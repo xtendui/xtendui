@@ -35,13 +35,24 @@ Xt.mount.push({
       gsap.killTweensOf(clone)
       gsap.set(content, { transformOrigin: 'right center' })
       gsap.set(content, { x: 0, opacity: 1 })
-      gsap.to(content, { x: contentX, opacity: 0, duration: 0.7, ease: 'quint.out' })
+      gsap.to(content, {
+        x: contentX,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'quint.out',
+      })
       // clone
       const clone = object.querySelector('.clone')
       gsap.killTweensOf(clone)
       gsap.set(clone, { transformOrigin: 'left center' })
       gsap.set(clone, { x: -cloneX, opacity: 0 })
-      gsap.to(clone, { x: 0, opacity: 1, duration: 0.7, ease: 'quint.out', delay: 0.3 })
+      gsap.to(clone, {
+        x: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: 'quint.out',
+        delay: 0.3,
+      })
     }
 
     object.addEventListener('click', eventOn)

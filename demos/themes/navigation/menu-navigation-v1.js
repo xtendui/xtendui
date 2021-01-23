@@ -80,7 +80,13 @@ Xt.mount.push({
         const content = tr.querySelector('.drop-content')
         gsap.killTweensOf(content)
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
-        gsap.to(content, { x: 0, opacity: 1, duration: contentTime, delay: contentDelayOn, ease: contentEase })
+        gsap.to(content, {
+          x: 0,
+          opacity: 1,
+          duration: contentTime,
+          delay: contentDelayOn,
+          ease: contentEase,
+        })
         // design
         const design = tr.querySelector('.design-setup')
         gsap.killTweensOf(design)
@@ -96,9 +102,15 @@ Xt.mount.push({
         const innerHeight = inner.clientHeight
         const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
         gsap.set(inner, { height: innerHeightCache })
-        gsap.to(inner, { height: innerHeight, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
-          Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
-        })
+        gsap
+          .to(inner, {
+            height: innerHeight,
+            duration: innerTime,
+            ease: innerEase,
+          })
+          .eventCallback('onUpdate', () => {
+            Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+          })
       }
     }
 
@@ -121,7 +133,13 @@ Xt.mount.push({
               // content
               const content = tr.querySelector('.drop-content')
               gsap.killTweensOf(content)
-              gsap.to(content, { x: contentXOff * self.direction * -1, opacity: 0, duration: contentTime, ease: contentEase, overwrite: true })
+              gsap.to(content, {
+                x: contentXOff * self.direction * -1,
+                opacity: 0,
+                duration: contentTime,
+                ease: contentEase,
+                overwrite: true,
+              })
               // design
               const design = tr.querySelector('.design-setup')
               gsap.killTweensOf(design)
@@ -141,20 +159,36 @@ Xt.mount.push({
               // content
               const content = tr.querySelector('.drop-content')
               gsap.killTweensOf(content)
-              gsap.to(content, { opacity: 0, duration: contentTime, ease: contentEase })
+              gsap.to(content, {
+                opacity: 0,
+                duration: contentTime,
+                ease: contentEase,
+              })
               // design
               const design = tr.querySelector('.design-setup')
               gsap.killTweensOf(design)
-              gsap.to(design, { opacity: 0, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
-                Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
-              })
+              gsap
+                .to(design, {
+                  opacity: 0,
+                  duration: designTime,
+                  ease: designEase,
+                })
+                .eventCallback('onUpdate', () => {
+                  Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
+                })
               // inner
               const inner = tr.querySelector('.drop-inner')
               const innerHeight = 0
               gsap.killTweensOf(inner)
-              gsap.to(inner, { height: innerHeight, duration: innerTime, ease: innerEase }).eventCallback('onUpdate', () => {
-                Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
-              })
+              gsap
+                .to(inner, {
+                  height: innerHeight,
+                  duration: innerTime,
+                  ease: innerEase,
+                })
+                .eventCallback('onUpdate', () => {
+                  Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+                })
             }
           })
         )
@@ -200,7 +234,6 @@ Xt.mount.push({
         object,
         'lineFrame',
         requestAnimationFrame(() => {
-          console.log('enter', el)
           // line
           const lineX = el.offsetLeft
           const lineY = el.getBoundingClientRect().top + el.offsetHeight
@@ -209,7 +242,15 @@ Xt.mount.push({
             gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0 })
             lineFirst = false
           }
-          gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
+          gsap.to(line, {
+            x: lineX,
+            y: lineY - lineHeight,
+            width: lineWidth,
+            height: lineHeight,
+            opacity: 1,
+            duration: lineTime,
+            ease: lineEase,
+          })
         })
       )
     }
@@ -234,20 +275,32 @@ Xt.mount.push({
         'lineFrame',
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            console.log('leave', el)
             // not when drop is still open
             const dropBtnActive = object.querySelector('.drop-container.active')
             if (!dropBtnActive) {
               // line
               const lineY = el.getBoundingClientRect().top + el.offsetHeight
               lineFirst = true
-              gsap.to(line, { y: lineY, opacity: 0, duration: lineTime, ease: lineEase })
+              gsap.to(line, {
+                y: lineY,
+                opacity: 0,
+                duration: lineTime,
+                ease: lineEase,
+              })
             } else {
               // line
               const lineX = dropBtnActive.offsetLeft
               const lineY = dropBtnActive.getBoundingClientRect().top + dropBtnActive.offsetHeight
               const lineWidth = dropBtnActive.offsetWidth
-              gsap.to(line, { x: lineX, y: lineY - lineHeight, width: lineWidth, height: lineHeight, opacity: 1, duration: lineTime, ease: lineEase })
+              gsap.to(line, {
+                x: lineX,
+                y: lineY - lineHeight,
+                width: lineWidth,
+                height: lineHeight,
+                opacity: 1,
+                duration: lineTime,
+                ease: lineEase,
+              })
             }
           })
         })

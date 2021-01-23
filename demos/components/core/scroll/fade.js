@@ -23,7 +23,12 @@ Xt.mount.push({
         once: true,
         onEnter: batch => {
           gsap.killTweensOf(batch)
-          gsap.to(batch, { opacity: 1, duration: 0.5, ease: 'quart.out', stagger: 0.15 })
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
         },
       })
     })

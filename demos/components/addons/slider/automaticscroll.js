@@ -59,14 +59,20 @@ Xt.mount.push({
           }
           // end dragging position
           gsap.killTweensOf(self.dragger)
-          gsap.to(self.dragger, { x: self.detail.dragPos, duration: time, ease: 'linear' }).eventCallback('onComplete', () => {
-            // wrap before changing slide if needed, needed with drag.wrap = true
-            self.eventWrap()
-            requestAnimationFrame(() => {
-              // go to next slide
-              self.goToNext()
+          gsap
+            .to(self.dragger, {
+              x: self.detail.dragPos,
+              duration: time,
+              ease: 'linear',
             })
-          })
+            .eventCallback('onComplete', () => {
+              // wrap before changing slide if needed, needed with drag.wrap = true
+              self.eventWrap()
+              requestAnimationFrame(() => {
+                // go to next slide
+                self.goToNext()
+              })
+            })
         }
       }
     }
@@ -79,7 +85,11 @@ Xt.mount.push({
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
-        gsap.to(tween, { timeScale: 0, duration: timeScaleTimeOff, ease: timeScaleEaseOff })
+        gsap.to(tween, {
+          timeScale: 0,
+          duration: timeScaleTimeOff,
+          ease: timeScaleEaseOff,
+        })
       }
     }
 
@@ -92,7 +102,11 @@ Xt.mount.push({
       // resume tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
-        gsap.to(tween, { timeScale: 1, duration: timeScaleTimeOn, ease: timeScaleEaseOn })
+        gsap.to(tween, {
+          timeScale: 1,
+          duration: timeScaleTimeOn,
+          ease: timeScaleEaseOn,
+        })
       }
     }
 

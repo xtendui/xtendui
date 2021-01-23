@@ -26,17 +26,44 @@ Xt.mount.push({
     const eventEnter = () => {
       // media
       const media = link.querySelector('.media-container')
-      gsap.to(media, { opacity: mediaOpacityIn, scale: 1 - mediaScale, duration: 1, ease: 'expo.out' })
+      gsap.to(media, {
+        opacity: mediaOpacityIn,
+        scale: 1 - mediaScale,
+        duration: 1,
+        ease: 'expo.out',
+      })
       const mediaInner = link.querySelector('.media-inner')
-      gsap.to(mediaInner, { scale: 1 + mediaScale, duration: 1, ease: 'expo.out' })
+      gsap.to(mediaInner, {
+        scale: 1 + mediaScale,
+        duration: 1,
+        ease: 'expo.out',
+      })
       // text
       const text = object.querySelector('.btn-line-content')
       gsap.to(text, { x: lineX, duration: 1, delay: 0.5, ease: 'expo.out' })
       // line
       const line = object.querySelector('.btn-line-design')
-      gsap.set(line, { width: 0, x: -lineWidthMax, opacity: lineOpacity, overwrite: true })
-      gsap.to(line, { width: lineWidthMax, x: -lineWidthMax + lineWidth, opacity: 1, duration: 0.5, ease: 'expo.in' })
-      gsap.to(line, { width: lineWidth + lineX, x: 0, opacity: 1, duration: 1, delay: 0.5, ease: 'expo.out' })
+      gsap.set(line, {
+        width: 0,
+        x: -lineWidthMax,
+        opacity: lineOpacity,
+        overwrite: true,
+      })
+      gsap.to(line, {
+        width: lineWidthMax,
+        x: -lineWidthMax + lineWidth,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.in',
+      })
+      gsap.to(line, {
+        width: lineWidth + lineX,
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: 'expo.out',
+      })
     }
 
     link.addEventListener('mouseenter', eventEnter)
@@ -46,7 +73,12 @@ Xt.mount.push({
     const eventLeave = () => {
       // media
       const media = link.querySelector('.media-container')
-      gsap.to(media, { opacity: mediaOpacityOut, scale: 1, duration: 1, ease: 'expo.inOut' })
+      gsap.to(media, {
+        opacity: mediaOpacityOut,
+        scale: 1,
+        duration: 1,
+        ease: 'expo.inOut',
+      })
       const mediaInner = link.querySelector('.media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
       // text
@@ -54,7 +86,14 @@ Xt.mount.push({
       gsap.to(text, { x: 0, duration: 1, ease: 'expo.inOut' })
       // line
       const line = object.querySelector('.btn-line-design')
-      gsap.to(line, { width: lineWidth, x: 0, opacity: lineOpacity, duration: 1, ease: 'expo.inOut', overwrite: true })
+      gsap.to(line, {
+        width: lineWidth,
+        x: 0,
+        opacity: lineOpacity,
+        duration: 1,
+        ease: 'expo.inOut',
+        overwrite: true,
+      })
     }
 
     link.addEventListener('mouseleave', eventLeave)

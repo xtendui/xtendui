@@ -22,14 +22,26 @@ Xt.mount.push({
       onUpdate: self => {
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
-        if (object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction < 0) {
+        if (
+          object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction < 0
+        ) {
           object.classList.remove('scrolling-down')
           gsap.killTweensOf(object)
           gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-        } else if (!object.classList.contains('scrolling-down') && object.classList.contains('scrolling-hide') && self.direction > 0) {
+        } else if (
+          !object.classList.contains('scrolling-down') &&
+          object.classList.contains('scrolling-hide') &&
+          self.direction > 0
+        ) {
           object.classList.add('scrolling-down')
           gsap.killTweensOf(object)
-          gsap.to(object, { y: -stickyInner.offsetHeight, duration: 0.5, ease: 'quart.out' })
+          gsap.to(object, {
+            y: -stickyInner.offsetHeight,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
         }
       },
     })
@@ -40,7 +52,7 @@ Xt.mount.push({
       trigger: object,
       start: -1, // needs -1 because start trigger is sticky
       endTrigger: document.querySelector('.demo--sticky-hide-content'),
-      end: `bottom top+=${stickyInner.offsetHeight}`,
+      end: () => `bottom top+=${stickyInner.offsetHeight}`,
       onUpdate: self => {
         if (self.isActive && object.classList.contains('scrolling-hide')) {
           object.classList.remove('scrolling-hide')

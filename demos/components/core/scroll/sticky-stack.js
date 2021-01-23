@@ -12,9 +12,7 @@ Xt.mount.push({
       trigger: object,
       start: 'top top',
       endTrigger: '.demo--sticky-stack-topsecond',
-      end: () => {
-        return `top ${object.offsetHeight}px`
-      },
+      end: () => `top ${object.offsetHeight}px`,
       pin: true,
       pinSpacing: false,
     })
@@ -44,10 +42,7 @@ Xt.mount.push({
 
     ScrollTrigger.create({
       trigger: object,
-      start: () => {
-        const el = document.querySelector('.demo--sticky-stack-topsecond')
-        return `top top+=${el.offsetHeight}px`
-      },
+      start: () => `top top+=${document.querySelector('.demo--sticky-stack-topsecond').offsetHeight}px`,
       endTrigger: 'html',
       end: 'bottom top',
       pin: true,
@@ -79,10 +74,7 @@ Xt.mount.push({
 
     ScrollTrigger.create({
       trigger: object,
-      start: () => {
-        const el = document.querySelector('.demo--sticky-stack-bottom')
-        return `bottom bottom-=${el.offsetHeight}px`
-      },
+      start: () => `bottom bottom-=${document.querySelector('.demo--sticky-stack-bottom').offsetHeight}px`,
       endTrigger: 'html',
       end: 'bottom top',
       pin: true,

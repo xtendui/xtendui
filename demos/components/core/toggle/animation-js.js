@@ -28,7 +28,12 @@ Xt.mount.push({
       } else {
         gsap.set(tr, { x: 15 })
       }
-      gsap.to(tr, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.to(tr, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
     }
 
     for (const target of self.targets) {
@@ -40,9 +45,19 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
-        gsap.to(tr, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(tr, {
+          x: 15,
+          opacity: 0,
+          duration: targetTimeOff,
+          ease: targetEaseOff,
+        })
       } else {
-        gsap.to(tr, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(tr, {
+          x: -15,
+          opacity: 0,
+          duration: targetTimeOff,
+          ease: targetEaseOff,
+        })
       }
     }
 

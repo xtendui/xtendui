@@ -30,11 +30,9 @@ Xt.mount.push({
     // slider
 
     let self = new Xt.Slider(object, {
+      mode: 'absolute',
       instant: true,
       duration: 1500,
-      drag: {
-        overflow: false,
-      },
     })
 
     // drag
@@ -43,11 +41,18 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero-cover')
-      const skew = self.detail.dragRatio < 0.5 ? 10 * (self.detail.dragRatio * 1.5) : 10 * (self.detail.dragRatioInverse * 1.5) // * 2 would be the same as the normal skew
-      gsap.set(assetCover, { x: `${100 * self.detail.dragRatioInverse * self.direction}%`, skewX: skew * self.direction })
+      const skew =
+        self.detail.dragRatio < 0.5 ? 10 * (self.detail.dragRatio * 1.5) : 10 * (self.detail.dragRatioInverse * 1.5) // * 2 would be the same as the normal skew
+      gsap.set(assetCover, {
+        x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
+        skewX: skew * self.direction,
+      })
       // content
       const content = tr.querySelector('.hero-content')
-      gsap.set(content, { x: -contentX * self.detail.dragRatio * self.direction, opacity: 1 * self.detail.dragRatioInverse })
+      gsap.set(content, {
+        x: -contentX * self.detail.dragRatio * self.direction,
+        opacity: 1 * self.detail.dragRatioInverse,
+      })
     }
 
     self.dragger.addEventListener('drag.xt.slider', eventDrag)
@@ -58,10 +63,20 @@ Xt.mount.push({
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // cover
       const assetCover = tr.querySelector('.hero-cover')
-      gsap.to(assetCover, { skewX: 0, x: `${100 * self.direction}%`, duration: 0.25, ease: assetCoverEase })
+      gsap.to(assetCover, {
+        skewX: 0,
+        x: `${100 * self.direction}%`,
+        duration: assetCoverTime,
+        ease: assetCoverEase,
+      })
       // content
       const content = tr.querySelector('.hero-content')
-      gsap.to(content, { x: 0, opacity: 1, duration: 0.25, ease: contentEase })
+      gsap.to(content, {
+        x: 0,
+        opacity: 1,
+        duration: contentTime,
+        ease: contentEase,
+      })
     }
 
     self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
@@ -92,25 +107,58 @@ Xt.mount.push({
           // cover
           const assetCover = tr.querySelector('.hero-cover')
           gsap.set(assetCover, { x: `${100 * self.direction}%`, skewX: 0 })
-          gsap.to(assetCover, { x: `${-100 * self.direction}%`, duration: assetCoverTime, ease: assetCoverEase })
-          gsap.to(assetCover, { skewX: 5 * self.direction, duration: assetCoverTime / 2, ease: assetCoverEase }).eventCallback('onComplete', () => {
-            gsap.to(assetCover, { skewX: 0, duration: assetCoverTime / 2, ease: assetCoverEase })
+          gsap.to(assetCover, {
+            x: `${-100 * self.direction}%`,
+            duration: assetCoverTime,
+            ease: assetCoverEase,
           })
+          gsap
+            .to(assetCover, {
+              skewX: 5 * self.direction,
+              duration: assetCoverTime / 2,
+              ease: assetCoverEase,
+            })
+            .eventCallback('onComplete', () => {
+              gsap.to(assetCover, {
+                skewX: 0,
+                duration: assetCoverTime / 2,
+                ease: assetCoverEase,
+              })
+            })
           // assetMask
           const assetMask = tr.querySelector('.hero')
           gsap.set(assetMask, { x: `${100 * self.direction}%` })
-          gsap.to(assetMask, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
+          gsap.to(assetMask, {
+            x: 0,
+            duration: assetMaskTime,
+            ease: assetMaskEase,
+          })
           const assetMaskInner = assetMask.querySelector('.hero-inner')
           gsap.set(assetMaskInner, { x: `${-100 * self.direction}%` })
-          gsap.to(assetMaskInner, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
+          gsap.to(assetMaskInner, {
+            x: 0,
+            duration: assetMaskTime,
+            ease: assetMaskEase,
+          })
           // asset
           const asset = tr.querySelector('.media')
           gsap.set(asset, { scale: 1 + assetZoom })
-          gsap.to(asset, { scale: 1, duration: assetTime, ease: assetEase, delay: assetDelay })
+          gsap.to(asset, {
+            scale: 1,
+            duration: assetTime,
+            ease: assetEase,
+            delay: assetDelay,
+          })
           // content
           const content = tr.querySelector('.hero-content')
           gsap.set(content, { x: contentX * self.direction })
-          gsap.to(content, { x: 0, opacity: 1, duration: contentTime, ease: contentEase, delay: contentDelayOn })
+          gsap.to(content, {
+            x: 0,
+            opacity: 1,
+            duration: contentTime,
+            ease: contentEase,
+            delay: contentDelayOn,
+          })
         }
       }
     }
@@ -126,19 +174,46 @@ Xt.mount.push({
         if (self.detail.dragging) {
           // cover
           const assetCover = tr.querySelector('.hero-cover')
-          gsap.to(assetCover, { x: `${-100 * self.direction}%`, duration: assetCoverTime, ease: assetCoverEase })
-          gsap.to(assetCover, { skewX: 10 * self.direction, duration: assetCoverTime / 2, ease: assetCoverEase }).eventCallback('onComplete', () => {
-            gsap.to(assetCover, { skewX: 0, duration: assetCoverTime / 2, ease: assetCoverEase })
+          gsap.to(assetCover, {
+            x: `${-100 * self.direction}%`,
+            duration: assetCoverTime,
+            ease: assetCoverEase,
           })
+          gsap
+            .to(assetCover, {
+              skewX: 10 * self.direction,
+              duration: assetCoverTime / 2,
+              ease: assetCoverEase,
+            })
+            .eventCallback('onComplete', () => {
+              gsap.to(assetCover, {
+                skewX: 0,
+                duration: assetCoverTime / 2,
+                ease: assetCoverEase,
+              })
+            })
           // assetMask
           const assetMask = tr.querySelector('.hero')
-          gsap.to(assetMask, { x: `${-100 * self.direction}%`, duration: assetMaskTime, ease: assetMaskEase })
+          gsap.to(assetMask, {
+            x: `${-100 * self.direction}%`,
+            duration: assetMaskTime,
+            ease: assetMaskEase,
+          })
           const assetMaskInner = assetMask.querySelector('.hero-inner')
-          gsap.to(assetMaskInner, { x: `${100 * self.direction}%`, duration: assetMaskTime, ease: assetMaskEase })
+          gsap.to(assetMaskInner, {
+            x: `${100 * self.direction}%`,
+            duration: assetMaskTime,
+            ease: assetMaskEase,
+          })
         }
         // content
         const content = tr.querySelector('.hero-content')
-        gsap.to(content, { x: -contentX * self.direction, opacity: 0, duration: contentTime, ease: contentEase })
+        gsap.to(content, {
+          x: -contentX * self.direction,
+          opacity: 0,
+          duration: contentTime,
+          ease: contentEase,
+        })
       }
     }
 
@@ -162,7 +237,10 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const links = object.tagName === 'A' || object.tagName === 'BUTTON' ? Xt.arrSingle(object) : object.querySelectorAll('a, button')
+    const links =
+      object.tagName === 'A' || object.tagName === 'BUTTON'
+        ? Xt.arrSingle(object)
+        : object.querySelectorAll('a, button')
     const img = object.querySelector('.media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
@@ -182,7 +260,12 @@ Xt.mount.push({
 
     const eventLeave = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityOut, duration: 0.5, ease: 'quart.out', overwrite: true })
+      gsap.to(img, {
+        opacity: imgOpacityOut,
+        duration: 0.5,
+        ease: 'quart.out',
+        overwrite: true,
+      })
     }
 
     for (const link of links) {

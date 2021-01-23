@@ -29,7 +29,12 @@ Xt.mount.push({
         gsap.set(inner, { x: 15 })
       }
       gsap.set(inner, { opacity: 0 })
-      gsap.to(inner, { x: 0, opacity: 1, duration: targetTimeOn, ease: targetEaseOn })
+      gsap.to(inner, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
     }
 
     for (const target of self.targets) {
@@ -42,10 +47,20 @@ Xt.mount.push({
       const tr = e.target
       if (!tr.classList.contains('inverse')) {
         const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, { x: 15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(inner, {
+          x: 15,
+          opacity: 0,
+          duration: targetTimeOff,
+          ease: targetEaseOff,
+        })
       } else {
         const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, { x: -15, opacity: 0, duration: targetTimeOff, ease: targetEaseOff })
+        gsap.to(inner, {
+          x: -15,
+          opacity: 0,
+          duration: targetTimeOff,
+          ease: targetEaseOff,
+        })
       }
     }
 
