@@ -21,12 +21,12 @@ demo.htmlSource = `
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md items-start ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md items-start ${btnPrimary()}">
     align items<br>items-start
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md items-end ${btnPrimary()}">
+  <button type="button" class="btn btn-md rounded-md items-end ${btnPrimary()}">
     align items<br>items-end
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>

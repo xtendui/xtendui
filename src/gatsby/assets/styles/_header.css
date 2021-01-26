@@ -21,9 +21,6 @@
   @screen lg {
     width: 20rem;
   }
-  @screen xl {
-    width: 20rem;
-  }
 }
 
 .gatsby_site-header_menu_link {
@@ -86,7 +83,13 @@
   align-items: center;
   height: 100%;
   img {
-    width: 8.5rem;
+    width: 7rem;
+    @screen md {
+      width: 8.5rem;
+      .gatsby_home-header & {
+        width: 9.5rem;
+      }
+    }
   }
   img {
     @apply transition;
@@ -106,12 +109,8 @@
   @screen lg {
     padding-top: 2rem;
     padding-bottom: 1.25rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  @screen xl {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 }
 
@@ -128,7 +127,7 @@
 }
 
 .gatsby_site-header_top_social {
-  @apply list list-1;
+  @apply list list-0.5;
   align-items: stretch;
   svg {
     @apply icon-md;
@@ -158,10 +157,7 @@
 }
 
 .gatsby_site-header_listing {
-  padding: 1.5rem;
-  @screen xl {
-    padding: 2rem;
-  }
+  padding: 1.75rem;
 }
 
 .gatsby_site-header_cat {
@@ -198,12 +194,8 @@
 }
 
 .gatsby_site-header_links_container {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  @screen xl {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
   @media (max-width: calc(theme('screens.lg') - 1px)) {
     margin-top: 4rem;
   }

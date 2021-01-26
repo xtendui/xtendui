@@ -8,6 +8,7 @@ const cardBlack = require('components/snippets/classes/card-black').default
 const iconTwitter = require('components/snippets/icons').iconTwitter
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
+const iconX = require('components/snippets/icons').iconX
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`
@@ -126,24 +127,11 @@ export default function Header({ page }) {
             <div className="overlay-inner">
               <div className="design-setup"></div>
               <div className="card">
-                <div className="btn btn-close p-5 pr-3 text-2xl fixed z-last mr-2" aria-label="Close">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="icon"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="#2c3e50"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </div>
+                <div
+                  className="btn btn-close p-5 pr-3 text-2xl fixed z-last mr-2"
+                  aria-label="Close"
+                  dangerouslySetInnerHTML={{ __html: iconX() }}
+                ></div>
                 <div className="mt-6">
                   <div className="gatsby_site-header_links_container">
                     <div className="gatsby_site-header_links">

@@ -129,7 +129,7 @@ export default class Page extends React.Component {
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
                               <img
-                                className="icon icon-sm mr-4"
+                                className="icon mr-4"
                                 src={'/logo-tailwind.svg'}
                                 loading="eager"
                                 alt="Tailwind Css"
@@ -158,12 +158,7 @@ export default class Page extends React.Component {
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
-                              <img
-                                className="icon icon-sm mr-4"
-                                src={'/logo-js.svg'}
-                                loading="eager"
-                                alt="Vanilla JS"
-                              />{' '}
+                              <img className="icon mr-4" src={'/logo-js.svg'} loading="eager" alt="Vanilla JS" />{' '}
                               Vanilla JS
                             </h3>
                           </div>
@@ -191,8 +186,7 @@ export default class Page extends React.Component {
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
-                              <img className="icon icon-sm mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" />{' '}
-                              Gsap
+                              <img className="icon mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" /> Gsap
                             </h3>
                           </div>
                           <div className="gatsby_home-main_feature_right">

@@ -15,8 +15,8 @@ module.exports = {
   theme:{
     xtendui: {
       icons: {
-        component: theme => ({
-          // modify components
+        utility: theme => ({
+          // modify utilities
         }),
       },
     },
@@ -30,9 +30,9 @@ Use `.icon` to create a **icon**.
 
 <div class="table-overflow">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.icon`                     | `icon`                | Icon styles            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.icon`                     | `icon`                | `responsive`                | Icon styles            |
 
 </div>
 

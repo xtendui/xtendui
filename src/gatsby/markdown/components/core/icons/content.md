@@ -10,9 +10,8 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [text-color](https://tailwindcss.com/docs/text-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
-
 [[notePrimary]]
-| Svg needs `fill: currentColor` or `stroke: currentColor` to have parent text color.
+| To **have parent text color** the Svg needs `stroke="currentColor"` or `fill="currentColor"` depending on svg format.
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/variant">
@@ -30,15 +29,15 @@ Text styles on **parent elements** are applied when **inerithed**.
 
 ## Size
 
-Use **component classes** to assign size. You can add **additional size** for example `.icon-xs`.
+Use **component classes** to assign size. You can add **additional size** for example `.icon-xs` or `.icon-xl`.
 
 <div class="table-overflow">
 
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.icon-sm`       | `icon-sm`                | Size small            |
-| Component                  | `.icon-md`       | `icon-md`                | Size medium            |
-| Component                  | `.icon-lg`       | `icon-lg`                | Size large            |
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.icon-sm`                     | `icon-sm`                | `responsive`                | Size small            |
+| Utility                  | `.icon-md`                     | `icon-md`                | `responsive`                | Size medium            |
+| Utility                  | `.icon-lg`                     | `icon-lg`                | `responsive`                | Size large            |
 
 </div>
 

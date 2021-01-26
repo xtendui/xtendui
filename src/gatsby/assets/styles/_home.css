@@ -10,7 +10,7 @@
 }
 
 .gatsby_home-header_content {
-  @apply relative z-20 py-4 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
+  @apply relative z-20 py-5 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
   .gatsby_logo-icon {
     @apply pb-3 transition-all duration-300 ease-out-quart;
   }
@@ -151,6 +151,10 @@
     display: flex;
     align-items: center;
     font-size: 2.6rem;
+  }
+  .icon {
+    width: 1em;
+    height: 1em;
   }
 }
 

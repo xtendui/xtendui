@@ -100,9 +100,6 @@ body {
   }
   h1 {
     span {
-      display: inline-block;
-    }
-    span span {
       font-weight: theme('fontWeight.normal');
       color: theme('colors.gray.500');
     }
@@ -111,9 +108,6 @@ body {
 
 .gatsby_site-article_hero-content-inner {
   max-width: 70rem;
-  &:not(.fade) {
-     pointer-events: none;
-   }
 }
 
 /**

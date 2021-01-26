@@ -161,17 +161,6 @@ module.exports = {
   }),
   component: theme => ({
     html: {
-      // base rem value
-      fontSize: rem(14),
-      '@screen sm': {
-        fontSize: rem(15.5), // odd number with .5 to fix chrome alignment
-      },
-      '@screen md': {
-        fontSize: rem(16),
-      },
-      '@screen xl': {
-        fontSize: rem(17.5), // odd number with .5 to fix chrome alignment
-      },
       // style
       '@apply text-black links-default': '',
       lineHeight: 1.8,
