@@ -236,7 +236,7 @@ Xt.mount.push({
         requestAnimationFrame(() => {
           // line
           const lineX = el.offsetLeft
-          const lineY = el.getBoundingClientRect().top + el.offsetHeight
+          const lineY = el.offsetTop + el.offsetHeight
           const lineWidth = el.offsetWidth
           if (lineFirst) {
             gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0 })
@@ -279,7 +279,7 @@ Xt.mount.push({
             const dropBtnActive = object.querySelector('.drop-container.active')
             if (!dropBtnActive) {
               // line
-              const lineY = el.getBoundingClientRect().top + el.offsetHeight
+              const lineY = el.offsetTop + el.offsetHeight
               lineFirst = true
               gsap.to(line, {
                 y: lineY,
@@ -290,7 +290,7 @@ Xt.mount.push({
             } else {
               // line
               const lineX = dropBtnActive.offsetLeft
-              const lineY = dropBtnActive.getBoundingClientRect().top + dropBtnActive.offsetHeight
+              const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
               const lineWidth = dropBtnActive.offsetWidth
               gsap.to(line, {
                 x: lineX,
