@@ -10,21 +10,9 @@
 }
 
 .gatsby_home-header_content {
-  @apply relative z-20 py-5 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
+  @apply relative z-20 py-6 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
   .gatsby_logo-icon {
-    @apply pb-3 transition-all duration-300 ease-out-quart;
-  }
-  @screen sm {
-    @apply relative py-8;
-    .gatsby_logo-icon {
-      @apply pb-3;
-    }
-  }
-  @screen lg {
-    @apply relative py-10;
-    .gatsby_logo-icon {
-      @apply pb-4;
-    }
+    @apply mb-6 transition-all duration-300 ease-out-quart;
   }
   .gatsby_home-header.scrolling-down & {
     .gatsby_logo-icon {

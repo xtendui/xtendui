@@ -66,6 +66,7 @@ Xt.mount.push({
     // vars
 
     const background = object.querySelector('.gatsby_home-header_background rect')
+    const content = object.querySelector('.gatsby_home-header_inner')
     const logo = object.querySelector('.gatsby_logo-icon')
 
     // methods
@@ -76,11 +77,17 @@ Xt.mount.push({
     }
 
     const curve = () => {
-      if (!object.classList.contains('scrolling-down')) {
+      if (!content.classList.contains('scrolling-down')) {
         gsap.killTweensOf(background)
         gsap.to(background, { rx: '50%', duration: 0.5, ease: 'quart.out' })
       }
     }
+
+    // mouse events
+
+    object.addEventListener('mouseenter', straight)
+
+    object.addEventListener('mouseleave', curve)
 
     // sticky
 
@@ -95,23 +102,27 @@ Xt.mount.push({
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
         if (
-          object.classList.contains('scrolling-down') &&
-          object.classList.contains('scrolling-hide') &&
+          content.classList.contains('scrolling-down') &&
+          content.classList.contains('scrolling-hide') &&
           self.direction < 0
         ) {
-          object.classList.remove('scrolling-down')
-          gsap.killTweensOf(object)
-          gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+          content.classList.remove('scrolling-down')
+          gsap.killTweensOf(content)
+          gsap.to(content, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
           curve()
         } else if (
-          !object.classList.contains('scrolling-down') &&
-          object.classList.contains('scrolling-hide') &&
+          !content.classList.contains('scrolling-down') &&
+          content.classList.contains('scrolling-hide') &&
           self.direction > 0
         ) {
-          object.classList.add('scrolling-down')
-          gsap.killTweensOf(object)
-          gsap.to(object, {
-            y: -logo.offsetHeight,
+          content.classList.add('scrolling-down')
+          gsap.killTweensOf(content)
+          gsap.to(content, {
+            y: -(logo.offsetTop + logo.offsetHeight),
             duration: 0.5,
             ease: 'quart.out',
           })
@@ -127,23 +138,21 @@ Xt.mount.push({
       start: -1, // needs -1 because start trigger is sticky
       end: () => `top top-=${object.offsetHeight}`,
       onUpdate: self => {
-        if (self.isActive && object.classList.contains('scrolling-hide')) {
-          object.classList.remove('scrolling-hide')
-          gsap.killTweensOf(object)
-          gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+        if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
+          content.classList.remove('scrolling-hide')
+          gsap.killTweensOf(content)
+          gsap.to(content, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
           curve()
-        } else if (!self.isActive && !object.classList.contains('scrolling-hide')) {
-          object.classList.add('scrolling-hide')
+        } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
+          content.classList.add('scrolling-hide')
           straight()
         }
       },
     })
-
-    // mouse events
-
-    object.addEventListener('mouseenter', straight)
-
-    object.addEventListener('mouseleave', curve)
   },
 })
 

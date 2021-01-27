@@ -8,18 +8,20 @@ import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
-  container: true,
+  container: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
 
 demo.htmlSource = `
 <div class="demo--sticky-hide-top scroll-sticky">
-  <div class="card card-sm ${cardPrimary()} demo--sticky-hide-top-main">
-    <div class="h4">Top</div>
-  </div>
-  <div class="card card-sm ${cardDefault()} demo--sticky-hide-top-sub">
-    <div class="h6">Top Second</div>
+  <div class="demo--sticky-hide-content">
+    <div class="card card-sm ${cardPrimary()} demo--sticky-hide-top-main">
+      <div class="h4">Top</div>
+    </div>
+    <div class="card card-sm ${cardDefault()} demo--sticky-hide-top-sub">
+      <div class="h6">Top Second</div>
+    </div>
   </div>
 </div>
 

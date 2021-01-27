@@ -8,6 +8,7 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
+    const content = object.querySelector('.demo--sticky-hide-content')
     const stickyInner = object.querySelector('.demo--sticky-hide-top-main')
 
     // sticky
@@ -23,21 +24,21 @@ Xt.mount.push({
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
         if (
-          object.classList.contains('scrolling-down') &&
-          object.classList.contains('scrolling-hide') &&
+          content.classList.contains('scrolling-down') &&
+          content.classList.contains('scrolling-hide') &&
           self.direction < 0
         ) {
-          object.classList.remove('scrolling-down')
-          gsap.killTweensOf(object)
-          gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
+          content.classList.remove('scrolling-down')
+          gsap.killTweensOf(content)
+          gsap.to(content, { y: 0, duration: 0.5, ease: 'quart.out' })
         } else if (
-          !object.classList.contains('scrolling-down') &&
-          object.classList.contains('scrolling-hide') &&
+          !content.classList.contains('scrolling-down') &&
+          content.classList.contains('scrolling-hide') &&
           self.direction > 0
         ) {
-          object.classList.add('scrolling-down')
-          gsap.killTweensOf(object)
-          gsap.to(object, {
+          content.classList.add('scrolling-down')
+          gsap.killTweensOf(content)
+          gsap.to(content, {
             y: -stickyInner.offsetHeight,
             duration: 0.5,
             ease: 'quart.out',
@@ -54,12 +55,12 @@ Xt.mount.push({
       endTrigger: document.querySelector('.demo--sticky-hide-content'),
       end: () => `bottom top+=${stickyInner.offsetHeight}`,
       onUpdate: self => {
-        if (self.isActive && object.classList.contains('scrolling-hide')) {
-          object.classList.remove('scrolling-hide')
-          gsap.killTweensOf(object)
-          gsap.to(object, { y: 0, duration: 0.5, ease: 'quart.out' })
-        } else if (!self.isActive && !object.classList.contains('scrolling-hide')) {
-          object.classList.add('scrolling-hide')
+        if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
+          content.classList.remove('scrolling-hide')
+          gsap.killTweensOf(content)
+          gsap.to(content, { y: 0, duration: 0.5, ease: 'quart.out' })
+        } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
+          content.classList.add('scrolling-hide')
         }
       },
     })
