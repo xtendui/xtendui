@@ -219,7 +219,7 @@ Xt.mount.push({
     const btns = object.querySelectorAll('.btn-line')
     const line = object.querySelector('.megamenu-line')
 
-    const lineHeight = 4
+    const lineHeight = 7
     const lineTime = 0.5
     const lineEase = 'quint.out'
 
