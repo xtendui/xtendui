@@ -14,7 +14,6 @@ module.exports = {
       right: '0', // @FIX no width or it bugs collapse animation
       overflowY: 'scroll',
       '&.out': {
-        overflowY: 'initial',
         pointerEvents: 'none',
       },
     },

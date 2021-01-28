@@ -1726,7 +1726,6 @@ class Toggle {
         }
         // special
         self.specialClassHtml(actionCurrent)
-        self.specialScrollbar(actionCurrent)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
       }
@@ -1854,6 +1853,7 @@ class Toggle {
       // activation
       self.activate(el, type)
       // special
+      self.specialScrollbar(actionCurrent)
       self.specialBackdrop(actionCurrent, obj, el, type)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
@@ -2003,6 +2003,7 @@ class Toggle {
       // activation
       self.deactivateDone(el, type)
       // special
+      self.specialScrollbar(actionCurrent)
       self.specialBackdrop(actionCurrent, obj, el, type)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // appendTo
