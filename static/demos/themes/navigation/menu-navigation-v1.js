@@ -58,8 +58,8 @@ Xt.mount.push({
       targets: '.drop-container > .drop',
       duration: 1000,
       preventEvent: true,
-      on: 'mouseenter',
-      off: 'mouseleave',
+      //on: 'mouseenter',
+      //off: 'mouseleave',
       instant: true,
     })
 
@@ -77,7 +77,6 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // content
-            console.log(self.direction, self.currentIndex, self.oldIndex)
         const content = tr.querySelector('.drop-content')
         gsap.killTweensOf(content)
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
@@ -126,7 +125,6 @@ Xt.mount.push({
           self.object,
           'dropmegamenuFrame',
           requestAnimationFrame(() => {
-            console.log(self.direction, self.currentIndex, self.oldIndex)
             // content
             const content = tr.querySelector('.drop-content')
             gsap.killTweensOf(content)

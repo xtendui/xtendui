@@ -37,92 +37,26 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-black"></div>
-            <div class="drop-content py-10 text-white links-inverse text-sm">
+            <div class="design-setup bg-accent-900"></div>
+            <div class="drop-content">
 
-              <div class="container-fluid">
-                <div class="row row-4">
-
-                  <div class="w-full md:w-4/12">
-                    <div class="media-container ratio-50">
-                      <div class="media-inner">
-                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="w-6/12 md:w-8/12">
-                    <div class="row row-2 flex-col flex-wrap" style="max-height: 20rem;">
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Dolor sit amet
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Dolor sit amet
-                        </a>
-                      </div>
-
-                    </div>
-                  </div>
-
+              <div class="pt-16 pb-24 text-white links-inverse">
+                <div class="container-fluid">
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Lorem ipsum
+                  </a>
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Dolor sit amet
+                  </a>
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Consectetur adipiscing elit
+                  </a>
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Morbi nec mauris est
+                  </a>
+                  <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                    Show all
+                  </a>
                 </div>
               </div>
 
@@ -140,122 +74,20 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-black"></div>
-            <div class="drop-content py-10 text-white links-inverse text-sm">
+            <div class="design-setup bg-accent-900"></div>
+            <div class="drop-content">
 
-              <div class="container-fluid">
-                <div class="row row-4">
-
-                  <div class="w-full md:w-4/12">
-                    <div class="media-container ratio-50">
-                      <div class="media-inner">
-                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="w-6/12 md:w-8/12">
-                    <div class="row row-2 flex-col flex-wrap" style="max-height: 30rem;">
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Dolor sit amet
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Dolor sit amet
-                        </a>
-                      </div>
-
-                    </div>
-                  </div>
-
+              <div class="pt-16 pb-24 text-white links-inverse">
+                <div class="container-fluid">
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Lorem ipsum
+                  </a>
+                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                    Dolor sit amet
+                  </a>
+                  <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                    Show all
+                  </a>
                 </div>
               </div>
 
@@ -274,59 +106,40 @@ demo.htmlSource = `
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
             <div class="design-setup bg-gray-100"></div>
-            <div class="drop-content py-10 text-black links-default text-sm">
+            <div class="drop-content">
 
-              <div class="container-fluid">
-                <div class="row row-4">
-
-                  <div class="w-full md:w-4/12">
-                    <div class="media-container ratio-50">
-                      <div class="media-inner">
-                        <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-                      </div>
+              <div class="pt-16 pb-24 text-black links-default">
+                <div class="container-fluid">
+                  <div class="row row-4">
+                    <div class="w-6/12">
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Lorem ipsum
+                      </a>
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Dolor sit amet
+                      </a>
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Consectetur adipiscing elit
+                      </a>
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Morbi nec mauris est
+                      </a>
+                    </div>
+                    <div class="w-6/12">
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Dolor sit amet
+                      </a>
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Consectetur adipiscing elit
+                      </a>
+                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                        Morbi nec mauris est
+                      </a>
+                      <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                          Show all
+                      </a>
                     </div>
                   </div>
-
-                  <div class="w-6/12 md:w-8/12">
-                    <div class="row row-2 flex-col flex-wrap" style="max-height: 15rem;">
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Lorem ipsum
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Consectetur
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Adipiscing elit
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="w-full md:w-6/12 lg:w-4/12">
-                        <a href="#" class="h5 inline-block">
-                          Dolor sit amet
-                        </a>
-                        <div class="list flex-col">
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Lorem ipsum
-                          </a>
-                          <a href="#" class="btn btn-sm rounded-md text-reset px-0 py-0.5 opacity-75 hover:opacity-100">
-                            Dolor sit amet
-                          </a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
                 </div>
               </div>
 
