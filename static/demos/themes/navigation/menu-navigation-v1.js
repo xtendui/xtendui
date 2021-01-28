@@ -58,8 +58,8 @@ Xt.mount.push({
       targets: '.drop-container > .drop',
       duration: 1000,
       preventEvent: true,
-      // on: 'mouseenter',
-      // off: 'mouseleave',
+      on: 'mouseenter',
+      off: 'mouseleave',
       instant: true,
     })
 
@@ -77,6 +77,7 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // content
+            console.log(self.direction, self.currentIndex, self.oldIndex)
         const content = tr.querySelector('.drop-content')
         gsap.killTweensOf(content)
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
@@ -90,16 +91,13 @@ Xt.mount.push({
         // design
         const design = tr.querySelector('.design-setup')
         gsap.killTweensOf(design)
-        const designOpacityCache = Xt.dataStorage.get(self.object, 'designOpacityCache') || 0
-        gsap.set(design, { opacity: designOpacityCache })
-        gsap.to(design, { opacity: 1, duration: designTime, ease: designEase }).eventCallback('onUpdate', () => {
-          Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
-        })
+        gsap.set(design, { opacity: 1 })
         // inner
         const inner = tr.querySelector('.drop-inner')
         gsap.killTweensOf(inner)
         gsap.set(inner, { height: '' })
         const innerHeight = inner.clientHeight
+        Xt.dataStorage.set(self.object, 'innerHeightFinal', innerHeight)
         const innerHeightCache = Xt.dataStorage.get(self.object, 'innerHeightCache') || 0
         gsap.set(inner, { height: innerHeightCache })
         gsap
@@ -128,54 +126,36 @@ Xt.mount.push({
           self.object,
           'dropmegamenuFrame',
           requestAnimationFrame(() => {
+            console.log(self.direction, self.currentIndex, self.oldIndex)
+            // content
+            const content = tr.querySelector('.drop-content')
+            gsap.killTweensOf(content)
+            gsap.to(content, {
+              x: contentXOff * self.direction * -1,
+              opacity: 0,
+              duration: contentTime,
+              ease: contentEase,
+              overwrite: true,
+            })
+            // design
+            const design = tr.querySelector('.design-setup')
+            gsap.killTweensOf(design)
+            gsap.to(design, {
+              opacity: 0,
+              duration: designTime,
+              ease: designEase,
+            })
             // when self.direction it's sequential interaction
             if (self.direction) {
-              // content
-              const content = tr.querySelector('.drop-content')
-              gsap.killTweensOf(content)
-              gsap.to(content, {
-                x: contentXOff * self.direction * -1,
-                opacity: 0,
-                duration: contentTime,
-                ease: contentEase,
-                overwrite: true,
+              // inner
+              const inner = tr.querySelector('.drop-inner')
+              gsap.killTweensOf(inner)
+              gsap.to(inner, {
+                height: Xt.dataStorage.get(self.object, 'innerHeightFinal'),
+                duration: innerTime,
+                ease: innerEase,
               })
-              // design
-              const design = tr.querySelector('.design-setup')
-              gsap.killTweensOf(design)
-              gsap.set(design, { opacity: 0 })
             } else {
-              // others
-              for (const other of self.targets.filter(x => x !== tr)) {
-                // design
-                const design = other.querySelector('.design-setup')
-                gsap.killTweensOf(design)
-                gsap.set(design, { opacity: 0 })
-                // inner
-                const inner = other.querySelector('.drop-inner')
-                gsap.killTweensOf(inner)
-                gsap.set(inner, { height: 0 })
-              }
-              // content
-              const content = tr.querySelector('.drop-content')
-              gsap.killTweensOf(content)
-              gsap.to(content, {
-                opacity: 0,
-                duration: contentTime,
-                ease: contentEase,
-              })
-              // design
-              const design = tr.querySelector('.design-setup')
-              gsap.killTweensOf(design)
-              gsap
-                .to(design, {
-                  opacity: 0,
-                  duration: designTime,
-                  ease: designEase,
-                })
-                .eventCallback('onUpdate', () => {
-                  Xt.dataStorage.set(self.object, 'designOpacityCache', design.style.opacity)
-                })
               // inner
               const inner = tr.querySelector('.drop-inner')
               const innerHeight = 0
@@ -189,6 +169,17 @@ Xt.mount.push({
                 .eventCallback('onUpdate', () => {
                   Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
                 })
+              // others
+              for (const other of self.targets.filter(x => x !== tr)) {
+                // design
+                const design = other.querySelector('.design-setup')
+                gsap.killTweensOf(design)
+                gsap.to(design, { opacity: 0, duration: designTime, ease: designEase, delay: designTime })
+                // inner
+                const inner = other.querySelector('.drop-inner')
+                gsap.killTweensOf(inner)
+                gsap.set(inner, { height: 0 })
+              }
             }
           })
         )

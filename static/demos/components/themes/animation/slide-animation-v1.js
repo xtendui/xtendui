@@ -32,7 +32,7 @@ Xt.mount.push({
     const eventOn = () => {
       // content
       const content = object.querySelector('.content')
-      gsap.killTweensOf(clone)
+      gsap.killTweensOf(content)
       gsap.set(content, { transformOrigin: 'right center' })
       gsap.set(content, { x: 0, opacity: 1 })
       gsap.to(content, {

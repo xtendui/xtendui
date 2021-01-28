@@ -986,10 +986,7 @@ Xt.animOn = (el, suffix = '') => {
     el,
     suffix,
     requestAnimationFrame(() => {
-      // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-      requestAnimationFrame(() => {
-        el.classList.add('active')
-      })
+      el.classList.add('active')
     })
   )
 }

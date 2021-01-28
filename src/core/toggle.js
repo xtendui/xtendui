@@ -197,9 +197,7 @@ class Toggle {
         currents++
         // keep the same level of raf as others
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            self.eventOn(element, true)
-          })
+          self.eventOn(element, true)
         })
       }
     }
@@ -224,9 +222,7 @@ class Toggle {
     if (saveCurrents) {
       // keep the same level of raf as others
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          self.initialCurrents = self.getCurrents().slice(0)
-        })
+        self.initialCurrents = self.getCurrents().slice(0)
       })
     }
     // no currents
@@ -242,10 +238,8 @@ class Toggle {
     }
     // keep the same level of raf as others
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -1233,7 +1227,7 @@ class Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (!self.initial && (self.currentIndex === null || self.oldIndex === null)) {
+    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
       self.direction = 0
     } else if (self.inverse !== null) {
       self.direction = self.inverse ? -1 : 1
@@ -1265,14 +1259,11 @@ class Toggle {
         el,
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
-          // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-          requestAnimationFrame(() => {
-            el.classList.add(...self.classesActive)
-            // remove initial instantly when wrap
-            if (el.classList.contains('xt-wrap')) {
-              el.classList.remove(...self.classesInitial)
-            }
-          })
+          el.classList.add(...self.classesActive)
+          // remove initial instantly when wrap
+          if (el.classList.contains('xt-wrap')) {
+            el.classList.remove(...self.classesInitial)
+          }
         })
       )
       // direction
@@ -1972,10 +1963,7 @@ class Toggle {
         el,
         `${self.ns + type}AnimFrame`,
         requestAnimationFrame(() => {
-          // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-          requestAnimationFrame(() => {
-            self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
-          })
+          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
         })
       )
     } else {
@@ -2560,10 +2548,7 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-              requestAnimationFrame(() => {
-                el.style.height = h
-              })
+              el.style.height = h
             })
           )
         }
@@ -2580,10 +2565,8 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-              requestAnimationFrame(() => {
-                el.style.width = w
-              })
+
+              el.style.width = w
             })
           )
         }
@@ -2600,10 +2583,7 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-              requestAnimationFrame(() => {
-                el.style.height = '0'
-              })
+              el.style.height = '0'
             })
           )
         }
@@ -2619,10 +2599,7 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              // @FIX raf sometimes el isn't already display: block (overlay and firefox expecially)
-              requestAnimationFrame(() => {
-                el.style.width = '0'
-              })
+              el.style.width = '0'
             })
           )
         }
@@ -2976,14 +2953,12 @@ class Toggle {
     const options = self.options
     // keep the same level of raf as others
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // check
-        if (options.disabled) {
-          self.disable()
-        } else {
-          self.enable()
-        }
-      })
+      // check
+      if (options.disabled) {
+        self.disable()
+      } else {
+        self.enable()
+      }
     })
   }
 

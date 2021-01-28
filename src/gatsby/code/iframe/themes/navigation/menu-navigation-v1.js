@@ -37,7 +37,7 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-accent-900"></div>
+            <div class="design-setup bg-black"></div>
             <div class="drop-content py-10 text-white links-inverse text-sm">
 
               <div class="container-fluid">
@@ -140,7 +140,7 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-accent-900"></div>
+            <div class="design-setup bg-black"></div>
             <div class="drop-content py-10 text-white links-inverse text-sm">
 
               <div class="container-fluid">
@@ -273,8 +273,8 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-accent-900"></div>
-            <div class="drop-content py-10 text-white links-inverse text-sm">
+            <div class="design-setup bg-gray-100"></div>
+            <div class="drop-content py-10 text-black links-default text-sm">
 
               <div class="container-fluid">
                 <div class="row row-4">
