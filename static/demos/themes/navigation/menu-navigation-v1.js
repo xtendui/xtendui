@@ -30,12 +30,16 @@ Xt.mount.push({
 })
 
 /**
- * .megamenu drops
+ * .megamenu
  */
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 .megamenu',
   mount: ({ object }) => {
+    /**
+     * .megamenu drops
+     */
+
     // vars
 
     const contentXOn = -40
@@ -186,22 +190,10 @@ Xt.mount.push({
 
     self.object.addEventListener('off.xt.drop', eventOff, true)
 
-    // unmount
+    /**
+     * .megamenu line
+     */
 
-    return function () {
-      self.destroy()
-      self = null
-    }
-  },
-})
-
-/**
- * .megamenu line
- */
-
-Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 .megamenu',
-  mount: ({ object }) => {
     // vars
 
     let lineFirst = true
@@ -263,35 +255,34 @@ Xt.mount.push({
         object,
         'lineFrame',
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            // not when drop is still open
-            const dropBtnActive = object.querySelector('.drop-container.active')
-            if (!dropBtnActive) {
-              // line
-              const lineY = el.offsetTop + el.offsetHeight
-              lineFirst = true
-              gsap.to(line, {
-                y: lineY,
-                opacity: 0,
-                duration: lineTime,
-                ease: lineEase,
-              })
-            } else {
-              // line
-              const lineX = dropBtnActive.offsetLeft
-              const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
-              const lineWidth = dropBtnActive.offsetWidth
-              gsap.to(line, {
-                x: lineX,
-                y: lineY - lineHeight,
-                width: lineWidth,
-                height: lineHeight,
-                opacity: 1,
-                duration: lineTime,
-                ease: lineEase,
-              })
-            }
-          })
+          // not when drop is still open
+          const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
+          console.log(dropBtnActive)
+          if (!dropBtnActive) {
+            // line
+            const lineY = el.offsetTop + el.offsetHeight
+            lineFirst = true
+            gsap.to(line, {
+              y: lineY,
+              opacity: 0,
+              duration: lineTime,
+              ease: lineEase,
+            })
+          } else {
+            // line
+            const lineX = dropBtnActive.offsetLeft
+            const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
+            const lineWidth = dropBtnActive.offsetWidth
+            gsap.to(line, {
+              x: lineX,
+              y: lineY - lineHeight,
+              width: lineWidth,
+              height: lineHeight,
+              opacity: 1,
+              duration: lineTime,
+              ease: lineEase,
+            })
+          }
         })
       )
     }
@@ -302,6 +293,13 @@ Xt.mount.push({
       if (drop) {
         drop.addEventListener('off.xt.drop', eventLeave.bind(btn), true)
       }
+    }
+
+    // unmount
+
+    return function () {
+      self.destroy()
+      self = null
     }
   },
 })
