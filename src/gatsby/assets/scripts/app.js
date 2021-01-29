@@ -161,8 +161,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches:
-    '.gatsby_home-main .h1-display, .gatsby_home-main_head_description, .gatsby_home-main_social, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_home-main_support_col, .gatsby_home-main .gatsby_listing-column', // add here all fade selectors css and js
+  matches: '.gatsby_home-main_scroll',
   mount: ({ object, mount }) => {
     // multiple mount object with raf
 
@@ -178,44 +177,51 @@ Xt.mount.push({
       // parallax
 
       for (const trigger of triggers) {
-        // leave
+        // bottom
 
-        const scrollTriggerLeave = {
+        const scrollTriggerBottom = {
           trigger: trigger,
-          start: 'top top+=100px',
-          end: 'bottom top+=100px',
+          start: 'top bottom',
+          end: 'top bottom-=150', // end 150px after
           scrub: 1.5,
         }
 
-        gsap.set(trigger, { y: 0, opacity: 1 })
         gsap
           .timeline({
-            scrollTrigger: scrollTriggerLeave,
+            scrollTrigger: scrollTriggerBottom,
           })
-          .to(trigger, {
+          .set(trigger, {
+            y: 30,
             opacity: 0,
-            y: -30,
-            ease: 'quint.inOut',
-          })
-
-        // enter
-
-        const scrollTriggerEnter = {
-          trigger: trigger,
-          start: 'top bottom+=50px',
-          end: 'bottom bottom+=50px',
-          scrub: 1.5,
-        }
-
-        gsap.set(trigger, { y: 30, opacity: 0 })
-        gsap
-          .timeline({
-            scrollTrigger: scrollTriggerEnter,
           })
           .to(trigger, {
             opacity: 1,
             y: 0,
             ease: 'quint.inOut',
+          })
+
+        // top
+
+        const scrollTriggerTop = {
+          trigger: trigger,
+          start: `bottom top+=200`, // 50px is header height, start 150px before
+          end: `bottom top+=50`, // 50px is header height
+          scrub: 1.5,
+        }
+
+        gsap
+          .timeline({
+            scrollTrigger: scrollTriggerTop,
+          })
+          .set(trigger, {
+            y: 0,
+            opacity: 1,
+          })
+          .to(trigger, {
+            opacity: 0,
+            y: -30,
+            ease: 'quint.inOut',
+            immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
           })
       }
     })

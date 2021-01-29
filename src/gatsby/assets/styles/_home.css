@@ -12,15 +12,15 @@
 .gatsby_home-header_content {
   @apply relative z-20 py-6 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
   .gatsby_logo-icon {
-    @apply mb-6 transition-all duration-300 ease-out-quart;
+    @apply mb-4 transition-all duration-300 ease-out-quart;
   }
-  .gatsby_home-header.scrolling-down & {
+  .scrolling-down & {
     .gatsby_logo-icon {
       @apply opacity-0 pointer-events-none;
     }
   }
-  .gatsby_home-header.scrolling-hide & {
-    @apply relative py-4;
+  .scrolling-down.scrolling-hide & {
+    @apply relative pt-7 pb-5;
   }
 }
 
@@ -201,9 +201,7 @@
 /* scroll */
 
 body:not(.xt-noscroll) {
-  .gatsby_home-main {
-    .h1-display, .gatsby_home-main_head_description, .gatsby_home-main_social, .gatsby_home-main_feature, .gatsby_home-main_philosophy_col, .gatsby_listing-column, .gatsby_home-main_support_col {
-      opacity: 0;
-    }
+  .gatsby_home-main_scroll {
+    opacity: 0;
   }
 }

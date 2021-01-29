@@ -14,11 +14,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--parallax-multiple">
 
-  <h1 class="pb-96">Scroll down</h1>
+  <h1 class="h-screen">Scroll down</h1>
 
-  <div class="box box-0 bg-accent-500 w-24 h-24 my-96"></div>
+  <div class="box box-0 bg-accent-500 w-24 h-24"></div>
 
-  <h1 class="pt-96">Scroll up</h1>
+  <h1 class="h-screen">Scroll up</h1>
 
 </div>
 `

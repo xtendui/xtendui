@@ -58,14 +58,14 @@ export default class Page extends React.Component {
               <main className="gatsby_home-main">
                 <div className="gatsby_home-main_head">
                   <div className="container">
-                    <h1 className="h1-display">A new paradigm for Custom Frontend Development</h1>
-                    <h2 className="h4 font-normal opacity-50">
+                    <h1 className="h1-display gatsby_home-main_scroll">A new paradigm for Custom Frontend Development</h1>
+                    <h2 className="h4 font-normal opacity-50 gatsby_home-main_scroll">
                       <span className="gatsby_home-main_head_description">
                         Xtend UI is a UI framework for custom styling, interactions and animations. Extremely
                         customizable and designed for building complex user interfaces.
                       </span>
                     </h2>
-                    <div className="gatsby_home-main_social">
+                    <div className="gatsby_home-main_social gatsby_home-main_scroll">
                       <div data-xt-tooltip="{ position: 'top' }">
                         <a
                           href={data.site.siteMetadata.twitter}
@@ -122,9 +122,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_features">
                   <div className="container">
-                    <h3 className="h1-display mb-14">Features</h3>
+                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Features</h3>
                     <div className="row">
-                      <div className="gatsby_home-main_feature">
+                      <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
@@ -154,7 +154,7 @@ export default class Page extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_feature">
+                      <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
@@ -182,7 +182,7 @@ export default class Page extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_feature">
+                      <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
                             <h3 className="h1-display">
@@ -207,39 +207,39 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_philosophies">
                   <div className="container">
-                    <h3 className="h1-display mb-14">Philosophy</h3>
+                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Philosophy</h3>
                     <div className="row">
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">Usability</h4>
                           <p>A keen eye on usability. Aria injected automaticaly with js.</p>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">Customization</h4>
                           <p>Focused on working speed, quality and customization.</p>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">User Explerience</h4>
                           <p>Support of advanced interactions and animations.</p>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">Documentation</h4>
                           <p>Well documented API for components and addons</p>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">Granular Themes</h4>
                           <p>Themes for every component instead of global theme.</p>
                         </div>
                       </div>
-                      <div className="gatsby_home-main_philosophy_col">
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
                           <h4 className="h4">UX Themes</h4>
                           <p>Themes focused on interactions and animations instead of design</p>
@@ -250,22 +250,22 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_actions">
                   <div className="container">
-                    <h3 className="h1-display mb-14">Start Now!</h3>
+                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Start Now!</h3>
                     <div className="gatsby_listing-items">
                       <div className="row row-stretch">
-                        <div className="gatsby_listing-column">
+                        <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/introduction/getting-started/setup" className="card gatsby_listing-item">
                             <div className="h4">Setup</div>
                             <p>Installation instructions to get Xtend UI up and running.</p>
                           </Link>
                         </div>
-                        <div className="gatsby_listing-column">
+                        <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/components" className="card gatsby_listing-item">
                             <div className="h4">Components</div>
                             <p>Customizable components and ecosystem of addons..</p>
                           </Link>
                         </div>
-                        <div className="gatsby_listing-column">
+                        <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/themes" className="card gatsby_listing-item">
                             <div className="h4">Themes</div>
                             <p>UI themes with advanced interactions and animations..</p>
@@ -277,9 +277,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_supports">
                   <div className="container">
-                    <h3 className="h1-display mb-14">Sponsors</h3>
+                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Sponsors</h3>
                     <div className="row">
-                      <div className="gatsby_home-main_support_col">
+                      <div className="gatsby_home-main_support_col gatsby_home-main_scroll">
                         <a
                           href="https://www.webgriffe.com/"
                           target="_blank"

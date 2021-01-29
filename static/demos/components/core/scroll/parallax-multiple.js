@@ -10,16 +10,18 @@ Xt.mount.push({
 
     const trigger0 = object.querySelector('.box-0')
 
-    // translate and rotare
+    // bottom
 
-    const scrollTrigger0 = {
+    const scrollTriggerBottom = {
       trigger: trigger0,
+      start: 'top bottom',
+      end: 'top bottom-=500', // end 500px after
       scrub: 1.5,
     }
 
     gsap
       .timeline({
-        scrollTrigger: scrollTrigger0,
+        scrollTrigger: scrollTriggerBottom,
       })
       .to(trigger0, {
         x: '50vw',
@@ -27,27 +29,31 @@ Xt.mount.push({
 
     gsap
       .timeline({
-        scrollTrigger: scrollTrigger0,
+        scrollTrigger: scrollTriggerBottom,
       })
       .to(trigger0, {
         rotate: '180deg',
         ease: 'quint.inOut',
       })
 
-    // scale
+    // top
 
-    const scrollTrigger1 = {
+    const scrollTriggerTop = {
       trigger: trigger0,
-      scrub: true,
+      start: `bottom top+=500`, // start 500px before
+      end: `bottom top`,
+      scrub: 1.5,
     }
 
     gsap
       .timeline({
-        scrollTrigger: scrollTrigger1,
+        scrollTrigger: scrollTriggerTop,
       })
       .to(trigger0, {
-        scale: 1.5,
+        rotate: '360deg',
+        scale: 2,
         ease: 'quint.inOut',
+        immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
       })
   },
 })
