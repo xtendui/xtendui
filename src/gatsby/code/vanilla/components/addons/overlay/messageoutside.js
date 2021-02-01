@@ -31,7 +31,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
+      <div class="overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
@@ -70,7 +70,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="overlay-container p-0 max-w-md ml-auto mr-0">
+      <div class="overlay-container p-0 w-screen max-w-md ml-auto mr-0">
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">

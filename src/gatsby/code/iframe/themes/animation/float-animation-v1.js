@@ -220,7 +220,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay group" data-xt-duration="700">
-      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
+      <div class="overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="design-setup bg-white ${animDesign}"></div>

@@ -214,7 +214,7 @@ demo.htmlSource = `
     </button>
 
     <div class="overlay group" data-xt-duration="1000">
-      <div class="overlay-container p-0 max-w-md ml-0 mr-auto">
+      <div class="overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="overlay-inner">
 
           <div class="card min-h-screen ${cardWhite()} ${animDesignLeft}">

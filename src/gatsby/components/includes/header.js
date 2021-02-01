@@ -123,7 +123,7 @@ export default function Header({ page }) {
         </header>
 
         <div className="overlay text-white links-inverse in xt-overlay-disabled" id="gatsby_menu--overlay">
-          <div className="overlay-container p-0 max-w-xs ml-auto mr-0">
+          <div className="overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="overlay-inner">
               <div className="design-setup"></div>
               <div className="card">
