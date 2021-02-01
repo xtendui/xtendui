@@ -23,7 +23,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="max-w-3xl">
               <div class="card-md">
@@ -51,7 +51,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="media-container ratio-100">
               <div class="media-inner">
@@ -75,7 +75,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="max-w-3xl">
               <div class="md:card-group">

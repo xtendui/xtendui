@@ -111,7 +111,7 @@ demo.htmlSource = `
       <div class="drop-inner rounded-md shadow-drop ${animDesign}">
         <div class="card w-80 rounded-md ${cardWhite()}">
           <div class="btn btn-close p-5 text-xl ${animItem}" aria-label="Close">
-            ${iconX()}
+            ${iconX({ classes: 'icon-md' })}
           </div>
           <div class="card-md rounded-md ${animItem}">
             <div class="h4">Lorem ipsum</div>
@@ -198,7 +198,7 @@ demo.htmlSource = `
     <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${animItem}" aria-label="Close">
-          ${iconX()}
+          ${iconX({ classes: 'icon-md' })}
         </div>
         <div class="overlay-inner ${animDesign}">
 
@@ -227,7 +227,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="list bg-accent-500 ${animItem}">
               <button type="button" class="btn btn-md ${btnPrimary()}">
@@ -272,7 +272,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
 
             <div class="md:card-group rounded-md ${animItem}">
@@ -389,7 +389,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
 
             <div class="md:card-group rounded-md ${animItem}">

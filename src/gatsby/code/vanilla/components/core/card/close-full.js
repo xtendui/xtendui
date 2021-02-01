@@ -16,10 +16,10 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardDefaultFull()}">
       <div class="btn btn-close p-0 text-2xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
       <div class="btn btn-close p-0 text-2xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
       <div class="card-md p-0">
         <div class="h4">Default</div>
@@ -31,7 +31,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardPrimaryFull()}">
       <div class="btn btn-close p-0 text-2xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
       <div class="card-md p-0">
         <div class="h4">Primary</div>

@@ -41,7 +41,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
@@ -92,7 +92,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
@@ -131,7 +131,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
@@ -182,7 +182,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
@@ -221,7 +221,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
@@ -272,7 +272,7 @@ demo.htmlSource = `
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
             <div class="btn btn-close text-xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">

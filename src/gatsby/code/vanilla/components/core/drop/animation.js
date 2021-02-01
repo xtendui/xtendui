@@ -47,7 +47,7 @@ demo.htmlSource = `
     <div class="drop transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
       <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX()}
+          ${iconX({ classes: 'icon-md' })}
         </div>
         <div class="card-md">
           <div class="h4">Lorem ipsum</div>

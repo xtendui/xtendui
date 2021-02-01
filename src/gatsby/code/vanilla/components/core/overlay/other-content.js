@@ -24,7 +24,7 @@ demo.htmlSource = `
     <div class="overlay">
       <div class="overlay-container max-w-3xl">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
-          ${iconX()}
+          ${iconX({ classes: 'icon-md' })}
         </div>
         <div class="overlay-inner">
 

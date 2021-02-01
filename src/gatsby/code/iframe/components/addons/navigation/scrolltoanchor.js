@@ -41,7 +41,7 @@ demo.htmlSource = `
     <div class="overlay-inner">
 
       <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
 
       <div class="card card-sm ${cardDefault()}" id="anchor-overlay-0">

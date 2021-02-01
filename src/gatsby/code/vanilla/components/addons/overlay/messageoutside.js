@@ -36,7 +36,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card-md">
               <div class="h3">Lorem ipsum</div>
@@ -75,7 +75,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card-md md:card-lg">
               <div class="h3">Lorem ipsum</div>

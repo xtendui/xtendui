@@ -25,7 +25,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="media-container rounded-md ratio-37.5">
               <div class="media-inner">
@@ -52,7 +52,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="media-container rounded-t-md ratio-37.5">
               <div class="media-inner">
@@ -86,7 +86,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX()}
+              ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="card-md rounded-t-md bg-gray-500">
               <div class="h4">Lorem ipsum</div>

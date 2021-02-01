@@ -16,7 +16,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardDefault()}">
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
       <div class="card-md">
         <div class="h4">Default</div>
@@ -28,7 +28,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardPrimary()}">
       <div class="btn btn-close p-5 text-xl" aria-label="Close">
-        ${iconX()}
+        ${iconX({ classes: 'icon-md' })}
       </div>
       <div class="card-md">
         <div class="h4">Primary</div>
