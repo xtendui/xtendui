@@ -207,7 +207,6 @@ Xt.mount.push({
     // enter
 
     const eventEnter = function () {
-      // eslint-disable-next-line no-invalid-this
       const el = this
       // eventOff after eventOn sequential interaction
       cancelAnimationFrame(Xt.dataStorage.get(object, 'lineFrame'))
@@ -220,7 +219,7 @@ Xt.mount.push({
           const lineY = el.offsetTop + el.offsetHeight
           const lineWidth = el.offsetWidth
           if (lineFirst) {
-            gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0 })
+            gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0, opacity: 0 })
             lineFirst = false
           }
           gsap.to(line, {
