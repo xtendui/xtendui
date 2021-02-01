@@ -197,7 +197,9 @@ class Toggle {
         currents++
         // keep the same level of raf as others
         requestAnimationFrame(() => {
-          self.eventOn(element, true)
+          requestAnimationFrame(() => {
+            self.eventOn(element, true)
+          })
         })
       }
     }
@@ -222,7 +224,9 @@ class Toggle {
     if (saveCurrents) {
       // keep the same level of raf as others
       requestAnimationFrame(() => {
-        self.initialCurrents = self.getCurrents().slice(0)
+        requestAnimationFrame(() => {
+          self.initialCurrents = self.getCurrents().slice(0)
+        })
       })
     }
     // no currents
@@ -238,8 +242,10 @@ class Toggle {
     }
     // keep the same level of raf as others
     requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      })
     })
   }
 
@@ -1259,11 +1265,13 @@ class Toggle {
         el,
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
-          el.classList.add(...self.classesActive)
-          // remove initial instantly when wrap
-          if (el.classList.contains('xt-wrap')) {
-            el.classList.remove(...self.classesInitial)
-          }
+          requestAnimationFrame(() => {
+            el.classList.add(...self.classesActive)
+            // remove initial instantly when wrap
+            if (el.classList.contains('xt-wrap')) {
+              el.classList.remove(...self.classesInitial)
+            }
+          })
         })
       )
       // direction
@@ -1300,9 +1308,20 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classes)
-      el.classList.remove(...self.classesActive)
       el.classList.add(...self.classesOut)
       el.classList.remove(...self.classesDone)
+      // keep the same level of raf as others
+      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+      Xt.dataStorage.put(
+        el,
+        `${self.ns}ActivateFrame`,
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.classList.remove(...self.classesActive)
+          })
+        })
+      )
+      // direction
       if (self.direction >= 0) {
         el.classList.remove(...self.classesInverse)
       } else {
@@ -1963,7 +1982,9 @@ class Toggle {
         el,
         `${self.ns + type}AnimFrame`,
         requestAnimationFrame(() => {
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          requestAnimationFrame(() => {
+            self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          })
         })
       )
     } else {
@@ -2549,7 +2570,9 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.height = h
+              requestAnimationFrame(() => {
+                el.style.height = h
+              })
             })
           )
         }
@@ -2566,8 +2589,9 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-
-              el.style.width = w
+              requestAnimationFrame(() => {
+                el.style.width = w
+              })
             })
           )
         }
@@ -2584,7 +2608,9 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.height = '0'
+              requestAnimationFrame(() => {
+                el.style.height = '0'
+              })
             })
           )
         }
@@ -2600,7 +2626,9 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              el.style.width = '0'
+              requestAnimationFrame(() => {
+                el.style.width = '0'
+              })
             })
           )
         }
@@ -2954,12 +2982,14 @@ class Toggle {
     const options = self.options
     // keep the same level of raf as others
     requestAnimationFrame(() => {
-      // check
-      if (options.disabled) {
-        self.disable()
-      } else {
-        self.enable()
-      }
+      requestAnimationFrame(() => {
+        // check
+        if (options.disabled) {
+          self.disable()
+        } else {
+          self.enable()
+        }
+      })
     })
   }
 

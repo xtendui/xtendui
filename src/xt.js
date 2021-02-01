@@ -986,7 +986,9 @@ Xt.animOn = (el, suffix = '') => {
     el,
     suffix,
     requestAnimationFrame(() => {
-      el.classList.add('active')
+      requestAnimationFrame(() => {
+        el.classList.add('active')
+      })
     })
   )
 }
