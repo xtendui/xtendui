@@ -40,14 +40,13 @@ Additionally on component initialization the class `.xt-toggle` gets added to th
 
 ## Animation
 
-The util class `.toggle` sets `display: none` when **not activated**. If you want `display: none` when **activated** use `.toggle-inverse`.
+The util class `.toggle` sets `display: none` when **not activated**.
 
 <div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
-| Utility                  | `.toggle-inverse`                     | `toggle-inverse`                | `responsive`                | Toggle `display: none` on `.done`         |
 
 </div>
 
@@ -62,8 +61,6 @@ You can use also **css animations**, just add them with **class names** `.in`, `
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-css">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
   </demovanilla>
 </demo>
 

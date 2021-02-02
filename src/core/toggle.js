@@ -1765,7 +1765,6 @@ class Toggle {
         for (const el of obj[type].queueEls) {
           // clear timeout and frame
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns + type}AnimFrame`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
           // done other queue
@@ -1832,7 +1831,6 @@ class Toggle {
         el.dispatchEvent(new CustomEvent(`offdelay.${self.componentNs}`))
       }
       // delay fnc
-      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns + type}AnimFrame`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
       if (!delay) {
@@ -1976,17 +1974,7 @@ class Toggle {
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
     // queue done
     if (!duration) {
-      // keep the same level of raf as others
-      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns + type}AnimFrame`))
-      Xt.dataStorage.set(
-        el,
-        `${self.ns + type}AnimFrame`,
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
-          })
-        })
-      )
+      self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else {
       Xt.dataStorage.set(
         el,

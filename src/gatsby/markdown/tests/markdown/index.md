@@ -9,6 +9,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <demovanilla src="vanilla/components/core/slider/contain-center">
   </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-css">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
+  </demovanilla>
 </demo>
 
 ## Markdown
