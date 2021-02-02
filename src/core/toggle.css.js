@@ -1,16 +1,21 @@
 module.exports = {
   variants: ['responsive'],
-  utility: {
+  utility: theme => ({
     '.toggle': {
       // setup
       '&:not(.in):not(.out)': {
         display: 'none',
       },
+      '&.in': {
+        zIndex: theme('zIndex.active'),
+      },
+      '&.out': {
+        pointerEvents: 'none',
+      },
     },
     '.toggle-absolute': {
       // setup
       '&:not(.in)': {
-        pointerEvents: 'none',
         position: 'absolute',
         top: '0',
         left: '0',
@@ -27,5 +32,5 @@ module.exports = {
       // setup
       cursor: 'default',
     },
-  },
+  }),
 }
