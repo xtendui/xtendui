@@ -20,7 +20,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.badge-sm': {
       // styles

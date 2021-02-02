@@ -21,7 +21,7 @@ module.exports = {
       // styles
       transitionProperty: 'height',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.slide': {
       // setup
@@ -91,7 +91,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '[data-xt-nav].btn': {
       minHeight: '1.3rem',

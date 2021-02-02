@@ -60,7 +60,7 @@ module.exports = {
       // animation
       transitionProperty: 'border, background, color',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.form-select': {
       // setup
@@ -106,7 +106,7 @@ module.exports = {
       // animation
       transitionProperty: 'all',
       transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.form-checkbox': {
       // styles
