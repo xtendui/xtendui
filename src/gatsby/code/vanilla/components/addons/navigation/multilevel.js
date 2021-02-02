@@ -10,9 +10,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--multilevel">
+<div class="demo--multilevel relative">
 
-  <nav class="toggle">
+  <nav class="toggle toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -40,7 +40,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="toggle" data-xt-group="cat-0">
+  <nav class="toggle toggle-absolute" data-xt-group="cat-0">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="toggle" data-xt-group="cat-0a">
+  <nav class="toggle toggle-absolute" data-xt-group="cat-0a">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -90,7 +90,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="toggle" data-xt-group="cat-0b">
+  <nav class="toggle toggle-absolute" data-xt-group="cat-0b">
 
     <div class="h5 flex items-center justify-between">
       <div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="toggle" data-xt-group="cat-1">
+  <nav class="toggle toggle-absolute" data-xt-group="cat-1">
 
     <div class="h5 flex items-center justify-between">
       <div>

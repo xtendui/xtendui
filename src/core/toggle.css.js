@@ -7,6 +7,16 @@ module.exports = {
         display: 'none',
       },
     },
+    '.toggle-absolute': {
+      // setup
+      '&:not(.in)': {
+        pointerEvents: 'none',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+      },
+    },
     '.toggle-inverse': {
       // setup
       '&.done': {

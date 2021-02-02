@@ -47,6 +47,7 @@ The util class `.toggle` sets `display: none` when **not activated**.
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.toggle`                     | `toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
+| Utility                  | `.toggle.toggle-absolute`                     | `toggle toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.instant: true`            |
 
 </div>
 
@@ -54,6 +55,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-absolute">
   </demovanilla>
 </demo>
 
