@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **component utility** `.row-<space>` to space content.
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 10.
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
 <div class="table-overflow">
 
@@ -22,8 +22,11 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[noteDefault]]
-| If you use **margin on row** be aware that **row space has automatic negative margins** for internal spacing.
+[[notePrimary]]
+| Don't use **margin on row** because it has **automatic negative margins** for internal spacing.
+
+[[notePrimary]]
+| Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/space-px">

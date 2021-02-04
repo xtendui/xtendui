@@ -46,25 +46,23 @@ module.exports = plugin.withOptions(() => {
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
                 css[`.list-${e(name)}`] = {
-                  margin: `-${value}`,
+                  marginTop: `-${value}`,
+                  marginLeft: `-${value}`,
                   '> *': {
-                    margin: `${value}`,
+                    marginTop: `${value}`,
+                    marginLeft: `${value}`,
                   },
                 }
                 css[`.list-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
-                  marginRight: `-${value}`,
                   '> *': {
                     marginLeft: `${value}`,
-                    marginRight: `${value}`,
                   },
                 }
                 css[`.list-y-${e(name)}`] = {
                   marginTop: `-${value}`,
-                  marginBottom: `-${value}`,
                   '> *': {
                     marginTop: `${value}`,
-                    marginBottom: `${value}`,
                   },
                 }
               })
@@ -75,25 +73,23 @@ module.exports = plugin.withOptions(() => {
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
                 css[`.row-${e(name)}`] = {
-                  margin: `-${value}`,
+                  marginTop: `-${value}`,
+                  marginLeft: `-${value}`,
                   '> *': {
-                    padding: `${value}`,
+                    paddingTop: `${value}`,
+                    paddingLeft: `${value}`,
                   },
                 }
                 css[`.row-x-${e(name)}`] = {
                   marginLeft: `-${value}`,
-                  marginRight: `-${value}`,
                   '> *': {
                     paddingLeft: `${value}`,
-                    paddingRight: `${value}`,
                   },
                 }
                 css[`.row-y-${e(name)}`] = {
                   marginTop: `-${value}`,
-                  marginBottom: `-${value}`,
                   '> *': {
                     paddingTop: `${value}`,
-                    paddingBottom: `${value}`,
                   },
                 }
               })

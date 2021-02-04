@@ -118,7 +118,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 Use **component utility** `.row-<space>` to space content.
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 10.
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
 <div class="table-overflow">
 
