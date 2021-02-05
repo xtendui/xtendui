@@ -23,7 +23,7 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       const inner = tr.querySelector('.overlay-inner')
-      if (!tr.classList.contains('inverse')) {
+      if (!self.direction < 0) {
         gsap.set(inner, { y: 15 })
       } else {
         gsap.set(inner, { y: -15 })
@@ -45,7 +45,7 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
-      if (!tr.classList.contains('inverse')) {
+      if (!self.direction < 0) {
         const inner = tr.querySelector('.overlay-inner')
         gsap.to(inner, {
           y: -15,

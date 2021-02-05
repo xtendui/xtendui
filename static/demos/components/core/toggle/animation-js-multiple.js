@@ -23,7 +23,7 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
-      if (!tr.classList.contains('inverse')) {
+      if (!self.direction < 0) {
         gsap.set(tr, { x: -15 })
       } else {
         gsap.set(tr, { x: 15 })
@@ -44,7 +44,7 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
-      if (!tr.classList.contains('inverse')) {
+      if (!self.direction < 0) {
         gsap.to(tr, {
           x: 15,
           opacity: 0,

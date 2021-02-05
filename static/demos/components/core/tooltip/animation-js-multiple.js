@@ -18,14 +18,14 @@ Xt.mount.push({
       elements: ':scope > a, :scope > button',
       targets: ':scope > .tooltip',
       duration: 300,
-      delayOff: 100,
+      delay: 25,
     })
 
     // on
 
     const eventOn = e => {
       const tr = e.target
-      if (!tr.classList.contains('inverse')) {
+      if (!self.direction < 0) {
         gsap.set(tr, { x: -10 })
       } else {
         gsap.set(tr, { x: 10 })
@@ -47,7 +47,7 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       gsap.to(tr, {
-        x: tr.classList.contains('inverse') ? -10 : 10,
+        x: self.direction < 0 ? -10 : 10,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

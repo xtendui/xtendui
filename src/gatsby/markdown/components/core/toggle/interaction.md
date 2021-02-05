@@ -75,13 +75,12 @@ You can use also **css animations**, just add them with **class names** `.in`, `
   </demovanilla>
 </demo>
 
-You can use also **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`. Use `delayOff: Milliseconds` for sequential animation direction with mouse events.
+You can use also **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`. Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
 
 <div class="table-overflow">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `self.inverse:Boolean`              | If inverse direction activation              |
 | Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
 
 </div>

@@ -1276,10 +1276,10 @@ class Toggle {
         })
       )
       // direction
-      if (self.direction >= 0) {
-        el.classList.remove(...self.classesInverse)
-      } else {
+      if (self.direction < 0) {
         el.classList.add(...self.classesInverse)
+      } else {
+        el.classList.remove(...self.classesInverse)
       }
     }
   }
@@ -1324,10 +1324,10 @@ class Toggle {
         })
       )
       // direction
-      if (self.direction >= 0) {
-        el.classList.remove(...self.classesInverse)
-      } else {
+      if (self.direction < 0) {
         el.classList.add(...self.classesInverse)
+      } else {
+        el.classList.remove(...self.classesInverse)
       }
     }
   }
@@ -1913,9 +1913,7 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // raf because setDirection
-        requestAnimationFrame(() => {
-          el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
-        })
+        el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
       }
     }
     // queue
@@ -2107,10 +2105,11 @@ class Toggle {
         self.wrap = false
       })
     } else if (actionCurrent === 'Off') {
-      // raf for sequential interaction reset direction
+      // raf because after off.xt
       requestAnimationFrame(() => {
         // only if no currents
         if (self.getCurrents().length === 0) {
+          // reset currentIndex and direction
           self.currentIndex = null
           self.setDirection()
         }

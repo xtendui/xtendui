@@ -112,7 +112,6 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `self.inverse:Boolean`              | If inverse direction activation              |
 | Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
 
 </div>
