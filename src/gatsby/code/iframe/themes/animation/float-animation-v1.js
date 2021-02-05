@@ -201,7 +201,7 @@ demo.htmlSource = `
           <div class="design-setup rounded-md bg-white ${animDesign}"></div>
 
           <div class="card min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem}">
-            <div class="media-container ratio-100">
+            <div class="media-container bg-gray-700 ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -240,7 +240,7 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="media-container h-48">
+            <div class="media-container bg-gray-700 h-48">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -354,7 +354,7 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="media-container rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
+                <div class="media-container bg-gray-700 rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
@@ -399,7 +399,7 @@ demo.htmlSource = `
             <div class="md:card-group">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="media-container rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
+                <div class="media-container bg-gray-700 rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>

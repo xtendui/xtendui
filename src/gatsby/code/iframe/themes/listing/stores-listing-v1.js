@@ -24,7 +24,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -80,7 +80,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -124,7 +124,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -180,7 +180,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -224,7 +224,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -280,7 +280,7 @@ demo.htmlSource = `
           <div class="listing-item-inner">
 
             <div class="listing-front card rounded-md ${cardDefault()}">
-              <div class="media-container flex-full rounded-t-md h-40">
+              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>

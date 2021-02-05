@@ -14,22 +14,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="relative block overflow-hidden w-full">
-  <div class="media-container h-64">
-    <div class="media-inner">
-      <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-    </div>
-  </div>
-  <div class="container-fluid flex items-end justify-center text-center">
-    <a href="#" class="group block w-full max-w-xl container-y">
-      <div class="h1 h1-display">
-        Lorem ipsum
-      </div>
-    </a>
-  </div>
-</div>
-
-<div class="relative block overflow-hidden w-full">
-  <div class="media-container h-64">
+  <div class="media-container bg-gray-700 h-96">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>

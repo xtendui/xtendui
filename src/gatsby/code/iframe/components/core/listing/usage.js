@@ -18,7 +18,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -36,7 +36,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -54,7 +54,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -72,7 +72,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -90,7 +90,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -108,7 +108,7 @@ demo.htmlSource = `
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75">
+          <div class="media-container bg-gray-700 ratio-75">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
@@ -126,7 +126,7 @@ demo.htmlSource = `
 
       <div class="w-6/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75 md:ratio-50">
+          <div class="media-container bg-gray-700 ratio-75 md:ratio-50">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
@@ -144,7 +144,7 @@ demo.htmlSource = `
 
       <div class="w-6/12">
         <a href="#" class="text-black">
-          <div class="media-container ratio-75 md:ratio-50">
+          <div class="media-container bg-gray-700 ratio-75 md:ratio-50">
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>

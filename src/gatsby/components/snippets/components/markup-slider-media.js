@@ -7,7 +7,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="/img.svg" loading="lazy" alt=""/>
         </div>
@@ -22,7 +22,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="/img-ratio.svg" loading="lazy" alt=""/>
         </div>
@@ -37,7 +37,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt=""/>
         </div>
@@ -52,7 +52,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt=""/>
         </div>
@@ -67,7 +67,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt=""/>
         </div>
@@ -82,7 +82,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt=""/>
         </div>
@@ -97,7 +97,7 @@ export default () => {
 
     <div class="slide">
 
-      <div class="media-container">
+      <div class="media-container bg-gray-700">
         <div class="media-inner relative">
           <img class="media" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt=""/>
         </div>

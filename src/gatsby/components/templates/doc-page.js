@@ -74,7 +74,7 @@ class Template extends React.Component {
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
-                                        <div className="media-container" key={z}>
+                                        <div className="media-container bg-gray-700" key={z}>
                                           <div className="media-inner">
                                             <video
                                               className="media object-cover object-center"

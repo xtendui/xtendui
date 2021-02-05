@@ -85,7 +85,7 @@ demo.htmlSource = `
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX({ classes: 'icon-md' })}
             </div>
-            <div class="media-container ratio-37.5">
+            <div class="media-container bg-gray-700 ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>

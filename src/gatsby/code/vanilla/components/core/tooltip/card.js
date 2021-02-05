@@ -24,7 +24,7 @@ demo.htmlSource = `
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX({ classes: 'icon-md' })}
         </div>
-        <div class="media-container rounded-md ratio-37.5">
+        <div class="media-container bg-gray-700 rounded-md ratio-37.5">
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
@@ -45,7 +45,7 @@ demo.htmlSource = `
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX({ classes: 'icon-md' })}
         </div>
-        <div class="media-container rounded-t-md ratio-37.5">
+        <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
           <div class="media-inner">
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>

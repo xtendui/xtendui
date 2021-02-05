@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="media-container h-screen">
+            <div class="media-container bg-gray-700 h-screen">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
       <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="media-container h-screen">
+            <div class="media-container bg-gray-700 h-screen">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -63,7 +63,7 @@ demo.htmlSource = `
       <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="media-container h-screen">
+            <div class="media-container bg-gray-700 h-screen">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -92,7 +92,7 @@ demo.htmlSource = `
       <div class="slide w-full">
         <div class="hero relative block overflow-hidden w-full">
           <div class="hero-inner">
-            <div class="media-container h-screen">
+            <div class="media-container bg-gray-700 h-screen">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>

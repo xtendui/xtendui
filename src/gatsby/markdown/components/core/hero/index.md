@@ -36,7 +36,7 @@ Use **tailwind classes** to **add shadow**.
   </div>
 </demo>
 
-## Shadow
+## Outside
 
 Use **tailwind classes** to **position content outside**.
 

@@ -28,7 +28,7 @@ demo.htmlSource = `
 
     <div class="w-full md:w-6/12">
       <div class="card rounded-md ${cardDefault()}">
-        <div class="media-container rounded-md ratio-37.5">
+        <div class="media-container bg-gray-700 rounded-md ratio-37.5">
           <div class="media-inner toggle overflow-hidden transition-all duration-500">
             <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>
@@ -38,7 +38,7 @@ demo.htmlSource = `
 
     <div class="w-full md:w-6/12">
       <div class="card rounded-md ${cardDefault()}">
-        <div class="media-container rounded-md ratio-37.5">
+        <div class="media-container bg-gray-700 rounded-md ratio-37.5">
           <div class="media-inner toggle overflow-hidden transition-all duration-500">
             <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>

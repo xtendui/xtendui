@@ -22,7 +22,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -73,7 +73,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -163,7 +163,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -202,7 +202,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -253,7 +253,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
 
           <div class="listing-front card rounded-md ${cardDefaultFull()}">
-            <div class="media-container h-40">
+            <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
