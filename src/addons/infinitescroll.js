@@ -55,15 +55,11 @@ class Infinitescroll {
       self.itemsFake = self.object.querySelector(self.options.elements.items).cloneNode(true)
     }
     // events
-    let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnloadHandler.bind(self))
+    let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnload.bind(self))
     addEventListener('unload', unloadHandler)
-    let beforeunloadHandler = Xt.dataStorage.put(
-      window,
-      `beforeunload/${self.ns}`,
-      self.eventBeforeunloadHandler.bind(self)
-    )
+    let beforeunloadHandler = Xt.dataStorage.put(window, `beforeunload/${self.ns}`, self.eventBeforeunload.bind(self))
     addEventListener('beforeunload', beforeunloadHandler)
-    let scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScrollHandler.bind(self))
+    let scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
     // setCurrent
     self.setCurrent()
@@ -122,35 +118,6 @@ class Infinitescroll {
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
-  }
-
-  //
-  // handler
-  //
-
-  /**
-   * unload handler
-   */
-  eventUnloadHandler() {
-    const self = this
-    self.eventUnload()
-  }
-
-  /**
-   * beforeunload handler
-   */
-  eventBeforeunloadHandler() {
-    const self = this
-    self.eventBeforeunload()
-  }
-
-  /**
-   * scroll handler
-   * @param {Event} e
-   */
-  eventScrollHandler(e = null) {
-    const self = this
-    self.eventScroll(e)
   }
 
   //
