@@ -270,7 +270,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay bg-white ${animDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -389,7 +389,7 @@ demo.htmlSource = `
       <div class="overlay-container max-w-5xl">
         <div class="overlay-inner">
 
-          <div class="design-setup rounded-md md:rounded-tr-none rounded-md shadow-overlay bg-white ${animDesign}"></div>
+          <div class="design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">

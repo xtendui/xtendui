@@ -28,7 +28,7 @@ Xt.scrollRestoration = 'auto'
 Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
 Xt.supportScroll =
   typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
-Xt.durationTimescale = matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches ? 1000 : 1
+Xt.durationTimescale = 1
 Xt.autoTimescale = 1
 Xt.debug = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development'
 

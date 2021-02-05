@@ -9,8 +9,8 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap);
 @import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
 @import "./_prism.css";
+@import "./_commons.css";
 @import "./_home.css";
-@import "./_shared.css";
 @import "./_header.css";
 @import "./_footer.css";
 @import "./_main.css";
