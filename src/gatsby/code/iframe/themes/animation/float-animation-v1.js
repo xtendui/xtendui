@@ -2,9 +2,9 @@ import React from 'react'
 import path from 'path'
 
 const classesDefault =
-  'text-black links-default rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0'
+  'text-black rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0'
 const classesPrimary =
-  'text-white links-inverse rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:-translate-y-1 active:bg-accent-700 active:translate-y-0'
+  'text-white rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:-translate-y-1 active:bg-accent-700 active:translate-y-0'
 const animDesign =
   'transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const animItem =
@@ -36,7 +36,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Button
 </div>
 
@@ -64,7 +64,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Drop
 </div>
 
@@ -124,7 +124,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Tooltip
 </div>
 
@@ -154,7 +154,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip group" data-xt-duration="700">
-      <div class="rounded-md shadow-tooltip text-black links-default bg-white ${animDesign}">
+      <div class="rounded-md shadow-tooltip text-black bg-white ${animDesign}">
         <form>
 
           <div class="list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
@@ -181,7 +181,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Overlay
 </div>
 
@@ -497,7 +497,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Card
 </div>
 

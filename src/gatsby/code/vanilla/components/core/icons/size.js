@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Sizes
 </div>
 
@@ -19,7 +19,7 @@ ${iconSearch({ classes: 'icon-md' })}
 
 ${iconSearch({ classes: 'icon-lg' })}
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Custom size and stroke
 </div>
 

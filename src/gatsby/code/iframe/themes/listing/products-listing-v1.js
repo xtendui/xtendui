@@ -28,7 +28,7 @@ demo.htmlSource = `
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
-                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                   <div class="list list-1.5 items-center flex-nowrap">
                     <div class="text-xl font-semibold">
                       -35%
@@ -56,7 +56,7 @@ demo.htmlSource = `
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
-                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+                <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                   <div class="list list-1.5 items-center flex-nowrap">
                     <div class="text-xl font-semibold">
                       -40%
@@ -209,7 +209,7 @@ demo.htmlSource = `
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
-            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
               <div class="list list-1.5 items-center flex-nowrap">
                 <div class="text-xl font-semibold">
                   -35%
@@ -237,7 +237,7 @@ demo.htmlSource = `
             <div class="media-inner">
               <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
-            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white links-inverse">
+            <div class="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
               <div class="list list-1.5 items-center flex-nowrap">
                 <div class="text-xl font-semibold">
                   -40%

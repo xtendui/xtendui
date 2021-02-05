@@ -257,7 +257,7 @@ pre {
     margin-left: 20rem;
   }
   > .btn-close {
-    @apply text-white links-inverse rounded-md border-accent-500 bg-accent-500 hover:text-opacity-75 hover:border-accent-600 hover:bg-accent-600;
+    @apply text-white rounded-md border-accent-500 bg-accent-500 hover:text-opacity-75 hover:border-accent-600 hover:bg-accent-600;
     top: 0;
     right: 0;
     border-radius: 0;

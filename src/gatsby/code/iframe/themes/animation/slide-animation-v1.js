@@ -38,7 +38,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Button
 </div>
 
@@ -66,7 +66,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Drop
 </div>
 
@@ -120,7 +120,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Tooltip
 </div>
 
@@ -177,7 +177,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Overlay
 </div>
 
@@ -485,7 +485,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Card
 </div>
 

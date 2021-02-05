@@ -33,7 +33,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   List Group
 </div>
 
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
 </form>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Drop
 </div>
 
@@ -126,7 +126,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Tooltip
 </div>
 
@@ -158,7 +158,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip group" data-xt-duration="700">
-      <div class="tooltip-inner rounded-md shadow-tooltip text-black links-default bg-white ${animDesign}">
+      <div class="tooltip-inner rounded-md shadow-tooltip text-black bg-white ${animDesign}">
         <form>
 
           <div class="list flex-nowrap max-w-sm ${animItem}">
@@ -185,7 +185,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black links-default bg-gray-200 text-center">
+<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Overlay
 </div>
 

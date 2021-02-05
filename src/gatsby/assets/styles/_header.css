@@ -139,7 +139,7 @@
   margin-bottom: -5px;
   padding: 5px;
   border-radius: 0;
-  @apply text-white links-inverse;
+  @apply text-white;
   line-height: 1;
   &:last-child {
     padding-right: 0;
