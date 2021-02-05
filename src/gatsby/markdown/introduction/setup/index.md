@@ -36,7 +36,7 @@ module.exports = {
 };
 ```
 
-Create a `tailwind.config.js` and add **xtendui preset**.
+Create a `tailwind.config.js` and add **xtendui preset**, with this purge configuration.
 
 ```jsx
 module.exports = {
@@ -44,7 +44,7 @@ module.exports = {
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
   purge: {
-    content: ['./src/**/*.css', './src/**/*.js'], // put other purge content
+    content: ['./node_modules/xtendui/src/**/*[!.css].js'], // put other purge content e.g.: './src/**/*.css', './src/**/*.js'
     options: {
       safelist: {
         greedy: [
