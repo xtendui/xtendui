@@ -13,6 +13,17 @@ const iconLink = require('components/snippets/icons').iconLink
 import 'assets/scripts/shared'
 
 /**
+ * prevent href="#" links
+ */
+
+document.addEventListener('click', e => {
+  const href = e.target.getAttribute('href')
+  if (href === '#') {
+    e.preventDefault()
+  }
+})
+
+/**
  * .gatsby_btn--overlay
  */
 
