@@ -22,9 +22,18 @@ module.exports = {
   },
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          md: '2rem',
+          lg: '2.5rem',
+          xl: '3rem',
+        },
+      },
       colors: {
         gray: {
-          50: '#FCFDFF',
           100: '#FAFCFF',
           200: '#F2F6FF',
           300: '#EAF1FF',

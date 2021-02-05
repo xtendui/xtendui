@@ -84,7 +84,7 @@ body {
 
 .gatsby_site-article_hero {
   .p {
-    @apply mt-0 mb-2;
+    @apply mt-0 mb-2 text-lg;
     line-height: theme('lineHeight.snug');
     opacity: 0.5;
   }
