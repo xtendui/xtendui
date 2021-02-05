@@ -1780,6 +1780,9 @@ class Toggle {
   queueDelay(actionCurrent, actionOther, obj, type, queueInitial) {
     const self = this
     const options = self.options
+    if (self.disabled) {
+      return
+    }
     // delay
     const els = obj[type].queueEls
     for (const el of els) {
@@ -1839,6 +1842,9 @@ class Toggle {
   queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
+    if (self.disabled) {
+      return
+    }
     if (actionCurrent === 'On') {
       // activation
       self.activate(el, type)
@@ -1941,6 +1947,9 @@ class Toggle {
   queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
+    if (self.disabled) {
+      return
+    }
     // special
     self.specialZindex(actionCurrent, el, type)
     // anim
@@ -1972,6 +1981,9 @@ class Toggle {
   queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
+    if (self.disabled) {
+      return
+    }
     // special
     if (actionCurrent === 'On') {
       // activation
@@ -2054,6 +2066,9 @@ class Toggle {
    */
   queueDone(actionCurrent, actionOther, obj, type) {
     const self = this
+    if (self.disabled) {
+      return
+    }
     // check
     if (obj[type]) {
       // type done
@@ -2086,6 +2101,10 @@ class Toggle {
    */
   queueComplete(actionCurrent, obj) {
     const self = this
+    if (self.disabled) {
+      return
+    }
+    // logic
     if (actionCurrent === 'On') {
       // auto
       self.eventAutostart()

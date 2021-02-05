@@ -114,7 +114,9 @@ Xt.mount.push({
             ease: innerEase,
           })
           .eventCallback('onUpdate', () => {
-            Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+            if (self) {
+              Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+            }
           })
       }
     }
@@ -166,7 +168,9 @@ Xt.mount.push({
               ease: innerEase,
             })
             .eventCallback('onUpdate', () => {
-              Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+              if (self) {
+                Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
+              }
             })
           // others
           for (const other of self.targets.filter(x => x !== tr)) {

@@ -31,7 +31,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="#menu1" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #1
         </a>
 
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="#menu2" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #2
         </a>
 
@@ -99,7 +99,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="#menu3" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #3
         </a>
 
@@ -149,7 +149,7 @@ demo.htmlSource = `
 
       </div>
 
-      <a href="#menu4" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+      <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
         Link #4
       </a>
 
