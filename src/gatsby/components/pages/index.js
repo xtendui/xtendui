@@ -77,9 +77,9 @@ export default class Page extends React.Component {
                           title="Twitter"
                           dangerouslySetInnerHTML={{ __html: iconTwitter() }}
                         ></a>
-                        <div className="tooltip group" data-xt-duration="200">
+                        <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Twitter
                           </div>
@@ -94,9 +94,9 @@ export default class Page extends React.Component {
                           title="Npm"
                           dangerouslySetInnerHTML={{ __html: iconPackage() }}
                         ></a>
-                        <div className="tooltip group" data-xt-duration="200">
+                        <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Npm
                           </div>
@@ -111,9 +111,9 @@ export default class Page extends React.Component {
                           title="Github"
                           dangerouslySetInnerHTML={{ __html: iconGithub() }}
                         ></a>
-                        <div className="tooltip group" data-xt-duration="200">
+                        <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Github
                           </div>
@@ -264,13 +264,13 @@ export default class Page extends React.Component {
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/components" className="card gatsby_listing-item">
                             <div className="h4">Components</div>
-                            <p>Customizable components and ecosystem of addons..</p>
+                            <p>Customizable components and ecosystem of addons.</p>
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/themes" className="card gatsby_listing-item">
                             <div className="h4">Themes</div>
-                            <p>UI themes with advanced interactions and animations..</p>
+                            <p>UI themes with advanced interactions and animations.</p>
                           </Link>
                         </div>
                       </div>

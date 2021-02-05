@@ -53,9 +53,9 @@ export default function Header({ page }) {
                         title="Twitter"
                         dangerouslySetInnerHTML={{ __html: iconTwitter() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="200">
+                      <div className="tooltip group" data-xt-duration="300">
                         <div
-                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Twitter
                         </div>
@@ -70,9 +70,9 @@ export default function Header({ page }) {
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="200">
+                      <div className="tooltip group" data-xt-duration="300">
                         <div
-                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Npm
                         </div>
@@ -87,9 +87,9 @@ export default function Header({ page }) {
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="200">
+                      <div className="tooltip group" data-xt-duration="300">
                         <div
-                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Github
                         </div>

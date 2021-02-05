@@ -18,7 +18,7 @@ demo.htmlSource = `
   <!-- mouse events instead of click you can remove this -->
   <div class="container-fluid pt-10">
     <label class="form-label-check">
-      <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
+      <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
       <span class="ml-3">Use mouse events</span>
     </label>
   </div>

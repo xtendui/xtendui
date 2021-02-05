@@ -9,7 +9,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <demovanilla src="vanilla/components/core/slider/contain-center">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css">
+  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
   </demovanilla>
@@ -52,6 +52,14 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+
+</div>
+
+<div class="table-overflow">
+
+|                      | Name                          | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- |
+| Class                  | `.inverse`       |  If inverse direction activation            |
 
 </div>
 
@@ -104,7 +112,8 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.mount:Array`              | Array of **mount objects**              |
+| Variable                  | `self.inverse:Boolean`              | If inverse direction activation              |
+| Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
 
 </div>
 

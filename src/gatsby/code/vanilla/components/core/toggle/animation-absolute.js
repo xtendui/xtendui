@@ -32,7 +32,7 @@ demo.htmlSource = `
 
   </div>
 
-  This text is below targets.
+  <div class="mt-2">This text is below targets.</div>
 
 </div>
 `

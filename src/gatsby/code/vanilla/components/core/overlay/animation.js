@@ -19,7 +19,7 @@ demo.htmlSource = `
 
   <div class="overlay group" data-xt-duration="500">
     <div class="overlay-container max-w-3xl">
-      <div class="overlay-inner transform transition opacity-0 translate-y-2 group-active:opacity-100 groupactive:translate-y-0">
+      <div class="overlay-inner transform transition opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">

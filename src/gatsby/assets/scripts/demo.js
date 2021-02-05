@@ -261,13 +261,13 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip group" data-xt-duration="200">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip group" data-xt-duration="300">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip group" data-xt-duration="200">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip group" data-xt-duration="300">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Hide Code
     </div>
   </div>
@@ -279,8 +279,8 @@ const populateDemo = (container, i) => {
   <button type="button" class="btn btn-open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
-  <div class="tooltip group" data-xt-duration="200">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="tooltip group" data-xt-duration="300">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Fullscreen
     </div>
   </div>
@@ -292,8 +292,8 @@ const populateDemo = (container, i) => {
   <a href="#" target="_blank" class="btn btn-open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
-  <div class="tooltip group" data-xt-duration="200">
-    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="tooltip group" data-xt-duration="300">
+    <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Iframe
     </div>
   </div>
@@ -330,13 +330,13 @@ const populateDemo = (container, i) => {
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip group" data-xt-duration="200">
-            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+          <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip group" data-xt-duration="300">
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip group" data-xt-duration="200">
-            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-200 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip group" data-xt-duration="300">
+            <div class="tooltip-sm rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copied!
             </div>
           </div>

@@ -10,13 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > a, :scope > button', targets: ':scope > .tooltip' }">
+<div class="list list-2 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > a, :scope > button', targets: ':scope > .tooltip', delayOff: 100 }">
 
   <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
     tooltip
   </button>
 
-  <div class="tooltip" data-xt-duration="200">
+  <div class="tooltip" data-xt-duration="300">
     <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
     tooltip
   </button>
 
-  <div class="tooltip" data-xt-duration="200">
+  <div class="tooltip" data-xt-duration="300">
     <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>

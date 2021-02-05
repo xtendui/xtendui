@@ -1251,6 +1251,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
+    self.setDirection()
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classes)
       el.classList.remove(...self.classesActive)
@@ -1306,6 +1307,7 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
+    self.setDirection()
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classes)
       el.classList.add(...self.classesOut)
@@ -1370,7 +1372,6 @@ class Toggle {
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
       self.setIndex(element)
-      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1423,13 +1424,6 @@ class Toggle {
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
-      // @FIX raf for sequential activation/deactivation (eg: mousenter mouseleave)
-      requestAnimationFrame(() => {
-        if (self.getCurrents().length === 0) {
-          self.currentIndex = null
-        }
-        self.setDirection()
-      })
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1558,7 +1552,7 @@ class Toggle {
         clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
         // auto
         const time = options.auto.time
-        // @fix raf because after .xt custom listeners
+        // raf because after .xt custom listeners
         requestAnimationFrame(() => {
           // timeout
           Xt.dataStorage.set(
@@ -1776,27 +1770,6 @@ class Toggle {
   }
 
   /**
-   * queue stop all
-   */
-  queueStopAll() {
-    const self = this
-    // stop all obj in queues
-    if (self.detail) {
-      // @FIX not already initialized
-      const actions = [
-        { current: 'On', other: 'Off' },
-        { current: 'Off', other: 'On' },
-      ]
-      for (const action of actions) {
-        // remove queue and stop
-        const removed = self.detail[`queue${action.current}`].shift()
-        self.queueStop(action.current, action.other, removed)
-        self.detail[`queue${action.current}`] = []
-      }
-    }
-  }
-
-  /**
    * queue delay
    * @param {String} actionCurrent Current action
    * @param {String} actionOther Other action
@@ -1939,14 +1912,17 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+        // raf because setDirection
+        requestAnimationFrame(() => {
+          el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+        })
       }
     }
     // queue
     if (!skipQueue) {
       self.queueAnim(actionCurrent, actionOther, obj, el, type)
       // queue done
-      if (obj[type].instantType) {
+      if (!obj[type].instant && obj[type].instantType) {
         const els = obj[type].queueEls
         if (el === els[els.length - 1]) {
           // only if last element
@@ -2091,10 +2067,12 @@ class Toggle {
           done++
         }
       }
-      // queue
-      self.queueStart(actionOther, actionCurrent, type, self.detail[`queue${actionOther}`].length - 1)
       // all done
       if (done === Object.entries(obj).length) {
+        // queue other when all done
+        for (const type in obj) {
+          self.queueStart(actionOther, actionCurrent, type, self.detail[`queue${actionOther}`].length - 1)
+        }
         // remove queue
         self.detail[`queue${actionCurrent}`].pop()
         // queue complete
@@ -2113,15 +2091,13 @@ class Toggle {
     if (actionCurrent === 'On') {
       // auto
       self.eventAutostart()
-      // @fix raf because after .xt custom listeners
+      // raf because after .xt custom listeners
       requestAnimationFrame(() => {
         // remove class initial
         if (self.initial) {
           for (const type in obj) {
-            if (obj[type].done) {
-              for (const el of obj[type].queueEls) {
-                el.classList.remove(...self.classesInitial)
-              }
+            for (const el of obj[type].queueEls) {
+              el.classList.remove(...self.classesInitial)
             }
           }
         }
@@ -2129,6 +2105,15 @@ class Toggle {
         self.inverse = null
         self.initial = false
         self.wrap = false
+      })
+    } else if (actionCurrent === 'Off') {
+      // raf for sequential interaction reset direction
+      requestAnimationFrame(() => {
+        // only if no currents
+        if (self.getCurrents().length === 0) {
+          self.currentIndex = null
+          self.setDirection()
+        }
       })
     }
   }
