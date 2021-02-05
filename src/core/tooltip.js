@@ -170,7 +170,7 @@ Tooltip.optionsDefault = {
   closeInside: '.tooltip-dismiss, .backdrop, .btn-close',
   zIndex: {
     targets: {
-      start: 650, // do not change: same as javascript and decreses with sequential tooltip
+      start: 6500, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
       factor: -1,
     },
   },

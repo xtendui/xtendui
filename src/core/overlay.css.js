@@ -5,7 +5,7 @@ module.exports = {
   component: theme => ({
     '.overlay': {
       // setup
-      '@apply toggle overflow-main': '',
+      '@apply overflow-main': '',
       position: 'fixed',
       zIndex: theme('zIndex.overlay'),
       top: '0',
@@ -13,6 +13,9 @@ module.exports = {
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
       overflowY: 'scroll',
+      '&:not(.in):not(.out)': {
+        display: 'none',
+      },
       '&.out': {
         pointerEvents: 'none',
       },

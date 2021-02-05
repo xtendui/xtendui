@@ -16,9 +16,11 @@ module.exports = {
   component: theme => ({
     '.drop': {
       // setup
-      '@apply toggle': '',
       position: 'absolute',
       margin: '0 !important',
+      '&:not(.in):not(.out)': {
+        display: 'none',
+      },
       '&.out': {
         pointerEvents: 'none',
       },

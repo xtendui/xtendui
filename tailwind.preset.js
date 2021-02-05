@@ -45,13 +45,13 @@ module.exports = {
       zIndex: {
         base: '0',
         active: '25',
-        top: '50',
-        backdrop: '500',
-        drop: '600', // do not change: same as javascript and decreses with sequential drop
-        tooltip: '650', // do not change: same as javascript and decreses with sequential tooltip
-        sticky: '800', // do not change: same as javascript and decreses with sequential sticky
-        overlay: '900',
-        last: '1000',
+        top: '500', // this is the z-index top for the page content, more z-index only for components over the content
+        backdrop: '1000',
+        drop: '6000', // theme.zIndex.drop same as Drop options.zIndex.targets.start
+        tooltip: '6500', // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
+        sticky: '8000',
+        overlay: '9000',
+        last: '10000',
       },
       inset: {
         100: '100%',

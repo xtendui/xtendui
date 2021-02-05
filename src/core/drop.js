@@ -166,7 +166,7 @@ Drop.optionsDefault = {
   closeInside: '.drop-dismiss, .backdrop, .btn-close',
   zIndex: {
     targets: {
-      start: 600, // do not change: same as javascript and decreses with sequential drop
+      start: 6000, // theme.zIndex.drop same as Drop options.zIndex.targets.start
       factor: -1,
     },
   },
