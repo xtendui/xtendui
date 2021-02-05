@@ -82,8 +82,6 @@ module.exports = {
     extend: {
       colors: {
         // customize xtendui colors
-        success: '#48bb78',
-        error: '#f56565',
         accent: {
           50: '#F8F7FF',
           100: '#F1F0FE',

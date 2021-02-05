@@ -12,8 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        success: '#48bb78',
-        error: '#f56565',
+        code: '#2d3748',
         accent: {
           50: '#F2F8FF',
           100: '#E6F2FF',

@@ -35,8 +35,6 @@
  */
 
 pre[class*="language-"] {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
   @apply overflow-sub my-5 mt-fc mb-lc py-5 px-5;
   width: 100%;
   border-radius: 6px;
@@ -54,9 +52,8 @@ pre[class*="language-"] {
     width: 100%;
     background: transparent !important;
     @apply font-mono;
-    font-size: 0.8125rem !important;
-    line-height: 1.4 !important;
-    white-space: pre-wrap !important;
+    font-size: .875em;
+    line-height: 1.7142857;
   }
 }
 
@@ -75,7 +72,6 @@ pre {
     border-width: 0 !important;
   }
   @apply border-3 border-gray-200;
-  @apply transition;
   #gatsby_open-full & {
     border: 0 !important;
     .gatsby_demo_code_body,
@@ -97,23 +93,42 @@ pre {
   }
 }
 
-.gatsby_demo_tabs, .gatsby_demo_code_tabs, .gatsby_demo_code_body {
+.gatsby_demo_tabs {
   @apply bg-gray-200;
 }
 
-.gatsby_demo_tabs, .gatsby_demo_code_tabs {
+.gatsby_demo_code_tabs, .gatsby_demo_code_body {
+  @apply bg-code;
+}
+
+.gatsby_demo_tabs {
   position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 7px;
+  padding: 11px;
   .btn {
-    border-width: 3px;
     padding: .5em .75em;
-    font-size: 10px;
-    @apply text-black links-default text-opacity-50 rounded-md border-transparent;
+    font-size: 11px;
+    @apply rounded-md border-gray-200 bg-gray-200 font-semibold text-black text-opacity-75 tracking-wide;
     &:hover, &:active, &.active {
-      @apply border-gray-300 bg-white text-opacity-100;
+      @apply border-white bg-white text-opacity-100;
+    }
+  }
+}
+
+.gatsby_demo_code_tabs {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 11px;
+  .btn {
+    padding: .5em .75em;
+    font-size: 11px;
+    @apply rounded-md border-code bg-code font-semibold text-white tracking-wide;
+    &:hover, &:active, &.active {
+      @apply bg-gray-800;
     }
   }
 }
@@ -135,10 +150,6 @@ pre {
 
 .gatsby_demo_tabs_inner {
   margin-top: -3px;
-}
-
-.gatsby_demo_text {
-  @apply py-2 px-4 border border-gray-200;
 }
 
 .gatsby_demo_source {
@@ -262,7 +273,10 @@ pre {
     right: 0;
     border-radius: 0;
     padding: 10px;
-    font-size: 23px;
+    .icon {
+      width: 28px;
+      height: auto;
+    }
   }
   .gatsby_demo_tabs_right {
     padding-right: 45px;

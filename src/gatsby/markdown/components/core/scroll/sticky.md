@@ -40,7 +40,7 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
 [[notePrimary]]
-| **Do not animate the sticky object** because Scrolltrigger set transforms to it. **Animate a inner div**.
+| **Do not animate the sticky object when `pin: true`** because Scrolltrigger set transforms to pinned nodes. **Animate a inner div**.
 
 Here's an example of **complex sticky hide** when scrolling down but only after the first card.
 
