@@ -11,7 +11,6 @@ const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
   container: false,
-  full: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
@@ -20,7 +19,7 @@ demo.htmlSource = `
 <div class="inline-block w-full bg-accent-900 text-white links-inverse">
 
   <a href="#" class="featured-item block my-28">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0">
           <div class="media-container bg-gray-700 ratio-75">
@@ -50,7 +49,7 @@ demo.htmlSource = `
   </a>
 
   <a href="#" class="featured-item block my-28">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0 sm:order-2">
           <div class="media-container bg-gray-700 ratio-75">
@@ -80,7 +79,7 @@ demo.htmlSource = `
   </a>
 
   <a href="#" class="featured-item block my-28">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0">
           <div class="media-container bg-gray-700 ratio-75">
@@ -114,7 +113,7 @@ demo.htmlSource = `
 <div class="inline-block w-full bg-white">
 
   <a href="#" class="featured-item block my-28">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row items-center">
         <div class="w-full md:w-5/12 z-0 sm:order-2">
           <div class="media-container bg-gray-700 ratio-75">

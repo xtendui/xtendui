@@ -30,7 +30,7 @@ demo.htmlSource = `
 
   <main class="site-main">
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row row-4 lg:row-6 items-stretch">
 
         <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">

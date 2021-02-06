@@ -19,7 +19,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container-fluid absolute inset-0 flex items-end justify-start text-left">
+  <div class="container absolute inset-0 flex items-end justify-start text-left">
     <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
@@ -43,7 +43,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container-fluid absolute inset-0 flex items-center justify-start text-left">
+  <div class="container absolute inset-0 flex items-center justify-start text-left">
     <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet
@@ -67,7 +67,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container-fluid absolute inset-0 flex items-center justify-end text-right">
+  <div class="container absolute inset-0 flex items-center justify-end text-right">
     <div class="block w-full max-w-xl container-y text-white links-inverse">
       <div class="h1">
         Lorem ipsum dolor sit amet

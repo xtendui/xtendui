@@ -16,7 +16,7 @@ demo.htmlSource = `
 <div class="megamenu relative bg-accent-500 text-white">
 
   <!-- mouse events instead of click you can remove this -->
-  <div class="container-fluid pt-10">
+  <div class="container pt-10">
     <label class="form-label-check">
       <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
       <span class="ml-3">Use mouse events</span>
@@ -25,7 +25,7 @@ demo.htmlSource = `
 
   <span class="megamenu-line absolute top-0 left-0 bg-white"></span>
 
-  <div class="container-fluid">
+  <div class="container">
 
     <div class="list -mx-4">
 
@@ -41,7 +41,7 @@ demo.htmlSource = `
             <div class="drop-content">
 
               <div class="pt-16 pb-24 text-white links-inverse">
-                <div class="container-fluid">
+                <div class="container">
                   <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Lorem ipsum
                   </a>
@@ -78,7 +78,7 @@ demo.htmlSource = `
             <div class="drop-content">
 
               <div class="pt-16 pb-24 text-white links-inverse">
-                <div class="container-fluid">
+                <div class="container">
                   <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Lorem ipsum
                   </a>
@@ -109,7 +109,7 @@ demo.htmlSource = `
             <div class="drop-content">
 
               <div class="pt-16 pb-24 text-black links-default">
-                <div class="container-fluid">
+                <div class="container">
                   <div class="row row-4">
                     <div class="w-6/12">
                       <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
@@ -159,7 +159,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="container-fluid py-24">
+<div class="container py-24">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.</p>
   <p>Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis id est.</p>
   <p>Morbi eget odio nibh. Pellentesque consectetur vitae libero ac blandit. Ut et lectus id diam pretium mattis ac at massa. Sed sagittis fermentum dictum. Nulla interdum justo vitae orci pharetra congue. Nullam enim dui, tempor ac dapibus in, maximus eget orci. Pellentesque mollis felis vel sapien sagittis luctus. Etiam vitae condimentum ligula. Cras blandit vehicula arcu fermentum blandit. Ut eu urna finibus felis bibendum tincidunt at vitae ante.</p>

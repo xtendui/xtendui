@@ -19,7 +19,7 @@ demo.htmlSource = `
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="container-fluid flex items-end justify-center text-center">
+  <div class="container flex items-end justify-center text-center">
     <a href="#" class="group block w-full max-w-xl container-y">
       <div class="h1">
         Lorem ipsum dolor sit amet

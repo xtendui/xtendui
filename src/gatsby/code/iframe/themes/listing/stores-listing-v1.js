@@ -16,7 +16,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="py-10">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row row-3 row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">

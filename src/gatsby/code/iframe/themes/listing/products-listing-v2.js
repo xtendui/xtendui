@@ -16,7 +16,7 @@ demo.htmlSource = `
 
   <div class="slider slider--listing" data-xt-slider="{ contain: true, jumpOverflow: true }">
     <div class="slides">
-      <div class="container-fluid">
+      <div class="container">
 
         <div class="h2 mb-8">Latest Products</div>
 
@@ -199,7 +199,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container">
 
     <div class="h2 mb-8">Category</div>
 

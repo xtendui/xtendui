@@ -167,7 +167,7 @@ module.exports = {
     },
     body: {
       // style
-      '@apply text-base': '',
+      '@apply text-base xl:text-lg': '',
     },
     h1: {
       // setup

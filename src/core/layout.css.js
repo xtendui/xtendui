@@ -58,12 +58,12 @@ module.exports = {
       // setup
       '@apply overflow-main': '',
     },
-    '.container-fluid': {
-      // setup
-      '@apply container': '',
-      // styles
-      maxWidth: '1536px !important',
-    },
+    '.container': theme('container.fluid')
+      ? {
+          // setup
+          maxWidth: '1536px',
+        }
+      : {},
     '::selection': {
       // styles
       backgroundColor: '#00FFDD',

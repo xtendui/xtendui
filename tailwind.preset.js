@@ -1,6 +1,17 @@
 module.exports = {
   theme: {
     extend: {
+      container: {
+        center: true,
+        fluid: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          md: '2rem',
+          lg: '3rem',
+          xl: '4rem',
+        },
+      },
       colors: {
         code: '#2d3748',
         accent: {

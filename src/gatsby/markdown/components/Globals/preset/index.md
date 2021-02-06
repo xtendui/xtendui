@@ -12,11 +12,10 @@ Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https:
 
 The following theme values are added with the preset:
 
-* [container](https://tailwindcss.com/docs/container) **center by default** and **custom padding**
-* [colors](https://tailwindcss.com/docs/customizing-colors) a default `accent` color stack to be replaced with your accent color, and utility colors (`success` and `error`)
-* [font-size](https://tailwindcss.com/docs/font-size) **unitless line height** for each font-size
+* [container](https://tailwindcss.com/docs/container) **center by default** and **custom padding** and **fluid**.
+* [colors](https://tailwindcss.com/docs/customizing-colors) a default `accent` color stack to be replaced with your accent color, and utility colors (`success` and `error`).
 * [z-index](https://tailwindcss.com/docs/font-size) **additional z-index** used by components, use `z-top` zindex to be sure it's **over anything except interactions components**, use `z-last` zindex to be sure it's **over anything**.
-* [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`
+* [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
 
 ## Variants
 
