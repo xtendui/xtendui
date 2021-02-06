@@ -23,12 +23,10 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       const inner = tr.querySelector('.overlay-inner')
-      if (!self.direction < 0) {
-        gsap.set(inner, { y: 15 })
-      } else {
-        gsap.set(inner, { y: -15 })
-      }
-      gsap.set(inner, { opacity: 0 })
+      gsap.set(inner, {
+        y: -15,
+        opacity: 0,
+      })
       gsap.to(inner, {
         y: 0,
         opacity: 1,
@@ -45,23 +43,13 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
-      if (!self.direction < 0) {
-        const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, {
-          y: -15,
-          opacity: 0,
-          duration: targetTimeOff,
-          ease: targetEaseOff,
-        })
-      } else {
-        const inner = tr.querySelector('.overlay-inner')
-        gsap.to(inner, {
-          y: 15,
-          opacity: 0,
-          duration: targetTimeOff,
-          ease: targetEaseOff,
-        })
-      }
+      const inner = tr.querySelector('.overlay-inner')
+      gsap.to(inner, {
+        y: -15,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
     }
 
     for (const target of self.targets) {

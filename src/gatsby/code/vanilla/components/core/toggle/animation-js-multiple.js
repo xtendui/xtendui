@@ -20,20 +20,12 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
-    Toggle 2
-  </button>
-
   <div class="card toggle rounded-md ${cardToggle()}">
     Target 0
   </div>
 
   <div class="card toggle rounded-md ${cardToggle()}">
     Target 1
-  </div>
-
-  <div class="card toggle rounded-md ${cardToggle()}">
-    Target 2
   </div>
 
 </div>

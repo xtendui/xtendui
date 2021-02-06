@@ -54,7 +54,7 @@ You can use also **css animations**, just add them with **class names** `.in`, `
   </demovanilla>
 </demo>
 
-You can use also **javascript animations**, just use [tooltip api](/components/core/tooltip/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`. Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
+You can use also **javascript animations**, just use [tooltip api](/components/core/tooltip/api).
 
 <div class="table-overflow">
 
@@ -70,6 +70,9 @@ You can use also **javascript animations**, just use [tooltip api](/components/c
   <demovanilla src="vanilla/components/core/tooltip/animation-js-multiple">
   </demovanilla>
 </demo>
+
+[[noteDefault]]
+| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
 
 Checkout out [tooltip's themes](/themes/by-component/tooltip) for **advanced animations**.
 

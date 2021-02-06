@@ -25,11 +25,7 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
-      if (!self.direction < 0) {
-        gsap.set(tr, { x: -10 })
-      } else {
-        gsap.set(tr, { x: 10 })
-      }
+      gsap.set(tr, { x: self.direction < 0 ? 10 : -10 })
       gsap.to(tr, {
         x: 0,
         opacity: 1,

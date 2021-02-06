@@ -15,6 +15,21 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
 </demo>
 
+<demo>
+  <demovanilla src="vanilla/components/core/tooltip/animation-css-multiple">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/tooltip/animation-js-multiple">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/animation-css-multiple">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/animation-js-multiple">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
+  </demovanilla>
+</demo>
+
 ## Markdown
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."

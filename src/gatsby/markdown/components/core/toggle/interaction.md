@@ -75,7 +75,7 @@ You can use also **css animations**, just add them with **class names** `.in`, `
   </demovanilla>
 </demo>
 
-You can use also **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`. Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
+You can use also **javascript animations**, just use [drop api](/components/core/drop/api).
 
 <div class="table-overflow">
 
@@ -89,6 +89,9 @@ You can use also **javascript animations**, just use [drop api](/components/core
   <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
   </demovanilla>
 </demo>
+
+[[noteDefault]]
+| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
 
 ## Timing
 
