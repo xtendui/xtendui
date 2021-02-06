@@ -27,7 +27,7 @@
 }
 
 .gatsby_demo_source {
-  @apply relative p-4 md:p-6 lg:p-8;
+  @apply relative p-4 md:p-6 lg:p-8 z-active;
 }
 
 /**
