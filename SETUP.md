@@ -15,7 +15,7 @@ npm install xtendui@beta --save
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
-npm install tailwindcss xtendui --save
+npm install tailwindcss@2 xtendui --save
 npm install postcss postcss-import postcss-nested autoprefixer --save-dev
 ```
 
@@ -124,7 +124,7 @@ import 'xtendui/src/core/toggle'
 This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
 ```
-npm install gsap --save
+npm install gsap@3 --save
 ```
 
 Then set up animations see [javascript animation](https://xtendui.com/components/globals/javascript#animation).
