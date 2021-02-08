@@ -71,13 +71,13 @@ module.exports = {
         height: 'auto',
         overflowY: 'initial',
         '.overlay-container': {
-          zIndex: 'initial',
           padding: '0',
           width: '100%',
           minHeight: 'auto',
           maxWidth: 'none',
         },
         '.overlay-inner': {
+          zIndex: 'initial',
           '> .card': {
             '@apply card-disable !important': '',
           },

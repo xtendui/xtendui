@@ -28,6 +28,9 @@
 
 .gatsby_demo_source {
   @apply relative p-4 md:p-6 lg:p-8 z-active;
+  #gatsby_open-full & {
+    @apply z-0;
+  }
 }
 
 /**
