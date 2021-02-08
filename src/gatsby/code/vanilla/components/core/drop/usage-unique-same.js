@@ -11,20 +11,20 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-md rounded-md ${btnPrimary()}" data-xt-drop="{ targets: '#drop--unique-1, #drop--unique-2' }">
+<button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}" data-xt-drop="{ targets: '#drop--unique-1, #drop--unique-2' }">
   drop
 </button>
 
 <div class="drop" id="drop--unique-1">
   <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
     <nav class="list flex-col">
-      <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+      <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </a>
-      <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+      <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Dolor sit
       </button>
-      <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+      <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Amet
       </button>
     </nav>
@@ -34,13 +34,13 @@ demo.htmlSource = `
 <div class="drop" id="drop--unique-2" data-xt-position="right-end">
   <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
     <nav class="list flex-col">
-      <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+      <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </a>
-      <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+      <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Dolor sit
       </button>
-      <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+      <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
         Amet
       </button>
     </nav>

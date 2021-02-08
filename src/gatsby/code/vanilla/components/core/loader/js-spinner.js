@@ -25,7 +25,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Lorem ipsum
     <span class="loader bg-white bg-opacity-75 toggle opacity-0 transition active:opacity-100 demo--loader-js-spinner">
       <span class="spinner text-accent-500">

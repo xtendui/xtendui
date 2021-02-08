@@ -9,15 +9,15 @@ export const demo = {
 
 demo.htmlSource = `
 <nav class="leading-none ellipsis">
-  <a href="#" class="btn btn-md px-0">
+  <a href="#" class="btn text-xs py-2 px-3.5 px-0">
     Home
   </a>
   <span class="separator separator-slash mx-2"></span>
-  <a href="#" class="btn btn-md px-0">
+  <a href="#" class="btn text-xs py-2 px-3.5 px-0">
     Lorem ipsum dolor sit amet
   </a>
   <span class="separator separator-slash mx-2"></span>
-  <div class="btn btn-md px-0 pointer-events-none">
+  <div class="btn text-xs py-2 px-3.5 px-0 pointer-events-none">
     Lorem ipsum
   </div>
 </nav>

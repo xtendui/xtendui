@@ -154,7 +154,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn btn-md rounded-md ${btnDefault()}">
+      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         submit
       </button>
     </div>

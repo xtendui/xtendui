@@ -20,16 +20,16 @@ demo.htmlSource = `
 <div data-xt-sticky="{ sticky: 'fixed' }">
   <div class="card card-sm ${cardPrimary()}">
     <div class="list list-2">
-      <a href="#anchor-0" class="btn btn-md rounded-md ${btnPrimary()}">
+      <a href="#anchor-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         anchor 0
       </a>
-      <a href="#anchor-1" class="btn btn-md rounded-md ${btnPrimary()}">
+      <a href="#anchor-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         anchor 1
       </a>
-      <a href="#anchor-2" class="btn btn-md rounded-md ${btnPrimary()}">
+      <a href="#anchor-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         anchor 2
       </a>
-      <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+      <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
         anchors within overlay
       </button>
     </div>
@@ -48,13 +48,13 @@ demo.htmlSource = `
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
-          <a href="#anchor-overlay-0" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 0
           </a>
-          <a href="#anchor-overlay-1" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 1
           </a>
-          <a href="#anchor-overlay-2" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 2
           </a>
         </div>
@@ -68,13 +68,13 @@ demo.htmlSource = `
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
-          <a href="#anchor-overlay-0" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 0
           </a>
-          <a href="#anchor-overlay-1" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 1
           </a>
-          <a href="#anchor-overlay-2" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 2
           </a>
         </div>
@@ -88,13 +88,13 @@ demo.htmlSource = `
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
-          <a href="#anchor-overlay-0" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 0
           </a>
-          <a href="#anchor-overlay-1" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 1
           </a>
-          <a href="#anchor-overlay-2" class="btn btn-md rounded-md ${btnDefault()}">
+          <a href="#anchor-overlay-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             anchor overlay 2
           </a>
         </div>
@@ -110,13 +110,13 @@ demo.htmlSource = `
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">
-      <a href="#anchor-0" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 0
       </a>
-      <a href="#anchor-1" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 1
       </a>
-      <a href="#anchor-2" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 2
       </a>
     </div>
@@ -130,13 +130,13 @@ demo.htmlSource = `
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">
-      <a href="#anchor-0" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 0
       </a>
-      <a href="#anchor-1" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 1
       </a>
-      <a href="#anchor-2" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 2
       </a>
     </div>
@@ -150,13 +150,13 @@ demo.htmlSource = `
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">
-      <a href="#anchor-0" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 0
       </a>
-      <a href="#anchor-1" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 1
       </a>
-      <a href="#anchor-2" class="btn btn-md rounded-md ${btnDefault()}">
+      <a href="#anchor-2" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
         anchor 2
       </a>
     </div>

@@ -37,7 +37,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
@@ -93,7 +93,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
@@ -137,7 +137,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
@@ -193,7 +193,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
@@ -237,7 +237,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>
@@ -293,7 +293,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="list list-2 mt-auto justify-end">
-                  <button type="button" class="listing-action btn btn-md rounded-md ${btnPrimary()}">
+                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
                 </div>

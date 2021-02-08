@@ -175,7 +175,7 @@ demo.htmlSource = `
               €&nbsp;229,00
             </div>
 
-            <a href="#" class="btn btn-lg rounded-md mb-6 ${btnPrimary()}">
+            <a href="#" class="btn text-sm py-2.5 px-4 rounded-md mb-6 ${btnPrimary()}">
               Add to cart
             </a>
 

@@ -25,7 +25,7 @@ demo.htmlSource = `
         Lorem ipsum dolor sit amet
       </div>
       <div class="list list-2 justify-center">
-        <div class="btn btn-md rounded-md ${btnPrimary()}">
+        <div class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
             Lorem ipsum
         </div>
       </div>

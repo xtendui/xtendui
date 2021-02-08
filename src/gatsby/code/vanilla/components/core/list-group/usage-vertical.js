@@ -17,13 +17,13 @@ demo.htmlSource = `
   <div class="list flex-col">
 
     <div class="list-inner">
-      <button type="button" class="btn btn-md rounded-tl-md ${btnDefault()}">
+      <button type="button" class="btn text-xs py-2 px-3.5 rounded-tl-md ${btnDefault()}">
         ${iconSearch({ classes: 'icon-lg' })}
       </button>
       <input type="text" class="form-item rounded-tr-md ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
     </div>
 
-    <button type="button" class="btn btn-md rounded-b-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-b-md ${btnPrimary()}">
       Search
     </button>
 

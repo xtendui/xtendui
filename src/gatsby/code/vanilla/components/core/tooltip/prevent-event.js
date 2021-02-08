@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div class="inline-block" data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
-    <a href="#tooltip-with-link-1" class="btn btn-md rounded-md ${btnPrimary()}">
+    <a href="#tooltip-with-link-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       tooltip
     </a>
 

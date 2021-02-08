@@ -10,13 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-2 items-center">
 
-  <div class="badge badge-md ${badgeDefault()}">
+  <div class="badge text-xs py-2 px-3.5 ${badgeDefault()}">
     Default
   </div>
 
-  <div class="badge badge-md ${badgePrimary()}">
+  <div class="badge text-xs py-2 px-3.5 ${badgePrimary()}">
     Primary
   </div>
 

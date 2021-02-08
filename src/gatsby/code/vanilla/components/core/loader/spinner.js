@@ -25,7 +25,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Lorem ipsum
     <span class="loader">
       <span class="spinner spinner-animated text-accent-500">

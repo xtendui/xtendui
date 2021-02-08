@@ -15,11 +15,11 @@ demo.htmlSource = `
 
   <button type="button" class="list flex-col group">
 
-    <div class="btn btn-md rounded-t-md ${btnPrimaryGroup()}">
+    <div class="btn text-xs py-2 px-3.5 rounded-t-md ${btnPrimaryGroup()}">
       Search
     </div>
 
-    <div class="btn btn-md rounded-b-md ${btnDefaultGroup()}">
+    <div class="btn text-xs py-2 px-3.5 rounded-b-md ${btnDefaultGroup()}">
       ${iconSearch({ classes: 'icon-lg' })}
     </div>
 

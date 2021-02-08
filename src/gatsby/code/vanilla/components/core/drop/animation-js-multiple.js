@@ -14,27 +14,27 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--drop-animation-js-multiple">
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     list
   </button>
 
   <div class="drop">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>
     </div>
   </div>
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     card
   </button>
 

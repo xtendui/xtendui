@@ -119,7 +119,7 @@ pre {
   .btn {
     padding: .5em .75em;
     font-size: 10px;
-    @apply rounded-md border-gray-200 bg-gray-200 font-bold text-black text-opacity-50 tracking-wider;
+    @apply text-black text-opacity-50 font-sans font-bold leading-tight tracking-wider uppercase rounded-md border-gray-200 bg-gray-200 transition;
     &:hover, &:active, &.active {
       @apply border-white bg-white text-opacity-100;
     }
@@ -135,7 +135,7 @@ pre {
   .btn {
     padding: .5em .75em;
     font-size: 11px;
-    @apply rounded-md border-code bg-code font-bold text-white tracking-wider;
+    @apply text-white font-sans font-bold leading-tight tracking-wider uppercase rounded-md border-code bg-code transition;
     &:hover, &:active, &.active {
       @apply bg-gray-800;
     }

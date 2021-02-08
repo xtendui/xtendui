@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
 
-    <a href="#tooltip-with-link-0" class="btn btn-md rounded-md ${btnPrimary()}">
+    <a href="#tooltip-with-link-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       tooltip
     </a>
 

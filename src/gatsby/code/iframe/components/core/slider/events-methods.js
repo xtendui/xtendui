@@ -16,38 +16,38 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-first-element">
+<div class="list list-2 items-center mb-4">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-first-target">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-add">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-add">
     Add
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-remove">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-remove">
     Remove
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-block">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-reinit">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-restart">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-destroy">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--slider-events-unmount">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--slider-events-unmount">
     Unmount
   </button>
 </div>

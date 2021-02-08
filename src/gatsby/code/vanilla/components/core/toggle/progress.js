@@ -12,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center demo--toggle-progress">
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()} in-toggle">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()} in-toggle">
     Toggle 0
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -22,7 +22,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 1
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -32,7 +32,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 2
     <span class="loader loader-y">
       <span class="filler text-accent-500">
@@ -42,7 +42,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 3
     <span class="loader loader-y">
       <span class="filler text-accent-500">

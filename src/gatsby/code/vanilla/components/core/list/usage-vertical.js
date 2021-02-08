@@ -11,15 +11,15 @@ export const demo = {
 demo.htmlSource = `
 <nav class="list list-2 flex-col">
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Lorem Ipsum
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Dolor sit
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Amet
   </button>
 

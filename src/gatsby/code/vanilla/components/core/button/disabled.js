@@ -12,19 +12,19 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md rounded-md disabled" aria-disabled="true">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md disabled" aria-disabled="true">
     btn
   </button>
 
-  <button type="button" class="btn btn-md rounded-md disabled ${btnDefault()}" aria-disabled="true">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md disabled ${btnDefault()}" aria-disabled="true">
     default
   </button>
 
-  <button type="button" class="btn btn-md rounded-md disabled ${btnPrimary()}" aria-disabled="true">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md disabled ${btnPrimary()}" aria-disabled="true">
     primary
   </button>
 
-  <button type="button" class="btn btn-md link disabled" aria-disabled="true">
+  <button type="button" class="btn text-xs py-2 px-3.5 link disabled" aria-disabled="true">
     link
   </button>
 

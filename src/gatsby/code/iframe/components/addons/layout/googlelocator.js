@@ -32,10 +32,10 @@ demo.htmlSource = `
             <div class="list flex-nowrap">
               <div class="list-inner flex-auto">
                 <input type="text" class="form-item rounded-l-md ${inputDefault()}" aria-label="Search" placeholder="Search">
-                <button type="button" class="btn-locate btn btn-md rounded-md ${btnDefault()}">
+                <button type="button" class="btn-locate btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
                   ${iconLocate({ classes: 'icon-lg' })}
                 </button>
-                <button type="button" class="btn-search btn btn-md rounded-r-md ${btnDefault()}">
+                <button type="button" class="btn-search btn text-xs py-2 px-3.5 rounded-r-md ${btnDefault()}">
                   ${iconSearch({ classes: 'icon-lg' })}
                 </button>
               </div>
@@ -128,7 +128,7 @@ demo.htmlSource = `
       <div class="googlelocator-main-map">
       </div>
 
-      <button type="button" class="btn-repeat btn btn-md rounded-md ${btnPrimary()}">
+      <button type="button" class="btn-repeat btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         Search in this area
       </button>
 

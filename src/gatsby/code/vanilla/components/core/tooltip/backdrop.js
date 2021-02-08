@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', backdrop: true }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       backdrop
     </button>
 
@@ -28,7 +28,7 @@ demo.htmlSource = `
 
   <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', backdrop: true }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       backdrop click
     </button>
 

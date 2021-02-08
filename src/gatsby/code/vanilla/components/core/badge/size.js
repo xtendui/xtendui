@@ -9,17 +9,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-2 items-center">
 
-  <div class="badge badge-sm ${badgeDefault()}">
+  <div class="badge text-xxs py-1.5 px-2.5 ${badgeDefault()}">
     Small
   </div>
 
-  <div class="badge badge-md ${badgeDefault()}">
+  <div class="badge text-xs py-2 px-3.5 ${badgeDefault()}">
     Medium
   </div>
 
-  <div class="badge badge-lg ${badgeDefault()}">
+  <div class="badge text-sm py-2.5 px-4 ${badgeDefault()}">
     Large
   </div>
 

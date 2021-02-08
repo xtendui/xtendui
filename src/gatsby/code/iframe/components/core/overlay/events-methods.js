@@ -17,35 +17,35 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-first-element">
+<div class="list list-2 items-center mb-4">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-first-target">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-block">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-reinit">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-restart">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-restart">
     Restart
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-destroy">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn btn-sm rounded-md ${btnPrimary()}" id="demo--overlay-events-unmount">
+  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-unmount">
     Unmount
   </button>
 </div>
 
-<div class="list list-1 items-center mb-4">
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" id="demo--overlay-events">
+<div class="list list-2 items-center mb-4">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" id="demo--overlay-events">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" id="demo--overlay-events-alt">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" id="demo--overlay-events-alt">
     Toggle 1
   </button>
 </div>

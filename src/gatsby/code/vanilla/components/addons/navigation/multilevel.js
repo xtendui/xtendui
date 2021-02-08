@@ -18,22 +18,22 @@ demo.htmlSource = `
       <div>
         Menu
       </div>
-      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()}  hidden">
+      <button type="button" class="multilevel-reset btn text-xxs py-1.5 px-2.5 ${btnPrimary()}  hidden">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0">
+      <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}" data-xt-group="cat-0">
         Category 0
       </button>
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-1">
+      <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}" data-xt-group="cat-1">
         Category 1
       </button>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -46,22 +46,22 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-xxs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0a">
+      <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}" data-xt-group="cat-0a">
         Category 0a
       </button>
-      <button type="button" class="btn btn-md ${btnDefault()}" data-xt-group="cat-0b">
+      <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}" data-xt-group="cat-0b">
         Category 0b
       </button>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -74,16 +74,16 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-xxs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -96,16 +96,16 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-xxs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 1
       </a>
     </nav>
@@ -118,16 +118,16 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="multilevel-reset btn btn-sm ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-xxs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
 
     <nav class="multilevel-list list flex-col">
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 0
       </a>
-      <a href="#" class="btn btn-md ${btnDefault()}">
+      <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
         Link 1
       </a>
     </nav>

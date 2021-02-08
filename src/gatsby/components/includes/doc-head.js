@@ -21,7 +21,7 @@ export default class DocHead extends React.Component {
                   </span>
                 ) : null}
                 {page.post.frontmatter.category ? (
-                  <div className="badge badge-sm">{page.post.frontmatter.category}</div>
+                  <div className="badge text-xxs py-1.5 px-2.5.5">{page.post.frontmatter.category}</div>
                 ) : null}
               </h1>
               {page.post.frontmatter.description ? (

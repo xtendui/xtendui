@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       closed fixed
     </button>
 
@@ -56,7 +56,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       screen closed fixed
     </button>
 

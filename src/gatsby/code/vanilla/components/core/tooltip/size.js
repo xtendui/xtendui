@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       small
     </button>
 
@@ -28,7 +28,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       medium
     </button>
 
@@ -42,7 +42,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       large
     </button>
 
@@ -56,7 +56,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       max-width
     </button>
 
@@ -70,7 +70,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       custom
     </button>
 

@@ -11,27 +11,27 @@ export const demo = {
 demo.htmlSource = `
 <nav class="list flex-col max-w-sm">
 
-  <button type="button" class="btn btn-md rounded-t-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-t-md ${btnPrimary()}">
     Lorem ipsum
   </button>
 
-  <button type="button" class="btn btn-md active ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 active ${btnPrimary()}">
     dolor sit amet
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
     consectetur adipiscing elit
   </button>
 
-  <button type="button" class="btn btn-md disabled ${btnPrimary()}" aria-disabled="true">
+  <button type="button" class="btn text-xs py-2 px-3.5 disabled ${btnPrimary()}" aria-disabled="true">
     Lorem ipsum
   </button>
 
-  <button type="button" class="btn btn-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
     dolor sit amet
   </button>
 
-  <button type="button" class="btn btn-md rounded-b-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-b-md ${btnPrimary()}">
     Lorem ipsum dolor sit amet consectetur adipiscing elit
   </button>
 

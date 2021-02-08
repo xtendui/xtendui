@@ -16,17 +16,17 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     align items<br>default
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md rounded-md items-start ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md items-start ${btnPrimary()}">
     align items<br>items-start
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md rounded-md items-end ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md items-end ${btnPrimary()}">
     align items<br>items-end
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
@@ -39,22 +39,22 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md rounded-md w-full ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full ${btnPrimary()}">
     justify content<br>default
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md rounded-md w-full justify-start ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-start ${btnPrimary()}">
     justify content<br>items-start
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md rounded-md w-full justify-center text-center ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-center text-center ${btnPrimary()}">
     justify content<br>items-center + text-center
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>
 
-  <button type="button" class="btn btn-md rounded-md w-full justify-end text-right ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-end text-right ${btnPrimary()}">
     justify content<br>items-end + text-right
     ${iconSearch({ classes: 'icon-lg ml-2' })}
   </button>

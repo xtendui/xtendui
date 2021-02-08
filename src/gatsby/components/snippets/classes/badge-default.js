@@ -1,3 +1,3 @@
 export default () => {
-  return `text-black bg-gray-200`
+  return `text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200`
 }

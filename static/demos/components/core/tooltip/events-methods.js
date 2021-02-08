@@ -60,7 +60,7 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-          <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+          <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
             Element ${indexEl}
           </button>
         `

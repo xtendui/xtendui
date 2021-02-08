@@ -42,7 +42,7 @@ demo.htmlSource = `
   <div class="row row-x-3 row-y-2">
 
     <div class="w-full md:w-auto">
-      <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+      <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         List group
       </button>
     </div>
@@ -51,13 +51,13 @@ demo.htmlSource = `
       <div class="list flex-nowrap max-w-sm ${listCollapse}">
 
         <div class="list-inner flex-auto">
-          <button type="button" class="btn btn-md rounded-l-md ${btnDefault()}">
+          <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
             ${iconSearch({ classes: 'icon-lg' })}
           </button>
           <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
         </div>
 
-        <button type="button" class="btn btn-md rounded-r-md ${btnPrimary()}">
+        <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
           Search
         </button>
 
@@ -76,7 +76,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       list
     </button>
 
@@ -84,13 +84,13 @@ demo.htmlSource = `
       <div class="drop-inner rounded-md shadow-drop ${animDesign}">
         <div class="card w-64 py-3 rounded-md ${cardWhite()} ">
           <nav class="list flex-col rounded-md${animItem}">
-            <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+            <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Dolor sit
             </button>
-            <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+            <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Amet
             </button>
           </nav>
@@ -103,7 +103,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       card
     </button>
 
@@ -134,7 +134,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       tooltip
     </button>
 
@@ -153,7 +153,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       list group
     </button>
 
@@ -164,13 +164,13 @@ demo.htmlSource = `
           <div class="list flex-nowrap max-w-sm ${animItem}">
 
             <div class="list-inner flex-auto">
-              <button type="button" class="btn btn-md rounded-l-md ${btnDefault()}">
+              <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
                 ${iconSearch({ classes: 'icon-lg' })}
               </button>
               <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
             </div>
 
-            <button type="button" class="btn btn-md rounded-r-md ${btnPrimary()}">
+            <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
               Search
             </button>
 
@@ -192,7 +192,7 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       screen full
     </button>
     <div class="overlay group" data-xt-duration="700">
@@ -217,7 +217,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       left blocks
     </button>
 
@@ -230,13 +230,13 @@ demo.htmlSource = `
               ${iconX({ classes: 'icon-md' })}
             </div>
             <div class="list bg-accent-500 ${animItem}">
-              <button type="button" class="btn btn-md ${btnPrimary()}">
+              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Menu
               </button>
-              <button type="button" class="btn btn-md ${btnPrimary()}">
+              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Info
               </button>
-              <button type="button" class="btn btn-md ${btnPrimary()}">
+              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Account
               </button>
             </div>
@@ -262,7 +262,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       contact
     </button>
 
@@ -342,7 +342,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md rounded-md ${btnPrimary()}">
+                      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                         Send
                       </button>
                     </div>
@@ -379,7 +379,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       newsletter
     </button>
 
@@ -466,7 +466,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn btn-md rounded-md ${btnPrimary()}">
+                      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                         Subscribe
                       </button>
                     </div>

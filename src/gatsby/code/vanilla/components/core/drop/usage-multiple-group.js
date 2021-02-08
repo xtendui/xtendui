@@ -13,24 +13,24 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-drop>
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}" data-xt-group="my-group">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}" data-xt-group="my-group">
     drop
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}" data-xt-group="another-group">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}" data-xt-group="another-group">
     drop
   </button>
 
   <div class="drop" data-xt-group="another-group">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>
@@ -40,13 +40,13 @@ demo.htmlSource = `
   <div class="drop" data-xt-group="my-group">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>
@@ -56,13 +56,13 @@ demo.htmlSource = `
   <div class="drop" data-xt-position="top" data-xt-group="my-group">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn btn-sm ${btnDefaultDrop()}">
+        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn btn-sm ${btnDefaultDrop()}">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>

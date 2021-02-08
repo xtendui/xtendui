@@ -12,11 +12,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle="{ min: 1, preventEvent: true }">
 
-  <a href="#toggle--prevent-event-0" class="btn btn-md rounded-md ${btnDefault()}">
+  <a href="#toggle--prevent-event-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 0
   </a>
 
-  <a href="#toggle--prevent-event-1" class="btn btn-md rounded-md ${btnDefault()}">
+  <a href="#toggle--prevent-event-1" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 1
   </a>
 
@@ -34,11 +34,11 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center" data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
-  <a href="#toggle--prevent-event-1-hover" class="btn btn-md rounded-md ${btnDefault()}">
+  <a href="#toggle--prevent-event-1-hover" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 1 hover
   </a>
 
-  <a href="#toggle--prevent-event-2-hover" class="btn btn-md rounded-md ${btnDefault()}">
+  <a href="#toggle--prevent-event-2-hover" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 2 hover
   </a>
 

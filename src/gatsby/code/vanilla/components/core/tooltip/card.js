@@ -15,7 +15,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       asset
     </button>
 
@@ -36,7 +36,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       asset and text
     </button>
 

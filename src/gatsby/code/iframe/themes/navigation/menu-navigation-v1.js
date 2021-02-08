@@ -31,7 +31,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn text-sm py-2.5 px-4 btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #1
         </a>
 
@@ -54,7 +54,7 @@ demo.htmlSource = `
                   <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Morbi nec mauris est
                   </a>
-                  <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                  <a href="#" class="btn text-xs py-2 px-3.5 link mt-6 py-2 px-0">
                     Show all
                   </a>
                 </div>
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn text-sm py-2.5 px-4 btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #2
         </a>
 
@@ -85,7 +85,7 @@ demo.htmlSource = `
                   <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Dolor sit amet
                   </a>
-                  <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                  <a href="#" class="btn text-xs py-2 px-3.5 link mt-6 py-2 px-0">
                     Show all
                   </a>
                 </div>
@@ -99,7 +99,7 @@ demo.htmlSource = `
 
       <div class="drop-container">
 
-        <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="btn text-sm py-2.5 px-4 btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
           Menu #3
         </a>
 
@@ -135,7 +135,7 @@ demo.htmlSource = `
                       <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Morbi nec mauris est
                       </a>
-                      <a href="#" class="btn btn-md link mt-6 py-2 px-0">
+                      <a href="#" class="btn text-xs py-2 px-3.5 link mt-6 py-2 px-0">
                           Show all
                       </a>
                     </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
 
       </div>
 
-      <a href="/" class="btn btn-lg btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
+      <a href="/" class="btn text-sm py-2.5 px-4 btn-line rounded-md py-6 opacity-75 hover:opacity-100 active:opacity-100">
         Link #4
       </a>
 

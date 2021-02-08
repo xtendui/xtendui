@@ -33,7 +33,7 @@ demo.htmlSource = `
     <div class="infinitescroll-pre mb-4">
       <div class="list list-1 flex-col items-center">
         <div>
-          <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+          <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             Load previous pages
           </button>
         </div>
@@ -193,7 +193,7 @@ demo.htmlSource = `
     <div class="list list-1 flex-col items-center">
 
       <div class="infinitescroll-trigger">
-        <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+        <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
 
           <span class="infinitescroll-trigger-content">
             Show more products

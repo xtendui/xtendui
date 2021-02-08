@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--overlay-animation-js">
 
-  <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     overlay
   </button>
 

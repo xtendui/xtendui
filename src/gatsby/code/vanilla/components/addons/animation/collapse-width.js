@@ -14,11 +14,11 @@ demo.htmlSource = `
 
   <div class="list list-2 items-center mb-4">
 
-    <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
       Toggle 0
     </button>
 
-    <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
       Toggle 1
     </button>
 

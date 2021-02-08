@@ -11,11 +11,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-toggle>
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-toggle>
     Toggle
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-toggle>
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-toggle>
     Toggle
   </button>
 

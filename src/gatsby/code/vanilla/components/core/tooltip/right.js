@@ -14,7 +14,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ position: 'right' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       right
     </button>
 
@@ -29,7 +29,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ position: 'right-start' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       right start
     </button>
 
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ position: 'right-end' }">
 
-    <button type="button" class="btn btn-md rounded-md ${btnPrimary()}">
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
       right end
     </button>
 

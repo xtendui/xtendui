@@ -12,23 +12,23 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center" data-xt-toggle>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="my-group">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-group="my-group">
     Toggle Group 0
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="my-group">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-group="my-group">
     Toggle Group 0
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 2
   </button>
 
-  <button type="button" class="btn btn-md rounded-md ${btnDefault()}" data-xt-group="another-group">
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-group="another-group">
     Toggle Group 3
   </button>
 

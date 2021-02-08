@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn-md rounded-md ${btnPrimary()} demo--tooltip--swap-toggle"
+<button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()} demo--tooltip--swap-toggle"
   data-xt-toggle data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap' }">
   Swap toggle
 </button>

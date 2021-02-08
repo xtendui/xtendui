@@ -10,13 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-1 items-center">
+<div class="list list-2 items-center">
 
-  <a role="button" class="badge badge-md ${badgeDefaultInteractive()}">
+  <a role="button" class="badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
     Default
   </a>
 
-  <a role="button" class="badge badge-md ${badgePrimaryInteractive()}">
+  <a role="button" class="badge text-xs py-2 px-3.5 ${badgePrimaryInteractive()}">
     Primary
   </a>
 

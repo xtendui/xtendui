@@ -12,8 +12,6 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 Use `.link` to create a [link](/components/core/link).
 
-Use `.text-reset` to create a button with inherited text.
-
 <demo>
   <demovanilla src="vanilla/components/core/button/variant">
   </demovanilla>
@@ -32,19 +30,7 @@ See [link variant](/components/core/link#variant) to style **links**.
 
 ## Size
 
-Use **component classes** to assign size. You can add **additional size** for example `.btn-xs` or `.btn-xl`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.btn-sm`       | `btn-sm`                | Size small            |
-| Component                  | `.btn-md`       | `btn-md`                | Size medium            |
-| Component                  | `.btn-lg`       | `btn-lg`                | Size large            |
-
-</div>
-
-Otherwise use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/size">

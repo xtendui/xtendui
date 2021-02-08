@@ -26,10 +26,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-start">
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -50,10 +50,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-start">
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -74,10 +74,10 @@ demo.htmlSource = `
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
       <div class="list list-2 justify-end">
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn btn-md rounded-md ${btnPrimary()}">
+        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Dolor sit amet
         </a>
       </div>

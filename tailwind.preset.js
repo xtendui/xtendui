@@ -12,6 +12,9 @@ module.exports = {
           xl: '4rem',
         },
       },
+      fontSize: {
+        xxs: ['10px', { lineHeight: '1rem' }],
+      },
       colors: {
         code: '#2d3748',
         accent: {

@@ -19,11 +19,11 @@ demo.htmlSource = `
   <div class="list" data-xt-groupnumber>
 
     <div class="list-inner">
-      <button type="button" class="btn btn-md rounded-l-md border border-gray-500 ${btnDefault()}" data-xt-step="-1">
+      <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md border border-gray-500 ${btnDefault()}" data-xt-step="-1">
         -
       </button>
       <input type="number" class="form-item border border-l-0 border-gray-500 ${inputDefault()}" aria-label="Quantity" value="1" min="0" max="100">
-      <button type="button" class="btn btn-md rounded-r-md border border-l-0 border-gray-500 ${btnDefault()}" data-xt-step="1">
+      <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 ${btnDefault()}" data-xt-step="1">
         +
       </button>
     </div>
@@ -43,10 +43,10 @@ demo.htmlSource = `
     <div class="list-inner">
       <input type="number" class="form-item rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${inputDefault()}" aria-label="Quantity" value="1" min="0" max="100">
       <div class="list-inner flex-col">
-        <button type="button" class="btn btn-sm py-1 rounded-tr-md border border-gray-500 ${btnDefault()}" data-xt-step="1">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 py-1 rounded-tr-md border border-gray-500 ${btnDefault()}" data-xt-step="1">
           +
         </button>
-        <button type="button" class="btn btn-sm py-1 rounded-br-md border border-t-0 border-gray-500 ${btnDefault()}" data-xt-step="-1">
+        <button type="button" class="btn text-xxs py-1.5 px-2.5 py-1 rounded-br-md border border-t-0 border-gray-500 ${btnDefault()}" data-xt-step="-1">
           -
         </button>
       </div>
