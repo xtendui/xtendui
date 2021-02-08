@@ -18,25 +18,25 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-2 items-center mb-4">
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-element">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-target">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-block">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-reinit">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-restart">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-restart">
     Restart
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-destroy">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-unmount">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--overlay-events-unmount">
     Unmount
   </button>
 </div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
 
       <div class="card rounded-md shadow-overlay ${cardWhite()}">
         <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="card-md md:card-lg">
           <div class="h3">Overlay</div>

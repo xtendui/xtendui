@@ -20,7 +20,7 @@ demo.htmlSource = `
     </div>
 
     <div class="btn text-xs py-2 px-3.5 rounded-r-md ${btnDefaultGroup()}">
-      ${iconSearch({ classes: 'icon-lg' })}
+      ${iconSearch({ classes: 'text-xl -my-1' })}
     </div>
 
   </button>

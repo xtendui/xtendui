@@ -77,13 +77,13 @@ demo.htmlSource = `
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="card w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
           <nav class="list flex-col">
-            <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+            <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
-            <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+            <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Dolor sit
             </button>
-            <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+            <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
               Amet
             </button>
           </nav>
@@ -105,7 +105,7 @@ demo.htmlSource = `
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="card w-80 rounded-md ${cardWhite()} ${animItem}">
           <div class="btn btn-close p-5 text-xl" aria-label="Close">
-            ${iconX({ classes: 'icon-md' })}
+            ${iconX()}
           </div>
           <div class="card-md">
             <div class="h4">Lorem ipsum</div>
@@ -157,7 +157,7 @@ demo.htmlSource = `
 
             <div class="list-inner flex-auto">
               <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
-                ${iconSearch({ classes: 'icon-lg' })}
+                ${iconSearch({ classes: 'text-xl -my-1' })}
               </button>
               <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
             </div>
@@ -190,7 +190,7 @@ demo.htmlSource = `
     <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardWhite()} ${animItem}" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="overlay-inner">
 
@@ -223,7 +223,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen ${cardWhite()} ${animItem}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="list bg-accent-500">
               <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
@@ -270,7 +270,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
 
             <div class="md:card-group">
@@ -389,7 +389,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
             <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
 
             <div class="md:card-group">

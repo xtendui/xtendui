@@ -29,31 +29,16 @@ Text styles on **parent elements** are applied when **inerithed**.
 
 ## Size
 
-Use **component classes** to assign size. You can add **additional size** for example `.icon-xs` or `.icon-xl`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.icon-sm`                     | `icon-sm`                | `responsive`                | Size small            |
-| Utility                  | `.icon-md`                     | `icon-md`                | `responsive`                | Size medium            |
-| Utility                  | `.icon-lg`                     | `icon-lg`                | `responsive`                | Size large            |
-
-</div>
-
-[[noteDefault]]
-| Icon sizes has **has negative margin** to not enlarge the parent element.
-
-Otherwise use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
+Change [font-size](https://tailwindcss.com/docs/font-size) to change the icon size. Or use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height), [stroke-width](https://tailwindcss.com/docs/stroke-width)).
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/size">
   </demovanilla>
 </demo>
 
-## Icons and Alignment
+## Button and Alignment
 
-Use [button](/components/core/button) as container or a `display: flex` container.
+Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon is bigger than the button **to prevent vertical resize**.
 
 <demo>
   <demovanilla src="vanilla/components/core/icons/button">

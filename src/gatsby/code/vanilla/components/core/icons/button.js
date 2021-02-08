@@ -16,19 +16,19 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
     icon small
-    ${iconSearch({ classes: 'icon-sm ml-1' })}
+    ${iconSearch({ classes: 'text-xs ml-1' })}
   </button>
 
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
     icon medium
-    ${iconSearch({ classes: 'icon-md ml-1' })}
+    ${iconSearch({ classes: 'text-base -my-1 ml-1' })}
   </button>
 
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
     icon large
-    ${iconSearch({ classes: 'icon-lg ml-1' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-1' })}
   </button>
 
 </div>
@@ -41,17 +41,17 @@ demo.htmlSource = `
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     icon small
-    ${iconSearch({ classes: 'icon-sm ml-1.5' })}
+    ${iconSearch({ classes: 'text-xs ml-1.5' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     icon medium
-    ${iconSearch({ classes: 'icon-md ml-1.5' })}
+    ${iconSearch({ classes: 'text-base ml-1.5' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     icon large
-    ${iconSearch({ classes: 'icon-lg ml-1.5' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-1.5' })}
   </button>
 
 </div>
@@ -64,17 +64,17 @@ demo.htmlSource = `
 
   <button type="button" class="btn text-sm py-2.5 px-4 rounded-md ${btnPrimary()}">
     icon small
-    ${iconSearch({ classes: 'icon-sm ml-2' })}
+    ${iconSearch({ classes: 'text-xs ml-2' })}
   </button>
 
   <button type="button" class="btn text-sm py-2.5 px-4 rounded-md ${btnPrimary()}">
     icon medium
-    ${iconSearch({ classes: 'icon-md ml-2' })}
+    ${iconSearch({ classes: 'text-base ml-2' })}
   </button>
 
   <button type="button" class="btn text-sm py-2.5 px-4 rounded-md ${btnPrimary()}">
     icon large
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
 </div>

@@ -14,7 +14,7 @@ demo.htmlSource = `
   <div class="card-md">
     <div class="list list-3 flex-nowrap items-baseline">
       <div>
-        ${iconPackage({ classes: 'icon-lg text-2xl' })}
+        ${iconPackage({ classes: 'text-xl -my-1' })}
       </div>
       <div>
         <div class="h4">Lorem ipsum</div>

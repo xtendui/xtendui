@@ -17,31 +17,31 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-2 items-center mb-4">
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-first-element">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-first-target">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-add">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-add">
     Add
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-remove">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-remove">
     Remove
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-block">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-reinit">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-restart">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-restart">
     Restart
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-destroy">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-unmount">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--drop-events-unmount">
     Unmount
   </button>
 </div>
@@ -55,13 +55,13 @@ demo.htmlSource = `
   <div class="drop" title="Target 0">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>
@@ -75,13 +75,13 @@ demo.htmlSource = `
   <div class="drop" title="Target 1">
     <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
       <nav class="list flex-col">
-        <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </a>
-        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Dolor sit
         </button>
-        <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+        <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
           Amet
         </button>
       </nav>

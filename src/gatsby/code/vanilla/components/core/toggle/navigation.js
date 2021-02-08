@@ -31,11 +31,11 @@ demo.htmlSource = `
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-    ${iconArrowLeft({ classes: 'icon-lg' })}
+    ${iconArrowLeft({ classes: 'text-xl -my-1' })}
   </button>
 
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-    ${iconArrowRight({ classes: 'icon-lg' })}
+    ${iconArrowRight({ classes: 'text-xl -my-1' })}
   </button>
 
   <div class="card toggle rounded-md ${cardToggle()}">

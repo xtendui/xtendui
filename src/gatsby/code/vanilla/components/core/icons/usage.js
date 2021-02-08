@@ -28,41 +28,41 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2">
 
-  ${iconSearch({ classes: 'icon-md' })}
+  ${iconSearch()}
 
-  ${iconX({ classes: 'icon-md' })}
+  ${iconX()}
 
-  ${iconArrowLeft({ classes: 'icon-md' })}
+  ${iconArrowLeft()}
 
-  ${iconArrowRight({ classes: 'icon-md' })}
+  ${iconArrowRight()}
 
-  ${iconArrowUp({ classes: 'icon-md' })}
+  ${iconArrowUp()}
 
-  ${iconArrowDown({ classes: 'icon-md' })}
+  ${iconArrowDown()}
 
-  ${iconChevronLeft({ classes: 'icon-md' })}
+  ${iconChevronLeft()}
 
-  ${iconChevronRight({ classes: 'icon-md' })}
+  ${iconChevronRight()}
 
-  ${iconChevronUp({ classes: 'icon-md' })}
+  ${iconChevronUp()}
 
-  ${iconChevronDown({ classes: 'icon-md' })}
+  ${iconChevronDown()}
 
-  ${iconLocate({ classes: 'icon-md' })}
+  ${iconLocate()}
 
-  ${iconPackage({ classes: 'icon-md' })}
+  ${iconPackage()}
 
-  ${iconGithub({ classes: 'icon-md' })}
+  ${iconGithub()}
 
-  ${iconLink({ classes: 'icon-md' })}
+  ${iconLink()}
 
-  ${iconCode({ classes: 'icon-md' })}
+  ${iconCode()}
 
-  ${iconMaximize({ classes: 'icon-md' })}
+  ${iconMaximize()}
 
-  ${iconExternal({ classes: 'icon-md' })}
+  ${iconExternal()}
 
-  ${iconCopy({ classes: 'icon-md' })}
+  ${iconCopy()}
 
 </div>
 `

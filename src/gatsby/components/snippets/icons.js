@@ -1,5 +1,5 @@
 // const iconArrowLeft = require('components/snippets/icons').iconX
-// ${iconArrowLeft({ classes: 'icon-lg' })}
+// ${iconArrowLeft({ classes: 'text-xl -my-1' })}
 
 export const iconX = ({ classes = null } = {}) => {
   classes = classes ? ` ${classes}` : ''

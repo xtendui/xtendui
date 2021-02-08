@@ -10,41 +10,41 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2">
 
-  <img class="icon icon-md" src="/icons/search.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/search.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/x.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/x.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/arrow-left.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/arrow-left.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/arrow-right.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/arrow-right.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/arrow-up.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/arrow-up.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/arrow-down.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/arrow-down.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/chevron-left.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/chevron-left.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/chevron-right.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/chevron-right.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/chevron-up.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/chevron-up.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/chevron-down.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/chevron-down.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/locate.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/locate.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/github.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/github.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/package.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/package.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/link.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/link.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/code.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/code.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/maximize.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/maximize.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/external-link.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/external-link.svg" loading="lazy" alt=""/>
 
-  <img class="icon icon-md" src="/icons/copy.svg" loading="lazy" alt=""/>
+  <img class="icon" src="/icons/copy.svg" loading="lazy" alt=""/>
 
 </div>
 `

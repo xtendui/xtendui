@@ -23,7 +23,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="card-md">
           <div class="h4">Lorem ipsum</div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="card w-80 rounded-md shadow-drop ${cardPrimary()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="card-md">
           <div class="h4">Lorem ipsum</div>

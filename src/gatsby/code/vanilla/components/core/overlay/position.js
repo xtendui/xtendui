@@ -25,7 +25,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
@@ -54,7 +54,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
@@ -83,7 +83,7 @@ demo.htmlSource = `
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="media-container bg-gray-700 ratio-37.5">
               <div class="media-inner">

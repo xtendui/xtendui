@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn text-xxs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
+  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
     small
   </button>
 

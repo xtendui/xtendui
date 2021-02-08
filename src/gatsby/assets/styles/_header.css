@@ -129,9 +129,6 @@
 .gatsby_site-header_top_social {
   @apply list list-0.5;
   align-items: stretch;
-  svg {
-    @apply icon-md;
-  }
 }
 
 .gatsby_site-header_top_social_btn {

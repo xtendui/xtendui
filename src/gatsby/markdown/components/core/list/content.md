@@ -22,11 +22,11 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[notePrimary]]
-| Don't use **margin on list** because it has **automatic negative margins** for internal spacing.
+[[noteDefault]]
+| `.list` childs have display `flex` to fix **browsers bugs with negative margin**.
 
 [[notePrimary]]
-| Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
+| Don't use **margin on list** because it has **automatic negative margins** for internal spacing.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/space-px">

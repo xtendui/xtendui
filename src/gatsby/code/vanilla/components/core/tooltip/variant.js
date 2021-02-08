@@ -22,11 +22,7 @@ demo.htmlSource = `
 
     <div class="tooltip">
       <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink(
-          {
-            classes: 'icon-md',
-          }
-        )} diam nec euismod commodo.
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>
     </div>
 
@@ -40,11 +36,7 @@ demo.htmlSource = `
 
     <div class="tooltip">
       <div class="tooltip-md rounded shadow-tooltip ${cardPrimary()}">
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink(
-          {
-            classes: 'icon-md',
-          }
-        )} diam nec euismod commodo.
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>
     </div>
 

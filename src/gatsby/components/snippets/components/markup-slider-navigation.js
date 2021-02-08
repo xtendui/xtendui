@@ -13,10 +13,10 @@ export default () => {
         <div class="h4">1</div>
         <nav class="slider-navigation list list-2">
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-            ${iconChevronLeft({ classes: 'icon-lg' })}
+            ${iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-            ${iconChevronRight({ classes: 'icon-lg' })}
+            ${iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
@@ -27,10 +27,10 @@ export default () => {
         <div class="h4">2</div>
         <nav class="slider-navigation list list-2">
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-            ${iconChevronLeft({ classes: 'icon-lg' })}
+            ${iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-            ${iconChevronRight({ classes: 'icon-lg' })}
+            ${iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
@@ -41,10 +41,10 @@ export default () => {
         <div class="h4">3</div>
         <nav class="slider-navigation list list-2">
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-            ${iconChevronLeft({ classes: 'icon-lg' })}
+            ${iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-            ${iconChevronRight({ classes: 'icon-lg' })}
+            ${iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
@@ -55,10 +55,10 @@ export default () => {
         <div class="h4">4</div>
         <nav class="slider-navigation list list-2">
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-            ${iconChevronLeft({ classes: 'icon-lg' })}
+            ${iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-            ${iconChevronRight({ classes: 'icon-lg' })}
+            ${iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
@@ -69,10 +69,10 @@ export default () => {
         <div class="h4">5</div>
         <nav class="slider-navigation list list-2">
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-            ${iconChevronLeft({ classes: 'icon-lg' })}
+            ${iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-            ${iconChevronRight({ classes: 'icon-lg' })}
+            ${iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
@@ -83,12 +83,12 @@ export default () => {
 
 <nav class="slider-pagination w-full list list-2">
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
-    ${iconChevronLeft({ classes: 'icon-lg' })}
+    ${iconChevronLeft({ classes: 'text-xl -my-1' })}
   </button>
   <button type="button" class="btn ${btnDefault()} xt-ignore" data-xt-pag title="Slide xt-num">
   </button>
   <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
-    ${iconChevronRight({ classes: 'icon-lg' })}
+    ${iconChevronRight({ classes: 'text-xl -my-1' })}
   </button>
 </nav>
 `

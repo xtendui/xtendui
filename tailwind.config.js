@@ -3,7 +3,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
-    enabled: true,
     content: ['./src/**/*.css', './src/**/*.js'],
     options: {
       safelist: {

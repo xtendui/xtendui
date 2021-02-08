@@ -115,7 +115,7 @@ demo.htmlSource = `
               <div class="overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
                 <div class="overlay-container p-0">
                   <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
-                    ${iconX({ classes: 'icon-md' })}
+                    ${iconX()}
                   </div>
                   <div class="overlay-inner">
 
@@ -193,7 +193,7 @@ demo.htmlSource = `
     </div>
 
     <a href="#product-continue-target" class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white" title="Scroll to content">
-      ${iconChevronDown({ classes: 'icon-md' })}
+      ${iconChevronDown()}
     </a>
 
   </main>

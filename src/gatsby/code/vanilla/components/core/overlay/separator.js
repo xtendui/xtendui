@@ -25,7 +25,7 @@ demo.htmlSource = `
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="md:card-group">
               <div class="card-md md:w-7/12">

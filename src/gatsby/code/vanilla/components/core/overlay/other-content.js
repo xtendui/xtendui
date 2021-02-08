@@ -24,7 +24,7 @@ demo.htmlSource = `
     <div class="overlay">
       <div class="overlay-container max-w-3xl">
         <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="overlay-inner">
 
@@ -34,7 +34,7 @@ demo.htmlSource = `
 
               <div class="list-inner flex-auto">
                 <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
-                  ${iconSearch({ classes: 'icon-lg' })}
+                  ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
                 <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
               </div>

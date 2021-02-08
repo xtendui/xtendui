@@ -72,13 +72,13 @@ Xt.mount.push({
           <div class="drop" title="Target ${indexTr}">
             <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
               <nav class="list flex-col">
-                <a href="#" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+                <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
-                <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+                <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
                   Dolor sit
                 </button>
-                <button type="button" class="btn text-xxs py-1.5 px-2.5 ${btnDefaultDrop()}">
+                <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
                   Amet
                 </button>
               </nav>

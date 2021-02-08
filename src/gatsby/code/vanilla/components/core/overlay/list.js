@@ -26,12 +26,12 @@ demo.htmlSource = `
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
             <div class="btn btn-close p-5 text-2xl" aria-label="Close">
-              ${iconX({ classes: 'icon-md' })}
+              ${iconX()}
             </div>
             <div class="card-md">
               <div class="list list-3 flex-nowrap items-baseline">
                 <div>
-                  ${iconPackage({ classes: 'icon-lg text-2xl' })}
+                  ${iconPackage({ classes: 'text-xl -my-1' })}
                 </div>
                 <div>
                   <div class="h4">Lorem ipsum</div>

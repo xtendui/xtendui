@@ -33,10 +33,10 @@ demo.htmlSource = `
               <div class="list-inner flex-auto">
                 <input type="text" class="form-item rounded-l-md ${inputDefault()}" aria-label="Search" placeholder="Search">
                 <button type="button" class="btn-locate btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
-                  ${iconLocate({ classes: 'icon-lg' })}
+                  ${iconLocate({ classes: 'text-xl -my-1' })}
                 </button>
                 <button type="button" class="btn-search btn text-xs py-2 px-3.5 rounded-r-md ${btnDefault()}">
-                  ${iconSearch({ classes: 'icon-lg' })}
+                  ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
               </div>
             </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
                 <div class="googlelocator-item-additional" data-xt-populate="additional"></div>
               </div>
               <a href="#" target="_blank" class="googlelocator-item-directions list list-1 flex-col items-center" title="directions" data-xt-populate="direction">
-                ${iconLocate({ classes: 'icon-lg' })}
+                ${iconLocate({ classes: 'text-xl -my-1' })}
                 <span data-xt-populate="distance"></span>
               </a>
             </div>

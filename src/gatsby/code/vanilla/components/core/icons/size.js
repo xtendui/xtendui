@@ -13,11 +13,11 @@ demo.htmlSource = `
   Sizes
 </div>
 
-${iconSearch({ classes: 'icon-sm' })}
+${iconSearch({ classes: 'text-xs' })}
 
-${iconSearch({ classes: 'icon-md' })}
+${iconSearch({ classes: 'text-base' })}
 
-${iconSearch({ classes: 'icon-lg' })}
+${iconSearch({ classes: 'text-xl' })}
 
 <div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
   Custom size and stroke

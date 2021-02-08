@@ -18,7 +18,7 @@ demo.htmlSource = `
 
     <div class="list-inner flex-auto">
       <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
-        ${iconSearch({ classes: 'icon-lg' })}
+        ${iconSearch({ classes: 'text-xl -my-1' })}
       </button>
       <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
     </div>

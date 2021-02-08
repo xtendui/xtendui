@@ -34,6 +34,7 @@ module.exports = {
       flexDirection: 'row',
       alignItems: 'flex-start',
       '> *': {
+        display: 'flex', // @FIX negative margin spacing
         flex: '0 0 auto', // @FIX column flex shrink
       },
       '&:empty': {

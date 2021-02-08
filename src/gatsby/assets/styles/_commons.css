@@ -36,7 +36,7 @@
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
   .btn:not(.btn-close) {
     .icon {
-      @apply icon-lg;
+      font-size: 14px;
     }
   }
 }

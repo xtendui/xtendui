@@ -22,7 +22,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="media-container bg-gray-700 rounded-md ratio-37.5">
           <div class="media-inner">
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="drop">
       <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="btn btn-close p-5 text-xl" aria-label="Close">
-          ${iconX({ classes: 'icon-md' })}
+          ${iconX()}
         </div>
         <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
           <div class="media-inner">

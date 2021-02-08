@@ -18,17 +18,17 @@ demo.htmlSource = `
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     align items<br>default
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md items-start ${btnPrimary()}">
     align items<br>items-start
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md items-end ${btnPrimary()}">
     align items<br>items-end
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
 </div>
@@ -41,22 +41,22 @@ demo.htmlSource = `
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full ${btnPrimary()}">
     justify content<br>default
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-start ${btnPrimary()}">
     justify content<br>items-start
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-center text-center ${btnPrimary()}">
     justify content<br>items-center + text-center
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-end text-right ${btnPrimary()}">
     justify content<br>items-end + text-right
-    ${iconSearch({ classes: 'icon-lg ml-2' })}
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
 </div>

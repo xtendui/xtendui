@@ -46,7 +46,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
@@ -102,7 +102,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
@@ -146,7 +146,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
@@ -202,7 +202,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
@@ -246,7 +246,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
@@ -302,7 +302,7 @@ demo.htmlSource = `
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
               <div class="btn btn-close p-5 text-xl" aria-label="Close">
-                ${iconX({ classes: 'icon-md' })}
+                ${iconX()}
               </div>
               <div class="card-sm">
                 <div class="h5">
