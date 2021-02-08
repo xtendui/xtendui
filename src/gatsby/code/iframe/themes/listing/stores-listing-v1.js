@@ -45,9 +45,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts
@@ -101,9 +101,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts
@@ -145,9 +145,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts
@@ -201,9 +201,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts
@@ -245,9 +245,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts
@@ -301,9 +301,9 @@ demo.htmlSource = `
             </div>
 
             <div class="listing-back h-full card rounded-md ${cardDefault()}">
-              <div class="btn btn-close p-5 text-xl" aria-label="Close">
+              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
-              </div>
+              </button>
               <div class="card-sm">
                 <div class="h5">
                   Contacts

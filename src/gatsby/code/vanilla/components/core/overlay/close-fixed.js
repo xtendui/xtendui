@@ -21,9 +21,9 @@ demo.htmlSource = `
 
     <div class="overlay">
       <div class="overlay-container max-w-3xl">
-        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
           ${iconX()}
-        </div>
+        </button>
         <div class="overlay-inner">
 
           <div class="card items-center justify-center rounded-md shadow-overlay ${cardWhite()}">
@@ -62,9 +62,9 @@ demo.htmlSource = `
 
     <div class="overlay">
       <div class="overlay-container p-0">
-        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
           ${iconX()}
-        </div>
+        </button>
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">

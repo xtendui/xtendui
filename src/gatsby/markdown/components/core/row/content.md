@@ -22,11 +22,11 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[noteDefault]]
-| `.row` childs have display `flex` to fix **browsers bugs with negative margin**.
-
 [[notePrimary]]
 | Don't use **margin on row** because it has **automatic negative margins** for internal spacing.
+
+[[notePrimary]]
+| Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
   <demovanilla src="vanilla/components/core/row/space-px">

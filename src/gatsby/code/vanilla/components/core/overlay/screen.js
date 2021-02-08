@@ -22,9 +22,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="max-w-3xl">
               <div class="card-md">
                 <div class="h4">Lorem ipsum</div>
@@ -50,9 +50,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="media-container bg-gray-700 ratio-100">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -74,9 +74,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="max-w-3xl">
               <div class="md:card-group">
                 <div class="card-md md:w-7/12">

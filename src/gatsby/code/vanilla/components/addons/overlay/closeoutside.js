@@ -25,9 +25,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md md:rounded-tr-none shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -54,9 +54,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -83,9 +83,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:left-auto md:right-100" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:left-auto md:right-100" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card-md">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

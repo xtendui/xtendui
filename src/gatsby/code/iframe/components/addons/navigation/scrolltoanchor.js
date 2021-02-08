@@ -40,9 +40,9 @@ demo.htmlSource = `
   <div class="overlay-container p-0">
     <div class="overlay-inner">
 
-      <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+      <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
         ${iconX()}
-      </div>
+      </button>
 
       <div class="card card-sm ${cardDefault()}" id="anchor-overlay-0">
         <div class="h4">Lorem ipsum dolor sit amet</div>

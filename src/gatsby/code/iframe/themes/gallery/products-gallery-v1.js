@@ -114,9 +114,9 @@ demo.htmlSource = `
 
               <div class="overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
                 <div class="overlay-container p-0">
-                  <div class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+                  <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
                     ${iconX()}
-                  </div>
+                  </button>
                   <div class="overlay-inner">
 
                     <div class="card items-center justify-center shadow-overlay ${cardWhite()}">

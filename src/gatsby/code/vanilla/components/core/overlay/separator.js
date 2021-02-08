@@ -24,9 +24,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="md:card-group">
               <div class="card-md md:w-7/12">
                 <div class="h4">Lorem ipsum</div>

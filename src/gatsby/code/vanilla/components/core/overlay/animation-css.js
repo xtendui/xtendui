@@ -22,9 +22,9 @@ demo.htmlSource = `
       <div class="overlay-inner">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

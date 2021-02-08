@@ -10,8 +10,10 @@ const animDesign =
 const animItem =
   'transform ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
 
-const btnDefault = () => `${classesDefault} hover:shadow-lg active:shadow-sm`
-const btnPrimary = () => `${classesPrimary} hover:shadow-lg active:shadow-sm`
+const btnDefault = () =>
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg active:shadow-sm`
+const btnPrimary = () =>
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesPrimary} hover:shadow-lg active:shadow-sm`
 const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
 const btnCloseOutside = require('components/snippets/classes/btn-closeoutside').default
 
@@ -42,16 +44,16 @@ demo.htmlSource = `
 
 <div class="list list-2 items-center">
 
-  <button type="button" class="btn text-xs py-2 px-3.5 transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
-    btn
-  </button>
-
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
     default
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
     primary
+  </button>
+
+  <button type="button" class="btn py-2.5 px-4 transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    text
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
@@ -104,9 +106,9 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="card w-80 rounded-md ${cardWhite()} ${animItem}">
-          <div class="btn btn-close p-5 text-xl" aria-label="Close">
+          <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
             ${iconX()}
-          </div>
+          </button>
           <div class="card-md">
             <div class="h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -189,9 +191,9 @@ demo.htmlSource = `
     </button>
     <div class="overlay group" data-xt-duration="700">
       <div class="overlay-container p-0">
-        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardWhite()} ${animItem}" aria-label="Close">
+        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${cardWhite()} ${animItem}" aria-label="Close">
           ${iconX()}
-        </div>
+        </button>
         <div class="overlay-inner">
 
           <div class="design-setup rounded-md bg-white ${animDesign}"></div>
@@ -222,9 +224,9 @@ demo.htmlSource = `
           <div class="design-setup bg-white ${animDesign}"></div>
 
           <div class="card min-h-screen ${cardWhite()} ${animItem}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="list bg-accent-500">
               <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Menu
@@ -269,9 +271,9 @@ demo.htmlSource = `
           <div class="design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
 
             <div class="md:card-group">
 
@@ -388,9 +390,9 @@ demo.htmlSource = `
           <div class="design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="card rounded-md ${cardWhite()} ${animItem}">
-            <div class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl ${btnCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
 
             <div class="md:card-group">
 

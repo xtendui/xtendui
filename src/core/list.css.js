@@ -36,9 +36,6 @@ module.exports = {
       '&:empty': {
         display: 'none',
       },
-      '> *': {
-        display: 'flex', // @FIX negative margin spacing
-      },
     },
     '.list-inner': {
       display: 'inline-flex',

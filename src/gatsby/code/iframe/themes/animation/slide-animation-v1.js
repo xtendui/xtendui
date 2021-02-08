@@ -101,9 +101,9 @@ demo.htmlSource = `
 
     <div class="drop group" data-xt-duration="700">
       <div class="card w-80 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
-        <div class="btn btn-close p-5 text-xl" aria-label="Close">
+        <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX()}
-        </div>
+        </button>
         <div class="card-md rounded-md ${animItem}">
           <div class="h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -185,9 +185,9 @@ demo.htmlSource = `
     </button>
     <div class="overlay group" data-xt-duration="1000">
       <div class="overlay-container p-0">
-        <div class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${animItem}" aria-label="Close">
+        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${animItem}" aria-label="Close">
           ${iconX()}
-        </div>
+        </button>
         <div class="overlay-inner">
 
           <div class="card min-h-screen items-center justify-center ${cardWhite()} ${animDesign}">
@@ -214,9 +214,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card min-h-screen ${cardWhite()} ${animDesignLeft}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="list bg-accent-500 ${animItemLeft}">
               <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Menu
@@ -259,9 +259,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()} ${animDesign}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
 
             <div class="md:card-group rounded-md ${animItem}">
 
@@ -376,9 +376,9 @@ demo.htmlSource = `
         <div class="overlay-inner">
 
           <div class="card rounded-md shadow-overlay ${cardWhite()} ${animDesign}">
-            <div class="btn btn-close p-5 text-2xl" aria-label="Close">
+            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
 
             <div class="md:card-group rounded-md ${animItem}">
 

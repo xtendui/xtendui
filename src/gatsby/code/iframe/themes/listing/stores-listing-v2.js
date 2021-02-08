@@ -40,9 +40,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
@@ -91,9 +91,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
@@ -130,9 +130,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
@@ -181,9 +181,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
@@ -220,9 +220,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
@@ -271,9 +271,9 @@ demo.htmlSource = `
           </div>
 
           <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
-            <div class="btn btn-close text-xl" aria-label="Close">
+            <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
-            </div>
+            </button>
             <div class="card card-sm flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
