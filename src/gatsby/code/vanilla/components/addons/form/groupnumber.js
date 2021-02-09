@@ -43,10 +43,10 @@ demo.htmlSource = `
     <div class="list-inner">
       <input type="number" class="form-item rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${inputDefault()}" aria-label="Quantity" value="1" min="0" max="100">
       <div class="list-inner flex-col">
-        <button type="button" class="btn text-2xs py-1.5 px-2.5 py-1 rounded-tr-md border border-gray-500 ${btnDefault()}" data-xt-step="1">
+        <button type="button" class="btn text-2xs py-1 px-2.5 rounded-tr-md border border-gray-500 ${btnDefault()}" data-xt-step="1">
           +
         </button>
-        <button type="button" class="btn text-2xs py-1.5 px-2.5 py-1 rounded-br-md border border-t-0 border-gray-500 ${btnDefault()}" data-xt-step="-1">
+        <button type="button" class="btn text-2xs py-1 px-2.5 rounded-br-md border border-t-0 border-gray-500 ${btnDefault()}" data-xt-step="-1">
           -
         </button>
       </div>

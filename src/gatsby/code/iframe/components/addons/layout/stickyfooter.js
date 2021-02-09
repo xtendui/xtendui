@@ -23,7 +23,7 @@ demo.htmlSource = `
   </header>
 
   <main class="site-main">
-    <div class="card text-base p-8 text-sm p-6 ${cardDefault()}">
+    <div class="card text-sm p-6 ${cardDefault()}">
       <div class="h4">Main</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
