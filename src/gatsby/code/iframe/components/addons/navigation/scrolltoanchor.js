@@ -18,7 +18,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-sticky="{ sticky: 'fixed' }">
-  <div class="card card-sm ${cardPrimary()}">
+  <div class="card text-sm p-6 ${cardPrimary()}">
     <div class="list list-2">
       <a href="#anchor-0" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
         anchor 0
@@ -44,7 +44,7 @@ demo.htmlSource = `
         ${iconX()}
       </button>
 
-      <div class="card card-sm ${cardDefault()}" id="anchor-overlay-0">
+      <div class="card text-sm p-6 ${cardDefault()}" id="anchor-overlay-0">
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
@@ -64,7 +64,7 @@ demo.htmlSource = `
       <br/><br/><br/><br/><br/><br/><br/>
       <br/><br/><br/><br/><br/><br/><br/>
 
-      <div class="card card-sm ${cardDefault()}" id="anchor-overlay-1">
+      <div class="card text-sm p-6 ${cardDefault()}" id="anchor-overlay-1">
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
@@ -84,7 +84,7 @@ demo.htmlSource = `
       <br/><br/><br/><br/><br/><br/><br/>
       <br/><br/><br/><br/><br/><br/><br/>
 
-      <div class="card card-sm ${cardDefault()}" id="anchor-overlay-2">
+      <div class="card text-sm p-6 ${cardDefault()}" id="anchor-overlay-2">
         <div class="h4">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
         <div class="list list-2">
@@ -106,7 +106,7 @@ demo.htmlSource = `
 
 <div class="container">
 
-  <div class="card card-sm ${cardDefault()}" id="anchor-0">
+  <div class="card text-sm p-6 ${cardDefault()}" id="anchor-0">
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">
@@ -126,7 +126,7 @@ demo.htmlSource = `
   <br/><br/><br/><br/><br/><br/><br/>
   <br/><br/><br/><br/><br/><br/><br/>
 
-  <div class="card card-sm ${cardDefault()}" id="anchor-1">
+  <div class="card text-sm p-6 ${cardDefault()}" id="anchor-1">
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">
@@ -146,7 +146,7 @@ demo.htmlSource = `
   <br/><br/><br/><br/><br/><br/><br/>
   <br/><br/><br/><br/><br/><br/><br/>
 
-  <div class="card card-sm ${cardDefault()}" id="anchor-2">
+  <div class="card text-sm p-6 ${cardDefault()}" id="anchor-2">
     <div class="h4">Lorem ipsum dolor sit amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
     <div class="list list-2">

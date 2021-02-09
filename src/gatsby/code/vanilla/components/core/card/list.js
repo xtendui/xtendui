@@ -11,10 +11,10 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="card rounded-md ${cardDefault()}">
-  <div class="card-md">
-    <div class="list list-3 flex-nowrap items-baseline">
+  <div class="text-base p-8">
+    <div class="list list-6 flex-nowrap items-baseline">
       <div>
-        ${iconPackage({ classes: 'text-xl -my-1' })}
+        ${iconPackage({ classes: 'text-3xl' })}
       </div>
       <div>
         <div class="h4">Lorem ipsum</div>

@@ -58,7 +58,7 @@ demo.htmlSource = `
         <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </button>
-        <div class="card-md md:card-lg">
+        <div class="text-base p-8 md:text-lg md:p-10">
           <div class="h3">Overlay</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -72,7 +72,7 @@ demo.htmlSource = `
 </div>
 
 <div class="card rounded-md ${cardDefault()} mt-6">
-  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--overlay-events-log">
+  <div class="text-sm p-6 overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--overlay-events-log">
   </div>
 </div>
 `

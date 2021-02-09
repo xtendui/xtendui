@@ -18,11 +18,11 @@ demo.htmlSource = `
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-      <div class="card-md mt-auto rounded-b-md bg-gray-400">
+      <div class="text-base p-8 mt-auto rounded-b-md bg-gray-400">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>
@@ -35,11 +35,11 @@ demo.htmlSource = `
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
       </div>
-      <div class="card-md mt-auto rounded-b-md bg-gray-400">
+      <div class="text-base p-8 mt-auto rounded-b-md bg-gray-400">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
       </div>
     </div>

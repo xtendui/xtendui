@@ -1,3 +1,3 @@
 export default () => {
-  return `card-md text-center text-black bg-gray-200`
+  return `text-base p-8 text-center text-black bg-gray-200`
 }

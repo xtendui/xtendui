@@ -57,7 +57,7 @@ ${indentString(markupSlider(), 2)}
 </div>
 
 <div class="card rounded-md ${cardDefault()} mt-6">
-  <div class="card-sm overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--slider-events-log">
+  <div class="text-sm p-6 overflow-y-auto overflow-x-hidden overflow-sub max-h-56" id="demo--slider-events-log">
   </div>
 </div>
 `

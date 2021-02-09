@@ -68,19 +68,5 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip>
-
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-      custom
-    </button>
-
-    <div class="tooltip">
-      <div class="w-80 p-6 text-base rounded-md shadow-tooltip ${cardBlack()}">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue.
-      </div>
-    </div>
-
-  </div>
-
 </div>
 `

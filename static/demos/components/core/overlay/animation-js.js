@@ -24,7 +24,7 @@ Xt.mount.push({
       const tr = e.target
       const inner = tr.querySelector('.overlay-inner')
       gsap.set(inner, {
-        y: -15,
+        y: 15,
         opacity: 0,
       })
       gsap.to(inner, {

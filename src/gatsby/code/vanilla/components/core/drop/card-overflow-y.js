@@ -25,7 +25,7 @@ demo.htmlSource = `
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
         </div>
-        <div class="card-md">
+        <div class="text-base p-8">
           <div class="h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -49,7 +49,7 @@ demo.htmlSource = `
             <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
         </div>
-        <div class="card-md overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
+        <div class="text-base p-8 overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
           <div class="h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

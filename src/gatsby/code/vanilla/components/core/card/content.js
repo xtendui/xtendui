@@ -28,7 +28,7 @@ demo.htmlSource = `
           <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
 
   <div class="w-full">
     <div class="card rounded-md ${cardDefault()}">
-      <div class="card-md rounded-t-md bg-gray-500">
+      <div class="text-base p-8 rounded-t-md bg-gray-500">
         <div class="h4">Lorem ipsum</div>
       </div>
-      <div class="card-md">
+      <div class="text-base p-8">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-      <div class="card-sm pt-0">
+      <div class="text-sm p-6 pt-0">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>

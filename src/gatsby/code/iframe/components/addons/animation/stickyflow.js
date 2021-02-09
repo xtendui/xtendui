@@ -17,7 +17,7 @@ export const demo = {
 demo.htmlSource = `
 
 <header class="site-header">
-  <div class="card card-sm ${cardPrimary()}">
+  <div class="card text-sm p-6 ${cardPrimary()}">
     <div class="h4">Header</div>
   </div>
 </header>
@@ -107,7 +107,7 @@ demo.htmlSource = `
 </main>
 
 <footer class="site-footer">
-  <div class="card card-sm ${cardDefault()}">
+  <div class="card text-sm p-6 ${cardDefault()}">
     <div class="h4">Footer</div>
   </div>
 </footer>

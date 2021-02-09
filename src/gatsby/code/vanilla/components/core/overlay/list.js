@@ -28,8 +28,8 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card-md">
-              <div class="list list-3 flex-nowrap items-baseline">
+            <div class="text-base p-8">
+              <div class="list list-6 flex-nowrap items-baseline">
                 <div>
                   ${iconPackage({ classes: 'text-xl -my-1' })}
                 </div>

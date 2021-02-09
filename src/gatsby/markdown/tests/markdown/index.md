@@ -48,18 +48,6 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
-Use **component classes** to create a **style disabled**.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.badge-sm`       | `badge-sm`                | Size small            |
-| Component                  | `.badge-md`       | `badge-md`                | Size medium            |
-| Component                  | `.badge-lg`       | `badge-lg`                | Size large            |
-
-</div>
-
 Use **component utility** `.card-group` to stack card content **horizontally**.
 
 <div class="table-overflow">

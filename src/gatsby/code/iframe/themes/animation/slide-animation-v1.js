@@ -104,7 +104,7 @@ demo.htmlSource = `
         <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
           ${iconX()}
         </button>
-        <div class="card-md rounded-md ${animItem}">
+        <div class="text-base p-8 rounded-md ${animItem}">
           <div class="h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
@@ -233,11 +233,11 @@ demo.htmlSource = `
                 <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
-            <div class="card-md ${animItemLeft}">
+            <div class="text-base p-8 ${animItemLeft}">
               <div class="h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="card-sm bg-gray-500 mt-auto ${animItemLeft}">
+            <div class="text-sm p-6 bg-gray-500 mt-auto ${animItemLeft}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>
@@ -265,7 +265,7 @@ demo.htmlSource = `
 
             <div class="md:card-group rounded-md ${animItem}">
 
-              <div class="card-md md:card-lg md:w-7/12">
+              <div class="text-base p-8 md:text-lg md:p-10 md:w-7/12">
                 <div class="h4">
                   Contact us
                 </div>
@@ -345,7 +345,7 @@ demo.htmlSource = `
                     <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
-                <div class="card-md bg-gray-300 flex-full text-sm">
+                <div class="text-base p-8 bg-gray-300 flex-full text-sm">
                   <p class="h5">
                     Didn't find what you was looking for?
                   </p>
@@ -390,7 +390,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="card-md md:card-lg md:w-7/12">
+              <div class="text-base p-8 md:text-lg md:p-10 md:w-7/12">
                 <div class="h4">
                   Subscribe to our newsletter
                 </div>
@@ -465,7 +465,7 @@ demo.htmlSource = `
 
             </div>
 
-            <div class="card-sm rounded-b-md bg-gray-300 text-xs ${animItem}">
+            <div class="text-sm p-6 rounded-b-md bg-gray-300 text-xs ${animItem}">
               <p>
                 Receive <strong>free discount</strong> periodically on all our products.
               </p>
@@ -489,7 +489,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <a role="button" class="card rounded-md ${cardDefaultInteractive()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -498,7 +498,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <a role="button" class="card rounded-md ${cardPrimaryInteractive()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

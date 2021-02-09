@@ -26,7 +26,7 @@ demo.htmlSource = `
               ${iconX()}
             </button>
             <div class="max-w-3xl">
-              <div class="card-md">
+              <div class="text-base p-8">
                 <div class="h4">Lorem ipsum</div>
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -79,15 +79,15 @@ demo.htmlSource = `
             </button>
             <div class="max-w-3xl">
               <div class="md:card-group">
-                <div class="card-md md:w-7/12">
+                <div class="text-base p-8 md:w-7/12">
                   <div class="h4">Lorem ipsum</div>
                   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
                 </div>
                 <div class="md:w-5/12">
-                  <div class="card-sm bg-gray-500">
+                  <div class="text-sm p-6 bg-gray-500">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
-                  <div class="card-md">
+                  <div class="text-base p-8">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
                   </div>
                 </div>

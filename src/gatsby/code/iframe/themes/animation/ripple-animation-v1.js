@@ -52,7 +52,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <a role="button" class="card rounded-md ${cardDefaultInteractive()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -61,7 +61,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <a role="button" class="card rounded-md ${cardPrimaryInteractive()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardDefault()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
@@ -82,7 +82,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="card rounded-md ${cardPrimary()}">
-      <div class="card-md">
+      <div class="text-base p-8">
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">

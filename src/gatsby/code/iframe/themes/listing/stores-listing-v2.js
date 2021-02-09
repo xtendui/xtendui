@@ -28,7 +28,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>
@@ -79,7 +79,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -94,7 +94,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>
@@ -118,7 +118,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -133,7 +133,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>
@@ -169,7 +169,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -184,7 +184,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>
@@ -208,7 +208,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -223,7 +223,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>
@@ -259,7 +259,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+              <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -274,7 +274,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="card card-sm flex-initial py-0 border-l border-gray-300">
+            <div class="card text-sm p-6 flex-initial py-0 border-l border-gray-300">
               <div class="h5">
                 Contacts
               </div>

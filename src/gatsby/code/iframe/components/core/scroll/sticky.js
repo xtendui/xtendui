@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card card-sm ${cardDefault()} demo--sticky-hide-content">
+<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
   <div class="h4">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -23,12 +23,12 @@ demo.htmlSource = `
 </div>
 
 <div class="demo--sticky-top scroll-sticky">
-  <div class="card card-sm ${cardPrimary()}">
+  <div class="card text-sm p-6 ${cardPrimary()}">
     <div class="h4">Top</div>
   </div>
 </div>
 
-<div class="card card-sm ${cardDefault()} demo--sticky-hide-content">
+<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
   <div class="h4">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -39,7 +39,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="card card-sm ${cardDefault()} demo--sticky-hide-content">
+<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
   <div class="h4">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
@@ -48,12 +48,12 @@ demo.htmlSource = `
 </div>
 
 <div class="demo--sticky-bottom scroll-sticky">
-  <div class="card card-sm ${cardPrimary()}">
+  <div class="card text-sm p-6 ${cardPrimary()}">
     <div class="h4">Bottom</div>
   </div>
 </div>
 
-<div class="card card-sm ${cardDefault()} demo--sticky-hide-content">
+<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
   <div class="h4">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

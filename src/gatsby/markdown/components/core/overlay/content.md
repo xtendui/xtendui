@@ -19,19 +19,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
-Use **component classes** to assign size. You can add **additional size** for example `.card-xs` or `.card-xl`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.card-sm`                     | `card-sm`                | `responsive`                | Size small            |
-| Utility                  | `.card-md`                     | `card-md`                | `responsive`                | Size medium            |
-| Utility                  | `.card-lg`                     | `card-lg`                | `responsive`                | Size large            |
-
-</div>
-
-Otherwise use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/size">

@@ -21,8 +21,8 @@ demo.htmlSource = `
 
     <div class="drop">
       <div class="card w-96 rounded-md shadow-drop ${cardWhite()}">
-        <div class="card-md">
-          <div class="list list-3 flex-nowrap items-baseline">
+        <div class="text-base p-8">
+          <div class="list list-6 flex-nowrap items-baseline">
             <div>
               ${iconPackage({ classes: 'text-xl -my-1' })}
             </div>

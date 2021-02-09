@@ -29,7 +29,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -48,7 +48,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
@@ -85,7 +85,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -104,7 +104,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
@@ -129,7 +129,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -148,7 +148,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
@@ -185,7 +185,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -204,7 +204,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
@@ -229,7 +229,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -248,7 +248,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
@@ -285,7 +285,7 @@ demo.htmlSource = `
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="card-sm h-full flex flex-col">
+              <div class="text-sm p-6 h-full flex flex-col">
                 <div class="h5">
                   Lorem Ipsum
                 </div>
@@ -304,7 +304,7 @@ demo.htmlSource = `
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="card-sm">
+              <div class="text-sm p-6">
                 <div class="h5">
                   Contacts
                 </div>
