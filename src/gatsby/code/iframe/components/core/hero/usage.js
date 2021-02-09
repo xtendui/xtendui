@@ -20,10 +20,13 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="container absolute inset-0 flex items-end justify-center text-center">
-    <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
-      <div class="h1 h1-display">
+    <a href="#" class="group block w-full py-8 md:py-12 text-white links-inverse">
+      <h2 class="h1 h1-display max-w-2xl mx-auto">
         Lorem ipsum
-      </div>
+      </h2>
+      <h3 class="p max-w-lg mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
+      </h3>
     </a>
   </div>
 </div>
@@ -35,11 +38,11 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="container absolute inset-0 flex items-end justify-center text-center">
-    <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
-      <div class="h1">
+    <a href="#" class="group block w-full py-8 md:py-12 text-white links-inverse">
+      <h2 class="h1 max-w-2xl mx-auto">
         Lorem ipsum dolor sit amet
-      </div>
-      <div class="list list-2 justify-center">
+      </h2>
+      <div class="list list-2 justify-center max-w-2xl mx-auto">
         <div class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
             Lorem ipsum
         </div>

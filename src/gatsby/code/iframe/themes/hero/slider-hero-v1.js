@@ -30,10 +30,10 @@ demo.htmlSource = `
               <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
             </div>
             <div class="hero-content container absolute inset-0 flex items-end justify-center text-center">
-              <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
-                <div class="h1 h1-display">
+              <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto text-white links-inverse">
+                <h2 class="h1 h1-display">
                   Lorem ipsum
-                </div>
+                </h2>
               </a>
             </div>
           </div>
@@ -50,10 +50,13 @@ demo.htmlSource = `
               <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
             </div>
             <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
-              <a href="#" class="group block w-full max-w-xl container-y text-white links-inverse">
-                <div class="h1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </div>
+              <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white links-inverse">
+                <h2 class="h1">
+                  Lorem ipsum dolor sit amet
+                </h2>
+                <h3 class="p max-w-lg mx-auto md:ml-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
+                </h3>
               </a>
             </div>
           </div>
@@ -70,11 +73,13 @@ demo.htmlSource = `
               <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-l from-transparent to-black opacity-50"></div>
             </div>
             <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
-              <div class="block w-full max-w-xl container-y text-white links-inverse">
-                <div class="h1">
+              <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white links-inverse">
+                <h2 class="h1">
                   Lorem ipsum dolor sit amet
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                </h2>
+                <h3 class="p max-w-lg mx-auto md:ml-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
+                </h3>
                 <div class="list list-2 justify-center md:justify-start">
                   <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                     Lorem ipsum
@@ -99,11 +104,13 @@ demo.htmlSource = `
               <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-black opacity-50"></div>
             </div>
             <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
-              <div class="block w-full max-w-xl container-y text-white links-inverse">
-                <div class="h1">
+              <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:mr-0 text-white links-inverse">
+                <h2 class="h1">
                   Lorem ipsum dolor sit amet
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                </h2>
+                <h3 class="p max-w-lg mx-auto md:mr-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
+                </h3>
                 <div class="list list-2 justify-center md:justify-end">
                   <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                     Lorem ipsum
