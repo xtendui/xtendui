@@ -77,13 +77,13 @@ demo.htmlSource = `
     <div class="drop group" data-xt-duration="700">
       <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
         <nav class="list flex-col rounded-md ${animItem}">
-          <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Amet
           </button>
         </nav>

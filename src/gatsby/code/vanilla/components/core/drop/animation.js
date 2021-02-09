@@ -23,13 +23,13 @@ demo.htmlSource = `
     <div class="drop transform transition opacity-0 -translate-x-2 active:opacity-100 active:translate-x-0">
       <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
-          <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Amet
           </button>
         </nav>

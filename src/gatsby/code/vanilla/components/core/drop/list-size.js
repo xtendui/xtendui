@@ -22,13 +22,13 @@ demo.htmlSource = `
     <div class="drop">
       <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
-          <a href="#" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-2xs py-1.5 px-2.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
             Amet
           </button>
         </nav>
@@ -46,13 +46,13 @@ demo.htmlSource = `
     <div class="drop">
       <div class="w-80 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
-          <a href="#" class="btn text-xs py-2 px-3.5 ${btnDefaultDrop()}">
+          <a href="#" class="btn text-xs py-2 px-6 ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-xs py-2 px-6 ${btnDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-xs py-2 px-6 ${btnDefaultDrop()}">
             Amet
           </button>
         </nav>
@@ -70,13 +70,13 @@ demo.htmlSource = `
     <div class="drop">
       <div class="w-96 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="list flex-col">
-          <a href="#" class="btn text-sm py-2.5 px-4 ${btnDefaultDrop()}">
+          <a href="#" class="btn text-sm py-2.5 px-6 ${btnDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-sm py-2.5 px-4 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-sm py-2.5 px-6 ${btnDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-sm py-2.5 px-4 ${btnDefaultDrop()}">
+          <button type="button" class="btn text-sm py-2.5 px-6 ${btnDefaultDrop()}">
             Amet
           </button>
         </nav>
