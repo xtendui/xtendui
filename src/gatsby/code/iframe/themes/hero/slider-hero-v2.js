@@ -30,7 +30,7 @@ demo.htmlSource = `
             </div>
             <div class="hero-content container absolute inset-0 flex items-end justify-center text-center">
               <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto text-white links-inverse">
-                <h2 class="h1 h1-display">
+                <h2 class="h1 font-black text-4xl md:text-5xl lg:text-6xl">
                   Lorem ipsum
                 </h2>
               </a>

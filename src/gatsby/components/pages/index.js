@@ -58,7 +58,7 @@ export default class Page extends React.Component {
               <main className="gatsby_home-main">
                 <div className="gatsby_home-main_head">
                   <div className="container">
-                    <h1 className="h1-display gatsby_home-main_scroll">
+                    <h1 className="h1 font-black text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                       A new paradigm for Custom Frontend Development
                     </h1>
                     <h2 className="h4 font-normal gatsby_home-main_scroll">
@@ -124,12 +124,12 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_features">
                   <div className="container">
-                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Features</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Features</h3>
                     <div className="row">
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="h1-display">
+                            <h3 className="h1 font-black text-3xl lg:text-4xl flex items-center">
                               <img
                                 className="icon mr-4"
                                 src={'/logo-tailwind.svg'}
@@ -159,7 +159,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="h1-display">
+                            <h3 className="h1 font-black text-3xl lg:text-4xl flex items-centerl">
                               <img className="icon mr-4" src={'/logo-js.svg'} loading="eager" alt="Vanilla JS" />{' '}
                               Vanilla JS
                             </h3>
@@ -187,7 +187,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="h1-display">
+                            <h3 className="h1 font-black text-3xl lg:text-4xl flex items-center">
                               <img className="icon mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" /> Gsap
                             </h3>
                           </div>
@@ -209,7 +209,7 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_philosophies">
                   <div className="container">
-                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Philosophy</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Philosophy</h3>
                     <div className="row">
                       <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
@@ -252,7 +252,7 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_actions">
                   <div className="container">
-                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Start Now!</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Start Now!</h3>
                     <div className="gatsby_listing-items">
                       <div className="row row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
@@ -279,7 +279,7 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_supports">
                   <div className="container">
-                    <h3 className="h1-display mb-14 gatsby_home-main_scroll">Sponsors</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Sponsors</h3>
                     <div className="row">
                       <div className="gatsby_home-main_support_col gatsby_home-main_scroll">
                         <a

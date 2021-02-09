@@ -20,7 +20,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Button
 </div>
 
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Card
 </div>
 

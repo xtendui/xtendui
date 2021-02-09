@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--slider-automaticscroll">
 
-  <div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+  <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
     Constant speed
   </div>
 
@@ -72,7 +72,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+  <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
     Faster or slower depending on horizontal space
   </div>
 
@@ -134,7 +134,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+  <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
     Images
   </div>
 

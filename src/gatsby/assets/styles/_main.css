@@ -126,7 +126,7 @@ body {
 
 .gatsby_listing-items {
   @apply w-full text-left;
-  .gatsby_listing .h-block + & {
+  .gatsby_listing .h6 + & {
     @apply my-5;
     @screen sm {
       @apply my-10;

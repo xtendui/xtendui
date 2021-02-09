@@ -12,113 +12,67 @@ module.exports = {
       // style
       marginTop: theme('spacing.7'),
       marginBottom: theme('spacing.5'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-3xl md:text-4xl lg:text-5xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(35),
-      lineHeight: 1.1,
+      lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(45),
-      },
     },
     '.h2': {
       // style
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.4'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-2xl md:text-3xl lg:text-4xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(25),
-      lineHeight: 1.2,
+      lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(35),
-      },
     },
     '.h3': {
       // style
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-xl md:text-2xl lg:text-3xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(20),
-      lineHeight: 1.2,
+      lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(30),
-      },
     },
     '.h4': {
       // style
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-xl lg:text-2xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(19),
-      lineHeight: 1.4,
+      lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(24),
-      },
     },
     '.h5': {
       // style
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(15),
-      lineHeight: 1.4,
+      lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
-      '@screen md': {
-        fontSize: rem(18),
-      },
     },
     '.h6': {
       // style
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc': {},
+      '@apply mt-fc mb-lc text-lg': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
-      fontSize: '14px',
-      lineHeight: 1.4,
-      letterSpacing: theme('letterSpacing.wide'),
-      textTransform: 'uppercase',
-    },
-    '.h1-display': {
-      // style
-      fontWeight: theme('fontWeight.black'),
-      lineHeight: 1,
-      fontSize: rem(35),
-      '@screen sm': {
-        fontSize: rem(50),
-      },
-      '@screen md': {
-        fontSize: rem(55),
-      },
-      '@screen lg': {
-        fontSize: rem(60),
-      },
-    },
-    '.h-block': {
-      // style
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
-      paddingTop: theme('spacing.3'),
-      paddingBottom: theme('spacing.3'),
-      paddingLeft: theme('spacing.6'),
-      paddingRight: theme('spacing.6'),
+      lineHeight: theme('lineHeight.tight'),
+      letterSpacing: theme('letterSpacing.tight'),
+      textTransform: 'none',
     },
     '.p': {
       // setup
@@ -169,35 +123,33 @@ module.exports = {
       // style
       '@apply text-base xl:text-lg': '',
     },
-    h1: {
+    'h1:not([class])': {
       // setup
       '@apply h1': '',
     },
-    h2: {
+    'h2:not([class])': {
       // setup
       '@apply h2': '',
     },
-    h3: {
+    'h3:not([class])': {
       // setup
       '@apply h3': '',
     },
-    h4: {
+    'h4:not([class])': {
       // setup
       '@apply h4': '',
     },
-    h5: {
+    'h5:not([class])': {
       // setup
       '@apply h5': '',
     },
-    h6: {
+    'h6:not([class])': {
       // setup
       '@apply h6': '',
     },
-    p: {
+    'p:not([class])': {
       // setup
       '@apply p': '',
-      // @FIX NESTED APPLY
-      '@apply mb-lc': {},
     },
     strong: {
       // styles

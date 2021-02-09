@@ -135,11 +135,6 @@
 
 .gatsby_home-main_feature_left {
   @apply w-full md:w-6/12 lg:w-5/12;
-  .h1-display {
-    display: flex;
-    align-items: center;
-    font-size: 2.6rem;
-  }
   .icon {
     width: 1em;
     height: 1em;

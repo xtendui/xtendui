@@ -31,22 +31,23 @@ See [link variant](/components/core/link#variant) to style **links**.
   </demovanilla>
 </demo>
 
-## Header
+## Headers
 
-You can use headers **tags or classes**, classes takes precedence with css specificity.
+You can use headers **classes or tags** with customizable styles.
+
+[[noteDefault]]
+| Headers `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <div class="table-overflow">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.h1-display`       | `h1-display`                | `responsive`                | Header h1 display            |
 | Utility                  | `h1` or `.h1`       | `h1`                | `responsive`                | Header h1            |
 | Utility                  | `h2` or `.h2`       | `h2`                | `responsive`                | Header h2            |
 | Utility                  | `h3` or `.h3`       | `h3`                | `responsive`                | Header h3            |
 | Utility                  | `h4` or `.h4`       | `h4`                | `responsive`                | Header h4            |
 | Utility                  | `h5` or `.h5`       | `h5`                | `responsive`                | Header h5            |
 | Utility                  | `h6` or `.h6`       | `h6`                | `responsive`                | Header h6            |
-| Utility                  | `.h-block`       | `h-block`                | `responsive`                | Header special block            |
 
 </div>
 
@@ -55,11 +56,19 @@ You can use headers **tags or classes**, classes takes precedence with css speci
   </demovanilla>
 </demo>
 
-You can add **additional headers** for example `.h7` or `.h-line`.
+Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height), [letter-spacing](https://tailwindcss.com/docs/letter-spacing)).
+
+<demo>
+  <demovanilla src="vanilla/components/core/typography/headers-custom">
+  </demovanilla>
+</demo>
 
 ## Paragraph
 
-You can use paragraph **tags or classes**, classes takes precedence with css specificity.
+You can use paragraph **classes or tags** with customizable styles.
+
+[[noteDefault]]
+| Paragrap `p` is automatically styled when it **donesn't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <div class="table-overflow">
 

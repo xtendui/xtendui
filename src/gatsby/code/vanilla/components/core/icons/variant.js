@@ -9,13 +9,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Default
 </div>
 
 ${iconSearch()}
 
-<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Accent
 </div>
 
@@ -39,7 +39,7 @@ ${iconSearch({ classes: 'text-accent-800' })}
 
 ${iconSearch({ classes: 'text-accent-900' })}
 
-<div class="h5 h-block rounded-md text-black bg-gray-200 text-center">
+<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Black opacity
 </div>
 
