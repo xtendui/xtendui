@@ -6,26 +6,6 @@ title: "Loader"
 description: "Plug and play visual loaders, can easily integrate with javascript."
 ---
 
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/loader.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/loader.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    xtendui: {
-      loader: {
-        component: theme => ({
-          // modify components
-        }),
-      },
-    },
-  },
-}
-```
-
-To **see the default values** see the source code of `node_modules/xtendui/tailwind.components.js`.
-
 ## Usage
 
 Use this code to create a **loader spinner**.

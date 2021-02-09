@@ -18,18 +18,18 @@ demo.htmlSource = `
       <div class="h5">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
-    <div class="loader bg-white bg-opacity-75">
-      <div class="spinner spinner-animated text-accent-500">
-        ${spinner({})}
+    <div class="loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+      <div class="spinner absolute inset-0 m-auto w-6 h-6 text-accent-500">
+        ${spinner({ classes: 'animate-spinner' })}
       </div>
     </div>
   </div>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Lorem ipsum
-    <span class="loader bg-white bg-opacity-75">
-      <span class="spinner spinner-animated text-accent-500">
-          ${spinner({})}
+    <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+      <span class="spinner absolute inset-0 m-auto w-6 h-6 text-accent-500">
+          ${spinner({ classes: 'animate-spinner' })}
       </span>
     </span>
   </button>

@@ -12,7 +12,6 @@ module.exports = {
   icons: require('./src/core/icons.css.js'),
   link: require('./src/core/link.css.js'),
   list: require('./src/core/list.css.js'),
-  loader: require('./src/core/loader.css.js'),
   media: require('./src/core/media.css.js'),
   overlay: require('./src/core/overlay.css.js'),
   row: require('./src/core/row.css.js'),

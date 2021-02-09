@@ -17,20 +17,20 @@ demo.htmlSource = `
       <div class="h5">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
-    <span class="loader loader-x loader-x-animated loader-size-bottom">
-      <span class="filler text-accent-500">
-        <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+    <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+      <span class="filler absolute inset-0 m-auto text-accent-500 h-1 top-auto">
+        <span class="absolute bg-current h-full bottom-0 animate-filler-x"></span>
+        <span class="absolute bg-current opacity-25 w-full h-full bottom-0"></span>
       </span>
     </span>
   </div>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Lorem ipsum
-    <span class="loader loader-x loader-x-animated loader-size-bottom">
-      <span class="filler text-accent-500">
-        <span class="bg-current"></span>
-        <span class="bg-current opacity-25"></span>
+    <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+      <span class="filler absolute inset-0 m-auto text-accent-500 h-1 top-auto">
+        <span class="absolute bg-current h-full bottom-0 animate-filler-x"></span>
+        <span class="absolute bg-current opacity-25 w-full h-full bottom-0"></span>
       </span>
     </span>
   </button>

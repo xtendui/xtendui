@@ -44,6 +44,9 @@ module.exports = {
       inset: {
         100: '100%',
       },
+      borderRadius: {
+        inherit: 'inherit',
+      },
       boxShadow: {
         ...require('./src/core/drop.css.js').boxShadow,
         ...require('./src/core/overlay.css.js').boxShadow,

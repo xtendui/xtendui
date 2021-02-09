@@ -2,12 +2,12 @@ module.exports = {
   component: {
     '.mousefollow': {
       pointerEvents: 'none',
-      overflow: 'visible',
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      right: 'auto',
-      bottom: 'auto',
+      position: 'fixed !important',
+      top: '0 !important',
+      left: '0 !important',
+      right: 'auto !important',
+      bottom: 'auto !important',
+      overflow: 'visible !important',
     },
   },
 }

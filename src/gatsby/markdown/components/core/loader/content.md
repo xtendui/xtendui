@@ -31,15 +31,7 @@ Use `.spinner-animated` to assing spinner animation.
 
 #### Direction
 
-Use **component classes** to assign direction. For `<direction>` values use `x` or `y`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
-
-</div>
+Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height)).
 
 Use `.loader-<direction>-animated` to assing filler animation. For `<direction>` values use `x` or `y`.
 
@@ -64,15 +56,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 #### Size
 
-For `<size>` values use `x`, `top` or `bottom`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-x.loader-size-<size>`                     | `loader-x loader-size-<size>`                | Loader size for filler direction `x`             |
-
-</div>
+Use **tailwind classes** to assign position (e.g. [top-right-bottom-left](https://tailwindcss.com/docs/top-right-bottom-left)).
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/filler-size-x">
@@ -82,16 +66,6 @@ For `<size>` values use `x`, `top` or `bottom`.
   <demovanilla src="vanilla/components/core/loader/filler-size-bottom">
   </demovanilla>
 </demo>
-
-For `<size>` values use `y`, `left` or `right`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-y.loader-size-<size>`                     | `loader-y loader-size-<size>`                | Loader size for filler direction `y`             |
-
-</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/loader/filler-size-y">

@@ -203,9 +203,9 @@ demo.htmlSource = `
             There are no more products
           </span>
 
-          <span class="loader infinitescroll-spinner">
-            <span class="spinner spinner-animated text-white">
-              ${spinner({})}
+          <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+            <span class="spinner absolute inset-0 m-auto w-6 h-6 text-white">
+              ${spinner({ classes: 'animate-spinner' })}
             </span>
           </span>
 
