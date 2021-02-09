@@ -9,7 +9,7 @@
       @apply duration-none transform-none !important;
       cursor: auto !important;
     }
-    .slider-pagination {
+    .slider-ui {
       display: none !important;
     }
   }

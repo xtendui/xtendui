@@ -20,6 +20,8 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing. I
 
 Use the class `.xt-overflow-auto` to **style horizontal alignment** when not overflowing.
 
+If you want something to automatically hide use the class `.slider-ui`.
+
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
   </demovanilla>
@@ -35,6 +37,8 @@ You can disable the **automatic overflow auto** behaviour with `overflowAuto: fa
 ## Expand
 
 To **disable and expand** a slider use `.slider-expand` and [match media](/components/core/slider/api#match-media) (use narrow screen to see it in action).
+
+If you want something to automatically hide use the class `.slider-ui`.
 
 <div class="table-overflow">
 

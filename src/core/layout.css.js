@@ -106,7 +106,6 @@ module.exports = {
       pointerEvents: 'none',
       // styles
       '&:not(.active)': {
-        // when not .active
         opacity: '.75',
       },
     },

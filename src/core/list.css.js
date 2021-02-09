@@ -2,7 +2,6 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     space: {
-      // styles
       px: '1px',
       0: '0px',
       0.5: '0.125rem',

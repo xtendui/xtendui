@@ -47,7 +47,7 @@ Inside it you can use this strings that gets populated with variables:
 
 </div>	
 
-[[notePrimary]]	
+[[notePrimary]]
 | `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.	
 
 <demo>	
@@ -168,6 +168,8 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 ## Disable
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-slider-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
+
+If you want something to automatically hide use the class `.slider-ui`.
 
 <div class="table-overflow">
 

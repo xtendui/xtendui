@@ -1,10 +1,3 @@
-const round = num =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, '$1')
-    .replace(/\.0$/, '')
-const rem = px => `${round(px / 16)}rem`
-
 module.exports = {
   boxShadow: {
     tooltip: '0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 5px 0px rgba(0, 0, 0, 0.05)',

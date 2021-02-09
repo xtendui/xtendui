@@ -1,10 +1,3 @@
-const round = num =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, '$1')
-    .replace(/\.0$/, '')
-const rem = px => `${round(px / 16)}rem`
-
 module.exports = {
   component: theme => ({
     '.slider': {
@@ -73,32 +66,6 @@ module.exports = {
       transitionDuration: theme('transitionDuration.700'),
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-    '.slider-pagination, .slider-navigation': {
-      // styles
-      paddingTop: theme('spacing.4'),
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    '[data-xt-pag].btn': {
-      // styles
-      minHeight: '1.3rem',
-      borderRadius: '2rem',
-      padding: `${rem(7)} ${rem(11)}`,
-      fontSize: rem(10),
-      '&.active': {
-        padding: `${rem(7)} ${rem(20)}`,
-      },
-      // animation
-      transitionProperty: 'all',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
-    },
-    '[data-xt-nav].btn': {
-      minHeight: '1.3rem',
-      borderRadius: '2rem',
-      padding: `${rem(7)} ${rem(11)}`,
-      fontSize: rem(10),
-    },
     '.slider-expand': {
       // setup
       '.slides': {
@@ -112,12 +79,12 @@ module.exports = {
       '.slide:not(.in)': {
         opacity: '1 !important',
       },
-      '.xt-wrap, .slider-pagination, [data-xt-nav], .loader, .filler, .spinner': {
+      '.xt-wrap, .slider-ui, .loader, .filler, .spinner': {
         display: 'none !important',
       },
     },
     '.xt-overflow-auto': {
-      '.slider-pagination, [data-xt-nav], .xt-wrap': {
+      '.slider-ui, .xt-wrap': {
         display: 'none !important',
       },
       // @FIX disable slider if not overflowing
@@ -128,7 +95,7 @@ module.exports = {
     '.xt-slider-disabled': {
       '&.slider': {
         // setup
-        '.slider-pagination, [data-xt-nav]': {
+        '.slider-ui': {
           display: 'none !important',
         },
         '.xt-wrap': {

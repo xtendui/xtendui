@@ -382,8 +382,7 @@ class Slider extends Xt.Toggle {
     self.pags = self.pags ? self.pags : []
     for (const [z, pag] of pags.entries()) {
       // vars
-      const cloned = pag.querySelector('[data-xt-pag]')
-      cloned.classList.add('xt-ignore')
+      const cloned = pag.querySelector('[data-xt-pag].xt-ignore')
       const container = cloned.parentNode
       const arr = self.group
       // populate

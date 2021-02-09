@@ -140,7 +140,7 @@ demo.htmlSource = `
     </div>
   </button>
 
-  <nav class="slider-pagination w-full list list-2 hidden">
+  <nav class="slider-pagination slider-ui hidden">
     <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
   </nav>

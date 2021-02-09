@@ -63,7 +63,6 @@ module.exports = {
       },
     },
     '.xt-grab': {
-      // styles
       cursor: 'grab',
       'a, img': {
         // prevent browser drag
