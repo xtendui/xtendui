@@ -24,7 +24,7 @@ demo.htmlSource = `
 
 <p>Example <abbr title="Lorem Ipsum">abbreviation text</abbr>.</p>
 
-<blockquote class="pt-4 text-center">
+<blockquote class="mb-4 mb-lc pt-4 text-center">
   <p class="h4">"This line rendered as blockquote title."</p>
   <p>This line rendered as blockquote text.</p>
   <footer class="text-sm text-gray-700">—This line rendered as, <cite>blockquote footer</cite></footer>

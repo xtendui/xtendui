@@ -156,11 +156,6 @@ module.exports = {
       // styles
       fontWeight: theme('fontWeight.semibold'),
     },
-    blockquote: {
-      // styles
-      marginBottom: theme('spacing.3'),
-      '@apply mb-lc': {},
-    },
     code: {
       // styles
       fontSize: '0.95em',
