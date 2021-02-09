@@ -69,7 +69,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="tooltip" title="Target ${indexTr}">
-            <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+            <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
               Lorem ipsum dolor sit amet
             </div>
           </div>

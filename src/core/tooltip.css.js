@@ -11,21 +11,6 @@ module.exports = {
   },
   variants: ['responsive'],
   utility: {
-    '.tooltip-sm': {
-      // styles
-      '@apply text-xs': '',
-      padding: `${rem(4)} ${rem(8)}`,
-    },
-    '.tooltip-md': {
-      // styles
-      '@apply text-xs': '',
-      padding: `${rem(7)} ${rem(11)}`,
-    },
-    '.tooltip-lg': {
-      // styles
-      '@apply text-sm': '',
-      padding: `${rem(10)} ${rem(14)}`,
-    },
     '.tooltip-static': {
       // setup
       width: '100%',

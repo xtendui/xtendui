@@ -135,7 +135,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip group" data-xt-duration="700">
-      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()} ${animDesign}">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()} ${animDesign}">
         <div class="${animItem}">
           Lorem ipsum dolor sit amet
         </div>

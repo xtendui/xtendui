@@ -17,7 +17,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" data-xt-duration="300">
-    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
@@ -27,7 +27,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" data-xt-duration="300">
-    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>
   </div>

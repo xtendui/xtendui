@@ -19,21 +19,9 @@ This example has **icons** with `inline-block`, complex markup and `<br/>` to ma
 
 ## Size
 
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+
 Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
-
-Use **component classes** to assign size. You can add **additional size** for example `.tooltip-xs` or `.tooltip-xl`.
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.tooltip-sm`                     | `tooltip-sm`                | `responsive`                | Size small            |
-| Utility                  | `.tooltip-md`                     | `tooltip-md`                | `responsive`                | Size medium            |
-| Utility                  | `.tooltip-lg`                     | `tooltip-lg`                | `responsive`                | Size large            |
-
-</div>
-
-Otherwise use **tailwind classes** to assign custom size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/size">

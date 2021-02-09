@@ -20,7 +20,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>
@@ -32,7 +32,7 @@ demo.htmlSource = `
     <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="tooltip">
-      <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

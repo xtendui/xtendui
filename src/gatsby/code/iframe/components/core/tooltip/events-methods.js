@@ -52,7 +52,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" title="Target 0">
-    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
@@ -62,7 +62,7 @@ demo.htmlSource = `
   </button>
 
   <div class="tooltip" title="Target 1">
-    <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>

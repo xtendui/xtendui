@@ -12,12 +12,12 @@ demo.htmlSource = `
 Lorem ipsum <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique-1, #tooltip--unique-2' }">dolor</a> sit amet
 
 <div class="tooltip" id="tooltip--unique-1">
-  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+  <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
     Lorem ipsum dolor sit amet
   </div>
 </div>
 <div class="tooltip" id="tooltip--unique-2" data-xt-position="right-end">
-  <div class="tooltip-md rounded shadow-tooltip ${cardBlack()}">
+  <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
     Consectetur adipiscing elit
   </div>
 </div>

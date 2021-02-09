@@ -82,6 +82,7 @@ module.exports = {
       letterSpacing: 'inherit',
       textTransform: 'inherit',
       // style
+      marginTop: theme('spacing.0'),
       marginBottom: theme('spacing.3'),
       '@apply text-reset mb-lc': {},
     },
