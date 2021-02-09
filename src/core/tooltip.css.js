@@ -5,7 +5,6 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.tooltip-static': {
-      // setup
       width: '100%',
       padding: 0,
       top: '100% !important',
@@ -15,7 +14,6 @@ module.exports = {
   },
   component: theme => ({
     '.tooltip': {
-      // setup
       position: 'absolute',
       margin: '0 !important',
       '&:not(.in):not(.out)': {
@@ -43,7 +41,6 @@ module.exports = {
       },
     },
     '.tooltip-arrow': {
-      // setup
       '@apply transform': '',
       '@apply rotate-45 !important': '',
       position: 'absolute',
@@ -66,7 +63,6 @@ module.exports = {
       },
     },
     '.xt-tooltip-disabled': {
-      // setup
       '&.tooltip': {
         display: 'none !important',
       },

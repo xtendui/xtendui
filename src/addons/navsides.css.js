@@ -1,7 +1,6 @@
 module.exports = {
   component: theme => ({
     '.navsides': {
-      // setup
       cursor: 'none',
       position: 'absolute',
       zIndex: `calc(${theme('zIndex.top')} - 1)`,
@@ -26,7 +25,6 @@ module.exports = {
       },
     },
     '.navsides-btn': {
-      // setup
       padding: '0',
       lineHeight: '0',
       // animation

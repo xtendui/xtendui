@@ -20,7 +20,6 @@ module.exports = {
   }),
   component: theme => ({
     'a:not([class]), a[class=""], .link': {
-      // setup
       '@apply text-reset !important': {},
       wordWrap: 'break-word',
       overflowWrap: 'break-word',

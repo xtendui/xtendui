@@ -1,7 +1,6 @@
 module.exports = {
   component: theme => ({
     '.btn': {
-      // setup
       cursor: 'pointer',
       'div&': {
         cursor: 'inherit',
@@ -15,7 +14,6 @@ module.exports = {
       textAlign: 'left',
     },
     '.btn-close': {
-      // setup
       position: 'absolute',
       zIndex: `calc(${theme('zIndex.top')} - 1)`,
       top: '0',

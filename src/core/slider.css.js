@@ -1,12 +1,10 @@
 module.exports = {
   component: theme => ({
     '.slider': {
-      // setup
       position: 'relative',
       overflow: 'hidden',
     },
     '.slides': {
-      // setup
       position: 'relative',
       display: 'inline-block', // @FIX autoheight values
       verticalAlign: 'top', // @FIX inline-block margin below
@@ -17,11 +15,9 @@ module.exports = {
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.slide': {
-      // setup
       position: 'relative',
     },
     '.slider-absolute': {
-      // setup
       '.slide': {
         position: 'relative',
         display: 'none',
@@ -67,7 +63,6 @@ module.exports = {
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.slider-expand': {
-      // setup
       '.slides': {
         overflow: 'visible',
         height: 'auto !important',
@@ -94,8 +89,7 @@ module.exports = {
     },
     '.xt-slider-disabled': {
       '&.slider': {
-        // setup
-        '.slider-ui': {
+          '.slider-ui': {
           display: 'none !important',
         },
         '.xt-wrap': {

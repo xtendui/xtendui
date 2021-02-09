@@ -1,7 +1,6 @@
 module.exports = {
   component: {
     '.separator': {
-      // setup
       display: 'inline-block',
       position: 'relative',
       fontSize: '1em',

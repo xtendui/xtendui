@@ -8,18 +8,15 @@ const rem = px => `${round(px / 16)}rem`
 module.exports = {
   component: theme => ({
     'table, .table': {
-      // setup
       borderCollapse: 'collapse',
       borderSpacing: '0',
     },
     '.table-overflow': {
-      // setup
       '@apply overflow-sub': '',
       overflowX: 'scroll',
       overflowY: 'hidden',
     },
     'table, .table, .table-overflow': {
-      // setup
       width: '100%',
       // styles
       marginTop: theme('spacing.4'),

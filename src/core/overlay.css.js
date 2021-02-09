@@ -4,7 +4,6 @@ module.exports = {
   },
   component: theme => ({
     '.overlay': {
-      // setup
       '@apply overflow-main': '',
       position: 'fixed',
       zIndex: theme('zIndex.overlay'),
@@ -21,7 +20,6 @@ module.exports = {
       },
     },
     '.overlay-container': {
-      // setup
       display: 'flex',
       flexWrap: 'nowrap',
       flexDirection: 'column',
@@ -45,7 +43,6 @@ module.exports = {
       },
     },
     '.overlay-inner': {
-      // setup
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -55,7 +52,6 @@ module.exports = {
       width: '100%',
     },
     '.xt-overlay-disabled': {
-      // setup
       'a&, button&': {
         display: 'none',
       },

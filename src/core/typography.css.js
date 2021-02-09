@@ -75,7 +75,6 @@ module.exports = {
       textTransform: 'none',
     },
     '.p': {
-      // setup
       fontFamily: 'inherit',
       fontStyle: 'inherit',
       fontWeight: 'inherit',
@@ -87,7 +86,6 @@ module.exports = {
       '@apply text-reset mb-lc': {},
     },
     '.text-reset': {
-      // setup
       fontFamily: 'inherit',
       fontStyle: 'inherit',
       fontWeight: 'inherit',
@@ -97,7 +95,6 @@ module.exports = {
       textTransform: 'inherit',
     },
     '.ellipsis': {
-      // setup
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
@@ -107,7 +104,6 @@ module.exports = {
       },
     },
     '.lowercase-capitalize': {
-      // setup
       textTransform: 'lowercase',
       '&:first-letter': {
         textTransform: 'uppercase',
@@ -125,31 +121,24 @@ module.exports = {
       '@apply text-base xl:text-lg': '',
     },
     'h1:not([class])': {
-      // setup
       '@apply h1': '',
     },
     'h2:not([class])': {
-      // setup
       '@apply h2': '',
     },
     'h3:not([class])': {
-      // setup
       '@apply h3': '',
     },
     'h4:not([class])': {
-      // setup
       '@apply h4': '',
     },
     'h5:not([class])': {
-      // setup
       '@apply h5': '',
     },
     'h6:not([class])': {
-      // setup
       '@apply h6': '',
     },
     'p:not([class])': {
-      // setup
       '@apply p': '',
     },
     strong: {

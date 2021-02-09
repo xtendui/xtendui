@@ -27,7 +27,6 @@ module.exports = {
   },
   component: {
     '.row': {
-      // setup
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
@@ -41,7 +40,6 @@ module.exports = {
       },
     },
     '.row-stretch': {
-      // setup
       alignItems: 'stretch',
       '> *': {
         display: 'flex',
@@ -53,8 +51,7 @@ module.exports = {
     },
     '@media (hover: none)': {
       '.row-overflow': {
-        // setup
-        '@apply overflow-sub': '',
+          '@apply overflow-sub': '',
         overflowX: 'auto',
         overflowY: 'hidden',
         flexWrap: 'nowrap',

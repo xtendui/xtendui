@@ -2,7 +2,6 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.toggle': {
-      // setup
       '&:not(.in):not(.out)': {
         display: 'none',
       },
@@ -14,7 +13,6 @@ module.exports = {
       },
     },
     '.toggle-absolute': {
-      // setup
       '&:not(.in)': {
         position: 'absolute',
         top: '0',
@@ -23,13 +21,11 @@ module.exports = {
       },
     },
     '.toggle-inverse': {
-      // setup
       '&.done': {
         display: 'none',
       },
     },
     '.xt-toggle-disabled': {
-      // setup
       cursor: 'default',
     },
   }),

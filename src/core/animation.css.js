@@ -97,19 +97,15 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.transform-none': {
-      // setup
       transform: 'none !important',
     },
     '.transition-none': {
-      // setup
       transition: 'none !important',
     },
     '.animate-none': {
-      // setup
       animation: 'none !important',
     },
     '.duration-none': {
-      // setup
       transitionDuration: 'initial !important',
       transitionDelay: 'initial !important',
       animationDuration: 'initial !important',

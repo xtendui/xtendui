@@ -28,14 +28,12 @@ module.exports = {
   },
   component: {
     '.media-container': {
-      // setup
       display: 'block',
       position: 'relative',
       overflow: 'hidden',
       width: '100%',
     },
     '.media-inner': {
-      // setup
       position: 'absolute',
       top: '0',
       left: '0',
@@ -43,7 +41,6 @@ module.exports = {
       right: '0',
     },
     '.media': {
-      // setup
       width: '100%',
       height: '100%',
     },

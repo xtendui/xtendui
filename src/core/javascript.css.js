@@ -23,28 +23,22 @@ module.exports = {
       },
     },
     'body.xt-scrollbar': {
-      // setup
       overflow: 'hidden !important',
     },
     '[data-xt-pag].xt-ignore': {
-      // setup
       display: 'none !important',
     },
     '[data-xt-nav]': {
-      // setup
       cursor: 'pointer',
     },
     '.xt-transition-none': {
-      // setup
       transition: 'none !important',
     },
     '.xt-container': {
-      // setup
       position: 'relative',
       width: '100%',
     },
     '.xt-jump': {
-      // setup
       '&:not(.in)': {
         cursor: 'pointer',
       },
@@ -53,11 +47,9 @@ module.exports = {
       },
     },
     '.xt-pointer-events-none': {
-      // setup
       pointerEvents: 'none',
     },
     '.xt-links-none': {
-      // setup
       'a&, a': {
         pointerEvents: 'none',
       },
@@ -76,14 +68,12 @@ module.exports = {
       },
     },
     '.xt-calculating': {
-      // setup
       '@apply duration-none !important': '',
       display: 'block !important',
       visibility: 'hidden !important',
       opacity: '0 !important',
     },
     '.xt-collapse-reset': {
-      // setup
       overflow: 'visible !important',
     },
   }),

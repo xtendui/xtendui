@@ -34,7 +34,6 @@ module.exports = {
       borderColor: `${theme('colors.error')} !important`,
     },
     '.form-label': {
-      // setup
       cursor: 'pointer',
       display: 'flex',
       // styles
@@ -50,7 +49,6 @@ module.exports = {
       },
     },
     '.form-item': {
-      // setup
       display: 'block', // @FIX select and textarea space below
       // styles
       padding: `.75em 1.2em`,
@@ -63,7 +61,6 @@ module.exports = {
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.form-select': {
-      // setup
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
       // styles
@@ -83,7 +80,6 @@ module.exports = {
       maxHeight: '10.5rem',
     },
     '.form-label-check': {
-      // setup
       cursor: 'pointer',
       display: 'inline-flex',
       // styles
@@ -91,7 +87,6 @@ module.exports = {
       lineHeight: theme('lineHeight.snug'),
     },
     '.form-check': {
-      // setup
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',

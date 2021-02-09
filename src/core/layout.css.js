@@ -2,47 +2,37 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.flex-full': {
-      // setup
       flex: '1 1 100%',
     },
     '.container-reset': {
-      // setup
       padding: 0,
       width: 'auto',
       maxWidth: 'none',
     },
     '.container-y': {
-      // setup
       ...theme('container.padding'),
     },
     '.-container': {
-      // setup
       ...theme('container.padding'),
     },
     '.-container-y': {
-      // setup
       ...theme('container.padding'),
     },
     '.h-screen': {
-      // setup
       height: 'calc(var(--vh, 1vh) * 100) !important',
     },
     '.min-h-screen': {
-      // setup
       minHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
     '.max-h-screen': {
-      // setup
       maxHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
     '.mt-fc': {
-      // setup
       '&:first-child': {
         marginTop: theme('spacing.0'),
       },
     },
     '.mb-lc': {
-      // setup
       '&:last-child': {
         marginBottom: theme('spacing.0'),
       },
@@ -50,18 +40,15 @@ module.exports = {
   }),
   component: theme => ({
     html: {
-      // setup
       touchAction: 'manipulation', // disable double-tap
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
     },
     body: {
-      // setup
       '@apply overflow-main': '',
     },
     '.container': theme('container.fluid')
       ? {
-          // setup
-          maxWidth: '1536px',
+              maxWidth: '1536px',
         }
       : {},
     '::selection': {
@@ -101,7 +88,6 @@ module.exports = {
       scrollbarColor: `${theme('colors.gray.600')} transparent`,
     },
     '[readonly], [disabled], .disabled': {
-      // setup
       cursor: 'not-allowed',
       pointerEvents: 'none',
       // styles
@@ -110,7 +96,6 @@ module.exports = {
       },
     },
     '.backdrop': {
-      // setup
       position: 'fixed',
       zIndex: theme('zIndex.backdrop'),
       top: '0',

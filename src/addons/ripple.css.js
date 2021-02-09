@@ -1,7 +1,6 @@
 module.exports = {
   component: theme => ({
     '.ripple-container': {
-      // setup
       overflow: 'hidden',
       pointerEvents: 'none',
       borderRadius: 'inherit',
