@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-3 demo--fade-outside-infinite">
+<div class="row row-6 demo--fade-outside-infinite">
 ${indentString(markupFade(), 2)}
 </div>
 `

@@ -46,7 +46,7 @@ class Template extends React.Component {
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">
-              <div className="row row-3">
+              <div className="row row-6">
                 <div className="gatsby_listing-group">
                   {data.post.frontmatter.category === 'Core' ? (
                     <h2 className="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">

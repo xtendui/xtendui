@@ -25,7 +25,7 @@ demo.htmlSource = `
 <main class="site-main">
 
   <div class="container">
-    <div class="row row-4 lg:row-6 items-stretch">
+    <div class="row row-8 lg:row-22 items-stretch">
 
       <div class="w-full md:w-6/12 lg:w-7/12">
         <div class="relative pt-6 md:py-6">

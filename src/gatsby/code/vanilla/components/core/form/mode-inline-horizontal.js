@@ -15,10 +15,10 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-3 row-y-2">
+  <div class="row row-x-6 row-y-4">
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -34,7 +34,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -50,7 +50,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -66,7 +66,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -82,7 +82,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -91,7 +91,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full md:w-auto">
               <label class="form-label-check">
@@ -114,7 +114,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -123,7 +123,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full md:w-auto">
               <label class="form-label-check">
@@ -146,7 +146,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
           <label class="form-label whitespace-nowrap ${labelDefault()}">
@@ -155,7 +155,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full md:w-auto">
               <label class="form-label-check">

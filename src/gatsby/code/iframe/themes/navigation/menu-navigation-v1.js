@@ -110,7 +110,7 @@ demo.htmlSource = `
 
               <div class="pt-16 pb-24 text-black links-default">
                 <div class="container">
-                  <div class="row row-4">
+                  <div class="row row-8">
                     <div class="w-6/12">
                       <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Lorem ipsum

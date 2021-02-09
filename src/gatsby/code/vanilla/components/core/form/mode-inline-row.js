@@ -15,7 +15,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-3 row-y-2">
+  <div class="row row-x-6 row-y-4">
 
     <div class="w-full md:w-auto">
       <label class="form-label mb-3 ${labelDefault()}">
@@ -51,7 +51,7 @@ demo.htmlSource = `
         Checkbox
       </label>
 
-      <div class="row row-x-4 row-y-1">
+      <div class="row row-x-8 row-y-2">
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
@@ -77,7 +77,7 @@ demo.htmlSource = `
         Radio
       </label>
 
-      <div class="row row-x-4 row-y-1">
+      <div class="row row-x-8 row-y-2">
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
@@ -103,7 +103,7 @@ demo.htmlSource = `
         Switch
       </label>
 
-      <div class="row row-x-4 row-y-1">
+      <div class="row row-x-8 row-y-2">
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">

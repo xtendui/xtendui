@@ -48,7 +48,7 @@ demo.htmlSource = `
   Card
 </div>
 
-<div class="row row-3">
+<div class="row row-6">
 
   <div class="w-full md:w-6/12">
     <a role="button" class="card rounded-md ${cardDefaultInteractive()}">

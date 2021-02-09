@@ -40,7 +40,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="row row-3">
+    <div class="row row-6">
 
       <div class="w-6/12 md:w-4/12">
         <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">

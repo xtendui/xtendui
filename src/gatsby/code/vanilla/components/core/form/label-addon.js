@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-3 row-y-2">
+  <div class="row row-x-6 row-y-4">
 
     <div class="w-full">
       <label class="form-label mb-3 ${labelDefault()}">
@@ -48,7 +48,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">
@@ -74,7 +74,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label flex-col ${labelDefault()}">

@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="py-10">
   <div class="container">
-    <div class="row row-3">
+    <div class="row row-6">
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="text-black">

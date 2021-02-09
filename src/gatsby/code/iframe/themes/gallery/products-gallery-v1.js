@@ -31,7 +31,7 @@ demo.htmlSource = `
   <main class="site-main">
 
     <div class="container">
-      <div class="row row-4 lg:row-6 items-stretch">
+      <div class="row row-8 lg:row-12 items-stretch">
 
         <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">
           <div class="relative md:py-12">
@@ -165,7 +165,7 @@ demo.htmlSource = `
 
         <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-continue-target" data-xt-stickyflow>
           <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
-          <div class="md:py-12 md:sticky stickyflow">
+          <div class="pb-12 md:py-12 md:sticky stickyflow">
 
             <h1 class="h2">
               Lorem ipsum dolor sit amet

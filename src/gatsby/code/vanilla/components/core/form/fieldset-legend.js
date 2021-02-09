@@ -16,7 +16,7 @@ demo.htmlSource = `
 <form>
 
   <fieldset>
-    <div class="row row-x-3 row-y-2">
+    <div class="row row-x-6 row-y-4">
 
       <div class="w-full">
         <legend>Legend #1</legend>
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <div class="row row-x-3 row-y-2">
+        <div class="row row-x-6 row-y-4">
 
           <div class="w-full md:w-auto">
             <label class="form-label mb-3 ${labelDefault()}">
@@ -69,7 +69,7 @@ demo.htmlSource = `
   </fieldset>
 
   <fieldset>
-    <div class="row row-x-3 row-y-2">
+    <div class="row row-x-6 row-y-4">
 
       <div class="w-full">
         <legend>Legend #2</legend>
@@ -81,7 +81,7 @@ demo.htmlSource = `
           Checkbox
         </label>
 
-        <div class="row row-x-4 row-y-1">
+        <div class="row row-x-8 row-y-2">
 
           <div class="w-full">
             <label class="form-label-check">
@@ -105,7 +105,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <div class="row row-x-3 row-y-2">
+        <div class="row row-x-6 row-y-4">
 
           <div class="w-full md:w-2/12 md:self-baseline">
             <label class="form-label ${labelDefault()}">
@@ -114,7 +114,7 @@ demo.htmlSource = `
           </div>
 
           <div class="w-full md:w-10/12">
-            <div class="row row-x-4 row-y-1">
+            <div class="row row-x-8 row-y-2">
 
               <div class="w-full">
                 <label class="form-label-check">
@@ -149,7 +149,7 @@ demo.htmlSource = `
           Checkbox
         </label>
 
-        <div class="row row-x-4 row-y-1">
+        <div class="row row-x-8 row-y-2">
 
           <div class="w-full md:w-auto">
             <label class="form-label-check">

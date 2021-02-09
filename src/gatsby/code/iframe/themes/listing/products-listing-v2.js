@@ -20,7 +20,7 @@ demo.htmlSource = `
 
         <div class="h2 mb-8">Latest Products</div>
 
-        <div class="slides-inner row row-2">
+        <div class="slides-inner row row-4">
 
           <div class="slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
@@ -203,7 +203,7 @@ demo.htmlSource = `
 
     <div class="h2 mb-8">Category</div>
 
-    <div class="row row-3">
+    <div class="row row-6">
 
       <div class="w-6/12 md:w-4/12">
         <a href="#" class="listing-item block group">

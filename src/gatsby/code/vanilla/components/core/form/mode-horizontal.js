@@ -15,10 +15,10 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="row row-x-3 row-y-2">
+  <div class="row row-x-6 row-y-4">
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label ${labelDefault()}">
@@ -34,7 +34,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-center">
           <label class="form-label ${labelDefault()}">
@@ -50,7 +50,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-4/12 md:self-center">
           <label class="form-label ${labelDefault()}">
@@ -66,7 +66,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
         <div class="w-full md:w-4/12 md:self-center">
           <label class="form-label ${labelDefault()}">
             Dolor sit amet
@@ -81,7 +81,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="form-label ${labelDefault()}">
@@ -90,7 +90,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full">
               <label class="form-label-check">
@@ -113,7 +113,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="form-label ${labelDefault()}">
@@ -122,7 +122,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full">
               <label class="form-label-check">
@@ -145,7 +145,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <div class="row row-x-3 row-y-2">
+      <div class="row row-x-6 row-y-4">
 
         <div class="w-full md:w-2/12 md:self-baseline">
           <label class="form-label ${labelDefault()}">
@@ -154,7 +154,7 @@ demo.htmlSource = `
         </div>
 
         <div class="w-full md:w-10/12">
-          <div class="row row-x-4 row-y-1">
+          <div class="row row-x-8 row-y-2">
 
             <div class="w-full">
               <label class="form-label-check">

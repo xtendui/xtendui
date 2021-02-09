@@ -15,7 +15,7 @@ export default function Footer() {
   `)
   return (
     <div className="gatsby_site-footer_bottom">
-      <div className="row row-1 gatsby_site-footer_bottom_row">
+      <div className="row row-4 gatsby_site-footer_bottom_row">
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version} and Demos licensed{' '}
           <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" target="_blank" rel="noopener noreferrer">

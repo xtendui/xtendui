@@ -11,7 +11,7 @@ export default () => {
 </span>
 
 <div class="slides">
-  <div class="slides-inner row row-2">
+  <div class="slides-inner row row-4">
 
     <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="card rounded-md ${cardSlide()}">

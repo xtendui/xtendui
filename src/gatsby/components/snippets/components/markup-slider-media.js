@@ -3,7 +3,7 @@ const btnDefault = require('components/snippets/classes/btn-default').default
 export default () => {
   return `
 <div class="slides">
-  <div class="slides-inner row row-2">
+  <div class="slides-inner row row-4">
 
     <div class="slide">
 

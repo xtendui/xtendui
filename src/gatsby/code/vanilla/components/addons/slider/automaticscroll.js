@@ -17,7 +17,7 @@ demo.htmlSource = `
   <div class="slider slider--text my-12">
 
     <div class="slides">
-      <ul class="slides-inner row row-10 transition-none">
+      <ul class="slides-inner row row-20 transition-none">
 
         <div class="slide list list-10 flex-nowrap whitespace-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 1">
@@ -79,7 +79,7 @@ demo.htmlSource = `
   <div class="slider slider--text slider--factor my-12">
 
     <div class="slides">
-      <ul class="slides-inner row row-10 transition-none">
+      <ul class="slides-inner row row-20 transition-none">
 
         <div class="slide list list-10 flex-nowrap whitespace-nowrap">
           <a href="#test-link-1" class="slide_item" title="item 1">

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-3">
+<div class="row row-6">
 
   <div class="w-full">
     <div class="card rounded-md ${cardDefaultFull()}">

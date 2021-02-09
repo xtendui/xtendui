@@ -129,7 +129,7 @@
 .gatsby_home-main_feature {
   @apply inline-block w-full text-left;
   .row {
-    @apply row-4;
+    @apply row-8;
   }
 }
 
@@ -150,7 +150,7 @@
 .gatsby_home-main_philosophies {
   @apply my-28 text-center;
   .row {
-    @apply row-3 md:row-5;
+    @apply row-6 md:row-20;
   }
 }
 
@@ -181,7 +181,7 @@
 .gatsby_home-main_supports {
   @apply my-28 text-center;
   .row {
-    @apply row-4 items-center justify-center;
+    @apply row-8 items-center justify-center;
   }
 }
 

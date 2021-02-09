@@ -43,7 +43,7 @@ export default class Template extends React.Component {
         <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
         <div className="gatsby_listing">
-          <div className="row row-3">
+          <div className="row row-6">
             {data.categories.category.sort(typeSort).map((category, i) => (
               <div className="gatsby_listing-group" key={i}>
                 <h2 className="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md bg-gray-200 text-center">{category.title.split('-').pop()}</h2>

@@ -39,7 +39,7 @@ demo.htmlSource = `
 
 <form data-xt-toggle="{ elements: '.w-full > .btn', targets: '.w-full > .list', instant: true, collapseWidth: 'targets' }">
 
-  <div class="row row-x-3 row-y-2">
+  <div class="row row-x-6 row-y-4">
 
     <div class="w-full md:w-auto">
       <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
@@ -283,7 +283,7 @@ demo.htmlSource = `
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-lg">
-                  <div class="row row-x-3 row-y-2">
+                  <div class="row row-x-6 row-y-4">
 
                     <div class="w-full md:w-6/12">
                       <label class="form-label mb-3 ${labelDefault()}">
@@ -357,7 +357,7 @@ demo.htmlSource = `
                     <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
-                <div class="text-base p-8 bg-gray-300 flex-full text-sm">
+                <div class="text-base p-8 bg-gray-300 flex-full">
                   <p class="h5">
                     Didn't find what you was looking for?
                   </p>
@@ -408,7 +408,7 @@ demo.htmlSource = `
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-lg">
-                  <div class="row row-x-3 row-y-2">
+                  <div class="row row-x-6 row-y-4">
 
                     <div class="w-full">
                       <label class="form-label mb-3 ${labelDefault()}">
@@ -423,7 +423,7 @@ demo.htmlSource = `
                         Subject
                       </label>
 
-                      <div class="row row-x-4 row-y-1">
+                      <div class="row row-x-8 row-y-2">
 
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
@@ -477,7 +477,7 @@ demo.htmlSource = `
 
             </div>
 
-            <div class="text-sm p-6 rounded-b-md bg-gray-300 text-xs ${animItem}">
+            <div class="text-sm p-6 rounded-b-md bg-gray-300 ${animItem}">
               <p>
                 Receive <strong>free discount</strong> periodically on all our products.
               </p>

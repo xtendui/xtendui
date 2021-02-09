@@ -26,7 +26,7 @@ demo.htmlSource = `
     <div class="googlelocator-aside-head">
 
       <div class="form">
-        <div class="row row-x-3 row-y-2">
+        <div class="row row-x-6 row-y-4">
 
           <div class="w-full">
             <div class="list flex-nowrap">
