@@ -1,3 +1,64 @@
+# [1.0.0-beta.3](https://github.com/minimit/xtendui/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* refactor icons name with icon + refactor links-inverse + remove code styles ([066e394](https://github.com/minimit/xtendui/commit/066e39420081c3af710d2a1f551c1190834da969))
+* **button:** div button cursor inherit ([40d2057](https://github.com/minimit/xtendui/commit/40d2057a9bf0d3d3d9f0633ff8f21d32720e1411))
+* **card:** card size with tailwind classes ([d12aad0](https://github.com/minimit/xtendui/commit/d12aad07be3a336473f8f21973f308a836a01c8b))
+* **css:** container fluid option default true ([b0007d9](https://github.com/minimit/xtendui/commit/b0007d9e2f7293c7294c859b25e0608e0e223363))
+* **css:** default animation out instead of in-out ([00be37b](https://github.com/minimit/xtendui/commit/00be37b79b84aec421211b98682f1f8d097d8d6c))
+* **css:** refactor button and badge sizes and styles with no defaults ([2ee7972](https://github.com/minimit/xtendui/commit/2ee7972bae6a3397acbf7109b94a700f15a3adce))
+* **css:** refactor icons size and row and list child with flex ([5b96cd4](https://github.com/minimit/xtendui/commit/5b96cd4d3abb9d2b97266bbbcb4453bedfe868ef))
+* **css:** refactor list and row spacing values ([7785d9a](https://github.com/minimit/xtendui/commit/7785d9ab9bf6794fa27c6cfa92cd29d10dc618d7))
+* **css:** revision btn close tag and revert list and row display flex ([dd45280](https://github.com/minimit/xtendui/commit/dd45280f821b8a4ef173fd85be20fdd734add1f7))
+* **js:** added double raf firefox and appenTo fix ([8a0accd](https://github.com/minimit/xtendui/commit/8a0accd1a7875ff09a34f135d4a687205b60a961))
+* **js:** medialoaded delay false ([38970de](https://github.com/minimit/xtendui/commit/38970dec41d50e4add2ef537c29fb2afdda0b391))
+* **js:** refactor self.direction and fix bug with sequential interactions with queueStart ([0dfa04b](https://github.com/minimit/xtendui/commit/0dfa04b2d7f6a68a1fa46ab68ad6812eecb49066))
+* **js:** refactor self.direction and fix bug with sequential interactions with queueStart ([7c39d37](https://github.com/minimit/xtendui/commit/7c39d37b3281a8461aaad572ccbccc3e9412f27b))
+* **js:** removed double raf firefox fix and refactor self.direction with 0 ([4fde26a](https://github.com/minimit/xtendui/commit/4fde26a64e73d54ff133f0da0aec44e8ff05c4d2))
+* **loader:** loader classes with tailwind ([66678b1](https://github.com/minimit/xtendui/commit/66678b1ae7795a553a95e5d35e8f94273978b7f8))
+* **navsides:** navsides styles with tailwind classes ([47e4b0e](https://github.com/minimit/xtendui/commit/47e4b0ec2c11e295b772dd80c612583626684bdc))
+* **overlay:** overlay disabled zindex ([7da7fba](https://github.com/minimit/xtendui/commit/7da7fba691a5be702beb43d560f7735ab1b594c9))
+* **overlay:** refactor xt-scrollbar to not jump position fixed ([5371a8c](https://github.com/minimit/xtendui/commit/5371a8ce4fb46aa13e74711c6ff87bb8efb7eb29))
+* **slider:** slider styles with tailwind classes ([39d0eed](https://github.com/minimit/xtendui/commit/39d0eeda658e6e90da5272493b636ea291bd28e7))
+* **toggle:** fix js errors when using delay and destoying ([7703dc9](https://github.com/minimit/xtendui/commit/7703dc92d90658dac2ac6f0c9bf5df916dcac189))
+* **toggle:** fixed instant toggle if no duration and removed toggle-inverse it has problems ([bb3d281](https://github.com/minimit/xtendui/commit/bb3d2815ed81472b07b133aeb958c46bca40cd6e))
+* **toggle:** toggle .out with pointer event none and .in with zindex active ([d5a86ad](https://github.com/minimit/xtendui/commit/d5a86ad0e81e7ddf1d218658b7e4ae5ccfd7364f))
+* **tooltip:** refactor tooltip sizes with tailwind classes ([30d23a6](https://github.com/minimit/xtendui/commit/30d23a6f62e770b7ba66c170812d25ccc9ddfa86))
+* **typography:** headers tags styled only if no class attribute and demos custom headers styles ([e45bd03](https://github.com/minimit/xtendui/commit/e45bd037d13f4c80fda7be34579e3977817e3bf1))
+* refactor base font size no more responsive and refactor icon size see commit [#826830](https://github.com/minimit/xtendui/issues/826830)ab3a ([6fc0515](https://github.com/minimit/xtendui/commit/6fc0515c900a5e0f79753d123865eaa2c2584de8)), closes [#826830ab3](https://github.com/minimit/xtendui/issues/826830ab3)
+* refactor z-index ([b22da0c](https://github.com/minimit/xtendui/commit/b22da0c131adb76919b38c39f048f4e811a51da5))
+* removed media background ([b76e7a0](https://github.com/minimit/xtendui/commit/b76e7a0965244a974b9a901ab874ce4026f5d97a))
+
+
+* form styles some with tailwind classes ([b5e9a71](https://github.com/minimit/xtendui/commit/b5e9a71123189680b46799da8ecc99dbe0df10c0))
+* table styles with tailwind classes ([1cf55b7](https://github.com/minimit/xtendui/commit/1cf55b7d8011b150fc6bae6cb1ae9647a3eab6c9))
+
+
+### Features
+
+* toggle-absolute for animating instantly ([cb2bfba](https://github.com/minimit/xtendui/commit/cb2bfba92ec779078b49ace805112e56d30b954e))
+
+
+### BREAKING CHANGES
+
+* icons to icon component name
+* use tailwind classes see docs
+* use tailwind classes for tables see docs
+* **navsides:** use tailwind classes for styling navsides see docs
+* **loader:** all styles of loader with tailwind classes see docs
+* **slider:** for slider pagination and navigation use tailwind classes and use the class .slider-ui on slider-pagination and slider-navigation
+* **card:** use tailwind classes for card size
+* **tooltip:** use tailwind classes for tooltip size
+* **typography:** if you had headers with class you need to use headers class
+* **css:** no more icon size use tailwind font size classes instead
+* **css:** no more default styles for button fonts and sizes, use tailwind classes instead
+* **css:** removed container-fluid, use container instead
+* **js:** now direction retain direction on deactivation and resets to 0 after a raf frame
+* **js:** now direction retain direction on deactivation and resets to 0 after a raf frame
+* **css:** double the list-<number> and row-<number> to have the same spacing because values now are half
+
 # [1.0.0-beta.2](https://github.com/minimit/xtendui/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2021-01-23)
 
 
