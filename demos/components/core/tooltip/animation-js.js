@@ -7,15 +7,15 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.2
+    const targetTimeOn = 0.3
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.2
+    const targetTimeOff = 0.3
     const targetEaseOff = 'quint.out'
 
     // init
 
     let self = new Xt.Tooltip(object, {
-      duration: 200,
+      duration: 300,
     })
 
     // on
@@ -23,9 +23,9 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       gsap.set(tr, { opacity: 0 })
-      gsap.set(tr, { y: 5 })
+      gsap.set(tr, { x: -10 })
       gsap.to(tr, {
-        y: 0,
+        x: 0,
         opacity: 1,
         duration: targetTimeOn,
         ease: targetEaseOn,
@@ -41,7 +41,7 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       gsap.to(tr, {
-        y: 5,
+        x: 10,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

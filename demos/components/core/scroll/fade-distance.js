@@ -19,7 +19,9 @@ Xt.mount.push({
 
       // fade
 
-      gsap.set(triggers, { y: 15 })
+      gsap.set(triggers, {
+        y: 15,
+      })
 
       ScrollTrigger.batch(triggers, {
         start: 'top bottom-=10%',

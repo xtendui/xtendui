@@ -159,7 +159,7 @@
   }
 
   .googlelocator-item-name {
-    @apply h5;
+    @apply mt-5 mb-3 mt-fc mb-lc font-sans font-bold leading-none tracking-tight text-xl;
   }
 
   .googlelocator-item-address {

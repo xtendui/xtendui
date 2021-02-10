@@ -1,6 +1,6 @@
 #iframe--stores-listing-v1 {
   /*##START*/
-  .listing-front {
+  .listing-item-front {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     backface-visibility: hidden;
   }
 
-  .listing-back {
+  .listing-item-back {
     position: relative;
     min-height: 22rem;
     transform: rotateY(180deg);
@@ -28,7 +28,7 @@
       .listing-item-inner {
         transform: rotateY(180deg);
       }
-      .listing-back {
+      .listing-item-back {
         z-index: theme('zIndex.active');
       }
     }

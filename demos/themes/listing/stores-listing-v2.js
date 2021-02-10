@@ -19,10 +19,10 @@ Xt.mount.push({
         // class
         tr.classList.add('active')
         // front
-        const front = tr.querySelector('.listing-front')
+        const front = tr.querySelector('.listing-item-front')
         gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing-back')
+        const back = tr.querySelector('.listing-item-back')
         gsap.set(back, { y: 40, opacity: 0 })
         gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
       } else {
@@ -35,11 +35,11 @@ Xt.mount.push({
         // class
         tr.classList.remove('active')
         // front
-        const front = tr.querySelector('.listing-front')
+        const front = tr.querySelector('.listing-item-front')
         gsap.set(front, { y: -40, opacity: 0 })
         gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing-back')
+        const back = tr.querySelector('.listing-item-back')
         gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
       }
     }
@@ -59,7 +59,7 @@ Xt.mount.push({
     }
 
     for (const item of items) {
-      item.querySelector('.listing-front').addEventListener('click', eventClick)
+      item.querySelector('.listing-item-front').addEventListener('click', eventClick)
       item.querySelector('.btn-close').addEventListener('click', () => {
         eventOff(item)
       })
