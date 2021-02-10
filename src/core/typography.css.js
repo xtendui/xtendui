@@ -8,6 +8,16 @@ const rem = px => `${round(px / 16)}rem`
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
+    '.mt-fc': {
+      '&:first-child': {
+        marginTop: theme('spacing.0'),
+      },
+    },
+    '.mb-lc': {
+      '&:last-child': {
+        marginBottom: theme('spacing.0'),
+      },
+    },
     '.h1': {
       // styles
       marginTop: theme('spacing.7'),
@@ -175,24 +185,24 @@ module.exports = {
         },
       },
     },
-    dl: {
+    'dl:not([class])': {
       // styles
       marginBottom: theme('spacing.3'),
       '@apply mb-lc': {},
     },
-    hr: {
+    'hr:not([class])': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
-    'figure, .figure': {
+    'figure:not([class])': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
-    'figcaption, .figcaption': {
+    'figcaption:not([class])': {
       // styles
       marginTop: theme('spacing.3'),
       fontSize: rem(14),

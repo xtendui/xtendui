@@ -8,15 +8,16 @@ date: "2030-10-10"
 
 ## Automatic spacing
 
-Check out the [automatic spacing classes](/components/core/layout/css#utils) to **reset margin top** when `:first-child` with `mt-fc` and **reset margin bottom** when `:last-child` with `mb-lc`.
+Use **component classes** to automatic space. With `mt-fc` you can **reset margin top** when `:first-child`, with `mb-lc` you can **reset margin bottom** when `:last-child`.
 
-## Html
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
-Inside `html` we assign **default lineHeight** and **default font color** with `@apply text-black links-default`.
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
+| Utility                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
 
-#### Rem
-
-Inside `html` there are the styles for **base rem typography**. We assign a root **responsive font size** for `html` and all **rem sizes** defined are relative to this font size.
+</div>
 
 ## Variant
 
@@ -68,7 +69,7 @@ Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tail
 You can use paragraph **classes or tags** with customizable styles.
 
 [[noteDefault]]
-| Paragrap `p` is automatically styled when it **donesn't have `[class]`**. To have custom styles use **tailwind classes**.
+| Paragraphs `p` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
@@ -94,10 +95,8 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 ## List
 
-Use the tags `ul` or `ol` to create a **unordered or ordered list**.
-
 [[noteDefault]]
-| List `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Lists `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/list">
@@ -106,7 +105,8 @@ Use the tags `ul` or `ol` to create a **unordered or ordered list**.
 
 ## Definition List
 
-Use **tailwind classes** to create a **definition list**.
+[[noteDefault]]
+| Definition lists `dl` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/definition-list">
@@ -115,16 +115,8 @@ Use **tailwind classes** to create a **definition list**.
 
 ## Figure
 
-Use **component classes** to style `figure` and` figcaption`.
-
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `figure` or `.figure`                     | `figure`                | Media styles inside text            |
-| Component                  | `figcaption` or `.figcaption`                     | `figcaption`                | Media caption styles inside text            |
-
-</div>
+[[noteDefault]]
+| Figure and Figcaption `figure` `figcaption` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/figure">

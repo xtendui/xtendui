@@ -27,16 +27,6 @@ module.exports = {
     '.max-h-screen': {
       maxHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
-    '.mt-fc': {
-      '&:first-child': {
-        marginTop: theme('spacing.0'),
-      },
-    },
-    '.mb-lc': {
-      '&:last-child': {
-        marginBottom: theme('spacing.0'),
-      },
-    },
   }),
   component: theme => ({
     html: {
