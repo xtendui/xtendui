@@ -34,7 +34,7 @@ Use `.list` to create a **list**.
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

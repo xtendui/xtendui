@@ -15,6 +15,13 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
   </demovanilla>
 </demo>
 
+To have **table border and border radius** use `.border-separate` and `border-spacing: 0`.
+
+<demo>
+  <demovanilla src="vanilla/components/core/table/border">
+  </demovanilla>
+</demo>
+
 ## Interactive
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
@@ -35,15 +42,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Overflow
 
-Use **component classes** to overflow with scroll when content is too long (use narrow screen to see it in action).
-
-<div class="table-overflow">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.table-overflow`       | `table-overflow`                | Overflow with scroll when content is too long            |
-
-</div>
+Use **tailwind classes** to overflow with scroll when content is too long (use narrow screen to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/table/overflow">

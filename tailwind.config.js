@@ -41,6 +41,9 @@ module.exports = {
       borderWidth: {
         3: '3px',
       },
+      borderColor: theme => ({
+        DEFAULT: theme('colors.gray.300', 'currentColor'),
+      }),
     },
   },
 }

@@ -12,7 +12,7 @@ If you want to animate on image loaded, with `mediaLoaded: true` use the class `
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -23,7 +23,7 @@ When you need to reinit the component when the media is loaded and the **width**
 
 ## Other
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

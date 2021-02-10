@@ -39,7 +39,7 @@ Use **component classes** to create a **mouse follow**.
 [[notePrimary]]
 | Remember **not to transition transform** of `.mousefollow` element.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -62,7 +62,7 @@ It's possible to **assign them also on single nodes** with `data-xt-duration="Mi
  
 Here are the main **javascript options**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -77,7 +77,7 @@ Here are the main **javascript options**.
 
 Listen to events.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -93,7 +93,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

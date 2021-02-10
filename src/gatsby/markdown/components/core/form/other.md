@@ -13,7 +13,7 @@ Use **component classes** to style **disabled**.
 [[notePrimary]]
 | For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -30,7 +30,7 @@ Use **component classes** to style **disabled**.
 
 Use **component classes** to create **fieldset** and **legend**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -81,7 +81,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 Use **component classes** to style **validation**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

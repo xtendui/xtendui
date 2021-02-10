@@ -31,7 +31,7 @@ module.exports = {
 
 Use `a` without classes or `.link` to create a **link**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -54,7 +54,7 @@ Use `a` without classes or `.link` to create a **link**.
 
 Use **component utility** `.links-default` and `.links-inverse` on **parent elements** to style **child links**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

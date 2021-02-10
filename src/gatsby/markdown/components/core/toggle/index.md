@@ -36,7 +36,7 @@ module.exports = {
 
 Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -10,7 +10,7 @@ description: "Collapse horizontal and vertical on interactions."
 
 Collapse only work with **xtendui javascript components**, assign `options.collapseHeight` or `options.collapseWidth` with also `overflow-hidden` on the selected nodes.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

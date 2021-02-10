@@ -8,45 +8,95 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="table-overflow">
-  <table>
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+  <table class="my-4 mt-fc mb-lc w-full">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Description</th>
-        <th>Additional</th>
-        <th>Another</th>
-        <th>Value</th>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          #
+        </th>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          Description
+        </th>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          Additional
+        </th>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          Another
+        </th>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          Value
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th>1</th>
-        <td>Lorem ipsum</td>
-        <td>Lorem ipsum</td>
-        <td>Lorem ipsum</td>
-        <td>1200</td>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          1
+        </th>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          1200
+        </td>
       </tr>
       <tr>
-        <th>2</th>
-        <td>Dolor sit amet</td>
-        <td>Dolor sit amet</td>
-        <td>Dolor sit amet</td>
-        <td>200</td>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          2
+        </th>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Dolor sit amet
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Dolor sit amet
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Dolor sit amet
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          200
+        </td>
       </tr>
       <tr>
-        <th>3</th>
-        <td>Consectetur adipiscing elit</td>
-        <td>Consectetur adipiscing elit</td>
-        <td>Consectetur adipiscing elit</td>
-        <td>2400</td>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          3
+        </th>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Consectetur adipiscing elit
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Consectetur adipiscing elit
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Consectetur adipiscing elit
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          2400
+        </td>
       </tr>
       <tr>
-        <th>3</th>
-        <td>Lorem ipsum</td>
-        <td>Lorem ipsum</td>
-        <td>Lorem ipsum</td>
-        <td>400</td>
+        <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
+          4
+        </th>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          Lorem ipsum
+        </td>
+        <td class="py-2 px-4 text-sm align-top leading-snug border ">
+          400
+        </td>
       </tr>
     </tbody>
   </table>

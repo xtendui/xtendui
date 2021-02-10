@@ -38,7 +38,7 @@ You can use headers **classes or tags** with customizable styles.
 [[noteDefault]]
 | Headers `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -70,7 +70,7 @@ You can use paragraph **classes or tags** with customizable styles.
 [[noteDefault]]
 | Paragrap `p` is automatically styled when it **donesn't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -117,7 +117,7 @@ Use **tailwind classes** to create a **definition list**.
 
 Use **component classes** to style `figure` and` figcaption`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -135,7 +135,7 @@ Use **component classes** to style `figure` and` figcaption`.
 
 These are typography's **component utilities**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

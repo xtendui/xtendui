@@ -39,7 +39,7 @@ Card content **stack vertically**. Use **tailwind classes** to assign styles (e.
 
 Use **component utility** `.card-group` to stack card content **horizontally**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -67,7 +67,7 @@ Use **tailwind classes** to style **borders** for separation.
 
 Use **tailwind classes** to overflow divs. Use **component classes** to style **overflow**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -10,7 +10,7 @@ date: "2050-10-10"
 
 These are general **component utilities**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -25,7 +25,7 @@ These are general **component utilities**.
 
 We add in theme additional easing on [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -60,7 +60,7 @@ We add in theme additional easing on [tailwind timing functions](https://tailwin
 
 We add in theme also additional keyframes on [tailwind animation](https://tailwindcss.com/docs/animation).
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

@@ -130,6 +130,7 @@ module.exports = {
             options: {
               classMap: {
                 link: 'link',
+                table: 'gatsby_table my-4 mt-fc mb-lc w-full',
                 'heading[depth=1]': 'h1',
                 'heading[depth=2]': 'h2',
                 'heading[depth=3]': 'h3',

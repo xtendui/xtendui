@@ -12,7 +12,7 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 If you want to **control a specific drop position** use `[data-xt-position=<value>]` on the `.drop`
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -41,7 +41,7 @@ Use `.drop-nospace` to **disable drop spacing**.
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/drop/other#popperjs).
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -56,7 +56,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 If you want a drop with size and position **relative to a parent Node with relative** use `.drop-static` and `.card.w-full`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

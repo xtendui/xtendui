@@ -12,7 +12,7 @@ Use **tailwind classes** to assign variant (e.g. [stroke](https://tailwindcss.co
 
 Use `.spinner-animated` to assing spinner animation.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -35,7 +35,7 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 
 Use `.loader-<direction>-animated` to assing filler animation. For `<direction>` values use `x` or `y`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

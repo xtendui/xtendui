@@ -50,7 +50,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **component utility** `.card-group` to stack card content **horizontally**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -58,7 +58,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 </div>
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
@@ -111,7 +111,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 (navigate on mobile for different behaviour)
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -119,7 +119,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 </div>
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -131,7 +131,7 @@ Use **component utility** `.row-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -141,7 +141,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 For `<direction>` values use `x` or `y`.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -151,7 +151,7 @@ For `<direction>` values use `x` or `y`.
 
 You can set **scroll mode** with css selectors.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                      | Syntax                          |  Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

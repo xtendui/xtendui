@@ -19,7 +19,7 @@ You can put **any content** inside, here are some examples.
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -31,7 +31,7 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 ## Other
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

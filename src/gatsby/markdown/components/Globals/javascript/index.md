@@ -106,7 +106,7 @@ Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac glob
 
 You can execute a function on DOM ready.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -126,7 +126,7 @@ To execute javascript code we use `Xt.mount` for two important reasons:
 
 * It create a **anonymous functions to encapsulate code** so **each block is self contained** and it behaves as a sort of **component for Vanilla Html and Js components**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -184,7 +184,7 @@ Xt.mount.push({
 
 You have some utilities for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -219,7 +219,7 @@ addEventListener('scroll', e => {
 })
 ```
 
-<div class="table-overflow">
+<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

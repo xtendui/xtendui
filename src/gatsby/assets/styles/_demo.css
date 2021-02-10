@@ -309,9 +309,16 @@ pre {
 
 .gatsby_table {
   border-collapse: separate;
+  border-spacing: 0;
   border-radius: 6px;
   border: 2px solid theme('colors.gray.200');
   th, td {
-    border-color: theme('borderColor.gray.200');
+    border: 1px solid theme('colors.gray.200');
+  }
+  th, td:first-child {
+    @apply py-2 px-4 text-xs font-semibold leading-snug tracking-wider uppercase text-left;
+  }
+  td {
+    @apply py-2.5 px-5 text-sm leading-snug;
   }
 }
