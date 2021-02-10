@@ -16,7 +16,7 @@ import { Xt } from 'xtendui'
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/javascript.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/javascript.css.js) for default values.
 
 ```jsx
 module.exports = {

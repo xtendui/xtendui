@@ -13,13 +13,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="text-sm">
 
-  <fieldset>
+  <fieldset class="my-8 mt-fc mb-lc">
     <div class="row row-x-6 row-y-4">
 
       <div class="w-full">
-        <legend>Legend #1</legend>
+        <legend class="text-2xl font-bold leading-snug">
+          Legend #1
+        </legend>
       </div>
 
       <div class="w-full md:w-6/12">
@@ -68,11 +70,13 @@ demo.htmlSource = `
     </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset class="my-8 mt-fc mb-lc">
     <div class="row row-x-6 row-y-4">
 
       <div class="w-full">
-        <legend>Legend #2</legend>
+        <legend class="text-2xl font-bold leading-snug">
+          Legend #2
+        </legend>
       </div>
 
       <div class="w-full">
@@ -86,14 +90,14 @@ demo.htmlSource = `
           <div class="w-full">
             <label class="form-label-check">
               <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-              <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+              <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check">
               <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-              <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+              <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
             <div class="mt-3 ${note()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -119,14 +123,14 @@ demo.htmlSource = `
               <div class="w-full">
                 <label class="form-label-check">
                   <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-                  <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                  <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
               </div>
 
               <div class="w-full">
                 <label class="form-label-check">
                   <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-                  <span class="ml-3"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                  <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
                 <div class="mt-3 ${note()}">
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -140,7 +144,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <legend>Legend #3</legend>
+        <legend class="text-2xl font-bold leading-snug">
+          Legend #3
+        </legend>
       </div>
 
       <div class="w-full">
@@ -154,14 +160,14 @@ demo.htmlSource = `
           <div class="w-full md:w-auto">
             <label class="form-label-check">
               <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-              <span class="ml-3">Lorem ipsum</span>
+              <span class="form-check-content">Lorem ipsum</span>
             </label>
           </div>
 
           <div class="w-full md:w-auto">
             <label class="form-label-check">
               <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-              <span class="ml-3">Lorem ipsum</span>
+              <span class="form-check-content">Lorem ipsum</span>
             </label>
           </div>
 

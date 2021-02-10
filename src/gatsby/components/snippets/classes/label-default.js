@@ -1,3 +1,3 @@
 export default () => {
-  return `text-black text-opacity-75`
+  return `text-black text-opacity-75 font-semibold`
 }

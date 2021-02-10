@@ -147,7 +147,7 @@ demo.htmlSource = `
 
     <div class="tooltip group" data-xt-duration="700">
       <div class="rounded-md shadow-tooltip ${cardWhite()} ${animDesign}">
-        <form>
+        <form class="text-sm">
 
           <div class="list flex-nowrap max-w-sm ${animItem}">
 
@@ -270,7 +270,7 @@ demo.htmlSource = `
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
-                <form class="text-lg">
+                <form class="text-md">
                   <div class="row row-x-6 row-y-4">
 
                     <div class="w-full md:w-6/12">
@@ -323,7 +323,7 @@ demo.htmlSource = `
                     <div class="w-full">
                       <label class="form-label-check">
                         <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-                        <span class="ml-3">
+                        <span class="form-check-content">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>
                       </label>
@@ -395,7 +395,7 @@ demo.htmlSource = `
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
-                <form class="text-lg">
+                <form class="text-md">
                   <div class="row row-x-6 row-y-4">
 
                     <div class="w-full">
@@ -416,7 +416,7 @@ demo.htmlSource = `
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
                             <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
-                            <span class="ml-3">
+                            <span class="form-check-content">
                               Option 1
                             </span>
                           </label>
@@ -425,7 +425,7 @@ demo.htmlSource = `
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
                             <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
-                            <span class="ml-3">
+                            <span class="form-check-content">
                               Option 2
                             </span>
                           </label>
@@ -434,7 +434,7 @@ demo.htmlSource = `
                         <div class="w-full sm:w-auto">
                           <label class="form-label-check">
                             <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
-                            <span class="ml-3">
+                            <span class="form-check-content">
                               Option 3
                             </span>
                           </label>
@@ -447,7 +447,7 @@ demo.htmlSource = `
                     <div class="w-full">
                       <label class="form-label-check">
                         <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-                        <span class="ml-3">
+                        <span class="form-check-content">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>
                       </label>

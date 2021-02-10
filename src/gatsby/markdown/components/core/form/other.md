@@ -8,10 +8,10 @@ date: "2005-10-10"
 
 ## Disabled
 
-Use **component classes** to style **disabled**.
+Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+| For aria purpose use `aria-disabled="true"` when using the **class** `.disabled`.
 
 <div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
@@ -27,17 +27,6 @@ Use **component classes** to style **disabled**.
 </demo>
 
 ## Fieldset Legend and Note
-
-Use **component classes** to create **fieldset** and **legend**.
-
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `fieldset, .fieldset`                     | `fieldset`                | Fieldset styles            |
-| Component                  | `legend, .legend`                     | `legend`                | Legend styles            |
-
-</div>
 
 Use **tailwind classes** to create a **note**.
 

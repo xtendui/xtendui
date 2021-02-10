@@ -48,7 +48,7 @@ module.exports = {
     },
     '.container': theme('container.fluid')
       ? {
-              maxWidth: '1536px',
+          maxWidth: '1536px',
         }
       : {},
     '::selection': {
@@ -88,7 +88,6 @@ module.exports = {
       scrollbarColor: `${theme('colors.gray.600')} transparent`,
     },
     '[readonly], [disabled], .disabled': {
-      cursor: 'not-allowed',
       pointerEvents: 'none',
       // styles
       '&:not(.active)': {

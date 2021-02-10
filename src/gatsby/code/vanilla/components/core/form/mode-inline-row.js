@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="text-sm">
   <div class="row row-x-6 row-y-4">
 
     <div class="w-full md:w-auto">
@@ -56,14 +56,14 @@ demo.htmlSource = `
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked disabled>
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
@@ -82,14 +82,14 @@ demo.htmlSource = `
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-inline-row" checked>
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-inline-row">
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
@@ -108,21 +108,21 @@ demo.htmlSource = `
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="checkbox" class="form-check form-switch rounded-full ${switchDefault()}">
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-inline-row" checked>
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 
         <div class="w-full md:w-auto">
           <label class="form-label-check">
             <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-inline-row">
-            <span class="ml-3">Lorem ipsum</span>
+            <span class="form-check-content">Lorem ipsum</span>
           </label>
         </div>
 

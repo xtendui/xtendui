@@ -1,45 +1,15 @@
-const round = num =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, '$1')
-    .replace(/\.0$/, '')
-const rem = px => `${round(px / 16)}rem`
-
 module.exports = {
   component: theme => ({
-    label: {
-      cursor: 'pointer',
-    },
-    'fieldset, .fieldset': {
-      // styles
-      '& + &': {
-        marginTop: theme('spacing.8'),
-      },
-    },
-    'legend, .legend': {
-      // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.4'),
-      '@apply mt-fc mb-lc': {},
-      width: '100%',
-      fontFamily: theme('fontFamily.sans').toString(),
-      fontWeight: theme('fontWeight.bold'),
-      fontSize: rem(24),
-      lineHeight: theme('lineHeight.snug'),
-    },
     '.form-valid': {
+      // styles
       borderColor: `${theme('colors.success')} !important`,
     },
     '.form-invalid': {
+      // styles
       borderColor: `${theme('colors.error')} !important`,
     },
     '.form-label': {
-      cursor: 'pointer',
       display: 'flex',
-      // styles
-      fontWeight: theme('fontWeight.semibold'),
-      fontSize: '0.8em',
-      lineHeight: theme('lineHeight.snug'),
     },
     '.form-label-required': {
       // styles
@@ -50,15 +20,7 @@ module.exports = {
     },
     '.form-item': {
       display: 'block', // @FIX select and textarea space below
-      // styles
-      padding: `.75em 1.2em`,
       width: '100%',
-      fontSize: '0.8em',
-      lineHeight: theme('lineHeight.snug'),
-      // animation
-      transitionProperty: 'border, background, color',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.form-select': {
       appearance: 'none',
@@ -82,9 +44,7 @@ module.exports = {
     '.form-label-check': {
       cursor: 'pointer',
       display: 'inline-flex',
-      // styles
-      fontSize: '0.8em',
-      lineHeight: theme('lineHeight.snug'),
+      alignItems: 'baseline',
     },
     '.form-check': {
       appearance: 'none',
@@ -93,26 +53,31 @@ module.exports = {
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
       // styles
-      '&[disabled]': {
+      '&[readonly], &[disabled], &.disabled': {
         backgroundColor: `${theme('colors.gray.500')} !important`,
         borderColor: `${theme('colors.gray.500')} !important`,
         opacity: '1',
       },
-      // animation
-      transitionProperty: 'all',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
+    },
+    '.form-check-content': {
+      // styles
+      marginLeft: '1em',
     },
     '.form-checkbox': {
+      appearance: 'none',
+      cursor: 'pointer',
+      position: 'relative',
+      flexShrink: '0',
+      backgroundRepeat: 'no-repeat',
       // styles
-      top: '-1px',
-      width: '1.5em',
-      height: '1.5em',
+      top: '.2em',
+      width: '1.25em',
+      height: '1.25em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
       backgroundSize: '0',
-      backgroundPosition: 'center center',
+      backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
         backgroundColor: 'currentColor',
@@ -120,14 +85,20 @@ module.exports = {
       },
     },
     '.form-radio': {
-      top: '-1px',
-      width: '1.5em',
-      height: '1.5em',
+      appearance: 'none',
+      cursor: 'pointer',
+      position: 'relative',
+      flexShrink: '0',
+      backgroundRepeat: 'no-repeat',
+      // styles
+      top: '.2em',
+      width: '1.25em',
+      height: '1.25em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-6 -6 12 12" fill="${encodeURIComponent(
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
-      backgroundPosition: 'center center',
       backgroundSize: '0',
+      backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
         backgroundColor: 'currentColor',
@@ -135,9 +106,15 @@ module.exports = {
       },
     },
     '.form-switch': {
-      top: '-1px',
-      width: '2.5em',
-      height: '1.5em',
+      appearance: 'none',
+      cursor: 'pointer',
+      position: 'relative',
+      flexShrink: '0',
+      backgroundRepeat: 'no-repeat',
+      // styles
+      top: '.2em',
+      width: '2.25em',
+      height: '1.25em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-5 -5 10 10" fill="${encodeURIComponent(
         theme('colors.gray.600')
       )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,

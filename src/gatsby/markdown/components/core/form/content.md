@@ -19,13 +19,13 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g. [font-size](https://tailwindcss.com/docs/font-size)).
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
+  <demovanilla src="vanilla/components/core/form/size-xs">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/form/size-sm">
   </demovanilla>
   <demovanilla src="vanilla/components/core/form/size-md">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/form/size-lg">
   </demovanilla>
 </demo>

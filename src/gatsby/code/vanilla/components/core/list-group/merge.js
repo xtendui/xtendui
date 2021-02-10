@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="text-sm">
 
   <button type="button" class="list group">
 

@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="text-sm">
   <div class="row row-x-6 row-y-4">
 
     <div class="w-full">
@@ -18,11 +18,11 @@ demo.htmlSource = `
         Lorem ipsum
         <div class="ml-4">
           <div class="list list-2 items-center">
-            <a href="#" class="btn">
-              btn
+            <a href="#" class="btn link">
+              link #1
             </a>
             <a href="#" class="btn link">
-              link
+              link #2
             </a>
           </div>
         </div>
@@ -35,11 +35,11 @@ demo.htmlSource = `
         Dolor sit amet
         <div class="ml-auto">
           <div class="list list-2 items-center">
-            <a href="#" class="btn">
-              btn
+            <a href="#" class="btn link">
+              link #1
             </a>
             <a href="#" class="btn link">
-              link
+              link #2
             </a>
           </div>
         </div>
@@ -55,11 +55,11 @@ demo.htmlSource = `
             Lorem ipsum
             <div class="mt-2">
               <div class="list list-2 items-center">
-                <a href="#" class="btn">
-                  btn
+                <a href="#" class="btn link">
+                  link #1
                 </a>
                 <a href="#" class="btn link">
-                  link
+                  link #2
                 </a>
               </div>
             </div>
@@ -81,11 +81,11 @@ demo.htmlSource = `
             Dolor sit amet
             <div class="mt-auto">
               <div class="list list-2 items-center">
-                <a href="#" class="btn">
-                  btn
+                <a href="#" class="btn link">
+                  link #1
                 </a>
                 <a href="#" class="btn link">
-                  link
+                  link #2
                 </a>
               </div>
             </div>

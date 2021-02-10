@@ -45,28 +45,28 @@ demo.htmlSource = `
           <div class="w-full">
             <label class="form-label-check">
               <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" name="googlelocator-options" value="" checked/>
-              <span class="ml-3">All types</span>
+              <span class="form-check-content">All types</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check">
               <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" name="googlelocator-options" value="restaurant"/>
-              <span class="ml-3">Restaurant</span>
+              <span class="form-check-content">Restaurant</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check" for="googlelocator-options-school">
               <input type="radio" class="form-check form-radio rounded-full ${switchDefault()}" id="googlelocator-options-school" name="googlelocator-options" value="school"/>
-              <span class="ml-3">School</span>
+              <span class="form-check-content">School</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="form-label-check" for="googlelocator-options-fav">
               <input type="checkbox" class="form-check form-switch rounded-full ${switchDefault()}" id="googlelocator-options-fav" name="googlelocator-fav" value="fav"/>
-              <span class="ml-3">Favourite</span>
+              <span class="form-check-content">Favourite</span>
             </label>
           </div>
 

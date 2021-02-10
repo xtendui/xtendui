@@ -14,7 +14,7 @@ demo.htmlSource = `
   Horizontal
 </div>
 
-<form>
+<form class="text-sm">
 
   <div class="list" data-xt-groupnumber>
 
@@ -36,7 +36,7 @@ demo.htmlSource = `
   Vertical
 </div>
 
-<form>
+<form class="text-sm">
 
   <div class="list" data-xt-groupnumber>
 

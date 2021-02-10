@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form>
+<form class="text-sm">
 
   <div class="row row-x-6 row-y-4">
 

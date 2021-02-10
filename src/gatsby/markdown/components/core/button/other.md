@@ -25,16 +25,16 @@ Use **component classes** to style **active**.
 
 ## Disabled
 
-Use **component classes** to style **disabled**.
+Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+| For aria purpose use `aria-disabled="true"` when using the **class** `.disabled`.
 
 <div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.disabled`                     | `disabled`                | Disabled styles            |
+| Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |
 
 </div>
 

@@ -19,7 +19,7 @@ demo.htmlSource = `
   <div class="container pt-10">
     <label class="form-label-check">
       <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-      <span class="ml-3">Use mouse events</span>
+      <span class="form-check-content">Use mouse events</span>
     </label>
   </div>
 

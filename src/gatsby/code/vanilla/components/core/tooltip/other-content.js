@@ -22,7 +22,7 @@ demo.htmlSource = `
 
     <div class="tooltip">
       <div class="rounded-md shadow-tooltip text-black links-default bg-white">
-        <form>
+        <form class="text-sm">
 
           <div class="list flex-nowrap max-w-sm">
 
