@@ -1,6 +1,8 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const iconSearch = require('components/snippets/icons').iconSearch
+const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
+const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -57,6 +59,17 @@ demo.htmlSource = `
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-end text-right ${btnPrimary()}">
     justify content<br>items-end + text-right
     ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+  </button>
+
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full justify-between ${btnPrimary()}">
+    justify content<br>between
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+  </button>
+
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md w-full ${btnPrimary()}">
+    margin<br>auto
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${iconChevronRight({ classes: 'text-xl -my-1 ml-auto' })}
   </button>
 
 </div>
