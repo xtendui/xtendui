@@ -340,12 +340,12 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col ${animItem}">
-                <div class="media-container bg-gray-700 rounded-b-md md:rounded-bl-none md:rounded-br-md h-48 md:ratio-100">
+                <div class="media-container bg-gray-700 h-48 md:ratio-100">
                   <div class="media-inner">
                     <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
-                <div class="text-base p-8 bg-gray-300 flex-full">
+                <div class="text-base p-8 bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
                   <p class="h5">
                     Didn't find what you was looking for?
                   </p>
