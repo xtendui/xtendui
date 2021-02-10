@@ -19,6 +19,9 @@ module.exports = {
     },
   }),
   component: theme => ({
+    body: {
+      '@apply links-default': '',
+    },
     'a:not([class]), a[class=""], .link': {
       '@apply text-reset !important': {},
       wordWrap: 'break-word',

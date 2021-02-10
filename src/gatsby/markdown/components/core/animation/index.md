@@ -33,12 +33,12 @@ module.exports = {
       keyframes: theme => ({
         // modify keyframe
       }),
-    },
-    xtendui: {
-      animation: {
-        utility: theme => ({
-          // modify utilities
-        }),
+      xtendui: {
+        animation: {
+          utility: theme => ({
+            // modify utilities
+          }),
+        },
       },
     },
   },

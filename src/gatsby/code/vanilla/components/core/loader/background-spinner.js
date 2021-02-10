@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center justify-center">
+<div class="list list-3 items-center justify-center">
 
   <div class="card rounded-md ${cardDefault()}">
     <div class="text-sm p-6">

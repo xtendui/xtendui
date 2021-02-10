@@ -14,7 +14,7 @@ demo.htmlSource = `
   Button small
 </div>
 
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}">
     icon small
@@ -37,7 +37,7 @@ demo.htmlSource = `
   Button medium
 </div>
 
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     icon small
@@ -60,7 +60,7 @@ demo.htmlSource = `
   Button large
 </div>
 
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <button type="button" class="btn text-sm py-2.5 px-4 rounded-md ${btnPrimary()}">
     icon small

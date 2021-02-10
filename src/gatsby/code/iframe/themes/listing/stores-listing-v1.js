@@ -36,7 +36,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
@@ -92,7 +92,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
@@ -136,7 +136,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
@@ -192,7 +192,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
@@ -236,7 +236,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>
@@ -292,7 +292,7 @@ demo.htmlSource = `
                 <address class="p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-2 mt-auto justify-end">
+                <div class="list list-3 mt-auto justify-end">
                   <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                       More info
                   </button>

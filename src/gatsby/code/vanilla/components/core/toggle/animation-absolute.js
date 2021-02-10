@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-toggle="{ instant: true, targets: ':scope > .relative > .toggle' }">
+<div class="list list-3 items-center" data-xt-toggle="{ instant: true, targets: ':scope > .relative > .toggle' }">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 0

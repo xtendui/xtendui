@@ -26,7 +26,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2">
+<div class="list list-3">
 
   ${iconSearch()}
 

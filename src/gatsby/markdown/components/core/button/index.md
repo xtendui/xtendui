@@ -13,11 +13,13 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      btn: {
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        btn: {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <a role="button" class="badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
     Default

@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-drop>
+<div class="list list-3 items-center" data-xt-drop>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}" data-xt-group="my-group">
     drop

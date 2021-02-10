@@ -17,11 +17,13 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      scroll: {
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        scroll: {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

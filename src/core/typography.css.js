@@ -136,18 +136,6 @@ module.exports = {
       // styles
       fontWeight: theme('fontWeight.semibold'),
     },
-    code: {
-      // styles
-      fontSize: '0.95em',
-      color: theme('colors.accent.600'),
-    },
-    '.links-inverse': {
-      // styles
-      code: {
-        color: theme('colors.white'),
-        opacity: '0.8',
-      },
-    },
     'ul:not([class]), ol:not([class])': {
       // styles
       marginBottom: theme('spacing.3'),

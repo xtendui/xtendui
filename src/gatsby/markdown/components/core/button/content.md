@@ -39,4 +39,4 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Icons
 
-Refer to [button and alignment](/components/core/icons/content#button-and-alignment).
+Refer to [button and alignment](/components/core/icon/content#button-and-alignment).

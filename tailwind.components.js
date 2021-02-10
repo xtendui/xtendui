@@ -9,7 +9,7 @@ module.exports = {
   card: require('./src/core/card.css.js'),
   drop: require('./src/core/drop.css.js'),
   form: require('./src/core/form.css.js'),
-  icons: require('./src/core/icons.css.js'),
+  icon: require('./src/core/icon.css.js'),
   link: require('./src/core/link.css.js'),
   list: require('./src/core/list.css.js'),
   media: require('./src/core/media.css.js'),

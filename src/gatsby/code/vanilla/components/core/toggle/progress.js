@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center demo--toggle-progress">
+<div class="list list-3 items-center demo--toggle-progress">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()} in-toggle">
     Toggle 0

@@ -21,11 +21,13 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      'groupnumber': {
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        groupnumber: {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

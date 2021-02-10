@@ -21,11 +21,13 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      'mousefollow': {
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        'mousefollow': {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

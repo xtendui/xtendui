@@ -13,14 +13,16 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      typography: {
-        utility: theme => ({
-          // modify utilities
-        }),
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        typography: {
+          utility: theme => ({
+            // modify utilities
+          }),
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

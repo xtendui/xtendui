@@ -44,15 +44,32 @@ module.exports = {
         DEFAULT: theme('colors.gray.300', 'currentColor'),
       }),
       xtendui: {
-        layout: {
+        link: {
+          utility: theme => ({
+            '.links-default': {
+              code: {
+                color: theme('colors.accent.600'),
+              },
+            },
+            '.links-inverse': {
+              code: {
+                color: theme('colors.white'),
+                opacity: '0.8',
+              },
+            },
+          }),
+        },
+        typography: {
           component: {
             body: {
-              // styles
               '@apply text-base xl:text-lg': '',
+            },
+            code: {
+              fontSize: '0.95em',
             },
           },
         },
-      }
+      },
     },
   },
 }

@@ -1,23 +1,25 @@
 ---
 type: "Components"
 category: "Core"
-parent: "Icons"
-title: "Icons"
+parent: "Icon"
+title: "Icon"
 description: "Everything you need to stylize svg icons."
 ---
 
 ## Customization
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/icons.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/icons.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/icon.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/icon.css.js) for default values.
 
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      icons: {
-        utility: theme => ({
-          // modify utilities
-        }),
+    extend: {
+      xtendui: {
+        icons: {
+          utility: theme => ({
+            // modify utilities
+          }),
+        },
       },
     },
   },
@@ -39,21 +41,21 @@ Use `.icon` to create a **icon**.
 Use this code to create **icons with svg**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/icons/usage">
+  <demovanilla src="vanilla/components/core/icon/usage">
   </demovanilla>
 </demo>
 
 Use this code to create **icons with img**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/icons/usage-img">
+  <demovanilla src="vanilla/components/core/icon/usage-img">
   </demovanilla>
 </demo>
 
 [[notePrimary]]
-| Icons with img don't support [icons variant](/components/core/icons/content#variant)
+| Icons with img don't support [icons variant](/components/core/icon/content#variant)
 
 [[noteDefault]]
 | Icons from [Feather Icons](https://feathericons.com).
 
-Check subpage to [customize content](/components/core/icons/content).
+Check subpage to [customize content](/components/core/icon/content).

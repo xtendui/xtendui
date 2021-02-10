@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-toggle="{matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { max: 2 } } }">
+<div class="list list-3 items-center" data-xt-toggle="{matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { max: 2 } } }">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 0

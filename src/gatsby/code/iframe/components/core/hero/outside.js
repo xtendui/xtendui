@@ -27,7 +27,7 @@ demo.htmlSource = `
       <h3 class="p max-w-lg mx-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-2 justify-center max-w-2xl mx-auto">
+      <div class="list list-3 justify-center max-w-2xl mx-auto">
         <div class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
             Lorem ipsum
         </div>

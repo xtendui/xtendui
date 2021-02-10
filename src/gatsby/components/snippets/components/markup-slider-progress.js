@@ -76,8 +76,8 @@ export default () => {
   </div>
 </div>
 
-<nav class="slider-pagination slider-ui w-full list list-2 pt-4 items-center justify-center">
-  <button type="button" class="btn text-2xs py-2 px-3.5 active:px-5 w-5 h-5 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore" data-xt-pag title="Slide xt-num">
+<nav class="slider-pagination slider-ui w-full list list-3 pt-4 items-center justify-center">
+  <button type="button" class="btn text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore" data-xt-pag title="Slide xt-num">
     <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden">
       <span class="filler absolute inset-0 m-auto text-accent-500">
         <span class="absolute bg-current h-full"></span>

@@ -25,12 +25,12 @@ module.exports = {
       boxShadow: {
         // modify box shadow
       },
-    },
-    xtendui: {
-      overlay: {
-        component: theme => ({
-          // modify components
-        }),
+      xtendui: {
+        overlay: {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

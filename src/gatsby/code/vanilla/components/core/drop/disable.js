@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <div class="demo--drop-disable" data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
 

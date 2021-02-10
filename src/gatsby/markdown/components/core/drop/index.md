@@ -25,15 +25,15 @@ module.exports = {
       boxShadow: {
         // modify box shadow
       },
-    },
-    xtendui: {
-      drop: {
-        utility: theme => ({
-          // modify utilities
-        }),
-        component: theme => ({
-          // modify components
-        }),
+      xtendui: {
+        drop: {
+          utility: theme => ({
+            // modify utilities
+          }),
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

@@ -96,14 +96,16 @@ You can **customize components** inside `tailwind.config.js`, check [xtendui/tai
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      layout: { // layout component
-        utility: theme => ({
-          // modify utilities
-        }),
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        layout: { // layout component
+          utility: theme => ({
+            // modify utilities
+          }),
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

@@ -24,7 +24,7 @@ demo.htmlSource = `
   Button
 </div>
 
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     default

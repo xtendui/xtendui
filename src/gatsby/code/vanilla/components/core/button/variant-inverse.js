@@ -10,23 +10,25 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center text-white links-inverse py-4 px-6 bg-accent-500">
+<div class="bg-accent-500 py-5 px-6">
+  <div class="list list-3 items-center text-white links-inverse">
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
-    default
-  </button>
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+      default
+    </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-    primary
-  </button>
+    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      primary
+    </button>
 
-  <button type="button" class="btn py-2.5 px-4">
-    text
-  </button>
+    <button type="button" class="btn py-2.5 px-4">
+      text
+    </button>
 
-  <button type="button" class="btn link">
-    link
-  </button>
+    <button type="button" class="btn link">
+      link
+    </button>
 
+  </div>
 </div>
 `

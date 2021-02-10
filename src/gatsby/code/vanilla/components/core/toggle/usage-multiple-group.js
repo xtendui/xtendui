@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-toggle>
+<div class="list list-3 items-center" data-xt-toggle>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-group="my-group">
     Toggle Group 0

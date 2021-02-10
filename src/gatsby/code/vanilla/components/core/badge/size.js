@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center">
+<div class="list list-3 items-center">
 
   <div class="badge text-2xs py-1.5 px-2.5 ${badgeDefault()}">
     Small

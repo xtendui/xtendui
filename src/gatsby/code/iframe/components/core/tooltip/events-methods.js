@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center mb-4">
+<div class="list list-3 items-center mb-4">
   <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--tooltip-events-first-element">
     1st element
   </button>
@@ -45,7 +45,7 @@ demo.htmlSource = `
   </button>
 </div>
 
-<div class="list list-2 items-center" id="demo--tooltip-events" title="Object">
+<div class="list list-3 items-center" id="demo--tooltip-events" title="Object">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     Element 0

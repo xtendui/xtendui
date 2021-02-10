@@ -79,7 +79,7 @@ demo.htmlSource = `
                 <h3 class="p max-w-lg mx-auto md:ml-0">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
                 </h3>
-                <div class="list list-2 justify-center md:justify-start">
+                <div class="list list-3 justify-center md:justify-start">
                   <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                     Lorem ipsum
                   </a>
@@ -110,7 +110,7 @@ demo.htmlSource = `
                 <h3 class="p max-w-lg mx-auto md:mr-0">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
                 </h3>
-                <div class="list list-2 justify-center md:justify-end">
+                <div class="list list-3 justify-center md:justify-end">
                   <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
                     Lorem ipsum
                   </a>

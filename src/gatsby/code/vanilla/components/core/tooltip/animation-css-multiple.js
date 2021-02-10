@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > a, :scope > button', targets: ':scope > .tooltip', delay: 25 }">
+<div class="list list-3 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ elements: ':scope > a, :scope > button', targets: ':scope > .tooltip', delay: 25 }">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     tooltip

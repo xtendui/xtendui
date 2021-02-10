@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-toggle="{ elements: ':scope > input', on: 'focus' }">
+<div class="list list-3 items-center" data-xt-toggle="{ elements: ':scope > input', on: 'focus' }">
 
   <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Toggle 0" placeholder="Toggle 0">
 

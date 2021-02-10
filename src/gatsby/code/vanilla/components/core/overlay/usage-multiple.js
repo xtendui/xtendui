@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center" data-xt-overlay>
+<div class="list list-3 items-center" data-xt-overlay>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
     overlay 0

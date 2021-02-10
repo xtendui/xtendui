@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-2 items-center demo--toggle-timing">
+<div class="list list-3 items-center demo--toggle-timing">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 0
@@ -54,7 +54,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="list list-2 items-center mt-4 demo--toggle-timing--event">
+<div class="list list-3 items-center mt-4 demo--toggle-timing--event">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
     Toggle 0 hover

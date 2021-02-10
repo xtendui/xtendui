@@ -17,7 +17,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()}">
         Lorem ipsum
         <div class="ml-4">
-          <div class="list list-2 items-center">
+          <div class="list list-3 items-center">
             <a href="#" class="btn link">
               link #1
             </a>
@@ -34,7 +34,7 @@ demo.htmlSource = `
       <label class="form-label mb-3 ${labelDefault()}">
         Dolor sit amet
         <div class="ml-auto">
-          <div class="list list-2 items-center">
+          <div class="list list-3 items-center">
             <a href="#" class="btn link">
               link #1
             </a>
@@ -54,7 +54,7 @@ demo.htmlSource = `
           <label class="form-label flex-col ${labelDefault()}">
             Lorem ipsum
             <div class="mt-2">
-              <div class="list list-2 items-center">
+              <div class="list list-3 items-center">
                 <a href="#" class="btn link">
                   link #1
                 </a>
@@ -80,7 +80,7 @@ demo.htmlSource = `
           <label class="form-label flex-col ${labelDefault()}">
             Dolor sit amet
             <div class="mt-auto">
-              <div class="list list-2 items-center">
+              <div class="list list-3 items-center">
                 <a href="#" class="btn link">
                   link #1
                 </a>

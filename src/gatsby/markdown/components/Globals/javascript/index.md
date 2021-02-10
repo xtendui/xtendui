@@ -21,11 +21,13 @@ You can **customize this component** inside `tailwind.config.js`, check [xtendui
 ```jsx
 module.exports = {
   theme:{
-    xtendui: {
-      javascript: {
-        component: theme => ({
-          // modify components
-        }),
+    extend: {
+      xtendui: {
+        javascript: {
+          component: theme => ({
+            // modify components
+          }),
+        },
       },
     },
   },

@@ -28,7 +28,7 @@ demo.htmlSource = `
       <h3 class="p max-w-lg mr-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-2 justify-start max-w-2xl mr-auto">
+      <div class="list list-3 justify-start max-w-2xl mr-auto">
         <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
@@ -55,7 +55,7 @@ demo.htmlSource = `
       <h3 class="p max-w-lg mr-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-2 justify-start max-w-2xl mr-auto">
+      <div class="list list-3 justify-start max-w-2xl mr-auto">
         <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
@@ -82,7 +82,7 @@ demo.htmlSource = `
       <h3 class="p max-w-lg ml-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-2 justify-end max-w-2xl ml-auto">
+      <div class="list list-3 justify-end max-w-2xl ml-auto">
         <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
           Lorem ipsum
         </a>
