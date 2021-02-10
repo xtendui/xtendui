@@ -7,31 +7,26 @@ module.exports = {
       verticalAlign: 'baseline',
     },
     '.separator-dash': {
-      // styles
       '&:after': {
         content: '"-"',
       },
     },
     '.separator-slash': {
-      // styles
       '&:after': {
         content: '"/"',
       },
     },
     '.separator-pipe': {
-      // styles
       '&:after': {
         content: '"|"',
       },
     },
     '.separator-point': {
-      // styles
       '&:after': {
         content: '"•"',
       },
     },
     '.separator-arrow': {
-      // styles
       '&:after': {
         content: '">"',
       },

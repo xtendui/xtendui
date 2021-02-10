@@ -1,0 +1,14 @@
+#iframe--ripple-animation-v1 {
+  /*##START*/
+  .bg-accent-500 {
+    /* custom opacity */
+    .ripple-container {
+      opacity: .25;
+    }
+    /* custom background */
+    .ripple {
+      background: theme('colors.white');
+    }
+  }
+  /*##END*/
+}
