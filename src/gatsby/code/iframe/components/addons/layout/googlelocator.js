@@ -108,7 +108,7 @@ demo.htmlSource = `
                 <address class="googlelocator-item-address" data-xt-populate="address"></address>
                 <div class="googlelocator-item-additional" data-xt-populate="additional"></div>
               </div>
-              <a href="#" target="_blank" class="googlelocator-item-directions list list-1 flex-col items-center" title="directions" data-xt-populate="direction">
+              <a href="#" target="_blank" class="googlelocator-item-directions list list-2 flex-col items-center" title="directions" data-xt-populate="direction">
                 ${iconLocate({ classes: 'text-xl -my-1' })}
                 <span data-xt-populate="distance"></span>
               </a>

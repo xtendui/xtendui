@@ -31,7 +31,7 @@ demo.htmlSource = `
   <div class="container">
 
     <div class="infinitescroll-pre mb-4">
-      <div class="list list-1 flex-col items-center">
+      <div class="list list-2 flex-col items-center">
         <div>
           <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             Load previous pages
@@ -190,7 +190,7 @@ demo.htmlSource = `
   </div>
 
   <div class="infinitescroll mt-4">
-    <div class="list list-1 flex-col items-center">
+    <div class="list list-2 flex-col items-center">
 
       <div class="infinitescroll-trigger">
         <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">

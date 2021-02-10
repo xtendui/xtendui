@@ -21,7 +21,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -39,7 +39,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -72,7 +72,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -90,7 +90,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -111,7 +111,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -129,7 +129,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -162,7 +162,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -180,7 +180,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -201,7 +201,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -219,7 +219,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -252,7 +252,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="media-container bg-gray-700 h-40">
               <div class="media-inner">
                 <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -270,7 +270,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="listing-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="btn btn-close text-xl" aria-label="Close">
               ${iconX()}
             </button>

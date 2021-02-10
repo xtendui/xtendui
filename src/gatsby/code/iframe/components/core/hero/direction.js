@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="relative block overflow-hidden w-full">
+<div class="hero relative block overflow-hidden w-full">
   <div class="media-container bg-gray-700 h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -39,7 +39,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="relative block overflow-hidden w-full">
+<div class="hero relative block overflow-hidden w-full">
   <div class="media-container bg-gray-700 h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -65,7 +65,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="relative block overflow-hidden w-full">
+<div class="hero relative block overflow-hidden w-full">
   <div class="media-container bg-gray-700 h-screen">
     <div class="media-inner">
       <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">

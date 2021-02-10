@@ -36,7 +36,7 @@ Xt.mount.push({
         ease: 'expo.out',
       })
       // content
-      const content = tr.querySelector('.listing-content')
+      const content = tr.querySelector('.listing-item-content')
       if (content) {
         gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
       }
@@ -59,7 +59,7 @@ Xt.mount.push({
       const mediaInner = tr.querySelector('.media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
       // content
-      const content = tr.querySelector('.listing-content')
+      const content = tr.querySelector('.listing-item-content')
       if (content) {
         gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
       }

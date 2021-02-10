@@ -88,7 +88,7 @@
 /* social */
 
 .gatsby_home-main_social {
-  @apply list list-1.5 mt-6;
+  @apply list list-3 mt-6;
   justify-content: center;
   svg {
     width: 2em;

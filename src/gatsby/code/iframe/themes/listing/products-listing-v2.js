@@ -30,7 +30,7 @@ demo.htmlSource = `
                 </div>
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                 <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-                  <div class="list list-1.5 items-center flex-nowrap">
+                  <div class="list list-3 items-center flex-nowrap">
                     <div class="text-lg font-semibold">
                       -35%
                     </div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
                 </div>
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                 <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-                  <div class="list list-1.5 items-center flex-nowrap">
+                  <div class="list list-3 items-center flex-nowrap">
                     <div class="text-lg font-semibold">
                       -40%
                     </div>
@@ -199,195 +199,198 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="container">
+  <div class="listing">
+    <div class="container">
 
-    <div class="h2 mb-8">Category</div>
+      <div class="h2 mb-8">Category</div>
 
-    <div class="row row-6">
+      <div class="row row-6">
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-            </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-            <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-              <div class="list list-1.5 items-center flex-nowrap">
-                <div class="text-lg font-semibold">
-                  -35%
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+              <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+                <div class="list list-3 items-center flex-nowrap">
+                  <div class="text-lg font-semibold">
+                    -35%
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Lorem ipsum
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Lorem ipsum
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-            </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-            <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-              <div class="list list-1.5 items-center flex-nowrap">
-                <div class="text-lg font-semibold">
-                  -40%
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+              <div class="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+                <div class="list list-3 items-center flex-nowrap">
+                  <div class="text-lg font-semibold">
+                    -40%
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Dolor sit amet
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Dolor sit amet
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Lorem ipsum
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Lorem ipsum
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Dolor sit amet
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Dolor sit amet
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Lorem ipsum
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Lorem ipsum
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Dolor sit amet
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Dolor sit amet
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Lorem ipsum
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Lorem ipsum
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Dolor sit amet
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Dolor sit amet
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
 
-      <div class="w-6/12 md:w-4/12">
-        <a href="#" class="listing-item block group">
-          <div class="media-container bg-gray-700 ratio-125">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <div class="w-6/12 md:w-4/12">
+          <a href="#" class="listing-item block group">
+            <div class="media-container bg-gray-700 ratio-125">
+              <div class="media-inner">
+                <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
-            <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-          </div>
-          <div class="py-4">
-            <div class="h5 group-hover:text-accent-500">
-              Lorem ipsum
+            <div class="py-4">
+              <div class="h5 group-hover:text-accent-500">
+                Lorem ipsum
+              </div>
+              <div class="-mt-2 text-sm font-semibold">
+                3.772,00 €
+              </div>
             </div>
-            <div class="-mt-2 text-sm font-semibold">
-              3.772,00 €
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
+
       </div>
 
     </div>

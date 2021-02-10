@@ -251,7 +251,7 @@ const populateDemo = (container, i) => {
   // multiple elements
   container.prepend(
     Xt.createElement(
-      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-1.5"></div><div class="gatsby_demo_tabs_right list list-1.5"></div></div>'
+      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left list list-3"></div><div class="gatsby_demo_tabs_right list list-3"></div></div>'
     )
   )
   const showCodeUid = Xt.getuniqueId()
@@ -324,8 +324,8 @@ const populateDemo = (container, i) => {
 <div class="gatsby_demo_code">
   <div class="gatsby_demo_code_inner">
     <div class="gatsby_demo_code_tabs">
-      <div class="gatsby_demo_code_tabs_left list list-1.5"></div>
-      <div class="gatsby_demo_code_tabs_right list list-1.5">
+      <div class="gatsby_demo_code_tabs_left list list-3"></div>
+      <div class="gatsby_demo_code_tabs_right list list-3">
         <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end' }">
           <button type="button" class="btn btn-tiny btn-clipboard" aria-label="Copy to Clipboard">
             ${iconCopy()}

@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <form class="text-sm">
 
-  <div class="list list-1 flex-col">
+  <div class="list list-2 flex-col">
 
     <div class="list-inner">
       <button type="button" class="btn text-xs py-2 px-3.5 rounded-tl-md rounded-bl-md ${btnDefault()}">

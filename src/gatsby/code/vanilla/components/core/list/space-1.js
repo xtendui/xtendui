@@ -9,13 +9,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="list list-1 flex-col">
+<nav class="list list-2 flex-col">
 
   <div>
     <div class="list list-1">
 
       <div>
-        <div class="list list-1 flex-col">
+        <div class="list list-2 flex-col">
 
           <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
             Lorem Ipsum

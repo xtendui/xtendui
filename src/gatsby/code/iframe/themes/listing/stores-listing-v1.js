@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="py-10">
+<div class="listing py-10">
   <div class="container">
     <div class="row row-6 row-stretch">
 
@@ -23,7 +23,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -44,7 +44,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -79,7 +79,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -100,7 +100,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -123,7 +123,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -144,7 +144,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -179,7 +179,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -200,7 +200,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -223,7 +223,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -244,7 +244,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -279,7 +279,7 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner">
 
-            <div class="listing-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
                 <div class="media-inner">
                   <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -300,7 +300,7 @@ demo.htmlSource = `
               </div>
             </div>
 
-            <div class="listing-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>

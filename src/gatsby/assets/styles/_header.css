@@ -127,7 +127,7 @@
 }
 
 .gatsby_site-header_top_social {
-  @apply list list-0.5;
+  @apply list list-1;
   align-items: stretch;
 }
 

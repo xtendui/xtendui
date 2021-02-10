@@ -4,7 +4,7 @@
     position: relative;
     overflow: hidden;
     @screen md {
-      .listing-front {
+      .listing-item-front {
         display: block;
         position: absolute;
         top: 0;
@@ -12,17 +12,17 @@
         width: 100%;
         height: 100%;
       }
-      .listing-back {
+      .listing-item-back {
         pointer-events: none;
         opacity: 0;
       }
       &.active {
-        .listing-back {
+        .listing-item-back {
           pointer-events: all;
         }
       }
     }
-    .listing-front {
+    .listing-item-front {
       @media (max-width: calc(theme('screens.md') - 1px)) {
         opacity: 1 !important;
         transform: none !important;
@@ -31,7 +31,7 @@
         cursor: pointer;
       }
     }
-    .listing-back {
+    .listing-item-back {
       @media (max-width: calc(theme('screens.md') - 1px)) {
         opacity: 1 !important;
         transform: none !important;
