@@ -47,6 +47,9 @@ module.exports = {
       borderRadius: {
         inherit: 'inherit',
       },
+      cursor: {
+        none: 'none',
+      },
       boxShadow: {
         ...require('./src/core/drop.css.js').boxShadow,
         ...require('./src/core/overlay.css.js').boxShadow,

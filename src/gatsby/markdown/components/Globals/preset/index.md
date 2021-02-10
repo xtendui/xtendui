@@ -18,6 +18,7 @@ The following theme values are added with the preset:
 * [z-index](https://tailwindcss.com/docs/font-size) **additional z-index** used by components, use `z-top` zindex to be sure it's **over anything except interactions components**, use `z-last` zindex to be sure it's **over anything**.
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
 * [border-radius](https://tailwindcss.com/docs/border-radius) **rounded-inherit** added.
+* [cursor](https://tailwindcss.com/docs/cursor) **cursor-none** added.
 
 ## Variants
 

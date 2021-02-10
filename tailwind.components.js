@@ -26,5 +26,4 @@ module.exports = {
   mousefollow: require('./src/addons/mousefollow.css.js'),
   ripple: require('./src/addons/ripple.css.js'),
   separator: require('./src/addons/separator.css.js'),
-  navsides: require('./src/addons/navsides.css.js'),
 }

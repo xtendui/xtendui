@@ -2,7 +2,7 @@
 type: "Components"
 category: "Addons"
 parent: "Animation"
-title: "Mouse Follow"
+title: "Mousefollow"
 description: "Javascript animation utility to follow mouse position."
 ---
 
@@ -34,7 +34,10 @@ module.exports = {
 
 ## Usage
 
-Use **component classes** to create a **mouse follow**. Remember **not to transition** `.mousefollow` element.
+Use **component classes** to create a **mouse follow**.
+
+[[notePrimary]]
+| Remember **not to transition transform** of `.mousefollow` element.
 
 <div class="table-overflow">
 
