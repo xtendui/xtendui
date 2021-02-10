@@ -45,7 +45,6 @@
     "tailwindcss": "^2.0.2"
   },
   "peerDependencies": {
-    "gsap": "3.x",
     "tailwindcss": "2.x"
   },
   "devDependencies": {
