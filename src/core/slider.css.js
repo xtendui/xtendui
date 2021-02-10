@@ -89,7 +89,7 @@ module.exports = {
     },
     '.xt-slider-disabled': {
       '&.slider': {
-          '.slider-ui': {
+        '.slider-ui': {
           display: 'none !important',
         },
         '.xt-wrap': {

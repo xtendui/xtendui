@@ -1,7 +1,6 @@
 import path from 'path'
 const btnPrimary = require('components/snippets/classes/btn-primary').default
 const iconSearch = require('components/snippets/icons').iconSearch
-const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
 const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 const filename = __filename.replace(/\\/g, '/')

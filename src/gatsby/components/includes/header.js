@@ -98,7 +98,11 @@ export default function Header({ page }) {
                   </div>
                 </div>
                 <div className="gatsby_site-header_menu_link">
-                  <button type="button" className="btn text-xs py-2 px-3.5 rounded-md gatsby_btn--overlay" aria-label="Menu">
+                  <button
+                    type="button"
+                    className="btn text-xs py-2 px-3.5 rounded-md gatsby_btn--overlay"
+                    aria-label="Menu"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon"

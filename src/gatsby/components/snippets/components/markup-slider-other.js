@@ -1,4 +1,3 @@
-const btnDefault = require('components/snippets/classes/btn-default').default
 const cardSlide = require('components/snippets/classes/card-slide').default
 
 export default () => {

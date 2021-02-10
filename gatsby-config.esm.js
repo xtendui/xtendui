@@ -116,7 +116,8 @@ module.exports = {
             options: {
               blocks: {
                 noteDefault: {
-                  classes: 'card text-sm p-6 my-5 mt-fc mb-lc text-black links-default rounded-md bg-gray-200 gatsby_note',
+                  classes:
+                    'card text-sm p-6 my-5 mt-fc mb-lc text-black links-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
                   classes:

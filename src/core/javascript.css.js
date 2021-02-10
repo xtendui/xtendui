@@ -1,5 +1,5 @@
 module.exports = {
-  component: theme => ({
+  component: {
     'body:not(.no-js-fouc):not(.xt-ready)': {
       // instant animations on page load
       '*': {
@@ -76,5 +76,5 @@ module.exports = {
     '.xt-collapse-reset': {
       overflow: 'visible !important',
     },
-  }),
+  },
 }

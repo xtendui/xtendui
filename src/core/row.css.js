@@ -51,7 +51,7 @@ module.exports = {
     },
     '@media (hover: none)': {
       '.row-overflow': {
-          '@apply overflow-sub': '',
+        '@apply overflow-sub': '',
         overflowX: 'auto',
         overflowY: 'hidden',
         flexWrap: 'nowrap',

@@ -124,7 +124,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_features">
                   <div className="container">
-                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Features</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                      Features
+                    </h3>
                     <div className="row">
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="row">
@@ -209,7 +211,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_philosophies">
                   <div className="container">
-                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Philosophy</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                      Philosophy
+                    </h3>
                     <div className="row">
                       <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
@@ -252,7 +256,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_actions">
                   <div className="container">
-                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Start Now!</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                      Start Now!
+                    </h3>
                     <div className="gatsby_listing-items">
                       <div className="row row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
@@ -279,7 +285,9 @@ export default class Page extends React.Component {
                 </div>
                 <div className="gatsby_home-main_supports">
                   <div className="container">
-                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">Sponsors</h3>
+                    <h3 className="h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                      Sponsors
+                    </h3>
                     <div className="row">
                       <div className="gatsby_home-main_support_col gatsby_home-main_scroll">
                         <a
