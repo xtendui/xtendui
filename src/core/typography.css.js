@@ -9,7 +9,7 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.h1': {
-      // style
+      // styles
       marginTop: theme('spacing.7'),
       marginBottom: theme('spacing.5'),
       '@apply mt-fc mb-lc text-3xl md:text-4xl lg:text-5xl': {},
@@ -20,7 +20,7 @@ module.exports = {
       textTransform: 'none',
     },
     '.h2': {
-      // style
+      // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.4'),
       '@apply mt-fc mb-lc text-2xl md:text-3xl lg:text-4xl': {},
@@ -31,7 +31,7 @@ module.exports = {
       textTransform: 'none',
     },
     '.h3': {
-      // style
+      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc text-xl md:text-2xl lg:text-3xl': {},
@@ -42,7 +42,7 @@ module.exports = {
       textTransform: 'none',
     },
     '.h4': {
-      // style
+      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc text-xl lg:text-2xl': {},
@@ -53,7 +53,7 @@ module.exports = {
       textTransform: 'none',
     },
     '.h5': {
-      // style
+      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc text-xl': {},
@@ -64,7 +64,7 @@ module.exports = {
       textTransform: 'none',
     },
     '.h6': {
-      // style
+      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       '@apply mt-fc mb-lc text-lg': {},
@@ -80,7 +80,7 @@ module.exports = {
       fontWeight: 'inherit',
       letterSpacing: 'inherit',
       textTransform: 'inherit',
-      // style
+      // styles
       marginTop: theme('spacing.0'),
       marginBottom: theme('spacing.3'),
       '@apply text-reset mb-lc': {},
@@ -111,15 +111,6 @@ module.exports = {
     },
   }),
   component: theme => ({
-    html: {
-      // style
-      '@apply text-black links-default': '',
-      lineHeight: 1.8,
-    },
-    body: {
-      // style
-      '@apply text-base xl:text-lg': '',
-    },
     'h1:not([class])': {
       '@apply h1': '',
     },
@@ -158,7 +149,7 @@ module.exports = {
       },
     },
     'ul:not([class]), ol:not([class])': {
-      // style
+      // styles
       marginBottom: theme('spacing.3'),
       '@apply mb-lc': {},
       '> li': {
@@ -176,7 +167,7 @@ module.exports = {
       },
     },
     'ul:not([class])': {
-      // style
+      // styles
       '> li': {
         paddingLeft: '1.25rem',
         '&:before': {
@@ -186,7 +177,7 @@ module.exports = {
       },
     },
     'ol:not([class])': {
-      // style
+      // styles
       '> li': {
         counterIncrement: 'ol-counter',
         paddingLeft: '1.5rem',
@@ -197,24 +188,24 @@ module.exports = {
       },
     },
     dl: {
-      // style
+      // styles
       marginBottom: theme('spacing.3'),
       '@apply mb-lc': {},
     },
     hr: {
-      // style
+      // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
     'figure, .figure': {
-      // style
+      // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
       '@apply mt-fc mb-lc': {},
     },
     'figcaption, .figcaption': {
-      // style
+      // styles
       marginTop: theme('spacing.3'),
       fontSize: rem(14),
       lineHeight: theme('lineHeight.snug'),

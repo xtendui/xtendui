@@ -23,7 +23,6 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          50: '#FCFDFF',
           100: '#FAFCFF',
           200: '#F2F6FF',
           300: '#EAF1FF',
@@ -44,6 +43,16 @@ module.exports = {
       borderColor: theme => ({
         DEFAULT: theme('colors.gray.300', 'currentColor'),
       }),
+      xtendui: {
+        layout: {
+          component: {
+            body: {
+              // styles
+              '@apply text-base xl:text-lg': '',
+            },
+          },
+        },
+      }
     },
   },
 }
