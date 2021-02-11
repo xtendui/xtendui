@@ -79,7 +79,7 @@ export default class Page extends React.Component {
                         ></a>
                         <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Twitter
                           </div>
@@ -96,7 +96,7 @@ export default class Page extends React.Component {
                         ></a>
                         <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Npm
                           </div>
@@ -113,7 +113,7 @@ export default class Page extends React.Component {
                         ></a>
                         <div className="tooltip group" data-xt-duration="300">
                           <div
-                            className={`text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Github
                           </div>

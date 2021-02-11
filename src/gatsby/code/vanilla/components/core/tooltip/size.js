@@ -19,7 +19,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()}">
+      <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>
@@ -47,7 +47,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="text-sm py-2.5 px-4 rounded shadow-tooltip ${cardBlack()}">
+      <div class="text-base py-2.5 px-4 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>
@@ -61,7 +61,7 @@ demo.htmlSource = `
     </button>
 
     <div class="tooltip">
-      <div class="text-sm py-2.5 px-4 max-w-lg rounded shadow-tooltip ${cardBlack()}">
+      <div class="text-base py-2.5 px-4 max-w-lg rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue.
       </div>
     </div>

@@ -17,37 +17,37 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-3 items-center mb-4">
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-first-element">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-first-target">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-add">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-remove">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-block">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-block">
     Block/Unblock
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-reinit">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-restart">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-destroy">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="btn text-2xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-unmount">
+  <button type="button" class="btn text-3xs py-1.5 px-2.5 rounded-md ${btnPrimary()}" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>

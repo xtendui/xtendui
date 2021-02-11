@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-3 items-center">
 
-  <div class="badge text-2xs py-1.5 px-2.5 ${badgeDefault()}">
+  <div class="badge text-3xs py-1.5 px-2.5 ${badgeDefault()}">
     Small
   </div>
 
@@ -19,7 +19,7 @@ demo.htmlSource = `
     Medium
   </div>
 
-  <div class="badge text-sm py-2.5 px-4 ${badgeDefault()}">
+  <div class="badge text-base py-2.5 px-4 ${badgeDefault()}">
     Large
   </div>
 

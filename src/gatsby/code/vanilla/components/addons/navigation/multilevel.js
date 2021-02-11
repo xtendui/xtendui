@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div>
         Menu
       </div>
-      <button type="button" class="multilevel-reset btn text-2xs py-1.5 px-2.5 ${btnPrimary()}  hidden">
+      <button type="button" class="multilevel-reset btn text-3xs py-1.5 px-2.5 ${btnPrimary()}  hidden">
         Back
       </button>
     </div>
@@ -46,7 +46,7 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="multilevel-reset btn text-2xs py-1.5 px-2.5 ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-3xs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
@@ -74,7 +74,7 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="multilevel-reset btn text-2xs py-1.5 px-2.5 ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-3xs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
@@ -96,7 +96,7 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="multilevel-reset btn text-2xs py-1.5 px-2.5 ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-3xs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>
@@ -118,7 +118,7 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="multilevel-reset btn text-2xs py-1.5 px-2.5 ${btnPrimary()} ">
+      <button type="button" class="multilevel-reset btn text-3xs py-1.5 px-2.5 ${btnPrimary()} ">
         Back
       </button>
     </div>

@@ -19,6 +19,7 @@
 }
 
 .gatsby_site-footer_bottom_row {
+  @apply text-black text-opacity-50;
   flex: 1 1 auto;
   font-size: 11px;
   @screen md {

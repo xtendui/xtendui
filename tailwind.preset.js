@@ -13,7 +13,9 @@ module.exports = {
         },
       },
       fontSize: {
-        '2xs': ['11px', { lineHeight: '1rem' }],
+        '3xs': ['0.6875rem', { lineHeight: '1rem' }],
+        '2xs': ['0.75rem', { lineHeight: '1rem' }],
+        xs: ['0.8125rem', { lineHeight: '1rem' }],
       },
       colors: {
         code: '#2d3748',

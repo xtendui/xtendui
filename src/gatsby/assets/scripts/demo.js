@@ -262,12 +262,12 @@ const populateDemo = (container, i) => {
     ${iconCode()}
   </button>
   <div id="tooltip--show-code--on-${showCodeUid}" class="tooltip group" data-xt-duration="300">
-    <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Show Code
     </div>
   </div>
   <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="tooltip group" data-xt-duration="300">
-    <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Hide Code
     </div>
   </div>
@@ -280,7 +280,7 @@ const populateDemo = (container, i) => {
     ${iconMaximize()}
   </button>
   <div class="tooltip group" data-xt-duration="300">
-    <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Fullscreen
     </div>
   </div>
@@ -293,7 +293,7 @@ const populateDemo = (container, i) => {
     ${iconExternal()}
   </a>
   <div class="tooltip group" data-xt-duration="300">
-    <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Iframe
     </div>
   </div>
@@ -331,12 +331,12 @@ const populateDemo = (container, i) => {
             ${iconCopy()}
           </button>
           <div id="tooltip--clipboard--on-${clipboardUid}" class="tooltip group" data-xt-duration="300">
-            <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+            <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
           <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="tooltip group" data-xt-duration="300">
-            <div class="text-2xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+            <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copied!
             </div>
           </div>

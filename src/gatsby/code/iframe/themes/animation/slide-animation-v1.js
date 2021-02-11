@@ -265,12 +265,12 @@ demo.htmlSource = `
 
             <div class="md:card-group rounded-md ${animItem}">
 
-              <div class="text-base p-8 md:text-lg md:p-10 md:w-7/12">
+              <div class="text-base p-8 md:w-7/12">
                 <div class="h4">
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
-                <form class="text-md">
+                <form class="text-sm">
                   <div class="row row-x-6 row-y-4">
 
                     <div class="w-full md:w-6/12">
@@ -390,12 +390,12 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="text-base p-8 md:text-lg md:p-10 md:w-7/12">
+              <div class="text-base p-8 md:w-7/12">
                 <div class="h4">
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
-                <form class="text-md">
+                <form class="text-sm">
                   <div class="row row-x-6 row-y-4">
 
                     <div class="w-full">
