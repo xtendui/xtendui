@@ -1680,9 +1680,9 @@ class Toggle {
     // nav
     const step = parseFloat(nav.getAttribute('data-xt-nav'))
     if (step < 0) {
-      self.goToPrev(-step, true)
+      self.goToPrev(-step)
     } else {
-      self.goToNext(step, true)
+      self.goToNext(step)
     }
   }
 
