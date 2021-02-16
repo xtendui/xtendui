@@ -16,7 +16,7 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-      default
+      Separator
     </button>
 
     <div class="overlay">

@@ -9,37 +9,37 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="text-white links-inverse py-4 px-6 bg-accent-500">
+<div class="text-white links-inverse py-4 px-6 bg-primary-500">
 
   <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
-    Default
+    Text
   </div>
 
   ${iconSearch()}
 
   <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
-    Accent
+    Primary
   </div>
 
-  ${iconSearch({ classes: 'text-accent-50' })}
+  ${iconSearch({ classes: 'text-primary-50' })}
 
-  ${iconSearch({ classes: 'text-accent-100' })}
+  ${iconSearch({ classes: 'text-primary-100' })}
 
-  ${iconSearch({ classes: 'text-accent-200' })}
+  ${iconSearch({ classes: 'text-primary-200' })}
 
-  ${iconSearch({ classes: 'text-accent-300' })}
+  ${iconSearch({ classes: 'text-primary-300' })}
 
-  ${iconSearch({ classes: 'text-accent-400' })}
+  ${iconSearch({ classes: 'text-primary-400' })}
 
-  ${iconSearch({ classes: 'text-accent-500' })}
+  ${iconSearch({ classes: 'text-primary-500' })}
 
-  ${iconSearch({ classes: 'text-accent-600' })}
+  ${iconSearch({ classes: 'text-primary-600' })}
 
-  ${iconSearch({ classes: 'text-accent-700' })}
+  ${iconSearch({ classes: 'text-primary-700' })}
 
-  ${iconSearch({ classes: 'text-accent-800' })}
+  ${iconSearch({ classes: 'text-primary-800' })}
 
-  ${iconSearch({ classes: 'text-accent-900' })}
+  ${iconSearch({ classes: 'text-primary-900' })}
 
   <div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
     White opacity

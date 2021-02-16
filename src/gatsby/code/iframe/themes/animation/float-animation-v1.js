@@ -4,7 +4,7 @@ import path from 'path'
 const classesDefault =
   'text-black rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0'
 const classesPrimary =
-  'text-white rounded-md bg-accent-500 border-transparent transform ease-out-quint duration-500 border hover:bg-accent-600 hover:border-accent-700 hover:-translate-y-1 active:bg-accent-700 active:translate-y-0'
+  'text-white rounded-md bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0'
 const animDesign =
   'transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const animItem =
@@ -45,7 +45,7 @@ demo.htmlSource = `
 <div class="list list-3 items-center">
 
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
-    default
+    gray
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
@@ -227,7 +227,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="list bg-accent-500">
+            <div class="list bg-primary-500">
               <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Menu
               </button>

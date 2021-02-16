@@ -16,7 +16,7 @@ demo.htmlSource = `
 
   <h1 class="h-screen">Scroll down</h1>
 
-  <div class="box box-0 bg-accent-500 w-24 h-24"></div>
+  <div class="box box-0 bg-primary-500 w-24 h-24"></div>
 
   <h1 class="h-screen">Scroll up</h1>
 

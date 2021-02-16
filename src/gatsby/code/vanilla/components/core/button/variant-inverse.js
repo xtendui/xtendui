@@ -10,11 +10,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="bg-accent-500 py-5 px-6">
+<div class="bg-primary-500 py-5 px-6">
   <div class="list list-3 items-center text-white links-inverse">
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
-      default
+      gray
     </button>
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">

@@ -49,7 +49,7 @@ module.exports = {
           utility: theme => ({
             '.links-default': {
               code: {
-                color: theme('colors.accent.600'),
+                color: theme('colors.primary.600'),
               },
             },
             '.links-inverse': {

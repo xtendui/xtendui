@@ -136,7 +136,7 @@ demo.htmlSource = `
   </div>
 
   <div class="loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 toggle">
-    <span class="spinner absolute inset-0 m-auto w-6 h-6 text-accent-500">
+    <span class="spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
       ${spinner({ classes: 'animate-spinner' })}
     </span>
   </div>

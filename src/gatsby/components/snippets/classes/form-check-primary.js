@@ -1,3 +1,3 @@
 export default () => {
-  return `border text-accent-400 border-accent-200 bg-accent-200 transition-all`
+  return `border text-primary-400 border-primary-200 bg-primary-200 transition-all`
 }

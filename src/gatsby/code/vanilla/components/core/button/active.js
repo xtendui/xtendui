@@ -17,7 +17,7 @@ demo.htmlSource = `
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md active ${btnDefault()}">
-    default
+    gray
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md active ${btnPrimary()}">

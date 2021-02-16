@@ -32,7 +32,7 @@
   width: 160%;
   height: 200%;
   rect {
-    fill: theme('colors.accent.500');
+    fill: theme('colors.primary.500');
     width: 100%;
     height: 100%;
   }
@@ -61,11 +61,11 @@
     letter-spacing: theme('letterSpacing.wide');
     text-transform: uppercase;
     &:hover {
-      @apply bg-accent-900 bg-opacity-50;
+      @apply bg-primary-900 bg-opacity-50;
       color: theme('colors.white');
     }
     &:active {
-      @apply bg-accent-900 bg-opacity-25;
+      @apply bg-primary-900 bg-opacity-25;
       color: theme('colors.white');
     }
   }

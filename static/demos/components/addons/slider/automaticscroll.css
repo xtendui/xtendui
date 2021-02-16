@@ -24,7 +24,7 @@
     .slide_item {
       @apply transform transition;
       &:hover, &:active, &.active {
-        color: theme('colors.accent.500');
+        color: theme('colors.primary.500');
       }
     }
   }

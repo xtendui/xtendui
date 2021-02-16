@@ -108,7 +108,7 @@ module.exports = {
       },
       '&.xt-focus-visible': {
         ':focus': {
-          outline: `5px auto ${theme('colors.accent.700')} !important`,
+          outline: `5px auto ${theme('colors.primary.700')} !important`,
         },
         'input:not([type="checkbox"]):not([type="radio"]), select, textarea': {
           '&:focus': {

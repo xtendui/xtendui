@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="megamenu relative bg-accent-500 text-white">
+<div class="megamenu relative bg-primary-500 text-white">
 
   <!-- mouse events instead of click you can remove this -->
   <div class="container pt-10">
@@ -37,7 +37,7 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-accent-900"></div>
+            <div class="design-setup bg-primary-900"></div>
             <div class="drop-content">
 
               <div class="pt-16 pb-24 text-white links-inverse">
@@ -74,7 +74,7 @@ demo.htmlSource = `
 
         <div class="drop drop-static drop-nospace">
           <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-accent-900"></div>
+            <div class="design-setup bg-primary-900"></div>
             <div class="drop-content">
 
               <div class="pt-16 pb-24 text-white links-inverse">

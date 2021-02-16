@@ -126,7 +126,7 @@
     border-radius: 50%;
     border-color: theme('colors.white') !important;
     background: theme('colors.white') !important;
-    color: theme('colors.accent.500');
+    color: theme('colors.primary.500');
     line-height: 1;
   }
 }

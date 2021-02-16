@@ -277,7 +277,7 @@ pre {
     margin-left: 20rem;
   }
   > .btn-close {
-    @apply text-white rounded-md border-accent-500 bg-accent-500 hover:text-opacity-75 hover:border-accent-600 hover:bg-accent-600;
+    @apply text-white rounded-md border-primary-500 bg-primary-500 hover:text-opacity-75 hover:border-primary-600 hover:bg-primary-600;
     top: 0;
     right: 0;
     border-radius: 0;

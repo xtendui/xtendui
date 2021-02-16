@@ -7,7 +7,7 @@
 
 .gatsby_site-article_sidebar {
   @apply text-white links-inverse overflow-sub;
-  background: theme('colors.accent.500');
+  background: theme('colors.primary.500');
   @screen lg {
     position: fixed;
     z-index: 2;
@@ -42,7 +42,7 @@
 #gatsby_menu--overlay {
   @media (max-width: calc(theme('screens.lg') - 1px)) {
     .design-setup {
-      @apply bg-accent-500;
+      @apply bg-primary-500;
     }
     .card {
       @apply min-h-screen;
@@ -102,7 +102,7 @@
 }
 
 .gatsby_site-header_inner {
-  @apply text-white bg-accent-500 links-inverse container;
+  @apply text-white bg-primary-500 links-inverse container;
   max-width: 1280px;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -199,7 +199,7 @@
 }
 
 .gatsby_site-header_links {
-  @apply border-t border-b border-accent-900 border-opacity-25;
+  @apply border-t border-b border-primary-900 border-opacity-25;
   padding-top: 1rem;
   padding-bottom: 1rem;
   > * {
@@ -257,7 +257,7 @@
   }
   &.gatsby_btn-site_article_sidebar--adiacent {
     > span {
-      @apply bg-accent-900 bg-opacity-25;
+      @apply bg-primary-900 bg-opacity-25;
       font-size: 12px;
     }
   }
@@ -269,14 +269,14 @@
   }
   &:hover {
     > span {
-      @apply bg-accent-900 bg-opacity-25;
+      @apply bg-primary-900 bg-opacity-25;
       transform: translateX(.25rem);
       color: theme('colors.white');
     }
   }
   &:active, &.active, &.current {
     > span {
-      @apply bg-accent-900 bg-opacity-50;
+      @apply bg-primary-900 bg-opacity-50;
       transform: none;
       font-weight: theme('fontWeight.semibold');
       color: theme('colors.white');

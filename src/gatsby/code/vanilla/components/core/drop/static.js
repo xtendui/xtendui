@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="relative py-4 px-6 bg-accent-500">
+<div class="relative py-4 px-6 bg-primary-500">
 
   <div data-xt-drop>
 

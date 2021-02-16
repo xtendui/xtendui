@@ -1,3 +1,3 @@
 export default () => {
-  return `text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-accent-500 hover:bg-accent-500 active:bg-accent-600`
+  return `text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-500 active:bg-primary-600`
 }

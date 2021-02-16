@@ -121,7 +121,7 @@ module.exports = {
                 },
                 notePrimary: {
                   classes:
-                    'card text-sm p-6 my-5 mt-fc mb-lc text-white links-inverse rounded-md bg-accent-500 gatsby_note',
+                    'card text-sm p-6 my-5 mt-fc mb-lc text-white links-inverse rounded-md bg-primary-500 gatsby_note',
                 },
               },
             },

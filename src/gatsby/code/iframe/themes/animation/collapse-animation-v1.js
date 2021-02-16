@@ -229,7 +229,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="list bg-accent-500 ${animItem}">
+            <div class="list bg-primary-500 ${animItem}">
               <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
                 Menu
               </button>

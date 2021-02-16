@@ -19,7 +19,7 @@ module.exports = {
       },
       colors: {
         code: '#2d3748',
-        accent: {
+        primary: {
           50: '#F2F8FF',
           100: '#E6F2FF',
           200: '#BFDDFF',

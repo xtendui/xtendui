@@ -38,7 +38,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Lorem ipsum
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -64,7 +64,7 @@ demo.htmlSource = `
                 </div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Dolor sit amet
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -83,7 +83,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Lorem ipsum
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -102,7 +102,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Dolor sit amet
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -121,7 +121,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Lorem ipsum
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -140,7 +140,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Dolor sit amet
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -159,7 +159,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Lorem ipsum
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -178,7 +178,7 @@ demo.htmlSource = `
                 <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
               </div>
               <div class="py-4">
-                <div class="h5 group-hover:text-accent-500">
+                <div class="h5 group-hover:text-primary-500">
                   Dolor sit amet
                 </div>
                 <div class="-mt-2 text-sm font-semibold">
@@ -222,7 +222,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -248,7 +248,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Dolor sit amet
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -267,7 +267,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -286,7 +286,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Dolor sit amet
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -305,7 +305,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -324,7 +324,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Dolor sit amet
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -343,7 +343,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -362,7 +362,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Dolor sit amet
               </div>
               <div class="-mt-2 text-sm font-semibold">
@@ -381,7 +381,7 @@ demo.htmlSource = `
               <div class="media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
             </div>
             <div class="py-4">
-              <div class="h5 group-hover:text-accent-500">
+              <div class="h5 group-hover:text-primary-500">
                 Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">

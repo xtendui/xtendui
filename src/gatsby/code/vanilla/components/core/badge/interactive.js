@@ -13,7 +13,7 @@ demo.htmlSource = `
 <div class="list list-3 items-center">
 
   <a role="button" class="badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
-    Default
+    Gray
   </a>
 
   <a role="button" class="badge text-xs py-2 px-3.5 ${badgePrimaryInteractive()}">

@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="demo--form-variant-primary py-4 px-6 bg-accent-500">
+<form class="demo--form-variant-primary py-4 px-6 bg-primary-500">
   <div class="row row-x-6 row-y-4">
 
     <div class="w-full">

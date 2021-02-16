@@ -154,7 +154,7 @@
     border-bottom: 1px solid theme('colors.gray.200');
     @apply transition;
     &.active {
-      border-bottom: 1px solid theme('colors.accent.500');
+      border-bottom: 1px solid theme('colors.primary.500');
     }
   }
 

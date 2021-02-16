@@ -3,9 +3,9 @@ module.exports = {
   utility: theme => ({
     '.links-default': {
       'a:not([class]), a[class=""], .link': {
-        color: theme('colors.accent.500'),
+        color: theme('colors.primary.500'),
         '&:hover, &:active, &.active': {
-          color: theme('colors.accent.600'),
+          color: theme('colors.primary.600'),
         },
       },
     },

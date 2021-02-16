@@ -1,3 +1,3 @@
 export default () => {
-  return `text-accent-600`
+  return `text-primary-600`
 }
