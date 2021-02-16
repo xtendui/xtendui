@@ -2977,7 +2977,7 @@ class Toggle {
         // check
         if (options.disabled) {
           self.disable()
-        } else if (!self.disabled) {
+        } else if (self.disabled) {
           self.enable()
         }
       })
