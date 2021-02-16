@@ -20,7 +20,9 @@ module.exports = plugin.withOptions(() => {
         const custom =
           typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
         const css = merge(...castArray(base || {}), custom || {})
-        addComponents(css)
+        addComponents(css, {
+          respectPrefix: false,
+        })
       }
     }
 
@@ -66,7 +68,10 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else if (component === 'row' && utility === 'space') {
               // row space
               let css = {}
@@ -93,7 +98,10 @@ module.exports = plugin.withOptions(() => {
                   },
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else if (component === 'layout' && utility === '.container-y') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
@@ -113,7 +121,10 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else if (component === 'layout' && utility === '.-container') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
@@ -133,7 +144,10 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else if (component === 'layout' && utility === '.-container-y') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
@@ -153,12 +167,18 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else {
               // all others
               let css = {}
               css[utility] = options[utility]
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             }
           }
         }
