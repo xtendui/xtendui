@@ -15,7 +15,7 @@ These are general **component utilities**.
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.transform-none`                     | `transform-none`                | `responsive`                | Disable transform (!important)            |
-| Utility                  | `.transition-none`                     | `transition-none`                | `responsive`                | Disable transform (!important)            |
+| Utility                  | `.transition-none`                     | `transition-none`                | `responsive`                | Disable transition (!important)            |
 | Utility                  | `.animate-none`                     | `animate-none`                | `responsive`                | Disable animation (!important)            |
 | Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
 
