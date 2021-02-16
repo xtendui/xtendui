@@ -3,6 +3,7 @@ import path from 'path'
 
 const btnDefault = require('components/snippets/classes/btn-default').default
 const btnPrimary = require('components/snippets/classes/btn-primary').default
+const btnText = require('components/snippets/classes/btn-text').default
 
 const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
@@ -27,19 +28,19 @@ demo.htmlSource = `
 <div class="list list-2 items-center">
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
-    gray
+    Gray
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-    primary
+    Primary
   </button>
 
-  <button type="button" class="btn py-2.5 px-4 rounded-md">
-    text
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnText()}">
+    Text
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 rounded-md link">
-    link
+    Link
   </button>
 
 </div>
@@ -74,7 +75,7 @@ demo.htmlSource = `
         <div class="h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
-          gray
+          Gray
         </button>
       </div>
     </div>
@@ -86,7 +87,7 @@ demo.htmlSource = `
         <div class="h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-          primary
+          Primary
         </button>
       </div>
     </div>

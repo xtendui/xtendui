@@ -17,7 +17,7 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-      gray
+      Default
     </button>
 
     <div class="overlay">
@@ -46,7 +46,7 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-      left
+      Left
     </button>
 
     <div class="overlay">
@@ -75,7 +75,7 @@ demo.htmlSource = `
   <div data-xt-overlay>
 
     <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
-      right
+      Right
     </button>
 
     <div class="overlay">

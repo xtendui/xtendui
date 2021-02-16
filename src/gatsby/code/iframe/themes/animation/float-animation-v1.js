@@ -45,19 +45,19 @@ demo.htmlSource = `
 <div class="list list-3 items-center">
 
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnDefault()}">
-    gray
+    Gray
   </button>
 
   <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
-    primary
+    Primary
   </button>
 
-  <button type="button" class="btn py-2.5 px-4 transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
-    text
+  <button type="button" class="btn text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    Text
   </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
-    link
+  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+    Link
   </button>
 
 </div>
