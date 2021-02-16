@@ -4,7 +4,7 @@ module.exports = {
   },
   variants: ['responsive'],
   utility: {
-    '.tooltip-static': {
+    '.xt-tooltip-static': {
       width: '100%',
       padding: 0,
       top: '100% !important',
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   component: theme => ({
-    '.tooltip': {
+    '.xt-tooltip': {
       position: 'absolute',
       margin: '0 !important',
       '&:not(.in):not(.out)': {
@@ -27,20 +27,20 @@ module.exports = {
         zIndex: theme('zIndex.tooltip'),
       },
       // styles
-      '[data-popper-placement^="top"]&:not(.tooltip-nospace)': {
+      '[data-popper-placement^="top"]&:not(.xt-tooltip-nospace)': {
         paddingBottom: theme('spacing.2'),
       },
-      '[data-popper-placement^="bottom"]&:not(.tooltip-nospace)': {
+      '[data-popper-placement^="bottom"]&:not(.xt-tooltip-nospace)': {
         paddingTop: theme('spacing.2'),
       },
-      '[data-popper-placement^="left"]&:not(.tooltip-nospace)': {
+      '[data-popper-placement^="left"]&:not(.xt-tooltip-nospace)': {
         paddingRight: theme('spacing.2'),
       },
-      '[data-popper-placement^="right"]&:not(.tooltip-nospace)': {
+      '[data-popper-placement^="right"]&:not(.xt-tooltip-nospace)': {
         paddingLeft: theme('spacing.2'),
       },
     },
-    '.tooltip-arrow': {
+    '.xt-tooltip-arrow': {
       '@apply transform': '',
       '@apply rotate-45 !important': '',
       position: 'absolute',
@@ -63,7 +63,7 @@ module.exports = {
       },
     },
     '.xt-tooltip-disabled': {
-      '&.tooltip': {
+      '&.xt-tooltip': {
         display: 'none !important',
       },
     },

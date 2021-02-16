@@ -1,8 +1,8 @@
 import React from 'react'
 import path from 'path'
 const spinner = require('components/snippets/spinner').default
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonDefault = require('components/snippets/classes/button-default').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -20,9 +20,9 @@ demo.htmlSource = `
     max: 4,
     elements: {
       scrollOffset: '.infinitescroll',
-      trigger: '.infinitescroll-trigger .btn',
-      reset: '.infinitescroll-pre .btn',
-      items: '.row',
+      trigger: '.infinitescroll-trigger .xt-button',
+      reset: '.infinitescroll-pre .xt-button',
+      items: '.xt-row',
       spaceAdditional: '.infinitescroll-pre',
       pagination: '.infinitescroll-pagination',
       item: ':scope > *',
@@ -31,26 +31,26 @@ demo.htmlSource = `
   <div class="container">
 
     <div class="infinitescroll-pre mb-4">
-      <div class="list list-2 flex-col items-center">
+      <div class="xt-list xt-list-2 flex-col items-center">
         <div>
-          <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
             Load previous pages
           </button>
         </div>
       </div>
     </div>
 
-    <div class="row row-6">
+    <div class="xt-row xt-row-6">
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -61,14 +61,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -79,14 +79,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -97,14 +97,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -115,14 +115,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Lorem Ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -133,14 +133,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -151,14 +151,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75 md:ratio-50">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75 md:xt-ratio-50">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Lorem Ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -169,14 +169,14 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-          <div class="media-container bg-gray-700 ratio-75 md:ratio-50">
-            <div class="media-inner">
-              <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+          <div class="xt-media-container bg-gray-700 xt-ratio-75 md:xt-ratio-50">
+            <div class="xt-media-inner">
+              <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
             </div>
           </div>
           <div class="py-4">
-            <div class="h5">
+            <div class="xt-h5 ">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -190,10 +190,10 @@ demo.htmlSource = `
   </div>
 
   <div class="infinitescroll mt-4">
-    <div class="list list-2 flex-col items-center">
+    <div class="xt-list xt-list-2 flex-col items-center">
 
       <div class="infinitescroll-trigger">
-        <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
 
           <span class="infinitescroll-trigger-content">
             Show more products
@@ -203,9 +203,9 @@ demo.htmlSource = `
             There are no more products
           </span>
 
-          <span class="loader absolute z-top inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
-            <span class="spinner absolute inset-0 m-auto w-6 h-6 text-white">
-              ${spinner({ classes: 'animate-spinner' })}
+          <span class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+            <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
+              ${spinner({ classes: 'animate-xt-spinner' })}
             </span>
           </span>
 

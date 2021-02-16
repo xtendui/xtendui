@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v2 .listing-item',
+  matches: '#iframe--products-listing-v2 .xt-listing-item',
   mount: ({ object }) => {
     // vars
 
@@ -23,20 +23,20 @@ Xt.mount.push({
     const eventEnter = e => {
       const tr = e.target
       // media
-      const media = tr.querySelector('.media-container')
+      const media = tr.querySelector('.xt-media-container')
       gsap.to(media, {
         scale: 1 + mediaContainerScale,
         duration: 0.5,
         ease: 'quart.out',
       })
-      const mediaInner = tr.querySelector('.media-inner')
+      const mediaInner = tr.querySelector('.xt-media-inner')
       gsap.to(mediaInner, {
         scale: 1 + mediaScale,
         duration: 1.5,
         ease: 'quart.out',
       })
       // mask
-      const mask = tr.querySelector('.media-mask')
+      const mask = tr.querySelector('.xt-media-mask')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
         height: 0,
@@ -69,12 +69,12 @@ Xt.mount.push({
     const eventLeave = e => {
       const tr = e.target
       // media
-      const media = tr.querySelector('.media-container')
+      const media = tr.querySelector('.xt-media-container')
       gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-      const mediaInner = tr.querySelector('.media-inner')
+      const mediaInner = tr.querySelector('.xt-media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
       // mask
-      const mask = tr.querySelector('.media-mask')
+      const mask = tr.querySelector('.xt-media-mask')
       gsap.to(mask, {
         height: '50%',
         y: '-100%',
@@ -96,7 +96,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v2 .listing-item', // add here all fade selectors css and js
+  matches: '#iframe--products-listing-v2 .xt-listing-item', // add here all fade selectors css and js
   mount: ({ object, mount }) => {
     // vars
 

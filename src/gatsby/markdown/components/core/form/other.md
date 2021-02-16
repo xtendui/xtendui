@@ -11,13 +11,13 @@ date: "2005-10-10"
 Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the **class** `.disabled`.
+| For aria purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `[readonly], [disabled], .disabled`                     | `disabled`                | Disabled styles            |
+| Component                  | `[readonly], [disabled], .xt-disabled`                     | `xt-disabled`                | Disabled styles            |
 
 </div>
 
@@ -70,14 +70,14 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 Use **component classes** to style **validation**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
-| Component                  | `.form-valid`                     | `form-valid`                | Validation valid class            |
-| Component                  | `.form-invalid`                     | `form-invalid`                | Validation invalid class            |
-| Component                  | `.form-label-required`                     | `form-label-required`                | Label required with asterisk            |
+| Component                  | `.xt-form-valid`                     | `xt-form-valid`                | Validation valid class            |
+| Component                  | `.xt-form-invalid`                     | `xt-form-invalid`                | Validation invalid class            |
+| Component                  | `.xt-label-required`                     | `xt-label-required`                | Label required with asterisk            |
 
 </div>
 

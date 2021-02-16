@@ -31,13 +31,13 @@ module.exports = {
 
 ## Usage
 
-Use `a` without classes or `.link` to create a **link**.
+Use `a` without classes or `.xt-link` to create a **link**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                     | Mixin                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.link`                 | `link`              | Link styles            |
+| Component                  | `.xt-link`                 | `xt-link`              | Link styles            |
 
 </div>
 
@@ -54,14 +54,14 @@ Use `a` without classes or `.link` to create a **link**.
 
 ## Variant
 
-Use **component utility** `.links-default` and `.links-inverse` on **parent elements** to style **child links**.
+Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **parent elements** to style **child links**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.links-default`       | `links-default`                | `responsive`                | Default links colors            |
-| Utility                  | `.links-inverse`       | `links-inverse`                | `responsive`                | Inverse links colors            |
+| Utility                  | `.xt-links-default`       | `xt-links-default`                | `responsive`                | Default links colors            |
+| Utility                  | `.xt-links-inverse`       | `xt-links-inverse`                | `responsive`                | Inverse links colors            |
 
 </div>
 

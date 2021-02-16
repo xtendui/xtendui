@@ -12,7 +12,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or a timeline** and by setting `scrub: true` to animate only when scrolling, or `scrub: <Number>` for the number of seconds to animate during scrolling.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -21,14 +21,14 @@ A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/parallax"></div>
 </demo>
 
 ## Toggle Actions
 
 Use `toggleActions` to control the playhead on ScrollTrigger events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -37,7 +37,7 @@ Use `toggleActions` to control the playhead on ScrollTrigger events.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-actions"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/parallax-actions"></div>
 </demo>
 
 ## Multiple
@@ -45,14 +45,14 @@ Use `toggleActions` to control the playhead on ScrollTrigger events.
 You can add **multiple ScrollTriggers and animations** on the same elements.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-multiple"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/parallax-multiple"></div>
 </demo>
 
 ## Distance
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -66,7 +66,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/parallax-range"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/parallax-range"></div>
 </demo>
 
 ## Other
@@ -75,7 +75,7 @@ You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`
 
 You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

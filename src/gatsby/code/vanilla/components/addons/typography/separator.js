@@ -8,5 +8,5 @@ export const demo = {
 }
 
 demo.htmlSource = `
-Lorem ipsum <span class="separator separator-slash mx-2"></span> dolor sit amet
+Lorem ipsum <span class="xt-separator xt-separator-slash mx-2"></span> dolor sit amet
 `

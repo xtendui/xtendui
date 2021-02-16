@@ -1,16 +1,16 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.links-default': {
-      'a:not([class]), a[class=""], .link': {
+    '.xt-links-default': {
+      'a:not([class]), a[class=""], .xt-link': {
         color: theme('colors.primary.500'),
         '&:hover, &:active, &.active': {
           color: theme('colors.primary.600'),
         },
       },
     },
-    '.links-inverse': {
-      'a:not([class]), a[class=""], .link': {
+    '.xt-links-inverse': {
+      'a:not([class]), a[class=""], .xt-link': {
         color: theme('colors.white'),
         '&:hover, &:active, &.active': {
           color: theme('colors.white'),
@@ -20,10 +20,10 @@ module.exports = {
   }),
   component: theme => ({
     body: {
-      '@apply links-default': '',
+      '@apply xt-links-default': '',
     },
-    'a:not([class]), a[class=""], .link': {
-      '@apply text-reset !important': {},
+    'a:not([class]), a[class=""], .xt-link': {
+      '@apply xt-text-reset !important': {},
       wordWrap: 'break-word',
       overflowWrap: 'break-word',
       textDecoration: 'underline',

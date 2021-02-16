@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--fade-inside .card', // add here all fade selectors css and js
+  matches: '.demo--fade-inside .xt-card', // add here all fade selectors css and js
   mount: ({ object, mount }) => {
     // multiple mount object with raf
 

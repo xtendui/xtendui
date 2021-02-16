@@ -399,7 +399,7 @@ class Slider extends Xt.Toggle {
         if (html.search(regex) !== -1) {
           let replace = ''
           for (const slide of group) {
-            const content = slide.querySelector('.slide-pagination-content')
+            const content = slide.querySelector('.xt-slide-content')
             if (content) {
               replace += `<span>${content.innerHTML}</span>`
             }
@@ -688,13 +688,13 @@ class Slider extends Xt.Toggle {
       // dragger
       if (!options.drag.manual) {
         // prevent alignment animation
-        self.dragger.classList.remove('duration-none')
+        self.dragger.classList.remove('xt-duration-none')
         // initial or resizing
         if (self.initial) {
           // prevent alignment animation
-          self.dragger.classList.add('duration-none')
+          self.dragger.classList.add('xt-duration-none')
           requestAnimationFrame(() => {
-            self.dragger.classList.remove('duration-none')
+            self.dragger.classList.remove('xt-duration-none')
           })
         }
         // drag position
@@ -856,7 +856,7 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // prevent dragging animation
-    self.dragger.classList.add('duration-none')
+    self.dragger.classList.add('xt-duration-none')
     // logic
     self.detail.dragIndex = self.currentIndex
     self.detail.dragVelocity = null
@@ -905,7 +905,7 @@ class Slider extends Xt.Toggle {
       self.dragger.classList.remove('xt-jumps-none')
     })
     // prevent dragging animation
-    self.dragger.classList.remove('duration-none')
+    self.dragger.classList.remove('xt-duration-none')
     // activation
     const direction = Math.sign(self.detail.dragDist)
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
@@ -1034,11 +1034,11 @@ class Slider extends Xt.Toggle {
     self.inverse = self.direction < 0
     // drag position
     if (self.initial) {
-      self.dragger.classList.add('xt-transition-none')
+      self.dragger.classList.add('xt-instant')
     }
     self.dragger.style.transform = `translateX(${self.detail.dragPos}px)`
     if (self.initial) {
-      self.dragger.classList.remove('xt-transition-none')
+      self.dragger.classList.remove('xt-instant')
     }
     // activation
     if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
@@ -1091,11 +1091,11 @@ class Slider extends Xt.Toggle {
     )
     // drag position
     if (self.initial) {
-      self.dragger.classList.add('xt-transition-none')
+      self.dragger.classList.add('xt-instant')
     }
     self.dragger.style.transform = `translateX(${self.detail.dragPosCurrent}px)`
     if (self.initial) {
-      self.dragger.classList.remove('xt-transition-none')
+      self.dragger.classList.remove('xt-instant')
     }
     // auto
     self.eventAutostart()
@@ -1119,7 +1119,7 @@ class Slider extends Xt.Toggle {
         const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
         const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
         const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
-        // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        // @TEST slide.querySelector('.xt-card').innerHTML = `${diff} ${self.detail.dragDist}`
         // next in direction from drag diff
         if (diff > 0 && (self.detail.dragDirection < 0 || diff <= -self.detail.dragDist)) {
           return i
@@ -1131,7 +1131,7 @@ class Slider extends Xt.Toggle {
         const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
         const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
         const diff = Math.floor(self.detail.dragPos - pos - (width / 2) * direction)
-        // @TEST slide.querySelector('.card').innerHTML = `${diff} ${self.detail.dragDist}`
+        // @TEST slide.querySelector('.xt-card').innerHTML = `${diff} ${self.detail.dragDist}`
         // next in direction from drag diff
         if (diff < 0 && (self.detail.dragDirection > 0 || diff >= -self.detail.dragDist)) {
           return i
@@ -1152,9 +1152,9 @@ class Slider extends Xt.Toggle {
     super.enable()
     const self = this
     // dragger
-    self.dragger.classList.add('xt-transition-none')
+    self.dragger.classList.add('xt-instant')
     requestAnimationFrame(() => {
-      self.dragger.classList.remove('xt-transition-none')
+      self.dragger.classList.remove('xt-instant')
     })
   }
 
@@ -1174,9 +1174,9 @@ class Slider extends Xt.Toggle {
       // jump
       self.dragger.classList.add('xt-jumps-none')
       // dragger
-      self.dragger.classList.add('xt-transition-none')
+      self.dragger.classList.add('xt-instant')
       requestAnimationFrame(() => {
-        self.dragger.classList.remove('xt-transition-none')
+        self.dragger.classList.remove('xt-instant')
       })
     }
     if (self.autoHeight) {
@@ -1266,10 +1266,10 @@ Slider.optionsDefault = {
   group: false,
   align: 'center',
   contain: false,
-  pagination: '.slider-pagination',
+  pagination: '.xt-slider-pagination',
   overflowAuto: true,
   drag: {
-    dragger: '.slides-inner',
+    dragger: '.xt-slides-inner',
     wrap: false,
     manual: false,
     threshold: 25,
@@ -1280,7 +1280,7 @@ Slider.optionsDefault = {
   },
   // element
   elements: '[data-xt-pag]',
-  targets: '.slide',
+  targets: '.xt-slide',
   // class
   class: 'in in-slider',
   // quantity
@@ -1292,7 +1292,7 @@ Slider.optionsDefault = {
   instant: true,
   // auto
   auto: {
-    pause: '[data-xt-pag], [data-xt-nav], .btn',
+    pause: '[data-xt-pag], [data-xt-nav], .xt-button',
   },
   // wheel
   wheel: {
@@ -1313,7 +1313,7 @@ Slider.optionsDefault = {
   jumpOverflow: false,
   navigation: '[data-xt-nav]',
   keyboard: {
-    selector: '.slides',
+    selector: '.xt-slides',
   },
 }
 

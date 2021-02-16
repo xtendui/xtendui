@@ -19,7 +19,7 @@ You can put **any content** inside, here are some examples.
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -31,12 +31,12 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 ## Other
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
-| Option                  | `closeInside:Query`                          | `'.tooltip-dismiss, .backdrop, .btn-close'`        | Query Node inside to close on click            |
+| Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-dismiss'`        | Query Node inside to close on click            |
 
 </div>

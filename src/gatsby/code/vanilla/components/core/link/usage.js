@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <a href="#">
     link
@@ -18,11 +18,11 @@ demo.htmlSource = `
     link custom
   </a>
 
-  <button type="button" class="btn link">
-    link btn
+  <button type="button" class="xt-button xt-link">
+    link button
   </button>
 
-  <div class="link">
+  <div class="xt-link">
     link class
   </div>
 

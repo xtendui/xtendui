@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -26,24 +26,24 @@ You can customize the **class names** used by the component.
 
 You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.	
 
-Additionally on component initialization the class `.xt-slider` gets added to the **object**.	
+Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.	
 
 ## Pagination	
 
-You can add pagination with an element `[data-xt-pag].xt-ignore`, it gets cloned inside the closest `.slider-pagination`.	
+You can add pagination with an element `[data-xt-pag].xt-ignore`, it gets cloned inside the closest `.xt-slider-pagination`.	
 
 Inside it you can use this strings that gets populated with variables:	
 
 - `xt-num` replaced with pagination's number slide	
 - `xt-tot` replaced with pagination's total slides	
-- `xt-content` replaced with slide's `.slide-pagination-content` **innerHTML**.	
+- `xt-content` replaced with slide's `.xt-slide-content` **innerHTML**.	
 - Classes added with slide's `[data-slide-pagination-class]` **value**.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `pagination:Query`                          | `'.slider-pagination'`        | Query for pagination element             |	
+| Option                  | `pagination:Query`                          | `'.xt-slider-pagination'`        | Query for pagination element             |	
 
 </div>	
 
@@ -59,7 +59,7 @@ Inside it you can use this strings that gets populated with variables:
 
 You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -74,11 +74,11 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 
 ## Drag	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.dragger:Query`                          | `'.slides-inner'`        | Query for dragger element             |	
+| Option                  | `drag.dragger:Query`                          | `'.xt-slides-inner'`        | Query for dragger element             |	
 | Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |	
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |	
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
@@ -91,7 +91,7 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 
 You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -110,7 +110,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mo
 
 ## Auto	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -118,7 +118,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mo
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |	
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |	
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |	
-| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .btn'`        | Elements that pause automatic on mouseenter            |	
+| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .xt-button'`        | Elements that pause automatic on mouseenter            |	
 
 </div>	
 
@@ -136,7 +136,7 @@ Use the [api](/components/core/slider/api#listen) and listen to events to make a
 
 You can block the activations with the class `.xt-block` on elements.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                      | Syntax                          | Mixin            | Description                   |	
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |	
@@ -150,7 +150,7 @@ Do not loop slides activation with `loop: false`.
 
 Disable the jump feature (clicking on not activated slides jumps to the slide) with `jump: false`. Jump only if the slide isn't entirely on screen.	
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -169,9 +169,9 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-slider-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 
-If you want something to automatically hide use the class `.slider-ui`.
+If you want something to automatically hide use the class `.xt-slider-ui`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

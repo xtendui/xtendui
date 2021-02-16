@@ -49,7 +49,7 @@ class Mousefollow {
     let leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
     self.object.addEventListener('mouseleave', leaveHandler)
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
@@ -165,7 +165,7 @@ class Mousefollow {
 Mousefollow.componentName = 'xt-mousefollow'
 Mousefollow.optionsDefault = {
   // elements
-  targets: ':scope > .mousefollow',
+  targets: ':scope > .xt-mousefollow',
   // mousefollow
   transform: true,
   friction: delta => {

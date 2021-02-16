@@ -238,7 +238,7 @@ class Toggle {
     }
     // initialized class
     if (!options.classSkip) {
-      self.object.classList.add(self.componentName)
+      self.object.classList.add(`${self.componentName}-init`)
     }
     // keep the same level of raf as others
     requestAnimationFrame(() => {
@@ -2461,11 +2461,11 @@ class Toggle {
     if (options.backdrop) {
       if ((obj['targets'] && type === 'targets') || (!obj['targets'] && type === 'elements')) {
         if (actionCurrent === 'On') {
-          const backdrops = el.querySelectorAll('.backdrop')
+          const backdrops = el.querySelectorAll('.xt-backdrop')
           if (!backdrops.length) {
-            const backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>')
+            const backdrop = Xt.createElement('<div class="xt-backdrop xt-ignore"></div>')
             el.append(backdrop)
-            // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
+            // @FIX pass wheel event or when you mousewheel over .xt-backdrop it doesn't scroll
             const eWheel =
               'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
             backdrop.addEventListener(
@@ -2478,7 +2478,7 @@ class Toggle {
             )
           }
         } else if (actionCurrent === 'Off') {
-          const backdrops = el.querySelectorAll('.backdrop')
+          const backdrops = el.querySelectorAll('.xt-backdrop')
           if (backdrops.length) {
             for (const backdrop of backdrops) {
               backdrop.remove()
@@ -3176,7 +3176,7 @@ Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .toggle, :scope > .toggle-inverse',
+  targets: ':scope > .xt-toggle, :scope > .xt-toggle-inverse',
   elementsInner: false,
   targetsInner: false,
   // class

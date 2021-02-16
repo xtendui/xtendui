@@ -8,7 +8,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '#iframe--slider-hero-v1 .slider',
+  matches: '#iframe--slider-hero-v1 .xt-slider',
   mount: ({ object }) => {
     // vars
 
@@ -41,16 +41,16 @@ Xt.mount.push({
     const eventDrag = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
-      const assetMask = tr.querySelector('.hero')
+      const assetMask = tr.querySelector('.xt-hero')
       gsap.set(assetMask, {
         x: `${-100 * self.detail.dragRatio * self.direction}%`,
       })
-      const assetMaskInner = assetMask.querySelector('.hero-inner')
+      const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
       gsap.set(assetMaskInner, {
         x: `${(100 * self.detail.dragRatio * self.direction) / 2}%`,
       })
       // asset
-      const asset = tr.querySelector('.media')
+      const asset = tr.querySelector('.xt-media')
       gsap.set(asset, { opacity: self.detail.dragRatioInverse + assetOpacity })
       // nextsOld
       const nextsOld = self.targets.filter(x => x.classList.contains('next'))
@@ -62,22 +62,22 @@ Xt.mount.push({
       for (const next of nexts) {
         next.classList.add('next')
         // assetMask
-        const assetMask = next.querySelector('.hero')
+        const assetMask = next.querySelector('.xt-hero')
         gsap.set(assetMask, {
           x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
         })
-        const assetMaskInner = assetMask.querySelector('.hero-inner')
+        const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
         gsap.set(assetMaskInner, {
           x: `${(-100 * self.detail.dragRatioInverse * self.direction) / 2}%`,
         })
         // asset
-        const asset = next.querySelector('.media')
+        const asset = next.querySelector('.xt-media')
         gsap.set(asset, {
           scale: 1 + assetZoom * self.detail.dragRatioInverse,
           opacity: self.detail.dragRatio + assetOpacity,
         })
         // content
-        const content = next.querySelector('.hero-content')
+        const content = next.querySelector('.xt-hero-content')
         gsap.set(content, {
           x: contentX * self.detail.dragRatioInverse * self.direction,
         })
@@ -91,36 +91,36 @@ Xt.mount.push({
     const eventDragReset = () => {
       const tr = self.targets.filter(x => self.hasCurrent(x))[0]
       // assetMask
-      const assetMask = tr.querySelector('.hero')
+      const assetMask = tr.querySelector('.xt-hero')
       gsap.to(assetMask, { x: 0, duration: assetMaskTime, ease: assetMaskEase })
-      const assetMaskInner = assetMask.querySelector('.hero-inner')
+      const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
       gsap.to(assetMaskInner, {
         x: 0,
         duration: assetMaskTime,
         ease: assetMaskEase,
       })
       // asset
-      const asset = tr.querySelector('.media')
+      const asset = tr.querySelector('.xt-media')
       gsap.to(asset, { x: 0, opacity: 1, duration: assetTime, ease: assetEase })
       // next
       const nexts = self.targets.filter(x => x.classList.contains('next'))
       for (const next of nexts) {
         // assetMask
-        const assetMask = next.querySelector('.hero')
+        const assetMask = next.querySelector('.xt-hero')
         const xCurrent = assetMask.clientWidth * self.direction
         gsap.to(assetMask, {
           x: xCurrent,
           duration: assetMaskTime,
           ease: assetMaskEase,
         })
-        const assetMaskInner = assetMask.querySelector('.hero-inner')
+        const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
         gsap.to(assetMaskInner, {
           x: -xCurrent / 2,
           duration: assetMaskTime,
           ease: assetMaskEase,
         })
         // asset
-        const asset = next.querySelector('.media')
+        const asset = next.querySelector('.xt-media')
         gsap.set(asset, {
           opacity: assetOpacity,
           duration: assetTime,
@@ -139,23 +139,23 @@ Xt.mount.push({
       if (self.targets.includes(tr)) {
         if (self.initial) {
           // assetMask
-          const assetMask = tr.querySelector('.hero')
+          const assetMask = tr.querySelector('.xt-hero')
           gsap.killTweensOf(assetMask)
           gsap.set(assetMask, { x: 0 })
-          const assetMaskInner = assetMask.querySelector('.hero-inner')
+          const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
           gsap.killTweensOf(assetMaskInner)
           gsap.set(assetMaskInner, { x: 0 })
           // asset
-          const asset = tr.querySelector('.media')
+          const asset = tr.querySelector('.xt-media')
           gsap.killTweensOf(asset)
           gsap.set(asset, { opacity: 1, scale: 1 })
           // content
-          const content = tr.querySelector('.hero-content')
+          const content = tr.querySelector('.xt-hero-content')
           gsap.killTweensOf(content)
           gsap.set(content, { x: 0 })
         } else {
           // assetMask
-          const assetMask = tr.querySelector('.hero')
+          const assetMask = tr.querySelector('.xt-hero')
           if (!self.detail.dragging) {
             gsap.set(assetMask, { x: `${100 * self.direction}%` })
           }
@@ -164,7 +164,7 @@ Xt.mount.push({
             duration: assetMaskTime,
             ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
           })
-          const assetMaskInner = assetMask.querySelector('.hero-inner')
+          const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
           if (!self.detail.dragging) {
             gsap.set(assetMaskInner, { x: `${-((100 * self.direction) / 2)}%` })
           }
@@ -174,7 +174,7 @@ Xt.mount.push({
             ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
           })
           // asset
-          const asset = tr.querySelector('.media')
+          const asset = tr.querySelector('.xt-media')
           if (!self.detail.dragging) {
             gsap.set(asset, { opacity: 1, scale: 1 + assetZoom })
           }
@@ -185,7 +185,7 @@ Xt.mount.push({
             ease: self.detail.dragging ? assetEaseDragging : assetEase,
           })
           // content
-          const content = tr.querySelector('.hero-content')
+          const content = tr.querySelector('.xt-hero-content')
           if (!self.detail.dragging) {
             gsap.set(content, { x: contentX * self.direction })
           }
@@ -207,20 +207,20 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // assetMask
-        const assetMask = tr.querySelector('.hero')
+        const assetMask = tr.querySelector('.xt-hero')
         gsap.to(assetMask, {
           x: `${-100 * self.direction}%`,
           duration: assetMaskTime,
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
         })
-        const assetMaskInner = assetMask.querySelector('.hero-inner')
+        const assetMaskInner = assetMask.querySelector('.xt-hero-inner')
         gsap.to(assetMaskInner, {
           x: `${(100 * self.direction) / 2}%`,
           duration: assetMaskTime,
           ease: self.detail.dragging ? assetMaskEaseDragging : assetMaskEase,
         })
         // asset
-        const asset = tr.querySelector('.media')
+        const asset = tr.querySelector('.xt-media')
         gsap.to(asset, {
           opacity: assetOpacity,
           duration: self.detail.dragging ? assetTimeDragging : assetTime,
@@ -246,11 +246,11 @@ Xt.mount.push({
 })
 
 /**
- * .slide link animation
+ * .xt-slide link animation
  */
 
 Xt.mount.push({
-  matches: '#iframe--slider-hero-v1 .slide',
+  matches: '#iframe--slider-hero-v1 .xt-slide',
   mount: ({ object }) => {
     // vars
 
@@ -258,7 +258,7 @@ Xt.mount.push({
       object.tagName === 'A' || object.tagName === 'BUTTON'
         ? Xt.arrSingle(object)
         : object.querySelectorAll('a, button')
-    const img = object.querySelector('.media')
+    const img = object.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
 

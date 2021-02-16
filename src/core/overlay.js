@@ -59,7 +59,7 @@ Overlay.componentName = 'xt-overlay'
 Overlay.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .overlay',
+  targets: ':scope > .xt-overlay',
   // class
   class: 'in in-overlay',
   // quantity
@@ -68,7 +68,7 @@ Overlay.optionsDefault = {
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit, :scope > .overlay-container > .overlay-inner > *:first-child',
+  eventLimit: '.event-limit, :scope > .xt-overlay-container > .xt-overlay-inner > *:first-child',
   // timing
   instant: {
     elements: true,
@@ -81,7 +81,7 @@ Overlay.optionsDefault = {
   closeAuto: true,
   appendTo: 'body',
   classHtml: false,
-  closeInside: '.overlay-dismiss, .backdrop, .btn-close',
+  closeInside: '.xt-backdrop, .xt-dismiss',
   closeOnDisable: true,
   scrollbar: true,
   focusLimit: true,

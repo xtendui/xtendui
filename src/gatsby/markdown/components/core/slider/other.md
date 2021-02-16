@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -20,7 +20,7 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing. I
 
 Use the class `.xt-overflow-auto` to **style horizontal alignment** when not overflowing.
 
-If you want something to automatically hide use the class `.slider-ui`.
+If you want something to automatically hide use the class `.xt-slider-ui`.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
@@ -36,15 +36,15 @@ You can disable the **automatic overflow auto** behaviour with `overflowAuto: fa
 
 ## Expand
 
-To **disable and expand** a slider use `.slider-expand` and [match media](/components/core/slider/api#match-media) (use narrow screen to see it in action).
+To **disable and expand** a slider use `.xt-slider-expand` and [match media](/components/core/slider/api#match-media) (use narrow screen to see it in action).
 
-If you want something to automatically hide use the class `.slider-ui`.
+If you want something to automatically hide use the class `.xt-slider-ui`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Component                  | `.slider-expand`       | `slider-expand`                | Expand the slider            |
+| Component                  | `.xt-slider-expand`       | `xt-slider-expand`                | Expand the slider            |
 
 </div>
 
@@ -66,11 +66,11 @@ To have **browser overflow scroll** on **touch devices** use this **css media qu
 
 Use `loading="lazy"` to lazy load images inside slider.
 
-If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
+If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.xt-slider`.
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -10,9 +10,9 @@ date: "2009-10-10"
 
 Use **js option** `position: <value>` to specify [popperjs placement](https://popper.js.org/docs/v2/constructors/#placement).
 
-If you want to **control a specific tooltip position** use `[data-xt-position=<value>]` on the `.tooltip`
+If you want to **control a specific tooltip position** use `[data-xt-position=<value>]` on the `.xt-tooltip`
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -20,7 +20,7 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 
 </div>
 
-Use `<div class="tooltip-arrow" data-arrow></div>` at the end of `.tooltip` to add an arrow.
+Use `<div class="xt-tooltip-arrow" data-arrow></div>` at the end of `.xt-tooltip` to add an arrow.
 
 You can customize **position and arrow** in the [tooltip component](/components/core/tooltip#customization). **We use padding** instead of popperjs offset to support mouseenter and mouseleave events.
 
@@ -37,11 +37,11 @@ You can customize **position and arrow** in the [tooltip component](/components/
   </demovanilla>
 </demo>
 
-Use `.tooltip-nospace` to **disable tooltip spacing**.
+Use `.xt-tooltip-nospace` to **disable tooltip spacing**.
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/tooltip/other#popperjs).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | 
@@ -54,13 +54,13 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 ## Static
 
-If you want a tooltip with size and position **relative to a parent Node with relative** use `.tooltip-static`.
+If you want a tooltip with size and position **relative to a parent Node with relative** use `.xt-tooltip-static`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.tooltip-static`       | `tooltip-static`                | `responsive`                | Position relative to closest element with `.relative`            |
+| Utility                  | `.xt-tooltip-static`       | `xt-tooltip-static`                | `responsive`                | Position relative to closest element with `.relative`            |
 
 </div>
 
@@ -74,7 +74,7 @@ If you want a tooltip with size and position **relative to a parent Node with re
 Use **component classes** to create a **mouse follow**.
 
 [[notePrimary]]
-| Remember **not to transition transform** of `.mousefollow` element.
+| Remember **not to transition transform** of `.xt-mousefollow` element.
 
 [[noteDefault]]
 | This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.

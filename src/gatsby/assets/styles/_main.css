@@ -94,7 +94,7 @@ body {
 }
 
 .gatsby_site-article_hero-content {
-  .badge {
+  .xt-badge {
     @apply border-gray-300 bg-gray-300 -mt-4 ml-4;
   }
   h1 {
@@ -114,7 +114,7 @@ body {
  */
 
 .gatsby_listing {
-  @apply mt-10 md:mt-20 mt-fc;
+  @apply mt-10 md:mt-20 xt-mt-auto;
   div:empty + & {
     @apply mt-0;
   }
@@ -126,7 +126,7 @@ body {
 
 .gatsby_listing-items {
   @apply w-full text-left;
-  .gatsby_listing .h6 + & {
+  .gatsby_listing .xt-h6 + & {
     @apply my-5;
     @screen sm {
       @apply my-10;
@@ -135,7 +135,7 @@ body {
   .gatsby_listing-group:last-child & {
     @apply mb-0;
   }
-  > .row {
+  > .xt-row {
     @apply -m-3;
     @screen md {
       @apply -m-5;
@@ -165,11 +165,11 @@ body {
 }
 
 .gatsby_listing-item {
-  @apply py-2 px-3 sm:py-4 sm:px-5 text-xs md:text-sm text-black links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out active:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-primary-600 active:shadow-md active:-translate-y-0.5;
+  @apply py-2 px-3 sm:py-4 sm:px-5 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out active:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-primary-600 active:shadow-md active:-translate-y-0.5;
   .gatsby_home-main_actions & {
     @apply text-sm;
   }
-  .h4 {
+  .xt-h4 {
     @apply mb-2;
     font-size: 1.125rem;
     line-height: 1;
@@ -180,7 +180,7 @@ body {
   .gatsby_listing-item--themes& {
     text-align: center;
   }
-  .media-container {
+  .xt-media-container {
     @apply mt-3 rounded-md border-3 border-gray-500 border-opacity-25 bg-gray-200;
     padding-bottom: 55.8%;
   }

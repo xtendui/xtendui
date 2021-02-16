@@ -59,9 +59,9 @@ class Tooltip extends Xt.Toggle {
     if (options.popperjs) {
       if (type === 'targets') {
         // instant
-        el.classList.add('xt-transition-none')
+        el.classList.add('xt-instant')
         requestAnimationFrame(() => {
-          el.classList.remove('xt-transition-none')
+          el.classList.remove('xt-instant')
         })
         // popperjs
         const element = self.getElements(el)[0]
@@ -137,7 +137,7 @@ Tooltip.componentName = 'xt-tooltip'
 Tooltip.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .tooltip',
+  targets: ':scope > .xt-tooltip',
   // class
   class: 'in in-tooltip',
   classSkip: {
@@ -150,7 +150,7 @@ Tooltip.optionsDefault = {
   // event
   on: 'mouseenter',
   off: 'mouseleave',
-  eventLimit: '.event-limit, .tooltip',
+  eventLimit: '.event-limit, .xt-tooltip',
   // timing
   instant: {
     elements: true,
@@ -167,7 +167,7 @@ Tooltip.optionsDefault = {
   popperjs: true,
   closeAuto: true,
   closeOutside: 'body',
-  closeInside: '.tooltip-dismiss, .backdrop, .btn-close',
+  closeInside: '.xt-backdrop, .xt-dismiss',
   zIndex: {
     targets: {
       start: 6500, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start

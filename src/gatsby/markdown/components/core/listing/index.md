@@ -14,6 +14,6 @@ Use **component classes** and **tailwind classes** to create a **listing**.
 | This component uses [media](/components/core/media) see documentation to **customize**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/listing/usage">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/listing/usage">
   </div>
 </demo>

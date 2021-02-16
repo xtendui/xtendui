@@ -10,14 +10,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card rounded-md ${cardDefaultfull()}">
+<div class="xt-card rounded-md ${cardDefaultfull()}">
   <div class="text-base p-0">
-    <div class="list list-6 flex-nowrap items-baseline">
+    <div class="xt-list xt-list-6 flex-nowrap items-baseline">
       <div>
         ${iconPackage({ classes: 'text-3xl' })}
       </div>
       <div>
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>

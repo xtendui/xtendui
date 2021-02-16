@@ -8,17 +8,17 @@ date: "2030-10-10"
 
 ## Space
 
-Use **component utility** `.list-<space>` to space content.
+Use **component utility** `.xt-list-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.list-<space>`       | `list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
-| Utility                  | `.list-x-<space>`       | `list-x-<space>`                | `responsive`                | Space contents horizontally            |
-| Utility                  | `.list-y-<space>`       | `list-y-<space>`                | `responsive`                | Space contents vertically            |
+| Utility                  | `.xt-list-<space>`       | `xt-list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Utility                  | `.xt-list-x-<space>`       | `xt-list-x-<space>`                | `responsive`                | Space contents horizontally            |
+| Utility                  | `.xt-list-y-<space>`       | `xt-list-y-<space>`                | `responsive`                | Space contents vertically            |
 
 </div>
 
@@ -46,7 +46,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
 [[noteDefault]]
-| By default `.list` has `align-items: stretch`.
+| By default `.xt-list` has `align-items: stretch`.
 
 <demo>
   <demovanilla src="vanilla/components/core/list/alignment">

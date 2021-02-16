@@ -1,6 +1,6 @@
 module.exports = {
   component: theme => ({
-    '.ripple-container': {
+    '.xt-ripple-container': {
       overflow: 'hidden',
       pointerEvents: 'none',
       borderRadius: 'inherit',
@@ -12,7 +12,7 @@ module.exports = {
       // styles
       opacity: '.075',
     },
-    '.ripple': {
+    '.xt-ripple': {
       // styles
       position: 'absolute',
       borderRadius: '50%',

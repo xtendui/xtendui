@@ -1,24 +1,24 @@
 module.exports = {
   component: {
-    'body:not(.no-js-fouc):not(.xt-ready)': {
+    'body:not(.xt-nojs-fouc):not(.xt-ready)': {
       // instant animations on page load
       '*': {
-        '@apply duration-none !important': '',
+        '@apply xt-duration-none !important': '',
       },
     },
     '@media (prefers-reduced-motion: reduce), (update: slow)': {
       // instant animations accessibility
-      'body:not(.no-js-prm)': {
+      'body:not(.xt-nojs-prm)': {
         '*': {
-          '@apply duration-none !important': '',
+          '@apply xt-duration-none !important': '',
         },
       },
     },
     '.initial': {
       // instant animations on components init and reinit
-      'body:not(.no-js-initial)': {
+      'body:not(.xt-nojs-initial)': {
         '&, *': {
-          '@apply duration-none !important': '',
+          '@apply xt-duration-none !important': '',
         },
       },
     },
@@ -31,7 +31,7 @@ module.exports = {
     '[data-xt-nav]': {
       cursor: 'pointer',
     },
-    '.xt-transition-none': {
+    '.xt-instant': {
       transition: 'none !important',
     },
     '.xt-container': {
@@ -68,7 +68,7 @@ module.exports = {
       },
     },
     '.xt-calculating': {
-      '@apply duration-none !important': '',
+      '@apply xt-duration-none !important': '',
       display: 'block !important',
       visibility: 'hidden !important',
       opacity: '0 !important',

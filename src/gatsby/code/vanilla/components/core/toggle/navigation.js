@@ -1,5 +1,5 @@
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
+const buttonDefault = require('components/snippets/classes/button-default').default
 const cardToggle = require('components/snippets/classes/card-toggle').default
 const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
 const iconArrowRight = require('components/snippets/icons').iconArrowRight
@@ -12,45 +12,45 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center" data-xt-toggle="{ navigation: '[data-xt-nav]' }">
+<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ navigation: '[data-xt-nav]' }">
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Toggle 0
   </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Toggle 1
   </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Toggle 2
   </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Toggle 3
   </button>
 
-  <button type="button" class="btn ${btnDefault()}" data-xt-nav="-1" title="Previous slide">
+  <button type="button" class="xt-button ${buttonDefault()}" data-xt-nav="-1" title="Previous slide">
     ${iconArrowLeft({ classes: 'text-xl -my-1' })}
   </button>
 
-  <button type="button" class="btn ${btnDefault()}" data-xt-nav="1" title="Next slide">
+  <button type="button" class="xt-button ${buttonDefault()}" data-xt-nav="1" title="Next slide">
     ${iconArrowRight({ classes: 'text-xl -my-1' })}
   </button>
 
-  <div class="card toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
     Target 0
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
     Target 1
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
     Target 2
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
     Target 3
   </div>
 

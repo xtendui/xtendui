@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
@@ -15,41 +15,41 @@ export const demo = {
 
 demo.htmlSource = `
 <form class="text-sm">
-  <div class="row row-x-6 row-y-4">
+  <div class="xt-row xt-row-x-6 xt-row-y-4">
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Input
       </label>
-      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Input" placeholder="Input">
+      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Input" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Disabled
       </label>
-      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Input" placeholder="Input" disabled>
+      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Input" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         File
       </label>
-      <input type="file" class="form-item rounded-md ${inputDefault()}" aria-label="File"/>
+      <input type="file" class="xt-input rounded-md ${inputDefault()}" aria-label="File"/>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Textarea
       </label>
-      <textarea class="form-item rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea"></textarea>
+      <textarea class="xt-input xt-textarea rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Select
       </label>
-      <select class="form-item form-select rounded-md ${inputDefault()}" aria-label="Select">
+      <select class="xt-input xt-select rounded-md ${inputDefault()}" aria-label="Select">
         <option selected value="">Select an option</option>
         <option>Test</option>
         <option>Test</option>
@@ -58,10 +58,10 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Select multiple
       </label>
-      <select class="form-item form-select rounded-md ${inputDefault()}" multiple aria-label="Select multiple">
+      <select class="xt-input xt-select rounded-md ${inputDefault()}" multiple aria-label="Select multiple">
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -70,23 +70,23 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Checkbox
       </label>
 
-      <div class="row row-x-8 row-y-2">
+      <div class="xt-row xt-row-x-8 xt-row-y-2">
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked disabled>
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked disabled>
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
@@ -96,23 +96,23 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Radio
       </label>
 
-      <div class="row row-x-8 row-y-2">
+      <div class="xt-row xt-row-x-8 xt-row-y-2">
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-usage">
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
@@ -122,30 +122,30 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="form-label mb-3 ${labelDefault()}">
+      <label class="xt-label mb-3 ${labelDefault()}">
         Switch
       </label>
 
-      <div class="row row-x-8 row-y-2">
+      <div class="xt-row xt-row-x-8 xt-row-y-2">
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="checkbox" class="form-check form-switch rounded-full ${switchDefault()}">
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="checkbox" class="xt-check xt-switch rounded-full ${switchDefault()}">
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-usage" checked>
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-usage" checked>
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
-          <label class="form-label-check">
-            <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-usage">
-            <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+          <label class="xt-label-check">
+            <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-usage">
+            <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
@@ -154,7 +154,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         submit
       </button>
     </div>

@@ -45,11 +45,11 @@ gsap.config({ force3D: false }) // smoother pixels animations
 
 You can **opt out** some animations behaviour:
 
-* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `body.no-js-fouc` to disable this behaviour.
+* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `body.xt-nojs-fouc` to disable this behaviour.
 
-* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `body.no-js-initial` to disable this behaviour.
+* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `body.xt-nojs-initial` to disable this behaviour.
 
-* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion", add `body.no-js-prm` to disable this behaviour.
+* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion", add `body.xt-nojs-prm` to disable this behaviour.
 
 * **Prefers Reduced Motion**: Xtend UI **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script:
 
@@ -108,7 +108,7 @@ Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac glob
 
 You can execute a function on DOM ready.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -128,7 +128,7 @@ To execute javascript code we use `Xt.mount` for two important reasons:
 
 * It create a **anonymous functions to encapsulate code** so **each block is self contained** and it behaves as a sort of **component for Vanilla Html and Js components**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -186,7 +186,7 @@ Xt.mount.push({
 
 You have some utilities for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -221,7 +221,7 @@ addEventListener('scroll', e => {
 })
 ```
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

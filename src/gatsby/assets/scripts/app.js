@@ -24,11 +24,11 @@ document.addEventListener('click', e => {
 })
 
 /**
- * .gatsby_btn--overlay
+ * .gatsby_button--overlay
  */
 
 Xt.mount.push({
-  matches: '.gatsby_btn--overlay',
+  matches: '.gatsby_button--overlay',
   mount: ({ object }) => {
     // overlay
 
@@ -273,7 +273,7 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       targets: '#gatsby_open-full',
-      closeInside: ':scope > .btn-close',
+      closeInside: ':scope > .xt-dismiss',
       closeAuto: true,
       scrollbar: true,
       classHtml: 'demo-full-open',
@@ -281,11 +281,11 @@ Xt.mount.push({
 
     // tooltip
 
-    const close = document.querySelector('#gatsby_open-full > .btn-close')
+    const close = document.querySelector('#gatsby_open-full > .xt-dismiss')
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--demo--close-${closeUid}" class="tooltip group" data-xt-duration="300">
+<div id="tooltip--demo--close-${closeUid}" class="xt-tooltip group" data-xt-duration="300">
   <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>
@@ -391,14 +391,14 @@ const makeDocument = () => {
     // sidebar links
     if (el.tagName === 'H2') {
       let container = document.querySelector(
-        '.gatsby_btn-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
+        '.gatsby_button-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
       )
       container = container
         ? container
-        : document.querySelector('.gatsby_btn-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
+        : document.querySelector('.gatsby_button-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
       if (container) {
         const item = Xt.createElement(
-          `<div><a href="#" class="btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent_inner"><span></span></button></div>`
+          `<div><a href="#" class="xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent_inner"><span></span></button></div>`
         )
         container.classList.add('active')
         container.querySelector('.gatsby_site-header_item').append(item)
@@ -420,7 +420,7 @@ const makeDocument = () => {
     el.append(
       Xt.createElement(`
 <span class="gatsby_site-article_anchor">
-  <span class="btn btn-default">
+  <span class="xt-button">
   ${iconLink()}
   </span>
 </span>`)

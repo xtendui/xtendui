@@ -1,7 +1,7 @@
 module.exports = {
   variants: ['responsive'],
   utility: {
-    '.icon': {
+    '.xt-icon': {
       display: 'inline-block',
       // styles
       width: 'auto',

@@ -43,14 +43,14 @@ export default class Template extends React.Component {
         <SEO title={seo.title} description={seo.description} />
         {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
         <div className="gatsby_listing">
-          <div className="row row-6">
+          <div className="xt-row xt-row-6">
             {data.categories.category.sort(typeSort).map((category, i) => (
               <div className="gatsby_listing-group" key={i}>
-                <h2 className="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md bg-gray-200 text-center">
+                <h2 className="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md bg-gray-200 text-center">
                   {category.title.split('-').pop()}
                 </h2>
                 <div className="gatsby_listing-items">
-                  <div className="row row-stretch">
+                  <div className="xt-row xt-row-stretch">
                     {category.posts.map(({ post }, z) =>
                       post.frontmatter.link ? (
                         <div className="gatsby_listing-column" key={z}>
@@ -58,9 +58,9 @@ export default class Template extends React.Component {
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="card gatsby_listing-item"
+                            className="xt-card gatsby_listing-item"
                           >
-                            <div className="h4">
+                            <div className="xt-h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -71,8 +71,8 @@ export default class Template extends React.Component {
                         </div>
                       ) : post.frontmatter.parent === post.frontmatter.title ? (
                         <div className="gatsby_listing-column" key={z}>
-                          <Link to={markdownSlug(post)} className="card gatsby_listing-item">
-                            <div className="h4">
+                          <Link to={markdownSlug(post)} className="xt-card gatsby_listing-item">
+                            <div className="xt-h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())

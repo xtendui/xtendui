@@ -31,16 +31,16 @@ module.exports = {
 
 ## Usage
 
-Use `.list` to create a **list**.
+Use `.xt-list` to create a **list**.
 
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.list`                     | `list`                | List styles            |
+| Component                  | `.xt-list`                     | `xt-list`                | List styles            |
 
 </div>
 
@@ -65,6 +65,6 @@ Use this code to create a **list vertical** with `.flex-col`.
 </demo>
 
 [[notePrimary]]
-| You can space anything inside `.list`. If you need to use **tailwind width classes** use [row](/components/core/row).
+| You can space anything inside `.xt-list`. If you need to use **tailwind width classes** use [row](/components/core/row).
 
 Check subpage to [customize content](/components/core/list/content).

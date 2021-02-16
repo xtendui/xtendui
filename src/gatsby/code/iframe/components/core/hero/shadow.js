@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -13,26 +13,26 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="hero relative block overflow-hidden w-full">
-  <div class="media-container bg-gray-700 h-screen">
-    <div class="media-inner">
-      <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+<div class="xt-hero relative block overflow-hidden w-full">
+  <div class="xt-media-container bg-gray-700 h-screen">
+    <div class="xt-media-inner">
+      <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
   </div>
   <div class="container absolute inset-0 flex items-end justify-start text-left">
-    <div class="block w-full py-8 md:py-12 text-white links-inverse">
-      <h2 class="h1 max-w-2xl mr-auto">
+    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
+      <h2 class="xt-h1 max-w-2xl mr-auto">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="p max-w-lg mr-auto">
+      <h3 class="xt-p max-w-lg mr-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-3 justify-start max-w-2xl mr-auto">
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      <div class="xt-list xt-list-3 justify-start max-w-2xl mr-auto">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -40,26 +40,26 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="hero relative block overflow-hidden w-full">
-  <div class="media-container bg-gray-700 h-screen">
-    <div class="media-inner">
-      <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+<div class="xt-hero relative block overflow-hidden w-full">
+  <div class="xt-media-container bg-gray-700 h-screen">
+    <div class="xt-media-inner">
+      <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50"></div>
   </div>
   <div class="container absolute inset-0 flex items-center justify-start text-left">
-    <div class="block w-full py-8 md:py-12 text-white links-inverse">
-      <h2 class="h1 max-w-2xl mr-auto">
+    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
+      <h2 class="xt-h1 max-w-2xl mr-auto">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="p max-w-lg mr-auto">
+      <h3 class="xt-p max-w-lg mr-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-3 justify-start max-w-2xl mr-auto">
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      <div class="xt-list xt-list-3 justify-start max-w-2xl mr-auto">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Dolor sit amet
         </a>
       </div>
@@ -67,26 +67,26 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="hero relative block overflow-hidden w-full">
-  <div class="media-container bg-gray-700 h-screen">
-    <div class="media-inner">
-      <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+<div class="xt-hero relative block overflow-hidden w-full">
+  <div class="xt-media-container bg-gray-700 h-screen">
+    <div class="xt-media-inner">
+      <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
   </div>
   <div class="container absolute inset-0 flex items-center justify-end text-right">
-    <div class="block w-full py-8 md:py-12 text-white links-inverse">
-      <h2 class="h1 max-w-2xl ml-auto">
+    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
+      <h2 class="xt-h1 max-w-2xl ml-auto">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="p max-w-lg ml-auto">
+      <h3 class="xt-p max-w-lg ml-auto">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="list list-3 justify-end max-w-2xl ml-auto">
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      <div class="xt-list xt-list-3 justify-end max-w-2xl ml-auto">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Lorem ipsum
         </a>
-        <a href="#" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+        <a href="#" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           Dolor sit amet
         </a>
       </div>

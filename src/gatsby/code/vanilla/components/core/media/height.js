@@ -8,9 +8,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="media-container bg-gray-700 h-64">
-  <div class="media-inner">
-    <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt=""/>
+<div class="xt-media-container bg-gray-700 h-64">
+  <div class="xt-media-inner">
+    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt=""/>
   </div>
 </div>
 `

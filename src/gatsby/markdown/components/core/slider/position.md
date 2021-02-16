@@ -10,7 +10,7 @@ date: "2009-10-10"
 
 Align the slides.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -31,7 +31,7 @@ Align the slides.
 
 With `group: Number` you set a decimal number from 0 to 1 to group the slides with a factor of the available `drag.dragger` width.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -50,7 +50,7 @@ Example of **responsive group** with [match media](/components/core/slider/api#m
 
 Contain the slides and **automatically group** them when the scroll position is the same of another slide.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -71,7 +71,7 @@ Contain the slides and **automatically group** them when the scroll position is 
 
 You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -90,16 +90,16 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 
 ## Other
 
-If you have slides of different height you can set `autoHeight: '.slides'` to have the slides element resize automatically on activation.
+If you have slides of different height you can set `autoHeight: '.xt-slides'` to have the slides element resize automatically on activation.
 
-If you want to keep the first element height on the slide use `keepHeight: '.slides'`.
+If you want to keep the first element height on the slide use `keepHeight: '.xt-slides'`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.slides`)            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.slides`)            |
+| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`)            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
 
 </div>
 

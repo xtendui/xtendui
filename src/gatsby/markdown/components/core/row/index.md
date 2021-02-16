@@ -31,13 +31,13 @@ module.exports = {
 
 ## Usage
 
-Use `.row` to create a **row**.
+Use `.xt-row` to create a **row**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.row`                     | `row`                | Row styles            |
+| Component                  | `.xt-row`                     | `xt-row`                | Row styles            |
 
 </div>
 
@@ -47,6 +47,6 @@ Use `.row` to create a **row**.
 </demo>
 
 [[notePrimary]]
-| You should always use **tailwind width classes** inside `.row`. Otherwise you can space contents with [list](/components/core/list).
+| You should always use **tailwind width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/core/list).
 
 Check subpage to [customize content](/components/core/row/content).

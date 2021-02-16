@@ -1,5 +1,5 @@
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
+const buttonDefault = require('components/snippets/classes/button-default').default
 const cardDefault = require('components/snippets/classes/card-default').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,37 +10,37 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-toggle="{ elements: '.btn', targets: '.toggle', collapseHeight: 'targets' }">
+<div data-xt-toggle="{ elements: '.xt-button', targets: '.xt-toggle', collapseHeight: 'targets' }">
 
-  <div class="list list-3 items-center mb-4">
+  <div class="xt-list xt-list-3 items-center mb-4">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
       Toggle 0
     </button>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
       Toggle 1
     </button>
 
   </div>
 
-  <div class="row row-6">
+  <div class="xt-row xt-row-6">
 
     <div class="w-full md:w-6/12">
-      <div class="card rounded-md ${cardDefault()}">
-        <div class="media-container bg-gray-700 rounded-md ratio-37.5">
-          <div class="media-inner toggle overflow-hidden transition-all duration-500">
-            <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+      <div class="xt-card rounded-md ${cardDefault()}">
+        <div class="xt-media-container bg-gray-700 rounded-md xt-ratio-37.5">
+          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500">
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>
         </div>
       </div>
     </div>
 
     <div class="w-full md:w-6/12">
-      <div class="card rounded-md ${cardDefault()}">
-        <div class="media-container bg-gray-700 rounded-md ratio-37.5">
-          <div class="media-inner toggle overflow-hidden transition-all duration-500">
-            <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+      <div class="xt-card rounded-md ${cardDefault()}">
+        <div class="xt-media-container bg-gray-700 rounded-md xt-ratio-37.5">
+          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500">
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>
         </div>
       </div>

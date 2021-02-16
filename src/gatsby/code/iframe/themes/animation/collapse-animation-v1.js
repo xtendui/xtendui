@@ -8,9 +8,9 @@ const animItem =
 const listCollapse =
   'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:translate-x-0'
 
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+const buttonDefault = require('components/snippets/classes/button-default').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
+const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
 
 const cardWhite = require('components/snippets/classes/card-white').default
 const cardBlack = require('components/snippets/classes/card-black').default
@@ -33,31 +33,31 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   List Group
 </div>
 
-<form data-xt-toggle="{ elements: '.w-full > .btn', targets: '.w-full > .list', instant: true, collapseWidth: 'targets' }">
+<form class="text-xs" data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', instant: true, collapseWidth: 'targets' }">
 
-  <div class="row row-x-6 row-y-4">
+  <div class="xt-row xt-row-x-6 xt-row-y-4">
 
     <div class="w-full md:w-auto">
-      <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+      <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         List group
       </button>
     </div>
 
     <div class="w-full md:w-auto">
-      <div class="list flex-nowrap max-w-sm ${listCollapse}">
+      <div class="xt-list flex-nowrap max-w-sm ${listCollapse}">
 
-        <div class="list-inner flex-auto">
-          <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
+        <div class="xt-list-inner flex-auto">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
             ${iconSearch({ classes: 'text-xl -my-1' })}
           </button>
-          <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+          <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
         </div>
 
-        <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
           Search
         </button>
 
@@ -68,109 +68,109 @@ demo.htmlSource = `
 
 </form>
 
-<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Drop
 </div>
 
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       list
     </button>
 
-    <div class="drop group" data-xt-duration="700">
-      <div class="drop-inner rounded-md shadow-drop ${animDesign}">
-        <div class="card w-64 py-3 rounded-md ${cardWhite()} ">
-          <nav class="list flex-col rounded-md${animItem}">
-            <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+    <div class="xt-drop group" data-xt-duration="700">
+      <div class="xt-drop-inner rounded-md shadow-drop ${animDesign}">
+        <div class="xt-card w-64 py-3 rounded-md ${cardWhite()} ">
+          <nav class="xt-list flex-col rounded-md${animItem}">
+            <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
-            <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Dolor sit
             </button>
-            <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Amet
             </button>
           </nav>
         </div>
       </div>
-      <div class="drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
+      <div class="xt-drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
 
-  <div data-xt-drop="{ targetsInner: '.drop-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       card
     </button>
 
-    <div class="drop group" data-xt-duration="700">
-      <div class="drop-inner rounded-md shadow-drop ${animDesign}">
-        <div class="card w-80 rounded-md ${cardWhite()}">
-          <button type="button" class="btn btn-close p-5 text-xl ${animItem}" aria-label="Close">
+    <div class="xt-drop group" data-xt-duration="700">
+      <div class="xt-drop-inner rounded-md shadow-drop ${animDesign}">
+        <div class="xt-card w-80 rounded-md ${cardWhite()}">
+          <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl ${animItem}" aria-label="Close">
             ${iconX()}
           </button>
           <div class="text-base p-8 rounded-md ${animItem}">
-            <div class="h4">Lorem ipsum</div>
+            <div class="xt-h4 ">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
       </div>
-      <div class="drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
+      <div class="xt-drop-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
 
 </div>
 
-<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Tooltip
 </div>
 
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.xt-tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       tooltip
     </button>
 
-    <div class="tooltip group" data-xt-duration="700">
-      <div class="tooltip-inner ${animDesign}">
+    <div class="xt-tooltip group" data-xt-duration="700">
+      <div class="xt-tooltip-inner ${animDesign}">
         <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
           <div class="${animItem}">
             Lorem ipsum dolor sit amet
           </div>
         </div>
       </div>
-      <div class="tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
+      <div class="xt-tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', targetsInner: '.xt-tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       list group
     </button>
 
-    <div class="tooltip group" data-xt-duration="700">
-      <div class="tooltip-inner rounded-md shadow-tooltip text-black bg-white ${animDesign}">
+    <div class="xt-tooltip group" data-xt-duration="700">
+      <div class="xt-tooltip-inner rounded-md shadow-tooltip text-black bg-white ${animDesign}">
         <form class="text-sm">
 
-          <div class="list flex-nowrap max-w-sm ${animItem}">
+          <div class="xt-list flex-nowrap max-w-sm ${animItem}">
 
-            <div class="list-inner flex-auto">
-              <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
+            <div class="xt-list-inner flex-auto">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
                 ${iconSearch({ classes: 'text-xl -my-1' })}
               </button>
-              <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+              <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
             </div>
 
-            <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
+            <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
               Search
             </button>
 
@@ -178,34 +178,34 @@ demo.htmlSource = `
 
         </form>
       </div>
-      <div class="tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
+      <div class="xt-tooltip-arrow ${animItem} group-active:delay-500" data-arrow></div>
     </div>
 
   </div>
 
 </div>
 
-<div class="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Overlay
 </div>
 
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+  <div data-xt-overlay="{ targetsInner: ':scope > .xt-overlay-container > .xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       screen full
     </button>
-    <div class="overlay group" data-xt-duration="700">
-      <div class="overlay-container p-0">
-        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2 ${animItem}" aria-label="Close">
+    <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-overlay-container p-0">
+        <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl ${animItem}" aria-label="Close">
           ${iconX()}
         </button>
-        <div class="overlay-inner ${animDesign}">
+        <div class="xt-overlay-inner ${animDesign}">
 
-          <div class="card min-h-screen items-center justify-center ${cardWhite()}">
-            <div class="media-container bg-gray-700 ratio-100 ${animItem}">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+          <div class="xt-card xt-min-h-screen items-center justify-center ${cardWhite()}">
+            <div class="xt-media-container bg-gray-700 xt-ratio-100 ${animItem}">
+              <div class="xt-media-inner">
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </div>
@@ -215,38 +215,38 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .xt-overlay-container > .xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       left blocks
     </button>
 
-    <div class="overlay group" data-xt-duration="700">
-      <div class="overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-        <div class="overlay-inner ${animDesign}">
+    <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
+        <div class="xt-overlay-inner ${animDesign}">
 
-          <div class="card min-h-screen ${cardWhite()}">
-            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="xt-card xt-min-h-screen ${cardWhite()}">
+            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="list bg-primary-500 ${animItem}">
-              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
+            <div class="xt-list bg-primary-500 ${animItem}">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
                 Menu
               </button>
-              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
                 Info
               </button>
-              <button type="button" class="btn text-xs py-2 px-3.5 ${btnPrimary()}">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
                 Account
               </button>
             </div>
-            <div class="media-container bg-gray-700 h-48 ${animItem}">
-              <div class="media-inner">
-                <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+            <div class="xt-media-container bg-gray-700 h-48 ${animItem}">
+              <div class="xt-media-inner">
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
             <div class="text-base p-8 ${animItem}">
-              <div class="h4">Lorem ipsum</div>
+              <div class="xt-h4 ">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="text-sm p-6 bg-gray-500 mt-auto ${animItem}">
@@ -260,64 +260,64 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .xt-overlay-container > .xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       contact
     </button>
 
-    <div class="overlay group" data-xt-duration="700">
-      <div class="overlay-container max-w-5xl">
-        <div class="overlay-inner rounded-md shadow-overlay ${animDesign}">
+    <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-overlay-container max-w-5xl">
+        <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign}">
 
-          <div class="card rounded-md ${cardWhite()}">
-            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="xt-card rounded-md ${cardWhite()}">
+            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
 
-            <div class="md:card-group rounded-md ${animItem}">
+            <div class="md:xt-card-group rounded-md ${animItem}">
 
               <div class="text-base p-8 md:w-7/12">
-                <div class="h4">
+                <div class="xt-h4 ">
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-sm">
-                  <div class="row row-x-6 row-y-4">
+                  <div class="xt-row xt-row-x-6 xt-row-y-4">
 
                     <div class="w-full md:w-6/12">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Name
                       </label>
-                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Name">
+                      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Name">
                     </div>
 
                     <div class="w-full md:w-6/12">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Surname
                       </label>
-                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Surname">
+                      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Surname">
                     </div>
 
                     <div class="w-full md:w-6/12">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Email">
+                      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full md:w-6/12">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Telephone
                       </label>
-                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Telephone">
+                      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Telephone">
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Subject
                       </label>
-                      <select class="form-item form-select rounded-md ${inputDefault()}" aria-label="Subject">
+                      <select class="xt-input xt-select rounded-md ${inputDefault()}" aria-label="Subject">
                         <option selected value="">Select an option</option>
                         <option>Test</option>
                         <option>Test</option>
@@ -326,23 +326,23 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Message
                       </label>
-                      <textarea class="form-item rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Message"></textarea>
+                      <textarea class="xt-input xt-textarea rounded-md ${inputDefault()} h-24 resize-vertical" aria-label="Message"></textarea>
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label-check">
-                        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-                        <span class="form-check-content">
+                      <label class="xt-label-check">
+                        <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+                        <span class="xt-check-content">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>
                       </label>
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                         Send
                       </button>
                     </div>
@@ -352,13 +352,13 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col ${animItem}">
-                <div class="media-container bg-gray-700 md:rounded-tr-md h-48 md:ratio-100">
-                  <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+                <div class="xt-media-container bg-gray-700 md:rounded-tr-md h-48 md:xt-ratio-100">
+                  <div class="xt-media-inner">
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
                 <div class="text-base p-8 bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
-                  <p class="h5">
+                  <p class="xt-h5 ">
                     Didn't find what you was looking for?
                   </p>
                   <p>
@@ -377,76 +377,76 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: ':scope > .overlay-container > .overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: ':scope > .xt-overlay-container > .xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       newsletter
     </button>
 
-    <div class="overlay group" data-xt-duration="700">
-      <div class="overlay-container max-w-5xl">
-        <div class="overlay-inner rounded-md shadow-overlay ${animDesign}">
+    <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-overlay-container max-w-5xl">
+        <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign}">
 
-          <div class="card rounded-md ${cardWhite()}">
-            <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
+          <div class="xt-card rounded-md ${cardWhite()}">
+            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
 
-            <div class="md:card-group rounded-md ${animItem}">
+            <div class="md:xt-card-group rounded-md ${animItem}">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="media-container bg-gray-700 rounded-t-md md:rounded-tr-none h-48 lg:ratio-100 md:flex-full">
-                  <div class="media-inner">
-                    <img class="media object-cover object-center" src="/img.svg" loading="eager" alt="">
+                <div class="xt-media-container bg-gray-700 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
+                  <div class="xt-media-inner">
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
               </div>
 
               <div class="text-base p-8 md:w-7/12">
-                <div class="h4">
+                <div class="xt-h4 ">
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                 <form class="text-sm">
-                  <div class="row row-x-6 row-y-4">
+                  <div class="xt-row xt-row-x-6 xt-row-y-4">
 
                     <div class="w-full">
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Email
                       </label>
-                      <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Email">
+                      <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Email">
                     </div>
 
                     <div class="w-full">
 
-                      <label class="form-label mb-3 ${labelDefault()}">
+                      <label class="xt-label mb-3 ${labelDefault()}">
                         Subject
                       </label>
 
-                      <div class="row row-x-8 row-y-2">
+                      <div class="xt-row xt-row-x-8 xt-row-y-2">
 
                         <div class="w-full sm:w-auto">
-                          <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
-                            <span class="form-check-content">
+                          <label class="xt-label-check">
+                            <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-usage" checked>
+                            <span class="xt-check-content">
                               Option 1
                             </span>
                           </label>
                         </div>
 
                         <div class="w-full sm:w-auto">
-                          <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
-                            <span class="form-check-content">
+                          <label class="xt-label-check">
+                            <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-usage">
+                            <span class="xt-check-content">
                               Option 2
                             </span>
                           </label>
                         </div>
 
                         <div class="w-full sm:w-auto">
-                          <label class="form-label-check">
-                            <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-usage">
-                            <span class="form-check-content">
+                          <label class="xt-label-check">
+                            <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-usage">
+                            <span class="xt-check-content">
                               Option 3
                             </span>
                           </label>
@@ -457,16 +457,16 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <label class="form-label-check">
-                        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-                        <span class="form-check-content">
+                      <label class="xt-label-check">
+                        <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+                        <span class="xt-check-content">
                           I <strong>read and accept</strong> the <a href="#" target="_blank" rel="noopener">sales conditions</a> and the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                         </span>
                       </label>
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                         Subscribe
                       </button>
                     </div>

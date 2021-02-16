@@ -40,15 +40,15 @@ class Ripple {
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // generate
     if (!self.container) {
-      self.object.append(Xt.createElement('<div class="ripple-container"></div>'))
-      self.container = self.object.querySelector(':scope > .ripple-container')
+      self.object.append(Xt.createElement('<div class="xt-ripple-container"></div>'))
+      self.container = self.object.querySelector(':scope > .xt-ripple-container')
     }
     // on
     let onHandler = Xt.dataStorage.put(self.object, `mousedown/touchstart/${self.ns}`, self.eventStart.bind(self))
     self.object.addEventListener('mousedown', onHandler)
     self.object.addEventListener('touchstart', onHandler, { passive: true })
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
@@ -67,7 +67,7 @@ class Ripple {
     const options = self.options
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      self.container.append(Xt.createElement('<div class="ripple"></div>'))
+      self.container.append(Xt.createElement('<div class="xt-ripple"></div>'))
       // @FIX prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()
@@ -139,7 +139,7 @@ class Ripple {
   destroy() {
     const self = this
     // generate
-    self.object.querySelector(':scope > .ripple-container').remove()
+    self.object.querySelector(':scope > .xt-ripple-container').remove()
     // remove events
     // on
     let onHandler = Xt.dataStorage.get(self.object, `mousedown/touchstart/${self.ns}`)
@@ -168,7 +168,7 @@ Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
   // ripple
   sizeInitial: 0.1,
-  onlyInside: 'a, button, .btn',
+  onlyInside: 'a, button, .xt-button',
 }
 
 //

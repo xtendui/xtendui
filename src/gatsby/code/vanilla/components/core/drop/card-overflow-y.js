@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardWhite = require('components/snippets/classes/card-white').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,23 +10,23 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       group
     </button>
 
-    <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardWhite()} overflow-y-auto overflow-x-hidden overflow-sub max-h-96">
-        <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
-          <div class="media-inner">
-            <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+    <div class="xt-drop">
+      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96">
+        <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-inner">
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
         </div>
         <div class="text-base p-8">
-          <div class="h4">Lorem ipsum</div>
+          <div class="xt-h4 ">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -38,19 +38,19 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       group
     </button>
 
-    <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
-        <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
-          <div class="media-inner">
-            <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+    <div class="xt-drop">
+      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
+        <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-inner">
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
         </div>
-        <div class="text-base p-8 overflow-y-auto overflow-x-hidden overflow-sub max-h-64">
-          <div class="h4">Lorem ipsum</div>
+        <div class="text-base p-8 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">
+          <div class="xt-h4 ">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

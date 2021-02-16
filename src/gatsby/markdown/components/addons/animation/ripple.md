@@ -39,7 +39,7 @@ module.exports = {
 Use this code to create a **ripple**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/themes/animation/ripple-animation-v1">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/themes/animation/ripple-animation-v1">
   </div>
 </demo>
 
@@ -47,12 +47,12 @@ Use this code to create a **ripple**.
  
 Here are the main **javascript options**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `sizeInitial:Boolean`                          | `0.1`        | Initial size factor            |
-| Option                    | `onlyInside:Query`                          | `'a, button, .btn'`        | Only if selector else query closest             |
+| Option                    | `onlyInside:Query`                          | `'a, button, .xt-button'`        | Only if selector else query closest             |
 
 </div>
 
@@ -60,7 +60,7 @@ Here are the main **javascript options**.
 
 Listen to events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -75,7 +75,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

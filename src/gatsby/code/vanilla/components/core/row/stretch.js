@@ -9,17 +9,17 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-4 row-stretch">
+<div class="xt-row xt-row-4 xt-row-stretch">
 
   <div class="w-full md:w-6/12">
-    <div class="card rounded-md ${cardDefault()}">
-      <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
-        <div class="media-inner">
-          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+    <div class="xt-card rounded-md ${cardDefault()}">
+      <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+        <div class="xt-media-inner">
+          <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
       <div class="text-base p-8 mt-auto rounded-b-md bg-gray-400">
@@ -29,14 +29,14 @@ demo.htmlSource = `
   </div>
 
   <div class="w-full md:w-6/12">
-    <div class="card rounded-md ${cardDefault()}">
-      <div class="media-container bg-gray-700 rounded-t-md ratio-37.5">
-        <div class="media-inner">
-          <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+    <div class="xt-card rounded-md ${cardDefault()}">
+      <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+        <div class="xt-media-inner">
+          <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
       </div>
       <div class="text-base p-8 mt-auto rounded-b-md bg-gray-400">

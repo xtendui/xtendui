@@ -10,13 +10,13 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [stroke](https://tailwindcss.com/docs/stroke), [opacity](https://tailwindcss.com/docs/opacity)).
 
-Use `.spinner-animated` to assing spinner animation.
+Use `.animate-xt-spinner` to assing spinner animation.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.spinner-animated`                     | `spinner-animated`                | Spinner animation            |
+| Component                  | `.animate-xt-spinner`                     | `animate-xt-spinner`                | Spinner animation            |
 
 </div>
 
@@ -33,13 +33,13 @@ Use `.spinner-animated` to assing spinner animation.
 
 Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height)).
 
-Use `.loader-<direction>-animated` to assing filler animation. For `<direction>` values use `x` or `y`.
+Use `.animate-xt-filler-<direction>` to assing filler animation. For `<direction>` values use `x` or `y`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-<direction>-animated`                     | `loader-<direction>-animated`                | Filler animation            |
+| Component                  | `.animate-xt-filler-<direction>`                     | `animate-xt-filler-<direction>`                | Filler animation            |
 
 </div>
 

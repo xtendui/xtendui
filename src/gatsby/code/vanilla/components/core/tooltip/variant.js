@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardBlack = require('components/snippets/classes/card-black').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 const iconLink = require('components/snippets/icons').iconLink
@@ -12,15 +12,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Black
     </button>
 
-    <div class="tooltip">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>
@@ -30,11 +30,11 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Primary
     </button>
 
-    <div class="tooltip">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardPrimary()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>

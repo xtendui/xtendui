@@ -3,8 +3,8 @@ module.exports = {
     overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   },
   component: theme => ({
-    '.overlay': {
-      '@apply overflow-main': '',
+    '.xt-overlay': {
+      '@apply xt-overflow-main': '',
       position: 'fixed',
       zIndex: theme('zIndex.overlay'),
       top: '0',
@@ -19,7 +19,7 @@ module.exports = {
         pointerEvents: 'none',
       },
     },
-    '.overlay-container': {
+    '.xt-overlay-container': {
       display: 'flex',
       flexWrap: 'nowrap',
       flexDirection: 'column',
@@ -42,7 +42,7 @@ module.exports = {
         padding: theme('container.padding.xl'),
       },
     },
-    '.overlay-inner': {
+    '.xt-overlay-inner': {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -55,7 +55,7 @@ module.exports = {
       'a&, button&': {
         display: 'none',
       },
-      '&.overlay': {
+      '&.xt-overlay': {
         display: 'flex !important',
         position: 'static',
         zIndex: 'initial',
@@ -66,19 +66,19 @@ module.exports = {
         width: 'auto',
         height: 'auto',
         overflowY: 'initial',
-        '.overlay-container': {
+        '.xt-overlay-container': {
           padding: '0',
           width: '100%',
           minHeight: 'auto',
           maxWidth: 'none',
         },
-        '.overlay-inner': {
+        '.xt-overlay-inner': {
           zIndex: 'initial',
-          '> .card': {
-            '@apply card-disable !important': '',
+          '> .xt-card': {
+            '@apply xt-card-disable !important': '',
           },
         },
-        '> .backdrop': {
+        '> .xt-backdrop': {
           display: 'none !important',
         },
       },

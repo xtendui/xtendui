@@ -1,30 +1,27 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.flex-full': {
-      flex: '1 1 100%',
-    },
-    '.container-reset': {
+    '.xt-container-reset': {
       padding: 0,
       width: 'auto',
       maxWidth: 'none',
     },
-    '.container-y': {
+    '.xt-container-y': {
       ...theme('container.padding'),
     },
-    '.-container': {
+    '.xt-container-remove': {
       ...theme('container.padding'),
     },
-    '.-container-y': {
+    '.xt-container-y-remove': {
       ...theme('container.padding'),
     },
-    '.h-screen': {
+    '.xt-h-screen': {
       height: 'calc(var(--vh, 1vh) * 100) !important',
     },
-    '.min-h-screen': {
+    '.xt-min-h-screen': {
       minHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
-    '.max-h-screen': {
+    '.xt-max-h-screen': {
       maxHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
   }),
@@ -34,7 +31,7 @@ module.exports = {
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
     },
     body: {
-      '@apply overflow-main': '',
+      '@apply xt-overflow-main': '',
     },
     '.container': theme('container.fluid')
       ? {
@@ -46,7 +43,7 @@ module.exports = {
       backgroundColor: '#00FFDD',
       color: theme('colors.black'),
     },
-    '.overflow-main': {
+    '.xt-overflow-main': {
       // styles
       '-webkit-overflow-scrolling': 'touch',
       '&::-webkit-scrollbar': {
@@ -63,7 +60,7 @@ module.exports = {
       scrollbarWidth: 'auto',
       scrollbarColor: `${theme('colors.gray.600')} ${theme('colors.white')}`,
     },
-    '.overflow-sub': {
+    '.xt-overflow-sub': {
       // styles
       '-webkit-overflow-scrolling': 'touch',
       '&::-webkit-scrollbar': {
@@ -77,16 +74,16 @@ module.exports = {
       scrollbarWidth: 'thin',
       scrollbarColor: `${theme('colors.gray.600')} transparent`,
     },
-    '[readonly], [disabled], .disabled': {
+    '[readonly], [disabled], .xt-disabled': {
       pointerEvents: 'none',
       // styles
       '&:not(.active)': {
         opacity: '.75',
       },
     },
-    '.backdrop': {
+    '.xt-backdrop': {
       position: 'fixed',
-      zIndex: theme('zIndex.backdrop'),
+      zIndex: theme('zIndex.xt-backdrop'),
       top: '0',
       right: '0',
       width: '100%',
@@ -117,7 +114,7 @@ module.exports = {
         },
       },
     },
-    '.design-setup': {
+    '.xt-design-setup': {
       position: 'absolute',
       zIndex: '-1',
       top: '0',

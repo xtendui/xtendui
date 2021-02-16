@@ -13,19 +13,19 @@ demo.htmlSource = `
 
   Lorem ipsum <a href="#" data-xt-group="my-group">dolor</a> sit <a href="#" data-xt-group="another-group">amet</a>
 
-  <div class="tooltip" data-xt-group="another-group">
+  <div class="xt-tooltip" data-xt-group="another-group">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
 
-  <div class="tooltip" data-xt-group="my-group">
+  <div class="xt-tooltip" data-xt-group="my-group">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>
 
-  <div class="tooltip" data-xt-position="bottom" data-xt-group="my-group">
+  <div class="xt-tooltip" data-xt-position="bottom" data-xt-group="my-group">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>

@@ -1,3 +1,3 @@
 export default () => {
-  return `text-black links-default`
+  return `text-black xt-links-default`
 }

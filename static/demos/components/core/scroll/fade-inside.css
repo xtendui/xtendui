@@ -2,7 +2,7 @@
 body:not(.xt-noscroll) {
   .demo--fade-inside {
     /* add here all fade selectors css and js */
-    .card {
+    .xt-card {
       opacity: 0;
     }
   }

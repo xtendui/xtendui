@@ -117,11 +117,11 @@ module.exports = {
               blocks: {
                 noteDefault: {
                   classes:
-                    'card text-sm p-6 my-5 mt-fc mb-lc text-black links-default rounded-md bg-gray-200 gatsby_note',
+                    'xt-card text-sm p-6 my-5 xt-m-auto text-black xt-links-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
                   classes:
-                    'card text-sm p-6 my-5 mt-fc mb-lc text-white links-inverse rounded-md bg-primary-500 gatsby_note',
+                    'xt-card text-sm p-6 my-5 xt-m-auto text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
                 },
               },
             },
@@ -131,13 +131,13 @@ module.exports = {
             options: {
               classMap: {
                 link: 'link',
-                table: 'gatsby_table my-4 mt-fc mb-lc w-full',
-                'heading[depth=1]': 'h1',
-                'heading[depth=2]': 'h2',
-                'heading[depth=3]': 'h3',
-                'heading[depth=4]': 'h4',
-                'heading[depth=5]': 'h5',
-                'heading[depth=6]': 'h6',
+                table: 'gatsby_table my-4 xt-m-auto w-full',
+                'heading[depth=1]': 'xt-h1',
+                'heading[depth=2]': 'xt-h2',
+                'heading[depth=3]': 'xt-h3',
+                'heading[depth=4]': 'xt-h4',
+                'heading[depth=5]': 'xt-h5',
+                'heading[depth=6]': 'xt-h6',
               },
             },
           },

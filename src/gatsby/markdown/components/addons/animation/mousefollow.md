@@ -23,7 +23,7 @@ module.exports = {
   theme:{
     extend: {
       xtendui: {
-        'mousefollow': {
+        mousefollow: {
           component: theme => ({
             // modify components
           }),
@@ -39,13 +39,13 @@ module.exports = {
 Use **component classes** to create a **mouse follow**.
 
 [[notePrimary]]
-| Remember **not to transition transform** of `.mousefollow` element.
+| Remember **not to transition transform** of `.xt-mousefollow` element.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.mousefollow`                     | `mousefollow`                | Styles for mouse follow            |
+| Component                  | `.xt-mousefollow`                     | `mousefollow`                | Styles for mouse follow            |
 
 </div>
 
@@ -64,11 +64,11 @@ It's possible to **assign them also on single nodes** with `data-xt-duration="Mi
  
 Here are the main **javascript options**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `targets:Query`                          | `':scope > .mousefollow'`        | Mouse follow targets            |
+| Option                    | `targets:Query`                          | `':scope > .xt-mousefollow'`        | Mouse follow targets            |
 | Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
 | Option                    | `friction:Function`                          | `<function>`        | Function for friction             |
 | Option                    | `mouseCheck(self):Function|Boolean`                          | `false`        | Function called on activate/deactivate, return false to not activate/deactivate             |
@@ -79,7 +79,7 @@ Here are the main **javascript options**.
 
 Listen to events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -95,7 +95,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

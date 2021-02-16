@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
-Use `.link` to create a [link](/components/core/link).
+Use `.xt-link` to create a [link](/components/core/link).
 
 <demo>
   <demovanilla src="vanilla/components/core/button/variant">

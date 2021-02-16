@@ -25,7 +25,7 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 | Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/layout/googlelocator">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/layout/googlelocator">
   </div>
 </demo>
 
@@ -37,7 +37,7 @@ Additionally you can pass functions to `options.formatData` to populate inside `
 
 For advanced options see javascript file source code `xtendui/src/addons/googlelocator.js`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -45,16 +45,16 @@ For advanced options see javascript file source code `xtendui/src/addons/googlel
 | Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
 | Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
-| Option                    | `elements.loader:Query`                          | `'.loader'`        | Object query for loader             |
+| Option                    | `elements.loader:Query`                          | `'.xt-loader'`        | Object query for loader             |
 | Option                    | `elements.searchInput:Query`                          | `'input[type="text"]'`        | Object query for searh input             |
-| Option                    | `elements.searchBtn:Query`                          | `'.btn-search'`        | Object query for search button             |
+| Option                    | `elements.searchBtn:Query`                          | `'.button-search'`        | Object query for search button             |
 | Option                    | `elements.map:Query`                          | `'.googlelocator-main-map'`        | Object query for google map             |
 | Option                    | `elements.itemsTemplate:Query`                          | `'script[type="text/x-template"]'`        | Object query for template cloned for maps items             |
 | Option                    | `elements.itemsContainer:Query`                          | `'.googlelocator-items'`        | Object query for items container to append items to             |
 | Option                    | `elements.results:Query`                          | `'.googlelocator-aside-body'`        | Object query for results messages             |
 | Option                    | `elements.resultsFounds:Query`                          | `'.googlelocator-result-found'`        | Object query for results found             |
-| Option                    | `elements.locateBtn:Query`                          | `'.btn-locate'`        | Object query for             |
-| Option                    | `elements.repeatBtn:Query`                          | `'.btn-repeat'`        | Object query for repeat search             |
+| Option                    | `elements.locateBtn:Query`                          | `'.button-locate'`        | Object query for             |
+| Option                    | `elements.repeatBtn:Query`                          | `'.button-repeat'`        | Object query for repeat search             |
 | Option                    | `elements.filter:Query`                          | `'input[type="checkbox"], input[type="radio"]'`        | Object query for             |
 
 </div>
@@ -63,7 +63,7 @@ For advanced options see javascript file source code `xtendui/src/addons/googlel
 
 Listen to events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -77,7 +77,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

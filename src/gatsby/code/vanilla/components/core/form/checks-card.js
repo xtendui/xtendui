@@ -12,64 +12,64 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row row-6">
+<div class="xt-row xt-row-6">
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked disabled>
+        <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked disabled>
       </div>
     </label>
   </div>
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
+        <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
       </div>
     </label>
   </div>
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-card" checked>
+        <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-card" checked>
       </div>
     </label>
   </div>
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="radio" class="form-check form-radio rounded-full ${radioDefault()}" name="radio-card">
+        <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-card">
       </div>
     </label>
   </div>
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-card" checked>
+        <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-card" checked>
       </div>
     </label>
   </div>
 
   <div class="w-full md:w-6/12">
-    <label class="card rounded-md ${cardDefaultInteractive()}">
+    <label class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="text-base p-8">
-        <div class="h4">Lorem ipsum</div>
+        <div class="xt-h4 ">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-        <input type="radio" class="form-check form-switch rounded-full ${switchDefault()}" name="switch-card">
+        <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-card">
       </div>
     </label>
   </div>

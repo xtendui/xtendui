@@ -1,8 +1,8 @@
 .demo--drop-disable {
   /* xt-drop-disabled additional reset styles */
-  .drop.xt-drop-disabled {
-    .list {
-      > .btn {
+  .xt-drop.xt-drop-disabled {
+    .xt-list {
+      > .xt-button {
         @apply px-0;
       }
     }

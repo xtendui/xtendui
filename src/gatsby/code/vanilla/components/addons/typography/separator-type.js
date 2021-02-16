@@ -8,5 +8,5 @@ export const demo = {
 }
 
 demo.htmlSource = `
-Lorem ipsum <span class="separator separator-dash mx-2"></span> dolor sit amet <span class="separator separator-slash mx-2"></span> Lorem ipsum <span class="separator separator-pipe mx-2"></span> dolor sit amet <span class="separator separator-point mx-2"></span> Lorem ipsum <span class="separator separator-arrow mx-2"></span> dolor sit amet.
+Lorem ipsum <span class="xt-separator xt-separator-dash mx-2"></span> dolor sit amet <span class="xt-separator xt-separator-slash mx-2"></span> Lorem ipsum <span class="xt-separator xt-separator-pipe mx-2"></span> dolor sit amet <span class="xt-separator xt-separator-point mx-2"></span> Lorem ipsum <span class="xt-separator xt-separator-arrow mx-2"></span> dolor sit amet.
 `

@@ -46,7 +46,7 @@ It's possible to **assign them also on single nodes** with `data-xt-duration="Mi
 Use **component classes** to create a **mouse follow**.
 
 [[notePrimary]]
-| Remember **not to transition transform** of `.mousefollow` element.
+| Remember **not to transition transform** of `.xt-mousefollow` element.
 
 [[noteDefault]]
 | This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.

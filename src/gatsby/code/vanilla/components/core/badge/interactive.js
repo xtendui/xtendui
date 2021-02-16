@@ -10,13 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <a role="button" class="badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
+  <a role="button" class="xt-badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
     Gray
   </a>
 
-  <a role="button" class="badge text-xs py-2 px-3.5 ${badgePrimaryInteractive()}">
+  <a role="button" class="xt-badge text-xs py-2 px-3.5 ${badgePrimaryInteractive()}">
     Primary
   </a>
 

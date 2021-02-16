@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 
@@ -17,57 +17,57 @@ export const demo = {
 demo.htmlSource = `
 
 <header class="site-header">
-  <div class="card text-sm p-6 ${cardPrimary()}">
-    <div class="h4">Header</div>
+  <div class="xt-card text-sm p-6 ${cardPrimary()}">
+    <div class="xt-h4 ">Header</div>
   </div>
 </header>
 
 <main class="site-main">
 
   <div class="container">
-    <div class="row row-8 lg:row-22 items-stretch">
+    <div class="xt-row xt-row-8 lg:xt-row-22 items-stretch">
 
       <div class="w-full md:w-6/12 lg:w-7/12">
         <div class="relative pt-6 md:py-6">
 
-          <div class="list flex-col">
+          <div class="xt-list flex-col">
 
             <div class="w-full">
-              <div class="media-container bg-gray-700">
-                <div class="media-inner relative">
-                  <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+              <div class="xt-media-container bg-gray-700">
+                <div class="xt-media-inner relative">
+                  <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
                 </div>
               </div>
             </div>
 
             <div class="w-full">
-              <div class="media-container bg-gray-700">
-                <div class="media-inner relative">
-                  <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+              <div class="xt-media-container bg-gray-700">
+                <div class="xt-media-inner relative">
+                  <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
                 </div>
               </div>
             </div>
 
             <div class="w-full">
-              <div class="media-container bg-gray-700">
-                <div class="media-inner relative">
-                  <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+              <div class="xt-media-container bg-gray-700">
+                <div class="xt-media-inner relative">
+                  <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
                 </div>
               </div>
             </div>
 
             <div class="w-full">
-              <div class="media-container bg-gray-700">
-                <div class="media-inner relative">
-                  <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+              <div class="xt-media-container bg-gray-700">
+                <div class="xt-media-inner relative">
+                  <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
                 </div>
               </div>
             </div>
 
             <div class="w-full">
-              <div class="media-container bg-gray-700">
-                <div class="media-inner relative">
-                  <img class="media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
+              <div class="xt-media-container bg-gray-700">
+                <div class="xt-media-inner relative">
+                  <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt=""/>
                 </div>
               </div>
             </div>
@@ -81,15 +81,15 @@ demo.htmlSource = `
         <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
         <div class="md:py-12 md:sticky stickyflow">
 
-          <h1 class="h2">
+          <h1 class="xt-h2 ">
             Lorem ipsum dolor sit amet
           </h1>
 
-          <div class="h5 mb-6">
+          <div class="xt-h5  mb-6">
             €&nbsp;229,00
           </div>
 
-          <a href="#" class="btn text-base py-2.5 px-4 rounded-md mb-6 ${btnPrimary()}">
+          <a href="#" class="xt-button text-base py-2.5 px-4 rounded-md mb-6 ${buttonPrimary()}">
             Add to cart
           </a>
 
@@ -107,8 +107,8 @@ demo.htmlSource = `
 </main>
 
 <footer class="site-footer">
-  <div class="card text-sm p-6 ${cardDefault()}">
-    <div class="h4">Footer</div>
+  <div class="xt-card text-sm p-6 ${cardDefault()}">
+    <div class="xt-h4 ">Footer</div>
   </div>
 </footer>
 

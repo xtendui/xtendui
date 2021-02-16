@@ -8,9 +8,9 @@ date: "2030-10-10"
 
 ## Responsive
 
-Use **tailwind classes** on `.media-inner` to assign relative position. The result is a **responsive media**.
+Use **tailwind classes** on `.xt-media-inner` to assign relative position. The result is a **responsive media**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -25,20 +25,20 @@ Use **tailwind classes** on `.media-inner` to assign relative position. The resu
 
 ## Aspect ratio
 
-Assing `padding-bottom` on `.media-container` to the aspect ratio you desire.
+Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
 
 <demo>
   <demovanilla src="vanilla/components/core/media/ratio">
   </demovanilla>
 </demo>
 
-Use **component utility** `.ratio-<value>` on `.media-container` to make aspect ratio images (resize screen to see it in action).
+Use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images (resize screen to see it in action).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio, can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`            |
+| Utility                  | `.xt-ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio, can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`            |
 
 </div>
 
@@ -51,7 +51,7 @@ You can add your own aspect ratio value as [media utility](/components/core/medi
 
 ## Object fit
 
-Use **tailwind classes** to assign object fit.
+Use **tailwind classes** to assign object fit. (e.g. [object-position](https://tailwindcss.com/docs/object-position)).
 
 <demo>
   <demovanilla src="vanilla/components/core/media/cover">

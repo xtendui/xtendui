@@ -1,6 +1,6 @@
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonDefault = require('components/snippets/classes/button-default').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const iconSearch = require('components/snippets/icons').iconSearch
 
@@ -12,28 +12,28 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       list group
     </button>
 
-    <div class="tooltip">
-      <div class="rounded-md shadow-tooltip text-black links-default bg-white">
+    <div class="xt-tooltip">
+      <div class="rounded-md shadow-tooltip text-black xt-links-default bg-white">
         <form class="text-sm">
 
-          <div class="list flex-nowrap max-w-sm">
+          <div class="xt-list flex-nowrap max-w-sm">
 
-            <div class="list-inner flex-auto">
-              <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
+            <div class="xt-list-inner flex-auto">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
                 ${iconSearch({ classes: 'text-xl -my-1' })}
               </button>
-              <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+              <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
             </div>
 
-            <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
+            <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
               Search
             </button>
 

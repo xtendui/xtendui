@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--slider-touch-overflow" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
+<div class="xt-slider demo--slider-touch-overflow" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

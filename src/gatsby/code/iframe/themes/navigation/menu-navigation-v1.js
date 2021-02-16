@@ -17,9 +17,9 @@ demo.htmlSource = `
 
   <!-- mouse events instead of click you can remove this -->
   <div class="container pt-10">
-    <label class="form-label-check">
-      <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-      <span class="form-check-content">Use mouse events</span>
+    <label class="xt-label-check">
+      <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+      <span class="xt-check-content">Use mouse events</span>
     </label>
   </div>
 
@@ -27,34 +27,34 @@ demo.htmlSource = `
 
   <div class="container">
 
-    <div class="list -mx-4">
+    <div class="xt-list -mx-4">
 
-      <div class="drop-container">
+      <div class="xt-drop-container">
 
-        <a href="/" class="btn text-sm py-6 px-4 btn-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #1
         </a>
 
-        <div class="drop drop-static drop-nospace">
-          <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-primary-900"></div>
-            <div class="drop-content">
+        <div class="xt-drop xt-drop-static xt-drop-nospace">
+          <div class="xt-drop-inner overflow-hidden">
+            <div class="xt-design-setup bg-primary-900"></div>
+            <div class="xt-drop-content">
 
-              <div class="pt-16 pb-24 text-white links-inverse">
+              <div class="pt-16 pb-24 text-white xt-links-inverse">
                 <div class="container">
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Lorem ipsum
                   </a>
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Dolor sit amet
                   </a>
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Consectetur adipiscing elit
                   </a>
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Morbi nec mauris est
                   </a>
-                  <a href="#" class="btn text-xs py-2 px-0 link mt-6">
+                  <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
                     Show all
                   </a>
                 </div>
@@ -66,26 +66,26 @@ demo.htmlSource = `
 
       </div>
 
-      <div class="drop-container">
+      <div class="xt-drop-container">
 
-        <a href="/" class="btn text-sm py-6 px-4 btn-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #2
         </a>
 
-        <div class="drop drop-static drop-nospace">
-          <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-primary-900"></div>
-            <div class="drop-content">
+        <div class="xt-drop xt-drop-static xt-drop-nospace">
+          <div class="xt-drop-inner overflow-hidden">
+            <div class="xt-design-setup bg-primary-900"></div>
+            <div class="xt-drop-content">
 
-              <div class="pt-16 pb-24 text-white links-inverse">
+              <div class="pt-16 pb-24 text-white xt-links-inverse">
                 <div class="container">
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Lorem ipsum
                   </a>
-                  <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                  <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Dolor sit amet
                   </a>
-                  <a href="#" class="btn text-xs py-2 px-0 link mt-6">
+                  <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
                     Show all
                   </a>
                 </div>
@@ -97,45 +97,45 @@ demo.htmlSource = `
 
       </div>
 
-      <div class="drop-container">
+      <div class="xt-drop-container">
 
-        <a href="/" class="btn text-sm py-6 px-4 btn-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #3
         </a>
 
-        <div class="drop drop-static drop-nospace">
-          <div class="drop-inner overflow-hidden">
-            <div class="design-setup bg-gray-100"></div>
-            <div class="drop-content">
+        <div class="xt-drop xt-drop-static xt-drop-nospace">
+          <div class="xt-drop-inner overflow-hidden">
+            <div class="xt-design-setup bg-gray-100"></div>
+            <div class="xt-drop-content">
 
-              <div class="pt-16 pb-24 text-black links-default">
+              <div class="pt-16 pb-24 text-black xt-links-default">
                 <div class="container">
-                  <div class="row row-8">
+                  <div class="xt-row xt-row-8">
                     <div class="w-6/12">
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Lorem ipsum
                       </a>
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Dolor sit amet
                       </a>
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Consectetur adipiscing elit
                       </a>
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Morbi nec mauris est
                       </a>
                     </div>
                     <div class="w-6/12">
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Dolor sit amet
                       </a>
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Consectetur adipiscing elit
                       </a>
-                      <a href="#" class="btn w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
+                      <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Morbi nec mauris est
                       </a>
-                      <a href="#" class="btn text-xs py-2 px-0 link mt-6">
+                      <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
                           Show all
                       </a>
                     </div>
@@ -149,7 +149,7 @@ demo.htmlSource = `
 
       </div>
 
-      <a href="/" class="btn text-sm py-6 px-4 btn-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+      <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
         Link #4
       </a>
 

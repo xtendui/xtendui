@@ -1,28 +1,28 @@
 module.exports = {
   variants: ['responsive'],
   utility: {
-    '.card-group': {
+    '.xt-card-group': {
       display: 'flex',
       alignItems: 'inherit',
     },
-    '.card-disable': {
-      '@apply text-black links-default !important': '',
+    '.xt-card-disable': {
+      '@apply text-black xt-links-default !important': '',
       borderWidth: '0 !important',
       backgroundColor: 'transparent !important',
       boxShadow: 'none !important',
       '> *': {
         padding: '0 !important',
       },
-      '> .btn-close': {
+      '> .xt-dismiss': {
         display: 'none !important',
       },
-      '> .design-setup': {
+      '> .xt-design-setup': {
         display: 'none !important',
       },
     },
   },
   component: {
-    '.card': {
+    '.xt-card': {
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',

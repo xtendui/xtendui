@@ -46,13 +46,13 @@ Card content **stack vertically**. Use **tailwind classes** to assign styles (e.
 
 ## Group
 
-Use **component utility** `.card-group` to stack card content **horizontally**.
+Use **component utility** `.xt-card-group` to stack card content **horizontally**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+| Utility                  | `.xt-card-group`       | `xt-card-group`                | `responsive`                | Card stack horizontal wrapper           |
 
 </div>
 
@@ -76,12 +76,12 @@ Use **tailwind classes** to style **borders** for separation.
 
 Use **tailwind classes** to overflow divs. Use **component classes** to style **overflow**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.overflow-main`                     | `overflow-main`                | Overflow scrollbar style            |
-| Component                  | `.overflow-sub`                     | `overflow-sub`                | Overflow scrollbar style small version            |
+| Component                  | `.xt-overflow-main`                     | `xt-overflow-main`                | Overflow scrollbar style            |
+| Component                  | `.xt-overflow-sub`                     | `xt-overflow-sub`                | Overflow scrollbar style small version            |
 
 </div>
 

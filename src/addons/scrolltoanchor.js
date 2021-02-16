@@ -76,7 +76,7 @@ class Scrolltoanchor {
       }
     }
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))

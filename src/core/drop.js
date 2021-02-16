@@ -59,9 +59,9 @@ class Drop extends Xt.Toggle {
     if (options.popperjs) {
       if (type === 'targets') {
         // instant
-        el.classList.add('xt-transition-none')
+        el.classList.add('xt-instant')
         requestAnimationFrame(() => {
-          el.classList.remove('xt-transition-none')
+          el.classList.remove('xt-instant')
         })
         // popperjs
         const element = self.getElements(el)[0]
@@ -137,7 +137,7 @@ Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
   // element
   elements: ':scope > a, :scope > button',
-  targets: ':scope > .drop',
+  targets: ':scope > .xt-drop',
   // class
   class: 'in in-drop',
   // quantity
@@ -146,7 +146,7 @@ Drop.optionsDefault = {
   // event
   on: 'click',
   off: false,
-  eventLimit: '.event-limit, .drop',
+  eventLimit: '.event-limit, .xt-drop',
   // timing
   instant: {
     elements: true,
@@ -163,7 +163,7 @@ Drop.optionsDefault = {
   popperjs: true,
   closeAuto: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .backdrop, .btn-close',
+  closeInside: '.xt-backdrop, .xt-dismiss',
   zIndex: {
     targets: {
       start: 6000, // theme.zIndex.drop same as Drop options.zIndex.targets.start

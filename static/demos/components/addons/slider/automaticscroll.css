@@ -2,30 +2,26 @@
 
   /* slider */
 
-  .slider {
+  .xt-slider {
     &.xt-overflow-auto {
-      .slides-inner {
+      .xt-slides-inner {
         justify-content: center;
       }
     }
   }
 
-  .slider--img {
-    .slide_item {
-      width: 300px;
-      @apply transform transition;
-      &:hover, &:active, &.active {
-        transform: scale(0.98);
-      }
+  .slide-asset {
+    width: 300px;
+    @apply transform transition;
+    &:hover, &:active, &.active {
+      transform: scale(0.98);
     }
   }
 
-  .slider--text {
-    .slide_item {
-      @apply transform transition;
-      &:hover, &:active, &.active {
-        color: theme('colors.primary.500');
-      }
+  .slide-text {
+    @apply transform transition;
+    &:hover, &:active, &.active {
+      color: theme('colors.primary.500');
     }
   }
 

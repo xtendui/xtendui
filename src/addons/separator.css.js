@@ -1,32 +1,32 @@
 module.exports = {
   component: {
-    '.separator': {
-      display: 'inline-block',
+    '.xt-separator': {
+      display: 'inline',
       position: 'relative',
       fontSize: '1em',
       verticalAlign: 'baseline',
     },
-    '.separator-dash': {
+    '.xt-separator-dash': {
       '&:after': {
         content: '"-"',
       },
     },
-    '.separator-slash': {
+    '.xt-separator-slash': {
       '&:after': {
         content: '"/"',
       },
     },
-    '.separator-pipe': {
+    '.xt-separator-pipe': {
       '&:after': {
         content: '"|"',
       },
     },
-    '.separator-point': {
+    '.xt-separator-point': {
       '&:after': {
         content: '"•"',
       },
     },
-    '.separator-arrow': {
+    '.xt-separator-arrow': {
       '&:after': {
         content: '">"',
       },

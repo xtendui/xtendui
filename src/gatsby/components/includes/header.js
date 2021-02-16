@@ -27,7 +27,7 @@ export default function Header({ page }) {
   return (
     <div className="gatsby_site-article_sidebar">
       <div className="gatsby_site-article_sidebar_inner">
-        <header className="gatsby_site-header scroll-sticky">
+        <header className="gatsby_site-header xt-scroll-sticky">
           <div className="gatsby_site-header_inner">
             <div>
               <div className="gatsby_site-header_content">
@@ -49,11 +49,11 @@ export default function Header({ page }) {
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_site-header_top_social_btn"
+                        className="xt-button gatsby_site-header_top_social_btn"
                         title="Twitter"
                         dangerouslySetInnerHTML={{ __html: iconTwitter() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="300">
+                      <div className="xt-tooltip group" data-xt-duration="300">
                         <div
                           className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
@@ -66,11 +66,11 @@ export default function Header({ page }) {
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_site-header_top_social_btn"
+                        className="xt-button gatsby_site-header_top_social_btn"
                         title="Npm"
                         dangerouslySetInnerHTML={{ __html: iconPackage() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="300">
+                      <div className="xt-tooltip group" data-xt-duration="300">
                         <div
                           className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
@@ -83,11 +83,11 @@ export default function Header({ page }) {
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn gatsby_site-header_top_social_btn"
+                        className="xt-button gatsby_site-header_top_social_btn"
                         title="Github"
                         dangerouslySetInnerHTML={{ __html: iconGithub() }}
                       ></a>
-                      <div className="tooltip group" data-xt-duration="300">
+                      <div className="xt-tooltip group" data-xt-duration="300">
                         <div
                           className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
@@ -100,12 +100,12 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className="btn text-xs py-2 px-3.5 rounded-md gatsby_btn--overlay"
+                    className="xt-button text-xs py-2 px-3.5 rounded-md gatsby_button--overlay"
                     aria-label="Menu"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="icon"
+                      className="xt-icon"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -126,13 +126,13 @@ export default function Header({ page }) {
           </div>
         </header>
 
-        <div className="overlay text-white links-inverse in xt-overlay-disabled" id="gatsby_menu--overlay">
-          <div className="overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
-            <div className="overlay-inner">
-              <div className="design-setup"></div>
-              <div className="card">
+        <div className="xt-overlay text-white xt-links-inverse in xt-overlay-disabled" id="gatsby_menu--overlay">
+          <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
+            <div className="xt-overlay-inner">
+              <div className="xt-design-setup"></div>
+              <div className="xt-card">
                 <div
-                  className="btn btn-close p-5 pr-3 text-2xl fixed z-last mr-2"
+                  className="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"
                   dangerouslySetInnerHTML={{ __html: iconX() }}
                 ></div>
@@ -144,7 +144,7 @@ export default function Header({ page }) {
                           <Link
                             to={markdownSlug(post)}
                             title={post.frontmatter.description}
-                            className={`btn gatsby_btn-site-header_link ${
+                            className={`xt-button gatsby_button-site-header_link ${
                               page && page.post
                                 ? markdownSlug(page.post) === markdownSlug(post)
                                   ? 'active'
@@ -178,7 +178,7 @@ export default function Header({ page }) {
                                             rel="noopener noreferrer"
                                             target="_blank"
                                             title={post.frontmatter.description}
-                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                            className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
                                                 ? 'active'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
@@ -198,7 +198,7 @@ export default function Header({ page }) {
                                           <Link
                                             to={markdownSlug(post)}
                                             title={post.frontmatter.description}
-                                            className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--sub ${
+                                            className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
                                                 ? 'active'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
@@ -224,7 +224,7 @@ export default function Header({ page }) {
                                                   <div key={i}>
                                                     <Link
                                                       to={markdownSlug(adiacent)}
-                                                      className={`btn gatsby_btn-site_article_sidebar gatsby_btn-site_article_sidebar--adiacent ${
+                                                      className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
                                                         page.post.frontmatter.title === adiacent.frontmatter.title &&
                                                         post.frontmatter.category === page.post.frontmatter.category
                                                           ? 'active'
@@ -265,7 +265,7 @@ export default function Header({ page }) {
               </div>
             </div>
           </div>
-          <div className="backdrop transition-none"></div>
+          <div className="xt-backdrop xt-transition-none"></div>
         </div>
       </div>
     </div>

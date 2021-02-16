@@ -2,11 +2,11 @@
   /*##START*/
   .bg-primary-500 {
     /* custom opacity */
-    .ripple-container {
+    .xt-ripple-container {
       opacity: .25;
     }
     /* custom background */
-    .ripple {
+    .xt-ripple {
       background: theme('colors.white');
     }
   }

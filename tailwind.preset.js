@@ -18,7 +18,6 @@ module.exports = {
         xs: ['0.8125rem', { lineHeight: '1rem' }],
       },
       colors: {
-        code: '#2d3748',
         primary: {
           50: '#F2F8FF',
           100: '#E6F2FF',
@@ -42,6 +41,9 @@ module.exports = {
         sticky: '8000',
         overlay: '9000',
         last: '10000',
+      },
+      flex: {
+        full: '1 1 100%',
       },
       inset: {
         100: '100%',

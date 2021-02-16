@@ -34,8 +34,8 @@
  */
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
-  .btn:not(.btn-close) {
-    .icon {
+  .xt-button:not(.xt-dismiss) {
+    .xt-icon {
       font-size: 14px;
     }
   }
@@ -120,7 +120,7 @@
   h2 & {
     bottom: -1px;
   }
-  .btn {
+  .xt-button {
     padding: 7px;
     font-size: 1.25rem;
     border-radius: 50%;

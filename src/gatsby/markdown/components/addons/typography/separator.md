@@ -41,11 +41,11 @@ Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com
 
 For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.separator-<type>`                     | `separator-<type>`                | Separator content            |
+| Component                  | `.xt-separator-<type>`                     | `separator-<type>`                | Separator content            |
 
 </div>
 

@@ -127,7 +127,7 @@
     }
   }
 
-  .btn-repeat {
+  .button-repeat {
     position: absolute;
     z-index: 2;
     top: 2rem;
@@ -140,8 +140,8 @@
 
   .googlelocator-item {
     @apply py-2;
-    > .list {
-      @apply list-2;
+    > .xt-list {
+      @apply xt-list-2;
       flex-wrap: nowrap;
       align-items: center;
       justify-content: space-between;
@@ -159,7 +159,7 @@
   }
 
   .googlelocator-item-name {
-    @apply mt-5 mb-3 mt-fc mb-lc font-sans font-bold leading-none tracking-tight text-xl;
+    @apply mt-5 mb-3 xt-m-auto font-sans font-bold leading-none tracking-tight text-xl;
   }
 
   .googlelocator-item-address {
@@ -201,7 +201,7 @@
       //box-shadow: @shadow-light;
       background: theme('colors.white');
       /* scroll */
-      @apply overflow-sub;
+      @apply xt-overflow-sub;
       overflow-x: hidden !important;
       overflow-y: auto !important;
       max-height: 15rem !important;

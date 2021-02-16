@@ -56,7 +56,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<h3 class="h6 sm:h5 md:h4">
+<h3 class="xt-h6 sm:xt-h5 md:xt-h4">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </h6>
 

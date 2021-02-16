@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--slider-progress">
+<div class="xt-slider demo--slider-progress">
 ${indentString(markupSlider(), 2)}
 </div>
 `

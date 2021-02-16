@@ -24,7 +24,7 @@ Use this code to create a **sticky flow** (use large screen to see it in action)
 Pratically it's a solution that **scrolls sticky content** when it **overflow the window**, following scroll direction.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/animation/stickyflow">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/animation/stickyflow">
   </div>
 </demo>
 
@@ -32,7 +32,7 @@ Pratically it's a solution that **scrolls sticky content** when it **overflow th
  
 Here are the main **javascript options**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -45,7 +45,7 @@ Here are the main **javascript options**.
 
 Listen to events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -59,7 +59,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

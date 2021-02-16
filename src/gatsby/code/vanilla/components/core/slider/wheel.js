@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider" data-xt-slider="{ wheel: { selector: '.slides-inner' } }">
+<div class="xt-slider" data-xt-slider="{ wheel: { selector: '.xt-slides-inner' } }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

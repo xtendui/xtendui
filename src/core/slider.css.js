@@ -1,10 +1,10 @@
 module.exports = {
   component: theme => ({
-    '.slider': {
+    '.xt-slider': {
       position: 'relative',
       overflow: 'hidden',
     },
-    '.slides': {
+    '.xt-slides': {
       position: 'relative',
       display: 'inline-block', // @FIX autoheight values
       verticalAlign: 'top', // @FIX inline-block margin below
@@ -14,11 +14,11 @@ module.exports = {
       transitionDuration: theme('transitionDuration.500'),
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-    '.slide': {
+    '.xt-slide': {
       position: 'relative',
     },
-    '.slider-absolute': {
-      '.slide': {
+    '.xt-slider-absolute': {
+      '.xt-slide': {
         position: 'relative',
         display: 'none',
         '&.in': {
@@ -40,7 +40,7 @@ module.exports = {
       },
       // @FIX page load height without .active slides
       '&:not(.xt-slider)': {
-        '.slide': {
+        '.xt-slide': {
           '&:first-child': {
             display: 'block !important',
             position: 'relative !important',
@@ -48,7 +48,7 @@ module.exports = {
         },
       },
     },
-    '.slides-inner': {
+    '.xt-slides-inner': {
       // prevent browser selection
       '-webkit-user-select': 'none',
       '-moz-user-select': 'none',
@@ -62,34 +62,34 @@ module.exports = {
       transitionDuration: theme('transitionDuration.700'),
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-    '.slider-expand': {
-      '.slides': {
+    '.xt-slider-expand': {
+      '.xt-slides': {
         overflow: 'visible',
         height: 'auto !important',
       },
-      '.slides-inner': {
-        '@apply duration-none transform-none !important': '',
+      '.xt-slides-inner': {
+        '@apply xt-duration-none xt-transform-none !important': '',
         flexWrap: 'wrap !important',
       },
-      '.slide:not(.in)': {
+      '.xt-slide:not(.in)': {
         opacity: '1 !important',
       },
-      '.xt-wrap, .slider-ui, .loader, .filler, .spinner': {
+      '.xt-wrap, .xt-slider-ui': {
         display: 'none !important',
       },
     },
     '.xt-overflow-auto': {
-      '.slider-ui, .xt-wrap': {
+      '.xt-slider-ui, .xt-wrap': {
         display: 'none !important',
       },
       // @FIX disable slider if not overflowing
-      '.slides-inner': {
-        '@apply duration-none transform-none !important': '',
+      '.xt-slides-inner': {
+        '@apply xt-duration-none xt-transform-none !important': '',
       },
     },
     '.xt-slider-disabled': {
-      '&.slider': {
-        '.slider-ui': {
+      '&.xt-slider': {
+        '.xt-slider-ui': {
           display: 'none !important',
         },
         '.xt-wrap': {

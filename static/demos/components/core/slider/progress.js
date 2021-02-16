@@ -25,7 +25,7 @@ Xt.mount.push({
 
     const eventAutostart = () => {
       // slider
-      const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
+      const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
       const timeline = gsap.timeline({ overwrite: false })
       gsap.killTweensOf(spinner)
       timeline.to(spinner, {
@@ -43,7 +43,7 @@ Xt.mount.push({
       // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
-        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.set(filler, { height: 0, top: '100%' })
@@ -58,7 +58,7 @@ Xt.mount.push({
       // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
-        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.set(filler, { width: 0, left: 0 })
@@ -80,7 +80,7 @@ Xt.mount.push({
       // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
-        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.to(filler, {
@@ -94,7 +94,7 @@ Xt.mount.push({
       // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
-        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.to(filler, {
@@ -113,7 +113,7 @@ Xt.mount.push({
 
     const eventAutopause = () => {
       // slider
-      const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
+      const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
       gsap.killTweensOf(spinner)
       gsap.to(spinner, {
         strokeDashoffset: 628,
@@ -124,7 +124,7 @@ Xt.mount.push({
       // elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
-        const fillers = element.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.to(filler, {
@@ -138,7 +138,7 @@ Xt.mount.push({
       // targets
       const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
-        const fillers = target.querySelectorAll('.filler span:nth-child(1)')
+        const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
         for (const filler of fillers) {
           gsap.killTweensOf(filler)
           gsap.to(filler, {
@@ -156,7 +156,7 @@ Xt.mount.push({
     // mousefollow
 
     let mouseFollow = new Xt.Mousefollow(object, {
-      targets: ':scope > .loader',
+      targets: ':scope > .xt-loader',
     })
 
     // unmount

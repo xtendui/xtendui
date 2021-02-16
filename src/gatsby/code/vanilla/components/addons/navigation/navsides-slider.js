@@ -12,16 +12,16 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider" data-xt-slider>
+<div class="xt-slider" data-xt-slider>
 ${indentString(markupSlider(), 2)}
-  <button type="button" class="slider-ui hidden md:block cursor-none z-top absolute top-0 left-0 w-24 h-full group" data-xt-nav="-1" aria-label="Previous slide" data-xt-mousefollow="{ targets: '.mousefollow' }">
-    <div class="mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
+  <button type="button" class="xt-slider-ui hidden md:block cursor-none z-top absolute top-0 left-0 w-24 h-full group" data-xt-nav="-1" aria-label="Previous slide" data-xt-mousefollow="{ targets: '.xt-mousefollow' }">
+    <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
       ${iconArrowLeft({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
     </div>
   </button>
 
-  <button type="button" class="slider-ui hidden md:block cursor-none z-top absolute top-0 right-0 w-24 h-full group" data-xt-nav="-1" aria-label="Next slide" data-xt-mousefollow="{ targets: '.mousefollow' }">
-    <div class="mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
+  <button type="button" class="xt-slider-ui hidden md:block cursor-none z-top absolute top-0 right-0 w-24 h-full group" data-xt-nav="-1" aria-label="Next slide" data-xt-mousefollow="{ targets: '.xt-mousefollow' }">
+    <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
       ${iconArrowRight({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
     </div>
   </button>

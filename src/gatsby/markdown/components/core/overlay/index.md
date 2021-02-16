@@ -44,12 +44,12 @@ module.exports = {
 
 Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .overlay'`        | Targets query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
@@ -62,7 +62,7 @@ Use this code to create a **overlay** in **self mode**.
 Just use the class `in-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/overlay/usage-self">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/usage-self">
   </div>
 </demo>
 

@@ -8,13 +8,13 @@ date: "2005-10-10"
 
 ## Disable
 
-You can disable styles using `.card-disable`.
+You can disable styles using `.xt-card-disable`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.card-disable`       | `card-disable`                | `responsive`                | Reset card styles            |
+| Utility                  | `.xt-card-disable`       | `xt-card-disable`                | `responsive`                | Reset card styles            |
 
 </div>
 

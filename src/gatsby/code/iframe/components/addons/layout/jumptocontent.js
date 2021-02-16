@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardScroll = require('components/snippets/classes/card-scroll').default
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -14,24 +14,24 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="jumptocontent toggle xt-fixed">
-  <a href="#jumptocontent" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+<div class="jumptocontent xt-toggle xt-fixed">
+  <a href="#jumptocontent" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
     Jump to content
   </a>
 </div>
 
-<div class="row row-6">
+<div class="xt-row xt-row-6">
 
   <div class="w-full">
-    <div class="card rounded-md ${cardScroll()}">
-      <div class="h4">Lorem ipsum</div>
+    <div class="xt-card rounded-md ${cardScroll()}">
+      <div class="xt-h4 ">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full">
-    <div class="card rounded-md ${cardScroll()}">
-      <div class="h4">Lorem ipsum</div>
+    <div class="xt-card rounded-md ${cardScroll()}">
+      <div class="xt-h4 ">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>

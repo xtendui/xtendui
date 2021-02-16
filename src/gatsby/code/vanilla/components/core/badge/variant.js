@@ -10,13 +10,13 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <div class="badge text-xs py-2 px-3.5 ${badgeDefault()}">
+  <div class="xt-badge text-xs py-2 px-3.5 ${badgeDefault()}">
     Gray
   </div>
 
-  <div class="badge text-xs py-2 px-3.5 ${badgePrimary()}">
+  <div class="xt-badge text-xs py-2 px-3.5 ${badgePrimary()}">
     Primary
   </div>
 

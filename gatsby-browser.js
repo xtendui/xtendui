@@ -8,7 +8,7 @@ window.keepSidebarScroll = 0
 window.overlayOpen = false
 
 exports.onPreRouteUpdate = ({ location, prevLocation }) => {
-  const btn = document.querySelector('.gatsby_btn--overlay')
+  const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
@@ -34,7 +34,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  const btn = document.querySelector('.gatsby_btn--overlay')
+  const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
@@ -58,7 +58,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
       // scroll top
       document.scrollingElement.scrollTop = 0
       // @FIX popstate #gatsby_open-full
-      for (const link of document.querySelectorAll('.gatsby_btn-site_article_sidebar.active')) {
+      for (const link of document.querySelectorAll('.gatsby_button-site_article_sidebar.active')) {
         link.addEventListener('click', e => {
           e.preventDefault()
           // no location.hash or page scroll to top

@@ -8,83 +8,91 @@ const rem = px => `${round(px / 16)}rem`
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.mt-fc': {
+    '.xt-mt-auto': {
       '&:first-child': {
-        marginTop: theme('spacing.0'),
+        marginTop: '0',
       },
     },
-    '.mb-lc': {
+    '.xt-mb-auto': {
       '&:last-child': {
-        marginBottom: theme('spacing.0'),
+        marginBottom: '0',
       },
     },
-    '.h1': {
+    '.xt-m-auto': {
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
+    },
+    '.xt-h1': {
       // styles
       marginTop: theme('spacing.7'),
       marginBottom: theme('spacing.5'),
-      '@apply mt-fc mb-lc text-3xl md:text-4xl lg:text-5xl': {},
+      '@apply xt-m-auto text-3xl md:text-4xl lg:text-5xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.h2': {
+    '.xt-h2': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.4'),
-      '@apply mt-fc mb-lc text-2xl md:text-3xl lg:text-4xl': {},
+      '@apply xt-m-auto text-2xl md:text-3xl lg:text-4xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.h3': {
+    '.xt-h3': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc text-xl md:text-2xl lg:text-3xl': {},
+      '@apply xt-m-auto text-xl md:text-2xl lg:text-3xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.h4': {
+    '.xt-h4': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc text-xl lg:text-2xl': {},
+      '@apply xt-m-auto text-xl lg:text-2xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.h5': {
+    '.xt-h5': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc text-xl': {},
+      '@apply xt-m-auto text-xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.h6': {
+    '.xt-h6': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply mt-fc mb-lc text-lg': {},
+      '@apply xt-m-auto text-lg': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
     },
-    '.p': {
+    '.xt-p': {
       fontFamily: 'inherit',
       fontStyle: 'inherit',
       fontWeight: 'inherit',
@@ -93,9 +101,9 @@ module.exports = {
       // styles
       marginTop: theme('spacing.0'),
       marginBottom: theme('spacing.3'),
-      '@apply text-reset mb-lc': {},
+      '@apply xt-text-reset xt-mb-auto': {},
     },
-    '.text-reset': {
+    '.xt-text-reset': {
       fontFamily: 'inherit',
       fontStyle: 'inherit',
       fontWeight: 'inherit',
@@ -104,16 +112,7 @@ module.exports = {
       letterSpacing: 'inherit',
       textTransform: 'inherit',
     },
-    '.ellipsis': {
-      overflow: 'hidden',
-      whiteSpace: 'nowrap',
-      textOverflow: 'ellipsis',
-      '> *': {
-        display: 'inline !important',
-        verticalAlign: 'middle !important',
-      },
-    },
-    '.lowercase-capitalize': {
+    '.xt-lowercase-capitalize': {
       textTransform: 'lowercase',
       '&:first-letter': {
         textTransform: 'uppercase',
@@ -122,25 +121,25 @@ module.exports = {
   }),
   component: theme => ({
     'h1:not([class])': {
-      '@apply h1': '',
+      '@apply xt-h1': '',
     },
     'h2:not([class])': {
-      '@apply h2': '',
+      '@apply xt-h2': '',
     },
     'h3:not([class])': {
-      '@apply h3': '',
+      '@apply xt-h3': '',
     },
     'h4:not([class])': {
-      '@apply h4': '',
+      '@apply xt-h4': '',
     },
     'h5:not([class])': {
-      '@apply h5': '',
+      '@apply xt-h5': '',
     },
     'h6:not([class])': {
-      '@apply h6': '',
+      '@apply xt-h6': '',
     },
     'p:not([class])': {
-      '@apply p': '',
+      '@apply xt-p': '',
     },
     strong: {
       // styles
@@ -149,11 +148,11 @@ module.exports = {
     'ul:not([class]), ol:not([class])': {
       // styles
       marginBottom: theme('spacing.3'),
-      '@apply mb-lc': {},
+      '@apply xt-mb-auto': {},
       '> li': {
         position: 'relative',
         marginBottom: theme('spacing.3'),
-        '@apply mb-lc': {},
+        '@apply xt-mb-auto': {},
         '&:before': {
           position: 'absolute',
           display: 'inline-block',
@@ -188,19 +187,19 @@ module.exports = {
     'dl:not([class])': {
       // styles
       marginBottom: theme('spacing.3'),
-      '@apply mb-lc': {},
+      '@apply xt-mb-auto': {},
     },
     'hr:not([class])': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
+      '@apply xt-m-auto': {},
     },
     'figure:not([class])': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.6'),
-      '@apply mt-fc mb-lc': {},
+      '@apply xt-m-auto': {},
     },
     'figcaption:not([class])': {
       // styles

@@ -14,22 +14,22 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
-  <div class="h4">Lorem ipsum</div>
+<div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
+  <div class="xt-h4 ">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-top scroll-sticky">
-  <div class="card text-sm p-6 ${cardPrimary()}">
-    <div class="h4">Top</div>
+<div class="demo--sticky-top xt-scroll-sticky">
+  <div class="xt-card text-sm p-6 ${cardPrimary()}">
+    <div class="xt-h4 ">Top</div>
   </div>
 </div>
 
-<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
-  <div class="h4">Lorem ipsum</div>
+<div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
+  <div class="xt-h4 ">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
@@ -39,22 +39,22 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
-  <div class="h4">Lorem ipsum</div>
+<div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
+  <div class="xt-h4 ">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-bottom scroll-sticky">
-  <div class="card text-sm p-6 ${cardPrimary()}">
-    <div class="h4">Bottom</div>
+<div class="demo--sticky-bottom xt-scroll-sticky">
+  <div class="xt-card text-sm p-6 ${cardPrimary()}">
+    <div class="xt-h4 ">Bottom</div>
   </div>
 </div>
 
-<div class="card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
-  <div class="h4">Lorem ipsum</div>
+<div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
+  <div class="xt-h4 ">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>

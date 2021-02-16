@@ -12,17 +12,17 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 Use the **component classes** to create a **sticky**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.scroll-sticky`                     | `scroll-sticky`                | Styles for sticky            |
+| Component                  | `.xt-scroll-sticky`                     | `xt-scroll-sticky`                | Styles for sticky            |
 
 </div>
 
 A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to control **pinner position**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -32,7 +32,7 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 </div>
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
 </demo>
 
 ## Event
@@ -45,7 +45,7 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Here's an example of **complex sticky hide** when scrolling down but only after the first card.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/sticky-hide"></div>
 </demo>
 
 ## Distance
@@ -54,7 +54,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 
 Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -68,7 +68,7 @@ Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infi
 Here's an example of **complex sticky stacking**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/sticky-stack"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/sticky-stack"></div>
 </demo>
 
 ## Other
@@ -77,7 +77,7 @@ You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`
 
 You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

@@ -26,7 +26,7 @@ module.exports = {
     },
   },
   component: {
-    '.row': {
+    '.xt-row': {
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
@@ -39,7 +39,7 @@ module.exports = {
         display: 'none',
       },
     },
-    '.row-stretch': {
+    '.xt-row-stretch': {
       alignItems: 'stretch',
       '> *': {
         display: 'flex',
@@ -50,8 +50,8 @@ module.exports = {
       },
     },
     '@media (hover: none)': {
-      '.row-overflow': {
-        '@apply overflow-sub': '',
+      '.xt-row-overflow': {
+        '@apply xt-overflow-sub': '',
         overflowX: 'auto',
         overflowY: 'hidden',
         flexWrap: 'nowrap',

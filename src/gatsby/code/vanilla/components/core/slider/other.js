@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider demo--slider-other" data-xt-slider="{ loop: false, jumpOverflow: true, autoHeight: '.slides' }">
+<div class="xt-slider demo--slider-other" data-xt-slider="{ loop: false, jumpOverflow: true, autoHeight: '.xt-slides' }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

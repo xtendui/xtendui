@@ -48,17 +48,17 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
-Use **component utility** `.card-group` to stack card content **horizontally**.
+Use **component utility** `.xt-card-group` to stack card content **horizontally**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.card-group`       | `card-group`                | `responsive`                | Card stack horizontal wrapper           |
+| Utility                  | `.xt-card-group`       | `xt-card-group`                | `responsive`                | Card stack horizontal wrapper           |
 
 </div>
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
@@ -91,7 +91,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 | For aria purpose use `role="toolbar"`.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the class `.disabled`.
+| For aria purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
 
 [[notePrimary]]
 | For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
@@ -111,7 +111,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 (navigate on mobile for different behaviour)
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
@@ -119,7 +119,7 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 </div>
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -127,31 +127,31 @@ Use **component utility** `.card-group` to stack card content **horizontally**.
 
 </div>
 
-Use **component utility** `.row-<space>` to space content.
+Use **component utility** `.xt-row-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.list-<space>`       | `list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Utility                  | `.xt-list-<space>`       | `xt-list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
 
 </div>
 
 For `<direction>` values use `x` or `y`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
+| Component                  | `.xt-loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
 
 </div>
 
 You can set **scroll mode** with css selectors.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          |  Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -162,11 +162,11 @@ You can set **scroll mode** with css selectors.
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/list-group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 <script type="text/plain" class="language-markup">
-  <a href="#" class="btn btn-default">
+  <a href="#" class="xt-button">
     <!-- content -->
   </a>
 
-  <button type="button" class="btn btn-default">
+  <button type="button" class="xt-button">
     <!-- content -->
   </button>
 </script>

@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="bg-primary-500 py-5 px-6">
-  <div class="list list-3 items-center text-white links-inverse">
+  <div class="xt-list xt-list-3 items-center text-white xt-links-inverse">
 
     <a href="#">
       link
@@ -19,11 +19,11 @@ demo.htmlSource = `
       link custom
     </a>
 
-    <button type="button" class="btn link">
-      link btn
+    <button type="button" class="xt-button xt-link">
+      link button
     </button>
 
-    <div class="link">
+    <div class="xt-link">
       link class
     </div>
 

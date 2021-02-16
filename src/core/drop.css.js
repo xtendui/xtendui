@@ -4,7 +4,7 @@ module.exports = {
   },
   variants: ['responsive'],
   utility: {
-    '.drop-static': {
+    '.xt-drop-static': {
       width: '100%',
       padding: 0,
       top: '100% !important',
@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   component: theme => ({
-    '.drop': {
+    '.xt-drop': {
       position: 'absolute',
       margin: '0 !important',
       '&:not(.in):not(.out)': {
@@ -27,20 +27,20 @@ module.exports = {
         zIndex: theme('zIndex.drop'),
       },
       // styles
-      '[data-popper-placement^="top"]&:not(.drop-nospace)': {
+      '[data-popper-placement^="top"]&:not(.xt-drop-nospace)': {
         paddingBottom: theme('spacing.4'),
       },
-      '[data-popper-placement^="bottom"]&:not(.drop-nospace)': {
+      '[data-popper-placement^="bottom"]&:not(.xt-drop-nospace)': {
         paddingTop: theme('spacing.4'),
       },
-      '[data-popper-placement^="left"]&:not(.drop-nospace)': {
+      '[data-popper-placement^="left"]&:not(.xt-drop-nospace)': {
         paddingRight: theme('spacing.4'),
       },
-      '[data-popper-placement^="right"]&:not(.drop-nospace)': {
+      '[data-popper-placement^="right"]&:not(.xt-drop-nospace)': {
         paddingLeft: theme('spacing.4'),
       },
     },
-    '.drop-arrow': {
+    '.xt-drop-arrow': {
       '@apply transform': '',
       '@apply rotate-45 !important': '',
       position: 'absolute',
@@ -66,7 +66,7 @@ module.exports = {
       'a&, button&': {
         display: 'none',
       },
-      '&.drop': {
+      '&.xt-drop': {
         display: 'inline-block !important',
         position: 'relative',
         top: 'auto',
@@ -76,11 +76,11 @@ module.exports = {
         '> *:first-child': {
           zIndex: 'initial',
         },
-        '> .design-setup': {
+        '> .xt-design-setup': {
           display: 'none',
         },
-        '> .card': {
-          '@apply card-disable !important': '',
+        '> .xt-card': {
+          '@apply xt-card-disable !important': '',
         },
       },
     },

@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider" data-xt-slider="{ contain: true, align: 'center' }">
+<div class="xt-slider" data-xt-slider="{ contain: true, align: 'center' }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

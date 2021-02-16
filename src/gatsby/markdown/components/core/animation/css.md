@@ -10,14 +10,14 @@ date: "2050-10-10"
 
 These are general **component utilities**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.transform-none`                     | `transform-none`                | `responsive`                | Disable transform (!important)            |
-| Utility                  | `.transition-none`                     | `transition-none`                | `responsive`                | Disable transition (!important)            |
-| Utility                  | `.animate-none`                     | `animate-none`                | `responsive`                | Disable animation (!important)            |
-| Utility                  | `.duration-none`                     | `duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
+| Utility                  | `.xt-transform-none`                     | `xt-transform-none`                | `responsive`                | Disable transform (!important)            |
+| Utility                  | `.xt-transition-none`                     | `xt-transition-none`                | `responsive`                | Disable transition (!important)            |
+| Utility                  | `.xt-animate-none`                     | `xt-animate-none`                | `responsive`                | Disable animation (!important)            |
+| Utility                  | `.xt-duration-none`                     | `xt-duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
 
 </div>
 
@@ -25,7 +25,7 @@ These are general **component utilities**.
 
 We add in theme additional easing on [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -60,20 +60,20 @@ We add in theme additional easing on [tailwind timing functions](https://tailwin
 
 We add in theme also additional keyframes on [tailwind animation](https://tailwindcss.com/docs/animation).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.animate-spinner`                     | `animate-spinner`                | Animation spinner            |
-| Component                  | `.animate-filler-x`                     | `animate-filler-x`                | Animation filler-x            |
-| Component                  | `.animate-filler-y`                     | `animate-filler-y`                | Animation filler-y            |
+| Component                  | `.animate-xt-spinner`                     | `animate-xt-spinner`                | Animation spinner            |
+| Component                  | `.animate-xt-filler-x`                     | `animate-xt-filler-x`                | Animation xt-filler-x            |
+| Component                  | `.animate-xt-filler-y`                     | `animate-xt-filler-y`                | Animation xt-filler-y            |
 
 </div>
 
 You can also use them inside css animation-
 
 ```css
-animation: 'spinner 1500ms infinite',
-animation: 'filler-x 1500ms infinite',
-animation: 'filler-y 1500ms infinite',
+animation: 'xt-spinner 1500ms infinite',
+animation: 'xt-filler-x 1500ms infinite',
+animation: 'xt-filler-y 1500ms infinite',
 ```

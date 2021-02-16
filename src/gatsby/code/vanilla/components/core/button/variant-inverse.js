@@ -1,7 +1,7 @@
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const btnText = require('components/snippets/classes/btn-text').default
+const buttonDefault = require('components/snippets/classes/button-default').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
+const buttonText = require('components/snippets/classes/button-text').default
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -12,21 +12,21 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="bg-primary-500 py-5 px-6">
-  <div class="list list-3 items-center text-white links-inverse">
+  <div class="xt-list xt-list-3 items-center text-white xt-links-inverse">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
       Gray
     </button>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Primary
     </button>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnText()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonText()}">
       Text
     </button>
 
-    <button type="button" class="btn link">
+    <button type="button" class="xt-button xt-link">
       Link
     </button>
 

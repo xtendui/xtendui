@@ -1,6 +1,6 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const btnDefault = require('components/snippets/classes/btn-default').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
+const buttonDefault = require('components/snippets/classes/button-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const iconSearch = require('components/snippets/icons').iconSearch
 const iconX = require('components/snippets/icons').iconX
@@ -13,33 +13,33 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-overlay>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       list group
     </button>
 
-    <div class="overlay">
-      <div class="overlay-container max-w-3xl">
-        <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+    <div class="xt-overlay">
+      <div class="xt-overlay-container max-w-3xl">
+        <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </button>
-        <div class="overlay-inner">
+        <div class="xt-overlay-inner">
 
           <form class="rounded-md shadow-overlay">
 
-            <div class="list flex-nowrap max-w-sm">
+            <div class="xt-list flex-nowrap max-w-sm">
 
-              <div class="list-inner flex-auto">
-                <button type="button" class="btn text-xs py-2 px-3.5 rounded-l-md ${btnDefault()}">
+              <div class="xt-list-inner flex-auto">
+                <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
                   ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
-                <input type="text" class="form-item ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+                <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
               </div>
 
-              <button type="button" class="btn text-xs py-2 px-3.5 rounded-r-md ${btnPrimary()}">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
                 Search
               </button>
 

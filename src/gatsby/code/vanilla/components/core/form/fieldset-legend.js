@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const labelDefault = require('components/snippets/classes/label-default').default
 const inputDefault = require('components/snippets/classes/input-default').default
 const checkDefault = require('components/snippets/classes/form-check-default').default
@@ -15,8 +15,8 @@ export const demo = {
 demo.htmlSource = `
 <form class="text-sm">
 
-  <fieldset class="my-8 mt-fc mb-lc">
-    <div class="row row-x-6 row-y-4">
+  <fieldset class="my-8 xt-m-auto">
+    <div class="xt-row xt-row-x-6 xt-row-y-4">
 
       <div class="w-full">
         <legend class="text-2xl font-bold leading-snug">
@@ -25,38 +25,38 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="form-label mb-3 ${labelDefault()}">
+        <label class="xt-label mb-3 ${labelDefault()}">
           Lorem Ipsum
         </label>
-        <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
+        <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
         <div class="mt-3 ${note()}">
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
         </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="form-label mb-3 ${labelDefault()}">
+        <label class="xt-label mb-3 ${labelDefault()}">
           Dolor sit amet
         </label>
-        <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
+        <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
       </div>
 
       <div class="w-full">
 
-        <div class="row row-x-6 row-y-4">
+        <div class="xt-row xt-row-x-6 xt-row-y-4">
 
           <div class="w-full md:w-auto">
-            <label class="form-label mb-3 ${labelDefault()}">
+            <label class="xt-label mb-3 ${labelDefault()}">
               Lorem ipsum
             </label>
-            <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
+            <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
           </div>
 
           <div class="w-full md:w-auto">
-            <label class="form-label mb-3 ${labelDefault()}">
+            <label class="xt-label mb-3 ${labelDefault()}">
               Dolor sit amet
             </label>
-            <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
+            <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
           </div>
 
         </div>
@@ -70,8 +70,8 @@ demo.htmlSource = `
     </div>
   </fieldset>
 
-  <fieldset class="my-8 mt-fc mb-lc">
-    <div class="row row-x-6 row-y-4">
+  <fieldset class="my-8 xt-m-auto">
+    <div class="xt-row xt-row-x-6 xt-row-y-4">
 
       <div class="w-full">
         <legend class="text-2xl font-bold leading-snug">
@@ -81,23 +81,23 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="form-label mb-3 ${labelDefault()}">
+        <label class="xt-label mb-3 ${labelDefault()}">
           Checkbox
         </label>
 
-        <div class="row row-x-8 row-y-2">
+        <div class="xt-row xt-row-x-8 xt-row-y-2">
 
           <div class="w-full">
-            <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-              <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+            <label class="xt-label-check">
+              <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+              <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
           </div>
 
           <div class="w-full">
-            <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-              <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+            <label class="xt-label-check">
+              <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+              <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
             </label>
             <div class="mt-3 ${note()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -109,28 +109,28 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <div class="row row-x-6 row-y-4">
+        <div class="xt-row xt-row-x-6 xt-row-y-4">
 
           <div class="w-full md:w-2/12 md:self-baseline">
-            <label class="form-label ${labelDefault()}">
+            <label class="xt-label ${labelDefault()}">
               Checkbox
             </label>
           </div>
 
           <div class="w-full md:w-10/12">
-            <div class="row row-x-8 row-y-2">
+            <div class="xt-row xt-row-x-8 xt-row-y-2">
 
               <div class="w-full">
-                <label class="form-label-check">
-                  <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-                  <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                <label class="xt-label-check">
+                  <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+                  <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="form-label-check">
-                  <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-                  <span class="form-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
+                <label class="xt-label-check">
+                  <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+                  <span class="xt-check-content"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
                 </label>
                 <div class="mt-3 ${note()}">
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -151,23 +151,23 @@ demo.htmlSource = `
 
       <div class="w-full">
 
-        <label class="form-label mb-3 ${labelDefault()}">
+        <label class="xt-label mb-3 ${labelDefault()}">
           Checkbox
         </label>
 
-        <div class="row row-x-8 row-y-2">
+        <div class="xt-row xt-row-x-8 xt-row-y-2">
 
           <div class="w-full md:w-auto">
-            <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}" checked>
-              <span class="form-check-content">Lorem ipsum</span>
+            <label class="xt-label-check">
+              <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+              <span class="xt-check-content">Lorem ipsum</span>
             </label>
           </div>
 
           <div class="w-full md:w-auto">
-            <label class="form-label-check">
-              <input type="checkbox" class="form-check form-checkbox rounded-md ${checkDefault()}">
-              <span class="form-check-content">Lorem ipsum</span>
+            <label class="xt-label-check">
+              <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+              <span class="xt-check-content">Lorem ipsum</span>
             </label>
           </div>
 
@@ -180,7 +180,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full">
-        <button type="submit" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+        <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
           submit
         </button>
       </div>

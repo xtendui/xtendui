@@ -22,6 +22,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        code: '#2d3748',
         gray: {
           50: '#FCFDFF',
           100: '#FAFCFF',
@@ -47,7 +48,7 @@ module.exports = {
       xtendui: {
         link: {
           utility: theme => ({
-            '.links-default': {
+            '.xt-links-default': {
               code: {
                 color: theme('colors.primary.600'),
               },

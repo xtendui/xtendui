@@ -1,3 +1,3 @@
 export default () => {
-  return `text-white links-inverse bg-black`
+  return `text-white xt-links-inverse bg-black`
 }

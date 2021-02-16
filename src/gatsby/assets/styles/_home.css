@@ -10,7 +10,7 @@
 }
 
 .gatsby_home-header_content {
-  @apply relative z-20 py-6 text-white links-inverse text-center transition-all duration-300 ease-out-quart;
+  @apply relative z-20 py-6 text-white xt-links-inverse text-center transition-all duration-300 ease-out-quart;
   .gatsby_logo-icon {
     @apply mb-4 transition-all duration-300 ease-out-quart;
   }
@@ -47,10 +47,10 @@
 }
 
 .gatsby_home-header_actions {
-  .list {
-    @apply list-1 justify-center;
+  .xt-list {
+    @apply xt-list-1 justify-center;
   }
-  .btn {
+  .xt-button {
     @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
@@ -88,7 +88,7 @@
 /* social */
 
 .gatsby_home-main_social {
-  @apply list list-3 mt-6;
+  @apply xt-list xt-list-3 mt-6;
   justify-content: center;
   svg {
     width: 2em;
@@ -121,21 +121,21 @@
 
 .gatsby_home-main_features {
   @apply my-28 text-center;
-  .row {
-    @apply row-8;
+  .xt-row {
+    @apply xt-row-8;
   }
 }
 
 .gatsby_home-main_feature {
   @apply inline-block w-full text-left;
-  .row {
-    @apply row-8;
+  .xt-row {
+    @apply xt-row-8;
   }
 }
 
 .gatsby_home-main_feature_left {
   @apply w-full md:w-6/12 lg:w-5/12;
-  .icon {
+  .xt-icon {
     width: 1em;
     height: 1em;
   }
@@ -149,8 +149,8 @@
 
 .gatsby_home-main_philosophies {
   @apply my-28 text-center;
-  .row {
-    @apply row-6 md:row-20;
+  .xt-row {
+    @apply xt-row-6 md:xt-row-20;
   }
 }
 
@@ -180,8 +180,8 @@
 
 .gatsby_home-main_supports {
   @apply my-28 text-center;
-  .row {
-    @apply row-8 items-center justify-center;
+  .xt-row {
+    @apply xt-row-8 items-center justify-center;
   }
 }
 

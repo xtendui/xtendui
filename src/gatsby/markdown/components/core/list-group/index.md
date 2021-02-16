@@ -38,15 +38,15 @@ Check subpage to [customize content](/components/core/list-group/content).
 
 Use **component classes** to style **nested**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.list-inner`       | `list-inner`                | Group list content            |
+| Component                  | `.xt-list-inner`       | `xt-list-inner`                | Group list content            |
 
 </div>
 
-You can nest `.list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
+You can nest `.xt-list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
 
 <demo>
   <demovanilla src="vanilla/components/core/list-group/usage-nested">

@@ -8,14 +8,15 @@ date: "2030-10-10"
 
 ## Automatic spacing
 
-Use **component classes** to automatic space. With `mt-fc` you can **reset margin top** when `:first-child`, with `mb-lc` you can **reset margin bottom** when `:last-child`.
+Use **component classes** to space reset automatically on `:first-child` and `:last-child`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.mt-fc`                     | `mt-fc`                | `responsive`                | Reset margin top on `:first-child`            |
-| Utility                  | `.mb-lc`                     | `mb-lc`                | `responsive`                | Reset margin bottom on `:last-child`            |
+| Utility                  | `.xt-mt-auto`                     | `xt-mt-auto`                | `responsive`                | Reset margin top on `:first-child`            |
+| Utility                  | `.xt-mb-auto`                     | `xt-mb-auto`                | `responsive`                | Reset margin bottom on `:last-child`            |
+| Utility                  | `.xt-m-auto`                     | `xt-m-auto`                | `responsive`                | Reset margin top on `:first-child` and bottom on `:last-child`            |
 
 </div>
 
@@ -39,16 +40,16 @@ You can use headers **classes or tags** with customizable styles.
 [[noteDefault]]
 | Headers `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `h1` or `.h1`       | `h1`                | `responsive`                | Header h1            |
-| Utility                  | `h2` or `.h2`       | `h2`                | `responsive`                | Header h2            |
-| Utility                  | `h3` or `.h3`       | `h3`                | `responsive`                | Header h3            |
-| Utility                  | `h4` or `.h4`       | `h4`                | `responsive`                | Header h4            |
-| Utility                  | `h5` or `.h5`       | `h5`                | `responsive`                | Header h5            |
-| Utility                  | `h6` or `.h6`       | `h6`                | `responsive`                | Header h6            |
+| Utility                  | `h1` or `.xt-h1`       | `xt-h1`                | `responsive`                | Header h1            |
+| Utility                  | `h2` or `.xt-h2`       | `xt-h2`                | `responsive`                | Header h2            |
+| Utility                  | `h3` or `.xt-h3`       | `xt-h3`                | `responsive`                | Header h3            |
+| Utility                  | `h4` or `.xt-h4`       | `xt-h4`                | `responsive`                | Header h4            |
+| Utility                  | `h5` or `.xt-h5`       | `xt-h5`                | `responsive`                | Header h5            |
+| Utility                  | `h6` or `.xt-h6`       | `xt-h6`                | `responsive`                | Header h6            |
 
 </div>
 
@@ -71,11 +72,11 @@ You can use paragraph **classes or tags** with customizable styles.
 [[noteDefault]]
 | Paragraphs `p` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `p` or `.p`       | `p`                | `responsive`                | Paragraph            |
+| Utility                  | `p` or `.xt-p`       | `xt-p`                | `responsive`                | Paragraph            |
 
 </div>
 
@@ -127,12 +128,11 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 These are typography's **component utilities**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.text-reset`       | `text-reset`                | `responsive`                | Reset text styles            |
-| Utility                  | `.ellipsis`       | `ellipsis`                | `responsive`                | Ellipsis text styles            |
-| Utility                  | `.lowercase-capitalize`       | `lowercase-capitalize`                | `responsive`                | Text transform lowercase and capitalize first letter            |
+| Utility                  | `.xt-text-reset`       | `xt-text-reset`                | `responsive`                | Reset text styles            |
+| Utility                  | `.xt-lowercase-capitalize`       | `xt-lowercase-capitalize`                | `responsive`                | Text transform lowercase and capitalize first letter            |
 
 </div>

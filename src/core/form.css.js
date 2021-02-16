@@ -1,28 +1,28 @@
 module.exports = {
   component: theme => ({
-    '.form-valid': {
+    '.xt-form-valid': {
       // styles
-      borderColor: `${theme('colors.success')} !important`,
+      borderColor: `${theme('colors.green.500')} !important`,
     },
-    '.form-invalid': {
+    '.xt-form-invalid': {
       // styles
-      borderColor: `${theme('colors.error')} !important`,
+      borderColor: `${theme('colors.red.500')} !important`,
     },
-    '.form-label': {
+    '.xt-label': {
       display: 'flex',
     },
-    '.form-label-required': {
+    '.xt-label-required': {
       // styles
       '&:after': {
         content: '"*"',
         marginLeft: theme('spacing.1'),
       },
     },
-    '.form-item': {
+    '.xt-input': {
       display: 'block', // @FIX select and textarea space below
       width: '100%',
     },
-    '.form-select': {
+    '.xt-select': {
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
       // styles
@@ -36,34 +36,34 @@ module.exports = {
         backgroundImage: 'none !important',
       },
     },
-    textarea: {
+    'xt-textarea': {
       // styles
       minHeight: '3.5rem',
       maxHeight: '10.5rem',
     },
-    '.form-label-check': {
+    '.xt-label-check': {
       cursor: 'pointer',
       display: 'inline-flex',
       alignItems: 'baseline',
     },
-    '.form-check': {
+    '.xt-check': {
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
       // styles
-      '&[readonly], &[disabled], &.disabled': {
+      '&[readonly], &[disabled], &.xt-disabled': {
         backgroundColor: `${theme('colors.gray.500')} !important`,
         borderColor: `${theme('colors.gray.500')} !important`,
         opacity: '1',
       },
     },
-    '.form-check-content': {
+    '.xt-check-content': {
       // styles
       marginLeft: '1em',
     },
-    '.form-checkbox': {
+    '.xt-checkbox': {
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',
@@ -84,7 +84,7 @@ module.exports = {
         borderColor: 'currentColor',
       },
     },
-    '.form-radio': {
+    '.xt-radio': {
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',
@@ -105,7 +105,7 @@ module.exports = {
         borderColor: 'currentColor',
       },
     },
-    '.form-switch': {
+    '.xt-switch': {
       appearance: 'none',
       cursor: 'pointer',
       position: 'relative',

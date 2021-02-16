@@ -38,11 +38,11 @@ export default class DocFoot extends React.Component {
       <div className="gatsby_site-article_foot">
         <div className="gatsby_listing-group">
           <div className="gatsby_listing-items">
-            <div className="row row-stretch">
+            <div className="xt-row xt-row-stretch">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing-column">
-                  <Link to={'/'} className="card gatsby_listing-item">
-                    <div className="h4">Setup or other problems?</div>
+                  <Link to={'/'} className="xt-card gatsby_listing-item">
+                    <div className="xt-h4">Setup or other problems?</div>
                     <p>
                       Check out the <strong>Getting Started</strong> pages.
                     </p>
@@ -56,9 +56,9 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/globals/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="card gatsby_listing-item"
+                    className="xt-card gatsby_listing-item"
                   >
-                    <div className="h4">Visit the Globals pages</div>
+                    <div className="xt-h4">Visit the Globals pages</div>
                     <p>
                       There {postsGlobals.length === 1 ? 'is' : 'are'}{' '}
                       <strong>
@@ -77,9 +77,9 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="card gatsby_listing-item"
+                    className="xt-card gatsby_listing-item"
                   >
-                    <div className="h4">Visit the Core pages</div>
+                    <div className="xt-h4">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
                       <strong>
@@ -98,9 +98,9 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="card gatsby_listing-item"
+                    className="xt-card gatsby_listing-item"
                   >
-                    <div className="h4">Visit the Addons page</div>
+                    <div className="xt-h4">Visit the Addons page</div>
                     <p>
                       There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
                       <strong>
@@ -123,9 +123,9 @@ export default class DocFoot extends React.Component {
                           x.post.frontmatter.title === page.post.frontmatter.parent
                       )[0].post.frontmatter.category
                     )}/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="card gatsby_listing-item"
+                    className="xt-card gatsby_listing-item"
                   >
-                    <div className="h4">Visit the Theme page</div>
+                    <div className="xt-h4">Visit the Theme page</div>
                     <p>
                       There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
                       <strong>

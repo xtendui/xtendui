@@ -12,7 +12,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -25,7 +25,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 | This demos uses [multiple mount object](/components/globals/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade"></div>
 </demo>
 
 ## Event
@@ -37,17 +37,17 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-infinite"></div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-inside"></div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-outside"></div>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-outside-infinite"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-infinite"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-inside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-outside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-outside-infinite"></div>
 </demo>
 
 ## Distance
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -61,7 +61,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 Here's an example of **distance fade** with **animation depending on direction**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/scroll/fade-distance"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-distance"></div>
 </demo>
 
 ## Other
@@ -70,7 +70,7 @@ You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`
 
 You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

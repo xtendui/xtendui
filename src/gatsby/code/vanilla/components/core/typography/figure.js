@@ -16,7 +16,7 @@ demo.htmlSource = `
 </figure>
 
 <figure>
-  <video class="media" poster="/placeholder-1080.jpg" muted loop playsinline controls>
+  <video class="xt-media" poster="/placeholder-1080.jpg" muted loop playsinline controls>
     <source type="video/mp4" src="/placeholder-1080.mp4" />
   </video>
 </figure>

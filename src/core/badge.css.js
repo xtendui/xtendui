@@ -1,6 +1,6 @@
 module.exports = {
   component: {
-    '.badge': {
+    '.xt-badge': {
       display: 'inline-block',
       verticalAlign: 'middle',
     },

@@ -26,7 +26,7 @@ module.exports = {
     },
   },
   component: {
-    '.list': {
+    '.xt-list': {
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
@@ -35,7 +35,7 @@ module.exports = {
         display: 'none',
       },
     },
-    '.list-inner': {
+    '.xt-list-inner': {
       display: 'inline-flex',
     },
   },

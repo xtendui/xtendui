@@ -8,17 +8,17 @@ date: "2030-10-10"
 
 ## Space
 
-Use **component utility** `.row-<space>` to space content.
+Use **component utility** `.xt-row-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.row-<space>`       | `row-<space>`                | `responsive`                | Space contents horizontally and vertically            |
-| Utility                  | `.row-x-<space>`       | `row-x-<space>`                | `responsive`                | Space contents horizontally            |
-| Utility                  | `.row-y-<space>`       | `row-y-<space>`                | `responsive`                | Space contents vertically            |
+| Utility                  | `.xt-row-<space>`       | `xt-row-<space>`                | `responsive`                | Space contents horizontally and vertically            |
+| Utility                  | `.xt-row-x-<space>`       | `xt-row-x-<space>`                | `responsive`                | Space contents horizontally            |
+| Utility                  | `.xt-row-y-<space>`       | `xt-row-y-<space>`                | `responsive`                | Space contents vertically            |
 
 </div>
 

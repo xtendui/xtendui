@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardBlack = require('components/snippets/classes/card-black').default
 const inputDefault = require('components/snippets/classes/input-default').default
 
@@ -11,15 +11,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-tooltip="{ on: 'click', off: 'click' }">
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       click
     </button>
 
-    <div class="tooltip">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
@@ -29,9 +29,9 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ elements: ':scope > input', on: 'focus', off: 'blur' }">
 
-    <input type="text" class="form-item rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
+    <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
-    <div class="tooltip">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>

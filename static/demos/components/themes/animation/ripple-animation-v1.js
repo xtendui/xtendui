@@ -3,7 +3,7 @@ import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--ripple-animation-v1 .btn, #iframe--ripple-animation-v1 .card',
+  matches: '#iframe--ripple-animation-v1 .xt-button, #iframe--ripple-animation-v1 .xt-card',
   mount: ({ object }) => {
     // init
 
@@ -12,7 +12,7 @@ Xt.mount.push({
     // on
 
     const eventOn = () => {
-      const ripple = self.container.querySelector('.ripple:last-child')
+      const ripple = self.container.querySelector('.xt-ripple:last-child')
       // animate
       if (ripple) {
         gsap.set(ripple, {
@@ -37,7 +37,7 @@ Xt.mount.push({
     // off
 
     const eventOff = () => {
-      const ripple = self.container.querySelector('.ripple:last-child')
+      const ripple = self.container.querySelector('.xt-ripple:last-child')
       // animate
       if (ripple) {
         gsap

@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const iconX = require('components/snippets/icons').iconX
 
@@ -15,51 +15,51 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="listing py-10">
+<div class="xt-listing py-10">
   <div class="container">
-    <div class="row row-6 row-stretch">
+    <div class="xt-row xt-row-6 xt-row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>
-                <div class="h5">
+                <div class="xt-h5 ">
                   Timetable
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Monday:</strong> 15:30–19:30<br/>
                   <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
                   <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
@@ -76,39 +76,39 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>
@@ -120,46 +120,46 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>
-                <div class="h5">
+                <div class="xt-h5 ">
                   Timetable
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Monday:</strong> 15:30–19:30<br/>
                   <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
                   <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
@@ -176,39 +176,39 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>
@@ -220,46 +220,46 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>
-                <div class="h5">
+                <div class="xt-h5 ">
                   Timetable
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Monday:</strong> 15:30–19:30<br/>
                   <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br/>
                   <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br/>
@@ -276,39 +276,39 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
-          <div class="listing-item-inner">
+        <div class="xt-listing-item block w-full">
+          <div class="xt-listing-item-inner">
 
-            <div class="listing-item-front card rounded-md ${cardDefault()}">
-              <div class="media-container bg-gray-700 flex-full rounded-t-md h-40">
-                <div class="media-inner">
-                  <img class="media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+                <div class="xt-media-inner">
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
               <div class="text-sm p-6 h-full flex flex-col">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
-                <address class="p font-sm not-italic">
+                <address class="xt-p font-sm not-italic">
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
-                <div class="list list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+                <div class="xt-list xt-list-3 mt-auto justify-end">
+                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
-              <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+              <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
               <div class="text-sm p-6">
-                <div class="h5">
+                <div class="xt-h5 ">
                   Contacts
                 </div>
-                <div class="p font-sm">
+                <div class="xt-p font-sm">
                   <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                   <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
                 </div>

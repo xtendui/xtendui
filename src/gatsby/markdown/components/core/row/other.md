@@ -8,13 +8,13 @@ date: "2005-10-10"
 
 ## Stretch
 
-Use `.row-stretch` to stretch content vertically.
+Use `.xt-row-stretch` to stretch content vertically.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.row-stretch`                     | `row-stretch`                | Stretch content vertically            |
+| Component                  | `.xt-row-stretch`                     | `xt-row-stretch`                | Stretch content vertically            |
 
 </div>
 
@@ -27,13 +27,13 @@ When using cards you can space with `margin auto` on **card content**. When not 
 
 ## Overflow
 
-Use `.row-overflow` to have browser overflow scroll on **touch devices** (use touch device to see it in action).
+Use `.xt-row-overflow` to have browser overflow scroll on **touch devices** (use touch device to see it in action).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.row-overflow`                     | `row-overflow`                | Overflow on touch devices            |
+| Component                  | `.xt-row-overflow`                     | `xt-row-overflow`                | Overflow on touch devices            |
 
 </div>
 

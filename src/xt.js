@@ -25,7 +25,7 @@ Xt.resizeDelay = 250
 Xt.medialoadedDelay = false
 Xt.stickyIndex = 800
 Xt.scrollRestoration = 'auto'
-Xt.focusables = 'a, button, details, input, iframe, select, textarea, .btn-close'
+Xt.focusables = 'a, button, details, input, iframe, select, textarea, .xt-dismiss'
 Xt.supportScroll =
   typeof window === 'undefined' ? false : 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
 Xt.durationTimescale = 1
@@ -852,7 +852,7 @@ Xt.setScrollbarWidth = () => {
   outer.style.visibility = 'hidden'
   outer.style.width = '100%'
   outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-  outer.classList.add('xt-ignore', 'overflow-main')
+  outer.classList.add('xt-ignore', 'xt-overflow-main')
   document.body.append(outer)
   // force scrollbars
   outer.style.overflow = 'scroll'
@@ -892,7 +892,7 @@ Xt.scrollbarSpaceOn = container => {
   const width = Xt.scrollbarWidth
   container.style.paddingRight = `${width}px`
   // backdrop
-  const backdrops = container.querySelectorAll('.backdrop')
+  const backdrops = container.querySelectorAll('.xt-backdrop')
   for (const backdrop of backdrops) {
     backdrop.style.right = `${width}px`
   }
@@ -913,9 +913,9 @@ Xt.scrollbarSpaceOn = container => {
       let val = parseFloat(style[prop])
       val = old !== '' ? val - parseFloat(old) : val
       const str = `calc(${val}px + ${width}px)`
-      element.classList.add('xt-transition-none')
+      element.classList.add('xt-instant')
       element.style[prop] = str
-      element.classList.remove('xt-transition-none')
+      element.classList.remove('xt-instant')
     }
   }
 }
@@ -927,17 +927,17 @@ Xt.scrollbarSpaceOn = container => {
 Xt.scrollbarSpaceOff = container => {
   container.style.paddingRight = ''
   // backdrop
-  const backdrops = container.querySelectorAll('.backdrop')
+  const backdrops = container.querySelectorAll('.xt-backdrop')
   for (const backdrop of backdrops) {
     backdrop.style.right = ''
   }
   // xt-fixed
   const elements = container.querySelectorAll('.xt-fixed')
   for (const element of elements) {
-    element.classList.add('xt-transition-none')
+    element.classList.add('xt-instant')
     element.style.right = ''
     element.style.paddingRight = ''
-    element.classList.remove('xt-transition-none')
+    element.classList.remove('xt-instant')
   }
 }
 

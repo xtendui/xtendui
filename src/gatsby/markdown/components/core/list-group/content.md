@@ -8,9 +8,9 @@ date: "2030-10-10"
 
 ## Size
 
-Use `.list.flex-nowrap` if you don't want the list content to wrap.
+Use `.xt-list.flex-nowrap` if you don't want the list content to wrap.
 
-Use `.list-inner.flex-auto` to expand it to **fill width**. On responsive the content will shrink.
+Use `.xt-list-inner.flex-auto` to expand it to **fill width**. On responsive the content will shrink.
 
 Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
 

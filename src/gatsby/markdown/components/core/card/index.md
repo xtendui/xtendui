@@ -31,7 +31,15 @@ module.exports = {
 
 ## Usage
 
-Use this code to create a **card**.
+Use `.xt-card` to create a **button**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-card`                     | `xt-card`                | Card styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/card/usage">

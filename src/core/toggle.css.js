@@ -1,7 +1,7 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
-    '.toggle': {
+    '.xt-toggle': {
       '&:not(.in):not(.out)': {
         display: 'none',
       },
@@ -12,7 +12,7 @@ module.exports = {
         pointerEvents: 'none',
       },
     },
-    '.toggle-absolute': {
+    '.xt-toggle-absolute': {
       '&:not(.in)': {
         position: 'absolute',
         top: '0',
@@ -20,7 +20,7 @@ module.exports = {
         width: '100%',
       },
     },
-    '.toggle-inverse': {
+    '.xt-toggle-inverse': {
       '&.done': {
         display: 'none',
       },

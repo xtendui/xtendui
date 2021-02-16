@@ -113,7 +113,7 @@ class Infinitescroll {
     // paginate
     self.paginate()
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
@@ -431,9 +431,9 @@ Infinitescroll.optionsDefault = {
   // element
   elements: {
     scrollOffset: '.infinitescroll',
-    trigger: '.infinitescroll-trigger .btn',
-    reset: '.infinitescroll-pre .btn',
-    items: '.listing-inner .row',
+    trigger: '.infinitescroll-trigger .xt-button',
+    reset: '.infinitescroll-pre .xt-button',
+    items: '.xt-listing-inner .xt-row',
     spaceAdditional: '.infinitescroll-pre',
     pagination: '.infinitescroll-pagination',
     item: ':scope > *',

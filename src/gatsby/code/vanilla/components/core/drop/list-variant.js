@@ -1,7 +1,7 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
-const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
-const btnPrimaryDrop = require('components/snippets/classes/btn-primary-drop').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
+const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
+const buttonPrimaryDrop = require('components/snippets/classes/button-primary-drop').default
 const cardWhite = require('components/snippets/classes/card-white').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 
@@ -13,24 +13,24 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Text
     </button>
 
-    <div class="drop">
-      <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
-        <nav class="list flex-col">
-          <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+    <div class="xt-drop">
+      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+        <nav class="xt-list flex-col">
+          <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+          <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+          <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Amet
           </button>
         </nav>
@@ -41,20 +41,20 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Primary
     </button>
 
-    <div class="drop">
-      <div class="card w-64 py-3 rounded-md shadow-drop ${cardPrimary()}">
-        <nav class="list flex-col">
-          <a href="#" class="btn text-2xs py-1.5 px-6 ${btnPrimaryDrop()}">
+    <div class="xt-drop">
+      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardPrimary()}">
+        <nav class="xt-list flex-col">
+          <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
-          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnPrimaryDrop()}">
+          <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
             Dolor sit
           </button>
-          <button type="button" class="btn text-2xs py-1.5 px-6 ${btnPrimaryDrop()}">
+          <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
             Amet
           </button>
         </nav>

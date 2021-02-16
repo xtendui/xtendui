@@ -12,7 +12,7 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 If you want to **control a specific drop position** use `[data-xt-position=<value>]` on the `.drop`
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -20,7 +20,7 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 
 </div>
 
-Use `<div class="drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow.
+Use `<div class="xt-drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow.
 
 You can customize **position and arrow** in the [drop component](/components/core/drop#customization). **We use padding** instead of popperjs offset to support mouseenter and mouseleave events.
 
@@ -37,11 +37,11 @@ You can customize **position and arrow** in the [drop component](/components/cor
   </demovanilla>
 </demo>
 
-Use `.drop-nospace` to **disable drop spacing**.
+Use `.xt-drop-nospace` to **disable drop spacing**.
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/drop/other#popperjs).
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -54,13 +54,13 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 ## Static
 
-If you want a drop with size and position **relative to a parent Node with relative** use `.drop-static` and `.card.w-full`.
+If you want a drop with size and position **relative to a parent Node with relative** use `.xt-drop-static` and `.xt-card.w-full`.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.drop-static`       | `drop-static`                | `responsive`                | Position relative to closest element with `.relative`            |
+| Utility                  | `.xt-drop-static`       | `xt-drop-static`                | `responsive`                | Position relative to closest element with `.relative`            |
 
 </div>
 

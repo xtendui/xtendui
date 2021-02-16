@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardBlack = require('components/snippets/classes/card-black').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -14,11 +14,11 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       static
     </button>
 
-    <div class="tooltip tooltip-static tooltip-nospace">
+    <div class="xt-tooltip xt-tooltip-static xt-tooltip-nospace">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>

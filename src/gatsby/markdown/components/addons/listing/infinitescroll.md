@@ -24,7 +24,7 @@ Remember to set a `options.get` variable for a **get request on current url** to
 | Check advanced feature [open this demo on a new page](/iframe/components/addons/listing/infinitescroll). You can see on page refresh and browser navigation that **the page is retained**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/addons/listing/infinitescroll">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/listing/infinitescroll">
   </div>
 </demo>
 
@@ -39,7 +39,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 - `xt-num` replaced with current page number
 - `xt-tot` replaced with total pages number
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -51,11 +51,11 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
 | Option                    | `elements.scrollOffset:Query`                          | `'.infinitescroll'`        | Object query for automatic scroll element            |
-| Option                    | `elements.trigger:Query`                          | `'.infinitescroll-trigger .btn'`        | Object query for trigger element            |
-| Option                    | `elements.reset:Query`                          | `'.infinitescroll-pre .btn'`        | Object query for reset element            |
+| Option                    | `elements.trigger:Query`                          | `'.infinitescroll-trigger .xt-button'`        | Object query for trigger element            |
+| Option                    | `elements.reset:Query`                          | `'.infinitescroll-pre .xt-button'`        | Object query for reset element            |
 | Option                    | `elements.spaceAdditional:Query`                          | `'.infinitescroll-pre'`        | Object query for additional space on reset            |
 | Option                    | `elements.pagination:Query`                          | `'.infinitescroll-pagination'`        | Object query for pagination            |
-| Option                    | `elements.items:Query`                          | `'.listing-inner .row'`        | Object query for items container            |
+| Option                    | `elements.items:Query`                          | `'.xt-listing-inner .xt-row'`        | Object query for items container            |
 | Option                    | `elements.item:Query`                          | `':scope > *'`        | Items container query for items            |
 
 </div>
@@ -64,7 +64,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 
 Listen to events.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -78,7 +78,7 @@ Listen to events.
 
 Access properties by getting component object.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |

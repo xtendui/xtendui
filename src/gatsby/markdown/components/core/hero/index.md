@@ -14,7 +14,7 @@ Use **component classes** and **tailwind classes** to create a **hero**.
 | This component uses [media](/components/core/media) see documentation to **customize**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/usage">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/hero/usage">
   </div>
 </demo>
 
@@ -23,7 +23,7 @@ Use **component classes** and **tailwind classes** to create a **hero**.
 Use **tailwind classes** to customize **content direction**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/direction">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/hero/direction">
   </div>
 </demo>
 
@@ -32,7 +32,7 @@ Use **tailwind classes** to customize **content direction**.
 Use **tailwind classes** to **add shadow**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/shadow">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/hero/shadow">
   </div>
 </demo>
 
@@ -41,6 +41,6 @@ Use **tailwind classes** to **add shadow**.
 Use **tailwind classes** to **position content outside**.
 
 <demo>
-  <div class="gatsby_demo_item toggle" data-iframe="iframe/components/core/hero/outside">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/hero/outside">
   </div>
 </demo>

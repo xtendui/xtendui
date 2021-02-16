@@ -1,6 +1,6 @@
 import React from 'react'
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardDefault = require('components/snippets/classes/card-default').default
 const cardPrimary = require('components/snippets/classes/card-primary').default
 const cardWhite = require('components/snippets/classes/card-white').default
@@ -23,71 +23,71 @@ demo.htmlSource = `
 <div class="site-wrapper">
 
   <header class="site-header">
-    <div class="card text-sm p-6 ${cardPrimary()}">
-      <div class="h4">Header</div>
+    <div class="xt-card text-sm p-6 ${cardPrimary()}">
+      <div class="xt-h4 ">Header</div>
     </div>
   </header>
 
   <main class="site-main">
 
     <div class="container">
-      <div class="row row-8 lg:row-12 items-stretch">
+      <div class="xt-row xt-row-8 lg:xt-row-12 items-stretch">
 
         <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">
           <div class="relative md:py-12">
             <div class="product-gallery">
 
-              <div class="list flex-col">
+              <div class="xt-list flex-col">
 
                 <a href="#product-image-overlay-1" class="product-image w-full" id="product-image-1" title="Expand image 1">
-                  <div class="media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-inner relative">
-                      <img class="media" src="/img.svg" loading="eager" alt=""/>
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                    <div class="xt-media-inner relative">
+                      <img class="xt-media" src="/img.svg" loading="eager" alt=""/>
                     </div>
-                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                    <div class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
                 <a href="#product-image-overlay-2" class="product-image w-full" id="product-image-2" title="Expand image 2">
-                  <div class="media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-inner relative">
-                      <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                    <div class="xt-media-inner relative">
+                      <img class="xt-media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
-                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                    <div class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
                 <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-3" title="Expand image 3">
-                  <div class="media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-inner relative">
-                      <img class="media" src="/img.svg" loading="eager" alt=""/>
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                    <div class="xt-media-inner relative">
+                      <img class="xt-media" src="/img.svg" loading="eager" alt=""/>
                     </div>
-                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                    <div class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
                 <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-4" title="Expand image 4">
-                  <div class="media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-inner relative">
-                      <img class="media" src="/img-alt.svg" loading="eager" alt=""/>
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                    <div class="xt-media-inner relative">
+                      <img class="xt-media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
-                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                    <div class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
                 <a href="#product-image-overlay-5" class="product-image w-full" id="product-image-5" title="Expand image 5">
-                  <div class="media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
-                    <div class="media-inner relative">
-                      <img class="media"" src="/img.svg" loading="eager" alt=""/>
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                    <div class="xt-media-inner relative">
+                      <img class="xt-media"" src="/img.svg" loading="eager" alt=""/>
                     </div>
-                    <div class="media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                    <div class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                   </div>
                 </a>
 
               </div>
 
-              <div class="absolute h-full top-0 right-0 md:hidden">
-                <div class="list flex-col h-full justify-center">
+              <div class="absolute h-full bottom-0 left-0 right-0 md:hidden">
+                <div class="xt-list flex-col h-full justify-center">
 
                   <a href="#product-image-1" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 1">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
@@ -112,43 +112,43 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
-                <div class="overlay-container p-0">
-                  <button type="button" class="btn btn-close p-5 text-2xl fixed z-last mr-2" aria-label="Close">
+              <div class="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
+                <div class="xt-overlay-container p-0">
+                  <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
                     ${iconX()}
                   </button>
-                  <div class="overlay-inner">
+                  <div class="xt-overlay-inner">
 
-                    <div class="card items-center justify-center shadow-overlay ${cardWhite()}">
+                    <div class="xt-card items-center justify-center shadow-overlay ${cardWhite()}">
                       <div class="w-full">
 
-                        <div class="media-container bg-gray-700">
-                          <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-1" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="xt-media-container bg-gray-700">
+                          <div class="xt-media-inner relative">
+                            <img class="xt-media" id="product-image-overlay-1" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
-                        <div class="media-container bg-gray-700">
-                          <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-2" src="/img-alt.svg" loading="lazy" alt=""/>
+                        <div class="xt-media-container bg-gray-700">
+                          <div class="xt-media-inner relative">
+                            <img class="xt-media" id="product-image-overlay-2" src="/img-alt.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
-                        <div class="media-container bg-gray-700">
-                          <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-3" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="xt-media-container bg-gray-700">
+                          <div class="xt-media-inner relative">
+                            <img class="xt-media" id="product-image-overlay-3" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
-                        <div class="media-container bg-gray-700">
-                          <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-4" src="/img-alt.svg" loading="eagelazyr" alt=""/>
+                        <div class="xt-media-container bg-gray-700">
+                          <div class="xt-media-inner relative">
+                            <img class="xt-media" id="product-image-overlay-4" src="/img-alt.svg" loading="eagelazyr" alt=""/>
                           </div>
                         </div>
 
-                        <div class="media-container bg-gray-700">
-                          <div class="media-inner relative">
-                            <img class="media" id="product-image-overlay-5" src="/img.svg" loading="lazy" alt=""/>
+                        <div class="xt-media-container bg-gray-700">
+                          <div class="xt-media-inner relative">
+                            <img class="xt-media" id="product-image-overlay-5" src="/img.svg" loading="lazy" alt=""/>
                           </div>
                         </div>
 
@@ -167,15 +167,15 @@ demo.htmlSource = `
           <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
           <div class="pb-12 md:py-12 md:sticky stickyflow">
 
-            <h1 class="h2">
+            <h1 class="xt-h2 ">
               Lorem ipsum dolor sit amet
             </h1>
 
-            <div class="h5 mb-6">
+            <div class="xt-h5  mb-6">
               €&nbsp;229,00
             </div>
 
-            <a href="#" class="btn text-base py-2.5 px-4 rounded-md mb-6 ${btnPrimary()}">
+            <a href="#" class="xt-button text-base py-2.5 px-4 rounded-md mb-6 ${buttonPrimary()}">
               Add to cart
             </a>
 
@@ -199,8 +199,8 @@ demo.htmlSource = `
   </main>
 
   <footer class="site-footer">
-    <div class="card text-sm p-6 ${cardDefault()}">
-      <div class="h4">Footer</div>
+    <div class="xt-card text-sm p-6 ${cardDefault()}">
+      <div class="xt-h4 ">Footer</div>
     </div>
   </footer>
 

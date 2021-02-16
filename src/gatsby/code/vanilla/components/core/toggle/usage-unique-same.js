@@ -1,5 +1,5 @@
 import path from 'path'
-const btnDefault = require('components/snippets/classes/btn-default').default
+const buttonDefault = require('components/snippets/classes/button-default').default
 const cardToggle = require('components/snippets/classes/card-toggle').default
 
 const filename = __filename.replace(/\\/g, '/')
@@ -10,21 +10,21 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
     Toggle same
   </button>
 
-  <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
     Toggle same
   </button>
 
-  <div class="card toggle rounded-md ${cardToggle()}" id="toggle--unique-2">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}" id="toggle--unique-2">
     Target 0
   </div>
 
-  <div class="card toggle rounded-md ${cardToggle()}" id="toggle--unique-3">
+  <div class="xt-card xt-toggle rounded-md ${cardToggle()}" id="toggle--unique-3">
     Target 0
   </div>
 

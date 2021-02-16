@@ -118,10 +118,10 @@ Xt.mount.push({
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
-      } else if (e.target.querySelector(':scope > .btn')) {
-        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
-      } else if (e.target.querySelector('.card > *:not(.btn-close) > *')) {
-        str += ` from <strong>${e.target.querySelector('.card > *:not(.btn-close) > *').textContent}</strong>`
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      } else if (e.target.querySelector('.xt-card > *:not(.xt-dismiss) > *')) {
+        str += ` from <strong>${e.target.querySelector('.xt-card > *:not(.xt-dismiss) > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
         str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {

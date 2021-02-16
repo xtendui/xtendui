@@ -168,7 +168,7 @@ class Googlelocator {
       }
     }
     // initialized class
-    self.object.classList.add(self.componentName)
+    self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
@@ -595,16 +595,16 @@ Googlelocator.optionsDefault = {
   locateText: 'Locate',
   // element
   elements: {
-    loader: '.loader',
+    loader: '.xt-loader',
     searchInput: 'input[type="text"]',
-    searchBtn: '.btn-search',
+    searchBtn: '.button-search',
     map: '.googlelocator-main-map',
     itemsTemplate: 'script[type="text/x-template"]',
     itemsContainer: '.googlelocator-items',
     results: '.googlelocator-aside-body',
     resultsFound: '.googlelocator-result-found',
-    locateBtn: '.btn-locate',
-    repeatBtn: '.btn-repeat',
+    locateBtn: '.button-locate',
+    repeatBtn: '.button-repeat',
     filter: 'input[type="checkbox"], input[type="radio"]',
   },
   // event

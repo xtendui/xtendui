@@ -28,13 +28,13 @@ module.exports = {
 
 ## Usage
 
-Use `.badge` to create a **badge**.
+Use `.xt-badge` to create a **badge**.
 
-<div class="overflow-sub overflow-y-hidden overflow-x-scroll my-4 mt-fc mb-lc w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.badge`                     | `badge`                | Badge styles            |
+| Component                  | `.xt-badge`                     | `badge`                | Badge styles            |
 
 </div>
 

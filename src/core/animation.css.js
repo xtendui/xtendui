@@ -36,12 +36,12 @@ module.exports = {
     'in-out-back': 'cubic-bezier(.68,-.55,.265,1.55)',
   },
   animation: {
-    spinner: 'spinner 1500ms infinite',
-    'filler-x': 'filler-x 1500ms infinite',
-    'filler-y': 'filler-y 1500ms infinite',
+    'xt-spinner': 'xt-spinner 1500ms infinite',
+    'xt-filler-x': 'xt-filler-x 1500ms infinite',
+    'xt-filler-y': 'xt-filler-y 1500ms infinite',
   },
   keyframes: theme => ({
-    spinner: {
+    'xt-spinner': {
       '0%': {
         strokeDashoffset: '628',
         transform: 'rotateY(0deg) rotateZ(-90deg)',
@@ -61,7 +61,7 @@ module.exports = {
         transform: 'rotateY(180deg) rotateZ(-90deg)',
       },
     },
-    'filler-x': {
+    'xt-filler-x': {
       '0%': {
         left: '0',
         width: '0',
@@ -77,7 +77,7 @@ module.exports = {
         width: '0',
       },
     },
-    'filler-y': {
+    'xt-filler-y': {
       '0%': {
         top: '0',
         height: '0',
@@ -96,16 +96,16 @@ module.exports = {
   }),
   variants: ['responsive'],
   utility: {
-    '.transform-none': {
+    '.xt-transform-none': {
       transform: 'none !important',
     },
-    '.transition-none': {
+    '.xt-transition-none': {
       transition: 'none !important',
     },
-    '.animate-none': {
+    '.xt-animate-none': {
       animation: 'none !important',
     },
-    '.duration-none': {
+    '.xt-duration-none': {
       transitionDuration: 'initial !important',
       transitionDelay: 'initial !important',
       animationDuration: 'initial !important',

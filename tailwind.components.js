@@ -5,7 +5,7 @@ module.exports = {
   // core
   animation: require('./src/core/animation.css.js'),
   badge: require('./src/core/badge.css.js'),
-  btn: require('./src/core/btn.css.js'),
+  button: require('./src/core/button.css.js'),
   card: require('./src/core/card.css.js'),
   drop: require('./src/core/drop.css.js'),
   form: require('./src/core/form.css.js'),

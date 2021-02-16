@@ -1,5 +1,5 @@
 import path from 'path'
-const btnPrimary = require('components/snippets/classes/btn-primary').default
+const buttonPrimary = require('components/snippets/classes/button-primary').default
 const cardWhite = require('components/snippets/classes/card-white').default
 const iconX = require('components/snippets/icons').iconX
 
@@ -11,21 +11,21 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-3 items-center">
+<div class="xt-list xt-list-3 items-center">
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       small
     </button>
 
-    <div class="drop">
-      <div class="card w-64 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="btn btn-close p-5 text-lg" aria-label="Close">
+    <div class="xt-drop">
+      <div class="xt-card w-64 rounded-md shadow-drop ${cardWhite()}">
+        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-lg" aria-label="Close">
           ${iconX()}
         </button>
         <div class="text-sm p-6">
-          <div class="h5">Lorem ipsum</div>
+          <div class="xt-h5 ">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
@@ -35,17 +35,17 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       medium
     </button>
 
-    <div class="drop">
-      <div class="card w-80 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="btn btn-close p-5 text-xl" aria-label="Close">
+    <div class="xt-drop">
+      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
+        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
         </button>
         <div class="text-base p-8">
-          <div class="h4">Lorem ipsum</div>
+          <div class="xt-h4 ">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
@@ -55,17 +55,17 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       large
     </button>
 
-    <div class="drop">
-      <div class="card w-96 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="btn btn-close p-5 text-2xl" aria-label="Close">
+    <div class="xt-drop">
+      <div class="xt-card w-96 rounded-md shadow-drop ${cardWhite()}">
+        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </button>
         <div class="text-base p-8 md:text-lg md:p-10">
-          <div class="h3">Lorem ipsum</div>
+          <div class="xt-h3 ">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>

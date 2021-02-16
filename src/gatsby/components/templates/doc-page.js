@@ -46,26 +46,26 @@ class Template extends React.Component {
         {data.post.frontmatter.parent === data.post.frontmatter.title ? (
           data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">
-              <div className="row row-6">
+              <div className="xt-row xt-row-6">
                 <div className="gatsby_listing-group">
                   {data.post.frontmatter.category === 'Core' ? (
-                    <h2 className="h6 my-6 mt-fc mb-lc py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+                    <h2 className="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
                       {'Customization and interactions'}
                     </h2>
                   ) : null}
                   <div className="gatsby_listing-items">
-                    <div className="row row-stretch">
+                    <div className="xt-row xt-row-stretch">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing-column" key={i}>
                               <a
                                 role="button"
-                                className="card gatsby_listing-item gatsby_listing-item--themes"
+                                className="xt-card gatsby_listing-item gatsby_listing-item--themes"
                                 data-gatsby-listing-toggle
                               >
                                 <div>
-                                  <div className="h4">
+                                  <div className="xt-h4">
                                     {adiacent.frontmatter.title
                                       .split(/[\s-]+/)
                                       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -74,10 +74,10 @@ class Template extends React.Component {
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
-                                        <div className="media-container bg-gray-700" key={z}>
-                                          <div className="media-inner">
+                                        <div className="xt-media-container bg-gray-700" key={z}>
+                                          <div className="xt-media-inner">
                                             <video
-                                              className="media object-cover object-center"
+                                              className="xt-media object-cover object-center"
                                               preload="metadata"
                                               muted
                                               playsInline
@@ -105,7 +105,7 @@ class Template extends React.Component {
                                     } else if (type === 'iframe') {
                                       return (
                                         <div
-                                          className="gatsby_demo_item toggle"
+                                          className="gatsby_demo_item xt-toggle"
                                           data-iframe-fullscreen={demo}
                                           key={i}
                                         ></div>
@@ -117,8 +117,8 @@ class Template extends React.Component {
                             </div>
                           ) : (
                             <div className="gatsby_listing-column" key={i}>
-                              <Link to={markdownSlug(adiacent)} className="card gatsby_listing-item">
-                                <div className="h4">
+                              <Link to={markdownSlug(adiacent)} className="xt-card gatsby_listing-item">
+                                <div className="xt-h4">
                                   {adiacent.frontmatter.title
                                     .split(/[\s-]+/)
                                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())

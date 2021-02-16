@@ -8,7 +8,7 @@ export default class DemoVanilla extends React.Component {
     demo.path = `/demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
     return (
       <div
-        className={'gatsby_demo_item toggle'}
+        className={'gatsby_demo_item xt-toggle'}
         data-name={name || demo.name.split('-').join(' ')}
         data-file={demo.path.split('-').join(' ')}
         data-inline={src}

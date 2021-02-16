@@ -1,6 +1,6 @@
 module.exports = {
   component: {
-    '.mousefollow': {
+    '.xt-mousefollow': {
       pointerEvents: 'none',
       position: 'fixed !important',
       top: '0 !important',
