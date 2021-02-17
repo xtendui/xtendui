@@ -1,3 +1,28 @@
+# [1.0.0-beta.4](https://github.com/minimit/xtendui/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-02-17)
+
+
+### Bug Fixes
+
+* **css:** refactor no apply in cssinjs ([20706af](https://github.com/minimit/xtendui/commit/20706af477678267777affc746f8a8fc97170f18))
+* **css:** respectPrefix false because we apply xtendui classes ([3077eab](https://github.com/minimit/xtendui/commit/3077eabdbde669d68c2f1bbd30ad0714ec4ab994))
+* **toggle:** enable fix ([98a99a1](https://github.com/minimit/xtendui/commit/98a99a1aae7073a2822c3d9ce423b72767498f4d))
+* **toggle:** fix do not enable if already disabled ([038079e](https://github.com/minimit/xtendui/commit/038079e4a3187fe711cf396f75f4e0942c0036b4))
+* **toggle:** nav no force to respect options.loop ([849a37a](https://github.com/minimit/xtendui/commit/849a37ae51fefc1378948a9659501a7a5a589395))
+* **toggle:** refactor activation event status ([f442e05](https://github.com/minimit/xtendui/commit/f442e051ebf9a3ea87af5eeeb4c555372a73dfc4))
+
+
+### Features
+
+* **css:** primary instead of accent for colors ([c725383](https://github.com/minimit/xtendui/commit/c7253831af3007f2eb53d78f0b1feeb20fec086b))
+* **css:** refactor all classes with xt- prefix ([5d6ea38](https://github.com/minimit/xtendui/commit/5d6ea38d0116ae2e5ee3718d27cc9e7aebab85d6))
+* revisited font size 3xs 2xs xs ([ccfdf3a](https://github.com/minimit/xtendui/commit/ccfdf3a663d0a99e8b00e125623d3f7b9c95c6ea))
+
+
+### BREAKING CHANGES
+
+* **css:** use primary instead of accent
+* text-xs is one pixel bigger use text-2xs for the same font size
+
 # [1.0.0-beta.3](https://github.com/minimit/xtendui/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2021-02-10)
 
 
