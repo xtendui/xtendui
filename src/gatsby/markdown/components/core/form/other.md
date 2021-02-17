@@ -13,7 +13,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 [[notePrimary]]
 | For aria purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -70,7 +70,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 Use **component classes** to style **validation**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

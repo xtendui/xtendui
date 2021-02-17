@@ -10,13 +10,13 @@ date: "2030-10-10"
 
 Use **component classes** to space reset automatically on `:first-child` and `:last-child`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.xt-mt-auto`                     | `xt-mt-auto`                | `responsive`                | Reset margin top on `:first-child`            |
 | Utility                  | `.xt-mb-auto`                     | `xt-mb-auto`                | `responsive`                | Reset margin bottom on `:last-child`            |
-| Utility                  | `.xt-m-auto`                     | `xt-m-auto`                | `responsive`                | Reset margin top on `:first-child` and bottom on `:last-child`            |
+| Utility                  | `.xt-my-auto`                     | `xt-my-auto`                | `responsive`                | Reset margin top on `:first-child` and bottom on `:last-child`            |
 
 </div>
 
@@ -38,18 +38,18 @@ See [link variant](/components/core/link#variant) to style **links**.
 You can use headers **classes or tags** with customizable styles.
 
 [[noteDefault]]
-| Headers `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Tags `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `h1` or `.xt-h1`       | `xt-h1`                | `responsive`                | Header h1            |
-| Utility                  | `h2` or `.xt-h2`       | `xt-h2`                | `responsive`                | Header h2            |
-| Utility                  | `h3` or `.xt-h3`       | `xt-h3`                | `responsive`                | Header h3            |
-| Utility                  | `h4` or `.xt-h4`       | `xt-h4`                | `responsive`                | Header h4            |
-| Utility                  | `h5` or `.xt-h5`       | `xt-h5`                | `responsive`                | Header h5            |
-| Utility                  | `h6` or `.xt-h6`       | `xt-h6`                | `responsive`                | Header h6            |
+| Utility                  | `h1` or `.xt-h1`       | `xt-h1`                | `responsive`                | Tag styles            |
+| Utility                  | `h2` or `.xt-h2`       | `xt-h2`                | `responsive`                | Tag styles            |
+| Utility                  | `h3` or `.xt-h3`       | `xt-h3`                | `responsive`                | Tag styles            |
+| Utility                  | `h4` or `.xt-h4`       | `xt-h4`                | `responsive`                | Tag styles            |
+| Utility                  | `h5` or `.xt-h5`       | `xt-h5`                | `responsive`                | Tag styles            |
+| Utility                  | `h6` or `.xt-h6`       | `xt-h6`                | `responsive`                | Tag styles            |
 
 </div>
 
@@ -70,13 +70,13 @@ Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tail
 You can use paragraph **classes or tags** with customizable styles.
 
 [[noteDefault]]
-| Paragraphs `p` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Tags `p` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `p` or `.xt-p`       | `xt-p`                | `responsive`                | Paragraph            |
+| Utility                  | `p` or `.xt-p`       | `xt-p`                | `responsive`                | Tag styles            |
 
 </div>
 
@@ -96,8 +96,19 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 ## List
 
+You can use lists **classes or tags** with customizable styles.
+
 [[noteDefault]]
-| Lists `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Tags `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `ul` or `.xt-ul`       | `xt-ul`                | `responsive`                | Tag styles            |
+| Utility                  | `ol` or `.xt-ol`       | `xt-ol`                | `responsive`                | Tag styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/list">
@@ -106,8 +117,18 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 ## Definition List
 
+You can use definition lists **classes or tags** with customizable styles.
+
 [[noteDefault]]
-| Definition lists `dl` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Tags `dl` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `dl` or `.xt-dl`       | `xt-dl`                | `responsive`                | Tag styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/definition-list">
@@ -116,8 +137,19 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 ## Figure
 
+You can use figure and figcaption **classes or tags** with customizable styles.
+
 [[noteDefault]]
-| Figure and Figcaption `figure` `figcaption` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+| Tags `figure` and `figcaption` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
+| Utility                  | `figure` or `.xt-figure`       | `xt-figure`                | `responsive`                | Tag styles            |
+| Utility                  | `figcaption` or `.xt-figcaption`       | `xt-figcaption`                | `responsive`                | Tag styles            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/typography/figure">
@@ -128,7 +160,7 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 These are typography's **component utilities**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

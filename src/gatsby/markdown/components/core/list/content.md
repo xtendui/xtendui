@@ -12,7 +12,7 @@ Use **component utility** `.xt-list-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

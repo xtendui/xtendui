@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Align items
 </div>
 
@@ -34,7 +34,7 @@ demo.htmlSource = `
 
 </div>
 
-<div class="xt-h6 my-6 xt-m-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+<div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
   Justify content
 </div>
 

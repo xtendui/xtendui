@@ -117,11 +117,11 @@ module.exports = {
               blocks: {
                 noteDefault: {
                   classes:
-                    'xt-card text-sm p-6 my-5 xt-m-auto text-black xt-links-default rounded-md bg-gray-200 gatsby_note',
+                    'xt-card text-sm p-6 my-5 xt-my-auto text-black xt-links-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
                   classes:
-                    'xt-card text-sm p-6 my-5 xt-m-auto text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
+                    'xt-card text-sm p-6 my-5 xt-my-auto text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
                 },
               },
             },
@@ -130,8 +130,8 @@ module.exports = {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                link: 'link',
-                table: 'gatsby_table my-4 xt-m-auto w-full',
+                link: 'xt-link',
+                table: 'gatsby_table my-4 xt-my-auto w-full',
                 'heading[depth=1]': 'xt-h1',
                 'heading[depth=2]': 'xt-h2',
                 'heading[depth=3]': 'xt-h3',

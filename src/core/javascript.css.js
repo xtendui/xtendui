@@ -3,14 +3,22 @@ module.exports = {
     'body:not(.xt-nojs-fouc):not(.xt-ready)': {
       // instant animations on page load
       '*': {
-        '@apply xt-duration-none !important': '',
+        transitionDuration: 'initial !important',
+        transitionDelay: 'initial !important',
+        animationDuration: 'initial !important',
+        animationDelay: 'initial !important',
+        animationIterationCount: '1 !important',
       },
     },
     '@media (prefers-reduced-motion: reduce), (update: slow)': {
       // instant animations accessibility
       'body:not(.xt-nojs-prm)': {
         '*': {
-          '@apply xt-duration-none !important': '',
+          transitionDuration: 'initial !important',
+          transitionDelay: 'initial !important',
+          animationDuration: 'initial !important',
+          animationDelay: 'initial !important',
+          animationIterationCount: '1 !important',
         },
       },
     },
@@ -18,7 +26,11 @@ module.exports = {
       // instant animations on components init and reinit
       'body:not(.xt-nojs-initial)': {
         '&, *': {
-          '@apply xt-duration-none !important': '',
+          transitionDuration: 'initial !important',
+          transitionDelay: 'initial !important',
+          animationDuration: 'initial !important',
+          animationDelay: 'initial !important',
+          animationIterationCount: '1 !important',
         },
       },
     },
@@ -68,10 +80,14 @@ module.exports = {
       },
     },
     '.xt-calculating': {
-      '@apply xt-duration-none !important': '',
       display: 'block !important',
       visibility: 'hidden !important',
       opacity: '0 !important',
+      transitionDuration: 'initial !important',
+      transitionDelay: 'initial !important',
+      animationDuration: 'initial !important',
+      animationDelay: 'initial !important',
+      animationIterationCount: '1 !important',
     },
     '.xt-collapse-reset': {
       overflow: 'visible !important',

@@ -15,7 +15,7 @@ export const demo = {
 demo.htmlSource = `
 <form class="text-sm">
 
-  <fieldset class="my-8 xt-m-auto">
+  <fieldset class="my-8 xt-my-auto">
     <div class="xt-row xt-row-x-6 xt-row-y-4">
 
       <div class="w-full">
@@ -70,7 +70,7 @@ demo.htmlSource = `
     </div>
   </fieldset>
 
-  <fieldset class="my-8 xt-m-auto">
+  <fieldset class="my-8 xt-my-auto">
     <div class="xt-row xt-row-x-6 xt-row-y-4">
 
       <div class="w-full">

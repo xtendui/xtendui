@@ -30,7 +30,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-stack-topsecond xt-scroll-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
-    <div class="h6">Top Second</div>
+    <div class="xt-h6">Top Second</div>
   </div>
 </div>
 
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-stack-topthird xt-scroll-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
-    <div class="h6">Top Third</div>
+    <div class="xt-h6">Top Third</div>
   </div>
 </div>
 
@@ -67,7 +67,7 @@ demo.htmlSource = `
 
 <div class="demo--sticky-stack-bottomsecond xt-scroll-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
-    <div class="h6">Bottom Second</div>
+    <div class="xt-h6">Bottom Second</div>
   </div>
 </div>
 

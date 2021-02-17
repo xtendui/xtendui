@@ -15,7 +15,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-slider slider-absolute">
+<div class="xt-slider xt-slider-absolute">
 
   <div class="xt-slides">
     <div class="xt-slides-inner xt-duration-none xt-transform-none">
@@ -51,7 +51,7 @@ demo.htmlSource = `
             </div>
             <div class="xt-hero-content container absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
               <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white xt-links-inverse">
-                <h2 class="h1">
+                <h2 class="xt-h1">
                   Lorem ipsum dolor sit amet
                 </h2>
                 <h3 class="xt-p max-w-lg mx-auto md:ml-0">
@@ -74,7 +74,7 @@ demo.htmlSource = `
             </div>
             <div class="xt-hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
               <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white xt-links-inverse">
-                <h2 class="h1">
+                <h2 class="xt-h1">
                   Lorem ipsum dolor sit amet
                 </h2>
                 <h3 class="xt-p max-w-lg mx-auto md:ml-0">
@@ -105,7 +105,7 @@ demo.htmlSource = `
             </div>
             <div class="xt-hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
               <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:mr-0 text-white xt-links-inverse">
-                <h2 class="h1">
+                <h2 class="xt-h1">
                   Lorem ipsum dolor sit amet
                 </h2>
                 <h3 class="xt-p max-w-lg mx-auto md:mr-0">
@@ -134,7 +134,7 @@ demo.htmlSource = `
     </div>
   </button>
 
-  <button type="button" class="xt-slider-ui hidden md:block cursor-none z-top absolute top-0 right-0 w-24 h-full group" data-xt-nav="-1" aria-label="Next slide" data-xt-mousefollow="{ targets: '.xt-mousefollow' }">
+  <button type="button" class="xt-slider-ui hidden md:block cursor-none z-top absolute top-0 right-0 w-24 h-full group" data-xt-nav="1" aria-label="Next slide" data-xt-mousefollow="{ targets: '.xt-mousefollow' }">
     <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
       ${iconArrowRight({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
     </div>

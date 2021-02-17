@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **tailwind classes** on `.xt-media-inner` to assign relative position. The result is a **responsive media**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -34,7 +34,7 @@ Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
 
 Use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images (resize screen to see it in action).
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

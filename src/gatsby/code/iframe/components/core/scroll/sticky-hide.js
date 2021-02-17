@@ -20,7 +20,7 @@ demo.htmlSource = `
       <div class="xt-h4 ">Top</div>
     </div>
     <div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-top-sub">
-      <div class="h6">Top Second</div>
+      <div class="xt-h6">Top Second</div>
     </div>
   </div>
 </div>

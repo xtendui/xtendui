@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
-  <table class="my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+  <table class="my-4 xt-my-auto w-full">
     <thead>
       <tr>
         <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">

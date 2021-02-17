@@ -6,10 +6,11 @@ module.exports = {
       alignItems: 'inherit',
     },
     '.xt-card-disable': {
-      '@apply text-black xt-links-default !important': '',
+      '@apply xt-links-default !important': '',
       borderWidth: '0 !important',
       backgroundColor: 'transparent !important',
       boxShadow: 'none !important',
+      color: 'inherit !important',
       '> *': {
         padding: '0 !important',
       },

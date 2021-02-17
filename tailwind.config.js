@@ -53,7 +53,7 @@ module.exports = {
                 color: theme('colors.primary.600'),
               },
             },
-            '.links-inverse': {
+            '.xt-links-inverse': {
               code: {
                 color: theme('colors.white'),
                 opacity: '0.8',

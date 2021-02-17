@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<table class="my-4 xt-m-auto w-full">
+<table class="my-4 xt-my-auto w-full">
   <thead>
     <tr>
       <th class="px-6 py-5 text-base align-top font-semibold leading-snug tracking-wider uppercase text-left border">

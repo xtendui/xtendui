@@ -41,7 +41,7 @@ Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com
 
 For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-m-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

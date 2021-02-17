@@ -18,7 +18,7 @@ module.exports = {
         marginBottom: '0',
       },
     },
-    '.xt-m-auto': {
+    '.xt-my-auto': {
       '&:first-child': {
         marginTop: '0',
       },
@@ -30,64 +30,94 @@ module.exports = {
       // styles
       marginTop: theme('spacing.7'),
       marginBottom: theme('spacing.5'),
-      '@apply xt-m-auto text-3xl md:text-4xl lg:text-5xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(38),
       lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-h2': {
       // styles
       marginTop: theme('spacing.6'),
       marginBottom: theme('spacing.4'),
-      '@apply xt-m-auto text-2xl md:text-3xl lg:text-4xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(34),
       lineHeight: theme('lineHeight.none'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-h3': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply xt-m-auto text-xl md:text-2xl lg:text-3xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(30),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-h4': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply xt-m-auto text-xl lg:text-2xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(26),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-h5': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply xt-m-auto text-xl': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(22),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-h6': {
       // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
-      '@apply xt-m-auto text-lg': {},
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
+      fontSize: rem(18),
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
@@ -96,12 +126,96 @@ module.exports = {
       fontFamily: 'inherit',
       fontStyle: 'inherit',
       fontWeight: 'inherit',
+      fontSize: 'inherit',
+      lineHeight: 'inherit',
       letterSpacing: 'inherit',
       textTransform: 'inherit',
       // styles
       marginTop: theme('spacing.0'),
       marginBottom: theme('spacing.3'),
-      '@apply xt-text-reset xt-mb-auto': {},
+      '&:last-child': {
+        marginBottom: '0',
+      },
+    },
+    '.xt-ul': {
+      // styles
+      marginBottom: theme('spacing.3'),
+      '&:last-child': {
+        marginBottom: '0',
+      },
+      '> li': {
+        position: 'relative',
+        marginBottom: theme('spacing.3'),
+        paddingLeft: '1.25rem',
+        '&:last-child': {
+          marginBottom: '0',
+        },
+        '&:before': {
+          position: 'absolute',
+          display: 'inline-block',
+          left: '0',
+          content: '"\\2022"',
+          color: theme('colors.gray.600'),
+        },
+      },
+    },
+    '.xt-ol': {
+      // styles
+      marginBottom: theme('spacing.3'),
+      '&:last-child': {
+        marginBottom: '0',
+      },
+      '> li': {
+        position: 'relative',
+        marginBottom: theme('spacing.3'),
+        paddingLeft: '1.5rem',
+        counterIncrement: 'ol-counter',
+        '&:last-child': {
+          marginBottom: '0',
+        },
+        '&:before': {
+          position: 'absolute',
+          display: 'inline-block',
+          left: '0',
+          content: 'counter(ol-counter) "."',
+          color: theme('colors.gray.600'),
+        },
+      },
+    },
+    '.xt-dl': {
+      // styles
+      marginBottom: theme('spacing.3'),
+      '&:last-child': {
+        marginBottom: '0',
+      },
+    },
+    '.xt-hr': {
+      // styles
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.6'),
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
+    },
+    '.xt-figure': {
+      // styles
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.6'),
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
+    },
+    '.xt-figcaption': {
+      // styles
+      marginTop: theme('spacing.3'),
+      fontSize: rem(14),
+      lineHeight: theme('lineHeight.snug'),
     },
     '.xt-text-reset': {
       fontFamily: 'inherit',
@@ -120,6 +234,10 @@ module.exports = {
     },
   }),
   component: theme => ({
+    strong: {
+      // styles
+      fontWeight: theme('fontWeight.semibold'),
+    },
     'h1:not([class])': {
       '@apply xt-h1': '',
     },
@@ -141,71 +259,23 @@ module.exports = {
     'p:not([class])': {
       '@apply xt-p': '',
     },
-    strong: {
-      // styles
-      fontWeight: theme('fontWeight.semibold'),
-    },
-    'ul:not([class]), ol:not([class])': {
-      // styles
-      marginBottom: theme('spacing.3'),
-      '@apply xt-mb-auto': {},
-      '> li': {
-        position: 'relative',
-        marginBottom: theme('spacing.3'),
-        '@apply xt-mb-auto': {},
-        '&:before': {
-          position: 'absolute',
-          display: 'inline-block',
-          left: '0',
-        },
-        '> ul:not([class]), > ol:not([class])': {
-          marginTop: theme('spacing.3'),
-        },
-      },
-    },
     'ul:not([class])': {
-      // styles
-      '> li': {
-        paddingLeft: '1.25rem',
-        '&:before': {
-          content: '"\\2022"',
-          color: theme('colors.gray.600'),
-        },
-      },
+      '@apply xt-ul': '',
     },
     'ol:not([class])': {
-      // styles
-      '> li': {
-        counterIncrement: 'ol-counter',
-        paddingLeft: '1.5rem',
-        '&:before': {
-          content: 'counter(ol-counter) "."',
-          color: theme('colors.gray.600'),
-        },
-      },
+      '@apply xt-ol': '',
     },
     'dl:not([class])': {
-      // styles
-      marginBottom: theme('spacing.3'),
-      '@apply xt-mb-auto': {},
+      '@apply xt-dl': '',
     },
     'hr:not([class])': {
-      // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply xt-m-auto': {},
+      '@apply xt-hr': '',
     },
     'figure:not([class])': {
-      // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
-      '@apply xt-m-auto': {},
+      '@apply xt-figure': '',
     },
     'figcaption:not([class])': {
-      // styles
-      marginTop: theme('spacing.3'),
-      fontSize: rem(14),
-      lineHeight: theme('lineHeight.snug'),
+      '@apply xt-figcaption': '',
     },
   }),
 }

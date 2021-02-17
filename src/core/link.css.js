@@ -3,34 +3,26 @@ module.exports = {
   utility: theme => ({
     '.xt-links-default': {
       'a:not([class]), a[class=""], .xt-link': {
+        // styles
         color: theme('colors.primary.500'),
-        '&:hover, &:active, &.active': {
-          color: theme('colors.primary.600'),
-        },
       },
     },
     '.xt-links-inverse': {
       'a:not([class]), a[class=""], .xt-link': {
+        // styles
         color: theme('colors.white'),
-        '&:hover, &:active, &.active': {
-          color: theme('colors.white'),
-        },
       },
     },
   }),
-  component: theme => ({
+  component: {
     body: {
       '@apply xt-links-default': '',
     },
     'a:not([class]), a[class=""], .xt-link': {
-      '@apply xt-text-reset !important': {},
       wordWrap: 'break-word',
       overflowWrap: 'break-word',
+      // styles
       textDecoration: 'underline',
-      // animation
-      transitionProperty: 'all',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-  }),
+  },
 }

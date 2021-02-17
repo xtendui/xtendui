@@ -38,7 +38,7 @@
  */
 
 pre[class*="language-"] {
-  @apply xt-overflow-sub my-5 xt-m-auto py-5 px-5 bg-code;
+  @apply xt-overflow-sub my-5 xt-my-auto py-5 px-5 bg-code;
   width: 100%;
   border-radius: 6px;
   .gatsby_demo_code_body & {
@@ -69,7 +69,7 @@ pre {
 }
 
 .gatsby_demo {
-  @apply my-6 xt-m-auto;
+  @apply my-6 xt-my-auto;
   border-radius: 6px;
   pre {
     border-width: 0 !important;
@@ -183,6 +183,14 @@ pre {
       display: flex;
       flex-flow: column;
       height: 100%;
+    }
+    .gatsby_demo_code_body_item {
+      display: flex;
+      align-items: stretch;
+      height: 21rem;
+      #gatsby_open-full & {
+        height: auto;
+      }
     }
     &.active {
       z-index: theme('zIndex.top');

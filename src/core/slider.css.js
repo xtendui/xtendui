@@ -68,8 +68,13 @@ module.exports = {
         height: 'auto !important',
       },
       '.xt-slides-inner': {
-        '@apply xt-duration-none xt-transform-none !important': '',
         flexWrap: 'wrap !important',
+        transform: 'none !important',
+        transitionDuration: 'initial !important',
+        transitionDelay: 'initial !important',
+        animationDuration: 'initial !important',
+        animationDelay: 'initial !important',
+        animationIterationCount: '1 !important',
       },
       '.xt-slide:not(.in)': {
         opacity: '1 !important',
@@ -84,7 +89,12 @@ module.exports = {
       },
       // @FIX disable slider if not overflowing
       '.xt-slides-inner': {
-        '@apply xt-duration-none xt-transform-none !important': '',
+        transform: 'none !important',
+        transitionDuration: 'initial !important',
+        transitionDelay: 'initial !important',
+        animationDuration: 'initial !important',
+        animationDelay: 'initial !important',
+        animationIterationCount: '1 !important',
       },
     },
     '.xt-slider-disabled': {

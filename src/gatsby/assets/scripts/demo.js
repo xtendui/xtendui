@@ -25,7 +25,8 @@ let scrollCache = 0
 const scrollToItem = (initial = false) => {
   const origin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
   if (initial && origin) {
-    scrollCache = document.scrollingElement.scrollTop + origin.offsetTop
+    scrollCache = origin.offsetTop
+    console.log(scrollCache, document.scrollingElement.scrollTop, origin.offsetTop)
     document.scrollingElement.scrollTo(0, scrollCache)
   } else {
     document.scrollingElement.scrollTo(0, scrollCache)
