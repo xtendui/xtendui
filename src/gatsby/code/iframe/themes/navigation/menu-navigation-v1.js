@@ -16,12 +16,12 @@ demo.htmlSource = `
 <div class="megamenu relative bg-primary-500 text-white">
 
   <!-- mouse events instead of click you can remove this -->
-  <div class="container pt-10">
+  <form class="text-sm container pt-10">
     <label class="xt-label-check">
       <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
       <span class="xt-check-content">Use mouse events</span>
     </label>
-  </div>
+  </form>
 
   <span class="megamenu-line absolute top-0 left-0 bg-white"></span>
 

@@ -149,13 +149,16 @@ Xt.mount.push({
         })
         // when self.direction it's sequential interaction
         if (self.direction) {
-          // inner
-          const inner = tr.querySelector('.xt-drop-inner')
-          gsap.killTweensOf(inner)
-          gsap.to(inner, {
-            height: Xt.dataStorage.get(self.object, 'innerHeightFinal'),
-            duration: innerTime,
-            ease: innerEase,
+          // raf for innerHeightFinal
+          requestAnimationFrame(() => {
+            // inner
+            const inner = tr.querySelector('.xt-drop-inner')
+            gsap.killTweensOf(inner)
+            gsap.to(inner, {
+              height: Xt.dataStorage.get(self.object, 'innerHeightFinal'),
+              duration: innerTime,
+              ease: innerEase,
+            })
           })
         } else {
           // inner
