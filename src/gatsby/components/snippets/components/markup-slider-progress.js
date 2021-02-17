@@ -79,8 +79,8 @@ export default () => {
   <button type="button" class="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore" data-xt-pag title="Slide xt-num">
     <span class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500">
-        <span class="absolute bg-current h-full"></span>
         <span class="absolute bg-current opacity-25 w-full h-full"></span>
+        <span class="absolute bg-current w-full"></span>
       </span>
     </span>
   </button>
