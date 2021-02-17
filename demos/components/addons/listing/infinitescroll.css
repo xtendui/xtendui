@@ -4,7 +4,7 @@
 
   .infinitescroll-spinner {
     @apply transition opacity-0;
-    .spinner {
+    .xt-spinner {
       @apply transition-all opacity-0 scale-75;
     }
   }
@@ -12,15 +12,15 @@
   .infinitescroll-loading {
     .infinitescroll-spinner {
       @apply opacity-100;
-      .spinner {
+      .xt-spinner {
         @apply opacity-100 scale-100;
       }
     }
   }
 
-  /* .infinitescroll-trigger .btn */
+  /* .infinitescroll-trigger .xt-button */
 
-  .infinitescroll-trigger .btn {
+  .infinitescroll-trigger .xt-button {
     .infinitescroll-trigger-content-nomore {
       display: none;
     }
@@ -30,7 +30,7 @@
   }
 
   .infinitescroll-loading {
-    .infinitescroll-trigger .btn {
+    .infinitescroll-trigger .xt-button {
       pointer-events: none;
       > .infinitescroll-trigger-content {
         @apply opacity-0;
@@ -41,7 +41,7 @@
   /* .infinitescroll-nomore */
 
   .infinitescroll-nomore {
-    .infinitescroll-trigger .btn {
+    .infinitescroll-trigger .xt-button {
       pointer-events: none;
       .infinitescroll-trigger-content {
         display: none;

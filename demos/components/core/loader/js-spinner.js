@@ -7,7 +7,7 @@ Xt.mount.push({
     // init
 
     const loaderTimeout = () => {
-      const spinner = object.querySelectorAll('.spinner svg:nth-child(1) circle')
+      const spinner = object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
       if (object.dataset.loaderTimeout) {
         clearTimeout(object.dataset.loaderTimeout)
         delete object.dataset.loaderTimeout

@@ -1,5 +1,5 @@
 .demo--slider-progress {
-  > .loader {
+  > .xt-loader {
     /* touch */
     @media (hover: none) {
       transform: none !important;
@@ -10,14 +10,14 @@
       left: 0;
       bottom: 12px;
       margin: 0;
-      .spinner {
+      .xt-spinner {
         opacity: 1;
       }
     }
     /* mouse */
     @media (hover: hover) {
-      @apply mousefollow;
-      .spinner {
+      @apply xt-mousefollow;
+      .xt-spinner {
         @apply -mt-1 ml-4;
       }
     }

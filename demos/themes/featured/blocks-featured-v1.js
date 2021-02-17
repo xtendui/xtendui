@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * .btn-line and media hover
+ * .button-line and media hover
  */
 
 Xt.mount.push({
-  matches: '#iframe--blocks-featured-v1 .btn-line',
+  matches: '#iframe--blocks-featured-v1 .button-line',
   mount: ({ object }) => {
     // vars
 
@@ -25,24 +25,24 @@ Xt.mount.push({
 
     const eventEnter = () => {
       // media
-      const media = link.querySelector('.media-container')
+      const media = link.querySelector('.xt-media-container')
       gsap.to(media, {
         opacity: mediaOpacityIn,
         scale: 1 - mediaScale,
         duration: 1,
         ease: 'expo.out',
       })
-      const mediaInner = link.querySelector('.media-inner')
+      const mediaInner = link.querySelector('.xt-media-inner')
       gsap.to(mediaInner, {
         scale: 1 + mediaScale,
         duration: 1,
         ease: 'expo.out',
       })
       // text
-      const text = object.querySelector('.btn-line-content')
+      const text = object.querySelector('.button-line-content')
       gsap.to(text, { x: lineX, duration: 1, delay: 0.5, ease: 'expo.out' })
       // line
-      const line = object.querySelector('.btn-line-design')
+      const line = object.querySelector('.button-line-design')
       gsap.set(line, {
         width: 0,
         x: -lineWidthMax,
@@ -72,20 +72,20 @@ Xt.mount.push({
 
     const eventLeave = () => {
       // media
-      const media = link.querySelector('.media-container')
+      const media = link.querySelector('.xt-media-container')
       gsap.to(media, {
         opacity: mediaOpacityOut,
         scale: 1,
         duration: 1,
         ease: 'expo.inOut',
       })
-      const mediaInner = link.querySelector('.media-inner')
+      const mediaInner = link.querySelector('.xt-media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
       // text
-      const text = object.querySelector('.btn-line-content')
+      const text = object.querySelector('.button-line-content')
       gsap.to(text, { x: 0, duration: 1, ease: 'expo.inOut' })
       // line
-      const line = object.querySelector('.btn-line-design')
+      const line = object.querySelector('.button-line-design')
       gsap.to(line, {
         width: lineWidth,
         x: 0,
@@ -112,10 +112,10 @@ Xt.mount.push({
     const content = object.querySelector('.featured-content')
     const contentY = '20'
 
-    const media = object.querySelector('.media-container')
+    const media = object.querySelector('.xt-media-container')
     const mediaY = '50'
 
-    const asset = media.querySelector('.media')
+    const asset = media.querySelector('.xt-media')
     const assetScale = 0.5
 
     // parallax

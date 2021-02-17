@@ -1,10 +1,10 @@
 #iframe--stores-listing-v2 {
   /*##START*/
-  .listing-item {
+  .xt-listing-item {
     position: relative;
     overflow: hidden;
     @screen md {
-      .listing-item-front {
+      .xt-listing-item-front {
         display: block;
         position: absolute;
         top: 0;
@@ -12,17 +12,17 @@
         width: 100%;
         height: 100%;
       }
-      .listing-item-back {
+      .xt-listing-item-back {
         pointer-events: none;
         opacity: 0;
       }
       &.active {
-        .listing-item-back {
+        .xt-listing-item-back {
           pointer-events: all;
         }
       }
     }
-    .listing-item-front {
+    .xt-listing-item-front {
       @media (max-width: calc(theme('screens.md') - 1px)) {
         opacity: 1 !important;
         transform: none !important;
@@ -31,12 +31,12 @@
         cursor: pointer;
       }
     }
-    .listing-item-back {
+    .xt-listing-item-back {
       @media (max-width: calc(theme('screens.md') - 1px)) {
         opacity: 1 !important;
         transform: none !important;
         margin-top: theme('spacing.6');
-        .btn-close {
+        .xt-dismiss {
           display: none;
         }
       }
@@ -46,8 +46,8 @@
     }
   }
 
-  .listing-asset {
-    .media-container {
+  .xt-listing-asset {
+    .xt-media-container {
       @supports (mix-blend-mode: screen) {
         &:before {
           content: '';

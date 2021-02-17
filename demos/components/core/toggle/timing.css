@@ -1,5 +1,5 @@
 .demo--toggle-timing, .demo--toggle-timing--event {
-  .card {
+  .xt-card {
     /* initial */
     @apply transform transition;
     @apply opacity-0 -translate-x-4;

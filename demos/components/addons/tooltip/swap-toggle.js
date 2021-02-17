@@ -5,7 +5,7 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const tooltip = object.parentNode.querySelector('.tooltip')
+    const tooltip = object.parentNode.querySelector('.xt-tooltip')
 
     // eventOn
 

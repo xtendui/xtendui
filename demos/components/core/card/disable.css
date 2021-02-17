@@ -1,3 +1,3 @@
 .demo--card-disable {
-  @apply md:card-disable !important;
+  @apply md:xt-card-disable !important;
 }

@@ -1,18 +1,18 @@
 .demo--overlay-animation-css {
   /* initial */
-  .overlay-inner {
+  .xt-overlay-inner {
     @apply transform transition;
     @apply opacity-0 translate-y-4;
   }
   /* active */
   &.active {
-    .overlay-inner {
+    .xt-overlay-inner {
       @apply opacity-100 translate-y-0;
     }
   }
   /* out */
   &.out {
-    .overlay-inner {
+    .xt-overlay-inner {
       @apply opacity-0 -translate-y-4;
     }
   }

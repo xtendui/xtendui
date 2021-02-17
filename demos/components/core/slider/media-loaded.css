@@ -1,6 +1,6 @@
 .demo--slider-media-loaded {
-  .slide {
-    .media-container {
+  .xt-slide {
+    .xt-media-container {
       @apply bg-gray-400;
     }
     /* fixed height */
@@ -15,16 +15,16 @@
     }
     /* hide loader on mediaLoaded */
     &.xt-medialoaded {
-      .loader {
+      .xt-loader {
         @apply transition opacity-0;
       }
     }
     /* animate media on mediaLoaded */
-    .media-inner {
+    .xt-media-inner {
       @apply transition opacity-0;
     }
     &.xt-medialoaded {
-      .media-inner {
+      .xt-media-inner {
         @apply opacity-100;
       }
     }

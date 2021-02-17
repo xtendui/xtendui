@@ -1,7 +1,7 @@
 #iframe--products-gallery-v1 {
   /*##START*/
   .product-gallery {
-    @apply overflow-y-auto overflow-x-hidden overflow-sub -container;
+    @apply overflow-y-auto overflow-x-hidden xt-overflow-sub xt-container-remove;
     height: 65vh;
     height: calc(var(--vh, 1vh) * 65);
     @screen md {

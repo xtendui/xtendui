@@ -49,7 +49,7 @@ Xt.mount.push({
     // add
 
     const addBtn = document.querySelector('#demo--tooltip-events-add')
-    const btnPrimary = require('components/snippets/classes/btn-primary').default
+    const buttonPrimary = require('components/snippets/classes/button-primary').default
     const cardBlack = require('components/snippets/classes/card-black').default
 
     const addFnc = () => {
@@ -60,7 +60,7 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-          <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
             Element ${indexEl}
           </button>
         `
@@ -68,7 +68,7 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-          <div class="tooltip" title="Target ${indexTr}">
+          <div class="xt-tooltip" title="Target ${indexTr}">
             <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
               Lorem ipsum dolor sit amet
             </div>
@@ -172,10 +172,10 @@ Xt.mount.push({
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
-      } else if (e.target.querySelector(':scope > .btn')) {
-        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
-      } else if (e.target.querySelector('.card > *')) {
-        str += ` from <strong>${e.target.querySelector('.card > *').textContent}</strong>`
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      } else if (e.target.querySelector('.xt-card > *')) {
+        str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
         str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {

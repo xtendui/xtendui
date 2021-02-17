@@ -95,9 +95,9 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-        <div class="slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-          <div class="card rounded-md ${cardSlide()}">
-            <div class="h4">${indexTr}</div>
+        <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
+          <div class="xt-card rounded-md ${cardSlide()}">
+            <div class="xt-h4 ">${indexTr}</div>
           </div>
         </div>
         `
@@ -202,10 +202,10 @@ Xt.mount.push({
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
-      } else if (e.target.querySelector(':scope > .btn')) {
-        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
-      } else if (e.target.querySelector('.card > *')) {
-        str += ` from <strong>${e.target.querySelector('.card > *').textContent}</strong>`
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      } else if (e.target.querySelector('.xt-card > *')) {
+        str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
         str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {

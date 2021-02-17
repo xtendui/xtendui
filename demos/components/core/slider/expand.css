@@ -1,5 +1,3 @@
 .demo--slider-expand {
-  @media (max-width: calc(theme('screens.md') - 1px)) {
-    @apply slider-expand;
-  }
+  @apply xt-slider-expand;
 }

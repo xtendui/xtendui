@@ -49,8 +49,8 @@ Xt.mount.push({
     // add
 
     const addBtn = document.querySelector('#demo--drop-events-add')
-    const btnPrimary = require('components/snippets/classes/btn-primary').default
-    const btnDefaultDrop = require('components/snippets/classes/btn-default-drop').default
+    const buttonPrimary = require('components/snippets/classes/button-primary').default
+    const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
     const cardWhite = require('components/snippets/classes/card-white').default
 
     const addFnc = () => {
@@ -61,7 +61,7 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-          <button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnPrimary()}">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
             Element ${indexEl}
           </button>
         `
@@ -69,16 +69,16 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-          <div class="drop" title="Target ${indexTr}">
-            <div class="card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+          <div class="xt-drop" title="Target ${indexTr}">
+            <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
               <nav class="list flex-col">
-                <a href="#" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+                <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
-                <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
                   Dolor sit
                 </button>
-                <button type="button" class="btn text-2xs py-1.5 px-6 ${btnDefaultDrop()}">
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
                   Amet
                 </button>
               </nav>
@@ -183,10 +183,10 @@ Xt.mount.push({
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
-      } else if (e.target.querySelector(':scope > .btn')) {
-        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
-      } else if (e.target.querySelector('.card > *')) {
-        str += ` from <strong>${e.target.querySelector('.card > *').textContent}</strong>`
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      } else if (e.target.querySelector('.xt-card > *')) {
+        str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
         str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {

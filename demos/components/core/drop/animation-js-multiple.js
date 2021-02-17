@@ -16,7 +16,7 @@ Xt.mount.push({
 
     let self = new Xt.Drop(object, {
       elements: ':scope > a, :scope > button',
-      targets: ':scope > .drop',
+      targets: ':scope > .xt-drop',
       duration: 500,
     })
 

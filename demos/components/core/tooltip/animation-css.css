@@ -1,5 +1,5 @@
 .demo--tooltip-animation-css {
-  .tooltip {
+  .xt-tooltip {
     /* initial */
     > * {
       @apply transform transition duration-300;

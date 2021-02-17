@@ -7,7 +7,7 @@ import gsap from 'gsap'
  */
 
 Xt.mount.push({
-  matches: '.demo--slider-automaticscroll .slider',
+  matches: '.demo--slider-automaticscroll .xt-slider',
   mount: ({ object }) => {
     // vars
 
@@ -27,36 +27,23 @@ Xt.mount.push({
       },
     })
 
-    // init
-
-    const eventInit = () => {
-      if (!self.wrap) {
-        // reset dragging position
-        gsap.set(self.dragger, { x: self.detail.dragPos })
-        self.goToNext()
-      }
-    }
-
-    self.object.addEventListener('init.xt.slider', eventInit, true)
-
     // on
 
     const eventOn = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
-        // animate
-        if (self.wrap) {
-          // end dragging position instant
+        if (self.intial || self.wrap) {
+          // reset dragging position
+          gsap.killTweensOf(self.dragger)
           gsap.set(self.dragger, { x: self.detail.dragPos })
+          if (self.intial) {
+            self.goToNext()
+          }
         } else {
           // time depending on target and dragger width
           const slideWidth = tr.offsetWidth
-          const draggerWidth = self.dragger.offsetWidth
           let time = (slideWidth * 15) / 1000 // constant speed
-          if (object.classList.contains('slider--factor')) {
-            time = (draggerWidth / slideWidth) * 50 // faster or slower depending on horizontal space
-          }
           // end dragging position
           gsap.killTweensOf(self.dragger)
           gsap

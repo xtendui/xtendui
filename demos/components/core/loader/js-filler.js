@@ -7,7 +7,7 @@ Xt.mount.push({
     // init
 
     const loaderTimeout = () => {
-      const filler = object.querySelectorAll('.filler span:nth-child(1)')
+      const filler = object.querySelectorAll('.xt-filler span:nth-child(2)')
       if (object.dataset.loaderTimeout) {
         clearTimeout(object.dataset.loaderTimeout)
         delete object.dataset.loaderTimeout

@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--slide-animation-v1 .btn, #iframe--slide-animation-v1 a.card',
+  matches: '#iframe--slide-animation-v1 .xt-button, #iframe--slide-animation-v1 a.xt-card',
   mount: ({ object }) => {
     // vars
 

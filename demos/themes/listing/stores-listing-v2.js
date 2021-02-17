@@ -2,15 +2,15 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 /**
- * .listing activation
+ * .xt-listing activation
  */
 
 Xt.mount.push({
-  matches: '#iframe--stores-listing-v2 .listing',
+  matches: '#iframe--stores-listing-v2 .xt-listing',
   mount: ({ object }) => {
     // vars
 
-    const items = object.querySelectorAll('.listing-item')
+    const items = object.querySelectorAll('.xt-listing-item')
 
     // click
 
@@ -19,10 +19,10 @@ Xt.mount.push({
         // class
         tr.classList.add('active')
         // front
-        const front = tr.querySelector('.listing-item-front')
+        const front = tr.querySelector('.xt-listing-item-front')
         gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing-item-back')
+        const back = tr.querySelector('.xt-listing-item-back')
         gsap.set(back, { y: 40, opacity: 0 })
         gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
       } else {
@@ -35,17 +35,17 @@ Xt.mount.push({
         // class
         tr.classList.remove('active')
         // front
-        const front = tr.querySelector('.listing-item-front')
+        const front = tr.querySelector('.xt-listing-item-front')
         gsap.set(front, { y: -40, opacity: 0 })
         gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
         // front
-        const back = tr.querySelector('.listing-item-back')
+        const back = tr.querySelector('.xt-listing-item-back')
         gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
       }
     }
 
     const eventClick = e => {
-      const tr = e.target.closest('.listing-item')
+      const tr = e.target.closest('.xt-listing-item')
       // disable on mobile
       if (matchMedia('(max-width: 767px)').matches) {
         return
@@ -59,8 +59,8 @@ Xt.mount.push({
     }
 
     for (const item of items) {
-      item.querySelector('.listing-item-front').addEventListener('click', eventClick)
-      item.querySelector('.btn-close').addEventListener('click', () => {
+      item.querySelector('.xt-listing-item-front').addEventListener('click', eventClick)
+      item.querySelector('.xt-dismiss').addEventListener('click', () => {
         eventOff(item)
       })
     }

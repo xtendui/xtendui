@@ -11,7 +11,7 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       elements: '.multilevel-reset, .multilevel-list > button',
-      targets: ':scope > .toggle',
+      targets: ':scope > .xt-toggle',
       min: 1,
       instant: true,
     })

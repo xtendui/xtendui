@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-const btnDefault = require('components/snippets/classes/btn-default').default
+const buttonDefault = require('components/snippets/classes/button-default').default
 const cardToggle = require('components/snippets/classes/card-toggle').default
 
 Xt.mount.push({
@@ -9,7 +9,7 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       elements: 'a, button',
-      targets: '.toggle',
+      targets: '.xt-toggle',
       min: 1,
       auto: {
         time: 2000,
@@ -88,11 +88,11 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="btn text-xs py-2 px-3.5 rounded-md ${btnDefault()}">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="card toggle rounded-md ${cardToggle()}">Target ${indexTr}</div>`
+        const strTr = `<div class="xt-card xt-toggle rounded-md ${cardToggle()}">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
@@ -194,10 +194,10 @@ Xt.mount.push({
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
-      } else if (e.target.querySelector(':scope > .btn')) {
-        str += ` from <strong>${e.target.querySelector(':scope > .btn').textContent}</strong>`
-      } else if (e.target.querySelector('.card > *')) {
-        str += ` from <strong>${e.target.querySelector('.card > *').textContent}</strong>`
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      } else if (e.target.querySelector('.xt-card > *')) {
+        str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
       } else if (e.target.querySelector(':scope > *')) {
         str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
       } else if (!e.target.querySelector('*')) {

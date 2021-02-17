@@ -60,9 +60,9 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.drop-container',
-      elementsInner: '.drop-container > a, .drop-container > button',
-      targets: '.drop-container > .drop',
+      elements: '.xt-drop-container',
+      elementsInner: '.xt-drop-container > a, .xt-drop-container > button',
+      targets: '.xt-drop-container > .xt-drop',
       duration: 1000,
       delay: 25,
       preventEvent: true,
@@ -74,7 +74,7 @@ Xt.mount.push({
     // setup
 
     for (const tr of self.targets) {
-      const inner = tr.querySelector('.drop-inner')
+      const inner = tr.querySelector('.xt-drop-inner')
       gsap.set(inner, { height: 0 })
     }
 
@@ -85,7 +85,7 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // content
-        const content = tr.querySelector('.drop-content')
+        const content = tr.querySelector('.xt-drop-content')
         gsap.killTweensOf(content)
         gsap.set(content, { x: contentXOn * self.direction, opacity: 0 })
         gsap.to(content, {
@@ -96,11 +96,11 @@ Xt.mount.push({
           ease: contentEase,
         })
         // design
-        const design = tr.querySelector('.design-setup')
+        const design = tr.querySelector('.xt-design-setup')
         gsap.killTweensOf(design)
         gsap.set(design, { opacity: 1 })
         // inner
-        const inner = tr.querySelector('.drop-inner')
+        const inner = tr.querySelector('.xt-drop-inner')
         gsap.killTweensOf(inner)
         gsap.set(inner, { height: '' })
         const innerHeight = inner.clientHeight
@@ -130,7 +130,7 @@ Xt.mount.push({
       // useCapture delegation
       if (self.targets.includes(tr)) {
         // content
-        const content = tr.querySelector('.drop-content')
+        const content = tr.querySelector('.xt-drop-content')
         gsap.killTweensOf(content)
         gsap.to(content, {
           x: contentXOff * self.direction * -1,
@@ -140,7 +140,7 @@ Xt.mount.push({
           overwrite: true,
         })
         // design
-        const design = tr.querySelector('.design-setup')
+        const design = tr.querySelector('.xt-design-setup')
         gsap.killTweensOf(design)
         gsap.to(design, {
           opacity: 0,
@@ -150,7 +150,7 @@ Xt.mount.push({
         // when self.direction it's sequential interaction
         if (self.direction) {
           // inner
-          const inner = tr.querySelector('.drop-inner')
+          const inner = tr.querySelector('.xt-drop-inner')
           gsap.killTweensOf(inner)
           gsap.to(inner, {
             height: Xt.dataStorage.get(self.object, 'innerHeightFinal'),
@@ -159,7 +159,7 @@ Xt.mount.push({
           })
         } else {
           // inner
-          const inner = tr.querySelector('.drop-inner')
+          const inner = tr.querySelector('.xt-drop-inner')
           gsap.killTweensOf(inner)
           gsap
             .to(inner, {
@@ -175,11 +175,11 @@ Xt.mount.push({
           // others
           for (const other of self.targets.filter(x => x !== tr)) {
             // design
-            const design = other.querySelector('.design-setup')
+            const design = other.querySelector('.xt-design-setup')
             gsap.killTweensOf(design)
             gsap.to(design, { opacity: 0, duration: designTime, ease: designEase, delay: designTime })
             // inner
-            const inner = other.querySelector('.drop-inner')
+            const inner = other.querySelector('.xt-drop-inner')
             gsap.killTweensOf(inner)
             gsap.set(inner, { height: 0 })
           }
@@ -196,7 +196,7 @@ Xt.mount.push({
     // vars
 
     let lineFirst = true
-    const btns = object.querySelectorAll('.btn-line')
+    const btns = object.querySelectorAll('.button-line')
     const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 7
@@ -228,7 +228,7 @@ Xt.mount.push({
 
     for (const btn of btns) {
       btn.addEventListener('mouseenter', eventEnter, true)
-      const drop = btn.closest('.drop-container')
+      const drop = btn.closest('.xt-drop-container')
       if (drop) {
         drop.addEventListener('on.xt.drop', eventEnter.bind(btn), true)
       }
@@ -270,7 +270,7 @@ Xt.mount.push({
 
     for (const btn of btns) {
       btn.addEventListener('mouseleave', eventLeave, true)
-      const drop = btn.closest('.drop-container')
+      const drop = btn.closest('.xt-drop-container')
       if (drop) {
         drop.addEventListener('off.xt.drop', eventLeave.bind(btn), true)
       }
