@@ -1,5 +1,5 @@
 .demo--multilevel {
-  .toggle {
+  .xt-toggle {
     /* initial */
     @apply transform transition;
     @apply -translate-x-10 opacity-0;

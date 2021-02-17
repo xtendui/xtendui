@@ -185,6 +185,7 @@ pre {
       height: 100%;
     }
     .gatsby_demo_code_body_item {
+      @apply xt-toggle;
       display: flex;
       align-items: stretch;
       height: 21rem;

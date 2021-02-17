@@ -723,11 +723,7 @@ const populateSources = (item, element) => {
   // populate tabs
   item
     .querySelector('.gatsby_demo_code_body')
-    .append(
-      Xt.createElement(
-        '<div class="gatsby_demo_code_body_item xt-toggle"><pre class="noedit"><code></code></pre></div>'
-      )
-    )
+    .append(Xt.createElement('<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
   item
     .querySelector('.gatsby_demo_code_tabs_left')
     .append(Xt.createElement(`<button type="button" class="xt-button">${lang}</button>`))

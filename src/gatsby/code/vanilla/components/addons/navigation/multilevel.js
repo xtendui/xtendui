@@ -40,7 +40,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute" data-xt-group="cat-0">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-0">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
@@ -90,7 +90,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute" data-xt-group="cat-0b">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-0b">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute" data-xt-group="cat-1">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-1">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
