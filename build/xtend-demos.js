@@ -1,7 +1,6 @@
 import 'xtendui/static/demos/components/addons/layout/googlelocator.js'
 import 'xtendui/static/demos/components/addons/layout/jumptocontent.js'
 import 'xtendui/static/demos/components/addons/list-group/expand.js'
-import 'xtendui/static/demos/components/addons/navigation/multilevel.js'
 import 'xtendui/static/demos/components/addons/navigation/navsides-slider.js'
 import 'xtendui/static/demos/components/addons/navigation/navsides-toggle.js'
 import 'xtendui/static/demos/components/addons/navigation/scrolltoanchor.js'

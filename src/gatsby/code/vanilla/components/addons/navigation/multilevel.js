@@ -10,15 +10,20 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--multilevel relative">
+<div class="demo--multilevel relative" data-xt-toggle="{
+      elements: '.multilevel-reset, .multilevel-list > button',
+      targets: ':scope > .xt-toggle',
+      min: 1,
+      instant: true
+    }">
 
-  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="initial">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
         Menu
       </div>
-      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()}  hidden">
+      <button type="button" class="multilevel-reset hidden" data-xt-group="initial">
         Back
       </button>
     </div>
@@ -46,7 +51,7 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} ">
+      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} " data-xt-group="initial">
         Back
       </button>
     </div>
@@ -74,7 +79,7 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} ">
+      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} " data-xt-group="cat-0">
         Back
       </button>
     </div>
@@ -96,7 +101,7 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} ">
+      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} " data-xt-group="cat-0">
         Back
       </button>
     </div>
@@ -118,7 +123,7 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} ">
+      <button type="button" class="multilevel-reset xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} " data-xt-group="initial">
         Back
       </button>
     </div>
