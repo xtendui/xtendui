@@ -37,7 +37,7 @@ demo.htmlSource = `
 
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-primary-900"></div>
+            <div class="xt-design-setup bg-primary-700 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
               <div class="pt-16 pb-24 text-white xt-links-inverse">
@@ -54,7 +54,7 @@ demo.htmlSource = `
                   <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Morbi nec mauris est
                   </a>
-                  <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
+                  <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0">
                     Show all
                   </a>
                 </div>
@@ -74,10 +74,10 @@ demo.htmlSource = `
 
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-primary-900"></div>
+            <div class="xt-design-setup bg-gray-200 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
-              <div class="pt-16 pb-24 text-white xt-links-inverse">
+              <div class="pt-16 pb-24 text-black xt-links-default">
                 <div class="container">
                   <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Lorem ipsum
@@ -85,7 +85,7 @@ demo.htmlSource = `
                   <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                     Dolor sit amet
                   </a>
-                  <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
+                  <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0">
                     Show all
                   </a>
                 </div>
@@ -105,13 +105,13 @@ demo.htmlSource = `
 
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-gray-100"></div>
+            <div class="xt-design-setup bg-gray-200 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
               <div class="pt-16 pb-24 text-black xt-links-default">
                 <div class="container">
-                  <div class="xt-row xt-row-8">
-                    <div class="w-6/12">
+                  <div class="xt-row xt-row-x-8">
+                    <div class="w-full lg:w-6/12">
                       <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Lorem ipsum
                       </a>
@@ -125,7 +125,7 @@ demo.htmlSource = `
                         Morbi nec mauris est
                       </a>
                     </div>
-                    <div class="w-6/12">
+                    <div class="w-full lg:w-6/12">
                       <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Dolor sit amet
                       </a>
@@ -135,7 +135,7 @@ demo.htmlSource = `
                       <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Morbi nec mauris est
                       </a>
-                      <a href="#" class="xt-button text-xs py-2 px-0 link mt-6">
+                      <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0">
                           Show all
                       </a>
                     </div>
