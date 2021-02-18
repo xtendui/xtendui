@@ -77,7 +77,7 @@ export default class Page extends React.Component {
                           title="Twitter"
                           dangerouslySetInnerHTML={{ __html: iconTwitter() }}
                         ></a>
-                        <div className="xt-tooltip group" data-xt-duration="300">
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
                             className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
@@ -94,7 +94,7 @@ export default class Page extends React.Component {
                           title="Npm"
                           dangerouslySetInnerHTML={{ __html: iconPackage() }}
                         ></a>
-                        <div className="xt-tooltip group" data-xt-duration="300">
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
                             className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
@@ -111,7 +111,7 @@ export default class Page extends React.Component {
                           title="Github"
                           dangerouslySetInnerHTML={{ __html: iconGithub() }}
                         ></a>
-                        <div className="xt-tooltip group" data-xt-duration="300">
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
                             className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >

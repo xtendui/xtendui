@@ -16,7 +16,7 @@ demo.htmlSource = `
     tooltip
   </button>
 
-  <div class="xt-tooltip">
+  <div class="xt-tooltip p-2">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
     tooltip
   </button>
 
-  <div class="xt-tooltip">
+  <div class="xt-tooltip p-2">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>

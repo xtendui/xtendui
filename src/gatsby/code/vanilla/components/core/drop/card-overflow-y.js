@@ -18,7 +18,7 @@ demo.htmlSource = `
       group
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96">
         <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
           <div class="xt-media-inner">
@@ -42,7 +42,7 @@ demo.htmlSource = `
       group
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
           <div class="xt-media-inner">

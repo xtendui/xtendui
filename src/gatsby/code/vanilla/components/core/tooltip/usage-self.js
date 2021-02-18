@@ -12,7 +12,7 @@ demo.htmlSource = `
 Lorem ipsum
 <span data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
   <a href="#">dolor</a>
-  <div class="xt-tooltip">
+  <div class="xt-tooltip p-2">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>

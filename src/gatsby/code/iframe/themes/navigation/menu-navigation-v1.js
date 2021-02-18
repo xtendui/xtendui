@@ -35,7 +35,7 @@ demo.htmlSource = `
           Menu #1
         </a>
 
-        <div class="xt-drop xt-drop-static xt-drop-nospace">
+        <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
             <div class="xt-design-setup bg-primary-900"></div>
             <div class="xt-drop-content">
@@ -72,7 +72,7 @@ demo.htmlSource = `
           Menu #2
         </a>
 
-        <div class="xt-drop xt-drop-static xt-drop-nospace">
+        <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
             <div class="xt-design-setup bg-primary-900"></div>
             <div class="xt-drop-content">
@@ -103,7 +103,7 @@ demo.htmlSource = `
           Menu #3
         </a>
 
-        <div class="xt-drop xt-drop-static xt-drop-nospace">
+        <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner overflow-hidden">
             <div class="xt-design-setup bg-gray-100"></div>
             <div class="xt-drop-content">

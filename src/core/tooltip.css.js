@@ -22,43 +22,55 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *:first-child': {
+      '> *': {
         position: 'relative',
         zIndex: theme('zIndex.tooltip'),
       },
-      // styles
-      '[data-popper-placement^="top"]&:not(.xt-tooltip-nospace)': {
-        paddingBottom: theme('spacing.2'),
+      '> .xt-arrow': {
+        position: 'absolute',
+        pointerEvents: 'none',
+        transform: 'rotate(45deg)',
+        zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
       },
-      '[data-popper-placement^="bottom"]&:not(.xt-tooltip-nospace)': {
-        paddingTop: theme('spacing.2'),
+      '&[data-popper-placement^="top"]': {
+        paddingTop: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          top: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-      '[data-popper-placement^="left"]&:not(.xt-tooltip-nospace)': {
-        paddingRight: theme('spacing.2'),
+      '&[data-popper-placement^="bottom"]': {
+        paddingBottom: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          bottom: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-      '[data-popper-placement^="right"]&:not(.xt-tooltip-nospace)': {
-        paddingLeft: theme('spacing.2'),
+      '&[data-popper-placement^="left"]': {
+        paddingLeft: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          left: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
-    },
-    '.xt-tooltip-arrow': {
-      position: 'absolute',
-      transform: 'rotate(45deg)',
-      // styles
-      zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
-      width: '1rem',
-      height: '1rem',
-      background: theme('colors.black'),
-      '[data-popper-placement^="top"] &': {
-        bottom: theme('spacing[1.5]'),
-      },
-      '[data-popper-placement^="bottom"] &': {
-        top: theme('spacing[1.5]'),
-      },
-      '[data-popper-placement^="left"] &': {
-        right: theme('spacing[1.5]'),
-      },
-      '[data-popper-placement^="right"] &': {
-        left: theme('spacing[1.5]'),
+      '&[data-popper-placement^="right"]': {
+        paddingRight: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          right: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
     },
     '.xt-tooltip-disabled': {

@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   Lorem ipsum <a href="#">dolor</a> sit amet
 
-  <div class="xt-tooltip">
+  <div class="xt-tooltip p-2">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>

@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 Lorem ipsum <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">dolor</a> sit amet
 
-<div class="xt-tooltip" id="tooltip--unique">
+<div class="xt-tooltip p-2" id="tooltip--unique">
   <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
     Lorem ipsum dolor sit amet
   </div>

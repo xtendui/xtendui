@@ -65,6 +65,7 @@ class Drop extends Xt.Toggle {
         })
         // popperjs
         const element = self.getElements(el)[0]
+        const arrow = el.querySelector(':scope > .xt-arrow')
         const popperInstance = createPopper(element, el, {
           placement: el.getAttribute('data-xt-position') || options.position,
           strategy: options.strategy,
@@ -89,17 +90,23 @@ class Drop extends Xt.Toggle {
                 padding: self.options.spaceFlip,
               },
             },
-            {
-              name: 'arrow',
-              options: {
-                element: '[data-arrow]',
-                padding: self.options.spaceArrow,
-              },
-            },
+            arrow
+              ? {
+                  name: 'arrow',
+                  options: {
+                    element: arrow,
+                    padding: self.options.spaceArrow === false ? arrow.offsetHeight / 2 : self.options.spaceArrow,
+                  },
+                }
+              : {},
           ],
           ...options.popperjs,
         })
         Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
+        // @FIX recalc position with new css depending on position
+        requestAnimationFrame(() => {
+          popperInstance.update()
+        })
       }
     }
   }
@@ -159,7 +166,7 @@ Drop.optionsDefault = {
   strategy: 'absolute',
   spaceOverflow: 15,
   spaceFlip: 15,
-  spaceArrow: 0,
+  spaceArrow: false,
   popperjs: true,
   closeAuto: true,
   closeOutside: 'body',

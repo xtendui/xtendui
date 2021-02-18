@@ -10,7 +10,7 @@ date: "2009-10-10"
 
 Use **js option** `position: <value>` to specify [popperjs placement](https://popper.js.org/docs/v2/constructors/#placement).
 
-If you want to **control a specific drop position** use `[data-xt-position=<value>]` on the `.drop`
+If you want to **control a specific drop position** use `[data-xt-position=<value>]` on the `.xt-drop`
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
@@ -20,9 +20,7 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 
 </div>
 
-Use `<div class="xt-drop-arrow" data-arrow></div>` at the end of `.drop` to add an arrow.
-
-You can customize **position and arrow** in the [drop component](/components/core/drop#customization). **We use padding** instead of popperjs offset to support mouseenter and mouseleave events.
+Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-white"></div>` inside `.xt-drop` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/bottom">
@@ -37,7 +35,12 @@ You can customize **position and arrow** in the [drop component](/components/cor
   </demovanilla>
 </demo>
 
-Use `.xt-drop-nospace` to **disable drop spacing**.
+To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/nospace">
+  </demovanilla>
+</demo>
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/drop/other#popperjs).
 
@@ -48,7 +51,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 | Option                  | `strategy:String`                          | `'fixed'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the drop            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the drop            |
-| Option                  | `spaceArrow:Number`                          | `0`        | Space for arrow            |
+| Option                  | `spaceArrow:Number|Boolean`                          | `false`        | Space for arrow, if false automatic            |
 
 </div>
 

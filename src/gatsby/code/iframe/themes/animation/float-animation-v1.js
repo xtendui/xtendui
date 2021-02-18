@@ -74,7 +74,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="xt-drop group" data-xt-duration="700">
+    <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
         <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="xt-card w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
@@ -91,7 +91,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
-      <div class="xt-drop-arrow ${cardWhite()} ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -102,7 +102,7 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="xt-drop group" data-xt-duration="700">
+    <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
         <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
         <div class="xt-card w-80 rounded-md ${cardWhite()} ${animItem}">
@@ -115,7 +115,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="xt-drop-arrow ${cardWhite()} ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -134,13 +134,13 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="xt-tooltip group" data-xt-duration="700">
+    <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()} ${animDesign}">
         <div class="${animItem}">
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -151,7 +151,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="xt-tooltip group" data-xt-duration="700">
+    <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="rounded-md shadow-tooltip text-black bg-white ${animDesign}">
         <form class="text-sm">
 
@@ -172,7 +172,7 @@ demo.htmlSource = `
 
         </form>
       </div>
-      <div class="xt-tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>

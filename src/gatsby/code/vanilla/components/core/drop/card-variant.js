@@ -20,7 +20,7 @@ demo.htmlSource = `
       White
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
@@ -40,7 +40,7 @@ demo.htmlSource = `
       Primary
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardPrimary()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}

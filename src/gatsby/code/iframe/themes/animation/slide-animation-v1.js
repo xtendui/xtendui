@@ -75,7 +75,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="xt-drop group" data-xt-duration="700">
+    <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
         <nav class="xt-list flex-col rounded-md ${animItem}">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
@@ -89,7 +89,7 @@ demo.htmlSource = `
           </button>
         </nav>
       </div>
-      <div class="xt-drop-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -100,7 +100,7 @@ demo.htmlSource = `
       card
     </button>
 
-    <div class="xt-drop group" data-xt-duration="700">
+    <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
@@ -110,7 +110,7 @@ demo.htmlSource = `
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
-      <div class="xt-drop-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -129,13 +129,13 @@ demo.htmlSource = `
       tooltip
     </button>
 
-    <div class="xt-tooltip group" data-xt-duration="700">
+    <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()} ${animDesign}">
         <div class="${animItem}">
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>
@@ -146,7 +146,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="xt-tooltip group" data-xt-duration="700">
+    <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="rounded-md shadow-tooltip ${cardWhite()} ${animDesign}">
         <form class="text-sm">
 
@@ -167,7 +167,7 @@ demo.htmlSource = `
 
         </form>
       </div>
-      <div class="xt-tooltip-arrow ${animItem} group-active:delay-300" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
     </div>
 
   </div>

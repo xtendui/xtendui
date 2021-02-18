@@ -15,14 +15,14 @@ demo.htmlSource = `
   <div data-xt-tooltip="{ position: 'left' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      left
+      left<br/>...
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
@@ -30,14 +30,14 @@ demo.htmlSource = `
   <div data-xt-tooltip="{ position: 'left-start' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      left start
+      left start<br/>...
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
@@ -45,14 +45,14 @@ demo.htmlSource = `
   <div data-xt-tooltip="{ position: 'left-end' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      left end
+      left end<br/>...
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>

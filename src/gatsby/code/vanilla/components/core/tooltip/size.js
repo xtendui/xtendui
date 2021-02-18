@@ -18,7 +18,7 @@ demo.htmlSource = `
       small
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
@@ -32,7 +32,7 @@ demo.htmlSource = `
       medium
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
@@ -46,7 +46,7 @@ demo.htmlSource = `
       large
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-base py-2.5 px-4 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
@@ -60,7 +60,7 @@ demo.htmlSource = `
       max-width
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-base py-2.5 px-4 max-w-lg rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue.
       </div>

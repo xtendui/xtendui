@@ -18,7 +18,7 @@ demo.htmlSource = `
       separator
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-screen max-w-2xl rounded-md shadow-drop ${cardWhite()}">
         <div class="md:xt-card-group">
           <div class="text-base p-8 md:w-7/12">

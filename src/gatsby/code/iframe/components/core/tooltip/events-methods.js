@@ -51,7 +51,7 @@ demo.htmlSource = `
     Element 0
   </button>
 
-  <div class="xt-tooltip" title="Target 0">
+  <div class="xt-tooltip p-2" title="Target 0">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
@@ -61,7 +61,7 @@ demo.htmlSource = `
     Element 1
   </button>
 
-  <div class="xt-tooltip" title="Target 1">
+  <div class="xt-tooltip p-2" title="Target 1">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>

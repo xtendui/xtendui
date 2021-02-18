@@ -20,7 +20,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <form class="rounded-md shadow-drop">
 
         <div class="xt-list flex-nowrap max-w-sm">

@@ -20,7 +20,7 @@ demo.htmlSource = `
       mouse
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
@@ -42,7 +42,7 @@ demo.htmlSource = `
 
     <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">

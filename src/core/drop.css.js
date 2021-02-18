@@ -22,43 +22,54 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *:first-child': {
+      '> *': {
         position: 'relative',
         zIndex: theme('zIndex.drop'),
       },
-      // styles
-      '[data-popper-placement^="top"]&:not(.xt-drop-nospace)': {
-        paddingBottom: theme('spacing.4'),
+      '> .xt-arrow': {
+        position: 'absolute',
+        pointerEvents: 'none',
+        transform: 'rotate(45deg)',
       },
-      '[data-popper-placement^="bottom"]&:not(.xt-drop-nospace)': {
-        paddingTop: theme('spacing.4'),
+      '&[data-popper-placement^="top"]': {
+        paddingTop: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          top: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-      '[data-popper-placement^="left"]&:not(.xt-drop-nospace)': {
-        paddingRight: theme('spacing.4'),
+      '&[data-popper-placement^="bottom"]': {
+        paddingBottom: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          bottom: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-      '[data-popper-placement^="right"]&:not(.xt-drop-nospace)': {
-        paddingLeft: theme('spacing.4'),
+      '&[data-popper-placement^="left"]': {
+        paddingLeft: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          left: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
-    },
-    '.xt-drop-arrow': {
-      position: 'absolute',
-      transform: 'rotate(45deg)',
-      // styles
-      zIndex: theme('zIndex.drop'),
-      width: '1rem',
-      height: '1rem',
-      background: theme('colors.white'),
-      '[data-popper-placement^="top"] &': {
-        bottom: theme('spacing.3'),
-      },
-      '[data-popper-placement^="bottom"] &': {
-        top: theme('spacing.3'),
-      },
-      '[data-popper-placement^="left"] &': {
-        right: theme('spacing.3'),
-      },
-      '[data-popper-placement^="right"] &': {
-        left: theme('spacing.3'),
+      '&[data-popper-placement^="right"]': {
+        paddingRight: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          right: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
     },
     '.xt-drop-disabled': {

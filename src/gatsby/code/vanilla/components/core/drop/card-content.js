@@ -19,7 +19,7 @@ demo.htmlSource = `
       asset
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
@@ -40,7 +40,7 @@ demo.htmlSource = `
       asset and text
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
@@ -65,7 +65,7 @@ demo.htmlSource = `
       text
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <div class="text-base p-8 rounded-t-md bg-gray-500">
           <div class="xt-h4 ">Lorem ipsum</div>

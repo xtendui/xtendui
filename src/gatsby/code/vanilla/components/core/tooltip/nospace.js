@@ -12,32 +12,32 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-tooltip="{ position: 'right' }">
+  <div data-xt-tooltip="{ position: 'bottom' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      right<br/>...
+      bottom
     </button>
 
-    <div class="xt-tooltip p-2">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
+      <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
 
-  <div data-xt-tooltip="{ position: 'right-start' }">
+  <div data-xt-tooltip="{ position: 'bottom-start' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      right start<br/>...
+      bottom start
     </button>
 
-    <div class="xt-tooltip p-2">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
+      <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
@@ -48,11 +48,11 @@ demo.htmlSource = `
       right end<br/>...
     </button>
 
-    <div class="xt-tooltip p-2">
+    <div class="xt-tooltip">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
+      <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
     </div>
 
   </div>

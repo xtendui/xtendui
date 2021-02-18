@@ -20,9 +20,7 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 
 </div>
 
-Use `<div class="xt-tooltip-arrow" data-arrow></div>` at the end of `.xt-tooltip` to add an arrow.
-
-You can customize **position and arrow** in the [tooltip component](/components/core/tooltip#customization). **We use padding** instead of popperjs offset to support mouseenter and mouseleave events.
+Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>` inside `.xt-tooltip` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/bottom">
@@ -37,7 +35,12 @@ You can customize **position and arrow** in the [tooltip component](/components/
   </demovanilla>
 </demo>
 
-Use `.xt-tooltip-nospace` to **disable tooltip spacing**.
+To not have **space** just omit `.xt-tooltip` **padding** and `.xt-arrow` **margin**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/tooltip/nospace">
+  </demovanilla>
+</demo>
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/tooltip/other#popperjs).
 
@@ -48,7 +51,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 | Option                  | `strategy:String`                          | `'fixed'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the tooltip            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the tooltip            |
-| Option                  | `spaceArrow:Number`                          | `0`        | Space for arrow            |
+| Option                  | `spaceArrow:Number|Boolean`                          | `false`        | Space for arrow, if false automatic            |
 
 </div>
 

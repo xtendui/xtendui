@@ -18,7 +18,7 @@ demo.htmlSource = `
       static
     </button>
 
-    <div class="xt-tooltip xt-tooltip-static xt-tooltip-nospace">
+    <div class="xt-tooltip p-2 xt-tooltip-static xt-tooltip-nospace">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>

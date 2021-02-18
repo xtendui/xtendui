@@ -20,7 +20,7 @@ demo.htmlSource = `
       Black
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>
@@ -34,7 +34,7 @@ demo.htmlSource = `
       Primary
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardPrimary()}">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br/>Proin molestie ${iconLink()} diam nec euismod commodo.
       </div>

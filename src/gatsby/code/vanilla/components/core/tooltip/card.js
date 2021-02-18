@@ -19,7 +19,7 @@ demo.htmlSource = `
       asset
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
@@ -40,7 +40,7 @@ demo.htmlSource = `
       asset and text
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}

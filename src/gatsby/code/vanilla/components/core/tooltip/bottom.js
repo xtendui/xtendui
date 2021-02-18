@@ -18,11 +18,11 @@ demo.htmlSource = `
       bottom
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
@@ -33,11 +33,11 @@ demo.htmlSource = `
       bottom start
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>
@@ -48,11 +48,11 @@ demo.htmlSource = `
       bottom end
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
-      <div class="xt-tooltip-arrow" data-arrow></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black"></div>
     </div>
 
   </div>

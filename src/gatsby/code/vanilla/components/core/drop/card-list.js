@@ -19,7 +19,7 @@ demo.htmlSource = `
       list
     </button>
 
-    <div class="xt-drop">
+    <div class="xt-drop p-4">
       <div class="xt-card w-96 rounded-md shadow-drop ${cardWhite()}">
         <div class="text-base p-8">
           <div class="xt-list xt-list-6 flex-nowrap items-baseline">

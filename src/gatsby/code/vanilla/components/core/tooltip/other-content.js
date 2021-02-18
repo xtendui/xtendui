@@ -20,7 +20,7 @@ demo.htmlSource = `
       list group
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="rounded-md shadow-tooltip text-black xt-links-default bg-white">
         <form class="text-sm">
 

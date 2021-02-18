@@ -19,7 +19,7 @@ demo.htmlSource = `
       click
     </button>
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
@@ -31,7 +31,7 @@ demo.htmlSource = `
 
     <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
-    <div class="xt-tooltip">
+    <div class="xt-tooltip p-2">
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>

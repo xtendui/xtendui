@@ -68,7 +68,7 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-          <div class="xt-tooltip" title="Target ${indexTr}">
+          <div class="xt-tooltip p-2" title="Target ${indexTr}">
             <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
               Lorem ipsum dolor sit amet
             </div>
