@@ -31,46 +31,6 @@ module.exports = {
         pointerEvents: 'none',
         transform: 'rotate(45deg)',
       },
-      '&[data-popper-placement^="top"]': {
-        paddingTop: '0 !important',
-        paddingLeft: '0 !important',
-        paddingRight: '0 !important',
-        '> .xt-arrow': {
-          top: 'auto !important',
-          marginLeft: '0 !important',
-          marginRight: '0 !important',
-        },
-      },
-      '&[data-popper-placement^="bottom"]': {
-        paddingBottom: '0 !important',
-        paddingLeft: '0 !important',
-        paddingRight: '0 !important',
-        '> .xt-arrow': {
-          bottom: 'auto !important',
-          marginLeft: '0 !important',
-          marginRight: '0 !important',
-        },
-      },
-      '&[data-popper-placement^="left"]': {
-        paddingLeft: '0 !important',
-        paddingTop: '0 !important',
-        paddingBottom: '0 !important',
-        '> .xt-arrow': {
-          left: 'auto !important',
-          marginTop: '0 !important',
-          marginBottom: '0 !important',
-        },
-      },
-      '&[data-popper-placement^="right"]': {
-        paddingRight: '0 !important',
-        paddingTop: '0 !important',
-        paddingBottom: '0 !important',
-        '> .xt-arrow': {
-          right: 'auto !important',
-          marginTop: '0 !important',
-          marginBottom: '0 !important',
-        },
-      },
     },
     '.xt-drop-disabled': {
       'a&, button&': {
