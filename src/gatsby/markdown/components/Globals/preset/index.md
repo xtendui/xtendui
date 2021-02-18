@@ -4,6 +4,7 @@ category: "Globals"
 parent: "Preset"
 title: "Preset"
 description: "Xtend UI preset with default theme that extends Tailwind default theme."
+date: "2020-10-05"
 ---
 
 ## Theme

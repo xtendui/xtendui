@@ -4,6 +4,7 @@ category: "Globals"
 parent: "Layout"
 title: "Layout"
 description: "Structural and layout components."
+date: "2020-09-05"
 ---
 
 ## Customization
@@ -37,7 +38,6 @@ These are layout **utilities**.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.flex-full`       | `flex-full`                | `responsive`                | `flex: 1 1 100%`            |
 | Utility                  | `.xt-container-reset`       | `xt-container-reset`                | `responsive`                | Reset container styles            |
 | Utility                  | `.xt-container-y`       | `xt-container-y`                | `NOT POSSIBLE`                | Vertical spacing same as `container` horizontal spacing as set in `theme.container.padding`             |
 | Utility                  | `.xt-container-remove`       | `xt-container-remove`                | `NOT POSSIBLE`                | Remove `container` horizontal spacing as set in `theme.container.padding`             |

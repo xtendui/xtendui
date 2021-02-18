@@ -4,6 +4,7 @@ category: "Globals"
 parent: "Javascript"
 title: "Javascript"
 description: "Javascript utilities and animations usability improvements."
+date: "2020-08-05"
 ---
 
 ## Installation
