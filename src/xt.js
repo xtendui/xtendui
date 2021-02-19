@@ -18,6 +18,7 @@ export const Xt = {}
 
 Xt.mount = []
 Xt.unmount = []
+Xt.running = {}
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
 Xt.optionsGlobal = {}
 Xt.scrollDelay = false

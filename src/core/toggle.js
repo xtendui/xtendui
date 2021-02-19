@@ -186,6 +186,7 @@ class Toggle {
     self.wrap = false
     self.currentIndex = null
     self.oldIndex = null
+    Xt.running[self.ns] = []
     // [disabled]
     self.destroyDisabled()
     // check elements
@@ -1151,35 +1152,40 @@ class Toggle {
   /**
    * add current based on namespace (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be added
+   * @param {Boolean} running Running currents
    */
-  addCurrent(element) {
+  addCurrent(element, running) {
     const self = this
     // addCurrent
-    if (!self.hasCurrent(element)) {
-      const arr = Xt.currents[self.ns]
-      arr.push(element)
+    if (!self.hasCurrent(element, running)) {
+      const arr = running ? Xt.running : Xt.currents
+      arr[self.ns].push(element)
     }
   }
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be removed
+   * @param {Boolean} running Running currents
    */
-  removeCurrent(element) {
+  removeCurrent(element, running) {
     const self = this
     // removeCurrent
-    Xt.currents[self.ns] = Xt.currents[self.ns].filter(x => x !== element)
+    const arr = running ? Xt.running : Xt.currents
+    arr[self.ns] = arr[self.ns].filter(x => x !== element)
   }
 
   /**
    * if element or target is in current (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} el To be checked
+   * @param {Boolean} running Running currents
    */
-  hasCurrent(el) {
+  hasCurrent(el, running) {
     const self = this
     // hasCurrent
     const groupElements = self.getElements(el)
-    return Xt.currents[self.ns].filter(x => x === groupElements[0]).length
+    const arr = running ? Xt.running : Xt.currents
+    return arr[self.ns].filter(x => x === groupElements[0]).length
   }
 
   /**
@@ -1207,6 +1213,32 @@ class Toggle {
     }
     // check
     return self.hasCurrent(element)
+  }
+
+  /**
+   * check element on
+   * @param {Object} obj Queue object to end
+   * @return {Boolean} If elements can activate
+   */
+  checkOnRunning(obj) {
+    const self = this
+    // check
+    const check = obj.elements.runningOn || !self.hasCurrent(obj.elements.queueEls[0], true)
+    obj.elements.runningOn = check ? true : false
+    return check
+  }
+
+  /**
+   * check element off running
+   * @param {Object} obj Queue object to end
+   * @return {Boolean} If elements can activate
+   */
+  checkOffRunning(obj) {
+    const self = this
+    // check
+    const check = obj.elements.runningOff || self.hasCurrent(obj.elements.queueEls[0], true)
+    obj.elements.runningOff = check ? true : false
+    return check
   }
 
   /**
@@ -1251,7 +1283,6 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    self.setDirection()
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classes)
       el.classList.remove(...self.classesActive)
@@ -1307,7 +1338,6 @@ class Toggle {
     const self = this
     const options = self.options
     // activation
-    self.setDirection()
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classes)
       el.classList.add(...self.classesOut)
@@ -1366,13 +1396,13 @@ class Toggle {
     }
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
-      console.log('on', element)
       // auto
       self.eventAutostop()
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
       self.setIndex(element)
+      self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
@@ -1422,7 +1452,6 @@ class Toggle {
     }
     // toggle
     if (force || self.checkOff(element)) {
-      console.log('off', element)
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])
@@ -1847,7 +1876,11 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    if (actionCurrent === 'On') {
+    if (actionCurrent === 'On' && self.checkOnRunning(obj)) {
+      // running check to stop multiple activation/deactivation with delay
+      if (el === obj.elements.queueEls[0]) {
+        self.addCurrent(el, true)
+      }
       // activation
       self.activate(el, type)
       // special
@@ -1908,7 +1941,11 @@ class Toggle {
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       }
-    } else if (actionCurrent === 'Off') {
+    } else if (actionCurrent === 'Off' && self.checkOffRunning(obj)) {
+      // running check to stop multiple activation/deactivation with delay
+      if (el === obj.elements.queueEls[0]) {
+        self.removeCurrent(el, true)
+      }
       // activation
       self.deactivate(el, type)
       // special
@@ -2126,7 +2163,7 @@ class Toggle {
         self.wrap = false
       })
     } else if (actionCurrent === 'Off') {
-      // raf because after off.xt
+      // raf after getCurrents is populated from on.xt
       requestAnimationFrame(() => {
         // only if no currents
         if (self.getCurrents().length === 0) {
