@@ -152,18 +152,6 @@ You can have **element's link** and **click events** prevented when the tooltip 
   </demovanilla>
 </demo>
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
-
-</div>
-
 ## Disable
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-tooltip-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.

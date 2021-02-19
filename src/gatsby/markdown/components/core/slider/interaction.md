@@ -132,18 +132,6 @@ Use the [api](/components/core/slider/api#listen) and listen to events to make a
   </demovanilla>	
 </demo>	
 
-## Block	
-
-You can block the activations with the class `.xt-block` on elements.	
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">	
-
-|                      | Syntax                          | Mixin            | Description                   |	
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |	
-| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |	
-
-</div>	
-
 ## Other	
 
 Do not loop slides activation with `loop: false`.	

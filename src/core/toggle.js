@@ -1190,7 +1190,7 @@ class Toggle {
   checkOn(element) {
     const self = this
     // check
-    return !self.hasCurrent(element) && !element.classList.contains('xt-block')
+    return !self.hasCurrent(element)
   }
 
   /**
@@ -1206,7 +1206,7 @@ class Toggle {
       return false
     }
     // check
-    return self.hasCurrent(element) && !element.classList.contains('xt-block')
+    return self.hasCurrent(element)
   }
 
   /**
@@ -1366,6 +1366,7 @@ class Toggle {
     }
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
+      console.log('on', element)
       // auto
       self.eventAutostop()
       // on
@@ -1420,7 +1421,8 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (!element.classList.contains('xt-block') && self.checkOff(element))) {
+    if (force || self.checkOff(element)) {
+      console.log('off', element)
       // off
       const groupElements = self.getElements(element)
       self.removeCurrent(groupElements[0])

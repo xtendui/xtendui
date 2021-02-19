@@ -8,7 +8,7 @@
     }
     /* active */
     &.active {
-      @apply delay-500 opacity-100 translate-x-0;
+      @apply delay-300 opacity-100 translate-x-0;
     }
     /* out */
     &.out {

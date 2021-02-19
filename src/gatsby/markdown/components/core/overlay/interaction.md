@@ -93,18 +93,6 @@ You can also use a function for <code>delay</code>, <code>delayOn</code> and <co
   </demovanilla>
 </demo>
 
-## Block
-
-You can block the activations with the class `.xt-block` on elements.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-block`                     | `NOT POSSIBLE`                | Block scroll on element            |
-
-</div>
-
 ## Disable
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-overlay-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.

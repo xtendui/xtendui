@@ -35,9 +35,6 @@ demo.htmlSource = `
   <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-block">
-    Block/Unblock
-  </button>
   <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
