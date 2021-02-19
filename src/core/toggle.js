@@ -41,7 +41,8 @@ class Toggle {
     self.classesActive = []
     self.classesOut = []
     self.classesInitial = []
-    self.classesInverse = []
+    self.classesLeft = []
+    self.classesRight = []
     self.elements = []
     self.targets = []
     self.currentIndex = null
@@ -75,7 +76,8 @@ class Toggle {
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
-    self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
+    self.classesLeft = self.options.classLeft ? [...self.options.classLeft.split(' ')] : []
+    self.classesRight = self.options.classRight ? [...self.options.classRight.split(' ')] : []
   }
 
   /**
@@ -286,7 +288,8 @@ class Toggle {
         ...self.classesOut,
         ...self.classesDone,
         ...self.classesInitial,
-        ...self.classesInverse
+        ...self.classesLeft,
+        ...self.classesRight
       )
       const elsInner = Xt.queryAll(el, options.elementsInner)
       for (const elInner of elsInner) {
@@ -296,7 +299,8 @@ class Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesInverse
+          ...self.classesLeft,
+          ...self.classesRight
         )
       }
     }
@@ -317,7 +321,8 @@ class Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesInverse
+          ...self.classesLeft,
+          ...self.classesRight
         )
         const trsInner = Xt.queryAll(tr, options.targetsInner)
         for (const trInner of trsInner) {
@@ -327,7 +332,8 @@ class Toggle {
             ...self.classesOut,
             ...self.classesDone,
             ...self.classesInitial,
-            ...self.classesInverse
+            ...self.classesLeft,
+            ...self.classesRight
           )
         }
       }
@@ -1222,7 +1228,7 @@ class Toggle {
    */
   checkOnRunning(obj) {
     const self = this
-    // check
+    // running check to stop multiple activation/deactivation with delay
     const check = obj.elements.runningOn || !self.hasCurrent(obj.elements.queueEls[0], true)
     obj.elements.runningOn = check ? true : false
     return check
@@ -1235,7 +1241,7 @@ class Toggle {
    */
   checkOffRunning(obj) {
     const self = this
-    // check
+    // running check to stop multiple activation/deactivation with delay
     const check = obj.elements.runningOff || self.hasCurrent(obj.elements.queueEls[0], true)
     obj.elements.runningOff = check ? true : false
     return check
@@ -1307,10 +1313,11 @@ class Toggle {
         })
       )
       // direction
+      el.classList.remove(...self.classesLeft, ...self.classesRight)
       if (self.direction < 0) {
-        el.classList.add(...self.classesInverse)
-      } else {
-        el.classList.remove(...self.classesInverse)
+        el.classList.add(...self.classesLeft)
+      } else if (self.direction > 0) {
+        el.classList.add(...self.classesRight)
       }
     }
   }
@@ -1354,10 +1361,11 @@ class Toggle {
         })
       )
       // direction
+      el.classList.remove(...self.classesLeft, ...self.classesRight)
       if (self.direction < 0) {
-        el.classList.add(...self.classesInverse)
-      } else {
-        el.classList.remove(...self.classesInverse)
+        el.classList.add(...self.classesLeft)
+      } else if (self.direction > 0) {
+        el.classList.add(...self.classesRight)
       }
     }
   }
@@ -1585,6 +1593,10 @@ class Toggle {
         const time = options.auto.time
         // raf because after .xt custom listeners
         requestAnimationFrame(() => {
+          // disabled
+          if (self.disabled) {
+            return
+          }
           // timeout
           Xt.dataStorage.set(
             self.object,
@@ -1945,6 +1957,12 @@ class Toggle {
       // running check to stop multiple activation/deactivation with delay
       if (el === obj.elements.queueEls[0]) {
         self.removeCurrent(el, true)
+        // only if no currents
+        if (self.getCurrents().length === 0) {
+          // reset currentIndex and direction
+          self.currentIndex = null
+          self.setDirection()
+        }
       }
       // activation
       self.deactivate(el, type)
@@ -1958,7 +1976,11 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // raf because setDirection
-        el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+        requestAnimationFrame(() => {
+          if (!self.disabled) {
+            el.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+          }
+        })
       }
     }
     // queue
@@ -2080,7 +2102,12 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(new CustomEvent(`offdone.${self.componentNs}`))
+        // raf because setDirection
+        requestAnimationFrame(() => {
+          if (!self.disabled) {
+            el.dispatchEvent(new CustomEvent(`offdone.${self.componentNs}`))
+          }
+        })
       }
     }
     // queue
@@ -2161,16 +2188,6 @@ class Toggle {
         self.inverse = null
         self.initial = false
         self.wrap = false
-      })
-    } else if (actionCurrent === 'Off') {
-      // raf after getCurrents is populated from on.xt
-      requestAnimationFrame(() => {
-        // only if no currents
-        if (self.getCurrents().length === 0) {
-          // reset currentIndex and direction
-          self.currentIndex = null
-          self.setDirection()
-        }
       })
     }
   }
@@ -3011,16 +3028,21 @@ class Toggle {
     const self = this
     const options = self.options
     // keep the same level of raf as others
-    requestAnimationFrame(() => {
+    cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}StatusFrame`))
+    Xt.dataStorage.put(
+      self.object,
+      `${self.ns}StatusFrame`,
       requestAnimationFrame(() => {
-        // check
-        if (!self.disabled && options.disabled) {
-          self.disable()
-        } else if (self.disabled && !options.disabled) {
-          self.enable()
-        }
+        requestAnimationFrame(() => {
+          // check
+          if (options.disabled || self.disableAfterInit) {
+            self.disable()
+          } else {
+            self.enable()
+          }
+        })
       })
-    })
+    )
   }
 
   /**
@@ -3181,7 +3203,7 @@ class Toggle {
     // weak
     if (!weak) {
       // initialized class
-      self.object.classList.remove(self.componentName)
+      self.object.classList.remove(`${self.componentName}-init`)
       // set self
       Xt.remove(self.componentName, self.object)
       // listener dispatch
@@ -3224,7 +3246,8 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classDone: 'done',
   classInitial: 'initial',
-  classInverse: 'inverse',
+  classLeft: 'direction-left',
+  classRight: 'direction-right',
   classSkip: false,
   // quantity
   min: 0,

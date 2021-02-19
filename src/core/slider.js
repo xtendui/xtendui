@@ -119,14 +119,14 @@ class Slider extends Xt.Toggle {
     }
     self.groupInitial = self.group
     // @FIX disable slider if not overflowing
-    if (options.overflowAuto && totalCount >= 0) {
-      self.object.classList.add('xt-overflow-auto')
-      // disable after initialization
-      requestAnimationFrame(() => {
-        self.disable()
-      })
-    } else {
-      self.object.classList.remove('xt-overflow-auto')
+    if (options.overflowAuto) {
+      if (totalCount >= 0) {
+        self.object.classList.add('xt-overflow-auto')
+        self.disableAfterInit = true
+      } else {
+        self.object.classList.remove('xt-overflow-auto')
+        self.disableAfterInit = false
+      }
     }
     // drag wrap
     const wrapFirst = []
@@ -153,7 +153,8 @@ class Slider extends Xt.Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesInverse
+          ...self.classesLeft,
+          ...self.classesRight
         )
         return cloned
       }

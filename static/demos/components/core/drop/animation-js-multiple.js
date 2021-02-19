@@ -17,7 +17,7 @@ Xt.mount.push({
     let self = new Xt.Drop(object, {
       elements: ':scope > a, :scope > button',
       targets: ':scope > .xt-drop',
-      duration: 500,
+      duration: 700,
     })
 
     // on
@@ -25,7 +25,7 @@ Xt.mount.push({
     const eventOn = e => {
       const tr = e.target
       gsap.set(tr, {
-        x: self.direction < 0 ? 15 : -15,
+        x: -self.direction * 15,
         opacity: 0,
       })
       gsap.to(tr, {
@@ -45,7 +45,7 @@ Xt.mount.push({
     const eventOff = e => {
       const tr = e.target
       gsap.to(tr, {
-        x: self.direction < 0 ? -15 : 15,
+        x: self.direction * 15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

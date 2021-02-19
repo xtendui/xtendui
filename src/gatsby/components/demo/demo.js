@@ -19,7 +19,7 @@ export default class Demo extends React.Component {
       // @FIX demo fullscreen
       for (const btnOpenFull of container.querySelectorAll('.button-open-full')) {
         if (btnOpenFull.classList.contains('in-toggle')) {
-          demoHash(null, true)
+          demoHash()
           break
         }
       }

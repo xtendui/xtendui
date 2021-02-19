@@ -19,7 +19,8 @@ You can customize the **class names** used by the component.
 | Option                  | `classOut:String`                          | `out`        | Class name for out            |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
-| Option                  | `classInverse:String`                          | `inverse`        | Class name for inverse direction activation            |
+| Option                  | `classLeft:String`                          | `direction-left`        | Class name for left direction activation            |
+| Option                  | `classRight:String`                          | `direction-right`        | Class name for right direction activation            |
 | Option                  | `classSkip:Object`                          | `{ elements: true, elementsInner: true }`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
@@ -37,14 +38,14 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   </demovanilla>
 </demo>
 
-You can use also **css animations**, just add them with **class names** `.in`, `.out` and `.inverse`.
+You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-left` and `.direction-right`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.inverse`       |  If inverse direction activation            |
-
+| Class                  | `.direction-left`       |  Class name for left direction activation            |
+| Class                  | `.direction-right`       |  Class name for left direction activation            |
 </div>
 
 <demo>

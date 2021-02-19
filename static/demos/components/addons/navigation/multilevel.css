@@ -2,8 +2,11 @@
   .xt-toggle {
     /* initial */
     @apply transform ease-out duration-700;
-    @apply opacity-0 -translate-x-10;
-    &.inverse {
+    @apply opacity-0;
+    &.direction-left {
+      @apply -translate-x-10;
+    }
+    &.direction-right {
       @apply translate-x-10;
     }
     /* active */
@@ -12,8 +15,11 @@
     }
     /* out */
     &.out {
-      @apply delay-0 opacity-0 translate-x-10;
-      &.inverse {
+      @apply delay-0 opacity-0;
+      &.direction-left {
+        @apply translate-x-10;
+      }
+      &.direction-right {
         @apply -translate-x-10;
       }
     }

@@ -150,7 +150,7 @@ class Ripple {
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
     // initialized class
-    self.object.classList.remove(self.componentName)
+    self.object.classList.remove(`${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

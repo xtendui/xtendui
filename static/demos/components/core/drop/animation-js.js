@@ -15,15 +15,16 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      duration: 500,
+      duration: 700,
     })
 
     // on
 
     const eventOn = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.set(tr, {
-        x: self.direction < 0 ? 15 : -15,
+        x: -15,
         opacity: 0,
       })
       gsap.to(tr, {
@@ -42,8 +43,9 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.to(tr, {
-        x: self.direction < 0 ? -15 : 15,
+        x: 15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

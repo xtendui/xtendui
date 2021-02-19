@@ -90,7 +90,7 @@ class Textareaautosize {
       self.form.removeEventListener('reset', changeHandler)
     }
     // initialized class
-    self.object.classList.remove(self.componentName)
+    self.object.classList.remove(`${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

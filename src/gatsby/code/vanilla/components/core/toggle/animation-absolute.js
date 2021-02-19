@@ -22,11 +22,11 @@ demo.htmlSource = `
 
   <div class="relative w-full">
 
-    <div class="xt-card xt-toggle xt-toggle-absolute rounded-md ${cardToggle()} transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="xt-card xt-toggle xt-toggle-absolute rounded-md ${cardToggle()} transform transition opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0">
       Target 0
     </div>
 
-    <div class="xt-card xt-toggle xt-toggle-absolute rounded-md ${cardToggle()} transform transition opacity-0 translate-y-2 active:opacity-100 active:translate-y-0">
+    <div class="xt-card xt-toggle xt-toggle-absolute rounded-md ${cardToggle()} transform transition opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0">
       Target 1
     </div>
 

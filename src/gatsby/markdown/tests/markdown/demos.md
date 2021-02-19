@@ -31,8 +31,6 @@ title: "Demos"
   </div>
   <demovanilla src="vanilla/components/core/slider/progress">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/timing">
-  </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/prevent-event">

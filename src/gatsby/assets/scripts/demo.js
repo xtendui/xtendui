@@ -21,34 +21,33 @@ const iconCopy = require('components/snippets/icons').iconCopy
  */
 
 let scrollCache = 0
+let hashReset = true
+let firstMount = true
 
-const scrollToItem = (initial = false) => {
+const scrollToItem = () => {
   const origin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
-  if (initial && origin) {
+  if (origin) {
     scrollCache = origin.offsetTop
-    document.scrollingElement.scrollTo(0, scrollCache)
-  } else {
     document.scrollingElement.scrollTo(0, scrollCache)
   }
 }
 
-const demoHash = (e, initial = false) => {
+const demoHash = () => {
   const demoFull = document.querySelector('#gatsby_open-full-trigger')
   // call offdone.xt
   if (demoFull) {
+    hashReset = false
     // close demo full
     demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
-    // hash cancel
-    cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     // check hash
     if (location.hash) {
       const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
       if (item) {
         const demo = item.closest('.gatsby_demo')
         if (demo) {
-          makeFullscreen(demo, initial)
+          makeFullscreen(demo)
           // scrollToItem
-          scrollToItem(initial)
+          scrollToItem()
           // trigger fullscreen or change tabs
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
         }
@@ -134,6 +133,7 @@ const formatCode = (source, sourceCode) => {
  */
 
 const populateBlock = () => {
+  firstMount = false
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
     el.after(Xt.createElement(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`))
@@ -151,13 +151,13 @@ const populateBlock = () => {
       el.addEventListener('click', e => {
         e.preventDefault()
         // hash
+        hashReset = false
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
-        // hash cancel
-        cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       })
     }
     // trigger fullscreen or change tabs
     full.addEventListener('on.xt.toggle', () => {
+      hashReset = true
       // @FIX demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.in')
@@ -178,9 +178,11 @@ const populateBlock = () => {
         // scrollToItem
         scrollToItem()
         // populate iframe
-        for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
-          // spinner
-          item.classList.remove('loaded')
+        if (container) {
+          for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
+            // spinner
+            item.classList.remove('loaded')
+          }
         }
         // iframe
         if (container && container.dataset.isFullscreenOnly) {
@@ -226,17 +228,14 @@ const populateBlock = () => {
         }
         // hidden tooltip
         const tooltip = document.querySelector('.button-open-full + .xt-tooltip')
-        tooltip.classList.remove('hidden')
-        // hash
-        cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
-        Xt.dataStorage.set(
-          document,
-          'gatsby_open-full-raf',
-          requestAnimationFrame(() => {
-            // no location.hash or page scroll to top
-            history.pushState({}, '', '#')
-          })
-        )
+        if (tooltip) {
+          tooltip.classList.remove('hidden')
+        }
+        // no location.hash
+        if (hashReset) {
+          history.pushState({}, '', '#')
+        }
+        hashReset = true
       }
     })
   }
@@ -373,9 +372,8 @@ const populateDemo = (container, i) => {
       e.preventDefault()
       scrollCache = document.scrollingElement.scrollTop
       // hash
+      hashReset = false
       location.hash = container.querySelector('.gatsby_demo_item.in').getAttribute('id')
-      // hash cancel
-      cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
     })
   }
   // get hash
@@ -453,9 +451,8 @@ const populateDemo = (container, i) => {
       // only if demo opened
       if (document.querySelector('#gatsby_open-full-trigger').classList.contains('in-toggle')) {
         // hash
+        hashReset = false
         location.hash = item.getAttribute('id')
-        // hash cancel
-        cancelAnimationFrame(Xt.dataStorage.get(document, 'gatsby_open-full-raf'))
       }
     })
   }
@@ -512,7 +509,7 @@ const btnOpenIframe = item => {
  * makeFullscreen
  */
 
-const makeFullscreen = (container, initial) => {
+const makeFullscreen = container => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
   // toggles
@@ -542,7 +539,7 @@ const makeFullscreen = (container, initial) => {
       `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`
     )
   )
-  if (!initial) {
+  if (!firstMount) {
     // ignore once for mount when moving
     container.classList.add('xt-ignore', 'xt-ignore-once')
   }

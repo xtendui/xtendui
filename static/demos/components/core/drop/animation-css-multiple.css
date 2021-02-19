@@ -1,10 +1,13 @@
 .demo--drop-animation-css-multiple {
   .xt-drop {
     /* initial */
-    @apply transform transition;
-    @apply opacity-0 -translate-x-4;
-    &.inverse {
+    @apply transform ease-out duration-700;
+    @apply opacity-0;
+    &.direction-left {
       @apply translate-x-4;
+    }
+    &.direction-right {
+      @apply -translate-x-4;
     }
     /* active */
     &.active {
@@ -12,11 +15,12 @@
     }
     /* out */
     &.out {
-      @apply opacity-0 translate-x-4;
-    }
-    &.inverse {
-      &.out {
+      @apply opacity-0;
+      &.direction-left {
         @apply -translate-x-4;
+      }
+      &.direction-right {
+        @apply translate-x-4;
       }
     }
   }
