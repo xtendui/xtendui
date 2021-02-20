@@ -18,6 +18,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-overlay group" data-xt-duration="500">
+    <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
     <div class="xt-overlay-container max-w-3xl">
       <div class="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
 

@@ -127,6 +127,7 @@ export default function Header({ page }) {
         </header>
 
         <div className="xt-overlay text-white xt-links-inverse in xt-overlay-disabled" id="gatsby_menu--overlay">
+          <div className="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="xt-overlay-inner">
               <div className="xt-design-setup"></div>

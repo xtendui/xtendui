@@ -18,6 +18,7 @@ demo.htmlSource = `
       screen
     </button>
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0">
         <div class="xt-overlay-inner">
 
@@ -46,6 +47,7 @@ demo.htmlSource = `
       screen full
     </button>
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0">
         <div class="xt-overlay-inner">
 
@@ -70,6 +72,7 @@ demo.htmlSource = `
       screen group
     </button>
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0">
         <div class="xt-overlay-inner">
 

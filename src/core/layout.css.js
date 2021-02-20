@@ -83,21 +83,11 @@ module.exports = {
     },
     '.xt-backdrop': {
       position: 'fixed',
-      zIndex: theme('zIndex.xt-backdrop'),
+      pointerEvents: 'none',
       top: '0',
       left: '0',
       right: 'var(--scrollbar-width)',
       bottom: '0',
-      // styles
-      backgroundColor: theme('colors.gray.900'),
-      opacity: '0',
-      // animation
-      transitionProperty: 'opacity',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
-      '.active &': {
-        opacity: '.3',
-      },
     },
     'body:not(.xt-focus-disable)': {
       ':focus': {

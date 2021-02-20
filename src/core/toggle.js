@@ -1896,8 +1896,8 @@ class Toggle {
       // activation
       self.activate(el, type)
       // special
+      self.specialAppendto(el, type)
       self.specialScrollbar(actionCurrent)
-      self.specialBackdrop(actionCurrent, obj, el, type)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
@@ -1907,19 +1907,6 @@ class Toggle {
           }
         } else if (type === 'elements') {
           Xt.focusLimit.on(obj.elements.queueEls[0])
-        }
-      }
-      // @FIX when standalone !self.targets.length && type === 'elements'
-      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // appendTo
-        if (options.appendTo) {
-          const appendToTarget = document.querySelector(options.appendTo)
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-          if (!appendOrigin) {
-            el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
-          }
-          el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-          appendToTarget.append(el)
         }
       }
       // aria
@@ -2060,7 +2047,6 @@ class Toggle {
       self.deactivateDone(el, type)
       // special
       self.specialScrollbar(actionCurrent)
-      self.specialBackdrop(actionCurrent, obj, el, type)
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         // appendTo
         if (options.appendTo) {
@@ -2504,48 +2490,6 @@ class Toggle {
   }
 
   /**
-   * backdrop append to element
-   * @param {String} actionCurrent Current action
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
-   */
-  specialBackdrop(actionCurrent, obj, el, type) {
-    const self = this
-    const options = self.options
-    // backdrop
-    if (options.backdrop) {
-      if ((obj['targets'] && type === 'targets') || (!obj['targets'] && type === 'elements')) {
-        if (actionCurrent === 'On') {
-          const backdrops = el.querySelectorAll('.xt-backdrop')
-          if (!backdrops.length) {
-            const backdrop = Xt.createElement('<div class="xt-backdrop xt-ignore"></div>')
-            el.append(backdrop)
-            // @FIX pass wheel event or when you mousewheel over .xt-backdrop it doesn't scroll
-            const eWheel =
-              'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
-            backdrop.addEventListener(
-              eWheel,
-              e => {
-                const delta = -e.deltaY || e.wheelDeltaY
-                el.scrollTop -= delta
-              },
-              { passive: true }
-            )
-          }
-        } else if (actionCurrent === 'Off') {
-          const backdrops = el.querySelectorAll('.xt-backdrop')
-          if (backdrops.length) {
-            for (const backdrop of backdrops) {
-              backdrop.remove()
-            }
-          }
-        }
-      }
-    }
-  }
-
-  /**
    * add or remove html class
    * @param {String} actionCurrent Current action
    */
@@ -2566,6 +2510,29 @@ class Toggle {
   }
 
   /**
+   * appendTo
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {String} type Type of element
+   */
+  specialAppendto(el, type) {
+    const self = this
+    const options = self.options
+    if (options.appendTo) {
+      // @FIX when standalone !self.targets.length && type === 'elements'
+      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        // appendTo
+        const appendToTarget = document.querySelector(options.appendTo)
+        const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+        if (!appendOrigin) {
+          el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
+        }
+        el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+        appendToTarget.append(el)
+      }
+    }
+  }
+
+  /**
    * scrollbar activation
    * @param {String} actionCurrent Current action
    */
@@ -2579,7 +2546,6 @@ class Toggle {
         // scrollbar
         const container = document.querySelector('body')
         container.classList.add('xt-scrollbar')
-        Xt.scrollbarSpaceOn(container)
       } else if (actionCurrent === 'Off') {
         // checks
         Xt.scrollbar.remove(self.ns)
@@ -2587,7 +2553,6 @@ class Toggle {
           // scrollbar
           const container = document.querySelector('body')
           container.classList.remove('xt-scrollbar')
-          Xt.scrollbarSpaceOff(container)
         }
       }
     }
@@ -2701,32 +2666,49 @@ class Toggle {
   specialClose(actionCurrent, el, type) {
     const self = this
     const options = self.options
-    if (type === 'targets' || type === 'targetsInner' || el === self.object) {
+    // @FIX when standalone !self.targets.length && type === 'elements'
+    if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
       if (actionCurrent === 'On') {
+        // closeDeep
+        if (options.closeDeep) {
+          const closeElements = el.querySelectorAll(options.closeDeep)
+          for (const closeElement of closeElements) {
+            const specialclosedeepHandler = Xt.dataStorage.put(
+              closeElement,
+              `click/close/${self.ns}`,
+              self.eventSpecialclosedeepHandler.bind(self)
+            )
+            // @FIX do not close when clicking things that trigger this
+            requestAnimationFrame(() => {
+              closeElement.addEventListener('click', specialclosedeepHandler)
+            })
+            // focusable
+            const specialclosedeepKeydownHandler = Xt.dataStorage.put(
+              closeElement,
+              `keydown/close/${self.ns}`,
+              self.eventSpecialclosedeepKeydownHandler.bind(self).bind(self, closeElement)
+            )
+            // @FIX do not close when clicking things that trigger this
+            requestAnimationFrame(() => {
+              closeElement.addEventListener('keydown', specialclosedeepKeydownHandler)
+              closeElement.setAttribute('tabindex', '0')
+              closeElement.setAttribute('role', 'button')
+            })
+          }
+        }
         // closeInside
         if (options.closeInside) {
-          const closeElements = el.querySelectorAll(options.closeInside)
+          const closeElements = document.querySelectorAll(options.closeInside)
           for (const closeElement of closeElements) {
             const specialcloseinsideHandler = Xt.dataStorage.put(
               closeElement,
               `click/close/${self.ns}`,
-              self.eventSpecialcloseinsideHandler.bind(self)
+              self.eventSpecialcloseinsideHandler.bind(self).bind(self, closeElement)
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
+              closeElement.removeEventListener('click', specialcloseinsideHandler)
               closeElement.addEventListener('click', specialcloseinsideHandler)
-            })
-            // focusable
-            const specialcloseinsideKeydownHandler = Xt.dataStorage.put(
-              closeElement,
-              `keydown/close/${self.ns}`,
-              self.eventSpecialcloseinsideKeydownHandler.bind(self).bind(self, closeElement)
-            )
-            // @FIX do not close when clicking things that trigger this
-            requestAnimationFrame(() => {
-              closeElement.addEventListener('keydown', specialcloseinsideKeydownHandler)
-              closeElement.setAttribute('tabindex', '0')
-              closeElement.setAttribute('role', 'button')
             })
           }
         }
@@ -2747,17 +2729,25 @@ class Toggle {
           }
         }
       } else if (actionCurrent === 'Off') {
+        // closeDeep
+        if (options.closeDeep) {
+          const closeElements = el.querySelectorAll(options.closeDeep)
+          for (const closeElement of closeElements) {
+            const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+            closeElement.removeEventListener('click', specialclosedeepHandler)
+            // focusable
+            const specialclosedeepKeydownHandler = Xt.dataStorage.get(closeElement, `keydown/close/${self.ns}`)
+            closeElement.removeEventListener('keydown', specialclosedeepKeydownHandler)
+            closeElement.removeAttribute('tabindex')
+            closeElement.removeAttribute('role')
+          }
+        }
         // closeInside
         if (options.closeInside) {
-          const closeElements = el.querySelectorAll(options.closeInside)
+          const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
             const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
             closeElement.removeEventListener('click', specialcloseinsideHandler)
-            // focusable
-            const specialcloseinsideKeydownHandler = Xt.dataStorage.get(closeElement, `keydown/close/${self.ns}`)
-            closeElement.removeEventListener('keydown', specialcloseinsideKeydownHandler)
-            closeElement.removeAttribute('tabindex')
-            closeElement.removeAttribute('role')
           }
         }
         // closeOutside
@@ -2773,10 +2763,10 @@ class Toggle {
   }
 
   /**
-   * specialClose on handler
+   * specialClosedeep handler
    * @param {Event} e
    */
-  eventSpecialcloseinsideHandler(e) {
+  eventSpecialclosedeepHandler(e) {
     const self = this
     // handler
     if (Xt.contains([...self.elements, ...self.targets], e.target)) {
@@ -2788,11 +2778,11 @@ class Toggle {
   }
 
   /**
-   * specialClose keydown handler
+   * specialClosedeep keydown handler
    * @param {Node|HTMLElement|EventTarget|Window} closeElement
    * @param {Event} e
    */
-  eventSpecialcloseinsideKeydownHandler(closeElement, e) {
+  eventSpecialclosedeepKeydownHandler(closeElement, e) {
     const code = e.keyCode ? e.keyCode : e.which
     // key enter or space
     if (code === 13 || code === 32) {
@@ -2802,7 +2792,23 @@ class Toggle {
   }
 
   /**
-   * specialClose off handler
+   * specialCloseinside handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventSpecialcloseinsideHandler(el, e) {
+    const self = this
+    // handler
+    if (e.target === el) {
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
+    }
+  }
+
+  /**
+   * specialCloseoutside handler
    * @param {Event} e
    */
   eventSpecialcloseoutsideHandler(e) {
@@ -3293,7 +3299,7 @@ Toggle.optionsDefaultSuper = {
   appendTo: false,
   classHtml: false,
   closeAuto: false,
-  closeInside: false,
+  closeDeep: false,
   closeOutside: false,
   closeOnDisable: false,
   scrollbar: false,

@@ -18,6 +18,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-overlay demo--overlay-animation-css" data-xt-duration="500">
+    <div class="xt-backdrop xt-overlay-ui bg-black"></div>
     <div class="xt-overlay-container max-w-3xl">
       <div class="xt-overlay-inner">
 

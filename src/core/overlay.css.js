@@ -81,7 +81,7 @@ module.exports = {
             '@apply xt-card-disable !important': '',
           },
         },
-        '> .xt-backdrop': {
+        '.xt-overlay-ui': {
           display: 'none !important',
         },
       },

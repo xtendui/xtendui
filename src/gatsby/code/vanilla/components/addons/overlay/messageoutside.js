@@ -21,6 +21,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="demo--overlay-messageoutside right-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="xt-card rounded-md ${cardDefault()}">
@@ -60,6 +61,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="demo--overlay-messageoutside left-0">
         <div class="w-10/12 lg:w-8/12">
           <div class="xt-card rounded-md ${cardDefault()}">

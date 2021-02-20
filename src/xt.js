@@ -887,63 +887,6 @@ Xt.normalizeWidth = width => {
 }
 
 /**
- * fix scrollbar spacing when changing overflow adding padding
- * @param {Array|Node|HTMLElement|EventTarget|Window} container
- */
-Xt.scrollbarSpaceOn = container => {
-  const width = Xt.scrollbarWidth
-  container.style.paddingRight = `${width}px`
-  // backdrop
-  const backdrops = container.querySelectorAll('.xt-backdrop')
-  for (const backdrop of backdrops) {
-    backdrop.style.right = `${width}px`
-  }
-  // xt-fixed
-  const elements = container.querySelectorAll('.xt-fixed')
-  for (const element of elements) {
-    const style = getComputedStyle(element)
-    let prop
-    if (Xt.normalizeWidth(element.clientWidth) === '') {
-      // only if full width
-      prop = 'paddingRight'
-    } else if (parseFloat(style.right) === 0) {
-      // only if right position
-      prop = 'right'
-    }
-    if (prop) {
-      const old = element.style[prop]
-      let val = parseFloat(style[prop])
-      val = old !== '' ? val - parseFloat(old) : val
-      const str = `calc(${val}px + ${width}px)`
-      element.classList.add('xt-instant')
-      element.style[prop] = str
-      element.classList.remove('xt-instant')
-    }
-  }
-}
-
-/**
- * fix scrollbar spacing when changing overflow adding padding
- * @param {Array|Node|HTMLElement|EventTarget|Window} container
- */
-Xt.scrollbarSpaceOff = container => {
-  container.style.paddingRight = ''
-  // backdrop
-  const backdrops = container.querySelectorAll('.xt-backdrop')
-  for (const backdrop of backdrops) {
-    backdrop.style.right = ''
-  }
-  // xt-fixed
-  const elements = container.querySelectorAll('.xt-fixed')
-  for (const element of elements) {
-    element.classList.add('xt-instant')
-    element.style.right = ''
-    element.style.paddingRight = ''
-    element.classList.remove('xt-instant')
-  }
-}
-
-/**
  * addScript
  * @param {String} url
  * @param {Function} callback

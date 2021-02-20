@@ -31,7 +31,9 @@ You can put **any content** inside, here are some examples.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
-| Option                  | `closeInside:Query`                          | `'.xt-dismiss, .xt-backdrop'`        | Query Node inside to close on click            |
+| Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
+| Option                  | `closeInside:Query`                          | `'.xt-overlay, .xt-overlay-container`        | Query Node inside to close on click no nested Nodes            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
 | Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
 | Option                  | `scrollbar:Boolean`                          | `true`        | Hide body scrollbars on activation            |
 | Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |

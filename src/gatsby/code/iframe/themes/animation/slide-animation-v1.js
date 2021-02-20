@@ -191,6 +191,7 @@ demo.htmlSource = `
       screen full
     </button>
     <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
       <div class="xt-overlay-container p-0">
         <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl ${animItem}" aria-label="Close">
           ${iconX()}
@@ -217,6 +218,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
       <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="xt-overlay-inner">
 
@@ -262,6 +264,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 
@@ -379,6 +382,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay group" data-xt-duration="700">
+      <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 

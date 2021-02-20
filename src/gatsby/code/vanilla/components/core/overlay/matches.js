@@ -11,13 +11,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { closeInside: '.xt-dismiss' } } }">
+<div data-xt-overlay="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { closeDeep: '.xt-dismiss' } } }">
 
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
     Overlay
   </button>
 
   <div class="xt-overlay">
+    <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
     <div class="xt-overlay-container max-w-3xl">
       <div class="xt-overlay-inner">
 
@@ -39,6 +40,7 @@ demo.htmlSource = `
               </button>
 
               <div class="xt-overlay">
+                <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
                 <div class="xt-overlay-container max-w-3xl">
                   <div class="xt-overlay-inner">
 

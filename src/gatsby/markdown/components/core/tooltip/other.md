@@ -36,7 +36,8 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click no nested Nodes            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
-| Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-dismiss'`        | Query Node inside to close on click            |
 
 </div>

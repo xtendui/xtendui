@@ -22,6 +22,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
           ${iconX()}

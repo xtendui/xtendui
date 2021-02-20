@@ -273,7 +273,7 @@ Xt.mount.push({
 
     let self = new Xt.Toggle(object, {
       targets: '#gatsby_open-full',
-      closeInside: ':scope > .xt-dismiss',
+      closeDeep: ':scope > .xt-dismiss',
       closeAuto: true,
       scrollbar: true,
       classHtml: 'demo-full-open',

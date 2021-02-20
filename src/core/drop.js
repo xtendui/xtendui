@@ -168,8 +168,8 @@ Drop.optionsDefault = {
   spaceArrow: false,
   popperjs: true,
   closeAuto: true,
+  closeDeep: '.xt-dismiss',
   closeOutside: 'body',
-  closeInside: '.xt-backdrop, .xt-dismiss',
   zIndex: {
     targets: {
       start: 6000, // theme.zIndex.drop same as Drop options.zIndex.targets.start

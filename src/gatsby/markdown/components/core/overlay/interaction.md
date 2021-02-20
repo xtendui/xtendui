@@ -33,6 +33,8 @@ Additionally on component initialization the class `.xt-overlay-init` gets added
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
+You can also customize `xt-backdrop` animations.
+
 <demo>
   <demovanilla src="vanilla/components/core/overlay/animation">
   </demovanilla>

@@ -172,8 +172,8 @@ Tooltip.optionsDefault = {
   spaceArrow: false,
   popperjs: true,
   closeAuto: true,
+  closeDeep: '.xt-dismiss',
   closeOutside: 'body',
-  closeInside: '.xt-backdrop, .xt-dismiss',
   zIndex: {
     targets: {
       start: 6500, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start

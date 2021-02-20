@@ -20,6 +20,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-xl">
         <div class="xt-overlay-inner">
 
@@ -49,6 +50,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div class="xt-overlay-inner">
 
@@ -78,6 +80,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 
@@ -107,6 +110,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
+      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
       <div class="xt-overlay-container">
         <div class="xt-overlay-inner">
 
