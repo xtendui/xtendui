@@ -1896,7 +1896,7 @@ class Toggle {
       // activation
       self.activate(el, type)
       // special
-      self.specialAppendto(el, type)
+      self.specialAppendto(actionCurrent, el, type)
       self.specialScrollbar(actionCurrent)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
@@ -2046,20 +2046,8 @@ class Toggle {
       // activation
       self.deactivateDone(el, type)
       // special
+      self.specialAppendto(actionCurrent, el, type)
       self.specialScrollbar(actionCurrent)
-      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // appendTo
-        if (options.appendTo) {
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-          if (appendOrigin) {
-            el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-            appendOrigin.before(el)
-            appendOrigin.remove()
-          } else {
-            el.remove()
-          }
-        }
-      }
       // aria
       if (options.aria) {
         // selected
@@ -2511,23 +2499,41 @@ class Toggle {
 
   /**
    * appendTo
+   * @param {String} actionCurrent Current action
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {String} type Type of element
    */
-  specialAppendto(el, type) {
+  specialAppendto(actionCurrent, el, type) {
     const self = this
     const options = self.options
     if (options.appendTo) {
-      // @FIX when standalone !self.targets.length && type === 'elements'
-      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-        // appendTo
-        const appendToTarget = document.querySelector(options.appendTo)
-        const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-        if (!appendOrigin) {
-          el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
+      if (actionCurrent === 'On') {
+        // @FIX when standalone !self.targets.length && type === 'elements'
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+          // appendTo
+          const appendToTarget = document.querySelector(options.appendTo)
+          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+          if (!appendOrigin) {
+            el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
+          }
+          el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+          appendToTarget.append(el)
         }
-        el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
-        appendToTarget.append(el)
+      } else if (actionCurrent === 'Off') {
+        // @FIX when standalone !self.targets.length && type === 'elements'
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+          // appendTo
+          if (options.appendTo) {
+            const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+            if (appendOrigin) {
+              el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+              appendOrigin.before(el)
+              appendOrigin.remove()
+            } else {
+              el.remove()
+            }
+          }
+        }
       }
     }
   }
