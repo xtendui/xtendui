@@ -2529,8 +2529,6 @@ class Toggle {
               el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
               appendOrigin.before(el)
               appendOrigin.remove()
-            } else {
-              el.remove()
             }
           }
         }
@@ -3020,6 +3018,7 @@ class Toggle {
    */
   eventMatch(value, mq, skipReinit = false) {
     const self = this
+    const options = self.options
     // replace options
     if (mq.matches) {
       self.options = Xt.merge([self.options, value])
@@ -3028,6 +3027,13 @@ class Toggle {
     }
     // reinit one time only with raf
     if (!skipReinit) {
+      // @FIX appendTo close or self.targets are lost
+      if (options.appendTo) {
+        for (const element of self.elements) {
+          self.eventOff(element)
+        }
+      }
+      // reinit
       cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}MatchFrame`))
       Xt.dataStorage.set(self.object, `${self.ns}MatchFrame`, requestAnimationFrame(self.eventReinitHandler.bind(self)))
     }
@@ -3091,12 +3097,10 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // closeOnDisable
-      if (options.closeOnDisable) {
-        // @FIX appendTo targets
-        for (const target of self.targets.filter(x => self.hasCurrent(x))) {
-          // listener dispatch
-          target.dispatchEvent(new CustomEvent(`off.trigger.${self.componentNs}`))
+      // @FIX appendTo close or self.targets are lost
+      if (options.appendTo) {
+        for (const element of self.elements) {
+          self.eventOff(element)
         }
       }
       // stop auto
@@ -3307,7 +3311,6 @@ Toggle.optionsDefaultSuper = {
   closeAuto: false,
   closeDeep: false,
   closeOutside: false,
-  closeOnDisable: false,
   scrollbar: false,
   onBlock: false,
   offBlock: false,

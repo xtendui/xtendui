@@ -83,7 +83,6 @@ Overlay.optionsDefault = {
   classHtml: false,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-overlay, .xt-overlay-container',
-  closeOnDisable: true,
   scrollbar: true,
   focusLimit: true,
 }
