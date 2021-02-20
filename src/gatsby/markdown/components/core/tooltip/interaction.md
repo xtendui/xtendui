@@ -31,6 +31,9 @@ Additionally on component initialization the class `.xt-tooltip-init` gets added
 
 ## Animation
 
+[[notePrimary]]
+| Do not animate `xt-tooltip` because of transform positioning, **animate the content instead**.
+
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>

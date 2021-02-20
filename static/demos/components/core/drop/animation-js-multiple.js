@@ -7,9 +7,9 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.7
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.7
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
 
     // init
@@ -17,7 +17,7 @@ Xt.mount.push({
     let self = new Xt.Drop(object, {
       elements: ':scope > a, :scope > button',
       targets: ':scope > .xt-drop',
-      duration: 700,
+      duration: 500,
     })
 
     // on

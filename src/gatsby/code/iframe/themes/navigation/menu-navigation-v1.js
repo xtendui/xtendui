@@ -29,7 +29,7 @@ demo.htmlSource = `
 
     <div class="xt-list -mx-4">
 
-      <div class="xt-drop-container">
+      <div class="xt-drop-item">
 
         <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #1
@@ -66,7 +66,7 @@ demo.htmlSource = `
 
       </div>
 
-      <div class="xt-drop-container">
+      <div class="xt-drop-item">
 
         <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #2
@@ -97,7 +97,7 @@ demo.htmlSource = `
 
       </div>
 
-      <div class="xt-drop-container">
+      <div class="xt-drop-item">
 
         <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #3

@@ -1,6 +1,9 @@
 module.exports = {
   variants: ['responsive'],
   utility: theme => ({
+    '.xt-toggle-item': {
+      display: 'inline-block',
+    },
     '.xt-toggle': {
       '&:not(.in):not(.out)': {
         display: 'none',

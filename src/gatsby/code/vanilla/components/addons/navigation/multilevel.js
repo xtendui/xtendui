@@ -14,10 +14,11 @@ demo.htmlSource = `
       elements: '.multilevel-reset, .multilevel-list > button',
       targets: ':scope > .xt-toggle',
       min: 1,
+      duration: 500,
       instant: true
     }">
 
-  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="initial">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="initial">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
@@ -45,7 +46,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-0">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="cat-0">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
@@ -95,7 +96,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-0b">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="cat-0b">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>
@@ -117,7 +118,7 @@ demo.htmlSource = `
 
   </nav>
 
-  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-700 -translate-x-10 opacity-0 active:ease-out active:delay-300 active:translate-x-0 active:opacity-100" data-xt-group="cat-1">
+  <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="cat-1">
 
     <div class="xt-h5  flex items-center justify-between">
       <div>

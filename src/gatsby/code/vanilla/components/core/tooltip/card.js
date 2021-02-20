@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center data-xt-tooltip>
 
-  <div class="xt-tooltip-container">
+  <div class="xt-tooltip-item">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       asset
@@ -34,7 +34,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="xt-tooltip-container">
+  <div class="xt-tooltip-item">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       asset and text

@@ -1,7 +1,7 @@
 .demo--toggle-animation-inverse {
   .xt-card {
     /* initial */
-    @apply transform ease-out duration-700;
+    @apply transform ease-out duration-500;
     @apply opacity-100 translate-x-0;
     /* active */
     &.active {

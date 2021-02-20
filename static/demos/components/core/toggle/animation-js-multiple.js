@@ -7,15 +7,15 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.7
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.7
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
 
     // init
 
     let self = new Xt.Toggle(object, {
-      duration: 700,
+      duration: 500,
     })
 
     // on

@@ -1,7 +1,7 @@
 .demo--toggle-animation {
   .xt-card {
     /* initial */
-    @apply transform ease-out duration-700;
+    @apply transform ease-out duration-500;
     @apply opacity-0;
     &.direction-before {
       @apply translate-x-4;

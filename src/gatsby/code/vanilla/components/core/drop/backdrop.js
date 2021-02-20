@@ -39,7 +39,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
 
-    <div class="xt-drop-container">
+    <div class="xt-drop-item">
 
       <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()} active:z-drop">
         backdrop mouse

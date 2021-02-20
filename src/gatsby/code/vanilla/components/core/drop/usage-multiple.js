@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center" data-xt-drop>
 
-  <div class="xt-drop-container">
+  <div class="xt-drop-item">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       drop
@@ -37,7 +37,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="xt-drop-container">
+  <div class="xt-drop-item">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       drop

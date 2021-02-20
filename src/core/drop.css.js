@@ -32,7 +32,7 @@ module.exports = {
         transform: 'rotate(45deg)',
       },
     },
-    '.xt-drop-container': {
+    '.xt-drop-item': {
       display: 'inline-block',
     },
     '.xt-drop-disabled': {

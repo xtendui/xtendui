@@ -2,11 +2,12 @@ import React from 'react'
 import path from 'path'
 
 const animDesign =
-  'h-0 overflow-hidden transform ease-in-out-quint duration-500 delay-200 -translate-y-4 group-active:ease-out-quint group-active:delay-0 group-active:translate-y-0'
+  'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0'
 const animItem =
-  'transform ease-in-out-quint duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
-const listCollapse =
-  'w-0 overflow-hidden transform ease-in-out-quint duration-700 -translate-x-4 active:ease-out-quint active:translate-x-0'
+  'transform ease-out-quint duration-500 opacity-0 -translate-y-4 group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
+const animItemOpacity =
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
+const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0'
 
 const buttonDefault = require('components/snippets/classes/button-default').default
 const buttonPrimary = require('components/snippets/classes/button-primary').default
@@ -96,7 +97,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-500"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -119,7 +120,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-500"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -146,14 +147,14 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-500"></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
     </div>
 
   </div>
 
   <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
 
-    <div class="xt-tooltip-container">
+    <div class="xt-tooltip-item">
 
       <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         list group
@@ -180,7 +181,7 @@ demo.htmlSource = `
 
           </form>
         </div>
-        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-500"></div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
       </div>
 
     </div>

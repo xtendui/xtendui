@@ -20,11 +20,11 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <div class="xt-card xt-toggle-inverse rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle-inverse rounded-md ${cardToggle()}" data-xt-duration="500">
     Target 0
   </div>
 
-  <div class="xt-card xt-toggle-inverse rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle-inverse rounded-md ${cardToggle()}" data-xt-duration="500">
     Target 1
   </div>
 

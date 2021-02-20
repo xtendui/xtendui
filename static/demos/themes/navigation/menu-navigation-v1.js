@@ -197,7 +197,7 @@ Xt.mount.push({
     let lineFirst = true
     let btnOn = false
     const btns = object.querySelectorAll('.xt-list > .button-line')
-    const drops = object.querySelectorAll('.xt-drop-container')
+    const drops = object.querySelectorAll('.xt-drop-item')
     const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 7
@@ -211,7 +211,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = true
       } else {
-        el = el.closest('.xt-drop-container').querySelector(':scope > .button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .button-line')
       }
       // raf after off.xt.drop
       requestAnimationFrame(() => {
@@ -250,7 +250,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = false
       } else {
-        el = el.closest('.xt-drop-container').querySelector(':scope > .button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .button-line')
       }
       // raf after mouseenter
       requestAnimationFrame(() => {

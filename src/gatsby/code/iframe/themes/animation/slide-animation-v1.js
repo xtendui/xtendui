@@ -2,14 +2,16 @@ import React from 'react'
 import path from 'path'
 
 const animDesign =
-  'overflow-hidden transform ease-in-out-quint duration-700 delay-300 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
+  'overflow-hidden transform transition ease-in-out-quint duration-500 delay-200 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const animItem =
-  'transform ease-in-out-quint duration-700 opacity-0 translate-y-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
+  'transform transition ease-in-out-quint duration-500 opacity-0 translate-y-1/4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
+const animItemOpacity =
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
 
 const animDesignLeft =
-  'overflow-hidden transform ease-in-out-quint duration-700 delay-300 opacity-0 -translate-x-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-x-0'
+  'overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-x-0'
 const animItemLeft =
-  'transform ease-in-out-quint duration-700 opacity-0 -translate-x-1/2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-x-0'
+  'transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-x-0'
 
 const buttonDefault = require('components/snippets/classes/button-default').default
 const buttonPrimary = require('components/snippets/classes/button-primary').default
@@ -89,7 +91,7 @@ demo.htmlSource = `
           </button>
         </nav>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -110,7 +112,7 @@ demo.htmlSource = `
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -135,14 +137,14 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
     </div>
 
   </div>
 
   <div data-xt-tooltip>
 
-    <div class="xt-tooltip-container">
+    <div class="xt-tooltip-item">
 
       <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         list group
@@ -169,7 +171,7 @@ demo.htmlSource = `
 
           </form>
         </div>
-        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
       </div>
 
     </div>
@@ -188,7 +190,7 @@ demo.htmlSource = `
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       screen full
     </button>
-    <div class="xt-overlay group" data-xt-duration="1000">
+    <div class="xt-overlay group" data-xt-duration="700">
       <div class="xt-overlay-container p-0">
         <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl ${animItem}" aria-label="Close">
           ${iconX()}
@@ -214,7 +216,7 @@ demo.htmlSource = `
       left blocks
     </button>
 
-    <div class="xt-overlay group" data-xt-duration="1000">
+    <div class="xt-overlay group" data-xt-duration="700">
       <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="xt-overlay-inner">
 
@@ -259,7 +261,7 @@ demo.htmlSource = `
       contact
     </button>
 
-    <div class="xt-overlay group" data-xt-duration="1000">
+    <div class="xt-overlay group" data-xt-duration="700">
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 
@@ -376,7 +378,7 @@ demo.htmlSource = `
       newsletter
     </button>
 
-    <div class="xt-overlay group" data-xt-duration="1000">
+    <div class="xt-overlay group" data-xt-duration="700">
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 

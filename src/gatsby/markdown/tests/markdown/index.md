@@ -30,6 +30,19 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
 </demo>
 
+<demo>
+  <demovanilla src="vanilla/components/core/tooltip/matches">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/matches">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/matches">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/overlay/matches">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/matches">
+  </demovanilla>
+</demo>
+
 ## Markdown
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."

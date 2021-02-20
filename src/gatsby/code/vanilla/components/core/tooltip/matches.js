@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   Lorem ipsum
 
-  <div class="xt-tooltip-container">
+  <div class="xt-tooltip-item">
 
     <a href="#">dolor</a>
 

@@ -16,7 +16,7 @@ demo.htmlSource = `
 
   <div data-xt-tooltip>
 
-    <div class="xt-tooltip-container">
+    <div class="xt-tooltip-item">
 
       <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         list group
@@ -48,6 +48,6 @@ demo.htmlSource = `
     </div>
 
   </div>
-  
+
 </div>
 `

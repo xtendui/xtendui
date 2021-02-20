@@ -48,8 +48,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-tooltip-container'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, .xt-tooltip-container > .xt-toolti'`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-tooltip-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, .xt-tooltip-item > .xt-toolti'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 
@@ -91,7 +91,7 @@ Use this code to create **tooltip** in **multiple mode**.
 The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
 
 [[notePrimary]]
-| Use `.xt-tooltip-container` when using **multiple mode**.
+| Use `.xt-tooltip-item` when using **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/usage-multiple">

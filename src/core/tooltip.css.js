@@ -33,7 +33,7 @@ module.exports = {
         zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
       },
     },
-    '.xt-tooltip-container': {
+    '.xt-tooltip-item': {
       display: 'inline-block',
     },
     '.xt-tooltip-disabled': {

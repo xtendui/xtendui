@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   Lorem ipsum
 
-  <div class="xt-tooltip-container" data-xt-group="my-group">
+  <div class="xt-tooltip-item" data-xt-group="my-group">
 
     <a href="#">dolor</a>
 
@@ -33,7 +33,7 @@ demo.htmlSource = `
 
   sit
 
-  <div class="xt-tooltip-container">
+  <div class="xt-tooltip-item">
 
     <a href="#">amet</a>
 

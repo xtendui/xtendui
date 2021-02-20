@@ -38,7 +38,7 @@ Xt.mount.push({
       gsap.to(content, {
         x: contentX,
         opacity: 0,
-        duration: 0.7,
+        duration: 0.5,
         ease: 'quint.out',
       })
       // clone
@@ -49,9 +49,9 @@ Xt.mount.push({
       gsap.to(clone, {
         x: 0,
         opacity: 1,
-        duration: 0.7,
+        duration: 0.5,
         ease: 'quint.out',
-        delay: 0.3,
+        delay: 0.2,
       })
     }
 

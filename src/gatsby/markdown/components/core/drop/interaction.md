@@ -31,6 +31,9 @@ Additionally on component initialization the class `.xt-drop-init` gets added to
 
 ## Animation
 
+[[notePrimary]]
+| Do not animate `xt-drop` because of transform positioning, **animate the content instead**.
+
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
@@ -49,7 +52,7 @@ You can use also **css animations**, just add them with **class names** `.active
 </div>
 
 [[noteDefault]]
-| Use `.xt-drop-container` when using **multiple mode**.
+| Use `.xt-drop-item` when using **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/animation-css">

@@ -13,7 +13,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center cccc" data-xt-drop>
 
-  <div class="xt-drop-container" data-xt-group="my-group">
+  <div class="xt-drop-item" data-xt-group="my-group">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Group
@@ -53,7 +53,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="xt-drop-container">
+  <div class="xt-drop-item">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       Drop

@@ -1,7 +1,7 @@
 .demo--multilevel {
   .xt-toggle {
     /* initial */
-    @apply transform ease-out duration-700;
+    @apply transform ease-out duration-500;
     @apply opacity-0;
     &.direction-before {
       @apply -translate-x-10;
@@ -11,7 +11,7 @@
     }
     /* active */
     &.active {
-      @apply delay-300 opacity-100 translate-x-0;
+      @apply delay-200 opacity-100 translate-x-0;
     }
     /* out */
     &.out {

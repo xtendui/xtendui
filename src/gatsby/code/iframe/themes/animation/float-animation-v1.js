@@ -8,7 +8,9 @@ const classesPrimary =
 const animDesign =
   'transform ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:scale-100'
 const animItem =
-  'transform ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-300 group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
+const animItemOpacity =
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
 
 const buttonDefault = () =>
   `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg active:shadow-sm`
@@ -91,7 +93,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${cardWhite()} ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -115,7 +117,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${cardWhite()} ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -140,14 +142,14 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
     </div>
 
   </div>
 
   <div data-xt-tooltip>
 
-    <div class="xt-tooltip-container">
+    <div class="xt-tooltip-item">
 
       <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
         list group
@@ -174,7 +176,7 @@ demo.htmlSource = `
 
           </form>
         </div>
-        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
       </div>
 
     </div>

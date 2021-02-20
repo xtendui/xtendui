@@ -2,7 +2,7 @@
   .xt-drop {
     /* initial */
     > * {
-      @apply transform ease-out duration-700;
+      @apply transform ease-out duration-500;
       @apply opacity-0;
     }
     &.direction-before {
