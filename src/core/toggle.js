@@ -41,8 +41,8 @@ class Toggle {
     self.classesActive = []
     self.classesOut = []
     self.classesInitial = []
-    self.classesLeft = []
-    self.classesRight = []
+    self.classesBefore = []
+    self.classesAfter = []
     self.elements = []
     self.targets = []
     self.currentIndex = null
@@ -76,8 +76,8 @@ class Toggle {
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
-    self.classesLeft = self.options.classLeft ? [...self.options.classLeft.split(' ')] : []
-    self.classesRight = self.options.classRight ? [...self.options.classRight.split(' ')] : []
+    self.classesBefore = self.options.classBefore ? [...self.options.classBefore.split(' ')] : []
+    self.classesAfter = self.options.classAfter ? [...self.options.classAfter.split(' ')] : []
   }
 
   /**
@@ -288,8 +288,8 @@ class Toggle {
         ...self.classesOut,
         ...self.classesDone,
         ...self.classesInitial,
-        ...self.classesLeft,
-        ...self.classesRight
+        ...self.classesBefore,
+        ...self.classesAfter
       )
       const elsInner = Xt.queryAll(el, options.elementsInner)
       for (const elInner of elsInner) {
@@ -299,8 +299,8 @@ class Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesLeft,
-          ...self.classesRight
+          ...self.classesBefore,
+          ...self.classesAfter
         )
       }
     }
@@ -321,8 +321,8 @@ class Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesLeft,
-          ...self.classesRight
+          ...self.classesBefore,
+          ...self.classesAfter
         )
         const trsInner = Xt.queryAll(tr, options.targetsInner)
         for (const trInner of trsInner) {
@@ -332,8 +332,8 @@ class Toggle {
             ...self.classesOut,
             ...self.classesDone,
             ...self.classesInitial,
-            ...self.classesLeft,
-            ...self.classesRight
+            ...self.classesBefore,
+            ...self.classesAfter
           )
         }
       }
@@ -1313,11 +1313,11 @@ class Toggle {
         })
       )
       // direction
-      el.classList.remove(...self.classesLeft, ...self.classesRight)
+      el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
-        el.classList.add(...self.classesLeft)
+        el.classList.add(...self.classesBefore)
       } else if (self.direction > 0) {
-        el.classList.add(...self.classesRight)
+        el.classList.add(...self.classesAfter)
       }
     }
   }
@@ -1361,11 +1361,11 @@ class Toggle {
         })
       )
       // direction
-      el.classList.remove(...self.classesLeft, ...self.classesRight)
+      el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
-        el.classList.add(...self.classesLeft)
+        el.classList.add(...self.classesBefore)
       } else if (self.direction > 0) {
-        el.classList.add(...self.classesRight)
+        el.classList.add(...self.classesAfter)
       }
     }
   }
@@ -3246,8 +3246,8 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classDone: 'done',
   classInitial: 'initial',
-  classLeft: 'direction-left',
-  classRight: 'direction-right',
+  classBefore: 'direction-before',
+  classAfter: 'direction-after',
   classSkip: false,
   // quantity
   min: 0,

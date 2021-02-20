@@ -3,10 +3,10 @@
     /* initial */
     @apply transform ease-out duration-700;
     @apply opacity-0;
-    &.direction-left {
+    &.direction-before {
       @apply translate-x-4;
     }
-    &.direction-right {
+    &.direction-after {
       @apply -translate-x-4;
     }
     /* active */
@@ -16,10 +16,10 @@
     /* out */
     &.out {
       @apply opacity-0;
-      &.direction-left {
+      &.direction-before {
         @apply -translate-x-4;
       }
-      &.direction-right {
+      &.direction-after {
         @apply translate-x-4;
       }
     }

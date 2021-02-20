@@ -19,8 +19,8 @@ You can customize the **class names** used by the component.
 | Option                  | `classOut:String`                          | `out`        | Class name for out            |	
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |	
 | Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |	
-| Option                  | `classLeft:String`                          | `direction-left`        | Class name for left direction activation            |
-| Option                  | `classRight:String`                          | `direction-right`        | Class name for right direction activation            |
+| Option                  | `classBefore:String`                          | `direction-before`        | Class name for left direction activation            |
+| Option                  | `classAfter:String`                          | `direction-after`        | Class name for right direction activation            |
 | Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |	
 
 </div>	

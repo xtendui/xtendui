@@ -155,8 +155,8 @@ class Slider extends Xt.Toggle {
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
-          ...self.classesLeft,
-          ...self.classesRight
+          ...self.classesBefore,
+          ...self.classesAfter
         )
         return cloned
       }
