@@ -1012,20 +1012,20 @@ class Toggle {
   getElementsGroups() {
     const self = this
     // groups
-    const final = []
+    const found = []
     for (const element of self.elements) {
       // choose element by group
       const group = element.getAttribute('data-xt-group')
       if (group) {
-        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
-        if (!found.length) {
-          final.push(element)
+        const alreadyFound = found.filter(x => x.getAttribute('data-xt-group') === group)
+        if (!alreadyFound.length) {
+          found.push(element)
         }
       } else {
-        final.push(element)
+        found.push(element)
       }
     }
-    return final
+    return found
   }
 
   /**
@@ -1249,7 +1249,7 @@ class Toggle {
 
   /**
    * set index
-   * @param {Node|HTMLElement|EventTarget|Window} element Current element
+   * @param {Node|HTMLElement|EventTarget|Window} element Current group element
    */
   setIndex(element) {
     const self = this
@@ -1409,7 +1409,7 @@ class Toggle {
       // on
       const groupElements = self.getElements(element)
       self.addCurrent(groupElements[0])
-      self.setIndex(element)
+      self.setIndex(groupElements[0])
       self.setDirection()
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
