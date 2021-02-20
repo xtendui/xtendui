@@ -195,7 +195,7 @@ pre {
       align-items: stretch;
       height: 21rem;
       #gatsby_open-full & {
-        height: auto;
+        height: 100%;
       }
     }
     &.active {

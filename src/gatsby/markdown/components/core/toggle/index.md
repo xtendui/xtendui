@@ -64,7 +64,7 @@ Check subpage to [customize interaction](/components/core/toggle/interaction).
 
 Use this code to create a **toggle** in **unique mode**.
 
-The **unique** mode is useful when triggering **targets outside the scope** of the component.
+The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.

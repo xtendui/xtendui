@@ -62,15 +62,12 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.xt-drop-container',
-      elementsInner: '.xt-drop-container > .btn-line',
-      targets: '.xt-drop-container > .xt-drop',
-      duration: 1000,
-      delay: 150,
-      preventEvent: true,
       on: 'mouseenter',
       off: 'mouseleave',
       instant: true,
+      duration: 1000,
+      delay: 150,
+      preventEvent: true,
     })
 
     // setup

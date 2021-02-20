@@ -37,7 +37,7 @@ demo.htmlSource = `
   List Group
 </div>
 
-<form class="text-xs" data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', instant: true, collapseWidth: 'targets' }">
+<form class="text-xs" data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', collapseWidth: 'targets' }">
 
   <div class="xt-row xt-row-x-6 xt-row-y-4">
 
@@ -74,7 +74,7 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       list
@@ -101,7 +101,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       card
@@ -132,7 +132,7 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       tooltip
@@ -151,7 +151,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
 
     <div class="xt-tooltip-container">
 
@@ -195,7 +195,7 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       screen full
     </button>
@@ -219,7 +219,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       left blocks
@@ -264,7 +264,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       contact
@@ -381,7 +381,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', instant: true, collapseHeight: 'targetsInner' }">
+  <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       newsletter

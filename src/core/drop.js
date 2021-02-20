@@ -80,7 +80,6 @@ class Drop extends Xt.Toggle {
             {
               name: 'preventOverflow',
               options: {
-                rootBoundary: 'document',
                 padding: self.options.spaceOverflow,
               },
             },

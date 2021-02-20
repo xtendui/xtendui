@@ -78,7 +78,7 @@ Check subpage to [customize interaction](/components/core/drop/interaction) and 
 
 Use this code to create a **drop** in **unique mode**.
 
-The **unique** mode is useful when triggering **targets outside the scope** of the component.
+The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
@@ -95,6 +95,8 @@ Check subpage to [customize interaction](/components/core/drop/interaction) and 
 #### Multiple
 
 Use this code to create **drop** in **multiple mode**.
+
+The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
 
 [[notePrimary]]
 | Use `.xt-drop-container` when using **multiple mode**.

@@ -117,7 +117,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 </div>
 
 [[notePrimary]]
-| When using `mouse` events use only [multiple mode](/components/core/tooltip#usage-multiple) for proper interaction.
+| When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/event">

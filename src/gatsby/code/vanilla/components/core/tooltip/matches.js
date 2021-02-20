@@ -9,15 +9,36 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block demo--tooltip-disable" data-xt-tooltip="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { position: 'top-start' } } }">
+<div data-xt-tooltip="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { position: 'top-start' } } }">
 
-  Lorem ipsum <a href="#">dolor</a> sit amet
+  Lorem ipsum
 
-  <div class="xt-tooltip p-2">
-    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
-      Lorem ipsum dolor sit amet
+  <div class="xt-tooltip-container">
+
+    <a href="#">dolor</a>
+
+    <div class="xt-tooltip p-2">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+        Lorem ipsum dolor sit amet
+
+        <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', position: 'auto' }">
+
+          <a href="#">nested</a>
+
+          <div class="xt-tooltip p-2">
+            <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+                Consectetur adipiscing elit
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
+
   </div>
+
+  sit amet
 
 </div>
 `

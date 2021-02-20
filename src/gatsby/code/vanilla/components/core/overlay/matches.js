@@ -35,7 +35,7 @@ demo.htmlSource = `
             <div data-xt-overlay>
 
               <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-                Overlay
+                Nested
               </button>
 
               <div class="xt-overlay">
