@@ -3029,7 +3029,7 @@ class Toggle {
     if (!skipReinit) {
       // @FIX appendTo close or self.targets are lost
       if (options.appendTo) {
-        for (const element of self.elements) {
+        for (const element of self.elements.filter(x => self.hasCurrent(x))) {
           self.eventOff(element)
         }
       }
@@ -3099,7 +3099,7 @@ class Toggle {
     if (!self.disabled) {
       // @FIX appendTo close or self.targets are lost
       if (options.appendTo) {
-        for (const element of self.elements) {
+        for (const element of self.elements.filter(x => self.hasCurrent(x))) {
           self.eventOff(element)
         }
       }
