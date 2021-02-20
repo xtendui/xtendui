@@ -1,3 +1,5 @@
 .demo--slider-expand {
-  @apply xt-slider-expand;
+  @screen md {
+    @apply xt-slider-expand;
+  }
 }

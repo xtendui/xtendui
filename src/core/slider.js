@@ -29,6 +29,8 @@ class Slider extends Xt.Toggle {
     // dragger
     self.dragger = self.object.querySelector(options.drag.dragger)
     self.destroyElements.push(self.dragger)
+    // grab
+    self.dragger.classList.add('xt-grab')
     // targets
     self.initScopeTargets()
     // autoHeight and keepHeight
@@ -461,12 +463,6 @@ class Slider extends Xt.Toggle {
       // @FIX prevent dragging links and images
       const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
       self.dragger.addEventListener('dragstart', dragstartFixHandler)
-      // xt-grab
-      if (!self.disabled) {
-        self.dragger.classList.add('xt-grab')
-      } else {
-        self.dragger.classList.remove('xt-grab')
-      }
       // wheel
       if (options.wheel && options.wheel.selector) {
         const wheel = self.wheel
@@ -1150,49 +1146,61 @@ class Slider extends Xt.Toggle {
    * disable
    */
   enable() {
-    super.enable()
     const self = this
-    // dragger
-    self.dragger.classList.add('xt-instant')
-    requestAnimationFrame(() => {
-      self.dragger.classList.remove('xt-instant')
-    })
+    const options = self.options
+    // enable
+    if (self.disabled) {
+      if (!options.drag.manual) {
+        // grab
+        self.dragger.classList.add('xt-grab')
+        // dragger
+        self.dragger.classList.add('xt-instant')
+        requestAnimationFrame(() => {
+          self.dragger.classList.remove('xt-instant')
+        })
+      }
+    }
+    // super
+    super.enable()
   }
 
   /**
    * disable
    */
   disable() {
-    super.disable()
     const self = this
     const options = self.options
     // disable
-    if (!options.drag.manual) {
-      // grab
-      self.dragger.classList.remove('xt-grab')
-      // links
-      self.dragger.classList.remove('xt-links-none')
-      // jump
-      self.dragger.classList.add('xt-jumps-none')
-      // dragger
-      self.dragger.classList.add('xt-instant')
-      requestAnimationFrame(() => {
-        self.dragger.classList.remove('xt-instant')
-      })
+    if (!self.disabled) {
+      if (!options.drag.manual) {
+        // grab
+        self.dragger.classList.remove('xt-grab')
+        // links
+        self.dragger.classList.remove('xt-links-none')
+        // jump
+        self.dragger.classList.add('xt-jumps-none')
+        // dragger
+        self.dragger.classList.add('xt-instant')
+        requestAnimationFrame(() => {
+          self.dragger.classList.remove('xt-instant')
+        })
+      }
+      if (self.autoHeight) {
+        // autoHeight
+        self.autoHeight.classList.remove('xt-autoHeight')
+        requestAnimationFrame(() => {
+          self.autoHeight.style.height = ''
+        })
+      }
+      if (self.keepHeight) {
+        // keepHeight
+        requestAnimationFrame(() => {
+          self.keepHeight.style.height = ''
+        })
+      }
     }
-    if (self.autoHeight) {
-      // autoHeight
-      self.autoHeight.classList.remove('xt-autoHeight')
-      requestAnimationFrame(() => {
-        self.autoHeight.style.height = ''
-      })
-    }
-    if (self.keepHeight) {
-      // keepHeight
-      requestAnimationFrame(() => {
-        self.keepHeight.style.height = ''
-      })
-    }
+    // super
+    super.disable()
   }
 
   //
