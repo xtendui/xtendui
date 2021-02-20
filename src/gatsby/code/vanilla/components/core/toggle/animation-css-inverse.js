@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center demo--toggle-animation-inverse" data-xt-toggle>
+<div class="xt-list xt-list-3 items-center demo--toggle-animation-inverse" data-xt-toggle="{ targets: ':scope > .xt-toggle-inverse, .xt-toggle-item > .xt-toggle-inverse' }">
 
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Toggle 0

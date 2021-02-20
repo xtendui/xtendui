@@ -866,6 +866,7 @@ Xt.setScrollbarWidth = () => {
   const widthNoScroll = outer.offsetWidth
   const widthWithScroll = inner.offsetWidth
   Xt.scrollbarWidth = widthNoScroll - widthWithScroll
+  document.documentElement.style.setProperty('--scrollbar-width', `${Xt.scrollbarWidth}px`)
   // remove
   outer.remove()
 }

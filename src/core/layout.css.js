@@ -85,9 +85,9 @@ module.exports = {
       position: 'fixed',
       zIndex: theme('zIndex.xt-backdrop'),
       top: '0',
-      right: '0',
-      width: '100%',
-      height: '100%',
+      left: '0',
+      right: 'var(--scrollbar-width)',
+      bottom: '0',
       // styles
       backgroundColor: theme('colors.gray.900'),
       opacity: '0',
