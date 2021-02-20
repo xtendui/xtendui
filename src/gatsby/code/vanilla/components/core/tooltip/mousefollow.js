@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block" data-xt-tooltip="{ popperjs: false }" data-xt-mousefollow>
+<div data-xt-tooltip="{ popperjs: false }" data-xt-mousefollow>
 
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
     mouse follow

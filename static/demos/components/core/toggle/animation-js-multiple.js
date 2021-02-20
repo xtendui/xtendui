@@ -22,6 +22,7 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.set(tr, {
         x: -self.direction * 15,
         opacity: 0,
@@ -42,6 +43,7 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.to(tr, {
         x: self.direction * 15,
         opacity: 0,

@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="inline-block demo--tooltip-disable" data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button', matches: { '(min-width: 768px)': { disabled: true } } }">
+<div class="inline-block demo--tooltip-disable" data-xt-tooltip="{ matches: { '(min-width: 768px)': { disabled: true } } }">
 
   Lorem ipsum <a href="#">dolor</a> sit amet
 

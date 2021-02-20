@@ -22,7 +22,7 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *': {
+      '> *:first-child': {
         position: 'relative',
         zIndex: theme('zIndex.drop'),
       },
@@ -31,6 +31,9 @@ module.exports = {
         pointerEvents: 'none',
         transform: 'rotate(45deg)',
       },
+    },
+    '.xt-drop-container': {
+      display: 'inline-block',
     },
     '.xt-drop-disabled': {
       'a&, button&': {

@@ -11,18 +11,32 @@ export const demo = {
 demo.htmlSource = `
 <div data-xt-tooltip>
 
-  Lorem ipsum <a href="#">dolor</a> sit <a href="#">amet</a>
+  Lorem ipsum
 
-  <div class="xt-tooltip p-2">
-    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
-      Lorem ipsum dolor sit amet
+  <div class="xt-tooltip-container">
+
+    <a href="#">dolor</a>
+
+    <div class="xt-tooltip p-2">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+        Lorem ipsum dolor sit amet
+      </div>
     </div>
+
   </div>
 
-  <div class="xt-tooltip p-2">
-    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
-      Consectetur adipiscing elit
+  sit
+
+  <div class="xt-tooltip-container">
+
+    <a href="#">amet</a>
+
+    <div class="xt-tooltip p-2">
+      <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+          Consectetur adipiscing elit
+      </div>
     </div>
+
   </div>
 
 </div>

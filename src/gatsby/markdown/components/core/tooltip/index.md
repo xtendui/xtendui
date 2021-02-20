@@ -48,8 +48,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-tooltip'`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-tooltip-container'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, .xt-tooltip-container > .xt-toolti'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 
@@ -58,9 +58,6 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 #### Self
 
 Use this code to create a **tooltip** in **self mode**.
-
-[[notePrimary]]
-| When using `mouse` events (default) use only [tooltip with self mode](/components/core/tooltip#usage-self) for proper interaction **if you need to interact with the tooltip**.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/usage-self">
@@ -91,12 +88,15 @@ Check subpage to [customize interaction](/components/core/tooltip/interaction) a
 
 Use this code to create **tooltip** in **multiple mode**.
 
+[[notePrimary]]
+| Use `.xt-tooltip-container` when using **multiple mode**.
+
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/usage-multiple">
   </demovanilla>
 </demo>
 
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**. Group's additional elements aren't counted for min and max.
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/usage-multiple-group">

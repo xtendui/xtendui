@@ -48,8 +48,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-drop'`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-drop-container`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-drop, .xt-drop-container > .xt-drop'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 
@@ -58,6 +58,14 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 #### Self
 
 Use this code to create a **drop** in **self mode**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|               | Syntax                          | Mixin               | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.xt-drop-container`                     | `NOT POSSIBLE`                | Overflow scrollbar style            |
+
+</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-self">
@@ -88,12 +96,15 @@ Check subpage to [customize interaction](/components/core/drop/interaction) and 
 
 Use this code to create **drop** in **multiple mode**.
 
+[[notePrimary]]
+| Use `.xt-drop-container` when using **multiple mode**.
+
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-multiple">
   </demovanilla>
 </demo>
 
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**. Group's additional elements aren't counted for min and max.
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-multiple-group">

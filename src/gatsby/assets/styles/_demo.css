@@ -184,6 +184,11 @@ pre {
       flex-flow: column;
       height: 100%;
     }
+    .gatsby_demo_code_inner:not(.xt-toggle-init) {
+      .gatsby_demo_code_body_item:first-child {
+        display: block !important
+      }
+    }
     .gatsby_demo_code_body_item {
       @apply xt-toggle;
       display: flex;

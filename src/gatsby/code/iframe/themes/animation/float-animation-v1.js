@@ -128,7 +128,7 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+  <div data-xt-tooltip>
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
       tooltip
@@ -145,34 +145,38 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+  <div data-xt-tooltip>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      list group
-    </button>
+    <div class="xt-tooltip-container">
 
-    <div class="xt-tooltip p-2 group" data-xt-duration="700">
-      <div class="rounded-md shadow-tooltip text-black bg-white ${animDesign}">
-        <form class="text-sm">
+      <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+        list group
+      </button>
 
-          <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
+      <div class="xt-tooltip p-2 group" data-xt-duration="700">
+        <div class="rounded-md shadow-tooltip text-black bg-white ${animDesign}">
+          <form class="text-sm">
 
-            <div class="xt-list-inner flex-auto">
-              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
-                ${iconSearch({ classes: 'text-xl -my-1' })}
+            <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
+
+              <div class="xt-list-inner flex-auto">
+                <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
+                  ${iconSearch({ classes: 'text-xl -my-1' })}
+                </button>
+                <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+              </div>
+
+              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
+                Search
               </button>
-              <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+
             </div>
 
-            <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
-              Search
-            </button>
-
-          </div>
-
-        </form>
+          </form>
+        </div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItem} group-active:delay-300"></div>
+
     </div>
 
   </div>

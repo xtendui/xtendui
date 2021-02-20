@@ -40,7 +40,7 @@ demo.htmlSource = `
               <div class="xt-list flex-col">
 
                 <a href="#product-image-overlay-1" class="product-image w-full" id="product-image-1" title="Expand image 1">
-                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay--product-images' }">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" src="/img.svg" loading="eager" alt=""/>
                     </div>
@@ -49,7 +49,7 @@ demo.htmlSource = `
                 </a>
 
                 <a href="#product-image-overlay-2" class="product-image w-full" id="product-image-2" title="Expand image 2">
-                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay--product-images' }">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
@@ -58,7 +58,7 @@ demo.htmlSource = `
                 </a>
 
                 <a href="#product-image-overlay-3" class="product-image w-full" id="product-image-3" title="Expand image 3">
-                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay--product-images' }">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" src="/img.svg" loading="eager" alt=""/>
                     </div>
@@ -67,7 +67,7 @@ demo.htmlSource = `
                 </a>
 
                 <a href="#product-image-overlay-4" class="product-image w-full" id="product-image-4" title="Expand image 4">
-                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay--product-images' }">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" src="/img-alt.svg" loading="eager" alt=""/>
                     </div>
@@ -76,7 +76,7 @@ demo.htmlSource = `
                 </a>
 
                 <a href="#product-image-overlay-5" class="product-image w-full" id="product-image-5" title="Expand image 5">
-                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay-product-images' }">
+                  <div class="xt-media-container bg-gray-700" data-xt-overlay="{ targets: '#overlay--product-images' }">
                     <div class="xt-media-inner relative">
                       <img class="xt-media"" src="/img.svg" loading="eager" alt=""/>
                     </div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay-product-images">
+              <div class="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay--product-images">
                 <div class="xt-overlay-container p-0">
                   <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
                     ${iconX()}

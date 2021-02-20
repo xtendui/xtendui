@@ -22,7 +22,7 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *': {
+      '> *:first-child': {
         position: 'relative',
         zIndex: theme('zIndex.tooltip'),
       },
@@ -32,6 +32,9 @@ module.exports = {
         transform: 'rotate(45deg)',
         zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
       },
+    },
+    '.xt-tooltip-container': {
+      display: 'inline-block',
     },
     '.xt-tooltip-disabled': {
       '&.xt-tooltip': {

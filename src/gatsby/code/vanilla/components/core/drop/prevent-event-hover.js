@@ -11,9 +11,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
-  <div class="inline-block" data-xt-drop="{ elements: false, elementsInner: ':scope > a, :scope > button', on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+  <div class="xt-drop-container">
 
     <a href="#drop-with-link-1" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       drop

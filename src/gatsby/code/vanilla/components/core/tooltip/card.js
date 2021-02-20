@@ -11,9 +11,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div class="xt-list xt-list-3 items-center data-xt-tooltip>
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+  <div class="xt-tooltip-container">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       asset
@@ -34,7 +34,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+  <div class="xt-tooltip-container">
 
     <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
       asset and text

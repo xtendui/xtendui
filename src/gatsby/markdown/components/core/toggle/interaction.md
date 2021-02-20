@@ -133,6 +133,9 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 </div>
 
+[[notePrimary]]
+| `data-xt-group` additional elements aren't counted for min and max.
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/quantity">
   </demovanilla>

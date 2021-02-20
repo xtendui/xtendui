@@ -143,8 +143,8 @@ class Drop extends Xt.Toggle {
 Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
   // element
-  elements: ':scope > a, :scope > button',
-  targets: ':scope > .xt-drop',
+  elements: ':scope > a, :scope > button, .xt-drop-container',
+  targets: ':scope > .xt-drop, .xt-drop-container > .xt-drop',
   // class
   class: 'in in-drop',
   // quantity

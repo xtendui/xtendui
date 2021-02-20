@@ -44,7 +44,7 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
 | Option                  | `targets:Query`                          | `':scope > .xt-toggle, :scope > .xt-toggle-inverse'`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
 </div>
@@ -87,7 +87,7 @@ Use this code to create a **toggle** in **multiple mode**.
   </demovanilla>
 </demo>
 
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**. Group's additional elements aren't counted for min and max.
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">

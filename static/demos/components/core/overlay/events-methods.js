@@ -6,7 +6,7 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Overlay(object, {
-      targets: '#overlay-nested',
+      targets: '#overlay--nested',
     })
 
     // log

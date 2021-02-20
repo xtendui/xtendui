@@ -10,7 +10,7 @@ export const demo = {
 
 demo.htmlSource = `
 Lorem ipsum
-<span data-xt-tooltip="{ elements: false, elementsInner: ':scope > a, :scope > button' }">
+<span data-xt-tooltip>
   <a href="#">dolor</a>
   <div class="xt-tooltip p-2">
     <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">

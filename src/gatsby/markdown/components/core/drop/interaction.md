@@ -48,6 +48,9 @@ You can use also **css animations**, just add them with **class names** `.active
 | Class                  | `.direction-after`       |  Class name for left direction activation            |
 </div>
 
+[[noteDefault]]
+| Use `.xt-drop-container` when using **multiple mode**.
+
 <demo>
   <demovanilla src="vanilla/components/core/drop/animation-css">
   </demovanilla>
@@ -117,7 +120,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 </div>
 
 [[notePrimary]]
-| When using `mouse` events use only [drop with self mode](/components/core/drop#usage-self) for proper interaction.
+| When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) for proper interaction.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/event">
