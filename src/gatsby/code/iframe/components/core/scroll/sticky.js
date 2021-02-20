@@ -22,7 +22,7 @@ demo.htmlSource = `
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-top xt-scroll-sticky">
+<div class="demo--sticky-top xt-sitcky">
   <div class="xt-card text-sm p-6 ${cardPrimary()}">
     <div class="xt-h4 ">Top</div>
   </div>
@@ -47,7 +47,7 @@ demo.htmlSource = `
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-bottom xt-scroll-sticky">
+<div class="demo--sticky-bottom xt-sitcky">
   <div class="xt-card text-sm p-6 ${cardPrimary()}">
     <div class="xt-h4 ">Bottom</div>
   </div>

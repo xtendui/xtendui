@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--sticky-matchmedia xt-scroll-sticky">
+<div class="demo--sticky-matchmedia xt-sitcky">
   <div class="xt-card text-sm p-6 ${cardPrimary()}">
     <div class="xt-h4 ">Top</div>
   </div>

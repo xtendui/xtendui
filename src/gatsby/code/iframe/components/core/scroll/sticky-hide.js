@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--sticky-hide-top xt-scroll-sticky">
+<div class="demo--sticky-hide-top xt-sitcky">
   <div class="demo--sticky-hide-content">
     <div class="xt-card text-sm p-6 ${cardPrimary()} demo--sticky-hide-top-main">
       <div class="xt-h4 ">Top</div>

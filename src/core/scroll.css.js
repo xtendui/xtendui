@@ -1,6 +1,6 @@
 module.exports = {
   component: theme => ({
-    '.xt-scroll-sticky': {
+    '.xt-sitcky': {
       position: 'relative',
       zIndex: theme('zIndex.sticky') - 1,
       height: 'auto !important',

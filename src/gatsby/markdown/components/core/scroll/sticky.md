@@ -16,7 +16,7 @@ Use the **component classes** to create a **sticky**.
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-scroll-sticky`                     | `xt-scroll-sticky`                | Styles for sticky            |
+| Component                  | `.xt-sitcky`                     | `xt-sitcky`                | Styles for sticky            |
 
 </div>
 
