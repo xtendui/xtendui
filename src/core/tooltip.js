@@ -158,11 +158,11 @@ Tooltip.optionsDefault = {
   off: 'mouseleave',
   eventLimit: '.event-limit, .xt-tooltip',
   // timing
-  instant: {
-    elements: true,
-    targets: false,
-    elementsInner: true,
-    targetsInner: false,
+  queue: {
+    elements: false,
+    targets: true,
+    elementsInner: false,
+    targetsInner: true,
   },
   // other
   position: 'top',

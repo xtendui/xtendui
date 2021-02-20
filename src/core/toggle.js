@@ -1543,7 +1543,7 @@ class Toggle {
       }
     }
     // put in queue
-    if (typeof options.instant !== 'object' && options.instant === true) {
+    if (!options.queue) {
       self.detail[`queue${actionCurrent}`] = [obj]
     } else {
       self.detail[`queue${actionCurrent}`].unshift(obj)
@@ -1775,9 +1775,9 @@ class Toggle {
       */
       if (!objOther || !objOther[type] || objOther[type].done) {
         // @FIX if initial must be instant, fixes queue
-        if (self.initial || (typeof options.instant !== 'object' && options.instant === true)) {
+        if (self.initial || !options.queue) {
           obj[type].instant = true
-        } else if (typeof options.instant === 'object' && options.instant[type]) {
+        } else if (options.queue && !options.queue[type]) {
           obj[type].instantType = true
         }
         // special
@@ -3265,11 +3265,11 @@ Toggle.optionsDefaultSuper = {
   eventLimit: '.event-limit',
   preventEvent: false,
   // timing
-  instant: {
-    elements: true,
-    targets: false,
-    elementsInner: true,
-    targetsInner: false,
+  queue: {
+    elements: false,
+    targets: true,
+    elementsInner: false,
+    targetsInner: true,
   },
   delay: false,
   delayOn: false,

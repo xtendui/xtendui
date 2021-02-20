@@ -64,7 +64,7 @@ Xt.mount.push({
     let self = new Xt.Drop(object, {
       on: 'mouseenter',
       off: 'mouseleave',
-      instant: true,
+      queue: false,
       duration: 1000,
       delay: 150,
       preventEvent: true,

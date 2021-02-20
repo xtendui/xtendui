@@ -462,7 +462,7 @@ const populateDemo = (container, i) => {
   const btnCode = container.querySelector('.button-show-code')
   new Xt.Toggle(btnCode, {
     targets: `#${demoId} .gatsby_demo_code`,
-    instant: true,
+    queue: false,
   })
   btnCode.addEventListener('click', function () {
     const btn = this
@@ -673,7 +673,7 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
       elements: '.gatsby_demo_code_tabs_left .xt-button',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
-      instant: true,
+      queue: false,
     })
   }
 }
@@ -695,7 +695,7 @@ const populateInline = async item => {
       elements: '.gatsby_demo_code_tabs_left .xt-button',
       targets: '.gatsby_demo_code_body_item',
       min: 1,
-      instant: true,
+      queue: false,
     })
   }
 }

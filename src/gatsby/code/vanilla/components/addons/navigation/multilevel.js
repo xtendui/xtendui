@@ -15,7 +15,7 @@ demo.htmlSource = `
       targets: ':scope > .xt-toggle',
       min: 1,
       duration: 500,
-      instant: true
+      queue: false
     }">
 
   <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="initial">

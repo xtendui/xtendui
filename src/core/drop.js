@@ -154,11 +154,11 @@ Drop.optionsDefault = {
   off: false,
   eventLimit: '.event-limit, .xt-drop',
   // timing
-  instant: {
-    elements: true,
-    targets: false,
-    elementsInner: true,
-    targetsInner: false,
+  queue: {
+    elements: false,
+    targets: true,
+    elementsInner: false,
+    targetsInner: true,
   },
   // other
   position: 'bottom-start',

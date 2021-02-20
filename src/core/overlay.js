@@ -70,11 +70,11 @@ Overlay.optionsDefault = {
   off: 'click',
   eventLimit: '.event-limit, :scope > .xt-overlay-container > .xt-overlay-inner > *:first-child',
   // timing
-  instant: {
-    elements: true,
-    targets: false,
-    elementsInner: true,
-    targetsInner: false,
+  queue: {
+    elements: false,
+    targets: true,
+    elementsInner: false,
+    targetsInner: true,
   },
   // other
   backdrop: true,

@@ -367,7 +367,7 @@ Ajax.optionsDefault = {
   on: 'click',
   off: false,
   // timing
-  instant: true,
+  queue: false,
   duration: false,
   // other
   aria: false,

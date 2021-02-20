@@ -48,7 +48,7 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
-| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.instant: true`            |
+| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.queue: false`            |
 
 </div>
 
@@ -108,7 +108,7 @@ You can also use a function for <code>delay</code>, <code>delayOn</code> and <co
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `instant:Object|Boolean`                 | `{ elements: true, targets: false, elementsInner: true, targetsInner: false }`     | Set instant activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`          |
+| Option                  | `queue:Object|Boolean`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
 | Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
 | Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
