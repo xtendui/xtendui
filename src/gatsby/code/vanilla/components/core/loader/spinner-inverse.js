@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="xt-h5 ">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
-    <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+    <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
         ${spinner({ classes: 'animate-xt-spinner' })}
       </div>
@@ -27,7 +27,7 @@ demo.htmlSource = `
 
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
     Lorem ipsum
-    <span class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+    <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
           ${spinner({ classes: 'animate-xt-spinner' })}
       </span>

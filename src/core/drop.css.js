@@ -22,10 +22,6 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *:first-child': {
-        position: 'relative',
-        zIndex: theme('zIndex.drop'),
-      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',

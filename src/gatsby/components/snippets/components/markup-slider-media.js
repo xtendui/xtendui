@@ -11,7 +11,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="/img.svg" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -26,7 +26,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="/img-ratio.svg" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -41,7 +41,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -56,7 +56,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -71,7 +71,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -86,7 +86,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -101,7 +101,7 @@ export default () => {
         <div class="xt-media-inner relative">
           <img class="xt-media" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt=""/>
         </div>
-        <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${spinner({ classes: 'animate-xt-spinner' })}
           </div>

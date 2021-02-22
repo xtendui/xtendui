@@ -135,7 +135,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
+  <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
     <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
       ${spinner({ classes: 'animate-xt-spinner' })}
     </span>

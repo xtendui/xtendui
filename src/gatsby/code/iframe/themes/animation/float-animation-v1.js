@@ -93,7 +93,7 @@ demo.htmlSource = `
           </nav>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${cardWhite()} ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -117,7 +117,7 @@ demo.htmlSource = `
           </div>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${cardWhite()} ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -142,7 +142,7 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -176,7 +176,7 @@ demo.htmlSource = `
 
           </form>
         </div>
-        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
       </div>
 
     </div>

@@ -113,7 +113,7 @@ Test prevent event.
   </demovanilla>
 </demo>
 
-Test backdrop.
+Test backdrop z-index and arrow z-index.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/backdrop">

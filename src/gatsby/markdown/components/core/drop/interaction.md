@@ -149,13 +149,7 @@ You can have **element's link** and **click events** prevented when the drop ope
 
 ## Backdrop
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `backdrop:Boolean`                              | `false`                     | Generate backdrop on targets or on object if no targets           |
-
-</div>
+Use `<div class="xt-backdrop xt-drop-ui bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/backdrop">

@@ -17,7 +17,7 @@ demo.htmlSource = `
       <div class="xt-h5 ">Small</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
-    <span class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+    <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
         <span class="absolute bg-current opacity-25 w-full h-full"></span>
         <span class="absolute bg-current h-full animate-xt-filler-x"></span>
@@ -27,7 +27,7 @@ demo.htmlSource = `
 
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
     Lorem ipsum
-    <span class="xt-loader absolute z-top inset-0 rounded-inherit overflow-hidden">
+    <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
         <span class="absolute bg-current opacity-25 w-full h-full"></span>
         <span class="absolute bg-current h-full animate-xt-filler-x"></span>

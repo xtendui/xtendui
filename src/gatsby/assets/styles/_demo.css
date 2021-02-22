@@ -199,7 +199,7 @@ pre {
       }
     }
     &.active {
-      z-index: theme('zIndex.top');
+      z-index: theme('zIndex.above');
     }
   }
   &[data-iframe] {
@@ -270,7 +270,7 @@ pre {
 
 #gatsby_open-full {
   position: fixed;
-  z-index: theme('zIndex.top');
+  z-index: theme('zIndex.above');
   top: 0;
   left: 0;
   bottom: 0;

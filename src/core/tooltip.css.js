@@ -12,7 +12,7 @@ module.exports = {
       right: '0 !important',
     },
   },
-  component: theme => ({
+  component: {
     '.xt-tooltip': {
       position: 'absolute',
       margin: '0 !important',
@@ -22,15 +22,10 @@ module.exports = {
       '&.out': {
         pointerEvents: 'none',
       },
-      '> *:first-child': {
-        position: 'relative',
-        zIndex: theme('zIndex.tooltip'),
-      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',
         transform: 'rotate(45deg)',
-        zIndex: `calc(${theme('zIndex.tooltip')} - 1)`,
       },
     },
     '.xt-tooltip-item': {
@@ -44,5 +39,5 @@ module.exports = {
         display: 'none !important',
       },
     },
-  }),
+  },
 }

@@ -51,7 +51,6 @@ module.exports = {
       justifyContent: 'center',
       alignItems: 'center',
       position: 'relative',
-      zIndex: theme('zIndex.overlay'),
       width: '100%',
     },
     '.xt-overlay-disabled': {

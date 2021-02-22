@@ -91,7 +91,7 @@ demo.htmlSource = `
           </button>
         </nav>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -112,7 +112,7 @@ demo.htmlSource = `
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white z-drop ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -137,7 +137,7 @@ demo.htmlSource = `
           Lorem ipsum dolor sit amet
         </div>
       </div>
-      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
     </div>
 
   </div>
@@ -171,7 +171,7 @@ demo.htmlSource = `
 
           </form>
         </div>
-        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black ${animItemOpacity}"></div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
       </div>
 
     </div>

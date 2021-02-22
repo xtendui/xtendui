@@ -25,6 +25,7 @@ demo.htmlSource = `
         <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>
+        <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
       </div>
 
     </div>
@@ -42,6 +43,7 @@ demo.htmlSource = `
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
+      <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
     </div>
 
   </div>
