@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="megamenu relative bg-primary-500 text-white">
+<div class="xt-megamenu relative bg-primary-500 text-white">
 
   <!-- mouse events instead of click you can remove this -->
   <form class="text-sm container pt-10">
@@ -23,7 +23,7 @@ demo.htmlSource = `
     </label>
   </form>
 
-  <span class="megamenu-line absolute top-0 left-0 bg-white"></span>
+  <span class="xt-megamenu-line absolute top-0 left-0 bg-white"></span>
 
   <div class="container">
 
@@ -31,7 +31,7 @@ demo.htmlSource = `
 
       <div class="xt-drop-item">
 
-        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 xt-button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #1
         </a>
 
@@ -68,7 +68,7 @@ demo.htmlSource = `
 
       <div class="xt-drop-item">
 
-        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 xt-button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #2
         </a>
 
@@ -99,7 +99,7 @@ demo.htmlSource = `
 
       <div class="xt-drop-item">
 
-        <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        <a href="/" class="xt-button text-sm py-6 px-4 xt-button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
           Menu #3
         </a>
 
@@ -149,7 +149,7 @@ demo.htmlSource = `
 
       </div>
 
-      <a href="/" class="xt-button text-sm py-6 px-4 button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+      <a href="/" class="xt-button text-sm py-6 px-4 xt-button-line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
         Link #4
       </a>
 

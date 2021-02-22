@@ -17,7 +17,7 @@ export default class Demo extends React.Component {
       index++
       document.documentElement.setAttribute('data-demo-index', index.toString())
       // @FIX demo fullscreen
-      for (const btnOpenFull of container.querySelectorAll('.button-open-full')) {
+      for (const btnOpenFull of container.querySelectorAll('.xt-button--open-full')) {
         if (btnOpenFull.classList.contains('in-toggle')) {
           demoHash()
           break

@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/addons/googlelocator'
 
 Xt.mount.push({
-  matches: '#iframe--googlelocator .googlelocator',
+  matches: '#iframe--googlelocator .xt-googlelocator',
   mount: ({ object }) => {
     // add yout api key here
 
@@ -25,14 +25,14 @@ Xt.mount.push({
         elements: {
           loader: '.xt-loader',
           searchInput: 'input[type="text"]',
-          searchBtn: '.button-search',
-          map: '.googlelocator-main-map',
+          searchBtn: '.xt-button--search',
+          map: '.xt-googlelocator-main-map',
           itemsTemplate: 'script[type="text/x-template"]',
-          itemsContainer: '.googlelocator-items',
-          results: '.googlelocator-aside-body',
-          resultsFound: '.googlelocator-result-found',
-          locateBtn: '.button-locate',
-          repeatBtn: '.button-repeat',
+          itemsContainer: '.xt-googlelocator-items',
+          results: '.xt-googlelocator-aside-body',
+          resultsFound: '.xt-googlelocator-result--found',
+          locateBtn: '.xt-button--locate',
+          repeatBtn: '.xt-button--repeat',
           filter: 'input[type="checkbox"], input[type="radio"]',
         },
         events: {

@@ -66,7 +66,7 @@ To have **browser overflow scroll** on **touch devices** use this **css media qu
 
 Use `loading="lazy"` to lazy load images inside slider.
 
-If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.xt-slider`.
+If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
 

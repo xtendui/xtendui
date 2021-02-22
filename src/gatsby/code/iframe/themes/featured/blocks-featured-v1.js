@@ -35,9 +35,9 @@ demo.htmlSource = `
             </div>
             <div class="leading-loose">
               <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <div class="xt-button button-line ${buttonLine}">
-                <span class="button-line-design ${buttonLineDesign}"></span>
-                <span class="button-line-content ${buttonLineContent}">
+              <div class="xt-button xt-button-line ${buttonLine}">
+                <span class="xt-button-line-design ${buttonLineDesign}"></span>
+                <span class="xt-button-line-content ${buttonLineContent}">
                   Discover
                 </span>
               </div>
@@ -65,9 +65,9 @@ demo.htmlSource = `
             </div>
             <div class="leading-loose md:-mr-32 md:pl-12">
               <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <div class="xt-button button-line ${buttonLine}">
-                <span class="button-line-design ${buttonLineDesign}"></span>
-                <span class="button-line-content ${buttonLineContent}">
+              <div class="xt-button xt-button-line ${buttonLine}">
+                <span class="xt-button-line-design ${buttonLineDesign}"></span>
+                <span class="xt-button-line-content ${buttonLineContent}">
                   Discover
                 </span>
               </div>
@@ -95,9 +95,9 @@ demo.htmlSource = `
             </div>
             <div class="leading-loose">
               <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <div class="xt-button button-line ${buttonLine}">
-                <span class="button-line-design ${buttonLineDesign}"></span>
-                <span class="button-line-content ${buttonLineContent}">
+              <div class="xt-button xt-button-line ${buttonLine}">
+                <span class="xt-button-line-design ${buttonLineDesign}"></span>
+                <span class="xt-button-line-content ${buttonLineContent}">
                   Discover
                 </span>
               </div>
@@ -129,9 +129,9 @@ demo.htmlSource = `
             </div>
             <div class="leading-loose">
               <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
-              <div class="xt-button button-line ${buttonLine}">
-                <span class="button-line-design ${buttonLineDesign}"></span>
-                <span class="button-line-content ${buttonLineContent}">
+              <div class="xt-button xt-button-line ${buttonLine}">
+                <span class="xt-button-line-design ${buttonLineDesign}"></span>
+                <span class="xt-button-line-content ${buttonLineContent}">
                   Discover
                 </span>
               </div>

@@ -8,7 +8,7 @@ Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',
   mount: ({ object }) => {
     const checkChange = () => {
-      const component = document.querySelector('#iframe--menu-navigation-v1 .megamenu')
+      const component = document.querySelector('#iframe--menu-navigation-v1 .xt-megamenu')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
@@ -35,14 +35,14 @@ Xt.mount.push({
 })
 
 /**
- * .megamenu
+ * .xt-megamenu
  */
 
 Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 .megamenu',
+  matches: '#iframe--menu-navigation-v1 .xt-megamenu',
   mount: ({ object }) => {
     /**
-     * .megamenu drops
+     * .xt-megamenu drops
      */
 
     // vars
@@ -189,16 +189,16 @@ Xt.mount.push({
     self.object.addEventListener('off.xt.drop', eventOff, true)
 
     /**
-     * .megamenu line
+     * .xt-megamenu line
      */
 
     // vars
 
     let lineFirst = true
     let btnOn = false
-    const btns = object.querySelectorAll('.xt-list > .button-line')
+    const btns = object.querySelectorAll('.xt-list > .xt-button-line')
     const drops = object.querySelectorAll('.xt-drop-item')
-    const line = object.querySelector('.megamenu-line')
+    const line = object.querySelector('.xt-megamenu-line')
 
     const lineHeight = 7
     const lineTime = 0.5
@@ -211,7 +211,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = true
       } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
       }
       // raf after off.xt.drop
       requestAnimationFrame(() => {
@@ -250,7 +250,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = false
       } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
       }
       // raf after mouseenter
       requestAnimationFrame(() => {

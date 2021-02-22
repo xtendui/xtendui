@@ -47,7 +47,7 @@ demo.htmlSource = `
   </button>
 </div>
 
-<div class="xt-overlay" id="overlay--nested">
+<div class="xt-overlay" id="xt-overlay--nested">
   <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
   <div class="xt-overlay-container max-w-5xl">
     <div class="xt-overlay-inner">
