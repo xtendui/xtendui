@@ -1,3 +1,35 @@
+# [1.0.0-beta.5](https://github.com/minimit/xtendui/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-02-22)
+
+
+### Bug Fixes
+
+* fixed body scrollbar padding and refactor toggle appendto ([937f3c8](https://github.com/minimit/xtendui/commit/937f3c8e58689f9163b77bf5a857de2a52eb300a))
+* **overlay:** fix backdrop over scrollbar ([0d79e62](https://github.com/minimit/xtendui/commit/0d79e621538aa19902319a619049c10c9bccc16f))
+* **scroll:** changed classes ([dff16f3](https://github.com/minimit/xtendui/commit/dff16f33519743621f150f5c38ae9194f8214c46))
+* refactor multiple mode and mouse events and default elements options ([4ab41c9](https://github.com/minimit/xtendui/commit/4ab41c9a9cdec27cc70bca326d3f5a2390f6dc7c))
+* **css:** refactor drop and tooltip arrow ([d627897](https://github.com/minimit/xtendui/commit/d6278976463438b182d209e46ef4c8029b8fa047))
+* **toggle:** refactor direction and classes before instead of left and after instead of right ([7fb0dc9](https://github.com/minimit/xtendui/commit/7fb0dc9289d01cfcd30897b9cc8c2386697689ba))
+* **toggle:** removed xt-block ([c348dde](https://github.com/minimit/xtendui/commit/c348dde049d6ada86927c570e46fa8f0e0f0a1f1))
+
+
+### Features
+
+* refactor instant named queue and inverted values ([605cb98](https://github.com/minimit/xtendui/commit/605cb985601744fb4d8039288af0c0f4e8709fd4))
+* refactor xt-backdrop now with tailwind classes and no more by javascript and added closeDeep ([e07f6c1](https://github.com/minimit/xtendui/commit/e07f6c123f1f0fbc654ef553092dee31aef5c70b))
+* **js:** refactor direction js and css + refactor initStatus + fixed destroy classes + docs fixes ([5304f2c](https://github.com/minimit/xtendui/commit/5304f2cf1e05afc2abba3f1ac35372d7b768adef))
+* **toggle:** running checks to prevent multiple activation/deactivation with delay ([a9433f4](https://github.com/minimit/xtendui/commit/a9433f457e3f23791dee178c2255676b352076cb))
+
+
+### BREAKING CHANGES
+
+* now you have to include xt-backdrop on the markup see demos
+closeInside renamed to closeDeep and added new option closeInside that matches selectors inside but not deep
+* **scroll:** use xt-sticky instead of xt-scroll-sticky
+* **toggle:** use direction-before and direction-after instead of
+direction-left and direction-rigt
+* **js:** removed .inverse class use .direction-left and .direction-right instead
+* **css:** assign xt-drop and xt-tooltip padding, removed nospace xt-arrow with classes instead of xt-drop-arrow and xt-tooltip-arrow
+
 # [1.0.0-beta.4](https://github.com/minimit/xtendui/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-02-17)
 
 
