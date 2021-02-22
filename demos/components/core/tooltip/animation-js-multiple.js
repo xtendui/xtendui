@@ -24,8 +24,12 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
-      gsap.set(tr, { x: self.direction < 0 ? 10 : -10 })
+      const tr = e.target.querySelector(':scope > *')
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
+        x: -self.direction * 15,
+        opacity: 0,
+      })
       gsap.to(tr, {
         x: 0,
         opacity: 1,
@@ -41,9 +45,10 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const tr = e.target
+      const tr = e.target.querySelector(':scope > *')
+      gsap.killTweensOf(tr)
       gsap.to(tr, {
-        x: self.direction < 0 ? -10 : 10,
+        x: self.direction * 15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

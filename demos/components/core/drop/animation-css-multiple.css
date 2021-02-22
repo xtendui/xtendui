@@ -1,22 +1,40 @@
 .demo--drop-animation-css-multiple {
   .xt-drop {
     /* initial */
-    @apply transform transition;
-    @apply opacity-0 -translate-x-4;
-    &.inverse {
-      @apply translate-x-4;
+    > * {
+      @apply transform ease-out duration-500;
+      @apply opacity-0;
+    }
+    &.direction-before {
+      > * {
+        @apply translate-x-4;
+      }
+    }
+    &.direction-after {
+      > * {
+        @apply -translate-x-4;
+      }
     }
     /* active */
     &.active {
-      @apply opacity-100 translate-x-0;
+      > * {
+        @apply opacity-100 translate-x-0;
+      }
     }
     /* out */
     &.out {
-      @apply opacity-0 translate-x-4;
-    }
-    &.inverse {
-      &.out {
-        @apply -translate-x-4;
+      > * {
+        @apply opacity-0;
+      }
+      &.direction-before {
+        > * {
+          @apply -translate-x-4;
+        }
+      }
+      &.direction-after {
+        > * {
+          @apply translate-x-4;
+        }
       }
     }
   }

@@ -7,9 +7,9 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.7
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.7
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
 
     // init
@@ -22,8 +22,9 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.set(tr, {
-        x: self.direction < 0 ? 15 : -15,
+        x: -self.direction * 15,
         opacity: 0,
       })
       gsap.to(tr, {
@@ -42,8 +43,9 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
+      gsap.killTweensOf(tr)
       gsap.to(tr, {
-        x: self.direction < 0 ? -15 : 15,
+        x: self.direction * 15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

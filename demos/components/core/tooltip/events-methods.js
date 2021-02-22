@@ -68,7 +68,7 @@ Xt.mount.push({
         const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
         const indexTr = targets.length + 1
         const strTr = `
-          <div class="xt-tooltip" title="Target ${indexTr}">
+          <div class="xt-tooltip p-2" title="Target ${indexTr}">
             <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
               Lorem ipsum dolor sit amet
             </div>
@@ -101,23 +101,6 @@ Xt.mount.push({
     }
 
     removeBtn.addEventListener('click', removeFnc)
-
-    // block
-
-    const blockBtn = document.querySelector('#demo--tooltip-events-block')
-
-    const blockFnc = () => {
-      logAdd('<strong>block/unblock</strong>')
-      for (const element of self.elements) {
-        if (element.classList.contains('xt-block')) {
-          element.classList.remove('xt-block')
-        } else {
-          element.classList.add('xt-block')
-        }
-      }
-    }
-
-    blockBtn.addEventListener('click', blockFnc)
 
     // reinit
 

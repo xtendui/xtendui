@@ -2,12 +2,17 @@
   .xt-tooltip {
     /* initial */
     > * {
-      @apply transform transition duration-300;
-      @apply opacity-0 -translate-x-2;
+      @apply transform ease-out duration-300;
+      @apply opacity-0;
     }
-    &.inverse {
+    &.direction-before {
       > * {
-        @apply translate-x-2;
+        @apply translate-x-4;
+      }
+    }
+    &.direction-after {
+      > * {
+        @apply -translate-x-4;
       }
     }
     /* active */
@@ -19,13 +24,16 @@
     /* out */
     &.out {
       > * {
-        @apply opacity-0 translate-x-2;
+        @apply opacity-0;
       }
-    }
-    &.inverse {
-      &.out {
+      &.direction-before {
         > * {
           @apply -translate-x-4;
+        }
+      }
+      &.direction-after {
+        > * {
+          @apply translate-x-4;
         }
       }
     }

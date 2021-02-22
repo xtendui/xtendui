@@ -8,16 +8,18 @@ Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',
   mount: ({ object }) => {
     const checkChange = () => {
-      const component = document.querySelector('#iframe--menu-navigation-v1 .megamenu')
+      const component = document.querySelector('#iframe--menu-navigation-v1 .xt-megamenu')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
           if (object.checked) {
             self.options.on = 'mouseenter'
             self.options.off = 'mouseleave'
+            self.options.delay = 150
           } else {
             self.options.on = 'click'
             self.options.off = false
+            self.options.delay = false
           }
           self.destroy(true)
           self.reinit()
@@ -33,14 +35,14 @@ Xt.mount.push({
 })
 
 /**
- * .megamenu
+ * .xt-megamenu
  */
 
 Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 .megamenu',
+  matches: '#iframe--menu-navigation-v1 .xt-megamenu',
   mount: ({ object }) => {
     /**
-     * .megamenu drops
+     * .xt-megamenu drops
      */
 
     // vars
@@ -60,15 +62,12 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Drop(object, {
-      elements: '.xt-drop-container',
-      elementsInner: '.xt-drop-container > a, .xt-drop-container > button',
-      targets: '.xt-drop-container > .xt-drop',
+      on: 'mouseenter',
+      off: 'mouseleave',
+      queue: false,
       duration: 1000,
-      delay: 25,
+      delay: 150,
       preventEvent: true,
-      //on: 'mouseenter',
-      //off: 'mouseleave',
-      instant: true,
     })
 
     // setup
@@ -190,14 +189,16 @@ Xt.mount.push({
     self.object.addEventListener('off.xt.drop', eventOff, true)
 
     /**
-     * .megamenu line
+     * .xt-megamenu line
      */
 
     // vars
 
     let lineFirst = true
-    const btns = object.querySelectorAll('.button-line')
-    const line = object.querySelector('.megamenu-line')
+    let btnOn = false
+    const btns = object.querySelectorAll('.xt-list > .xt-button-line')
+    const drops = object.querySelectorAll('.xt-drop-item')
+    const line = object.querySelector('.xt-megamenu-line')
 
     const lineHeight = 7
     const lineTime = 0.5
@@ -205,57 +206,23 @@ Xt.mount.push({
 
     // enter
 
-    const eventEnter = function () {
-      const el = this
-      // line
-      const lineX = el.offsetLeft
-      const lineY = el.offsetTop + el.offsetHeight
-      const lineWidth = el.offsetWidth
-      if (lineFirst) {
-        gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0, opacity: 0 })
-        lineFirst = false
-      }
-      gsap.to(line, {
-        x: lineX,
-        y: lineY - lineHeight,
-        width: lineWidth,
-        height: lineHeight,
-        opacity: 1,
-        duration: lineTime,
-        ease: lineEase,
-      })
-    }
-
-    for (const btn of btns) {
-      btn.addEventListener('mouseenter', eventEnter, true)
-      const drop = btn.closest('.xt-drop-container')
-      if (drop) {
-        drop.addEventListener('on.xt.drop', eventEnter.bind(btn), true)
-      }
-    }
-
-    // leave
-
-    const eventLeave = function () {
-      // eslint-disable-next-line no-invalid-this
-      const el = this
-      // not when drop is still open
-      const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-      if (!dropBtnActive) {
-        // line
-        const lineY = el.offsetTop + el.offsetHeight
-        lineFirst = true
-        gsap.to(line, {
-          y: lineY,
-          opacity: 0,
-          duration: lineTime,
-          ease: lineEase,
-        })
+    const eventEnter = e => {
+      let el = e.target
+      if (Array.from(btns).includes(el)) {
+        btnOn = true
       } else {
+        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
+      }
+      // raf after off.xt.drop
+      requestAnimationFrame(() => {
         // line
-        const lineX = dropBtnActive.offsetLeft
-        const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
-        const lineWidth = dropBtnActive.offsetWidth
+        const lineX = el.offsetLeft
+        const lineY = el.offsetTop + el.offsetHeight
+        const lineWidth = el.offsetWidth
+        if (lineFirst) {
+          gsap.set(line, { x: lineX, y: lineY, width: lineWidth, height: 0, opacity: 0 })
+          lineFirst = false
+        }
         gsap.to(line, {
           x: lineX,
           y: lineY - lineHeight,
@@ -265,15 +232,66 @@ Xt.mount.push({
           duration: lineTime,
           ease: lineEase,
         })
-      }
+      })
     }
 
     for (const btn of btns) {
-      btn.addEventListener('mouseleave', eventLeave, true)
-      const drop = btn.closest('.xt-drop-container')
-      if (drop) {
-        drop.addEventListener('off.xt.drop', eventLeave.bind(btn), true)
+      btn.addEventListener('mouseenter', eventEnter)
+    }
+
+    for (const drop of drops) {
+      drop.addEventListener('on.xt.drop', eventEnter)
+    }
+
+    // leave
+
+    const eventLeave = e => {
+      let el = e.target
+      if (Array.from(btns).includes(el)) {
+        btnOn = false
+      } else {
+        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
       }
+      // raf after mouseenter
+      requestAnimationFrame(() => {
+        // not when drop is still open
+        const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
+        if (!dropBtnActive) {
+          if (!btnOn) {
+            // line
+            const lineY = el.offsetTop + el.offsetHeight
+            lineFirst = true
+            gsap.to(line, {
+              y: lineY,
+              opacity: 0,
+              duration: lineTime,
+              ease: lineEase,
+            })
+          }
+        } else {
+          // line
+          const lineX = dropBtnActive.offsetLeft
+          const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
+          const lineWidth = dropBtnActive.offsetWidth
+          gsap.to(line, {
+            x: lineX,
+            y: lineY - lineHeight,
+            width: lineWidth,
+            height: lineHeight,
+            opacity: 1,
+            duration: lineTime,
+            ease: lineEase,
+          })
+        }
+      })
+    }
+
+    for (const btn of btns) {
+      btn.addEventListener('mouseleave', eventLeave)
+    }
+
+    for (const drop of drops) {
+      drop.addEventListener('off.xt.drop', eventLeave)
     }
 
     // unmount

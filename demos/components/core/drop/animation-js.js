@@ -7,9 +7,9 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.7
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.7
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
 
     // init
@@ -21,9 +21,10 @@ Xt.mount.push({
     // on
 
     const eventOn = e => {
-      const tr = e.target
+      const tr = e.target.querySelector(':scope > *')
+      gsap.killTweensOf(tr)
       gsap.set(tr, {
-        x: self.direction < 0 ? 15 : -15,
+        x: -15,
         opacity: 0,
       })
       gsap.to(tr, {
@@ -41,9 +42,10 @@ Xt.mount.push({
     // off
 
     const eventOff = e => {
-      const tr = e.target
+      const tr = e.target.querySelector(':scope > *')
+      gsap.killTweensOf(tr)
       gsap.to(tr, {
-        x: self.direction < 0 ? -15 : 15,
+        x: 15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

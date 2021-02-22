@@ -7,9 +7,9 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const targetTimeOn = 0.7
+    const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.7
+    const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
 
     // init
@@ -22,7 +22,9 @@ Xt.mount.push({
 
     const eventOn = e => {
       const tr = e.target
+      // inner
       const inner = tr.querySelector('.xt-overlay-inner')
+      gsap.killTweensOf(inner)
       gsap.set(inner, {
         y: 15,
         opacity: 0,
@@ -30,6 +32,17 @@ Xt.mount.push({
       gsap.to(inner, {
         y: 0,
         opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
+      // backdrop
+      const backdrop = tr.querySelector('.xt-backdrop')
+      gsap.killTweensOf(backdrop)
+      gsap.set(backdrop, {
+        opacity: 0,
+      })
+      gsap.to(backdrop, {
+        opacity: 0.25,
         duration: targetTimeOn,
         ease: targetEaseOn,
       })
@@ -43,12 +56,22 @@ Xt.mount.push({
 
     const eventOff = e => {
       const tr = e.target
+      // inner
       const inner = tr.querySelector('.xt-overlay-inner')
+      gsap.killTweensOf(inner)
       gsap.to(inner, {
         y: -15,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,
+      })
+      // backdrop
+      const backdrop = tr.querySelector('.xt-backdrop')
+      gsap.killTweensOf(backdrop)
+      gsap.to(backdrop, {
+        opacity: 0,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
       })
     }
 
