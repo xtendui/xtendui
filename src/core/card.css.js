@@ -5,7 +5,7 @@ module.exports = {
       display: 'flex',
       alignItems: 'inherit',
     },
-    '.xt-card-disable': {
+    '.xt-card-disabled': {
       '@apply xt-links-default !important': '',
       borderWidth: '0 !important',
       backgroundColor: 'transparent !important',

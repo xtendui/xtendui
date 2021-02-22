@@ -21,6 +21,7 @@ demo.htmlSource = `
       </button>
 
       <div class="xt-tooltip p-2">
+       <div class="xt-backdrop xt-tooltip-ui bg-black opacity-25"></div>
         <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>
@@ -37,6 +38,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip p-2">
+      <div class="xt-backdrop xt-tooltip-ui bg-black opacity-25"></div>
       <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>

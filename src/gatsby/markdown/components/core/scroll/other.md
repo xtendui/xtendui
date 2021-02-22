@@ -6,7 +6,7 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disable
+## Disabled
 
 If you want to **disable the ScrollTrigger** use the method `disable()`.
 

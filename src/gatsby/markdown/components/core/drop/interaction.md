@@ -162,7 +162,7 @@ You can have **element's link** and **click events** prevented when the drop ope
   </demovanilla>
 </demo>
 
-## Disable
+## Disabled
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-drop-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 

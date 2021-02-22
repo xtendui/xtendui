@@ -154,7 +154,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
   </demovanilla>	
 </demo>	
 
-## Disable
+## Disabled
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-slider-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 

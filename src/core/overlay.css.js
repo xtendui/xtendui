@@ -78,7 +78,7 @@ module.exports = {
         '.xt-overlay-inner': {
           zIndex: 'initial',
           '> .xt-card': {
-            '@apply xt-card-disable !important': '',
+            '@apply xt-card-disabled !important': '',
           },
         },
         '.xt-overlay-ui': {

@@ -53,8 +53,11 @@ module.exports = {
           display: 'none',
         },
         '> .xt-card': {
-          '@apply xt-card-disable !important': '',
+          '@apply xt-card-disabled !important': '',
         },
+      },
+      '.xt-drop-ui': {
+        display: 'none !important',
       },
     },
   }),

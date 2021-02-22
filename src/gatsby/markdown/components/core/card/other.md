@@ -6,15 +6,15 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disable
+## Disabled
 
-You can disable styles using `.xt-card-disable`.
+You can disable styles using `.xt-card-disabled`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.xt-card-disable`       | `xt-card-disable`                | `responsive`                | Reset card styles            |
+| Utility                  | `.xt-card-disabled`       | `xt-card-disabled`                | `responsive`                | Reset card styles            |
 
 </div>
 

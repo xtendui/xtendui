@@ -104,7 +104,7 @@ You can also use a function for <code>delay</code>, <code>delayOn</code> and <co
   </demovanilla>
 </demo>
 
-## Disable
+## Disabled
 
 If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-overlay-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
 

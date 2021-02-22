@@ -40,6 +40,9 @@ module.exports = {
       '&.xt-tooltip': {
         display: 'none !important',
       },
+      '.xt-tooltip-ui': {
+        display: 'none !important',
+      },
     },
   }),
 }

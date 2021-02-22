@@ -1,47 +1,10 @@
 ---
-type: "Tests"
-category: "Tests"
+type: "Hidden"
+category: "Hidden"
 parent: "Markdown"
 title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/contain-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-js-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-js-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
-  </demovanilla>
-</demo>
-
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/matches">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/matches">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/matches">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/overlay/matches">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/matches">
-  </demovanilla>
-</demo>
 
 ## Markdown
 
