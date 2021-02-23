@@ -156,9 +156,7 @@ You can specify **on** and **off** events for the toggle.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/event-mouse">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/event-focus">
+  <demovanilla src="vanilla/components/core/toggle/event">
   </demovanilla>
 </demo>
 

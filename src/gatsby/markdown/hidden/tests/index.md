@@ -94,9 +94,7 @@ Test auto.
 Test event, test event mouse should be instant no jump.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/event-mouse">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/event-focus">
+  <demovanilla src="vanilla/components/core/toggle/event">
   </demovanilla>
   <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>
