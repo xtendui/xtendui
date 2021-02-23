@@ -29,7 +29,7 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="xt-card rounded-md ${cardDefault()}">
         <div class="xt-media-container bg-gray-700 rounded-md xt-ratio-37.5">
-          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500">
+          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500" data-xt-duration="500">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>
         </div>
@@ -39,7 +39,7 @@ demo.htmlSource = `
     <div class="w-full md:w-6/12">
       <div class="xt-card rounded-md ${cardDefault()}">
         <div class="xt-media-container bg-gray-700 rounded-md xt-ratio-37.5">
-          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500">
+          <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500" data-xt-duration="500">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
           </div>
         </div>
