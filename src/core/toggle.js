@@ -464,16 +464,23 @@ class Toggle {
     // elements
     for (const el of self.elements) {
       // event on
-      const onHandler = Xt.dataStorage.put(
-        el,
-        `${options.on}/${self.ns}`,
-        self.eventOnHandler.bind(self).bind(self, el)
-      )
       if (options.on) {
+        const onHandler = Xt.dataStorage.put(
+          el,
+          `${options.on}/${self.ns}`, // @FIX same event for on and off same namespace
+          self.eventOnHandler.bind(self).bind(self, el)
+        )
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
+        const onHandlerCustom = Xt.dataStorage.put(
+          el,
+          `${options.on}/${self.ns}`,
+          self.eventOnHandler.bind(self).bind(self, el)
+        )
+        el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
+        // preventEvent
         if (options.preventEvent) {
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
             // @FIX prevents click links on click until clicked two times
@@ -495,13 +502,11 @@ class Toggle {
         }
         Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
       }
-      const onHandlerCustom = Xt.dataStorage.put(el, `on/${self.ns}`, self.eventOnHandler.bind(self).bind(self, el))
-      el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       // event off
       if (options.off) {
         const offHandler = Xt.dataStorage.put(
           el,
-          `${options.off}/${self.ns}`,
+          `${options.off}/${self.ns}`, // @FIX same event for on and off same namespace
           self.eventOffHandler.bind(self).bind(self, el)
         )
         const events = [...options.off.split(' ')]
@@ -510,7 +515,7 @@ class Toggle {
         }
         const offHandlerCustom = Xt.dataStorage.put(
           el,
-          `off/${self.ns}`,
+          `${options.off}/${self.ns}`, // @FIX same event for on and off same namespace
           self.eventOffHandler.bind(self).bind(self, el)
         )
         el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
@@ -518,22 +523,22 @@ class Toggle {
     }
     // targets
     for (const tr of self.targets) {
-      // event
-      const onHandler = Xt.dataStorage.put(
-        tr,
-        `${options.on}/${self.ns}`,
-        self.eventOnHandler.bind(self).bind(self, tr)
-      )
-      tr.addEventListener(`on.trigger.${self.componentNs}`, onHandler)
+      // event on
+      if (options.on) {
+        const onHandler = Xt.dataStorage.put(
+          tr,
+          `${options.on}/${self.ns}`,
+          self.eventOnHandler.bind(self).bind(self, tr)
+        )
+        tr.addEventListener(`on.trigger.${self.componentNs}`, onHandler)
+      }
+      // event off
       if (options.off) {
         const offHandlerCustom = Xt.dataStorage.put(
           tr,
-          `off/${self.ns}`,
+          `${options.off}/${self.ns}`,
           self.eventOffHandler.bind(self).bind(self, tr)
         )
-        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
-      } else {
-        const offHandlerCustom = Xt.dataStorage.put(tr, `off/${self.ns}`, self.eventOnHandler.bind(self).bind(self, tr))
         tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
@@ -1403,6 +1408,7 @@ class Toggle {
       return false
     }
     // toggle
+    // @FIX same event for on and off same namespace
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // auto
       self.eventAutostop()
@@ -1435,12 +1441,13 @@ class Toggle {
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
       }
-      // activationd
+      // activation
       return true
-    } else if (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`) {
+    } else if (options.on === options.off && (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`)) {
+      // @FIX same event for on and off same namespace
       self.eventOff(element, false, e)
     }
-    // activationd
+    // activation
     return false
   }
 
