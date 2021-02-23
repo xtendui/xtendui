@@ -77,6 +77,7 @@ module.exports = {
     },
   },
   variants: {
+    display: ['responsive', 'group-hover', 'group-active', 'hover', 'active', 'focus'],
     backgroundColor: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     gradientColorStops: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
     backgroundOpacity: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),

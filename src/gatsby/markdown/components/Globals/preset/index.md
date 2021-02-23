@@ -24,8 +24,7 @@ The following theme values are added with the preset:
 
 ## Variants
 
-The theme adds also **custom tailwind variants** `active` and `group-active`, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values.
+See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values
 
-They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.
-
-When you **style active with css** remember to style `&:active, &.active`.
+* Added display variants `['responsive', 'group-hover', 'group-active', 'hover', 'active', 'focus']`
+* Added **custom tailwind variants** `active` and `group-active`. They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.
