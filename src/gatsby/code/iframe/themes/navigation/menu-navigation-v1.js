@@ -111,7 +111,7 @@ demo.htmlSource = `
               <div class="pt-16 pb-24 text-black xt-links-default">
                 <div class="container">
                   <div class="xt-row xt-row-x-8">
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Lorem ipsum
                       </a>
@@ -125,7 +125,7 @@ demo.htmlSource = `
                         Morbi nec mauris est
                       </a>
                     </div>
-                    <div class="w-full lg:w-6/12">
+                    <div class="w-full md:w-6/12">
                       <a href="#" class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case" style="font-size: 28px;">
                         Dolor sit amet
                       </a>
