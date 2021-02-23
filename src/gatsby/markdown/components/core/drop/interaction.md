@@ -51,8 +51,8 @@ You can use also **css animations**, just add them with **class names** `.active
 | Class                  | `.direction-after`       |  Class name for left direction activation            |
 </div>
 
-[[noteDefault]]
-| Use `.xt-drop-item` when using **multiple mode**.
+[[notePrimary]]
+| Use `.xt-drop-item` as **elements** when using **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/animation-css">

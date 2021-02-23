@@ -99,7 +99,7 @@ Use this code to create **drop** in **multiple mode**.
 The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
 
 [[notePrimary]]
-| Use `.xt-drop-item` when using **multiple mode**.
+| Use `.xt-drop-item` as **elements** when using **multiple mode**.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/usage-multiple">

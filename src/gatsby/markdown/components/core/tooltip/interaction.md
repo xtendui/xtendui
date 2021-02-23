@@ -51,6 +51,9 @@ You can use also **css animations**, just add them with **class names** `.active
 | Class                  | `.direction-after`       |  Class name for left direction activation            |
 </div>
 
+[[notePrimary]]
+| Use `.xt-tooltip-item` as **elements** when using **multiple mode**.
+
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/animation-css">
   </demovanilla>
