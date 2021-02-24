@@ -12,7 +12,7 @@ module.exports = {
       right: '0 !important',
     },
   },
-  component: theme => ({
+  component: {
     '.xt-drop': {
       position: 'absolute',
       margin: '0 !important',
@@ -56,5 +56,5 @@ module.exports = {
         display: 'none !important',
       },
     },
-  }),
+  },
 }
