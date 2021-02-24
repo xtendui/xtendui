@@ -60,6 +60,9 @@ You can use headers **classes or tags** with customizable styles.
 
 Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height), [letter-spacing](https://tailwindcss.com/docs/letter-spacing)).
 
+[[noteDefault]]
+| Remember to **override text line height with responsive leading**.
+
 <demo>
   <demovanilla src="vanilla/components/core/typography/headers-custom">
   </demovanilla>
