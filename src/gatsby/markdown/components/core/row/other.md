@@ -27,17 +27,17 @@ When using cards you can space with `margin auto` on **card content**. When not 
 
 ## Overflow
 
-Use `.xt-row-overflow` to have browser overflow scroll on **touch devices** (use touch device to see it in action).
+Use `.xt-row-overflow` to have **overflow scroll when overflowing**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-row-overflow`                     | `xt-row-overflow`                | Overflow on touch devices            |
+| Component                  | `.xt-row-overflow`                     | `xt-row-overflow`                | Overflow styles when overflowing            |
 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/overflow">
-  </demovanilla>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/row/overflow">
+  </div>
 </demo>

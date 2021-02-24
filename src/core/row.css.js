@@ -49,15 +49,13 @@ module.exports = {
         },
       },
     },
-    '@media (hover: none)': {
-      '.xt-row-overflow': {
-        '@apply xt-overflow-sub': '',
-        overflowX: 'auto',
-        overflowY: 'hidden',
-        flexWrap: 'nowrap',
-        '> *': {
-          flex: 'none',
-        },
+    '.xt-row-overflow': {
+      '@apply xt-overflow-sub': '',
+      overflowX: 'auto',
+      overflowY: 'hidden',
+      flexWrap: 'nowrap',
+      '> *': {
+        flex: 'none',
       },
     },
   },
