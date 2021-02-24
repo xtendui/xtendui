@@ -234,6 +234,11 @@ module.exports = {
     },
   }),
   component: theme => ({
+    body: {
+      '-webkit-font-smoothing': 'antialiased',
+      '-moz-osx-font-smoothing': 'grayscale',
+      fontVariantLigatures: 'none',
+    },
     strong: {
       // styles
       fontWeight: theme('fontWeight.semibold'),
