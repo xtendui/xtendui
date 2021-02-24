@@ -55,7 +55,7 @@ demo.htmlSource = `
     Primary
   </button>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonText()}">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black ${buttonText()}">
     Text
   </button>
 

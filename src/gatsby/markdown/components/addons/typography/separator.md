@@ -35,7 +35,7 @@ Use this code to create a **separator**.
   </demovanilla>
 </demo>
 
-## Type
+## Variant
 
 Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [text-color](https://tailwindcss.com/docs/text-color)).
 
@@ -50,6 +50,15 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/addons/typography/separator-type">
+  <demovanilla src="vanilla/components/addons/typography/separator-variant">
+  </demovanilla>
+</demo>
+
+## Size
+
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+
+<demo>
+  <demovanilla src="vanilla/components/addons/typography/separator-size">
   </demovanilla>
 </demo>

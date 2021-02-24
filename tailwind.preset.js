@@ -13,9 +13,9 @@ module.exports = {
         },
       },
       fontSize: {
-        '3xs': ['0.6875rem', { lineHeight: '1rem' }],
-        '2xs': ['0.75rem', { lineHeight: '1rem' }],
-        xs: ['0.8125rem', { lineHeight: '1rem' }],
+        '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
+        '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
+        xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
       },
       colors: {
         primary: {

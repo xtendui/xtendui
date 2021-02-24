@@ -21,7 +21,7 @@ demo.htmlSource = `
     Primary
   </button>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonText()} xt-disabled" aria-disabled="true">
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black ${buttonText()} xt-disabled" aria-disabled="true">
     Text
   </button>
 

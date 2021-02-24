@@ -10,15 +10,15 @@ export const demo = {
 
 demo.htmlSource = `
 <nav class="xt-breadcrumbs leading-none truncate">
-  <a href="#" class="xt-button text-xs py-2 px-0 ${buttonText()}">
+  <a href="#" class="xt-button text-xs py-2 px-0 text-black ${buttonText()}">
     Home
   </a>
   <span class="xt-separator xt-separator-slash mx-2"></span>
-  <a href="#" class="xt-button text-xs py-2 px-0 ${buttonText()}">
+  <a href="#" class="xt-button text-xs py-2 px-0 text-black ${buttonText()}">
     Lorem ipsum dolor sit amet
   </a>
   <span class="xt-separator xt-separator-slash mx-2"></span>
-  <div class="xt-button text-xs py-2 px-0 ${buttonText()} pointer-events-none">
+  <div class="xt-button text-xs py-2 px-0 text-black ${buttonText()} pointer-events-none">
     Lorem ipsum
   </div>
 </nav>
