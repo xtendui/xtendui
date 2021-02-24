@@ -209,7 +209,7 @@ demo.htmlSource = `
         <div class="xt-overlay-inner ${animDesign}">
 
           <div class="xt-card xt-min-h-screen items-center justify-center ${cardWhite()}">
-            <div class="xt-media-container bg-gray-700 xt-ratio-100 ${animItem}">
+            <div class="xt-media-container bg-gray-200 xt-ratio-100 ${animItem}">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -247,7 +247,7 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="xt-media-container bg-gray-700 h-48 ${animItem}">
+            <div class="xt-media-container bg-gray-200 h-48 ${animItem}">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -360,7 +360,7 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col ${animItem}">
-                <div class="xt-media-container bg-gray-700 md:rounded-tr-md h-48 md:xt-ratio-100">
+                <div class="xt-media-container bg-gray-200 md:rounded-tr-md h-48 md:xt-ratio-100">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
@@ -404,7 +404,7 @@ demo.htmlSource = `
             <div class="md:xt-card-group rounded-md ${animItem}">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="xt-media-container bg-gray-700 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
+                <div class="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>

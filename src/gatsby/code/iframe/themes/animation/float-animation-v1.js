@@ -206,7 +206,7 @@ demo.htmlSource = `
           <div class="xt-design-setup rounded-md bg-white ${animDesign}"></div>
 
           <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem}">
-            <div class="xt-media-container bg-gray-700 xt-ratio-100">
+            <div class="xt-media-container bg-gray-200 xt-ratio-100">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -246,7 +246,7 @@ demo.htmlSource = `
                 Account
               </button>
             </div>
-            <div class="xt-media-container bg-gray-700 h-48">
+            <div class="xt-media-container bg-gray-200 h-48">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
@@ -361,7 +361,7 @@ demo.htmlSource = `
               </div>
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="xt-media-container bg-gray-700 h-48 md:xt-ratio-100">
+                <div class="xt-media-container bg-gray-200 h-48 md:xt-ratio-100">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
@@ -407,7 +407,7 @@ demo.htmlSource = `
             <div class="md:xt-card-group">
 
               <div class="md:w-5/12 flex flex-col">
-                <div class="xt-media-container bg-gray-700 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
+                <div class="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>

@@ -88,7 +88,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>

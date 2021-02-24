@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="xt-slide w-full">
         <div class="xt-hero relative block overflow-hidden w-full">
           <div class="xt-hero-inner">
-            <div class="xt-media-container bg-gray-700 h-screen">
+            <div class="xt-media-container bg-gray-200 h-screen">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -43,7 +43,7 @@ demo.htmlSource = `
       <div class="xt-slide w-full">
         <div class="xt-hero relative block overflow-hidden w-full">
           <div class="xt-hero-inner">
-            <div class="xt-media-container bg-gray-700 h-screen">
+            <div class="xt-media-container bg-gray-200 h-screen">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -66,7 +66,7 @@ demo.htmlSource = `
       <div class="xt-slide w-full">
         <div class="xt-hero relative block overflow-hidden w-full">
           <div class="xt-hero-inner">
-            <div class="xt-media-container bg-gray-700 h-screen">
+            <div class="xt-media-container bg-gray-200 h-screen">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -97,7 +97,7 @@ demo.htmlSource = `
       <div class="xt-slide w-full">
         <div class="xt-hero relative block overflow-hidden w-full">
           <div class="xt-hero-inner">
-            <div class="xt-media-container bg-gray-700 h-screen">
+            <div class="xt-media-container bg-gray-200 h-screen">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>

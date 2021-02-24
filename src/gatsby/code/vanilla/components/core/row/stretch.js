@@ -13,7 +13,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+      <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
         <div class="xt-media-inner">
           <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="xt-media-container bg-gray-700 rounded-t-md xt-ratio-37.5">
+      <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
         <div class="xt-media-inner">
           <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>

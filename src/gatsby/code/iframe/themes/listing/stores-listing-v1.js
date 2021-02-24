@@ -24,7 +24,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -80,7 +80,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -124,7 +124,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -180,7 +180,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -224,7 +224,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -280,7 +280,7 @@ demo.htmlSource = `
           <div class="xt-listing-item-inner">
 
             <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
-              <div class="xt-media-container bg-gray-700 flex-full rounded-t-md h-40">
+              <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>

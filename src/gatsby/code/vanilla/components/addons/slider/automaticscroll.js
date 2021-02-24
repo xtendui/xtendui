@@ -83,42 +83,42 @@ demo.htmlSource = `
 
         <div class="xt-slide xt-list xt-list-px flex-nowrap">
           <a href="#test-link-1" class="slide-asset" title="item 0">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-2" class="slide-asset" title="item 1">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-3" class="slide-asset" title="item 2">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-4" class="slide-asset" title="item 3">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-5" class="slide-asset" title="item 4">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
           </a>
           <a href="#test-link-6" class="slide-asset" title="item 5">
-            <div class="xt-media-container bg-gray-700 xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-200 xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="">
               </div>

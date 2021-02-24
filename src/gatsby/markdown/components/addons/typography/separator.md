@@ -56,7 +56,7 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **tailwind classes** to assign size (e.g. [margin](https://tailwindcss.com/docs/margin), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demovanilla src="vanilla/components/addons/typography/separator-size">

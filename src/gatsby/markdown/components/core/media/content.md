@@ -6,6 +6,17 @@ title: "Content"
 date: "2030-10-10"
 ---
 
+## Variant
+
+When images are loading the `.xt-media-container` background is shown.
+
+Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color)).
+
+<demo>
+  <demovanilla src="vanilla/components/core/media/variant">
+  </demovanilla>
+</demo>
+
 ## Responsive
 
 Use **tailwind classes** on `.xt-media-inner` to assign relative position. The result is a **responsive media**.

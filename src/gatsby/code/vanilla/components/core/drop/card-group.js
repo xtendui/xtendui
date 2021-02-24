@@ -56,7 +56,7 @@ demo.htmlSource = `
             </div>
           </div>
         </div>
-        <div class="xt-media-container bg-gray-700 rounded-b-md xt-ratio-25">
+        <div class="xt-media-container bg-gray-200 rounded-b-md xt-ratio-25">
           <div class="xt-media-inner">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
