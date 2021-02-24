@@ -22,6 +22,11 @@ demo.htmlSource = `
     ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
+  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md items-center ${buttonPrimary()}">
+    align items<br>center
+    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+  </button>
+
   <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md items-start ${buttonPrimary()}">
     align items<br>items-start
     ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}

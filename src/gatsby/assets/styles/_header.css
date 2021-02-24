@@ -233,7 +233,7 @@
     @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
-    font-weight: theme('fontWeight.normal');
+    font-weight: theme('fontWeight.semibold');
     font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.66);
     line-height: 1;

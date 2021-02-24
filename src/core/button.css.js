@@ -10,7 +10,6 @@ module.exports = {
       verticalAlign: 'middle',
       flexWrap: 'nowrap',
       alignItems: 'center',
-      justifyContent: 'space-between',
       textAlign: 'left',
     },
   },
