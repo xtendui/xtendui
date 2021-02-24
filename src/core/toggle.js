@@ -540,6 +540,13 @@ class Toggle {
           self.eventOffHandler.bind(self).bind(self, tr)
         )
         tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
+      } else {
+        const offHandlerCustom = Xt.dataStorage.put(
+          tr,
+          `${options.off}/${self.ns}`,
+          self.eventOnHandler.bind(self).bind(self, tr)
+        )
+        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
     // auto
