@@ -117,7 +117,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
-| Option                  | `off:String`                             | `false`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
+| Option                  | `off:String`                             | `'click'`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
 | Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-drop'`        | Limit events inside self.object            |
 
 </div>

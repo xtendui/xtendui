@@ -63,7 +63,7 @@ demo.htmlSource = `
 </div>
 
 <form class="text-sm mt-4">
-  <div data-xt-drop="{ elements: ':scope > input', on: 'focus' }">
+  <div data-xt-drop="{ elements: ':scope > input', on: 'focus', off: false }">
 
     <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 

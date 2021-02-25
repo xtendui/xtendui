@@ -18,7 +18,7 @@ Xt.mount.push({
             self.options.delay = 150
           } else {
             self.options.on = 'click'
-            self.options.off = false
+            self.options.off = 'click'
             self.options.delay = false
           }
           self.destroy(true)

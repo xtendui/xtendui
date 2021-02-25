@@ -65,22 +65,6 @@ Test direction and queue timing.
 </demo>
 
 @TODO put queue false demos
-## Event Methods
-
-Test add and remove, test change > reinit > change > restart, destroy no interactions.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/events-methods">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/drop/events-methods">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/tooltip/events-methods">
-  </div>
-</demo>
 
 ## Toggle
 
@@ -91,7 +75,11 @@ Test auto.
   </demovanilla>
 </demo>
 
-Test event, test event mouse should be instant no jump.
+Test toggle mouse should not close when clicking opened elements.
+
+Test drop mouse should not close when going over targets.
+
+Test tooltip click should close when clicking opened elements.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/event">
@@ -142,6 +130,23 @@ Test wrap activation on drag, test when not wrapping if active is not first or l
   </demovanilla>
   <demovanilla src="vanilla/components/core/slider/wrap-right">
   </demovanilla>
+</demo>
+
+## Event Methods
+
+Test add and remove, test change > reinit > change > restart, destroy no interactions.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/events-methods">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/drop/events-methods">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/tooltip/events-methods">
+  </div>
 </demo>
 
 ## Addons

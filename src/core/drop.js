@@ -151,7 +151,7 @@ Drop.optionsDefault = {
   max: 1,
   // event
   on: 'click',
-  off: false,
+  off: 'click',
   eventLimit: '.event-limit, .xt-drop',
   // timing
   queue: {
