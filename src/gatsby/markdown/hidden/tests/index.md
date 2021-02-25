@@ -8,7 +8,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Disabled
 
-Test initial position, test no interactions.
+Test initial position.
+
+Test no interactions.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/disable">
@@ -27,7 +29,11 @@ Test initial position, test no interactions.
 
 ## Matches
 
-Test matches functionality on mobile/desktop, test overlay open on mobile > resize desktop is disabled.
+Test matches functionality on mobile/desktop.
+
+Test overlay open on mobile > resize desktop is disabled.
+
+Test overlay open nested should close one by one clicking on close.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/matches">
@@ -121,7 +127,9 @@ Test contain grouping and position.
   </demovanilla>
 </demo>
 
-Test wrap activation on drag, test when not wrapping if active is not first or last.
+Test wrap activation on drag.
+
+Test when not wrapping if active is not first or last.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/wrap-center">
@@ -134,7 +142,11 @@ Test wrap activation on drag, test when not wrapping if active is not first or l
 
 ## Event Methods
 
-Test add and remove, test change > reinit > change > restart, destroy no interactions.
+Test add and remove.
+
+Test change > reinit > change > restart.
+
+Test destroy no interactions.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
@@ -151,14 +163,18 @@ Test add and remove, test change > reinit > change > restart, destroy no interac
 
 ## Addons
 
-Test scroll position, test activation classes on scroll.
+Test scroll position.
+
+Test activation classes on scroll.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor">
   </div>
 </demo>
 
-Test scroll position, test wrap.
+Test scroll position.
+
+Test wrap.
 
 <demo>
   <demovanilla src="vanilla/components/addons/slider/automaticscroll">
