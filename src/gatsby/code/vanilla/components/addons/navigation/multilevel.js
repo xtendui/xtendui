@@ -10,8 +10,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-multilevel relative demo--multilevel" data-xt-toggle="{
-      elements: '.xt-multilevel-reset, .xt-multilevel-list > button',
+<div class="multilevel relative demo--multilevel" data-xt-toggle="{
+      elements: '.multilevel-reset, .multilevel-list > button',
       targets: ':scope > .xt-toggle',
       min: 1,
       duration: 500,
@@ -24,12 +24,12 @@ demo.htmlSource = `
       <div>
         Menu
       </div>
-      <button type="button" class="hidden xt-multilevel-reset" data-xt-group="initial">
+      <button type="button" class="hidden multilevel-reset" data-xt-group="initial">
         Back
       </button>
     </div>
 
-    <nav class="xt-list flex-col xt-multilevel-list">
+    <nav class="xt-list flex-col multilevel-list">
       <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonDefault()}" data-xt-group="cat-0">
         Category 0
       </button>
@@ -52,12 +52,12 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} xt-multilevel-reset" data-xt-group="initial">
+      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} multilevel-reset" data-xt-group="initial">
         Back
       </button>
     </div>
 
-    <nav class="xt-list flex-col xt-multilevel-list">
+    <nav class="xt-list flex-col multilevel-list">
       <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonDefault()}" data-xt-group="cat-0a">
         Category 0a
       </button>
@@ -80,12 +80,12 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} xt-multilevel-reset" data-xt-group="cat-0">
+      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
         Back
       </button>
     </div>
 
-    <nav class="xt-list flex-col xt-multilevel-list">
+    <nav class="xt-list flex-col multilevel-list">
       <a href="#" class="xt-button text-xs py-2 px-3.5 ${buttonDefault()}">
         Link 0
       </a>
@@ -102,12 +102,12 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} xt-multilevel-reset" data-xt-group="cat-0">
+      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
         Back
       </button>
     </div>
 
-    <nav class="xt-list flex-col xt-multilevel-list">
+    <nav class="xt-list flex-col multilevel-list">
       <a href="#" class="xt-button text-xs py-2 px-3.5 ${buttonDefault()}">
         Link 0
       </a>
@@ -124,12 +124,12 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} xt-multilevel-reset" data-xt-group="initial">
+      <button type="button" class="xt-button text-3xs py-1.5 px-2.5 ${buttonPrimary()} multilevel-reset" data-xt-group="initial">
         Back
       </button>
     </div>
 
-    <nav class="xt-list flex-col xt-multilevel-list">
+    <nav class="xt-list flex-col multilevel-list">
       <a href="#" class="xt-button text-xs py-2 px-3.5 ${buttonDefault()}">
         Link 0
       </a>

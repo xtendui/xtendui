@@ -43,7 +43,7 @@ demo.htmlSource = `
     <div class="xt-row xt-row-6">
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -61,7 +61,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -79,7 +79,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -97,7 +97,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -115,7 +115,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -133,7 +133,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12 md:w-4/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -151,7 +151,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75 md:xt-ratio-50">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -169,7 +169,7 @@ demo.htmlSource = `
       </div>
 
       <div class="w-6/12">
-        <a href="https://github.com/minimit/xtendui" class="xt-listing-item block text-black">
+        <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
           <div class="xt-media-container bg-gray-200 xt-ratio-75 md:xt-ratio-50">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">

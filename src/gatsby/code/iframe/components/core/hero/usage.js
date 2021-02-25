@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-hero relative block overflow-hidden w-full">
+<div class="hero relative block overflow-hidden w-full">
   <div class="xt-media-container bg-gray-200 h-screen">
     <div class="xt-media-inner">
       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">

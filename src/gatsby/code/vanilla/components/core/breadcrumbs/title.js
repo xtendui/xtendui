@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="w-full p-8 md:p-10 lg:p-12 bg-gray-200">
 
-  <nav class="xt-breadcrumbs leading-none truncate">
+  <nav class="breadcrumbs leading-none truncate">
     <a href="#" class="xt-button text-xs py-2 px-0 text-black ${buttonText()}">
       Home
     </a>

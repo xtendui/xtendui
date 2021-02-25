@@ -245,18 +245,18 @@ pre {
   }
 }
 
-.xt-button--show-code {
+.button--show-code {
   display: none;
   #gatsby_open-full & {
     display: inline-flex;
   }
 }
 
-.xt-button--open-iframe-container {
+.button--open-iframe-container {
   display: none !important;
 }
 
-.xt-button--open-iframe {
+.button--open-iframe {
   padding-top: 0.4em !important;
   padding-bottom: 0.4em !important;
   > span {
@@ -296,10 +296,10 @@ pre {
   .gatsby_demo_tabs_right {
     padding-right: 45px;
   }
-  .xt-button--open-full-container {
+  .button--open-full-container {
     display: none !important;
   }
-  .xt-button--open-iframe-container.gatsby_with-iframe {
+  .button--open-iframe-container.gatsby_with-iframe {
     display: block !important;
   }
 }

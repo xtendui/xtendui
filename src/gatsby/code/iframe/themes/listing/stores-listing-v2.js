@@ -14,14 +14,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-listing py-10">
+<div class="listing py-10">
   <div class="container">
     <div class="xt-row xt-row-6 xt-row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -39,7 +39,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -70,9 +70,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -90,7 +90,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -109,9 +109,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -129,7 +129,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -160,9 +160,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -180,7 +180,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -199,9 +199,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -219,7 +219,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
@@ -250,9 +250,9 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
+        <div class="listing-item block w-full">
 
-          <div class="xt-listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -270,7 +270,7 @@ demo.htmlSource = `
             </div>
           </div>
 
-          <div class="xt-listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>

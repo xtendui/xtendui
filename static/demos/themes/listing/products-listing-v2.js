@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v2 .xt-listing-item',
+  matches: '#iframe--products-listing-v2 .listing-item',
   mount: ({ object }) => {
     // vars
 
@@ -96,7 +96,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v2 .xt-listing-item', // add here all fade selectors css and js
+  matches: '#iframe--products-listing-v2 .listing-item', // add here all fade selectors css and js
   mount: ({ object, mount }) => {
     // vars
 

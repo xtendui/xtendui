@@ -162,7 +162,7 @@ const populateBlock = () => {
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.in')
       // hidden tooltip
-      const tooltip = document.querySelector('.xt-button--open-full + .xt-tooltip')
+      const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
       tooltip.classList.add('hidden')
       // triggering e.detail.container
       dispatchEvent(
@@ -199,7 +199,7 @@ const populateBlock = () => {
           }
         }
         // btnOpenFull
-        for (const btn of document.querySelectorAll('.xt-button--open-full.in')) {
+        for (const btn of document.querySelectorAll('.button--open-full.in')) {
           btn.classList.remove('in', 'in-tooltip')
         }
         // toggles
@@ -227,7 +227,7 @@ const populateBlock = () => {
           appendOrigin.remove()
         }
         // hidden tooltip
-        const tooltip = document.querySelector('.xt-button--open-full + .xt-tooltip')
+        const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
         if (tooltip) {
           tooltip.classList.remove('hidden')
         }
@@ -257,7 +257,7 @@ const populateDemo = (container, i) => {
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
 <div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
-  <button type="button" class="xt-button xt-button--show-code" aria-label="Toggle Code">
+  <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
     ${iconCode()}
   </button>
   <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
@@ -274,8 +274,8 @@ const populateDemo = (container, i) => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="xt-button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
-  <button type="button" class="xt-button xt-button--open-full" aria-label="Toggle Fullscreen">
+<div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
+  <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
     ${iconMaximize()}
   </button>
   <div class="xt-tooltip p-2 group" data-xt-duration="300">
@@ -287,8 +287,8 @@ const populateDemo = (container, i) => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="xt-button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
-  <a href="#" target="_blank" class="xt-button xt-button--open-iframe" aria-label="Open Iframe">
+<div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
+  <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
     ${iconExternal()}
   </a>
   <div class="xt-tooltip p-2 group" data-xt-duration="300">
@@ -367,7 +367,7 @@ const populateDemo = (container, i) => {
     }
   }
   // set hash
-  for (const btnOpenFull of container.querySelectorAll('.xt-button--open-full')) {
+  for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
     btnOpenFull.addEventListener('click', e => {
       e.preventDefault()
       scrollCache = document.scrollingElement.scrollTop
@@ -381,7 +381,7 @@ const populateDemo = (container, i) => {
     const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       const demo = item.closest('.gatsby_demo')
-      demo.querySelector('.xt-button--open-full').classList.add('in', 'in-toggle')
+      demo.querySelector('.button--open-full').classList.add('in', 'in-toggle')
       item.classList.add('in', 'in-toggle')
     }
   }
@@ -456,10 +456,10 @@ const populateDemo = (container, i) => {
       }
     })
   }
-  // .xt-button--show-code
+  // .button--show-code
   const demoId = `gatsby_demo_${i}`
   container.setAttribute('id', demoId)
-  const btnCode = container.querySelector('.xt-button--show-code')
+  const btnCode = container.querySelector('.button--show-code')
   new Xt.Toggle(btnCode, {
     targets: `#${demoId} .gatsby_demo_code`,
     queue: false,
@@ -496,12 +496,12 @@ const populateDemo = (container, i) => {
  */
 const btnOpenIframe = item => {
   const iframe = item.querySelector('iframe')
-  const btn = item.closest('.gatsby_demo').querySelector('.xt-button--open-iframe')
+  const btn = item.closest('.gatsby_demo').querySelector('.button--open-iframe')
   if (iframe) {
-    btn.closest('.xt-button--open-iframe-container').classList.add('gatsby_with-iframe')
+    btn.closest('.button--open-iframe-container').classList.add('gatsby_with-iframe')
     btn.setAttribute('href', iframe.getAttribute('data-src'))
   } else {
-    btn.closest('.xt-button--open-iframe-container').classList.remove('gatsby_with-iframe')
+    btn.closest('.button--open-iframe-container').classList.remove('gatsby_with-iframe')
   }
 }
 

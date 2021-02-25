@@ -12,11 +12,11 @@ export const demo = {
 
 demo.htmlSource = `
 <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}"
-  data-xt-overlay="{ targets: '#xt-overlay--unique' }">
+  data-xt-overlay="{ targets: '#overlay--unique' }">
   overlay
 </button>
 
-<div class="xt-overlay" id="xt-overlay--unique">
+<div class="xt-overlay" id="overlay--unique">
   <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
   <div class="xt-overlay-container max-w-3xl">
     <div class="xt-overlay-inner">

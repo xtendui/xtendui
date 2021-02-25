@@ -47,14 +47,14 @@ For advanced options see javascript file source code `xtendui/src/addons/googlel
 | Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
 | Option                    | `elements.loader:Query`                          | `'.xt-loader'`        | Object query for loader             |
 | Option                    | `elements.searchInput:Query`                          | `'input[type="text"]'`        | Object query for searh input             |
-| Option                    | `elements.searchBtn:Query`                          | `'.xt-button--search'`        | Object query for search button             |
-| Option                    | `elements.map:Query`                          | `'.xt-googlelocator-main-map'`        | Object query for google map             |
+| Option                    | `elements.searchBtn:Query`                          | `'.button--search'`        | Object query for search button             |
+| Option                    | `elements.map:Query`                          | `'.googlelocator-main-map'`        | Object query for google map             |
 | Option                    | `elements.itemsTemplate:Query`                          | `'script[type="text/x-template"]'`        | Object query for template cloned for maps items             |
-| Option                    | `elements.itemsContainer:Query`                          | `'.xt-googlelocator-items'`        | Object query for items container to append items to             |
-| Option                    | `elements.results:Query`                          | `'.xt-googlelocator-aside-body'`        | Object query for results messages             |
-| Option                    | `elements.resultsFounds:Query`                          | `'.xt-googlelocator-result--found'`        | Object query for results found             |
-| Option                    | `elements.locateBtn:Query`                          | `'.xt-button--locate'`        | Object query for             |
-| Option                    | `elements.repeatBtn:Query`                          | `'.xt-button--repeat'`        | Object query for repeat search             |
+| Option                    | `elements.itemsContainer:Query`                          | `'.googlelocator-items'`        | Object query for items container to append items to             |
+| Option                    | `elements.results:Query`                          | `'.googlelocator-aside-body'`        | Object query for results messages             |
+| Option                    | `elements.resultsFounds:Query`                          | `'.googlelocator-result--found'`        | Object query for results found             |
+| Option                    | `elements.locateBtn:Query`                          | `'.button--locate'`        | Object query for             |
+| Option                    | `elements.repeatBtn:Query`                          | `'.button--repeat'`        | Object query for repeat search             |
 | Option                    | `elements.filter:Query`                          | `'input[type="checkbox"], input[type="radio"]'`        | Object query for             |
 
 </div>

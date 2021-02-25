@@ -9,7 +9,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<nav class="xt-breadcrumbs leading-none truncate">
+<nav class="breadcrumbs leading-none truncate">
   <a href="#" class="xt-button text-xs py-2 px-0 text-black ${buttonText()}">
     Home
   </a>

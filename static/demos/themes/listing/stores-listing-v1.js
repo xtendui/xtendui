@@ -1,15 +1,15 @@
 import { Xt } from 'xtendui'
 
 /**
- * .xt-listing-item activation
+ * .listing-item activation
  */
 
 Xt.mount.push({
-  matches: '#iframe--stores-listing-v1 .xt-listing-item',
+  matches: '#iframe--stores-listing-v1 .listing-item',
   mount: ({ object }) => {
     // vars
 
-    const actionBtn = object.querySelector('.xt-listing-action')
+    const actionBtn = object.querySelector('.listing-action')
     const closeBtn = object.querySelector('.xt-dismiss')
 
     // eventClick

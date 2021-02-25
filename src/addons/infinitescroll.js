@@ -433,7 +433,7 @@ Infinitescroll.optionsDefault = {
     scrollOffset: '.infinitescroll',
     trigger: '.infinitescroll-trigger .xt-button',
     reset: '.infinitescroll-pre .xt-button',
-    items: '.xt-listing-inner .xt-row',
+    items: '.listing-inner .xt-row',
     spaceAdditional: '.infinitescroll-pre',
     pagination: '.infinitescroll-pagination',
     item: ':scope > *',

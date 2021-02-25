@@ -1,6 +1,6 @@
 #iframe--stores-listing-v1 {
   /*##START*/
-  .xt-listing-item-front {
+  .listing-item-front {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,25 +10,25 @@
     backface-visibility: hidden;
   }
 
-  .xt-listing-item-back {
+  .listing-item-back {
     position: relative;
     min-height: 22rem;
     transform: rotateY(180deg);
     backface-visibility: hidden;
   }
 
-  .xt-listing-item {
+  .listing-item {
     perspective: 1400px;
-    .xt-listing-item-inner {
+    .listing-item-inner {
       height: 100%;
       transform-style: preserve-3d;
       @apply transition ease-in-out-quad duration-500;
     }
     &.active {
-      .xt-listing-item-inner {
+      .listing-item-inner {
         transform: rotateY(180deg);
       }
-      .xt-listing-item-back {
+      .listing-item-back {
         z-index: theme('zIndex.active');
       }
     }

@@ -15,15 +15,15 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-listing py-10">
+<div class="listing py-10">
   <div class="container">
     <div class="xt-row xt-row-6 xt-row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -37,14 +37,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -76,10 +76,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -93,14 +93,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -120,10 +120,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -137,14 +137,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -176,10 +176,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -193,14 +193,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -220,10 +220,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -237,14 +237,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
@@ -276,10 +276,10 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="xt-listing-item block w-full">
-          <div class="xt-listing-item-inner">
+        <div class="listing-item block w-full">
+          <div class="listing-item-inner">
 
-            <div class="xt-listing-item-front card rounded-md ${cardDefault()}">
+            <div class="listing-item-front card rounded-md ${cardDefault()}">
               <div class="xt-media-container bg-gray-200 flex-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -293,14 +293,14 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="xt-listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
               </div>
             </div>
 
-            <div class="xt-listing-item-back h-full card rounded-md ${cardDefault()}">
+            <div class="listing-item-back h-full card rounded-md ${cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v1 .xt-listing-item',
+  matches: '#iframe--products-listing-v1 .listing-item',
   mount: ({ object }) => {
     // vars
 
@@ -36,7 +36,7 @@ Xt.mount.push({
         ease: 'expo.out',
       })
       // content
-      const content = tr.querySelector('.xt-listing-item-content')
+      const content = tr.querySelector('.listing-item-content')
       if (content) {
         gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
       }
@@ -59,7 +59,7 @@ Xt.mount.push({
       const mediaInner = tr.querySelector('.xt-media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
       // content
-      const content = tr.querySelector('.xt-listing-item-content')
+      const content = tr.querySelector('.listing-item-content')
       if (content) {
         gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
       }
@@ -74,7 +74,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--products-listing-v1 .xt-listing-item', // add here all fade selectors css and js
+  matches: '#iframe--products-listing-v1 .listing-item', // add here all fade selectors css and js
   mount: ({ object, mount }) => {
     // vars
 

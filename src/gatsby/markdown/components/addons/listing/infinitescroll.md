@@ -55,7 +55,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `elements.reset:Query`                          | `'.infinitescroll-pre .xt-button'`        | Object query for reset element            |
 | Option                    | `elements.spaceAdditional:Query`                          | `'.infinitescroll-pre'`        | Object query for additional space on reset            |
 | Option                    | `elements.pagination:Query`                          | `'.infinitescroll-pagination'`        | Object query for pagination            |
-| Option                    | `elements.items:Query`                          | `'.xt-listing-inner .xt-row'`        | Object query for items container            |
+| Option                    | `elements.items:Query`                          | `'.listing-inner .xt-row'`        | Object query for items container            |
 | Option                    | `elements.item:Query`                          | `':scope > *'`        | Items container query for items            |
 
 </div>
