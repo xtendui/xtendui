@@ -132,7 +132,7 @@ class Scrolltoanchor {
             const hash = hashchange ? loc.hash : el.hash.toString()
             self.target = self.object.querySelector(hash)
             if (self.target && Xt.visible(self.target)) {
-              // prevent page hash
+              // prevent page hash with automatic scroll
               if (e) {
                 e.preventDefault()
               }
@@ -151,8 +151,8 @@ class Scrolltoanchor {
                 other.classList.remove(...self.classes)
               }
               el.classList.add(...self.classes)
-              // no location.hash or page scrolls
-              if (location.hash !== el.hash) {
+              // prevent page hash with automatic scroll
+              if (!options.preventHash && location.hash !== el.hash) {
                 history.pushState({}, '', loc.hash)
               }
               // vars
@@ -316,6 +316,7 @@ Scrolltoanchor.optionsDefault = {
   class: 'active',
   // event
   scrollDelay: 75,
+  preventHash: false,
   // scroll
   position: (scrollingElement, target) => {
     const rect = target.getBoundingClientRect()

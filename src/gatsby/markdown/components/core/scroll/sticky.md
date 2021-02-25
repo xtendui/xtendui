@@ -16,7 +16,7 @@ Use the **component classes** to create a **sticky**.
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-sitcky`                     | `xt-sitcky`                | Styles for sticky            |
+| Component                  | `.xt-sticky`                     | `xt-sticky`                | Styles for sticky            |
 
 </div>
 

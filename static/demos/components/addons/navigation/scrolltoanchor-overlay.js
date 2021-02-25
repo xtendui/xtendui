@@ -6,12 +6,17 @@ gsap.registerPlugin(ScrollToPlugin)
 
 // you can remove this
 
+import 'xtendui/src/core/overlay'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor .xt-sticky',
+  matches: '#iframe--scrolltoanchor-overlay .xt-sticky',
   mount: ({ object }) => {
+    // vars
+
+    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
+
     // sticky
 
     ScrollTrigger.create({
@@ -22,6 +27,12 @@ Xt.mount.push({
       pin: true,
       pinSpacing: false,
     })
+
+    // refresh
+
+    overlay.addEventListener('on.xt.overlay', () => {
+      ScrollTrigger.refresh()
+    })
   },
 })
 
@@ -30,14 +41,25 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor body',
+  matches: '#iframe--scrolltoanchor-overlay body',
   mount: ({ object }) => {
+    // vars
+
+    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
+
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
+      scrollElements: [overlay],
       scrollSpace: () => {
-        return document.querySelector('.xt-sticky').clientHeight
+        return object.querySelector('.xt-sticky').clientHeight
       },
+    })
+
+    // refresh
+
+    overlay.addEventListener('on.xt.overlay', () => {
+      overlay.dispatchEvent(new CustomEvent('scroll.trigger.xt.scrolltoanchor'))
     })
 
     // change

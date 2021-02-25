@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
-// mouse events instead of click you can remove this
+// you can remove this
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',

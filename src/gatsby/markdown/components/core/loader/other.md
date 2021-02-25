@@ -49,7 +49,7 @@ Use **component classes** to create a **mouse follow**.
 | Remember **not to transition transform** of `.xt-mousefollow` element.
 
 [[noteDefault]]
-| This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
+| This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
   <demovanilla src="vanilla/components/addons/animation/mousefollow">

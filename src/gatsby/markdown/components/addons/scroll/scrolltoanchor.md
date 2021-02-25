@@ -14,18 +14,17 @@ Import the **component javascript** file.
 import 'xtendui/src/addons/scrolltoanchor'
 ```
 
-[[notePrimary]]
-| This addon **doesn't need** Gsap ScrollTrigger.
-
 ## Usage
 
 Use this code to create a **scroll to anchor**.
 
 [[noteDefault]]
-| This addon uses [sticky](/components/core/sticky) see documentation to **import javascript** and **customize**.
+| This demo uses [scroll sticky](/components/core/scroll/sticky) and [overlay](/components/core/overlay) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor-overlay">
   </div>
 </demo>
 
@@ -42,6 +41,7 @@ Here are the main **javascript options**.
 | Option                    | `scrollElements:Array`                          | `[document.scrollingElement]`        | Scroll nodes (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class             |
 | Option                    | `scrollDelay:Number`                          | `250`        | Delay on scroll checks             |
+| Option                    | `preventHash:Boolean`                          | `false`        | Prevent url hash change             |
 | Option                    | `position(scrollingElement, target, self):Function`             | `<Function>`        | Positioning function return `Number`             |
 | Option                    | `scrollSpace(scrollingElement, target, self):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
 | Option                    | `scrollDistance(scrollingElement, target, self):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |

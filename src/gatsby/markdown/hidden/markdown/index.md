@@ -78,10 +78,10 @@ You can use also **css animations**, just add them with **class names** `.active
 | This demos uses [loader](/components/core/loader) see documentation to **customize**.
 
 [[noteDefault]]
-| This component uses [card](/components/core/card) see documentation to **import javascript** and **customize**.
+| This component uses [card](/components/core/card) see documentation for more info.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
+| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 [[notePrimary]]
 | For aria purpose use `role="toolbar"`.

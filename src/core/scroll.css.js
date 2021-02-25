@@ -1,6 +1,6 @@
 module.exports = {
   component: theme => ({
-    '.xt-sitcky': {
+    '.xt-sticky': {
       position: 'relative',
       zIndex: theme('zIndex.sticky') - 1,
       height: 'auto !important',

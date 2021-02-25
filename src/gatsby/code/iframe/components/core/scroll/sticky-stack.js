@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="demo--sticky-stack-top xt-sitcky">
+<div class="demo--sticky-stack-top xt-sticky">
   <div class="xt-card text-sm p-6 ${cardPrimary()}">
     <div class="xt-h4 ">Top</div>
   </div>
@@ -28,7 +28,7 @@ demo.htmlSource = `
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-stack-topsecond xt-sitcky">
+<div class="demo--sticky-stack-topsecond xt-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
     <div class="xt-h6">Top Second</div>
   </div>
@@ -42,7 +42,7 @@ demo.htmlSource = `
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-stack-topthird xt-sitcky">
+<div class="demo--sticky-stack-topthird xt-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
     <div class="xt-h6">Top Third</div>
   </div>
@@ -51,7 +51,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-<div class="demo--sticky-stack-bottom xt-sitcky">
+<div class="demo--sticky-stack-bottom xt-sticky">
   <div class="xt-card text-sm p-6 ${cardPrimary()}">
     <div class="xt-h4 ">Bottom</div>
   </div>
@@ -65,7 +65,7 @@ demo.htmlSource = `
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
 </div>
 
-<div class="demo--sticky-stack-bottomsecond xt-sitcky">
+<div class="demo--sticky-stack-bottomsecond xt-sticky">
   <div class="xt-card text-sm p-6 ${cardDefault()}">
     <div class="xt-h6">Bottom Second</div>
   </div>

@@ -11,7 +11,7 @@ description: "Small cards to display notes."
 Use [card](/components/core/card) to create a **note**.
 
 [[noteDefault]]
-| This component uses [card](/components/core/card) see documentation to **import javascript** and **customize**.
+| This component uses [card](/components/core/card) see documentation for more info.
 
 Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [font-weight](https://tailwindcss.com/docs/font-weight)).
 

@@ -11,7 +11,7 @@ description: "Simple nav component as a subcomponent of list group."
 Use [list group](/components/core/list-group) to create a **nav**.
 
 [[noteDefault]]
-| This component uses [list group](/components/core/list-group) see documentation to **import javascript** and **customize**.
+| This component uses [list group](/components/core/list-group) see documentation for more info.
 
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.

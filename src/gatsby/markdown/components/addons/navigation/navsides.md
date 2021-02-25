@@ -13,7 +13,7 @@ description: "Arrow navigation on sides that appears and follows the mouse."
 Use this code to create a **navigation sides** on toggle. Position relative to closest element with `.relative`.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
+| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/navsides-toggle">
@@ -25,7 +25,7 @@ Use this code to create a **navigation sides** on toggle. Position relative to c
 Use this code to create a **navigation sides** on slider.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation to **import javascript** and **customize**.
+| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
   <demovanilla src="vanilla/components/addons/navigation/navsides-slider">

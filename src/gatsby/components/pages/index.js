@@ -22,7 +22,7 @@ export default class Page extends React.Component {
         <div className="gatsby_site-wrapper">
           <div className="gatsby_site-main">
             <div className="gatsby_site-main_inner">
-              <header className="gatsby_home-header xt-sitcky">
+              <header className="gatsby_home-header xt-sticky">
                 <div className="gatsby_home-header_inner">
                   <div className="gatsby_home-header_content">
                     <div className="container">
