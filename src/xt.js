@@ -4,8 +4,6 @@
  * @license MIT (https://github.com/minimit/xtendui/blob/beta/LICENSE)
  */
 
-import './polyfill.js'
-
 //
 // constructor
 //
