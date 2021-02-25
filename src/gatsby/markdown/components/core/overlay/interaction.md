@@ -89,6 +89,31 @@ You can also use a function for <code>delay</code>, <code>delayOn</code> and <co
 
 </div>
 
+## Event
+
+You can specify **on** and **off** events for the overlay.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
+| Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit`        | Limit events inside self.object            |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
+| Option                  | `closeInside:Query`                          | `'.xt-overlay, .xt-overlay-container`        | Query Node inside to close on click, no nested Nodes            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
+
+</div>
+
+You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/event">
+  </div>
+</demo>
+
 ## Class html
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">

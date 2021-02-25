@@ -152,6 +152,11 @@ You can specify **on** and **off** events for the toggle.
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
 | Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
+| Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeDeep:Query`                          | `false`        | Query Node inside to close on click            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
 
 </div>
 
@@ -163,14 +168,6 @@ You can specify **on** and **off** events for the toggle.
 You can have **element's link** and **other events** that trigger after toggle with `preventEvent: true`.
 
 If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
-
-</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/prevent-event">

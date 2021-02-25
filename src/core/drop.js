@@ -153,6 +153,11 @@ Drop.optionsDefault = {
   on: 'click',
   off: 'click',
   eventLimit: '.event-limit, .xt-drop',
+  closeAuto: true,
+  closeDeep: '.xt-dismiss',
+  closeInside: false,
+  closeOutside: 'body',
+  preventEvent: false,
   // timing
   queue: {
     elements: false,
@@ -167,9 +172,6 @@ Drop.optionsDefault = {
   spaceFlip: 15,
   spaceArrow: false,
   popperjs: true,
-  closeAuto: true,
-  closeDeep: '.xt-dismiss',
-  closeOutside: 'body',
   zIndex: {
     targets: {
       start: 6000, // theme.zIndex.drop same as Drop options.zIndex.targets.start

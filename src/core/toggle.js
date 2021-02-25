@@ -2818,9 +2818,11 @@ class Toggle {
     const self = this
     // handler
     if (e.target === el) {
-      const currents = self.getCurrents()
-      for (const current of currents) {
-        self.eventOff(current, true)
+      if (Xt.contains([...self.elements, ...self.targets], e.target)) {
+        const currents = self.getCurrents()
+        for (const current of currents) {
+          self.eventOff(current, true)
+        }
       }
     }
   }
@@ -3287,6 +3289,9 @@ Toggle.optionsDefaultSuper = {
   on: 'click',
   off: 'click',
   eventLimit: '.event-limit',
+  closeDeep: false,
+  closeInside: false,
+  closeOutside: false,
   preventEvent: false,
   // timing
   queue: {
@@ -3323,8 +3328,6 @@ Toggle.optionsDefaultSuper = {
   appendTo: false,
   classHtml: false,
   closeAuto: false,
-  closeDeep: false,
-  closeOutside: false,
   scrollbar: false,
   onBlock: false,
   offBlock: false,

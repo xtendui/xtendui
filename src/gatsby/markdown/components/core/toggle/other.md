@@ -29,9 +29,6 @@ When you need to reinit the component when the media is loaded and the **width**
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
 | Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
-| Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on `closeauto.trigger.xt` event            |
-| Option                  | `closeDeep:Query`                          | `false`        | Query Node inside to close on click            |
-| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
 | Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
 | Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
 | Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |

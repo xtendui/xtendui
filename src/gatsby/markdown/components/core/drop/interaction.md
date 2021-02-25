@@ -119,6 +119,11 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 | Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
 | Option                  | `off:String`                             | `'click'`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
 | Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-drop'`        | Limit events inside self.object            |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |
+| Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter, use touch device to see it in action)            |
 
 </div>
 
@@ -131,14 +136,6 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 </demo>
 
 You can have **element's link** and **click events** prevented when the drop opens with `preventEvent: true`, they will trigger only if the drop is already opened.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter, use touch device to see it in action)            |
-
-</div>
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/prevent-event">

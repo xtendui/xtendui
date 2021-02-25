@@ -33,7 +33,7 @@ Test matches functionality on mobile/desktop.
 
 Test overlay open on mobile > resize desktop is disabled.
 
-Test overlay open nested should close one by one clicking on close.
+Test overlay open nested should close one by one clicking outside.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/matches">

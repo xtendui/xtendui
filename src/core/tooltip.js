@@ -157,6 +157,11 @@ Tooltip.optionsDefault = {
   on: 'mouseenter',
   off: 'mouseleave',
   eventLimit: '.event-limit, .xt-tooltip',
+  closeAuto: true,
+  closeDeep: '.xt-dismiss',
+  closeInside: false,
+  closeOutside: 'body',
+  preventEvent: false,
   // timing
   queue: {
     elements: false,
@@ -171,9 +176,6 @@ Tooltip.optionsDefault = {
   spaceFlip: 15,
   spaceArrow: false,
   popperjs: true,
-  closeAuto: true,
-  closeDeep: '.xt-dismiss',
-  closeOutside: 'body',
   zIndex: {
     targets: {
       start: 6500, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start

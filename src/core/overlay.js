@@ -68,7 +68,10 @@ Overlay.optionsDefault = {
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit, :scope > .xt-overlay-container > .xt-overlay-inner > *:first-child',
+  eventLimit: '.event-limit',
+  closeAuto: true,
+  closeDeep: '.xt-dismiss',
+  closeInside: '.xt-overlay, .xt-overlay-container',
   // timing
   queue: {
     elements: false,
@@ -78,11 +81,8 @@ Overlay.optionsDefault = {
   },
   // other
   backdrop: true,
-  closeAuto: true,
   appendTo: 'body',
   classHtml: false,
-  closeDeep: '.xt-dismiss',
-  closeInside: '.xt-overlay, .xt-overlay-container',
   scrollbar: true,
   focusLimit: true,
 }
