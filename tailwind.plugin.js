@@ -21,7 +21,7 @@ module.exports = plugin.withOptions(() => {
           typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
         const css = merge(...castArray(base || {}), custom || {})
         addComponents(css, {
-          //respectPrefix: false,
+          respectPrefix: false,
         })
       }
     }
@@ -47,7 +47,7 @@ module.exports = plugin.withOptions(() => {
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.xt-list-${e(name)}`] = {
+                css[`.${e(`xt-list-${name}`)}`] = {
                   marginTop: `-${value}`,
                   marginLeft: `-${value}`,
                   '> *': {
@@ -55,13 +55,13 @@ module.exports = plugin.withOptions(() => {
                     marginLeft: `${value}`,
                   },
                 }
-                css[`.xt-list-x-${e(name)}`] = {
+                css[`.${e(`xt-list-x-${name}`)}`] = {
                   marginLeft: `-${value}`,
                   '> *': {
                     marginLeft: `${value}`,
                   },
                 }
-                css[`.xt-list-y-${e(name)}`] = {
+                css[`.${e(`xt-list-y-${name}`)}`] = {
                   marginTop: `-${value}`,
                   '> *': {
                     marginTop: `${value}`,
@@ -70,14 +70,14 @@ module.exports = plugin.withOptions(() => {
               })
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             } else if (component === 'row' && utility === 'space') {
               // row space
               let css = {}
               Object.keys(options[utility]).forEach(name => {
                 let value = options[utility][name]
-                css[`.xt-row-${e(name)}`] = {
+                css[`.${e(`xt-row-${name}`)}`] = {
                   marginTop: `-${value}`,
                   marginLeft: `-${value}`,
                   '> *': {
@@ -85,13 +85,13 @@ module.exports = plugin.withOptions(() => {
                     paddingLeft: `${value}`,
                   },
                 }
-                css[`.xt-row-x-${e(name)}`] = {
+                css[`.${e(`xt-row-x-${name}`)}`] = {
                   marginLeft: `-${value}`,
                   '> *': {
                     paddingLeft: `${value}`,
                   },
                 }
-                css[`.xt-row-y-${e(name)}`] = {
+                css[`.${e(`xt-row-y-${name}`)}`] = {
                   marginTop: `-${value}`,
                   '> *': {
                     paddingTop: `${value}`,
@@ -100,7 +100,7 @@ module.exports = plugin.withOptions(() => {
               })
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-y') {
               let css = {}
@@ -123,7 +123,7 @@ module.exports = plugin.withOptions(() => {
               })
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-remove') {
               let css = {}
@@ -146,7 +146,7 @@ module.exports = plugin.withOptions(() => {
               })
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-y-remove') {
               let css = {}
@@ -169,7 +169,7 @@ module.exports = plugin.withOptions(() => {
               })
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             } else {
               // all others
@@ -177,7 +177,7 @@ module.exports = plugin.withOptions(() => {
               css[utility] = options[utility]
               addComponents(css, {
                 variants: variants,
-                //respectPrefix: false,
+                respectPrefix: false,
               })
             }
           }
