@@ -1,9 +1,11 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
-const buttonPrimaryDrop = require('components/snippets/classes/button-primary-drop').default
-const cardWhite = require('components/snippets/classes/card-white').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const buttonDefaultDrop = require('components/snippets/classes').buttonDefaultDrop
+const buttonPrimaryDrop = require('components/snippets/classes').buttonPrimaryDrop
+const cardWhite = require('components/snippets/classes').cardWhite
+const cardPrimary = require('components/snippets/classes').cardPrimary
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -17,7 +19,7 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       Text
     </button>
 
@@ -41,7 +43,7 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       Primary
     </button>
 

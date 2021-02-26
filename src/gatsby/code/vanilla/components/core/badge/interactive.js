@@ -1,6 +1,8 @@
 import path from 'path'
-const badgeDefaultInteractive = require('components/snippets/classes/badge-default-interactive').default
-const badgePrimaryInteractive = require('components/snippets/classes/badge-primary-interactive').default
+
+const badgeMd = require('components/snippets/classes').badgeMd
+const badgeDefaultInteractive = require('components/snippets/classes').badgeDefaultInteractive
+const badgePrimaryInteractive = require('components/snippets/classes').badgePrimaryInteractive
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -12,11 +14,11 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <a role="button" class="xt-badge text-xs py-2 px-3.5 ${badgeDefaultInteractive()}">
+  <a role="button" class="xt-badge ${badgeMd()} ${badgeDefaultInteractive()}">
     Gray
   </a>
 
-  <a role="button" class="xt-badge text-xs py-2 px-3.5 ${badgePrimaryInteractive()}">
+  <a role="button" class="xt-badge ${badgeMd()} ${badgePrimaryInteractive()}">
     Primary
   </a>
 

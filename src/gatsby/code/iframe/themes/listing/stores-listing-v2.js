@@ -1,6 +1,8 @@
 import React from 'react'
 import path from 'path'
-const cardDefaultFull = require('components/snippets/classes/card-default-full').default
+
+const cardSm = require('components/snippets/classes').cardSm
+const cardDefaultFull = require('components/snippets/classes').cardDefaultFull
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -28,7 +30,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -43,7 +45,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>
@@ -79,7 +81,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -94,7 +96,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>
@@ -118,7 +120,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -133,7 +135,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>
@@ -169,7 +171,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -184,7 +186,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>
@@ -208,7 +210,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -223,7 +225,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>
@@ -259,7 +261,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="mt-6 h-full flex flex-col">
-              <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+              <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -274,7 +276,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="xt-card text-sm p-6 flex-initial py-0 border-l border-gray-300">
+            <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
               <div class="xt-h5 ">
                 Contacts
               </div>

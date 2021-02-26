@@ -49,8 +49,6 @@ Xt.mount.push({
     // add
 
     const addBtn = document.querySelector('#demo--tooltip-events-add')
-    const buttonPrimary = require('components/snippets/classes/button-primary').default
-    const cardBlack = require('components/snippets/classes/card-black').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -60,7 +58,7 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             Element ${indexEl}
           </button>
         `
@@ -69,7 +67,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="xt-tooltip p-2" title="Target ${indexTr}">
-            <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+            <div class="text-xs py-2 px-3.5 rounded shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>
           </div>

@@ -1,5 +1,6 @@
 import path from 'path'
-const h6 = require('components/snippets/classes/headers').h6
+
+const h6 = require('components/snippets/headers').h6
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')

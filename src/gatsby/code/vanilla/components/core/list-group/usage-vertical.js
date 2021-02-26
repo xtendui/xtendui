@@ -1,7 +1,9 @@
 import path from 'path'
-const buttonDefault = require('components/snippets/classes/button-default').default
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const inputDefault = require('components/snippets/classes/input-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const inputDefault = require('components/snippets/classes').inputDefault
 const iconSearch = require('components/snippets/icons').iconSearch
 
 const filename = __filename.replace(/\\/g, '/')
@@ -17,13 +19,13 @@ demo.htmlSource = `
   <div class="xt-list flex-col">
 
     <div class="xt-list-inner">
-      <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-tl-md ${buttonDefault()}">
+      <button type="button" class="xt-button ${buttonMd()} rounded-tl-md ${buttonDefault()}">
         ${iconSearch({ classes: 'text-xl -my-1' })}
       </button>
       <input type="text" class="xt-input rounded-tr-md ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
     </div>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-b-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-b-md ${buttonPrimary()}">
       Search
     </button>
 

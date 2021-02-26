@@ -1,5 +1,5 @@
 const spinner = require('components/snippets/spinner').default
-const cardSlide = require('components/snippets/classes/card-slide').default
+const cardSlide = require('components/snippets/classes').cardSlide
 
 export default () => {
   return `

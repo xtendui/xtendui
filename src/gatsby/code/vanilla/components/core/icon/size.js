@@ -1,4 +1,5 @@
 import path from 'path'
+
 const iconSearch = require('components/snippets/icons').iconSearch
 
 const filename = __filename.replace(/\\/g, '/')

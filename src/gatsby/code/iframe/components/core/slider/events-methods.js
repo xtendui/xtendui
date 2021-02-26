@@ -1,8 +1,11 @@
 import React from 'react'
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardDefault = require('components/snippets/classes/card-default').default
-const markupSlider = require('components/snippets/components/markup-slider-event-method').default
+
+const buttonSm = require('components/snippets/classes').buttonSm
+const cardSm = require('components/snippets/classes').cardSm
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardDefault = require('components/snippets/classes').cardDefault
+const markupSlider = require('components/snippets/markup-slider-event-method').default
 const indentString = require('indent-string')
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -17,34 +20,34 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center mb-4">
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-first-element">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-first-element">
     1st element
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-first-target">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-first-target">
     1st target
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-add">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-add">
     Add
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-remove">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-remove">
     Remove
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-reinit">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-reinit">
     Reinit
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-restart">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-restart">
     Restart
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-destroy">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-destroy">
     Destroy
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--slider-events-unmount">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--slider-events-unmount">
     Unmount
   </button>
 </div>
@@ -54,7 +57,7 @@ ${indentString(markupSlider(), 2)}
 </div>
 
 <div class="xt-card rounded-md ${cardDefault()} mt-6">
-  <div class="text-sm p-6 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--slider-events-log">
+  <div class="${cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--slider-events-log">
   </div>
 </div>
 `

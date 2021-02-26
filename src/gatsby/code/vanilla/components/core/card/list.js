@@ -1,5 +1,7 @@
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
+
+const cardMd = require('components/snippets/classes').cardMd
+const cardDefault = require('components/snippets/classes').cardDefault
 const iconPackage = require('components/snippets/icons').iconPackage
 
 const filename = __filename.replace(/\\/g, '/')
@@ -11,7 +13,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="xt-card rounded-md ${cardDefault()}">
-  <div class="text-base p-8">
+  <div class="${cardMd()}">
     <div class="xt-list xt-list-6 flex-nowrap items-baseline">
       <div>
         ${iconPackage({ classes: 'text-3xl' })}

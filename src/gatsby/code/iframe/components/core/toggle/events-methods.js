@@ -1,9 +1,13 @@
 import React from 'react'
 import path from 'path'
-const buttonDefault = require('components/snippets/classes/button-default').default
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardToggle = require('components/snippets/classes/card-toggle').default
+
+const buttonSm = require('components/snippets/classes').buttonSm
+const buttonMd = require('components/snippets/classes').buttonMd
+const cardSm = require('components/snippets/classes').cardSm
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardDefault = require('components/snippets/classes').cardDefault
+const cardToggle = require('components/snippets/classes').cardToggle
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,34 +21,34 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center mb-4">
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-first-element">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-first-element">
     1st element
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-first-target">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-first-target">
     1st target
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostart">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostart">
     Autostart
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostop">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-autostop">
     Autostop
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-add">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-add">
     Add
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-remove">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-remove">
     Remove
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-reinit">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-reinit">
     Reinit
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-restart">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-restart">
     Restart
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-destroy">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-destroy">
     Destroy
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--toggle-events-unmount">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--toggle-events-unmount">
     Unmount
   </button>
 </div>
@@ -52,16 +56,16 @@ demo.htmlSource = `
 <div id="demo--toggle-events">
 
   <div class="xt-list xt-list-3 items-center mb-4" id="demo--toggle-events-elements">
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}" data-xt-group="0">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}" data-xt-group="0">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-group="0">
       Toggle Group 0
     </button>
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
       Toggle 1
     </button>
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
       Toggle 2
     </button>
   </div>
@@ -84,7 +88,7 @@ demo.htmlSource = `
 </div>
 
 <div class="xt-card rounded-md ${cardDefault()} mt-6">
-  <div class="text-sm p-6 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--toggle-events-log">
+  <div class="${cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--toggle-events-log">
   </div>
 </div>
 `

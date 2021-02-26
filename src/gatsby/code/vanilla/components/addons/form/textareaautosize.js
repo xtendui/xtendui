@@ -1,6 +1,7 @@
 import path from 'path'
-const labelDefault = require('components/snippets/classes/label-default').default
-const inputDefault = require('components/snippets/classes/input-default').default
+
+const labelDefault = require('components/snippets/classes').labelDefault
+const inputDefault = require('components/snippets/classes').inputDefault
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')

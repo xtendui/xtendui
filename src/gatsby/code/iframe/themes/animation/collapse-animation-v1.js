@@ -9,17 +9,22 @@ const animItemOpacity =
   'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
 const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0'
 
-const buttonDefault = require('components/snippets/classes/button-default').default
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
+const buttonMd = require('components/snippets/classes').buttonMd
+const tooltipMd = require('components/snippets/classes').tooltipMd
+const cardSm = require('components/snippets/classes').cardSm
+const cardMd = require('components/snippets/classes').cardMd
 
-const cardWhite = require('components/snippets/classes/card-white').default
-const cardBlack = require('components/snippets/classes/card-black').default
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const buttonDefaultDrop = require('components/snippets/classes').buttonDefaultDrop
 
-const labelDefault = require('components/snippets/classes/label-default').default
-const inputDefault = require('components/snippets/classes/input-default').default
-const checkDefault = require('components/snippets/classes/form-check-default').default
-const radioDefault = require('components/snippets/classes/form-radio-default').default
+const cardWhite = require('components/snippets/classes').cardWhite
+const cardBlack = require('components/snippets/classes').cardBlack
+
+const labelDefault = require('components/snippets/classes').labelDefault
+const inputDefault = require('components/snippets/classes').inputDefault
+const checkDefault = require('components/snippets/classes').checkDefault
+const radioDefault = require('components/snippets/classes').radioDefault
 const iconX = require('components/snippets/icons').iconX
 const iconSearch = require('components/snippets/icons').iconSearch
 
@@ -43,7 +48,7 @@ demo.htmlSource = `
   <div class="xt-row xt-row-x-6 xt-row-y-4">
 
     <div class="w-full md:w-auto">
-      <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         List group
       </button>
     </div>
@@ -52,13 +57,13 @@ demo.htmlSource = `
       <div class="xt-list flex-nowrap max-w-sm ${listCollapse}">
 
         <div class="xt-list-inner flex-auto">
-          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
             ${iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
         </div>
 
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
+        <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
           Search
         </button>
 
@@ -77,7 +82,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       list
     </button>
 
@@ -104,7 +109,7 @@ demo.htmlSource = `
 
   <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       card
     </button>
 
@@ -114,7 +119,7 @@ demo.htmlSource = `
           <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl ${animItem}" aria-label="Close">
             ${iconX()}
           </button>
-          <div class="text-base p-8 rounded-md ${animItem}">
+          <div class="${cardMd()} rounded-md ${animItem}">
             <div class="xt-h4 ">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
@@ -135,13 +140,13 @@ demo.htmlSource = `
 
   <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       tooltip
     </button>
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="xt-tooltip-inner ${animDesign}">
-        <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+        <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
           <div class="${animItem}">
             Lorem ipsum dolor sit amet
           </div>
@@ -156,7 +161,7 @@ demo.htmlSource = `
 
     <div class="xt-tooltip-item">
 
-      <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         list group
       </button>
 
@@ -167,13 +172,13 @@ demo.htmlSource = `
             <div class="xt-list flex-nowrap max-w-sm ${animItem}">
 
               <div class="xt-list-inner flex-auto">
-                <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
+                <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
                   ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
                 <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
               </div>
 
-              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
+              <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
                 Search
               </button>
 
@@ -197,7 +202,7 @@ demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
   <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       screen full
     </button>
     <div class="xt-overlay group" data-xt-duration="700">
@@ -223,8 +228,8 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-      left blocks
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      Menu
     </button>
 
     <div class="xt-overlay group" data-xt-duration="700">
@@ -237,13 +242,13 @@ demo.htmlSource = `
               ${iconX()}
             </button>
             <div class="xt-list bg-primary-500 ${animItem}">
-              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
+              <button type="button" class="xt-button ${buttonMd()} ${buttonPrimary()}">
                 Menu
               </button>
-              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
+              <button type="button" class="xt-button ${buttonMd()} ${buttonPrimary()}">
                 Info
               </button>
-              <button type="button" class="xt-button text-xs py-2 px-3.5 ${buttonPrimary()}">
+              <button type="button" class="xt-button ${buttonMd()} ${buttonPrimary()}">
                 Account
               </button>
             </div>
@@ -252,11 +257,11 @@ demo.htmlSource = `
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
               </div>
             </div>
-            <div class="text-base p-8 ${animItem}">
+            <div class="${cardMd()} ${animItem}">
               <div class="xt-h4 ">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
-            <div class="text-sm p-6 bg-gray-500 mt-auto ${animItem}">
+            <div class="${cardSm()} bg-gray-500 mt-auto ${animItem}">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
             </div>
           </div>
@@ -269,7 +274,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       contact
     </button>
 
@@ -285,7 +290,7 @@ demo.htmlSource = `
 
             <div class="md:xt-card-group rounded-md ${animItem}">
 
-              <div class="text-base p-8 md:w-7/12">
+              <div class="${cardMd()} md:w-7/12">
                 <div class="xt-h4 ">
                   Contact us
                 </div>
@@ -350,7 +355,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                      <button type="submit" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                         Send
                       </button>
                     </div>
@@ -365,7 +370,7 @@ demo.htmlSource = `
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="">
                   </div>
                 </div>
-                <div class="text-base p-8 bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
+                <div class="${cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
                   <p class="xt-h5 ">
                     Didn't find what you was looking for?
                   </p>
@@ -387,7 +392,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       newsletter
     </button>
 
@@ -411,7 +416,7 @@ demo.htmlSource = `
                 </div>
               </div>
 
-              <div class="text-base p-8 md:w-7/12">
+              <div class="${cardMd()} md:w-7/12">
                 <div class="xt-h4 ">
                   Subscribe to our newsletter
                 </div>
@@ -475,7 +480,7 @@ demo.htmlSource = `
                     </div>
 
                     <div class="w-full">
-                      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                      <button type="submit" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                         Subscribe
                       </button>
                     </div>
@@ -486,7 +491,7 @@ demo.htmlSource = `
 
             </div>
 
-            <div class="text-sm p-6 rounded-b-md bg-gray-300 ${animItem}">
+            <div class="${cardSm()} rounded-b-md bg-gray-300 ${animItem}">
               <p>
                 Receive <strong>free discount</strong> periodically on all our products.
               </p>

@@ -1,6 +1,4 @@
 import { Xt } from 'xtendui'
-const buttonDefault = require('components/snippets/classes/button-default').default
-const cardToggle = require('components/snippets/classes/card-toggle').default
 
 Xt.mount.push({
   matches: '#demo--toggle-events',
@@ -88,11 +86,11 @@ Xt.mount.push({
         logAdd('<strong>add</strong>')
         // elements
         const elIndex = self.getElementsGroups().length
-        const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">Toggle ${elIndex}</button>`
+        const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">Toggle ${elIndex}</button>`
         document.querySelector('#demo--toggle-events-elements').append(Xt.createElement(strEl))
         // targets
         const indexTr = self.getTargetsGroups().length
-        const strTr = `<div class="xt-card xt-toggle rounded-md ${cardToggle()}">Target ${indexTr}</div>`
+        const strTr = `<div class="xt-card xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${indexTr}</div>`
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')

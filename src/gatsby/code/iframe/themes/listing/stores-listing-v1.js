@@ -1,7 +1,10 @@
 import React from 'react'
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardDefault = require('components/snippets/classes/card-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const cardSm = require('components/snippets/classes').cardSm
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardDefault = require('components/snippets/classes').cardDefault
 const iconX = require('components/snippets/icons').iconX
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
@@ -29,7 +32,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -37,7 +40,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -48,7 +51,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>
@@ -85,7 +88,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -93,7 +96,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -104,7 +107,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>
@@ -129,7 +132,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -137,7 +140,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -148,7 +151,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>
@@ -185,7 +188,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -193,7 +196,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -204,7 +207,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>
@@ -229,7 +232,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -237,7 +240,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -248,7 +251,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>
@@ -285,7 +288,7 @@ demo.htmlSource = `
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="text-sm p-6 h-full flex flex-col">
+              <div class="${cardSm()} h-full flex flex-col">
                 <div class="xt-h5 ">
                   Lorem Ipsum
                 </div>
@@ -293,7 +296,7 @@ demo.htmlSource = `
                   Street lorem ipsum 42, 00134 City, Nation
                 </address>
                 <div class="xt-list xt-list-3 mt-auto justify-end">
-                  <button type="button" class="listing-action xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+                  <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
                       More info
                   </button>
                 </div>
@@ -304,7 +307,7 @@ demo.htmlSource = `
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${iconX()}
               </button>
-              <div class="text-sm p-6">
+              <div class="${cardSm()}">
                 <div class="xt-h5 ">
                   Contacts
                 </div>

@@ -1,4 +1,5 @@
 import path from 'path'
+
 const iconSearch = require('components/snippets/icons').iconSearch
 const iconX = require('components/snippets/icons').iconX
 const iconArrowLeft = require('components/snippets/icons').iconArrowLeft

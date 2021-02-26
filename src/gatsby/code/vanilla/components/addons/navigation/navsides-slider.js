@@ -1,5 +1,6 @@
 import path from 'path'
-const markupSlider = require('components/snippets/components/markup-slider').default
+
+const markupSlider = require('components/snippets/markup-slider').default
 const indentString = require('indent-string')
 const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
 const iconArrowRight = require('components/snippets/icons').iconArrowRight

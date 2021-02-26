@@ -1,6 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardBlack = require('components/snippets/classes/card-black').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const tooltipMd = require('components/snippets/classes').tooltipMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardBlack = require('components/snippets/classes').cardBlack
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -12,12 +15,12 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--tooltip-animation-css" data-xt-tooltip>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     tooltip
   </button>
 
   <div class="xt-tooltip p-2" data-xt-duration="300">
-    <div class="text-xs py-2 px-3.5 rounded shadow-tooltip ${cardBlack()}">
+    <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
     </div>
   </div>

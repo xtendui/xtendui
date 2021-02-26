@@ -4,7 +4,9 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { markdownSlug } from 'components/snippets/markdown-slug'
 import { typeSort } from 'components/snippets/type-sort'
-const cardBlack = require('components/snippets/classes/card-black').default
+const buttonMd = require('components/snippets/classes').buttonMd
+const tooltipSm = require('components/snippets/classes').tooltipSm
+const cardBlack = require('components/snippets/classes').cardBlack
 const iconTwitter = require('components/snippets/icons').iconTwitter
 const iconPackage = require('components/snippets/icons').iconPackage
 const iconGithub = require('components/snippets/icons').iconGithub
@@ -55,7 +57,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Twitter
                         </div>
@@ -72,7 +74,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Npm
                         </div>
@@ -89,7 +91,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`text-3xs py-1.5 px-2.5 rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Github
                         </div>
@@ -100,7 +102,7 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className="xt-button text-xs py-2 px-3.5 rounded-md gatsby_button--overlay"
+                    className="xt-button ${buttonMd()} rounded-md gatsby_button--overlay"
                     aria-label="Menu"
                   >
                     <svg

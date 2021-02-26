@@ -1,7 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
-const cardWhite = require('components/snippets/classes/card-white').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const buttonDefaultDrop = require('components/snippets/classes').buttonDefaultDrop
+const cardWhite = require('components/snippets/classes').cardWhite
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -15,7 +17,7 @@ demo.htmlSource = `
 
   <div class="xt-drop-item">
 
-    <a href="#drop-with-link-1" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <a href="#drop-with-link-1" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       drop
     </a>
 

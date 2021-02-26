@@ -93,18 +93,6 @@ body {
   position: relative;
 }
 
-.gatsby_site-article_hero-content {
-  .xt-badge {
-    @apply border-gray-300 bg-gray-300 -mt-4 ml-4;
-  }
-  h1 {
-    span {
-      font-weight: theme('fontWeight.normal');
-      color: theme('colors.gray.500');
-    }
-  }
-}
-
 .gatsby_site-article_hero-content-inner {
   max-width: 70rem;
 }

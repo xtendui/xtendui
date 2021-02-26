@@ -1,10 +1,12 @@
 import React from 'react'
 import path from 'path'
+
+const buttonMd = require('components/snippets/classes').buttonMd
 const spinner = require('components/snippets/spinner').default
-const buttonDefault = require('components/snippets/classes/button-default').default
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const inputDefault = require('components/snippets/classes/input-default').default
-const switchDefault = require('components/snippets/classes/form-switch-default').default
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const inputDefault = require('components/snippets/classes').inputDefault
+const switchDefault = require('components/snippets/classes').switchDefault
 const iconLocate = require('components/snippets/icons').iconLocate
 const iconSearch = require('components/snippets/icons').iconSearch
 
@@ -32,10 +34,10 @@ demo.htmlSource = `
             <div class="xt-list flex-nowrap">
               <div class="xt-list-inner flex-auto">
                 <input type="text" class="xt-input rounded-l-md ${inputDefault()}" aria-label="Search" placeholder="Search">
-                <button type="button" class="button--locate xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+                <button type="button" class="button--locate xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
                   ${iconLocate({ classes: 'text-xl -my-1' })}
                 </button>
-                <button type="button" class="button--search xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonDefault()}">
+                <button type="button" class="button--search xt-button ${buttonMd()} rounded-r-md ${buttonDefault()}">
                   ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
               </div>
@@ -128,7 +130,7 @@ demo.htmlSource = `
       <div class="googlelocator-main-map">
       </div>
 
-      <button type="button" class="button--repeat xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+      <button type="button" class="button--repeat xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         Search in this area
       </button>
 

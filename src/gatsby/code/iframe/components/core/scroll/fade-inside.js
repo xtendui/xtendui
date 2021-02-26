@@ -1,6 +1,7 @@
 import React from 'react'
 import path from 'path'
-const markupFade = require('components/snippets/components/markup-fade').default
+
+const markupFade = require('components/snippets/markup-fade').default
 const indentString = require('indent-string')
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'

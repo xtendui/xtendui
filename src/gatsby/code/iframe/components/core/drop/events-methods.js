@@ -1,9 +1,13 @@
 import React from 'react'
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardDefault = require('components/snippets/classes/card-default').default
-const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
-const cardWhite = require('components/snippets/classes/card-white').default
+
+const buttonSm = require('components/snippets/classes').buttonSm
+const buttonMd = require('components/snippets/classes').buttonMd
+const cardSm = require('components/snippets/classes').cardSm
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardDefault = require('components/snippets/classes').cardDefault
+const buttonDefaultDrop = require('components/snippets/classes').buttonDefaultDrop
+const cardWhite = require('components/snippets/classes').cardWhite
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,35 +21,35 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center mb-4">
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-first-element">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-first-element">
     1st element
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-first-target">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-first-target">
     1st target
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-add">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-add">
     Add
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-remove">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-remove">
     Remove
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-reinit">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-reinit">
     Reinit
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-restart">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-restart">
     Restart
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-destroy">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-destroy">
     Destroy
   </button>
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}" id="demo--drop-events-unmount">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}" id="demo--drop-events-unmount">
     Unmount
   </button>
 </div>
 
 <div class="xt-list xt-list-3 items-center" id="demo--drop-events" title="Object">
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     Element 0
   </button>
 
@@ -65,7 +69,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     Element 1
   </button>
 
@@ -88,7 +92,7 @@ demo.htmlSource = `
 </div>
 
 <div class="xt-card rounded-md ${cardDefault()} mt-6">
-  <div class="text-sm p-6 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--drop-events-log">
+  <div class="${cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56" id="demo--drop-events-log">
   </div>
 </div>
 `

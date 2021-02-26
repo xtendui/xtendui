@@ -1,5 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
+
+const buttonSm = require('components/snippets/classes').buttonSm
+const buttonMd = require('components/snippets/classes').buttonM
+const buttonLg = require('components/snippets/classes').buttonLg
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
 const iconSearch = require('components/snippets/icons').iconSearch
 
 const filename = __filename.replace(/\\/g, '/')
@@ -16,17 +20,17 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}">
     icon small
     ${iconSearch({ classes: 'text-xs ml-1' })}
   </button>
 
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}">
     icon medium
     ${iconSearch({ classes: 'text-base -my-1 ml-1' })}
   </button>
 
-  <button type="button" class="xt-button text-3xs py-1.5 px-2.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}">
     icon large
     ${iconSearch({ classes: 'text-xl -my-1 ml-1' })}
   </button>
@@ -39,17 +43,17 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     icon small
     ${iconSearch({ classes: 'text-xs ml-1.5' })}
   </button>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     icon medium
     ${iconSearch({ classes: 'text-base ml-1.5' })}
   </button>
 
-  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     icon large
     ${iconSearch({ classes: 'text-xl -my-1 ml-1.5' })}
   </button>
@@ -62,17 +66,17 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button text-base py-2.5 px-4 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonLg()} rounded-md ${buttonPrimary()}">
     icon small
     ${iconSearch({ classes: 'text-xs ml-2' })}
   </button>
 
-  <button type="button" class="xt-button text-base py-2.5 px-4 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonLg()} rounded-md ${buttonPrimary()}">
     icon medium
     ${iconSearch({ classes: 'text-base ml-2' })}
   </button>
 
-  <button type="button" class="xt-button text-base py-2.5 px-4 rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${buttonLg()} rounded-md ${buttonPrimary()}">
     icon large
     ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>

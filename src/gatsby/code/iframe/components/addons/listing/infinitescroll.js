@@ -1,8 +1,10 @@
 import React from 'react'
 import path from 'path'
+
+const buttonMd = require('components/snippets/classes').buttonMd
 const spinner = require('components/snippets/spinner').default
-const buttonDefault = require('components/snippets/classes/button-default').default
-const buttonPrimary = require('components/snippets/classes/button-primary').default
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -33,7 +35,7 @@ demo.htmlSource = `
     <div class="infinitescroll-pre mb-4">
       <div class="xt-list xt-list-2 flex-col items-center">
         <div>
-          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
             Load previous pages
           </button>
         </div>
@@ -193,7 +195,7 @@ demo.htmlSource = `
     <div class="xt-list xt-list-2 flex-col items-center">
 
       <div class="infinitescroll-trigger">
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+        <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
 
           <span class="infinitescroll-trigger-content">
             Show more products

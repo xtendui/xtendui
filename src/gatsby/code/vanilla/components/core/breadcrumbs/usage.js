@@ -1,5 +1,6 @@
 import path from 'path'
-const buttonText = require('components/snippets/classes/button-text').default
+
+const buttonText = require('components/snippets/classes').buttonText
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')

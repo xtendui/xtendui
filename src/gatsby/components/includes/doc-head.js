@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const badgeSm = require('components/snippets/classes').badgeSm
+const badgeDefault = require('components/snippets/classes').badgeDefault
+
 export default class DocHead extends React.Component {
   render() {
     const { page } = this.props
@@ -15,13 +18,15 @@ export default class DocHead extends React.Component {
                   .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                   .join(' ')}{' '}
                 {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-                  <span>
+                  <span className="font-normal text-gray-500">
                     <br className="md:hidden" />
                     {page.post.frontmatter.parent}
                   </span>
                 ) : null}
                 {page.post.frontmatter.category ? (
-                  <div className="xt-badge text-3xs py-1.5 px-2.5 font-sans font-semibold leading-snug tracking-wider uppercase">
+                  <div
+                    className={`xt-badge ${badgeSm()} text-black font-sans font-semibold leading-snug tracking-wider uppercase border-gray-300 bg-gray-300 -mt-4 ml-2`}
+                  >
                     {page.post.frontmatter.category}
                   </div>
                 ) : null}

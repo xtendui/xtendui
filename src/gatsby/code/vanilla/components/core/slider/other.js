@@ -1,5 +1,6 @@
 import path from 'path'
-const markupSlider = require('components/snippets/components/markup-slider-other').default
+
+const markupSlider = require('components/snippets/markup-slider-other').default
 const indentString = require('indent-string')
 
 const filename = __filename.replace(/\\/g, '/')

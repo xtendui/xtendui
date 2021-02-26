@@ -1,10 +1,12 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const labelDefault = require('components/snippets/classes/label-default').default
-const inputDefault = require('components/snippets/classes/input-default').default
-const checkDefault = require('components/snippets/classes/form-check-default').default
-const radioDefault = require('components/snippets/classes/form-radio-default').default
-const switchDefault = require('components/snippets/classes/form-switch-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const labelDefault = require('components/snippets/classes').labelDefault
+const inputDefault = require('components/snippets/classes').inputDefault
+const checkDefault = require('components/snippets/classes').checkDefault
+const radioDefault = require('components/snippets/classes').radioDefault
+const switchDefault = require('components/snippets/classes').switchDefault
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -184,7 +186,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+      <button type="submit" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         submit
       </button>
     </div>

@@ -1,7 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const buttonDefault = require('components/snippets/classes/button-default').default
-const inputDefault = require('components/snippets/classes/input-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const inputDefault = require('components/snippets/classes').inputDefault
 const iconSearch = require('components/snippets/icons').iconSearch
 const iconX = require('components/snippets/icons').iconX
 
@@ -17,7 +19,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       list group
     </button>
 
@@ -34,13 +36,13 @@ demo.htmlSource = `
             <div class="xt-list flex-nowrap max-w-sm">
 
               <div class="xt-list-inner flex-auto">
-                <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md ${buttonDefault()}">
+                <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
                   ${iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
                 <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
               </div>
 
-              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md ${buttonPrimary()}">
+              <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
                 Search
               </button>
 

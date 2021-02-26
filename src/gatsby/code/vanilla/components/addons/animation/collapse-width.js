@@ -1,6 +1,8 @@
 import path from 'path'
-const buttonDefault = require('components/snippets/classes/button-default').default
-const cardDefault = require('components/snippets/classes/card-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonDefault = require('components/snippets/classes').buttonDefault
+const cardDefault = require('components/snippets/classes').cardDefault
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -14,11 +16,11 @@ demo.htmlSource = `
 
   <div class="xt-list xt-list-3 items-center mb-4">
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
       Toggle 0
     </button>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
       Toggle 1
     </button>
 

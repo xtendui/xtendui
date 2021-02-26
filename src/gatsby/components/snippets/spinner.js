@@ -1,6 +1,3 @@
-// const spinner = require('components/snippets/spinner').default
-// ${spinner({})}
-
 export default ({ classes = null, dimension = 120, radius = 100, dash = 628 }) => {
   classes = classes ? ` ${classes}` : ''
   return `<svg viewBox="0 0 ${dimension * 2} ${

@@ -1,4 +1,4 @@
-const cardDefault = require('components/snippets/classes/card-default').default
+const cardDefault = require('components/snippets/classes').cardDefault
 
 export default () => {
   return `

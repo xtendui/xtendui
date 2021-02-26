@@ -1,7 +1,9 @@
 import React from 'react'
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
+
+const cardSm = require('components/snippets/classes').cardSm
+const cardDefault = require('components/snippets/classes').cardDefault
+const cardPrimary = require('components/snippets/classes').cardPrimary
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -15,12 +17,12 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="demo--sticky-matchmedia xt-sticky">
-  <div class="xt-card text-sm p-6 ${cardPrimary()}">
+  <div class="xt-card ${cardSm()} ${cardPrimary()}">
     <div class="xt-h4 ">Top</div>
   </div>
 </div>
 
-<div class="xt-card text-sm p-6 ${cardDefault()} demo--sticky-hide-content">
+<div class="xt-card ${cardSm()} ${cardDefault()} demo--sticky-hide-content">
   <div class="xt-h4 ">Lorem ipsum</div>
   <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
   <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>

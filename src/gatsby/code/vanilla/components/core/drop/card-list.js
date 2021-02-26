@@ -1,6 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardWhite = require('components/snippets/classes/card-white').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const cardMd = require('components/snippets/classes').cardMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardWhite = require('components/snippets/classes').cardWhite
 const iconPackage = require('components/snippets/icons').iconPackage
 
 const filename = __filename.replace(/\\/g, '/')
@@ -15,13 +18,13 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       list
     </button>
 
     <div class="xt-drop p-4">
       <div class="xt-card w-96 rounded-md shadow-drop ${cardWhite()}">
-        <div class="text-base p-8">
+        <div class="${cardMd()}">
           <div class="xt-list xt-list-6 flex-nowrap items-baseline">
             <div>
               ${iconPackage({ classes: 'text-xl -my-1' })}

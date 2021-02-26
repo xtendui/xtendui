@@ -1,5 +1,6 @@
 import path from 'path'
-const cardDefaultfull = require('components/snippets/classes/card-default-full').default
+
+const cardDefaultFull = require('components/snippets/classes').cardDefaultFull
 const iconPackage = require('components/snippets/icons').iconPackage
 
 const filename = __filename.replace(/\\/g, '/')

@@ -1,6 +1,7 @@
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
+
+const cardDefault = require('components/snippets/classes').cardDefault
+const cardPrimary = require('components/snippets/classes').cardPrimary
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')

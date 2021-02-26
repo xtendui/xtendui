@@ -1,5 +1,7 @@
 import path from 'path'
-const buttonDefault = require('components/snippets/classes/button-default').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonDefault = require('components/snippets/classes').buttonDefault
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -9,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonDefault()}">
+<button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
   button
 </button>
 `

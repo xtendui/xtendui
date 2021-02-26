@@ -1,6 +1,8 @@
 import React from 'react'
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -28,7 +30,7 @@ demo.htmlSource = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
       <div class="xt-list xt-list-3 justify-center max-w-2xl mx-auto">
-        <div class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+        <div class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
             Lorem ipsum
         </div>
       </div>

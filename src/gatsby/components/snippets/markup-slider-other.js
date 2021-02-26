@@ -1,4 +1,4 @@
-const cardSlide = require('components/snippets/classes/card-slide').default
+const cardSlide = require('components/snippets/classes').cardSlide
 
 export default () => {
   return `
@@ -23,14 +23,14 @@ export default () => {
       </div>
     </div>
 
-    <div class="xt-slide w-7/12 sm:w-6/12 opacity-50 active:opacity-100">
+    <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
         <div class="xt-h4 ">4</div>
       </div>
     </div>
 
-    <div class="xt-slide w-7/12 sm:w-6/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+    <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
+      <div class="xt-card rounded-md ${cardSlide()} h-40">
         <div class="xt-h4 ">5</div>
       </div>
     </div>

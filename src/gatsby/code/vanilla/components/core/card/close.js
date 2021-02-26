@@ -1,6 +1,8 @@
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
+
+const cardMd = require('components/snippets/classes').cardMd
+const cardDefault = require('components/snippets/classes').cardDefault
+const cardPrimary = require('components/snippets/classes').cardPrimary
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -18,7 +20,7 @@ demo.htmlSource = `
       <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
         ${iconX()}
       </button>
-      <div class="text-base p-8">
+      <div class="${cardMd()}">
         <div class="xt-h4 ">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -30,7 +32,7 @@ demo.htmlSource = `
       <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
         ${iconX()}
       </button>
-      <div class="text-base p-8">
+      <div class="${cardMd()}">
         <div class="xt-h4 ">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>

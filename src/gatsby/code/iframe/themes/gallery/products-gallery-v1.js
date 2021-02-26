@@ -1,9 +1,12 @@
 import React from 'react'
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardDefault = require('components/snippets/classes/card-default').default
-const cardPrimary = require('components/snippets/classes/card-primary').default
-const cardWhite = require('components/snippets/classes/card-white').default
+
+const buttonLg = require('components/snippets/classes').buttonLg
+const cardSm = require('components/snippets/classes').cardSm
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardDefault = require('components/snippets/classes').cardDefault
+const cardPrimary = require('components/snippets/classes').cardPrimary
+const cardWhite = require('components/snippets/classes').cardWhite
 const iconX = require('components/snippets/icons').iconX
 const iconChevronDown = require('components/snippets/icons').iconChevronDown
 
@@ -23,7 +26,7 @@ demo.htmlSource = `
 <div class="site-wrapper">
 
   <header class="site-header">
-    <div class="xt-card text-sm p-6 ${cardPrimary()}">
+    <div class="xt-card ${cardSm()} ${cardPrimary()}">
       <div class="xt-h4 ">Header</div>
     </div>
   </header>
@@ -176,7 +179,7 @@ demo.htmlSource = `
               €&nbsp;229,00
             </div>
 
-            <a href="#" class="xt-button text-base py-2.5 px-4 rounded-md mb-6 ${buttonPrimary()}">
+            <a href="#" class="xt-button ${buttonLg()} rounded-md mb-6 ${buttonPrimary()}">
               Add to cart
             </a>
 
@@ -200,7 +203,7 @@ demo.htmlSource = `
   </main>
 
   <footer class="site-footer">
-    <div class="xt-card text-sm p-6 ${cardDefault()}">
+    <div class="xt-card ${cardSm()} ${cardDefault()}">
       <div class="xt-h4 ">Footer</div>
     </div>
   </footer>

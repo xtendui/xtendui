@@ -1,6 +1,8 @@
 import React from 'react'
 import path from 'path'
-const cardDefault = require('components/snippets/classes/card-default').default
+
+const cardMd = require('components/snippets/classes').cardMd
+const cardDefault = require('components/snippets/classes').cardDefault
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,7 +19,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-4/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="text-base p-8">
+      <div class="${cardMd()}">
         <div class="xt-h4 ">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh.</p>
       </div>
@@ -26,7 +28,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-4/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="text-base p-8">
+      <div class="${cardMd()}">
         <div class="xt-h4 ">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
@@ -35,7 +37,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-4/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="text-base p-8">
+      <div class="${cardMd()}">
         <div class="xt-h4 ">Lorem ipsum dolor sit amet</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>

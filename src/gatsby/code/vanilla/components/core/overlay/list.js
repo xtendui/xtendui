@@ -1,6 +1,9 @@
 import path from 'path'
-const buttonPrimary = require('components/snippets/classes/button-primary').default
-const cardWhite = require('components/snippets/classes/card-white').default
+
+const buttonMd = require('components/snippets/classes').buttonMd
+const cardMd = require('components/snippets/classes').cardMd
+const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const cardWhite = require('components/snippets/classes').cardWhite
 const iconX = require('components/snippets/icons').iconX
 const iconPackage = require('components/snippets/icons').iconPackage
 
@@ -16,7 +19,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
 
-    <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       list
     </button>
 
@@ -29,7 +32,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="text-base p-8">
+            <div class="${cardMd()}">
               <div class="xt-list xt-list-6 flex-nowrap items-baseline">
                 <div>
                   ${iconPackage({ classes: 'text-xl -my-1' })}

@@ -1,6 +1,7 @@
 import React from 'react'
 import path from 'path'
-const checkDefault = require('components/snippets/classes/form-check-default').default
+
+const checkDefault = require('components/snippets/classes').checkDefault
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
