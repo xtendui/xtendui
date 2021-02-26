@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const badgeSm = require('components/snippets/classes').badgeSm
-const badgeDefault = require('components/snippets/classes').badgeDefault
 
 export default class DocHead extends React.Component {
   render() {
@@ -32,9 +31,9 @@ export default class DocHead extends React.Component {
                 ) : null}
               </h1>
               {page.post.frontmatter.description ? (
-                <h2 className="p">{page.post.frontmatter.description}</h2>
+                <h2 className="-mt-2 mb-2 md:text-lg opacity-50">{page.post.frontmatter.description}</h2>
               ) : (
-                <h2 className="p">{page.parent.frontmatter.description}</h2>
+                <h2 className="-mt-2 mb-2 md:text-lg opacity-50">{page.parent.frontmatter.description}</h2>
               )}
             </div>
           </div>

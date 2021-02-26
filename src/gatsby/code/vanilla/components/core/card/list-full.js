@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-card rounded-md ${cardDefaultfull()}">
+<div class="xt-card rounded-md ${cardDefaultFull()}">
   <div class="text-base p-0">
     <div class="xt-list xt-list-6 flex-nowrap items-baseline">
       <div>

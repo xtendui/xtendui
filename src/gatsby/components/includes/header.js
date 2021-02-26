@@ -102,7 +102,7 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className="xt-button ${buttonMd()} rounded-md gatsby_button--overlay"
+                    className={`xt-button ${buttonMd()} rounded-md gatsby_button--overlay`}
                     aria-label="Menu"
                   >
                     <svg
@@ -268,7 +268,6 @@ export default function Header({ page }) {
               </div>
             </div>
           </div>
-          <div className="xt-backdrop xt-transition-none"></div>
         </div>
       </div>
     </div>

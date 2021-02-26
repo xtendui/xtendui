@@ -48,7 +48,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
 
 [[noteDefault]]

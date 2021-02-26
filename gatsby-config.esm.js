@@ -117,11 +117,11 @@ module.exports = {
               blocks: {
                 noteDefault: {
                   classes:
-                    'xt-card text-sm p-6 my-5 xt-my-auto text-black xt-links-default rounded-md bg-gray-200 gatsby_note',
+                    'xt-card text-sm px-7 py-6 my-5 xt-my-auto font-normal text-black xt-links-default rounded-md bg-gray-200 gatsby_note',
                 },
                 notePrimary: {
                   classes:
-                    'xt-card text-sm p-6 my-5 xt-my-auto text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
+                    'xt-card text-sm px-7 py-6 my-5 xt-my-auto font-semibold text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
                 },
               },
             },

@@ -28,8 +28,8 @@ module.exports = {
     },
     '.xt-h1': {
       // styles
-      marginTop: theme('spacing.7'),
-      marginBottom: theme('spacing.5'),
+      marginTop: theme('spacing.8'),
+      marginBottom: theme('spacing.6'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(38),
@@ -62,8 +62,8 @@ module.exports = {
     },
     '.xt-h3': {
       // styles
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.3'),
+      marginTop: theme('spacing.6'),
+      marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(30),
@@ -113,8 +113,8 @@ module.exports = {
     },
     '.xt-h6': {
       // styles
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.3'),
+      marginTop: theme('spacing.4'),
+      marginBottom: theme('spacing.2'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(18),
@@ -233,14 +233,10 @@ module.exports = {
       },
     },
   }),
-  component: theme => ({
+  component: {
     body: {
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
-    },
-    strong: {
-      // styles
-      fontWeight: theme('fontWeight.semibold'),
     },
     'h1:not([class])': {
       '@apply xt-h1': '',
@@ -281,5 +277,5 @@ module.exports = {
     'figcaption:not([class])': {
       '@apply xt-figcaption': '',
     },
-  }),
+  },
 }

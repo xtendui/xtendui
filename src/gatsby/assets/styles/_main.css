@@ -82,13 +82,6 @@ body {
   }
 }
 
-.gatsby_site-article_hero {
-  .p {
-    @apply mt-0 mb-2 md:text-lg;
-    opacity: 0.5;
-  }
-}
-
 .gatsby_site-article_hero-inner {
   position: relative;
 }
@@ -124,7 +117,8 @@ body {
     @apply mb-0;
   }
   > .xt-row {
-    @apply -m-3;
+    /* row same as card */
+    @apply -m-3.5;
     @screen md {
       @apply -m-5;
     }
@@ -153,7 +147,8 @@ body {
 }
 
 .gatsby_listing-item {
-  @apply py-2 px-3 sm:py-4 sm:px-5 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out active:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-primary-600 active:shadow-md active:-translate-y-0.5;
+  /* row same as card */
+  @apply p-3.5 sm:py-4 sm:px-5 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out active:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 active:text-white active:bg-primary-600 active:shadow-md active:-translate-y-0.5;
   .gatsby_home-main_actions & {
     @apply text-sm;
   }

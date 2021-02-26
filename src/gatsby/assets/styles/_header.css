@@ -30,12 +30,7 @@
   > .xt-button {
     padding: 0;
     padding-left: 1.5rem;
-    font-size: 1.15rem;
-    svg {
-      width: 1.5em;
-      height: 1.5em;
-      margin: calc((1em - 1.5em) / 2);
-    }
+    font-size: 1.5rem;
   }
 }
 
@@ -129,8 +124,6 @@
 }
 
 .gatsby_site-header_top_social_btn {
-  margin-top: -5px;
-  margin-bottom: -5px;
   padding: 5px;
   border-radius: 0;
   @apply text-white;
