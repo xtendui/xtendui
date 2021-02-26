@@ -35,12 +35,6 @@ Example loader filler with **activation animation**.
   </demovanilla>
 </demo>
 
-## Timing
-
-Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
-
-It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
-
 ## Mouse Follow
 
 Use **component classes** to create a **mouse follow**.

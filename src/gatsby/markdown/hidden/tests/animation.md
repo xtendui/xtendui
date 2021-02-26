@@ -5,7 +5,7 @@ parent: "Tests"
 title: "Animation"
 ---
 
-## Animation
+## Css
 
 Test direction and queue timing.
 
@@ -18,6 +18,10 @@ Test direction and queue timing.
   </demovanilla>
 </demo>
 
+## Js
+
+Test direction and queue timing.
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
   </demovanilla>
@@ -27,4 +31,15 @@ Test direction and queue timing.
   </demovanilla>
 </demo>
 
-@TODO put queue false demos
+## Queue
+
+Test instant activation when switching.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/animation-multiple-noqueue">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/animation-multiple-noqueue">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/tooltip/animation-multiple-noqueue">
+  </demovanilla>
+</demo>

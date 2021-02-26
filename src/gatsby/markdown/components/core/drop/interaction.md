@@ -29,85 +29,6 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `.xt-drop-init` gets added to the **object**.
 
-## Animation
-
-[[notePrimary]]
-| Do not animate `xt-drop` because of transform positioning, **animate the content instead**.
-
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/animation">
-  </demovanilla>
-</demo>
-
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Name                          | Description                   |
-| ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.direction-before`       |  Class name for left direction activation            |
-| Class                  | `.direction-after`       |  Class name for left direction activation            |
-</div>
-
-[[notePrimary]]
-| Use `.xt-drop-item` as **elements** when using **multiple mode**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/animation-css">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-css-multiple">
-  </demovanilla>
-</demo>
-
-You can use also **javascript animations**, just use [drop api](/components/core/drop/api).
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/animation-js">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-js-multiple">
-  </demovanilla>
-</demo>
-
-[[noteDefault]]
-| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
-
-Checkout out [drop's themes](/themes/by-component/drop) for **advanced animations**.
-
-## Timing
-
-Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
-
-If you want to manually set it use `options.duration` or `options.durationOn` and `options.durationOff`.
-
-It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
-
-You can also use a function for <code>delay</code>, <code>delayOn</code> and <code>delayOff</code> see javascript in the demo below.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|Boolean`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-| Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
-| Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
-| Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
-
-</div>
-
 ## Event
 
 You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`.
@@ -127,8 +48,11 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 
 </div>
 
-[[notePrimary]]
+[[noteDefault]]
 | When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
+
+[[noteDefault]]
+| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/event">

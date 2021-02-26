@@ -29,66 +29,6 @@ You can start with toggled elements and targets just by adding **one of the clas
 
 Additionally on component initialization the class `.xt-overlay-init` gets added to the **object**.
 
-## Animation
-
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
-
-You can also customize `xt-backdrop` animations.
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/animation">
-  </demovanilla>
-</demo>
-
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Name                          | Description                   |
-| ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.direction-before`       |  Class name for left direction activation            |
-| Class                  | `.direction-after`       |  Class name for left direction activation            |
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/animation-css">
-  </demovanilla>
-</demo>
-
-You can use also **javascript animations**, just use [drop api](/components/core/drop/api), and remember to set `durationOn: Milliseconds` and `durationOff: Milliseconds`.
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/animation-js">
-  </demovanilla>
-</demo>
-
-Checkout out [overlay's themes](/themes/by-component/overlay) for **advanced animations**.
-
-## Timing
-
-Xtend **automatically detects animation time** on activation and deactivation **before setting display property** with `in` and `out` classes.
-
-If you want to manually set it use `options.duration` or `options.durationOn` and `options.durationOff`.
-
-It's possible to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or  `data-xt-durationOn="Milliseconds"` and  `data-xt-durationOff="Milliseconds"`.
-
-You can also use a function for <code>delay</code>, <code>delayOn</code> and <code>delayOff</code> see javascript in the demo below.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|Boolean`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayOn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOff:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-| Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
-| Option                  | `durationOn:Milliseconds`                          | `false`        | Activation duration            |
-| Option                  | `durationOff:Milliseconds`                          | `false`        | Deactivation duration            |
-
-</div>
-
 ## Event
 
 You can specify **on** and **off** events for the overlay.
