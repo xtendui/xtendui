@@ -6,28 +6,9 @@ title: "Media"
 description: "Wrapper to have media with aspect ratio, also on page load, useful also for advanced animations."
 ---
 
-## Customization
+## Installation
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/media.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/media.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        media: {
-          utility: theme => ({
-            // modify utilities
-          }),
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.media`, check [xtendui/src/core/media.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/media.css.js) for default values.
 
 ## Usage
 

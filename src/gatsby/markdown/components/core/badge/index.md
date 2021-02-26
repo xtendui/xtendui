@@ -6,25 +6,9 @@ title: "Badge"
 description: "Component for showing short and relevant tags."
 ---
 
-## Customization
+## Installation
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/badge.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/badge.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        badge: {
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.badge`, check [xtendui/src/core/badge.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/badge.css.js) for default values.
 
 ## Usage
 

@@ -6,25 +6,9 @@ title: "Icon"
 description: "Everything you need to stylize svg icons."
 ---
 
-## Customization
+## Installation
 
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/icon.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/icon.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        icons: {
-          utility: theme => ({
-            // modify utilities
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.icon`, check [xtendui/src/core/icon.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/icon.css.js) for default values.
 
 ## Usage
 

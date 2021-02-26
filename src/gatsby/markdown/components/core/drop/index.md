@@ -8,37 +8,9 @@ description: "Nested navigation to show on user interaction, can contain lists a
 
 ## Installation
 
-Import the **component javascript** file.
+Import the **component javascript** file with `import 'xtendui/src/core/drop'`.
 
-```jsx
-import 'xtendui/src/core/drop'
-```
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/drop.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/drop.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      boxShadow: {
-        // modify box shadow
-      },
-      xtendui: {
-        drop: {
-          utility: theme => ({
-            // modify utilities
-          }),
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop`, check [xtendui/src/core/drop.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/drop.css.js) for default values.
 
 ## Usage
 
