@@ -8,11 +8,7 @@ description: "Automatic pagination activable on click or on scroll, with browser
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/infinitescroll'
-```
+Import the **component javascript** file with `import 'xtendui/src/addons/infinitescroll'`.
 
 ## Usage
 

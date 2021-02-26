@@ -8,37 +8,9 @@ description: "Informations or elements to show on user interaction, can contain 
 
 ## Installation
 
-Import the **component javascript** file.
+Import the **component javascript** file with `import 'xtendui/src/core/tooltip'`.
 
-```jsx
-import 'xtendui/src/core/tooltip'
-```
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/tooltip.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      boxShadow: {
-        // modify box shadow
-      },
-      xtendui: {
-        tooltip: {
-          utility: theme => ({
-            // modify utilities
-          }),
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`, check [xtendui/src/core/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/tooltip.css.js) for default values.
 
 ## Usage
 

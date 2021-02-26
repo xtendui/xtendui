@@ -103,8 +103,6 @@ You can use also **css animations**, just add them with **class names** `.active
 
 (use large screen to see it in action)
 
-(resize screen to see it in action)
-
 (navigate on mobile for different behaviour)
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">

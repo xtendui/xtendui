@@ -8,11 +8,7 @@ description: "Advanced animation for postion sticky to show content on scroll fo
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/stickyflow'
-```
+Import the **component javascript** file with `import 'xtendui/src/addons/stickyflow'`.
 
 [[notePrimary]]
 | This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.

@@ -8,31 +8,9 @@ description: "Material ripple effect on user interaction."
 
 ## Installation
 
-Import the **component javascript** file.
+Import the **component javascript** file with `import 'xtendui/src/addons/ripple'`.
 
-```jsx
-import 'xtendui/src/addons/ripple'
-```
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/ripple.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        ripple: {
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple`, check [xtendui/src/addons/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/ripple.css.js) for default values.
 
 ## Usage
 

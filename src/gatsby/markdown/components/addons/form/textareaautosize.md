@@ -8,11 +8,7 @@ description: "Textarea with dynamic height depending on content."
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/textareaautosize'
-```
+Import the **component javascript** file with `import 'xtendui/src/addons/textareaautosize'`.
 
 ## Usage
 

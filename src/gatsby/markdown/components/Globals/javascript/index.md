@@ -9,11 +9,7 @@ date: "2020-08-05"
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import { Xt } from 'xtendui'
-```
+Import the **component javascript** file with `import { Xt } from 'xtendui'`.
 
 ## Customization
 

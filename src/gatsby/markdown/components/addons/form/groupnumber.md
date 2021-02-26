@@ -8,31 +8,9 @@ description: "Input number with list group and javascript for and effective inte
 
 ## Installation
 
-Import the **component javascript** file.
+Import the **component javascript** file with `import 'xtendui/src/addons/groupnumber'`.
 
-```jsx
-import 'xtendui/src/addons/groupnumber'
-```
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/addons/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/groupnumber.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        groupnumber: {
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`, check [xtendui/src/addons/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/groupnumber.css.js) for default values.
 
 ## Usage
 

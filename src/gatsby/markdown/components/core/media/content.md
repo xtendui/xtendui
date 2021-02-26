@@ -43,7 +43,7 @@ Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
   </demovanilla>
 </demo>
 
-Use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images (resize screen to see it in action).
+Or use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
@@ -52,8 +52,6 @@ Use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make a
 | Utility                  | `.xt-ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio, can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`            |
 
 </div>
-
-You can add your own aspect ratio value as [media utility](/components/core/media#customization).
 
 <demo>
   <demovanilla src="vanilla/components/core/media/ratio-class">

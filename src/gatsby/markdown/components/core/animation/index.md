@@ -8,42 +8,7 @@ description: "Animation components and utilities with css or javascript transiti
 
 ## Installation
 
-Follow the [installation instructions](/introduction/getting-started/setup#javascript) for javascript animations.
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/animation.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      transitionDelay: {
-        // modify transition delay
-      },
-      transitionDuration: {
-        // modify transition duration
-      },
-      transitionTimingFunction: {
-        // modify transition timing function
-      },
-      animation: {
-        // modify animations
-      },
-      keyframes: theme => ({
-        // modify keyframe
-      }),
-      xtendui: {
-        animation: {
-          utility: theme => ({
-            // modify utilities
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation`, check [xtendui/src/core/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/animation.css.js) for default values.
 
 ## Usage
 

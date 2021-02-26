@@ -8,11 +8,7 @@ description: "Plug and play a google maps locator, with all the basic functional
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/googlelocator'
-```
+Import the **component javascript** file with `import 'xtendui/src/addons/googlelocator'`.
 
 ## Usage
 

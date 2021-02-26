@@ -8,34 +8,9 @@ description: "Use overlay when you need to display any content over the main pag
 
 ## Installation
 
-Import the **component javascript** file.
+Import the **component javascript** file with `import 'xtendui/src/core/overlay'`.
 
-```jsx
-import 'xtendui/src/core/overlay'
-```
-
-## Customization
-
-You can **customize this component** inside `tailwind.config.js`, check [xtendui/src/core/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/overlay.css.js) for default values.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      boxShadow: {
-        // modify box shadow
-      },
-      xtendui: {
-        overlay: {
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay`, check [xtendui/src/core/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/overlay.css.js) for default values.
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.

@@ -8,11 +8,7 @@ description: "Automatically scroll to an id clicking the relative anchor with th
 
 ## Installation
 
-Import the **component javascript** file.
-
-```jsx
-import 'xtendui/src/addons/scrolltoanchor'
-```
+Import the **component javascript** file with `import 'xtendui/src/addons/scrolltoanchor'`.
 
 ## Usage
 
