@@ -6,7 +6,9 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-## Animation
+Checkout out [drop's themes](/themes/by-component/drop) for **advanced animations**.
+
+## Queue and Duration
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -23,14 +25,11 @@ You can set it in the options or to **assign them also on single nodes** with `d
 
 </div>
 
-[[noteDefault]]
+[[notePrimary]]
 | Do not animate `xt-drop` because of transform positioning, **animate the content instead**.
 
-[[noteDefault]]
+[[notePrimary]]
 | Use `.xt-drop-item` as **elements** when using **multiple mode**.
-
-[[noteDefault]]
-| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
@@ -42,6 +41,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   <demovanilla src="vanilla/components/core/drop/animation-multiple-noqueue">
   </demovanilla>
 </demo>
+
+## Css Animation
 
 You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
 
@@ -60,6 +61,8 @@ You can use also **css animations**, just add them with **class names** `.active
   </demovanilla>
 </demo>
 
+## Js Animation
+
 You can use also **javascript animations**, just use [drop api](/components/core/drop/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
@@ -77,4 +80,11 @@ You can use also **javascript animations**, just use [drop api](/components/core
   </demovanilla>
 </demo>
 
-Checkout out [drop's themes](/themes/by-component/drop) for **advanced animations**.
+## Design Animation
+
+Use `.xt-drop-inner` and assign design styles to `.xt-design` (see [layout components](/components/globals/layout#components)) when you want to **animate the design independently from the content**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/animation-design">
+  </demovanilla>
+</demo>

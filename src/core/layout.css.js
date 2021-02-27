@@ -89,6 +89,13 @@ module.exports = {
       right: 'var(--scrollbar-width)',
       bottom: '0',
     },
+    '.xt-design': {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      bottom: '0',
+      right: '0',
+    },
     'body:not(.xt-focus-disable)': {
       ':focus': {
         outline: 'none !important',
@@ -103,13 +110,6 @@ module.exports = {
           },
         },
       },
-    },
-    '.xt-design-setup': {
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      bottom: '0',
-      right: '0',
     },
   }),
 }

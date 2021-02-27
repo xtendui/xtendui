@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-## Animation
+## Toggle
 
 The util class `.xt-toggle` sets `display: none` when **not activated**.
 
@@ -18,6 +18,8 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 | Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.queue: false`            |
 
 </div>
+
+## Queue and Duration
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -43,6 +45,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   </demovanilla>
 </demo>
 
+## Css Animation
+
 You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
@@ -58,6 +62,8 @@ You can use also **css animations**, just add them with **class names** `.active
   </demovanilla>
 </demo>
 
+## Js Animation
+
 You can use also **javascript animations**, just use [drop api](/components/core/drop/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
@@ -70,5 +76,14 @@ You can use also **javascript animations**, just use [drop api](/components/core
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
+  </demovanilla>
+</demo>
+
+## Design Animation
+
+Use `.xt-toggle-inner` and assign design styles to `.xt-design` (see [layout components](/components/globals/layout#components)) when you want to **animate the design independently from the content**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/animation-design">
   </demovanilla>
 </demo>

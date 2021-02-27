@@ -51,9 +51,6 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 [[notePrimary]]
 | When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
 
-[[noteDefault]]
-| Use `delay: Milliseconds` for direction when using `mouseenter` and `mouseleave` events.
-
 <demo>
   <demovanilla src="vanilla/components/core/drop/event">
   </demovanilla>
@@ -79,7 +76,9 @@ Use `<div class="xt-backdrop xt-drop-ui bg-black opacity-25"></div>` inside `.xt
 
 ## Disabled
 
-If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-drop-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
+If you want to **disable the component** use the `options.disabled`.
+
+If you want something to automatically hide use the class `.xt-drop-ui`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 

@@ -37,8 +37,8 @@ demo.htmlSource = `
         </a>
 
         <div class="xt-drop xt-drop-static">
-          <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-primary-700 border-b-4 border-gray-500"></div>
+          <div class="xt-drop-inner">
+            <div class="xt-design bg-primary-700 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
               <div class="pt-16 pb-24 text-white xt-links-inverse">
@@ -74,8 +74,8 @@ demo.htmlSource = `
         </a>
 
         <div class="xt-drop xt-drop-static">
-          <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-gray-200 border-b-4 border-gray-500"></div>
+          <div class="xt-drop-inner">
+            <div class="xt-design bg-gray-200 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
               <div class="pt-16 pb-24 text-black xt-links-default">
@@ -105,8 +105,8 @@ demo.htmlSource = `
         </a>
 
         <div class="xt-drop xt-drop-static">
-          <div class="xt-drop-inner overflow-hidden">
-            <div class="xt-design-setup bg-gray-200 border-b-4 border-gray-500"></div>
+          <div class="xt-drop-inner">
+            <div class="xt-design bg-gray-200 border-b-4 border-gray-500"></div>
             <div class="xt-drop-content">
 
               <div class="pt-16 pb-24 text-black xt-links-default">

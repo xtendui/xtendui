@@ -71,7 +71,9 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
 
 ## Disabled
 
-If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-overlay-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
+If you want to **disable the component** use the `options.disabled`.
+
+If you want something to automatically hide use the class `.xt-overlay-ui`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 

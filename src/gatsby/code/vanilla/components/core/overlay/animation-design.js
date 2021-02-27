@@ -3,7 +3,6 @@ import path from 'path'
 const buttonMd = require('components/snippets/classes').buttonMd
 const cardMd = require('components/snippets/classes').cardMd
 const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardWhite = require('components/snippets/classes').cardWhite
 const iconX = require('components/snippets/icons').iconX
 
 const filename = __filename.replace(/\\/g, '/')
@@ -23,9 +22,11 @@ demo.htmlSource = `
   <div class="xt-overlay group" data-xt-duration="500">
     <div class="xt-backdrop xt-overlay-ui bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
     <div class="xt-overlay-container max-w-3xl">
-      <div class="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+      <div class="xt-overlay-inner">
 
-          <div class="xt-card rounded-md shadow-overlay ${cardWhite()}">
+          <div class="xt-design rounded-md shadow-overlay bg-white transform transition ease-out duration-500 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0"></div>
+
+          <div class="xt-card transition ease-out duration-500 opacity-0 group-active:opacity-100">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>

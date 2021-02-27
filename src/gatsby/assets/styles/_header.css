@@ -36,7 +36,7 @@
 
 #gatsby_menu--overlay {
   @media (max-width: calc(theme('screens.lg') - 1px)) {
-    .xt-design-setup {
+    .xt-design {
       @apply bg-primary-500;
     }
     .xt-card {

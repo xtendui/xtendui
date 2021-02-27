@@ -22,7 +22,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip p-2 xt-tooltip-static xt-tooltip-nospace">
-      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

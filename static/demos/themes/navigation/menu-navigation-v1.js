@@ -95,7 +95,7 @@ Xt.mount.push({
           ease: contentEase,
         })
         // design
-        const design = tr.querySelector('.xt-design-setup')
+        const design = tr.querySelector('.xt-design')
         gsap.killTweensOf(design)
         gsap.set(design, { opacity: 1 })
         // inner
@@ -139,7 +139,7 @@ Xt.mount.push({
           overwrite: true,
         })
         // design
-        const design = tr.querySelector('.xt-design-setup')
+        const design = tr.querySelector('.xt-design')
         gsap.killTweensOf(design)
         gsap.to(design, {
           opacity: 0,
@@ -174,7 +174,7 @@ Xt.mount.push({
           // others
           for (const other of self.targets.filter(x => x !== tr)) {
             // design
-            const design = other.querySelector('.xt-design-setup')
+            const design = other.querySelector('.xt-design')
             gsap.killTweensOf(design)
             gsap.to(design, { opacity: 0, duration: designTime, ease: designEase, delay: designTime })
             // inner

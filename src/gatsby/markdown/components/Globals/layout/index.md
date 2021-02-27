@@ -42,6 +42,7 @@ These are layout **component classes**.
 | Component                  | `.xt-overflow-sub`                     | `xt-overflow-sub`                | Overflow scrollbar style small version            |
 | Component                  | `[readonly], [disabled], .xt-disabled`                     | `xt-disabled`                | Disabled styles            |
 | Component                  | `.xt-backdrop`                     | `xt-backdrop`                | Backdrop styles            |
+| Component                  | `.xt-design`                     | `xt-design`                | Setup design styles in position absolute            |
 
 </div>
 

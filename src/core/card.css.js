@@ -17,7 +17,7 @@ module.exports = {
       '> .xt-dismiss': {
         display: 'none !important',
       },
-      '> .xt-design-setup': {
+      '> .xt-design': {
         display: 'none !important',
       },
     },

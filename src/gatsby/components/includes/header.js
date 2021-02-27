@@ -57,7 +57,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Twitter
                         </div>
@@ -74,7 +74,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Npm
                         </div>
@@ -91,7 +91,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Github
                         </div>
@@ -132,7 +132,7 @@ export default function Header({ page }) {
           <div className="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="xt-overlay-inner">
-              <div className="xt-design-setup"></div>
+              <div className="xt-design"></div>
               <div className="xt-card">
                 <div
                   className="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 pr-3 text-2xl"

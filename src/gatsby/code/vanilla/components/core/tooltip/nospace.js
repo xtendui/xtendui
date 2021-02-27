@@ -22,7 +22,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip">
-      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
       <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
@@ -37,7 +37,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip">
-      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
       <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
@@ -52,7 +52,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip">
-      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
       <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>

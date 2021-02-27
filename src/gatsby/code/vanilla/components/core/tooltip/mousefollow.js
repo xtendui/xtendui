@@ -20,7 +20,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-tooltip p-2 group xt-mousefollow" data-xt-duration="300">
-    <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-300 ease-in-out-quint opacity-0 translate-x-4 group-active:opacity-100 group-active:translate-x-0">
+    <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-300 ease-in-out-quint opacity-0 translate-x-4 group-active:opacity-100 group-active:translate-x-0">
       Lorem ipsum dolor sit amet
     </div>
   </div>

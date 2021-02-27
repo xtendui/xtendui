@@ -135,11 +135,11 @@ export const cardPrimary = () => {
 }
 
 export const cardSlide = () => {
-  return `text-base p-8 text-center text-black bg-gray-200`
+  return `text-base p-8 text-center text-black xt-links-default bg-gray-200`
 }
 
 export const cardToggle = () => {
-  return `text-sm p-6 text-black bg-gray-200`
+  return `text-sm p-6 text-black xt-links-default bg-gray-200`
 }
 
 export const cardWhite = () => {

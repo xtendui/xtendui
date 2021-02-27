@@ -48,7 +48,7 @@ module.exports = {
         '> *:first-child': {
           zIndex: 'initial',
         },
-        '> .xt-design-setup': {
+        '> .xt-drop-inner > .xt-design': {
           display: 'none',
         },
         '> .xt-card': {

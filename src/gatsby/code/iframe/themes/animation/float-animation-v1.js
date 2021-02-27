@@ -82,8 +82,8 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
-        <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
-        <div class="xt-card w-64 py-3.5 rounded-md ${cardWhite()} ${animItem}">
+        <div class="xt-design rounded-md shadow-drop bg-white ${animDesign}"></div>
+        <div class="xt-card w-64 py-3.5 ${animItem}">
           <nav class="xt-list flex-col">
             <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -110,8 +110,8 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
-        <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
-        <div class="xt-card w-64 rounded-md ${cardWhite()} ${animItem}">
+        <div class="xt-design rounded-md shadow-drop bg-white ${animDesign}"></div>
+        <div class="xt-card w-64 ${animItem}">
           <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
             ${iconX()}
           </button>
@@ -142,8 +142,8 @@ demo.htmlSource = `
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="xt-tooltip-inner">
-        <div class="xt-design-setup rounded-md shadow-tooltip bg-black ${animDesign}"></div>
-        <div class="${tooltipMd()} font-semibold text-white xt-links-inverse ${animItem}">
+        <div class="xt-design rounded-md shadow-tooltip bg-black ${animDesign}"></div>
+        <div class="relative ${tooltipMd()} font-semibold text-white xt-links-inverse ${animItem}">
           Lorem ipsum dolor sit amet
         </div>
       </div>
@@ -162,7 +162,7 @@ demo.htmlSource = `
 
       <div class="xt-tooltip p-2 group" data-xt-duration="700">
         <div class="xt-tooltip-inner">
-          <div class="xt-design-setup rounded-md shadow-tooltip bg-white ${animDesign}"></div>
+          <div class="xt-design rounded-md shadow-tooltip bg-white ${animDesign}"></div>
           <div class="font-semibold text-black xt-links-default ${animItem}">
             <form class="text-sm">
 
@@ -211,7 +211,7 @@ demo.htmlSource = `
         </button>
         <div class="xt-overlay-inner">
 
-          <div class="xt-design-setup rounded-md bg-white ${animDesign}"></div>
+          <div class="xt-design rounded-md bg-white ${animDesign}"></div>
 
           <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem}">
             <div class="xt-media-container bg-gray-200 xt-ratio-100">
@@ -237,7 +237,7 @@ demo.htmlSource = `
       <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="xt-overlay-inner">
 
-          <div class="xt-design-setup bg-white ${animDesign}"></div>
+          <div class="xt-design bg-white ${animDesign}"></div>
 
           <div class="xt-card xt-min-h-screen ${cardWhite()} ${animItem}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
@@ -285,7 +285,7 @@ demo.htmlSource = `
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 
-          <div class="xt-design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
+          <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="xt-card rounded-md ${cardWhite()} ${animItem}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${buttonCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">
@@ -405,7 +405,7 @@ demo.htmlSource = `
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
 
-          <div class="xt-design-setup rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
+          <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
 
           <div class="xt-card rounded-md ${cardWhite()} ${animItem}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${buttonCloseOutside()} md:p-3 md:right-auto md:left-100" aria-label="Close">

@@ -15,6 +15,9 @@ module.exports = {
         pointerEvents: 'none',
       },
     },
+    '.xt-toggle-inner': {
+      position: 'relative',
+    },
     '.xt-toggle-absolute': {
       '&:not(.in)': {
         position: 'absolute',
@@ -30,6 +33,9 @@ module.exports = {
     },
     '.xt-toggle-disabled': {
       cursor: 'default',
+      '.xt-toggle-ui': {
+        display: 'none !important',
+      },
     },
   }),
 }

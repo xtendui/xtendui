@@ -146,7 +146,7 @@ demo.htmlSource = `
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="xt-tooltip-inner ${animDesign}">
-        <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+        <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
           <div class="${animItem}">
             Lorem ipsum dolor sit amet
           </div>

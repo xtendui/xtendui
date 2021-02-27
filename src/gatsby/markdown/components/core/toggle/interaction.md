@@ -190,7 +190,9 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 ## Disabled
 
-If you want to **disable the component** use the `options.disabled`, besides that you can add the class `.xt-toggle-disabled` to `object`, `elements` and `targets` to disable them before javascript initialization.
+If you want to **disable the component** use the `options.disabled`.
+
+If you want something to automatically hide use the class `.xt-toggle-ui`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
