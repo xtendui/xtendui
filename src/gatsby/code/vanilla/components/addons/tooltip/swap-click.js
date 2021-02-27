@@ -19,13 +19,13 @@ demo.htmlSource = `
 </button>
 
 <div class="xt-tooltip p-2 group" id="tooltip--swap-click" data-xt-duration="300">
-  <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Lorem ipsum dolor sit amet
   </div>
 </div>
 
 <div class="xt-tooltip p-2 group" id="tooltip--swap-click-swap" style="display: none" data-xt-duration="300">
-  <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Clicked!
   </div>
 </div>

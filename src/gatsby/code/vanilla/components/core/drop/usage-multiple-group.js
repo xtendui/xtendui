@@ -22,7 +22,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-drop p-4" data-xt-group="my-group">
-      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -38,7 +38,7 @@ demo.htmlSource = `
     </div>
 
     <div class="xt-drop p-4" data-xt-position="right-end" data-xt-group="my-group">
-      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -62,7 +62,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit

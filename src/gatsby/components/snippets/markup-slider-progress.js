@@ -14,7 +14,7 @@ export default () => {
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">1</div>
+        <div class="xt-h4">1</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
             <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
@@ -26,7 +26,7 @@ export default () => {
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">2</div>
+        <div class="xt-h4">2</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
             <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
@@ -38,7 +38,7 @@ export default () => {
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">3</div>
+        <div class="xt-h4">3</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
             <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
@@ -50,7 +50,7 @@ export default () => {
 
     <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">4</div>
+        <div class="xt-h4">4</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
             <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
@@ -62,7 +62,7 @@ export default () => {
 
     <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">5</div>
+        <div class="xt-h4">5</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
             <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>

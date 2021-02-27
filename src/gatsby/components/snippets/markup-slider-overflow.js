@@ -10,13 +10,13 @@ export default () => {
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">1</div>
+        <div class="xt-h4">1</div>
       </div>
     </div>
 
     <div class="xt-slide w-10/12 sm:w-6/12 opacity-50 active:opacity-100">
       <div class="xt-card rounded-md ${cardSlide()}">
-        <div class="xt-h4 ">2</div>
+        <div class="xt-h4">2</div>
       </div>
     </div>
 

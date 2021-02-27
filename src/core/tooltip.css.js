@@ -28,6 +28,9 @@ module.exports = {
         transform: 'rotate(45deg)',
       },
     },
+    '.xt-tooltip-inner': {
+      position: 'relative',
+    },
     '.xt-tooltip-item': {
       display: 'inline-block',
     },

@@ -67,7 +67,7 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="xt-drop p-4" title="Target ${indexTr}">
-            <div class="xt-card w-64 py-3 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav class="list flex-col">
                 <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit

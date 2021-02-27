@@ -24,7 +24,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
         <nav class="xt-list flex-col">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -53,7 +53,7 @@ demo.htmlSource = `
           ${iconX()}
         </button>
         <div class="${cardMd()}">
-          <div class="xt-h4 ">Lorem ipsum</div>
+          <div class="xt-h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>

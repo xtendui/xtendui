@@ -28,6 +28,9 @@ module.exports = {
         transform: 'rotate(45deg)',
       },
     },
+    '.xt-drop-inner': {
+      position: 'relative',
+    },
     '.xt-drop-item': {
       display: 'inline-block',
     },

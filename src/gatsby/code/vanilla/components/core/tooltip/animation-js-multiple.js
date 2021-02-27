@@ -20,7 +20,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-tooltip p-2">
-    <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+    <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>
   </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-tooltip p-2">
-    <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+    <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
       Consectetur adipiscing elit
     </div>
   </div>

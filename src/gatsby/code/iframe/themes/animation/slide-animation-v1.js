@@ -83,7 +83,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
-      <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
+      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
         <nav class="xt-list flex-col rounded-md ${animItem}">
           <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -108,12 +108,12 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
-      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
+      <div class="xt-card w-64 rounded-md shadow-drop ${cardWhite()} ${animDesign}">
         <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
         </button>
-        <div class="${cardMd()} rounded-md ${animItem}">
-          <div class="xt-h4 ">Lorem ipsum</div>
+        <div class="${cardSm()} rounded-md ${animItem}">
+          <div class="xt-h5">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
@@ -137,7 +137,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
-      <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()} ${animDesign}">
+      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()} ${animDesign}">
         <div class="${animItem}">
           Lorem ipsum dolor sit amet
         </div>
@@ -248,7 +248,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="${cardMd()} ${animItemLeft}">
-              <div class="xt-h4 ">Lorem ipsum</div>
+              <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="${cardSm()} bg-gray-500 mt-auto ${animItemLeft}">
@@ -281,7 +281,7 @@ demo.htmlSource = `
             <div class="md:xt-card-group rounded-md ${animItem}">
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -407,7 +407,7 @@ demo.htmlSource = `
               </div>
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -506,7 +506,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <a role="button" class="xt-card rounded-md ${cardDefaultInteractive()}">
       <div class="${cardMd()}">
-        <div class="xt-h4 ">Default</div>
+        <div class="xt-h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </a>
@@ -515,7 +515,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <a role="button" class="xt-card rounded-md ${cardPrimaryInteractive()}">
       <div class="${cardMd()}">
-        <div class="xt-h4 ">Primary</div>
+        <div class="xt-h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </a>

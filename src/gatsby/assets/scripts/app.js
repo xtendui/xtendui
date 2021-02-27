@@ -287,7 +287,7 @@ Xt.mount.push({
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
 <div id="tooltip--demo--close-${closeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
-  <div class="${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>
 </div>`)

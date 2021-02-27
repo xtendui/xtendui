@@ -14,7 +14,7 @@ demo.htmlSource = `
 Lorem ipsum <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">dolor</a> sit amet
 
 <div class="xt-tooltip p-2" id="tooltip--unique">
-  <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+  <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
     Lorem ipsum dolor sit amet
   </div>
 </div>

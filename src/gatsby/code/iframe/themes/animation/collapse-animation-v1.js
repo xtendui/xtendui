@@ -88,7 +88,7 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner rounded-md shadow-drop ${animDesign}">
-        <div class="xt-card w-64 py-3 rounded-md ${cardWhite()} ">
+        <div class="xt-card w-64 py-3.5 rounded-md ${cardWhite()} ">
           <nav class="xt-list flex-col rounded-md${animItem}">
             <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -115,12 +115,12 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner rounded-md shadow-drop ${animDesign}">
-        <div class="xt-card w-80 rounded-md ${cardWhite()}">
+        <div class="xt-card w-64 rounded-md ${cardWhite()}">
           <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl ${animItem}" aria-label="Close">
             ${iconX()}
           </button>
-          <div class="${cardMd()} rounded-md ${animItem}">
-            <div class="xt-h4 ">Lorem ipsum</div>
+          <div class="${cardSm()} rounded-md ${animItem}">
+            <div class="xt-h5">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
@@ -146,7 +146,7 @@ demo.htmlSource = `
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
       <div class="xt-tooltip-inner ${animDesign}">
-        <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+        <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
           <div class="${animItem}">
             Lorem ipsum dolor sit amet
           </div>
@@ -258,7 +258,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="${cardMd()} ${animItem}">
-              <div class="xt-h4 ">Lorem ipsum</div>
+              <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="${cardSm()} bg-gray-500 mt-auto ${animItem}">
@@ -291,7 +291,7 @@ demo.htmlSource = `
             <div class="md:xt-card-group rounded-md ${animItem}">
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -417,7 +417,7 @@ demo.htmlSource = `
               </div>
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>

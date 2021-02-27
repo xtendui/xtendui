@@ -37,15 +37,15 @@ export const tooltipLg = () => {
 }
 
 export const cardSm = () => {
-  return 'text-sm px-7 py-6'
+  return 'text-sm py-6 px-7'
 }
 
 export const cardMd = () => {
-  return 'text-base px-9 py-8'
+  return 'text-base py-8 px-9'
 }
 
 export const cardLg = () => {
-  return 'text-base px-9 py-8 md:text-lg md:px-10 md:py-9'
+  return 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10'
 }
 
 // variant

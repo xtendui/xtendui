@@ -21,7 +21,7 @@ demo.htmlSource = `
 
 <header class="site-header">
   <div class="xt-card ${cardSm()} ${cardPrimary()}">
-    <div class="xt-h4 ">Header</div>
+    <div class="xt-h4">Header</div>
   </div>
 </header>
 
@@ -111,7 +111,7 @@ demo.htmlSource = `
 
 <footer class="site-footer">
   <div class="xt-card ${cardSm()} ${cardDefault()}">
-    <div class="xt-h4 ">Footer</div>
+    <div class="xt-h4">Footer</div>
   </div>
 </footer>
 

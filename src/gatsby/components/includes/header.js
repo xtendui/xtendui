@@ -57,7 +57,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Twitter
                         </div>
@@ -74,7 +74,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Npm
                         </div>
@@ -91,7 +91,7 @@ export default function Header({ page }) {
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`${tooltipSm()} rounded shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Github
                         </div>

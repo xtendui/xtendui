@@ -96,7 +96,7 @@ Xt.mount.push({
         const strTr = `
         <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
           <div class="xt-card rounded-md text-base p-8 text-center text-black bg-gray-200">
-            <div class="xt-h4 ">${indexTr}</div>
+            <div class="xt-h4">${indexTr}</div>
           </div>
         </div>
         `

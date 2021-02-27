@@ -21,40 +21,40 @@ demo.htmlSource = `
 
         <div class="xt-slide xt-list xt-list-10 flex-nowrap whitespace-nowrap">
           <a href="#test-link-1" class="slide-text" title="item 1">
-            <div class="xt-h4 ">One</div>
+            <div class="xt-h4">One</div>
           </a>
           <a href="#test-link-2" class="slide-text" title="item 2">
-            <div class="xt-h4 ">Two</div>
+            <div class="xt-h4">Two</div>
           </a>
           <a href="#test-link-3" class="slide-text" title="item 3">
-            <div class="xt-h4 ">Three</div>
+            <div class="xt-h4">Three</div>
           </a>
           <a href="#test-link-4" class="slide-text" title="item 4">
-            <div class="xt-h4 ">Four</div>
+            <div class="xt-h4">Four</div>
           </a>
           <a href="#test-link-5" class="slide-text" title="item 5">
-            <div class="xt-h4 ">Five</div>
+            <div class="xt-h4">Five</div>
           </a>
           <a href="#test-link-6" class="slide-text" title="item 6">
-            <div class="xt-h4 ">Six</div>
+            <div class="xt-h4">Six</div>
           </a>
           <a href="#test-link-7" class="slide-text" title="item 7">
-            <div class="xt-h4 ">Seven</div>
+            <div class="xt-h4">Seven</div>
           </a>
           <a href="#test-link-8" class="slide-text" title="item 8">
-            <div class="xt-h4 ">Eight</div>
+            <div class="xt-h4">Eight</div>
           </a>
           <a href="#test-link-9" class="slide-text" title="item 9">
-            <div class="xt-h4 ">Nine</div>
+            <div class="xt-h4">Nine</div>
           </a>
           <a href="#test-link-10" class="slide-text" title="item 10">
-            <div class="xt-h4 ">Ten</div>
+            <div class="xt-h4">Ten</div>
           </a>
           <a href="#test-link-11" class="slide-text" title="item 11">
-            <div class="xt-h4 ">Eleven</div>
+            <div class="xt-h4">Eleven</div>
           </a>
           <a href="#test-link-12" class="slide-text" title="item 12">
-            <div class="xt-h4 ">Twelve</div>
+            <div class="xt-h4">Twelve</div>
           </a>
         </div>
 

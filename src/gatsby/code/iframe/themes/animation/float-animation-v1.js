@@ -25,7 +25,6 @@ const buttonDefaultDrop = require('components/snippets/classes').buttonDefaultDr
 const buttonCloseOutside = require('components/snippets/classes').buttonCloseOutside
 
 const cardWhite = () => 'text-black xt-links-default'
-const cardBlack = require('components/snippets/classes').cardBlack
 
 const labelDefault = require('components/snippets/classes').labelDefault
 const inputDefault = require('components/snippets/classes').inputDefault
@@ -84,7 +83,7 @@ demo.htmlSource = `
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
         <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
-        <div class="xt-card w-64 py-3 rounded-md ${cardWhite()} ${animItem}">
+        <div class="xt-card w-64 py-3.5 rounded-md ${cardWhite()} ${animItem}">
           <nav class="xt-list flex-col">
             <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -112,12 +111,12 @@ demo.htmlSource = `
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner">
         <div class="xt-design-setup rounded-md shadow-drop bg-white ${animDesign}"></div>
-        <div class="xt-card w-80 rounded-md ${cardWhite()} ${animItem}">
+        <div class="xt-card w-64 rounded-md ${cardWhite()} ${animItem}">
           <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
             ${iconX()}
           </button>
-          <div class="${cardMd()}">
-            <div class="xt-h4 ">Lorem ipsum</div>
+          <div class="${cardSm()}">
+            <div class="xt-h5">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
           </div>
         </div>
@@ -142,8 +141,9 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-tooltip p-2 group" data-xt-duration="700">
-      <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()} ${animDesign}">
-        <div class="${animItem}">
+      <div class="xt-tooltip-inner">
+        <div class="xt-design-setup rounded-md shadow-tooltip bg-black ${animDesign}"></div>
+        <div class="${tooltipMd()} font-semibold text-white xt-links-inverse ${animItem}">
           Lorem ipsum dolor sit amet
         </div>
       </div>
@@ -161,25 +161,28 @@ demo.htmlSource = `
       </button>
 
       <div class="xt-tooltip p-2 group" data-xt-duration="700">
-        <div class="rounded-md shadow-tooltip text-black bg-white ${animDesign}">
-          <form class="text-sm">
+        <div class="xt-tooltip-inner">
+          <div class="xt-design-setup rounded-md shadow-tooltip bg-white ${animDesign}"></div>
+          <div class="font-semibold text-black xt-links-default ${animItem}">
+            <form class="text-sm">
 
-            <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
+              <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
 
-              <div class="xt-list-inner flex-auto">
-                <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
-                  ${iconSearch({ classes: 'text-xl -my-1' })}
+                <div class="xt-list-inner flex-auto">
+                  <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
+                    ${iconSearch({ classes: 'text-xl -my-1' })}
+                  </button>
+                  <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+                </div>
+
+                <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
+                  Search
                 </button>
-                <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
+
               </div>
 
-              <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
-                Search
-              </button>
-
-            </div>
-
-          </form>
+            </form>
+          </div>
         </div>
         <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
       </div>
@@ -257,7 +260,7 @@ demo.htmlSource = `
               </div>
             </div>
             <div class="${cardMd()}">
-              <div class="xt-h4 ">Lorem ipsum</div>
+              <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
             <div class="${cardSm()} bg-gray-500 mt-auto">
@@ -292,7 +295,7 @@ demo.htmlSource = `
             <div class="md:xt-card-group">
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Contact us
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -420,7 +423,7 @@ demo.htmlSource = `
               </div>
 
               <div class="${cardMd()} md:w-7/12">
-                <div class="xt-h4 ">
+                <div class="xt-h4">
                   Subscribe to our newsletter
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -519,7 +522,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <a role="button" class="xt-card ${classesDefault} hover:shadow-xl active:shadow-md">
       <div class="${cardMd()}">
-        <div class="xt-h4 ">Default</div>
+        <div class="xt-h4">Default</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </a>
@@ -528,7 +531,7 @@ demo.htmlSource = `
   <div class="w-full md:w-6/12">
     <a role="button" class="xt-card ${classesPrimary} hover:shadow-xl active:shadow-md">
       <div class="${cardMd()}">
-        <div class="xt-h4 ">Primary</div>
+        <div class="xt-h4">Primary</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </a>

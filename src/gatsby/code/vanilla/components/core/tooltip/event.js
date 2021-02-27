@@ -21,7 +21,7 @@ demo.htmlSource = `
   </button>
 
   <div class="xt-tooltip p-2">
-    <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+    <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
 
       <div class="inline-block" data-xt-tooltip="{ position: 'auto' }">
@@ -29,7 +29,7 @@ demo.htmlSource = `
         <a href="#">nested</a>
 
         <div class="xt-tooltip p-2">
-          <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+          <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
               Consectetur adipiscing elit
           </div>
         </div>
@@ -48,7 +48,7 @@ demo.htmlSource = `
     <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Focus" placeholder="Focus">
 
     <div class="xt-tooltip p-2">
-      <div class="${tooltipMd()} rounded shadow-tooltip ${cardBlack()}">
+      <div class="${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

@@ -30,7 +30,7 @@ demo.htmlSource = `
         <div class="w-10/12 lg:w-8/12">
           <div class="xt-card rounded-md ${cardDefault()}">
             <div class="${cardMd()}">
-              <div class="xt-h4 ">Lorem ipsum</div>
+              <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
         <div class="w-10/12 lg:w-8/12">
           <div class="xt-card rounded-md ${cardDefault()}">
             <div class="${cardMd()}">
-              <div class="xt-h4 ">Lorem ipsum</div>
+              <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
             </div>
           </div>
