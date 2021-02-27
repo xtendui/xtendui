@@ -2,6 +2,12 @@ module.exports = {
   boxShadow: {
     overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   },
+  utility: theme => ({
+    '.xt-overlay-container': {
+      ...theme('container.padding'),
+      DEFAULT: 0, // override padding first breakpoint
+    },
+  }),
   component: theme => ({
     '.xt-overlay': {
       '@apply xt-overflow-main': '',
@@ -31,19 +37,6 @@ module.exports = {
       margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
       width: '100%',
       minHeight: '100vh',
-      padding: theme('container.padding.DEFAULT'),
-      '@screen sm': {
-        padding: theme('container.padding.sm'),
-      },
-      '@screen md': {
-        padding: theme('container.padding.md'),
-      },
-      '@screen lg': {
-        padding: theme('container.padding.lg'),
-      },
-      '@screen xl': {
-        padding: theme('container.padding.xl'),
-      },
     },
     '.xt-overlay-inner': {
       display: 'flex',

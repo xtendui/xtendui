@@ -102,6 +102,26 @@ module.exports = plugin.withOptions(() => {
                 variants: variants,
                 respectPrefix: false,
               })
+            } else if (component === 'overlay' && utility === '.xt-overlay-container') {
+              let css = {}
+              Object.keys(options[utility]).forEach(name => {
+                let value = options[utility][name]
+                if (name === 'DEFAULT') {
+                  css[utility] = {
+                    padding: value,
+                  }
+                } else {
+                  css[utility] = {
+                    ...css[utility],
+                    [`@screen ${name}`]: {
+                      padding: value,
+                    },
+                  }
+                }
+              })
+              addComponents(css, {
+                respectPrefix: false,
+              })
             } else if (component === 'layout' && utility === '.xt-container-y') {
               let css = {}
               Object.keys(options[utility]).forEach(name => {

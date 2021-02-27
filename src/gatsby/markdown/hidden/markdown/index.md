@@ -26,6 +26,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
+Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default styles.
+
+The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/core/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/overlay.css.js) for default styles.
+
 description: "Examples of breadcrumbs, with all the basic functionality and more."
 
 description: "Listing markup component for category pages or simple product listing."
