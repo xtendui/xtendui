@@ -78,7 +78,7 @@ module.exports = {
       pointerEvents: 'none',
       // styles
       '&:not(.active)': {
-        opacity: '.75',
+        opacity: '.5',
       },
     },
     '.xt-backdrop': {

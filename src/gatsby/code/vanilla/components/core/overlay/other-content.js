@@ -31,7 +31,7 @@ demo.htmlSource = `
         </button>
         <div class="xt-overlay-inner">
 
-          <form class="rounded-md shadow-overlay">
+          <form class="text-sm rounded-md shadow-overlay">
 
             <div class="xt-list flex-nowrap max-w-sm">
 

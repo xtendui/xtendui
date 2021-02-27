@@ -151,7 +151,7 @@ export const checkDefault = () => {
 }
 
 export const checkPrimary = () => {
-  return `border text-primary-400 border-primary-200 bg-primary-200 transition-all`
+  return `border text-primary-400 border-primary-600 bg-primary-400 transition-all`
 }
 
 export const radioDefault = () => {
@@ -159,7 +159,7 @@ export const radioDefault = () => {
 }
 
 export const radioPrimary = () => {
-  return `border text-primary-400 border-primary-200 bg-primary-200 transition-all`
+  return `border text-primary-400 border-primary-600 bg-primary-400 transition-all`
 }
 
 export const switchDefault = () => {
@@ -167,7 +167,7 @@ export const switchDefault = () => {
 }
 
 export const switchPrimary = () => {
-  return `border text-primary-400 border-primary-200 bg-primary-200 transition-all`
+  return `border text-primary-400 border-primary-600 bg-primary-400 transition-all`
 }
 
 export const inputDefault = () => {
@@ -176,6 +176,10 @@ export const inputDefault = () => {
 
 export const inputPrimary = () => {
   return `py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700`
+}
+
+export const inputUnderline = () => {
+  return `py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition`
 }
 
 export const labelDefault = () => {

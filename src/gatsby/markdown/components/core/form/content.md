@@ -15,6 +15,8 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
   </demovanilla>
   <demovanilla src="vanilla/components/core/form/variant-primary">
   </demovanilla>
+  <demovanilla src="vanilla/components/core/form/variant-underline">
+  </demovanilla>
 </demo>
 
 ## Size
