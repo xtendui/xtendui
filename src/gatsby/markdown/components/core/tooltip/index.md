@@ -10,7 +10,7 @@ description: "Informations or elements to show on user interaction, can contain 
 
 Import the **component javascript** file with `import 'xtendui/src/core/tooltip'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`, check [xtendui/src/core/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/tooltip.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`, check [xtendui/src/core/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/tooltip.css.js) for default styles.
 
 ## Usage
 

@@ -10,7 +10,7 @@ description: "Create visually stunning sliders, has a comprehensive javascript a
 
 Import the **component javascript** file with `import 'xtendui/src/core/slider'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`, check [xtendui/src/core/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/slider.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`, check [xtendui/src/core/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/slider.css.js) for default styles.
 
 ## Usage
 

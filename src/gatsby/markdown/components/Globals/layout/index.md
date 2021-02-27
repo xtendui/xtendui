@@ -9,7 +9,7 @@ date: "2020-09-05"
 
 ## Installation
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`, check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`, check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default styles.
 
 ## Utilities
 

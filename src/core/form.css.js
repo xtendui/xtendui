@@ -8,15 +8,15 @@ module.exports = {
       // styles
       borderColor: `${theme('colors.red.500')} !important`,
     },
-    '.xt-label': {
-      display: 'flex',
-    },
     '.xt-label-required': {
       // styles
       '&:after': {
         content: '"*"',
         marginLeft: theme('spacing.1'),
       },
+    },
+    '.xt-label': {
+      display: 'flex',
     },
     '.xt-input': {
       display: 'block', // @FIX select and textarea space below

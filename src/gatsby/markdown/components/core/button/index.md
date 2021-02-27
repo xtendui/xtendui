@@ -8,7 +8,7 @@ description: "Simple and extensible button styles."
 
 ## Installation
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button`, check [xtendui/src/core/button.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/button.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button`, check [xtendui/src/core/button.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/button.css.js) for default styles.
 
 ## Usage
 

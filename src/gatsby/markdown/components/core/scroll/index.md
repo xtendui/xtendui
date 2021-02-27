@@ -10,7 +10,7 @@ description: "Content interactions and animations when you scroll the page, stic
 
 This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/getting-started/setup#javascript-gsap) to **install and use gsap**.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll`, check [xtendui/src/core/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/scroll.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll`, check [xtendui/src/core/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/scroll.css.js) for default styles.
 
 ## Usage
 

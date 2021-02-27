@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.demo--custom-constrain',
+  matches: '.demo--form-constrain',
   mount: ({ object }) => {
     // eventValidation
 

@@ -10,7 +10,7 @@ description: "Javascript animation utility to follow mouse position."
 
 Import the **component javascript** file with `import 'xtendui/src/addons/mousefollow'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow`, check [xtendui/src/addons/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/mousefollow.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow`, check [xtendui/src/addons/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/mousefollow.css.js) for default styles.
 
 ## Usage
 

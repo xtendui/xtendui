@@ -8,7 +8,7 @@ description: "Default link styles for html links, can also be applied to buttons
 
 ## Installation
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link`, check [xtendui/src/core/link.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/link.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link`, check [xtendui/src/core/link.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/link.css.js) for default styles.
 
 ## Usage
 

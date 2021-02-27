@@ -9,7 +9,7 @@ date: "2020-10-05"
 
 ## Theme
 
-Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values. You can customize them in `tailwind.config.js` see [css custimization](/introduction/getting-started/setup#css-customization).
+Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles. You can customize them in `tailwind.config.js` see [css custimization](/introduction/getting-started/setup#css-customization).
 
 The following theme values are added with the preset:
 
@@ -24,7 +24,7 @@ The following theme values are added with the preset:
 
 ## Variants
 
-See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default values
+See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles
 
 * Added display variants `['responsive', 'group-hover', 'group-active', 'hover', 'active', 'focus']`
 * Added **custom tailwind variants** `active` and `group-active`. They styles **when user presses the element** with pseudo selectors `:active` and `.group:active` but also **when the element is activated by javascript** with the class `.active` and `.group.active`.

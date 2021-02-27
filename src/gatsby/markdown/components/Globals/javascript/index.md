@@ -11,7 +11,7 @@ date: "2020-08-05"
 
 Import the **component javascript** file with `import { Xt } from 'xtendui'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`, check [xtendui/src/core/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/javascript.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`, check [xtendui/src/core/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/javascript.css.js) for default styles.
 
 ## Animation
 

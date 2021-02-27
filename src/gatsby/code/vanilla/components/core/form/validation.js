@@ -23,7 +23,7 @@ demo.htmlSource = `
       <label class="xt-label mb-3 ${labelDefault()} xt-label-required">
         Custom constrain
       </label>
-      <input type="text" class="xt-input rounded-md ${inputDefault()} demo--custom-constrain" aria-label="Custom constrain" placeholder="Custom constrain" required>
+      <input type="text" class="xt-input rounded-md ${inputDefault()} demo--form-constrain" aria-label="Custom constrain" placeholder="Custom constrain" required>
     </div>
 
     <div class="w-full">

@@ -25,7 +25,7 @@ Use **component classes** to style **active**.
 
 ## Disabled
 
-Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
+Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default styles.
 
 [[notePrimary]]
 | For aria purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.

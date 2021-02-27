@@ -10,7 +10,7 @@ description: "Create advanced interactions with ease, has a comprehensive javasc
 
 Import the **component javascript** file with `import 'xtendui/src/core/toggle'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle`, check [xtendui/src/core/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/toggle.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle`, check [xtendui/src/core/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/toggle.css.js) for default styles.
 
 ## Usage
 

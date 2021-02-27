@@ -8,7 +8,7 @@ description: "Separator to be used in text content"
 
 ## Installation
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator`, check [xtendui/src/addons/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/separator.css.js) for default values.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator`, check [xtendui/src/addons/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/addons/separator.css.js) for default styles.
 
 ## Usage
 

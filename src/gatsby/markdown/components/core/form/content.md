@@ -29,3 +29,21 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   <demovanilla src="vanilla/components/core/form/size-md">
   </demovanilla>
 </demo>
+
+## Checks button
+
+Use [button](/components/core/button) with `label` to create **checks with button**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/checks-button">
+  </demovanilla>
+</demo>
+
+## Checks card
+
+Use [card](/components/core/card) with `label` to create **checks with card**.
+
+<demo>
+  <demovanilla src="vanilla/components/core/form/checks-card">
+  </demovanilla>
+</demo>

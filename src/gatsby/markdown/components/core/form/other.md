@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Disabled
 
-Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default values.
+Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default styles.
 
 [[notePrimary]]
 | For aria purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.
@@ -28,7 +28,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 
 ## Fieldset Legend and Note
 
-Use **tailwind classes** to create a **note**.
+Use **tailwind classes** to style **fieldset**, **legend** and **note**.
 
 <demo>
   <demovanilla src="vanilla/components/core/form/fieldset-legend">
@@ -44,52 +44,10 @@ Use **tailwind classes** to create a **label addon**.
   </demovanilla>
 </demo>
 
-## Checks button
-
-Use [button](/components/core/button) with `label` to create **checks with button**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/form/checks-button">
-  </demovanilla>
-</demo>
-
-## Checks card
-
-Use [card](/components/core/card) with `label` to create **checks with card**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/form/checks-card">
-  </demovanilla>
-</demo>
-
-## Validation
-
-Html validation and Constraint Validation API.
-
-It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
-
-Use **component classes** to style **validation**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
-| Component                  | `.xt-form-valid`                     | `xt-form-valid`                | Validation valid class            |
-| Component                  | `.xt-form-invalid`                     | `xt-form-invalid`                | Validation invalid class            |
-| Component                  | `.xt-label-required`                     | `xt-label-required`                | Label required with asterisk            |
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/form/validation">
-  </demovanilla>
-</demo>
-
 ## Group
 
-Refer to [group](/components/core/group).
+Refer to [list group](/components/core/list-group).
 
 ## Toolbar
 
-Refer to [toolbar](/components/addons/toolbar).
+Refer to [toolbar](/components/core/toolbar).
