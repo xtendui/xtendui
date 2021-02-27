@@ -59,15 +59,15 @@ export default class Page extends React.Component {
               <main className="gatsby_home-main">
                 <div className="gatsby_home-main_head">
                   <div className="container">
-                    <h1 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
+                    <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                       A new paradigm for Custom Frontend Development
-                    </h1>
-                    <h2 className="xt-h4 font-normal gatsby_home-main_scroll">
+                    </h3>
+                    <h1 className="xt-h4 font-normal gatsby_home-main_scroll">
                       <span className="gatsby_home-main_head_description opacity-50">
-                        Xtend UI is a UI framework for custom styling, interactions and animations. Extremely
-                        customizable and designed for building complex user interfaces.
+                        Xtend UI is a framework for custom styling, interactions and animations. Extremely customizable
+                        and designed for building complex user interfaces.
                       </span>
-                    </h2>
+                    </h1>
                     <div className="gatsby_home-main_social gatsby_home-main_scroll">
                       <div data-xt-tooltip="{ position: 'top' }">
                         <a
@@ -132,7 +132,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
                               <img
                                 className="xt-icon mr-4"
                                 src={'/logo-tailwind.svg'}
@@ -140,20 +140,18 @@ export default class Page extends React.Component {
                                 alt="Tailwind Css"
                               />{' '}
                               Tailwind Css
-                            </h3>
+                            </h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                A <strong>Tailwind plugin</strong> with overridable{' '}
-                                <strong>basic styles with cssinjs</strong>.
+                                <strong>Tailwind plugin</strong> with <strong>overridable cssinjs setup styles</strong>.
                               </li>
                               <li>
-                                Tailwind <strong>component classes</strong> for component basic styling when possible.
+                                <strong>Tailwind components</strong> that supports a wide range of designs.
                               </li>
                               <li>
-                                We use <strong>Tailwind html classes</strong> for design and animations styles when
-                                possible.
+                                <strong>Css animations</strong> for simple class based animations.
                               </li>
                             </ul>
                           </div>
@@ -162,17 +160,15 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">
                               <img className="xt-icon mr-4" src={'/logo-js.svg'} loading="eager" alt="Vanilla JS" />{' '}
                               Vanilla JS
-                            </h3>
+                            </h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                <strong>API</strong> with customizzable behaviour (e.g.:{' '}
-                                <Link to="/components/core/toggle/api">toggle</Link>
-                                ).
+                                <strong>API</strong> with customizzable behaviour.
                               </li>
                               <li>
                                 Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
@@ -190,14 +186,14 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h3 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
                               <img className="xt-icon mr-4" src={'/logo-gsap.svg'} loading="eager" alt="Gsap" /> Gsap
-                            </h3>
+                            </h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
                               <li>
-                                Javascript animations when they are <strong>too complex for css</strong>.
+                                Complex UI components with <strong>custom Javascript animations</strong>.
                               </li>
                               <li>
                                 <strong>Gsap ScrollTrigger</strong> for{' '}
@@ -218,38 +214,38 @@ export default class Page extends React.Component {
                     <div className="xt-row">
                       <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">Usability</h4>
+                          <h3 className="xt-h6 md:xt-h4">Customization</h3>
+                          <p>Components that supports a wide range of design personalizations.</p>
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
+                        <div className="gatsby_home-main_philosophy">
+                          <h3 className="xt-h6 md:xt-h4">Complex UI</h3>
+                          <p>Makes complex interactions trivial with well thought components.</p>
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
+                        <div className="gatsby_home-main_philosophy">
+                          <h3 className="xt-h6 md:xt-h4">User Explerience</h3>
+                          <p>Support for advanced interactions and animations.</p>
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
+                        <div className="gatsby_home-main_philosophy">
+                          <h3 className="xt-h6 md:xt-h4">Plug and Play</h3>
+                          <p>Components classes with prefix, import only the one you needs and purge css.</p>
+                        </div>
+                      </div>
+                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
+                        <div className="gatsby_home-main_philosophy">
+                          <h3 className="xt-h6 md:xt-h4">Usability</h3>
                           <p>A keen eye on usability. Aria injected automaticaly with js.</p>
                         </div>
                       </div>
                       <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
                         <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">Customization</h4>
-                          <p>Focused on working speed, quality and customization.</p>
-                        </div>
-                      </div>
-                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
-                        <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">User Explerience</h4>
-                          <p>Support of advanced interactions and animations.</p>
-                        </div>
-                      </div>
-                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
-                        <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">Documentation</h4>
-                          <p>Well documented API for components and addons</p>
-                        </div>
-                      </div>
-                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
-                        <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">Granular Themes</h4>
-                          <p>Themes for every component instead of global theme.</p>
-                        </div>
-                      </div>
-                      <div className="gatsby_home-main_philosophy_col gatsby_home-main_scroll">
-                        <div className="gatsby_home-main_philosophy">
-                          <h4 className="xt-h4">UX Themes</h4>
-                          <p>Themes focused on interactions and animations instead of design</p>
+                          <h3 className="xt-h6 md:xt-h4">UX Themes</h3>
+                          <p>Granular themes focused on interactions and animations instead of design.</p>
                         </div>
                       </div>
                     </div>
@@ -284,6 +280,7 @@ export default class Page extends React.Component {
                     </div>
                   </div>
                 </div>
+                {/*
                 <div className="gatsby_home-main_supports">
                   <div className="container">
                     <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
@@ -311,6 +308,7 @@ export default class Page extends React.Component {
                     </div>
                   </div>
                 </div>
+                */}
               </main>
             </div>
           </div>

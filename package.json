@@ -1,7 +1,7 @@
 {
   "name": "xtendui",
   "version": "1.0.0-beta.5",
-  "description": "UI framework for custom styling, interactions and animations.",
+  "description": "Custom frontend development with Vanilla Javascript and Tailwind Components.",
   "homepage": "http://xtendui.com/",
   "license": "MIT",
   "author": "Riccardo Caroli <beaver82@gmail.com>",

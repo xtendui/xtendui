@@ -122,14 +122,14 @@
 .gatsby_home-main_features {
   @apply my-28 text-center;
   .xt-row {
-    @apply xt-row-8;
+    @apply xt-row-12;
   }
 }
 
 .gatsby_home-main_feature {
   @apply inline-block w-full text-left;
   .xt-row {
-    @apply xt-row-8;
+    @apply xt-row-4;
   }
 }
 
@@ -150,7 +150,7 @@
 .gatsby_home-main_philosophies {
   @apply my-28 text-center;
   .xt-row {
-    @apply xt-row-6 md:xt-row-20;
+    @apply xt-row-3.5 md:xt-row-10;
   }
 }
 

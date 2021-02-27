@@ -32,9 +32,9 @@ date: "2050-09-10"
 
 ## About
 
-##### A new paradigm for Custom Frontend Development
+##### Custom frontend development with Vanilla Javascript and Tailwind Components
 
-Xtend UI is a UI framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
+Xtend UI is a framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
@@ -63,12 +63,14 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
 
+<!--
 ## Sponsors
 
 <a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/1.0-dev/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
 &nbsp;&nbsp;
+-->
 
 ## Copyright
 
