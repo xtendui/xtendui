@@ -11,7 +11,7 @@ export default class DocHead extends React.Component {
         <div className="gatsby_site-article_hero-inner">
           <div className="gatsby_site-article_hero-content">
             <div className="gatsby_site-article_hero-content-inner">
-              <h1>
+              <h2 className="xt-h1">
                 {page.post.frontmatter.title
                   .split(/[\s-]+/)
                   .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -29,11 +29,11 @@ export default class DocHead extends React.Component {
                     {page.post.frontmatter.category}
                   </div>
                 ) : null}
-              </h1>
+              </h2>
               {page.post.frontmatter.description ? (
-                <h2 className="-mt-2 mb-2 md:text-lg opacity-50">{page.post.frontmatter.description}</h2>
+                <h1 className="-mt-2 mb-2 md:text-lg opacity-50">{page.post.frontmatter.description}</h1>
               ) : (
-                <h2 className="-mt-2 mb-2 md:text-lg opacity-50">{page.parent.frontmatter.description}</h2>
+                <h1 className="-mt-2 mb-2 md:text-lg opacity-50">{page.parent.frontmatter.description}</h1>
               )}
             </div>
           </div>

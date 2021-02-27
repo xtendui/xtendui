@@ -67,7 +67,7 @@ module.exports = {
               '@apply text-base xl:text-lg': '',
             },
             code: {
-              fontSize: '0.95em',
+              fontSize: '0.85em',
             },
           },
         },
