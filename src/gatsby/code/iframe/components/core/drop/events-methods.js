@@ -50,7 +50,7 @@ demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center" id="demo--drop-events" title="Object">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-    Element 0
+    Drop 0
   </button>
 
   <div class="xt-drop p-4" title="Target 0">
@@ -70,7 +70,7 @@ demo.htmlSource = `
   </div>
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-    Element 1
+    Drop 1
   </button>
 
   <div class="xt-drop p-4" title="Target 1">

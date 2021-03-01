@@ -59,7 +59,7 @@ Xt.mount.push({
         const indexEl = elements.length + 1
         const strEl = `
           <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
-            Element ${indexEl}
+            Tooltip ${indexEl}
           </button>
         `
         document.querySelector('#demo--tooltip-events').append(Xt.createElement(strEl))
@@ -75,6 +75,7 @@ Xt.mount.push({
         document.querySelector('#demo--tooltip-events').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }
@@ -94,6 +95,7 @@ Xt.mount.push({
         elements[elements.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }

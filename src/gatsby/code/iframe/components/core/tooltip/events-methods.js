@@ -50,7 +50,7 @@ demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center" id="demo--tooltip-events" title="Object">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-    Element 0
+    Tooltip 0
   </button>
 
   <div class="xt-tooltip p-2" title="Target 0">
@@ -60,7 +60,7 @@ demo.htmlSource = `
   </div>
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-    Element 1
+    Tooltip 1
   </button>
 
   <div class="xt-tooltip p-2" title="Target 1">

@@ -94,6 +94,7 @@ Xt.mount.push({
         document.querySelector('#demo--toggle-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }
@@ -116,6 +117,7 @@ Xt.mount.push({
         targets[targets.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }

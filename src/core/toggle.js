@@ -3031,7 +3031,7 @@ class Toggle {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           // check
-          if (options.disabled || self.disableAfterInit) {
+          if (options.disabled) {
             self.disable()
           } else {
             self.enable()
