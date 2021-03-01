@@ -41,7 +41,7 @@ export default () => {
   </div>
 </div>
 
-<nav class="xt-slider-pagination xt-slider-ui w-full xt-list xt-list-3 pt-4 items-center justify-center">
+<nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
   <button type="button" class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${buttonDefault()}" data-xt-nav="-1" title="Previous slide">
     ${iconChevronLeft({ classes: 'text-xl -my-1' })}
   </button>

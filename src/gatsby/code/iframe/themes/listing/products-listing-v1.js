@@ -188,7 +188,7 @@ demo.htmlSource = `
 
         </div>
 
-        <nav class="xt-slider-pagination xt-slider-ui">
+        <nav class="xt-slider-pagination">
           <button type="button" class="xt-button button-default xt-ignore" data-xt-pag title="Slide xt-num">
           </button>
         </nav>

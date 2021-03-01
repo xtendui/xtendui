@@ -34,13 +34,5 @@ module.exports = {
     '.xt-tooltip-item': {
       display: 'inline-block',
     },
-    '.xt-tooltip-disabled': {
-      '&.xt-tooltip': {
-        display: 'none !important',
-      },
-      '.xt-tooltip-ui': {
-        display: 'none !important',
-      },
-    },
   },
 }

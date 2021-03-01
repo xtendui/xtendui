@@ -31,11 +31,5 @@ module.exports = {
         display: 'none',
       },
     },
-    '.xt-toggle-disabled': {
-      cursor: 'default',
-      '.xt-toggle-ui': {
-        display: 'none !important',
-      },
-    },
   }),
 }

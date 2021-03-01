@@ -67,31 +67,9 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-Use `<div class="xt-backdrop xt-tooltip-ui bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/backdrop">
   </demovanilla>
 </demo>
-
-## Disabled
-
-If you want to **disable the component** use the `options.disabled`.
-
-If you want something to automatically hide use the class `.xt-tooltip-ui`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-
-</div>
-
-Example of **component disabled on desktop** with [match media](/components/core/tooltip/api#match-media).
-
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/disable">
-  </demovanilla>
-</demo>
-

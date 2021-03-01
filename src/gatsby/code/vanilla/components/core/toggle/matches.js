@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { max: 2 } } }">
+<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ matches: { '(min-width: 768px)': { max: 2 } } }">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
     Toggle 0

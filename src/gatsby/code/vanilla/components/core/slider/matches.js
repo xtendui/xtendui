@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-slider demo--slider-disable" data-xt-slider="{ drag: { wrap: true }, matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { align: 'left', drag: { wrap: false } } } }">
+<div class="xt-slider" data-xt-slider="{ drag: { wrap: true }, matches: { '(min-width: 768px)': { align: 'left', drag: { wrap: false } } } }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

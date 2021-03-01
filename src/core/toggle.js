@@ -3324,7 +3324,6 @@ Toggle.optionsDefaultSuper = {
   keyboard: {
     selector: false,
   },
-  backdrop: false,
   appendTo: false,
   classHtml: false,
   closeAuto: false,

@@ -62,29 +62,8 @@ module.exports = {
       transitionDuration: theme('transitionDuration.700'),
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-    '.xt-slider-expand': {
-      '.xt-slides': {
-        overflow: 'visible',
-        height: 'auto !important',
-      },
-      '.xt-slides-inner': {
-        flexWrap: 'wrap !important',
-        transform: 'none !important',
-        transitionDuration: 'initial !important',
-        transitionDelay: 'initial !important',
-        animationDuration: 'initial !important',
-        animationDelay: 'initial !important',
-        animationIterationCount: '1 !important',
-      },
-      '.xt-slide:not(.in)': {
-        opacity: '1 !important',
-      },
-      '.xt-wrap, .xt-slider-ui': {
-        display: 'none !important',
-      },
-    },
     '.xt-overflow-auto': {
-      '.xt-slider-ui, .xt-wrap': {
+      '.xt-wrap': {
         display: 'none !important',
       },
       // @FIX disable slider if not overflowing
@@ -95,17 +74,6 @@ module.exports = {
         animationDuration: 'initial !important',
         animationDelay: 'initial !important',
         animationIterationCount: '1 !important',
-      },
-    },
-    '.xt-slider-disabled': {
-      '&.xt-slider': {
-        '.xt-slider-ui': {
-          display: 'none !important',
-        },
-        '.xt-wrap': {
-          visibility: 'hidden !important',
-          opacity: '0 !important',
-        },
       },
     },
   }),

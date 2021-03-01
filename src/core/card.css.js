@@ -5,22 +5,6 @@ module.exports = {
       display: 'flex',
       alignItems: 'inherit',
     },
-    '.xt-card-disabled': {
-      '@apply xt-links-default !important': '',
-      borderWidth: '0 !important',
-      backgroundColor: 'transparent !important',
-      boxShadow: 'none !important',
-      color: 'inherit !important',
-      '> *': {
-        padding: '0 !important',
-      },
-      '> .xt-dismiss': {
-        display: 'none !important',
-      },
-      '> .xt-design': {
-        display: 'none !important',
-      },
-    },
   },
   component: {
     '.xt-card': {

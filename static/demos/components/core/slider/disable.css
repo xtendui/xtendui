@@ -1,0 +1,8 @@
+.demo--slider-disable {
+  .xt-slide {
+    opacity: 1 !important;
+  }
+  .xt-slider-pagination {
+    display: none;
+  }
+}

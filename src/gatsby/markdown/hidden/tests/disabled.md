@@ -7,12 +7,18 @@ title: "Disabled"
 
 ## Disabled
 
-Test initial position.
-
 Test no interactions.
 
+Test reenable from disable.
+
+Test initial position and initial activation when disabled.
+
+Test overlay open on mobile > resize desktop is disabled.
+
+Test overlay open nested should close one by one clicking outside.
+
 <demo>
-  <demovanilla src="vanilla/components/core/slider/disable">
+  <demovanilla src="vanilla/components/core/card/disable">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/disable">
   </demovanilla>
@@ -22,6 +28,6 @@ Test no interactions.
   </demovanilla>
   <demovanilla src="vanilla/components/core/tooltip/disable">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/card/disable">
+  <demovanilla src="vanilla/components/core/slider/disable">
   </demovanilla>
 </demo>

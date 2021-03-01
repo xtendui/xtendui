@@ -17,7 +17,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="xt-overlay in-overlay" id="overlay--standalone" data-xt-overlay="{ on: false, off: false }">
-  <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+  <div class="xt-backdrop bg-black opacity-25"></div>
   <div class="xt-overlay-container max-w-3xl">
     <div class="xt-overlay-inner">
 

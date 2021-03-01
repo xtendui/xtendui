@@ -14,14 +14,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+<div class="demo--overlay-disable" data-xt-overlay="{ matches: { '(min-width: 768px)': { disabled: true } } }">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     Overlay
   </button>
 
   <div class="xt-overlay">
-    <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+    <div class="xt-backdrop bg-black opacity-25"></div>
     <div class="xt-overlay-container max-w-3xl">
       <div class="xt-overlay-inner">
 
@@ -43,7 +43,7 @@ demo.htmlSource = `
               </button>
 
               <div class="xt-overlay">
-                <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+                <div class="xt-backdrop bg-black opacity-25"></div>
                 <div class="xt-overlay-container max-w-3xl">
                   <div class="xt-overlay-inner">
 

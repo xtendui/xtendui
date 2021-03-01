@@ -14,6 +14,7 @@
 @import 'xtendui/static/demos/components/core/form/variant-primary.css';
 @import 'xtendui/static/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/core/overlay/class-html.css';
+@import 'xtendui/static/demos/components/core/overlay/disable.css';
 @import 'xtendui/static/demos/components/core/row/overlfow.css';
 @import 'xtendui/static/demos/components/core/scroll/fade-distance.css';
 @import 'xtendui/static/demos/components/core/scroll/fade-infinite.css';
@@ -21,6 +22,7 @@
 @import 'xtendui/static/demos/components/core/scroll/fade-matchmedia.css';
 @import 'xtendui/static/demos/components/core/scroll/fade.css';
 @import 'xtendui/static/demos/components/core/scroll/sticky-hide.css';
+@import 'xtendui/static/demos/components/core/slider/disable.css';
 @import 'xtendui/static/demos/components/core/slider/expand.css';
 @import 'xtendui/static/demos/components/core/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/core/slider/overflow-auto.css';
@@ -30,9 +32,11 @@
 @import 'xtendui/static/demos/components/core/toggle/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/toggle/class.css';
 @import 'xtendui/static/demos/components/core/toggle/custom-options.css';
+@import 'xtendui/static/demos/components/core/toggle/disable.css';
 @import 'xtendui/static/demos/components/core/toggle/jump.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css.css';
+@import 'xtendui/static/demos/components/core/tooltip/disable.css';
 @import 'xtendui/static/demos/test/demo-vanilla-iframe.css';
 @import 'xtendui/static/demos/test/demo-vanilla.css';
 @import 'xtendui/static/demos/themes/animation/ripple-animation-v1.css';

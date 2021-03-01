@@ -23,7 +23,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
-      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+      <div class="xt-backdrop bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
         <div class="xt-overlay-inner">
 
@@ -53,7 +53,7 @@ demo.htmlSource = `
     </button>
 
     <div class="xt-overlay">
-      <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+      <div class="xt-backdrop bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
         <div class="xt-overlay-inner">
 

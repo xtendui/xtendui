@@ -1,3 +1,15 @@
 .demo--card-disabled {
-  @apply md:xt-card-disabled !important;
+  &.xt-card {
+    @apply xt-links-default;
+    border-width: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    > * {
+      padding: 0;
+    }
+    > .xt-dismiss {
+      display: none;
+    }
+  }
 }

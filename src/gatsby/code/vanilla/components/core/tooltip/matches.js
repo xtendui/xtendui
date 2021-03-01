@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-tooltip="{ matches: { '(max-width: 767px)': { disabled: true }, '(min-width: 768px)': { position: 'top-start' } } }">
+<div data-xt-tooltip="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">
 
   Lorem ipsum
 

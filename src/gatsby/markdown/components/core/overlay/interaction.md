@@ -68,26 +68,3 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
   <demovanilla src="vanilla/components/core/overlay/class-html">
   </demovanilla>
 </demo>
-
-## Disabled
-
-If you want to **disable the component** use the `options.disabled`.
-
-If you want something to automatically hide use the class `.xt-overlay-ui`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-
-</div>
-
-Example of **component disabled on desktop** with [match media](/components/core/overlay/api#match-media).
-
-<demo>
-  <demovanilla src="vanilla/components/core/overlay/disable">
-  </demovanilla>
-</demo>
-
-

@@ -153,24 +153,3 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
   <demovanilla src="vanilla/components/core/slider/other">	
   </demovanilla>	
 </demo>	
-
-## Disabled
-
-If you want to **disable the component** use the `options.disabled`.
-
-If you want something to automatically hide use the class `.xt-slider-ui`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-
-</div>
-
-Example of **component disabled on desktop** with [match media](/components/core/slider/api#match-media).
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/disable">
-  </demovanilla>
-</demo>

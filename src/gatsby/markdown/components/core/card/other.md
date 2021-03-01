@@ -8,15 +8,7 @@ date: "2005-10-10"
 
 ## Disabled
 
-You can disable styles using `.xt-card-disabled`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.xt-card-disabled`       | `xt-card-disabled`                | `responsive`                | Reset card styles            |
-
-</div>
+Disable and reset styles accordingly.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/disable">

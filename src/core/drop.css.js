@@ -34,30 +34,5 @@ module.exports = {
     '.xt-drop-item': {
       display: 'inline-block',
     },
-    '.xt-drop-disabled': {
-      'a&, button&': {
-        display: 'none',
-      },
-      '&.xt-drop': {
-        display: 'inline-block !important',
-        position: 'relative',
-        top: 'auto',
-        left: 'auto',
-        right: 'auto',
-        bottom: 'auto',
-        '> *:first-child': {
-          zIndex: 'initial',
-        },
-        '> .xt-drop-inner > .xt-design': {
-          display: 'none',
-        },
-        '> .xt-card': {
-          '@apply xt-card-disabled !important': '',
-        },
-      },
-      '.xt-drop-ui': {
-        display: 'none !important',
-      },
-    },
   },
 }

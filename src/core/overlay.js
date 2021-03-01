@@ -80,7 +80,6 @@ Overlay.optionsDefault = {
     targetsInner: true,
   },
   // other
-  backdrop: true,
   appendTo: 'body',
   classHtml: false,
   scrollbar: true,

@@ -67,30 +67,9 @@ You can have **element's link** and **click events** prevented when the drop ope
 
 ## Backdrop
 
-Use `<div class="xt-backdrop xt-drop-ui bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/backdrop">
-  </demovanilla>
-</demo>
-
-## Disabled
-
-If you want to **disable the component** use the `options.disabled`.
-
-If you want something to automatically hide use the class `.xt-drop-ui`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-
-</div>
-
-Example of **component disabled on desktop** with [match media](/components/core/drop/api#match-media).
-
-<demo>
-  <demovanilla src="vanilla/components/core/drop/disable">
   </demovanilla>
 </demo>

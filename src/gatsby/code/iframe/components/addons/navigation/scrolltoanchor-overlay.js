@@ -25,7 +25,7 @@ demo.htmlSource = `
 </button>
 
 <div class="xt-overlay" id="demo--overlay-scrolltoanchor">
-  <div class="xt-backdrop xt-overlay-ui bg-black opacity-25"></div>
+  <div class="xt-backdrop bg-black opacity-25"></div>
   <div class="xt-overlay-container p-0">
     <div class="xt-overlay-inner">
 

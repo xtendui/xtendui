@@ -192,8 +192,6 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 If you want to **disable the component** use the `options.disabled`.
 
-If you want something to automatically hide use the class `.xt-toggle-ui`.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -203,6 +201,8 @@ If you want something to automatically hide use the class `.xt-toggle-ui`.
 </div>
 
 Example of **component disabled on desktop** with [match media](/components/core/toggle/api#match-media).
+
+Disable and reset styles accordingly.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/disable">

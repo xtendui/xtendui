@@ -46,37 +46,5 @@ module.exports = {
       position: 'relative',
       width: '100%',
     },
-    '.xt-overlay-disabled': {
-      'a&, button&': {
-        display: 'none',
-      },
-      '&.xt-overlay': {
-        display: 'flex !important',
-        position: 'static',
-        zIndex: 'initial',
-        top: 'auto',
-        left: 'auto',
-        bottom: 'auto',
-        right: 'auto',
-        width: 'auto',
-        height: 'auto',
-        overflowY: 'initial',
-        '.xt-overlay-container': {
-          padding: '0',
-          width: '100%',
-          minHeight: 'auto',
-          maxWidth: 'none',
-        },
-        '.xt-overlay-inner': {
-          zIndex: 'initial',
-          '> .xt-card': {
-            '@apply xt-card-disabled !important': '',
-          },
-        },
-        '.xt-overlay-ui': {
-          display: 'none !important',
-        },
-      },
-    },
   }),
 }

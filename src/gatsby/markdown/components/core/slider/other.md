@@ -6,6 +6,27 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Disabled
+
+If you want to **disable the component** use the `options.disabled`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
+
+</div>
+
+Example of **component disabled on desktop** with [match media](/components/core/slider/api#match-media).
+
+Disable and reset styles accordingly.
+
+<demo>
+  <demovanilla src="vanilla/components/core/slider/disable">
+  </demovanilla>
+</demo>
+
 ## Overflow auto
 
 Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
@@ -19,8 +40,6 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing. I
 </div>
 
 Use the class `.xt-overflow-auto` to **style horizontal alignment** when not overflowing.
-
-If you want something to automatically hide use the class `.xt-slider-ui`.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
@@ -36,17 +55,7 @@ You can disable the **automatic overflow auto** behaviour with `overflowAuto: fa
 
 ## Expand
 
-To **disable and expand** a slider use `.xt-slider-expand` and [match media](/components/core/slider/api#match-media) (use narrow screen to see it in action).
-
-If you want something to automatically hide use the class `.xt-slider-ui`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Component                  | `.xt-slider-expand`       | `xt-slider-expand`                | Expand the slider            |
-
-</div>
+Disable and reset styles accordingly. (use narrow screen to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/expand">
@@ -55,7 +64,7 @@ If you want something to automatically hide use the class `.xt-slider-ui`.
 
 ## Touch Overflow
 
-To have **browser overflow scroll** on **touch devices** use this **css media query** and [match media](/components/core/slider/api#match-media) (use touch device to see it in action).
+Disable and reset styles accordingly. (use touch device to see it in action).
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/touch-overflow">
