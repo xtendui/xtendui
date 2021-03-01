@@ -420,24 +420,26 @@ const populateDemo = (container, i) => {
           const btn = btnClipboard
           const tooltip = btn.closest('[data-xt-tooltip]')
           // close tooltip
-          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip', { detail: { skip: true } }))
           // swap tooltip
           let self = Xt.get('xt-tooltip', tooltip)
           if (self) {
             self.targets[0].style.display = 'none'
-            self.targets[1].style.display = ''
+            self.targets[1].style.display = 'block'
             // open tooltip
             tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
           }
         }
       })
       const tooltip = btnClipboard.closest('[data-xt-tooltip]')
-      tooltip.addEventListener('off.xt.tooltip', () => {
-        // swap tooltip
-        let self = Xt.get('xt-tooltip', tooltip)
-        if (self) {
-          self.targets[0].style.display = ''
-          self.targets[1].style.display = 'none'
+      tooltip.addEventListener('off.xt.tooltip', e => {
+        if (!e || !e.detail || !e.detail.skip) {
+          // swap tooltip
+          let self = Xt.get('xt-tooltip', tooltip)
+          if (self) {
+            self.targets[0].style.display = ''
+            self.targets[1].style.display = 'none'
+          }
         }
       })
     }

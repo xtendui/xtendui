@@ -1,7 +1,4 @@
-const buttonDefault = require('components/snippets/classes').buttonDefault
 const cardSlide = require('components/snippets/classes').cardSlide
-const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
-const iconChevronRight = require('components/snippets/icons').iconChevronRight
 
 export default () => {
   return `

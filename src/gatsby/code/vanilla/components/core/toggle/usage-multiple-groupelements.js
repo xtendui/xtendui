@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center" data-xt-toggle>
+<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ groupElements: true }">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-group="my-group">
     Toggle Group 0

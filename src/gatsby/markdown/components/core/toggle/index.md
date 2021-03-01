@@ -50,8 +50,6 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-unique">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique-same">
-  </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
@@ -73,3 +71,22 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
+
+#### Group Elements
+
+With usage unique or multiple if you want to **group also elements activation** use `groupElements: true`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
+
+</div>
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
+  </demovanilla>
+</demo>

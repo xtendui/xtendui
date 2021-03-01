@@ -7,6 +7,19 @@ title: "Toggle"
 
 ## Toggle
 
+Test activation and group.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
+  </demovanilla>
+</demo>
+
 Test initial activation.
 
 <demo>

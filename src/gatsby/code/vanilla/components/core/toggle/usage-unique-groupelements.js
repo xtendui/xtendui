@@ -14,12 +14,12 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
-    Toggle same
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }">
+    Toggle 0 and 1
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3' }">
-    Toggle same
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }">
+    Toggle 0 and 1
   </button>
 
   <div class="xt-card xt-toggle rounded-md ${cardToggle()}" id="toggle--unique-2">
@@ -27,7 +27,7 @@ demo.htmlSource = `
   </div>
 
   <div class="xt-card xt-toggle rounded-md ${cardToggle()}" id="toggle--unique-3">
-    Target 0
+    Target 1
   </div>
 
 </div>
