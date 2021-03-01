@@ -30,7 +30,6 @@ module.exports = {
     '.xt-media-container': {
       display: 'block',
       position: 'relative',
-      overflow: 'hidden',
       width: '100%',
     },
     '.xt-media-inner': {
