@@ -7,10 +7,10 @@ title: "Toggle"
 
 ## Toggle
 
-Test auto.
+Test initial activation.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/auto">
+  <demovanilla src="vanilla/components/core/toggle/class">
   </demovanilla>
 </demo>
 
@@ -44,5 +44,12 @@ Test backdrop z-index and arrow z-index.
   <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
   <demovanilla src="vanilla/components/core/tooltip/backdrop">
+  </demovanilla>
+</demo>
+
+Test auto.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
 </demo>

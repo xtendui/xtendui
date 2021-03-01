@@ -25,7 +25,7 @@ You can customize the **class names** used by the component.
 
 </div>
 
-You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.
+You can set initial activation by adding `in-tooltip` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
 

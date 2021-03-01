@@ -25,15 +25,12 @@ You can customize the **class names** used by the component.
 
 </div>
 
+You can set initial activation by adding `in-toggle` to the **elements** or **targets**.
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/class">
   </demovanilla>
-</demo>
-
-You can start with toggled elements and targets just by adding **one of the class names for activation** to the **elements** or **targets**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/start">
+  <demovanilla src="vanilla/components/core/toggle/class-custom">
   </demovanilla>
 </demo>
 
