@@ -29,7 +29,7 @@ Disable and reset styles accordingly.
 
 ## Overflow auto
 
-Slider with `overflowAuto:Boolean` automatically disable when not overflowing. It also hides automatically **pagination**, **navigation** and **wrap**.
+Slider with `overflowAuto:Boolean` automatically disable when not overflowing.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
@@ -39,17 +39,10 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing. I
 
 </div>
 
-Use the class `.xt-overflow-auto` to **style horizontal alignment** when not overflowing.
+Use the class `.xt-overflow-auto` to styles accordingly.
 
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
-  </demovanilla>
-</demo>
-
-You can disable the **automatic overflow auto** behaviour with `overflowAuto: false`.
-
-<demo>
-  <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
   </demovanilla>
 </demo>
 

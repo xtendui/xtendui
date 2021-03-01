@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-slider demo--slider-expand" data-xt-slider="{ matches: { '(max-width: 767px)': { disabled: true } } }" }">
+<div class="xt-slider demo--slider-expand" data-xt-slider="{ drag: { wrap: true }, matches: { '(max-width: 767px)': { disabled: true } } }" }">
 ${indentString(markupSlider(), 2)}
 </div>
 `

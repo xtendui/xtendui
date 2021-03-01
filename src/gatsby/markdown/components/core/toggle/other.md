@@ -30,8 +30,6 @@ When you need to reinit the component when the media is loaded and the **width**
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
 | Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
 | Option                  | `scrollbar:Boolean`                          | `false`        | Hide body scrollbars on activation            |
-| Option                  | `onBlock:Milliseconds`                          | `true`        | Block concurrent activation events for some time            |
-| Option                  | `offBlock:Milliseconds`                          | `true`        | Block concurrent deactivation events for some time            |
 | Option                  | `zIndex:Object|Boolean`                 | `false`     | Set `z-index` on activation, can be one or more objects ex: `zIndex: { targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |

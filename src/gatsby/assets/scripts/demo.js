@@ -168,7 +168,11 @@ const populateBlock = () => {
       // triggering e.detail.container
       dispatchEvent(
         new CustomEvent('resize', {
-          detail: { force: true, container: current },
+          detail: {
+            force: true,
+            container: current,
+            delay: 0,
+          },
         })
       )
     })
@@ -221,7 +225,10 @@ const populateBlock = () => {
             // triggering e.detail.container
             dispatchEvent(
               new CustomEvent('resize', {
-                detail: { force: true, container: current },
+                detail: {
+                  force: true,
+                  container: current,
+                },
               })
             )
           }

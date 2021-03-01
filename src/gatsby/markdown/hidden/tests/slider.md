@@ -31,9 +31,16 @@ Test when not wrapping if active is not first or last.
   </demovanilla>
 </demo>
 
+Test activation and self.initial on overflow auto and back to not overflow auto.
+
 <demo>
   <demovanilla src="vanilla/components/core/slider/overflow-auto">
   </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
-  </demovanilla>
 </demo>
+
+Test auto.
+
+<demo>	
+  <demovanilla src="vanilla/components/core/slider/progress">	
+  </demovanilla>	
+</demo>	

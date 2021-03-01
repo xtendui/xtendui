@@ -15,5 +15,8 @@
     .xt-slider-pagination {
       display: none !important;
     }
+    .xt-wrap {
+      display: none !important;
+    }
   }
 }

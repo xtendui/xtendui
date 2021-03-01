@@ -14,8 +14,6 @@ Test change > reinit > change > restart.
 Test destroy no interactions.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
-  </div>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/events-methods">
@@ -23,5 +21,7 @@ Test destroy no interactions.
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/drop/events-methods">
   </div>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/tooltip/events-methods">
+  </div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
   </div>
 </demo>

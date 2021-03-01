@@ -62,19 +62,5 @@ module.exports = {
       transitionDuration: theme('transitionDuration.700'),
       transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-    '.xt-overflow-auto': {
-      '.xt-wrap': {
-        display: 'none !important',
-      },
-      // @FIX disable slider if not overflowing
-      '.xt-slides-inner': {
-        transform: 'none !important',
-        transitionDuration: 'initial !important',
-        transitionDelay: 'initial !important',
-        animationDuration: 'initial !important',
-        animationDelay: 'initial !important',
-        animationIterationCount: '1 !important',
-      },
-    },
   }),
 }

@@ -263,14 +263,12 @@ class Toggle {
     const options = self.options
     // check
     const check = elCheck => {
-      let activated = false
       for (const c of self.classes) {
         if (elCheck.classList.contains(c)) {
-          activated = true
-          break
+          return true
         }
       }
-      return activated
+      return false
     }
     // logic
     let activated = false
@@ -745,15 +743,6 @@ class Toggle {
     const options = self.options
     // @FIX targets handler
     const el = self.getElements(element)[0]
-    // event block
-    if (options.onBlock) {
-      const now = new Date().getTime()
-      const old = Xt.dataStorage.get(el, `${self.ns}EventBlock${e.type}`) || 0
-      Xt.dataStorage.set(el, `${self.ns}EventBlock${e.type}`, now)
-      if (now - old < options.onBlock) {
-        return
-      }
-    }
     // handler
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
@@ -779,15 +768,6 @@ class Toggle {
     const options = self.options
     // @FIX targets handler
     const el = self.getElements(element)[0]
-    // event block
-    if (options.offBlock) {
-      const now = new Date().getTime()
-      const old = Xt.dataStorage.get(el, `${self.ns}EventBlock${e.type}`) || 0
-      Xt.dataStorage.set(el, `${self.ns}EventBlock${e.type}`, now)
-      if (now - old < options.offBlock) {
-        return
-      }
-    }
     // handler
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
@@ -1837,9 +1817,6 @@ class Toggle {
   queueDelay(actionCurrent, actionOther, obj, type, queueInitial) {
     const self = this
     const options = self.options
-    if (self.disabled) {
-      return
-    }
     // delay
     const els = obj[type].queueEls
     for (const el of els) {
@@ -1899,9 +1876,6 @@ class Toggle {
   queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
-    if (self.disabled) {
-      return
-    }
     if (actionCurrent === 'On' && self.checkOnRunning(obj)) {
       // running check to stop multiple activation/deactivation with delay
       if (el === obj.elements.queueEls[0]) {
@@ -2009,9 +1983,6 @@ class Toggle {
   queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
-    if (self.disabled) {
-      return
-    }
     // special
     self.specialZindex(actionCurrent, el, type)
     // anim
@@ -2043,9 +2014,6 @@ class Toggle {
   queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
-    if (self.disabled) {
-      return
-    }
     // special
     if (actionCurrent === 'On') {
       // activation
@@ -2120,9 +2088,6 @@ class Toggle {
    */
   queueDone(actionCurrent, actionOther, obj, type) {
     const self = this
-    if (self.disabled) {
-      return
-    }
     // check
     if (obj[type]) {
       // type done
@@ -2155,9 +2120,6 @@ class Toggle {
    */
   queueComplete(actionCurrent, obj) {
     const self = this
-    if (self.disabled) {
-      return
-    }
     // logic
     if (actionCurrent === 'On') {
       // auto
@@ -3069,7 +3031,7 @@ class Toggle {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           // check
-          if (options.disabled) {
+          if (options.disabled || self.disableAfterInit) {
             self.disable()
           } else {
             self.enable()
@@ -3328,8 +3290,6 @@ Toggle.optionsDefaultSuper = {
   classHtml: false,
   closeAuto: false,
   scrollbar: false,
-  onBlock: false,
-  offBlock: false,
   mediaLoaded: false,
   mediaLoadedReinit: false,
   zIndex: false,
