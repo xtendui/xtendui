@@ -18,7 +18,7 @@ demo.htmlSource = `
     Toggle 0
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()} in-toggle">
     Toggle 1
   </button>
 

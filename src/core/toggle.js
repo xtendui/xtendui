@@ -91,9 +91,9 @@ class Toggle {
     self.initMatch()
     self.initScope()
     self.initAria()
-    self.initStatus()
     self.initEvents()
     self.initStart(saveCurrents)
+    self.initStatus()
   }
 
   /**
@@ -3069,7 +3069,7 @@ class Toggle {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           // check
-          if (options.disabled || self.disableAfterInit) {
+          if (options.disabled) {
             self.disable()
           } else {
             self.enable()

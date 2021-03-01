@@ -124,10 +124,10 @@ class Slider extends Xt.Toggle {
     if (options.overflowAuto) {
       if (totalCount >= 0) {
         self.object.classList.add('xt-overflow-auto')
-        self.disableAfterInit = true
+        self.disable()
       } else {
         self.object.classList.remove('xt-overflow-auto')
-        self.disableAfterInit = false
+        self.enable()
       }
     }
     // drag wrap

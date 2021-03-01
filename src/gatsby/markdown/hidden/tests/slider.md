@@ -30,3 +30,10 @@ Test when not wrapping if active is not first or last.
   <demovanilla src="vanilla/components/core/slider/wrap-right">
   </demovanilla>
 </demo>
+
+<demo>
+  <demovanilla src="vanilla/components/core/slider/overflow-auto">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/slider/overflow-auto-false">
+  </demovanilla>
+</demo>
