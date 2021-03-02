@@ -59,7 +59,7 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `false`        | Add class to `html` on activation            |
+| Option                  | `classHtml:String`                          | `'xt-scrollbar-overlay`        | Add class to `html` on activation            |
 
 </div>
 

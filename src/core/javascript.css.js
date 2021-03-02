@@ -34,10 +34,6 @@ module.exports = {
         },
       },
     },
-    'body.xt-scrollbar': {
-      paddingRight: 'var(--scrollbar-width) !important',
-      overflow: 'hidden !important',
-    },
     '[data-xt-pag].xt-ignore': {
       display: 'none !important',
     },

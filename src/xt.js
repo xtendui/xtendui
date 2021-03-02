@@ -405,38 +405,38 @@ Xt.dataStorage = {
 }
 
 //
-// scrollbar
-// util to remember scrollbar state
+// classHtml
+// util to remember classHtml state
 //
 
-Xt.scrollbar = {
+Xt.classHtml = {
   /**
    * properties
    */
   currents: [],
 
   /**
-   * get scrollbar currents
+   * get classHtml currents
    * @return {Array} Currents
    */
   get: () => {
-    return Xt.scrollbar.currents
+    return Xt.classHtml.currents
   },
 
   /**
-   * add scrollbar currents
+   * add classHtml currents
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
   add: el => {
-    Xt.scrollbar.currents.push(el)
+    Xt.classHtml.currents.push(el)
   },
 
   /**
-   * remove scrollbar currents
+   * remove classHtml currents
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
   remove: el => {
-    Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el)
+    Xt.classHtml.currents = Xt.classHtml.currents.filter(x => x !== el)
   },
 }
 

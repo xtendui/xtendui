@@ -17,7 +17,7 @@ module.exports = {
       left: '0',
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
-      overflowY: 'scroll',
+      overflow: 'hidden',
       '&:not(.in):not(.out)': {
         display: 'none',
       },
@@ -45,6 +45,16 @@ module.exports = {
       alignItems: 'center',
       position: 'relative',
       width: '100%',
+    },
+    '.xt-scrollbar-overlay': {
+      paddingRight: 'var(--scrollbar-width) !important',
+      overflow: 'hidden !important',
+      '.xt-overlay': {
+        overflowY: 'scroll',
+      },
+      '.xt-backdrop': {
+        right: 'var(--scrollbar-width)',
+      },
     },
   }),
 }

@@ -1891,7 +1891,6 @@ class Toggle {
       self.activate(el, type)
       // special
       self.specialAppendto(actionCurrent, el, type)
-      self.specialScrollbar(actionCurrent)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
@@ -2041,7 +2040,6 @@ class Toggle {
       self.deactivateDone(el, type)
       // special
       self.specialAppendto(actionCurrent, el, type)
-      self.specialScrollbar(actionCurrent)
       // aria
       if (options.aria) {
         // selected
@@ -2476,13 +2474,19 @@ class Toggle {
     const options = self.options
     if (options.classHtml) {
       if (actionCurrent === 'On') {
+        // checks
+        Xt.classHtml.add(self.ns)
         // class on
         const container = document.documentElement
         container.classList.add(...options.classHtml.split(' '))
       } else if (actionCurrent === 'Off') {
-        // class off
-        const container = document.documentElement
-        container.classList.remove(...options.classHtml.split(' '))
+        // checks
+        Xt.classHtml.remove(self.ns)
+        if (!Xt.classHtml.get().length) {
+          // class off
+          const container = document.documentElement
+          container.classList.remove(...options.classHtml.split(' '))
+        }
       }
     }
   }
@@ -2521,32 +2525,6 @@ class Toggle {
               appendOrigin.remove()
             }
           }
-        }
-      }
-    }
-  }
-
-  /**
-   * scrollbar activation
-   * @param {String} actionCurrent Current action
-   */
-  specialScrollbar(actionCurrent) {
-    const self = this
-    const options = self.options
-    if (options.scrollbar) {
-      if (actionCurrent === 'On') {
-        // checks
-        Xt.scrollbar.add(self.ns)
-        // scrollbar
-        const container = document.querySelector('body')
-        container.classList.add('xt-scrollbar')
-      } else if (actionCurrent === 'Off') {
-        // checks
-        Xt.scrollbar.remove(self.ns)
-        if (!Xt.scrollbar.get().length) {
-          // scrollbar
-          const container = document.querySelector('body')
-          container.classList.remove('xt-scrollbar')
         }
       }
     }
@@ -3303,7 +3281,6 @@ Toggle.optionsDefaultSuper = {
   appendTo: false,
   classHtml: false,
   closeAuto: false,
-  scrollbar: false,
   mediaLoaded: false,
   mediaLoadedReinit: false,
   zIndex: false,
