@@ -68,3 +68,5 @@ Test auto.
   <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
 </demo>
+
+Test [e.detail.skip = true](/components/core/toggle/api#trigger).
