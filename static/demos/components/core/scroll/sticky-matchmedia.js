@@ -9,7 +9,7 @@ Xt.mount.push({
     // match media
 
     ScrollTrigger.matchMedia({
-      '(max-width: 639px)': () => {
+      '(max-width: 767px)': () => {
         // sticky
 
         ScrollTrigger.create({

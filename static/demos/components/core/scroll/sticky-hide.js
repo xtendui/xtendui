@@ -47,12 +47,12 @@ Xt.mount.push({
       },
     })
 
-    // hide depending on .demo--sticky-hide-content
+    // hide depending on content
 
     ScrollTrigger.create({
       trigger: object,
       start: -1, // needs -1 because start trigger is sticky
-      endTrigger: document.querySelector('.demo--sticky-hide-content'),
+      endTrigger: content,
       end: () => `bottom top+=${stickyInner.offsetHeight}`,
       onUpdate: self => {
         if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
