@@ -23,17 +23,18 @@ demo.htmlSource = `
     <div class="xt-slides-inner xt-duration-none xt-transform-none">
 
       <div class="xt-slide w-full">
-        <div class="hero relative block overflow-hidden w-full">
+        <div class="hero relative overflow-hidden bg-black">
           <div class="hero-inner">
-            <div class="xt-media-container bg-gray-200 h-screen">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
               <div class="xt-media-inner">
-                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
             </div>
-            <div class="hero-content container absolute inset-0 flex items-end justify-center text-center">
-              <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto text-white xt-links-inverse">
+            <div class="hero-content flex relative h-screen">
+              <a href="/" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center">
                 <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">
-                  Lorem ipsum
+                  1. Lorem ipsum
                 </h2>
               </a>
             </div>
@@ -43,52 +44,66 @@ demo.htmlSource = `
       </div>
 
       <div class="xt-slide w-full">
-        <div class="hero relative block overflow-hidden w-full">
+        <div class="hero relative overflow-hidden bg-black">
           <div class="hero-inner">
-            <div class="xt-media-container bg-gray-200 h-screen">
-              <div class="xt-media-inner">
-                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
-              </div>
-            </div>
-            <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:justify-start md:text-left">
-              <a href="#" class="group block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white xt-links-inverse">
-                <h2 class="xt-h1">
-                  Lorem ipsum dolor sit amet
-                </h2>
-                <h3 class="xt-p max-w-lg mx-auto md:ml-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
-                </h3>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
-      </div>
-
-      <div class="xt-slide w-full">
-        <div class="hero relative block overflow-hidden w-full">
-          <div class="hero-inner">
-            <div class="xt-media-container bg-gray-200 h-screen">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
             </div>
-            <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-start md:text-left">
-              <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:ml-0 text-white xt-links-inverse">
-                <h2 class="xt-h1">
-                  Lorem ipsum dolor sit amet
+            <div class="hero-content flex relative h-screen">
+              <a href="/" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">
+                  2. Dolor sit amet
                 </h2>
-                <h3 class="xt-p max-w-lg mx-auto md:ml-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
-                </h3>
-                <div class="xt-list xt-list-3 justify-center md:justify-start">
-                  <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-                    Lorem ipsum
-                  </a>
-                  <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-                    Dolor sit amet
-                  </a>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
+      </div>
+
+      <div class="xt-slide w-full">
+        <div class="hero relative overflow-hidden bg-black">
+          <div class="hero-inner">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
+              <div class="xt-media-inner">
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+            </div>
+            <div class="hero-content flex relative h-screen">
+              <a href="/" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                <h2 class="xt-h1">
+                  3. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h2>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
+      </div>
+
+      <div class="xt-slide w-full">
+        <div class="hero relative overflow-hidden bg-black">
+          <div class="hero-inner">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
+              <div class="xt-media-inner">
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
+            </div>
+            <div class="hero-content flex relative h-screen">
+              <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                <h2 class="xt-h1">
+                  4. Lorem ipsum dolor sit amet
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                  Lorem ipsum
+                </a>
               </div>
             </div>
           </div>
@@ -97,29 +112,48 @@ demo.htmlSource = `
       </div>
 
       <div class="xt-slide w-full">
-        <div class="hero relative block overflow-hidden w-full">
+        <div class="hero relative overflow-hidden bg-black">
           <div class="hero-inner">
-            <div class="xt-media-container bg-gray-200 h-screen">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
+              <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-l from-transparent to-black opacity-50"></div>
             </div>
-            <div class="hero-content container absolute inset-0 flex items-end justify-center text-center md:items-center md:justify-end md:text-right">
-              <div class="block w-full py-8 md:py-12 max-w-2xl mx-auto md:mr-0 text-white xt-links-inverse">
+            <div class="hero-content flex relative h-screen">
+              <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                 <h2 class="xt-h1">
-                  Lorem ipsum dolor sit amet
+                  5. Lorem ipsum dolor sit amet
                 </h2>
-                <h3 class="xt-p max-w-lg mx-auto md:mr-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
-                </h3>
-                <div class="xt-list xt-list-3 justify-center md:justify-end">
-                  <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-                    Lorem ipsum
-                  </a>
-                  <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-                    Dolor sit amet
-                  </a>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                  Lorem ipsum
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
+      </div>
+
+      <div class="xt-slide w-full in-slider">
+        <div class="hero relative overflow-hidden bg-black">
+          <div class="hero-inner">
+            <div class="xt-media-container bg-gray-700 w-full h-full absolute">
+              <div class="xt-media-inner">
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-black opacity-50"></div>
+            </div>
+            <div class="hero-content flex relative h-screen">
+              <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
+                <h2 class="xt-h1">
+                  6. Lorem ipsum dolor sit amet
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
+                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                  Lorem ipsum
+                </a>
               </div>
             </div>
           </div>

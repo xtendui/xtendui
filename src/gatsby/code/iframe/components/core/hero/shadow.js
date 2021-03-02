@@ -15,83 +15,68 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="hero relative block overflow-hidden w-full">
-  <div class="xt-media-container bg-gray-200 h-screen">
+<div class="hero relative overflow-hidden">
+  <div class="xt-media-container bg-gray-200 w-full h-full absolute">
     <div class="xt-media-inner">
       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
   </div>
-  <div class="container absolute inset-0 flex items-end justify-start text-left">
-    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
-      <h2 class="xt-h1 max-w-2xl mr-auto">
+  <div class="flex relative h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+      <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="xt-p max-w-lg mr-auto">
+      <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="xt-list xt-list-3 justify-start max-w-2xl mr-auto">
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Lorem ipsum
-        </a>
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Dolor sit amet
-        </a>
-      </div>
+      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        Lorem ipsum
+      </a>
     </div>
   </div>
 </div>
 
-<div class="hero relative block overflow-hidden w-full">
-  <div class="xt-media-container bg-gray-200 h-screen">
+<div class="hero relative overflow-hidden">
+  <div class="xt-media-container bg-gray-200 w-full h-full absolute">
     <div class="xt-media-inner">
       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50"></div>
   </div>
-  <div class="container absolute inset-0 flex items-center justify-start text-left">
-    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
-      <h2 class="xt-h1 max-w-2xl mr-auto">
+  <div class="flex relative h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+      <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="xt-p max-w-lg mr-auto">
+      <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="xt-list xt-list-3 justify-start max-w-2xl mr-auto">
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Lorem ipsum
-        </a>
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Dolor sit amet
-        </a>
-      </div>
+      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        Lorem ipsum
+      </a>
     </div>
   </div>
 </div>
 
-<div class="hero relative block overflow-hidden w-full">
-  <div class="xt-media-container bg-gray-200 h-screen">
+<div class="hero relative overflow-hidden">
+  <div class="xt-media-container bg-gray-200 w-full h-full absolute">
     <div class="xt-media-inner">
       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
   </div>
-  <div class="container absolute inset-0 flex items-center justify-end text-right">
-    <div class="block w-full py-8 md:py-12 text-white xt-links-inverse">
-      <h2 class="xt-h1 max-w-2xl ml-auto">
+  <div class="flex relative h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-right group">
+      <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>
-      <h3 class="xt-p max-w-lg ml-auto">
+      <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <div class="xt-list xt-list-3 justify-end max-w-2xl ml-auto">
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Lorem ipsum
-        </a>
-        <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-          Dolor sit amet
-        </a>
-      </div>
+      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        Lorem ipsum
+      </a>
     </div>
   </div>
 </div>
