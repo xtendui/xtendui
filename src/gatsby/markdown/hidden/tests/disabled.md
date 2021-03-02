@@ -15,7 +15,7 @@ Test initial position and initial activation when disabled.
 
 Test overlay open on mobile > resize desktop is disabled.
 
-Test overlay open nested should close one by one clicking outside.
+Test nested, also overlay open nested should close one by one clicking outside.
 
 <demo>
   <demovanilla src="vanilla/components/core/card/disable">

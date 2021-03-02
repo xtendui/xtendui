@@ -18,12 +18,12 @@ demo.htmlSource = `
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}"
     data-xt-overlay="{ targets: '#overlay--unique' }">
-    overlay
+    Overlay
   </button>
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}"
     data-xt-overlay="{ targets: '#overlay--unique' }">
-    same overlay
+    Overlay same
   </button>
 
   <div class="xt-overlay" id="overlay--unique">

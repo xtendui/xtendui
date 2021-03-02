@@ -38,7 +38,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                              | `'mouseenter'`                     | Set event to listen for activation           |
 | Option                  | `off:String`                             | `'mouseleave'`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-| Option                  | `eventLimit:Query`                          | `'.event-limit, .tooltip > *:first-child'`        | Limit events inside self.object            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit`        | Limit events inside self.object            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |

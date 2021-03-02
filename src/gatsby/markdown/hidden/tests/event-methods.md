@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Hidden"
 parent: "Tests"
-title: "Methods"
+title: "Event Methods"
 ---
 
 ## Event Methods

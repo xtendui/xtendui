@@ -14,7 +14,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-overlay="{ matches: { '(min-width: 768px)': { closeDeep: '.xt-dismiss' } } }">
+<div data-xt-overlay="{ matches: { '(min-width: 768px)': { closeDeep: false } } }">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     Overlay
