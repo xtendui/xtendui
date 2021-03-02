@@ -92,23 +92,23 @@ demo.htmlSource = `
               <div class="absolute h-full bottom-0 left-0 right-0 md:hidden">
                 <div class="xt-list flex-col h-full justify-center">
 
-                  <a href="#product-image-1" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 1">
+                  <a href="#product-image-1" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 1">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                   </a>
 
-                  <a href="#product-image-2" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 2">
+                  <a href="#product-image-2" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 2">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                   </a>
 
-                  <a href="#product-image-3" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 3">
+                  <a href="#product-image-3" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 3">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                   </a>
 
-                  <a href="#product-image-4" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 4">
+                  <a href="#product-image-4" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 4">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                   </a>
 
-                  <a href="#product-image-5" class="product-dot group py-1.5 px-2 flex items-center justify-center" title="Go to image 5">
+                  <a href="#product-image-5" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 5">
                     <div class="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                   </a>
 

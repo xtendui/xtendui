@@ -23,7 +23,7 @@ demo.htmlSource = `
     </tr>
   </thead>
   <tbody>
-    <tr class="group cursor-pointer">
+    <tr class="cursor-pointer group">
       <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border transition group-hover:bg-gray-300 group-active:bg-gray-400">
         1
       </th>
@@ -34,7 +34,7 @@ demo.htmlSource = `
         1200
       </td>
     </tr>
-    <tr class="group cursor-pointer">
+    <tr class="cursor-pointer group">
       <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border transition group-hover:bg-gray-300 group-active:bg-gray-400">
         2
       </th>
@@ -45,7 +45,7 @@ demo.htmlSource = `
         200
       </td>
     </tr>
-    <tr class="group cursor-pointer">
+    <tr class="cursor-pointer group">
       <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border transition group-hover:bg-gray-300 group-active:bg-gray-400">
         3
       </th>
@@ -56,7 +56,7 @@ demo.htmlSource = `
         2400
       </td>
     </tr>
-    <tr class="group cursor-pointer">
+    <tr class="cursor-pointer group">
       <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border transition group-hover:bg-gray-300 group-active:bg-gray-400">
         4
       </th>
