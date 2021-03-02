@@ -10,6 +10,8 @@ title: "Toggle"
 Test activation and group.
 
 <demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-unique">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">

@@ -11,14 +11,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-Lorem ipsum
-<span data-xt-tooltip>
-  <a href="#">dolor</a>
-  <div class="xt-tooltip p-2">
-    <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
-      Lorem ipsum dolor sit amet
-    </div>
+<div class="xt-tooltip p-2 in-tooltip relative inline-block" data-xt-tooltip="{ on: false, off: false, closeOutside: false, classSkip: false }">
+  <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+    Lorem ipsum dolor sit amet
   </div>
-</span>
-sit amet
+</div>
 `

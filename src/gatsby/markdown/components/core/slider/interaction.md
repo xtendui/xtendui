@@ -8,19 +8,13 @@ date: "2010-10-10"
 
 ## Class	
 
-You can customize the **class names** used by the component.	
+You can customize the **class names** used by the component. Refer to [toggle class](/components/core/toggle/interaction#class).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
 | Option                  | `class:String`                          | `in in-slider`        | Class name for activation            |	
-| Option                  | `classActive:String`                          | `active`        | Class name for active            |	
-| Option                  | `classOut:String`                          | `out`        | Class name for out            |	
-| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |	
-| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |	
-| Option                  | `classBefore:String`                          | `direction-before`        | Class name for left direction activation            |
-| Option                  | `classAfter:String`                          | `direction-after`        | Class name for right direction activation            |
 | Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |	
 
 </div>	

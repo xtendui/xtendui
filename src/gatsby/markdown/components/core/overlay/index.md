@@ -30,19 +30,6 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Self
-
-Use this code to create a **overlay** in **self mode**.
-
-Just use the class `in-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/usage-self">
-  </div>
-</demo>
-
-Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).
-
 #### Unique
 
 Use this code to create a **overlay** in **unique mode**.
@@ -66,6 +53,19 @@ Use this code to create a **overlay** in **multiple mode**.
 <demo>
   <demovanilla src="vanilla/components/core/overlay/usage-multiple">
   </demovanilla>
+</demo>
+
+Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).
+
+#### Self
+
+Use this code to create a **overlay** in **self mode**.
+
+Just use the class `in-overlay` if you want to automatically open, or use the [api](/components/core/overlay/api)
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/usage-self">
+  </div>
 </demo>
 
 Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).

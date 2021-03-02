@@ -27,17 +27,6 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Self
-
-Use this code to create a **tooltip** in **self mode**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/usage-self">
-  </demovanilla>
-</demo>
-
-Check subpage to [customize interaction](/components/core/tooltip/interaction) and [customize content](/components/core/tooltip/content).
-
 #### Unique
 
 Use this code to create a **tooltip** in **unique mode**.
@@ -49,8 +38,6 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/usage-unique">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/usage-unique-same">
   </demovanilla>
 </demo>
 
@@ -65,15 +52,25 @@ The **multiple** mode is useful when using `mouse` events and **you want to inte
 [[notePrimary]]
 | Use `.xt-tooltip-item` as **elements** when using **multiple mode**.
 
-<demo>
-  <demovanilla src="vanilla/components/core/tooltip/usage-multiple">
-  </demovanilla>
-</demo>
-
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
+  <demovanilla src="vanilla/components/core/tooltip/usage-multiple">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/tooltip/usage-multiple-group">
+  </demovanilla>
+</demo>
+
+Check subpage to [customize interaction](/components/core/tooltip/interaction) and [customize content](/components/core/tooltip/content).
+
+#### Self
+
+Use this code to create a **tooltip** in **self mode**.
+
+Just use the class `in-tooltip` if you want to automatically open, or use the [api](/components/core/tooltip/api)
+
+<demo>
+  <demovanilla src="vanilla/components/core/tooltip/usage-self">
   </demovanilla>
 </demo>
 
