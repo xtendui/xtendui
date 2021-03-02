@@ -1246,6 +1246,8 @@ class Toggle {
    */
   setIndex(element) {
     const self = this
+    // @FIX groupElements and targets
+    element = self.getElements(element)[0]
     // set index
     let index = 0
     for (const [i, el] of self.getElementsGroups().entries()) {

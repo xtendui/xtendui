@@ -14,12 +14,12 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="multilevel relative demo--multilevel" data-xt-toggle="{
-      elements: '.multilevel-reset, .multilevel-list > button',
-      targets: ':scope > .xt-toggle',
-      min: 1,
-      duration: 500,
-      queue: false
-    }">
+    elements: '.multilevel-reset, .multilevel-list > button',
+    targets: ':scope > .xt-toggle',
+    min: 1,
+    duration: 500,
+    queue: false
+  }">
 
   <nav class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100" data-xt-group="initial">
 
