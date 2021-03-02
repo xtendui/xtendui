@@ -81,8 +81,7 @@ Overlay.optionsDefault = {
   },
   // other
   appendTo: 'body',
-  classHtml: false,
-  scrollbar: true,
+  classHtml: 'xt-scrollbar-overlay',
   focusLimit: true,
 }
 

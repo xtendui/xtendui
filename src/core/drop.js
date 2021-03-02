@@ -152,7 +152,7 @@ Drop.optionsDefault = {
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit, .xt-drop',
+  eventLimit: '.event-limit',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: false,

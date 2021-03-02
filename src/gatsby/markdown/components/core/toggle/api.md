@@ -67,26 +67,6 @@ You can add **additional options** that gets added on **match media query**. You
 
 </div>
 
-## Trigger
-
-Trigger events on **DOM elements**.
-
-```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-```
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | DOM Element                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.trigger.xt.toggle`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt.toggle`      | `elements` `targets` | Deactivation event            |
-| Event                   | `closeauto.trigger.xt`           | `window` | Autclose all components with `closeAuto: true` option             |
-| Event                   | `autostart.trigger.xt.toggle`           | `object` | Auto start event             |
-| Event                   | `autostop.trigger.xt.toggle`           | `object` | Auto stop event             |
-
-</div>
-
 ## Listen
 
 Listen to events on **single Nodes**.
@@ -155,6 +135,32 @@ object.addEventListener('on.xt.toggle', eventOn, true)
 | Event                   | `destroy.xt.toggle`           | `object` | Destroy event             |
 
 </div>
+
+## Trigger
+
+Trigger events on **DOM elements**.
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt.toggle`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.toggle`      | `elements` `targets` | Deactivation event            |
+| Event                   | `closeauto.trigger.xt`           | `window` | Autclose all components with `closeAuto: true` option             |
+| Event                   | `autostart.trigger.xt.toggle`           | `object` | Auto start event             |
+| Event                   | `autostop.trigger.xt.toggle`           | `object` | Auto stop event             |
+
+</div>
+
+You can pass `e.detail` to the trigger event. For example with this code triggered `on.xt.toggle` and `ondone.xt.toggle` will have `e.detail.skip = true`.
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.toggle', { detail: { skip: true } }))
+```
 
 ## Properties
 

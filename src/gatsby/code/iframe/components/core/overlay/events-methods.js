@@ -45,10 +45,10 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center mb-4">
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" id="demo--overlay-events">
-    Toggle 0
+    Overlay
   </button>
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}" id="demo--overlay-events-alt">
-    Toggle 1
+    Overlay same
   </button>
 </div>
 

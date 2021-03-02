@@ -10,6 +10,8 @@ title: "Toggle"
 Test activation and group.
 
 <demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-unique">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
@@ -66,3 +68,5 @@ Test auto.
   <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
 </demo>
+
+Test [e.detail.skip = true](/components/core/toggle/api#trigger).

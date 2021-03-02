@@ -86,7 +86,7 @@ module.exports = {
       pointerEvents: 'none',
       top: '0',
       left: '0',
-      right: 'var(--scrollbar-width)',
+      right: '0',
       bottom: '0',
     },
     '.xt-design': {

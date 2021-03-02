@@ -13,7 +13,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center cccc" data-xt-drop>
+<div class="xt-list xt-list-3 items-center" data-xt-drop>
 
   <div class="xt-drop-item" data-xt-group="my-group">
 

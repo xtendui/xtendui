@@ -44,18 +44,6 @@ Here are the main **javascript options**.
 
 </div>
 
-## Trigger
-
-Trigger events on **DOM elements**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | DOM Element                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scroll.trigger.xt.scrolltoanchor`       | `scrollElement` | Scroll event             |
-
-</div>
-
 ## Listen
 
 Listen to events.
@@ -67,6 +55,18 @@ Listen to events.
 | Event                   | `change.xt.scrolltoanchor`      | `object` | Change event            |
 | Event                   | `init.xt.scrolltoanchor`           | `object` | Init event             |
 | Event                   | `destroy.xt.scrolltoanchor`           | `object` | Destroy event             |
+
+</div>
+
+## Trigger
+
+Trigger events on **DOM elements**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `scroll.trigger.xt.scrolltoanchor`       | `scrollElement` | Scroll event             |
 
 </div>
 

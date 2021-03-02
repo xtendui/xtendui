@@ -27,17 +27,6 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 </div>
 
-#### Self
-
-Use this code to create a **toggle** in **self mode**.
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-self">
-  </demovanilla>
-</demo>
-
-Check subpage to [customize interaction](/components/core/toggle/interaction).
-
 #### Unique
 
 Use this code to create a **toggle** in **unique mode**.
@@ -58,35 +47,24 @@ Check subpage to [customize interaction](/components/core/toggle/interaction).
 
 Use this code to create a **toggle** in **multiple mode**.
 
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
-  </demovanilla>
-</demo>
-
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
   </demovanilla>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
 
-#### Group Elements
+#### Self
 
-With usage unique or multiple if you want to **group also elements activation** use `groupElements: true`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
-
-</div>
+Use this code to create a **toggle** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
+  <demovanilla src="vanilla/components/core/toggle/usage-self">
   </demovanilla>
 </demo>
+
+Check subpage to [customize interaction](/components/core/toggle/interaction).

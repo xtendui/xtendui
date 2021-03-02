@@ -67,25 +67,6 @@ You can add **additional options** that gets added on **match media query**. You
 
 </div>
 
-## Trigger
-
-Trigger events on **DOM elements**.
-
-```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
-```
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | DOM Element                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.trigger.xt.slider`       | `elements` `targets` | Activation event             |
-| Event                   | `off.trigger.xt.slider`      | `elements` `targets` | Deactivation event            |
-| Event                   | `autostart.trigger.xt.slider`           | `object` | Auto start event             |
-| Event                   | `autostop.trigger.xt.slider`           | `object` | Auto stop event             |
-
-</div>
-
 ## Listen
 
 Listen to events on **single Nodes**.
@@ -162,6 +143,31 @@ object.addEventListener('on.xt.slider', eventOn, true)
 | Event                   | `destroy.xt.slider`           | `object` | Destroy event             |
 
 </div>
+
+## Trigger
+
+Trigger events on **DOM elements**.
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | DOM Element                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `on.trigger.xt.slider`       | `elements` `targets` | Activation event             |
+| Event                   | `off.trigger.xt.slider`      | `elements` `targets` | Deactivation event            |
+| Event                   | `autostart.trigger.xt.slider`           | `object` | Auto start event             |
+| Event                   | `autostop.trigger.xt.slider`           | `object` | Auto stop event             |
+
+</div>
+
+You can pass `e.detail` to the trigger event. For example with this code triggered `on.xt.slider` and `ondone.xt.slider` will have `e.detail.skip = true`.
+
+```js
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider', { detail: { skip: true } }))
+```
 
 ## Properties
 
