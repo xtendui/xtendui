@@ -31,6 +31,23 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 
 </div>
 
+Remember to **add and remove `.xt-ignore` to pinned nodes on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+
+```js
+const sticky = ScrollTrigger.create({
+  pin: true,
+  ...
+})
+
+ScrollTrigger.addEventListener('refresh', () => {
+  // @FIX ScrollTrigger pin mount ignore
+  sticky.pin.classList.add('xt-ignore')
+  requestAnimationFrame(() => {
+    sticky.pin.classList.remove('xt-ignore')
+  })
+})
+```
+
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
 </demo>

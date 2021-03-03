@@ -11,7 +11,7 @@ Test add and remove.
 
 Test change > reinit > change > restart.
 
-Test destroy no interactions.
+Test destroy remove all interaction and events.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">

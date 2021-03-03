@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo--parallax-actions">
 
-  <h1 class="h-screen">Scroll down</h1>
+  <h1 class="xt-h1 h-screen">Scroll down</h1>
 
   <div class="box box-0 bg-primary-500 w-24 h-24 mb-96"></div>
 
@@ -22,7 +22,7 @@ demo.htmlSource = `
 
   <div class="box box-2 bg-primary-500 w-24 h-24 mt-96"></div>
 
-  <h1 class="h-screen">Scroll up</h1>
+  <h1 class="xt-h1 h-screen">Scroll up</h1>
 
 </div>
 `

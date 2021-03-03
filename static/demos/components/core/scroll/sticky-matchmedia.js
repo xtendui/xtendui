@@ -12,13 +12,21 @@ Xt.mount.push({
       '(max-width: 767px)': () => {
         // sticky
 
-        ScrollTrigger.create({
+        const sticky = ScrollTrigger.create({
           trigger: object,
           start: 'top top',
           endTrigger: 'html',
           end: 'bottom top',
           pin: true,
           pinSpacing: false,
+        })
+
+        ScrollTrigger.addEventListener('refresh', () => {
+          // @FIX ScrollTrigger pin mount ignore
+          sticky.pin.classList.add('xt-ignore')
+          requestAnimationFrame(() => {
+            sticky.pin.classList.remove('xt-ignore')
+          })
         })
       },
     })

@@ -117,6 +117,9 @@ To execute javascript code we use `Xt.mount` for two important reasons:
 
 </div>
 
+[[notePrimary]]
+| Remember to **use `.xt-ignore` when moving object** to prevent **child multiple mount and unmount**. If you want to automatically remove the `.xt-ignore` class use `.xt-ignore.xt-ignore-once`.
+
 Here's an example of **mounting a query component**, the **return function to unmount** is executed on DOM removal of the query nodes.
 
 ```js

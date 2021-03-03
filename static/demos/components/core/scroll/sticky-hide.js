@@ -13,7 +13,7 @@ Xt.mount.push({
 
     // sticky
 
-    ScrollTrigger.create({
+    const sticky = ScrollTrigger.create({
       trigger: object,
       start: 'top top',
       endTrigger: 'html',
@@ -45,6 +45,14 @@ Xt.mount.push({
           })
         }
       },
+    })
+
+    ScrollTrigger.addEventListener('refresh', () => {
+      // @FIX ScrollTrigger pin mount ignore
+      sticky.pin.classList.add('xt-ignore')
+      requestAnimationFrame(() => {
+        sticky.pin.classList.remove('xt-ignore')
+      })
     })
 
     // hide depending on content
