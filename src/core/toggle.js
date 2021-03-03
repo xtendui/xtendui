@@ -474,7 +474,7 @@ class Toggle {
         const onHandlerCustom = Xt.dataStorage.put(
           el,
           `${options.on}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, el)
+          self.eventOnHandler.bind(self).bind(self, el, true)
         )
         el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
         // preventEvent
@@ -513,7 +513,7 @@ class Toggle {
         const offHandlerCustom = Xt.dataStorage.put(
           el,
           `${options.off}/${self.ns}`, // @FIX same event for on and off same namespace
-          self.eventOffHandler.bind(self).bind(self, el)
+          self.eventOffHandler.bind(self).bind(self, el, true)
         )
         el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
@@ -525,7 +525,7 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           tr,
           `${options.on}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, tr)
+          self.eventOnHandler.bind(self).bind(self, tr, true)
         )
         tr.addEventListener(`on.trigger.${self.componentNs}`, onHandler)
       }
@@ -534,14 +534,14 @@ class Toggle {
         const offHandlerCustom = Xt.dataStorage.put(
           tr,
           `${options.off}/${self.ns}`,
-          self.eventOffHandler.bind(self).bind(self, tr)
+          self.eventOffHandler.bind(self).bind(self, tr, true)
         )
         tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       } else {
         const offHandlerCustom = Xt.dataStorage.put(
           tr,
           `${options.off}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, tr)
+          self.eventOnHandler.bind(self).bind(self, tr, true)
         )
         tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
@@ -735,15 +735,16 @@ class Toggle {
   /**
    * element on handler
    * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Boolean} force
    * @param {Event} e
    */
-  eventOnHandler(element, e) {
+  eventOnHandler(element, e, force = false) {
     const self = this
     const options = self.options
     // @FIX groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
-    if (options.eventLimit) {
+    if (!force && options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
       if (self.container.matches(options.eventLimit)) {
         return
@@ -758,16 +759,17 @@ class Toggle {
 
   /**
    * element off handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Node|HTMLElement|EventTarget|Window} elementelement
+   * @param {Boolean} force
    * @param {Event} e
    */
-  eventOffHandler(element, e) {
+  eventOffHandler(element, e, force = false) {
     const self = this
     const options = self.options
     // @FIX groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
-    if (options.eventLimit) {
+    if (!force && options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
       if (self.container.matches(options.eventLimit)) {
         return
