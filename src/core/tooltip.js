@@ -159,7 +159,7 @@ Tooltip.optionsDefault = {
   eventLimit: '.event-limit, .xt-tooltip',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
-  closeInside: false,
+  closeInside: '.xt-backdrop',
   closeOutside: 'body',
   preventEvent: false,
   // timing

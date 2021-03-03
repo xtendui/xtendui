@@ -71,7 +71,7 @@ Overlay.optionsDefault = {
   eventLimit: '.event-limit, .xt-overlay',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
-  closeInside: '.xt-overlay, .xt-overlay-container',
+  closeInside: '.xt-backdrop, .xt-overlay, .xt-overlay-container',
   closeOutside: false,
   // timing
   queue: {

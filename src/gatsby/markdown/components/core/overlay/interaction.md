@@ -41,7 +41,7 @@ You can specify **on** and **off** events for the overlay.
 | Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-overlay'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
-| Option                  | `closeInside:Query`                          | `'.xt-overlay, .xt-overlay-container`        | Query Node inside to close on click, no nested Nodes            |
+| Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-overlay, .xt-overlay-container`        | Query Node inside to close on click, no nested Nodes            |
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
 
 </div>

@@ -41,7 +41,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 | Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-tooltip'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
-| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |
+| Option                  | `closeInside:Query`                          | `'.xt-backdrop'`        | Query Node inside to close on click, no nested Nodes            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
 | Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter, use touch device to see it in action)            |
 
@@ -66,7 +66,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `z-below` to have the backdrop below the content.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `z-tooltip` to have the button above the backdrop.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/backdrop">

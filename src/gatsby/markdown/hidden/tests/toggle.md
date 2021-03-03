@@ -70,9 +70,11 @@ Test prevent event.
 
 ## Backdrop
 
-Test backdrop z-index and arrow z-index.
+Test backdrop and no backdrop click.
 
 <demo>
+  <demovanilla src="vanilla/components/core/overlay/variant">
+  </demovanilla>
   <demovanilla src="vanilla/components/core/drop/backdrop">
   </demovanilla>
   <demovanilla src="vanilla/components/core/tooltip/backdrop">

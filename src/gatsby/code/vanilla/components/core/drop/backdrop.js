@@ -17,7 +17,7 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()} active:z-drop">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       backdrop
     </button>
 

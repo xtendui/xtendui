@@ -155,7 +155,7 @@ Drop.optionsDefault = {
   eventLimit: '.event-limit, .xt-drop',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
-  closeInside: false,
+  closeInside: '.xt-backdrop',
   closeOutside: 'body',
   preventEvent: false,
   // timing

@@ -15,7 +15,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-tooltip>
+  <div data-xt-tooltip="{ classSkip: false }">
 
     <div class="xt-tooltip-item">
 
@@ -35,9 +35,9 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip="{ on: 'click', off: 'click' }">
+  <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()} active:z-tooltip">
       backdrop click
     </button>
 
