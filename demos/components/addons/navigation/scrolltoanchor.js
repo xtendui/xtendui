@@ -4,28 +4,47 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
+// you can remove this
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+Xt.mount.push({
+  matches: '#iframe--scrolltoanchor .xt-sticky',
+  mount: ({ object }) => {
+    // sticky
+
+    const sticky = ScrollTrigger.create({
+      trigger: object,
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
+    })
+
+    ScrollTrigger.addEventListener('refresh', () => {
+      // @FIX ScrollTrigger pin mount ignore
+      sticky.pin.classList.add('xt-ignore')
+      requestAnimationFrame(() => {
+        sticky.pin.classList.remove('xt-ignore')
+      })
+    })
+  },
+})
+
+/**
+ * scrolltoanchor
+ */
+
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor body',
   mount: ({ object }) => {
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollElements: [
-        document.scrollingElement,
-        object.querySelector('.demo--scrolltoanchor'),
-        object.querySelector('#demo--overlay-scrolltoanchor'),
-      ],
-      scrollSpace: scrollingElement => {
-        let scrollSpace = 0
-        if (scrollingElement === document.scrollingElement) {
-          const spaces = document.querySelectorAll('.xt-sticky.xt-clone')
-          for (const space of spaces) {
-            if (Xt.visible(space)) {
-              scrollSpace += space.clientHeight
-            }
-          }
-        }
-        return scrollSpace
+      scrollSpace: () => {
+        return document.querySelector('.xt-sticky').clientHeight
       },
     })
 

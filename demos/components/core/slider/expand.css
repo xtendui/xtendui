@@ -1,5 +1,22 @@
 .demo--slider-expand {
-  @screen md {
-    @apply xt-slider-expand;
+  @media (max-width: calc(theme('screens.md') - 1px)) {
+    .xt-slides {
+      overflow: visible !important;
+      height: auto !important;
+    }
+    .xt-slides-inner {
+      flex-wrap: wrap !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .xt-slide {
+      opacity: 1 !important;
+    }
+    .xt-slider-pagination {
+      display: none !important;
+    }
+    .xt-wrap {
+      display: none !important;
+    }
   }
 }

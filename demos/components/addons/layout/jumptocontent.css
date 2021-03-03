@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: theme('zIndex.top');
+  z-index: theme('zIndex.above');
   /* initial */
   @apply transform transition;
   @apply opacity-0 -translate-y-4;

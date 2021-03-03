@@ -49,9 +49,6 @@ Xt.mount.push({
     // add
 
     const addBtn = document.querySelector('#demo--drop-events-add')
-    const buttonPrimary = require('components/snippets/classes/button-primary').default
-    const buttonDefaultDrop = require('components/snippets/classes/button-default-drop').default
-    const cardWhite = require('components/snippets/classes/card-white').default
 
     const addFnc = () => {
       clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -61,8 +58,8 @@ Xt.mount.push({
         const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
         const indexEl = elements.length + 1
         const strEl = `
-          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md ${buttonPrimary()}">
-            Element ${indexEl}
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            Drop ${indexEl}
           </button>
         `
         document.querySelector('#demo--drop-events').append(Xt.createElement(strEl))
@@ -70,15 +67,15 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
           <div class="xt-drop p-4" title="Target ${indexTr}">
-            <div class="xt-card w-64 py-3 rounded-md shadow-drop ${cardWhite()}">
+            <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav class="list flex-col">
-                <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+                <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
-                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                   Dolor sit
                 </button>
-                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                   Amet
                 </button>
               </nav>
@@ -88,6 +85,7 @@ Xt.mount.push({
         document.querySelector('#demo--drop-events').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }
@@ -107,6 +105,7 @@ Xt.mount.push({
         elements[elements.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }

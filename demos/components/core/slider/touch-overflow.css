@@ -1,15 +1,19 @@
 .demo--slider-touch-overflow {
   @media (hover: none) {
     .xt-slides {
-      @apply xt-overflow-sub;
-      overflow-x: auto;
-      overflow-y: hidden;
+      @apply xt-overflow-sub !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
     }
     .xt-slides-inner {
-      @apply xt-duration-none xt-transform-none !important;
       cursor: auto !important;
+      transform: none !important;
+      transition: none !important;
     }
-    .xt-slider-ui {
+    .xt-slide {
+      opacity: 1 !important;
+    }
+    .xt-slider-pagination {
       display: none !important;
     }
   }

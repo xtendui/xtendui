@@ -18,7 +18,7 @@ Xt.mount.push({
       scrollElements: [
         document.scrollingElement,
         object.querySelector('.product-gallery'),
-        object.querySelector('#xt-overlay--product-images'),
+        object.querySelector('#overlay--product-images'),
       ],
     })
 

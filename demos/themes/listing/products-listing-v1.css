@@ -2,7 +2,7 @@
   /*##START*/
   body:not(.xt-noscroll) {
     /* add here all fade selectors css and js */
-    .xt-listing-item {
+    .listing-item {
       opacity: 0;
     }
   }

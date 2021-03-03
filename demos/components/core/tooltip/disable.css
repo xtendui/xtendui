@@ -1,0 +1,5 @@
+.demo--tooltip-disable {
+  .xt-tooltip.xt-tooltip-disabled {
+    display: none;
+  }
+}

@@ -1,5 +1,4 @@
 import { Xt } from 'xtendui'
-const cardSlide = require('components/snippets/classes/card-slide').default
 
 Xt.mount.push({
   matches: '#demo--slider-events',
@@ -96,14 +95,15 @@ Xt.mount.push({
         const indexTr = targets.length + 1
         const strTr = `
         <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-          <div class="xt-card rounded-md ${cardSlide()}">
-            <div class="xt-h4 ">${indexTr}</div>
+          <div class="xt-card rounded-md text-base p-8 text-center text-black bg-gray-200">
+            <div class="xt-h4">${indexTr}</div>
           </div>
         </div>
         `
         document.querySelector('#demo--slider-events-targets').append(Xt.createElement(strTr))
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }
@@ -126,6 +126,7 @@ Xt.mount.push({
         targets[targets.length - 1].remove()
         // reinit
         logAdd('<strong>reinit</strong>')
+        self.restart()
         self.reinit()
       }, 200).toString()
     }

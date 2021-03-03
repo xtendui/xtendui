@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
- * .xt-button-line and media hover
+ * .button--line and media hover
  */
 
 Xt.mount.push({
-  matches: '#iframe--blocks-featured-v1 .xt-button-line',
+  matches: '#iframe--blocks-featured-v1 .button--line',
   mount: ({ object }) => {
     // vars
 
@@ -39,10 +39,10 @@ Xt.mount.push({
         ease: 'expo.out',
       })
       // text
-      const text = object.querySelector('.xt-button-line-content')
+      const text = object.querySelector('.button--line-content')
       gsap.to(text, { x: lineX, duration: 1, delay: 0.5, ease: 'expo.out' })
       // line
-      const line = object.querySelector('.xt-button-line-design')
+      const line = object.querySelector('.button--line-design')
       gsap.set(line, {
         width: 0,
         x: -lineWidthMax,
@@ -82,10 +82,10 @@ Xt.mount.push({
       const mediaInner = link.querySelector('.xt-media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
       // text
-      const text = object.querySelector('.xt-button-line-content')
+      const text = object.querySelector('.button--line-content')
       gsap.to(text, { x: 0, duration: 1, ease: 'expo.inOut' })
       // line
-      const line = object.querySelector('.xt-button-line-design')
+      const line = object.querySelector('.button--line-design')
       gsap.to(line, {
         width: lineWidth,
         x: 0,

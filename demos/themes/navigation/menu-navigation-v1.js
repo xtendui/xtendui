@@ -2,13 +2,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
-// mouse events instead of click you can remove this
+// you can remove this
 
 Xt.mount.push({
   matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',
   mount: ({ object }) => {
     const checkChange = () => {
-      const component = document.querySelector('#iframe--menu-navigation-v1 .xt-megamenu')
+      const component = document.querySelector('#iframe--menu-navigation-v1 .megamenu')
       if (component) {
         const self = Xt.get('xt-drop', component)
         if (self) {
@@ -18,7 +18,7 @@ Xt.mount.push({
             self.options.delay = 150
           } else {
             self.options.on = 'click'
-            self.options.off = false
+            self.options.off = 'click'
             self.options.delay = false
           }
           self.destroy(true)
@@ -35,14 +35,14 @@ Xt.mount.push({
 })
 
 /**
- * .xt-megamenu
+ * .megamenu
  */
 
 Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 .xt-megamenu',
+  matches: '#iframe--menu-navigation-v1 .megamenu',
   mount: ({ object }) => {
     /**
-     * .xt-megamenu drops
+     * .megamenu drops
      */
 
     // vars
@@ -95,7 +95,7 @@ Xt.mount.push({
           ease: contentEase,
         })
         // design
-        const design = tr.querySelector('.xt-design-setup')
+        const design = tr.querySelector('.xt-design')
         gsap.killTweensOf(design)
         gsap.set(design, { opacity: 1 })
         // inner
@@ -139,7 +139,7 @@ Xt.mount.push({
           overwrite: true,
         })
         // design
-        const design = tr.querySelector('.xt-design-setup')
+        const design = tr.querySelector('.xt-design')
         gsap.killTweensOf(design)
         gsap.to(design, {
           opacity: 0,
@@ -174,7 +174,7 @@ Xt.mount.push({
           // others
           for (const other of self.targets.filter(x => x !== tr)) {
             // design
-            const design = other.querySelector('.xt-design-setup')
+            const design = other.querySelector('.xt-design')
             gsap.killTweensOf(design)
             gsap.to(design, { opacity: 0, duration: designTime, ease: designEase, delay: designTime })
             // inner
@@ -189,16 +189,16 @@ Xt.mount.push({
     self.object.addEventListener('off.xt.drop', eventOff, true)
 
     /**
-     * .xt-megamenu line
+     * .megamenu line
      */
 
     // vars
 
     let lineFirst = true
     let btnOn = false
-    const btns = object.querySelectorAll('.xt-list > .xt-button-line')
+    const btns = object.querySelectorAll('.xt-list > .button--line')
     const drops = object.querySelectorAll('.xt-drop-item')
-    const line = object.querySelector('.xt-megamenu-line')
+    const line = object.querySelector('.megamenu-line')
 
     const lineHeight = 7
     const lineTime = 0.5
@@ -211,7 +211,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = true
       } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
       }
       // raf after off.xt.drop
       requestAnimationFrame(() => {
@@ -250,7 +250,7 @@ Xt.mount.push({
       if (Array.from(btns).includes(el)) {
         btnOn = false
       } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .xt-button-line')
+        el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
       }
       // raf after mouseenter
       requestAnimationFrame(() => {

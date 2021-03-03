@@ -13,7 +13,7 @@ Xt.mount.push({
 
     // sticky
 
-    ScrollTrigger.create({
+    const sticky = ScrollTrigger.create({
       trigger: object,
       start: 'top top',
       endTrigger: 'html',
@@ -47,12 +47,20 @@ Xt.mount.push({
       },
     })
 
-    // hide depending on .demo--sticky-hide-content
+    ScrollTrigger.addEventListener('refresh', () => {
+      // @FIX ScrollTrigger pin mount ignore
+      sticky.pin.classList.add('xt-ignore')
+      requestAnimationFrame(() => {
+        sticky.pin.classList.remove('xt-ignore')
+      })
+    })
+
+    // hide depending on content
 
     ScrollTrigger.create({
       trigger: object,
       start: -1, // needs -1 because start trigger is sticky
-      endTrigger: document.querySelector('.demo--sticky-hide-content'),
+      endTrigger: content,
       end: () => `bottom top+=${stickyInner.offsetHeight}`,
       onUpdate: self => {
         if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
