@@ -43,3 +43,18 @@ Test instant activation when switching.
   <demovanilla src="vanilla/components/core/tooltip/animation-multiple-noqueue">
   </demovanilla>
 </demo>
+
+## Design
+
+Test z-index xt-design below everything.
+
+<demo>
+  <demovanilla src="vanilla/components/core/toggle/animation-design">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/overlay/animation-design">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/drop/animation-design">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/tooltip/animation-design">
+  </demovanilla>
+</demo>
