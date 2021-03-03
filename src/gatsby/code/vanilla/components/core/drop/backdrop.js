@@ -15,7 +15,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <div data-xt-drop="{ appendTo: 'body' }">
+  <div data-xt-drop>
 
     <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
       backdrop

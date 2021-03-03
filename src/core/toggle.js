@@ -2451,6 +2451,11 @@ class Toggle {
   specialZindex(actionCurrent, el, type) {
     const self = this
     const options = self.options
+    // @FIX when standalone !self.targets.length && type === 'elements'
+    if (!self.targets.length && type === 'elements') {
+      type = 'targets'
+    }
+    // set zIndex
     if (options.zIndex && options.zIndex[type]) {
       if (actionCurrent === 'On') {
         self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
