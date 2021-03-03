@@ -32,7 +32,7 @@ Xt.mount.push({
   mount: ({ object }) => {
     // sticky
 
-    const sticky =  ScrollTrigger.create({
+    const sticky = ScrollTrigger.create({
       trigger: object,
       start: 'bottom bottom',
       endTrigger: 'html',

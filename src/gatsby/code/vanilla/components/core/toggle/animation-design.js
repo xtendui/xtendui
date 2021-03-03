@@ -2,7 +2,6 @@ import path from 'path'
 
 const buttonMd = require('components/snippets/classes').buttonMd
 const buttonDefault = require('components/snippets/classes').buttonDefault
-const cardToggle = require('components/snippets/classes').cardToggle
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
