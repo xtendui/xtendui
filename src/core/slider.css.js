@@ -23,14 +23,14 @@ module.exports = {
         display: 'none',
         '&.in': {
           display: 'block',
-          zIndex: theme('zIndex.active'),
+          zIndex: theme('zIndex.10'),
         },
         '&.out': {
           display: 'block',
         },
         '&.next': {
           display: 'block',
-          zIndex: `calc(${theme('zIndex.active')} + 1)`,
+          zIndex: `calc(${theme('zIndex.10')} + 1)`,
         },
         '&:not(.in)': {
           position: 'absolute',

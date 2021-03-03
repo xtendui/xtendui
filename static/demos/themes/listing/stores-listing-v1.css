@@ -6,7 +6,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: theme('zIndex.active');
+    z-index: theme('zIndex.10');
     backface-visibility: hidden;
   }
 
@@ -29,7 +29,7 @@
         transform: rotateY(180deg);
       }
       .listing-item-back {
-        z-index: theme('zIndex.active');
+        z-index: theme('zIndex.10');
       }
     }
   }

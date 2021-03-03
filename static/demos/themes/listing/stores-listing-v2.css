@@ -52,7 +52,7 @@
         &:before {
           content: '';
           position: absolute;
-          z-index: theme('zIndex.active');
+          z-index: theme('zIndex.10');
           top: 0;
           left: 0;
           right: 0;
@@ -63,7 +63,7 @@
         &:after {
           content: '';
           position: absolute;
-          z-index: theme('zIndex.active');
+          z-index: theme('zIndex.10');
           top: 0;
           left: 0;
           right: 0;
