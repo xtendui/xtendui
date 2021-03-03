@@ -156,7 +156,7 @@ Tooltip.optionsDefault = {
   // event
   on: 'mouseenter',
   off: 'mouseleave',
-  eventLimit: '.event-limit',
+  eventLimit: '.event-limit, .xt-tooltip',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: false,

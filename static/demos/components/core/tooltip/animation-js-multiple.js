@@ -15,8 +15,6 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Tooltip(object, {
-      elements: ':scope > a, :scope > button',
-      targets: ':scope > .xt-tooltip',
       duration: 300,
       delay: 25,
     })

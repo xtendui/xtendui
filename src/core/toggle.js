@@ -745,16 +745,15 @@ class Toggle {
     // handler
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
-      if (eventLimit.length) {
-        if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-          self.eventOn(el, false, e)
+      if (self.container.matches(options.eventLimit)) {
+        return
+      } else if (eventLimit.length) {
+        if (Xt.contains(eventLimit, e.target)) {
+          return
         }
-      } else {
-        self.eventOn(el, false, e)
       }
-    } else {
-      self.eventOn(el, false, e)
     }
+    self.eventOn(el, false, e)
   }
 
   /**
@@ -770,16 +769,15 @@ class Toggle {
     // handler
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
-      if (eventLimit.length) {
-        if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
-          self.eventOff(el, false, e)
+      if (self.container.matches(options.eventLimit)) {
+        return
+      } else if (eventLimit.length) {
+        if (Xt.contains(eventLimit, e.target)) {
+          return
         }
-      } else {
-        self.eventOff(el, false, e)
       }
-    } else {
-      self.eventOff(el, false, e)
     }
+    self.eventOff(el, false, e)
   }
 
   /**
@@ -836,8 +834,6 @@ class Toggle {
       self.eventPreventeventEndHandler(el)
       Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
       Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
-      // off on second interaction on touch
-      el.dispatchEvent(new CustomEvent(`off.trigger.${self.componentNs}`))
     }
   }
 

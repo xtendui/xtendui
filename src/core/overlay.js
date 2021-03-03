@@ -68,10 +68,11 @@ Overlay.optionsDefault = {
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit',
+  eventLimit: '.event-limit, .xt-overlay',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-overlay, .xt-overlay-container',
+  closeOutside: false,
   // timing
   queue: {
     elements: false,

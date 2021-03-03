@@ -33,26 +33,30 @@ demo.htmlSource = `
           <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
             Dolor sit
           </button>
-          <div data-xt-drop="{ position: 'right-start' }">
+          <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
 
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
-              nested
-            </button>
+            <div class="xt-drop-item">
 
-            <div class="xt-drop p-4">
-              <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardPrimary()}">
-                <nav class="xt-list flex-col">
-                  <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </a>
-                  <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Dolor sit
-                  </button>
-                  <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Amet
-                  </button>
-                </nav>
+              <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+                nested
+              </button>
+
+              <div class="xt-drop p-4">
+                <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardPrimary()}">
+                  <nav class="xt-list flex-col">
+                    <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </a>
+                    <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                      Dolor sit
+                    </button>
+                    <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                      Amet
+                    </button>
+                  </nav>
+                </div>
               </div>
+
             </div>
 
           </div>

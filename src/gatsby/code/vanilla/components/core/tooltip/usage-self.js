@@ -11,7 +11,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-tooltip p-2 in-tooltip relative inline-block" data-xt-tooltip="{ on: false, off: false, closeOutside: false, classSkip: false }">
+<div class="xt-tooltip p-2 in-tooltip relative inline-block" data-xt-tooltip="{ closeOutside: false, classSkip: false }">
   <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
     Lorem ipsum dolor sit amet
   </div>

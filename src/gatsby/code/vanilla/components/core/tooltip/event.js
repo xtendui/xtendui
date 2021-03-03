@@ -24,7 +24,7 @@ demo.htmlSource = `
     <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
       Lorem ipsum dolor sit amet
 
-      <div class="inline-block" data-xt-tooltip="{ position: 'auto' }">
+      <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', position: 'auto' }">
 
         <a href="#">nested</a>
 
