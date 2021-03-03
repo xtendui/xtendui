@@ -1,7 +1,7 @@
 import path from 'path'
 
 const buttonSm = require('components/snippets/classes').buttonSm
-const buttonMd = require('components/snippets/classes').buttonM
+const buttonMd = require('components/snippets/classes').buttonMd
 const buttonLg = require('components/snippets/classes').buttonLg
 const buttonPrimary = require('components/snippets/classes').buttonPrimary
 const iconSearch = require('components/snippets/icons').iconSearch
