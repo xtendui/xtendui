@@ -1,3 +1,51 @@
+# [1.0.0-beta.6](https://github.com/minimit/xtendui/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-03-03)
+
+
+### Bug Fixes
+
+* **button:** no default justification xt-button ([95b649e](https://github.com/minimit/xtendui/commit/95b649ebf23d4387d9020ee2e31e298fa3e8aff1))
+* **css:** body with no ligatures and font smoothing by default ([626e9cf](https://github.com/minimit/xtendui/commit/626e9cf7b4f0cde963c3c2d40e6a92f2c7312f3f))
+* **css:** design setup zindex ([bb065c1](https://github.com/minimit/xtendui/commit/bb065c12b03a174ccbacddf01d3fd932c5dfe3e1))
+* **drop:** drop options off with click ([de99bb7](https://github.com/minimit/xtendui/commit/de99bb72b7011260288f9d23ee5bd67bd85c9496))
+* **hero:** refactor hero markup ([88c4e79](https://github.com/minimit/xtendui/commit/88c4e79402cb1ed0cbf4c48687670ddc912a8ac8))
+* **overlay:** no more scrollbar option and remember classHtml as scrollbar did ([ef390c9](https://github.com/minimit/xtendui/commit/ef390c9640465d6e6da9df1428a2aafddc335d4a))
+* refactor drop and tooltip event limit to trigger targets ([3642d1e](https://github.com/minimit/xtendui/commit/3642d1eb3a828111b0b6404746f52f3806f3df43))
+* **toggle:** fix group index and direction ([3afce63](https://github.com/minimit/xtendui/commit/3afce63a713a16ec3c9dc9debe3d2532144cfb4e))
+* extended broswser support ([88fb3d5](https://github.com/minimit/xtendui/commit/88fb3d5af3ee2782e678f9ca4d6f799466228b50))
+* fix activation initial on reinit and removed onBlock offBlock and ([737a918](https://github.com/minimit/xtendui/commit/737a918afc2ca2c12b2b5c6d0d6a145e6a6c1b20))
+* fix disabled after initialization with initial activation ([30c5aec](https://github.com/minimit/xtendui/commit/30c5aec514ffb211f2568a5a1187d81d70aac245))
+* plugin tailwind with respect prefix and esacape fix ([2b902ee](https://github.com/minimit/xtendui/commit/2b902ee0151d6cb24c8594e0e7ed6d3e55600a91))
+* **overlay:** fix closeInside to check if inside so closes one nested overlay at time ([4345717](https://github.com/minimit/xtendui/commit/43457171a10aeddbba67adbe3ddab78e9021917b))
+* **row:** xt-row-overflow also on non touch devices ([d54aec9](https://github.com/minimit/xtendui/commit/d54aec93610e98981af20df35218b00b416ba54b))
+* **toggle:** fixed deactivation on on event when off false ([05599a7](https://github.com/minimit/xtendui/commit/05599a798fc61031218488ca10fd61dc76ec9a94))
+* **toggle:** fixed deactivation on on event when off false ([c15598f](https://github.com/minimit/xtendui/commit/c15598f149e05c484ef35e97d7f5a6606ab9061f))
+* refactor backdrop and arrow z-index ([c90c480](https://github.com/minimit/xtendui/commit/c90c480d9e43ab41d3f3b0c929cb5f87dd3d8484))
+
+
+### Features
+
+* **toggle:** refactor group activation and trigger xt events pass event object ([62d08aa](https://github.com/minimit/xtendui/commit/62d08aa926abfa181aad4d1d079b02163a8168ec))
+* refactor disabled styles not in cssinjs but custom ([2031cbd](https://github.com/minimit/xtendui/commit/2031cbd910062f326d22cd47b73ce18dad94a7df))
+* **css:** added display variants ([f5367c1](https://github.com/minimit/xtendui/commit/f5367c1491ccad90e26fd2da25313a3dc41d057a))
+* **overlay:** overlay padding from util ([71b6687](https://github.com/minimit/xtendui/commit/71b6687b010a5654e64a719c6fab9e2c1545346e))
+* **scrolltoanchor:** added options.preventHash and revision demos ([456c37e](https://github.com/minimit/xtendui/commit/456c37e2f090f0a74569cd6dbdae1c527a4f4136))
+
+
+### fi
+
+* **media:** removed overflow hidden ([3b681e0](https://github.com/minimit/xtendui/commit/3b681e062e9964292b321b528a9cacb4ff2bcec0))
+
+
+### BREAKING CHANGES
+
+* **media:** use the classe overflow-hidden on xt-media-container if you need it
+* **toggle:** now by default unique and grouped elements have not linked activation, to have linked activation on elements use options.groupElements: true
+* reset styles manually for disabled components and slider-expand
+* **scrolltoanchor:** fixed xt-sticky class use this class for scroll sticky elements
+* **button:** use justify-between on xt-button where you need it
+* use z-above instead of z-top
+use z-below on tooltip xt-arrow
+
 # [1.0.0-beta.5](https://github.com/minimit/xtendui/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-02-22)
 
 
