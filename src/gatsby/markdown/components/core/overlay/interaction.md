@@ -38,7 +38,7 @@ You can specify **on** and **off** events for the overlay.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-overlay'`        | Limit events inside self.object            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-overlay'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-overlay, .xt-overlay-container`        | Query Node inside to close on click, no nested Nodes            |

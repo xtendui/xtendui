@@ -13,20 +13,16 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div data-xt-tooltip="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
 
-  <div data-xt-tooltip="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+  <a href="#tooltip-with-link-1" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    tooltip
+  </a>
 
-    <a href="#tooltip-with-link-1" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-      tooltip
-    </a>
-
-    <div class="xt-tooltip p-2">
-      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
-        Lorem ipsum dolor sit amet
-      </div>
+  <div class="xt-tooltip p-2">
+    <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      Lorem ipsum dolor sit amet
     </div>
-
   </div>
 
 </div>

@@ -15,45 +15,41 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div data-xt-overlay>
 
-  <div data-xt-overlay>
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    list group
+  </button>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-      list group
-    </button>
+  <div class="xt-overlay">
+    <div class="xt-backdrop bg-black opacity-25"></div>
+    <div class="xt-overlay-container max-w-3xl">
+      <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
+        ${iconX()}
+      </button>
+      <div class="xt-overlay-inner">
 
-    <div class="xt-overlay">
-      <div class="xt-backdrop bg-black opacity-25"></div>
-      <div class="xt-overlay-container max-w-3xl">
-        <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
-          ${iconX()}
-        </button>
-        <div class="xt-overlay-inner">
+        <form class="text-sm rounded-md shadow-overlay">
 
-          <form class="text-sm rounded-md shadow-overlay">
+          <div class="xt-list flex-nowrap max-w-sm">
 
-            <div class="xt-list flex-nowrap max-w-sm">
-
-              <div class="xt-list-inner flex-auto">
-                <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
-                  ${iconSearch({ classes: 'text-xl -my-1' })}
-                </button>
-                <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
-              </div>
-
-              <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
-                Search
+            <div class="xt-list-inner flex-auto">
+              <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
+                ${iconSearch({ classes: 'text-xl -my-1' })}
               </button>
-
+              <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
             </div>
 
-          </form>
+            <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
+              Search
+            </button>
 
-        </div>
+          </div>
+
+        </form>
+
       </div>
     </div>
-
   </div>
 
 </div>

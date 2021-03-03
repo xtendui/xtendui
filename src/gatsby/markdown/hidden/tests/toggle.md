@@ -7,7 +7,7 @@ title: "Toggle"
 
 ## Usage
 
-Test activation and no close clicking inside.
+Test activation and no close clicking inside with eventLimit.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-self">

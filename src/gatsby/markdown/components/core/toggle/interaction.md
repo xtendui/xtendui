@@ -87,7 +87,7 @@ You can specify **on** and **off** events for the toggle.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit events inside self.object            |
+| Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `false`        | Query Node inside to close on click            |
 | Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |

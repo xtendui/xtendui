@@ -14,35 +14,31 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div data-xt-drop>
 
-  <div data-xt-drop>
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    list group
+  </button>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-      list group
-    </button>
+  <div class="xt-drop p-4">
+    <form class="rounded-md shadow-drop">
 
-    <div class="xt-drop p-4">
-      <form class="rounded-md shadow-drop">
+      <div class="xt-list flex-nowrap max-w-sm">
 
-        <div class="xt-list flex-nowrap max-w-sm">
-
-          <div class="xt-list-inner flex-auto">
-            <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
-              ${iconSearch({ classes: 'text-xl -my-1' })}
-            </button>
-            <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
-          </div>
-
-          <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
-            Search
+        <div class="xt-list-inner flex-auto">
+          <button type="button" class="xt-button ${buttonMd()} rounded-l-md ${buttonDefault()}">
+            ${iconSearch({ classes: 'text-xl -my-1' })}
           </button>
-
+          <input type="text" class="xt-input ${inputDefault()}" aria-label="Search" placeholder="Seach Catalog" />
         </div>
 
-      </form>
-    </div>
+        <button type="button" class="xt-button ${buttonMd()} rounded-r-md ${buttonPrimary()}">
+          Search
+        </button>
 
+      </div>
+
+    </form>
   </div>
 
 </div>

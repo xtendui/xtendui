@@ -15,51 +15,47 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center">
+<div class="demo--drop-disable" data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
 
-  <div class="demo--drop-disable" data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    drop
+  </button>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
-      drop
-    </button>
+  <div class="xt-drop p-4">
+    <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
+      <nav class="xt-list flex-col">
+        <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </a>
+        <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
+          Dolor sit
+        </button>
+        <div data-xt-drop>
 
-    <div class="xt-drop p-4">
-      <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardWhite()}">
-        <nav class="xt-list flex-col">
-          <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </a>
           <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
-            Dolor sit
+            nested
           </button>
-          <div data-xt-drop>
 
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
-              nested
-            </button>
-
-            <div class="xt-drop p-4">
-              <div class="xt-backdrop bg-black opacity-25"></div>
-              <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardPrimary()}">
-                <nav class="xt-list flex-col">
-                  <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  </a>
-                  <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Dolor sit
-                  </button>
-                  <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
-                    Amet
-                  </button>
-                </nav>
-              </div>
+          <div class="xt-drop p-4">
+            <div class="xt-backdrop bg-black opacity-25"></div>
+            <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${cardPrimary()}">
+              <nav class="xt-list flex-col">
+                <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </a>
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                  Dolor sit
+                </button>
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${buttonPrimaryDrop()}">
+                  Amet
+                </button>
+              </nav>
             </div>
-
           </div>
-        </nav>
-      </div>
-    </div>
 
+        </div>
+      </nav>
+    </div>
   </div>
 
 </div>
