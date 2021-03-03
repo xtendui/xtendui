@@ -66,7 +66,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `z-tooltip` to have the button above the backdrop.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `active:z-tooltip` to have the button above the backdrop.
 
 <demo>
   <demovanilla src="vanilla/components/core/tooltip/backdrop">

@@ -178,7 +178,7 @@ Tooltip.optionsDefault = {
   popperjs: true,
   zIndex: {
     targets: {
-      start: 6500, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
+      start: 200, // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
       factor: -1,
     },
   },

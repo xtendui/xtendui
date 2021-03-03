@@ -66,7 +66,7 @@ You can have **element's link** and **click events** prevented when the drop ope
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `z-drop` to have the button above the backdrop.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `active:z-drop` to have the button above the backdrop.
 
 <demo>
   <demovanilla src="vanilla/components/core/drop/backdrop">

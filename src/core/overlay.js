@@ -84,6 +84,12 @@ Overlay.optionsDefault = {
   appendTo: 'body',
   classHtml: 'xt-scrollbar-overlay',
   focusLimit: true,
+  zIndex: {
+    targets: {
+      start: 500, // theme.zIndex.overlay same as Overlay options.zIndex.targets.start
+      factor: 0,
+    },
+  },
 }
 
 //
