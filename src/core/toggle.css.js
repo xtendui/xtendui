@@ -1,15 +1,12 @@
 module.exports = {
   variants: ['responsive'],
-  utility: theme => ({
+  utility: {
     '.xt-toggle-item': {
       display: 'inline-block',
     },
     '.xt-toggle': {
       '&:not(.in):not(.out)': {
         display: 'none',
-      },
-      '&.in': {
-        zIndex: theme('zIndex.active'),
       },
       '&.out': {
         pointerEvents: 'none',
@@ -31,5 +28,5 @@ module.exports = {
         display: 'none',
       },
     },
-  }),
+  },
 }

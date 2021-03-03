@@ -35,7 +35,7 @@ demo.htmlSource = `
 
   </div>
 
-  <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
+  <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false, appendTo: 'body' }">
 
     <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()} active:z-tooltip">
       backdrop click

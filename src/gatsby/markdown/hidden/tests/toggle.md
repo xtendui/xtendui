@@ -81,6 +81,17 @@ Test backdrop and no backdrop click.
   </demovanilla>
 </demo>
 
+## Static
+
+Test position and visibility.
+
+<demo>
+  <demovanilla src="vanilla/components/core/drop/static">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/tooltip/static">
+  </demovanilla>
+</demo>
+
 ## Auto
 
 Test auto.
