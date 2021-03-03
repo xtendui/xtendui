@@ -1881,13 +1881,14 @@ class Toggle {
     const self = this
     const options = self.options
     if (actionCurrent === 'On' && self.checkOnRunning(obj)) {
-      // running check to stop multiple activation/deactivation with delay
+      // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.addCurrent(el, true)
       }
       // activation
       self.activate(el, type)
       // special
+      self.specialZindex(actionCurrent, el, type)
       self.specialAppendto(actionCurrent, el, type)
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type)
@@ -1934,11 +1935,11 @@ class Toggle {
         )
       }
     } else if (actionCurrent === 'Off' && self.checkOffRunning(obj)) {
-      // running check to stop multiple activation/deactivation with delay
+      // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.removeCurrent(el, true)
         // only if no currents
-        if (self.getCurrents().length === 0) {
+        if (!self.getCurrents().length) {
           // reset currentIndex and direction
           self.currentIndex = null
           self.setDirection()
@@ -1990,8 +1991,6 @@ class Toggle {
   queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
-    // special
-    self.specialZindex(actionCurrent, el, type)
     // anim
     const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`], actionCurrent)
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
@@ -2034,6 +2033,15 @@ class Toggle {
         )
       }
     } else if (actionCurrent === 'Off') {
+      // only one time and if last element
+      if (type === 'elements' && el === obj.elements.queueEls[0]) {
+        // only if no currents
+        if (!self.getCurrents().length) {
+          for (const type in obj) {
+            self.specialZindex(actionCurrent, false, type)
+          }
+        }
+      }
       // activation
       self.deactivateDone(el, type)
       // special
@@ -2462,8 +2470,7 @@ class Toggle {
         self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
         el.style.zIndex = self.detail.zIndex
       } else if (actionCurrent === 'Off') {
-        self.detail.zIndex = options.zIndex[type].start + options.zIndex[type].factor
-        el.style.zIndex = self.detail.zIndex
+        self.detail.zIndex = options.zIndex[type].start
       }
     }
   }

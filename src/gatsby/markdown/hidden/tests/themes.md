@@ -7,7 +7,9 @@ title: "Themes"
 
 ## Themes
 
-Test move over other and then target should not change.
+Test move slightly over other and then target should not change with delay.
+
+Test direction and zIndex sequential activation and zIndex reset.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/themes/navigation/menu-navigation-v1">
