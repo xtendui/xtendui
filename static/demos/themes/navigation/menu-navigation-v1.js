@@ -122,7 +122,7 @@ Xt.mount.push({
 
     self.object.addEventListener('on.xt.drop', eventOn, true)
 
-    // on
+    // off
 
     const eventOff = e => {
       const tr = e.target

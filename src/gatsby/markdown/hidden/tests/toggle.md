@@ -5,7 +5,7 @@ parent: "Tests"
 title: "Toggle"
 ---
 
-## Toggle
+## Usage
 
 Test activation and no close clicking inside.
 
@@ -33,12 +33,16 @@ Test activation and group.
   </demovanilla>
 </demo>
 
+## Class
+
 Test initial activation.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/class">
   </demovanilla>
 </demo>
+
+## Event
 
 Test toggle mouse should not close when clicking opened elements.
 
@@ -64,6 +68,8 @@ Test prevent event.
   </demovanilla>
 </demo>
 
+## Backdrop
+
 Test backdrop z-index and arrow z-index.
 
 <demo>
@@ -73,11 +79,15 @@ Test backdrop z-index and arrow z-index.
   </demovanilla>
 </demo>
 
+## Auto
+
 Test auto.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/auto">
   </demovanilla>
 </demo>
+
+## Api
 
 Test [e.detail.skip = true](/components/core/toggle/api#trigger).

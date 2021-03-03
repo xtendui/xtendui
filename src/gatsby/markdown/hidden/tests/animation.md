@@ -46,8 +46,6 @@ Test instant activation when switching.
 
 ## Design
 
-Test z-index xt-design below everything.
-
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-design">
   </demovanilla>

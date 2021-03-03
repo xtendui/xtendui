@@ -81,7 +81,7 @@ You can use also **javascript animations**, just use [drop api](/components/core
 
 ## Design Animation
 
-Use `.xt-toggle-inner` and assign design styles to `.xt-design` (see [layout components](/components/globals/layout#components)) when you want to **animate the design independently from the content**.
+Use `.xt-toggle-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on child elements for fixing z-index issues.
 
 <demo>
   <demovanilla src="vanilla/components/core/toggle/animation-design">
