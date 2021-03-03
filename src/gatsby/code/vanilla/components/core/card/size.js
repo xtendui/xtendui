@@ -18,7 +18,7 @@ demo.htmlSource = `
   <div class="w-full">
     <div class="xt-card rounded-md ${cardDefault()}">
       <div class="${cardSm()}">
-        <div class="xt-h5 ">Small</div>
+        <div class="xt-h5">Small</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>
@@ -36,7 +36,7 @@ demo.htmlSource = `
   <div class="w-full">
     <div class="xt-card rounded-md ${cardDefault()}">
       <div class="${cardLg()}">
-        <div class="xt-h3 ">Large</div>
+        <div class="xt-h3">Large</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>

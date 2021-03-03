@@ -30,7 +30,7 @@ demo.htmlSource = `
           ${iconX()}
         </button>
         <div class="${cardSm()}">
-          <div class="xt-h5 ">Lorem ipsum</div>
+          <div class="xt-h5">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
           ${iconX()}
         </button>
         <div class="${cardLg()}">
-          <div class="xt-h3 ">Lorem ipsum</div>
+          <div class="xt-h3">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
         </div>
       </div>

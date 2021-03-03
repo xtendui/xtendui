@@ -23,7 +23,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -31,29 +31,29 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">
                 <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                 <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
               </div>
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Timetable
               </div>
               <div class="xt-p font-sm">
@@ -74,7 +74,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -82,22 +82,22 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">
@@ -113,7 +113,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -121,29 +121,29 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">
                 <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                 <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
               </div>
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Timetable
               </div>
               <div class="xt-p font-sm">
@@ -164,7 +164,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -172,22 +172,22 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">
@@ -203,7 +203,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
@@ -211,29 +211,29 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">
                 <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br/>
                 <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br/>
               </div>
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Timetable
               </div>
               <div class="xt-p font-sm">
@@ -254,7 +254,7 @@ demo.htmlSource = `
       <div class="w-full md:w-6/12 lg:w-4/12">
         <div class="listing-item block w-full">
 
-          <div class="listing-item-front card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
@@ -262,22 +262,22 @@ demo.htmlSource = `
             </div>
             <div class="mt-6 h-full flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-                <div class="xt-h5 ">
+                <div class="xt-h5">
                   Lorem Ipsum
                 </div>
                 <address class="xt-p font-sm not-italic">
-                  Street lorem ipsum 42, 00134 City, Nation
+                  Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
             </div>
           </div>
 
-          <div class="listing-item-back h-full card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-back h-full xt-card rounded-md ${cardDefaultFull()}">
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
-              <div class="xt-h5 ">
+              <div class="xt-h5">
                 Contacts
               </div>
               <div class="xt-p font-sm">

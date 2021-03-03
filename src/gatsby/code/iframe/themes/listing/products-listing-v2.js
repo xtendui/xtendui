@@ -24,7 +24,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -50,7 +50,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -76,7 +76,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -95,7 +95,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -114,7 +114,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -133,7 +133,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -152,7 +152,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
@@ -171,7 +171,7 @@ demo.htmlSource = `
 
           <div class="xt-slide w-6/12 md:w-4/12">
             <a href="#" class="listing-item block group">
-              <div class="xt-media-container bg-gray-200 xt-ratio-125">
+              <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
@@ -208,7 +208,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -234,7 +234,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -260,7 +260,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -279,7 +279,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -298,7 +298,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -317,7 +317,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -336,7 +336,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
@@ -355,7 +355,7 @@ demo.htmlSource = `
 
         <div class="w-6/12 md:w-4/12">
           <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
+            <div class="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
@@ -364,25 +364,6 @@ demo.htmlSource = `
             <div class="py-4">
               <div class="xt-h5  group-hover:text-primary-500">
                 Dolor sit amet
-              </div>
-              <div class="-mt-2 text-sm font-semibold">
-                3.772,00 €
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="w-6/12 md:w-4/12">
-          <a href="#" class="listing-item block group">
-            <div class="xt-media-container bg-gray-200 xt-ratio-125">
-              <div class="xt-media-inner">
-                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
-              </div>
-              <div class="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-            </div>
-            <div class="py-4">
-              <div class="xt-h5  group-hover:text-primary-500">
-                Lorem ipsum
               </div>
               <div class="-mt-2 text-sm font-semibold">
                 3.772,00 €

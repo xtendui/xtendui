@@ -52,7 +52,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -70,7 +70,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -88,7 +88,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Lorem ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -106,7 +106,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -124,7 +124,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Lorem Ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -142,7 +142,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -160,7 +160,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Lorem Ipsum
             </div>
             <div class="-mt-2 text-sm font-semibold">
@@ -178,7 +178,7 @@ demo.htmlSource = `
             </div>
           </div>
           <div class="py-4">
-            <div class="xt-h5 ">
+            <div class="xt-h5">
               Dolor sit amet
             </div>
             <div class="-mt-2 text-sm font-semibold">

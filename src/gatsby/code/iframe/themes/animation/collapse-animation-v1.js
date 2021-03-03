@@ -88,7 +88,7 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4 group" data-xt-duration="700">
       <div class="xt-drop-inner rounded-md shadow-drop ${animDesign}">
-        <div class="xt-card w-64 py-3.5 rounded-md ${cardWhite()} ">
+        <div class="xt-card w-64 py-3.5 rounded-md ${cardWhite()}">
           <nav class="xt-list flex-col rounded-md${animItem}">
             <a href="#" class="xt-button text-2xs py-1.5 px-6 ${buttonDefaultDrop()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -371,7 +371,7 @@ demo.htmlSource = `
                   </div>
                 </div>
                 <div class="${cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
-                  <p class="xt-h5 ">
+                  <p class="xt-h5">
                     Didn't find what you was looking for?
                   </p>
                   <p>

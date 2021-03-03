@@ -84,7 +84,7 @@ demo.htmlSource = `
         <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
         <div class="md:py-12 md:sticky stickyflow">
 
-          <h1 class="xt-h2 ">
+          <h1 class="xt-h2">
             Lorem ipsum dolor sit amet
           </h1>
 

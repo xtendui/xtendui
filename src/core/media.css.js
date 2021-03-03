@@ -38,10 +38,12 @@ module.exports = {
       left: '0',
       bottom: '0',
       right: '0',
+      borderRadius: 'inherit',
     },
     '.xt-media': {
       width: '100%',
       height: '100%',
+      borderRadius: 'inherit',
     },
   },
 }

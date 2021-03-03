@@ -361,7 +361,7 @@ demo.htmlSource = `
                   </div>
                 </div>
                 <div class="${cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
-                  <p class="xt-h5 ">
+                  <p class="xt-h5">
                     Didn't find what you was looking for?
                   </p>
                   <p>
