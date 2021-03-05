@@ -1,7 +1,6 @@
 import path from 'path'
 
 const cardSm = require('components/snippets/classes').cardSm
-const cardMd = require('components/snippets/classes').cardMd
 const cardDefaultFull = require('components/snippets/classes').cardDefaultFull
 
 const filename = __filename.replace(/\\/g, '/')
