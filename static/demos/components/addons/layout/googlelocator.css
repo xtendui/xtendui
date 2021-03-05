@@ -113,12 +113,12 @@
     .gm-style-iw-d + button {
       top: 0 !important;
       right: 0 !important;
-      width: 3rem !important;
-      height: 3rem !important;
-      background: theme('colors.gray.200') !important;
+      width: 2rem !important;
+      height: 2rem !important;
+      background: theme('colors.primary.500') !important;
       border-bottom-left-radius: 0.7rem;
       font-size: 25px;
-      color: theme('colors.black') !important;
+      color: theme('colors.white') !important;
       line-height: 0;
       text-align: center;
       opacity: 1 !important;

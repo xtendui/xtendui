@@ -3075,6 +3075,12 @@ class Toggle {
           tr.classList.remove(`${self.componentName}-disabled`)
         }
       }
+      // aria
+      if (options.aria === true || options.aria.activation) {
+        for (const el of self.elements) {
+          el.removeAttribute('aria-disabled')
+        }
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
@@ -3110,6 +3116,13 @@ class Toggle {
           tr.classList.add(`${self.componentName}-disabled`)
         }
       }
+      // aria
+      if (options.aria === true || options.aria.activation) {
+        for (const el of self.elements) {
+          el.setAttribute('aria-disabled', 'true')
+        }
+      }
+      // [disabled]
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }

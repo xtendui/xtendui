@@ -5,7 +5,6 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.xt-drop-static': {
-      width: '100%',
       padding: 0,
       top: '100% !important',
       left: '0 !important',
