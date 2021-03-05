@@ -180,6 +180,14 @@ pre {
       width: 100%;
       height: 100%;
     }
+    .gatsby_demo_code_body {
+      @apply bg-code;
+      height: 21rem;
+      #gatsby_open-full & {
+        height: auto;
+        flex: 1;
+      }
+    }
     .gatsby_demo_code_inner {
       display: flex;
       flex-flow: column;
@@ -223,10 +231,6 @@ pre {
       overflow: hidden;
     }
   }
-}
-
-.gatsby_demo_code_body {
-  flex: 1;
 }
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
