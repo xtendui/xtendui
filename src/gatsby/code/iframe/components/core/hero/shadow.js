@@ -22,8 +22,8 @@ demo.htmlSource = `
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
   </div>
-  <div class="flex relative h-screen">
-    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+  <div class="flex relative min-h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
       <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>
@@ -44,8 +44,8 @@ demo.htmlSource = `
     </div>
     <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50"></div>
   </div>
-  <div class="flex relative h-screen">
-    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+  <div class="flex relative min-h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
       <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>
@@ -66,8 +66,8 @@ demo.htmlSource = `
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
   </div>
-  <div class="flex relative h-screen">
-    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center md:text-right group">
+  <div class="flex relative min-h-screen">
+    <div class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right group">
       <h2 class="xt-h1">
         Lorem ipsum dolor sit amet
       </h2>

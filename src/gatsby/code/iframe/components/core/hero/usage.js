@@ -21,8 +21,8 @@ demo.htmlSource = `
       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
     </div>
   </div>
-  <div class="flex relative h-screen">
-    <a href="#" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-white xt-links-inverse text-center group">
+  <div class="flex relative min-h-screen">
+    <a href="#" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center group">
       <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">
         Lorem ipsum
       </h2>

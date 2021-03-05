@@ -22,7 +22,7 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="flex relative">
-    <a href="#" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mx-auto md:max-w-lg lg:md:max-w-xl xl:max-w-2xl text-center group">
+    <a href="#" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mx-auto max-w-2xl text-center group">
       <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">
         Lorem ipsum
       </h2>

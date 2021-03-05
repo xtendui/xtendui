@@ -8,7 +8,7 @@ description: "Listing markup component for category pages or simple product list
 
 ## Usage
 
-Use **component classes** and **tailwind classes** to create a **listing**.
+Use **tailwind classes** to create a **listing**.
 
 [[noteDefault]]
 | This component uses [media](/components/core/media) see documentation to **customize**.
