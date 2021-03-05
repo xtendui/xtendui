@@ -3,6 +3,7 @@ module.exports = {
   utility: {
     '.xt-toggle-item': {
       display: 'inline-block',
+      lineHeight: 1,
     },
     '.xt-toggle': {
       '&:not(.in):not(.out)': {

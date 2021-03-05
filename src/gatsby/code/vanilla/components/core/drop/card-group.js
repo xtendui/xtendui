@@ -27,10 +27,10 @@ demo.htmlSource = `
         <div class="md:xt-card-group">
           <div class="${cardMd()} md:w-7/12">
             <div class="xt-h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
           </div>
           <div class="${cardSm()} md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-400">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ demo.htmlSource = `
         <div class="md:xt-card-group">
           <div class="${cardMd()} md:w-7/12 bg-gray-400 md:rounded-tl-md">
             <div class="xt-h4">Lorem ipsum</div>
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
           </div>
           <div class="md:w-5/12">
             <div class="${cardSm()} bg-gray-500 md:rounded-tr-md">

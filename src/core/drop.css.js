@@ -32,6 +32,7 @@ module.exports = {
     },
     '.xt-drop-item': {
       display: 'inline-block',
+      lineHeight: 1,
     },
   },
 }
