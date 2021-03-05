@@ -16,7 +16,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="jumptocontent xt-toggle">
+<div class="jumptocontent xt-toggle fixed z-above left-0 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0">
   <a href="#jumptocontent" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
     Jump to content
   </a>

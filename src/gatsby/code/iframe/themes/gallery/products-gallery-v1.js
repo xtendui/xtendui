@@ -89,7 +89,7 @@ demo.htmlSource = `
 
               </div>
 
-              <div class="absolute h-full bottom-0 left-0 right-0 md:hidden">
+              <div class="absolute h-full bottom-0 right-0 md:hidden">
                 <div class="xt-list flex-col h-full justify-center">
 
                   <a href="#product-image-1" class="product-dot py-1.5 px-2 flex items-center justify-center group" title="Go to image 1">

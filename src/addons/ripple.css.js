@@ -1,5 +1,5 @@
 module.exports = {
-  component: theme => ({
+  component: {
     '.xt-ripple-container': {
       overflow: 'hidden',
       pointerEvents: 'none',
@@ -9,14 +9,10 @@ module.exports = {
       left: '0',
       right: '0',
       bottom: '0',
-      // styles
-      opacity: '.075',
     },
     '.xt-ripple': {
-      // styles
       position: 'absolute',
       borderRadius: '50%',
-      background: theme('colors.black'),
     },
-  }),
+  },
 }

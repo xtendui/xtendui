@@ -26,9 +26,9 @@ demo.htmlSource = `
 
     <div class="xt-overlay">
       <div class="xt-backdrop bg-black opacity-25"></div>
-      <div class="demo--overlay-messageoutside right-0">
+      <div class="demo--overlay-messageoutside fixed h-full right-0 hidden md:flex items-center justify-center pointer-events-none">
         <div class="w-10/12 lg:w-8/12">
-          <div class="xt-card rounded-md ${cardDefault()}">
+          <div class="xt-card rounded-md ${cardDefault()} pointer-events-auto">
             <div class="${cardMd()}">
               <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
@@ -66,9 +66,9 @@ demo.htmlSource = `
 
     <div class="xt-overlay">
       <div class="xt-backdrop bg-black opacity-25"></div>
-      <div class="demo--overlay-messageoutside left-0">
+      <div class="demo--overlay-messageoutside fixed h-full left-0 hidden md:flex items-center justify-center pointer-events-none">
         <div class="w-10/12 lg:w-8/12">
-          <div class="xt-card rounded-md ${cardDefault()}">
+          <div class="xt-card rounded-md ${cardDefault()} pointer-events-auto">
             <div class="${cardMd()}">
               <div class="xt-h4">Lorem ipsum</div>
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>

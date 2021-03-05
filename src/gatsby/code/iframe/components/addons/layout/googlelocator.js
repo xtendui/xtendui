@@ -21,11 +21,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="googlelocator">
+<div class="googlelocator flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
 
-  <div class="googlelocator-aside">
+  <div class="googlelocator-aside relative z-10">
 
-    <div class="googlelocator-aside-head">
+    <div class="relative p-6 border-b border-gray-200">
 
       <form class="text-sm">
         <div class="xt-row xt-row-x-6 xt-row-y-4">
@@ -77,40 +77,40 @@ demo.htmlSource = `
 
     </div>
 
-    <div class="googlelocator-aside-body">
+    <div class="googlelocator-aside-body relative p-6">
 
-      <div class="googlelocator-result googlelocator-result--initial">
+      <div class="googlelocator-result googlelocator-result--initial text-xs pb-4 border-b border-gray-200">
         Insert your position and find a place near you
       </div>
 
-      <div class="googlelocator-result googlelocator-result--error">
+      <div class="googlelocator-result googlelocator-result--error text-xs pb-4 border-b border-gray-200">
         Request timed out, retry
       </div>
 
-      <div class="googlelocator-result googlelocator-result--noplace">
+      <div class="googlelocator-result googlelocator-result--noplace text-xs pb-4 border-b border-gray-200">
         Not a valid place
       </div>
 
-      <div class="googlelocator-result googlelocator-result--empty">
+      <div class="googlelocator-result googlelocator-result--empty text-xs pb-4 border-b border-gray-200">
         No place found
       </div>
 
-      <div class="googlelocator-result googlelocator-result--founds">
+      <div class="googlelocator-result googlelocator-result--founds text-xs pb-4 border-b border-gray-200">
         <span class="googlelocator-result--found"></span>
         places found
       </div>
 
-      <div class="googlelocator-items">
+      <div class="googlelocator-items mt-4">
 
         <script type="text/x-template">
-          <div class="googlelocator-item" tabindex="-1">
-            <div class="xt-list">
+          <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600" tabindex="-1">
+            <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
               <div class="googlelocator-item-content">
-                <div class="googlelocator-item-name" data-xt-populate="name"></div>
-                <address class="googlelocator-item-address" data-xt-populate="address"></address>
-                <div class="googlelocator-item-additional" data-xt-populate="additional"></div>
+                <div class="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
+                <address class="text-sm uppercase not-italic" data-xt-populate="address"></address>
+                <div class="text-sm uppercase" data-xt-populate="additional"></div>
               </div>
-              <a href="#" target="_blank" class="googlelocator-item-directions xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
+              <a href="#" target="_blank" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
                 ${iconLocate({ classes: 'text-xl -my-1' })}
                 <span data-xt-populate="distance"></span>
               </a>
@@ -124,13 +124,13 @@ demo.htmlSource = `
 
   </div>
 
-  <div class="googlelocator-main">
-    <div class="googlelocator-main-inner">
+  <div class="googlelocator-main relative flex-auto min-h-full md:fixed md:inset-0">
+    <div class="relative w-full h-full">
 
-      <div class="googlelocator-main-map">
+      <div class="googlelocator-main-map w-full h-full">
       </div>
 
-      <button type="button" class="button--repeat xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <button type="button" class="button--repeat absolute z-10 top-4 left-4 xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         Search in this area
       </button>
 

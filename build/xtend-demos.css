@@ -1,5 +1,4 @@
 @import 'xtendui/static/demos/components/addons/layout/googlelocator.css';
-@import 'xtendui/static/demos/components/addons/layout/jumptocontent.css';
 @import 'xtendui/static/demos/components/addons/layout/stickyfooter.css';
 @import 'xtendui/static/demos/components/addons/list-group/expand.css';
 @import 'xtendui/static/demos/components/addons/listing/infinitescroll.css';
@@ -32,8 +31,6 @@
 @import 'xtendui/static/demos/components/core/toggle/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/toggle/class-custom.css';
 @import 'xtendui/static/demos/components/core/toggle/custom-options.css';
-@import 'xtendui/static/demos/components/core/toggle/disable.css';
-@import 'xtendui/static/demos/components/core/toggle/jump.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/core/tooltip/disable.css';

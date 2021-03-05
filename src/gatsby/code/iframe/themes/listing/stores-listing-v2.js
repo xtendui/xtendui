@@ -21,15 +21,15 @@ demo.htmlSource = `
     <div class="xt-row xt-row-6 xt-row-stretch">
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum
@@ -72,15 +72,15 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum
@@ -111,15 +111,15 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum
@@ -162,15 +162,15 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum
@@ -201,15 +201,15 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum
@@ -252,15 +252,15 @@ demo.htmlSource = `
       </div>
 
       <div class="w-full md:w-6/12 lg:w-4/12">
-        <div class="listing-item block w-full">
+        <div class="listing-item block relative overflow-hidden w-full">
 
-          <div class="listing-item-front xt-card rounded-md ${cardDefaultFull()}">
+          <div class="listing-item-front absolute inset-0 xt-card rounded-md ${cardDefaultFull()}">
             <div class="xt-media-container bg-gray-200 h-40">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
               </div>
             </div>
-            <div class="mt-6 h-full flex flex-col">
+            <div class="mt-6 flex flex-col">
               <div class="xt-card ${cardSm()} flex-initial py-0 border-l border-gray-300">
                 <div class="xt-h5">
                   Lorem Ipsum

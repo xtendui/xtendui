@@ -12,7 +12,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ targets: '.demo--toggle-jump', jump: true }">
+<div class="xt-list xt-list-3 items-center" data-xt-toggle="{ targets: '.xt-card', jump: true }">
 
   <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
     Toggle 0
@@ -26,15 +26,15 @@ demo.htmlSource = `
     Toggle 2
   </button>
 
-  <div class="xt-card demo--toggle-jump rounded-md ${cardToggle()}">
+  <div class="xt-card rounded-md ${cardToggle()} transition opacity-50 active:opacity-100">
     Target 0
   </div>
 
-  <div class="xt-card demo--toggle-jump rounded-md ${cardToggle()}">
+  <div class="xt-card rounded-md ${cardToggle()} transition opacity-50 active:opacity-100">
     Target 1
   </div>
 
-  <div class="xt-card demo--toggle-jump rounded-md ${cardToggle()}">
+  <div class="xt-card rounded-md ${cardToggle()} transition opacity-50 active:opacity-100">
     Target 2
   </div>
 

@@ -46,10 +46,6 @@ Xt.mount.push({
 
     const eventClick = e => {
       const tr = e.target.closest('.listing-item')
-      // disable on mobile
-      if (matchMedia('(max-width: 767px)').matches) {
-        return
-      }
       // deactivate
       for (const other of Array.from(items).filter(x => x !== tr)) {
         eventOff(other)

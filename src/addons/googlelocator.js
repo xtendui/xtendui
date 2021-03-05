@@ -332,7 +332,7 @@ class Googlelocator {
   populateItems() {
     const self = this
     // remove old
-    const removes = self.object.querySelectorAll('.googlelocator-clone')
+    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
       remove.remove()
     }
@@ -568,7 +568,7 @@ class Googlelocator {
       self.resultElement.classList.remove('error')
     }
     // clone
-    const removes = self.object.querySelectorAll('.googlelocator-clone')
+    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
       remove.remove()
     }
@@ -708,10 +708,8 @@ Googlelocator.optionsDefault = {
       } else {
         distance = `${Math.round(loc.distance)} m`
       }
+      console.log(el, distance)
       el.innerHTML = distance
-      if (self.searchInput.value === '') {
-        el.remove()
-      }
     },
     info: function (self, loc, el) {
       return el.outerHTML
