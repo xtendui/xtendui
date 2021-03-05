@@ -95,7 +95,7 @@ demo.htmlSource = `
             <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
-            <div class="${cardMd()} rounded-t-md bg-gray-500">
+            <div class="${cardMd()} rounded-t-md bg-gray-300">
               <div class="xt-h4">Lorem ipsum</div>
             </div>
             <div class="${cardMd()}">

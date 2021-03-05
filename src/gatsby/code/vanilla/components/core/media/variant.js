@@ -13,7 +13,7 @@ demo.htmlSource = `
   <div class="xt-media-container bg-gray-200" style="padding-bottom: 20%;">
   </div>
 
-  <div class="xt-media-container bg-gray-400" style="padding-bottom: 20%;">
+  <div class="xt-media-container bg-gray-300" style="padding-bottom: 20%;">
   </div>
 
   <div class="xt-media-container bg-gray-600" style="padding-bottom: 20%;">

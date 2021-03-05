@@ -40,7 +40,7 @@ demo.htmlSource = `
 
   <div class="w-full">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <div class="${cardMd()} rounded-t-md bg-gray-500">
+      <div class="${cardMd()} rounded-t-md bg-gray-300">
         <div class="xt-h4">Lorem ipsum</div>
       </div>
       <div class="${cardMd()}">

@@ -17,7 +17,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="xt-card rounded-md ${cardDefault()}">
-      <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
+      <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
         ${iconX()}
       </button>
       <div class="${cardMd()}">
@@ -29,7 +29,7 @@ demo.htmlSource = `
 
   <div class="w-full md:w-6/12">
     <div class="xt-card rounded-md ${cardPrimary()}">
-      <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
+      <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
         ${iconX()}
       </button>
       <div class="${cardMd()}">

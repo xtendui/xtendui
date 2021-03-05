@@ -26,7 +26,7 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4">
       <div class="xt-card w-64 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-lg" aria-label="Close">
+        <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-lg" aria-label="Close">
           ${iconX()}
         </button>
         <div class="${cardSm()}">
@@ -46,7 +46,7 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4">
       <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
+        <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
           ${iconX()}
         </button>
         <div class="${cardMd()}">
@@ -66,7 +66,7 @@ demo.htmlSource = `
 
     <div class="xt-drop p-4">
       <div class="xt-card w-96 rounded-md shadow-drop ${cardWhite()}">
-        <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
+        <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-2xl" aria-label="Close">
           ${iconX()}
         </button>
         <div class="${cardLg()}">

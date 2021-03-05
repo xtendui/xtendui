@@ -1,6 +1,5 @@
 import path from 'path'
 
-const cardSm = require('components/snippets/classes').cardSm
 const cardMd = require('components/snippets/classes').cardMd
 const cardDefaultFull = require('components/snippets/classes').cardDefaultFull
 
@@ -31,7 +30,7 @@ demo.htmlSource = `
           <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
         </div>
       </div>
-      <div class="${cardMd()} px-0 pb-0">
+      <div class="text-base pt-6">
         <div class="xt-h4">Lorem ipsum</div>
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
@@ -40,13 +39,13 @@ demo.htmlSource = `
 
   <div class="w-full">
     <div class="xt-card rounded-md ${cardDefaultFull()}">
-      <div class="${cardMd()} rounded-md bg-gray-500">
+      <div class="${cardMd()} rounded-md bg-gray-300">
         <div class="xt-h4">Lorem ipsum</div>
       </div>
-      <div class="${cardMd()} px-0">
+      <div class="text-base pt-6">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
-      <div class="${cardSm()} px-0 py-0">
+      <div class="text-sm pt-6">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
       </div>
     </div>
