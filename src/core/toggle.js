@@ -2484,18 +2484,28 @@ class Toggle {
     const options = self.options
     if (options.classHtml) {
       if (actionCurrent === 'On') {
-        // checks
-        Xt.classHtml.add(self.ns)
-        // class on
-        const container = document.documentElement
-        container.classList.add(...options.classHtml.split(' '))
-      } else if (actionCurrent === 'Off') {
-        // checks
-        Xt.classHtml.remove(self.ns)
-        if (!Xt.classHtml.get().length) {
-          // class off
+        for (const c of options.classHtml.split(' ')) {
+          // checks
+          Xt.classHtml.add({
+            c: c,
+            ns: self.ns,
+          })
+          // class on
           const container = document.documentElement
-          container.classList.remove(...options.classHtml.split(' '))
+          container.classList.add(c)
+        }
+      } else if (actionCurrent === 'Off') {
+        for (const c of options.classHtml.split(' ')) {
+          // checks
+          Xt.classHtml.remove({
+            c: c,
+            ns: self.ns,
+          })
+          if (!Xt.classHtml.get({ c: c }).length) {
+            // class off
+            const container = document.documentElement
+            container.classList.remove(c)
+          }
         }
       }
     }

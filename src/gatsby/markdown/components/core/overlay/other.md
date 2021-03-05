@@ -51,7 +51,6 @@ You can have the `.xt-dismiss` with `.fixed.z-last.mr-2` and moved inside `.xt-o
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
 | Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
 
 </div>

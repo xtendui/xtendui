@@ -55,6 +55,8 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
 
 ## Class html
 
+You can set **html classes on activation**, remember to keep default `classHtml` classes.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -67,3 +69,13 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
   <demovanilla src="vanilla/components/core/overlay/class-html">
   </demovanilla>
 </demo>
+
+## Other
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
+
+</div>

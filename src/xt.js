@@ -416,27 +416,28 @@ Xt.classHtml = {
   currents: [],
 
   /**
-   * get classHtml currents
-   * @return {Array} Currents
-   */
-  get: () => {
-    return Xt.classHtml.currents
-  },
-
-  /**
    * add classHtml currents
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {Object} obj Object
    */
-  add: el => {
-    Xt.classHtml.currents.push(el)
+  add: obj => {
+    Xt.classHtml.currents.push(obj)
   },
 
   /**
    * remove classHtml currents
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {Object} obj Object
    */
-  remove: el => {
-    Xt.classHtml.currents = Xt.classHtml.currents.filter(x => x !== el)
+  remove: obj => {
+    Xt.classHtml.currents = Xt.classHtml.currents.filter(x => x.c !== obj.c || x.ns !== obj.ns)
+  },
+
+  /**
+   * get classHtml currents
+   * @param {Object} obj Object
+   * @return {Array} Currents
+   */
+  get: obj => {
+    return Xt.classHtml.currents.filter(x => x.c === obj.c)
   },
 }
 

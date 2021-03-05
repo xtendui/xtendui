@@ -101,6 +101,17 @@ Test auto.
   </demovanilla>
 </demo>
 
+## Class Html
+
+Test classes nested should not remove additional class.
+
+Test close all should remove all class.
+
+<demo>
+  <demovanilla src="vanilla/components/core/overlay/class-html">
+  </demovanilla>
+</demo>
+
 ## Api
 
 Test [e.detail.skip = true](/components/core/toggle/api#trigger).
