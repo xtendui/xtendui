@@ -127,7 +127,7 @@ You can use also **css animations**, just add them with **class names** `.active
 
 Use **component utility** `.xt-row-<space>` to space content.
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing) up to 20.
+For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
