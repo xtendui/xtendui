@@ -98,10 +98,14 @@ demo.htmlSource = `
 
       </div>
 
+      <a href="/" class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+        Link #3
+      </a>
+
       <div class="xt-drop-item">
 
         <a href="/" class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
-          Menu #3
+          Menu #4
         </a>
 
         <div class="xt-drop xt-drop-static">
@@ -151,7 +155,7 @@ demo.htmlSource = `
       </div>
 
       <a href="/" class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
-        Link #4
+        Link #5
       </a>
 
     </div>
