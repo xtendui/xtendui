@@ -19,6 +19,8 @@ Use this code to create a **sticky flow** (use large screen to see it in action)
 
 Pratically it's a solution that **scrolls sticky content** when it **overflow the window**, following scroll direction.
 
+Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
+
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/animation/stickyflow">
   </div>
