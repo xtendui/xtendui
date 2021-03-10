@@ -13,10 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor-overlay .xt-sticky',
   mount: ({ object }) => {
-    // vars
-
-    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
-
     // sticky
 
     const sticky = ScrollTrigger.create({
@@ -38,6 +34,8 @@ Xt.mount.push({
 
     // refresh
 
+    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
+
     overlay.addEventListener('on.xt.overlay', () => {
       ScrollTrigger.refresh()
     })
@@ -51,44 +49,63 @@ Xt.mount.push({
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor-overlay body',
   mount: ({ object }) => {
-    // vars
-
-    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
-
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollElements: [overlay],
       scrollSpace: () => {
         return object.querySelector('.xt-sticky').clientHeight
       },
     })
 
-    // refresh
-
-    overlay.addEventListener('on.xt.overlay', () => {
-      overlay.dispatchEvent(new CustomEvent('scroll.trigger.xt.scrolltoanchor'))
-    })
-
     // change
 
-    const eventChange = () => {
+    const eventChange = function () {
+      const selfChange = this
       // val
-      let pos = self.position - self.scrollSpace - self.scrollDistance
+      let pos = selfChange.position - selfChange.scrollSpace - selfChange.scrollDistance
       const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
+      const max = selfChange.scrollElement.scrollHeight - selfChange.scrollElement.clientHeight
       pos = pos < min ? min : pos
       pos = pos > max ? max : pos
       // scroll
-      gsap.killTweensOf(self.scrollElement)
-      gsap.to(self.scrollElement, {
+      gsap.killTweensOf(selfChange.scrollElement)
+      gsap.to(selfChange.scrollElement, {
         scrollTo: pos,
         duration: 1,
         ease: 'quart.inOut',
       })
     }
 
-    self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
+    self.object.addEventListener('change.xt.scrolltoanchor', eventChange.bind(self))
+
+    // init overlays
+
+    const selfsOverlay = []
+    const overlays = document.querySelectorAll('.xt-overlay')
+
+    for (const overlay of overlays) {
+      // init
+
+      let selfOverlay = new Xt.Scrolltoanchor(overlay, {
+        scrollElements: [overlay],
+        preventHash: true,
+        scrollSpace: () => {
+          return overlay.querySelector('.xt-sticky').clientHeight
+        },
+      })
+
+      selfsOverlay.push(selfOverlay)
+
+      // refresh
+
+      overlay.addEventListener('on.xt.overlay', () => {
+        overlay.dispatchEvent(new CustomEvent('scroll.trigger.xt.scrolltoanchor'))
+      })
+
+      // eventChange
+
+      selfOverlay.object.addEventListener('change.xt.scrolltoanchor', eventChange.bind(selfOverlay))
+    }
 
     // unmount
 
@@ -96,6 +113,11 @@ Xt.mount.push({
       self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
       self.destroy()
       self = null
+      for (let selfOverlay of selfsOverlay) {
+        selfOverlay.object.removeEventListener('change.xt.scrolltoanchor', eventChange.bind(selfOverlay))
+        selfOverlay.destroy()
+        selfOverlay = null
+      }
     }
   },
 })

@@ -44,7 +44,7 @@ Xt.mount.push({
 
     let self = new Xt.Scrolltoanchor(object, {
       scrollSpace: () => {
-        return document.querySelector('.xt-sticky').clientHeight
+        return object.querySelector('.xt-sticky').clientHeight
       },
     })
 

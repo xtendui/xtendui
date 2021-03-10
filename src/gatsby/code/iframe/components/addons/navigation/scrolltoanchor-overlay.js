@@ -14,15 +14,90 @@ import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
 export const demo = {
-  container: true,
+  container: false,
   name: path.basename(filename, '.js'),
   dirs: dirs,
 }
 
 demo.htmlSource = `
-<button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
-  Open overlay
-</button>
+<div class="xt-sticky">
+  <div class="xt-card ${cardSm()} ${cardPrimary()}">
+    <div class="xt-list xt-list-3">
+      <a href="#anchor-0" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        #0
+      </a>
+      <a href="#anchor-1" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        #1
+      </a>
+      <a href="#anchor-2" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        #2
+      </a>
+      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+        Open overlay
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="xt-card ${cardSm()} ${cardDefault()}" id="anchor-0">
+    <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+    <div class="xt-list xt-list-3">
+      <a href="#anchor-0" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #0
+      </a>
+      <a href="#anchor-1" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #1
+      </a>
+      <a href="#anchor-2" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #2
+      </a>
+    </div>
+  </div>
+
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+
+  <div class="xt-card ${cardSm()} ${cardDefault()}" id="anchor-1">
+    <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+    <div class="xt-list xt-list-3">
+      <a href="#anchor-0" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #0
+      </a>
+      <a href="#anchor-1" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #1
+      </a>
+      <a href="#anchor-2" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #2
+      </a>
+    </div>
+  </div>
+
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+  <br/><br/><br/><br/><br/><br/><br/>
+
+  <div class="xt-card ${cardSm()} ${cardDefault()}" id="anchor-2">
+    <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+    <div class="xt-list xt-list-3">
+      <a href="#anchor-0" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #0
+      </a>
+      <a href="#anchor-1" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #1
+      </a>
+      <a href="#anchor-2" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        #2
+      </a>
+    </div>
+  </div>
+
+</div>
 
 <div class="xt-overlay" id="demo--overlay-scrolltoanchor">
   <div class="xt-backdrop bg-black opacity-25"></div>
