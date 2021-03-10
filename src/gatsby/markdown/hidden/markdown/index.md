@@ -17,6 +17,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 #### Addons
 
 .multilevel
+.stickyflow .stickyflow-filler
 
 #### Themes
 
