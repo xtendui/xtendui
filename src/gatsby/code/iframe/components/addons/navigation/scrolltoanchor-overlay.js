@@ -32,9 +32,15 @@ demo.htmlSource = `
       <a href="#anchor-2" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
         #2
       </a>
-      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
-        Open overlay
-      </button>
+      <a href="#anchor-overlay-0" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+        #0 overlay
+      </a>
+      <a href="#anchor-overlay-1" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+        #1 overlay
+      </a>
+      <a href="#anchor-overlay-2" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}" data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+        #2 overlay
+      </a>
     </div>
   </div>
 </div>

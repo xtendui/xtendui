@@ -34,13 +34,13 @@ Here are the main **javascript options**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `elements:Array`                          | `[href*="#"]:not([aria-controls])`        | Elements nodes (filter out toggle components toggles with `:not([aria-controls])`)            |
 | Option                    | `matches:Query`                          | `'[href$="{hash}"]:not([aria-controls])'`        | Matches nodes (filter out toggle components toggles with `:not([aria-controls])`)               |
-| Option                    | `scrollElements:Array`                          | `[document.scrollingElement]`        | Scroll nodes (ordered parent > child)             |
+| Option                    | `scrollElements:Query`                          | `'.xt-overlay`        | Query for scroll nodes (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class             |
 | Option                    | `scrollDelay:Number`                          | `250`        | Delay on scroll checks             |
-| Option                    | `preventHash:Boolean`                          | `false`        | Prevent url hash change             |
-| Option                    | `position(scrollingElement, target, self):Function`             | `<Function>`        | Positioning function return `Number`             |
-| Option                    | `scrollSpace(scrollingElement, target, self):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
-| Option                    | `scrollDistance(scrollingElement, target, self):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
+| Option                    | `hash:Boolean`                          | `false`        | Update url with hash             |
+| Option                    | `scrollPosition({ self }):Function`             | `<Function>`        | Positioning function return `Number`             |
+| Option                    | `scrollSpace({ self }):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
+| Option                    | `scrollDistance({ self }):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
 
 </div>
 
@@ -80,8 +80,9 @@ Access properties by getting component object.
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `position:Number`       | Current scroll position to scroll to             |
 | Property                   | `scrollElement:Node`       | Current scrolling element             |
-| Property                   | `position:Number`       | Current scroll position             |
+| Property                   | `scrollPosition:Number`       | Current scroll position             |
 | Property                   | `scrollSpace:Number`       | Current scroll space             |
 | Property                   | `scrollDistance:Number`       | Current scroll distance             |
 

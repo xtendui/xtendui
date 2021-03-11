@@ -52,60 +52,31 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollSpace: () => {
-        return object.querySelector('.xt-sticky').clientHeight
+      scrollSpace: ({ self }) => {
+        let space = 0
+        const spaceEls = self.scrollElement.querySelectorAll('.xt-sticky[style*="position: fixed"]')
+        for (const spaceEl of spaceEls) {
+          space += spaceEl.clientHeight
+        }
+        return space
       },
     })
 
     // change
 
-    const eventChange = function () {
-      const selfChange = this
-      // val
-      let pos = selfChange.position - selfChange.scrollSpace - selfChange.scrollDistance
-      const min = 0
-      const max = selfChange.scrollElement.scrollHeight - selfChange.scrollElement.clientHeight
-      pos = pos < min ? min : pos
-      pos = pos > max ? max : pos
+    const eventChange = () => {
       // scroll
-      gsap.killTweensOf(selfChange.scrollElement)
-      gsap.to(selfChange.scrollElement, {
-        scrollTo: pos,
-        duration: 1,
+      const overlay = self.target.closest('.xt-overlay')
+      const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
+      gsap.killTweensOf(self.scrollElement)
+      gsap.to(self.scrollElement, {
+        scrollTo: self.position,
+        duration: duration,
         ease: 'quart.inOut',
       })
     }
 
-    self.object.addEventListener('change.xt.scrolltoanchor', eventChange.bind(self))
-
-    // init overlays
-
-    const selfsOverlay = []
-    const overlays = document.querySelectorAll('.xt-overlay')
-
-    for (const overlay of overlays) {
-      // init
-
-      let selfOverlay = new Xt.Scrolltoanchor(overlay, {
-        scrollElements: [overlay],
-        preventHash: true,
-        scrollSpace: () => {
-          return overlay.querySelector('.xt-sticky').clientHeight
-        },
-      })
-
-      selfsOverlay.push(selfOverlay)
-
-      // refresh
-
-      overlay.addEventListener('on.xt.overlay', () => {
-        overlay.dispatchEvent(new CustomEvent('scroll.trigger.xt.scrolltoanchor'))
-      })
-
-      // eventChange
-
-      selfOverlay.object.addEventListener('change.xt.scrolltoanchor', eventChange.bind(selfOverlay))
-    }
+    self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
 
     // unmount
 
@@ -113,11 +84,6 @@ Xt.mount.push({
       self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
       self.destroy()
       self = null
-      for (let selfOverlay of selfsOverlay) {
-        selfOverlay.object.removeEventListener('change.xt.scrolltoanchor', eventChange.bind(selfOverlay))
-        selfOverlay.destroy()
-        selfOverlay = null
-      }
     }
   },
 })

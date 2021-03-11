@@ -708,7 +708,6 @@ Googlelocator.optionsDefault = {
       } else {
         distance = `${Math.round(loc.distance)} m`
       }
-      console.log(el, distance)
       el.innerHTML = distance
     },
     info: function (self, loc, el) {
