@@ -135,7 +135,7 @@ export default function Header({ page }) {
               <div className="xt-design"></div>
               <div className="xt-card">
                 <div
-                  className="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 pr-3 text-2xl"
+                  className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"
                   dangerouslySetInnerHTML={{ __html: iconX() }}
                 ></div>

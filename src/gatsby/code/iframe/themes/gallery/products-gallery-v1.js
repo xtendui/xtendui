@@ -118,7 +118,7 @@ demo.htmlSource = `
               <div class="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100" id="overlay--product-images">
                 <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
                 <div class="xt-overlay-container p-0">
-                  <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl" aria-label="Close">
+                  <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
                     ${iconX()}
                   </button>
                   <div class="xt-overlay-inner">

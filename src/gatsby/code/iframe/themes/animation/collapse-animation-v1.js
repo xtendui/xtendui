@@ -4,7 +4,7 @@ import path from 'path'
 const animDesign =
   'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0'
 const animItem =
-  'transform ease-in-out-quint duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
+  'transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0'
 const animItemOpacity =
   'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
 const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0'
@@ -208,7 +208,7 @@ demo.htmlSource = `
     <div class="xt-overlay group" data-xt-duration="700">
       <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
       <div class="xt-overlay-container p-0">
-        <button type="button" class="xt-button xt-dismiss fixed z-last mr-2 top-0 right-0 p-5 text-2xl ${animItem}" aria-label="Close">
+        <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${animItem}" aria-label="Close">
           ${iconX()}
         </button>
         <div class="xt-overlay-inner ${animDesign}">

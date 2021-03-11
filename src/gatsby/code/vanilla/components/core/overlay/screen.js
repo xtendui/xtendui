@@ -27,7 +27,7 @@ demo.htmlSource = `
         <div class="xt-overlay-inner">
 
           <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
+            <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="max-w-3xl">
@@ -56,7 +56,7 @@ demo.htmlSource = `
         <div class="xt-overlay-inner">
 
           <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
+            <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="xt-media-container bg-gray-200 xt-ratio-100">
@@ -81,7 +81,7 @@ demo.htmlSource = `
         <div class="xt-overlay-inner">
 
           <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${cardWhite()}">
-            <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
+            <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${iconX()}
             </button>
             <div class="max-w-3xl">

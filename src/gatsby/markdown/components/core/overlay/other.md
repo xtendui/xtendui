@@ -38,7 +38,10 @@ You can put **any content** inside, here are some examples.
 
 ## Close fixed
 
-You can have the `.xt-dismiss` with `.fixed.z-last.mr-2` and moved inside `.xt-overlay-container` to have it **fixed inside the overlay**.
+You can have the the close button with `.fixed` to have it **fixed inside the overlay**.
+
+[[noteDefault]]
+| Do not transition margin on`.fixed` because `.xt-scrollbar-overlay.xt-overlay .fixed` gets automatic `margin-right` to prevent moving with scrollbars.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/close-fixed">

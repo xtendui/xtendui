@@ -110,7 +110,7 @@ demo.htmlSource = `
   <div class="xt-overlay-container p-0">
     <div class="xt-overlay-inner">
 
-      <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
+      <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
         ${iconX()}
       </button>
 

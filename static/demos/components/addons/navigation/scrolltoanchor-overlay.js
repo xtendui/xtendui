@@ -13,32 +13,38 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor-overlay .xt-sticky',
   mount: ({ object }) => {
+    // vars
+
+    const overlay = object.closest('.xt-overlay')
+
     // sticky
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
+    const initSticky = () => {
+      const sticky = ScrollTrigger.create({
+        trigger: object,
+        start: 'top top',
+        endTrigger: 'html',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
       })
-    })
 
-    // refresh
+      ScrollTrigger.addEventListener('refresh', () => {
+        // @FIX ScrollTrigger pin mount ignore
+        sticky.pin.classList.add('xt-ignore')
+        requestAnimationFrame(() => {
+          sticky.pin.classList.remove('xt-ignore')
+        })
+      })
+    }
 
-    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
-
-    overlay.addEventListener('on.xt.overlay', () => {
-      ScrollTrigger.refresh()
-    })
+    if (overlay) {
+      overlay.addEventListener('on.xt.overlay', () => {
+        initSticky()
+      })
+    } else {
+      initSticky()
+    }
   },
 })
 
