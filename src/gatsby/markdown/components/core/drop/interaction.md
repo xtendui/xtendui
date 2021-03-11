@@ -39,7 +39,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 | Option                  | `on:String`                              | `'click'`                     | Set event to listen for activation           |
 | Option                  | `off:String`                             | `'click'`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
 | Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-drop'`        | Limit on and off events within selector            |
-| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on `closeauto.trigger.xt` event            |
+| Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on window `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop'`        | Query Node inside to close on click, no nested Nodes            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |

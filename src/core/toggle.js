@@ -656,7 +656,7 @@ class Toggle {
     }
     // closeauto
     if (options.closeAuto) {
-      const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventAutocloseHandler.bind(self))
+      const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventCloseautoHandler.bind(self))
       addEventListener('closeauto.trigger.xt', closeautoHandler)
     }
     // mediaLoaded
@@ -938,7 +938,7 @@ class Toggle {
    * closeauto handler
    * @param {Event} e
    */
-  eventAutocloseHandler(e) {
+  eventCloseautoHandler(e) {
     const self = this
     // check
     let check = self.object
