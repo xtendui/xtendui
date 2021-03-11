@@ -60,6 +60,9 @@ Xt.mount.push({
     const innerTime = 1
     const innerEase = 'expo.out'
 
+    let innerHeightFinal = 0
+    let innerHeightCache = 0
+
     // init
 
     let self = new Xt.Drop(object, {
@@ -113,9 +116,9 @@ Xt.mount.push({
           height: '',
         })
         const innerHeight = inner.clientHeight
-        Xt.dataStorage.set(self.object, 'innerHeightFinal', innerHeight)
+        innerHeightFinal = innerHeight
         gsap.set(inner, {
-          height: Xt.dataStorage.get(self.object, 'innerHeightCache') ?? 0,
+          height: innerHeightCache,
         })
         gsap
           .to(inner, {
@@ -124,9 +127,7 @@ Xt.mount.push({
             ease: innerEase,
           })
           .eventCallback('onUpdate', () => {
-            if (self) {
-              Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
-            }
+            innerHeightCache = inner.clientHeight
           })
         // when sequential interaction
         if (self.direction) {
@@ -136,10 +137,10 @@ Xt.mount.push({
             const inner = target.querySelector('.xt-drop-inner')
             gsap.killTweensOf(inner)
             gsap.set(inner, {
-              height: Xt.dataStorage.get(self.object, 'innerHeightCache') ?? 0,
+              height: innerHeightCache,
             })
             gsap.to(inner, {
-              height: Xt.dataStorage.get(self.object, 'innerHeightFinal'),
+              height: innerHeightFinal,
               duration: innerTime,
               ease: innerEase,
             })
@@ -186,9 +187,7 @@ Xt.mount.push({
               ease: innerEase,
             })
             .eventCallback('onUpdate', () => {
-              if (self) {
-                Xt.dataStorage.set(self.object, 'innerHeightCache', inner.clientHeight)
-              }
+              innerHeightCache = inner.clientHeight
             })
         }
       }
