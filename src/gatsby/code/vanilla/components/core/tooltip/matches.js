@@ -1,7 +1,6 @@
 import path from 'path'
 
-const tooltipMd = require('components/snippets/classes').tooltipMd
-const cardBlack = require('components/snippets/classes').cardBlack
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -20,7 +19,7 @@ demo.htmlSource = `
     <a href="#">dolor</a>
 
     <div class="xt-tooltip p-2">
-      <div class="relative ${tooltipMd()} rounded-md shadow-tooltip ${cardBlack()}">
+      <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>

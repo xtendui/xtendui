@@ -7,9 +7,8 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-const tooltipSm = require('components/snippets/classes').tooltipSm
-const cardBlack = require('components/snippets/classes').cardBlack
-const iconLink = require('components/snippets/icons').iconLink
+
+const classes = require('components/snippets/classes').classes
 
 import 'assets/scripts/shared'
 
@@ -302,7 +301,7 @@ Xt.mount.push({
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
 <div id="tooltip--demo--close-${closeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
-  <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>
 </div>`)
@@ -431,7 +430,7 @@ const makeDocument = () => {
       Xt.createElement(`
 <span class="gatsby_site-article_anchor">
   <span class="xt-button">
-  ${iconLink()}
+  ${classes.iconLink()}
   </span>
 </span>`)
     )

@@ -1,10 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
-const iconArrowRight = require('components/snippets/icons').iconArrowRight
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -101,7 +98,7 @@ demo.htmlSource = `
                   4. Lorem ipsum dolor sit amet
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   Lorem ipsum
                 </a>
               </div>
@@ -126,7 +123,7 @@ demo.htmlSource = `
                   5. Lorem ipsum dolor sit amet
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   Lorem ipsum
                 </a>
               </div>
@@ -151,7 +148,7 @@ demo.htmlSource = `
                   6. Lorem ipsum dolor sit amet
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.</p>
-                <a href="/" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+                <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   Lorem ipsum
                 </a>
               </div>
@@ -166,13 +163,13 @@ demo.htmlSource = `
 
   <button type="button" class="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group" data-xt-nav="-1" aria-label="Previous slide" data-xt-mousefollow>
     <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
-      ${iconArrowLeft({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
+      ${classes.iconArrowLeft({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
     </div>
   </button>
 
   <button type="button" class="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group" data-xt-nav="1" aria-label="Next slide" data-xt-mousefollow>
     <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
-      ${iconArrowRight({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
+      ${classes.iconArrowRight({ classes: 'transform transition-all group-active:opacity-75 group-active:scale-75' })}
     </div>
   </button>
 

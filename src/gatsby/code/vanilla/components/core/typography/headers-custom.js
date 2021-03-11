@@ -1,13 +1,6 @@
 import path from 'path'
 
-const h1Display = require('components/snippets/headers').h1Display
-const h1 = require('components/snippets/headers').h1
-const h2 = require('components/snippets/headers').h2
-const h3 = require('components/snippets/headers').h3
-const h4 = require('components/snippets/headers').h4
-const h5 = require('components/snippets/headers').h5
-const h6 = require('components/snippets/headers').h6
-const hBlock = require('components/snippets/headers').hBlock
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -17,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="${h1Display()}">
+<div class="${classes.h1Display()}">
   Lorem ipsum dolor sit amet
 </div>
 
@@ -25,7 +18,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h1()}">
+<div class="${classes.h1()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -33,7 +26,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h2()}">
+<div class="${classes.h2()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -41,7 +34,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h3()}">
+<div class="${classes.h3()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -49,7 +42,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h4()}">
+<div class="${classes.h4()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -57,7 +50,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h5()}">
+<div class="${classes.h5()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -65,7 +58,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h6()}">
+<div class="${classes.h6()}">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 
@@ -73,7 +66,7 @@ demo.htmlSource = `
   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
 </p>
 
-<div class="${h6()} ${hBlock()} rounded-md text-black bg-gray-200 text-center">
+<div class="${classes.h6()} ${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
 </div>
 

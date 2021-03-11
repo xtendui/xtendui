@@ -1,9 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const iconSearch = require('components/snippets/icons').iconSearch
-const iconChevronRight = require('components/snippets/icons').iconChevronRight
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -19,24 +16,24 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
     align items<br>default
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md items-center ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md items-center ${classes.buttonPrimary()}">
     align items<br>center
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md items-start ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md items-start ${classes.buttonPrimary()}">
     align items<br>items-start
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md items-end ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md items-end ${classes.buttonPrimary()}">
     align items<br>items-end
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
 </div>
@@ -47,35 +44,35 @@ demo.htmlSource = `
 
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full ${classes.buttonPrimary()}">
     justify content<br>default
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full justify-start ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full justify-start ${classes.buttonPrimary()}">
     justify content<br>items-start
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full justify-center text-center ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full justify-center text-center ${classes.buttonPrimary()}">
     justify content<br>items-center + text-center
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full justify-end text-right ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full justify-end text-right ${classes.buttonPrimary()}">
     justify content<br>items-end + text-right
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full justify-between ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full justify-between ${classes.buttonPrimary()}">
     justify content<br>between
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md w-full ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full ${classes.buttonPrimary()}">
     margin<br>auto
-    ${iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-    ${iconChevronRight({ classes: 'text-xl -my-1 ml-auto' })}
+    ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+    ${classes.iconChevronRight({ classes: 'text-xl -my-1 ml-auto' })}
   </button>
 
 </div>

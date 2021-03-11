@@ -1,11 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const cardSm = require('components/snippets/classes').cardSm
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardDefault = require('components/snippets/classes').cardDefault
-const iconX = require('components/snippets/icons').iconX
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -26,13 +22,13 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner h-full">
 
-            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
               <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Lorem Ipsum
                 </div>
@@ -40,18 +36,18 @@ demo.htmlSource = `
                   Street 42, 00134 City, Nation
                 </address>
               </div>
-              <div class="${cardSm()} mt-auto pt-0">
-                <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+              <div class="${classes.cardSm()} mt-auto pt-0">
+                <button type="button" class="listing-action xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   More info
                 </button>
               </div>
             </div>
 
-            <div class="listing-item-back relative h-full xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
-                ${iconX()}
+                ${classes.iconX()}
               </button>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Contacts
                 </div>
@@ -82,13 +78,13 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner h-full">
 
-            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
               <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Lorem Ipsum
                 </div>
@@ -96,18 +92,18 @@ demo.htmlSource = `
                   Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
-              <div class="${cardSm()} mt-auto pt-0">
-                <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+              <div class="${classes.cardSm()} mt-auto pt-0">
+                <button type="button" class="listing-action xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   More info
                 </button>
               </div>
             </div>
 
-            <div class="listing-item-back relative h-full xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
-                ${iconX()}
+                ${classes.iconX()}
               </button>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Contacts
                 </div>
@@ -126,13 +122,13 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner h-full">
 
-            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
               <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Lorem Ipsum
                 </div>
@@ -140,18 +136,18 @@ demo.htmlSource = `
                   Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
-              <div class="${cardSm()} mt-auto pt-0">
-                <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+              <div class="${classes.cardSm()} mt-auto pt-0">
+                <button type="button" class="listing-action xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   More info
                 </button>
               </div>
             </div>
 
-            <div class="listing-item-back relative h-full xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
-                ${iconX()}
+                ${classes.iconX()}
               </button>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Contacts
                 </div>
@@ -182,13 +178,13 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner h-full">
 
-            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
               <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Lorem Ipsum
                 </div>
@@ -196,18 +192,18 @@ demo.htmlSource = `
                   Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
-              <div class="${cardSm()} mt-auto pt-0">
-                <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+              <div class="${classes.cardSm()} mt-auto pt-0">
+                <button type="button" class="listing-action xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   More info
                 </button>
               </div>
             </div>
 
-            <div class="listing-item-back relative h-full xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
-                ${iconX()}
+                ${classes.iconX()}
               </button>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Contacts
                 </div>
@@ -226,13 +222,13 @@ demo.htmlSource = `
         <div class="listing-item block w-full">
           <div class="listing-item-inner h-full">
 
-            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
               <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
                 </div>
               </div>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Lorem Ipsum
                 </div>
@@ -240,18 +236,18 @@ demo.htmlSource = `
                   Street Lorem Ipsum 42, 00134 City, Nation
                 </address>
               </div>
-              <div class="${cardSm()} mt-auto pt-0">
-                <button type="button" class="listing-action xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+              <div class="${classes.cardSm()} mt-auto pt-0">
+                <button type="button" class="listing-action xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
                   More info
                 </button>
               </div>
             </div>
 
-            <div class="listing-item-back relative h-full xt-card rounded-md ${cardDefault()}">
+            <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl" aria-label="Close">
-                ${iconX()}
+                ${classes.iconX()}
               </button>
-              <div class="${cardSm()}">
+              <div class="${classes.cardSm()}">
                 <div class="xt-h5">
                   Contacts
                 </div>

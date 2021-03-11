@@ -1,12 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const cardSm = require('components/snippets/classes').cardSm
-const cardMd = require('components/snippets/classes').cardMd
-const cardLg = require('components/snippets/classes').cardLg
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardWhite = require('components/snippets/classes').cardWhite
-const iconX = require('components/snippets/icons').iconX
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -20,16 +14,16 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       small
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-64 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-64 rounded-md shadow-drop ${classes.cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-lg" aria-label="Close">
-          ${iconX()}
+          ${classes.iconX()}
         </button>
-        <div class="${cardSm()}">
+        <div class="${classes.cardSm()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>
@@ -40,16 +34,16 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       medium
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
-          ${iconX()}
+          ${classes.iconX()}
         </button>
-        <div class="${cardMd()}">
+        <div class="${classes.cardMd()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>
@@ -60,16 +54,16 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       large
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-96 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-96 rounded-md shadow-drop ${classes.cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-2xl" aria-label="Close">
-          ${iconX()}
+          ${classes.iconX()}
         </button>
-        <div class="${cardLg()}">
+        <div class="${classes.cardLg()}">
           <div class="xt-h3">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>

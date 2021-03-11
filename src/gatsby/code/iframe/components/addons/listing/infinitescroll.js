@@ -1,10 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const spinner = require('components/snippets/spinner').default
-const buttonDefault = require('components/snippets/classes').buttonDefault
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -35,7 +32,7 @@ demo.htmlSource = `
     <div class="infinitescroll-pre mb-4">
       <div class="xt-list xt-list-2 flex-col items-center">
         <div>
-          <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
             Load previous pages
           </button>
         </div>
@@ -195,7 +192,7 @@ demo.htmlSource = `
     <div class="xt-list xt-list-2 flex-col items-center">
 
       <div class="infinitescroll-trigger">
-        <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
 
           <span class="infinitescroll-trigger-content">
             Show more products
@@ -207,7 +204,7 @@ demo.htmlSource = `
 
           <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
             <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
-              ${spinner({ classes: 'animate-xt-spinner' })}
+              ${classes.spinner({ classes: 'animate-xt-spinner' })}
             </span>
           </span>
 

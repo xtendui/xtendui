@@ -4,13 +4,8 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { markdownSlug } from 'components/snippets/markdown-slug'
 import { typeSort } from 'components/snippets/type-sort'
-const buttonMd = require('components/snippets/classes').buttonMd
-const tooltipSm = require('components/snippets/classes').tooltipSm
-const cardBlack = require('components/snippets/classes').cardBlack
-const iconTwitter = require('components/snippets/icons').iconTwitter
-const iconPackage = require('components/snippets/icons').iconPackage
-const iconGithub = require('components/snippets/icons').iconGithub
-const iconX = require('components/snippets/icons').iconX
+
+const classes = require('components/snippets/classes').classes
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`
@@ -53,11 +48,11 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Twitter"
-                        dangerouslySetInnerHTML={{ __html: iconTwitter() }}
+                        dangerouslySetInnerHTML={{ __html: classes.iconTwitter() }}
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Twitter
                         </div>
@@ -70,11 +65,11 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Npm"
-                        dangerouslySetInnerHTML={{ __html: iconPackage() }}
+                        dangerouslySetInnerHTML={{ __html: classes.iconPackage() }}
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Npm
                         </div>
@@ -87,11 +82,11 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Github"
-                        dangerouslySetInnerHTML={{ __html: iconGithub() }}
+                        dangerouslySetInnerHTML={{ __html: classes.iconGithub() }}
                       ></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                         >
                           Visit on Github
                         </div>
@@ -102,7 +97,7 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className={`xt-button ${buttonMd()} rounded-md gatsby_button--overlay`}
+                    className={`xt-button ${classes.buttonMd()} rounded-md gatsby_button--overlay`}
                     aria-label="Menu"
                   >
                     <svg
@@ -137,7 +132,7 @@ export default function Header({ page }) {
                 <div
                   className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"
-                  dangerouslySetInnerHTML={{ __html: iconX() }}
+                  dangerouslySetInnerHTML={{ __html: classes.iconX() }}
                 ></div>
                 <div className="mt-6">
                   <div className="gatsby_site-header_links_container">

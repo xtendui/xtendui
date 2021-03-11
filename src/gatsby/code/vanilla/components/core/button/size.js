@@ -1,9 +1,6 @@
 import path from 'path'
 
-const buttonSm = require('components/snippets/classes').buttonSm
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonLg = require('components/snippets/classes').buttonLg
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -15,15 +12,15 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center">
 
-  <button type="button" class="xt-button ${buttonSm()} rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}">
     small
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
     medium
   </button>
 
-  <button type="button" class="xt-button ${buttonLg()} rounded-md ${buttonPrimary()}">
+  <button type="button" class="xt-button ${classes.buttonLg()} rounded-md ${classes.buttonPrimary()}">
     large
   </button>
 

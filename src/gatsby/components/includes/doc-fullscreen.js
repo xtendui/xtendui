@@ -1,6 +1,7 @@
 import React from 'react'
 
-const iconX = require('components/snippets/icons').iconX
+const classes = require('components/snippets/classes').classes
+
 export default class DocFullscreen extends React.Component {
   render() {
     return (
@@ -10,7 +11,7 @@ export default class DocFullscreen extends React.Component {
           <div
             className="xt-button xt-dismiss absolute z-last top-0 right-0"
             aria-label="Close"
-            dangerouslySetInnerHTML={{ __html: iconX() }}
+            dangerouslySetInnerHTML={{ __html: classes.iconX() }}
           ></div>
           <div className="xt-card-content" id="gatsby_open-full-content"></div>
         </div>

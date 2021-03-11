@@ -1,7 +1,6 @@
 import path from 'path'
 
-const badgeMd = require('components/snippets/classes').badgeMd
-const badgeDefault = require('components/snippets/classes').badgeDefault
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -11,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="xt-badge ${badgeMd()} ${badgeDefault()}">
+<div class="xt-badge ${classes.badgeMd()} ${classes.badgeDefault()}">
   Lorem ipsum
 </div>
 `

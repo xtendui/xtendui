@@ -1,9 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardDefault = require('components/snippets/classes').cardDefault
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -17,7 +15,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="jumptocontent xt-toggle fixed z-above left-0 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0">
-  <a href="#jumptocontent" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+  <a href="#jumptocontent" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
     Jump to content
   </a>
 </div>
@@ -25,14 +23,14 @@ demo.htmlSource = `
 <div class="xt-row xt-row-6">
 
   <div class="w-full">
-    <div class="xt-card rounded-md p-6 ${cardDefault()}">
+    <div class="xt-card rounded-md p-6 ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>
   </div>
 
   <div class="w-full">
-    <div class="xt-card rounded-md p-6 ${cardDefault()}">
+    <div class="xt-card rounded-md p-6 ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</p>
     </div>

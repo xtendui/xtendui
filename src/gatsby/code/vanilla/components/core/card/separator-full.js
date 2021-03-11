@@ -1,6 +1,6 @@
 import path from 'path'
 
-const cardDefaultFull = require('components/snippets/classes').cardDefaultFull
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -13,7 +13,7 @@ demo.htmlSource = `
 <div class="xt-row xt-row-6">
 
   <div class="w-full">
-    <div class="xt-card rounded-md ${cardDefaultFull()}">
+    <div class="xt-card rounded-md ${classes.cardDefaultFull()}">
       <div class="md:xt-card-group">
         <div class="md:w-7/12 pb-6 md:pb-0 md:pr-6">
           <div class="xt-h4">Lorem ipsum</div>

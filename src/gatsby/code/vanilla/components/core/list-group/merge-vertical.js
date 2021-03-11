@@ -1,9 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonDefaultGroup = require('components/snippets/classes').buttonDefaultGroup
-const buttonPrimaryGroup = require('components/snippets/classes').buttonPrimaryGroup
-const iconSearch = require('components/snippets/icons').iconSearch
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -17,12 +14,12 @@ demo.htmlSource = `
 
   <button type="button" class="xt-list flex-col group">
 
-    <div class="xt-button ${buttonMd()} rounded-t-md ${buttonPrimaryGroup()}">
+    <div class="xt-button ${classes.buttonMd()} rounded-t-md ${classes.buttonPrimaryGroup()}">
       Search
     </div>
 
-    <div class="xt-button ${buttonMd()} rounded-b-md ${buttonDefaultGroup()}">
-      ${iconSearch({ classes: 'text-xl -my-1' })}
+    <div class="xt-button ${classes.buttonMd()} rounded-b-md ${classes.buttonDefaultGroup()}">
+      ${classes.iconSearch({ classes: 'text-xl -my-1' })}
     </div>
 
   </button>

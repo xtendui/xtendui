@@ -1,14 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const spinner = require('components/snippets/spinner').default
-const buttonDefault = require('components/snippets/classes').buttonDefault
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const inputDefault = require('components/snippets/classes').inputDefault
-const switchDefault = require('components/snippets/classes').switchDefault
-const iconLocate = require('components/snippets/icons').iconLocate
-const iconSearch = require('components/snippets/icons').iconSearch
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -33,12 +26,12 @@ demo.htmlSource = `
           <div class="w-full">
             <div class="xt-list flex-nowrap">
               <div class="xt-list-inner flex-auto">
-                <input type="text" class="xt-input rounded-l-md ${inputDefault()}" aria-label="Search" placeholder="Search">
-                <button type="button" class="button--locate xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
-                  ${iconLocate({ classes: 'text-xl -my-1' })}
+                <input type="text" class="xt-input rounded-l-md ${classes.inputDefault()}" aria-label="Search" placeholder="Search">
+                <button type="button" class="button--locate xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+                  ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                 </button>
-                <button type="button" class="button--search xt-button ${buttonMd()} rounded-r-md ${buttonDefault()}">
-                  ${iconSearch({ classes: 'text-xl -my-1' })}
+                <button type="button" class="button--search xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonDefault()}">
+                  ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
               </div>
             </div>
@@ -46,28 +39,28 @@ demo.htmlSource = `
 
           <div class="w-full">
             <label class="xt-label-check">
-              <input type="radio" class="xt-check xt-radio rounded-full ${switchDefault()}" name="googlelocator-options" value="" checked/>
+              <input type="radio" class="xt-check xt-radio rounded-full ${classes.switchDefault()}" name="googlelocator-options" value="" checked/>
               <span class="xt-check-content">All types</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="xt-label-check">
-              <input type="radio" class="xt-check xt-radio rounded-full ${switchDefault()}" name="googlelocator-options" value="restaurant"/>
+              <input type="radio" class="xt-check xt-radio rounded-full ${classes.switchDefault()}" name="googlelocator-options" value="restaurant"/>
               <span class="xt-check-content">Restaurant</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="xt-label-check" for="googlelocator-options-school">
-              <input type="radio" class="xt-check xt-radio rounded-full ${switchDefault()}" id="googlelocator-options-school" name="googlelocator-options" value="school"/>
+              <input type="radio" class="xt-check xt-radio rounded-full ${classes.switchDefault()}" id="googlelocator-options-school" name="googlelocator-options" value="school"/>
               <span class="xt-check-content">School</span>
             </label>
           </div>
 
           <div class="w-full">
             <label class="xt-label-check" for="googlelocator-options-fav">
-              <input type="checkbox" class="xt-check xt-switch rounded-full ${switchDefault()}" id="googlelocator-options-fav" name="googlelocator-fav" value="fav"/>
+              <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" id="googlelocator-options-fav" name="googlelocator-fav" value="fav"/>
               <span class="xt-check-content">Favourite</span>
             </label>
           </div>
@@ -111,7 +104,7 @@ demo.htmlSource = `
                 <div class="text-sm uppercase" data-xt-populate="additional"></div>
               </div>
               <a href="#" target="_blank" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
-                ${iconLocate({ classes: 'text-xl -my-1' })}
+                ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                 <span data-xt-populate="distance"></span>
               </a>
             </div>
@@ -130,7 +123,7 @@ demo.htmlSource = `
       <div class="googlelocator-main-map w-full h-full">
       </div>
 
-      <button type="button" class="button--repeat absolute z-10 top-4 left-4 xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <button type="button" class="button--repeat absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Search in this area
       </button>
 
@@ -139,7 +132,7 @@ demo.htmlSource = `
 
   <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
     <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-      ${spinner({ classes: 'animate-xt-spinner' })}
+      ${classes.spinner({ classes: 'animate-xt-spinner' })}
     </span>
   </div>
 </div>

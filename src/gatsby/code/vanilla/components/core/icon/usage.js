@@ -1,23 +1,6 @@
 import path from 'path'
 
-const iconSearch = require('components/snippets/icons').iconSearch
-const iconX = require('components/snippets/icons').iconX
-const iconArrowLeft = require('components/snippets/icons').iconArrowLeft
-const iconArrowRight = require('components/snippets/icons').iconArrowRight
-const iconArrowUp = require('components/snippets/icons').iconArrowUp
-const iconArrowDown = require('components/snippets/icons').iconArrowDown
-const iconChevronLeft = require('components/snippets/icons').iconChevronLeft
-const iconChevronRight = require('components/snippets/icons').iconChevronRight
-const iconChevronUp = require('components/snippets/icons').iconChevronUp
-const iconChevronDown = require('components/snippets/icons').iconChevronDown
-const iconLocate = require('components/snippets/icons').iconLocate
-const iconGithub = require('components/snippets/icons').iconGithub
-const iconPackage = require('components/snippets/icons').iconPackage
-const iconLink = require('components/snippets/icons').iconLink
-const iconCode = require('components/snippets/icons').iconCode
-const iconMaximize = require('components/snippets/icons').iconMaximize
-const iconExternal = require('components/snippets/icons').iconExternal
-const iconCopy = require('components/snippets/icons').iconCopy
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -29,41 +12,41 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3">
 
-  ${iconSearch()}
+  ${classes.iconSearch()}
 
-  ${iconX()}
+  ${classes.iconX()}
 
-  ${iconArrowLeft()}
+  ${classes.iconArrowLeft()}
 
-  ${iconArrowRight()}
+  ${classes.iconArrowRight()}
 
-  ${iconArrowUp()}
+  ${classes.iconArrowUp()}
 
-  ${iconArrowDown()}
+  ${classes.iconArrowDown()}
 
-  ${iconChevronLeft()}
+  ${classes.iconChevronLeft()}
 
-  ${iconChevronRight()}
+  ${classes.iconChevronRight()}
 
-  ${iconChevronUp()}
+  ${classes.iconChevronUp()}
 
-  ${iconChevronDown()}
+  ${classes.iconChevronDown()}
 
-  ${iconLocate()}
+  ${classes.iconLocate()}
 
-  ${iconPackage()}
+  ${classes.iconPackage()}
 
-  ${iconGithub()}
+  ${classes.iconGithub()}
 
-  ${iconLink()}
+  ${classes.iconLink()}
 
-  ${iconCode()}
+  ${classes.iconCode()}
 
-  ${iconMaximize()}
+  ${classes.iconMaximize()}
 
-  ${iconExternal()}
+  ${classes.iconExternal()}
 
-  ${iconCopy()}
+  ${classes.iconCopy()}
 
 </div>
 `

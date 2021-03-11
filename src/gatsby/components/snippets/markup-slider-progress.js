@@ -1,11 +1,10 @@
-const spinner = require('components/snippets/spinner').default
-const cardSlide = require('components/snippets/classes').cardSlide
+const classes = require('components/snippets/classes').classes
 
 export default () => {
   return `
 <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
   <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-active:opacity-100">
-      ${spinner({})}
+      ${classes.spinner({})}
   </span>
 </span>
 
@@ -13,7 +12,7 @@ export default () => {
   <div class="xt-slides-inner xt-row xt-row-4">
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+      <div class="xt-card rounded-md ${classes.cardSlide()}">
         <div class="xt-h4">1</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -25,7 +24,7 @@ export default () => {
     </div>
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+      <div class="xt-card rounded-md ${classes.cardSlide()}">
         <div class="xt-h4">2</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -37,7 +36,7 @@ export default () => {
     </div>
 
     <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+      <div class="xt-card rounded-md ${classes.cardSlide()}">
         <div class="xt-h4">3</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -49,7 +48,7 @@ export default () => {
     </div>
 
     <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+      <div class="xt-card rounded-md ${classes.cardSlide()}">
         <div class="xt-h4">4</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -61,7 +60,7 @@ export default () => {
     </div>
 
     <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
-      <div class="xt-card rounded-md ${cardSlide()}">
+      <div class="xt-card rounded-md ${classes.cardSlide()}">
         <div class="xt-h4">5</div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">

@@ -1,9 +1,6 @@
 import path from 'path'
 
-const buttonSm = require('components/snippets/classes').buttonSm
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonDefault = require('components/snippets/classes').buttonDefault
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -33,16 +30,16 @@ demo.htmlSource = `
     </div>
 
     <nav class="xt-list flex-col multilevel-list">
-      <button type="button" class="xt-button ${buttonMd()} ${buttonDefault()}" data-xt-group="cat-0">
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}" data-xt-group="cat-0">
         Category 0
       </button>
-      <button type="button" class="xt-button ${buttonMd()} ${buttonDefault()}" data-xt-group="cat-1">
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}" data-xt-group="cat-1">
         Category 1
       </button>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 0
       </a>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 1
       </a>
     </nav>
@@ -55,22 +52,22 @@ demo.htmlSource = `
       <div>
         Category 0
       </div>
-      <button type="button" class="xt-button ${buttonSm()} ${buttonPrimary()} multilevel-reset" data-xt-group="initial">
+      <button type="button" class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset" data-xt-group="initial">
         Back
       </button>
     </div>
 
     <nav class="xt-list flex-col multilevel-list">
-      <button type="button" class="xt-button ${buttonMd()} ${buttonDefault()}" data-xt-group="cat-0a">
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}" data-xt-group="cat-0a">
         Category 0a
       </button>
-      <button type="button" class="xt-button ${buttonMd()} ${buttonDefault()}" data-xt-group="cat-0b">
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}" data-xt-group="cat-0b">
         Category 0b
       </button>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 0
       </a>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 1
       </a>
     </nav>
@@ -83,16 +80,16 @@ demo.htmlSource = `
       <div>
         Category 0a
       </div>
-      <button type="button" class="xt-button ${buttonSm()} ${buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
+      <button type="button" class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
         Back
       </button>
     </div>
 
     <nav class="xt-list flex-col multilevel-list">
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 0
       </a>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 1
       </a>
     </nav>
@@ -105,16 +102,16 @@ demo.htmlSource = `
       <div>
         Category 0b
       </div>
-      <button type="button" class="xt-button ${buttonSm()} ${buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
+      <button type="button" class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset" data-xt-group="cat-0">
         Back
       </button>
     </div>
 
     <nav class="xt-list flex-col multilevel-list">
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 0
       </a>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 1
       </a>
     </nav>
@@ -127,16 +124,16 @@ demo.htmlSource = `
       <div>
         Category 1
       </div>
-      <button type="button" class="xt-button ${buttonSm()} ${buttonPrimary()} multilevel-reset" data-xt-group="initial">
+      <button type="button" class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset" data-xt-group="initial">
         Back
       </button>
     </div>
 
     <nav class="xt-list flex-col multilevel-list">
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 0
       </a>
-      <a href="#" class="xt-button ${buttonMd()} ${buttonDefault()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
         Link 1
       </a>
     </nav>

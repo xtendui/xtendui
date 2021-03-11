@@ -1,7 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonDefault = require('components/snippets/classes').buttonDefault
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -19,26 +18,26 @@ demo.htmlSource = `
       <div>
         <div class="xt-list xt-list-px flex-col">
 
-          <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
             Lorem Ipsum
           </button>
 
-          <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
             Dolor sit
           </button>
 
-          <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
             Amet
           </button>
 
         </div>
       </div>
 
-      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Dolor sit
       </button>
 
-      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Amet
       </button>
 
@@ -48,15 +47,15 @@ demo.htmlSource = `
   <div>
     <div class="xt-list xt-list-px">
 
-      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem Ipsum
       </button>
 
-      <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Dolor sit
       </button>
 
-        <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Amet
       </button>
 

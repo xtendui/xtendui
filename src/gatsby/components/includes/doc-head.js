@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const badgeSm = require('components/snippets/classes').badgeSm
+const classes = require('components/snippets/classes').classes
 
 export default class DocHead extends React.Component {
   render() {
@@ -24,7 +24,7 @@ export default class DocHead extends React.Component {
                 ) : null}
                 {page.post.frontmatter.category ? (
                   <div
-                    className={`xt-badge ${badgeSm()} text-black font-sans font-semibold leading-snug tracking-wider uppercase border-gray-300 bg-gray-300 -mt-4 ml-2`}
+                    className={`xt-badge ${classes.badgeSm()} text-black font-sans font-semibold leading-snug tracking-wider uppercase border-gray-300 bg-gray-300 -mt-4 ml-2`}
                   >
                     {page.post.frontmatter.category}
                   </div>

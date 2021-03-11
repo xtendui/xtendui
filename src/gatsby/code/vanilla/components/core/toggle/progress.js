@@ -1,8 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonDefault = require('components/snippets/classes').buttonDefault
-const cardToggle = require('components/snippets/classes').cardToggle
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -14,7 +12,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="xt-list xt-list-3 items-center demo--toggle-progress">
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()} in-toggle">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} in-toggle">
     Toggle 0
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -24,7 +22,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
     Toggle 1
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -34,7 +32,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
     Toggle 2
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -44,7 +42,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
     Toggle 3
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -54,7 +52,7 @@ demo.htmlSource = `
     </span>
   </button>
 
-  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
     Target 0
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -64,7 +62,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
     Target 1
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -74,7 +72,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
     Target 2
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -84,7 +82,7 @@ demo.htmlSource = `
     </span>
   </div>
 
-  <div class="xt-card xt-toggle rounded-md ${cardToggle()}">
+  <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
     Target 3
     <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
       <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">

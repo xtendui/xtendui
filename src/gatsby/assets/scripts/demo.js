@@ -9,13 +9,7 @@ require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 Prism.manual = true
 
-const tooltipSm = require('components/snippets/classes').tooltipSm
-const cardBlack = require('components/snippets/classes').cardBlack
-const spinner = require('components/snippets/spinner').default
-const iconCode = require('components/snippets/icons').iconCode
-const iconMaximize = require('components/snippets/icons').iconMaximize
-const iconExternal = require('components/snippets/icons').iconExternal
-const iconCopy = require('components/snippets/icons').iconCopy
+const classes = require('components/snippets/classes').classes
 
 /**
  * demoHash
@@ -266,15 +260,15 @@ const populateDemo = (container, i) => {
     Xt.createElement(`
 <div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
   <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
-    ${iconCode()}
+    ${classes.iconCode()}
   </button>
   <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
-    <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Show Code
     </div>
   </div>
   <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="xt-tooltip p-2 group" data-xt-duration="300">
-    <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Hide Code
     </div>
   </div>
@@ -284,10 +278,10 @@ const populateDemo = (container, i) => {
     Xt.createElement(`
 <div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
   <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
-    ${iconMaximize()}
+    ${classes.iconMaximize()}
   </button>
   <div class="xt-tooltip p-2 group" data-xt-duration="300">
-    <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Fullscreen
     </div>
   </div>
@@ -297,10 +291,10 @@ const populateDemo = (container, i) => {
     Xt.createElement(`
 <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
   <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
-    ${iconExternal()}
+    ${classes.iconExternal()}
   </a>
   <div class="xt-tooltip p-2 group" data-xt-duration="300">
-    <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
       Open Iframe
     </div>
   </div>
@@ -335,15 +329,15 @@ const populateDemo = (container, i) => {
       <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
         <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end' }">
           <button type="button" class="xt-button xt-button-clipboard" aria-label="Copy to Clipboard">
-            ${iconCopy()}
+            ${classes.iconCopy()}
           </button>
           <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
-            <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
           <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="xt-tooltip p-2 group" data-xt-duration="300">
-            <div class="relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copied!
             </div>
           </div>
@@ -583,7 +577,7 @@ const initializeIframe = (container, item) => {
       Xt.createElement(`
           <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-              ${spinner({ classes: 'animate-xt-spinner' })}
+              ${classes.spinner({ classes: 'animate-xt-spinner' })}
             </div>
           </div>`)
     )

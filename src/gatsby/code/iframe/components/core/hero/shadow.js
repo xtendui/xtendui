@@ -1,8 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -30,7 +29,7 @@ demo.htmlSource = `
       <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Lorem ipsum
       </a>
     </div>
@@ -52,7 +51,7 @@ demo.htmlSource = `
       <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Lorem ipsum
       </a>
     </div>
@@ -74,7 +73,7 @@ demo.htmlSource = `
       <h3 class="xt-p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
       </h3>
-      <a href="#" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <a href="#" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Lorem ipsum
       </a>
     </div>

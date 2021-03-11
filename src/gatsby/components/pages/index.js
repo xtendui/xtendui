@@ -5,11 +5,8 @@ import { Link } from 'gatsby'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
-const tooltipSm = require('components/snippets/classes').tooltipSm
-const cardBlack = require('components/snippets/classes').cardBlack
-const iconTwitter = require('components/snippets/icons').iconTwitter
-const iconPackage = require('components/snippets/icons').iconPackage
-const iconGithub = require('components/snippets/icons').iconGithub
+
+const classes = require('components/snippets/classes').classes
 
 export default class Page extends React.Component {
   render() {
@@ -76,11 +73,11 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Twitter"
-                          dangerouslySetInnerHTML={{ __html: iconTwitter() }}
+                          dangerouslySetInnerHTML={{ __html: classes.iconTwitter() }}
                         ></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Twitter
                           </div>
@@ -93,11 +90,11 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Npm"
-                          dangerouslySetInnerHTML={{ __html: iconPackage() }}
+                          dangerouslySetInnerHTML={{ __html: classes.iconPackage() }}
                         ></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Npm
                           </div>
@@ -110,11 +107,11 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Github"
-                          dangerouslySetInnerHTML={{ __html: iconGithub() }}
+                          dangerouslySetInnerHTML={{ __html: classes.iconGithub() }}
                         ></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${tooltipSm()} rounded-md shadow-tooltip ${cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
                           >
                             Visit on Github
                           </div>

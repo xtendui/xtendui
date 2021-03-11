@@ -1,11 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const cardSm = require('components/snippets/classes').cardSm
-const cardMd = require('components/snippets/classes').cardMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardWhite = require('components/snippets/classes').cardWhite
-const iconX = require('components/snippets/icons').iconX
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -19,14 +14,14 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       asset
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
-          ${iconX()}
+          ${classes.iconX()}
         </button>
         <div class="xt-media-container bg-gray-200 rounded-md xt-ratio-37.5">
           <div class="xt-media-inner">
@@ -40,21 +35,21 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       asset and text
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
+      <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
-          ${iconX()}
+          ${classes.iconX()}
         </button>
         <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
           <div class="xt-media-inner">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="">
           </div>
         </div>
-        <div class="${cardMd()}">
+        <div class="${classes.cardMd()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>
@@ -65,19 +60,19 @@ demo.htmlSource = `
 
   <div data-xt-drop>
 
-    <button type="button" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
       text
     </button>
 
     <div class="xt-drop p-4">
-      <div class="xt-card w-80 rounded-md shadow-drop ${cardWhite()}">
-        <div class="${cardMd()} rounded-t-md bg-gray-300">
+      <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
+        <div class="${classes.cardMd()} rounded-t-md bg-gray-300">
           <div class="xt-h4">Lorem ipsum</div>
         </div>
-        <div class="${cardMd()}">
+        <div class="${classes.cardMd()}">
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>
-        <div class="${cardSm()} pt-0">
+        <div class="${classes.cardSm()} pt-0">
           <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis.</p>
         </div>
       </div>

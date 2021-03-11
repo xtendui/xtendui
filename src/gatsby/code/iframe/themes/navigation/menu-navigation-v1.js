@@ -1,7 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const checkDefault = require('components/snippets/classes').checkDefault
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -19,7 +19,7 @@ demo.htmlSource = `
   <!-- you can remove this -->
   <form class="text-sm container pt-10">
     <label class="xt-label-check">
-      <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked>
+      <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked>
       <span class="xt-check-content">Use mouse events</span>
     </label>
   </form>

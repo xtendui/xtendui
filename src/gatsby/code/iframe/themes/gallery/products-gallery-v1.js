@@ -1,14 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonLg = require('components/snippets/classes').buttonLg
-const cardSm = require('components/snippets/classes').cardSm
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardDefault = require('components/snippets/classes').cardDefault
-const cardPrimary = require('components/snippets/classes').cardPrimary
-const cardWhite = require('components/snippets/classes').cardWhite
-const iconX = require('components/snippets/icons').iconX
-const iconChevronDown = require('components/snippets/icons').iconChevronDown
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -26,7 +19,7 @@ demo.htmlSource = `
 <div class="site-wrapper">
 
   <header class="site-header">
-    <div class="xt-card ${cardSm()} ${cardPrimary()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
       <div class="xt-h4">Header</div>
     </div>
   </header>
@@ -119,11 +112,11 @@ demo.htmlSource = `
                 <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
                 <div class="xt-overlay-container p-0">
                   <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
-                    ${iconX()}
+                    ${classes.iconX()}
                   </button>
                   <div class="xt-overlay-inner">
 
-                    <div class="xt-card items-center justify-center shadow-overlay ${cardWhite()}">
+                    <div class="xt-card items-center justify-center shadow-overlay ${classes.cardWhite()}">
                       <div class="w-full">
 
                         <div class="xt-media-container bg-gray-200 overflow-hidden">
@@ -179,7 +172,7 @@ demo.htmlSource = `
               €&nbsp;229,00
             </div>
 
-            <a href="#" class="xt-button ${buttonLg()} rounded-md mb-6 ${buttonPrimary()}">
+            <a href="#" class="xt-button ${classes.buttonLg()} rounded-md mb-6 ${classes.buttonPrimary()}">
               Add to cart
             </a>
 
@@ -197,13 +190,13 @@ demo.htmlSource = `
     </div>
 
     <a href="#product-continue-target" class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white" title="Scroll to content">
-      ${iconChevronDown()}
+      ${classes.iconChevronDown()}
     </a>
 
   </main>
 
   <footer class="site-footer">
-    <div class="xt-card ${cardSm()} ${cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Footer</div>
     </div>
   </footer>

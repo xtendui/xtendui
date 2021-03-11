@@ -1,11 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-const buttonLg = require('components/snippets/classes').buttonLg
-const cardSm = require('components/snippets/classes').cardSm
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const cardDefault = require('components/snippets/classes').cardDefault
-const cardPrimary = require('components/snippets/classes').cardPrimary
+const classes = require('components/snippets/classes').classes
 
 import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
 
@@ -20,7 +16,7 @@ export const demo = {
 demo.htmlSource = `
 
 <header class="site-header">
-  <div class="xt-card ${cardSm()} ${cardPrimary()}">
+  <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
     <div class="xt-h4">Header</div>
   </div>
 </header>
@@ -92,7 +88,7 @@ demo.htmlSource = `
             €&nbsp;229,00
           </div>
 
-          <a href="#" class="xt-button ${buttonLg()} rounded-md mb-6 ${buttonPrimary()}">
+          <a href="#" class="xt-button ${classes.buttonLg()} rounded-md mb-6 ${classes.buttonPrimary()}">
             Add to cart
           </a>
 
@@ -110,7 +106,7 @@ demo.htmlSource = `
 </main>
 
 <footer class="site-footer">
-  <div class="xt-card ${cardSm()} ${cardDefault()}">
+  <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
     <div class="xt-h4">Footer</div>
   </div>
 </footer>

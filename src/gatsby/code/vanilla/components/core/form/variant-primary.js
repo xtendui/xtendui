@@ -1,12 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonDefault = require('components/snippets/classes').buttonDefault
-const labelPrimary = require('components/snippets/classes').labelPrimary
-const inputPrimary = require('components/snippets/classes').inputPrimary
-const checkPrimary = require('components/snippets/classes').checkPrimary
-const radioPrimary = require('components/snippets/classes').radioPrimary
-const switchPrimary = require('components/snippets/classes').switchPrimary
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -20,38 +14,38 @@ demo.htmlSource = `
   <div class="xt-row xt-row-x-6 xt-row-y-4">
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Input
       </label>
-      <input type="text" class="xt-input rounded-md ${inputPrimary()}" aria-label="Input" placeholder="Input">
+      <input type="text" class="xt-input rounded-md ${classes.inputPrimary()}" aria-label="Input" placeholder="Input">
     </div>
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Disabled
       </label>
-      <input type="text" class="xt-input rounded-md ${inputPrimary()}" aria-label="Input" placeholder="Input" disabled>
+      <input type="text" class="xt-input rounded-md ${classes.inputPrimary()}" aria-label="Input" placeholder="Input" disabled>
     </div>
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         File
       </label>
-      <input type="file" class="xt-input rounded-md ${inputPrimary()}" aria-label="File"/>
+      <input type="file" class="xt-input rounded-md ${classes.inputPrimary()}" aria-label="File"/>
     </div>
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Textarea
       </label>
-      <textarea class="xt-input xt-textarea rounded-md ${inputPrimary()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea"></textarea>
+      <textarea class="xt-input xt-textarea rounded-md ${classes.inputPrimary()} h-24 resize-vertical" aria-label="Textarea" placeholder="Textarea"></textarea>
     </div>
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Select
       </label>
-      <select class="xt-input xt-select xt-select-primary rounded-md ${inputPrimary()}" aria-label="Select">
+      <select class="xt-input xt-select xt-select-primary rounded-md ${classes.inputPrimary()}" aria-label="Select">
         <option selected value="">Select an option</option>
         <option>Option 1</option>
         <option>Option 2</option>
@@ -60,10 +54,10 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Select multiple
       </label>
-      <select class="xt-input xt-select xt-select-primary rounded-md ${inputPrimary()}" aria-label="Select multiple" multiple>
+      <select class="xt-input xt-select xt-select-primary rounded-md ${classes.inputPrimary()}" aria-label="Select multiple" multiple>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
@@ -72,7 +66,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Checkbox
       </label>
 
@@ -80,14 +74,14 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkPrimary()}" checked disabled>
+            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}" checked disabled>
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkPrimary()}">
+            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}">
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -98,7 +92,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Radio
       </label>
 
@@ -106,14 +100,14 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="radio" class="xt-check xt-radio rounded-full ${radioPrimary()}" name="radio-primary" checked>
+            <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioPrimary()}" name="radio-primary" checked>
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="radio" class="xt-check xt-radio rounded-full ${radioPrimary()}" name="radio-primary">
+            <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioPrimary()}" name="radio-primary">
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -124,7 +118,7 @@ demo.htmlSource = `
 
     <div class="w-full">
 
-      <label class="xt-label mb-3 ${labelPrimary()}">
+      <label class="xt-label mb-3 ${classes.labelPrimary()}">
         Switch
       </label>
 
@@ -132,21 +126,21 @@ demo.htmlSource = `
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="checkbox" class="xt-check xt-switch rounded-full ${radioPrimary()}">
+            <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.radioPrimary()}">
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="radio" class="xt-check xt-switch rounded-full ${switchPrimary()}" name="switch-primary" checked>
+            <input type="radio" class="xt-check xt-switch rounded-full ${classes.switchPrimary()}" name="switch-primary" checked>
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
 
         <div class="w-full">
           <label class="xt-label-check">
-            <input type="radio" class="xt-check xt-switch rounded-full ${switchPrimary()}" name="switch-primary">
+            <input type="radio" class="xt-check xt-switch rounded-full ${classes.switchPrimary()}" name="switch-primary">
             <span class="ml-3 text-white xt-links-inverse"><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span>
           </label>
         </div>
@@ -156,7 +150,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="xt-button ${buttonMd()} rounded-md ${buttonDefault()}">
+      <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         submit
       </button>
     </div>

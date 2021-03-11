@@ -1,12 +1,6 @@
 import path from 'path'
 
-const buttonMd = require('components/snippets/classes').buttonMd
-const buttonPrimary = require('components/snippets/classes').buttonPrimary
-const labelDefault = require('components/snippets/classes').labelDefault
-const inputDefault = require('components/snippets/classes').inputDefault
-const checkDefault = require('components/snippets/classes').checkDefault
-const radioDefault = require('components/snippets/classes').radioDefault
-const switchDefault = require('components/snippets/classes').switchDefault
+const classes = require('components/snippets/classes').classes
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -23,13 +17,13 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
+          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
@@ -39,13 +33,13 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
+          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>
@@ -55,13 +49,13 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Lorem ipsum
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Lorem ipsum"/>
+          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum"/>
         </div>
 
       </div>
@@ -71,13 +65,13 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-center">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Dolor sit amet
           </label>
         </div>
 
         <div class="w-full md:w-auto md:self-center">
-          <input type="text" class="xt-input rounded-md ${inputDefault()}" aria-label="Dolor sit amet"/>
+          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet"/>
         </div>
 
       </div>
@@ -87,7 +81,7 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Checkbox
           </label>
         </div>
@@ -97,14 +91,14 @@ demo.htmlSource = `
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}" checked disabled>
+                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked disabled>
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${checkDefault()}">
+                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}">
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
@@ -119,7 +113,7 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Radio
           </label>
         </div>
@@ -129,14 +123,14 @@ demo.htmlSource = `
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-horizontal" checked>
+                <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioDefault()}" name="radio-horizontal" checked>
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="radio" class="xt-check xt-radio rounded-full ${radioDefault()}" name="radio-horizontal">
+                <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioDefault()}" name="radio-horizontal">
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
@@ -151,7 +145,7 @@ demo.htmlSource = `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
 
         <div class="w-full md:w-auto md:self-baseline">
-          <label class="xt-label whitespace-nowrap ${labelDefault()}">
+          <label class="xt-label whitespace-nowrap ${classes.labelDefault()}">
             Switch
           </label>
         </div>
@@ -161,21 +155,21 @@ demo.htmlSource = `
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="checkbox" class="xt-check xt-switch rounded-full ${switchDefault()}">
+                <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}">
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-horizontal">
+                <input type="radio" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" name="switch-horizontal">
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
 
             <div class="w-full md:w-auto">
               <label class="xt-label-check">
-                <input type="radio" class="xt-check xt-switch rounded-full ${switchDefault()}" name="switch-horizontal">
+                <input type="radio" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" name="switch-horizontal">
                 <span class="xt-check-content">Lorem ipsum</span>
               </label>
             </div>
@@ -187,7 +181,7 @@ demo.htmlSource = `
     </div>
 
     <div class="w-full">
-      <button type="submit" class="xt-button ${buttonMd()} rounded-md ${buttonPrimary()}">
+      <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         submit
       </button>
     </div>

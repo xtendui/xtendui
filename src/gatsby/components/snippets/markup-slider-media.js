@@ -1,4 +1,4 @@
-const spinner = require('components/snippets/spinner').default
+const classes = require('components/snippets/classes').classes
 
 export default () => {
   return `
@@ -13,7 +13,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default () => {
         </div>
         <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-            ${spinner({ classes: 'animate-xt-spinner' })}
+            ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
       </div>
