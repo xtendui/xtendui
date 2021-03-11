@@ -148,7 +148,7 @@ You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@
 npm install @babel/core @babel/preset-env --save-dev
 ```
 
-Then in the root of your project set up polyfills with [.babel.config.js](https://github.com/minimit/xtendui/blob/beta/.babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
+Then in the root of your project set up polyfills with [babel.config.js](https://github.com/minimit/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
 
 ## CDN
 
