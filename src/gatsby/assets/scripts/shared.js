@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/build/xtend-core'
 import 'xtendui/build/xtend-addons'
 import 'xtendui/build/xtend-future'
-import 'xtendui/build/xtend-demos'
+//import 'xtendui/build/xtend-demos'
 import gsap from 'gsap'
 gsap.config({ force3D: false }) // smoother pixels animations
 

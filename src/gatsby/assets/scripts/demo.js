@@ -60,13 +60,15 @@ addEventListener('hashchange', demoHash)
 const formatCode = (source, sourceCode) => {
   let text = source.innerHTML
   // ##START and ##END
-  const metas = text.match(/\/\*##START\*\/\n([\S\s]*?)\/\*##END\*\/\n/g)
+  const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
   if (metas) {
     text = ''
     for (const meta of metas.entries()) {
-      text += meta[1].replace(/\/\*##START\*\/\n/g, '').replace(/\/\*##END\*\/\n/g, '')
+      text += meta[1]
     }
   }
+  // remove ##
+  text = text.replace(/\n*[ ]*\/\*##(.*)*/g, '')
   // replace id
   const item = source.closest('.gatsby_demo_item')
   if (item) {
@@ -349,7 +351,7 @@ const populateDemo = (container, i) => {
 </div>`
       )
     )
-    // inject iframe
+    // inject
     if (!item.getAttribute('data-iframe-fullscreen')) {
       if (item.getAttribute('data-iframe')) {
         initializeIframe(container, item)
@@ -364,7 +366,10 @@ const populateDemo = (container, i) => {
         // populate source disable
         container.dataset.isFullscreenOnly = 'true'
       } else {
-        sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
+        const text = item.querySelector('script[type="text/plain"]')
+        if (text) {
+          sourceTo.innerHTML = text.innerHTML
+        }
       }
     }
   }

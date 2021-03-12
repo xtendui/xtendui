@@ -6,6 +6,15 @@ title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## REACT
+
+<demo>
+  <demoreact src="vanilla/components/core/toggle/animation-js-multiple">
+  </demoreact>
+  <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
+  </demovanilla>
+</demo>
+
 ## Classes not xt
 
 #### Core

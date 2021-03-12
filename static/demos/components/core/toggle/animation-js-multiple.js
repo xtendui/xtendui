@@ -1,63 +1,73 @@
+/*##IMPORTSSTART*/
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 import gsap from 'gsap'
+/*##IMPORTSEND*/
 
-Xt.mount.push({
-  matches: '.demo--toggle-animation-js',
-  mount: ({ object }) => {
-    // vars
+class DemoToggleAnimationJsMultiple {
+  constructor(ref) {
+    /*##COMPONENTDIDMOUNTSTART*/
+    this.ref = ref
+    this.init()
+    /*##COMPONENTDIDMOUNTEND*/
+  }
 
-    const targetTimeOn = 0.5
-    const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.5
-    const targetEaseOff = 'quint.out'
-
-    // init
-
-    let self = new Xt.Toggle(object, {
+  /*##METHODSSTART*/
+  init() {
+    this.toggle = new Xt.Toggle(this.ref.querySelector('.demo--toggle-animation-js-multiple'), {
       duration: 500,
     })
-
-    // on
-
-    const eventOn = e => {
-      const tr = e.target
-      gsap.killTweensOf(tr)
-      gsap.set(tr, {
-        x: -self.direction * 15,
-        opacity: 0,
-      })
-      gsap.to(tr, {
-        x: 0,
-        opacity: 1,
-        duration: targetTimeOn,
-        ease: targetEaseOn,
-      })
+    for (const target of this.toggle.targets) {
+      target.addEventListener('on.xt.toggle', this.eventOn.bind(this))
+      target.addEventListener('off.xt.toggle', this.eventOff.bind(this))
     }
+  }
 
-    for (const target of self.targets) {
-      target.addEventListener('on.xt.toggle', eventOn)
-    }
+  eventOn(e) {
+    const tr = e.target
+    const targetTimeOn = 0.5
+    const targetEaseOn = 'quint.out'
+    // target
+    gsap.killTweensOf(tr)
+    gsap.set(tr, {
+      x: -this.toggle.direction * 15,
+      opacity: 0,
+    })
+    gsap.to(tr, {
+      x: 0,
+      opacity: 1,
+      duration: targetTimeOn,
+      ease: targetEaseOn,
+    })
+  }
 
-    // off
+  eventOff(e) {
+    const tr = e.target
+    const targetTimeOff = 0.5
+    const targetEaseOff = 'quint.out'
+    // target
+    gsap.killTweensOf(tr)
+    gsap.to(tr, {
+      x: this.toggle.direction * 15,
+      opacity: 0,
+      duration: targetTimeOff,
+      ease: targetEaseOff,
+    })
+  }
+  /*##METHODSEND*/
 
-    const eventOff = e => {
-      const tr = e.target
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
-        x: self.direction * 15,
-        opacity: 0,
-        duration: targetTimeOff,
-        ease: targetEaseOff,
-      })
-    }
+  destroy() {
+    /*##COMPONENTDIDUNMOUNTSTART*/
+    this.toggle.destroy()
+    this.toggle = null
+    /*##COMPONENTDIDUNMOUNTEND*/
+  }
+}
 
-    for (const target of self.targets) {
-      target.addEventListener('off.xt.toggle', eventOff)
-    }
-
-    // unmount
-
+Xt.mount.push({
+  matches: '#ref--toggle-animation-js-multiple',
+  mount: ({ object }) => {
+    let self = new DemoToggleAnimationJsMultiple(object)
     return () => {
       self.destroy()
       self = null
