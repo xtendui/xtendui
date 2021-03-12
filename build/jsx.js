@@ -4,11 +4,11 @@ const fs = require('fs')
 const path = require('path')
 const indentString = require('indent-string')
 
-new glob.Glob('src/gatsby/code/vanilla/components/core/toggle/animation-js-multiple.js', (er, files) => {
-  for (const file of files) {
+new glob.Glob('src/gatsby/code/vanilla/components/core/toggle/animation-js-multiple.js', (er, filenames) => {
+  for (const filename of filenames) {
     //static/demos/components/core/toggle/animation-js-multiple.js
-    const name = path.basename(file, '.js')
-    const dirs = path.dirname(file).split('/')
+    const name = path.basename(filename, '.js')
+    const dirs = path.dirname(filename).split('/')
     const code = `static/demos/${dirs.join('/')}/${name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
     let str = `import React from 'react'
 `
@@ -31,7 +31,7 @@ class Demo extends React.Component {
   }
 
   componentDidMount() {
-    const ref = this.ref.current
+    this.object = this.ref.current
 `
           // ##COMPONENTDIDMOUNTSTART and ##COMPONENTDIDMOUNTEND
           const mounts = jsText.match(

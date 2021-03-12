@@ -632,9 +632,8 @@ const source = async (item, el) => {
   if (url) {
     const request = await fetch(url, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'text/plain',
-      },
+      headers: new Headers({ 'Content-Type': 'text/plain' }),
+      mode: 'no-cors',
     })
     const response = await request
     const body = await response.text()

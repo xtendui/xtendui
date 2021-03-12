@@ -4,17 +4,17 @@ import 'xtendui/src/core/toggle'
 import gsap from 'gsap'
 /*##IMPORTSEND*/
 
-class DemoToggleAnimationJsMultiple {
+class Demo {
   constructor(ref) {
+    this.object = ref
     /*##COMPONENTDIDMOUNTSTART*/
-    this.ref = ref
     this.init()
     /*##COMPONENTDIDMOUNTEND*/
   }
 
   /*##METHODSSTART*/
   init() {
-    this.toggle = new Xt.Toggle(this.ref.querySelector('.demo--toggle-animation-js-multiple'), {
+    this.toggle = new Xt.Toggle(this.object.querySelector('.demo--toggle-animation-js-multiple'), {
       duration: 500,
     })
     for (const target of this.toggle.targets) {
@@ -67,7 +67,7 @@ class DemoToggleAnimationJsMultiple {
 Xt.mount.push({
   matches: '#ref--toggle-animation-js-multiple',
   mount: ({ object }) => {
-    let self = new DemoToggleAnimationJsMultiple(object)
+    let self = new Demo(object)
     return () => {
       self.destroy()
       self = null

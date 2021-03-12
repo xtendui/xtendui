@@ -1,12 +1,11 @@
 import path from 'path'
 
-let req
+let classes
 try {
-  req = require(path.resolve(`./src/gatsby/components/snippets/classes`))
+  classes = require(path.resolve(`./src/gatsby/components/snippets/classes`)).classes
 } catch (e) {
-  req = require('components/snippets/classes')
+  classes = require('components/snippets/classes').classes
 }
-const classes = req.classes
 
 const html = `
 <div id="ref--toggle-animation-js-multiple">

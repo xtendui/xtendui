@@ -2,9 +2,9 @@ const glob = require('glob')
 const writeFile = require('write')
 
 let jsCore = ''
-const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
-  for (const file of files) {
-    jsCore += `import 'xtendui/${file}'\n`
+const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/*.css.js'] }, (er, filenames) => {
+  for (const filename of filenames) {
+    jsCore += `import 'xtendui/${filename}'\n`
   }
 })
 jsCoreGlob.on('end', () => {
@@ -12,10 +12,10 @@ jsCoreGlob.on('end', () => {
 })
 
 let jsAddons = ``
-const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
-  for (const file of files) {
+const jsAddonsGlob = new glob.Glob('src/addons/**/*.js', { ignore: ['**/*.css.js'] }, (er, filenames) => {
+  for (const filename of filenames) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
-    jsAddons += `import 'xtendui/${file}'\n`
+    jsAddons += `import 'xtendui/${filename}'\n`
   }
 })
 jsAddonsGlob.on('end', () => {
@@ -23,10 +23,10 @@ jsAddonsGlob.on('end', () => {
 })
 
 let jsFuture = ``
-const jsFutureGlob = new glob.Glob('src/future/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
-  for (const file of files) {
+const jsFutureGlob = new glob.Glob('src/future/**/*.js', { ignore: ['**/*.css.js'] }, (er, filenames) => {
+  for (const filename of filenames) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
-    jsFuture += `import 'xtendui/${file}'\n`
+    jsFuture += `import 'xtendui/${filename}'\n`
   }
 })
 jsFutureGlob.on('end', () => {
@@ -34,9 +34,9 @@ jsFutureGlob.on('end', () => {
 })
 
 let jsDemos = ``
-const jsDemosGlob = new glob.Glob('static/demos/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
-  for (const file of files) {
-    jsDemos += `import 'xtendui/${file}'\n`
+const jsDemosGlob = new glob.Glob('static/demos/**/*.js', { ignore: ['**/*.css.js'] }, (er, filenames) => {
+  for (const filename of filenames) {
+    jsDemos += `import 'xtendui/${filename}'\n`
   }
 })
 jsDemosGlob.on('end', () => {

@@ -7,7 +7,10 @@ export default class DemoReact extends React.Component {
     const demo = require(`code/${src}.js`).demo
     const code = `demos/${demo.dirs.join('/')}/${demo.name}`.replace('/vanilla', '').replace('src/gatsby/code/', '')
     const Demo = require(`static/${code}.jsx`).default
-    const jsx = require(`!!raw-loader!static/${code}.jsx`).default
+    try {
+      require(`static/${code}.css`).default
+      // eslint-disable-next-line no-empty
+    } catch (ex) {}
     return (
       <div
         className={'gatsby_demo_item xt-toggle'}
@@ -18,8 +21,13 @@ export default class DemoReact extends React.Component {
         <div className="gatsby_demo_source gatsby_demo_source--from">
           <Demo />
         </div>
-        <script type="text/plain" data-lang="jsx" dangerouslySetInnerHTML={{ __html: jsx }} />
-        <div className="gatsby_demo_source xt-ignore" data-lang="css" data-fetch={`${code}.css`} />
+        <script
+          className="gatsby_demo_source xt-ignore"
+          type="text/plain"
+          data-lang="jsx"
+          data-fetch={`/${code}.jsx`}
+        />
+        <div className="gatsby_demo_source xt-ignore" data-lang="css" data-fetch={`/${code}.css`} />
       </div>
     )
   }

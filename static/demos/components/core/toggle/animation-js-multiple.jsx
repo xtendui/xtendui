@@ -10,8 +10,7 @@ class Demo extends React.Component {
   }
 
   componentDidMount() {
-    const ref = this.ref.current
-    this.ref = ref
+    this.object = this.ref.current
     this.init()
   }
 
@@ -21,7 +20,7 @@ class Demo extends React.Component {
   }
 
   init() {
-    this.toggle = new Xt.Toggle(this.ref.querySelector('.demo--toggle-animation-js-multiple'), {
+    this.toggle = new Xt.Toggle(this.object.querySelector('.demo--toggle-animation-js-multiple'), {
       duration: 500,
     })
     for (const target of this.toggle.targets) {
