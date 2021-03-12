@@ -181,23 +181,25 @@ Xt.Ripple = Ripple
 // observe
 //
 
-Xt.mount.push({
-  matches: `[data-${Xt.Ripple.componentName}]`,
-  mount: ({ object }) => {
-    // vars
+if (typeof window !== 'undefined') {
+  Xt.mount.push({
+    matches: `[data-${Xt.Ripple.componentName}]`,
+    mount: ({ object }) => {
+      // vars
 
-    const optionsMarkup = object.getAttribute(`data-${Xt.Ripple.componentName}`)
-    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+      const optionsMarkup = object.getAttribute(`data-${Xt.Ripple.componentName}`)
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
-    // init
+      // init
 
-    let self = new Xt.Ripple(object, options)
+      let self = new Xt.Ripple(object, options)
 
-    // unmount
+      // unmount
 
-    return () => {
-      self.destroy()
-      self = null
-    }
-  },
-})
+      return () => {
+        self.destroy()
+        self = null
+      }
+    },
+  })
+}

@@ -383,23 +383,25 @@ Xt.Ajax = Ajax
 // observe
 //
 
-Xt.mount.push({
-  matches: `[data-${Xt.Ajax.componentName}]`,
-  mount: ({ object }) => {
-    // vars
+if (typeof window !== 'undefined') {
+  Xt.mount.push({
+    matches: `[data-${Xt.Ajax.componentName}]`,
+    mount: ({ object }) => {
+      // vars
 
-    const optionsMarkup = object.getAttribute(`data-${Xt.Ajax.componentName}`)
-    const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+      const optionsMarkup = object.getAttribute(`data-${Xt.Ajax.componentName}`)
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
-    // init
+      // init
 
-    let self = new Xt.Ajax(object, options)
+      let self = new Xt.Ajax(object, options)
 
-    // unmount
+      // unmount
 
-    return () => {
-      self.destroy()
-      self = null
-    }
-  },
-})
+      return () => {
+        self.destroy()
+        self = null
+      }
+    },
+  })
+}
