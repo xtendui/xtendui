@@ -28,11 +28,12 @@
     "src/future/*.*"
   ],
   "scripts": {
-    "webpack": "webpack --progress",
-    "build": "gatsby clean && gatsby build",
-    "dev": "gatsby clean && gatsby develop -p 8080",
-    "serve": "yarn build && gatsby serve -p 8080",
-    "deploy": "yarn build && gh-pages -d public",
+    "generate": "node ./build/generate.js",
+    "webpack": "yarn generate && webpack --progress",
+    "build": "yarn generate && gatsby clean && gatsby build",
+    "dev": "yarn generate && gatsby clean && gatsby develop -p 8080",
+    "serve": "yarn generate && yarn build && gatsby serve -p 8080",
+    "deploy": "yarn generate && yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
     "postversion": "yarn webpack"

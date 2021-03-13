@@ -88,13 +88,6 @@ module.exports = {
         path: './src/gatsby/components/pages/',
       },
     },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: './src/gatsby/code/',
-        ignore: ['vanilla/**/**'],
-      },
-    },
     // contenful
     {
       resolve: `gatsby-source-contentful`,

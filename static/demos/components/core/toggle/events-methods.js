@@ -1,4 +1,5 @@
 import { Xt } from 'xtendui'
+import 'xtendui/src/core/toggle'
 
 Xt.mount.push({
   matches: '#demo--toggle-events',

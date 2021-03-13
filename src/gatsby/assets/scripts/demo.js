@@ -306,16 +306,21 @@ const populateDemo = (container, i) => {
   for (const [k, item] of items.entries()) {
     // populate tabs
     let name = k
-    let file = item.getAttribute('data-file')
+    /*
+    let id = item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     const src = item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     if (src) {
       name = src.split('/').pop().split('-').join(' ')
-      file = src.split('/').splice(2, 10).join('-')
-    } else if (file) {
-      name = file.split('/').pop().split('-').join(' ')
-      file = file.split('/').splice(3, 10).join('-')
-    }
-    item.setAttribute('id', kebabCase(file))
+      id = src.split('/').splice(2, 10).join('-')
+    } else if (id) {
+      name = id.split('/').pop().split('-').join(' ')
+      id = id.split('/').splice(3, 10).join('-')
+    }*/
+    let id = item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
+    id = id.replace('iframe/', '').replace('demos/', '').replace('components/', '')
+    name = id.split('/').pop().split('-').join(' ')
+    id = id.split('/').join('-')
+    item.setAttribute('id', kebabCase(id))
     container
       .querySelector('.gatsby_demo_tabs_left')
       .append(Xt.createElement(`<button type="button" class="xt-button">${name}</button>`))
@@ -612,12 +617,12 @@ const unloadIframe = iframe => {
   iframe.removeAttribute('src')
 }
 
-window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
+window.initIframe = (name, htmlSource, cssSource, jsSource) => {
   const src = `iframe[name="${name}"]`
   const iframes = document.querySelectorAll(src)
   for (const iframe of iframes) {
     const item = iframe.closest('.gatsby_demo_item')
-    populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
+    populateIframe(item, iframe, htmlSource, cssSource, jsSource)
     // spinner
     item.classList.add('loaded')
   }
@@ -646,15 +651,12 @@ const source = async (item, el) => {
   }
 }
 
-const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
+const populateIframe = async (item, iframe, htmlSource, cssSource, jsSource) => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
     if (htmlSource) {
       item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
-    }
-    if (jsxSource) {
-      item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx">${jsxSource}</div>`))
     }
     if (cssSource) {
       item.append(

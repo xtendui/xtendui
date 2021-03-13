@@ -9,9 +9,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## REACT
 
 <demo>
-  <demoreact src="vanilla/components/core/toggle/animation-js-multiple">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
+  </div>
+  <demoreact src="demos/components/core/toggle/animation-js-multiple">
   </demoreact>
-  <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
+  <demovanilla src="demos/components/core/toggle/animation-js-multiple">
   </demovanilla>
 </demo>
 

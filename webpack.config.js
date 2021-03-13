@@ -3,9 +3,6 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-require('./build/js.js')
-require('./build/jsx.js')
-
 module.exports = {
   mode: 'production',
   performance: { hints: false },

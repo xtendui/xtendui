@@ -1,16 +1,10 @@
 import path from 'path'
 
-let classes
-try {
-  classes = require(path.resolve(`./src/gatsby/components/snippets/classes`)).classes
-} catch (e) {
-  classes = require('components/snippets/classes').classes
-}
+const classes = require(path.resolve(`./src/gatsby/components/snippets/classes`)).classes
 
 const html = `
 <div id="ref--toggle-animation-js-multiple">
   <div class="xt-list xt-list-3 items-center demo--toggle-animation-js-multiple">
-
     <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
       Toggle 0
     </button>
@@ -26,7 +20,6 @@ const html = `
     <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
       Target 1
     </div>
-
   </div>
 </div>
 `
