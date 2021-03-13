@@ -1,6 +1,7 @@
 import path from 'path'
 
-const classes = require(path.resolve(`./src/gatsby/components/snippets/classes`)).classes
+const resolve = module.parent && module.parent.resolve ? module.parent.resolve : ''
+const classes = resolve ? require(resolve + 'components/snippets/classes').classes : require('components/snippets/classes').classes
 
 export const options = {
   container: true
