@@ -38,7 +38,7 @@ export default class DemoInline extends React.Component {
       )
     } else {
       // vanilla
-      const html = require(`static/${src}.html`).default
+      const html = require(`static/${src}.html.js`).object.html
       try {
         require(`static/${src}.js`).default
         // eslint-disable-next-line no-empty

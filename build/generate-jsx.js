@@ -7,9 +7,9 @@ const indentString = require('indent-string')
 
 ;(async () => {
   await del(['static/**/**.jsx'])
-  new glob.Glob('static/**/**.html', (er, files) => {
+  new glob.Glob('static/**/**.html.js', (er, files) => {
     for (const file of files) {
-      const name = path.basename(file, '.html')
+      const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)
       const src = dir + '/' + name
       let str = `import React from 'react'
@@ -83,11 +83,11 @@ class Demo extends React.Component {
       })
       jsGlob.on('end', () => {
         module.resolve = path.resolve(`./src/gatsby/`) + '/'
-        const html = require('esm')(module)(path.resolve(`${src}.html`)).default
+        const html = require('esm')(module)(path.resolve(`${src}.html.js`)).object.html
         str += indentString(
           html
-            .replace(/^export default const html(.*)\n/gm, '')
             .replace(/class="/g, 'className="')
+            // remove first and last line
             .split('\n')
             .slice(2, -2)
             .join('\n'),

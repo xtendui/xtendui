@@ -1,11 +1,5 @@
-import path from 'path'
-
 const resolve = module.parent && module.parent.resolve ? module.parent.resolve : ''
 const classes = resolve ? require(resolve + 'components/snippets/classes').classes : require('components/snippets/classes').classes
-
-export const options = {
-  container: true
-}
 
 const html = `
 <div id="ref--toggle-event-methods">
@@ -83,4 +77,7 @@ const html = `
 </div>
 `
 
-export default html
+export const object = {
+  html: html,
+  container: true,
+}

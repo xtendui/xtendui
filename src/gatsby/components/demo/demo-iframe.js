@@ -12,12 +12,12 @@ export default class DemoIframe extends React.Component {
     const src = location.pathname.substring(1)
     const id = src.replace('demos/', '').replace('components/', '').split('/').join('-')
     // iframe
-    const options = require(`static/${src}.html`).options
+    const object = require(`static/${src}.html`).object
     const seo = {}
     seo.title = src
     seo.description = seo.title
     document.documentElement.classList.add('gatsby_iframe-inside')
-    if (options.container) {
+    if (object.container) {
       document.documentElement.classList.add('gatsby_iframe-container')
     }
     require('assets/scripts/shared')
@@ -55,7 +55,7 @@ export default class DemoIframe extends React.Component {
       )
     } else {
       // vanilla
-      const html = require(`static/${src}.html`).default
+      const html = object.html
       const Xt = require('xtendui').Xt
       const iframeLoaded = () => {
         if (window.self !== window.top) {
