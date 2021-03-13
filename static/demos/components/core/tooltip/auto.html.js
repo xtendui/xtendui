@@ -1,4 +1,4 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children.includes(module))
+const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
 let resolve
 if (moduleParents.length) {
   resolve = moduleParents[0].resolve
@@ -11,20 +11,9 @@ const classes = resolve
 const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ position: 'top' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">top</button>
-
-        <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
-          </div>
-          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
-        </div>
-      </div>
-
-      <div data-xt-tooltip="{ position: 'top-start' }">
+      <div data-xt-tooltip="{ position: 'auto' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          top start
+          auto
         </button>
 
         <div class="xt-tooltip p-2">
@@ -35,9 +24,22 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'top-end' }">
+      <div data-xt-tooltip="{ position: 'auto-start' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          top end
+          auto start
+        </button>
+
+        <div class="xt-tooltip p-2">
+          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+            Lorem ipsum dolor sit amet
+          </div>
+          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+        </div>
+      </div>
+
+      <div data-xt-tooltip="{ position: 'auto-end' }">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          auto end
         </button>
 
         <div class="xt-tooltip p-2">

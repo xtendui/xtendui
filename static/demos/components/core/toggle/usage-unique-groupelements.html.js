@@ -1,4 +1,4 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children.includes(module))
+const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
 let resolve
 if (moduleParents.length) {
   resolve = moduleParents[0].resolve

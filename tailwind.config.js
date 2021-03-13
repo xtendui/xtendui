@@ -7,14 +7,14 @@ module.exports = {
     options: {
       safelist: {
         greedy: [
-          // demos
-          /^iframe--/,
+          // popperjs
+          /^data-popper-/,
           // code
           /pre/,
           /code/,
           /token/,
-          // popperjs
-          /^data-popper-/,
+          // demos
+          /^iframe--/,
         ],
       },
     },

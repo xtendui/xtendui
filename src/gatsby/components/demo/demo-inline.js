@@ -13,7 +13,7 @@ export default class DemoInline extends React.Component {
       // eslint-disable-next-line no-empty
     } catch (ex) {}
     // switch
-    const mode = localStorage.getItem('mode')
+    const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
     if (mode === 'react') {
       // react
       const Demo = require(`static/${src}.jsx`).default

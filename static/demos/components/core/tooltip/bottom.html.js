@@ -1,4 +1,4 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children.includes(module))
+const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
 let resolve
 if (moduleParents.length) {
   resolve = moduleParents[0].resolve
@@ -11,9 +11,9 @@ const classes = resolve
 const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ position: 'left' }">
+      <div data-xt-tooltip="{ position: 'bottom' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          left<br />...
+          bottom
         </button>
 
         <div class="xt-tooltip p-2">
@@ -24,9 +24,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'left-start' }">
+      <div data-xt-tooltip="{ position: 'bottom-start' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          left start<br />...
+          bottom start
         </button>
 
         <div class="xt-tooltip p-2">
@@ -37,9 +37,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'left-end' }">
+      <div data-xt-tooltip="{ position: 'bottom-end' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          left end<br />...
+          bottom end
         </button>
 
         <div class="xt-tooltip p-2">

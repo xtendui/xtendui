@@ -9,9 +9,8 @@ gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const classes = require('components/snippets/classes').classes
-
 import 'assets/scripts/shared'
+const classes = require('components/snippets/classes').classes
 
 /**
  * prevent href="#" links

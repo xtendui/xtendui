@@ -1,4 +1,4 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children.includes(module))
+const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
 let resolve
 if (moduleParents.length) {
   resolve = moduleParents[0].resolve
@@ -10,13 +10,13 @@ const classes = resolve
 
 const html = /* HTML */ `
   <div id="ref--">
-    <div class="xt-list xt-list-3 items-center">
-      <div class="demo--tooltip-animation-js">
+    <div class="relative py-4 px-6 bg-primary-500">
+      <div data-xt-tooltip>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          tooltip
+          static
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2 xt-tooltip-static xt-tooltip-nospace">
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
