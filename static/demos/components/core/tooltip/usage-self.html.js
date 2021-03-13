@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div
       class="xt-tooltip p-2 in-tooltip relative inline-block"

@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div
       class="jumptocontent xt-toggle fixed z-above left-0 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0"

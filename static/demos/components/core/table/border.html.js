@@ -1,4 +1,4 @@
-const html = /* HTML */ `
+const html = `
   <table class="my-4 xt-my-auto w-full rounded-xl border-2 border-separate" style="border-spacing: 0">
     <thead>
       <tr>

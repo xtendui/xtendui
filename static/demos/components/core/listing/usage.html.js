@@ -1,4 +1,4 @@
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="listing py-10">
       <div class="container">

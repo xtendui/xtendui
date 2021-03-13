@@ -1,4 +1,4 @@
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
       <table class="my-4 xt-my-auto w-full">

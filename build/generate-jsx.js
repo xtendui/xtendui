@@ -100,7 +100,7 @@ class Demo extends React.Component {
             .split('\n')
             .slice(2, -2)
             .join('\n'),
-          6
+          4
         )
         str += `
       </div>
@@ -111,7 +111,7 @@ class Demo extends React.Component {
 export default Demo
 `
         const destination = `${src}.jsx`
-        //writeFile(destination, str)
+        writeFile(destination, str)
       })
     }
   })

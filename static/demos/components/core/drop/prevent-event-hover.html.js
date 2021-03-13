@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
       <div class="xt-drop-item">

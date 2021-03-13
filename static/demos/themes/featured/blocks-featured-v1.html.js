@@ -2,7 +2,7 @@ const buttonLine = 'px-0 text-xs font-sans font-semibold leading-snug tracking-w
 const buttonLineDesign = 'absolute w-4 border-t border-current opacity-50'
 const buttonLineContent = 'pl-8'
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="featured inline-block w-full bg-primary-900 text-white xt-links-inverse">
       <a href="#" class="featured-item block my-28">

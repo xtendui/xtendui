@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <nav class="breadcrumbs leading-none truncate">
       <a href="#" class="xt-button text-xs py-2 px-0 text-black ${classes.buttonText()}"> Home </a>

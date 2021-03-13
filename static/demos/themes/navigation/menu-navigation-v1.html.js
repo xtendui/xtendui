@@ -1,9 +1,8 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="megamenu relative bg-primary-500 text-white">
-      <!-- you can remove this -->
       <form class="text-sm container pt-10">
         <label class="xt-label-check">
           <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />

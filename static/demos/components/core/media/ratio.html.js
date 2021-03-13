@@ -1,4 +1,4 @@
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="xt-media-container bg-gray-200" style="padding-bottom: 25%;">
       <div class="xt-media-inner">

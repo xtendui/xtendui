@@ -1,4 +1,4 @@
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     Lorem ipsum <span class="xt-separator xt-separator-dash mx-2 text-primary-500"></span> dolor sit amet
     <span class="xt-separator xt-separator-slash mx-2 text-primary-500"></span> Lorem ipsum

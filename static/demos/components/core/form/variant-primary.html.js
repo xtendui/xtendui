@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <form class="text-sm demo--form-variant-primary py-4 px-6 bg-primary-500">
       <div class="xt-row xt-row-x-6 xt-row-y-4">

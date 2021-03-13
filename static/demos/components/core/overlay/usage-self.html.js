@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="xt-overlay in-overlay" data-xt-overlay>
       <div class="xt-backdrop bg-black opacity-25"></div>

@@ -1,10 +1,10 @@
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="py-10">
       <div class="xt-slider slider--listing" data-xt-slider="{ contain: true, jumpOverflow: true }">
         <div class="xt-slides">
           <div class="container">
-            <div class="xt-h2  mb-8">Latest Products</div>
+            <div class="xt-h2 mb-8">Latest Products</div>
 
             <div class="xt-slides-inner xt-row xt-row-4">
               <div class="xt-slide w-6/12 md:w-4/12">
@@ -148,7 +148,7 @@ const html = /* HTML */ `
 
       <div class="listing">
         <div class="container">
-          <div class="xt-h2  mb-8">Category</div>
+          <div class="xt-h2 mb-8">Category</div>
 
           <div class="xt-row xt-row-6">
             <div class="w-6/12 md:w-4/12">

@@ -10,7 +10,7 @@ const animDesignLeft =
 const animItemLeft =
   'transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-x-0'
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Button</div>
 
@@ -311,7 +311,7 @@ const html = /* HTML */ `
                       </div>
                     </div>
                     <div class="${classes.cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
-                      <p class="xt-h5">Didn't find what you was looking for?</p>
+                      <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
                         <a href="mailto:info@info.com">info@info.com</a>.

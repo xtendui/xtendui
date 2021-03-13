@@ -35,7 +35,7 @@
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .js,.jsx",
     "postversion": "yarn webpack",
     "postinstall" : "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
   },

@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = /* HTML */ `
+const html = `
   <div id="ref--">
     <div class="googlelocator flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
       <div class="googlelocator-aside relative z-10">
