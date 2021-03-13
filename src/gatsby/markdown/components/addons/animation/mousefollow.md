@@ -28,8 +28,8 @@ Use **component classes** to create a **mouse follow**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/addons/animation/mousefollow">
-  </demovanilla>
+  <demoinline src="vanilla/components/addons/animation/mousefollow">
+  </demoinline>
 </demo>
 
 ## Options

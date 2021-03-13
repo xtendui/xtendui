@@ -7,8 +7,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-inverse">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/animation-css-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/animation-css-inverse">
+  </demoinline>
 </demo>

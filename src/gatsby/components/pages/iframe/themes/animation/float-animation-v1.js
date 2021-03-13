@@ -18,7 +18,7 @@ const animItem =
 const animItemOpacity =
   'transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100'
 
-import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
+import DemoIframe from 'components/demo/demo-iframe'
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -527,7 +527,7 @@ demo.htmlSource = `
 
 class Page extends React.Component {
   render() {
-    return <DemoVanillaIframe demo={demo} />
+    return <DemoIframe demo={demo} />
   }
 }
 

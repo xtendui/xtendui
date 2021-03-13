@@ -40,8 +40,8 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/usage-unique">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/overlay/usage-unique">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).
@@ -51,8 +51,8 @@ Check subpage to [customize interaction](/components/core/overlay/interaction) a
 Use this code to create a **overlay** in **multiple mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/usage-multiple">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/overlay/usage-multiple">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/overlay/interaction) and [customize content](/components/core/overlay/content).

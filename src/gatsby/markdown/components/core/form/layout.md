@@ -13,8 +13,8 @@ Use **component utility** to assign [row spacing](/components/core/row/content#s
 Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/mode-row">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/form/mode-row">
+  </demoinline>
 </demo>
 
 ## Inline Row
@@ -22,8 +22,8 @@ Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss
 Inline Row mode with `w-auto`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/mode-inline-row">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/form/mode-inline-row">
+  </demoinline>
 </demo>
 
 ## Horizontal
@@ -33,8 +33,8 @@ Use **component utility** to assign [row spacing](/components/core/row/content#s
 Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/mode-horizontal">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/form/mode-horizontal">
+  </demoinline>
 </demo>
 
 ## Inline Horizontal
@@ -42,6 +42,6 @@ Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss
 Inline Horizontal mode with `w-auto`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/mode-inline-horizontal">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/form/mode-inline-horizontal">
+  </demoinline>
 </demo>

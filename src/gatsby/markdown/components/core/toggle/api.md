@@ -53,8 +53,8 @@ You can add **additional options** that gets added on **match media query**. You
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/matches">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/matches">
+  </demoinline>
 </demo>
 
 ## Util

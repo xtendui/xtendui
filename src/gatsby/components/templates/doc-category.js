@@ -8,12 +8,11 @@ import { typeSort } from 'components/snippets/type-sort'
 import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Demo from 'components/demo/demo'
-import DemoVanilla from 'components/demo/demo-vanilla'
-import DemoReact from 'components/demo/demo-react'
+import DemoInline from 'components/demo/demo-inline'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
-  components: { demo: Demo, demovanilla: DemoVanilla, demoreact: DemoReact },
+  components: { demo: Demo, demoinline: DemoInline },
 }).Compiler
 
 export default class Template extends React.Component {

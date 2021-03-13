@@ -10,12 +10,12 @@ title: "Animation"
 Test direction and queue timing.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-css-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-css-multiple">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/animation-css-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/animation-css-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/animation-css-multiple">
+  </demoinline>
 </demo>
 
 ## Js
@@ -23,12 +23,12 @@ Test direction and queue timing.
 Test direction and queue timing.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-js-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-js-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-js-multiple">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/animation-js-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/animation-js-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/animation-js-multiple">
+  </demoinline>
 </demo>
 
 ## Queue
@@ -36,23 +36,23 @@ Test direction and queue timing.
 Test instant activation when switching.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-multiple-noqueue">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-multiple-noqueue">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-multiple-noqueue">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/animation-multiple-noqueue">
+  </demoinline>
 </demo>
 
 ## Design
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/animation-design">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/overlay/animation-design">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-design">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-design">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/animation-design">
+  </demoinline>
+  <demoinline src="vanilla/components/core/overlay/animation-design">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/animation-design">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/animation-design">
+  </demoinline>
 </demo>

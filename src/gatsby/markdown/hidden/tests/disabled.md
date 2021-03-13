@@ -20,16 +20,16 @@ Test nested
   Overlay open nested and close should have classHtml scrollbar until all nested closed.
 
 <demo>
-  <demovanilla src="vanilla/components/core/card/disable">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/disable">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/overlay/disable">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/disable">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/disable">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/disable">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/card/disable">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/disable">
+  </demoinline>
+  <demoinline src="vanilla/components/core/overlay/disable">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/disable">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/disable">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/disable">
+  </demoinline>
 </demo>

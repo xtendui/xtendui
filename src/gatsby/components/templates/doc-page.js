@@ -7,12 +7,11 @@ import { markdownSlug } from 'components/snippets/markdown-slug'
 import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Demo from 'components/demo/demo'
-import DemoVanilla from 'components/demo/demo-vanilla'
-import DemoReact from 'components/demo/demo-react'
+import DemoInline from 'components/demo/demo-inline'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
-  components: { demo: Demo, demovanilla: DemoVanilla, demoreact: DemoReact },
+  components: { demo: Demo, demoinline: DemoInline },
 }).Compiler
 
 class Template extends React.Component {
@@ -102,7 +101,7 @@ class Template extends React.Component {
                                   {adiacent.frontmatter.demos.map((demo, i) => {
                                     const type = demo.split('/')[0]
                                     if (type === 'vanilla') {
-                                      return <DemoVanilla src={demo} key={i}></DemoVanilla>
+                                      return <DemoInline src={demo} key={i}></DemoInline>
                                     } else if (type === 'iframe') {
                                       return (
                                         <div

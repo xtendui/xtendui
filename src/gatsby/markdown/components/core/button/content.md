@@ -13,8 +13,8 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 Use `.xt-link` to create a [link](/components/core/link).
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/variant">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/variant">
+  </demoinline>
 </demo>
 
 Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss.com/docs/text-color), [text-opacity](https://tailwindcss.com/docs/text-opacity)).
@@ -24,8 +24,8 @@ Text styles on **parent elements** are applied when **inerithed**.
 See [link variant](/components/core/link#variant) to style **links**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/variant-inverse">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/variant-inverse">
+  </demoinline>
 </demo>
 
 ## Size
@@ -33,8 +33,8 @@ See [link variant](/components/core/link#variant) to style **links**.
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/size">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/size">
+  </demoinline>
 </demo>
 
 ## Icons

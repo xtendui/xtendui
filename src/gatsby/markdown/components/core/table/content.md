@@ -11,15 +11,15 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/table/variant">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/table/variant">
+  </demoinline>
 </demo>
 
 To have **table border and border radius** use `.border-separate` and `border-spacing: 0`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/table/border">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/table/border">
+  </demoinline>
 </demo>
 
 ## Interactive
@@ -27,8 +27,8 @@ To have **table border and border radius** use `.border-separate` and `border-sp
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/table/interactive">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/table/interactive">
+  </demoinline>
 </demo>
 
 ## Size
@@ -36,8 +36,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/table/size">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/table/size">
+  </demoinline>
 </demo>
 
 ## Overflow
@@ -45,6 +45,6 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Use **tailwind classes** to overflow with scroll when content is too long (use narrow screen to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/core/table/overflow">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/table/overflow">
+  </demoinline>
 </demo>

@@ -19,8 +19,8 @@ Use **component classes** to style **active**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/active">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/active">
+  </demoinline>
 </demo>
 
 ## Disabled
@@ -39,8 +39,8 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/disabled">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/disabled">
+  </demoinline>
 </demo>
 
 ## Group

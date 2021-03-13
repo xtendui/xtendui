@@ -5,7 +5,7 @@ const buttonLine = 'px-0 text-xs font-sans font-semibold leading-snug tracking-w
 const buttonLineDesign = 'absolute w-4 border-t border-current opacity-50'
 const buttonLineContent = 'pl-8'
 
-import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
+import DemoIframe from 'components/demo/demo-iframe'
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -147,7 +147,7 @@ demo.htmlSource = `
 
 class Page extends React.Component {
   render() {
-    return <DemoVanillaIframe demo={demo} />
+    return <DemoIframe demo={demo} />
   }
 }
 

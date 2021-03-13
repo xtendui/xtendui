@@ -15,13 +15,13 @@ Use `.xt-list-inner.flex-auto` to expand it to **fill width**. On responsive the
 Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/size">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/size">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/size-vertical">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/size-vertical">
+  </demoinline>
 </demo>
 
 ## Space
@@ -29,13 +29,13 @@ Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.co
 Use [list space](/components/core/list/content#space) **component classes** to assign space).
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/space">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/space">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/space-vertical">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/space-vertical">
+  </demoinline>
 </demo>
 
 ## Border
@@ -43,13 +43,13 @@ Use [list space](/components/core/list/content#space) **component classes** to a
 Use **tailwind classes** to assign border.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/border">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/border">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/border-vertical">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/border-vertical">
+  </demoinline>
 </demo>
 
 ## Merge
@@ -57,11 +57,11 @@ Use **tailwind classes** to assign border.
 You can make group a **single interactive object**, be sure to use `group` on the interactive element and the variants `group-hover:` and `group-active:` classes.
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/merge">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/merge">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/list-group/merge-vertical">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/list-group/merge-vertical">
+  </demoinline>
 </demo>

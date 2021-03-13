@@ -25,6 +25,6 @@ Test scroll position.
 Test wrap.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/slider/automaticscroll">
-  </demovanilla>
+  <demoinline src="vanilla/components/addons/slider/automaticscroll">
+  </demoinline>
 </demo>

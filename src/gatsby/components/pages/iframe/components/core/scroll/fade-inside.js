@@ -4,7 +4,7 @@ import path from 'path'
 const markupFade = require('components/snippets/markup-fade').default
 const indentString = require('indent-string')
 
-import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
+import DemoIframe from 'components/demo/demo-iframe'
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -22,7 +22,7 @@ ${indentString(markupFade(), 2)}
 
 class Page extends React.Component {
   render() {
-    return <DemoVanillaIframe demo={demo} />
+    return <DemoIframe demo={demo} />
   }
 }
 

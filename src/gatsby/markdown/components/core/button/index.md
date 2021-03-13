@@ -23,8 +23,8 @@ Use `.xt-button` to create a **button**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/button/usage">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/button/usage">
+  </demoinline>
 </demo>
 
 Check subpage to [customize content](/components/core/button/content).

@@ -11,15 +11,15 @@ description: "Plug and play visual loaders, can easily integrate with javascript
 Use this code to create a **loader spinner**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/spinner">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/loader/spinner">
+  </demoinline>
 </demo>
 
 Use this code to create a **loader filler**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/filler-x">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/loader/filler-x">
+  </demoinline>
 </demo>
 
 Check subpage to [customize content](/components/core/loader/content#filler).

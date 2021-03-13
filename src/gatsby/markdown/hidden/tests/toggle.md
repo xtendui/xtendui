@@ -10,27 +10,27 @@ title: "Toggle"
 Test activation and no close clicking inside with eventLimit.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-self">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/usage-self">
+  </demoinline>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/usage-self">
   </div>
-  <demovanilla src="vanilla/components/core/drop/usage-self">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/usage-self">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/usage-self">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/usage-self">
+  </demoinline>
 </demo>
 
 Test activation and group.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/usage-unique">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/usage-unique-groupelements">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/usage-multiple-group">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/usage-multiple-groupelements">
+  </demoinline>
 </demo>
 
 ## Class
@@ -38,8 +38,8 @@ Test activation and group.
 Test initial activation.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/class">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/class">
+  </demoinline>
 </demo>
 
 ## Event
@@ -51,21 +51,21 @@ Test drop open and close nested.
 Test tooltip open and close nested.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/event">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/event">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/event">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/event">
+  </demoinline>
 </demo>
 
 Test prevent event.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/prevent-event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/prevent-event-hover">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/prevent-event">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/prevent-event-hover">
+  </demoinline>
 </demo>
 
 ## Backdrop
@@ -73,12 +73,12 @@ Test prevent event.
 Test backdrop and no backdrop click.
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/variant">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/backdrop">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/backdrop">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/overlay/variant">
+  </demoinline>
+  <demoinline src="vanilla/components/core/drop/backdrop">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/backdrop">
+  </demoinline>
 </demo>
 
 ## Static
@@ -86,10 +86,10 @@ Test backdrop and no backdrop click.
 Test position and visibility.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/static">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/static">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/static">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/static">
+  </demoinline>
 </demo>
 
 ## Auto
@@ -97,8 +97,8 @@ Test position and visibility.
 Test auto.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/auto">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/auto">
+  </demoinline>
 </demo>
 
 ## Class Html
@@ -108,8 +108,8 @@ Test classes nested should not remove additional class.
 Test close all should remove all class.
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/class-html">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/overlay/class-html">
+  </demoinline>
 </demo>
 
 ## Api

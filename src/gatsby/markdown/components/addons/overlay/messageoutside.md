@@ -11,6 +11,6 @@ description: "Add content on the available side space of overlay with sides."
 Use this code to create a **message outside**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/overlay/messageoutside">
-  </demovanilla>
+  <demoinline src="vanilla/components/addons/overlay/messageoutside">
+  </demoinline>
 </demo>

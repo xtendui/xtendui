@@ -23,8 +23,8 @@ Example of **component disabled on desktop** with [match media](/components/core
 Disable and reset styles accordingly.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/disable">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/disable">
+  </demoinline>
 </demo>
 
 ## Overflow auto
@@ -42,8 +42,8 @@ Slider with `overflowAuto:Boolean` automatically disable when not overflowing.
 Use the class `.xt-overflow-auto` to styles accordingly.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/overflow-auto">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/overflow-auto">
+  </demoinline>
 </demo>
 
 ## Expand
@@ -51,8 +51,8 @@ Use the class `.xt-overflow-auto` to styles accordingly.
 Disable and reset styles accordingly. (use narrow screen to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/expand">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/expand">
+  </demoinline>
 </demo>
 
 ## Touch Overflow
@@ -60,8 +60,8 @@ Disable and reset styles accordingly. (use narrow screen to see it in action).
 Disable and reset styles accordingly. (use touch device to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/touch-overflow">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/touch-overflow">
+  </demoinline>
 </demo>
 
 ## Media loaded
@@ -85,8 +85,8 @@ When you need to reinit the component when the media is loaded and the **width**
 | This demos uses [loader](/components/core/loader) see documentation to **customize**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/media-loaded">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/media-loaded">
+  </demoinline>
 </demo>
 
 [[noteDefault]]

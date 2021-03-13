@@ -19,12 +19,12 @@ Align the slides.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/align-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/align-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/align-right">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/align-left">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/align-center">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/align-right">
+  </demoinline>
 </demo>
 
 ## Group
@@ -42,8 +42,8 @@ With `group: Number` you set a decimal number from 0 to 1 to group the slides wi
 Example of **responsive group** with [match media](/components/core/slider/api#match-media).
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/group-responsive">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/group-responsive">
+  </demoinline>
 </demo>
 
 ## Contain
@@ -59,12 +59,12 @@ Contain the slides and **automatically group** them when the scroll position is 
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/contain-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/contain-right">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/contain-center">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/contain-left">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/contain-right">
+  </demoinline>
 </demo>
 
 ## Wrap
@@ -80,12 +80,12 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/wrap-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-right">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/wrap-center">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/wrap-left">
+  </demoinline>
+  <demoinline src="vanilla/components/core/slider/wrap-right">
+  </demoinline>
 </demo>
 
 ## Other
@@ -104,6 +104,6 @@ If you want to keep the first element height on the slide use `keepHeight: '.xt-
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/other">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/slider/other">
+  </demoinline>
 </demo>

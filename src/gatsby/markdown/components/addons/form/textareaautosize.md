@@ -15,8 +15,8 @@ Import the **component javascript** file with `import 'xtendui/src/addons/textar
 Use this code to create a **textarea autosize**. You can customize `min-height` and `max-height` of the textarea.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/form/textareaautosize">
-  </demovanilla>
+  <demoinline src="vanilla/components/addons/form/textareaautosize">
+  </demoinline>
 </demo>
 
 ## Listen

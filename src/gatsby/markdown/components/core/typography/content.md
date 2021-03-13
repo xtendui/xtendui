@@ -29,8 +29,8 @@ Text styles on **parent elements** are applied when **inerithed**.
 See [link variant](/components/core/link#variant) to style **links**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/variant">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/variant">
+  </demoinline>
 </demo>
 
 ## Headers
@@ -54,8 +54,8 @@ You can use headers **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/headers">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/headers">
+  </demoinline>
 </demo>
 
 Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height), [letter-spacing](https://tailwindcss.com/docs/letter-spacing)).
@@ -64,8 +64,8 @@ Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tail
 | Remember to **override text line height with responsive leading**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/headers-custom">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/headers-custom">
+  </demoinline>
 </demo>
 
 ## Paragraph
@@ -84,8 +84,8 @@ You can use paragraph **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/paragraph">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/paragraph">
+  </demoinline>
 </demo>
 
 ## Text
@@ -93,8 +93,8 @@ You can use paragraph **classes or tags** with customizable styles.
 Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/text">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/text">
+  </demoinline>
 </demo>
 
 ## List
@@ -114,8 +114,8 @@ You can use lists **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/list">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/list">
+  </demoinline>
 </demo>
 
 ## Definition List
@@ -134,8 +134,8 @@ You can use definition lists **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/definition-list">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/definition-list">
+  </demoinline>
 </demo>
 
 ## Figure
@@ -155,8 +155,8 @@ You can use figure and figcaption **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/typography/figure">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/typography/figure">
+  </demoinline>
 </demo>
 
 ## Other

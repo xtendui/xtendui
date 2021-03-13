@@ -37,8 +37,8 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/usage-unique">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
@@ -50,10 +50,10 @@ Use this code to create a **toggle** in **multiple mode**.
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/usage-multiple">
+  </demoinline>
+  <demoinline src="vanilla/components/core/toggle/usage-multiple-group">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
@@ -63,8 +63,8 @@ Check subpage to [customize interaction](/components/core/toggle/interaction).
 Use this code to create a **toggle** in **self mode**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-self">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/toggle/usage-self">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).

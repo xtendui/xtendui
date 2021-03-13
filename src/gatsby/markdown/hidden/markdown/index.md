@@ -11,10 +11,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
   </div>
-  <demoreact src="demos/components/core/toggle/animation-js-multiple">
-  </demoreact>
-  <demovanilla src="demos/components/core/toggle/animation-js-multiple">
-  </demovanilla>
+  <demoinline src="demos/components/core/toggle/animation-js-multiple">
+  </demoinline>
 </demo>
 
 ## Classes not xt

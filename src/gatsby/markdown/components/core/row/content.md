@@ -29,16 +29,16 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 | Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/space-px">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-1">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-2">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-3">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/row/space-4">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/row/space-px">
+  </demoinline>
+  <demoinline src="vanilla/components/core/row/space-1">
+  </demoinline>
+  <demoinline src="vanilla/components/core/row/space-2">
+  </demoinline>
+  <demoinline src="vanilla/components/core/row/space-3">
+  </demoinline>
+  <demoinline src="vanilla/components/core/row/space-4">
+  </demoinline>
 </demo>
 
 ## Alignment
@@ -46,6 +46,6 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/alignment">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/row/alignment">
+  </demoinline>
 </demo>

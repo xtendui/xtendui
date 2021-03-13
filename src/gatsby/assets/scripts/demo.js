@@ -617,12 +617,12 @@ const unloadIframe = iframe => {
   iframe.removeAttribute('src')
 }
 
-window.initIframe = (name, htmlSource, cssSource, jsSource) => {
+window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
   const src = `iframe[name="${name}"]`
   const iframes = document.querySelectorAll(src)
   for (const iframe of iframes) {
     const item = iframe.closest('.gatsby_demo_item')
-    populateIframe(item, iframe, htmlSource, cssSource, jsSource)
+    populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
     // spinner
     item.classList.add('loaded')
   }
@@ -651,12 +651,17 @@ const source = async (item, el) => {
   }
 }
 
-const populateIframe = async (item, iframe, htmlSource, cssSource, jsSource) => {
+const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
     if (htmlSource) {
       item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
+    }
+    if (jsxSource) {
+      item.append(
+        Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx" data-fetch=${jsxSource}></div>`)
+      )
     }
     if (cssSource) {
       item.append(

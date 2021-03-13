@@ -11,8 +11,8 @@ date: "2030-05-05"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-variant">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-variant">
+  </demoinline>
 </demo>
 
 ## Size
@@ -22,8 +22,8 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-size">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-size">
+  </demoinline>
 </demo>
 
 ## Content
@@ -31,8 +31,8 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Card content **stack vertically**. Use **tailwind classes** to assign styles (e.g. [padding](https://tailwindcss.com/docs/padding), [background-color](https://tailwindcss.com/docs/background-color), [border-radius](https://tailwindcss.com/docs/border-radius)) 
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-content">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-content">
+  </demoinline>
 </demo>
 
 ## Group
@@ -50,8 +50,8 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-group">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-group">
+  </demoinline>
 </demo>
 
 ## Separator
@@ -59,8 +59,8 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 Use **tailwind classes** to style **borders** for separation.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-separator">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-separator">
+  </demoinline>
 </demo>
 
 ## Overflow
@@ -77,8 +77,8 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-overflow-y">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-overflow-y">
+  </demoinline>
 </demo>
 
 ## List
@@ -86,6 +86,6 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 You can use [list component](/components/core/list) to space card's internal content.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/card-list">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/drop/card-list">
+  </demoinline>
 </demo>

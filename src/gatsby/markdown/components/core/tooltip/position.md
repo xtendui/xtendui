@@ -23,23 +23,23 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>` inside `.xt-tooltip` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/bottom">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/top">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/auto">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/bottom">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/top">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/left">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/right">
+  </demoinline>
+  <demoinline src="vanilla/components/core/tooltip/auto">
+  </demoinline>
 </demo>
 
 To not have **space** just omit `.xt-tooltip` **padding** and `.xt-arrow` **margin**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/nospace">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/nospace">
+  </demoinline>
 </demo>
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/tooltip/other#popperjs).
@@ -68,8 +68,8 @@ If you want a tooltip with size and position **relative to a parent Node with re
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/static">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/static">
+  </demoinline>
 </demo>
 
 ## Mouse Follow
@@ -83,6 +83,6 @@ Use **component classes** to create a **mouse follow**.
 | This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/mousefollow">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/mousefollow">
+  </demoinline>
 </demo>

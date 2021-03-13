@@ -1,7 +1,7 @@
 import React from 'react'
 import path from 'path'
 
-import DemoVanillaIframe from 'components/demo/demo-vanilla-iframe'
+import DemoIframe from 'components/demo/demo-iframe'
 
 const filename = __filename.replace(/\\/g, '/')
 const dirs = path.dirname(filename).split('/')
@@ -29,7 +29,7 @@ demo.htmlSource = `
 
 class Page extends React.Component {
   render() {
-    return <DemoVanillaIframe demo={demo} />
+    return <DemoIframe demo={demo} />
   }
 }
 

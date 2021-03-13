@@ -13,8 +13,8 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 This example has **icons** with `inline-block`, complex markup and `<br/>` to make a **multiline tooltip**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/variant">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/variant">
+  </demoinline>
 </demo>
 
 ## Size
@@ -24,8 +24,8 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/size">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/size">
+  </demoinline>
 </demo>
 
 ## Card
@@ -33,6 +33,6 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
 Use [card component](/components/core/card) to populate the tooltip with **complex content** see for example the [drop content card](/components/core/drop/content-card).
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/card">
-  </demovanilla>
+  <demoinline src="vanilla/components/core/tooltip/card">
+  </demoinline>
 </demo>
