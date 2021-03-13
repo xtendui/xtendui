@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default class DocHead extends React.Component {
   render() {

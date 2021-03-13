@@ -8,8 +8,8 @@ export default class Demo extends React.Component {
   }
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      const populateDemo = require('assets/scripts/demo').populateDemo
-      const demoHash = require('assets/scripts/demo').demoHash
+      const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
+      const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
       const container = this.demoRef.current
       // fix demo index when changing page
       let index = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)

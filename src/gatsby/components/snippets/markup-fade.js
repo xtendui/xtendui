@@ -1,4 +1,4 @@
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default () => {
   return `

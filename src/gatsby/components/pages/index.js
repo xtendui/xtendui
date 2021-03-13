@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default class Page extends React.Component {
   render() {

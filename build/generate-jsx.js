@@ -6,8 +6,6 @@ const writeFile = require('write')
 const indentString = require('indent-string')
 
 ;(async () => {
-  return false
-
   await del(['static/demos/**/**.jsx'])
   new glob.Glob('static/demos/**/**.html.js', (er, files) => {
     for (const file of files) {
@@ -94,7 +92,6 @@ class Demo extends React.Component {
     return (
       <div ref={this.ref}>
 `
-        module.resolve = `${path.resolve(`./src/gatsby/`)}/`
         const html = require('esm')(module)(path.resolve(`${src}.html.js`)).object.html
         str += indentString(
           html
@@ -114,7 +111,7 @@ class Demo extends React.Component {
 export default Demo
 `
         const destination = `${src}.jsx`
-        writeFile(destination, str)
+        //writeFile(destination, str)
       })
     }
   })

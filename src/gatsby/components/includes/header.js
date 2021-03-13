@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { markdownSlug } from 'components/snippets/markdown-slug'
-import { typeSort } from 'components/snippets/type-sort'
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug'
+import { typeSort } from 'src/gatsby/components/snippets/type-sort'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`

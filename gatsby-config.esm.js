@@ -65,9 +65,6 @@ module.exports = {
         root: './',
         aliases: {
           static: './static',
-          code: './src/gatsby/code',
-          assets: './src/gatsby/assets',
-          components: './src/gatsby/components',
           // resolve xtendui import js and css
           xtendui: path.resolve(__dirname, './'),
         },
@@ -85,7 +82,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: './src/gatsby/components/pages/',
+        path: 'src/gatsby/components/pages/',
       },
     },
     // contenful

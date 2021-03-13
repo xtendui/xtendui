@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import DemoIframe from 'components/demo/demo-iframe'
+import DemoIframe from 'src/gatsby/components/demo/demo-iframe'
 
 class Page extends React.Component {
   render() {

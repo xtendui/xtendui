@@ -1,6 +1,6 @@
 import React from 'react'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default class DocFullscreen extends React.Component {
   render() {

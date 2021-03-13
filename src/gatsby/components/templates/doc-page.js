@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
-import { markdownSlug } from 'components/snippets/markdown-slug'
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
-import Demo from 'components/demo/demo'
-import DemoInline from 'components/demo/demo-inline'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout'
+import Demo from 'src/gatsby/components/demo/demo'
+import DemoInline from 'src/gatsby/components/demo/demo-inline'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,

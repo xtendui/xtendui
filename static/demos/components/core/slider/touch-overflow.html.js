@@ -1,12 +1,5 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
-let resolve
-if (moduleParents.length) {
-  resolve = moduleParents[0].resolve
-}
 
-const markupSlider = resolve
-  ? require(`${resolve}components/snippets/markup-slider`).default
-  : require('components/snippets/markup-slider').default
+const markupSlider = require('src/gatsby/components/snippets/markup-slider').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `

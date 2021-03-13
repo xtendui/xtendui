@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout-demo'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout-demo'
 
 export default class DemoIframe extends React.Component {
   render() {
@@ -20,7 +20,7 @@ export default class DemoIframe extends React.Component {
       if (object.container) {
         document.documentElement.classList.add('gatsby_iframe-container')
       }
-      require('assets/scripts/shared')
+      require('src/gatsby/assets/scripts/shared')
       document.documentElement.setAttribute('id', id)
     }
     // css

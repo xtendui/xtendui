@@ -36,7 +36,8 @@
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
-    "postversion": "yarn webpack"
+    "postversion": "yarn webpack",
+    "postinstall" : "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.0.3",

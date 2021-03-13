@@ -1,12 +1,4 @@
-const moduleParents = Object.values(require.cache).filter(m => m.children && m.children.includes(module))
-let resolve
-if (moduleParents.length) {
-  resolve = moduleParents[0].resolve
-}
-
-const classes = resolve
-  ? require(`${resolve}components/snippets/classes`).classes
-  : require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 const animDesign =
   'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0'
 const animItem =
