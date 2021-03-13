@@ -5,6 +5,6 @@ parent: "Overlay"
 title: "products-gallery-v1"
 date: "2020-06-10"
 demos: [
-  "demos/themes/gallery/products-gallery-v1"
+  "themes/gallery/products-gallery-v1"
 ]
 ---

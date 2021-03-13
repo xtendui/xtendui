@@ -23,22 +23,22 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-white"></div>` inside `.xt-drop` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/bottom">
+  <demoinline src="demos/components/core/drop/bottom">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/top">
+  <demoinline src="demos/components/core/drop/top">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/left">
+  <demoinline src="demos/components/core/drop/left">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/right">
+  <demoinline src="demos/components/core/drop/right">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/auto">
+  <demoinline src="demos/components/core/drop/auto">
   </demoinline>
 </demo>
 
 To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin**.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/nospace">
+  <demoinline src="demos/components/core/drop/nospace">
   </demoinline>
 </demo>
 
@@ -68,6 +68,6 @@ If you want a drop with size and position **relative to a parent Node with relat
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/static">
+  <demoinline src="demos/components/core/drop/static">
   </demoinline>
 </demo>

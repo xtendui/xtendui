@@ -23,7 +23,7 @@ Use `.xt-badge` to create a **badge**.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/badge/usage">
+  <demoinline src="demos/components/core/badge/usage">
   </demoinline>
 </demo>
 

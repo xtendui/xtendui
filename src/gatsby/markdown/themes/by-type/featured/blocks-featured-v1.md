@@ -5,6 +5,6 @@ parent: "Featured"
 title: "blocks-featured-v1"
 date: "2020-02-27"
 demos: [
-  "demos/themes/featured/blocks-featured-v1"
+  "themes/featured/blocks-featured-v1"
 ]
 ---

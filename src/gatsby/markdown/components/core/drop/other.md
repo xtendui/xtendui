@@ -23,7 +23,7 @@ Example of **component disabled on desktop** with [match media](/components/core
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/disable">
+  <demoinline src="demos/components/core/drop/disable">
   </demoinline>
 </demo>
 
@@ -32,7 +32,7 @@ Disable and reset styles accordingly.
 You can put **any content** inside, here are some examples.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/other-content">
+  <demoinline src="demos/components/core/drop/other-content">
   </demoinline>
 </demo>
 

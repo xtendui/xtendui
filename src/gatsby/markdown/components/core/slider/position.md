@@ -19,11 +19,11 @@ Align the slides.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/align-left">
+  <demoinline src="demos/components/core/slider/align-left">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/align-center">
+  <demoinline src="demos/components/core/slider/align-center">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/align-right">
+  <demoinline src="demos/components/core/slider/align-right">
   </demoinline>
 </demo>
 
@@ -42,7 +42,7 @@ With `group: Number` you set a decimal number from 0 to 1 to group the slides wi
 Example of **responsive group** with [match media](/components/core/slider/api#match-media).
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/group-responsive">
+  <demoinline src="demos/components/core/slider/group-responsive">
   </demoinline>
 </demo>
 
@@ -59,11 +59,11 @@ Contain the slides and **automatically group** them when the scroll position is 
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/contain-center">
+  <demoinline src="demos/components/core/slider/contain-center">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/contain-left">
+  <demoinline src="demos/components/core/slider/contain-left">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/contain-right">
+  <demoinline src="demos/components/core/slider/contain-right">
   </demoinline>
 </demo>
 
@@ -80,11 +80,11 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/wrap-center">
+  <demoinline src="demos/components/core/slider/wrap-center">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/wrap-left">
+  <demoinline src="demos/components/core/slider/wrap-left">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/wrap-right">
+  <demoinline src="demos/components/core/slider/wrap-right">
   </demoinline>
 </demo>
 
@@ -104,6 +104,6 @@ If you want to keep the first element height on the slide use `keepHeight: '.xt-
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/other">
+  <demoinline src="demos/components/core/slider/other">
   </demoinline>
 </demo>

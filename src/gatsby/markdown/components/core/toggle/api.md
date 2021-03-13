@@ -53,7 +53,7 @@ You can add **additional options** that gets added on **match media query**. You
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/matches">
+  <demoinline src="demos/components/core/toggle/matches">
   </demoinline>
 </demo>
 

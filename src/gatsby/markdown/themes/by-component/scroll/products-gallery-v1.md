@@ -5,6 +5,6 @@ parent: "Scroll"
 title: "products-gallery-v1"
 date: "2020-08-14"
 demos: [
-  "demos/themes/gallery/products-gallery-v1"
+  "themes/gallery/products-gallery-v1"
 ]
 ---

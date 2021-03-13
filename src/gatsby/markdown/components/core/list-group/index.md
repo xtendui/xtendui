@@ -17,7 +17,7 @@ Use this code to create a **group horizontal**.
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/usage">
+  <demoinline src="demos/components/core/list-group/usage">
   </demoinline>
 </demo>
 
@@ -28,7 +28,7 @@ Use this code to create a **group vertical** with `.flex-col`.
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/usage-vertical">
+  <demoinline src="demos/components/core/list-group/usage-vertical">
   </demoinline>
 </demo>
 
@@ -49,6 +49,6 @@ Use **component classes** to style **nested**.
 You can nest `.xt-list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/usage-nested">
+  <demoinline src="demos/components/core/list-group/usage-nested">
   </demoinline>
 </demo>

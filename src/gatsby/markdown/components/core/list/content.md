@@ -29,15 +29,15 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 | Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
-  <demoinline src="vanilla/components/core/list/space-px">
+  <demoinline src="demos/components/core/list/space-px">
   </demoinline>
-  <demoinline src="vanilla/components/core/list/space-1">
+  <demoinline src="demos/components/core/list/space-1">
   </demoinline>
-  <demoinline src="vanilla/components/core/list/space-2">
+  <demoinline src="demos/components/core/list/space-2">
   </demoinline>
-  <demoinline src="vanilla/components/core/list/space-3">
+  <demoinline src="demos/components/core/list/space-3">
   </demoinline>
-  <demoinline src="vanilla/components/core/list/space-4">
+  <demoinline src="demos/components/core/list/space-4">
   </demoinline>
 </demo>
 
@@ -49,6 +49,6 @@ Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwin
 | By default `.xt-list` has `align-items: stretch`.
 
 <demo>
-  <demoinline src="vanilla/components/core/list/alignment">
+  <demoinline src="demos/components/core/list/alignment">
   </demoinline>
 </demo>

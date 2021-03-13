@@ -19,9 +19,9 @@ You can group elements activation with the option `groupElements: true`.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/usage-unique-groupelements">
+  <demoinline src="demos/components/core/toggle/usage-unique-groupelements">
   </demoinline>
-  <demoinline src="vanilla/components/core/toggle/usage-multiple-groupelements">
+  <demoinline src="demos/components/core/toggle/usage-multiple-groupelements">
   </demoinline>
 </demo>
 
@@ -47,9 +47,9 @@ You can customize the **class names** used by the component.
 You can set initial activation by adding `in-toggle` to the **elements** or **targets**.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/class">
+  <demoinline src="demos/components/core/toggle/class">
   </demoinline>
-  <demoinline src="vanilla/components/core/toggle/class-custom">
+  <demoinline src="demos/components/core/toggle/class-custom">
   </demoinline>
 </demo>
 
@@ -73,7 +73,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 | `data-xt-group` additional elements aren't counted for min and max.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/quantity">
+  <demoinline src="demos/components/core/toggle/quantity">
   </demoinline>
 </demo>
 
@@ -97,7 +97,7 @@ You can specify **on** and **off** events for the toggle.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/event">
+  <demoinline src="demos/components/core/toggle/event">
   </demoinline>
 </demo>
 
@@ -106,9 +106,9 @@ You can have **element's link** and **other events** that trigger after toggle w
 If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/prevent-event">
+  <demoinline src="demos/components/core/toggle/prevent-event">
   </demoinline>
-  <demoinline src="vanilla/components/core/toggle/prevent-event-hover">
+  <demoinline src="demos/components/core/toggle/prevent-event-hover">
   </demoinline>
 </demo>
 
@@ -130,14 +130,14 @@ If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets a
 | Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/core/toggle/api#trigger).
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/auto">
+  <demoinline src="demos/components/core/toggle/auto">
   </demoinline>
 </demo>
 
 Use the [api](/components/core/slider/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/progress">
+  <demoinline src="demos/components/core/toggle/progress">
   </demoinline>
 </demo>
 
@@ -166,7 +166,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/jump">
+  <demoinline src="demos/components/core/toggle/jump">
   </demoinline>
 </demo>
 
@@ -183,7 +183,7 @@ You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[da
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/navigation">
+  <demoinline src="demos/components/core/toggle/navigation">
   </demoinline>
 </demo>
 
@@ -200,7 +200,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/usability-keyboard">
+  <demoinline src="demos/components/core/toggle/usability-keyboard">
   </demoinline>
 </demo>
 
@@ -221,7 +221,7 @@ Example of **component disabled on desktop** with [match media](/components/core
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/disable">
+  <demoinline src="demos/components/core/toggle/disable">
   </demoinline>
 </demo>
 

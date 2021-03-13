@@ -23,7 +23,7 @@ Example of **component disabled on desktop** with [match media](/components/core
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/disable">
+  <demoinline src="demos/components/core/overlay/disable">
   </demoinline>
 </demo>
 
@@ -32,7 +32,7 @@ Disable and reset styles accordingly.
 You can put **any content** inside, here are some examples.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/other-content">
+  <demoinline src="demos/components/core/overlay/other-content">
   </demoinline>
 </demo>
 
@@ -44,7 +44,7 @@ You can have the the close button with `.fixed` to have it **fixed inside the ov
 | Do not transition margin on`.fixed` because `.xt-scrollbar-overlay.xt-overlay .fixed` gets automatic `margin-right` to prevent moving with scrollbars.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/close-fixed">
+  <demoinline src="demos/components/core/overlay/close-fixed">
   </demoinline>
 </demo>
 

@@ -30,7 +30,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 You can also customize `xt-backdrop` animations.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/animation">
+  <demoinline src="demos/components/core/overlay/animation">
   </demoinline>
 </demo>
 
@@ -47,7 +47,7 @@ You can use also **css animations**, just add them with **class names** `.active
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/animation-css">
+  <demoinline src="demos/components/core/overlay/animation-css">
   </demoinline>
 </demo>
 
@@ -56,7 +56,7 @@ You can use also **css animations**, just add them with **class names** `.active
 You can use also **javascript animations**, just use [drop api](/components/core/drop/api).
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/animation-js">
+  <demoinline src="demos/components/core/overlay/animation-js">
   </demoinline>
 </demo>
 
@@ -65,6 +65,6 @@ You can use also **javascript animations**, just use [drop api](/components/core
 Use `.xt-overlay-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on child elements for fixing z-index issues.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/animation-design">
+  <demoinline src="demos/components/core/overlay/animation-design">
   </demoinline>
 </demo>

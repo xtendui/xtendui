@@ -11,7 +11,7 @@ description: "Swap tooltip content dynamically."
 Use this code to create a **tooltip swap**.
 
 <demo>
-  <demoinline src="vanilla/components/addons/tooltip/swap-click">
+  <demoinline src="demos/components/addons/tooltip/swap-click">
   </demoinline>
 </demo>
 
@@ -21,6 +21,6 @@ Use this code to create a **tooltip swap toggle**.
 | This addon uses [toggle](/components/core/tooltip) see documentation for more info.
 
 <demo>
-  <demoinline src="vanilla/components/addons/tooltip/swap-toggle">
+  <demoinline src="demos/components/addons/tooltip/swap-toggle">
   </demoinline>
 </demo>

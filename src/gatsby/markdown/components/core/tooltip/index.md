@@ -37,7 +37,7 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demoinline src="vanilla/components/core/tooltip/usage-unique">
+  <demoinline src="demos/components/core/tooltip/usage-unique">
   </demoinline>
 </demo>
 
@@ -55,9 +55,9 @@ The **multiple** mode is useful when using `mouse` events and **you want to inte
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
-  <demoinline src="vanilla/components/core/tooltip/usage-multiple">
+  <demoinline src="demos/components/core/tooltip/usage-multiple">
   </demoinline>
-  <demoinline src="vanilla/components/core/tooltip/usage-multiple-group">
+  <demoinline src="demos/components/core/tooltip/usage-multiple-group">
   </demoinline>
 </demo>
 
@@ -70,7 +70,7 @@ Use this code to create a **tooltip** in **self mode**.
 Just use the class `in-tooltip` if you want to automatically open, or use the [api](/components/core/tooltip/api)
 
 <demo>
-  <demoinline src="vanilla/components/core/tooltip/usage-self">
+  <demoinline src="demos/components/core/tooltip/usage-self">
   </demoinline>
 </demo>
 

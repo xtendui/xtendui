@@ -11,7 +11,7 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demoinline src="vanilla/components/core/badge/variant">
+  <demoinline src="demos/components/core/badge/variant">
   </demoinline>
 </demo>
 
@@ -20,7 +20,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demoinline src="vanilla/components/core/badge/interactive">
+  <demoinline src="demos/components/core/badge/interactive">
   </demoinline>
 </demo>
 
@@ -29,6 +29,6 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/core/badge/size">
+  <demoinline src="demos/components/core/badge/size">
   </demoinline>
 </demo>

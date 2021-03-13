@@ -15,12 +15,12 @@ Use `.xt-list-inner.flex-auto` to expand it to **fill width**. On responsive the
 Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/size">
+  <demoinline src="demos/components/core/list-group/size">
   </demoinline>
 </demo>
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/size-vertical">
+  <demoinline src="demos/components/core/list-group/size-vertical">
   </demoinline>
 </demo>
 
@@ -29,12 +29,12 @@ Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.co
 Use [list space](/components/core/list/content#space) **component classes** to assign space).
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/space">
+  <demoinline src="demos/components/core/list-group/space">
   </demoinline>
 </demo>
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/space-vertical">
+  <demoinline src="demos/components/core/list-group/space-vertical">
   </demoinline>
 </demo>
 
@@ -43,12 +43,12 @@ Use [list space](/components/core/list/content#space) **component classes** to a
 Use **tailwind classes** to assign border.
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/border">
+  <demoinline src="demos/components/core/list-group/border">
   </demoinline>
 </demo>
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/border-vertical">
+  <demoinline src="demos/components/core/list-group/border-vertical">
   </demoinline>
 </demo>
 
@@ -57,11 +57,11 @@ Use **tailwind classes** to assign border.
 You can make group a **single interactive object**, be sure to use `group` on the interactive element and the variants `group-hover:` and `group-active:` classes.
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/merge">
+  <demoinline src="demos/components/core/list-group/merge">
   </demoinline>
 </demo>
 
 <demo>
-  <demoinline src="vanilla/components/core/list-group/merge-vertical">
+  <demoinline src="demos/components/core/list-group/merge-vertical">
   </demoinline>
 </demo>

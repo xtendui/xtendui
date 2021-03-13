@@ -46,7 +46,7 @@ Inside it you can use this strings that gets populated with variables:
 | `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.	
 
 <demo>	
-  <demoinline src="vanilla/components/core/slider/pagination">	
+  <demoinline src="demos/components/core/slider/pagination">	
   </demoinline>	
 </demo>	
 
@@ -63,7 +63,7 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 </div>	
 
 <demo>	
-  <demoinline src="vanilla/components/core/slider/navigation">	
+  <demoinline src="demos/components/core/slider/navigation">	
   </demoinline>	
 </demo>	
 
@@ -99,7 +99,7 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mousewheel navigation.	
 
 <demo>	
-  <demoinline src="vanilla/components/core/slider/wheel">	
+  <demoinline src="demos/components/core/slider/wheel">	
   </demoinline>	
 </demo>	
 
@@ -123,7 +123,7 @@ Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mo
 Use the [api](/components/core/slider/api#listen) and listen to events to make auto progress indicators.	
 
 <demo>	
-  <demoinline src="vanilla/components/core/slider/progress">	
+  <demoinline src="demos/components/core/slider/progress">	
   </demoinline>	
 </demo>	
 
@@ -144,6 +144,6 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 </div>	
 
 <demo>	
-  <demoinline src="vanilla/components/core/slider/other">	
+  <demoinline src="demos/components/core/slider/other">	
   </demoinline>	
 </demo>	

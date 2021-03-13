@@ -26,6 +26,6 @@ Use **component classes** to style `.xt-label-required`, `.xt-form-valid`, `.xt-
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/form/validation">
+  <demoinline src="demos/components/core/form/validation">
   </demoinline>
 </demo>

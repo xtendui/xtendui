@@ -39,9 +39,9 @@ You can set it in the options or to **assign them also on single nodes** with `d
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/animation-multiple">
+  <demoinline src="demos/components/core/toggle/animation-multiple">
   </demoinline>
-  <demoinline src="vanilla/components/core/toggle/animation-multiple-noqueue">
+  <demoinline src="demos/components/core/toggle/animation-multiple-noqueue">
   </demoinline>
 </demo>
 
@@ -58,7 +58,7 @@ You can use also **css animations**, just add them with **class names** `.active
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/animation-css-multiple">
+  <demoinline src="demos/components/core/toggle/animation-css-multiple">
   </demoinline>
 </demo>
 
@@ -75,7 +75,7 @@ You can use also **javascript animations**, just use [drop api](/components/core
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/animation-js-multiple">
+  <demoinline src="demos/components/core/toggle/animation-js-multiple">
   </demoinline>
 </demo>
 
@@ -84,6 +84,6 @@ You can use also **javascript animations**, just use [drop api](/components/core
 Use `.xt-toggle-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on child elements for fixing z-index issues.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/animation-design">
+  <demoinline src="demos/components/core/toggle/animation-design">
   </demoinline>
 </demo>

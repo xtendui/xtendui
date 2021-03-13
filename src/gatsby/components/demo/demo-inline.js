@@ -18,12 +18,7 @@ export default class DemoInline extends React.Component {
       // react
       const Demo = require(`static/${src}.jsx`).default
       return (
-        <div
-          className={'gatsby_demo_item xt-toggle'}
-          data-name={name}
-          data-id={id}
-          data-inline={src}
-        >
+        <div className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
           <div className="gatsby_demo_source gatsby_demo_source--from">
             <Demo />
           </div>
@@ -44,12 +39,7 @@ export default class DemoInline extends React.Component {
         // eslint-disable-next-line no-empty
       } catch (ex) {}
       return (
-        <div
-          className={'gatsby_demo_item xt-toggle'}
-          data-name={name}
-          data-id={id}
-          data-inline={src}
-        >
+        <div className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
           <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
           <div className="gatsby_demo_source xt-ignore" data-lang="css" data-fetch={`/${src}.css`} />

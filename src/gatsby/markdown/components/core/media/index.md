@@ -15,7 +15,7 @@ You can **customize this component** inside `tailwind.config.js` setting `theme.
 Use this code to create a **media**.
 
 <demo>
-  <demoinline src="vanilla/components/core/media/usage">
+  <demoinline src="demos/components/core/media/usage">
   </demoinline>
 </demo>
 

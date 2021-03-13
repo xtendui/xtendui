@@ -19,7 +19,7 @@ Use **component classes** to style **active**.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/button/active">
+  <demoinline src="demos/components/core/button/active">
   </demoinline>
 </demo>
 
@@ -39,7 +39,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/button/disabled">
+  <demoinline src="demos/components/core/button/disabled">
   </demoinline>
 </demo>
 

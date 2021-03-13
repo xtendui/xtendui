@@ -51,16 +51,16 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 | When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/event">
+  <demoinline src="demos/components/core/drop/event">
   </demoinline>
 </demo>
 
 You can have **element's link** and **click events** prevented when the drop opens with `preventEvent: true`, they will trigger only if the drop is already opened.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/prevent-event">
+  <demoinline src="demos/components/core/drop/prevent-event">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/prevent-event-hover">
+  <demoinline src="demos/components/core/drop/prevent-event-hover">
   </demoinline>
 </demo>
 
@@ -69,6 +69,6 @@ You can have **element's link** and **click events** prevented when the drop ope
 Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `active:z-drop` to have the button above the backdrop.
 
 <demo>
-  <demoinline src="vanilla/components/core/drop/backdrop">
+  <demoinline src="demos/components/core/drop/backdrop">
   </demoinline>
 </demo>

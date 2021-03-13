@@ -316,8 +316,8 @@ const populateDemo = (container, i) => {
       name = id.split('/').pop().split('-').join(' ')
       id = id.split('/').splice(3, 10).join('-')
     }*/
-    let id = item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
-    id = id.replace('demos/', '').replace('components/', '')
+    let id =
+      item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
     item.setAttribute('id', kebabCase(id))
@@ -678,8 +678,8 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
     for (const el of els) {
       try {
         await source(item, el)
-      } catch (e) {
-        console.error(e)
+      } catch (ex) {
+        console.error(ex)
       } finally {
         el.remove()
       }
@@ -700,8 +700,8 @@ const populateInline = async item => {
     for (const el of els) {
       try {
         await source(item, el)
-      } catch (e) {
-        console.error(e)
+      } catch (ex) {
+        console.error(ex)
       } finally {
         el.remove()
       }

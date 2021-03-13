@@ -11,11 +11,11 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demoinline src="vanilla/components/core/form/variant-default">
+  <demoinline src="demos/components/core/form/variant-default">
   </demoinline>
-  <demoinline src="vanilla/components/core/form/variant-primary">
+  <demoinline src="demos/components/core/form/variant-primary">
   </demoinline>
-  <demoinline src="vanilla/components/core/form/variant-underline">
+  <demoinline src="demos/components/core/form/variant-underline">
   </demoinline>
 </demo>
 
@@ -24,11 +24,11 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/core/form/size-xs">
+  <demoinline src="demos/components/core/form/size-xs">
   </demoinline>
-  <demoinline src="vanilla/components/core/form/size-sm">
+  <demoinline src="demos/components/core/form/size-sm">
   </demoinline>
-  <demoinline src="vanilla/components/core/form/size-md">
+  <demoinline src="demos/components/core/form/size-md">
   </demoinline>
 </demo>
 
@@ -37,7 +37,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Use [button](/components/core/button) with `label` to create **checks with button**.
 
 <demo>
-  <demoinline src="vanilla/components/core/form/checks-button">
+  <demoinline src="demos/components/core/form/checks-button">
   </demoinline>
 </demo>
 
@@ -46,6 +46,6 @@ Use [button](/components/core/button) with `label` to create **checks with butto
 Use [card](/components/core/card) with `label` to create **checks with card**.
 
 <demo>
-  <demoinline src="vanilla/components/core/form/checks-card">
+  <demoinline src="demos/components/core/form/checks-card">
   </demoinline>
 </demo>

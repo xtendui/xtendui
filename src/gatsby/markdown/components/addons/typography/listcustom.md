@@ -11,6 +11,6 @@ description: "Customize ordered and unordered lists with svg instead of bullet p
 Use this code to create a **custom list**.
 
 <demo>
-  <demoinline src="vanilla/components/addons/typography/listcustom">
+  <demoinline src="demos/components/addons/typography/listcustom">
   </demoinline>
 </demo>

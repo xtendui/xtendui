@@ -17,7 +17,7 @@ Use this code to create a **breadcrumbs**.
 | For aria purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <demo>
-  <demoinline src="vanilla/components/core/breadcrumbs/usage">
+  <demoinline src="demos/components/core/breadcrumbs/usage">
   </demoinline>
 </demo>
 
@@ -26,6 +26,6 @@ Use this code to create a **breadcrumbs**.
 Use **tailwind classes** to add title and background.
 
 <demo>
-  <demoinline src="vanilla/components/core/breadcrumbs/title">
+  <demoinline src="demos/components/core/breadcrumbs/title">
   </demoinline>
 </demo>

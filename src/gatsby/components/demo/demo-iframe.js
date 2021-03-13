@@ -10,7 +10,7 @@ export default class DemoIframe extends React.Component {
   render() {
     const { location } = this.props
     const src = location.pathname.substring(1)
-    const id = src.replace('demos/', '').replace('components/', '').split('/').join('-')
+    const id = src.split('/').join('-')
     // iframe
     const object = require(`static/${src}.html`).object
     const seo = {}
@@ -44,10 +44,7 @@ export default class DemoIframe extends React.Component {
         <Layout>
           <SEO title={seo.title} description={seo.description} />
           <div id="body-outer">
-            <div
-              id="gatsby_body-inner"
-              className="gatsby_demo_source--from"
-            >
+            <div id="gatsby_body-inner" className="gatsby_demo_source--from">
               <Demo />
             </div>
           </div>

@@ -66,7 +66,7 @@ You can set **html classes on activation**, remember to keep default `classHtml`
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/class-html">
+  <demoinline src="demos/components/core/overlay/class-html">
   </demoinline>
 </demo>
 

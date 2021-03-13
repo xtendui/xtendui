@@ -30,7 +30,7 @@ Use `.xt-list` to create a **list**.
 Use this code to create a **list horizontal**.
 
 <demo>
-  <demoinline src="vanilla/components/core/list/usage">
+  <demoinline src="demos/components/core/list/usage">
   </demoinline>
 </demo>
 
@@ -41,7 +41,7 @@ Check subpage to [customize content](/components/core/list/content).
 Use this code to create a **list vertical** with `.flex-col`.
 
 <demo>
-  <demoinline src="vanilla/components/core/list/usage-vertical">
+  <demoinline src="demos/components/core/list/usage-vertical">
   </demoinline>
 </demo>
 

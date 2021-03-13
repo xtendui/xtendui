@@ -9,14 +9,14 @@ description: "Base styles for all tables overridable with tailwind classes."
 ## Usage
 
 <demo>
-  <demoinline src="vanilla/components/core/table/usage">
+  <demoinline src="demos/components/core/table/usage">
   </demoinline>
 </demo>
 
 Use **tailwind classes** to assign [table-layout](https://tailwindcss.com/docs/table-layout).
 
 <demo>
-  <demoinline src="vanilla/components/core/table/usage-fixed">
+  <demoinline src="demos/components/core/table/usage-fixed">
   </demoinline>
 </demo>
 

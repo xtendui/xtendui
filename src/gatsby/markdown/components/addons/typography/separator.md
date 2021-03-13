@@ -15,7 +15,7 @@ You can **customize this component** inside `tailwind.config.js` setting `theme.
 Use this code to create a **separator**.
 
 <demo>
-  <demoinline src="vanilla/components/addons/typography/separator">
+  <demoinline src="demos/components/addons/typography/separator">
   </demoinline>
 </demo>
 
@@ -34,7 +34,7 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/addons/typography/separator-variant">
+  <demoinline src="demos/components/addons/typography/separator-variant">
   </demoinline>
 </demo>
 
@@ -43,6 +43,6 @@ For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
 Use **tailwind classes** to assign size (e.g. [margin](https://tailwindcss.com/docs/margin), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/addons/typography/separator-size">
+  <demoinline src="demos/components/addons/typography/separator-size">
   </demoinline>
 </demo>

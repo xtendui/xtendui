@@ -11,14 +11,14 @@ description: "Plug and play visual loaders, can easily integrate with javascript
 Use this code to create a **loader spinner**.
 
 <demo>
-  <demoinline src="vanilla/components/core/loader/spinner">
+  <demoinline src="demos/components/core/loader/spinner">
   </demoinline>
 </demo>
 
 Use this code to create a **loader filler**.
 
 <demo>
-  <demoinline src="vanilla/components/core/loader/filler-x">
+  <demoinline src="demos/components/core/loader/filler-x">
   </demoinline>
 </demo>
 

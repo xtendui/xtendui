@@ -23,7 +23,7 @@ Use `.xt-row` to create a **row**.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/row/usage">
+  <demoinline src="demos/components/core/row/usage">
   </demoinline>
 </demo>
 

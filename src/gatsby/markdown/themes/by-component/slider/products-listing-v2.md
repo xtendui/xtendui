@@ -5,6 +5,6 @@ parent: "Slider"
 title: "products-listing-v2"
 date: "2020-06-10"
 demos: [
-  "demos/themes/listing/products-listing-v2"
+  "themes/listing/products-listing-v2"
 ]
 ---

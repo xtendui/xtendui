@@ -13,7 +13,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 You can also customize `xt-backdrop` styles or just do not include it.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/variant">
+  <demoinline src="demos/components/core/overlay/variant">
   </demoinline>
 </demo>
 
@@ -26,7 +26,7 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/size">
+  <demoinline src="demos/components/core/overlay/size">
   </demoinline>
 </demo>
 
@@ -35,7 +35,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Card content **stack vertically**. Use **tailwind classes** to assign styles (e.g. [padding](https://tailwindcss.com/docs/padding), [background-color](https://tailwindcss.com/docs/background-color), [border-radius](https://tailwindcss.com/docs/border-radius)) 
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/content">
+  <demoinline src="demos/components/core/overlay/content">
   </demoinline>
 </demo>
 
@@ -54,7 +54,7 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/group">
+  <demoinline src="demos/components/core/overlay/group">
   </demoinline>
 </demo>
 
@@ -63,7 +63,7 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 Use **tailwind classes** to style **borders** for separation.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/separator">
+  <demoinline src="demos/components/core/overlay/separator">
   </demoinline>
 </demo>
 
@@ -81,7 +81,7 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/overflow-y">
+  <demoinline src="demos/components/core/overlay/overflow-y">
   </demoinline>
 </demo>
 
@@ -90,6 +90,6 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 You can use [list component](/components/core/list) to space card's internal content.
 
 <demo>
-  <demoinline src="vanilla/components/core/overlay/list">
+  <demoinline src="demos/components/core/overlay/list">
   </demoinline>
 </demo>

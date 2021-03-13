@@ -21,7 +21,7 @@ Use `.xt-row-stretch` to stretch content vertically.
 When using cards you can space with `margin auto` on **card content**. When not using cards, be sure that the content have class `flex-auto`.
 
 <demo>
-  <demoinline src="vanilla/components/core/row/stretch">
+  <demoinline src="demos/components/core/row/stretch">
   </demoinline>
 </demo>
 

@@ -11,7 +11,7 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demoinline src="vanilla/components/core/card/variant">
+  <demoinline src="demos/components/core/card/variant">
   </demoinline>
 </demo>
 
@@ -20,7 +20,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demoinline src="vanilla/components/core/card/interactive">
+  <demoinline src="demos/components/core/card/interactive">
   </demoinline>
 </demo>
 
@@ -31,7 +31,7 @@ Checkout out [cards's themes](/themes/by-component/card) for **advanced animatio
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/core/card/size">
+  <demoinline src="demos/components/core/card/size">
   </demoinline>
 </demo>
 
@@ -40,7 +40,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Card content **stack vertically**. Use **tailwind classes** to assign styles (e.g. [padding](https://tailwindcss.com/docs/padding), [background-color](https://tailwindcss.com/docs/background-color), [border-radius](https://tailwindcss.com/docs/border-radius)) 
 
 <demo>
-  <demoinline src="vanilla/components/core/card/content">
+  <demoinline src="demos/components/core/card/content">
   </demoinline>
 </demo>
 
@@ -59,7 +59,7 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
-  <demoinline src="vanilla/components/core/card/group">
+  <demoinline src="demos/components/core/card/group">
   </demoinline>
 </demo>
 
@@ -68,7 +68,7 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 Use **tailwind classes** to style **borders** for separation.
 
 <demo>
-  <demoinline src="vanilla/components/core/card/separator">
+  <demoinline src="demos/components/core/card/separator">
   </demoinline>
 </demo>
 
@@ -86,7 +86,7 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/card/overflow-y">
+  <demoinline src="demos/components/core/card/overflow-y">
   </demoinline>
 </demo>
 
@@ -95,7 +95,7 @@ Use **tailwind classes** to overflow divs. Use **component classes** to style **
 You can use [list component](/components/core/list) to space card's internal content.
 
 <demo>
-  <demoinline src="vanilla/components/core/card/list">
+  <demoinline src="demos/components/core/card/list">
   </demoinline>
 </demo>
 
@@ -104,6 +104,6 @@ You can use [list component](/components/core/list) to space card's internal con
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="vanilla/components/core/card/close">
+  <demoinline src="demos/components/core/card/close">
   </demoinline>
 </demo>

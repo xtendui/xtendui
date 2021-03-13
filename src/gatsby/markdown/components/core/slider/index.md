@@ -20,7 +20,7 @@ Use this code to create a **slider**.
 | `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.
 
 <demo>
-  <demoinline src="vanilla/components/core/slider/usage">
+  <demoinline src="demos/components/core/slider/usage">
   </demoinline>
 </demo>
 

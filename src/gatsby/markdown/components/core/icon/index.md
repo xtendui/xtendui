@@ -25,14 +25,14 @@ Use `.xt-icon` to create a **icon**.
 Use this code to create **icons with svg**.
 
 <demo>
-  <demoinline src="vanilla/components/core/icon/usage">
+  <demoinline src="demos/components/core/icon/usage">
   </demoinline>
 </demo>
 
 Use this code to create **icons with img**.
 
 <demo>
-  <demoinline src="vanilla/components/core/icon/usage-img">
+  <demoinline src="demos/components/core/icon/usage-img">
   </demoinline>
 </demo>
 

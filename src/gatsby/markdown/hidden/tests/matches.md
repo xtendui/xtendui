@@ -10,14 +10,14 @@ title: "Matches"
 Test matches functionality on mobile/desktop.
 
 <demo>
-  <demoinline src="vanilla/components/core/toggle/matches">
+  <demoinline src="demos/components/core/toggle/matches">
   </demoinline>
-  <demoinline src="vanilla/components/core/overlay/matches">
+  <demoinline src="demos/components/core/overlay/matches">
   </demoinline>
-  <demoinline src="vanilla/components/core/drop/matches">
+  <demoinline src="demos/components/core/drop/matches">
   </demoinline>
-  <demoinline src="vanilla/components/core/tooltip/matches">
+  <demoinline src="demos/components/core/tooltip/matches">
   </demoinline>
-  <demoinline src="vanilla/components/core/slider/matches">
+  <demoinline src="demos/components/core/slider/matches">
   </demoinline>
 </demo>

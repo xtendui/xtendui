@@ -22,7 +22,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/form/disabled">
+  <demoinline src="demos/components/core/form/disabled">
   </demoinline>
 </demo>
 
@@ -31,7 +31,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.
 Use **tailwind classes** to style **fieldset**, **legend** and **note**.
 
 <demo>
-  <demoinline src="vanilla/components/core/form/fieldset-legend">
+  <demoinline src="demos/components/core/form/fieldset-legend">
   </demoinline>
 </demo>
 
@@ -40,7 +40,7 @@ Use **tailwind classes** to style **fieldset**, **legend** and **note**.
 Use **tailwind classes** to create a **label addon**.
 
 <demo>
-  <demoinline src="vanilla/components/core/form/label-addon">
+  <demoinline src="demos/components/core/form/label-addon">
   </demoinline>
 </demo>
 

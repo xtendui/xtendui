@@ -17,6 +17,6 @@ Use [list group](/components/core/list-group) to create a **nav**.
 | For aria purpose use `<nav></nav>`.
 
 <demo>
-  <demoinline src="vanilla/components/core/nav/usage">
+  <demoinline src="demos/components/core/nav/usage">
   </demoinline>
 </demo>

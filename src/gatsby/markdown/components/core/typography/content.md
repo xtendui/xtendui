@@ -29,7 +29,7 @@ Text styles on **parent elements** are applied when **inerithed**.
 See [link variant](/components/core/link#variant) to style **links**.
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/variant">
+  <demoinline src="demos/components/core/typography/variant">
   </demoinline>
 </demo>
 
@@ -54,7 +54,7 @@ You can use headers **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/headers">
+  <demoinline src="demos/components/core/typography/headers">
   </demoinline>
 </demo>
 
@@ -64,7 +64,7 @@ Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tail
 | Remember to **override text line height with responsive leading**.
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/headers-custom">
+  <demoinline src="demos/components/core/typography/headers-custom">
   </demoinline>
 </demo>
 
@@ -84,7 +84,7 @@ You can use paragraph **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/paragraph">
+  <demoinline src="demos/components/core/typography/paragraph">
   </demoinline>
 </demo>
 
@@ -93,7 +93,7 @@ You can use paragraph **classes or tags** with customizable styles.
 Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/text">
+  <demoinline src="demos/components/core/typography/text">
   </demoinline>
 </demo>
 
@@ -114,7 +114,7 @@ You can use lists **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/list">
+  <demoinline src="demos/components/core/typography/list">
   </demoinline>
 </demo>
 
@@ -134,7 +134,7 @@ You can use definition lists **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/definition-list">
+  <demoinline src="demos/components/core/typography/definition-list">
   </demoinline>
 </demo>
 
@@ -155,7 +155,7 @@ You can use figure and figcaption **classes or tags** with customizable styles.
 </div>
 
 <demo>
-  <demoinline src="vanilla/components/core/typography/figure">
+  <demoinline src="demos/components/core/typography/figure">
   </demoinline>
 </demo>
 

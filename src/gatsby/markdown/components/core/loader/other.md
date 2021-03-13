@@ -11,9 +11,9 @@ date: "2005-10-10"
 Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 <demo>
-  <demoinline src="vanilla/components/core/loader/background-spinner">
+  <demoinline src="demos/components/core/loader/background-spinner">
   </demoinline>
-  <demoinline src="vanilla/components/core/loader/background-filler">
+  <demoinline src="demos/components/core/loader/background-filler">
   </demoinline>
 </demo>
 
@@ -24,14 +24,14 @@ Use **tailwind classes** to assign loader activation animation.
 Example loader spinner with **activation animation**.
 
 <demo>
-  <demoinline src="vanilla/components/core/loader/js-spinner">
+  <demoinline src="demos/components/core/loader/js-spinner">
   </demoinline>
 </demo>
 
 Example loader filler with **activation animation**.
 
 <demo>
-  <demoinline src="vanilla/components/core/loader/js-filler">
+  <demoinline src="demos/components/core/loader/js-filler">
   </demoinline>
 </demo>
 
@@ -46,6 +46,6 @@ Use **component classes** to create a **mouse follow**.
 | This demo uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
-  <demoinline src="vanilla/components/addons/animation/mousefollow">
+  <demoinline src="demos/components/addons/animation/mousefollow">
   </demoinline>
 </demo>
