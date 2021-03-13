@@ -102,7 +102,6 @@ class Demo extends React.Component {
 export default Demo
 `
         const destination = `${src}.jsx`
-        console.log('Generating React', destination)
         writeFile(destination, str)
       })
     }

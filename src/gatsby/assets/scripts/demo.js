@@ -317,7 +317,7 @@ const populateDemo = (container, i) => {
       id = id.split('/').splice(3, 10).join('-')
     }*/
     let id = item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
-    id = id.replace('iframe/', '').replace('demos/', '').replace('components/', '')
+    id = id.replace('demos/', '').replace('components/', '')
     name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
     item.setAttribute('id', kebabCase(id))

@@ -9,9 +9,8 @@ import 'assets/styles/app.css'
 export default class DemoIframe extends React.Component {
   render() {
     const { location } = this.props
-    const src = location.pathname.replace('/iframe', 'demos')
+    const src = location.pathname.substring(1)
     const id = src.replace('demos/', '').replace('components/', '').split('/').join('-')
-    const html = require(`static/${src}.html`).default
     // iframe
     const options = require(`static/${src}.html`).options
     const seo = {}

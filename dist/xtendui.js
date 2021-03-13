@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
-import 'xtendui/build/xtend-core'
-import 'xtendui/build/xtend-addons'
+import './xtend-core'
+import './xtend-addons'
 
 // export UMD
 /* eslint-disable */

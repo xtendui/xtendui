@@ -12,7 +12,7 @@ Test activation and no close clicking inside with eventLimit.
 <demo>
   <demoinline src="vanilla/components/core/toggle/usage-self">
   </demoinline>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/usage-self">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/overlay/usage-self">
   </div>
   <demoinline src="vanilla/components/core/drop/usage-self">
   </demoinline>

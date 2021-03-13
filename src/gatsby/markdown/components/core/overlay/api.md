@@ -217,6 +217,6 @@ self.targets.filter(x => self.hasCurrent(x))
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/overlay/events-methods">
   </div>
 </demo>

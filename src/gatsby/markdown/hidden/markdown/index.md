@@ -9,7 +9,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## REACT
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/toggle/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/toggle/events-methods">
   </div>
   <demoinline src="demos/components/core/toggle/animation-js-multiple">
   </demoinline>

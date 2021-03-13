@@ -38,6 +38,6 @@ Use `.xt-row-overflow` to have **overflow scroll when overflowing**.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/row/overflow">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/row/overflow">
   </div>
 </demo>

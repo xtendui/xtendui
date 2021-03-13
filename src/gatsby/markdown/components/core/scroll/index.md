@@ -17,19 +17,19 @@ You can **customize this component** inside `tailwind.config.js` setting `theme.
 Use this code to create a **fade**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade"></div>
 </demo>
 
 Use this code to create a **sticky**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/sticky"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/sticky"></div>
 </demo>
 
 Use this code to create a **parallax**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/parallax"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/parallax"></div>
 </demo>
 
 Check subpage to [scroll fade](/components/core/scroll/fade) and [scroll sticky](/components/core/scroll/sticky) and [scroll parallax](/components/core/scroll/parallax).

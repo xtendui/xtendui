@@ -11,6 +11,6 @@ description: "Example with simple markup and css for a sticky footer."
 Use this code to create a **sticky footer**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/layout/stickyfooter">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/layout/stickyfooter">
   </div>
 </demo>

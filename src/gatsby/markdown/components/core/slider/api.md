@@ -264,6 +264,6 @@ Index methods:
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/slider/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/slider/events-methods">
   </div>
 </demo>
