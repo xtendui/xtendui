@@ -71,7 +71,8 @@ jobs:
     - name: Exit if unstaged
       if: steps.changes.outputs.changed == 1
       run: |
-        echo "Unstaged changes after generation"
+        echo "There are unstaged changes"
+        git status
         exit 1
     - name: Lint
       run: yarn lint
