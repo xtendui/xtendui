@@ -1,28 +1,20 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-drop>
-            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            <button
+              type="button"
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+            >
               group
             </button>
 
             <div className="xt-drop p-4">
-              <div
-                className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
-              >
+              <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96">
                 <div className="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
                   <div className="xt-media-inner">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -51,7 +43,10 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-drop>
-            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            <button
+              type="button"
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+            >
               group
             </button>
 

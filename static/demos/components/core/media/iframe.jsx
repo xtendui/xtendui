@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -19,7 +10,7 @@ class Demo extends React.Component {
               className="xt-media"
               type="text/html"
               src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&enablejsapi=1&rel=0"
-              frameborder="0"
+              frameBorder="0"
             ></iframe>
           </div>
         </div>

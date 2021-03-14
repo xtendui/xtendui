@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -19,11 +10,16 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
-                <input type="checkbox" className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" checked disabled />
+                <input
+                  type="checkbox"
+                  className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                  checked
+                  disabled
+                />
               </div>
             </label>
           </div>
@@ -33,11 +29,14 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
-                <input type="checkbox" className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
+                <input
+                  type="checkbox"
+                  className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                />
               </div>
             </label>
           </div>
@@ -47,9 +46,9 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
                 <input
                   type="radio"
@@ -66,11 +65,15 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
-                <input type="radio" className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all" name="radio-card" />
+                <input
+                  type="radio"
+                  className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                  name="radio-card"
+                />
               </div>
             </label>
           </div>
@@ -80,9 +83,9 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
                 <input
                   type="radio"
@@ -99,11 +102,15 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                  vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
-                <input type="radio" className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all" name="switch-card" />
+                <input
+                  type="radio"
+                  className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                  name="switch-card"
+                />
               </div>
             </label>
           </div>

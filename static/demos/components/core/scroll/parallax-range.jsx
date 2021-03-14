@@ -10,9 +10,7 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (

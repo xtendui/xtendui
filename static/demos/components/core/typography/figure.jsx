@@ -1,23 +1,14 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
         <figure>
           <img src="/img.svg" loading="lazy" alt="" />
           <figcaption>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex
-            at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut
+            ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
           </figcaption>
         </figure>
 

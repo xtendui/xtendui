@@ -1,21 +1,11 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
         <div data-xt-tooltip="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">
           Lorem ipsum
-
           <div className="xt-tooltip-item">
             <a href="#">dolor</a>
 
@@ -25,7 +15,6 @@ class Demo extends React.Component {
               </div>
             </div>
           </div>
-
           sit amet
         </div>
       </div>

@@ -10,9 +10,7 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -22,14 +20,12 @@ class Demo extends React.Component {
             <div className="text-sm py-6 px-7">
               <div className="xt-h5">Small</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-                velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                vitae magna eget, vehicula scelerisque elit.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <span
-              className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler"
-            >
+            <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
                 <span className="absolute bg-current opacity-25 w-full h-full"></span>
                 <span className="absolute bg-current h-full"></span>
@@ -37,11 +33,12 @@ class Demo extends React.Component {
             </span>
           </div>
 
-          <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          <button
+            type="button"
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+          >
             Lorem ipsum
-            <span
-              className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler"
-            >
+            <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
                 <span className="absolute bg-current opacity-25 w-full h-full"></span>
                 <span className="absolute bg-current h-full"></span>

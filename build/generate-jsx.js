@@ -12,23 +12,20 @@ const indentString = require('indent-string')
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)
       const src = `${dir}/${name}`
+      let html = require('esm')(module)(path.resolve(`${src}.html.js`)).object.html
+      // refs
+      const refs = html.match(/id="ref--(.*?)"/g)
       let str = `import React from 'react'
 `
       const jsGlob = new glob.Glob(`${src}.js`, (er, jsSources) => {
         if (!jsSources.length) {
           str += `
-class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-`
-          str += `  }
-`
+class Demo extends React.Component {`
         } else {
+          if (!refs) {
+            console.error('Jsx generator found custom javascript and no id="ref--')
+            process.exit(1)
+          }
           const jsSource = jsSources[0]
           const jsText = fs.readFileSync(jsSource, 'utf8')
           // ##IMPORTSSTART and ##IMPORTSEND
@@ -90,20 +87,25 @@ class Demo extends React.Component {
         str += `
   render() {
     return (
-      <div ref={this.ref}>
 `
-        const html = require('esm')(module)(path.resolve(`${src}.html.js`)).object.html
-        str += indentString(
-          html
-            .replace(/class="/g, 'className="')
-            // remove first and last line
-            .split('\n')
-            .slice(2, -2)
-            .join('\n'),
-          4
-        )
+        if (refs) {
+          str += `      <div ref={this.ref}>
+`
+        }
+        html = html.replace(/class="/g, 'className="')
+        if (refs) {
+          // remove first and last line including ref
+          html = html.split('\n').slice(2, -2).join('\n')
+        } else {
+          // remove first and last line
+          html = html.split('\n').slice(1, -1).join('\n')
+        }
+        str += indentString(html, 4)
+        if (refs) {
+          str += `
+      </div>`
+        }
         str += `
-      </div>
     )
   }
 }

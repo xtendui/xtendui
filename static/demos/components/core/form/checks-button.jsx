@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -26,7 +17,10 @@ class Demo extends React.Component {
 
           <label className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Lorem ipsum
-            <input type="checkbox" className="xt-check xt-checkbox top-auto ml-2 rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
+            <input
+              type="checkbox"
+              className="xt-check xt-checkbox top-auto ml-2 rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+            />
           </label>
 
           <label className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">

@@ -1,72 +1,63 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h3>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h4>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h5>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h5>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h6>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h6>
+        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <h3 className="xt-h6 sm:xt-h5 md:xt-h4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h3>
+        <h3 className="xt-h6 sm:xt-h5 md:xt-h4">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
 
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
         </p>
       </div>
     )

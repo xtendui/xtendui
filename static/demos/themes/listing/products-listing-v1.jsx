@@ -10,9 +10,7 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -34,7 +32,9 @@ class Demo extends React.Component {
                           <div className="xt-list xt-list-3 items-center flex-nowrap">
                             <div className="text-xl font-semibold">-35%</div>
                             <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
-                              For Exhibition<br />Renewal
+                              For Exhibition
+                              <br />
+                              Renewal
                             </div>
                           </div>
                         </div>
@@ -50,12 +50,21 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block">
                       <div className="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
                         <div className="xt-media-inner">
-                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                          <img
+                            className="xt-media object-cover object-center"
+                            src="/img-alt.svg"
+                            loading="lazy"
+                            alt=""
+                          />
                         </div>
                         <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                           <div className="xt-list xt-list-3 items-center flex-nowrap">
                             <div className="text-xl font-semibold">-40%</div>
-                            <div className="max-w-xs text-xs leading-tight uppercase opacity-50">Black<br />Friday</div>
+                            <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                              Black
+                              <br />
+                              Friday
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -84,7 +93,12 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block">
                       <div className="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
                         <div className="xt-media-inner">
-                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                          <img
+                            className="xt-media object-cover object-center"
+                            src="/img-alt.svg"
+                            loading="lazy"
+                            alt=""
+                          />
                         </div>
                       </div>
                       <div className="listing-item-content py-4">
@@ -112,7 +126,12 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block">
                       <div className="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
                         <div className="xt-media-inner">
-                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                          <img
+                            className="xt-media object-cover object-center"
+                            src="/img-alt.svg"
+                            loading="lazy"
+                            alt=""
+                          />
                         </div>
                       </div>
                       <div className="listing-item-content py-4">
@@ -140,7 +159,12 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block">
                       <div className="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
                         <div className="xt-media-inner">
-                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                          <img
+                            className="xt-media object-cover object-center"
+                            src="/img-alt.svg"
+                            loading="lazy"
+                            alt=""
+                          />
                         </div>
                       </div>
                       <div className="listing-item-content py-4">
@@ -177,7 +201,11 @@ class Demo extends React.Component {
                       <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                         <div className="xt-list xt-list-3 items-center flex-nowrap">
                           <div className="text-xl font-semibold">-35%</div>
-                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">For Exhibition<br />Renewal</div>
+                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                            For Exhibition
+                            <br />
+                            Renewal
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -197,7 +225,11 @@ class Demo extends React.Component {
                       <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                         <div className="xt-list xt-list-3 items-center flex-nowrap">
                           <div className="text-xl font-semibold">-40%</div>
-                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">Black<br />Friday</div>
+                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                            Black
+                            <br />
+                            Friday
+                          </div>
                         </div>
                       </div>
                     </div>

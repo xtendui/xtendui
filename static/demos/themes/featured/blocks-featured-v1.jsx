@@ -10,9 +10,7 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -33,9 +31,9 @@ class Demo extends React.Component {
                     <div className="xt-h1 mb-6 md:-ml-32">Lorem ipsum</div>
                     <div className="leading-loose">
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-                        tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                        vitae magna eget, vehicula scelerisque elit.
+                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit
+                        eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
+                        sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                       <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
                         <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
@@ -63,9 +61,9 @@ class Demo extends React.Component {
                     <div className="xt-h1 mb-6">Dolor sit amet</div>
                     <div className="leading-loose md:-mr-32 md:pl-12">
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-                        tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                        vitae magna eget, vehicula scelerisque elit.
+                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit
+                        eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
+                        sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                       <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
                         <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
@@ -93,9 +91,9 @@ class Demo extends React.Component {
                     <div className="xt-h1 mb-6 md:-ml-32">Consectetur adipiscing elit</div>
                     <div className="leading-loose">
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-                        tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                        vitae magna eget, vehicula scelerisque elit.
+                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit
+                        eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
+                        sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                       <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
                         <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
@@ -125,9 +123,9 @@ class Demo extends React.Component {
                     <div className="xt-h1 mb-6 md:-mr-32">Lorem ipsum</div>
                     <div className="leading-loose">
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-                        tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-                        vitae magna eget, vehicula scelerisque elit.
+                        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit
+                        eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
+                        sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                       <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
                         <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>

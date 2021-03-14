@@ -10,9 +10,7 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -26,15 +24,18 @@ class Demo extends React.Component {
         </button>
 
         <div className="xt-tooltip p-2 group" id="tooltip--swap-click" data-xt-duration="300">
-          <div
-            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+          <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
             Lorem ipsum dolor sit amet
           </div>
         </div>
 
-        <div className="xt-tooltip p-2 group" id="tooltip--swap-click-swap" style="display: none" data-xt-duration="300">
-          <div
-            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+        <div
+          className="xt-tooltip p-2 group"
+          id="tooltip--swap-click-swap"
+          style="display: none"
+          data-xt-duration="300"
+        >
+          <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
             Clicked!
           </div>
         </div>

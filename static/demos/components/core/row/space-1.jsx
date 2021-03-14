@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -36,8 +27,8 @@ class Demo extends React.Component {
 
           <div className="w-full md:w-auto flex-1">
             <div className="w-full py-3 px-4 text-sm bg-gray-300">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut
-              ex at ex pellentesque efficitur.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean
+              ut ex at ex pellentesque efficitur.
             </div>
           </div>
         </div>

@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -19,8 +10,8 @@ class Demo extends React.Component {
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum dolor sit amet</div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
-                  fringilla nibh.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
+                  ut fringilla nibh.
                 </p>
               </div>
             </div>

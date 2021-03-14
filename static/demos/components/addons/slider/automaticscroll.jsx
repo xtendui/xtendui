@@ -10,15 +10,15 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {
-  }
-
+  componentWillUnmount() {}
 
   render() {
     return (
       <div ref={this.ref}>
         <div className="demo--slider-automaticscroll">
-          <div className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Constant speed</div>
+          <div className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+            Constant speed
+          </div>
 
           <div className="xt-slider slider--text my-12">
             <div className="xt-slides">
@@ -69,7 +69,12 @@ class Demo extends React.Component {
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
             <nav className="xt-slider-pagination hidden">
-              <button type="button" className="xt-button button-default xt-ignore" data-xt-pag title="Slide xt-num"></button>
+              <button
+                type="button"
+                className="xt-button button-default xt-ignore"
+                data-xt-pag
+                title="Slide xt-num"
+              ></button>
             </nav>
           </div>
 
@@ -117,7 +122,12 @@ class Demo extends React.Component {
                   <a href="#test-link-6" className="slide-asset" title="item 5">
                     <div className="xt-media-container bg-gray-200 xt-ratio-37.5">
                       <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
+                        <img
+                          className="xt-media object-cover object-center"
+                          src="/img-alt.svg"
+                          loading="eager"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </a>
@@ -130,7 +140,12 @@ class Demo extends React.Component {
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
             <nav className="xt-slider-pagination hidden">
-              <button type="button" className="xt-button button-default xt-ignore" data-xt-pag title="Slide xt-num"></button>
+              <button
+                type="button"
+                className="xt-button button-default xt-ignore"
+                data-xt-pag
+                title="Slide xt-num"
+              ></button>
             </nav>
           </div>
         </div>

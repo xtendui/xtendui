@@ -1,21 +1,11 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
         <div data-xt-tooltip>
           Lorem ipsum
-
           <div className="xt-tooltip-item" data-xt-group="my-group">
             <a href="#">dolor</a>
 
@@ -31,9 +21,7 @@ class Demo extends React.Component {
               </div>
             </div>
           </div>
-
           sit
-
           <div className="xt-tooltip-item">
             <a href="#">amet</a>
 

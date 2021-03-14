@@ -1,18 +1,9 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
-      <div ref={this.ref}>
+      <table className="table-fixed my-4 xt-my-auto w-full">
         <thead>
           <tr>
             <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">
@@ -60,7 +51,7 @@ class Demo extends React.Component {
             <td className="py-2 px-4 text-sm align-top leading-snug border">400</td>
           </tr>
         </tbody>
-      </div>
+      </table>
     )
   }
 }

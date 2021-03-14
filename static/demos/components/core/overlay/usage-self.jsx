@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -23,7 +14,21 @@ class Demo extends React.Component {
                   className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
                 </button>
                 <div className="text-base py-8 px-9">
                   <div className="xt-h4">Lorem ipsum</div>
@@ -33,14 +38,16 @@ class Demo extends React.Component {
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                   <p>
-                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.
+                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula
-                    nulla sollicitudin nunc, ut commodo nulla enim nec nisi.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.
                   </p>
                   <p>
-                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.
+                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.
                   </p>
                 </div>
               </div>

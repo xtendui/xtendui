@@ -1,15 +1,6 @@
 import React from 'react'
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props)
-    this.ref = React.createRef()
-  }
-
-  componentDidMount() {
-    this.object = this.ref.current
-  }
-
   render() {
     return (
       <div ref={this.ref}>
@@ -25,10 +16,13 @@ class Demo extends React.Component {
         >
           <nav
             className="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-            data-xt-group="initial">
+            data-xt-group="initial"
+          >
             <div className="xt-h5  flex items-center justify-between">
               <div>Menu</div>
-              <button type="button" className="hidden multilevel-reset" data-xt-group="initial">Back</button>
+              <button type="button" className="hidden multilevel-reset" data-xt-group="initial">
+                Back
+              </button>
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
@@ -46,14 +40,27 @@ class Demo extends React.Component {
               >
                 Category 1
               </button>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 0{' '}
+              </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 1{' '}
+              </a>
             </nav>
           </nav>
 
           <nav
             className="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-            data-xt-group="cat-0">
+            data-xt-group="cat-0"
+          >
             <div className="xt-h5  flex items-center justify-between">
               <div>Category 0</div>
               <button
@@ -80,8 +87,20 @@ class Demo extends React.Component {
               >
                 Category 0b
               </button>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 0{' '}
+              </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 1{' '}
+              </a>
             </nav>
           </nav>
 
@@ -98,14 +117,27 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 0{' '}
+              </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 1{' '}
+              </a>
             </nav>
           </nav>
 
           <nav
             className="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-            data-xt-group="cat-0b">
+            data-xt-group="cat-0b"
+          >
             <div className="xt-h5  flex items-center justify-between">
               <div>Category 0b</div>
               <button
@@ -118,14 +150,27 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 0{' '}
+              </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 1{' '}
+              </a>
             </nav>
           </nav>
 
           <nav
             className="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-            data-xt-group="cat-1">
+            data-xt-group="cat-1"
+          >
             <div className="xt-h5  flex items-center justify-between">
               <div>Category 1</div>
               <button
@@ -138,8 +183,20 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
-              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 0{' '}
+              </a>
+              <a
+                href="#"
+                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+              >
+                {' '}
+                Link 1{' '}
+              </a>
             </nav>
           </nav>
         </div>

@@ -37,7 +37,7 @@
     "custom": "yarn alias-src && node ./build/generate.js",
     "alias-src": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postversion": "yarn pack",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.0.3",
