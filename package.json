@@ -28,16 +28,16 @@
     "src/future/*.*"
   ],
   "scripts": {
-    "generate": "node ./build/generate.js",
-    "webpack": "yarn alias && yarn generate && webpack --progress",
-    "build": "yarn alias && yarn generate && gatsby clean && gatsby build",
-    "dev": "yarn alias && yarn generate && gatsby clean && gatsby develop -p 8080",
+    "build": "yarn custom && gatsby clean && gatsby build",
+    "dev": "yarn custom && gatsby clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js,.jsx",
-    "postversion": "yarn webpack",
-    "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
+    "pack": "webpack --progress",
+    "custom": "yarn alias-src && node ./build/generate.js",
+    "alias-src": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
+    "postversion": "yarn pack",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.0.3",
