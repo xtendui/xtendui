@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div
       class="xt-list xt-list-3 items-center"
@@ -8,15 +8,13 @@ const html = `
     >
       <a
         href="#toggle--prevent-event-1-hover"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 1 hover
       </a>
 
       <a
         href="#toggle--prevent-event-2-hover"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 2 hover
       </a>
 

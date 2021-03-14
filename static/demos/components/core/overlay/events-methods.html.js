@@ -1,48 +1,42 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-first-element"
-      >
+        id="demo--overlay-events-first-element">
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-first-target"
-      >
+        id="demo--overlay-events-first-target">
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-reinit"
-      >
+        id="demo--overlay-events-reinit">
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-restart"
-      >
+        id="demo--overlay-events-restart">
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-destroy"
-      >
+        id="demo--overlay-events-destroy">
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-unmount"
-      >
+        id="demo--overlay-events-unmount">
         Unmount
       </button>
     </div>
@@ -51,15 +45,13 @@ const html = `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="demo--overlay-events"
-      >
+        id="demo--overlay-events">
         Overlay
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="demo--overlay-events-alt"
-      >
+        id="demo--overlay-events-alt">
         Overlay same
       </button>
     </div>
@@ -102,8 +94,7 @@ const html = `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--overlay-events-log"
-      ></div>
+        id="demo--overlay-events-log"></div>
     </div>
   </div>
 `

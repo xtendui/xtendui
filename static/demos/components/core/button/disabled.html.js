@@ -1,29 +1,26 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} xt-disabled"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         Gray
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} xt-disabled"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         Primary
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} xt-disabled"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         Text
       </button>
 

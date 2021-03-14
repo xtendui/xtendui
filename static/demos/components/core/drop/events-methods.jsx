@@ -21,57 +21,49 @@ class Demo extends React.Component {
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-first-element"
-          >
+            id="demo--drop-events-first-element">
             1st element
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-first-target"
-          >
+            id="demo--drop-events-first-target">
             1st target
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-add"
-          >
+            id="demo--drop-events-add">
             Add
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-remove"
-          >
+            id="demo--drop-events-remove">
             Remove
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-reinit"
-          >
+            id="demo--drop-events-reinit">
             Reinit
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-restart"
-          >
+            id="demo--drop-events-restart">
             Restart
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-destroy"
-          >
+            id="demo--drop-events-destroy">
             Destroy
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--drop-events-unmount"
-          >
+            id="demo--drop-events-unmount">
             Unmount
           </button>
         </div>
@@ -117,8 +109,7 @@ class Demo extends React.Component {
         <div className="xt-card rounded-md text-black xt-links-default bg-gray-200 mt-6">
           <div
             className="text-sm py-6 px-7 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-            id="demo--drop-events-log"
-          ></div>
+            id="demo--drop-events-log"></div>
         </div>
       </div>
     )

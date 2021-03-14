@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div data-xt-tooltip="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">
       Lorem ipsum

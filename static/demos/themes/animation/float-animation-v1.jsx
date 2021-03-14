@@ -22,15 +22,13 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0"
-          >
+            className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
             Text
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
             Link
           </button>
         </div>

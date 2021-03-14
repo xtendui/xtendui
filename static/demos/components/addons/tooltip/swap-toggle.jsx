@@ -28,16 +28,14 @@ class Demo extends React.Component {
 
         <div className="xt-tooltip p-2 group" id="tooltip--swap-toggle" data-xt-duration="300">
           <div
-            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0"
-          >
+            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
             Lorem ipsum dolor sit amet
           </div>
         </div>
 
         <div className="xt-tooltip p-2 group" id="tooltip--swap-toggle-swap" style="display: none" data-xt-duration="300">
           <div
-            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0"
-          >
+            className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
             Toggled!
           </div>
         </div>

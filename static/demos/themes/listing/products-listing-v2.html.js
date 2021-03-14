@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="py-10">
       <div class="xt-slider slider--listing" data-xt-slider="{ contain: true, jumpOverflow: true }">

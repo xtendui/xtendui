@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <ul class="demo--listcustom">
       <li>

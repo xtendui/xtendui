@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-row xt-row-1">
       <div class="w-4/12">

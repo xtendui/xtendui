@@ -1,62 +1,54 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-first-element"
-      >
+        id="demo--tooltip-events-first-element">
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-first-target"
-      >
+        id="demo--tooltip-events-first-target">
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-add"
-      >
+        id="demo--tooltip-events-add">
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-remove"
-      >
+        id="demo--tooltip-events-remove">
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-reinit"
-      >
+        id="demo--tooltip-events-reinit">
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-restart"
-      >
+        id="demo--tooltip-events-restart">
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-destroy"
-      >
+        id="demo--tooltip-events-destroy">
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-unmount"
-      >
+        id="demo--tooltip-events-unmount">
         Unmount
       </button>
     </div>
@@ -86,8 +78,7 @@ const html = `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--tooltip-events-log"
-      ></div>
+        id="demo--tooltip-events-log"></div>
     </div>
   </div>
 `

@@ -1,13 +1,12 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center" data-xt-toggle>
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="my-group"
-      >
+        data-xt-group="my-group">
         Toggle Group 0
       </button>
 
@@ -18,8 +17,7 @@ const html = `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="my-group"
-      >
+        data-xt-group="my-group">
         Toggle Group 0
       </button>
 
@@ -30,8 +28,7 @@ const html = `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="another-group"
-      >
+        data-xt-group="another-group">
         Toggle Group 3
       </button>
 

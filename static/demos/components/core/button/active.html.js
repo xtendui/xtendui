@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} active">
@@ -13,8 +13,7 @@ const html = `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} active"
-      >
+        class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} active">
         Text
       </button>
 

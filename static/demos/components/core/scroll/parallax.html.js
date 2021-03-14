@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="demo--parallax">
       <h1 class="xt-h1 h-screen">Scroll down</h1>

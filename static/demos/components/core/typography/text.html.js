@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <p>Example <mark>highlight text</mark>.</p>
 

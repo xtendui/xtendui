@@ -1,7 +1,7 @@
 const markupSlider = require('src/gatsby/components/snippets/markup-slider').default
 const indentString = require('indent-string')
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div
       class="xt-slider demo--slider-disable"

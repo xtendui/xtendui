@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <table class="my-4 xt-my-auto w-full">
     <thead>
       <tr>

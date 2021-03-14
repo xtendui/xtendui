@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <figure>
       <img src="/img.svg" loading="lazy" alt="" />

@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center justify-center demo--overlay-class-html">
       <div data-xt-overlay="{ classHtml: 'xt-scrollbar-overlay classhtml-custom' }">

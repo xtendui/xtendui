@@ -1,4 +1,4 @@
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <dl>
       <dt class="font-bold">Lorem ipsum dolor sit amet.</dt>

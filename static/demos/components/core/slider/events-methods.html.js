@@ -2,77 +2,67 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 const markupSlider = require('src/gatsby/components/snippets/markup-slider').default
 const indentString = require('indent-string')
 
-const html = `
+const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-first-element"
-      >
+        id="demo--slider-events-first-element">
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-first-target"
-      >
+        id="demo--slider-events-first-target">
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-autostart"
-      >
+        id="demo--toggle-events-autostart">
         Autostart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-autostop"
-      >
+        id="demo--toggle-events-autostop">
         Autostop
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-add"
-      >
+        id="demo--slider-events-add">
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-remove"
-      >
+        id="demo--slider-events-remove">
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-reinit"
-      >
+        id="demo--slider-events-reinit">
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-restart"
-      >
+        id="demo--slider-events-restart">
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-destroy"
-      >
+        id="demo--slider-events-destroy">
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--slider-events-unmount"
-      >
+        id="demo--slider-events-unmount">
         Unmount
       </button>
     </div>
@@ -82,8 +72,7 @@ const html = `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--slider-events-log"
-      ></div>
+        id="demo--slider-events-log"></div>
     </div>
   </div>
 `
