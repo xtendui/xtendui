@@ -15,10 +15,7 @@ class Demo extends React.Component {
       <div ref={this.ref}>
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-overlay>
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               group
             </button>
 
@@ -32,36 +29,22 @@ class Demo extends React.Component {
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                     <div className="md:xt-card-group">
                       <div className="text-base py-8 px-9 md:w-7/12">
                         <div className="xt-h4">Lorem ipsum</div>
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
-                          Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac
-                          diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                          suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
+                          mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                         </p>
                       </div>
                       <div className="text-sm py-6 px-7 md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
-                          Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac
-                          diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                          suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
+                          mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                         </p>
                       </div>
                     </div>
@@ -72,10 +55,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-overlay>
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               group complex
             </button>
 
@@ -89,42 +69,28 @@ class Demo extends React.Component {
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                     <div className="md:xt-card-group">
                       <div className="text-base py-8 px-9 md:w-7/12 bg-gray-300 md:rounded-tl-md">
                         <div className="xt-h4">Lorem ipsum</div>
                         <p>
-                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
-                          Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac
-                          diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                          suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
+                          mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                         </p>
                       </div>
                       <div className="md:w-5/12">
                         <div className="text-sm py-6 px-7 bg-gray-300 md:rounded-tr-md">
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
-                            volutpat turpis.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                            turpis.
                           </p>
                         </div>
                         <div className="text-base py-8 px-9">
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
-                            volutpat turpis.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                            turpis.
                           </p>
                         </div>
                       </div>

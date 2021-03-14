@@ -10,7 +10,9 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+  }
+
 
   render() {
     return (
@@ -75,10 +77,7 @@ class Demo extends React.Component {
         </div>
 
         <div className="xt-list xt-list-3 items-center" id="demo--tooltip-events" title="Object">
-          <button
-            type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+          <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             Tooltip 0
           </button>
 
@@ -88,10 +87,7 @@ class Demo extends React.Component {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+          <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             Tooltip 1
           </button>
 

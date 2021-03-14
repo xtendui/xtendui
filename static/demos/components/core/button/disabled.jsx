@@ -38,11 +38,7 @@ class Demo extends React.Component {
             Text
           </button>
 
-          <button
-            type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md xt-link xt-disabled"
-            aria-disabled="true"
-          >
+          <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md xt-link xt-disabled" aria-disabled="true">
             link
           </button>
         </div>

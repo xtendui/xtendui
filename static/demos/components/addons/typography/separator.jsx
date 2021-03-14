@@ -11,7 +11,11 @@ class Demo extends React.Component {
   }
 
   render() {
-    return <div ref={this.ref}></div>
+    return (
+      <div ref={this.ref}>
+
+      </div>
+    )
   }
 }
 

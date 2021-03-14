@@ -19,9 +19,9 @@ class Demo extends React.Component {
               <div className="text-sm">
                 <div className="xt-h5">Small</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+                  vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
             </div>
@@ -32,9 +32,9 @@ class Demo extends React.Component {
               <div className="text-base">
                 <div className="xt-h4">Medium</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+                  vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
             </div>
@@ -45,9 +45,9 @@ class Demo extends React.Component {
               <div className="text-lg">
                 <div className="xt-h3">Large</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+                  velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+                  vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
             </div>

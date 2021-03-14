@@ -29,15 +29,15 @@
   ],
   "scripts": {
     "generate": "node ./build/generate.js",
-    "webpack": "yarn generate && webpack --progress",
-    "build": "yarn generate && gatsby clean && gatsby build",
-    "dev": "yarn generate && gatsby clean && gatsby develop -p 8080",
+    "webpack": "yarn alias && yarn generate && webpack --progress",
+    "build": "yarn alias && yarn generate && gatsby clean && gatsby build",
+    "dev": "yarn alias && yarn generate && gatsby clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js,.jsx",
     "postversion": "yarn webpack",
-    "postinstall" : "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
+    "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.0.3",
@@ -101,10 +101,8 @@
     "postcss-loader": "^4.0.3",
     "postcss-nested": "^5.0.1",
     "prettier-eslint": "^11.0.0",
-    "prism-themes": "^1.5.0",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
-    "raw-loader": "^4.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

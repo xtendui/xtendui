@@ -30,19 +30,9 @@ class Demo extends React.Component {
             Toggle same
           </button>
 
-          <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            id="toggle--unique-0"
-          >
-            Target 0
-          </div>
+          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200" id="toggle--unique-0">Target 0</div>
 
-          <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            id="toggle--unique-1"
-          >
-            Target 1
-          </div>
+          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200" id="toggle--unique-1">Target 1</div>
         </div>
       </div>
     )

@@ -31,13 +31,9 @@ class Demo extends React.Component {
             Toggle 2 hover
           </a>
 
-          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-            Target 1 hover
-          </div>
+          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 1 hover</div>
 
-          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-            Target 2 hover
-          </div>
+          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 2 hover</div>
         </div>
       </div>
     )

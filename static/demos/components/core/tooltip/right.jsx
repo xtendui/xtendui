@@ -15,13 +15,8 @@ class Demo extends React.Component {
       <div ref={this.ref}>
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-tooltip="{ position: 'right' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
-              right
-              <br />
-              ...
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              right<br />...
             </button>
 
             <div className="xt-tooltip p-2">
@@ -33,13 +28,8 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-tooltip="{ position: 'right-start' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
-              right start
-              <br />
-              ...
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              right start<br />...
             </button>
 
             <div className="xt-tooltip p-2">
@@ -51,13 +41,8 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-tooltip="{ position: 'right-end' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
-              right end
-              <br />
-              ...
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              right end<br />...
             </button>
 
             <div className="xt-tooltip p-2">

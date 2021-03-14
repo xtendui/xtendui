@@ -75,30 +75,26 @@ class Demo extends React.Component {
 
                   <div className="xt-h5 mb-6">€&nbsp;229,00</div>
 
-                  <a
-                    href="#"
-                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                  >
+                  <a href="#" className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                     Add to cart
                   </a>
 
                   <div className="text-opacity-75">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas
-                      efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut
-                      scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo
-                      nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum
-                      ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in
-                      finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris
-                      elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper
-                      mollis urna eu pharetra.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur
+                      semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque
+                      lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo.
+                      Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor
+                      in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat
+                      quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam
+                      velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.
                     </p>
                     <p>
                       Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere
                       tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis
-                      fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus
-                      ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl
-                      turpis id est.
+                      fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac
+                      velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis
+                      id est.
                     </p>
                   </div>
                 </div>

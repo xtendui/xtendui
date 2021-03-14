@@ -15,10 +15,7 @@ class Demo extends React.Component {
       <div ref={this.ref}>
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-tooltip="{ position: 'bottom' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               bottom
             </button>
 
@@ -31,10 +28,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-tooltip="{ position: 'bottom-start' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               bottom start
             </button>
 
@@ -47,10 +41,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-tooltip="{ position: 'bottom-end' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               bottom end
             </button>
 

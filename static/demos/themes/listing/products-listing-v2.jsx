@@ -10,7 +10,9 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+  }
+
 
   render() {
     return (
@@ -46,12 +48,7 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block group">
                       <div className="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                         <div className="xt-media-inner">
-                          <img
-                            className="xt-media object-cover object-center"
-                            src="/img-alt.svg"
-                            loading="lazy"
-                            alt=""
-                          />
+                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                         </div>
                         <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                         <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
@@ -86,12 +83,7 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block group">
                       <div className="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                         <div className="xt-media-inner">
-                          <img
-                            className="xt-media object-cover object-center"
-                            src="/img-alt.svg"
-                            loading="lazy"
-                            alt=""
-                          />
+                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                         </div>
                         <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                       </div>
@@ -121,12 +113,7 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block group">
                       <div className="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                         <div className="xt-media-inner">
-                          <img
-                            className="xt-media object-cover object-center"
-                            src="/img-alt.svg"
-                            loading="lazy"
-                            alt=""
-                          />
+                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                         </div>
                         <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                       </div>
@@ -156,12 +143,7 @@ class Demo extends React.Component {
                     <a href="#" className="listing-item block group">
                       <div className="xt-media-container bg-gray-200 xt-ratio-125 overflow-hidden">
                         <div className="xt-media-inner">
-                          <img
-                            className="xt-media object-cover object-center"
-                            src="/img-alt.svg"
-                            loading="lazy"
-                            alt=""
-                          />
+                          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                         </div>
                         <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                       </div>

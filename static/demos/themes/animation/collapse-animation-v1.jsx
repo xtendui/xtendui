@@ -21,10 +21,7 @@ class Demo extends React.Component {
         >
           <div className="xt-row xt-row-x-6 xt-row-y-4">
             <div className="w-full md:w-auto">
-              <button
-                type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+              <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 List group
               </button>
             </div>
@@ -32,25 +29,8 @@ class Demo extends React.Component {
             <div className="w-full md:w-auto">
               <div className="xt-list flex-nowrap max-w-sm w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0">
                 <div className="xt-list-inner flex-auto">
-                  <button
-                    type="button"
-                    className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+                  <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                   </button>
                   <input
                     type="text"
@@ -60,10 +40,7 @@ class Demo extends React.Component {
                   />
                 </div>
 
-                <button
-                  type="button"
-                  className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                >
+                <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                   Search
                 </button>
               </div>
@@ -75,10 +52,7 @@ class Demo extends React.Component {
 
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               list
             </button>
 
@@ -86,22 +60,13 @@ class Demo extends React.Component {
               <div className="xt-drop-inner rounded-md shadow-drop h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
                 <div className="xt-card w-64 py-3.5 rounded-md text-black xt-links-default bg-white">
                   <nav className="xt-list flex-col rounded-mdtransform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
-                    <a
-                      href="#"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                    <a href="#" className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </a>
-                    <button
-                      type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                    <button type="button" className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Dolor sit
                     </button>
-                    <button
-                      type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                    <button type="button" className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Amet
                     </button>
                   </nav>
@@ -112,10 +77,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               card
             </button>
 
@@ -127,21 +89,7 @@ class Demo extends React.Component {
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
                     aria-label="Close"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                   </button>
                   <div className="text-sm py-6 px-7 rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
                     <div className="xt-h5">Lorem ipsum</div>
@@ -161,19 +109,14 @@ class Demo extends React.Component {
 
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               tooltip
             </button>
 
             <div className="xt-tooltip p-2 group" data-xt-duration="700">
               <div className="xt-tooltip-inner h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
                 <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-                  <div className="transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
-                    Lorem ipsum dolor sit amet
-                  </div>
+                  <div className="transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">Lorem ipsum dolor sit amet</div>
                 </div>
               </div>
               <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100"></div>
@@ -182,10 +125,7 @@ class Demo extends React.Component {
 
           <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
             <div className="xt-tooltip-item">
-              <button
-                type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+              <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 list group
               </button>
 
@@ -198,21 +138,7 @@ class Demo extends React.Component {
                           type="button"
                           className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon text-xl -my-1"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </button>
                         <input
                           type="text"
@@ -222,10 +148,7 @@ class Demo extends React.Component {
                         />
                       </div>
 
-                      <button
-                        type="button"
-                        className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                      <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Search
                       </button>
                     </div>
@@ -241,10 +164,7 @@ class Demo extends React.Component {
 
         <div className="xt-list xt-list-3 items-center">
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               screen full
             </button>
             <div className="xt-overlay group" data-xt-duration="700">
@@ -255,21 +175,7 @@ class Demo extends React.Component {
                   className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
                   aria-label="Close"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
                 <div className="xt-overlay-inner h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
                   <div className="xt-card xt-min-h-screen items-center justify-center text-black xt-links-default bg-white">
@@ -285,10 +191,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               Menu
             </button>
 
@@ -302,39 +205,12 @@ class Demo extends React.Component {
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                     <div className="xt-list bg-primary-500 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
-                      <button
-                        type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
-                        Menu
-                      </button>
-                      <button
-                        type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
-                        Info
-                      </button>
-                      <button
-                        type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                      <button type="button" className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">Menu</button>
+                      <button type="button" className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">Info</button>
+                      <button type="button" className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Account
                       </button>
                     </div>
@@ -347,8 +223,8 @@ class Demo extends React.Component {
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                        suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
-                        mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                        suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                        augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                     </div>
                     <div className="text-sm py-6 px-7 bg-gray-300 mt-auto transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
@@ -364,10 +240,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               contact
             </button>
 
@@ -381,21 +254,7 @@ class Demo extends React.Component {
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
 
                     <div className="md:xt-card-group rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
@@ -406,18 +265,11 @@ class Demo extends React.Component {
                           <div className="xt-row xt-row-x-6 xt-row-y-4">
                             <div className="w-full md:w-6/12">
                               <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Name </label>
-                              <input
-                                type="text"
-                                className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
-                                aria-label="Name"
-                              />
+                              <input type="text" className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Name" />
                             </div>
 
                             <div className="w-full md:w-6/12">
-                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold">
-                                {' '}
-                                Surname{' '}
-                              </label>
+                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Surname </label>
                               <input
                                 type="text"
                                 className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
@@ -427,18 +279,11 @@ class Demo extends React.Component {
 
                             <div className="w-full md:w-6/12">
                               <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Email </label>
-                              <input
-                                type="text"
-                                className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
-                                aria-label="Email"
-                              />
+                              <input type="text" className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Email" />
                             </div>
 
                             <div className="w-full md:w-6/12">
-                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold">
-                                {' '}
-                                Telephone{' '}
-                              </label>
+                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Telephone </label>
                               <input
                                 type="text"
                                 className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
@@ -447,17 +292,9 @@ class Demo extends React.Component {
                             </div>
 
                             <div className="w-full">
-                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold">
-                                {' '}
-                                Subject{' '}
-                              </label>
-                              <select
-                                className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
-                                aria-label="Subject"
-                              >
-                                <option selected value="">
-                                  Select an option
-                                </option>
+                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Subject </label>
+                              <select className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Subject">
+                                <option selected value="">Select an option</option>
                                 <option>Test</option>
                                 <option>Test</option>
                                 <option>Test</option>
@@ -465,10 +302,7 @@ class Demo extends React.Component {
                             </div>
 
                             <div className="w-full">
-                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold">
-                                {' '}
-                                Message{' '}
-                              </label>
+                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Message </label>
                               <textarea
                                 className="xt-input xt-textarea rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition h-24 resize-vertical"
                                 aria-label="Message"
@@ -477,20 +311,11 @@ class Demo extends React.Component {
 
                             <div className="w-full">
                               <label className="xt-label-check">
-                                <input
-                                  type="checkbox"
-                                  className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
-                                />
+                                <input type="checkbox" className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
                                 <span className="xt-check-content">
                                   I <strong>read and accept</strong> the
-                                  <a href="#" target="_blank" rel="noopener">
-                                    sales conditions
-                                  </a>{' '}
-                                  and the
-                                  <a href="#" target="_blank" rel="noopener">
-                                    privacy policy
-                                  </a>
-                                  .
+                                  <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
+                                  <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                                 </span>
                               </label>
                             </div>
@@ -510,12 +335,7 @@ class Demo extends React.Component {
                       <div className="md:w-5/12 flex flex-col transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
                         <div className="xt-media-container bg-gray-200 md:rounded-tr-md h-48 md:xt-ratio-100">
                           <div className="xt-media-inner">
-                            <img
-                              className="xt-media object-cover object-center"
-                              src="/img.svg"
-                              loading="eager"
-                              alt=""
-                            />
+                            <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                           </div>
                         </div>
                         <div className="text-base py-8 px-9 bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
@@ -534,10 +354,7 @@ class Demo extends React.Component {
           </div>
 
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
-            <button
-              type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+            <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               newsletter
             </button>
 
@@ -551,33 +368,16 @@ class Demo extends React.Component {
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
 
                     <div className="md:xt-card-group rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
                       <div className="md:w-5/12 flex flex-col">
-                        <div className="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
+                        <div
+                          className="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                        >
                           <div className="xt-media-inner">
-                            <img
-                              className="xt-media object-cover object-center"
-                              src="/img.svg"
-                              loading="eager"
-                              alt=""
-                            />
+                            <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                           </div>
                         </div>
                       </div>
@@ -589,18 +389,11 @@ class Demo extends React.Component {
                           <div className="xt-row xt-row-x-6 xt-row-y-4">
                             <div className="w-full">
                               <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Email </label>
-                              <input
-                                type="text"
-                                className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
-                                aria-label="Email"
-                              />
+                              <input type="text" className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Email" />
                             </div>
 
                             <div className="w-full">
-                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold">
-                                {' '}
-                                Subject{' '}
-                              </label>
+                              <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Subject </label>
 
                               <div className="xt-row xt-row-x-8 xt-row-y-2">
                                 <div className="w-full sm:w-auto">
@@ -641,20 +434,11 @@ class Demo extends React.Component {
 
                             <div className="w-full">
                               <label className="xt-label-check">
-                                <input
-                                  type="checkbox"
-                                  className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
-                                />
+                                <input type="checkbox" className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
                                 <span className="xt-check-content">
                                   I <strong>read and accept</strong> the
-                                  <a href="#" target="_blank" rel="noopener">
-                                    sales conditions
-                                  </a>{' '}
-                                  and the
-                                  <a href="#" target="_blank" rel="noopener">
-                                    privacy policy
-                                  </a>
-                                  .
+                                  <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
+                                  <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                                 </span>
                               </label>
                             </div>
@@ -673,9 +457,7 @@ class Demo extends React.Component {
                     </div>
 
                     <div className="text-sm py-6 px-7 rounded-b-md bg-gray-300 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
-                      <p>
-                        Receive <strong>free discount</strong> periodically on all our products.
-                      </p>
+                      <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                     </div>
                   </div>
                 </div>

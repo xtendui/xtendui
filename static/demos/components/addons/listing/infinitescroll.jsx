@@ -33,10 +33,7 @@ class Demo extends React.Component {
             <div className="infinitescroll-pre mb-4">
               <div className="xt-list xt-list-2 flex-col items-center">
                 <div>
-                  <button
-                    type="button"
-                    className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  >
+                  <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                     Load previous pages
                   </button>
                 </div>
@@ -161,42 +158,14 @@ class Demo extends React.Component {
           <div className="infinitescroll mt-4">
             <div className="xt-list xt-list-2 flex-col items-center">
               <div className="infinitescroll-trigger">
-                <button
-                  type="button"
-                  className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                >
+                <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                   <span className="infinitescroll-trigger-content"> Show more products </span>
 
                   <span className="infinitescroll-trigger-content-nomore"> There are no more products </span>
 
                   <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
                     <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
-                      <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
-                        <circle
-                          className="stroke-current origin-center opacity-25"
-                          fill="none"
-                          strokeWidth="30"
-                          cx="120"
-                          cy="120"
-                          r="100"
-                          strokeDasharray="628"
-                          strokeDashoffset="0"
-                          pathLength="628"
-                        />
-                      </svg>
-                      <svg viewBox="0 0 240 240">
-                        <circle
-                          className="stroke-current origin-center relative animate-xt-spinner"
-                          fill="none"
-                          strokeWidth="30"
-                          cx="120"
-                          cy="120"
-                          r="100"
-                          strokeDasharray="628"
-                          strokeDashoffset="628"
-                          pathLength="628"
-                        />
-                      </svg>
+                      <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet"><circle className="stroke-current origin-center opacity-25" fill="none" stroke-width="30" cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="0" pathLength="628"/></svg><svg viewBox="0 0 240 240"><circle className="stroke-current origin-center relative animate-xt-spinner" fill="none" stroke-width="30" cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
                     </span>
                   </span>
                 </button>

@@ -10,7 +10,9 @@ class Demo extends React.Component {
     this.object = this.ref.current
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+  }
+
 
   render() {
     return (
@@ -33,41 +35,13 @@ class Demo extends React.Component {
                           type="button"
                           className="button--locate xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon text-xl -my-1"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </button>
                         <button
                           type="button"
                           className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon text-xl -my-1"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </button>
                       </div>
                     </div>
@@ -99,7 +73,7 @@ class Demo extends React.Component {
                   </div>
 
                   <div className="w-full">
-                    <label className="xt-label-check" htmlFor="googlelocator-options-school">
+                    <label className="xt-label-check" for="googlelocator-options-school">
                       <input
                         type="radio"
                         className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
@@ -112,7 +86,7 @@ class Demo extends React.Component {
                   </div>
 
                   <div className="w-full">
-                    <label className="xt-label-check" htmlFor="googlelocator-options-fav">
+                    <label className="xt-label-check" for="googlelocator-options-fav">
                       <input
                         type="checkbox"
                         className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
@@ -151,41 +125,15 @@ class Demo extends React.Component {
 
               <div className="googlelocator-items mt-4">
                 <script type="text/x-template">
-                  <div
-                    className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600"
-                    tabIndex="-1"
-                  >
+                  <div className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600" tabindex="-1">
                     <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
                       <div className="googlelocator-item-content">
-                        <div
-                          className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl"
-                          data-xt-populate="name"
-                        ></div>
+                        <div className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
                         <address className="text-sm uppercase not-italic" data-xt-populate="address"></address>
                         <div className="text-sm uppercase" data-xt-populate="additional"></div>
                       </div>
-                      <a
-                        href="#"
-                        target="_blank"
-                        className="text-2xs uppercase xt-list xt-list-2 flex-col items-center"
-                        title="directions"
-                        data-xt-populate="direction"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="xt-icon text-xl -my-1"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                          <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                      <a href="#" target="_blank" className="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <span data-xt-populate="distance"></span>
                       </a>
                     </div>
@@ -210,32 +158,7 @@ class Demo extends React.Component {
 
           <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-              <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
-                <circle
-                  className="stroke-current origin-center opacity-25"
-                  fill="none"
-                  strokeWidth="30"
-                  cx="120"
-                  cy="120"
-                  r="100"
-                  strokeDasharray="628"
-                  strokeDashoffset="0"
-                  pathLength="628"
-                />
-              </svg>
-              <svg viewBox="0 0 240 240">
-                <circle
-                  className="stroke-current origin-center relative animate-xt-spinner"
-                  fill="none"
-                  strokeWidth="30"
-                  cx="120"
-                  cy="120"
-                  r="100"
-                  strokeDasharray="628"
-                  strokeDashoffset="628"
-                  pathLength="628"
-                />
-              </svg>
+              <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet"><circle className="stroke-current origin-center opacity-25" fill="none" stroke-width="30" cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="0" pathLength="628"/></svg><svg viewBox="0 0 240 240"><circle className="stroke-current origin-center relative animate-xt-spinner" fill="none" stroke-width="30" cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>
             </span>
           </div>
         </div>

@@ -15,6 +15,7 @@ class Demo extends React.Component {
       <div ref={this.ref}>
         <div data-xt-tooltip>
           Lorem ipsum
+
           <div className="xt-tooltip-item">
             <a href="#">dolor</a>
 
@@ -24,7 +25,9 @@ class Demo extends React.Component {
               </div>
             </div>
           </div>
+
           sit
+
           <div className="xt-tooltip-item">
             <a href="#">amet</a>
 

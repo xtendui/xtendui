@@ -14,10 +14,7 @@ class Demo extends React.Component {
     return (
       <div ref={this.ref}>
         <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
-          <a
-            href="#tooltip-with-link-0"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+          <a href="#tooltip-with-link-0" className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             tooltip
           </a>
 

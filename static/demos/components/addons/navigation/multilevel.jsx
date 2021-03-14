@@ -29,9 +29,7 @@ class Demo extends React.Component {
           >
             <div className="xt-h5  flex items-center justify-between">
               <div>Menu</div>
-              <button type="button" className="hidden multilevel-reset" data-xt-group="initial">
-                Back
-              </button>
+              <button type="button" className="hidden multilevel-reset" data-xt-group="initial">Back</button>
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
@@ -49,20 +47,8 @@ class Demo extends React.Component {
               >
                 Category 1
               </button>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 0{' '}
-              </a>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 1{' '}
-              </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
             </nav>
           </nav>
 
@@ -96,20 +82,8 @@ class Demo extends React.Component {
               >
                 Category 0b
               </button>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 0{' '}
-              </a>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 1{' '}
-              </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
             </nav>
           </nav>
 
@@ -126,20 +100,8 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 0{' '}
-              </a>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 1{' '}
-              </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
             </nav>
           </nav>
 
@@ -159,20 +121,8 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 0{' '}
-              </a>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 1{' '}
-              </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
             </nav>
           </nav>
 
@@ -192,20 +142,8 @@ class Demo extends React.Component {
             </div>
 
             <nav className="xt-list flex-col multilevel-list">
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 0{' '}
-              </a>
-              <a
-                href="#"
-                className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
-                {' '}
-                Link 1{' '}
-              </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 0 </a>
+              <a href="#" className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"> Link 1 </a>
             </nav>
           </nav>
         </div>
