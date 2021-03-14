@@ -54,9 +54,9 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+          ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
