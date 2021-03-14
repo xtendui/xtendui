@@ -66,7 +66,7 @@ jobs:
         CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     - name: Lint
-      run: yarn lint
+      run: yarn lint --fix
     - name: Check unstaged
       id: changes
       uses: UnicornGlobal/has-changes-action@v1.0.11
