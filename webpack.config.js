@@ -64,9 +64,7 @@ module.exports = {
   ],
   optimization: {
     minimizer: [
-      new TerserJSPlugin({
-        extractComments: false,
-      }),
+      new TerserJSPlugin(),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
           map: {
