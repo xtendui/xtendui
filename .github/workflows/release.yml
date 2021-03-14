@@ -18,7 +18,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: ./.github/workflows/composite-setup
+    - uses: ./.github/workflows/setup
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -35,8 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [release]
     steps:
-    - uses: ./.github/workflows/composite-setup
-    - uses: ./.github/workflows/composite-build
+    - uses: ./.github/workflows/setup
+    - uses: ./.github/workflows/build
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
