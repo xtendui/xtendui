@@ -15,14 +15,11 @@ env:
 
 jobs:
   release:
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') && github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        fetch-depth: 1
     - name: Node
       uses: actions/setup-node@v1
       with:
@@ -62,9 +59,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        fetch-depth: 1
     - name: Node
       uses: actions/setup-node@v1
       with:
@@ -86,11 +80,8 @@ jobs:
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
-    - name: Build
-      run: yarn build
-      env:
-        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
-        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+    - name: Custom Build (jsx generation)
+      run: yarn custom
     - name: Lint
       run: yarn lint --fix
     - name: Check unstaged
@@ -102,6 +93,11 @@ jobs:
         echo "There are unstaged changes, use 'yarn generate' and commit changes"
         git status
         exit 1
+    - name: Build
+      run: yarn build
+      env:
+        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
