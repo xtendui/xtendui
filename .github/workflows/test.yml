@@ -72,7 +72,6 @@ jobs:
     # You can now access a variable indicating if there have been changes
     - name: Process changes
       if: steps.changes.outputs.changed == 1
-      run: echo "Unstaged changes after generation"
-      run: exit 1
+      run: echo "Unstaged changes after generation" exit 1
     - name: Lint
       run: yarn lint
