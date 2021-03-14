@@ -17,8 +17,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
-            >
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
               Menu #1
             </a>
 
@@ -67,8 +66,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
-            >
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
               Menu #2
             </a>
 
@@ -109,8 +107,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
-            >
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
               Menu #4
             </a>
 

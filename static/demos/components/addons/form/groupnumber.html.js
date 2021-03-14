@@ -48,15 +48,13 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button text-2xs py-1.5 px-2.5 rounded-tr-md border border-gray-500 ${classes.buttonDefault()}"
-              data-xt-step="1"
-            >
+              data-xt-step="1">
               +
             </button>
             <button
               type="button"
               class="xt-button text-2xs py-1.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 ${classes.buttonDefault()}"
-              data-xt-step="-1"
-            >
+              data-xt-step="-1">
               -
             </button>
           </div>

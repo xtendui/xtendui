@@ -13,8 +13,7 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-              aria-label="Close"
-            >
+              aria-label="Close">
               ${classes.iconX()}
             </button>
             <div class="xt-media-container bg-gray-200 rounded-md xt-ratio-37.5">
@@ -36,8 +35,7 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-              aria-label="Close"
-            >
+              aria-label="Close">
               ${classes.iconX()}
             </button>
             <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">

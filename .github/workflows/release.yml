@@ -91,6 +91,8 @@ jobs:
       env:
         CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+    - name: Lint
+      run: yarn lint
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
