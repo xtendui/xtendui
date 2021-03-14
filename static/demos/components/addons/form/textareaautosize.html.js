@@ -9,8 +9,7 @@ const html = /* HTML */ `
           <textarea
             class="xt-input xt-textarea rounded-md ${classes.inputDefault()} overflow-hidden resize-none"
             aria-label="Textarea autosize"
-            data-xt-textareaautosize
-          ></textarea>
+            data-xt-textareaautosize></textarea>
         </div>
       </div>
     </form>

@@ -35,8 +35,7 @@ const html = /* HTML */ `
           <textarea
             class="xt-input xt-textarea rounded-md ${classes.inputPrimary()} h-24 resize-vertical"
             aria-label="Textarea"
-            placeholder="Textarea"
-          ></textarea>
+            placeholder="Textarea"></textarea>
         </div>
 
         <div class="w-full">
@@ -54,8 +53,7 @@ const html = /* HTML */ `
           <select
             class="xt-input xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
             aria-label="Select multiple"
-            multiple
-          >
+            multiple>
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>

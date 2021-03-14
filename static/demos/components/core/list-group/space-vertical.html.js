@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <div class="xt-list-inner">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-tl-md rounded-bl-md ${classes.buttonDefault()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded-tl-md rounded-bl-md ${classes.buttonDefault()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input

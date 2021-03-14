@@ -24,15 +24,13 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0"
-          >
+            data-xt-group="cat-0">
             Category 0
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-1"
-          >
+            data-xt-group="cat-1">
             Category 1
           </button>
           <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
@@ -48,8 +46,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="initial"
-          >
+            data-xt-group="initial">
             Back
           </button>
         </div>
@@ -58,15 +55,13 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0a"
-          >
+            data-xt-group="cat-0a">
             Category 0a
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0b"
-          >
+            data-xt-group="cat-0b">
             Category 0b
           </button>
           <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
@@ -80,8 +75,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="cat-0"
-          >
+            data-xt-group="cat-0">
             Back
           </button>
         </div>
@@ -100,8 +94,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="cat-0"
-          >
+            data-xt-group="cat-0">
             Back
           </button>
         </div>
@@ -120,8 +113,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="initial"
-          >
+            data-xt-group="initial">
             Back
           </button>
         </div>

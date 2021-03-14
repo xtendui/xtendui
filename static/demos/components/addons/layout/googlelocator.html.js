@@ -134,8 +134,7 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="button--repeat absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-          >
+            class="button--repeat absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
             Search in this area
           </button>
         </div>

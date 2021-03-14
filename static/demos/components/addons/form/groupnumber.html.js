@@ -10,8 +10,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} rounded-l-md border border-gray-500 ${classes.buttonDefault()}"
-            data-xt-step="-1"
-          >
+            data-xt-step="-1">
             -
           </button>
           <input
@@ -25,8 +24,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} rounded-r-md border border-l-0 border-gray-500 ${classes.buttonDefault()}"
-            data-xt-step="1"
-          >
+            data-xt-step="1">
             +
           </button>
         </div>
