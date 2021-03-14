@@ -43,7 +43,7 @@ jobs:
           ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --prefer-offline
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -85,7 +85,7 @@ jobs:
           ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --prefer-offline
     - name: Build
       run: yarn build
       env:
