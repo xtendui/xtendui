@@ -17,17 +17,38 @@ const indentString = require('indent-string')
       const refs = html.match(/id="ref--(.*?)"/g)
       let str = `import React from 'react'
 `
+      // js
       const jsGlob = new glob.Glob(`${src}.js`, (er, jsSources) => {
         if (!jsSources.length) {
           str += `
 class Demo extends React.Component {`
         } else {
-          if (!refs) {
-            console.error('Jsx generator found custom javascript and no id="ref--')
-            process.exit(1)
-          }
           const jsSource = jsSources[0]
           const jsText = fs.readFileSync(jsSource, 'utf8')
+          // automatic check of refs
+          if (!refs) {
+            // not found any ref in html
+            console.error('Jsx generator found custom javascript and no html "ref--"')
+            process.exit(1)
+          }
+          const refsJs = jsText.match(/'#ref--(.*?)'/g)
+          if (refsJs) {
+            let found = 0
+            for (const refJs of refsJs.entries()) {
+              const checkJs = refJs[1].split("'").join('').replace('#', '')
+              for (const refHtml of refs.entries()) {
+                const checkHtml = refHtml[1].split('"').join('').replace('id=', '')
+                if (checkJs === checkHtml) {
+                  found++
+                }
+              }
+            }
+            if (found !== refsJs.length || found !== refs.length) {
+              // not found ref in html with match
+              console.error('Jsx generator found custom javascript with no matching html "ref--"')
+              process.exit(1)
+            }
+          }
           // ##IMPORTSSTART and ##IMPORTSEND
           const imports = jsText.match(/\/\*##IMPORTSSTART\*\/\n([\S\s]*?)\/\*##IMPORTSEND\*\/\n/g)
           if (imports) {
