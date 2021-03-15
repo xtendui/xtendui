@@ -6,49 +6,57 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-first-element">
+        id="demo--drop-events-first-element"
+      >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-first-target">
+        id="demo--drop-events-first-target"
+      >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-add">
+        id="demo--drop-events-add"
+      >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-remove">
+        id="demo--drop-events-remove"
+      >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-reinit">
+        id="demo--drop-events-reinit"
+      >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-restart">
+        id="demo--drop-events-restart"
+      >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-destroy">
+        id="demo--drop-events-destroy"
+      >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-unmount">
+        id="demo--drop-events-unmount"
+      >
         Unmount
       </button>
     </div>
@@ -94,7 +102,8 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--drop-events-log"></div>
+        id="demo--drop-events-log"
+      ></div>
     </div>
   </div>
 `

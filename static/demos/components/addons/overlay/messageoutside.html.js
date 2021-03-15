@@ -11,7 +11,8 @@ const html = /* HTML */ `
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black opacity-25"></div>
           <div
-            class="demo--overlay-messageoutside fixed h-full right-0 hidden md:flex items-center justify-center pointer-events-none">
+            class="demo--overlay-messageoutside fixed h-full right-0 hidden md:flex items-center justify-center pointer-events-none"
+          >
             <div class="w-10/12 lg:w-8/12">
               <div class="xt-card rounded-md ${classes.cardDefault()} pointer-events-auto">
                 <div class="${classes.cardMd()}">
@@ -69,7 +70,8 @@ const html = /* HTML */ `
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black opacity-25"></div>
           <div
-            class="demo--overlay-messageoutside fixed h-full left-0 hidden md:flex items-center justify-center pointer-events-none">
+            class="demo--overlay-messageoutside fixed h-full left-0 hidden md:flex items-center justify-center pointer-events-none"
+          >
             <div class="w-10/12 lg:w-8/12">
               <div class="xt-card rounded-md ${classes.cardDefault()} pointer-events-auto">
                 <div class="${classes.cardMd()}">

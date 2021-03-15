@@ -6,37 +6,43 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-first-element">
+        id="demo--overlay-events-first-element"
+      >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-first-target">
+        id="demo--overlay-events-first-target"
+      >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-reinit">
+        id="demo--overlay-events-reinit"
+      >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-restart">
+        id="demo--overlay-events-restart"
+      >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-destroy">
+        id="demo--overlay-events-destroy"
+      >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--overlay-events-unmount">
+        id="demo--overlay-events-unmount"
+      >
         Unmount
       </button>
     </div>
@@ -45,13 +51,15 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="demo--overlay-events">
+        id="demo--overlay-events"
+      >
         Overlay
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="demo--overlay-events-alt">
+        id="demo--overlay-events-alt"
+      >
         Overlay same
       </button>
     </div>
@@ -64,7 +72,8 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
-              aria-label="Close">
+              aria-label="Close"
+            >
               ${classes.iconX()}
             </button>
             <div class="${classes.cardMd()} md:text-lg md:p-10">
@@ -93,7 +102,8 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--overlay-events-log"></div>
+        id="demo--overlay-events-log"
+      ></div>
     </div>
   </div>
 `

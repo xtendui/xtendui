@@ -11,19 +11,22 @@ const html = /* HTML */ `
           <a
             href="#anchor-overlay-0"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+          >
             #0 overlay
           </a>
           <a
             href="#anchor-overlay-1"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+          >
             #1 overlay
           </a>
           <a
             href="#anchor-overlay-2"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }">
+            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+          >
             #2 overlay
           </a>
         </div>

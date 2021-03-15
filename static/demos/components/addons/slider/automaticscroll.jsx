@@ -62,8 +62,7 @@ class Demo extends React.Component {
                 type="button"
                 className="xt-button button-default xt-ignore"
                 data-xt-pag
-                title="Slide xt-num"
-              ></button>
+                title="Slide xt-num"></button>
             </nav>
           </div>
 
@@ -133,8 +132,7 @@ class Demo extends React.Component {
                 type="button"
                 className="xt-button button-default xt-ignore"
                 data-xt-pag
-                title="Slide xt-num"
-              ></button>
+                title="Slide xt-num"></button>
             </nav>
           </div>
         </div>

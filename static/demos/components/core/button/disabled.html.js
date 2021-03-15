@@ -6,21 +6,24 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} xt-disabled"
-        aria-disabled="true">
+        aria-disabled="true"
+      >
         Gray
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} xt-disabled"
-        aria-disabled="true">
+        aria-disabled="true"
+      >
         Primary
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} xt-disabled"
-        aria-disabled="true">
+        aria-disabled="true"
+      >
         Text
       </button>
 

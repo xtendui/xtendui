@@ -15,8 +15,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -31,8 +30,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>{' '}
@@ -46,8 +44,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -61,8 +58,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>{' '}
@@ -76,8 +72,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -91,8 +86,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>{' '}
@@ -106,8 +100,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -121,8 +114,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>{' '}
@@ -136,8 +128,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -151,8 +142,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>{' '}
@@ -166,8 +156,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -184,8 +173,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -199,8 +187,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -214,8 +201,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -229,8 +215,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
@@ -244,8 +229,7 @@ class Demo extends React.Component {
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
-          strokeLinejoin="round"
-        >
+          strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>

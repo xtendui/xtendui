@@ -6,7 +6,8 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="my-group">
+        data-xt-group="my-group"
+      >
         Toggle Group 0
       </button>
 
@@ -17,7 +18,8 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="another-group">
+        data-xt-group="another-group"
+      >
         Toggle Group 2
       </button>
 
@@ -28,7 +30,8 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="another-group">
+        data-xt-group="another-group"
+      >
         Toggle Group 2
       </button>
 

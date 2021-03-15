@@ -6,8 +6,7 @@ class Demo extends React.Component {
       <div ref={this.ref}>
         <div
           className="demo--tooltip-disable"
-          data-xt-tooltip="{ matches: { '(min-width: 768px)': { disabled: true } } }"
-        >
+          data-xt-tooltip="{ matches: { '(min-width: 768px)': { disabled: true } } }">
           Lorem ipsum
           <div className="xt-tooltip-item">
             <a href="#">dolor</a>

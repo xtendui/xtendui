@@ -13,7 +13,8 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} active">
+        class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} active"
+      >
         Text
       </button>
 

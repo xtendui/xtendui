@@ -8,8 +8,7 @@ class Demo extends React.Component {
           <div data-xt-tooltip>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               Black
             </button>
 
@@ -28,8 +27,7 @@ class Demo extends React.Component {
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                  strokeLinejoin="round">
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                 </svg>{' '}
@@ -41,8 +39,7 @@ class Demo extends React.Component {
           <div data-xt-tooltip>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               Primary
             </button>
 
@@ -61,8 +58,7 @@ class Demo extends React.Component {
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                  strokeLinejoin="round">
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                 </svg>{' '}

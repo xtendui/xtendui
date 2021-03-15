@@ -41,16 +41,14 @@ class Demo extends React.Component {
               <textarea
                 className="xt-input xt-textarea rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700 h-24 resize-vertical"
                 aria-label="Textarea"
-                placeholder="Textarea"
-              ></textarea>
+                placeholder="Textarea"></textarea>
             </div>
 
             <div className="w-full">
               <label className="xt-label mb-3 text-white text-opacity-75"> Select </label>
               <select
                 className="xt-input xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
-                aria-label="Select"
-              >
+                aria-label="Select">
                 <option selected value="">
                   Select an option
                 </option>
@@ -65,8 +63,7 @@ class Demo extends React.Component {
               <select
                 className="xt-input xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
                 aria-label="Select multiple"
-                multiple
-              >
+                multiple>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
@@ -200,8 +197,7 @@ class Demo extends React.Component {
             <div className="w-full">
               <button
                 type="submit"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                 submit
               </button>
             </div>

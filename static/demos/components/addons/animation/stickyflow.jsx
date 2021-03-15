@@ -68,8 +68,7 @@ class Demo extends React.Component {
 
                   <a
                     href="#"
-                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                  >
+                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                     Add to cart
                   </a>
 

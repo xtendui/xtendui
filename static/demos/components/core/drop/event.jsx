@@ -8,8 +8,7 @@ class Demo extends React.Component {
           <div className="xt-drop-item">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               mouse
             </button>
 
@@ -18,22 +17,19 @@ class Demo extends React.Component {
                 <nav className="xt-list flex-col">
                   <a
                     href="#"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                  >
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                  >
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                     Dolor sit
                   </button>
                   <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
                     <div className="xt-drop-item">
                       <button
                         type="button"
-                        className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                      >
+                        className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                         nested
                       </button>
 
@@ -42,20 +38,17 @@ class Demo extends React.Component {
                           <nav className="xt-list flex-col">
                             <a
                               href="#"
-                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                            >
+                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit
                             </a>
                             <button
                               type="button"
-                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                            >
+                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                               Dolor sit
                             </button>
                             <button
                               type="button"
-                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                            >
+                              className="xt-button text-2xs py-1.5 px-6 px-6 w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                               Amet
                             </button>
                           </nav>
@@ -83,20 +76,17 @@ class Demo extends React.Component {
                 <nav className="xt-list flex-col">
                   <a
                     href="#"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                  >
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                  >
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                     Dolor sit
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                  >
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                     Amet
                   </button>
                 </nav>

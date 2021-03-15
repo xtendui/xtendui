@@ -33,8 +33,7 @@ class Demo extends React.Component {
                 className="xt-input xt-textarea rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition h-24 resize-vertical"
                 aria-label="Textarea"
                 placeholder="Textarea"
-                disabled
-              ></textarea>
+                disabled></textarea>
             </div>
 
             <div className="w-full">
@@ -42,8 +41,7 @@ class Demo extends React.Component {
               <select
                 className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
                 aria-label="Select"
-                disabled
-              >
+                disabled>
                 <option selected value="">
                   Select an option
                 </option>
@@ -59,8 +57,7 @@ class Demo extends React.Component {
                 className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
                 aria-label="Select multiple"
                 multiple
-                disabled
-              >
+                disabled>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
@@ -200,8 +197,7 @@ class Demo extends React.Component {
             <div className="w-full">
               <button
                 type="submit"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 submit
               </button>
             </div>

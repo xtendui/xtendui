@@ -26,13 +26,15 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0"
+      >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0">
+        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0"
+      >
         Link
       </button>
     </div>
@@ -111,9 +113,7 @@ const html = /* HTML */ `
 
       <div data-xt-tooltip>
         <div class="xt-tooltip-item">
-          <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">
-            list group
-          </button>
+          <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">list group</button>
 
           <div class="xt-tooltip p-2 group" data-xt-duration="700">
             <div class="xt-tooltip-inner">
@@ -157,7 +157,8 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${cardWhite()} ${animItem}"
-              aria-label="Close">
+              aria-label="Close"
+            >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">

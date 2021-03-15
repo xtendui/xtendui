@@ -7,29 +7,25 @@ class Demo extends React.Component {
         <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ navigation: '[data-xt-nav]' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 0
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 1
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 2
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 3
           </button>
 
@@ -38,8 +34,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
             data-xt-nav="-1"
             aria-label="Previous slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +46,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
@@ -64,8 +58,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
             data-xt-nav="1"
             aria-label="Next slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +70,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>

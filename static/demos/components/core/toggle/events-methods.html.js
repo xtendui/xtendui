@@ -6,61 +6,71 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-first-element">
+        id="demo--toggle-events-first-element"
+      >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-first-target">
+        id="demo--toggle-events-first-target"
+      >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-autostart">
+        id="demo--toggle-events-autostart"
+      >
         Autostart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-autostop">
+        id="demo--toggle-events-autostop"
+      >
         Autostop
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-add">
+        id="demo--toggle-events-add"
+      >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-remove">
+        id="demo--toggle-events-remove"
+      >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-reinit">
+        id="demo--toggle-events-reinit"
+      >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-restart">
+        id="demo--toggle-events-restart"
+      >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-destroy">
+        id="demo--toggle-events-destroy"
+      >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--toggle-events-unmount">
+        id="demo--toggle-events-unmount"
+      >
         Unmount
       </button>
     </div>
@@ -100,7 +110,8 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--toggle-events-log"></div>
+        id="demo--toggle-events-log"
+      ></div>
     </div>
   </div>
 `

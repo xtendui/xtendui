@@ -22,12 +22,10 @@ class Demo extends React.Component {
                           href="#product-image-overlay-1"
                           className="product-image w-full"
                           id="product-image-1"
-                          title="Expand image 1"
-                        >
+                          title="Expand image 1">
                           <div
                             className="xt-media-container bg-gray-200 overflow-hidden"
-                            data-xt-overlay="{ targets: '#overlay--product-images' }"
-                          >
+                            data-xt-overlay="{ targets: '#overlay--product-images' }">
                             <div className="xt-media-inner relative">
                               <img className="xt-media" src="/img.svg" loading="eager" alt="" />
                             </div>
@@ -39,12 +37,10 @@ class Demo extends React.Component {
                           href="#product-image-overlay-2"
                           className="product-image w-full"
                           id="product-image-2"
-                          title="Expand image 2"
-                        >
+                          title="Expand image 2">
                           <div
                             className="xt-media-container bg-gray-200 overflow-hidden"
-                            data-xt-overlay="{ targets: '#overlay--product-images' }"
-                          >
+                            data-xt-overlay="{ targets: '#overlay--product-images' }">
                             <div className="xt-media-inner relative">
                               <img className="xt-media" src="/img-alt.svg" loading="eager" alt="" />
                             </div>
@@ -56,12 +52,10 @@ class Demo extends React.Component {
                           href="#product-image-overlay-3"
                           className="product-image w-full"
                           id="product-image-3"
-                          title="Expand image 3"
-                        >
+                          title="Expand image 3">
                           <div
                             className="xt-media-container bg-gray-200 overflow-hidden"
-                            data-xt-overlay="{ targets: '#overlay--product-images' }"
-                          >
+                            data-xt-overlay="{ targets: '#overlay--product-images' }">
                             <div className="xt-media-inner relative">
                               <img className="xt-media" src="/img.svg" loading="eager" alt="" />
                             </div>
@@ -73,12 +67,10 @@ class Demo extends React.Component {
                           href="#product-image-overlay-4"
                           className="product-image w-full"
                           id="product-image-4"
-                          title="Expand image 4"
-                        >
+                          title="Expand image 4">
                           <div
                             className="xt-media-container bg-gray-200 overflow-hidden"
-                            data-xt-overlay="{ targets: '#overlay--product-images' }"
-                          >
+                            data-xt-overlay="{ targets: '#overlay--product-images' }">
                             <div className="xt-media-inner relative">
                               <img className="xt-media" src="/img-alt.svg" loading="eager" alt="" />
                             </div>
@@ -90,12 +82,10 @@ class Demo extends React.Component {
                           href="#product-image-overlay-5"
                           className="product-image w-full"
                           id="product-image-5"
-                          title="Expand image 5"
-                        >
+                          title="Expand image 5">
                           <div
                             className="xt-media-container bg-gray-200 overflow-hidden"
-                            data-xt-overlay="{ targets: '#overlay--product-images' }"
-                          >
+                            data-xt-overlay="{ targets: '#overlay--product-images' }">
                             <div className="xt-media-inner relative">
                               <img className="xt-media" src="/img.svg" loading="eager" alt="" />
                             </div>
@@ -109,40 +99,35 @@ class Demo extends React.Component {
                           <a
                             href="#product-image-1"
                             className="product-dot py-1.5 px-2 flex items-center justify-center group"
-                            title="Go to image 1"
-                          >
+                            title="Go to image 1">
                             <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                           </a>
 
                           <a
                             href="#product-image-2"
                             className="product-dot py-1.5 px-2 flex items-center justify-center group"
-                            title="Go to image 2"
-                          >
+                            title="Go to image 2">
                             <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                           </a>
 
                           <a
                             href="#product-image-3"
                             className="product-dot py-1.5 px-2 flex items-center justify-center group"
-                            title="Go to image 3"
-                          >
+                            title="Go to image 3">
                             <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                           </a>
 
                           <a
                             href="#product-image-4"
                             className="product-dot py-1.5 px-2 flex items-center justify-center group"
-                            title="Go to image 4"
-                          >
+                            title="Go to image 4">
                             <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                           </a>
 
                           <a
                             href="#product-image-5"
                             className="product-dot py-1.5 px-2 flex items-center justify-center group"
-                            title="Go to image 5"
-                          >
+                            title="Go to image 5">
                             <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
                           </a>
                         </div>
@@ -150,15 +135,13 @@ class Demo extends React.Component {
 
                       <div
                         className="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100"
-                        id="overlay--product-images"
-                      >
+                        id="overlay--product-images">
                         <div className="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
                         <div className="xt-overlay-container p-0">
                           <button
                             type="button"
                             className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
-                            aria-label="Close"
-                          >
+                            aria-label="Close">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="xt-icon"
@@ -169,8 +152,7 @@ class Demo extends React.Component {
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
+                              strokeLinejoin="round">
                               <line x1="18" y1="6" x2="6" y2="18"></line>
                               <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
@@ -255,8 +237,7 @@ class Demo extends React.Component {
 
                     <a
                       href="#"
-                      className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                    >
+                      className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                       Add to cart
                     </a>
 
@@ -300,8 +281,7 @@ class Demo extends React.Component {
             <a
               href="#product-continue-target"
               className="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white"
-              title="Scroll to content"
-            >
+              title="Scroll to content">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon"
@@ -312,8 +292,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </a>

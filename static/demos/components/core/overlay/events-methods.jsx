@@ -8,43 +8,37 @@ class Demo extends React.Component {
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-first-element"
-          >
+            id="demo--overlay-events-first-element">
             1st element
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-first-target"
-          >
+            id="demo--overlay-events-first-target">
             1st target
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-reinit"
-          >
+            id="demo--overlay-events-reinit">
             Reinit
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-restart"
-          >
+            id="demo--overlay-events-restart">
             Restart
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-destroy"
-          >
+            id="demo--overlay-events-destroy">
             Destroy
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--overlay-events-unmount"
-          >
+            id="demo--overlay-events-unmount">
             Unmount
           </button>
         </div>
@@ -53,15 +47,13 @@ class Demo extends React.Component {
           <button
             type="button"
             className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-            id="demo--overlay-events"
-          >
+            id="demo--overlay-events">
             Overlay
           </button>
           <button
             type="button"
             className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-            id="demo--overlay-events-alt"
-          >
+            id="demo--overlay-events-alt">
             Overlay same
           </button>
         </div>
@@ -74,8 +66,7 @@ class Demo extends React.Component {
                 <button
                   type="button"
                   className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon"
@@ -86,8 +77,7 @@ class Demo extends React.Component {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                    strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
@@ -120,8 +110,7 @@ class Demo extends React.Component {
         <div className="xt-card rounded-md text-black xt-links-default bg-gray-200 mt-6">
           <div
             className="text-sm py-6 px-7 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-            id="demo--overlay-events-log"
-          ></div>
+            id="demo--overlay-events-log"></div>
         </div>
       </div>
     )

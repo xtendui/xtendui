@@ -60,7 +60,7 @@ export default class DemoIframe extends React.Component {
         const Xt = require('xtendui').Xt
         const iframeLoaded = () => {
           if (window.self !== window.top) {
-            window.parent.initIframe(id, html, `/${src}.css`, `/${src}.js`)
+            window.parent.initIframe(id, html, false, `/${src}.css`, `/${src}.js`)
           }
         }
         Xt.ready(iframeLoaded)

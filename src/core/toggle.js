@@ -1606,7 +1606,11 @@ class Toggle {
             self.object.setAttribute('aria-live', 'off')
           }
           // listener dispatch
-          self.object.dispatchEvent(new CustomEvent(`autostart.${self.componentNs}`, { detail: e ? e.detail : null }))
+          self.object.dispatchEvent(
+            new CustomEvent(`autostart.${self.componentNs}`, {
+              detail: e ? e.detail : null,
+            })
+          )
         })
       }
     }
@@ -1628,7 +1632,11 @@ class Toggle {
         self.object.setAttribute('aria-live', 'polite')
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`autostop.${self.componentNs}`, { detail: e ? e.detail : null }))
+      self.object.dispatchEvent(
+        new CustomEvent(`autostop.${self.componentNs}`, {
+          detail: e ? e.detail : null,
+        })
+      )
     }
   }
 
@@ -1655,7 +1663,11 @@ class Toggle {
           self.object.setAttribute('aria-live', 'polite')
         }
         // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`autopause.${self.componentNs}`, { detail: e ? e.detail : null }))
+        self.object.dispatchEvent(
+          new CustomEvent(`autopause.${self.componentNs}`, {
+            detail: e ? e.detail : null,
+          })
+        )
       }
     }
   }
@@ -1681,7 +1693,11 @@ class Toggle {
           // resume
           self.eventAutostart()
           // listener dispatch
-          self.object.dispatchEvent(new CustomEvent(`autoresume.${self.componentNs}`, { detail: e ? e.detail : null }))
+          self.object.dispatchEvent(
+            new CustomEvent(`autoresume.${self.componentNs}`, {
+              detail: e ? e.detail : null,
+            })
+          )
         }
       }
     })
@@ -1931,7 +1947,9 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(
-          new CustomEvent(`on.${self.componentNs}`, { detail: obj.elements.e ? obj.elements.e.detail : null })
+          new CustomEvent(`on.${self.componentNs}`, {
+            detail: obj.elements.e ? obj.elements.e.detail : null,
+          })
         )
       }
     } else if (actionCurrent === 'Off' && self.checkOffRunning(obj)) {
@@ -1960,7 +1978,9 @@ class Toggle {
         requestAnimationFrame(() => {
           if (!self.disabled) {
             el.dispatchEvent(
-              new CustomEvent(`off.${self.componentNs}`, { detail: obj.elements.e ? obj.elements.e.detail : null })
+              new CustomEvent(`off.${self.componentNs}`, {
+                detail: obj.elements.e ? obj.elements.e.detail : null,
+              })
             )
           }
         })
@@ -2029,7 +2049,9 @@ class Toggle {
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         el.dispatchEvent(
-          new CustomEvent(`ondone.${self.componentNs}`, { detail: obj.elements.e ? obj.elements.e.detail : null })
+          new CustomEvent(`ondone.${self.componentNs}`, {
+            detail: obj.elements.e ? obj.elements.e.detail : null,
+          })
         )
       }
     } else if (actionCurrent === 'Off') {
@@ -2078,7 +2100,9 @@ class Toggle {
         requestAnimationFrame(() => {
           if (!self.disabled) {
             el.dispatchEvent(
-              new CustomEvent(`offdone.${self.componentNs}`, { detail: obj.elements.e ? obj.elements.e.detail : null })
+              new CustomEvent(`offdone.${self.componentNs}`, {
+                detail: obj.elements.e ? obj.elements.e.detail : null,
+              })
             )
           }
         })

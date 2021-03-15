@@ -10,8 +10,7 @@ class Demo extends React.Component {
               className="xt-media"
               type="text/html"
               src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&enablejsapi=1&rel=0"
-              frameBorder="0"
-            ></iframe>
+              frameBorder="0"></iframe>
           </div>
         </div>
       </div>

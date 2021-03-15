@@ -8,8 +8,7 @@ class Demo extends React.Component {
           <div data-xt-drop>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               list
             </button>
 
@@ -20,20 +19,17 @@ class Demo extends React.Component {
                   <nav className="xt-list flex-col">
                     <a
                       href="#"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </a>
                     <button
                       type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Dolor sit
                     </button>
                     <button
                       type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Amet
                     </button>
                   </nav>
@@ -45,8 +41,7 @@ class Demo extends React.Component {
           <div data-xt-drop>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               card
             </button>
 
@@ -57,8 +52,7 @@ class Demo extends React.Component {
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon"
@@ -69,8 +63,7 @@ class Demo extends React.Component {
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                      strokeLinejoin="round">
                       <line x1="18" y1="6" x2="6" y2="18"></line>
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>

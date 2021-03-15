@@ -62,8 +62,7 @@ class Template extends React.Component {
                               <a
                                 role="button"
                                 className="xt-card gatsby_listing-item gatsby_listing-item--themes"
-                                data-gatsby-listing-toggle
-                              >
+                                data-gatsby-listing-toggle>
                                 <div>
                                   <div className="xt-h4">
                                     {adiacent.frontmatter.title
@@ -82,8 +81,7 @@ class Template extends React.Component {
                                               muted
                                               playsInline
                                               loop
-                                              autoPlay
-                                            >
+                                              autoPlay>
                                               <source
                                                 type="video/mp4"
                                                 src={assets.item.file.url ? assets.item.file.url : null}
@@ -107,8 +105,7 @@ class Template extends React.Component {
                                         <div
                                           className="gatsby_demo_item xt-toggle"
                                           data-iframe-fullscreen={demo}
-                                          key={i}
-                                        ></div>
+                                          key={i}></div>
                                       )
                                     }
                                   })}

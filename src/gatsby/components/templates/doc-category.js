@@ -58,8 +58,7 @@ export default class Template extends React.Component {
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="xt-card gatsby_listing-item"
-                          >
+                            className="xt-card gatsby_listing-item">
                             <div className="xt-h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)

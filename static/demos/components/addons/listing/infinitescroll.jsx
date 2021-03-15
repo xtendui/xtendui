@@ -18,16 +18,14 @@ class Demo extends React.Component {
             pagination: '.infinitescroll-pagination',
             item: ':scope > *',
           },
-        }"
-        >
+        }">
           <div className="container">
             <div className="infinitescroll-pre mb-4">
               <div className="xt-list xt-list-2 flex-col items-center">
                 <div>
                   <button
                     type="button"
-                    className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  >
+                    className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                     Load previous pages
                   </button>
                 </div>
@@ -154,8 +152,7 @@ class Demo extends React.Component {
               <div className="infinitescroll-trigger">
                 <button
                   type="button"
-                  className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                >
+                  className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                   <span className="infinitescroll-trigger-content"> Show more products </span>
 
                   <span className="infinitescroll-trigger-content-nomore"> There are no more products </span>

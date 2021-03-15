@@ -13,8 +13,7 @@ class Demo extends React.Component {
               muted
               playsinline
               loop
-              autoPlay
-            >
+              autoPlay>
               <source type="video/mp4" src="/placeholder-1080.mp4" />
             </video>
           </div>

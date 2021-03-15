@@ -11,8 +11,7 @@ class Demo extends React.Component {
         <div className="xt-list xt-list-3 items-center">
           <button
             type="button"
-            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon small{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +23,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -33,8 +31,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon medium{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +43,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -55,8 +51,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon large{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +63,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -83,8 +77,7 @@ class Demo extends React.Component {
         <div className="xt-list xt-list-3 items-center">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon small{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,8 +89,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -105,8 +97,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon medium{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -118,8 +109,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -127,8 +117,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon large{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -140,8 +129,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -155,8 +143,7 @@ class Demo extends React.Component {
         <div className="xt-list xt-list-3 items-center">
           <button
             type="button"
-            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon small{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,8 +155,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -177,8 +163,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon medium{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -190,8 +175,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -199,8 +183,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-          >
+            className="xt-button text-base py-2.5 px-4 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
             icon large{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -212,8 +195,7 @@ class Demo extends React.Component {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+              strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>

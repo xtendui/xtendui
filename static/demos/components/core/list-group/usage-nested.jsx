@@ -18,14 +18,12 @@ class Demo extends React.Component {
               <div className="xt-list-inner flex-col">
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-2.5 rounded-tr-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                >
+                  className="xt-button text-2xs py-1.5 px-2.5 rounded-tr-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                   +
                 </button>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                >
+                  className="xt-button text-2xs py-1.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                   -
                 </button>
               </div>

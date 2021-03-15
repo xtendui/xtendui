@@ -11,8 +11,7 @@ export default class DocFullscreen extends React.Component {
           <div
             className="xt-button xt-dismiss absolute z-last top-0 right-0"
             aria-label="Close"
-            dangerouslySetInnerHTML={{ __html: classes.iconX() }}
-          ></div>
+            dangerouslySetInnerHTML={{ __html: classes.iconX() }}></div>
           <div className="xt-card-content" id="gatsby_open-full-content"></div>
         </div>
       </>

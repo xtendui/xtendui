@@ -12,8 +12,7 @@ class Demo extends React.Component {
               <button
                 type="button"
                 className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                data-xt-step="-1"
-              >
+                data-xt-step="-1">
                 -
               </button>
               <input
@@ -27,8 +26,7 @@ class Demo extends React.Component {
               <button
                 type="button"
                 className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                data-xt-step="1"
-              >
+                data-xt-step="1">
                 +
               </button>
             </div>
@@ -52,15 +50,13 @@ class Demo extends React.Component {
                 <button
                   type="button"
                   className="xt-button text-2xs py-1.5 px-2.5 rounded-tr-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  data-xt-step="1"
-                >
+                  data-xt-step="1">
                   +
                 </button>
                 <button
                   type="button"
                   className="xt-button text-2xs py-1.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  data-xt-step="-1"
-                >
+                  data-xt-step="-1">
                   -
                 </button>
               </div>

@@ -48,8 +48,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Lorem ipsum
             <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-spinner">
               <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">

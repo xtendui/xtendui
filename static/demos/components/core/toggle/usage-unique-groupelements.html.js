@@ -6,14 +6,16 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }">
+        data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }"
+      >
         Toggle
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }">
+        data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: true }"
+      >
         Toggle same
       </button>
 

@@ -6,14 +6,16 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-toggle>
+        data-xt-toggle
+      >
         Toggle
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-toggle>
+        data-xt-toggle
+      >
         Toggle
       </button>
     </div>

@@ -19,8 +19,7 @@ class Demo extends React.Component {
               </h3>
               <a
                 href="#"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 {' '}
                 Lorem ipsum{' '}
               </a>
@@ -43,8 +42,7 @@ class Demo extends React.Component {
               </h3>
               <a
                 href="#"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 {' '}
                 Lorem ipsum{' '}
               </a>
@@ -67,8 +65,7 @@ class Demo extends React.Component {
               </h3>
               <a
                 href="#"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 {' '}
                 Lorem ipsum{' '}
               </a>

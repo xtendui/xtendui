@@ -14,7 +14,8 @@ const html = /* HTML */ `
     >
       <nav
         class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-        data-xt-group="initial">
+        data-xt-group="initial"
+      >
         <div class="xt-h5  flex items-center justify-between">
           <div>Menu</div>
           <button type="button" class="hidden multilevel-reset" data-xt-group="initial">Back</button>
@@ -24,13 +25,15 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0">
+            data-xt-group="cat-0"
+          >
             Category 0
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-1">
+            data-xt-group="cat-1"
+          >
             Category 1
           </button>
           <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
@@ -40,13 +43,15 @@ const html = /* HTML */ `
 
       <nav
         class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-        data-xt-group="cat-0">
+        data-xt-group="cat-0"
+      >
         <div class="xt-h5  flex items-center justify-between">
           <div>Category 0</div>
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="initial">
+            data-xt-group="initial"
+          >
             Back
           </button>
         </div>
@@ -55,13 +60,15 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0a">
+            data-xt-group="cat-0a"
+          >
             Category 0a
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-group="cat-0b">
+            data-xt-group="cat-0b"
+          >
             Category 0b
           </button>
           <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
@@ -75,7 +82,8 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="cat-0">
+            data-xt-group="cat-0"
+          >
             Back
           </button>
         </div>
@@ -88,13 +96,15 @@ const html = /* HTML */ `
 
       <nav
         class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-        data-xt-group="cat-0b">
+        data-xt-group="cat-0b"
+      >
         <div class="xt-h5  flex items-center justify-between">
           <div>Category 0b</div>
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="cat-0">
+            data-xt-group="cat-0"
+          >
             Back
           </button>
         </div>
@@ -107,13 +117,15 @@ const html = /* HTML */ `
 
       <nav
         class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 active:ease-out active:delay-200 active:translate-x-0 active:opacity-100"
-        data-xt-group="cat-1">
+        data-xt-group="cat-1"
+      >
         <div class="xt-h5  flex items-center justify-between">
           <div>Category 1</div>
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()} multilevel-reset"
-            data-xt-group="initial">
+            data-xt-group="initial"
+          >
             Back
           </button>
         </div>

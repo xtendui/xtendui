@@ -19,8 +19,7 @@ class Demo extends React.Component {
                     <div className="hero-content flex relative min-h-screen">
                       <a
                         href="/"
-                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center"
-                      >
+                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                         <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
                       </a>
                     </div>
@@ -41,8 +40,7 @@ class Demo extends React.Component {
                     <div className="hero-content flex relative min-h-screen">
                       <a
                         href="/"
-                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
-                      >
+                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                         <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
@@ -67,8 +65,7 @@ class Demo extends React.Component {
                     <div className="hero-content flex relative min-h-screen">
                       <a
                         href="/"
-                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
-                      >
+                        className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                         <h2 className="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                       </a>
                     </div>
@@ -95,8 +92,7 @@ class Demo extends React.Component {
                         </p>
                         <a
                           href="/"
-                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           Lorem ipsum
                         </a>
                       </div>
@@ -124,8 +120,7 @@ class Demo extends React.Component {
                         </p>
                         <a
                           href="/"
-                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           Lorem ipsum
                         </a>
                       </div>
@@ -153,8 +148,7 @@ class Demo extends React.Component {
                         </p>
                         <a
                           href="/"
-                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           Lorem ipsum
                         </a>
                       </div>
@@ -171,8 +165,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
             data-xt-nav="-1"
             aria-label="Previous slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -184,8 +177,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
@@ -197,8 +189,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
             data-xt-nav="1"
             aria-label="Next slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -210,8 +201,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>

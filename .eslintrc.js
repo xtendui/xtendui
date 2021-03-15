@@ -24,5 +24,5 @@ module.exports = {
     'prettier/prettier': ['error', { singleQuote: true }],
     'prefer-template': 2,
   },
-  ignorePatterns: ['**/*.html.js'],
+  //ignorePatterns: ['**/*.html.js'],
 }

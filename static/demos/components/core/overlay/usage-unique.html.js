@@ -6,14 +6,16 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-        data-xt-overlay="{ targets: '#overlay--unique' }">
+        data-xt-overlay="{ targets: '#overlay--unique' }"
+      >
         Overlay
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-        data-xt-overlay="{ targets: '#overlay--unique' }">
+        data-xt-overlay="{ targets: '#overlay--unique' }"
+      >
         Overlay same
       </button>
 

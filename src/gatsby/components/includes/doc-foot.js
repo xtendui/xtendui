@@ -56,8 +56,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/globals/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item"
-                  >
+                    className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Globals pages</div>
                     <p>
                       There {postsGlobals.length === 1 ? 'is' : 'are'}{' '}
@@ -77,8 +76,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item"
-                  >
+                    className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
@@ -98,8 +96,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column">
                   <Link
                     to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item"
-                  >
+                    className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Addons page</div>
                     <p>
                       There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
@@ -123,8 +120,7 @@ export default class DocFoot extends React.Component {
                           x.post.frontmatter.title === page.post.frontmatter.parent
                       )[0].post.frontmatter.category
                     )}/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item"
-                  >
+                    className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Theme page</div>
                     <p>
                       There {postsThemes.length === 1 ? 'is' : 'are'}{' '}

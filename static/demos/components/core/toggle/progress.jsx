@@ -7,8 +7,7 @@ class Demo extends React.Component {
         <div className="xt-list xt-list-3 items-center demo--toggle-progress">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition in-toggle"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition in-toggle">
             Toggle 0
             <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -20,8 +19,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 1
             <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -33,8 +31,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 2
             <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -46,8 +43,7 @@ class Demo extends React.Component {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 3
             <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
               <span className="xt-filler absolute inset-0 m-auto text-primary-500">

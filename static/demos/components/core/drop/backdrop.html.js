@@ -29,7 +29,8 @@ const html = /* HTML */ `
         <div class="xt-drop-item">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} active:z-drop">
+            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} active:z-drop"
+          >
             backdrop mouse
           </button>
 

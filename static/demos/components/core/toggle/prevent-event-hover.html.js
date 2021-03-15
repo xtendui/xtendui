@@ -8,13 +8,15 @@ const html = /* HTML */ `
     >
       <a
         href="#toggle--prevent-event-1-hover"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+      >
         Toggle 1 hover
       </a>
 
       <a
         href="#toggle--prevent-event-2-hover"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+      >
         Toggle 2 hover
       </a>
 

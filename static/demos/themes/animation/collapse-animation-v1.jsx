@@ -8,14 +8,12 @@ class Demo extends React.Component {
 
         <form
           className="text-xs"
-          data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', collapseWidth: 'targets' }"
-        >
+          data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', collapseWidth: 'targets' }">
           <div className="xt-row xt-row-x-6 xt-row-y-4">
             <div className="w-full md:w-auto">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 List group
               </button>
             </div>
@@ -25,8 +23,7 @@ class Demo extends React.Component {
                 <div className="xt-list-inner flex-auto">
                   <button
                     type="button"
-                    className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                  >
+                    className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon text-xl -my-1"
@@ -37,8 +34,7 @@ class Demo extends React.Component {
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                      strokeLinejoin="round">
                       <circle cx="11" cy="11" r="8"></circle>
                       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
@@ -53,8 +49,7 @@ class Demo extends React.Component {
 
                 <button
                   type="button"
-                  className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                >
+                  className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                   Search
                 </button>
               </div>
@@ -68,8 +63,7 @@ class Demo extends React.Component {
           <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               list
             </button>
 
@@ -79,20 +73,17 @@ class Demo extends React.Component {
                   <nav className="xt-list flex-col rounded-mdtransform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
                     <a
                       href="#"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </a>
                     <button
                       type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Dolor sit
                     </button>
                     <button
                       type="button"
-                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition"
-                    >
+                      className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
                       Amet
                     </button>
                   </nav>
@@ -105,8 +96,7 @@ class Demo extends React.Component {
           <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               card
             </button>
 
@@ -116,8 +106,7 @@ class Demo extends React.Component {
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon"
@@ -128,8 +117,7 @@ class Demo extends React.Component {
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                      strokeLinejoin="round">
                       <line x1="18" y1="6" x2="6" y2="18"></line>
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
@@ -154,8 +142,7 @@ class Demo extends React.Component {
           <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               tooltip
             </button>
 
@@ -175,8 +162,7 @@ class Demo extends React.Component {
             <div className="xt-tooltip-item">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 list group
               </button>
 
@@ -187,8 +173,7 @@ class Demo extends React.Component {
                       <div className="xt-list-inner flex-auto">
                         <button
                           type="button"
-                          className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                        >
+                          className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="xt-icon text-xl -my-1"
@@ -199,8 +184,7 @@ class Demo extends React.Component {
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
+                            strokeLinejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                           </svg>
@@ -215,8 +199,7 @@ class Demo extends React.Component {
 
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                        className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Search
                       </button>
                     </div>
@@ -234,8 +217,7 @@ class Demo extends React.Component {
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               screen full
             </button>
             <div className="xt-overlay group" data-xt-duration="700">
@@ -244,8 +226,7 @@ class Demo extends React.Component {
                 <button
                   type="button"
                   className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon"
@@ -256,8 +237,7 @@ class Demo extends React.Component {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
+                    strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
@@ -278,8 +258,7 @@ class Demo extends React.Component {
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               Menu
             </button>
 
@@ -291,8 +270,7 @@ class Demo extends React.Component {
                     <button
                       type="button"
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="xt-icon"
@@ -303,8 +281,7 @@ class Demo extends React.Component {
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                        strokeLinejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
@@ -312,20 +289,17 @@ class Demo extends React.Component {
                     <div className="xt-list bg-primary-500 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Menu
                       </button>
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Info
                       </button>
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                      >
+                        className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                         Account
                       </button>
                     </div>
@@ -357,8 +331,7 @@ class Demo extends React.Component {
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               contact
             </button>
 
@@ -370,8 +343,7 @@ class Demo extends React.Component {
                     <button
                       type="button"
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="xt-icon"
@@ -382,8 +354,7 @@ class Demo extends React.Component {
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                        strokeLinejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
@@ -444,8 +415,7 @@ class Demo extends React.Component {
                               </label>
                               <select
                                 className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
-                                aria-label="Subject"
-                              >
+                                aria-label="Subject">
                                 <option selected value="">
                                   Select an option
                                 </option>
@@ -462,8 +432,7 @@ class Demo extends React.Component {
                               </label>
                               <textarea
                                 className="xt-input xt-textarea rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition h-24 resize-vertical"
-                                aria-label="Message"
-                              ></textarea>
+                                aria-label="Message"></textarea>
                             </div>
 
                             <div className="w-full">
@@ -489,8 +458,7 @@ class Demo extends React.Component {
                             <div className="w-full">
                               <button
                                 type="submit"
-                                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                              >
+                                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                                 Send
                               </button>
                             </div>
@@ -527,8 +495,7 @@ class Demo extends React.Component {
           <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            >
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
               newsletter
             </button>
 
@@ -540,8 +507,7 @@ class Demo extends React.Component {
                     <button
                       type="button"
                       className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="xt-icon"
@@ -552,8 +518,7 @@ class Demo extends React.Component {
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                        strokeLinejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
@@ -653,8 +618,7 @@ class Demo extends React.Component {
                             <div className="w-full">
                               <button
                                 type="submit"
-                                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                              >
+                                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                                 Subscribe
                               </button>
                             </div>

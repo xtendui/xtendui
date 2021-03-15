@@ -20,8 +20,7 @@ class Demo extends React.Component {
                         />
                         <button
                           type="button"
-                          className="button--locate xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                        >
+                          className="button--locate xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="xt-icon text-xl -my-1"
@@ -32,16 +31,14 @@ class Demo extends React.Component {
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
+                            strokeLinejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                           </svg>
                         </button>
                         <button
                           type="button"
-                          className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                        >
+                          className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="xt-icon text-xl -my-1"
@@ -52,8 +49,7 @@ class Demo extends React.Component {
                             stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
+                            strokeLinejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                           </svg>
@@ -142,14 +138,12 @@ class Demo extends React.Component {
                 <script type="text/x-template">
                   <div
                     className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600"
-                    tabIndex="-1"
-                  >
+                    tabIndex="-1">
                     <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
                       <div className="googlelocator-item-content">
                         <div
                           className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl"
-                          data-xt-populate="name"
-                        ></div>
+                          data-xt-populate="name"></div>
                         <address className="text-sm uppercase not-italic" data-xt-populate="address"></address>
                         <div className="text-sm uppercase" data-xt-populate="additional"></div>
                       </div>
@@ -158,8 +152,7 @@ class Demo extends React.Component {
                         target="_blank"
                         className="text-2xs uppercase xt-list xt-list-2 flex-col items-center"
                         title="directions"
-                        data-xt-populate="direction"
-                      >
+                        data-xt-populate="direction">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -170,8 +163,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                           <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -190,8 +182,7 @@ class Demo extends React.Component {
 
               <button
                 type="button"
-                className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-              >
+                className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                 Search in this area
               </button>
             </div>

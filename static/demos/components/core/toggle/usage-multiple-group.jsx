@@ -8,38 +8,33 @@ class Demo extends React.Component {
           <button
             type="button"
             className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-            data-xt-group="my-group"
-          >
+            data-xt-group="my-group">
             Toggle Group 0
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 1
           </button>
 
           <button
             type="button"
             className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-            data-xt-group="my-group"
-          >
+            data-xt-group="my-group">
             Toggle Group 0
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          >
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
             Toggle 2
           </button>
 
           <button
             type="button"
             className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-            data-xt-group="another-group"
-          >
+            data-xt-group="another-group">
             Toggle Group 3
           </button>
 
@@ -49,22 +44,19 @@ class Demo extends React.Component {
 
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            data-xt-group="my-group"
-          >
+            data-xt-group="my-group">
             Target Group 0
           </div>
 
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            data-xt-group="another-group"
-          >
+            data-xt-group="another-group">
             Target Group 3
           </div>
 
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            data-xt-group="my-group"
-          >
+            data-xt-group="my-group">
             Target Group 0
           </div>
 
@@ -74,8 +66,7 @@ class Demo extends React.Component {
 
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            data-xt-group="another-group"
-          >
+            data-xt-group="another-group">
             Target Group 3
           </div>
         </div>

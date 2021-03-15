@@ -424,7 +424,11 @@ const populateDemo = (container, i) => {
           const btn = btnClipboard
           const tooltip = btn.closest('[data-xt-tooltip]')
           // close tooltip
-          tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip', { detail: { skip: true } }))
+          tooltip.dispatchEvent(
+            new CustomEvent('off.trigger.xt.tooltip', {
+              detail: { skip: true },
+            })
+          )
           // swap tooltip
           let self = Xt.get('xt-tooltip', tooltip)
           if (self) {

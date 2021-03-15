@@ -44,8 +44,7 @@ class Demo extends React.Component {
               type="button"
               className="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
               data-xt-pag
-              title="Slide xt-num"
-            ></button>
+              title="Slide xt-num"></button>
           </nav>
 
           <button
@@ -53,8 +52,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
             data-xt-nav="-1"
             aria-label="Previous slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +64,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
@@ -79,8 +76,7 @@ class Demo extends React.Component {
             className="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
             data-xt-nav="1"
             aria-label="Next slide"
-            data-xt-mousefollow
-          >
+            data-xt-mousefollow>
             <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +88,7 @@ class Demo extends React.Component {
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+                strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>

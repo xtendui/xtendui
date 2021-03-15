@@ -8,71 +8,61 @@ class Demo extends React.Component {
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-first-element"
-          >
+            id="demo--slider-events-first-element">
             1st element
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-first-target"
-          >
+            id="demo--slider-events-first-target">
             1st target
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--toggle-events-autostart"
-          >
+            id="demo--toggle-events-autostart">
             Autostart
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--toggle-events-autostop"
-          >
+            id="demo--toggle-events-autostop">
             Autostop
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-add"
-          >
+            id="demo--slider-events-add">
             Add
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-remove"
-          >
+            id="demo--slider-events-remove">
             Remove
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-reinit"
-          >
+            id="demo--slider-events-reinit">
             Reinit
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-restart"
-          >
+            id="demo--slider-events-restart">
             Restart
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-destroy"
-          >
+            id="demo--slider-events-destroy">
             Destroy
           </button>
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-            id="demo--slider-events-unmount"
-          >
+            id="demo--slider-events-unmount">
             Unmount
           </button>
         </div>
@@ -117,16 +107,14 @@ class Demo extends React.Component {
               type="button"
               className="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
               data-xt-pag
-              title="Slide xt-num"
-            ></button>
+              title="Slide xt-num"></button>
           </nav>
         </div>
 
         <div className="xt-card rounded-md text-black xt-links-default bg-gray-200 mt-6">
           <div
             className="text-sm py-6 px-7 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-            id="demo--slider-events-log"
-          ></div>
+            id="demo--slider-events-log"></div>
         </div>
       </div>
     )

@@ -14,7 +14,8 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
-              aria-label="Close">
+              aria-label="Close"
+            >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
@@ -107,7 +108,8 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
-              aria-label="Close">
+              aria-label="Close"
+            >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">

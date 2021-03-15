@@ -23,8 +23,7 @@ class Demo extends React.Component {
                       <div className="text-sm py-6 px-7 mt-auto pt-0">
                         <button
                           type="button"
-                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           More info
                         </button>
                       </div>
@@ -34,8 +33,7 @@ class Demo extends React.Component {
                       <button
                         type="button"
                         className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-                        aria-label="Close"
-                      >
+                        aria-label="Close">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon"
@@ -46,8 +44,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -103,8 +100,7 @@ class Demo extends React.Component {
                       <div className="text-sm py-6 px-7 mt-auto pt-0">
                         <button
                           type="button"
-                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           More info
                         </button>
                       </div>
@@ -114,8 +110,7 @@ class Demo extends React.Component {
                       <button
                         type="button"
                         className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-                        aria-label="Close"
-                      >
+                        aria-label="Close">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon"
@@ -126,8 +121,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -162,8 +156,7 @@ class Demo extends React.Component {
                       <div className="text-sm py-6 px-7 mt-auto pt-0">
                         <button
                           type="button"
-                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           More info
                         </button>
                       </div>
@@ -173,8 +166,7 @@ class Demo extends React.Component {
                       <button
                         type="button"
                         className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-                        aria-label="Close"
-                      >
+                        aria-label="Close">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon"
@@ -185,8 +177,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -242,8 +233,7 @@ class Demo extends React.Component {
                       <div className="text-sm py-6 px-7 mt-auto pt-0">
                         <button
                           type="button"
-                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           More info
                         </button>
                       </div>
@@ -253,8 +243,7 @@ class Demo extends React.Component {
                       <button
                         type="button"
                         className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-                        aria-label="Close"
-                      >
+                        aria-label="Close">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon"
@@ -265,8 +254,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -301,8 +289,7 @@ class Demo extends React.Component {
                       <div className="text-sm py-6 px-7 mt-auto pt-0">
                         <button
                           type="button"
-                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
-                        >
+                          className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
                           More info
                         </button>
                       </div>
@@ -312,8 +299,7 @@ class Demo extends React.Component {
                       <button
                         type="button"
                         className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
-                        aria-label="Close"
-                      >
+                        aria-label="Close">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon"
@@ -324,8 +310,7 @@ class Demo extends React.Component {
                           stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>

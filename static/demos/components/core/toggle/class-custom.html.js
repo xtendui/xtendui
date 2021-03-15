@@ -9,7 +9,8 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} demo--toggle-custom-class">
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} demo--toggle-custom-class"
+      >
         Toggle 1
       </button>
 

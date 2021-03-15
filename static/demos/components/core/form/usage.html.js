@@ -35,7 +35,8 @@ const html = /* HTML */ `
           <textarea
             class="xt-input xt-textarea rounded-md ${classes.inputDefault()} h-24 resize-vertical"
             aria-label="Textarea"
-            placeholder="Textarea"></textarea>
+            placeholder="Textarea"
+          ></textarea>
         </div>
 
         <div class="w-full">
