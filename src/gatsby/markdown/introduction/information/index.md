@@ -44,7 +44,7 @@ Xtend UI is a framework for custom styling, interactions and animations. Extreme
 * Docs icons with [Feather Icons](https://feathericons.com/)
 * Docs images with [Unsplash](https://source.unsplash.com/)
 
-[Supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc) are browsers that supports `css variables`, `css grid`, `composedPath`, `:scope`.
+[Supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc) are browsers that supports `css variables`, `css grid`, `async`, `:scope`,  `composedPath`.
 
 ## Setup
 

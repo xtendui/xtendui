@@ -7,13 +7,13 @@
   "author": "Riccardo Caroli <beaver82+xtendui@gmail.com>",
   "repository": "https://github.com/minimit/xtendui.git",
   "keywords": [
-    "frontend",
-    "library",
-    "framework",
+    "react",
     "javascript",
-    "tailwindcss",
-    "animation",
-    "ui"
+    "components",
+    "ui",
+    "frontend",
+    "react-components",
+    "tailwindcss"
   ],
   "main": "src/xt.js",
   "publishConfig": {

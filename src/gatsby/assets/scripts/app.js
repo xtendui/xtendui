@@ -24,6 +24,50 @@ document.addEventListener('click', e => {
 })
 
 /**
+ * switcher
+ */
+
+Xt.mount.push({
+  matches: '.button--switch-html',
+  mount: ({ object }) => {
+    // click
+
+    const eventClick = () => {
+      localStorage.setItem('mode', false)
+      window.location.reload()
+    }
+
+    object.addEventListener('click', eventClick)
+
+    // init
+
+    if (localStorage.getItem('mode') !== 'react') {
+      object.classList.add('active')
+    }
+  },
+})
+
+Xt.mount.push({
+  matches: '.button--switch-react',
+  mount: ({ object }) => {
+    // click
+
+    const eventClick = () => {
+      localStorage.setItem('mode', 'react')
+      window.location.reload()
+    }
+
+    object.addEventListener('click', eventClick)
+
+    // init
+
+    if (localStorage.getItem('mode') === 'react') {
+      object.classList.add('active')
+    }
+  },
+})
+
+/**
  * .gatsby_button--overlay
  */
 

@@ -134,7 +134,43 @@ export default function Header({ page }) {
                   aria-label="Close"
                   dangerouslySetInnerHTML={{ __html: classes.iconX() }}
                 ></div>
-                <div className="mt-6">
+                <div className="mt-16 md:mt-2">
+                  <div className="gatsby_site-header_switcher_container">
+                    <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
+                      <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
+                        <button
+                          type="button"
+                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition`}
+                        >
+                          Html
+                        </button>
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                          <div
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          >
+                            Switch to Html
+                          </div>
+                        </div>
+                      </div>
+                      <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
+                        <button
+                          type="button"
+                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition`}
+                        >
+                          React
+                        </button>
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                          <div
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
+                          >
+                            Switch to React
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4">
                   <div className="gatsby_site-header_links_container">
                     <div className="gatsby_site-header_links">
                       {page.menus.posts.map(({ post }, i) => (

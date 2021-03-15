@@ -5,6 +5,6 @@ not op_mini all
 Edge >= 79
 Firefox >= 52
 Chrome >= 57
-Safari >= 10.1
+Safari >= 11
 Opera >= 44
-iOS >= 10.3
+iOS >= 11
