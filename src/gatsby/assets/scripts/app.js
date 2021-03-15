@@ -35,6 +35,17 @@ Xt.mount.push({
     const eventClick = () => {
       localStorage.setItem('mode', false)
       window.location.reload()
+      /* @TODO demos in react
+      for (const el of document.querySelectorAll('.button--switch-html')) {
+        el.classList.add('active')
+      }
+      for (const el of document.querySelectorAll('.button--switch-react')) {
+        el.classList.remove('active')
+      }
+      for (const demo of window.currentDemos) {
+        demo.setMode(false)
+      }
+      */
     }
 
     object.addEventListener('click', eventClick)
@@ -55,6 +66,17 @@ Xt.mount.push({
     const eventClick = () => {
       localStorage.setItem('mode', 'react')
       window.location.reload()
+      /* @TODO demos in react
+      for (const el of document.querySelectorAll('.button--switch-html')) {
+        el.classList.remove('active')
+      }
+      for (const el of document.querySelectorAll('.button--switch-react')) {
+        el.classList.add('active')
+      }
+      for (const demo of window.currentDemos) {
+        demo.setMode('react')
+      }
+      */
     }
 
     object.addEventListener('click', eventClick)

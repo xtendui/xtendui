@@ -83,10 +83,6 @@ pre {
       overflow-y: auto;
       @apply xt-overflow-main;
     }
-    .gatsby_demo_item.active-code {
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1 !important;
@@ -158,6 +154,7 @@ pre {
 
 .gatsby_demo_item {
   position: relative;
+  height: 100%;
   .gatsby_demo_item_wrapper {
     position: relative;
     #gatsby_open-full & {

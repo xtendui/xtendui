@@ -9,6 +9,8 @@ export default class DemoIframe extends React.Component {
     const { location } = this.props
     const src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
     const id = src.split('/').join('-')
+    const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
+    console.log(localStorage.getItem('mode'))
     // seo
     const seo = {}
     seo.title = src
@@ -28,61 +30,50 @@ export default class DemoIframe extends React.Component {
       require(`static/${src}.css`).default
       // eslint-disable-next-line no-empty
     } catch (ex) {}
-    // switch
-    const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
-    if (mode === 'react') {
-      // react
-      const Demo = require(`static/${src}.jsx`).default
-      if (typeof window !== 'undefined') {
+    // vanilla
+    const html = require(`static/${src}.html.js`).object.html
+    try {
+      require(`static/${src}.js`).default
+      // eslint-disable-next-line no-empty
+    } catch (ex) {}
+    // react
+    const Demo = require(`static/${src}.jsx`).default
+    // code
+    if (typeof window !== 'undefined') {
+      if (window.self !== window.top) {
         const Xt = require('xtendui').Xt
-        const iframeLoaded = () => {
-          if (window.self !== window.top) {
+        let iframeLoaded
+        if (mode === 'react') {
+          iframeLoaded = () => {
             window.parent.initIframe(id, false, `/${src}.jsx`, `/${src}.css`)
           }
-        }
-        Xt.ready(iframeLoaded)
-      }
-      // render
-      return (
-        <Layout>
-          <SEO title={seo.title} description={seo.description} />
-          <div id="body-outer">
-            <div id="gatsby_body-inner" className="gatsby_demo_source--from">
-              <Demo />
-            </div>
-          </div>
-        </Layout>
-      )
-    } else {
-      // vanilla
-      const html = require(`static/${src}.html.js`).object.html
-      if (typeof window !== 'undefined') {
-        const Xt = require('xtendui').Xt
-        const iframeLoaded = () => {
-          if (window.self !== window.top) {
+        } else {
+          iframeLoaded = () => {
             window.parent.initIframe(id, html, false, `/${src}.css`, `/${src}.js`)
           }
         }
         Xt.ready(iframeLoaded)
       }
-      try {
-        require(`static/${src}.js`).default
-        // eslint-disable-next-line no-empty
-      } catch (ex) {}
-      // render
-      return (
-        <Layout>
-          <SEO title={seo.title} description={seo.description} />
-          <div id="body-outer">
+    }
+    // render with all
+    return (
+      <Layout>
+        <SEO title={seo.title} description={seo.description} />
+        <div id="body-outer">
+          {mode === 'react' ? (
+            <div id="gatsby_body-inner" className="gatsby_demo_source--from">
+              <Demo />
+            </div>
+          ) : (
             <div
               id="gatsby_body-inner"
               className="gatsby_demo_source--from"
               dangerouslySetInnerHTML={{ __html: html }}
             />
-          </div>
-        </Layout>
-      )
-    }
+          )}
+        </div>
+      </Layout>
+    )
   }
 }
 
