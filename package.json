@@ -28,17 +28,17 @@
     "src/future/*.*"
   ],
   "scripts": {
-    "postversion": "yarn pack",
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",
-    "custom": "yarn alias && node ./build/generate.js",
-    "generate": "yarn custom && yarn lint --fix",
-    "pack": "webpack --progress",
-    "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
-    "lint": "eslint . --ext .js,.jsx"
+    "generate": "node ./build/generate.js && yarn lint --fix",
+    "lint": "eslint . --ext .js,.jsx",
+    "postinstall": "yarn alias",
+    "postversion": "yarn pack",
+    "pack": "node ./build/pack.js && webpack --progress",
+    "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\""
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.0.3",

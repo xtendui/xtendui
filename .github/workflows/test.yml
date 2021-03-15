@@ -51,10 +51,8 @@ jobs:
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
     # build/action.yml composite
-    - name: Custom Build (jsx generation)
-      run: yarn custom
-    - name: Lint
-      run: yarn lint --fix
+    - name: Generate jsx and lint
+      run: yarn generate
     - name: Check unstaged
       id: changes
       uses: UnicornGlobal/has-changes-action@v1.0.11
