@@ -25,19 +25,19 @@ class Demo extends React.Component {
       duration: 500,
     })
     for (const target of this.toggle.targets) {
-      target.addEventListener('on.xt.toggle', this.eventOn.bind(this))
-      target.addEventListener('off.xt.toggle', this.eventOff.bind(this))
+      target.addEventListener('on.xt.toggle', this.toggleOn.bind(this, { self: this.toggle }))
+      target.addEventListener('off.xt.toggle', this.toggleOff.bind(this, { self: this.toggle }))
     }
   }
 
-  eventOn(e) {
+  toggleOn({ self }, e) {
     const tr = e.target
     const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
     // target
     gsap.killTweensOf(tr)
     gsap.set(tr, {
-      x: -this.toggle.direction * 15,
+      x: -self.direction * 15,
       opacity: 0,
     })
     gsap.to(tr, {
@@ -48,14 +48,14 @@ class Demo extends React.Component {
     })
   }
 
-  eventOff(e) {
+  toggleOff({ self }, e) {
     const tr = e.target
     const targetTimeOff = 0.5
     const targetEaseOff = 'quint.out'
     // target
     gsap.killTweensOf(tr)
     gsap.to(tr, {
-      x: this.toggle.direction * 15,
+      x: self.direction * 15,
       opacity: 0,
       duration: targetTimeOff,
       ease: targetEaseOff,
