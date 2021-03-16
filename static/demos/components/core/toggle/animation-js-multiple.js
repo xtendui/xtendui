@@ -66,8 +66,8 @@ class Demo {
 
 Xt.mount.push({
   matches: '#ref--toggle-animation-js-multiple',
-  mount: ({ object }) => {
-    let self = new Demo(object)
+  mount: ({ object: ref }) => {
+    let self = new Demo(ref)
     return () => {
       self.destroy()
       self = null
