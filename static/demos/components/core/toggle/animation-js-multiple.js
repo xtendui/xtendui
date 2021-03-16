@@ -14,6 +14,7 @@ class Demo {
 
   /*##METHODSSTART*/
   init() {
+    // toggle
     this.toggle = new Xt.Toggle(this.object.querySelector('.demo--toggle-animation-js-multiple'), {
       duration: 500,
     })
