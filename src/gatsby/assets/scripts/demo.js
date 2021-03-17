@@ -158,7 +158,9 @@ const populateBlock = () => {
       const current = content.querySelector('.gatsby_demo_item.in')
       // hidden tooltip
       const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
-      tooltip.classList.add('hidden')
+      if (tooltip) {
+        tooltip.classList.add('hidden')
+      }
       // triggering e.detail.container
       dispatchEvent(
         new CustomEvent('resize', {
