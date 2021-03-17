@@ -20,16 +20,16 @@ demo.htmlSource = `
     Toggle 1
   </button>
 
-  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}" data-xt-group="another-group">
-    Toggle Group 2
+  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}" data-xt-group="my-group">
+    Toggle Group 0
   </button>
 
   <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
-    Toggle 3
+    Toggle 2
   </button>
 
   <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}" data-xt-group="another-group">
-    Toggle Group 2
+    Toggle Group 3
   </button>
 
   <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
@@ -41,7 +41,7 @@ demo.htmlSource = `
   </div>
 
   <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="another-group">
-    Target Group 2
+    Target Group 3
   </div>
 
   <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="my-group">
@@ -49,7 +49,7 @@ demo.htmlSource = `
   </div>
 
   <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">
-    Target 3
+    Target 2
   </div>
 
   <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="another-group">

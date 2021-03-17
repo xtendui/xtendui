@@ -657,7 +657,7 @@ class Slider extends Xt.Toggle {
       `${self.ns}GroupPos`
     )
     // toggle
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
+    if (force || (self.checkOn(element) && (e?.detail?.type !== `off.trigger.${self.componentNs}`))) {
       // autoHeight and keepHeight
       if (self.autoHeight || (self.keepHeight && self.initial)) {
         let slideHeight = Xt.dataStorage.get(slide, `${self.ns}SlideHeight`)
@@ -772,7 +772,7 @@ class Slider extends Xt.Toggle {
           )
         }
       }
-    } else if (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`) {
+    } else if (e?.detail?.type !== `on.trigger.${self.componentNs}`) {
       // drag reset
       self.logicDragreset()
     }
@@ -1292,6 +1292,7 @@ Slider.optionsDefault = {
   targets: '.xt-slide',
   // class
   class: 'in in-slider',
+  groupElements: true,
   // quantity
   min: 1,
   max: 1,

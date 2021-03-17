@@ -6,25 +6,6 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
-## Group Elements
-
-You can group elements activation with the option `groupElements: true`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
-
-</div>
-
-<demo>
-  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
-  </demovanilla>
-</demo>
-
 ## Class
 
 You can customize the **class names** used by the component.

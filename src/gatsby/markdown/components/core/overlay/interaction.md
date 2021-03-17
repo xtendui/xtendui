@@ -6,11 +6,6 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
-## Group Elements
-
-You can group elements activation with the option `groupElements: true`. Refer to [toggle group elements](/components/core/toggle/interaction#group-elements).
-
-
 ## Class
 
 You can customize the **class names** used by the component. Refer to [toggle class](/components/core/toggle/interaction#class).

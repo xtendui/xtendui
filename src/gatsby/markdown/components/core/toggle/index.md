@@ -36,8 +36,20 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 [[notePrimary]]
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
+You can group elements activation with the option `groupElements: true`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-unique">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-unique-groupelements">
   </demovanilla>
 </demo>
 
@@ -49,10 +61,22 @@ Use this code to create a **toggle** in **multiple mode**.
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
+You can group elements activation with the option `groupElements: true`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
+
+</div>
+
 <demo>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple">
   </demovanilla>
   <demovanilla src="vanilla/components/core/toggle/usage-multiple-group">
+  </demovanilla>
+  <demovanilla src="vanilla/components/core/toggle/usage-multiple-groupelements">
   </demovanilla>
 </demo>
 

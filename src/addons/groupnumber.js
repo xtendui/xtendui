@@ -74,7 +74,7 @@ class Groupnumber {
   eventChange(step, e) {
     const self = this
     // trigger external events and skip internal events
-    if (!e || !e.detail || !e.detail.skip) {
+    if (!e?.detail?.skip) {
       const input = self.object.querySelector('input')
       let val = parseFloat(input.value)
       val = val + step
@@ -92,13 +92,12 @@ class Groupnumber {
     val = isNaN(val) ? 0 : val
     for (const input of self.inputs) {
       // check min and max
-      const minAttributeAsFloat = parseFloat(input.getAttribute('min'))
-      const inputMin = isNaN(minAttributeAsFloat) ? 1 : minAttributeAsFloat
-      const maxAttributeAsFloat = parseFloat(input.getAttribute('max'))
-      const inputMax = isNaN(maxAttributeAsFloat) ? Infinity : maxAttributeAsFloat
+      const inputMin = parseFloat(input.getAttribute('min')) ?? 1
+      const inputMax = parseFloat(input.getAttribute('max')) ?? Infinity
       // disabled
       for (const step of self.steps) {
-        const qty = parseFloat(step.getAttribute('data-xt-step'))
+        const inputStep = parseFloat(step.getAttribute('data-xt-step')) ?? 1
+        const qty = inputStep
         step.removeAttribute('disabled')
         if (val <= inputMin && qty < 0) {
           val = inputMin
