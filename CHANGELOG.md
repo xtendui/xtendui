@@ -1,3 +1,35 @@
+# [1.0.0-beta.7](https://github.com/minimit/xtendui/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-03-17)
+
+
+### Bug Fixes
+
+* aria disabled on disable ([338feac](https://github.com/minimit/xtendui/commit/338feacc6185cd93c55930b968274a7a0f44c369))
+* event limit refactor and fix eventLimit ([c098d2d](https://github.com/minimit/xtendui/commit/c098d2d7faa44b2e0ee501a50c830382166764c2))
+* fix form activation of radios when triggering change event ([89dcf89](https://github.com/minimit/xtendui/commit/89dcf897b8736eade4f2a440626a648110ac7876))
+* fix ssr window undefined error ([1bb0e85](https://github.com/minimit/xtendui/commit/1bb0e85da62e7be2a411234e89f12cba78606d98))
+* fixed classHtml to remeber others opened classes ([9e1fcf9](https://github.com/minimit/xtendui/commit/9e1fcf9394b81526b0191ee624f20b64c98a7afe))
+* items with line height and demos card ([f2901ea](https://github.com/minimit/xtendui/commit/f2901ea54674826e4bcf09bbb79dbee0010e1e52))
+* list and row all spacing ([3b4e0ad](https://github.com/minimit/xtendui/commit/3b4e0ad267ba8825e4c510452329b16c7578c2e5))
+* **media:** xt-media inherit border radius ([4700785](https://github.com/minimit/xtendui/commit/4700785b12136da65c699470364b9a368bbf09c1))
+* overlay zIndex from javascript and sticky below components ([f9a17d8](https://github.com/minimit/xtendui/commit/f9a17d80ce9150c9c29ef88b6c8f8e1038bc3f5f))
+* refactor backdrop pointer events and closeInside ([b433cb0](https://github.com/minimit/xtendui/commit/b433cb06f7055fdf1ca4ace09c822e85a5d4138c))
+* removed toggle zIndex and refactor backdrop ([d9c69f8](https://github.com/minimit/xtendui/commit/d9c69f8ab4217326706b14766c2fa7e7c9856073))
+* removed zIndex base and active ([21af787](https://github.com/minimit/xtendui/commit/21af787bc9f85f343719788182ac1790b909593c))
+* trigger events force because of eventLimit ([f9b7e82](https://github.com/minimit/xtendui/commit/f9b7e825ec1f821bb6c44d61383b4ec7aa51f556))
+* xt-design no zindex ([0825124](https://github.com/minimit/xtendui/commit/08251249e8b8be033fe8babdb2d039833a23a3df))
+* zIndex in self mode ([4bc078c](https://github.com/minimit/xtendui/commit/4bc078c8ae54e0f27d617ad579a8926e60e879ee))
+* zIndex resets now on toggle components ([cb18242](https://github.com/minimit/xtendui/commit/cb1824248753fb5336847816d4a2ce1f164423c1))
+
+
+### Features
+
+* **scrolltoanchor:** refactor scrolltoanchor ([f2964a0](https://github.com/minimit/xtendui/commit/f2964a066c732afff3d579cc7b4f050c63beb2f8))
+
+
+### BREAKING CHANGES
+
+* if you use zIndex.base or zIndex.active use tailwind zIndex instead
+
 # [1.0.0-beta.6](https://github.com/minimit/xtendui/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-03-03)
 
 
