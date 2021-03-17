@@ -269,7 +269,7 @@ Xt.mount.push({
       requestAnimationFrame(() => {
         // not when drop is still open
         const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-        if (!dropBtnActive && !this.btnOn) {
+        if (!dropBtnActive && !btnOn) {
           // line
           const lineY = el.offsetTop + el.offsetHeight
           lineFirst = true
