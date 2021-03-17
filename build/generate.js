@@ -48,43 +48,41 @@ const indentString = require('indent-string')
               process.exit(1)
             }
           }
-          // ##IMPORTSSTART and ##IMPORTSEND
-          const imports = jsText.match(/\/\*##IMPORTSSTART\*\/\n([\S\s]*?)\/\*##IMPORTSEND\*\/\n/g)
+          // ##IMPORTSTART and ##IMPORTEND
+          const imports = jsText.match(/\/\*##IMPORTSTART\*\/\n([\S\s]*?)\/\*##IMPORTEND\*\/\n/g)
           if (imports) {
             for (const meta of imports.entries()) {
-              strImports += meta[1].replace(/\/\*##IMPORTSSTART\*\/\n/g, '').replace(/\/\*##IMPORTSEND\*\/\n/g, '')
+              strImports += meta[1].replace(/\/\*##IMPORTSTART\*\/\n/g, '').replace(/\/\*##IMPORTEND\*\/\n/g, '')
             }
+            // remove ##
+            strImports = strImports.replace(/\n*[ ]*\/\*##(.*)*/g, '')
           }
-          // ##COMPONENTDIDMOUNTSTART and ##COMPONENTDIDMOUNTEND
-          const mounts = jsText.match(
-            /[ ]*\/\*##COMPONENTDIDMOUNTSTART\*\/\n([\S\s]*?)[ ]*\/\*##COMPONENTDIDMOUNTEND\*\/\n/g
-          )
+          // ##MOUNTSTART and ##MOUNTEND
+          const mounts = jsText.match(/[ ]*\/\*##MOUNTSTART\*\/\n([\S\s]*?)[ ]*\/\*##MOUNTEND\*\/\n/g)
           if (mounts) {
             for (const meta of mounts.entries()) {
               strMount += meta[1]
-                .replace(/[ ]*\/\*##COMPONENTDIDMOUNTSTART\*\/\n/g, '')
-                .replace(/[ ]*\/\*##COMPONENTDIDMOUNTEND\*\/\n/g, '')
             }
+            // remove ##
+            strMount = strMount.replace(/\n*[ ]*\/\*##(.*)*/g, '')
           }
-          // ##COMPONENTDIDUNMOUNTSTART and ##COMPONENTDIDUNMOUNTEND
-          const unmount = jsText.match(
-            /[ ]*\/\*##COMPONENTDIDUNMOUNTSTART\*\/\n([\S\s]*?)[ ]*\/\*##COMPONENTDIDUNMOUNTEND\*\/\n/g
-          )
+          // ##UNMOUNTSTART and ##UNMOUNTEND
+          const unmount = jsText.match(/[ ]*\/\*##UNMOUNTSTART\*\/\n([\S\s]*?)[ ]*\/\*##UNMOUNTEND\*\/\n/g)
           if (unmount) {
             for (const meta of unmount.entries()) {
               strUnmount += meta[1]
-                .replace(/[ ]*\/\*##COMPONENTDIDUNMOUNTSTART\*\/\n/g, '')
-                .replace(/[ ]*\/\*##COMPONENTDIDUNMOUNTEND\*\/\n/g, '')
             }
+            // remove ##
+            strUnmount = strUnmount.replace(/\n*[ ]*\/\*##(.*)*/g, '')
           }
-          // ##METHODSSTART and ##METHODSEND
-          const methods = jsText.match(/[ ]*\/\*##METHODSSTART\*\/\n([\S\s]*?)[ ]*\/\*##METHODSEND\*\/\n/g)
+          // ##METHODSTART and ##METHODEND
+          const methods = jsText.match(/[ ]*\/\*##METHODSTART\*\/\n([\S\s]*?)[ ]*\/\*##METHODEND\*\/\n/g)
           if (methods) {
             for (const meta of methods.entries()) {
               strMethods += meta[1]
-                .replace(/[ ]*\/\*##METHODSSTART\*\/\n/g, '')
-                .replace(/[ ]*\/\*##METHODSEND\*\/\n/g, '')
             }
+            // remove ##
+            strMethods = strMethods.replace(/\n*[ ]*\/\*##(.*)*/g, '')
           }
         }
       })
@@ -108,8 +106,7 @@ class Demo extends React.Component {${
   }
 
   componentDidMount() {
-    this.object = this.ref.current
-${strMount}  }
+    this.object = this.ref.current${strMount}  }
 ${
   strUnmount !== ''
     ? `

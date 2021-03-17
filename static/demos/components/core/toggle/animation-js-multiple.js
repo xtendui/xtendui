@@ -1,18 +1,18 @@
-/*##IMPORTSSTART*/
+/*##IMPORTSTART*/
 import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 import gsap from 'gsap'
-/*##IMPORTSEND*/
+/*##IMPORTEND*/
 
 class Demo {
   constructor(ref) {
     this.object = ref
-    /*##COMPONENTDIDMOUNTSTART*/
+    /*##MOUNTSTART*/
     this.init()
-    /*##COMPONENTDIDMOUNTEND*/
+    /*##MOUNTEND*/
   }
 
-  /*##METHODSSTART*/
+  /*##METHODSTART*/
   init() {
     // toggle
     this.toggle = new Xt.Toggle(this.object.querySelector('.demo--toggle-animation-js-multiple'), {
@@ -55,13 +55,13 @@ class Demo {
       ease: targetEaseOff,
     })
   }
-  /*##METHODSEND*/
+  /*##METHODEND*/
 
   destroy() {
-    /*##COMPONENTDIDUNMOUNTSTART*/
+    /*##UNMOUNTSTART*/
     this.toggle.destroy()
     this.toggle = null
-    /*##COMPONENTDIDUNMOUNTEND*/
+    /*##UNMOUNTEND*/
   }
 }
 
