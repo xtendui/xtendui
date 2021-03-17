@@ -657,7 +657,7 @@ class Slider extends Xt.Toggle {
       `${self.ns}GroupPos`
     )
     // toggle
-    if (force || (self.checkOn(element) && (e?.detail?.type !== `off.trigger.${self.componentNs}`))) {
+    if (force || (self.checkOn(element) && e?.detail?.type !== `off.trigger.${self.componentNs}`)) {
       // autoHeight and keepHeight
       if (self.autoHeight || (self.keepHeight && self.initial)) {
         let slideHeight = Xt.dataStorage.get(slide, `${self.ns}SlideHeight`)

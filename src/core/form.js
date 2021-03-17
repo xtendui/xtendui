@@ -10,14 +10,14 @@ Xt.mount.push({
     // vars
 
     const name = object.getAttribute('name')
-    const all = document.querySelectorAll(`input[type="radio"][name="${name}"]`)
+    const radios = document.querySelectorAll(`input[type="radio"][name="${name}"]`)
 
     // eventInput
 
     const eventInput = e => {
       // propagate to other radios
       if (!e?.detail?.skip) {
-        for (const radio of all) {
+        for (const radio of Array.from(radios).filter(x => x !== object)) {
           radio.dispatchEvent(
             new CustomEvent('change', {
               detail: { skip: true },

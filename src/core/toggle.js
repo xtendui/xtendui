@@ -1397,7 +1397,7 @@ class Toggle {
     }
     // toggle
     // @FIX same event for on and off same namespace
-    if (force || (self.checkOn(element) && (e?.detail?.type !== `off.trigger.${self.componentNs}`))) {
+    if (force || (self.checkOn(element) && e?.detail?.type !== `off.trigger.${self.componentNs}`)) {
       // auto
       self.eventAutostop()
       // @FIX groupElements and targets
@@ -1432,7 +1432,7 @@ class Toggle {
       }
       // activation
       return true
-    } else if (options.on === options.off && (e?.detail?.type !== `on.trigger.${self.componentNs}`)) {
+    } else if (options.on === options.off && e?.detail?.type !== `on.trigger.${self.componentNs}`) {
       // @FIX same event for on and off same namespace
       self.eventOff(element, false, e)
     }
