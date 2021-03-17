@@ -1,7 +1,0 @@
-.demo--row-overflow {
-  @media (max-width: calc(theme('screens.md') - 1px)) {
-    > * {
-        width: 300px !important;
-    }
-  }
-}

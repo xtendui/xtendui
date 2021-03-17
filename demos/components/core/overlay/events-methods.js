@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '#demo--overlay-events, #demo--overlay-events-alt',
+  matches: '#demo--overlay-events',
   mount: ({ object }) => {
     // init
 
@@ -20,7 +20,7 @@ Xt.mount.push({
       // hr
       clearTimeout(window.logTimeout)
       window.logTimeout = setTimeout(() => {
-        log.innerHTML += '<hr/>'
+        log.innerHTML += '<hr class="my-4 border-gray-500"/>'
       }, 1000)
     }
 
@@ -99,6 +99,11 @@ Xt.mount.push({
 
     const events = e => {
       let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
+      if (self.elements.includes(e.target)) {
+        str += ` type <strong>element</strong>`
+      } else if (self.targets.includes(e.target)) {
+        str += ` type <strong>target</strong>`
+      }
       if (e.target.getAttribute('title')) {
         str += ` from <strong>${e.target.getAttribute('title')}</strong>`
       } else if (e.target.querySelector(':scope > .xt-button')) {
@@ -135,5 +140,16 @@ Xt.mount.push({
       self = null
     }
     return unmount
+  },
+})
+
+Xt.mount.push({
+  matches: '#demo--overlay-events-alt',
+  mount: ({ object }) => {
+    // init
+
+    new Xt.Overlay(object, {
+      targets: '#overlay--nested',
+    })
   },
 })

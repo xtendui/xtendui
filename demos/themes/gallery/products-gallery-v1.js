@@ -15,35 +15,21 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollElements: [
-        document.scrollingElement,
-        object.querySelector('.product-gallery'),
-        object.querySelector('#overlay--product-images'),
-      ],
+      scrollElements: '.xt-overlay, .product-gallery',
     })
 
     // change
 
     const eventChange = () => {
-      // val
-      let pos = self.position - self.scrollSpace - self.scrollDistance
-      const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
-      pos = pos < min ? min : pos
-      pos = pos > max ? max : pos
       // scroll
-      const component = self.scrollElement.closest('.xt-overlay')
-      if (component) {
-        // if component on activation
-        gsap.set(self.scrollElement, { scrollTo: pos })
-      } else {
-        gsap.killTweensOf(self.scrollElement)
-        gsap.to(self.scrollElement, {
-          scrollTo: pos,
-          duration: 1,
-          ease: 'quart.inOut',
-        })
-      }
+      const overlay = self.target.closest('.xt-overlay')
+      const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
+      gsap.killTweensOf(self.scrollElement)
+      gsap.to(self.scrollElement, {
+        scrollTo: self.position,
+        duration: duration,
+        ease: 'quart.inOut',
+      })
     }
 
     self.object.addEventListener('change.xt.scrolltoanchor', eventChange)

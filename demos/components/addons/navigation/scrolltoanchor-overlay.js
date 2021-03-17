@@ -15,32 +15,36 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
+    const overlay = object.closest('.xt-overlay')
 
     // sticky
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
+    const initSticky = () => {
+      const sticky = ScrollTrigger.create({
+        trigger: object,
+        start: 'top top',
+        endTrigger: 'html',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
       })
-    })
 
-    // refresh
+      ScrollTrigger.addEventListener('refresh', () => {
+        // @FIX ScrollTrigger pin mount ignore
+        sticky.pin.classList.add('xt-ignore')
+        requestAnimationFrame(() => {
+          sticky.pin.classList.remove('xt-ignore')
+        })
+      })
+    }
 
-    overlay.addEventListener('on.xt.overlay', () => {
-      ScrollTrigger.refresh()
-    })
+    if (overlay) {
+      overlay.addEventListener('on.xt.overlay', () => {
+        initSticky()
+      })
+    } else {
+      initSticky()
+    }
   },
 })
 
@@ -51,39 +55,29 @@ Xt.mount.push({
 Xt.mount.push({
   matches: '#iframe--scrolltoanchor-overlay body',
   mount: ({ object }) => {
-    // vars
-
-    const overlay = document.querySelector('#demo--overlay-scrolltoanchor')
-
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollElements: [overlay],
-      scrollSpace: () => {
-        return object.querySelector('.xt-sticky').clientHeight
+      scrollSpace: ({ self }) => {
+        let space = 0
+        const spaceEls = self.scrollElement.querySelectorAll('.xt-sticky[style*="position: fixed"]')
+        for (const spaceEl of spaceEls) {
+          space += spaceEl.clientHeight
+        }
+        return space
       },
-    })
-
-    // refresh
-
-    overlay.addEventListener('on.xt.overlay', () => {
-      overlay.dispatchEvent(new CustomEvent('scroll.trigger.xt.scrolltoanchor'))
     })
 
     // change
 
     const eventChange = () => {
-      // val
-      let pos = self.position - self.scrollSpace - self.scrollDistance
-      const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
-      pos = pos < min ? min : pos
-      pos = pos > max ? max : pos
       // scroll
+      const overlay = self.target.closest('.xt-overlay')
+      const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
       gsap.killTweensOf(self.scrollElement)
       gsap.to(self.scrollElement, {
-        scrollTo: pos,
-        duration: 1,
+        scrollTo: self.position,
+        duration: duration,
         ease: 'quart.inOut',
       })
     }

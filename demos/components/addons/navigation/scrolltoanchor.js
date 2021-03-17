@@ -43,24 +43,24 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Scrolltoanchor(object, {
-      scrollSpace: () => {
-        return document.querySelector('.xt-sticky').clientHeight
+      hash: true,
+      scrollSpace: ({ self }) => {
+        let space = 0
+        const spaceEls = self.scrollElement.querySelectorAll('.xt-sticky[style*="position: fixed"]')
+        for (const spaceEl of spaceEls) {
+          space += spaceEl.clientHeight
+        }
+        return space
       },
     })
 
     // change
 
     const eventChange = () => {
-      // val
-      let pos = self.position - self.scrollSpace - self.scrollDistance
-      const min = 0
-      const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
-      pos = pos < min ? min : pos
-      pos = pos > max ? max : pos
       // scroll
       gsap.killTweensOf(self.scrollElement)
       gsap.to(self.scrollElement, {
-        scrollTo: pos,
+        scrollTo: self.position,
         duration: 1,
         ease: 'quart.inOut',
       })

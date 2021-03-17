@@ -13,7 +13,7 @@ Xt.mount.push({
     // vars
 
     const link = object.tagName === 'a' || object.tagName === 'button' ? object : object.closest('a, button')
-    const mediaScale = 0.03
+    const mediaScale = 0.04
     const mediaOpacityIn = 0.75
     const mediaOpacityOut = 1
     const lineOpacity = 0.4
