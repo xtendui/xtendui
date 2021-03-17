@@ -946,7 +946,7 @@ class Toggle {
       check = self.targets[0]
     }
     // triggering e.detail.container
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
+    if (!e?.detail?.container || e.detail.container.contains(check)) {
       // handler
       const currents = self.getCurrents()
       for (const current of currents) {
@@ -1397,7 +1397,7 @@ class Toggle {
     }
     // toggle
     // @FIX same event for on and off same namespace
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
+    if (force || (self.checkOn(element) && e?.detail?.type !== `off.trigger.${self.componentNs}`)) {
       // auto
       self.eventAutostop()
       // @FIX groupElements and targets
@@ -1432,7 +1432,7 @@ class Toggle {
       }
       // activation
       return true
-    } else if (options.on === options.off && (!e || !e.type || e.type !== `on.trigger.${self.componentNs}`)) {
+    } else if (options.on === options.off && e?.detail?.type !== `on.trigger.${self.componentNs}`) {
       // @FIX same event for on and off same namespace
       self.eventOff(element, false, e)
     }
@@ -3168,7 +3168,7 @@ class Toggle {
       check = self.targets[0]
     }
     // triggering e.detail.container
-    if (!e || !e.detail || !e.detail.container || e.detail.container.contains(check)) {
+    if (!e?.detail?.container || e.detail.container.contains(check)) {
       Xt.eventDelay({
         event: e,
         element: self.object,
@@ -3292,6 +3292,7 @@ Toggle.optionsDefaultSuper = {
   classBefore: 'direction-before',
   classAfter: 'direction-after',
   classSkip: false,
+  groupElements: false,
   // quantity
   min: 0,
   max: 1,

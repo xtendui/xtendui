@@ -269,18 +269,16 @@ Xt.mount.push({
       requestAnimationFrame(() => {
         // not when drop is still open
         const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-        if (!dropBtnActive) {
-          if (!btnOn) {
-            // line
-            const lineY = el.offsetTop + el.offsetHeight
-            lineFirst = true
-            gsap.to(line, {
-              y: lineY,
-              opacity: 0,
-              duration: lineTime,
-              ease: lineEase,
-            })
-          }
+        if (!dropBtnActive && !this.btnOn) {
+          // line
+          const lineY = el.offsetTop + el.offsetHeight
+          lineFirst = true
+          gsap.to(line, {
+            y: lineY,
+            opacity: 0,
+            duration: lineTime,
+            ease: lineEase,
+          })
         } else {
           // line
           const lineX = dropBtnActive.offsetLeft

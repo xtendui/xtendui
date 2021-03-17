@@ -137,6 +137,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/core/toggle) |     
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
 | Option                  | `jumpOverflow:Boolean`                          | `false`        | Jump only activates if slide overflows the dragger            |	

@@ -245,7 +245,7 @@ If you want to listen to it, this example explains the listener with a container
 ```js
 const checkResize = document.querySelector('.my-element')
 const eventResize = function (e) {
-  if (!e || !e.detail || !e.detail.container || e.detail.container.contains(checkResize)) {
+  if (!e?.detail?.container || e.detail.container.contains(checkResize)) {
     // logic
   }
 }

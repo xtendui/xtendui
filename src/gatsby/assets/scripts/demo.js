@@ -161,7 +161,9 @@ const populateBlock = () => {
       const current = content.querySelector('.gatsby_demo_item.in')
       // hidden tooltip
       const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
-      tooltip.classList.add('hidden')
+      if (tooltip) {
+        tooltip.classList.add('hidden')
+      }
       // triggering e.detail.container
       dispatchEvent(
         new CustomEvent('resize', {
@@ -445,7 +447,7 @@ const populateDemo = container => {
       })
       const tooltip = btnClipboard.closest('[data-xt-tooltip]')
       tooltip.addEventListener('off.xt.tooltip', e => {
-        if (!e || !e.detail || !e.detail.skip) {
+        if (!e?.detail?.skip) {
           // swap tooltip
           let self = Xt.get('xt-tooltip', tooltip)
           if (self) {
