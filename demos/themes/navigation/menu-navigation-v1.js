@@ -265,8 +265,8 @@ Xt.mount.push({
       } else {
         el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
       }
-      // raf after mouseenter
-      requestAnimationFrame(() => {
+      // after mouseenter and off.xt.drop
+      setTimeout(() => {
         // not when drop is still open
         const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
         if (!dropBtnActive) {
@@ -296,7 +296,7 @@ Xt.mount.push({
             ease: lineEase,
           })
         }
-      })
+      }, 25)
     }
 
     for (const btn of btns) {
