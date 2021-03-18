@@ -23,7 +23,8 @@ Xt.mount.push({
       }
     }
 
-    const eventChange = (initial = false) => {
+    const eventChange = ({ initial = false }) => {
+      console.log(initial, inputs.length)
       if (!initial && inputs.length) {
         for (const input of inputs) {
           change(input)
@@ -33,8 +34,8 @@ Xt.mount.push({
       }
     }
 
-    object.addEventListener('change', eventChange)
-    eventChange(true)
+    object.addEventListener('change', eventChange.bind(null, { initial: false }))
+    eventChange({ initial: true })
   },
 })
 
@@ -48,7 +49,7 @@ Xt.mount.push({
     // vars
 
     const scrollWindowFactor = 0.2
-    const items = object.querySelectorAll('input, select, textarea')
+    const items = object.elements
     let raf
 
     // valid
