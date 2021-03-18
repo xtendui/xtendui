@@ -204,7 +204,7 @@ Xt.mount.push({
 
     let lineFirst = true
     let btnOn = false
-    const btns = object.querySelectorAll('.xt-list > .button--line')
+    const btns = object.querySelectorAll('.button--line')
     const drops = object.querySelectorAll('.xt-drop-item')
     const line = object.querySelector('.megamenu-line')
 
@@ -216,36 +216,33 @@ Xt.mount.push({
 
     const eventEnter = e => {
       let el = e.target
-      if (Array.from(btns).includes(el)) {
-        btnOn = true
-      } else {
+      if (e.type === 'on.xt.drop') {
         el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      } else {
+        btnOn = true
       }
-      // raf after off.xt.drop
-      requestAnimationFrame(() => {
-        // line
-        const lineX = el.offsetLeft
-        const lineY = el.offsetTop + el.offsetHeight
-        const lineWidth = el.offsetWidth
-        if (lineFirst) {
-          gsap.set(line, {
-            x: lineX,
-            y: lineY,
-            width: lineWidth,
-            height: 0,
-            opacity: 0,
-          })
-          lineFirst = false
-        }
-        gsap.to(line, {
+      // line
+      const lineX = el.offsetLeft
+      const lineY = el.offsetTop + el.offsetHeight
+      const lineWidth = el.offsetWidth
+      if (lineFirst) {
+        gsap.set(line, {
           x: lineX,
-          y: lineY - lineHeight,
+          y: lineY,
           width: lineWidth,
-          height: lineHeight,
-          opacity: 1,
-          duration: lineTime,
-          ease: lineEase,
+          height: 0,
+          opacity: 0,
         })
+        lineFirst = false
+      }
+      gsap.to(line, {
+        x: lineX,
+        y: lineY - lineHeight,
+        width: lineWidth,
+        height: lineHeight,
+        opacity: 1,
+        duration: lineTime,
+        ease: lineEase,
       })
     }
 
@@ -261,29 +258,20 @@ Xt.mount.push({
 
     const eventLeave = e => {
       let el = e.target
-      if (Array.from(btns).includes(el)) {
-        btnOn = false
-      } else {
+      if (e.type === 'off.xt.drop') {
         el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      } else {
+        btnOn = false
       }
-      // after mouseenter and off.xt.drop
       setTimeout(() => {
-        // not when drop is still open
+        // when one button still hover
+        if (btnOn) {
+          return
+        }
+        // check open drops
         const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-        if (!dropBtnActive) {
-          if (!btnOn) {
-            // line
-            const lineY = el.offsetTop + el.offsetHeight
-            lineFirst = true
-            gsap.to(line, {
-              y: lineY,
-              opacity: 0,
-              duration: lineTime,
-              ease: lineEase,
-            })
-          }
-        } else {
-          // line
+        if (dropBtnActive) {
+          // when one drop still open
           const lineX = dropBtnActive.offsetLeft
           const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
           const lineWidth = dropBtnActive.offsetWidth
@@ -293,6 +281,16 @@ Xt.mount.push({
             width: lineWidth,
             height: lineHeight,
             opacity: 1,
+            duration: lineTime,
+            ease: lineEase,
+          })
+        } else {
+          // when no drop still open
+          const lineY = el.offsetTop + el.offsetHeight
+          lineFirst = true
+          gsap.to(line, {
+            y: lineY,
+            opacity: 0,
             duration: lineTime,
             ease: lineEase,
           })

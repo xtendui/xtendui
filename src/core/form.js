@@ -24,7 +24,6 @@ Xt.mount.push({
     }
 
     const eventChange = ({ initial = false }) => {
-      console.log(initial, inputs.length)
       if (!initial && inputs.length) {
         for (const input of inputs) {
           change(input)
