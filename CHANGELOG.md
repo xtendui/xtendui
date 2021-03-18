@@ -1,3 +1,10 @@
+# [1.0.0-beta.9](https://github.com/minimit/xtendui/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-03-18)
+
+
+### Bug Fixes
+
+* **form:** fix check and radio active ([c7941af](https://github.com/minimit/xtendui/commit/c7941af4b78838f52ba2f0196544469d3c377595))
+
 # [1.0.0-beta.8](https://github.com/minimit/xtendui/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-03-18)
 
 
