@@ -1,37 +1,6 @@
 import { Xt } from '../xt.js'
 
 /**
- * Radio change event on same name radios
- */
-
-Xt.mount.push({
-  matches: 'input[type="radio"]',
-  mount: ({ object }) => {
-    // vars
-
-    const name = object.getAttribute('name')
-    const radios = document.querySelectorAll(`input[type="radio"][name="${name}"]`)
-
-    // eventInput
-
-    const eventInput = e => {
-      // propagate to other radios
-      if (!e?.detail?.skip) {
-        for (const radio of Array.from(radios).filter(x => x !== object)) {
-          radio.dispatchEvent(
-            new CustomEvent('change', {
-              detail: { skip: true },
-            })
-          )
-        }
-      }
-    }
-
-    object.addEventListener('change', eventInput)
-  },
-})
-
-/**
  * checks labels .active
  */
 
@@ -40,20 +9,32 @@ Xt.mount.push({
   mount: ({ object }) => {
     // vars
 
-    const label = object.closest('label')
+    const name = object.getAttribute('name')
+    const inputs = document.querySelectorAll(`[name="${name}"]`)
 
     // eventChange
 
-    const eventChange = () => {
-      if (object.checked) {
+    const change = input => {
+      const label = input.closest('label')
+      if (input.checked) {
         label.classList.add('active')
       } else {
         label.classList.remove('active')
       }
     }
 
+    const eventChange = (initial = false) => {
+      if (!initial && inputs.length) {
+        for (const input of inputs) {
+          change(input)
+        }
+      } else {
+        change(object)
+      }
+    }
+
     object.addEventListener('change', eventChange)
-    eventChange()
+    eventChange(true)
   },
 })
 
