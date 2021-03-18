@@ -1,3 +1,11 @@
+# [1.0.0-beta.8](https://github.com/minimit/xtendui/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-03-18)
+
+
+### Bug Fixes
+
+* **form:** refactor form change radio and checkbox ([99e74e2](https://github.com/minimit/xtendui/commit/99e74e236c4835514babcd91e497c2bf172f1eb6))
+* **toggle:** fix toggle multiple activation ([01f18c5](https://github.com/minimit/xtendui/commit/01f18c53750d55a43ffd63eb456d40c7cc7c6878))
+
 # [1.0.0-beta.7](https://github.com/minimit/xtendui/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-03-17)
 
 
