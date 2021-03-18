@@ -39,7 +39,7 @@ demo.htmlSource = `
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner">
             <div class="xt-design bg-primary-700 border-b-4 border-gray-500"></div>
-            <div class="xt-drop-content">
+            <div class="xt-drop-content relative">
 
               <div class="pt-16 pb-24 text-white xt-links-inverse">
                 <div class="container">
@@ -76,7 +76,7 @@ demo.htmlSource = `
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner">
             <div class="xt-design bg-gray-900 border-b-4 border-gray-500"></div>
-            <div class="xt-drop-content">
+            <div class="xt-drop-content relative">
 
               <div class="pt-16 pb-24 text-white xt-links-inverse">
                 <div class="container">
@@ -111,7 +111,7 @@ demo.htmlSource = `
         <div class="xt-drop xt-drop-static">
           <div class="xt-drop-inner">
             <div class="xt-design bg-gray-200 border-b-4 border-gray-500"></div>
-            <div class="xt-drop-content">
+            <div class="xt-drop-content relative">
 
               <div class="pt-16 pb-24 text-black xt-links-default">
                 <div class="container">

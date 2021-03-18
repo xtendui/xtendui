@@ -62,7 +62,7 @@ You can use also **javascript animations**, just use [drop api](/components/core
 
 ## Design Animation
 
-Use `.xt-overlay-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on child elements for fixing z-index issues.
+Use `.xt-overlay-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
 
 <demo>
   <demovanilla src="vanilla/components/core/overlay/animation-design">
