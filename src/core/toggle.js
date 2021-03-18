@@ -1397,7 +1397,7 @@ class Toggle {
     }
     // toggle
     // @FIX same event for on and off same namespace
-    if (force || (self.checkOn(element) && e?.detail?.type !== `off.trigger.${self.componentNs}`)) {
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // auto
       self.eventAutostop()
       // @FIX groupElements and targets
