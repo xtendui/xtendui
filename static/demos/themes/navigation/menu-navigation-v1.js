@@ -60,6 +60,7 @@ Xt.mount.push({
     const innerTime = 1
     const innerEase = 'expo.out'
 
+    const dropDelay = 150
     let innerHeightFinal = 0
     let innerHeightCache = 0
 
@@ -70,7 +71,7 @@ Xt.mount.push({
       off: 'mouseleave',
       queue: false,
       duration: 1000,
-      delay: 150,
+      delay: dropDelay,
       preventEvent: true,
     })
 
@@ -296,7 +297,7 @@ Xt.mount.push({
             ease: lineEase,
           })
         }
-      }, 25)
+      }, dropDelay)
     }
 
     for (const btn of btns) {
