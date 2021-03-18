@@ -60,6 +60,7 @@ Xt.mount.push({
     const innerTime = 1
     const innerEase = 'expo.out'
 
+    const dropDelay = 150
     let innerHeightFinal = 0
     let innerHeightCache = 0
 
@@ -70,7 +71,7 @@ Xt.mount.push({
       off: 'mouseleave',
       queue: false,
       duration: 1000,
-      delay: 150,
+      delay: dropDelay,
       preventEvent: true,
     })
 
@@ -265,20 +266,22 @@ Xt.mount.push({
       } else {
         el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
       }
-      // raf after mouseenter
-      requestAnimationFrame(() => {
+      // after mouseenter and off.xt.drop
+      setTimeout(() => {
         // not when drop is still open
         const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-        if (!dropBtnActive && !btnOn) {
-          // line
-          const lineY = el.offsetTop + el.offsetHeight
-          lineFirst = true
-          gsap.to(line, {
-            y: lineY,
-            opacity: 0,
-            duration: lineTime,
-            ease: lineEase,
-          })
+        if (!dropBtnActive) {
+          if (!btnOn) {
+            // line
+            const lineY = el.offsetTop + el.offsetHeight
+            lineFirst = true
+            gsap.to(line, {
+              y: lineY,
+              opacity: 0,
+              duration: lineTime,
+              ease: lineEase,
+            })
+          }
         } else {
           // line
           const lineX = dropBtnActive.offsetLeft
@@ -294,7 +297,7 @@ Xt.mount.push({
             ease: lineEase,
           })
         }
-      })
+      }, dropDelay)
     }
 
     for (const btn of btns) {

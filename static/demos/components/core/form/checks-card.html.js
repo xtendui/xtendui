@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div id="ref--">
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -18,7 +18,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -51,7 +51,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -65,7 +65,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -84,7 +84,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <label class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
