@@ -150,7 +150,7 @@ const populateBlock = () => {
         e.preventDefault()
         // hash
         hashReset = false
-        location.hash = el.nextSibling.querySelector('.gatsby_demo_item ').getAttribute('id')
+        location.hash = el.nextSibling.querySelector('.gatsby_demo_item').getAttribute('id')
       })
     }
     // trigger fullscreen or change tabs
@@ -365,7 +365,7 @@ const populateDemo = container => {
     // inject
     if (!item.getAttribute('data-iframe-fullscreen')) {
       if (item.getAttribute('data-iframe')) {
-        initializeIframe(container, item)
+        initializeIframe(item)
       } else {
         populateInline(item)
       }
@@ -568,7 +568,7 @@ const makeFullscreen = container => {
     for (const item of container.querySelectorAll('.gatsby_demo_item.in')) {
       if (item.getAttribute('data-iframe-fullscreen')) {
         item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
-        initializeIframe(container, item)
+        initializeIframe(item)
         item.dispatchEvent(new CustomEvent('ondone.xt.toggle'))
       }
     }
@@ -579,14 +579,11 @@ const makeFullscreen = container => {
  * Iframe
  */
 
-const initializeIframe = (container, item) => {
+const initializeIframe = item => {
   if (!item.classList.contains('populated-iframe')) {
     item.classList.add('populated-iframe')
     const src = `/${item.getAttribute('data-iframe')}`
-    const id = item.getAttribute('id')
-    item.append(
-      Xt.createElement(`<div class="gatsby_demo_item_wrapper"><iframe data-src="${src}" name="${id}"></iframe></div>`)
-    )
+    item.append(Xt.createElement(`<div class="gatsby_demo_item_wrapper"><iframe data-src="${src}"></iframe></div>`))
     item.querySelector('.gatsby_demo_item_wrapper').append(
       Xt.createElement(`
           <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
@@ -621,9 +618,10 @@ const unloadIframe = iframe => {
   iframe.removeAttribute('src')
 }
 
-window.initIframe = (name, htmlSource, jsxSource, cssSource, jsSource) => {
-  const src = `iframe[name="${name}"]`
-  const iframes = document.querySelectorAll(src)
+window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
+  const selector = `iframe[data-src="/${src}"]`
+  const iframes = document.querySelectorAll(selector)
+  console.log(selector, iframes)
   for (const iframe of iframes) {
     const item = iframe.closest('.gatsby_demo_item')
     populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)

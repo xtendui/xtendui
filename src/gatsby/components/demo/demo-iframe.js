@@ -45,11 +45,11 @@ export default class DemoIframe extends React.Component {
         let iframeLoaded
         if (mode === 'react') {
           iframeLoaded = () => {
-            window.parent.initIframe(id, false, `/${src}.jsx`, `/${src}.css`)
+            window.parent.initIframe(src, false, `/${src}.jsx`, `/${src}.css`)
           }
         } else {
           iframeLoaded = () => {
-            window.parent.initIframe(id, html, false, `/${src}.css`, `/${src}.js`)
+            window.parent.initIframe(src, html, false, `/${src}.css`, `/${src}.js`)
           }
         }
         Xt.ready(iframeLoaded)

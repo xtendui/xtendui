@@ -97,17 +97,12 @@ class Template extends React.Component {
                               {adiacent.frontmatter.demos ? (
                                 <Demo>
                                   {adiacent.frontmatter.demos.map((demo, i) => {
-                                    const type = demo.split('/')[0]
-                                    if (type === 'vanilla') {
-                                      return <DemoInline src={demo} key={i}></DemoInline>
-                                    } else if (type === 'iframe') {
-                                      return (
-                                        <div
-                                          className="gatsby_demo_item xt-toggle"
-                                          data-iframe-fullscreen={demo}
-                                          key={i}></div>
-                                      )
-                                    }
+                                    return (
+                                      <div
+                                        className="gatsby_demo_item xt-toggle"
+                                        data-iframe-fullscreen={`demos/${demo}`}
+                                        key={i}></div>
+                                    )
                                   })}
                                 </Demo>
                               ) : null}
