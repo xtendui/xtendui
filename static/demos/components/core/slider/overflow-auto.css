@@ -1,5 +1,5 @@
-.demo--slider-overflow-auto {
-  &.xt-overflow-auto {
+.CCC--slider-overflow-auto, .CCC--slider-overflow-auto-react {
+  .xt-overflow-auto {
     .xt-slides-inner {
       transform: none !important;
       transition-duration: initial !important;

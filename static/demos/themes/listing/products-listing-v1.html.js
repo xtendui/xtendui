@@ -9,7 +9,7 @@ const html = /* HTML */ `
             <div class="xt-slides-inner xt-row xt-row-4">
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -31,7 +31,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -51,7 +51,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -65,7 +65,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -79,7 +79,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -93,7 +93,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -107,7 +107,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -121,7 +121,7 @@ const html = /* HTML */ `
 
               <div class="xt-slide w-6/12 md:w-4/12">
                 <a href="#" class="listing-item block">
-                  <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                  <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -153,7 +153,7 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-6">
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -173,7 +173,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -193,7 +193,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -207,7 +207,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -221,7 +221,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -235,7 +235,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -249,7 +249,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -263,7 +263,7 @@ const html = /* HTML */ `
 
             <div class="w-6/12 md:w-4/12">
               <a href="#" class="listing-item block">
-                <div class="xt-media-container bg-gray-200 overflow-hidden xt-ratio-75">
+                <div class="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>

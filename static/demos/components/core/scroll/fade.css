@@ -1,5 +1,6 @@
-body:not(.xt-noscroll) {
-  .demo--fade {
+
+.CCC--fade, .CCC--fade-react {
+  body:not(.xt-noscroll) & {
     .xt-card {
       opacity: 0;
     }

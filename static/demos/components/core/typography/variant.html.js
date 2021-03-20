@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <h2>Lorem Ipsum</h2>
 
     <p>

@@ -1,67 +1,67 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--drop-events">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-first-element"
+        id="button--drop-events-first-element"
       >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-first-target"
+        id="button--drop-events-first-target"
       >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-add"
+        id="button--drop-events-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-remove"
+        id="button--drop-events-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-reinit"
+        id="button--drop-events-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-restart"
+        id="button--drop-events-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-destroy"
+        id="button--drop-events-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--drop-events-unmount"
+        id="button--drop-events-unmount"
       >
         Unmount
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="demo--drop-events" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="drop--events" title="Object">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Drop 0
       </button>
@@ -102,7 +102,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--drop-events-log"
+        id="card--drop-events-log"
       ></div>
     </div>
   </div>

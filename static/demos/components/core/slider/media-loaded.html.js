@@ -1,9 +1,9 @@
-const markupSlider = require('src/gatsby/components/snippets/markup-slider').default
+const markupSlider = require('src/gatsby/components/snippets/markup-slider-media').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="xt-slider demo--slider-media-loaded" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
+  <div class="CCC--slider-media-loaded">
+    <div class="xt-slider" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
       ${indentString(markupSlider(), 2)}
     </div>
   </div>

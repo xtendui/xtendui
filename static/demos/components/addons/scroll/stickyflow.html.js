@@ -15,7 +15,7 @@ const html = /* HTML */ `
             <div class="relative pt-6 md:py-6">
               <div class="xt-list flex-col">
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-200">
+                  <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-200">
+                  <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -31,7 +31,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-200">
+                  <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -39,7 +39,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-200">
+                  <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -47,7 +47,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-200">
+                  <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
                       <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>

@@ -28,3 +28,12 @@ Test wrap.
   <demoinline src="demos/components/addons/slider/automaticscroll">
   </demoinline>
 </demo>
+
+Test activation.
+
+<demo>
+  <demoinline src="demos/components/addons/tooltip/swap-click">
+  </demoinline>
+  <demoinline src="demos/components/addons/tooltip/swap-toggle">
+  </demoinline>
+</demo>

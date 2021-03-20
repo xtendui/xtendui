@@ -1,4 +1,4 @@
-.demo--tooltip-disable {
+.CCC--tooltip-disable, .CCC--tooltip-disable-react {
   .xt-tooltip.xt-tooltip-disabled {
     display: none;
   }

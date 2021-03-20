@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--loader-js-spinner">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div class="xt-card rounded-md ${classes.cardDefault()}">
         <div class="${classes.cardSm()}">
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </p>
         </div>
         <div
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-spinner"
+          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100"
         >
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">${classes.spinner({})}</div>
         </div>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem ipsum
         <span
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-spinner"
+          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100"
         >
           <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500"> ${classes.spinner({})} </span>
         </span>

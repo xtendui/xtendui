@@ -202,3 +202,50 @@ body {
 ```jsx
 const test = 'test'
 ```
+
+```js
+Xt.mount.push({
+  matches: '.CCC--products-listing-v1',
+  mount: ({ object }) => {
+    const unmountDrops = mountDrops({ object })
+
+    // unmount
+
+    return () => {
+      unmountDrops()
+    }
+  },
+})
+
+/* mountDrops */
+
+const mountDrops = ({ object }) => {
+  // unmount
+
+  return () => {}
+}
+
+/* mountDrops */
+
+const mountDrops = ({ object }) => {
+  const buttons = object.querySelectorAll('.xt-button')
+  const unmounts = []
+
+  for (const button of buttons) {
+    // unmount
+
+    unmounts.push(() => {
+      self.destroy()
+      self = null
+    })
+  }
+
+  // unmount
+
+  return () => {
+    for (const unmount of unmounts) {
+      unmount()
+    }
+  }
+}
+```

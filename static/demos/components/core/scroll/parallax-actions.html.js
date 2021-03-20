@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--parallax-actions">
     <div class="demo--parallax-actions">
       <h1 class="xt-h1 h-screen">Scroll down</h1>
 

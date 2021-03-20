@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-drop p-4 in-drop relative inline-block" data-xt-drop="{ closeOutside: false }">
       <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
         <nav class="xt-list flex-col">

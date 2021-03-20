@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center demo--overlay-class-html">
       <div data-xt-overlay="{ classHtml: 'xt-scrollbar-overlay classhtml-custom' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">

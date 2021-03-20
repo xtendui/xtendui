@@ -1,8 +1,8 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+  <div class="CCC--sticky">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -17,13 +17,13 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="demo--sticky-top xt-sticky">
+    <div class="xt-sticky sticky--top">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -41,7 +41,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -56,13 +56,13 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="demo--sticky-bottom xt-sticky">
+    <div class="xt-sticky sticky--bottom">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Bottom</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <nav class="nav">
       <div class="xt-list flex-col max-w-sm">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-t-md ${classes.buttonPrimary()}">

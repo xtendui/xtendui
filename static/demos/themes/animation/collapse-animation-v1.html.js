@@ -175,7 +175,7 @@ const html = /* HTML */ `
             </button>
             <div class="xt-overlay-inner ${animDesign}">
               <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()}">
-                <div class="xt-media-container bg-gray-200 xt-ratio-100 ${animItem}">
+                <div class="xt-media-container bg-gray-600 xt-ratio-100 ${animItem}">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
@@ -210,7 +210,7 @@ const html = /* HTML */ `
                     Account
                   </button>
                 </div>
-                <div class="xt-media-container bg-gray-200 h-48 ${animItem}">
+                <div class="xt-media-container bg-gray-600 h-48 ${animItem}">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
@@ -329,7 +329,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col ${animItem}">
-                    <div class="xt-media-container bg-gray-200 md:rounded-tr-md h-48 md:xt-ratio-100">
+                    <div class="xt-media-container bg-gray-600 md:rounded-tr-md h-48 md:xt-ratio-100">
                       <div class="xt-media-inner">
                         <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                       </div>
@@ -370,7 +370,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group rounded-md ${animItem}">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                      class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
                     >
                       <div class="xt-media-inner">
                         <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

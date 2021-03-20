@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-list xt-list-3 items-center">
       <a href="#"> link </a>
 

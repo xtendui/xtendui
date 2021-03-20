@@ -4,49 +4,40 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--sticky-top',
+  matches: '.CCC--sticky',
   mount: ({ object }) => {
-    // sticky
+    const unmountSticky = mountSticky({ object })
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
+    // unmount
 
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
+    return () => {
+      unmountSticky()
+    }
   },
 })
 
-Xt.mount.push({
-  matches: '.demo--sticky-bottom',
-  mount: ({ object }) => {
-    // sticky
+/* mountSticky */
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'bottom bottom',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
+const mountSticky = ({ object }) => {
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--top'),
+    start: 'top top',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
 
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
-  },
-})
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--bottom'),
+    start: 'bottom bottom',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
+
+  // unmount
+
+  return () => {}
+}

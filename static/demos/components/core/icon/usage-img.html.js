@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-list xt-list-3">
       <img class="xt-icon" src="/icons/search.svg" loading="lazy" alt="" />
 

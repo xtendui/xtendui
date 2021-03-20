@@ -4,74 +4,80 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--fade-matchmedia .xt-card',
-  mount: ({ object, mount }) => {
-    // multiple mount object with raf
+  matches: '.CCC--fade-matchmedia',
+  mount: ({ object }) => {
+    const unmountFade = mountFade({ object })
 
-    mount.triggers = mount.triggers ? mount.triggers : []
-    mount.triggers.push(object)
-    cancelAnimationFrame(mount.raf)
-    mount.raf = requestAnimationFrame(() => {
-      // reset mount object
+    // unmount
 
-      const triggers = mount.triggers
-      mount.triggers = []
-
-      // match media
-
-      ScrollTrigger.matchMedia({
-        '(max-width: 767px)': () => {
-          // fade
-
-          ScrollTrigger.batch(triggers, {
-            onEnter: batch => {
-              gsap.killTweensOf(batch)
-              gsap.set(batch, { opacity: 0 })
-              gsap.to(batch, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'quart.out',
-                stagger: 0.15,
-              })
-            },
-            onLeave: batch => {
-              gsap.killTweensOf(batch)
-              gsap.to(batch, {
-                opacity: 0,
-                duration: 0.5,
-                ease: 'quart.out',
-                stagger: 0.15,
-              })
-            },
-            onEnterBack: batch => {
-              gsap.killTweensOf(batch)
-              gsap.set(batch, { opacity: 0 })
-              gsap.to(batch, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'quart.out',
-                stagger: 0.15,
-              })
-            },
-            onLeaveBack: batch => {
-              gsap.killTweensOf(batch)
-              gsap.to(batch, {
-                opacity: 0,
-                duration: 0.5,
-                ease: 'quart.out',
-                stagger: 0.15,
-              })
-            },
-          })
-        },
-        '(min-width: 640px)': () => {
-          // fade
-
-          for (const trigger of triggers) {
-            gsap.set(trigger, { opacity: 1 })
-          }
-        },
-      })
-    })
+    return () => {
+      unmountFade()
+    }
   },
 })
+
+/* mountFade */
+
+const mountFade = ({ object }) => {
+  const items = object.querySelectorAll('.xt-card')
+
+  // match media
+
+  ScrollTrigger.matchMedia({
+    '(max-width: 767px)': () => {
+      // fade
+
+      ScrollTrigger.batch(items, {
+        onEnter: batch => {
+          gsap.killTweensOf(batch)
+          gsap.set(batch, { opacity: 0 })
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
+        },
+        onLeave: batch => {
+          gsap.killTweensOf(batch)
+          gsap.to(batch, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
+        },
+        onEnterBack: batch => {
+          gsap.killTweensOf(batch)
+          gsap.set(batch, { opacity: 0 })
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
+        },
+        onLeaveBack: batch => {
+          gsap.killTweensOf(batch)
+          gsap.to(batch, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: 0.15,
+          })
+        },
+      })
+    },
+    '(min-width: 640px)': () => {
+      // fade
+
+      for (const trigger of items) {
+        gsap.set(trigger, { opacity: 1 })
+      }
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}

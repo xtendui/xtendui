@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
@@ -12,7 +12,7 @@ const html = /* HTML */ `
           <div
             class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
           >
-            <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4">
           <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
-            <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>

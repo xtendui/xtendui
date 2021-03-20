@@ -1,7 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/toggle'
-import 'xtendui/src/core/overlay'
-import 'xtendui/src/core/tooltip'
+import 'xtendui/dist/xtend-core'
 import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -397,6 +395,7 @@ Xt.mount.push({
 
     let self = new Xt.Scrolltoanchor(object, {
       elements: '[href^="#"]:not([aria-controls])',
+      hash: true,
       scrollDistance: () => {
         return window.innerHeight / 10
       },

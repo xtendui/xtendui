@@ -1,8 +1,8 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="demo--drop-disable" data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+  <div class="CCC--drop-disable">
+    <div data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">drop</button>
 
       <div class="xt-drop p-4">

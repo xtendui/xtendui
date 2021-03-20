@@ -1,14 +1,14 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="demo--sticky-stack-top xt-sticky">
+  <div class="CCC--sticky-stack">
+    <div class="xt-sticky sticky--stack-top">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} sticky--hide-content">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -23,13 +23,13 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="demo--sticky-stack-topsecond xt-sticky">
+    <div class="xt-sticky sticky--stack-topsecond">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h6">Top Second</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} sticky--hide-content">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -44,7 +44,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="demo--sticky-stack-topthird xt-sticky">
+    <div class="xt-sticky sticky--stack-topthird">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h6">Top Third</div>
       </div>
@@ -53,13 +53,13 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="demo--sticky-stack-bottom xt-sticky">
+    <div class="xt-sticky sticky--stack-bottom">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Bottom</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} sticky--hide-content">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -74,7 +74,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="demo--sticky-stack-bottomsecond xt-sticky">
+    <div class="xt-sticky sticky--stack-bottomsecond">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h6">Bottom Second</div>
       </div>

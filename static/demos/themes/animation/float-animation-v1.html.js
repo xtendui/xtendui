@@ -165,7 +165,7 @@ const html = /* HTML */ `
               <div class="xt-design rounded-md bg-white ${animDesign}"></div>
 
               <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem}">
-                <div class="xt-media-container bg-gray-200 xt-ratio-100">
+                <div class="xt-media-container bg-gray-600 xt-ratio-100">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
@@ -198,7 +198,7 @@ const html = /* HTML */ `
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
                 </div>
-                <div class="xt-media-container bg-gray-200 h-48">
+                <div class="xt-media-container bg-gray-600 h-48">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
@@ -312,7 +312,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col">
-                    <div class="xt-media-container bg-gray-200 h-48 md:xt-ratio-100">
+                    <div class="xt-media-container bg-gray-600 h-48 md:xt-ratio-100">
                       <div class="xt-media-inner">
                         <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                       </div>
@@ -353,7 +353,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-200 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                      class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
                     >
                       <div class="xt-media-inner">
                         <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

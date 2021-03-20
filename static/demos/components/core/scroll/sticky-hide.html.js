@@ -1,19 +1,19 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="demo--sticky-hide-top xt-sticky">
-      <div class="demo--sticky-hide-content">
-        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()} demo--sticky-hide-top-main">
+  <div class="CCC--sticky-hide">
+    <div class="xt-sticky">
+      <div class="sticky--hide-content">
+        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()} sticky--hide-top-main">
           <div class="xt-h4">Top</div>
         </div>
-        <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-top-sub">
+        <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} sticky--hide-top-sub">
           <div class="xt-h6">Top Second</div>
         </div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} sticky--hide-content">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

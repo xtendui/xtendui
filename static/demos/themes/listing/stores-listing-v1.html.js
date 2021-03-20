@@ -9,7 +9,7 @@ const html = /* HTML */ `
             <div class="listing-item block w-full">
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -62,7 +62,7 @@ const html = /* HTML */ `
             <div class="listing-item block w-full">
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -105,7 +105,7 @@ const html = /* HTML */ `
             <div class="listing-item block w-full">
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -158,7 +158,7 @@ const html = /* HTML */ `
             <div class="listing-item block w-full">
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -201,7 +201,7 @@ const html = /* HTML */ `
             <div class="listing-item block w-full">
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <div class="xt-media-inner">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>

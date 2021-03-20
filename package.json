@@ -28,8 +28,8 @@
     "src/future/*.*"
   ],
   "scripts": {
-    "build": "gatsby clean && gatsby build",
-    "dev": "gatsby clean && gatsby develop -p 8080",
+    "build": "yarn webpack && gatsby clean && gatsby build",
+    "dev": "yarn webpack && gatsby clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "release": "npx semantic-release --dry-run --no-ci",

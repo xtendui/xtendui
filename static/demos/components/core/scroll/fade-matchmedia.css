@@ -1,6 +1,6 @@
 
-body:not(.xt-noscroll) {
-  .demo--fade-matchmedia {
+.CCC--fade-matchmedia, .CCC--fade-matchmedia-react {
+  body:not(.xt-noscroll) & {
     .xt-card {
       opacity: 0;
     }

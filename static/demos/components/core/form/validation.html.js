@@ -1,14 +1,14 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--form-validation">
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
           <label class="xt-label mb-3 ${classes.labelDefault()} xt-label-required"> Custom constrain </label>
           <input
             type="text"
-            class="xt-input rounded-md ${classes.inputDefault()} demo--form-constrain"
+            class="xt-input rounded-md ${classes.inputDefault()} input--constrains"
             aria-label="Custom constrain"
             placeholder="Custom constrain"
             required

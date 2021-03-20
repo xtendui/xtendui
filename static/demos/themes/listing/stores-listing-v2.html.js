@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -88,7 +88,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -133,7 +133,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -168,7 +168,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -213,7 +213,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="listing-item block relative overflow-hidden w-full">
               <div class="listing-item-front absolute inset-0 xt-card rounded-md ${classes.cardDefaultFull()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+                <div class="xt-media-container bg-gray-600 h-40">
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>

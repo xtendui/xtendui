@@ -1,6 +1,6 @@
 const html = /* HTML */ `
-  <div id="ref--">
-    <div class="xt-media-container bg-gray-200" style="padding-bottom: 37.5%">
+  <div class="CCC--media-usage">
+    <div class="xt-media-container bg-gray-200">
       <div class="xt-media-inner">
         <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
       </div>

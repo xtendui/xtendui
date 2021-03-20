@@ -144,7 +144,7 @@ class Toggle {
     const self = this
     const options = self.options
     // elements
-    if (options.elements) {
+    if (options.elements && self.mode !== 'unique') {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)))
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav

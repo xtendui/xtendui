@@ -11,6 +11,9 @@
 @import 'xtendui/static/demos/components/core/drop/animation-css.css';
 @import 'xtendui/static/demos/components/core/drop/disable.css';
 @import 'xtendui/static/demos/components/core/form/variant-primary.css';
+@import 'xtendui/static/demos/components/core/media/min-height.css';
+@import 'xtendui/static/demos/components/core/media/ratio.css';
+@import 'xtendui/static/demos/components/core/media/usage.css';
 @import 'xtendui/static/demos/components/core/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/core/overlay/class-html.css';
 @import 'xtendui/static/demos/components/core/overlay/disable.css';
@@ -27,6 +30,7 @@
 @import 'xtendui/static/demos/components/core/slider/overflow-auto.css';
 @import 'xtendui/static/demos/components/core/slider/progress.css';
 @import 'xtendui/static/demos/components/core/slider/touch-overflow.css';
+@import 'xtendui/static/demos/components/core/table/border.css';
 @import 'xtendui/static/demos/components/core/toggle/animation-css-inverse.css';
 @import 'xtendui/static/demos/components/core/toggle/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/core/toggle/class-custom.css';

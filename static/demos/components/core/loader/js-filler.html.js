@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--loader-js-filler">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div class="xt-card rounded-md ${classes.cardDefault()}">
         <div class="${classes.cardSm()}">
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </p>
         </div>
         <span
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler"
+          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100"
         >
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
             <span class="absolute bg-current opacity-25 w-full h-full"></span>
@@ -25,7 +25,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem ipsum
         <span
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100 demo--loader-js-filler"
+          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100"
         >
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
             <span class="absolute bg-current opacity-25 w-full h-full"></span>

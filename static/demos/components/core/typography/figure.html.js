@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <figure>
       <img src="/img.svg" loading="lazy" alt="" />
       <figcaption>

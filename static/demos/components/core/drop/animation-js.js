@@ -3,8 +3,25 @@ import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--drop-animation-js',
+  matches: '.CCC--drop-animation-js',
   mount: ({ object }) => {
+    const unmountDrops = mountDrops({ object })
+
+    // unmount
+
+    return () => {
+      unmountDrops()
+    }
+  },
+})
+
+/* mountDrops */
+
+const mountDrops = ({ object }) => {
+  const drops = object.querySelectorAll('.xt-drop-item')
+  const unmounts = []
+
+  for (const drop of drops) {
     // vars
 
     const targetTimeOn = 0.5
@@ -14,7 +31,7 @@ Xt.mount.push({
 
     // init
 
-    let self = new Xt.Drop(object, {
+    let self = new Xt.Drop(drop, {
       duration: 500,
     })
 
@@ -58,9 +75,17 @@ Xt.mount.push({
 
     // unmount
 
-    return () => {
+    unmounts.push(() => {
       self.destroy()
       self = null
+    })
+  }
+
+  // unmount
+
+  return () => {
+    for (const unmount of unmounts) {
+      unmount()
     }
-  },
-})
+  }
+}

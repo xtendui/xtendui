@@ -1,5 +1,5 @@
-.demo--slider-progress {
-  > .xt-loader {
+.CCC--slider-progress, .CCC--slider-progress-react {
+  .xt-slider > .xt-loader {
     /* touch */
     @media (hover: none) {
       transform: none !important;

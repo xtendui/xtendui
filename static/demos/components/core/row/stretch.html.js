@@ -1,11 +1,11 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-row xt-row-4 xt-row-stretch">
       <div class="w-full md:w-6/12">
         <div class="xt-card rounded-md ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div class="xt-card rounded-md ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
             <div class="xt-media-inner">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>

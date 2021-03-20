@@ -1,7 +1,9 @@
-.demo--row-overflow {
-  @media (max-width: calc(theme('screens.md') - 1px)) {
-    > * {
-      width: 280px !important;
+.CCC--row-overflow, .CCC--row-overflow-react {
+  .xt-row {
+    @media (max-width: calc(theme('screens.md') - 1px)) {
+      > * {
+        width: 280px !important;
+      }
     }
   }
 }

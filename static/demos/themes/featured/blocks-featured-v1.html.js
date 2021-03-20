@@ -9,7 +9,7 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0">
-              <div class="xt-media-container bg-gray-200 xt-ratio-75 overflow-hidden">
+              <div class="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -39,7 +39,7 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0 sm:order-2">
-              <div class="xt-media-container bg-gray-200 xt-ratio-75 overflow-hidden">
+              <div class="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0">
-              <div class="xt-media-container bg-gray-200 xt-ratio-75 overflow-hidden">
+              <div class="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -101,7 +101,7 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0 sm:order-2">
-              <div class="xt-media-container bg-gray-200 xt-ratio-75 overflow-hidden">
+              <div class="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
                 <div class="xt-media-inner">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>

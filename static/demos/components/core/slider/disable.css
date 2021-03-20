@@ -1,5 +1,5 @@
-.demo--slider-disable {
-  &.xt-slider-disabled {
+.CCC--slider-disable, .CCC--slider-disable-react {
+  .xt-slider-disabled {
     .xt-slide {
       opacity: 1 !important;
     }

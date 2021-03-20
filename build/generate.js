@@ -7,8 +7,8 @@ const indentString = require('indent-string')
 const test = false
 
 ;(async () => {
-  await del(['static/demos/**/**.jsx'])
-  new glob.Glob('static/demos/components/addons/**/**.html.js', (er, files) => {
+  //await del(['static/demos/**/**.jsx'])
+  new glob.Glob('static/demos/components/core/media/**.html.js', (er, files) => {
     for (const file of files) {
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)
@@ -55,6 +55,8 @@ const test = false
             for (const meta of imports.entries()) {
               strImports += meta[1]
             }
+          } else {
+            strImports = `${jsText}\n`
           }
           // mounts
           const mounts = jsText.match(/(?<= {2}mount:(.*?)$).*([\S\s]*?)[ ]*(?=^\s\s\})/gm)
@@ -71,7 +73,7 @@ const test = false
               strMethods += meta[1]
             }
           }
-          // remove xt
+          // remove xt if not used
           const xts = strMethods.match(/(Xt\.)/g)
           if (!xts) {
             strImports = strImports.replace(/(import { Xt } from 'xtendui'\n)/g, '')
@@ -93,6 +95,10 @@ const test = false
         html = html.replace(/class="/g, 'className="')
         html = html.replace(/checked/g, 'defaultChecked')
         html = html.replace(/value/g, 'defaultValue')
+        html = html.replace(/selected/g, '')
+        html = html.replace(/playsinline/g, 'playsInline')
+        html = html.replace(/autoplay/g, 'autoPlay')
+        html = html.replace(/frameborder/g, 'frameBorder')
         // str
         let str = `import React${
           strMount !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
@@ -115,15 +121,15 @@ ${strImports}export default function component() {${
             : ''
         }
   return (${indentString(html, 2)}  )
-}
+}${
+          strMount !== ''
+            ? `
 
-${
-  strMount !== ''
-    ? `/* mount */
+/* mount */
 
 const mount = ({ object }) => {${strMount}}`
-    : ''
-}
+            : ''
+        }
 ${strMethods !== '' ? `${strMethods}` : ''}`
         const destination = `${src}.jsx`
         writeFile(destination, str)

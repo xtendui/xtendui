@@ -17,7 +17,7 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-200 rounded-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -40,7 +40,7 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-200 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <div class="xt-media-inner">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
