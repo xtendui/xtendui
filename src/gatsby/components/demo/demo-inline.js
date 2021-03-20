@@ -30,7 +30,6 @@ export default class DemoInline extends React.Component {
   componentWillUnmount() {
     if (typeof window !== 'undefined') {
       window.currentDemos.filter(x => x !== this)
-      console.log(window.currentDemos)
     }
   }
 
@@ -46,11 +45,6 @@ export default class DemoInline extends React.Component {
     const id = src.split('-').join(' ')
     const name = path.basename(src, '.js')
     const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
-    // css
-    try {
-      require(`static/${src}.css`).default
-      // eslint-disable-next-line no-empty
-    } catch (ex) {}
     // vanilla
     const html = require(`static/${src}.html.js`).object.html
     try {

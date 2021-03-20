@@ -1,6 +1,17 @@
 const glob = require('glob')
 const writeFile = require('write')
 
+let cssDemos = ''
+const cssDemosGlob = new glob.Glob('static/demos/**/*.css', { ignore: ['**/_*.css'] }, (er, files) => {
+  for (const file of files) {
+    cssDemos += `@import 'xtendui/${file}';\n`
+  }
+})
+
+cssDemosGlob.on('end', () => {
+  writeFile('./dist/xtend-demos.css', cssDemos)
+})
+
 let jsCore = ''
 const jsCoreGlob = new glob.Glob('src/core/**/*.js', { ignore: ['**/*.css.js'] }, (er, files) => {
   for (const file of files) {

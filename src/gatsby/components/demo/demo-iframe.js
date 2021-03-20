@@ -10,7 +10,6 @@ export default class DemoIframe extends React.Component {
     const src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
     const id = src.split('/').join('-')
     const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
-    console.log(localStorage.getItem('mode'))
     // seo
     const seo = {}
     seo.title = src
@@ -25,11 +24,6 @@ export default class DemoIframe extends React.Component {
       require('src/gatsby/assets/scripts/shared')
       document.documentElement.setAttribute('id', id)
     }
-    // css
-    try {
-      require(`static/${src}.css`).default
-      // eslint-disable-next-line no-empty
-    } catch (ex) {}
     // vanilla
     const html = require(`static/${src}.html.js`).object.html
     try {

@@ -60,25 +60,27 @@ addEventListener('hashchange', demoHash)
 const formatCode = (source, sourceCode) => {
   let text = source.innerHTML
   // ##START and ##END
-  const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
-  if (metas) {
-    text = ''
-    for (const meta of metas.entries()) {
-      text += meta[1]
-    }
-  }
+  // const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
+  // if (metas) {
+  //   text = ''
+  //   for (const meta of metas.entries()) {
+  //     text += meta[1]
+  //   }
+  // }
   // remove ##
-  text = text.replace(/\n*[ ]*\/\*##(.*)*/g, '')
-  // replace id
-  const item = source.closest('.gatsby_demo_item')
-  if (item) {
-    let id = item.getAttribute('data-iframe')
-    if (id) {
-      const names = id.split('/')
-      id = `#iframe--${names[names.length - 1]}`
-      text = text.replace(new RegExp(`[ ]{0,}${id}[ ]{0,}`, 'gi'), '')
-    }
-  }
+  // text = text.replace(/\n*[ ]*\/\*##(.*)*/g, '')
+  // refs
+  // const ref = text.match(/( {2}<div class="CCC--(.*?)$)/gm)
+  // if (ref) {
+  //   text = text.replace(/( {2}<div class="CCC--(.*?)$)/gm, '')
+  //   text = text.replace(/(^ {2}<\/div>)/gm, '')
+  // }
+  // ref
+  // const refs = text.match(/(\.CCC--(.*?)$)/gm)
+  // if (refs) {
+  //   text = text.replace(/^(\.CCC--(.*?)$)/gm, '')
+  //   text = text.replace(/^}$/gm, '')
+  // }
   // clipboard
   Xt.dataStorage.set(
     sourceCode,
@@ -110,7 +112,13 @@ const formatCode = (source, sourceCode) => {
   })
   // remove tabs
   const arr = text.split('\n')
-  let search = arr[0]
+  let search
+  for (const notEmpty of arr) {
+    if (notEmpty !== '') {
+      search = notEmpty
+      break
+    }
+  }
   search = search.length ? search : arr[1]
   if (search) {
     const toRemove = search.search(/\S/g)
@@ -621,7 +629,6 @@ const unloadIframe = iframe => {
 window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
   const selector = `iframe[data-src="/${src}"]`
   const iframes = document.querySelectorAll(selector)
-  console.log(selector, iframes)
   for (const iframe of iframes) {
     const item = iframe.closest('.gatsby_demo_item')
     populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
