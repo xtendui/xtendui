@@ -1,11 +1,7 @@
-#iframe--products-listing-v1 {
-  /*##START*/
-  body:not(.xt-noscroll) {
-    /* add here all fade selectors css and js */
+.CCC--products-listing-v1, .CCC--products-listing-v1-jsx {
+  body:not(.xt-noscroll) & {
     .listing-item {
       opacity: 0;
     }
   }
-  /*##END*/
 }
-
