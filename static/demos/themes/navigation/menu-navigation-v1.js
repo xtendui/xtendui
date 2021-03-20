@@ -190,7 +190,7 @@ const mountLine = ({ object }) => {
 
   // vars
 
-  const btns = object.querySelectorAll('.xt-list > .button--line')
+  const btns = object.querySelectorAll('.button--line')
   const drops = object.querySelectorAll('.xt-drop-item')
   const line = object.querySelector('.megamenu-line')
 
@@ -252,6 +252,7 @@ const mountLine = ({ object }) => {
     } else {
       btnOn = false
     }
+    // same delay as drop
     setTimeout(() => {
       // when one button still hover
       if (btnOn) {
@@ -267,10 +268,12 @@ const mountLine = ({ object }) => {
         const lineWidth = dropBtnActive.offsetWidth
         gsap.to(line, {
           x: lineX,
-          y: lineY,
+          y: lineY - lineHeight,
           width: lineWidth,
-          height: 0,
-          opacity: 0,
+          height: lineHeight,
+          opacity: 1,
+          duration: lineTime,
+          ease: lineEase,
         })
       } else {
         // when no drop still open
