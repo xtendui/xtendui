@@ -57,8 +57,14 @@ addEventListener('hashchange', demoHash)
  * formatCode
  */
 
-const formatCode = (source, sourceCode) => {
+const formatCode = (source, sourceCode, isReact = false) => {
   let text = source.innerHTML
+  // css refs
+  if (isReact) {
+    text = text.replace(/\.CCC(.*?), /, '')
+  } else {
+    text = text.replace(/, \.CCC(.*?)-react/, '')
+  }
   // ##START and ##END
   // const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
   // if (metas) {
@@ -641,7 +647,7 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
  * populate
  */
 
-const source = async (item, el) => {
+const source = async (item, el, isReact = false) => {
   const url = el.getAttribute('data-fetch')
   if (url) {
     const request = await fetch(url, {
@@ -653,10 +659,10 @@ const source = async (item, el) => {
     const body = await response.text()
     if (response.ok && body.substring(0, 9) !== '<!DOCTYPE') {
       el.innerHTML = body
-      populateSources(item, el)
+      populateSources(item, el, isReact)
     }
   } else {
-    populateSources(item, el)
+    populateSources(item, el, isReact)
   }
 }
 
@@ -683,10 +689,11 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
       )
     }
     // populate
+    const isReact = !!jsxSource
     const els = item.querySelectorAll('[data-lang]')
     for (const el of els) {
       try {
-        await source(item, el)
+        await source(item, el, isReact)
       } catch (ex) {
         console.error(ex)
       }
@@ -704,9 +711,10 @@ const populateInline = async item => {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')
+    const isReact = !!item.querySelector('[data-lang="jsx"]')
     for (const el of els) {
       try {
-        await source(item, el)
+        await source(item, el, isReact)
       } catch (ex) {
         console.error(ex)
       }
@@ -724,7 +732,7 @@ const populateInline = async item => {
  * sources
  */
 
-const populateSources = (item, element) => {
+const populateSources = (item, element, isReact = false) => {
   let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-markup') {
@@ -756,7 +764,7 @@ const populateSources = (item, element) => {
   } else if (lang === 'jsx') {
     lang = 'language-jsx'
   }
-  codeInside.innerHTML = formatCode(element, codeInside)
+  codeInside.innerHTML = formatCode(element, codeInside, isReact)
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
 }

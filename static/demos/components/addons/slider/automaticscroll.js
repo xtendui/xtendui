@@ -2,13 +2,26 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 import gsap from 'gsap'
 
-/**
- * slider
- */
-
 Xt.mount.push({
-  matches: '.demo--slider-automaticscroll .xt-slider',
+  matches: '.CCC--slider-automaticscroll',
   mount: ({ object }) => {
+    const unmountSliders = mountSliders({ object })
+
+    // unmount
+
+    return () => {
+      unmountSliders()
+    }
+  },
+})
+
+/* mountSliders */
+
+const mountSliders = ({ object }) => {
+  const sliders = object.querySelectorAll('.xt-slider')
+  const unmounts = []
+
+  for (const slider of sliders) {
     // vars
 
     const timeScaleTimeOn = 0.75
@@ -18,7 +31,7 @@ Xt.mount.push({
 
     // slider
 
-    let self = new Xt.Slider(object, {
+    let self = new Xt.Slider(slider, {
       align: 'left',
       jump: false,
       drag: {
@@ -102,12 +115,20 @@ Xt.mount.push({
 
     // unmount
 
-    return () => {
+    unmounts.push(() => {
       eventPause()
       removeEventListener('blur', eventPause)
       removeEventListener('focus', eventResume)
       self.destroy()
       self = null
+    })
+  }
+
+  // unmount
+
+  return () => {
+    for (const unmount of unmounts) {
+      unmount()
     }
-  },
-})
+  }
+}

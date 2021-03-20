@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div data-xt-toggle="{ elements: '.xt-button', targets: '.xt-toggle', collapseHeight: 'targets' }">
       <div class="xt-list xt-list-3 items-center mb-4">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">

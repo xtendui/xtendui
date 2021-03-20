@@ -1,8 +1,8 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="googlelocator flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
+  <div class="CCC--googlelocator">
+    <div class="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
       <div class="googlelocator-aside relative z-10">
         <div class="relative p-6 border-b border-gray-200">
           <form class="text-sm">

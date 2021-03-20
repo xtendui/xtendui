@@ -1,9 +1,9 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--jumptocontent">
     <div
-      class="jumptocontent xt-toggle fixed z-above left-0 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0"
+      class="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0"
     >
       <a href="#jumptocontent" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Jump to content

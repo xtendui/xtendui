@@ -1,33 +1,53 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.demo--group-expand',
+  matches: '.CCC--group-expand',
   mount: ({ object }) => {
+    const unmountExpand = mountExpand({ object })
+
+    // unmount
+
+    return () => {
+      unmountExpand()
+    }
+  },
+})
+
+/* mountExpand */
+
+const mountExpand = ({ object }) => {
+  const lists = object.querySelectorAll('.xt-list')
+
+  for (const list of lists) {
     // on
 
-    object.querySelector('input').addEventListener('focus', () => {
-      object.classList.add('expand')
-      object.classList.add('expand-focus')
+    list.querySelector('input').addEventListener('focus', () => {
+      list.classList.add('expand')
+      list.classList.add('expand-focus')
     })
 
-    object.addEventListener('mouseenter', () => {
-      object.classList.add('expand-enter')
+    list.addEventListener('mouseenter', () => {
+      list.classList.add('expand-enter')
     })
 
     // off
 
-    object.querySelector('input').addEventListener('blur', () => {
-      object.classList.remove('expand-focus')
-      if (!object.classList.contains('expand-enter')) {
-        object.classList.remove('expand')
+    list.querySelector('input').addEventListener('blur', () => {
+      list.classList.remove('expand-focus')
+      if (!list.classList.contains('expand-enter')) {
+        list.classList.remove('expand')
       }
     })
 
-    object.addEventListener('mouseleave', () => {
-      object.classList.remove('expand-enter')
-      if (!object.classList.contains('expand-focus')) {
-        object.classList.remove('expand')
+    list.addEventListener('mouseleave', () => {
+      list.classList.remove('expand-enter')
+      if (!list.classList.contains('expand-focus')) {
+        list.classList.remove('expand')
       }
     })
-  },
-})
+  }
+
+  // unmount
+
+  return () => {}
+}

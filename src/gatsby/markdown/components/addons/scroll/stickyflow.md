@@ -22,7 +22,7 @@ Pratically it's a solution that **scrolls sticky content** when it **overflow th
 Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/animation/stickyflow">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/scroll/stickyflow">
   </div>
 </demo>
 

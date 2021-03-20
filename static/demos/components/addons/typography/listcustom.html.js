@@ -1,9 +1,9 @@
 const html = /* HTML */ `
-  <div class="CCC--">
-    <ul class="demo--listcustom">
+  <ul class="CCC--listcustom">
+    <ul>
       <li>
         <p><strong>Lorem ipsum dolor sit amet.</strong></p>
-        <ul class="demo--listcustom">
+        <ul>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           <li>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut
@@ -20,7 +20,7 @@ const html = /* HTML */ `
         at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
       </li>
     </ul>
-  </div>
+  </ul>
 `
 
 export const object = {

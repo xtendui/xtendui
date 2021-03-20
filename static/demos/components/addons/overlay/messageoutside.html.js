@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--overlay-messageoutside">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
@@ -11,7 +11,7 @@ const html = /* HTML */ `
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black opacity-25"></div>
           <div
-            class="demo--overlay-messageoutside fixed h-full right-0 hidden md:flex items-center justify-center pointer-events-none"
+            class="overlay--messageoutside fixed h-full right-0 hidden md:flex items-center justify-center pointer-events-none"
           >
             <div class="w-10/12 lg:w-8/12">
               <div class="xt-card rounded-md ${classes.cardDefault()} pointer-events-auto">
@@ -70,7 +70,7 @@ const html = /* HTML */ `
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black opacity-25"></div>
           <div
-            class="demo--overlay-messageoutside fixed h-full left-0 hidden md:flex items-center justify-center pointer-events-none"
+            class="overlay--messageoutside fixed h-full left-0 hidden md:flex items-center justify-center pointer-events-none"
           >
             <div class="w-10/12 lg:w-8/12">
               <div class="xt-card rounded-md ${classes.cardDefault()} pointer-events-auto">

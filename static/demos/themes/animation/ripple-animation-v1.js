@@ -20,7 +20,6 @@ Xt.mount.push({
 const mountRipple = ({ object }) => {
   const items = object.querySelectorAll('.xt-button, .xt-card')
   const unmounts = []
-  console.log(items)
 
   for (const item of items) {
     // init

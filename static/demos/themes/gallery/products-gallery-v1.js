@@ -64,12 +64,10 @@ const mountImages = ({ object }) => {
 
   // overlay
 
-  const ccc = new Xt.Overlay(object, {
+  new Xt.Overlay(object, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
-
-  console.log(ccc.elements)
 
   // vars
 

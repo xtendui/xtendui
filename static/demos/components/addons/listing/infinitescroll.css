@@ -1,5 +1,5 @@
-.CCC--infinitescroll {
-  /* .infinitescroll-spinner */
+.CCC--infinitescroll, .CCC--infinitescroll-react {
+  /* spinner */
 
   .infinitescroll-spinner {
     @apply transition opacity-0;
@@ -17,7 +17,7 @@
     }
   }
 
-  /* .infinitescroll-trigger .xt-button */
+  /* trigger */
 
   .infinitescroll-trigger .xt-button {
     .infinitescroll-trigger-content-nomore {
@@ -37,7 +37,7 @@
     }
   }
 
-  /* .infinitescroll-nomore */
+  /* nomore */
 
   .infinitescroll-nomore {
     .infinitescroll-trigger .xt-button {
@@ -51,7 +51,7 @@
     }
   }
 
-  /* .infinitescroll-pre */
+  /* pre */
 
   .infinitescroll-pre {
     display: none;

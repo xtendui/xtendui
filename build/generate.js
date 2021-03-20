@@ -8,7 +8,7 @@ const test = false
 
 ;(async () => {
   await del(['static/demos/**/**.jsx'])
-  new glob.Glob('static/demos/themes/animation/**/**.html.js', (er, files) => {
+  new glob.Glob('static/demos/components/addons/**/**.html.js', (er, files) => {
     for (const file of files) {
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)
@@ -19,17 +19,7 @@ const test = false
       let strMethods = ''
       // refs
       const refs = html.match(/class="CCC(.*?)"/g)
-      html = html.replace(/(?<=class="CCC(.*?))"/g, '-jsx" ref={ref}')
-      // test
-      if (test) {
-        html = html.replace(
-          /(^ {2}<div *.+)/gm,
-          `$1<button onClick={() => setCount(count + 1)}>You clicked {count} times</button>`
-        )
-      }
-      // react stuff
-      html = html.replace(/class="/g, 'className="')
-      html = html.replace(/checked/g, 'defaultChecked')
+      html = html.replace(/(?<=class="CCC(.*?))"/g, '-react"')
       // js
       const jsGlob = new glob.Glob(`${src}.js`, (er, jsSources) => {
         if (jsSources.length) {
@@ -89,11 +79,26 @@ const test = false
         }
       })
       jsGlob.on('end', () => {
+        if (strMount) {
+          html = html.replace(/(?<=class="CCC(.*?))"/g, '" ref={ref}')
+        }
+        // test
+        if (test) {
+          html = html.replace(
+            /(^ {2}<div *.+)/gm,
+            `$1<button onClick={() => setCount(count + 1)}>You clicked {count} times</button>`
+          )
+        }
+        // react stuff
+        html = html.replace(/class="/g, 'className="')
+        html = html.replace(/checked/g, 'defaultChecked')
+        html = html.replace(/value/g, 'defaultValue')
+        // str
         let str = `import React${
-          refs || strMount !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
+          strMount !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function component() {${
-          refs || strMount !== ''
+          strMount !== ''
             ? `${test ? 'const [count, setCount] = useState(0)' : ''}
   const nodeRef = useRef(null)
   let unmount

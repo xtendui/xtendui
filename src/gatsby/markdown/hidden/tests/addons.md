@@ -14,9 +14,9 @@ Test scroll position on click elements.
 Test activation classes and scroll position on page load and hash change.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/navigation/scrolltoanchor">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/scroll/scrolltoanchor">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/navigation/scrolltoanchor-overlay">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/scroll/scrolltoanchor-overlay">
   </div>
 </demo>
 

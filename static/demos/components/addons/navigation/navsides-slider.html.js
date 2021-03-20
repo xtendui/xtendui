@@ -3,7 +3,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider').def
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-slider" data-xt-slider>
       ${indentString(markupSlider(), 2)}
       <button

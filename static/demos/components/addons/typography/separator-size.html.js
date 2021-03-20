@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Size xs</div>
 
     Lorem ipsum <span class="xt-separator xt-separator-dash mx-1 text-xs"></span> dolor sit amet
