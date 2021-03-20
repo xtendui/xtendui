@@ -1,67 +1,67 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div class="CCC--tooltip-eventmethods">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-first-element"
+        id="button--tooltip-eventmethods-first-element"
       >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-first-target"
+        id="button--tooltip-eventmethods-first-target"
       >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-add"
+        id="button--tooltip-eventmethods-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-remove"
+        id="button--tooltip-eventmethods-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-reinit"
+        id="button--tooltip-eventmethods-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-restart"
+        id="button--tooltip-eventmethods-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-destroy"
+        id="button--tooltip-eventmethods-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="demo--tooltip-events-unmount"
+        id="button--tooltip-eventmethods-unmount"
       >
         Unmount
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="demo--tooltip-events" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Tooltip 0
       </button>
@@ -86,7 +86,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="demo--tooltip-events-log"
+        id="card--tooltip-eventmethods-log"
       ></div>
     </div>
   </div>

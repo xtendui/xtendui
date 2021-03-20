@@ -6,62 +6,62 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-first-element"
+        id="button--drop-eventmethods-first-element"
       >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-first-target"
+        id="button--drop-eventmethods-first-target"
       >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-add"
+        id="button--drop-eventmethods-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-remove"
+        id="button--drop-eventmethods-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-reinit"
+        id="button--drop-eventmethods-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-restart"
+        id="button--drop-eventmethods-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-destroy"
+        id="button--drop-eventmethods-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-events-unmount"
+        id="button--drop-eventmethods-unmount"
       >
         Unmount
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="drop--events" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" title="Object">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Drop 0
       </button>
@@ -102,7 +102,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--drop-events-log"
+        id="card--drop-eventmethods-log"
       ></div>
     </div>
   </div>

@@ -7,8 +7,8 @@ const indentString = require('indent-string')
 const test = false
 
 ;(async () => {
-  //await del(['static/demos/**/**.jsx'])
-  new glob.Glob('static/demos/components/core/media/**.html.js', (er, files) => {
+  await del(['static/demos/**/**.jsx'])
+  new glob.Glob('static/demos/**/**.html.js', (er, files) => {
     for (const file of files) {
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)

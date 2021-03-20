@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div
       class="xt-tooltip p-2 in-tooltip relative inline-block"
       data-xt-tooltip="{ closeOutside: false, classSkip: false }"

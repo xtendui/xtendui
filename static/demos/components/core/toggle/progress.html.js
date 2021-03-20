@@ -1,8 +1,16 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="xt-list xt-list-3 items-center demo--toggle-progress">
+  <div class="CCC--toggle-progress">
+    <div class="xt-list xt-list-3 items-center">
+      <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
+        <span
+          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-active:opacity-100"
+        >
+          ${classes.spinner({})}
+        </span>
+      </span>
+
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} in-toggle">
         Toggle 0
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">

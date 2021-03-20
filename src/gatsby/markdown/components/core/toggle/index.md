@@ -47,10 +47,10 @@ You can group elements activation with the option `groupElements: true`.
 </div>
 
 <demo>
-  <demovanilla src="demos/components/core/toggle/usage-unique">
-  </demovanilla>
-  <demovanilla src="demos/components/core/toggle/usage-unique-groupelements">
-  </demovanilla>
+  <demoinline src="demos/components/core/toggle/usage-unique">
+  </demoinline>
+  <demoinline src="demos/components/core/toggle/usage-unique-groupelements">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).
@@ -72,12 +72,12 @@ You can group elements activation with the option `groupElements: true`.
 </div>
 
 <demo>
-  <demovanilla src="demos/components/core/toggle/usage-multiple">
-  </demovanilla>
-  <demovanilla src="demos/components/core/toggle/usage-multiple-group">
-  </demovanilla>
-  <demovanilla src="demos/components/core/toggle/usage-multiple-groupelements">
-  </demovanilla>
+  <demoinline src="demos/components/core/toggle/usage-multiple">
+  </demoinline>
+  <demoinline src="demos/components/core/toggle/usage-multiple-group">
+  </demoinline>
+  <demoinline src="demos/components/core/toggle/usage-multiple-groupelements">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/toggle/interaction).

@@ -1,8 +1,8 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
-    <div class="xt-list xt-list-3 items-center demo--tooltip-animation-css-multiple" data-xt-tooltip="{ delay: 25 }">
+  <div class="CCC--tooltip-animation-css-multiple">
+    <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ delay: 25 }">
       <div class="xt-tooltip-item">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
           tooltip

@@ -17,7 +17,7 @@ Xt.mount.push({
 /* mountEventmethods */
 
 const mountEventmethods = ({ object }) => {
-  const slider = object.querySelector('#slider--events')
+  const slider = object.querySelector('#slider--eventmethods')
 
   // init
 
@@ -39,7 +39,7 @@ const mountEventmethods = ({ object }) => {
 
   // log
 
-  const log = document.querySelector('#card--slider-events-log')
+  const log = document.querySelector('#card--slider-eventmethods-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -54,7 +54,7 @@ const mountEventmethods = ({ object }) => {
 
   // first element
 
-  const firstEl = document.querySelector('#button--slider-events-first-element')
+  const firstEl = document.querySelector('#button--slider-eventmethods-first-element')
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
@@ -66,7 +66,7 @@ const mountEventmethods = ({ object }) => {
 
   // first target
 
-  const firstTr = document.querySelector('#button--slider-events-first-target')
+  const firstTr = document.querySelector('#button--slider-eventmethods-first-target')
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
@@ -100,7 +100,7 @@ const mountEventmethods = ({ object }) => {
 
   // add
 
-  const addBtn = document.querySelector('#button--slider-events-add')
+  const addBtn = document.querySelector('#button--slider-eventmethods-add')
 
   const addFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
@@ -116,7 +116,7 @@ const mountEventmethods = ({ object }) => {
         </div>
       </div>
       `
-      document.querySelector('#slider--events-targets').append(Xt.createElement(strTr))
+      document.querySelector('#slider--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
@@ -127,7 +127,7 @@ const mountEventmethods = ({ object }) => {
 
   // remove
 
-  const removeBtn = document.querySelector('#button--slider-events-remove')
+  const removeBtn = document.querySelector('#button--slider-eventmethods-remove')
 
   const removeFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
@@ -149,7 +149,7 @@ const mountEventmethods = ({ object }) => {
 
   // reinit
 
-  const reinitBtn = document.querySelector('#button--slider-events-reinit')
+  const reinitBtn = document.querySelector('#button--slider-eventmethods-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
@@ -163,7 +163,7 @@ const mountEventmethods = ({ object }) => {
 
   // restart
 
-  const restartBtn = document.querySelector('#button--slider-events-restart')
+  const restartBtn = document.querySelector('#button--slider-eventmethods-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -174,7 +174,7 @@ const mountEventmethods = ({ object }) => {
 
   // destroy
 
-  const destroyBtn = document.querySelector('#button--slider-events-destroy')
+  const destroyBtn = document.querySelector('#button--slider-eventmethods-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -185,7 +185,7 @@ const mountEventmethods = ({ object }) => {
 
   // unmount
 
-  const unmountBtn = document.querySelector('#button--slider-events-unmount')
+  const unmountBtn = document.querySelector('#button--slider-eventmethods-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

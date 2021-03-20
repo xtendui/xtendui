@@ -8,14 +8,14 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-first-element"
+        id="button--slider-eventmethods-first-element"
       >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-first-target"
+        id="button--slider-eventmethods-first-target"
       >
         1st target
       </button>
@@ -36,53 +36,53 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-add"
+        id="button--slider-eventmethods-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-remove"
+        id="button--slider-eventmethods-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-reinit"
+        id="button--slider-eventmethods-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-restart"
+        id="button--slider-eventmethods-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-destroy"
+        id="button--slider-eventmethods-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--slider-events-unmount"
+        id="button--slider-eventmethods-unmount"
       >
         Unmount
       </button>
     </div>
 
-    <div class="xt-slider" id="slider--events">${indentString(markupSlider(), 2)}</div>
+    <div class="xt-slider" id="slider--eventmethods">${indentString(markupSlider(), 2)}</div>
 
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--slider-events-log"
+        id="card--slider-eventmethods-log"
       ></div>
     </div>
   </div>

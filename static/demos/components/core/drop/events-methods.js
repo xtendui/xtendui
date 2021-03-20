@@ -17,7 +17,7 @@ Xt.mount.push({
 /* mountEventmethods */
 
 const mountEventmethods = ({ object }) => {
-  const drop = object.querySelector('#drop--events')
+  const drop = object.querySelector('#drop--eventmethods')
 
   // init
 
@@ -25,7 +25,7 @@ const mountEventmethods = ({ object }) => {
 
   // log
 
-  const log = object.querySelector('#card--drop-events-log')
+  const log = object.querySelector('#card--drop-eventmethods-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -40,7 +40,7 @@ const mountEventmethods = ({ object }) => {
 
   // first element
 
-  const firstEl = object.querySelector('#button--drop-events-first-element')
+  const firstEl = object.querySelector('#button--drop-eventmethods-first-element')
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
@@ -52,7 +52,7 @@ const mountEventmethods = ({ object }) => {
 
   // first target
 
-  const firstTr = object.querySelector('#button--drop-events-first-target')
+  const firstTr = object.querySelector('#button--drop-eventmethods-first-target')
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
@@ -64,7 +64,7 @@ const mountEventmethods = ({ object }) => {
 
   // add
 
-  const addBtn = object.querySelector('#button--drop-events-add')
+  const addBtn = object.querySelector('#button--drop-eventmethods-add')
 
   const addFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -109,7 +109,7 @@ const mountEventmethods = ({ object }) => {
 
   // remove
 
-  const removeBtn = object.querySelector('#button--drop-events-remove')
+  const removeBtn = object.querySelector('#button--drop-eventmethods-remove')
 
   const removeFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -128,7 +128,7 @@ const mountEventmethods = ({ object }) => {
 
   // reinit
 
-  const reinitBtn = object.querySelector('#button--drop-events-reinit')
+  const reinitBtn = object.querySelector('#button--drop-eventmethods-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -142,7 +142,7 @@ const mountEventmethods = ({ object }) => {
 
   // restart
 
-  const restartBtn = object.querySelector('#button--drop-events-restart')
+  const restartBtn = object.querySelector('#button--drop-eventmethods-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -153,7 +153,7 @@ const mountEventmethods = ({ object }) => {
 
   // destroy
 
-  const destroyBtn = object.querySelector('#button--drop-events-destroy')
+  const destroyBtn = object.querySelector('#button--drop-eventmethods-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -164,7 +164,7 @@ const mountEventmethods = ({ object }) => {
 
   // unmount
 
-  const unmountBtn = object.querySelector('#button--drop-events-unmount')
+  const unmountBtn = object.querySelector('#button--drop-eventmethods-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

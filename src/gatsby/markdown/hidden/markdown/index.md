@@ -205,7 +205,7 @@ const test = 'test'
 
 ```js
 Xt.mount.push({
-  matches: '.CCC--products-listing-v1',
+  matches: '.CCC--',
   mount: ({ object }) => {
     const unmountDrops = mountDrops({ object })
 

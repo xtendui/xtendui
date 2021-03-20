@@ -1,11 +1,10 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div data-xt-tooltip>
       Lorem ipsum
-
-      <div class="xt-tooltip-item">
+      <span class="xt-tooltip-item">
         <a href="#">dolor</a>
 
         <div class="xt-tooltip p-2">
@@ -13,11 +12,9 @@ const html = /* HTML */ `
             Lorem ipsum dolor sit amet
           </div>
         </div>
-      </div>
-
+      </span>
       sit
-
-      <div class="xt-tooltip-item">
+      <span class="xt-tooltip-item">
         <a href="#">amet</a>
 
         <div class="xt-tooltip p-2">
@@ -25,7 +22,7 @@ const html = /* HTML */ `
             Consectetur adipiscing elit
           </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 `

@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div
       class="xt-list xt-list-3 items-center demo--toggle-disable"
       data-xt-toggle="{ matches: { '(min-width: 768px)': { disabled: true } } }"

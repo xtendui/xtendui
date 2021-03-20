@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--">
+  <div>
     <div data-xt-tooltip="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
       <a href="#tooltip-with-link-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         tooltip

@@ -6,42 +6,42 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-first-element"
+        id="button--overlay-eventmethods-first-element"
       >
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-first-target"
+        id="button--overlay-eventmethods-first-target"
       >
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-reinit"
+        id="button--overlay-eventmethods-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-restart"
+        id="button--overlay-eventmethods-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-destroy"
+        id="button--overlay-eventmethods-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-events-unmount"
+        id="button--overlay-eventmethods-unmount"
       >
         Unmount
       </button>
@@ -51,14 +51,14 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="overlay--events"
+        id="overlay--eventmethods"
       >
         Overlay
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        id="overlay--events-alt"
+        id="overlay--eventmethods-alt"
       >
         Overlay same
       </button>
@@ -102,7 +102,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--overlay-events-log"
+        id="card--overlay-eventmethods-log"
       ></div>
     </div>
   </div>

@@ -17,8 +17,8 @@ Xt.mount.push({
 /* mountEventmethods */
 
 const mountEventmethods = ({ object }) => {
-  const overlay = object.querySelector('#overlay--events')
-  const overlayAlt = object.querySelector('#overlay--events-alt')
+  const overlay = object.querySelector('#overlay--eventmethods')
+  const overlayAlt = object.querySelector('#overlay--eventmethods-alt')
 
   // init
 
@@ -32,7 +32,7 @@ const mountEventmethods = ({ object }) => {
 
   // log
 
-  const log = object.querySelector('#card--overlay-events-log')
+  const log = object.querySelector('#card--overlay-eventmethods-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -47,7 +47,7 @@ const mountEventmethods = ({ object }) => {
 
   // first element
 
-  const firstEl = object.querySelector('#button--overlay-events-first-element')
+  const firstEl = object.querySelector('#button--overlay-eventmethods-first-element')
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
@@ -59,7 +59,7 @@ const mountEventmethods = ({ object }) => {
 
   // first target
 
-  const firstTr = object.querySelector('#button--overlay-events-first-target')
+  const firstTr = object.querySelector('#button--overlay-eventmethods-first-target')
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
@@ -71,7 +71,7 @@ const mountEventmethods = ({ object }) => {
 
   // reinit
 
-  const reinitBtn = object.querySelector('#button--overlay-events-reinit')
+  const reinitBtn = object.querySelector('#button--overlay-eventmethods-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(object.dataset.reinitTimeout))
@@ -85,7 +85,7 @@ const mountEventmethods = ({ object }) => {
 
   // restart
 
-  const restartBtn = object.querySelector('#button--overlay-events-restart')
+  const restartBtn = object.querySelector('#button--overlay-eventmethods-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -96,7 +96,7 @@ const mountEventmethods = ({ object }) => {
 
   // destroy
 
-  const destroyBtn = object.querySelector('#button--overlay-events-destroy')
+  const destroyBtn = object.querySelector('#button--overlay-eventmethods-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -107,7 +107,7 @@ const mountEventmethods = ({ object }) => {
 
   // unmount
 
-  const unmountBtn = object.querySelector('#button--overlay-events-unmount')
+  const unmountBtn = object.querySelector('#button--overlay-eventmethods-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

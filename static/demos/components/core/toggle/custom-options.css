@@ -1,5 +1,0 @@
-.CCC--toggle-custom-options, .CCC--toggle-custom-options-react {
-  &:not(.in):not(.out) {
-    display: none;
-  }
-}
