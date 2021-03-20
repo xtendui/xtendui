@@ -4,121 +4,67 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--sticky-stack-top',
+  matches: '.CCC--sticky-stack',
   mount: ({ object }) => {
-    // sticky
+    const unmountSticky = mountSticky({ object })
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'top top',
-      endTrigger: '.demo--sticky-stack-topsecond',
-      end: () => `top ${object.offsetHeight}px`,
-      pin: true,
-      pinSpacing: false,
-    })
+    // unmount
 
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
+    return () => {
+      unmountSticky()
+    }
   },
 })
 
-Xt.mount.push({
-  matches: '.demo--sticky-stack-topsecond',
-  mount: ({ object }) => {
-    // sticky
+/* mountSticky */
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
+const mountSticky = ({ object }) => {
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--stack-top'),
+    start: 'top top',
+    endTrigger: '.sticky--stack-topsecond',
+    end: () => `top ${object.offsetHeight}px`,
+    pin: true,
+    pinSpacing: false,
+  })
 
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
-  },
-})
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--stack-topsecond'),
+    start: 'top top',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
 
-Xt.mount.push({
-  matches: '.demo--sticky-stack-topthird',
-  mount: ({ object }) => {
-    // sticky
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--stack-topthird'),
+    start: () => `top top+=${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: () => `top top+=${document.querySelector('.demo--sticky-stack-topsecond').offsetHeight}px`,
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--stack-bottom'),
+    start: 'bottom bottom',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
 
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
-  },
-})
+  ScrollTrigger.create({
+    trigger: object.querySelector('.sticky--stack-bottomsecond'),
+    start: () => `bottom bottom-=${document.querySelector('.sticky--stack-bottom').offsetHeight}px`,
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
 
-Xt.mount.push({
-  matches: '.demo--sticky-stack-bottom',
-  mount: ({ object }) => {
-    // sticky
+  // unmount
 
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: 'bottom bottom',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
-  },
-})
-
-Xt.mount.push({
-  matches: '.demo--sticky-stack-bottomsecond',
-  mount: ({ object }) => {
-    // sticky
-
-    const sticky = ScrollTrigger.create({
-      trigger: object,
-      start: () => `bottom bottom-=${document.querySelector('.demo--sticky-stack-bottom').offsetHeight}px`,
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      // @FIX ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
-    })
-  },
-})
+  return () => {}
+}

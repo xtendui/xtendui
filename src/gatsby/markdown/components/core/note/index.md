@@ -16,13 +16,13 @@ Use [card](/components/core/card) to create a **note**.
 Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [font-weight](https://tailwindcss.com/docs/font-weight)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/note/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/note/usage">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/note/usage-full">
-  </demovanilla>
+  <demoinline src="demos/components/core/note/usage-full">
+  </demoinline>
 </demo>
 
 ## Form note

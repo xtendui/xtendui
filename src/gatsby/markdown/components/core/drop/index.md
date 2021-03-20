@@ -37,8 +37,8 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 | To activate **unique mode** you **need** to specify targets with **#id**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-unique">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/usage-unique">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
@@ -55,10 +55,10 @@ The **multiple** mode is useful when using `mouse` events and **you want to inte
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/usage-multiple-group">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/usage-multiple">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/usage-multiple-group">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).
@@ -70,8 +70,8 @@ Use this code to create a **drop** in **self mode**.
 Just use the class `in-drop` if you want to automatically open, or use the [api](/components/core/drop/api)
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/usage-self">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/usage-self">
+  </demoinline>
 </demo>
 
 Check subpage to [customize interaction](/components/core/drop/interaction) and [customize lists](/components/core/drop/content-list) or [customize card](/components/core/drop/content-card).

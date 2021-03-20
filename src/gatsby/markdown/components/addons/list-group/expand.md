@@ -11,6 +11,6 @@ description: "Simple effect demo to expand a list group with input."
 Use this code to create a **list group expand**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/list-group/expand">
-  </demovanilla>
+  <demoinline src="demos/components/addons/list-group/expand">
+  </demoinline>
 </demo>

@@ -17,7 +17,7 @@ You can **customize this component** inside `tailwind.config.js` setting `theme.
 Use this code to create a **ripple**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/themes/animation/ripple-animation-v1">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/animation/ripple-animation-v1">
   </div>
 </demo>
 

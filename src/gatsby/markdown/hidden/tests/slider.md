@@ -10,12 +10,12 @@ title: "Slider"
 Test contain grouping and position.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/wrap-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-right">
-  </demovanilla>
+  <demoinline src="demos/components/core/slider/wrap-center">
+  </demoinline>
+  <demoinline src="demos/components/core/slider/wrap-left">
+  </demoinline>
+  <demoinline src="demos/components/core/slider/wrap-right">
+  </demoinline>
 </demo>
 
 Test wrap activation on drag.
@@ -23,24 +23,24 @@ Test wrap activation on drag.
 Test when not wrapping if active is not first or last.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/wrap-center">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/slider/wrap-right">
-  </demovanilla>
+  <demoinline src="demos/components/core/slider/wrap-center">
+  </demoinline>
+  <demoinline src="demos/components/core/slider/wrap-left">
+  </demoinline>
+  <demoinline src="demos/components/core/slider/wrap-right">
+  </demoinline>
 </demo>
 
 Test activation and self.initial on overflow auto and back to not overflow auto.
 
 <demo>
-  <demovanilla src="vanilla/components/core/slider/overflow-auto">
-  </demovanilla>
+  <demoinline src="demos/components/core/slider/overflow-auto">
+  </demoinline>
 </demo>
 
 Test auto.
 
 <demo>	
-  <demovanilla src="vanilla/components/core/slider/progress">	
-  </demovanilla>	
+  <demoinline src="demos/components/core/slider/progress">	
+  </demoinline>	
 </demo>	

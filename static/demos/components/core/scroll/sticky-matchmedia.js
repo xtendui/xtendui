@@ -4,31 +4,37 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--sticky-matchmedia',
+  matches: '.CCC--sticky-matchmedia',
   mount: ({ object }) => {
-    // match media
+    const unmountSticky = mountSticky({ object })
 
-    ScrollTrigger.matchMedia({
-      '(max-width: 767px)': () => {
-        // sticky
+    // unmount
 
-        const sticky = ScrollTrigger.create({
-          trigger: object,
-          start: 'top top',
-          endTrigger: 'html',
-          end: 'bottom top',
-          pin: true,
-          pinSpacing: false,
-        })
-
-        ScrollTrigger.addEventListener('refresh', () => {
-          // @FIX ScrollTrigger pin mount ignore
-          sticky.pin.classList.add('xt-ignore')
-          requestAnimationFrame(() => {
-            sticky.pin.classList.remove('xt-ignore')
-          })
-        })
-      },
-    })
+    return () => {
+      unmountSticky()
+    }
   },
 })
+
+/* mountSticky */
+
+const mountSticky = ({ object }) => {
+  ScrollTrigger.matchMedia({
+    '(max-width: 767px)': () => {
+      // sticky
+
+      ScrollTrigger.create({
+        trigger: object.querySelector('.xt-sticky'),
+        start: 'top top',
+        endTrigger: 'html',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+      })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}

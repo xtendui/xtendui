@@ -23,23 +23,23 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-white"></div>` inside `.xt-drop` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/bottom">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/top">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/right">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/auto">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/bottom">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/top">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/left">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/right">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/auto">
+  </demoinline>
 </demo>
 
 To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/nospace">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/nospace">
+  </demoinline>
 </demo>
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/core/drop/other#popperjs).
@@ -68,6 +68,6 @@ If you want a drop with size and position **relative to a parent Node with relat
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/static">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/static">
+  </demoinline>
 </demo>

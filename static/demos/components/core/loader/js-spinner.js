@@ -2,16 +2,33 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.demo--loader-js-spinner',
+  matches: '.CCC--loader-js-spinner',
   mount: ({ object }) => {
+    const unmountLoader = mountLoader({ object })
+
+    // unmount
+
+    return () => {
+      unmountLoader()
+    }
+  },
+})
+
+/* mountLoader */
+
+const mountLoader = ({ object }) => {
+  const loaders = object.querySelectorAll('.xt-loader')
+  const unmounts = []
+
+  for (const loader of loaders) {
     // init
 
     const loaderTimeout = () => {
-      const spinner = object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
-      if (object.dataset.loaderTimeout) {
-        clearTimeout(object.dataset.loaderTimeout)
-        delete object.dataset.loaderTimeout
-        Xt.animOn(object)
+      const spinner = loader.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+      if (loader.dataset.loaderTimeout) {
+        clearTimeout(loader.dataset.loaderTimeout)
+        delete loader.dataset.loaderTimeout
+        Xt.animOn(loader)
         gsap.set(spinner, { strokeDashoffset: 628 })
         gsap
           .to(spinner, {
@@ -22,18 +39,26 @@ Xt.mount.push({
           })
           .eventCallback('onComplete', loaderTimeout)
       } else {
-        Xt.animOff(object)
-        object.classList.remove('active')
-        object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
+        Xt.animOff(loader)
+        loader.classList.remove('active')
+        loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }
 
-    object.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
+    loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
 
     // unmount
 
-    return () => {
-      clearTimeout(object.dataset.loaderTimeout)
+    unmounts.push(() => {
+      clearTimeout(loader.dataset.loaderTimeout)
+    })
+  }
+
+  // unmount
+
+  return () => {
+    for (const unmount of unmounts) {
+      unmount()
     }
-  },
-})
+  }
+}

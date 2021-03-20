@@ -2,8 +2,6 @@ const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-require('./build/css.js')
-require('./build/js.js')
 
 module.exports = {
   mode: 'production',
@@ -66,9 +64,7 @@ module.exports = {
   ],
   optimization: {
     minimizer: [
-      new TerserJSPlugin({
-        extractComments: false,
-      }),
+      new TerserJSPlugin(),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
           map: {

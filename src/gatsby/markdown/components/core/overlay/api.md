@@ -53,8 +53,8 @@ You can add **additional options** that gets added on **match media query**. You
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/matches">
-  </demovanilla>
+  <demoinline src="demos/components/core/overlay/matches">
+  </demoinline>
 </demo>
 
 ## Util
@@ -217,6 +217,6 @@ self.targets.filter(x => self.hasCurrent(x))
 ## Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/overlay/events-methods">
   </div>
 </demo>

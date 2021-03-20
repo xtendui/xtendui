@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from 'components/includes/header'
-import Footer from 'components/includes/footer'
-import DocHead from 'components/includes/doc-head'
-import DocFoot from 'components/includes/doc-foot'
-import DocFullscreen from 'components/includes/doc-fullscreen'
+import Header from 'src/gatsby/components/includes/header'
+import Footer from 'src/gatsby/components/includes/footer'
+import DocHead from 'src/gatsby/components/includes/doc-head'
+import DocFoot from 'src/gatsby/components/includes/doc-foot'
+import DocFullscreen from 'src/gatsby/components/includes/doc-fullscreen'
 
-import 'assets/styles/app.css'
+import 'src/gatsby/assets/styles/app.css'
 
 export default class Layout extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      const makeDocument = require('assets/scripts/app').makeDocument
-      const populateBlock = require('assets/scripts/demo').populateBlock
+      const makeDocument = require('src/gatsby/assets/scripts/app').makeDocument
+      const populateBlock = require('src/gatsby/assets/scripts/demo').populateBlock
       populateBlock()
       makeDocument()
     }

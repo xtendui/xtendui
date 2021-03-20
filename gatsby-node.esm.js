@@ -5,9 +5,7 @@
  */
 
 import path from 'path'
-import { markdownSlug } from './src/gatsby/components/snippets/markdown-slug.js'
-require('./build/css.js')
-require('./build/js.js')
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug.js'
 
 // webpack config
 

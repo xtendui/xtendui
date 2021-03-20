@@ -1,7 +1,4 @@
-.demo--slider-automaticscroll {
-
-  /* slider */
-
+.CCC--slider-automaticscroll, .CCC--slider-automaticscroll-react {
   .xt-slider {
     &.xt-overflow-auto {
       .xt-slides-inner {
@@ -24,5 +21,4 @@
       color: theme('colors.primary.500');
     }
   }
-
 }

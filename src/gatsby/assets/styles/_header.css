@@ -215,12 +215,14 @@
   }
 }
 
+.gatsby_site-header_switcher_container {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .gatsby_site-header_links_container {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
-    margin-top: 4rem;
-  }
 }
 
 .gatsby_site-header_links {

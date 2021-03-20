@@ -34,12 +34,12 @@ You can set it in the options or to **assign them also on single nodes** with `d
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/animation">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-multiple-noqueue">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/animation">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/animation-multiple">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/animation-multiple-noqueue">
+  </demoinline>
 </demo>
 
 ## Css Animation
@@ -55,10 +55,10 @@ You can use also **css animations**, just add them with **class names** `.active
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/animation-css">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-css-multiple">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/animation-css">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/animation-css-multiple">
+  </demoinline>
 </demo>
 
 ## Js Animation
@@ -74,10 +74,10 @@ You can use also **javascript animations**, just use [drop api](/components/core
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/animation-js">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/drop/animation-js-multiple">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/animation-js">
+  </demoinline>
+  <demoinline src="demos/components/core/drop/animation-js-multiple">
+  </demoinline>
 </demo>
 
 ## Design Animation
@@ -85,6 +85,6 @@ You can use also **javascript animations**, just use [drop api](/components/core
 Use `.xt-drop-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/animation-design">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/animation-design">
+  </demoinline>
 </demo>

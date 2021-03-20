@@ -1,7 +1,9 @@
- .demo--group-expand {
-  @apply transition-all;
-  &.expand {
-    @apply max-w-md;
+.CCC--group-expand, .CCC--group-expand-react {
+  .xt-list {
+    @apply transition-all;
+    &.expand {
+      @apply max-w-md;
+    }
   }
 }
 

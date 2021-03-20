@@ -11,6 +11,6 @@ description: "Infinite scrolling slider, pauses on interaction and automatic dis
 Use this code to create a **slider infinite**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/slider/automaticscroll">
-  </demovanilla>
+  <demoinline src="demos/components/addons/slider/automaticscroll">
+  </demoinline>
 </demo>

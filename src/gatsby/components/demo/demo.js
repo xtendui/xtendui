@@ -8,15 +8,12 @@ export default class Demo extends React.Component {
   }
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      const populateDemo = require('assets/scripts/demo').populateDemo
-      const demoHash = require('assets/scripts/demo').demoHash
+      // populate
+      const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
       const container = this.demoRef.current
-      // fix demo index when changing page
-      let index = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
-      populateDemo(container, index)
-      index++
-      document.documentElement.setAttribute('data-demo-index', index.toString())
+      populateDemo(container)
       // @FIX demo fullscreen
+      const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
       for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
         if (btnOpenFull.classList.contains('in-toggle')) {
           demoHash()

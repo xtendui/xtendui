@@ -25,7 +25,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 | This demos uses [multiple mount object](/components/globals/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade"></div>
 </demo>
 
 ## Event
@@ -37,10 +37,10 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-infinite"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-inside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-outside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-outside-infinite"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade-infinite"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade-inside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade-outside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade-outside-infinite"></div>
 </demo>
 
 ## Distance
@@ -61,7 +61,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 Here's an example of **distance fade** with **animation depending on direction**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/scroll/fade-distance"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/scroll/fade-distance"></div>
 </demo>
 
 ## Other

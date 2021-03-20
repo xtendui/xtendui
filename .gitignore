@@ -73,3 +73,4 @@ public
 **/*.min.css.map
 **/*.min.js
 **/*.min.js.map
+static/demos/**/**.jsx

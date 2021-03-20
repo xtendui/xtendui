@@ -17,6 +17,6 @@ Use this code to create a **toggle multilevel**.
 | For aria purpose use `<nav></nav>`.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/navigation/multilevel">
-  </demovanilla>
+  <demoinline src="demos/components/addons/navigation/multilevel">
+  </demoinline>
 </demo>

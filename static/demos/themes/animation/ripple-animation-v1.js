@@ -3,15 +3,32 @@ import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '#iframe--ripple-animation-v1 .xt-button, #iframe--ripple-animation-v1 .xt-card',
+  matches: '.CCC--ripple-animation-v1',
   mount: ({ object }) => {
+    const unmountRipple = mountRipple({ object })
+
+    // unmount
+
+    return () => {
+      unmountRipple()
+    }
+  },
+})
+
+/* mountRipple */
+
+const mountRipple = ({ object }) => {
+  const items = object.querySelectorAll('.xt-button, .xt-card')
+  const unmounts = []
+
+  for (const item of items) {
     // init
 
-    let self = new Xt.Ripple(object, {})
+    let self = new Xt.Ripple(item, {})
 
     // on
 
-    const eventOn = () => {
+    const on = () => {
       const ripple = self.container.querySelector('.xt-ripple:last-child')
       // animate
       if (ripple) {
@@ -32,11 +49,11 @@ Xt.mount.push({
       }
     }
 
-    object.addEventListener('on.xt.ripple', eventOn)
+    item.addEventListener('on.xt.ripple', on)
 
     // off
 
-    const eventOff = () => {
+    const off = () => {
       const ripple = self.container.querySelector('.xt-ripple:last-child')
       // animate
       if (ripple) {
@@ -53,13 +70,21 @@ Xt.mount.push({
       }
     }
 
-    object.addEventListener('off.xt.ripple', eventOff)
+    item.addEventListener('off.xt.ripple', off)
 
     // unmount
 
-    return () => {
+    unmounts.push(() => {
       self.destroy()
       self = null
+    })
+  }
+
+  // unmount
+
+  return () => {
+    for (const unmount of unmounts) {
+      unmount()
     }
-  },
-})
+  }
+}

@@ -18,9 +18,9 @@ Use this code to create a **scroll to anchor**.
 | This demo uses [scroll sticky](/components/core/scroll/sticky) and [overlay](/components/core/overlay) see documentation for more info.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/scroll/scrolltoanchor">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/addons/navigation/scrolltoanchor-overlay">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/addons/scroll/scrolltoanchor-overlay">
   </div>
 </demo>
 

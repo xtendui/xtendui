@@ -34,12 +34,12 @@ You can set it in the options or to **assign them also on single nodes** with `d
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/animation">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-multiple">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-multiple-noqueue">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/animation">
+  </demoinline>
+  <demoinline src="demos/components/core/tooltip/animation-multiple">
+  </demoinline>
+  <demoinline src="demos/components/core/tooltip/animation-multiple-noqueue">
+  </demoinline>
 </demo>
 
 ## Css Animation
@@ -55,10 +55,10 @@ You can use also **css animations**, just add them with **class names** `.active
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/animation-css">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-css-multiple">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/animation-css">
+  </demoinline>
+  <demoinline src="demos/components/core/tooltip/animation-css-multiple">
+  </demoinline>
 </demo>
 
 ## Js Animation
@@ -74,10 +74,10 @@ You can use also **javascript animations**, just use [tooltip api](/components/c
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/animation-js">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/animation-js-multiple">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/animation-js">
+  </demoinline>
+  <demoinline src="demos/components/core/tooltip/animation-js-multiple">
+  </demoinline>
 </demo>
 
 ## Design Animation
@@ -85,6 +85,6 @@ You can use also **javascript animations**, just use [tooltip api](/components/c
 Use `.xt-tooltip-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/animation-design">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/animation-design">
+  </demoinline>
 </demo>

@@ -1,5 +1,4 @@
-#iframe--googlelocator {
-  /*##START*/
+.CCC--googlelocator, .CCC--googlelocator-react {
   .googlelocator-main {
     @screen md {
       padding-left: 20rem;
@@ -101,7 +100,6 @@
       @apply p-4 !important;
       border: 0;
       border-radius: 0;
-      //box-shadow: @shadow-light;
       background: theme('colors.white');
       /* scroll */
       @apply xt-overflow-sub;
@@ -132,5 +130,4 @@
       }
     }
   }
-  /*##END*/
 }

@@ -44,7 +44,7 @@ You can specify **on** and **off** events for the overlay.
 You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/overlay/event">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/overlay/event">
   </div>
 </demo>
 
@@ -61,8 +61,8 @@ You can set **html classes on activation**, remember to keep default `classHtml`
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/overlay/class-html">
-  </demovanilla>
+  <demoinline src="demos/components/core/overlay/class-html">
+  </demoinline>
 </demo>
 
 ## Other

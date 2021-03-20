@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
-import { markdownSlug } from 'components/snippets/markdown-slug'
-import { typeSort } from 'components/snippets/type-sort'
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug'
+import { typeSort } from 'src/gatsby/components/snippets/type-sort'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
-import Demo from 'components/demo/demo'
-import DemoVanilla from 'components/demo/demo-vanilla'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout'
+import Demo from 'src/gatsby/components/demo/demo'
+import DemoInline from 'src/gatsby/components/demo/demo-inline'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
-  components: { demo: Demo, demovanilla: DemoVanilla },
+  components: { demo: Demo, demoinline: DemoInline },
 }).Compiler
 
 export default class Template extends React.Component {
@@ -58,8 +58,7 @@ export default class Template extends React.Component {
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="xt-card gatsby_listing-item"
-                          >
+                            className="xt-card gatsby_listing-item">
                             <div className="xt-h4">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)

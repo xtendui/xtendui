@@ -17,6 +17,6 @@ Use [list group](/components/core/list-group) to create a **toolbar**.
 | For aria purpose use `role="toolbar"`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/toolbar/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/toolbar/usage">
+  </demoinline>
 </demo>

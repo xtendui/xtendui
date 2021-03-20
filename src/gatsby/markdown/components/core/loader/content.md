@@ -21,10 +21,10 @@ Use `.animate-xt-spinner` to assing spinner animation.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/spinner">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/spinner-inverse">
-  </demovanilla>
+  <demoinline src="demos/components/core/loader/spinner">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/spinner-inverse">
+  </demoinline>
 </demo>
 
 ## Filler
@@ -46,12 +46,12 @@ Use `.animate-xt-filler-<direction>` to assing filler animation. For `<direction
 Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/filler-x">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-y">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-inverse">
-  </demovanilla>
+  <demoinline src="demos/components/core/loader/filler-x">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-y">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-inverse">
+  </demoinline>
 </demo>
 
 #### Size
@@ -59,19 +59,19 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 Use **tailwind classes** to assign position (e.g. [top-right-bottom-left](https://tailwindcss.com/docs/top-right-bottom-left)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/filler-size-x">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-size-top">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-size-bottom">
-  </demovanilla>
+  <demoinline src="demos/components/core/loader/filler-size-x">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-size-top">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-size-bottom">
+  </demoinline>
 </demo>
 
 <demo>
-  <demovanilla src="vanilla/components/core/loader/filler-size-y">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-size-left">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/loader/filler-size-right">
-  </demovanilla>
+  <demoinline src="demos/components/core/loader/filler-size-y">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-size-left">
+  </demoinline>
+  <demoinline src="demos/components/core/loader/filler-size-right">
+  </demoinline>
 </demo>

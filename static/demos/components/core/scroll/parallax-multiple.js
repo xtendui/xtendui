@@ -4,56 +4,72 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.demo--parallax-multiple',
+  matches: '.CCC--parallax-multiple',
   mount: ({ object }) => {
-    // vars
+    const unmountParallax = mountParallax({ object })
 
-    const trigger0 = object.querySelector('.box-0')
+    // unmount
 
-    // bottom
-
-    const scrollTriggerBottom = {
-      trigger: trigger0,
-      start: 'top bottom',
-      end: 'top bottom-=500', // end 500px after
-      scrub: 1.5,
+    return () => {
+      unmountParallax()
     }
-
-    gsap
-      .timeline({
-        scrollTrigger: scrollTriggerBottom,
-      })
-      .to(trigger0, {
-        x: '50vw',
-      })
-
-    gsap
-      .timeline({
-        scrollTrigger: scrollTriggerBottom,
-      })
-      .to(trigger0, {
-        rotate: '180deg',
-        ease: 'quint.inOut',
-      })
-
-    // top
-
-    const scrollTriggerTop = {
-      trigger: trigger0,
-      start: `bottom top+=500`, // start 500px before
-      end: `bottom top`,
-      scrub: 1.5,
-    }
-
-    gsap
-      .timeline({
-        scrollTrigger: scrollTriggerTop,
-      })
-      .to(trigger0, {
-        rotate: '360deg',
-        scale: 2,
-        ease: 'quint.inOut',
-        immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
-      })
   },
 })
+
+/* mountParallax */
+
+const mountParallax = ({ object }) => {
+  // vars
+
+  const trigger0 = object.querySelector('.box-0')
+
+  // bottom
+
+  const scrollTriggerBottom = {
+    trigger: trigger0,
+    start: 'top bottom',
+    end: 'top bottom-=500', // end 500px after
+    scrub: 1.5,
+  }
+
+  gsap
+    .timeline({
+      scrollTrigger: scrollTriggerBottom,
+    })
+    .to(trigger0, {
+      x: '50vw',
+    })
+
+  gsap
+    .timeline({
+      scrollTrigger: scrollTriggerBottom,
+    })
+    .to(trigger0, {
+      rotate: '180deg',
+      ease: 'quint.inOut',
+    })
+
+  // top
+
+  const scrollTriggerTop = {
+    trigger: trigger0,
+    start: `bottom top+=500`, // start 500px before
+    end: `bottom top`,
+    scrub: 1.5,
+  }
+
+  gsap
+    .timeline({
+      scrollTrigger: scrollTriggerTop,
+    })
+    .to(trigger0, {
+      rotate: '360deg',
+      scale: 2,
+      ease: 'quint.inOut',
+      immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
+    })
+
+  // unmount
+
+  return () => {}
+}

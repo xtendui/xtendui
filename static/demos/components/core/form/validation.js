@@ -1,21 +1,39 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.demo--form-constrain',
+  matches: '.CCC--form-validation',
   mount: ({ object }) => {
-    // eventValidation
+    const unmountValidation = mountValidation({ object })
 
-    const eventValidation = () => {
-      const constraints = ['^(CH-)?\\d{4}$', 'Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950']
-      const constraint = new RegExp(constraints[0], '')
-      if (constraint.test(object.value)) {
-        object.setCustomValidity('')
-      } else {
-        object.setCustomValidity(constraints[1])
-      }
+    // unmount
+
+    return () => {
+      unmountValidation()
     }
-
-    object.addEventListener('input', eventValidation)
-    object.addEventListener('change', eventValidation)
   },
 })
+
+/* mountValidation */
+
+const mountValidation = ({ object }) => {
+  const input = object.querySelector('.input--constrains')
+
+  // eventValidation
+
+  const eventValidation = () => {
+    const constraints = ['^(CH-)?\\d{4}$', 'Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950']
+    const constraint = new RegExp(constraints[0], '')
+    if (constraint.test(input.value)) {
+      input.setCustomValidity('')
+    } else {
+      input.setCustomValidity(constraints[1])
+    }
+  }
+
+  input.addEventListener('input', eventValidation)
+  input.addEventListener('change', eventValidation)
+
+  // unmount
+
+  return () => {}
+}

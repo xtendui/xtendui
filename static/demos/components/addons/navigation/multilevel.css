@@ -1,4 +1,4 @@
-.demo--multilevel {
+.CCC--multilevel, .CCC--multilevel-react {
   .xt-toggle {
     /* initial */
     @apply transform ease-out duration-500;

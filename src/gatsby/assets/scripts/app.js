@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/toggle'
-import 'xtendui/src/core/tooltip'
+import 'xtendui/dist/xtend-core'
 import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -8,9 +7,8 @@ gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const classes = require('components/snippets/classes').classes
-
-import 'assets/scripts/shared'
+import 'src/gatsby/assets/scripts/shared'
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 /**
  * prevent href="#" links
@@ -21,6 +19,72 @@ document.addEventListener('click', e => {
   if (href === '#') {
     e.preventDefault()
   }
+})
+
+/**
+ * switcher
+ */
+
+Xt.mount.push({
+  matches: '.button--switch-html',
+  mount: ({ object }) => {
+    // click
+
+    const eventClick = () => {
+      localStorage.setItem('mode', false)
+      window.location.reload()
+      /* @TODO demos in react
+      for (const el of document.querySelectorAll('.button--switch-html')) {
+        el.classList.add('active')
+      }
+      for (const el of document.querySelectorAll('.button--switch-react')) {
+        el.classList.remove('active')
+      }
+      for (const demo of window.currentDemos) {
+        demo.setMode(false)
+      }
+      */
+    }
+
+    object.addEventListener('click', eventClick)
+
+    // init
+
+    if (localStorage.getItem('mode') !== 'react') {
+      object.classList.add('active')
+    }
+  },
+})
+
+Xt.mount.push({
+  matches: '.button--switch-react',
+  mount: ({ object }) => {
+    // click
+
+    const eventClick = () => {
+      localStorage.setItem('mode', 'react')
+      window.location.reload()
+      /* @TODO demos in react
+      for (const el of document.querySelectorAll('.button--switch-html')) {
+        el.classList.remove('active')
+      }
+      for (const el of document.querySelectorAll('.button--switch-react')) {
+        el.classList.add('active')
+      }
+      for (const demo of window.currentDemos) {
+        demo.setMode('react')
+      }
+      */
+    }
+
+    object.addEventListener('click', eventClick)
+
+    // init
+
+    if (localStorage.getItem('mode') === 'react') {
+      object.classList.add('active')
+    }
+  },
 })
 
 /**
@@ -331,6 +395,7 @@ Xt.mount.push({
 
     let self = new Xt.Scrolltoanchor(object, {
       elements: '[href^="#"]:not([aria-controls])',
+      hash: true,
       scrollDistance: () => {
         return window.innerHeight / 10
       },

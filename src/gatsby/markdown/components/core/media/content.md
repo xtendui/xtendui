@@ -13,8 +13,8 @@ When images are loading the `.xt-media-container` background is shown.
 Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/variant">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/variant">
+  </demoinline>
 </demo>
 
 ## Responsive
@@ -30,8 +30,8 @@ Use **tailwind classes** on `.xt-media-inner` to assign relative position. The r
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/responsive">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/responsive">
+  </demoinline>
 </demo>
 
 ## Aspect ratio
@@ -39,8 +39,8 @@ Use **tailwind classes** on `.xt-media-inner` to assign relative position. The r
 Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/ratio">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/ratio">
+  </demoinline>
 </demo>
 
 Or use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images.
@@ -54,8 +54,8 @@ Or use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to mak
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/ratio-class">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/ratio-class">
+  </demoinline>
 </demo>
 
 ## Object fit
@@ -63,19 +63,19 @@ Or use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to mak
 Use **tailwind classes** to assign object fit. (e.g. [object-position](https://tailwindcss.com/docs/object-position)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/cover">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/media/contain">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/cover">
+  </demoinline>
+  <demoinline src="demos/components/core/media/contain">
+  </demoinline>
 </demo>
 
 You can also use **video** or **iframe** for media.
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/video">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/media/iframe">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/video">
+  </demoinline>
+  <demoinline src="demos/components/core/media/iframe">
+  </demoinline>
 </demo>
 
 ## Height
@@ -83,13 +83,13 @@ You can also use **video** or **iframe** for media.
 Use **tailwind classes** to assign height (e.g. [height](https://tailwindcss.com/docs/height)).
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/height">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/height">
+  </demoinline>
 </demo>
 
 You can also use `min-height: <Value>` to have a min height (use narrow screen to see it in action).
 
 <demo>
-  <demovanilla src="vanilla/components/core/media/min-height">
-  </demovanilla>
+  <demoinline src="demos/components/core/media/min-height">
+  </demoinline>
 </demo>

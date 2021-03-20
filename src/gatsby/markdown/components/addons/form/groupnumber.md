@@ -19,8 +19,8 @@ Use this code to create a **group number**.
 You can add steps with `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current value.	
 
 <demo>
-  <demovanilla src="vanilla/components/addons/form/groupnumber">
-  </demovanilla>
+  <demoinline src="demos/components/addons/form/groupnumber">
+  </demoinline>
 </demo>
 
 ## Options

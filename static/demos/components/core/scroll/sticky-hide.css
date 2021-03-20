@@ -1,9 +1,9 @@
-.demo--sticky-hide-top {
-  .demo--sticky-hide-top-sub .h6 {
+.CCC--sticky-hide, .CCC--sticky-hide-react {
+  .sticky--hide-top-sub .h6 {
     @apply transition-all duration-500 ease-in-out-quint;
   }
-  .demo--sticky-hide-content.scrolling-down.scrolling-hide {
-    .demo--sticky-hide-top-sub .h6 {
+  .sticky--hide-content.scrolling-down.scrolling-hide {
+    .sticky--hide-top-sub .h6 {
       @apply text-xl;
     }
   }

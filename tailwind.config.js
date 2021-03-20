@@ -3,18 +3,18 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
-    content: ['./src/**/*.css', './src/**/*.js'],
+    content: ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
     options: {
       safelist: {
         greedy: [
-          // demos
-          /^iframe--/,
+          // popperjs
+          /^data-popper-/,
           // code
           /pre/,
           /code/,
           /token/,
-          // popperjs
-          /^data-popper-/,
+          // demos
+          /^iframe--/,
         ],
       },
     },

@@ -23,15 +23,15 @@ Use `.xt-card` to create a **button**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/card/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/card/usage">
+  </demoinline>
 </demo>
 
 You can also **stack** card content.
 
 <demo>
-  <demovanilla src="vanilla/components/core/card/usage-stack">
-  </demovanilla>
+  <demoinline src="demos/components/core/card/usage-stack">
+  </demoinline>
 </demo>
 
 Check subpage to [customize content](/components/core/card/content).

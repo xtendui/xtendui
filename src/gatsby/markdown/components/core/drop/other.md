@@ -23,8 +23,8 @@ Example of **component disabled on desktop** with [match media](/components/core
 Disable and reset styles accordingly.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/disable">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/disable">
+  </demoinline>
 </demo>
 
 ## Other Content
@@ -32,8 +32,8 @@ Disable and reset styles accordingly.
 You can put **any content** inside, here are some examples.
 
 <demo>
-  <demovanilla src="vanilla/components/core/drop/other-content">
-  </demovanilla>
+  <demoinline src="demos/components/core/drop/other-content">
+  </demoinline>
 </demo>
 
 ## Popperjs

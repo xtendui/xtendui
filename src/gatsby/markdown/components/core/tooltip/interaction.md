@@ -46,17 +46,17 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 | When using `mouse` events use only [multiple mode](/components/core/drop#usage-multiple) **when you want to interact with the targets**.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/event">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/event">
+  </demoinline>
 </demo>
 
 You can have **element's link** and **click events** prevented when the tooltip opens with `preventEvent: true`, they will trigger only if the tooltip is already opened.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/prevent-event">
-  </demovanilla>
-  <demovanilla src="vanilla/components/core/tooltip/prevent-event-click">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/prevent-event">
+  </demoinline>
+  <demoinline src="demos/components/core/tooltip/prevent-event-click">
+  </demoinline>
 </demo>
 
 ## Backdrop
@@ -64,6 +64,6 @@ You can have **element's link** and **click events** prevented when the tooltip 
 Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `active:z-tooltip` to have the button above the backdrop.
 
 <demo>
-  <demovanilla src="vanilla/components/core/tooltip/backdrop">
-  </demovanilla>
+  <demoinline src="demos/components/core/tooltip/backdrop">
+  </demoinline>
 </demo>

@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { markdownSlug } from 'components/snippets/markdown-slug'
-import { typeSort } from 'components/snippets/type-sort'
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug'
+import { typeSort } from 'src/gatsby/components/snippets/type-sort'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default function Header({ page }) {
   const { site } = useStaticQuery(graphql`
@@ -48,12 +48,12 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Twitter"
-                        dangerouslySetInnerHTML={{ __html: classes.iconTwitter() }}
-                      ></a>
+                        dangerouslySetInnerHTML={{
+                          __html: classes.iconTwitter(),
+                        }}></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                        >
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -65,12 +65,12 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Npm"
-                        dangerouslySetInnerHTML={{ __html: classes.iconPackage() }}
-                      ></a>
+                        dangerouslySetInnerHTML={{
+                          __html: classes.iconPackage(),
+                        }}></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                        >
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -82,12 +82,12 @@ export default function Header({ page }) {
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Github"
-                        dangerouslySetInnerHTML={{ __html: classes.iconGithub() }}
-                      ></a>
+                        dangerouslySetInnerHTML={{
+                          __html: classes.iconGithub(),
+                        }}></a>
                       <div className="xt-tooltip p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                        >
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -98,8 +98,7 @@ export default function Header({ page }) {
                   <button
                     type="button"
                     className={`xt-button ${classes.buttonMd()} rounded-md gatsby_button--overlay`}
-                    aria-label="Menu"
-                  >
+                    aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon"
@@ -110,8 +109,7 @@ export default function Header({ page }) {
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                      strokeLinejoin="round">
                       <line x1="3" y1="12" x2="21" y2="12"></line>
                       <line x1="3" y1="6" x2="21" y2="6"></line>
                       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -132,9 +130,40 @@ export default function Header({ page }) {
                 <div
                   className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"
-                  dangerouslySetInnerHTML={{ __html: classes.iconX() }}
-                ></div>
-                <div className="mt-6">
+                  dangerouslySetInnerHTML={{ __html: classes.iconX() }}></div>
+                <div className="mt-16 md:mt-2">
+                  <div className="gatsby_site-header_switcher_container">
+                    <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
+                      <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
+                        <button
+                          type="button"
+                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
+                          Html
+                        </button>
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                          <div
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
+                            Switch to Html
+                          </div>
+                        </div>
+                      </div>
+                      <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
+                        <button
+                          type="button"
+                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
+                          React
+                        </button>
+                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                          <div
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
+                            Switch to React
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4">
                   <div className="gatsby_site-header_links_container">
                     <div className="gatsby_site-header_links">
                       {page.menus.posts.map(({ post }, i) => (
@@ -150,8 +179,7 @@ export default function Header({ page }) {
                                   ? 'current'
                                   : ''
                                 : ''
-                            }`}
-                          >
+                            }`}>
                             <span>{post.frontmatter.title}</span>
                           </Link>
                         </div>
@@ -183,8 +211,7 @@ export default function Header({ page }) {
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
                                                 : ''
-                                            }`}
-                                          >
+                                            }`}>
                                             <span>{post.frontmatter.title}</span>
                                           </a>
                                           <div className="gatsby_site-header_adiacent_inner">
@@ -203,8 +230,7 @@ export default function Header({ page }) {
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
                                                 : ''
-                                            }`}
-                                          >
+                                            }`}>
                                             <span>{post.frontmatter.title}</span>
                                           </Link>
                                           <div className="gatsby_site-header_adiacent_inner">
@@ -227,8 +253,7 @@ export default function Header({ page }) {
                                                         post.frontmatter.category === page.post.frontmatter.category
                                                           ? 'active'
                                                           : ''
-                                                      }`}
-                                                    >
+                                                      }`}>
                                                       <span>
                                                         {adiacent.frontmatter.title
                                                           .split(/[\s-]+/)

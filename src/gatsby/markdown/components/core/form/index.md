@@ -20,8 +20,8 @@ Use this code to create a **form items**.
 | For aria purpose [label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea`, we use `aria-label="Label"`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/form/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/form/usage">
+  </demoinline>
 </demo>
 
 Check subpage to [customize content](/components/core/form/content) and [customize layout](/components/core/form/layout).

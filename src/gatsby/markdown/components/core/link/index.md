@@ -29,8 +29,8 @@ Use `a` without classes or `.xt-link` to create a **link**.
 | Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
 
 <demo>
-  <demovanilla src="vanilla/components/core/link/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/link/usage">
+  </demoinline>
 </demo>
 
 ## Variant
@@ -47,6 +47,6 @@ Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **paren
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/link/variant-inverse">
-  </demovanilla>
+  <demoinline src="demos/components/core/link/variant-inverse">
+  </demoinline>
 </demo>

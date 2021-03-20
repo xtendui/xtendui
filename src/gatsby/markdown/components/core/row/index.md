@@ -23,8 +23,8 @@ Use `.xt-row` to create a **row**.
 </div>
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/usage">
-  </demovanilla>
+  <demoinline src="demos/components/core/row/usage">
+  </demoinline>
 </demo>
 
 [[notePrimary]]

@@ -50,7 +50,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     }
     // scroll
     overlay.scrollTop = window.keepSidebarScroll
-    require('assets/scripts/gatsby.js').gatsbySidebarContain()
+    require('src/gatsby/assets/scripts/gatsby.js').gatsbySidebarContain()
   }
   // only if changing page
   if (prevLocation) {

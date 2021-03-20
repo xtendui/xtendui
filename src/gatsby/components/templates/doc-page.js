@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
-import { markdownSlug } from 'components/snippets/markdown-slug'
+import { markdownSlug } from 'src/gatsby/components/snippets/markdown-slug'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
-import Demo from 'components/demo/demo'
-import DemoVanilla from 'components/demo/demo-vanilla'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout'
+import Demo from 'src/gatsby/components/demo/demo'
+import DemoInline from 'src/gatsby/components/demo/demo-inline'
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
-  components: { demo: Demo, demovanilla: DemoVanilla },
+  components: { demo: Demo, demoinline: DemoInline },
 }).Compiler
 
 class Template extends React.Component {
@@ -62,8 +62,7 @@ class Template extends React.Component {
                               <a
                                 role="button"
                                 className="xt-card gatsby_listing-item gatsby_listing-item--themes"
-                                data-gatsby-listing-toggle
-                              >
+                                data-gatsby-listing-toggle>
                                 <div>
                                   <div className="xt-h4">
                                     {adiacent.frontmatter.title
@@ -74,7 +73,7 @@ class Template extends React.Component {
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
-                                        <div className="xt-media-container bg-gray-200" key={z}>
+                                        <div className="xt-media-container bg-gray-600" key={z}>
                                           <div className="xt-media-inner">
                                             <video
                                               className="xt-media object-cover object-center"
@@ -82,8 +81,7 @@ class Template extends React.Component {
                                               muted
                                               playsInline
                                               loop
-                                              autoPlay
-                                            >
+                                              autoPlay>
                                               <source
                                                 type="video/mp4"
                                                 src={assets.item.file.url ? assets.item.file.url : null}
@@ -99,18 +97,12 @@ class Template extends React.Component {
                               {adiacent.frontmatter.demos ? (
                                 <Demo>
                                   {adiacent.frontmatter.demos.map((demo, i) => {
-                                    const type = demo.split('/')[0]
-                                    if (type === 'vanilla') {
-                                      return <DemoVanilla src={demo} key={i}></DemoVanilla>
-                                    } else if (type === 'iframe') {
-                                      return (
-                                        <div
-                                          className="gatsby_demo_item xt-toggle"
-                                          data-iframe-fullscreen={demo}
-                                          key={i}
-                                        ></div>
-                                      )
-                                    }
+                                    return (
+                                      <div
+                                        className="gatsby_demo_item xt-toggle"
+                                        data-iframe-fullscreen={`demos/${demo}`}
+                                        key={i}></div>
+                                    )
                                   })}
                                 </Demo>
                               ) : null}

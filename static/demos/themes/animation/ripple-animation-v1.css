@@ -1,5 +1,4 @@
-#iframe--ripple-animation-v1 {
-  /*##START*/
+.CCC--ripple-animation-v1, .CCC--ripple-animation-v1-react {
   .xt-ripple-container {
     opacity: .075;
   }
@@ -16,5 +15,4 @@
       background: theme('colors.white');
     }
   }
-  /*##END*/
 }

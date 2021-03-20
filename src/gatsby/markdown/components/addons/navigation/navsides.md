@@ -16,8 +16,8 @@ Use this code to create a **navigation sides** on toggle. Position relative to c
 | This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/navigation/navsides-toggle">
-  </demovanilla>
+  <demoinline src="demos/components/addons/navigation/navsides-toggle">
+  </demoinline>
 </demo>
 
 #### Slider
@@ -28,6 +28,6 @@ Use this code to create a **navigation sides** on slider.
 | This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/navigation/navsides-slider">
-  </demovanilla>
+  <demoinline src="demos/components/addons/navigation/navsides-slider">
+  </demoinline>
 </demo>

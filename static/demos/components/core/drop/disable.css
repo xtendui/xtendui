@@ -1,4 +1,4 @@
-.demo--drop-disable {
+.CCC--drop-disable, .CCC--drop-disable-react {
   a.xt-drop-disabled, button.xt-drop-disabled {
     display: none;
   }

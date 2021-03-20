@@ -15,6 +15,6 @@
 @import "./_footer.css";
 @import "./_main.css";
 @import "./_demo.css";
-@import "xtendui/build/xtend-demos.css";
+@import "xtendui/dist/xtend-demos.css";
 
 @import "tailwindcss/utilities";

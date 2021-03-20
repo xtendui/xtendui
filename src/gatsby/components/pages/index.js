@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
+import SEO from 'src/gatsby/components/seo'
+import Layout from 'src/gatsby/components/layout'
 
-const classes = require('components/snippets/classes').classes
+const classes = require('src/gatsby/components/snippets/classes').classes
 
 export default class Page extends React.Component {
   render() {
@@ -73,12 +73,12 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Twitter"
-                          dangerouslySetInnerHTML={{ __html: classes.iconTwitter() }}
-                        ></a>
+                          dangerouslySetInnerHTML={{
+                            __html: classes.iconTwitter(),
+                          }}></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                          >
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Twitter
                           </div>
                         </div>
@@ -90,12 +90,12 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Npm"
-                          dangerouslySetInnerHTML={{ __html: classes.iconPackage() }}
-                        ></a>
+                          dangerouslySetInnerHTML={{
+                            __html: classes.iconPackage(),
+                          }}></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                          >
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Npm
                           </div>
                         </div>
@@ -107,12 +107,12 @@ export default class Page extends React.Component {
                           rel="noopener noreferrer"
                           className="xt-button gatsby_home-main_social_btn"
                           title="Github"
-                          dangerouslySetInnerHTML={{ __html: classes.iconGithub() }}
-                        ></a>
+                          dangerouslySetInnerHTML={{
+                            __html: classes.iconGithub(),
+                          }}></a>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}
-                          >
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Github
                           </div>
                         </div>

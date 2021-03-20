@@ -21,8 +21,8 @@ Use `.xt-row-stretch` to stretch content vertically.
 When using cards you can space with `margin auto` on **card content**. When not using cards, be sure that the content have class `flex-auto`.
 
 <demo>
-  <demovanilla src="vanilla/components/core/row/stretch">
-  </demovanilla>
+  <demoinline src="demos/components/core/row/stretch">
+  </demoinline>
 </demo>
 
 ## Overflow
@@ -38,6 +38,6 @@ Use `.xt-row-overflow` to have **overflow scroll when overflowing**.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="iframe/components/core/row/overflow">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/row/overflow">
   </div>
 </demo>

@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/some-other-sitemap.xml`,
-        exclude: [`/iframe/**/*`, `/tests/**/*`],
+        exclude: [`/hidden/**/*`, `/demos/**/*`],
       },
     },
     // manifest
@@ -64,8 +64,7 @@ module.exports = {
       options: {
         root: './',
         aliases: {
-          assets: './src/gatsby/assets',
-          components: './src/gatsby/components',
+          static: './static',
           // resolve xtendui import js and css
           xtendui: path.resolve(__dirname, './'),
         },
@@ -83,14 +82,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: './src/gatsby/components/pages/',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: './src/gatsby/code/',
-        ignore: ['vanilla/**/**'],
+        path: 'src/gatsby/components/pages/',
       },
     },
     // contenful

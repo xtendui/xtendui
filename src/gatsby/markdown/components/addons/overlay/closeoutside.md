@@ -11,6 +11,6 @@ description: "Overlay close button positioned outside on desktop."
 Use this code to create a **close outside**.
 
 <demo>
-  <demovanilla src="vanilla/components/addons/overlay/closeoutside">
-  </demovanilla>
+  <demoinline src="demos/components/addons/overlay/closeoutside">
+  </demoinline>
 </demo>
