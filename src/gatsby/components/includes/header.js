@@ -137,7 +137,7 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
                           Html
                         </button>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
@@ -150,7 +150,7 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
                           React
                         </button>
                         <div className="xt-tooltip p-2 group" data-xt-duration="300">
