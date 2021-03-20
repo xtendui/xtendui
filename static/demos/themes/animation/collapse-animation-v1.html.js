@@ -8,7 +8,7 @@ const animItemOpacity =
 const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0'
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div>
     <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">List Group</div>
 
     <form

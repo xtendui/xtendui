@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/overlay'
 import 'xtendui/src/core/toggle'
+import 'xtendui/src/core/overlay'
 import 'xtendui/src/core/tooltip'
 import 'xtendui/src/addons/scrolltoanchor'
 import gsap from 'gsap'

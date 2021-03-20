@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <div class="demo--overlay-disable" data-xt-overlay="{ matches: { '(min-width: 768px)': { disabled: true } } }">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
         Overlay

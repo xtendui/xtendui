@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <nav class="xt-list xt-list-3 flex-col">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem Ipsum

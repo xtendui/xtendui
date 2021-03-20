@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor-overlay .xt-sticky',
+  matches: '.CCC-scrolltoanchor-overlay .xt-sticky',
   mount: ({ object }) => {
     // vars
 
@@ -53,7 +53,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor-overlay body',
+  matches: '.CCC-scrolltoanchor-overlay body',
   mount: ({ object }) => {
     // init
 

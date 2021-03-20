@@ -2,241 +2,281 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
-// you can remove this
-
 Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 input[type="checkbox"]',
+  matches: '.CCC--menu-navigation-v1',
   mount: ({ object }) => {
-    const checkChange = () => {
-      const component = document.querySelector('#iframe--menu-navigation-v1 .megamenu')
-      if (component) {
-        const self = Xt.get('xt-drop', component)
-        if (self) {
-          if (object.checked) {
-            self.options.on = 'mouseenter'
-            self.options.off = 'mouseleave'
-            self.options.delay = 150
-          } else {
-            self.options.on = 'click'
-            self.options.off = 'click'
-            self.options.delay = false
-          }
-          self.destroy(true)
-          self.reinit()
-        }
-      }
-    }
+    const unmountDrops = mountDrops({ object })
+    const unmountLine = mountLine({ object })
+    const unmountSwitcher = mountSwitcher({ object })
 
-    object.addEventListener('change', checkChange)
-    requestAnimationFrame(() => {
-      checkChange()
-    })
+    // unmount
+
+    return () => {
+      unmountDrops()
+      unmountLine()
+      unmountSwitcher()
+    }
   },
 })
 
-/**
- * .megamenu
- */
+/* mountDrops */
 
-Xt.mount.push({
-  matches: '#iframe--menu-navigation-v1 .megamenu',
-  mount: ({ object }) => {
-    /**
-     * .megamenu drops
-     */
+const mountDrops = ({ object }) => {
+  const megamenu = object.querySelector('.megamenu')
 
-    // vars
+  // vars
 
-    const contentXOn = -40
-    const contentXOff = -40
-    const contentTime = 0.75
-    const contentDelayOn = 0.25
-    const contentEase = 'quint.out'
+  const contentXOn = -40
+  const contentXOff = -40
+  const contentTime = 0.75
+  const contentDelayOn = 0.25
+  const contentEase = 'quint.out'
 
-    const designTime = 1
-    const designDelayOff = 0.1 // fix opacity when changing fast
-    const designEase = 'expo.out'
+  const designTime = 1
+  const designDelayOff = 0.1 // fix opacity when changing fast
+  const designEase = 'expo.out'
 
-    const innerTime = 1
-    const innerEase = 'expo.out'
+  const innerTime = 1
+  const innerEase = 'expo.out'
 
-    const dropDelay = 150
-    let innerHeightFinal = 0
-    let innerHeightCache = 0
+  const dropDelay = 150
+  let innerHeightFinal = 0
+  let innerHeightCache = 0
 
-    // init
+  // init
 
-    let self = new Xt.Drop(object, {
-      on: 'mouseenter',
-      off: 'mouseleave',
-      queue: false,
-      duration: 1000,
-      delay: dropDelay,
-      preventEvent: true,
+  let self = new Xt.Drop(megamenu, {
+    on: 'mouseenter',
+    off: 'mouseleave',
+    queue: false,
+    duration: 1000,
+    delay: dropDelay,
+    preventEvent: true,
+  })
+
+  // setup
+
+  for (const tr of self.targets) {
+    const inner = tr.querySelector('.xt-drop-inner')
+    gsap.set(inner, {
+      height: 0,
     })
+  }
 
-    // setup
+  // on
 
-    for (const tr of self.targets) {
-      const inner = tr.querySelector('.xt-drop-inner')
-      gsap.set(inner, {
-        height: 0,
+  const on = e => {
+    const tr = e.target
+    // useCapture delegation
+    if (self.targets.includes(tr)) {
+      // content
+      const content = tr.querySelector('.xt-drop-content')
+      gsap.killTweensOf(content)
+      gsap.set(content, {
+        x: contentXOn * self.direction,
+        opacity: 0,
       })
+      gsap.to(content, {
+        x: 0,
+        opacity: 1,
+        duration: contentTime,
+        delay: contentDelayOn,
+        ease: contentEase,
+      })
+      // design
+      const design = tr.querySelector('.xt-design')
+      gsap.killTweensOf(design)
+      gsap.set(design, {
+        opacity: 1,
+      })
+      // inner
+      const inner = tr.querySelector('.xt-drop-inner')
+      gsap.killTweensOf(inner)
+      gsap.set(inner, {
+        height: '',
+      })
+      const innerHeight = inner.clientHeight
+      innerHeightFinal = innerHeight
+      gsap.set(inner, {
+        height: innerHeightCache,
+      })
+      gsap
+        .to(inner, {
+          height: innerHeight,
+          duration: innerTime,
+          ease: innerEase,
+        })
+        .eventCallback('onUpdate', () => {
+          innerHeightCache = inner.clientHeight
+        })
+      // when sequential interaction
+      if (self.direction) {
+        // not current targets
+        for (const target of self.targets.filter(x => !self.hasCurrent(x))) {
+          // inner
+          const inner = target.querySelector('.xt-drop-inner')
+          gsap.killTweensOf(inner)
+          gsap.set(inner, {
+            height: innerHeightCache,
+          })
+          gsap.to(inner, {
+            height: innerHeightFinal,
+            duration: innerTime,
+            ease: innerEase,
+          })
+        }
+      }
     }
+  }
 
-    // on
+  self.object.addEventListener('on.xt.drop', on, true)
 
-    const eventOn = e => {
-      const tr = e.target
-      // useCapture delegation
-      if (self.targets.includes(tr)) {
-        // content
-        const content = tr.querySelector('.xt-drop-content')
-        gsap.killTweensOf(content)
-        gsap.set(content, {
-          x: contentXOn * self.direction,
-          opacity: 0,
-        })
-        gsap.to(content, {
-          x: 0,
-          opacity: 1,
-          duration: contentTime,
-          delay: contentDelayOn,
-          ease: contentEase,
-        })
-        // design
-        const design = tr.querySelector('.xt-design')
-        gsap.killTweensOf(design)
-        gsap.set(design, {
-          opacity: 1,
-        })
+  // off
+
+  const off = e => {
+    const tr = e.target
+    // useCapture delegation
+    if (self.targets.includes(tr)) {
+      // content
+      const content = tr.querySelector('.xt-drop-content')
+      gsap.killTweensOf(content)
+      gsap.to(content, {
+        x: contentXOff * self.direction * -1,
+        opacity: 0,
+        duration: contentTime,
+        ease: contentEase,
+      })
+      // design
+      const design = tr.querySelector('.xt-design')
+      gsap.killTweensOf(design)
+      gsap.to(design, {
+        opacity: 0,
+        duration: designTime,
+        ease: designEase,
+        delay: designDelayOff,
+      })
+      // when not sequential interaction
+      if (!self.direction) {
         // inner
         const inner = tr.querySelector('.xt-drop-inner')
         gsap.killTweensOf(inner)
-        gsap.set(inner, {
-          height: '',
-        })
-        const innerHeight = inner.clientHeight
-        innerHeightFinal = innerHeight
-        gsap.set(inner, {
-          height: innerHeightCache,
-        })
         gsap
           .to(inner, {
-            height: innerHeight,
+            height: 0,
             duration: innerTime,
             ease: innerEase,
           })
           .eventCallback('onUpdate', () => {
             innerHeightCache = inner.clientHeight
           })
-        // when sequential interaction
-        if (self.direction) {
-          // not current targets
-          for (const target of self.targets.filter(x => !self.hasCurrent(x))) {
-            // inner
-            const inner = target.querySelector('.xt-drop-inner')
-            gsap.killTweensOf(inner)
-            gsap.set(inner, {
-              height: innerHeightCache,
-            })
-            gsap.to(inner, {
-              height: innerHeightFinal,
-              duration: innerTime,
-              ease: innerEase,
-            })
-          }
-        }
       }
     }
+  }
 
-    self.object.addEventListener('on.xt.drop', eventOn, true)
+  self.object.addEventListener('off.xt.drop', off, true)
 
-    // off
+  // unmount
 
-    const eventOff = e => {
-      const tr = e.target
-      // useCapture delegation
-      if (self.targets.includes(tr)) {
-        // content
-        const content = tr.querySelector('.xt-drop-content')
-        gsap.killTweensOf(content)
-        gsap.to(content, {
-          x: contentXOff * self.direction * -1,
-          opacity: 0,
-          duration: contentTime,
-          ease: contentEase,
-        })
-        // design
-        const design = tr.querySelector('.xt-design')
-        gsap.killTweensOf(design)
-        gsap.to(design, {
-          opacity: 0,
-          duration: designTime,
-          ease: designEase,
-          delay: designDelayOff,
-        })
-        // when not sequential interaction
-        if (!self.direction) {
-          // inner
-          const inner = tr.querySelector('.xt-drop-inner')
-          gsap.killTweensOf(inner)
-          gsap
-            .to(inner, {
-              height: 0,
-              duration: innerTime,
-              ease: innerEase,
-            })
-            .eventCallback('onUpdate', () => {
-              innerHeightCache = inner.clientHeight
-            })
-        }
-      }
+  return () => {
+    self.destroy()
+    self = null
+  }
+}
+
+/* mountLine */
+
+const mountLine = ({ object }) => {
+  const megamenu = object.querySelector('.megamenu')
+
+  // vars
+
+  const btns = object.querySelectorAll('.xt-list > .button--line')
+  const drops = object.querySelectorAll('.xt-drop-item')
+  const line = object.querySelector('.megamenu-line')
+
+  const dropDelay = 150
+  const lineHeight = 7
+  const lineTime = 0.5
+  const lineEase = 'quint.out'
+  let lineFirst = true
+  let btnOn = false
+
+  // enter
+
+  const enter = e => {
+    let el = e.target
+    if (Array.from(btns).includes(el)) {
+      btnOn = true
+    } else {
+      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
     }
-
-    self.object.addEventListener('off.xt.drop', eventOff, true)
-
-    /**
-     * .megamenu line
-     */
-
-    // vars
-
-    let lineFirst = true
-    let btnOn = false
-    const btns = object.querySelectorAll('.xt-list > .button--line')
-    const drops = object.querySelectorAll('.xt-drop-item')
-    const line = object.querySelector('.megamenu-line')
-
-    const lineHeight = 7
-    const lineTime = 0.5
-    const lineEase = 'quint.out'
-
-    // enter
-
-    const eventEnter = e => {
-      let el = e.target
-      if (Array.from(btns).includes(el)) {
-        btnOn = true
-      } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+    // raf after off.xt.drop
+    requestAnimationFrame(() => {
+      // line
+      const lineX = el.offsetLeft
+      const lineY = el.offsetTop + el.offsetHeight
+      const lineWidth = el.offsetWidth
+      if (lineFirst) {
+        gsap.set(line, {
+          x: lineX,
+          y: lineY,
+          width: lineWidth,
+          height: 0,
+          opacity: 0,
+        })
+        lineFirst = false
       }
-      // raf after off.xt.drop
-      requestAnimationFrame(() => {
-        // line
-        const lineX = el.offsetLeft
-        const lineY = el.offsetTop + el.offsetHeight
-        const lineWidth = el.offsetWidth
-        if (lineFirst) {
-          gsap.set(line, {
-            x: lineX,
+      gsap.to(line, {
+        x: lineX,
+        y: lineY - lineHeight,
+        width: lineWidth,
+        height: lineHeight,
+        opacity: 1,
+        duration: lineTime,
+        ease: lineEase,
+      })
+    })
+  }
+
+  for (const btn of btns) {
+    btn.addEventListener('mouseenter', enter)
+  }
+
+  for (const drop of drops) {
+    drop.addEventListener('on.xt.drop', enter)
+  }
+
+  // leave
+
+  const leave = e => {
+    let el = e.target
+    if (Array.from(btns).includes(el)) {
+      btnOn = false
+    } else {
+      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+    }
+    // after mouseenter and off.xt.drop
+    setTimeout(() => {
+      // not when drop is still open
+      const self = Xt.get('xt-drop', megamenu)
+      const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
+      if (!dropBtnActive) {
+        if (!btnOn) {
+          // line
+          const lineY = el.offsetTop + el.offsetHeight
+          lineFirst = true
+          gsap.to(line, {
             y: lineY,
-            width: lineWidth,
-            height: 0,
             opacity: 0,
+            duration: lineTime,
+            ease: lineEase,
           })
-          lineFirst = false
         }
+      } else {
+        // line
+        const lineX = dropBtnActive.offsetLeft
+        const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
+        const lineWidth = dropBtnActive.offsetWidth
         gsap.to(line, {
           x: lineX,
           y: lineY - lineHeight,
@@ -246,73 +286,53 @@ Xt.mount.push({
           duration: lineTime,
           ease: lineEase,
         })
-      })
-    }
-
-    for (const btn of btns) {
-      btn.addEventListener('mouseenter', eventEnter)
-    }
-
-    for (const drop of drops) {
-      drop.addEventListener('on.xt.drop', eventEnter)
-    }
-
-    // leave
-
-    const eventLeave = e => {
-      let el = e.target
-      if (Array.from(btns).includes(el)) {
-        btnOn = false
-      } else {
-        el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
       }
-      // after mouseenter and off.xt.drop
-      setTimeout(() => {
-        // not when drop is still open
-        const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
-        if (!dropBtnActive) {
-          if (!btnOn) {
-            // line
-            const lineY = el.offsetTop + el.offsetHeight
-            lineFirst = true
-            gsap.to(line, {
-              y: lineY,
-              opacity: 0,
-              duration: lineTime,
-              ease: lineEase,
-            })
-          }
-        } else {
-          // line
-          const lineX = dropBtnActive.offsetLeft
-          const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
-          const lineWidth = dropBtnActive.offsetWidth
-          gsap.to(line, {
-            x: lineX,
-            y: lineY - lineHeight,
-            width: lineWidth,
-            height: lineHeight,
-            opacity: 1,
-            duration: lineTime,
-            ease: lineEase,
-          })
-        }
-      }, dropDelay)
-    }
+    }, dropDelay)
+  }
 
-    for (const btn of btns) {
-      btn.addEventListener('mouseleave', eventLeave)
-    }
+  for (const btn of btns) {
+    btn.addEventListener('mouseleave', leave)
+  }
 
-    for (const drop of drops) {
-      drop.addEventListener('off.xt.drop', eventLeave)
-    }
+  for (const drop of drops) {
+    drop.addEventListener('off.xt.drop', leave)
+  }
 
-    // unmount
+  // unmount
 
-    return function () {
-      self.destroy()
-      self = null
+  return () => {}
+}
+
+/* mountSwitcher */
+
+const mountSwitcher = ({ object }) => {
+  const megamenu = object.querySelector('.megamenu')
+  const switcher = object.querySelector('input[type="checkbox"]')
+
+  const change = () => {
+    const self = Xt.get('xt-drop', megamenu)
+    if (self) {
+      if (switcher.checked) {
+        self.options.on = 'mouseenter'
+        self.options.off = 'mouseleave'
+        self.options.delay = 150
+      } else {
+        self.options.on = 'click'
+        self.options.off = 'click'
+        self.options.delay = false
+      }
+      self.destroy(true)
+      self.reinit()
     }
-  },
-})
+  }
+
+  switcher.addEventListener('change', change)
+
+  requestAnimationFrame(() => {
+    change()
+  })
+
+  // unmount
+
+  return () => {}
+}

@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor .xt-sticky',
+  matches: '.CCC-scrolltoanchor .xt-sticky',
   mount: ({ object }) => {
     // sticky
 
@@ -38,7 +38,7 @@ Xt.mount.push({
  */
 
 Xt.mount.push({
-  matches: '#iframe--scrolltoanchor body',
+  matches: '.CCC-scrolltoanchor body',
   mount: ({ object }) => {
     // init
 

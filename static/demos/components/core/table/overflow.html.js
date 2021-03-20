@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
       <table class="my-4 xt-my-auto w-full">
         <thead>

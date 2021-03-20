@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--products-gallery-v1">
     <div class="site-wrapper">
       <header class="site-header">
         <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
@@ -22,10 +22,7 @@ const html = /* HTML */ `
                       id="product-image-1"
                       title="Expand image 1"
                     >
-                      <div
-                        class="xt-media-container bg-gray-200 overflow-hidden"
-                        data-xt-overlay="{ targets: '#overlay--product-images' }"
-                      >
+                      <div class="xt-media-container bg-gray-200 overflow-hidden">
                         <div class="xt-media-inner relative">
                           <img class="xt-media" src="/img.svg" loading="eager" alt="" />
                         </div>
@@ -41,10 +38,7 @@ const html = /* HTML */ `
                       id="product-image-2"
                       title="Expand image 2"
                     >
-                      <div
-                        class="xt-media-container bg-gray-200 overflow-hidden"
-                        data-xt-overlay="{ targets: '#overlay--product-images' }"
-                      >
+                      <div class="xt-media-container bg-gray-200 overflow-hidden">
                         <div class="xt-media-inner relative">
                           <img class="xt-media" src="/img-alt.svg" loading="eager" alt="" />
                         </div>
@@ -60,10 +54,7 @@ const html = /* HTML */ `
                       id="product-image-3"
                       title="Expand image 3"
                     >
-                      <div
-                        class="xt-media-container bg-gray-200 overflow-hidden"
-                        data-xt-overlay="{ targets: '#overlay--product-images' }"
-                      >
+                      <div class="xt-media-container bg-gray-200 overflow-hidden">
                         <div class="xt-media-inner relative">
                           <img class="xt-media" src="/img.svg" loading="eager" alt="" />
                         </div>
@@ -79,10 +70,7 @@ const html = /* HTML */ `
                       id="product-image-4"
                       title="Expand image 4"
                     >
-                      <div
-                        class="xt-media-container bg-gray-200 overflow-hidden"
-                        data-xt-overlay="{ targets: '#overlay--product-images' }"
-                      >
+                      <div class="xt-media-container bg-gray-200 overflow-hidden">
                         <div class="xt-media-inner relative">
                           <img class="xt-media" src="/img-alt.svg" loading="eager" alt="" />
                         </div>
@@ -252,7 +240,7 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-continue-target" data-xt-stickyflow>
+            <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-arrow-target" data-xt-stickyflow>
               <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
               <div class="pb-12 md:py-12 md:sticky stickyflow">
                 <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
@@ -299,8 +287,8 @@ const html = /* HTML */ `
         </div>
 
         <a
-          href="#product-continue-target"
-          class="product-continue fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white"
+          href="#product-arrow-target"
+          class="product-arrow fixed md:hidden p-4 z-sticky bottom-0 inset-x-0 text-4xl text-center bg-gradient-to-b from-transparent to-white"
           title="Scroll to content"
         >
           ${classes.iconChevronDown()}

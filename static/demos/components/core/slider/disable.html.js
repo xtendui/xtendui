@@ -2,7 +2,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider').def
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <div
       class="xt-slider demo--slider-disable"
       data-xt-slider="{ drag: { wrap: true }, matches: { '(min-width: 768px)': { disabled: true } } }"

@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/addons/googlelocator'
 
 Xt.mount.push({
-  matches: '#iframe--googlelocator .googlelocator',
+  matches: '.CCC-googlelocator .googlelocator',
   mount: ({ object }) => {
     // add yout api key here
 

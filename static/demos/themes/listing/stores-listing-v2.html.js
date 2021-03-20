@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--stores-listing-v2">
     <div class="listing py-10">
       <div class="container">
         <div class="xt-row xt-row-6 xt-row-stretch">

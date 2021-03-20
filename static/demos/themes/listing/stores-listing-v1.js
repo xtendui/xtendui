@@ -1,33 +1,49 @@
 import { Xt } from 'xtendui'
 
-/**
- * .listing-item activation
- */
-
 Xt.mount.push({
-  matches: '#iframe--stores-listing-v1 .listing-item',
+  matches: '.CCC--stores-listing-v1',
   mount: ({ object }) => {
-    // vars
+    const unmountListing = mountListing({ object })
 
-    const actionBtn = object.querySelector('.listing-action')
-    const closeBtn = object.querySelector('.xt-dismiss')
+    // unmount
 
-    // eventClick
-
-    const eventClick = e => {
-      e.stopPropagation()
-      object.classList.add('active')
+    return () => {
+      unmountListing()
     }
-
-    actionBtn.addEventListener('click', eventClick)
-
-    // eventClose
-
-    const eventClose = e => {
-      e.stopPropagation()
-      object.classList.remove('active')
-    }
-
-    closeBtn.addEventListener('click', eventClose)
   },
 })
+
+/* mountListing */
+
+const mountListing = ({ object }) => {
+  const items = object.querySelectorAll('.listing-item')
+
+  for (const item of items) {
+    // vars
+
+    const actionBtn = item.querySelector('.listing-action')
+    const closeBtn = item.querySelector('.xt-dismiss')
+
+    // click
+
+    const click = e => {
+      e.stopPropagation()
+      item.classList.add('active')
+    }
+
+    actionBtn.addEventListener('click', click)
+
+    // close
+
+    const close = e => {
+      e.stopPropagation()
+      item.classList.remove('active')
+    }
+
+    closeBtn.addEventListener('click', close)
+  }
+
+  // unmount
+
+  return () => {}
+}

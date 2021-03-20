@@ -2,7 +2,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider').def
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <div
       class="xt-slider demo--slider-other"
       data-xt-slider="{ loop: false, jumpOverflow: true, autoHeight: '.xt-slides' }"

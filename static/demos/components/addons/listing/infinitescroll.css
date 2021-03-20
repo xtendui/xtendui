@@ -1,5 +1,4 @@
-#iframe--infinitescroll {
-  /*##START*/
+.CCC--infinitescroll {
   /* .infinitescroll-spinner */
 
   .infinitescroll-spinner {
@@ -63,5 +62,4 @@
       display: block;
     }
   }
-  /*##END*/
 }

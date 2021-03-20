@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--slider-hero-v2">
     <div class="xt-slider xt-slider-absolute">
       <div class="xt-slides">
         <div class="xt-slides-inner xt-duration-none xt-transform-none">

@@ -1,5 +1,4 @@
-#iframe--googlelocator {
-  /*##START*/
+.CCC--googlelocator {
   .googlelocator-main {
     @screen md {
       padding-left: 20rem;
@@ -132,5 +131,4 @@
       }
     }
   }
-  /*##END*/
 }

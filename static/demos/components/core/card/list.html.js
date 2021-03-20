@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <div class="xt-card rounded-md ${classes.cardDefault()}">
       <div class="${classes.cardMd()}">
         <div class="xt-list xt-list-6 md:flex-nowrap items-baseline">

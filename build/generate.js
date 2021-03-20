@@ -4,17 +4,18 @@ const path = require('path')
 const glob = require('glob')
 const writeFile = require('write')
 const indentString = require('indent-string')
-const test = true
+const test = false
 
 ;(async () => {
   await del(['static/demos/**/**.jsx'])
-  new glob.Glob('static/demos/themes/listing/**/**.html.js', (er, files) => {
+  new glob.Glob('static/demos/themes/animation/**/**.html.js', (er, files) => {
     for (const file of files) {
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)
       const src = `${dir}/${name}`
       let html = require('esm')(module)(path.resolve(`${src}.html.js`)).object.html
       let strImports = ''
+      let strMount = ''
       let strMethods = ''
       // refs
       const refs = html.match(/class="CCC(.*?)"/g)
@@ -35,11 +36,6 @@ const test = true
           const jsSource = jsSources[0]
           const jsText = fs.readFileSync(jsSource, 'utf8')
           // automatic check of refs
-          if (!refs) {
-            // not found any ref in html
-            console.error(`Jsx generator found custom javascript and no html CCC in ${file}`)
-            process.exit(1)
-          }
           const refsJs = jsText.match(/(?!'\.)CCC[^' ]*/g)
           if (refsJs) {
             let found = 0
@@ -52,10 +48,15 @@ const test = true
                 }
               }
             }
+            if (!refs) {
+              // not found any ref in html
+              console.error(`Jsx generator found custom javascript and no html CCC in ${file}`)
+              process.exit(1)
+            }
             if (found < refsJs.length || found < refs.length) {
               // not found ref in html with match
               console.error(`Jsx generator found custom javascript with no matching html CCC in ${file}`)
-              process.exit(1)
+              //process.exit(1)
             }
           }
           // imports
@@ -65,14 +66,21 @@ const test = true
               strImports += meta[1]
             }
           }
+          // mounts
+          const mounts = jsText.match(/(?<= {2}mount:(.*?)$).*([\S\s]*?)[ ]*(?=^\s\s\})/gm)
+          if (mounts) {
+            for (const meta of mounts.entries()) {
+              strMount += meta[1]
+            }
+            strMount = strMount.replace(/^ {2}/gm, '')
+          }
           // methods
-          const methods = jsText.match(/(?<= {2}mount:(.*?)$).*([\S\s]*?)[ ]*(?=^\s\s\})/gm)
+          const methods = jsText.match(/(?<=^}\)\n)([\s\S]+)/gm)
           if (methods) {
             for (const meta of methods.entries()) {
               strMethods += meta[1]
             }
           }
-          strMethods = strMethods.replace(/(^ {2})/gm, '')
           // remove xt
           const xts = strMethods.match(/(Xt\.)/g)
           if (!xts) {
@@ -82,10 +90,10 @@ const test = true
       })
       jsGlob.on('end', () => {
         let str = `import React${
-          refs || strMethods !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
+          refs || strMount !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function component() {${
-          refs || strMethods !== ''
+          refs || strMount !== ''
             ? `${test ? 'const [count, setCount] = useState(0)' : ''}
   const nodeRef = useRef(null)
   let unmount
@@ -95,7 +103,7 @@ ${strImports}export default function component() {${
     }
     nodeRef.current = object
     if (object !== null) {
-      unmount = mount(object)
+      unmount = mount({ object })
     }
   }, [])
 `
@@ -104,8 +112,14 @@ ${strImports}export default function component() {${
   return (${indentString(html, 2)}  )
 }
 
-${strMethods !== '' ? `const mount = object => {${strMethods}}` : ''}
-`
+${
+  strMount !== ''
+    ? `/* mount */
+
+const mount = ({ object }) => {${strMount}}`
+    : ''
+}
+${strMethods !== '' ? `${strMethods}` : ''}`
         const destination = `${src}.jsx`
         writeFile(destination, str)
       })

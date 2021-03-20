@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--">
     <form class="text-sm">
       <button type="button" class="xt-list group">
         <div class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonPrimaryGroup()}">Search</div>

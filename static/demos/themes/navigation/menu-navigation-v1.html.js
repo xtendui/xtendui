@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--menu-navigation-v1">
     <div class="megamenu relative bg-primary-500 text-white">
       <form class="text-sm container pt-10">
         <label class="xt-label-check">
@@ -30,29 +30,25 @@ const html = /* HTML */ `
                     <div class="container">
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Lorem ipsum
                       </a>
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Dolor sit amet
                       </a>
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Consectetur adipiscing elit
                       </a>
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Morbi nec mauris est
                       </a>
@@ -80,15 +76,13 @@ const html = /* HTML */ `
                     <div class="container">
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Lorem ipsum
                       </a>
                       <a
                         href="#"
-                        class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                        style="font-size: 28px;"
+                        class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                       >
                         Dolor sit amet
                       </a>
@@ -125,29 +119,25 @@ const html = /* HTML */ `
                         <div class="w-full md:w-6/12">
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Lorem ipsum
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Dolor sit amet
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Consectetur adipiscing elit
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Morbi nec mauris est
                           </a>
@@ -155,22 +145,19 @@ const html = /* HTML */ `
                         <div class="w-full md:w-6/12">
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Dolor sit amet
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Consectetur adipiscing elit
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full py-4 px-0 font-sans font-medium tracking-normal normal-case"
-                            style="font-size: 28px;"
+                            class="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case"
                           >
                             Morbi nec mauris est
                           </a>
@@ -194,7 +181,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="container py-24">
+    <div class="container py-10">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper.
         Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse

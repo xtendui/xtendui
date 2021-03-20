@@ -1,7 +1,7 @@
 const html = /* HTML */ `
-  <div id="ref--">
+  <div class="CCC--products-listing-v2">
     <div class="py-10">
-      <div class="xt-slider slider--listing" data-xt-slider="{ contain: true, jumpOverflow: true }">
+      <div class="xt-slider slider--listing">
         <div class="xt-slides">
           <div class="container">
             <div class="xt-h2 mb-8">Latest Products</div>
