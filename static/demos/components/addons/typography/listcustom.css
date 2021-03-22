@@ -1,8 +1,12 @@
 .CCC--listcustom {
   ul {
+    list-style: none;
     margin-bottom: theme('spacing.3');
     @apply xt-mb-auto;
     > li {
+      &:before {
+        display: none;
+      }
       margin-bottom: theme('spacing.3');
       @apply xt-mb-auto;
       padding-left: 2em;
