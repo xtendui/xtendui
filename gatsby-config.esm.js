@@ -64,13 +64,14 @@ module.exports = {
       options: {
         root: './',
         aliases: {
+          src: './src',
           static: './static',
           // resolve xtendui import js and css
           xtendui: path.resolve(__dirname, './'),
         },
       },
     },
-    // resolve graphql
+    // needs gatsby-source-filesystem resolve name
     {
       resolve: 'gatsby-source-filesystem',
       options: {
