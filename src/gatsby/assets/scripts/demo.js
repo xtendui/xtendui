@@ -557,7 +557,10 @@ const makeFullscreen = container => {
     // populate source
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
     if (sourceTo && container.dataset.isFullscreenOnly) {
-      sourceTo.innerHTML = item.querySelector('script[type="text/plain"]').innerHTML
+      const text = item.querySelector('script[type="text/plain"]')
+      if (text) {
+        sourceTo.innerHTML = text.innerHTML
+      }
     }
   }
   // needs both or sometimes it doesn't open

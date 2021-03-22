@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import path from 'path'
 
 export default class DemoInline extends React.Component {
   /* @TODO demos in react
@@ -43,7 +42,7 @@ export default class DemoInline extends React.Component {
   render() {
     const { src } = this.props
     const id = src.split('-').join(' ')
-    const name = path.basename(src, '.js')
+    const name = src.split('/').pop().split('.')[0]
     const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
     // vanilla
     const html = require(`static/${src}.html.js`).object.html
