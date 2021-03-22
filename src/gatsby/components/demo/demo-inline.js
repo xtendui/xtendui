@@ -15,6 +15,10 @@ export default class DemoInline extends React.Component {
       this.state = {
         mode: localStorage.getItem('mode'),
       }
+    } else {
+      this.state = {
+        mode: false,
+      }
     }
   }
 
