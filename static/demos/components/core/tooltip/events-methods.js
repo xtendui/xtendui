@@ -21,7 +21,7 @@ const mountEventmethods = ({ object }) => {
 
   // init
 
-  let self = new Xt.Tooltip(tooltip)
+  let self = new Xt.Tooltip(tooltip, { closeOutside: false })
 
   // log
 
@@ -38,29 +38,53 @@ const mountEventmethods = ({ object }) => {
     }, 1000)
   }
 
-  // first element
+  // on first element
 
   const firstEl = document.querySelector('#button--tooltip-eventmethods-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>1st element</strong>')
+    logAdd('<strong>on 1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
 
-  // first target
+  // on first target
 
   const firstTr = document.querySelector('#button--tooltip-eventmethods-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>1st target</strong>')
+    logAdd('<strong>on 1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
+
+  // off first element
+
+  const firstElOff = object.querySelector('#button--tooltip-eventmethods-first-element-off')
+
+  const firstElOffFnc = () => {
+    logAdd('<strong>off 1st element</strong>')
+    const elements = self.elements
+    elements[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  firstElOff.addEventListener('click', firstElOffFnc)
+
+  // on first target
+
+  const firstTrOff = object.querySelector('#button--tooltip-eventmethods-first-target-off')
+
+  const firstTrOffFnc = () => {
+    logAdd('<strong>off 1st target</strong>')
+    const targets = self.targets
+    targets[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  firstTrOff.addEventListener('click', firstTrOffFnc)
 
   // add
 

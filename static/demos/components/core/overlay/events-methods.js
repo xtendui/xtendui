@@ -45,24 +45,24 @@ const mountEventmethods = ({ object }) => {
     }, 1000)
   }
 
-  // first element
+  // on first element
 
   const firstEl = object.querySelector('#button--overlay-eventmethods-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>1st element</strong>')
+    logAdd('<strong>on 1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
 
-  // first target
+  // on first target
 
   const firstTr = object.querySelector('#button--overlay-eventmethods-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>1st target</strong>')
+    logAdd('<strong>on 1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }

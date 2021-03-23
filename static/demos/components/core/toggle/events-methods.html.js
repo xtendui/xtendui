@@ -8,14 +8,14 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
         id="button--toggle-eventmethods-first-element"
       >
-        1st element
+        on 1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
         id="button--toggle-eventmethods-first-target"
       >
-        1st target
+        on 1st target
       </button>
       <button
         type="button"

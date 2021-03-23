@@ -44,24 +44,24 @@ const mountEventmethods = ({ object }) => {
     }, 1000)
   }
 
-  // first element
+  // on first element
 
   const firstEl = document.querySelector('#button--toggle-eventmethods-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>1st element</strong>')
+    logAdd('<strong>on 1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
 
-  // first target
+  // on first target
 
   const firstTr = document.querySelector('#button--toggle-eventmethods-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>1st target</strong>')
+    logAdd('<strong>on 1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }

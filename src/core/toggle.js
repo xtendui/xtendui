@@ -477,27 +477,6 @@ class Toggle {
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
-        // preventEvent
-        if (options.preventEvent) {
-          if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
-            // @FIX prevents click links on click until clicked two times
-            const preventeventStartTouchHandler = Xt.dataStorage.put(
-              el,
-              `touchend/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self, { element: el })
-            )
-            el.addEventListener('touchend', preventeventStartTouchHandler)
-          }
-          if (events.includes('click')) {
-            const preventeventStartMouseHandler = Xt.dataStorage.put(
-              el,
-              `mouseup/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self, { element: el })
-            )
-            el.addEventListener('mouseup', preventeventStartMouseHandler)
-          }
-        }
-        Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
       }
       // event off
       const offHandlerCustom = Xt.dataStorage.put(
@@ -519,6 +498,30 @@ class Toggle {
             el.addEventListener(event, offHandler)
           }
         }
+      }
+      // preventEvent
+      if (options.on) {
+        if (options.preventEvent) {
+          const events = [...options.on.split(' ')]
+          if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
+            // @FIX prevents click links on click until clicked two times
+            const preventeventStartTouchHandler = Xt.dataStorage.put(
+              el,
+              `touchend/preventevent/${self.ns}`,
+              self.eventPreventeventStartHandler.bind(self, { element: el })
+            )
+            el.addEventListener('touchend', preventeventStartTouchHandler)
+          }
+          if (events.includes('click')) {
+            const preventeventStartMouseHandler = Xt.dataStorage.put(
+              el,
+              `mouseup/preventevent/${self.ns}`,
+              self.eventPreventeventStartHandler.bind(self, { element: el })
+            )
+            el.addEventListener('mouseup', preventeventStartMouseHandler)
+          }
+        }
+        Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
       }
     }
     // targets
