@@ -38,9 +38,9 @@ const mountToggle = ({ object }) => {
     },
   })
 
-  // start auto
+  // autostart
 
-  const eventAutostart = () => {
+  const autostart = () => {
     // toggle
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     const timeline = gsap.timeline({ overwrite: false })
@@ -89,11 +89,11 @@ const mountToggle = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autostart.xt.toggle', eventAutostart)
+  self.object.addEventListener('autostart.xt.toggle', autostart)
 
-  // stop auto
+  // autostop
 
-  const eventAutostop = () => {
+  const autostop = () => {
     // elements
     const elements = self.elements.filter(x => self.hasCurrent(x))
     for (const element of elements) {
@@ -124,11 +124,11 @@ const mountToggle = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autostop.xt.toggle', eventAutostop)
+  self.object.addEventListener('autostop.xt.toggle', autostop)
 
-  // pause auto
+  // autopause
 
-  const eventAutopause = () => {
+  const autopause = () => {
     // toggle
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
@@ -168,7 +168,7 @@ const mountToggle = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autopause.xt.toggle', eventAutopause)
+  self.object.addEventListener('autopause.xt.toggle', autopause)
 
   // mousefollow
 

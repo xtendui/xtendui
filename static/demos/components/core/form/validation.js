@@ -18,9 +18,9 @@ Xt.mount.push({
 const mountValidation = ({ object }) => {
   const input = object.querySelector('.input--constrains')
 
-  // eventValidation
+  // validate
 
-  const eventValidation = () => {
+  const validate = () => {
     const constraints = ['^(CH-)?\\d{4}$', 'Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950']
     const constraint = new RegExp(constraints[0], '')
     if (constraint.test(input.value)) {
@@ -30,8 +30,8 @@ const mountValidation = ({ object }) => {
     }
   }
 
-  input.addEventListener('input', eventValidation)
-  input.addEventListener('change', eventValidation)
+  input.addEventListener('input', validate)
+  input.addEventListener('change', validate)
 
   // unmount
 

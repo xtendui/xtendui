@@ -33,7 +33,7 @@ const mountDrops = ({ object }) => {
 
   // on
 
-  const eventOn = e => {
+  const on = e => {
     const tr = e.target.querySelector(':scope > *')
     gsap.killTweensOf(tr)
     gsap.set(tr, {
@@ -49,12 +49,12 @@ const mountDrops = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('on.xt.drop', eventOn)
+    target.addEventListener('on.xt.drop', on)
   }
 
   // off
 
-  const eventOff = e => {
+  const off = e => {
     const tr = e.target.querySelector(':scope > *')
     gsap.killTweensOf(tr)
     gsap.to(tr, {
@@ -66,7 +66,7 @@ const mountDrops = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('off.xt.drop', eventOff)
+    target.addEventListener('off.xt.drop', off)
   }
 
   // unmount

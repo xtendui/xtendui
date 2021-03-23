@@ -40,7 +40,7 @@ const mountScrolltoanchor = () => {
 
   // change
 
-  const eventChange = () => {
+  const change = () => {
     // scroll
     gsap.killTweensOf(self.scrollElement)
     gsap.to(self.scrollElement, {
@@ -50,12 +50,12 @@ const mountScrolltoanchor = () => {
     })
   }
 
-  self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
+  self.object.addEventListener('change.xt.scrolltoanchor', change)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
+    self.object.removeEventListener('change.xt.scrolltoanchor', change)
     self.destroy()
     self = null
   }

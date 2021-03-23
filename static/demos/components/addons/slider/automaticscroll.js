@@ -42,7 +42,7 @@ const mountSliders = ({ object }) => {
 
     // on
 
-    const eventOn = e => {
+    const on = e => {
       const tr = e.target
       // useCapture delegation
       if (self.targets.includes(tr)) {
@@ -77,11 +77,11 @@ const mountSliders = ({ object }) => {
       }
     }
 
-    self.object.addEventListener('on.xt.slider', eventOn, true)
+    self.object.addEventListener('on.xt.slider', on, true)
 
-    // eventPause
+    // pause
 
-    const eventPause = () => {
+    const pause = () => {
       // pause tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
@@ -93,12 +93,12 @@ const mountSliders = ({ object }) => {
       }
     }
 
-    self.object.addEventListener('mouseenter', eventPause, true)
-    addEventListener('blur', eventPause)
+    self.object.addEventListener('mouseenter', pause, true)
+    addEventListener('blur', pause)
 
-    // eventResume
+    // resume
 
-    const eventResume = () => {
+    const resume = () => {
       // resume tween
       const tweens = gsap.getTweensOf(self.dragger)
       for (const tween of tweens) {
@@ -110,15 +110,15 @@ const mountSliders = ({ object }) => {
       }
     }
 
-    self.object.addEventListener('mouseleave', eventResume, true)
-    addEventListener('focus', eventResume)
+    self.object.addEventListener('mouseleave', resume, true)
+    addEventListener('focus', resume)
 
     // unmount
 
     unmounts.push(() => {
-      eventPause()
-      removeEventListener('blur', eventPause)
-      removeEventListener('focus', eventResume)
+      pause()
+      removeEventListener('blur', pause)
+      removeEventListener('focus', resume)
       self.destroy()
       self = null
     })

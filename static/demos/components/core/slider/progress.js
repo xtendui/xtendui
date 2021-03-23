@@ -36,9 +36,9 @@ const mountSlider = ({ object }) => {
     },
   })
 
-  // start auto
+  // autostart
 
-  const eventAutostart = () => {
+  const autostart = () => {
     // slider
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     const timeline = gsap.timeline({ overwrite: false })
@@ -87,11 +87,11 @@ const mountSlider = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autostart.xt.slider', eventAutostart)
+  self.object.addEventListener('autostart.xt.slider', autostart)
 
-  // stop auto
+  // autostop
 
-  const eventAutostop = () => {
+  const autostop = () => {
     // elements
     const elements = self.elements.filter(x => self.hasCurrent(x))
     for (const element of elements) {
@@ -122,11 +122,11 @@ const mountSlider = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autostop.xt.slider', eventAutostop)
+  self.object.addEventListener('autostop.xt.slider', autostop)
 
-  // pause auto
+  // autopause
 
-  const eventAutopause = () => {
+  const autopause = () => {
     // slider
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
@@ -166,7 +166,7 @@ const mountSlider = ({ object }) => {
     }
   }
 
-  self.object.addEventListener('autopause.xt.slider', eventAutopause)
+  self.object.addEventListener('autopause.xt.slider', autopause)
 
   // mousefollow
 

@@ -33,7 +33,7 @@ const mountOverlay = ({ object }) => {
 
   // on
 
-  const eventOn = e => {
+  const on = e => {
     const tr = e.target
     // inner
     const inner = tr.querySelector('.xt-overlay-inner')
@@ -62,12 +62,12 @@ const mountOverlay = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('on.xt.overlay', eventOn)
+    target.addEventListener('on.xt.overlay', on)
   }
 
   // off
 
-  const eventOff = e => {
+  const off = e => {
     const tr = e.target
     // inner
     const inner = tr.querySelector('.xt-overlay-inner')
@@ -89,7 +89,7 @@ const mountOverlay = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('off.xt.overlay', eventOff)
+    target.addEventListener('off.xt.overlay', off)
   }
 
   // unmount

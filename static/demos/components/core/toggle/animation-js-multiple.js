@@ -33,7 +33,7 @@ const mountToggle = ({ object }) => {
 
   // on
 
-  const eventOn = e => {
+  const on = e => {
     const tr = e.target
     gsap.killTweensOf(tr)
     gsap.set(tr, {
@@ -49,12 +49,12 @@ const mountToggle = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('on.xt.toggle', eventOn)
+    target.addEventListener('on.xt.toggle', on)
   }
 
   // off
 
-  const eventOff = e => {
+  const off = e => {
     const tr = e.target
     gsap.killTweensOf(tr)
     gsap.to(tr, {
@@ -66,7 +66,7 @@ const mountToggle = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('off.xt.toggle', eventOff)
+    target.addEventListener('off.xt.toggle', off)
   }
 
   // unmount

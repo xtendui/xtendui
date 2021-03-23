@@ -40,7 +40,7 @@ const mountScrolltoanchor = () => {
 
   // change
 
-  const eventChange = () => {
+  const change = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
     const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
@@ -52,12 +52,12 @@ const mountScrolltoanchor = () => {
     })
   }
 
-  self.object.addEventListener('change.xt.scrolltoanchor', eventChange)
+  self.object.addEventListener('change.xt.scrolltoanchor', change)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('change.xt.scrolltoanchor', eventChange)
+    self.object.removeEventListener('change.xt.scrolltoanchor', change)
     self.destroy()
     self = null
   }

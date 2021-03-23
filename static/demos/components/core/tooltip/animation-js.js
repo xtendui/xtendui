@@ -35,7 +35,7 @@ const mountTooltip = ({ object }) => {
 
   // on
 
-  const eventOn = e => {
+  const on = e => {
     const tr = e.target.querySelector(':scope > *')
     gsap.killTweensOf(tr)
     gsap.set(tr, {
@@ -51,12 +51,12 @@ const mountTooltip = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('on.xt.tooltip', eventOn)
+    target.addEventListener('on.xt.tooltip', on)
   }
 
   // off
 
-  const eventOff = e => {
+  const off = e => {
     const tr = e.target.querySelector(':scope > *')
     gsap.killTweensOf(tr)
     gsap.to(tr, {
@@ -68,7 +68,7 @@ const mountTooltip = ({ object }) => {
   }
 
   for (const target of self.targets) {
-    target.addEventListener('off.xt.tooltip', eventOff)
+    target.addEventListener('off.xt.tooltip', off)
   }
 
   // unmount
