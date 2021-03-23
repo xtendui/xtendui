@@ -3,7 +3,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 const html = /* HTML */ `
   <div class="CCC--toggle-animation-inverse">
     <div
-      class="xt-list xt-list-3 items-center demo--toggle-animation-inverse"
+      class="xt-list xt-list-3 items-center"
       data-xt-toggle="{ targets: ':scope > .xt-toggle-inverse, .xt-toggle-item > .xt-toggle-inverse' }"
     >
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">

@@ -8,7 +8,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()} demo--sticky-hide-content">
+    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="CCC--tooltip-swap-toggle">
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} demo--tooltip--swap-toggle"
+      class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
       data-xt-toggle
       data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap' }"
     >

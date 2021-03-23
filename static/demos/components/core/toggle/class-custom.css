@@ -1,3 +1,5 @@
 .CCC--toggle-class-custom, .CCC--toggle-class-custom-react {
-  color: red !important;
+  .active--toggle-custom-class {
+    color: red !important;
+  }
 }

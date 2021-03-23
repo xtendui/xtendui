@@ -11,21 +11,21 @@ const html = /* HTML */ `
           <a
             href="#anchor-overlay-0"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+            data-xt-overlay="{ targets: '#overlay--scrolltoanchor' }"
           >
             #0 overlay
           </a>
           <a
             href="#anchor-overlay-1"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+            data-xt-overlay="{ targets: '#overlay--scrolltoanchor' }"
           >
             #1 overlay
           </a>
           <a
             href="#anchor-overlay-2"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#demo--overlay-scrolltoanchor' }"
+            data-xt-overlay="{ targets: '#overlay--scrolltoanchor' }"
           >
             #2 overlay
           </a>
@@ -91,7 +91,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-overlay" id="demo--overlay-scrolltoanchor">
+    <div class="xt-overlay" id="overlay--scrolltoanchor">
       <div class="xt-backdrop bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0">
         <div class="xt-overlay-inner">

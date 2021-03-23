@@ -364,14 +364,14 @@ Xt.mount.push({
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--demo--close-${closeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
+<div id="tooltip--close-${closeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
   <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>
 </div>`)
     )
     new Xt.Tooltip(close, {
-      targets: `#tooltip--demo--close-${closeUid}`,
+      targets: `#tooltip--close-${closeUid}`,
       position: 'bottom-end',
     })
 

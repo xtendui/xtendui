@@ -3,7 +3,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 const html = /* HTML */ `
   <div class="CCC--multilevel">
     <div
-      class="multilevel relative demo--multilevel"
+      class="multilevel relative"
       data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', targets: ':scope > .xt-toggle', min: 1, duration: 500, queue: false }"
     >
       <nav

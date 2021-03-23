@@ -2,7 +2,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="CCC--drop-animation-css-multiple">
-    <div class="xt-list xt-list-3 items-center demo--drop-animation-css-multiple" data-xt-drop>
+    <div class="xt-list xt-list-3 items-center" data-xt-drop>
       <div class="xt-drop-item">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
           list

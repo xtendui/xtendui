@@ -3,7 +3,7 @@ const indentString = require('indent-string')
 
 const html = /* HTML */ `
   <div class="CCC--fade-infinite">
-    <div class="xt-row xt-row-6 demo--fade-infinite">${indentString(markupFade(), 2)}</div>
+    <div class="xt-row xt-row-6">${indentString(markupFade(), 2)}</div>
   </div>
 `
 
