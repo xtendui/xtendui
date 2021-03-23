@@ -2,15 +2,21 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.xt-links-default': {
-      'a:not([class]), a[class=""], .xt-link': {
-        // styles
-        color: theme('colors.primary.500'),
+      // @FIX specificity when nested .xt-links-default and .xt-links-inverse
+      '&, .xt-links-inverse &': {
+        'a:not([class]), a[class=""], .xt-link': {
+          // styles
+          color: theme('colors.primary.500'),
+        },
       },
     },
     '.xt-links-inverse': {
-      'a:not([class]), a[class=""], .xt-link': {
-        // styles
-        color: theme('colors.white'),
+      // @FIX specificity when nested .xt-links-default and .xt-links-inverse
+      '&, .xt-links-default &': {
+        'a:not([class]), a[class=""], .xt-link': {
+          // styles
+          color: theme('colors.white'),
+        },
       },
     },
   }),
