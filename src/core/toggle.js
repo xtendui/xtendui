@@ -825,7 +825,7 @@ class Toggle {
       // prevent default
       e.preventDefault()
     } else {
-      self.eventPreventeventEndHandler(element)
+      self.eventPreventeventEndHandler({ element })
       Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
       Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
     }
