@@ -21,7 +21,7 @@ const mountEventmethods = ({ object }) => {
 
   // init
 
-  let self = new Xt.Drop(drop)
+  let self = new Xt.Drop(drop, { closeOutside: false })
 
   // log
 

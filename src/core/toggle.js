@@ -461,22 +461,22 @@ class Toggle {
     // elements
     for (const el of self.elements) {
       // event on
+      const onHandlerCustom = Xt.dataStorage.put(
+        el,
+        `${options.on}/oncustom/${self.ns}`,
+        self.eventOnHandler.bind(self, { element: el, force: true })
+      )
+      el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       if (options.on) {
         const onHandler = Xt.dataStorage.put(
           el,
-          `${options.on}/${self.ns}`, // @FIX same event for on and off same namespace
-          self.eventOnHandler.bind(self).bind(self, el)
+          `${options.on}/on/${self.ns}`,
+          self.eventOnHandler.bind(self, { element: el })
         )
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
         }
-        const onHandlerCustom = Xt.dataStorage.put(
-          el,
-          `${options.on}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, el, true)
-        )
-        el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
         // preventEvent
         if (options.preventEvent) {
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
@@ -484,7 +484,7 @@ class Toggle {
             const preventeventStartTouchHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self).bind(self, el)
+              self.eventPreventeventStartHandler.bind(self, { element: el })
             )
             el.addEventListener('touchend', preventeventStartTouchHandler)
           }
@@ -492,7 +492,7 @@ class Toggle {
             const preventeventStartMouseHandler = Xt.dataStorage.put(
               el,
               `mouseup/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self).bind(self, el)
+              self.eventPreventeventStartHandler.bind(self, { element: el })
             )
             el.addEventListener('mouseup', preventeventStartMouseHandler)
           }
@@ -500,51 +500,43 @@ class Toggle {
         Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
       }
       // event off
+      const offHandlerCustom = Xt.dataStorage.put(
+        el,
+        `${options.off}/offcustom/${self.ns}`,
+        self.eventOffHandler.bind(self, { element: el })
+      )
+      el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(
-          el,
-          `${options.off}/${self.ns}`, // @FIX same event for on and off same namespace
-          self.eventOffHandler.bind(self).bind(self, el)
-        )
-        const events = [...options.off.split(' ')]
-        for (const event of events) {
-          el.addEventListener(event, offHandler)
+        // @FIX same event for on and off same namespace
+        if (options.on !== options.off) {
+          const offHandler = Xt.dataStorage.put(
+            el,
+            `${options.off}/off/${self.ns}`,
+            self.eventOffHandler.bind(self, { element: el })
+          )
+          const events = [...options.off.split(' ')]
+          for (const event of events) {
+            el.addEventListener(event, offHandler)
+          }
         }
-        const offHandlerCustom = Xt.dataStorage.put(
-          el,
-          `${options.off}/${self.ns}`, // @FIX same event for on and off same namespace
-          self.eventOffHandler.bind(self).bind(self, el, true)
-        )
-        el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       }
     }
     // targets
     for (const tr of self.targets) {
       // event on
-      if (options.on) {
-        const onHandler = Xt.dataStorage.put(
-          tr,
-          `${options.on}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, tr, true)
-        )
-        tr.addEventListener(`on.trigger.${self.componentNs}`, onHandler)
-      }
+      const onHandlerCustom = Xt.dataStorage.put(
+        tr,
+        `${options.on}/oncustom/${self.ns}`,
+        self.eventOnHandler.bind(self, { element: tr, force: true })
+      )
+      tr.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       // event off
-      if (options.off) {
-        const offHandlerCustom = Xt.dataStorage.put(
-          tr,
-          `${options.off}/${self.ns}`,
-          self.eventOffHandler.bind(self).bind(self, tr, true)
-        )
-        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
-      } else {
-        const offHandlerCustom = Xt.dataStorage.put(
-          tr,
-          `${options.off}/${self.ns}`,
-          self.eventOnHandler.bind(self).bind(self, tr, true)
-        )
-        tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
-      }
+      const offHandlerCustom = Xt.dataStorage.put(
+        tr,
+        `${options.off}/offcustom/${self.ns}`,
+        self.eventOffHandler.bind(self, { element: tr, force: true })
+      )
+      tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
     }
     // auto
     if (options.auto && options.auto.time) {
@@ -738,7 +730,7 @@ class Toggle {
    * @param {Boolean} force
    * @param {Event} e
    */
-  eventOnHandler(element, e, force = false) {
+  eventOnHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
     // @FIX groupElements and targets
@@ -763,7 +755,7 @@ class Toggle {
    * @param {Boolean} force
    * @param {Event} e
    */
-  eventOffHandler(element, e, force = false) {
+  eventOffHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
     // @FIX groupElements and targets
@@ -784,40 +776,40 @@ class Toggle {
 
   /**
    * init prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} element
    */
-  eventPreventeventStartHandler(el) {
+  eventPreventeventStartHandler({ element }) {
     const self = this
     // active
-    Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
+    Xt.dataStorage.put(element, `active/preventevent/${self.ns}`, self.hasCurrent(element))
     // event link
     const preventeventHandler = Xt.dataStorage.put(
-      el,
+      element,
       `click/preventevent/${self.ns}`,
-      self.eventPreventeventHandler.bind(self).bind(self, el)
+      self.eventPreventeventHandler.bind(self, { element })
     )
-    el.addEventListener('click', preventeventHandler)
+    element.addEventListener('click', preventeventHandler)
     // event reset
     const preventeventResetHandler = Xt.dataStorage.put(
-      el,
+      element,
       `off/preventevent/${self.ns}`,
-      self.eventPreventeventResetHandler.bind(self).bind(self, el)
+      self.eventPreventeventResetHandler.bind(self, { element })
     )
-    el.addEventListener(`off.${self.componentNs}`, preventeventResetHandler)
+    element.addEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} element
    */
-  eventPreventeventEndHandler(el) {
+  eventPreventeventEndHandler({ element }) {
     const self = this
     // event link
-    const preventeventHandler = Xt.dataStorage.get(el, `click/preventevent/${self.ns}`)
-    el.removeEventListener('click', preventeventHandler)
+    const preventeventHandler = Xt.dataStorage.get(element, `click/preventevent/${self.ns}`)
+    element.removeEventListener('click', preventeventHandler)
     // event reset
-    const preventeventResetHandler = Xt.dataStorage.get(el, `off/preventevent/${self.ns}`)
-    el.removeEventListener(`off.${self.componentNs}`, preventeventResetHandler)
+    const preventeventResetHandler = Xt.dataStorage.get(element, `off/preventevent/${self.ns}`)
+    element.removeEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
@@ -825,29 +817,29 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventPreventeventHandler(el, e) {
+  eventPreventeventHandler({ element }, e) {
     const self = this
-    const active = Xt.dataStorage.get(el, `active/preventevent/${self.ns}`)
-    if (!active && !Xt.dataStorage.get(el, `${self.ns}PreventeventDone`)) {
-      Xt.dataStorage.set(el, `${self.ns}PreventeventDone`, true)
+    const active = Xt.dataStorage.get(element, `active/preventevent/${self.ns}`)
+    if (!active && !Xt.dataStorage.get(element, `${self.ns}PreventeventDone`)) {
+      Xt.dataStorage.set(element, `${self.ns}PreventeventDone`, true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventPreventeventEndHandler(el)
-      Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
-      Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
+      self.eventPreventeventEndHandler(element)
+      Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
+      Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
     }
   }
 
   /**
    * reset prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} element
    */
-  eventPreventeventResetHandler(el) {
+  eventPreventeventResetHandler({ element }) {
     const self = this
-    self.eventPreventeventEndHandler(el)
-    Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
-    Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
+    self.eventPreventeventEndHandler({ element })
+    Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
+    Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
   }
 
   /**
@@ -1396,8 +1388,8 @@ class Toggle {
       return false
     }
     // toggle
-    // @FIX same event for on and off same namespace
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
+      // @FIX same event for on and off same namespace
       // auto
       self.eventAutostop()
       // @FIX groupElements and targets
@@ -1432,7 +1424,7 @@ class Toggle {
       }
       // activation
       return true
-    } else if (options.on === options.off && e?.detail?.type !== `on.trigger.${self.componentNs}`) {
+    } else if (options.on === options.off && e?.type !== `on.trigger.${self.componentNs}`) {
       // @FIX same event for on and off same namespace
       self.eventOff(element, false, e)
     }
@@ -3228,7 +3220,7 @@ class Toggle {
                   for (const event of events) {
                     element.removeEventListener(event, handler)
                     element.removeEventListener(event, handler, true)
-                    Xt.dataStorage.remove(element, key)
+                    // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times
                   }
                 }
               }

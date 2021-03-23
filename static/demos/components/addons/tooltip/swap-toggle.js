@@ -42,7 +42,6 @@ const mountButtonsSwap = ({ object }) => {
       tooltip.removeEventListener('offdone.xt.tooltip', swap)
       // swap
       let self = Xt.get('xt-tooltip', buttonSwap)
-      console.log(self.targets)
       self.targets[0].classList.add('hidden')
       self.targets[1].classList.remove('hidden')
       // open
