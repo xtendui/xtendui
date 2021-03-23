@@ -9,17 +9,16 @@
 .gatsby_site-footer_bottom {
   a {
     font-weight: theme('fontWeight.semibold');
-    color: theme('colors.black');
+    color: theme('colors.black') !important;
     text-decoration: none;
     &:hover, &:active, &.active {
-      color: theme('colors.black');
       text-decoration: underline;
     }
   }
 }
 
 .gatsby_site-footer_bottom_row {
-  @apply text-black text-opacity-50;
+  @apply text-black text-opacity-75;
   flex: 1 1 auto;
   font-size: 11px;
   @screen md {

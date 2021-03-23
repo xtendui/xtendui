@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   }),
-  component: {
+  component: theme => ({
     body: {
       '@apply xt-links-default': '',
     },
@@ -23,6 +23,9 @@ module.exports = {
       overflowWrap: 'break-word',
       // styles
       textDecoration: 'underline',
+      transitionProperty: 'all',
+      transitionDuration: theme('transitionDuration.500'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
-  },
+  }),
 }

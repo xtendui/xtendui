@@ -66,4 +66,3 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 ## Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtendui/blob/beta/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS).
