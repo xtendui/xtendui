@@ -1132,11 +1132,11 @@ if (typeof window !== 'undefined') {
     Xt.eventDelay({
       event: e,
       element: document.documentElement,
+      prefix: 'xtWindowHeightResize',
+      instant: true,
       func: () => {
         Xt.innerHeightSet()
       },
-      prefix: 'xtWindowHeightResize',
-      instant: true,
     })
   })
   Xt.innerHeightSet()

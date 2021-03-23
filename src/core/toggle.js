@@ -966,11 +966,11 @@ class Toggle {
       Xt.eventDelay({
         event: { detail: { delay: Xt.medialoadedDelay } },
         element: self.object,
+        prefix: `${self.ns}MedialoadedReinit`,
         func: () => {
           // mediaLoaded
           self.eventMediaLoadedReinit()
         },
-        prefix: `${self.ns}MedialoadedReinit`,
       })
     }
     // mediaLoaded
@@ -3167,11 +3167,11 @@ class Toggle {
       Xt.eventDelay({
         event: e,
         element: self.object,
+        prefix: `${self.ns}Reinit`,
         func: () => {
           // handler
           self.reinit()
         },
-        prefix: `${self.ns}Reinit`,
       })
     }
   }

@@ -191,14 +191,22 @@ For special events like the `resize` and `scroll` events we use a special wrappe
 
 ```js
 addEventListener('resize', e => {
-  Xt.eventDelay({ event: e, element: document.documentElement, func: () => {
-    // logic
+  Xt.eventDelay({
+    event: e,
+    element: document.documentElement,
+    func: () => {
+      // logic
+    },
   })
 })
 
 addEventListener('scroll', e => {
-  Xt.eventDelay({ event: e, element: document.documentElement, func: () => {
-    // logic
+  Xt.eventDelay({
+    event: e,
+    element: document.documentElement,
+    func: () => {
+      // logic
+    },
   })
 })
 ```
