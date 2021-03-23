@@ -44,7 +44,7 @@ class Stickyflow {
     // vars
     self.scrollTopOld = 0
     // events
-    let changeHandler = Xt.dataStorage.put(window, `scroll/resize/${self.ns}`, self.eventChange.bind(self))
+    let changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self.eventChange.bind(self))
     addEventListener('scroll', changeHandler)
     addEventListener('resize', changeHandler)
     // initial
@@ -114,7 +114,7 @@ class Stickyflow {
   destroy() {
     const self = this
     // remove events
-    let changeHandler = Xt.dataStorage.get(window, `scroll/resize/${self.ns}`)
+    let changeHandler = Xt.dataStorage.get(window, `scroll resize/${self.ns}`)
     removeEventListener('scroll', changeHandler)
     removeEventListener('resize', changeHandler)
     // initialized class

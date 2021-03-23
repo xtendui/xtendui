@@ -39,7 +39,7 @@ class Textareaautosize {
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // key
-    let changeHandler = Xt.dataStorage.put(self.object, `keydown/keyup/reset/${self.ns}`, self.keychange.bind(self))
+    let changeHandler = Xt.dataStorage.put(self.object, `keydown keyup reset/${self.ns}`, self.keychange.bind(self))
     self.object.addEventListener('keydown', changeHandler)
     self.object.addEventListener('keyup', changeHandler)
     self.form = self.object.closest('form')
@@ -82,8 +82,10 @@ class Textareaautosize {
    */
   destroy() {
     const self = this
+    // reset
+    self.object.style.height = ''
     // remove events
-    let changeHandler = Xt.dataStorage.get(self.object, `keydown/keyup/reset/${self.ns}`)
+    let changeHandler = Xt.dataStorage.get(self.object, `keydown keyup reset/${self.ns}`)
     self.object.removeEventListener('keydown', changeHandler)
     self.object.removeEventListener('keyup', changeHandler)
     if (self.form) {
