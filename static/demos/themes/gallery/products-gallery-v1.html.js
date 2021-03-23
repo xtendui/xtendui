@@ -86,10 +86,7 @@ const html = /* HTML */ `
                       id="product-image-5"
                       title="Expand image 5"
                     >
-                      <div
-                        class="xt-media-container bg-gray-600 overflow-hidden"
-                        data-xt-overlay="{ targets: '#overlay--product-images' }"
-                      >
+                      <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <div class="xt-media-inner relative">
                           <img class="xt-media" src="/img.svg" loading="eager" alt="" />
                         </div>
