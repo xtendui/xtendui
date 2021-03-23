@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--products-listing-v2',
+  matches: '.demo--products-listing-v2',
   mount: ({ object }) => {
     const unmountSlider = mountSlider({ object })
     const unmountMedia = mountMedia({ object })

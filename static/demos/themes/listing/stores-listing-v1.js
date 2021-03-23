@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.CCC--stores-listing-v1',
+  matches: '.demo--stores-listing-v1',
   mount: ({ object }) => {
     const unmountListing = mountListing({ object })
 

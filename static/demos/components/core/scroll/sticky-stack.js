@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--sticky-stack',
+  matches: '.demo--sticky-stack',
   mount: ({ object }) => {
     const unmountSticky = mountSticky({ object })
 

@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--group-expand">
+  <div class="demo--group-expand">
     <form class="text-sm">
       <div class="xt-list flex-nowrap max-w-sm">
         <div class="xt-list-inner flex-auto">

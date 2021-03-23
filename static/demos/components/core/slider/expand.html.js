@@ -2,7 +2,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider').def
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--slider-expand">
+  <div class="demo--slider-expand">
     <div
       class="xt-slider"
       data-xt-slider="{ drag: { wrap: true }, matches: { '(max-width: 767px)':

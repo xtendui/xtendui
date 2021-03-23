@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--toggle-animation-js-multiple">
+  <div class="demo--toggle-animation-js-multiple">
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 0

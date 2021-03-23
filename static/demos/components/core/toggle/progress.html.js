@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--toggle-progress">
+  <div class="demo--toggle-progress">
     <div class="xt-list xt-list-3 items-center">
       <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
         <span

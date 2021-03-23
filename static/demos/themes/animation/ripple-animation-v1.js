@@ -3,7 +3,7 @@ import 'xtendui/src/addons/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--ripple-animation-v1',
+  matches: '.demo--ripple-animation-v1',
   mount: ({ object }) => {
     const unmountRipple = mountRipple({ object })
 

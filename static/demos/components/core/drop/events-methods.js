@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/drop'
 
 Xt.mount.push({
-  matches: '.CCC--drop-events',
+  matches: '.demo--drop-events',
   mount: ({ object }) => {
     const unmountEventmethods = mountEventmethods({ object })
 

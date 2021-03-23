@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--stores-listing-v2',
+  matches: '.demo--stores-listing-v2',
   mount: ({ object }) => {
     const unmountListing = mountListing({ object })
 

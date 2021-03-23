@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--scrolltoanchor-overlay',
+  matches: '.demo--scrolltoanchor-overlay',
   mount: ({ object }) => {
     const unmountScrolltoanchor = mountScrolltoanchor()
     const unmountSticky = mountSticky({ object })

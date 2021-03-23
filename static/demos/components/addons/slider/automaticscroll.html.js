@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--slider-automaticscroll">
+  <div class="demo--slider-automaticscroll">
     <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Constant speed</div>
 
     <div class="xt-slider slider--text my-12">

@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--products-listing-v1">
+  <div class="demo--products-listing-v1">
     <div class="py-10">
       <div class="xt-slider slider--listing">
         <div class="xt-slides">

@@ -4,7 +4,7 @@ import 'xtendui/src/addons/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--toggle-progress',
+  matches: '.demo--toggle-progress',
   mount: ({ object }) => {
     const unmountToggle = mountToggle({ object })
 

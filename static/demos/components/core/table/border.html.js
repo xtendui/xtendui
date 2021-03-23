@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <div class="CCC--table-border">
+  <div class="demo--table-border">
     <table class="my-4 xt-my-auto w-full rounded-xl border-2 border-separate">
       <thead>
         <tr>

@@ -18,15 +18,15 @@ const test = false
       let strMount = ''
       let strMethods = ''
       // refs
-      const refs = html.match(/class="CCC(.*?)"/g)
-      html = html.replace(/(?<=class="CCC(.*?))"/g, '-react"')
+      const refs = html.match(/class="demo--(.*?)"/g)
+      html = html.replace(/(?<=class="demo--(.*?))"/g, '-react"')
       // js
       const jsGlob = new glob.Glob(`${src}.js`, (er, jsSources) => {
         if (jsSources.length) {
           const jsSource = jsSources[0]
           const jsText = fs.readFileSync(jsSource, 'utf8')
           // automatic check of refs
-          const refsJs = jsText.match(/(?!'\.)CCC[^' ]*/g)
+          const refsJs = jsText.match(/(?!'\.)demo--[^' ]*/g)
           if (refsJs) {
             let found = 0
             for (const refJs of refsJs.entries()) {
@@ -40,12 +40,12 @@ const test = false
             }
             if (!refs) {
               // not found any ref in html
-              console.error(`Jsx generator found custom javascript and no html CCC in ${file}`)
+              console.error(`Jsx generator found custom javascript and no html demo-- in ${file}`)
               process.exit(1)
             }
             if (found < refsJs.length || found < refs.length) {
               // not found ref in html with match
-              console.error(`Jsx generator found custom javascript with no matching html CCC in ${file}`)
+              console.error(`Jsx generator found custom javascript with no matching html demo-- in ${file}`)
               //process.exit(1)
             }
           }
@@ -82,7 +82,7 @@ const test = false
       })
       jsGlob.on('end', () => {
         if (strMount) {
-          html = html.replace(/(?<=class="CCC(.*?))"/g, '" ref={ref}')
+          html = html.replace(/(?<=class="demo--(.*?))"/g, '" ref={ref}')
         }
         // test
         if (test) {
@@ -101,7 +101,7 @@ const test = false
         html = html.replace(/frameborder/g, 'frameBorder')
         // str
         let str = `import React${
-          strMount !== '' ? `, ${refs ? `{ useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
+          strMount !== '' ? `${refs ? `, { useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function component() {${
           strMount !== ''

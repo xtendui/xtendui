@@ -3,7 +3,7 @@ import 'xtendui/src/core/slider'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--slider-automaticscroll',
+  matches: '.demo--slider-automaticscroll',
   mount: ({ object }) => {
     const unmountSliders = mountSliders({ object })
 

@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/addons/googlelocator'
 
 Xt.mount.push({
-  matches: '.CCC--googlelocator',
+  matches: '.demo--googlelocator',
   mount: ({ object }) => {
     const unmountGooglelocator = mountGooglelocator({ object })
 

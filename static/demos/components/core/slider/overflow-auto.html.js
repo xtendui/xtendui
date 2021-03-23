@@ -2,7 +2,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider-overf
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--slider-overflow-auto">
+  <div class="demo--slider-overflow-auto">
     <div class="xt-slider" data-xt-slider="{ align: 'center', drag: { wrap: true } }">
       ${indentString(markupSlider(), 2)}
     </div>

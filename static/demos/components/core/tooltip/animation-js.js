@@ -3,7 +3,7 @@ import 'xtendui/src/core/tooltip'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--tooltip-animation-js',
+  matches: '.demo--tooltip-animation-js',
   mount: ({ object }) => {
     const unmountTooltip = mountTooltip({ object })
 

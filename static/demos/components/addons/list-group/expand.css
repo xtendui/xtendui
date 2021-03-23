@@ -1,4 +1,4 @@
-.CCC--group-expand, .CCC--group-expand-react {
+.demo--group-expand, .demo--group-expand-react {
   .xt-list {
     @apply transition-all;
     &.expand {

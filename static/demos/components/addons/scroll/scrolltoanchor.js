@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--scrolltoanchor',
+  matches: '.demo--scrolltoanchor',
   mount: ({ object }) => {
     const unmountScrolltoanchor = mountScrolltoanchor()
     const unmountSticky = mountSticky({ object })

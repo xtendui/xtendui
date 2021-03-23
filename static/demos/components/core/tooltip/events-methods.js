@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/tooltip'
 
 Xt.mount.push({
-  matches: '.CCC--tooltip-eventmethods',
+  matches: '.demo--tooltip-eventmethods',
   mount: ({ object }) => {
     const unmountEventmethods = mountEventmethods({ object })
 

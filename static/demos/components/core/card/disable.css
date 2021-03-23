@@ -1,4 +1,4 @@
-.CCC--card-disabled, .CCC--card-disabled-react {
+.demo--card-disabled, .demo--card-disabled-react {
   .xt-card {
     @apply xt-links-default;
     border-width: 0;

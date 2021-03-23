@@ -7,7 +7,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 Xt.mount.push({
-  matches: '.CCC--products-gallery-v1',
+  matches: '.demo--products-gallery-v1',
   mount: ({ object }) => {
     const unmountScrolltoanchor = mountScrolltoanchor()
     const unmountImages = mountImages({ object })

@@ -4,7 +4,7 @@ import 'xtendui/src/addons/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--slider-hero-v2',
+  matches: '.demo--slider-hero-v2',
   mount: ({ object }) => {
     const unmountSlider = mountSlider({ object })
     const unmountSlide = mountSlide({ object })

@@ -1,4 +1,4 @@
-.CCC--toggle-animation, .CCC--toggle-animation-react {
+.demo--toggle-animation, .demo--toggle-animation-react {
   .xt-card {
     /* initial */
     @apply transform ease-out duration-500;

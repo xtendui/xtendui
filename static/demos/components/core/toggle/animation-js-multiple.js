@@ -3,7 +3,7 @@ import 'xtendui/src/core/toggle'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--toggle-animation-js-multiple',
+  matches: '.demo--toggle-animation-js-multiple',
   mount: ({ object }) => {
     const unmountToggle = mountToggle({ object })
 

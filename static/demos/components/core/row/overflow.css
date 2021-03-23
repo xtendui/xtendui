@@ -1,4 +1,4 @@
-.CCC--row-overflow, .CCC--row-overflow-react {
+.demo--row-overflow, .demo--row-overflow-react {
   .xt-row {
     @media (max-width: calc(theme('screens.md') - 1px)) {
       > * {

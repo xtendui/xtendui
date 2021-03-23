@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/tooltip'
 
 Xt.mount.push({
-  matches: '.CCC--tooltip-swap-click',
+  matches: '.demo--tooltip-swap-click',
   mount: ({ object }) => {
     const unmountButtonsSwap = mountButtonsSwap({ object })
 

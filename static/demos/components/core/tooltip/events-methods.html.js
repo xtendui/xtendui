@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--tooltip-eventmethods">
+  <div class="demo--tooltip-eventmethods">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"

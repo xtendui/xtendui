@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.CCC--group-expand',
+  matches: '.demo--group-expand',
   mount: ({ object }) => {
     const unmountExpand = mountExpand({ object })
 

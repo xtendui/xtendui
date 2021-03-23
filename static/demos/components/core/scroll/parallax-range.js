@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--parallax-range',
+  matches: '.demo--parallax-range',
   mount: ({ object }) => {
     const unmountParallax = mountParallax({ object })
 

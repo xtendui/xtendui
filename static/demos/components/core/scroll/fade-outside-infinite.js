@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--fade-outside-infinite',
+  matches: '.demo--fade-outside-infinite',
   mount: ({ object }) => {
     const unmountFade = mountFade({ object })
 

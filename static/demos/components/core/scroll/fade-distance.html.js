@@ -2,7 +2,7 @@ const markupFade = require('src/gatsby/components/snippets/markup-fade').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--fade-distance">
+  <div class="demo--fade-distance">
     <div class="xt-row xt-row-6">${indentString(markupFade(), 2)}</div>
   </div>
 `

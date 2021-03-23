@@ -3,7 +3,7 @@ import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--drop-animation-js-multiple',
+  matches: '.demo--drop-animation-js-multiple',
   mount: ({ object }) => {
     const unmountDrops = mountDrops({ object })
 

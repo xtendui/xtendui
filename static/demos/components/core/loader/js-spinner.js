@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--loader-js-spinner',
+  matches: '.demo--loader-js-spinner',
   mount: ({ object }) => {
     const unmountLoader = mountLoader({ object })
 

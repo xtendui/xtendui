@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--infinitescroll">
+  <div class="demo--infinitescroll">
     <div
       class="py-10"
       data-xt-infinitescroll="{

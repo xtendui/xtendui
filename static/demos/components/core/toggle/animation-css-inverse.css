@@ -1,4 +1,4 @@
-.CCC--toggle-animation-inverse, .CCC--toggle-animation-inverse-react {
+.demo--toggle-animation-inverse, .demo--toggle-animation-inverse-react {
   .xt-card {
     /* initial */
     @apply transform ease-out duration-500;

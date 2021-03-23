@@ -61,9 +61,9 @@ const formatCode = (source, sourceCode, isReact = false) => {
   let text = source.innerHTML
   // css refs
   if (isReact) {
-    text = text.replace(/\.CCC(.*?), /, '')
+    text = text.replace(/\.demo--(.*?), /, '')
   } else {
-    text = text.replace(/, \.CCC(.*?)-react/, '')
+    text = text.replace(/, \.demo--(.*?)-react/, '')
   }
   // ##START and ##END
   // const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
@@ -76,15 +76,15 @@ const formatCode = (source, sourceCode, isReact = false) => {
   // remove ##
   // text = text.replace(/\n*[ ]*\/\*##(.*)*/g, '')
   // refs
-  // const ref = text.match(/( {2}<div class="CCC--(.*?)$)/gm)
+  // const ref = text.match(/( {2}<div class="demo--(.*?)$)/gm)
   // if (ref) {
-  //   text = text.replace(/( {2}<div class="CCC--(.*?)$)/gm, '')
+  //   text = text.replace(/( {2}<div class="demo--(.*?)$)/gm, '')
   //   text = text.replace(/(^ {2}<\/div>)/gm, '')
   // }
   // ref
-  // const refs = text.match(/(\.CCC--(.*?)$)/gm)
+  // const refs = text.match(/(\.demo--(.*?)$)/gm)
   // if (refs) {
-  //   text = text.replace(/^(\.CCC--(.*?)$)/gm, '')
+  //   text = text.replace(/^(\.demo--(.*?)$)/gm, '')
   //   text = text.replace(/^}$/gm, '')
   // }
   // clipboard

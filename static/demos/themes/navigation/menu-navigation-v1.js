@@ -3,7 +3,7 @@ import 'xtendui/src/core/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--menu-navigation-v1',
+  matches: '.demo--menu-navigation-v1',
   mount: ({ object }) => {
     const unmountDrops = mountDrops({ object })
     const unmountLine = mountLine({ object })

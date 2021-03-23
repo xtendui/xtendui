@@ -1,4 +1,4 @@
-.CCC--slider-progress, .CCC--slider-progress-react {
+.demo--slider-progress, .demo--slider-progress-react {
   .xt-slider > .xt-loader {
     /* touch */
     @media (hover: none) {

@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/slider'
 
 Xt.mount.push({
-  matches: '.CCC--slider-events',
+  matches: '.demo--slider-events',
   mount: ({ object }) => {
     const unmountEventmethods = mountEventmethods({ object })
 

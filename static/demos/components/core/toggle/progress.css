@@ -1,4 +1,4 @@
-.CCC--toggle-progress, .CCC--toggle-progress-react {
+.demo--toggle-progress, .demo--toggle-progress-react {
   > .xt-list > .xt-loader {
     /* touch */
     @media (hover: none) {

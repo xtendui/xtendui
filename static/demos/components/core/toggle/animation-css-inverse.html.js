@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--toggle-animation-inverse">
+  <div class="demo--toggle-animation-inverse">
     <div
       class="xt-list xt-list-3 items-center"
       data-xt-toggle="{ targets: ':scope > .xt-toggle-inverse, .xt-toggle-item > .xt-toggle-inverse' }"

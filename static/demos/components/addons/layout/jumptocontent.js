@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.CCC--jumptocontent',
+  matches: '.demo--jumptocontent',
   mount: ({ object }) => {
     const unmountJumptocontents = mountJumptocontents({ object })
 

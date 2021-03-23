@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC--fade-inside',
+  matches: '.demo--fade-inside',
   mount: ({ object }) => {
     const unmountFade = mountFade({ object })
 

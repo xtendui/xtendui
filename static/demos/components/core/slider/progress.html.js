@@ -2,7 +2,7 @@ const markupSlider = require('src/gatsby/components/snippets/markup-slider-progr
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div class="CCC--slider-progress">
+  <div class="demo--slider-progress">
     <div class="xt-slider">${indentString(markupSlider(), 2)}</div>
   </div>
 `

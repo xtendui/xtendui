@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/toggle'
 
 Xt.mount.push({
-  matches: '.CCC--toggle-eventmethods',
+  matches: '.demo--toggle-eventmethods',
   mount: ({ object }) => {
     const unmountEventmethods = mountEventmethods({ object })
 

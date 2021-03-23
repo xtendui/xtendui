@@ -1,4 +1,4 @@
-.CCC--sticky-hide, .CCC--sticky-hide-react {
+.demo--sticky-hide, .demo--sticky-hide-react {
   .sticky--hide-top-sub .h6 {
     @apply transition-all duration-500 ease-in-out-quint;
   }

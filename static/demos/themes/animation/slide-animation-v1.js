@@ -5,7 +5,7 @@ import 'xtendui/src/core/tooltip'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC-slide-animation-v1',
+  matches: '.demo--slide-animation-v1',
   mount: ({ object }) => {
     const unmountSlide = mountSlide({ object })
 

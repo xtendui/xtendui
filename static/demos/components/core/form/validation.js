@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount.push({
-  matches: '.CCC--form-validation',
+  matches: '.demo--form-validation',
   mount: ({ object }) => {
     const unmountValidation = mountValidation({ object })
 

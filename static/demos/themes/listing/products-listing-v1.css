@@ -1,4 +1,4 @@
-.CCC--products-listing-v1, .CCC--products-listing-v1-react {
+.demo--products-listing-v1, .demo--products-listing-v1-react {
   body:not(.xt-noscroll) & {
     .listing-item {
       opacity: 0;

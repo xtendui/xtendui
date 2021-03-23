@@ -1,5 +1,5 @@
 
-.CCC--fade-inside, .CCC--fade-inside-react {
+.demo--fade-inside, .demo--fade-inside-react {
   body:not(.xt-noscroll) & {
     .xt-card {
       opacity: 0;

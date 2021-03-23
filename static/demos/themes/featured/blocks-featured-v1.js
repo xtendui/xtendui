@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount.push({
-  matches: '.CCC-blocks-featured-v1',
+  matches: '.demo--blocks-featured-v1',
   mount: ({ object }) => {
     const unmountItemsParallax = mountItemsParallax({ object })
     const unmountButtonsLine = mountButtonsLine({ object })

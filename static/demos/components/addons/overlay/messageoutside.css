@@ -1,4 +1,4 @@
-.CCC--overlay-messageoutside {
+.demo--overlay-messageoutside {
   .overlay--messageoutside {
     width: calc(100vw - 28rem); /* same as max-w-md */
   }

@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="CCC--stickyfooter">
+  <div class="demo--stickyfooter">
     <div class="site-wrapper">
       <header class="site-header">
         <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">

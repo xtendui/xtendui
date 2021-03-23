@@ -3,7 +3,7 @@ import 'xtendui/src/core/overlay'
 import gsap from 'gsap'
 
 Xt.mount.push({
-  matches: '.CCC--overlay-animation-js',
+  matches: '.demo--overlay-animation-js',
   mount: ({ object }) => {
     const unmountOverlay = mountOverlay({ object })
 

@@ -1,4 +1,4 @@
-.CCC--products-gallery-v1, .CCC--products-gallery-v1-react {
+.demo--products-gallery-v1, .demo--products-gallery-v1-react {
   .product-gallery {
     @apply overflow-y-auto overflow-x-hidden xt-overflow-sub xt-container-remove;
     height: 65vh;

@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/core/overlay'
 
 Xt.mount.push({
-  matches: '.CCC--overlay-events',
+  matches: '.demo--overlay-events',
   mount: ({ object }) => {
     const unmountEventmethods = mountEventmethods({ object })
 
