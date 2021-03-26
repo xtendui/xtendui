@@ -31,10 +31,8 @@ const html = /* HTML */ `
                 <div class="xt-link">link class</div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>

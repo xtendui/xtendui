@@ -99,10 +99,7 @@ class Infinitescroll {
         add += additional.offsetHeight
       }
       document.scrollingElement.scrollTop = state.scrollResume - state.scrollRemove + add
-      // debug
-      if (Xt.debug) {
-        console.debug('Xt.debug xt-infinitescroll scrollResume', state.scrollResume)
-      }
+      // @TEST console.debug('xt-infinitescroll scrollResume', state.scrollResume)
     }
     // scrollRemove
     let space = 0
@@ -194,14 +191,10 @@ class Infinitescroll {
       if (linkOrigin === location.origin) {
         if (self.url.href !== location.href) {
           history.replaceState(null, '', self.url.href)
-          if (Xt.debug) {
-            console.debug('Xt.debug xt-infinitescroll history replace', self.url.href)
-          }
+          // @TEST console.debug('xt-infinitescroll history replace', self.url.href)
         }
       } else {
-        if (Xt.debug) {
-          console.error('Xt.debug xt-infinitescroll cannot set history with different origin', linkOrigin)
-        }
+        console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
       }
       // request if on bottom
       if (self.options.events.scroll) {
@@ -232,18 +225,12 @@ class Infinitescroll {
         const request = new XMLHttpRequest()
         request.open('GET', self.url.href, true)
         request.onload = () => {
-          // debug
-          if (Xt.debug) {
-            console.debug('Xt.debug xt-infinitescroll request success', request, self.url)
-          }
+          // @TEST console.debug('xt-infinitescroll request success', request, self.url)
           // response
           self.response(request)
         }
         request.onerror = () => {
-          // debug
-          if (Xt.debug) {
-            console.debug('Xt.debug xt-infinitescroll request failed', request)
-          }
+          // @TEST console.debug('xt-infinitescroll request failed', request)
           // response
           self.response(request)
         }
@@ -279,10 +266,7 @@ class Infinitescroll {
     if (self.options.get && items) {
       self.populate(items)
     } else {
-      // debug
-      if (Xt.debug) {
-        console.debug('Xt.debug xt-infinitescroll fake populate because no items found')
-      }
+      // @TEST console.debug('xt-infinitescroll fake populate because no items found')
       // fake
       setTimeout(() => {
         self.populate(self.itemsFake.cloneNode(true))

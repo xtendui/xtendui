@@ -78,11 +78,11 @@ addEventListener('resize', animationResponsive)
 animationResponsive()
 ```
 ## Utilities
-#### Xt.debug
 
-Xtend sends debug messages on `console.debug`, you can find them activating the **verbose console log**.
+#### Usability
 
-Set `NODE_ENV=development` to have **Xt.debug activated**. On Linux and mac globally with `export NODE_ENV = development`, on windows globally with `Add-Content -Path $Profile.CurrentUserAllHosts -Value '$Env:NODE_ENV = "development"'`.
+Activate usability logs with `import 'xtendui/src/core/usability'`. Xtend will sends **warning messages with website usability suggestions**.
+
 #### Xt.ready
 
 You can execute a function on DOM ready.
