@@ -205,16 +205,3 @@ Disable and reset styles accordingly.
   <demoinline src="demos/components/core/toggle/disable">
   </demoinline>
 </demo>
-
-
-## Other
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
-| Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
-| Option                  | `zIndex:Object|Boolean`                 | `false`     | Set `z-index` on activation, can be one or more objects ex: `zIndex: { targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
-
-</div>

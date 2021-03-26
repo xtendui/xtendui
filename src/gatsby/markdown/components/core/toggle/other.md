@@ -21,13 +21,14 @@ When you need to reinit the component when the media is loaded and the **width**
 
 </div>
 
-## Other
+See [slider media loaded](/components/core/slider/other#media-loaded) for demo.
+
+## Aria
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 | Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.activation:Boolean`                          | `true`        | Inject aria selected, expanded and live attributes            |
 | Option                  | `aria.role:Boolean`                          | `true`        | Inject aria role attributes            |
@@ -35,5 +36,18 @@ When you need to reinit the component when the media is loaded and the **width**
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |
 | Option                  | `aria.describedby:Boolean`                          | `false`        | Inject aria describedby attributes            |
 | Option                  | `aria.labelledby:Boolean`                          | `false`        | Inject aria labelledby attributes            |
+
+</div>
+
+## Other
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
+| Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
+| Option                  | `zIndex:Object|Boolean`                 | `false`     | Set `z-index` on activation, e.g.: `{ targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+| Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 
 </div>

@@ -64,13 +64,3 @@ You can set **html classes on activation**, remember to keep default `classHtml`
   <demoinline src="demos/components/core/overlay/class-html">
   </demoinline>
 </demo>
-
-## Other
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
-
-</div>

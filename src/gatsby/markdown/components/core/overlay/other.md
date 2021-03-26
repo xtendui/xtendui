@@ -48,12 +48,18 @@ You can have the the close button with `.fixed` to have it **fixed inside the ov
   </demoinline>
 </demo>
 
+## Aria
+
+See [toggle aria](/components/core/toggle/other#aria) for aria options.
+
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
+| Option                  | `zIndex:Object|Boolean`                 | `{ targets: { start: 500, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
 
 </div>

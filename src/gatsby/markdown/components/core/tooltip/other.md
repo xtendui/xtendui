@@ -49,3 +49,17 @@ You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for ini
 </div>
 
 If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'PopperInstance')`, for example when you want to `.update()` it.
+
+## Aria
+
+See [toggle aria](/components/core/toggle/other#aria) for aria options.
+
+## Other
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `zIndex:Object|Boolean`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+
+</div>

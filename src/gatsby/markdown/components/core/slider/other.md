@@ -91,3 +91,31 @@ When you need to reinit the component when the media is loaded and the **width**
 
 [[noteDefault]]
 | Images from [Unsplash](https://source.unsplash.com/)
+
+## Aria
+
+See [toggle aria](/components/core/toggle/other#aria) for aria options.
+
+## Other	
+
+Do not loop slides activation with `loop: false`.	
+
+Disable the jump feature (clicking on not activated slides jumps to the slide) with `jump: false`. Jump only if the slide isn't entirely on screen.	
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">	
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/core/toggle) |     
+| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
+| Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
+| Option                  | `jumpOverflow:Boolean`                          | `false`        | Jump only activates if slide overflows the dragger            |
+| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`)            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
+
+</div>	
+
+<demo>	
+  <demoinline src="demos/components/core/slider/other">	
+  </demoinline>	
+</demo>	

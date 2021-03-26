@@ -126,25 +126,3 @@ Use the [api](/components/core/slider/api#listen) and listen to events to make a
   <demoinline src="demos/components/core/slider/progress">	
   </demoinline>	
 </demo>	
-
-## Other	
-
-Do not loop slides activation with `loop: false`.	
-
-Disable the jump feature (clicking on not activated slides jumps to the slide) with `jump: false`. Jump only if the slide isn't entirely on screen.	
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/core/toggle) |     
-| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
-| Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
-| Option                  | `jumpOverflow:Boolean`                          | `false`        | Jump only activates if slide overflows the dragger            |	
-
-</div>	
-
-<demo>	
-  <demoinline src="demos/components/core/slider/other">	
-  </demoinline>	
-</demo>	

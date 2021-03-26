@@ -87,23 +87,3 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
   <demoinline src="demos/components/core/slider/wrap-right">
   </demoinline>
 </demo>
-
-## Other
-
-If you have slides of different height you can set `autoHeight: '.xt-slides'` to have the slides element resize automatically on activation.
-
-If you want to keep the first element height on the slide use `keepHeight: '.xt-slides'`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`)            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/core/slider/other">
-  </demoinline>
-</demo>
