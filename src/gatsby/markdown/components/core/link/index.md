@@ -37,6 +37,8 @@ Use `a` without classes or `.xt-link` to create a **link**.
 
 Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **parent elements** to style **child links**.
 
+You can nest **up to two time included the body** to override links styles.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
