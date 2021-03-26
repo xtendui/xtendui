@@ -33,12 +33,12 @@ module.exports = {
       },
       zIndex: {
         below: '-1',
-        sticky: '90',
-        above: '100', // this is the z-index top for the page content, more z-index only for components over the content
-        drop: '200', // theme.zIndex.drop same as Drop options.zIndex.targets.start
-        tooltip: '200', // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
-        overlay: '500', // theme.zIndex.overlay same as Overlay options.zIndex.targets.start
-        last: '1000',
+        drop: '400', // theme.zIndex.drop same as Drop options.zIndex.targets.start
+        tooltip: '500', // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
+        sticky: '900',
+        above: '1000', // this is the z-index top for the page content, more z-index only for components over the content
+        overlay: '5000', // theme.zIndex.overlay same as Overlay options.zIndex.targets.start
+        last: '10000',
       },
       flex: {
         full: '1 1 100%',
@@ -53,24 +53,24 @@ module.exports = {
         none: 'none',
       },
       boxShadow: {
-        ...require('./src/core/drop.css.js').boxShadow,
-        ...require('./src/core/overlay.css.js').boxShadow,
-        ...require('./src/core/tooltip.css.js').boxShadow,
+        ...require('./src/drop.css.js').boxShadow,
+        ...require('./src/overlay.css.js').boxShadow,
+        ...require('./src/tooltip.css.js').boxShadow,
       },
       transitionDelay: {
-        ...require('./src/core/animation.css.js').transitionDelay,
+        ...require('./src/animation.css.js').transitionDelay,
       },
       transitionDuration: {
-        ...require('./src/core/animation.css.js').transitionDuration,
+        ...require('./src/animation.css.js').transitionDuration,
       },
       transitionTimingFunction: {
-        ...require('./src/core/animation.css.js').transitionTimingFunction,
+        ...require('./src/animation.css.js').transitionTimingFunction,
       },
       animation: {
-        ...require('./src/core/animation.css.js').animation,
+        ...require('./src/animation.css.js').animation,
       },
       keyframes: theme => ({
-        ...require('./src/core/animation.css.js').keyframes(theme),
+        ...require('./src/animation.css.js').keyframes(theme),
       }),
     },
   },

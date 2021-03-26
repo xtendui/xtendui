@@ -1,3 +1,3 @@
-import 'xtendui/src/core/overlay'
-import 'xtendui/src/core/drop'
-import 'xtendui/src/core/tooltip'
+import 'xtendui/src/overlay'
+import 'xtendui/src/drop'
+import 'xtendui/src/tooltip'

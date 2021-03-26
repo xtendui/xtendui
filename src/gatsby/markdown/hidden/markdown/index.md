@@ -8,14 +8,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Classes not xt
 
-#### Core
+#### Components
 
 .hero
 .listing
 .breadcrumbs
-
-#### Addons
-
 .googlelocator
 .multilevel
 .stickyflow
@@ -28,9 +25,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Markdown
 
-Use **component classes** to style **disabled**. Check [xtendui/src/core/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/layout.css.js) for default styles.
+Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
-The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/core/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/core/overlay.css.js) for default styles.
+The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/overlay.css.js) for default styles.
 
 description: "Examples of breadcrumbs, with all the basic functionality and more."
 
@@ -40,7 +37,7 @@ Use this code to create a **card**.
 
 Use this code to create a **group vertical** with `.flex-col`.
 
-Check subpage to [customize content](/components/core/loader/content#spinner).
+Check subpage to [customize content](/components/loader/content#spinner).
 
 Use **tailwind classes** to create a **navigation**.
 
@@ -78,16 +75,16 @@ You can use also **css animations**, just add them with **class names** `.active
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[noteDefault]]
-| This demos uses [multiple mount object](/components/globals/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
+| This demos uses [multiple mount object](/components/getting-started/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 [[noteDefault]]
-| This demos uses [loader](/components/core/loader) see documentation to **customize**.
+| This demos uses [loader](/components/loader) see documentation to **customize**.
 
 [[noteDefault]]
-| This component uses [card](/components/core/card) see documentation for more info.
+| This component uses [card](/components/card) see documentation for more info.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/addons/animation/mousefollow) see documentation for more info.
+| This addon uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
 
 [[notePrimary]]
 | For aria purpose use `role="toolbar"`.

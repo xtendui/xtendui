@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/slider'
+import 'xtendui/src/slider'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)

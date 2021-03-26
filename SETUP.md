@@ -118,7 +118,7 @@ You can import the **components you need** as described in the demos.
 
 ```jsx
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/toggle'
+import 'xtendui/src/toggle'
 ```
 
 #### Gsap
@@ -129,7 +129,7 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 npm install gsap@3 --save
 ```
 
-Then set up animations see [javascript animation](https://xtendui.com/components/globals/javascript#animation).
+Then set up animations see [javascript animation](https://xtendui.com/components/components/animation/javascript).
 
 #### Polyfill
 
@@ -145,6 +145,6 @@ Then in the root of your project set up polyfills with [babel.config.js](https:/
 
 If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
 
-The CDN `dist/` files are large because they include tailwindcss and all components / addons, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
+The CDN `dist/` files are large because they include tailwindcss and all components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
 Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.

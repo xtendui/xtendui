@@ -137,7 +137,7 @@ body {
     @apply w-2/4 md:w-2/6;
   }
   .gatsby_site-article_foot & {
-    &:nth-child(1) {
+    &:nth-child(3) {
       display: none;
       @screen md {
         display: block;

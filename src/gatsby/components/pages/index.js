@@ -172,7 +172,9 @@ export default class Page extends React.Component {
                               </li>
                               <li>
                                 A system to{' '}
-                                <Link to="/components/globals/javascript#utilities-xt-mount">mount components</Link>{' '}
+                                <Link to="/components/getting-started/javascript#utilities-xt-mount">
+                                  mount components
+                                </Link>{' '}
                                 with <strong>mutation observer queries</strong>, to structure your javascript code
                                 better.
                               </li>
@@ -194,7 +196,7 @@ export default class Page extends React.Component {
                               </li>
                               <li>
                                 <strong>Gsap ScrollTrigger</strong> for{' '}
-                                <Link to="/components/core/scroll">scroll interactions</Link>.
+                                <Link to="/components/interaction/scroll">scroll interactions</Link>.
                               </li>
                             </ul>
                           </div>
@@ -264,7 +266,7 @@ export default class Page extends React.Component {
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/components" className="xt-card gatsby_listing-item">
                             <div className="xt-h4">Components</div>
-                            <p>Customizable components and ecosystem of addons.</p>
+                            <p>Customizable components with an ecosystem of plugins.</p>
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll">

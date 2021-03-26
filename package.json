@@ -23,8 +23,6 @@
     "tailwind.*.js",
     "dist/*.min.*",
     "src/*.*",
-    "src/addons/*.*",
-    "src/core/*.*",
     "src/future/*.*"
   ],
   "scripts": {

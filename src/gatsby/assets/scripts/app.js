@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
-import 'xtendui/dist/xtend-core'
-import 'xtendui/src/addons/scrolltoanchor'
+import 'xtendui/dist/xtend-components'
+import 'xtendui/src/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -463,6 +463,7 @@ const makeDocument = () => {
     }
     id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
+    /*
     if (el.tagName === 'H2') {
       let container = document.querySelector(
         '.gatsby_button-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
@@ -480,6 +481,7 @@ const makeDocument = () => {
         item.querySelector('span').textContent = el.textContent.trim()
       }
     }
+    */
     // gatsby_make-anchor
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')

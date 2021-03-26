@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/addons/ripple'
+import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
 Xt.mount.push({

@@ -1,9 +1,9 @@
 const typeSort = (a, b) => {
-  if (a.title === 'Addons' || a.title === 'By Component') {
+  if (a.title === 'By Component') {
     // a is less than b by some ordering criterion
     return 1
   }
-  if ((a.title === 'Globals' && b.title === 'Core') || b.title === 'Addons' || b.title === 'By Component') {
+  if (b.title === 'By Component') {
     // a is greater than b by the ordering criterion
     return -1
   }

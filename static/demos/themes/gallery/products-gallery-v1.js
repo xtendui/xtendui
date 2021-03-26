@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/overlay'
-import 'xtendui/src/addons/stickyflow'
-import 'xtendui/src/addons/scrolltoanchor'
+import 'xtendui/src/overlay'
+import 'xtendui/src/stickyflow'
+import 'xtendui/src/scrolltoanchor'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)

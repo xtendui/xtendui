@@ -8,6 +8,7 @@
 .gatsby_site-article_sidebar {
   @apply text-white xt-links-inverse xt-overflow-sub;
   background: theme('colors.primary.500');
+  line-height: 1;
   @screen lg {
     position: fixed;
     z-index: 2;
@@ -16,7 +17,6 @@
     bottom: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    line-height: 1;
   }
   @screen lg {
     width: 20rem;
@@ -256,7 +256,7 @@
 
 .gatsby_button-site_article_sidebar, .gatsby_button-site-header_link {
   padding: 0;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
   border-width: 0;
   @apply w-full font-sans;
   > span {

@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/drop'
+import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 Xt.mount.push({

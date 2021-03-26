@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/core/overlay'
-import 'xtendui/src/core/drop'
-import 'xtendui/src/core/tooltip'
+import 'xtendui/src/overlay'
+import 'xtendui/src/drop'
+import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
 Xt.mount.push({

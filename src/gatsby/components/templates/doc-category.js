@@ -124,7 +124,6 @@ export const query = graphql`
               parent
               title
               description
-              link
             }
           }
         }

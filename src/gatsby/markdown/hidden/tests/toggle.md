@@ -10,26 +10,35 @@ title: "Toggle"
 Test activation and no close clicking inside with eventLimit.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/usage-self">
+  <demoinline src="demos/components/toggle/usage-self">
   </demoinline>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/core/overlay/usage-self">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/usage-self">
   </div>
-  <demoinline src="demos/components/core/drop/usage-self">
+  <demoinline src="demos/components/drop/usage-self">
   </demoinline>
-  <demoinline src="demos/components/core/tooltip/usage-self">
+  <demoinline src="demos/components/tooltip/usage-self">
   </demoinline>
 </demo>
 
 Test activation and group.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/usage-unique">
+  <demoinline src="demos/components/toggle/usage-unique">
   </demoinline>
-  <demoinline src="demos/components/core/toggle/usage-unique-groupelements">
+  <demoinline src="demos/components/toggle/usage-unique-groupelements">
   </demoinline>
-  <demoinline src="demos/components/core/toggle/usage-multiple-group">
+  <demoinline src="demos/components/toggle/usage-multiple-group">
   </demoinline>
-  <demoinline src="demos/components/core/toggle/usage-multiple-groupelements">
+  <demoinline src="demos/components/toggle/usage-multiple-groupelements">
+  </demoinline>
+</demo>
+
+Test activation.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-click">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/swap-toggle">
   </demoinline>
 </demo>
 
@@ -38,7 +47,7 @@ Test activation and group.
 Test initial activation.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/class">
+  <demoinline src="demos/components/toggle/class">
   </demoinline>
 </demo>
 
@@ -51,20 +60,20 @@ Test drop open and close nested.
 Test tooltip open and close nested.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/event">
+  <demoinline src="demos/components/toggle/event">
   </demoinline>
-  <demoinline src="demos/components/core/drop/event">
+  <demoinline src="demos/components/drop/event">
   </demoinline>
-  <demoinline src="demos/components/core/tooltip/event">
+  <demoinline src="demos/components/tooltip/event">
   </demoinline>
 </demo>
 
 Test prevent event.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/prevent-event">
+  <demoinline src="demos/components/toggle/prevent-event">
   </demoinline>
-  <demoinline src="demos/components/core/toggle/prevent-event-hover">
+  <demoinline src="demos/components/toggle/prevent-event-hover">
   </demoinline>
 </demo>
 
@@ -73,11 +82,11 @@ Test prevent event.
 Test backdrop and no backdrop click.
 
 <demo>
-  <demoinline src="demos/components/core/overlay/variant">
+  <demoinline src="demos/components/overlay/variant">
   </demoinline>
-  <demoinline src="demos/components/core/drop/backdrop">
+  <demoinline src="demos/components/drop/backdrop">
   </demoinline>
-  <demoinline src="demos/components/core/tooltip/backdrop">
+  <demoinline src="demos/components/tooltip/backdrop">
   </demoinline>
 </demo>
 
@@ -86,9 +95,9 @@ Test backdrop and no backdrop click.
 Test position and visibility.
 
 <demo>
-  <demoinline src="demos/components/core/drop/static">
+  <demoinline src="demos/components/drop/static">
   </demoinline>
-  <demoinline src="demos/components/core/tooltip/static">
+  <demoinline src="demos/components/tooltip/static">
   </demoinline>
 </demo>
 
@@ -97,7 +106,7 @@ Test position and visibility.
 Test auto.
 
 <demo>
-  <demoinline src="demos/components/core/toggle/auto">
+  <demoinline src="demos/components/toggle/auto">
   </demoinline>
 </demo>
 
@@ -108,10 +117,10 @@ Test classes nested should not remove additional class.
 Test close all should remove all class.
 
 <demo>
-  <demoinline src="demos/components/core/overlay/class-html">
+  <demoinline src="demos/components/overlay/class-html">
   </demoinline>
 </demo>
 
 ## Api
 
-Test [e.detail.skip = true](/components/core/toggle/api#trigger).
+Test [e.detail.skip = true](/components/toggle/api#trigger).

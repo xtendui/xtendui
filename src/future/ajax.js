@@ -1,5 +1,5 @@
-import { Xt } from '../xt.js'
-import '../core/toggle'
+import { Xt } from '../xt'
+import '../toggle'
 import JSON5 from 'json5'
 
 /**

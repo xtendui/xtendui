@@ -9,24 +9,9 @@ export default class DocFoot extends React.Component {
     const postsIntroduction = page.postsAll.posts.filter(
       x => ['Introduction'].includes(x.post.frontmatter.type) && x.post.frontmatter.title !== x.post.frontmatter.parent
     )
-    const postsGlobals = page.postsAll.posts.filter(
-      x =>
-        ['Components'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.category === 'Globals' &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent
-    )
     const postsCore = page.postsAll.posts.filter(
       x =>
-        ['Components'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.category === 'Core' &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent
-    )
-    const postsAddons = page.postsAll.posts.filter(
-      x =>
-        ['Components'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.category === 'Addons' &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent &&
-        x.post.frontmatter.title !== x.post.frontmatter.parent
+        ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.parent === page.post.frontmatter.parent
     )
     const postsThemes = page.postsAll.posts.filter(
       x =>
@@ -41,69 +26,27 @@ export default class DocFoot extends React.Component {
             <div className="xt-row xt-row-stretch">
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing-column">
-                  <Link to={'/'} className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Setup or other problems?</div>
+                  <Link to={'/introduction'} className="xt-card gatsby_listing-item">
+                    <div className="xt-h4">Problems getting it to work?</div>
                     <p>
-                      Check out the <strong>Getting Started</strong> pages.
+                      Check out the <strong>Introduction</strong> pages.
                     </p>
                   </Link>
                 </div>
               ) : null}
 
-              {page.post.frontmatter.category !== 'Globals' &&
-              page.post.frontmatter.category !== 'Globals' &&
-              postsGlobals.length ? (
+              {page.post.frontmatter.type !== 'Components' && postsCore.length ? (
                 <div className="gatsby_listing-column">
                   <Link
-                    to={`/components/globals/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Visit the Globals pages</div>
-                    <p>
-                      There {postsGlobals.length === 1 ? 'is' : 'are'}{' '}
-                      <strong>
-                        {postsGlobals.length} globals page
-                        {postsAddons.length === 1 ? '' : 's'}{' '}
-                      </strong>{' '}
-                      for {page.post.frontmatter.parent}.
-                    </p>
-                  </Link>
-                </div>
-              ) : null}
-
-              {page.post.frontmatter.category !== 'Core' &&
-              page.post.frontmatter.category !== 'Core' &&
-              postsCore.length ? (
-                <div className="gatsby_listing-column">
-                  <Link
-                    to={`/components/core/${kebabCase(page.post.frontmatter.parent)}`}
+                    to={`/components/${kebabCase(page.post.frontmatter.parent)}`}
                     className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
                       <strong>
                         {postsCore.length} core page
-                        {postsAddons.length === 1 ? '' : 's'}{' '}
+                        {postsCore.length === 1 ? '' : 's'}{' '}
                       </strong>{' '}
-                      for {page.post.frontmatter.parent}.
-                    </p>
-                  </Link>
-                </div>
-              ) : null}
-
-              {page.post.frontmatter.type !== 'Addons' &&
-              page.post.frontmatter.category !== 'Addons' &&
-              postsAddons.length ? (
-                <div className="gatsby_listing-column">
-                  <Link
-                    to={`/components/addons/${kebabCase(page.post.frontmatter.parent)}`}
-                    className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Visit the Addons page</div>
-                    <p>
-                      There {postsAddons.length === 1 ? 'is' : 'are'}{' '}
-                      <strong>
-                        {postsAddons.length} addon
-                        {postsAddons.length === 1 ? '' : 's'}{' '}
-                      </strong>
                       for {page.post.frontmatter.parent}.
                     </p>
                   </Link>
@@ -113,13 +56,7 @@ export default class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
                 <div className="gatsby_listing-column">
                   <Link
-                    to={`/themes/${kebabCase(
-                      page.postsAll.posts.filter(
-                        x =>
-                          x.post.frontmatter.type === 'Themes' &&
-                          x.post.frontmatter.title === page.post.frontmatter.parent
-                      )[0].post.frontmatter.category
-                    )}/${kebabCase(page.post.frontmatter.parent)}`}
+                    to={`/themes/${kebabCase(page.post.frontmatter.parent)}`}
                     className="xt-card gatsby_listing-item">
                     <div className="xt-h4">Visit the Theme page</div>
                     <p>
