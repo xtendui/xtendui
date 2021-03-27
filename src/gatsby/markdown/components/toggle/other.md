@@ -27,6 +27,23 @@ Disable and reset styles accordingly.
   </demoinline>
 </demo>
 
+## Match Media
+
+You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/matches">
+  </demoinline>
+</demo>
+
 ## Media loaded
 
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.toggle`.

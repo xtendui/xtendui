@@ -7,11 +7,19 @@ description: "Javascript animation utility to follow mouse position."
 date: "1900-10-10"
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow`.
+
+Check [xtendui/src/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/mousefollow'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow`, check [xtendui/src/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-mousefollow="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Mousefollow(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 
@@ -77,37 +85,3 @@ Access properties by getting component object.
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-mousefollow="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Mousefollow(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Mousefollow(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

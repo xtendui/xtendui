@@ -6,9 +6,11 @@ title: "List"
 description: "Flex component to space any element with margins, also spaces vertically."
 ---
 
-## Installation
+## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list`, check [xtendui/src/list.css.js](https://github.com/minimit/xtendui/blob/beta/src/list.css.js) for default styles.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list`.
+
+Check [xtendui/src/list.css.js](https://github.com/minimit/xtendui/blob/beta/src/list.css.js) for default styles.
 
 ## Usage
 

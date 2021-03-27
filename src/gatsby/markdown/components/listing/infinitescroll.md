@@ -7,9 +7,13 @@ description: "Automatic pagination activable on click or on scroll, with browser
 date: "1900-10-10"
 ---
 
-## Installation
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/infinitescroll'`.
+
+Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Infinitescroll(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 
@@ -88,37 +92,3 @@ Access properties by getting component object.
 | Property                   | `itemsElement:Node`       | Items node             |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Infinitescroll(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Infinitescroll(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

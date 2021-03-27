@@ -6,9 +6,11 @@ title: "Layout"
 description: "Structural and layout components."
 ---
 
-## Installation
+## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`, check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`.
+
+Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
 ## Utilities
 

@@ -7,9 +7,13 @@ description: "Textarea with dynamic height depending on content."
 date: "1900-10-10"
 ---
 
-## Installation
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/textareaautosize'`.
+
+Initialize automatically **within markup** with `[data-xt-textareaautosize="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Textareaautosize(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 
@@ -46,37 +50,3 @@ Access properties by getting component object.
 | Property                   | `form:Node`       | Form closest node             |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-textareaautosize="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Textareaautosize(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Textareaautosize(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

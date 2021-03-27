@@ -368,30 +368,3 @@ Ajax.optionsDefault = {
 //
 
 Xt.Ajax = Ajax
-
-//
-// observe
-//
-
-if (typeof window !== 'undefined') {
-  Xt.mount.push({
-    matches: `[data-${Xt.Ajax.componentName}]`,
-    mount: ({ object }) => {
-      // vars
-
-      const optionsMarkup = object.getAttribute(`data-${Xt.Ajax.componentName}`)
-      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
-
-      // init
-
-      let self = new Xt.Ajax(object, options)
-
-      // unmount
-
-      return () => {
-        self.destroy()
-        self = null
-      }
-    },
-  })
-}

@@ -7,11 +7,17 @@ description: "Material ripple effect on user interaction."
 date: "1900-10-10"
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple`.
+
+Check [xtendui/src/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/ripple.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/ripple'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple`, check [xtendui/src/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/ripple.css.js) for default styles.
+Initialize with **javascript** with `new Xt.Ripple(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 
@@ -64,37 +70,3 @@ Access properties by getting component object.
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-ripple="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Ripple(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Ripple(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

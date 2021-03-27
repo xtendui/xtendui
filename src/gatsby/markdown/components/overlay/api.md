@@ -6,57 +6,6 @@ title: "API"
 date: "1980-05-05"
 ---
 
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Overlay(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Overlay(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```
-
-## Match Media
-
-You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/overlay/matches">
-  </demoinline>
-</demo>
-
 ## Util
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">

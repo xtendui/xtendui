@@ -7,9 +7,11 @@ description: "Separator to be used in text content"
 date: "1900-10-10"
 ---
 
-## Installation
+## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator`, check [xtendui/src/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/separator.css.js) for default styles.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator`.
+
+Check [xtendui/src/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/separator.css.js) for default styles.
 
 ## Usage
 

@@ -6,11 +6,17 @@ title: "Slider"
 description: "Create visually stunning sliders, has a comprehensive javascript api."
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`.
+
+Check [xtendui/src/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/slider.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/slider'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`, check [xtendui/src/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/slider.css.js) for default styles.
+Initialize with **javascript** with `new Xt.Slider(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 

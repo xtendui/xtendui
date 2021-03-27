@@ -6,11 +6,19 @@ title: "Tooltip"
 description: "Informations or elements to show on user interaction, can contain simple text and more complex graphics."
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`.
+
+Check [xtendui/src/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/tooltip.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/tooltip'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`, check [xtendui/src/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/tooltip.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-tooltip="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Tooltip(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 

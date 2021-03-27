@@ -7,11 +7,19 @@ description: "Input number with list group and javascript for and effective inte
 date: "1900-10-10"
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`.
+
+Check [xtendui/src/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/groupnumber'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`, check [xtendui/src/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-groupnumber="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Groupnumber(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 
@@ -65,37 +73,3 @@ Access properties by getting component object.
 | Property                   | `steps:Nodes`       | Steps node             |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-groupnumber="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Groupnumber(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Groupnumber(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

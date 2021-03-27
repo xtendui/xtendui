@@ -6,9 +6,11 @@ title: "Row"
 description: "Flex component to space columns with paddings, also spaces vertically."
 ---
 
-## Installation
+## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row`, check [xtendui/src/row.css.js](https://github.com/minimit/xtendui/blob/beta/src/row.css.js) for default styles.
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row`.
+
+Check [xtendui/src/row.css.js](https://github.com/minimit/xtendui/blob/beta/src/row.css.js) for default styles.
 
 ## Usage
 

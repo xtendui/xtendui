@@ -6,16 +6,24 @@ title: "Overlay"
 description: "Use overlay when you need to display any content over the main page, comes in different options and factors."
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay`.
+
+Check [xtendui/src/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/overlay.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/overlay'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay`, check [xtendui/src/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/overlay.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Overlay(document.querySelector('#my-object'), {/* options */})`.
+
+## Usage
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
-
-## Usage
 
 Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
 

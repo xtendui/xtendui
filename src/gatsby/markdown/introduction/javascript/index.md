@@ -7,11 +7,16 @@ description: "Javascript utilities and animations usability improvements."
 date: "2020-08-05"
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`.
+
+Check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/javascript.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`, check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/javascript.css.js) for default styles.
 
 ## Usability
 

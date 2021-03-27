@@ -6,9 +6,12 @@ title: "Google Locator"
 description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---
 
-## Installation
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/googlelocator'`.
+
+Initialize with **javascript** with `new Xt.Googlelocator(document.querySelector('#my-object'), {/* options */})`.
+
 
 ## Usage
 
@@ -90,35 +93,3 @@ Access properties by getting component object.
 | Property                   | `searchBtn:Node`       | Search button node             |
 
 </div>
-
-## Initialization
-
-Initialize with **javascript**.
-
-```js
-let self = new Xt.Googlelocator(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Googlelocator(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```

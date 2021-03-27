@@ -6,11 +6,19 @@ title: "Drop"
 description: "Nested navigation to show on user interaction, can contain lists and more complex graphics."
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop`.
+
+Check [xtendui/src/drop.css.js](https://github.com/minimit/xtendui/blob/beta/src/drop.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/drop'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop`, check [xtendui/src/drop.css.js](https://github.com/minimit/xtendui/blob/beta/src/drop.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-drop="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Drop(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 

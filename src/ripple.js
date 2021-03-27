@@ -176,30 +176,3 @@ Ripple.optionsDefault = {
 //
 
 Xt.Ripple = Ripple
-
-//
-// observe
-//
-
-if (typeof window !== 'undefined') {
-  Xt.mount.push({
-    matches: `[data-${Xt.Ripple.componentName}]`,
-    mount: ({ object }) => {
-      // vars
-
-      const optionsMarkup = object.getAttribute(`data-${Xt.Ripple.componentName}`)
-      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
-
-      // init
-
-      let self = new Xt.Ripple(object, options)
-
-      // unmount
-
-      return () => {
-        self.destroy()
-        self = null
-      }
-    },
-  })
-}

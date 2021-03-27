@@ -6,11 +6,19 @@ title: "Toggle"
 description: "Create advanced interactions with ease, has a comprehensive javascript api."
 ---
 
-## Installation
+## Styles
+
+You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle`.
+
+Check [xtendui/src/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/toggle.css.js) for default styles.
+
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/toggle'`.
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle`, check [xtendui/src/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/toggle.css.js) for default styles.
+Initialize automatically **within markup** with `[data-xt-toggle="{ <options> }"]`.
+
+Initialize with **javascript** with `new Xt.Toggle(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
 

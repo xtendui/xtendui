@@ -7,14 +7,16 @@ description: "Advanced animation for postion sticky to show content on scroll fo
 date: "1900-10-10"
 ---
 
-## Installation
+## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
 
-[[notePrimary]]
-| This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
+Initialize with **javascript** with `new Xt.Stickyflow(document.querySelector('#my-object'), {/* options */})`.
 
 ## Usage
+
+[[notePrimary]]
+| This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
 
 Use this code to create a **sticky flow** (use large screen to see it in action).
 
@@ -68,37 +70,3 @@ Access properties by getting component object.
 | Property                   | `filler:Nodes`       | Filler element             |
 
 </div>
-
-## Initialization
-
-Initialize automatically **within markup** with `[data-xt-stickyflow="{ <options> }"]` on the **object** (the DOM element you assigned the component).
-
-Or initialize with **javascript**.
-
-```js
-let self = new Xt.Stickyflow(document.querySelector('#my-object'), {
-  // options
-})
-```
-
-Or inizialize with **mutation observer**.
-
-```js
-Xt.mount.push({
-  matches: '#my-object',
-  mount: ({ object }) => {
-    // init
-
-    let self = new Xt.Stickyflow(object, {
-      // options
-    })
-
-    // unmount
-
-    return () => {
-      self.destroy()
-      self = null
-    }
-  }
-})
-```
