@@ -2,39 +2,52 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default class DemoInline extends React.Component {
+  /* @TODO demos in react
+
+  window.currentDemos = []
+
+  <div ref={this.refDemo}>
+
   constructor(props) {
     super(props)
     this.refDemo = React.createRef()
-    this.state = {
-      mode: false,
+    if (typeof window !== 'undefined') {
+      this.state = {
+        mode: localStorage.getItem('mode'),
+      }
+    } else {
+      this.state = {
+        mode: false,
+      }
     }
   }
 
   componentDidMount() {
-    this.item = this.refDemo.current
-    window.currentDemos = window.currentDemos ? window.currentDemos : []
-    window.currentDemos.push(this)
-    // raf because initial render not switched already
-    requestAnimationFrame(() => {
-      this.setMode(localStorage.getItem('mode'))
-    })
+    this.container = this.refDemo.current
+    if (typeof window !== 'undefined') {
+      window.currentDemos.push(this)
+      this.populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
+    }
   }
 
   componentWillUnmount() {
-    window.currentDemos.filter(x => x !== this)
+    if (typeof window !== 'undefined') {
+      window.currentDemos.filter(x => x !== this)
+    }
   }
 
   setMode(mode) {
     this.setState({
       mode: mode,
     })
-    require('src/gatsby/assets/scripts/demo').populateItem(this.item)
+    this.populateDemo(this.container.closest('.gatsby_demo'))
   }
-
+  */
   render() {
     const { src } = this.props
     const id = src.split('-').join(' ')
     const name = src.split('/').pop().split('.')[0]
+    const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
     // vanilla
     const html = require(`static/${src}.html.js`).object.html
     try {
@@ -45,8 +58,8 @@ export default class DemoInline extends React.Component {
     const Demo = require(`static/${src}.jsx`).default
     // render with all
     return (
-      <div ref={this.refDemo} className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
-        {this.state.mode === 'react' ? (
+      <div className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
+        {mode === 'react' ? (
           <div>
             <div className="gatsby_demo_source gatsby_demo_source--from">
               <Demo />
