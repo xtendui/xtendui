@@ -71,7 +71,7 @@ module.exports = {
         },
       },
     },
-    // needs gatsby-source-filesystem resolve name
+    // filesystem
     {
       resolve: 'gatsby-source-filesystem',
       options: {

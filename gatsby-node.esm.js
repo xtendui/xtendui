@@ -63,7 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       let slug = markdownSlug(node)
       createPage({
-        path: slug, // needs gatsby-source-filesystem resolve name
+        path: slug,
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,
         context: {
           // for graphql query($type: String)
