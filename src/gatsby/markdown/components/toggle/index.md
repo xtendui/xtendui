@@ -28,8 +28,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-toggle-item'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-toggle, .xt-toggle-item > .xt-toggle'`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-toggle-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 

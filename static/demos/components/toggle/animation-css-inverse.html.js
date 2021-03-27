@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--toggle-animation-inverse">
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ targets: ':scope > .xt-toggle-inverse, .xt-toggle-item > .xt-toggle-inverse' }"
+      data-xt-toggle="{ targets: ':scope > .xt-toggle-inverse, :scope > .xt-toggle-item > .xt-toggle-inverse' }"
     >
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 0

@@ -31,8 +31,8 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button, .xt-overlay-item'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-overlay, .xt-overlay-item > .xt-overlay'`        | Targets query            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-overlay-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-overlay, :scope > .xt-overlay-item > .xt-overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
