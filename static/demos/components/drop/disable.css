@@ -13,8 +13,9 @@
     > .xt-card {
       border-width: 0;
       background-color: transparent;
-      box-shadow: none;
       color: inherit;
+      box-shadow: none;
+      padding: 0;
       > * {
         padding: 0;
       }

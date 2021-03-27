@@ -25,6 +25,7 @@
         background-color: transparent;
         box-shadow: none;
         color: inherit;
+        padding: 0;
         > * {
           padding: 0;
         }
