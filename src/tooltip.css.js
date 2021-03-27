@@ -14,7 +14,7 @@ module.exports = {
   component: {
     '.xt-tooltip': {
       margin: '0 !important',
-      '&:not(.in):not(.out)': {
+      '&:not(.in):not(.active):not(.out)': {
         display: 'none',
       },
       '&.out': {

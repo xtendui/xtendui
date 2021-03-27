@@ -165,7 +165,7 @@ pre {
     order: 2;
     @media (max-width: calc(theme('screens.lg') - 1px)) {
       /*@apply toggle;*/
-      &:not(.in):not(.out) {
+      &:not(.in):not(.active):not(.out) {
         display: none;
       }
     }

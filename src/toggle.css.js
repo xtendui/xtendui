@@ -6,7 +6,7 @@ module.exports = {
       lineHeight: 1,
     },
     '.xt-toggle': {
-      '&:not(.in):not(.out)': {
+      '&:not(.in):not(.active):not(.out)': {
         display: 'none',
       },
       '&.out': {

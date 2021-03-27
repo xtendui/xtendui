@@ -17,7 +17,7 @@ module.exports = {
       bottom: '0', // @FIX no height or it bugs collapse animation
       right: '0', // @FIX no width or it bugs collapse animation
       overflow: 'hidden',
-      '&:not(.in):not(.out)': {
+      '&:not(.in):not(.active):not(.out)': {
         display: 'none',
       },
       '&.out': {

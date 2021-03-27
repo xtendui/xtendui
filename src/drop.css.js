@@ -14,7 +14,7 @@ module.exports = {
   component: {
     '.xt-drop': {
       margin: '0 !important',
-      '&:not(.in):not(.out)': {
+      '&:not(.in):not(.active):not(.out)': {
         display: 'none',
       },
       '&.out': {
