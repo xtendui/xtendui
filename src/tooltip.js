@@ -110,28 +110,6 @@ class Tooltip extends Xt.Toggle {
     }
   }
 
-  /**
-   * deactivate element done
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of elements
-   */
-  deactivateDone(el, type) {
-    const self = this
-    const options = self.options
-    // super
-    super.deactivateDone(el, type)
-    // popperjs
-    if (options.popperjs) {
-      if (type === 'targets') {
-        const popperInstance = Xt.dataStorage.get(el, 'PopperInstance')
-        if (popperInstance) {
-          popperInstance.destroy()
-          Xt.dataStorage.remove(el, 'PopperInstance')
-        }
-      }
-    }
-  }
-
   //
 }
 
