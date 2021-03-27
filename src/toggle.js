@@ -102,19 +102,17 @@ class Toggle {
   initSetup() {
     const self = this
     const options = self.options
-    // setup (based on xtend mode)
+    // mode
+    self.containerTargets = self.object
     if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend unique mode
       self.mode = 'unique'
-      self.container = document.documentElement
+      self.containerTargets = document.documentElement
       self.ns = `${self.componentName}-${options.targets.toString()}-${self.classes.toString()}`
     } else {
-      // xtend multiple mode
       self.mode = 'multiple'
-      self.container = self.object
-      const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
-      Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-      self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
+      const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+      Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+      self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     }
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
@@ -144,8 +142,12 @@ class Toggle {
     const self = this
     const options = self.options
     // elements
+    self.containerElements = self.object
     if (options.elements) {
-      let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)))
+      if (options.elements.indexOf('#') !== -1) {
+        self.containerElements = document.documentElement
+      }
+      let arr = Array.from(Xt.arrSingle(self.containerElements.querySelectorAll(options.elements)))
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
@@ -165,7 +167,7 @@ class Toggle {
     const options = self.options
     // targets
     if (options.targets) {
-      let arr = Array.from(self.container.querySelectorAll(options.targets))
+      let arr = Array.from(self.containerTargets.querySelectorAll(options.targets))
       arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
@@ -740,8 +742,8 @@ class Toggle {
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
     if (!force && options.eventLimit) {
-      const eventLimit = self.container.querySelectorAll(options.eventLimit)
-      if (self.container.matches(options.eventLimit)) {
+      const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
+      if (self.containerElements.matches(options.eventLimit)) {
         return
       } else if (eventLimit.length) {
         if (Xt.contains(eventLimit, e.target)) {
@@ -765,8 +767,8 @@ class Toggle {
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
     if (!force && options.eventLimit) {
-      const eventLimit = self.container.querySelectorAll(options.eventLimit)
-      if (self.container.matches(options.eventLimit)) {
+      const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
+      if (self.containerElements.matches(options.eventLimit)) {
         return
       } else if (eventLimit.length) {
         if (Xt.contains(eventLimit, e.target)) {
