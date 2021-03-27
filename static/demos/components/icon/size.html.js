@@ -2,12 +2,12 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Sizes</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Sizes</div>
 
     ${classes.iconSearch({ classes: 'text-xs' })} ${classes.iconSearch({ classes: 'text-base' })}
     ${classes.iconSearch({ classes: 'text-xl' })}
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
       Custom size and stroke
     </div>
 

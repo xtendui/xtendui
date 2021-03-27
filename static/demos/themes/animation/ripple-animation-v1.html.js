@@ -2,7 +2,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--ripple-animation-v1">
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Button</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Button</div>
 
     <div class="xt-list xt-list-2 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">Gray</button>
@@ -18,7 +18,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md xt-link">Link</button>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Card</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">

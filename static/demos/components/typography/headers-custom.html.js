@@ -58,7 +58,7 @@ const html = /* HTML */ `
       eget, vehicula scelerisque elit.
     </p>
 
-    <div class="${classes.h6()} ${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </div>
 

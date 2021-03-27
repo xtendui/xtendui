@@ -9,7 +9,7 @@ const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">List Group</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">List Group</div>
 
     <form
       class="text-xs"
@@ -44,7 +44,7 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Drop</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
@@ -101,7 +101,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Tooltip</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
@@ -156,7 +156,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Overlay</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">

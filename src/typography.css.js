@@ -28,12 +28,12 @@ module.exports = {
     },
     '.xt-h1': {
       // styles
-      marginTop: theme('spacing.8'),
-      marginBottom: theme('spacing.6'),
+      marginTop: theme('spacing.10'),
+      marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(38),
-      lineHeight: theme('lineHeight.none'),
+      lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
       '&:first-child': {
@@ -45,12 +45,12 @@ module.exports = {
     },
     '.xt-h2': {
       // styles
-      marginTop: theme('spacing.6'),
+      marginTop: theme('spacing.10'),
       marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
       fontSize: rem(34),
-      lineHeight: theme('lineHeight.none'),
+      lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
       '&:first-child': {
@@ -62,7 +62,7 @@ module.exports = {
     },
     '.xt-h3': {
       // styles
-      marginTop: theme('spacing.6'),
+      marginTop: theme('spacing.10'),
       marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -113,7 +113,7 @@ module.exports = {
     },
     '.xt-h6': {
       // styles
-      marginTop: theme('spacing.4'),
+      marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.2'),
       fontFamily: theme('fontFamily.sans').toString(),
       fontWeight: theme('fontWeight.bold'),
@@ -132,20 +132,20 @@ module.exports = {
       textTransform: 'inherit',
       // styles
       marginTop: theme('spacing.0'),
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.3'),
       '&:last-child': {
         marginBottom: '0',
       },
     },
     '.xt-ul': {
       // styles
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.5'),
       '&:last-child': {
         marginBottom: '0',
       },
       '> li': {
         position: 'relative',
-        marginBottom: theme('spacing.4'),
+        marginBottom: theme('spacing.3'),
         paddingLeft: '1.25rem',
         '&:last-child': {
           marginBottom: '0',
@@ -161,13 +161,13 @@ module.exports = {
     },
     '.xt-ol': {
       // styles
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.5'),
       '&:last-child': {
         marginBottom: '0',
       },
       '> li': {
         position: 'relative',
-        marginBottom: theme('spacing.4'),
+        marginBottom: theme('spacing.3'),
         paddingLeft: '1.5rem',
         counterIncrement: 'ol-counter',
         '&:last-child': {
@@ -184,15 +184,15 @@ module.exports = {
     },
     '.xt-dl': {
       // styles
-      marginBottom: theme('spacing.4'),
+      marginBottom: theme('spacing.5'),
       '&:last-child': {
         marginBottom: '0',
       },
     },
     '.xt-hr': {
       // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
+      marginTop: theme('spacing.5'),
+      marginBottom: theme('spacing.5'),
       '&:first-child': {
         marginTop: '0',
       },
@@ -202,8 +202,8 @@ module.exports = {
     },
     '.xt-figure': {
       // styles
-      marginTop: theme('spacing.6'),
-      marginBottom: theme('spacing.6'),
+      marginTop: theme('spacing.5'),
+      marginBottom: theme('spacing.5'),
       '&:first-child': {
         marginTop: '0',
       },
@@ -213,7 +213,7 @@ module.exports = {
     },
     '.xt-figcaption': {
       // styles
-      marginTop: theme('spacing.4'),
+      marginTop: theme('spacing.3'),
       fontSize: rem(14),
       lineHeight: theme('lineHeight.snug'),
     },

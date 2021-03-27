@@ -1,6 +1,6 @@
 const html = /* HTML */ `
   <div class="demo--slider-automaticscroll">
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Constant speed</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Constant speed</div>
 
     <div class="xt-slider slider--text my-12">
       <div class="xt-slides">
@@ -55,7 +55,7 @@ const html = /* HTML */ `
       </nav>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Images</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Images</div>
 
     <div class="xt-slider slider--img my-12">
       <div class="xt-slides">

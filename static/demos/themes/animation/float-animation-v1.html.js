@@ -17,7 +17,7 @@ const animItemOpacity =
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Button</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} ${buttonDefault()}">Gray</button>
@@ -39,7 +39,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Drop</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
@@ -94,7 +94,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Tooltip</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip>
@@ -146,7 +146,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Overlay</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay>
@@ -442,7 +442,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md text-black bg-gray-200 text-center">Card</div>
+    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
