@@ -22,7 +22,7 @@ Xt.mount.push({
 /* mountDrops */
 
 const mountDrops = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
+  const megamenu = object.querySelector('.megamenu-drop')
 
   // vars
 
@@ -186,7 +186,7 @@ const mountDrops = ({ object }) => {
 /* mountLine */
 
 const mountLine = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
+  const megamenu = object.querySelector('.megamenu-drop')
 
   // vars
 
@@ -305,7 +305,7 @@ const mountLine = ({ object }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
+  const megamenu = object.querySelector('.megamenu-drop')
   const switcher = object.querySelector('input[type="checkbox"]')
 
   const change = () => {

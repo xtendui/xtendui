@@ -67,3 +67,19 @@ Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` t
   <demoinline src="demos/components/tooltip/backdrop">
   </demoinline>
 </demo>
+
+## Swap
+
+Use this code to create a **tooltip swap**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-click">
+  </demoinline>
+</demo>
+
+Use this code to create a **tooltip swap toggle**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-toggle">
+  </demoinline>
+</demo>

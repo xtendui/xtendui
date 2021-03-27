@@ -48,6 +48,24 @@ You can have the the close button with `.fixed` to have it **fixed inside the ov
   </demoinline>
 </demo>
 
+## Close outside
+
+Use this code to create a **close outside**.
+
+<demo>
+  <demoinline src="demos/components/overlay/closeoutside">
+  </demoinline>
+</demo>
+
+## Message Outside
+
+Use this code to create a **message outside**.
+
+<demo>
+  <demoinline src="demos/components/overlay/messageoutside">
+  </demoinline>
+</demo>
+
 ## Aria
 
 See [toggle aria](/components/toggle/other#aria) for aria options.
