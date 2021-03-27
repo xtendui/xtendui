@@ -10,17 +10,21 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-2">
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+            Lorem ipsum
 
-            <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', position: 'auto' }">
-              <a href="#">nested</a>
+            <div class="inline-block" data-xt-tooltip>
+              <div class="xt-tooltip-item">
+                <a href="#">dolor</a>
 
-              <div class="xt-tooltip p-2">
-                <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
-                  Consectetur adipiscing elit
+                <div class="xt-tooltip p-2">
+                  <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+                    Consectetur adipiscing elit
+                  </div>
                 </div>
               </div>
             </div>
+
+            sit amet
           </div>
         </div>
       </div>

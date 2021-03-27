@@ -1,6 +1,8 @@
 .demo--drop-disable, .demo--drop-disable-react {
-  a.xt-drop-disabled, button.xt-drop-disabled {
-    display: none;
+  .xt-drop-item.xt-drop-disabled {
+    > a, > button {
+      display: none;
+    }
   }
   .xt-drop.xt-drop-disabled {
     display: inline-block !important;
@@ -24,7 +26,7 @@
       }
     }
     > .xt-card > .xt-list {
-      > .xt-button, > * > .xt-button {
+      > .xt-button, .xt-drop-item > .xt-button {
         @apply px-0;
       }
     }
