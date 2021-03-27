@@ -12,7 +12,7 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 If you want to **control a specific drop position** use `[data-xt-position=<value>]` on the `.xt-drop`
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -44,7 +44,7 @@ To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin*
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/drop/other#popperjs).
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -59,7 +59,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 If you want a drop with size and position **relative to a parent Node with relative** use `.xt-drop-static` and `.xt-card.w-full`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

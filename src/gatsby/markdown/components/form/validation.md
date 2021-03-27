@@ -14,7 +14,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 Use **component classes** to style `.xt-label-required`, `.xt-form-valid`, `.xt-form-invalid`. Check [xtendui/src/form.css.js](https://github.com/minimit/xtendui/blob/beta/src/form.css.js) for default styles.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

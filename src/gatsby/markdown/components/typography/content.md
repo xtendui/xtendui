@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **component classes** to space reset automatically on `:first-child` and `:last-child`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
@@ -40,7 +40,7 @@ You can use headers **classes or tags** with customizable styles.
 [[noteDefault]]
 | Tags `h1...h6` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -75,7 +75,7 @@ You can use paragraph **classes or tags** with customizable styles.
 [[noteDefault]]
 | Tags `p` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -104,7 +104,7 @@ You can use lists **classes or tags** with customizable styles.
 [[noteDefault]]
 | Tags `ul` and `ol` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -125,7 +125,7 @@ You can use definition lists **classes or tags** with customizable styles.
 [[noteDefault]]
 | Tags `dl` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -145,7 +145,7 @@ You can use figure and figcaption **classes or tags** with customizable styles.
 [[noteDefault]]
 | Tags `figure` and `figcaption` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
@@ -163,7 +163,7 @@ You can use figure and figcaption **classes or tags** with customizable styles.
 
 These are typography's **component utilities**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

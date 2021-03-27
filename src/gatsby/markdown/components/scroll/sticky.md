@@ -12,7 +12,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 Use the **component classes** to create a **sticky**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -22,7 +22,7 @@ Use the **component classes** to create a **sticky**.
 
 A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to control **pinner position**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -71,7 +71,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end*
 
 Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -94,7 +94,7 @@ You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`
 
 You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |

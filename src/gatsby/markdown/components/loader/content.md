@@ -12,7 +12,7 @@ Use **tailwind classes** to assign variant (e.g. [stroke](https://tailwindcss.co
 
 Use `.animate-xt-spinner` to assing spinner animation.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
@@ -35,7 +35,7 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 
 Use `.animate-xt-filler-<direction>` to assing filler animation. For `<direction>` values use `x` or `y`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

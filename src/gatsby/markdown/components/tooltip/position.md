@@ -12,7 +12,7 @@ Use **js option** `position: <value>` to specify [popperjs placement](https://po
 
 If you want to **control a specific tooltip position** use `[data-xt-position=<value>]` on the `.xt-tooltip`
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
@@ -44,7 +44,7 @@ To not have **space** just omit `.xt-tooltip` **padding** and `.xt-arrow` **marg
 
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/tooltip/other#popperjs).
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | 
@@ -59,7 +59,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 
 If you want a tooltip with size and position **relative to a parent Node with relative** use `.xt-tooltip-static`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |

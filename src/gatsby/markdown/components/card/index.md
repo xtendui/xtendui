@@ -16,7 +16,7 @@ Check [xtendui/src/card.css.js](https://github.com/minimit/xtendui/blob/beta/src
 
 Use `.xt-card` to create a **button**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |

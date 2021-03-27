@@ -69,7 +69,7 @@ pre {
 }
 
 .gatsby_demo {
-  @apply my-6 xt-my-auto;
+  @apply my-5 xt-my-auto;
   border-radius: 6px;
   pre {
     border-width: 0 !important;
