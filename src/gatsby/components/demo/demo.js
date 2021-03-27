@@ -7,18 +7,16 @@ export default class Demo extends React.Component {
     this.demoRef = React.createRef()
   }
   componentDidMount() {
-    if (typeof window !== 'undefined') {
-      // populate
-      const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
-      const container = this.demoRef.current
-      populateDemo(container)
-      // @FIX demo fullscreen
-      const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
-      for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
-        if (btnOpenFull.classList.contains('in-toggle')) {
-          demoHash()
-          break
-        }
+    // populate
+    const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
+    const container = this.demoRef.current
+    populateDemo(container)
+    // @FIX demo fullscreen
+    const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
+    for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
+      if (btnOpenFull.classList.contains('in-toggle')) {
+        demoHash()
+        break
       }
     }
   }
