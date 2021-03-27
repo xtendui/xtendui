@@ -70,7 +70,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
+| Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
 </div>
 

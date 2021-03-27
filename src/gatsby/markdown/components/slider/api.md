@@ -191,7 +191,6 @@ const elements = self.elements
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
-| Property                   | `inverse:Boolean`       | Inverse direction activation            |
 | Property                   | `dragger:Node`       | Dragger node             |
 | Property                   | `wheel:Node`       | Wheel node             |
 | Property                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |

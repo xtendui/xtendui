@@ -112,7 +112,7 @@ You can use also **css animations**, just add them with **class names** `.active
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `self.direction:Number`              | Direction of activation `0`, `-1` or `1`              |
+| Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
 </div>
 
