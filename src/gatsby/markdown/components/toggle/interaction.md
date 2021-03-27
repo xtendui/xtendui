@@ -184,24 +184,3 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
   <demoinline src="demos/components/toggle/usability-keyboard">
   </demoinline>
 </demo>
-
-## Disabled
-
-If you want to **disable the component** use the `options.disabled`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-
-</div>
-
-Example of **component disabled on desktop** with [match media](/components/toggle/api#match-media).
-
-Disable and reset styles accordingly.
-
-<demo>
-  <demoinline src="demos/components/toggle/disable">
-  </demoinline>
-</demo>

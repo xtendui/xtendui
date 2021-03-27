@@ -6,6 +6,27 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Disabled
+
+If you want to **disable the component** use the `options.disabled`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
+
+</div>
+
+Example of **component disabled on desktop** with [match media](/components/toggle/api#match-media).
+
+Disable and reset styles accordingly.
+
+<demo>
+  <demoinline src="demos/components/toggle/disable">
+  </demoinline>
+</demo>
+
 ## Media loaded
 
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.toggle`.
