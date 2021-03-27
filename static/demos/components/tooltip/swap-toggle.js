@@ -51,7 +51,6 @@ const mountButtonsSwap = ({ object }) => {
     // on
 
     const on = () => {
-      console.log(buttonSwap, tooltip)
       // swap
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       tooltip.addEventListener('offdone.xt.tooltip', swap)

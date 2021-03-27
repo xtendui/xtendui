@@ -1,3 +1,5 @@
+const classes = require('src/gatsby/components/snippets/classes').classes
+
 const html = /* HTML */ `
   <div class="demo--slider-automaticscroll">
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Constant speed</div>

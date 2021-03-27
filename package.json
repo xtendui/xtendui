@@ -22,8 +22,7 @@
   "files": [
     "tailwind.*.js",
     "dist/*.min.*",
-    "src/*.*",
-    "src/future/*.*"
+    "src/*.*"
   ],
   "scripts": {
     "build": "yarn packet && gatsby clean && gatsby build",

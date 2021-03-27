@@ -1,5 +1,4 @@
 import { Xt } from './xt'
-import JSON5 from 'json5'
 
 /**
  * Ripple

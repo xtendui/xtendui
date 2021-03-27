@@ -1,6 +1,5 @@
 import { Xt } from '../xt'
 import '../toggle'
-import JSON5 from 'json5'
 
 /**
  * Ajax

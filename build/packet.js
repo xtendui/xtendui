@@ -13,7 +13,7 @@ cssDemosGlob.on('end', () => {
 })
 
 let jsCore = ''
-const jsCoreGlob = new glob.Glob('src/*.js', { ignore: ['src/**.css.js'] }, (er, files) => {
+const jsCoreGlob = new glob.Glob('src/*.js', { ignore: ['src/*.css.js'] }, (er, files) => {
   for (const file of files) {
     jsCore += `import 'xtendui/${file}'\n`
   }
