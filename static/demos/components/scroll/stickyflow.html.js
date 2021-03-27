@@ -25,7 +25,7 @@ const html = /* HTML */ `
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
-                      <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                      <img class="xt-media" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ const html = /* HTML */ `
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-600">
                     <div class="xt-media-inner relative">
-                      <img class="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                      <img class="xt-media" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
                   </div>
                 </div>
@@ -57,7 +57,10 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="w-full md:w-6/12 lg:w-5/12" data-xt-stickyflow>
+          <div
+            class="w-full md:w-6/12 lg:w-5/12"
+            data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}"
+          >
             <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
             <div class="md:py-12 md:sticky stickyflow">
               <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>

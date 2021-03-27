@@ -237,7 +237,8 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-arrow-target" data-xt-stickyflow>
+            <div class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12" id="product-arrow-target"
+              data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}">
               <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
               <div class="pb-12 md:py-12 md:sticky stickyflow">
                 <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>

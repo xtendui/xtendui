@@ -47,13 +47,13 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `events.scroll:Boolean`                          | `true`        | Automatically activate on scroll            |
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
-| Option                    | `elements.scrollOffset:Query`                          | `'.infinitescroll'`        | Object query for automatic scroll element            |
-| Option                    | `elements.trigger:Query`                          | `'.infinitescroll-trigger .xt-button'`        | Object query for trigger element            |
-| Option                    | `elements.reset:Query`                          | `'.infinitescroll-pre .xt-button'`        | Object query for reset element            |
-| Option                    | `elements.spaceAdditional:Query`                          | `'.infinitescroll-pre'`        | Object query for additional space on reset            |
-| Option                    | `elements.pagination:Query`                          | `'.infinitescroll-pagination'`        | Object query for pagination            |
-| Option                    | `elements.items:Query`                          | `'.listing-inner .xt-row'`        | Object query for items container            |
-| Option                    | `elements.item:Query`                          | `':scope > *'`        | Items container query for items            |
+| Option                    | `elements.scrollOffset:Query`                          | `false`        | Object query for automatic scroll element            |
+| Option                    | `elements.trigger:Query`                          | `false`        | Object query for trigger element            |
+| Option                    | `elements.reset:Query`                          | `false`        | Object query for reset element            |
+| Option                    | `elements.spaceAdditional:Query`                          | `false`        | Object query for additional space on reset            |
+| Option                    | `elements.pagination:Query`                          | `false`        | Object query for pagination            |
+| Option                    | `elements.items:Query`                          | `false`        | Object query for items container            |
+| Option                    | `elements.item:Query`                          | `false`        | Items container query for items            |
 
 </div>
 

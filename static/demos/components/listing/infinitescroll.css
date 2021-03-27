@@ -8,7 +8,7 @@
     }
   }
 
-  .infinitescroll-loading {
+  .xt-infinitescroll-loading {
     .infinitescroll-spinner {
       @apply opacity-100;
       .xt-spinner {
@@ -28,7 +28,7 @@
     }
   }
 
-  .infinitescroll-loading {
+  .xt-infinitescroll-loading {
     .infinitescroll-trigger .xt-button {
       pointer-events: none;
       > .infinitescroll-trigger-content {
@@ -39,7 +39,7 @@
 
   /* nomore */
 
-  .infinitescroll-nomore {
+  .xt-infinitescroll-nomore {
     .infinitescroll-trigger .xt-button {
       pointer-events: none;
       .infinitescroll-trigger-content {
@@ -57,7 +57,7 @@
     display: none;
   }
 
-  .infinitescroll-reset {
+  .xt-infinitescroll-reset {
     .infinitescroll-pre {
       display: block;
     }

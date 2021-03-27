@@ -29,9 +29,7 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 
 Here are the main **javascript options**.
 
-Additionally you can pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-xt-populate="<FunctionName>"`, see javascript file source code `xtendui/src/googlelocator.js`.
-
-For advanced options see javascript file source code `xtendui/src/googlelocator.js`.
+Additionally you have to pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-xt-populate="<FunctionName>"`, see javascript file source code `xtendui/src/googlelocator.js`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 
@@ -40,18 +38,18 @@ For advanced options see javascript file source code `xtendui/src/googlelocator.
 | Option                    | `initialLocate:Boolean`                          | `false`        | Automatic locate on page load (**needs https**)            |
 | Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
-| Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
-| Option                    | `elements.loader:Query`                          | `'.xt-loader'`        | Object query for loader             |
-| Option                    | `elements.searchInput:Query`                          | `'input[type="text"]'`        | Object query for searh input             |
-| Option                    | `elements.searchBtn:Query`                          | `'.button--search'`        | Object query for search button             |
-| Option                    | `elements.map:Query`                          | `'.googlelocator-main-map'`        | Object query for google map             |
-| Option                    | `elements.itemsTemplate:Query`                          | `'script[type="text/x-template"]'`        | Object query for template cloned for maps items             |
-| Option                    | `elements.itemsContainer:Query`                          | `'.googlelocator-items'`        | Object query for items container to append items to             |
-| Option                    | `elements.results:Query`                          | `'.googlelocator-aside-body'`        | Object query for results messages             |
-| Option                    | `elements.resultsFounds:Query`                          | `'.googlelocator-result--found'`        | Object query for results found             |
-| Option                    | `elements.locateBtn:Query`                          | `'.button--locate'`        | Object query for             |
-| Option                    | `elements.repeatBtn:Query`                          | `'.button--repeat'`        | Object query for repeat search             |
-| Option                    | `elements.filter:Query`                          | `'input[type="checkbox"], input[type="radio"]'`        | Object query for             |
+| Option                    | `locateRadius:Number`                          | `false`        | Radius for locate            |
+| Option                    | `locateText:String`                          | `false`        | Locate text for input            |
+| Option                    | `elements.loader:Query`                          | `false`        | Object query for loader             |
+| Option                    | `elements.searchInput:Query`                          | `false`        | Object query for searh input             |
+| Option                    | `elements.searchBtn:Query`                          | `false`        | Object query for search button             |
+| Option                    | `elements.map:Query`                          | `false`        | Object query for google map             |
+| Option                    | `elements.itemsTemplate:Query`                          | `false`        | Object query for template cloned for maps items             |
+| Option                    | `elements.itemsContainer:Query`                          | `false`        | Object query for items container to append items to             |
+| Option                    | `elements.results:Query`                          | `false`        | Object query for results messages             |
+| Option                    | `elements.resultsFounds:Query`                          | `false`        | Object query for results found             |
+| Option                    | `elements.locateBtn:Query`                          | `false`        | Object query for locate button             |
+| Option                    | `elements.repeatBtn:Query`                          | `false`        | Object query for repeat search button             |
 
 </div>
 

@@ -35,8 +35,8 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `element:Query`                          | `'.stickyflow'`        | Sticky element query            |
-| Option                    | `filler:Query`                          | `'.stickyflow-filler'`        | Filler element query            |
+| Option                    | `element:Query`                          | `false`        | Sticky element query            |
+| Option                    | `filler:Query`                          | `false`        | Filler element query            |
 
 </div>
 

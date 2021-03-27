@@ -135,8 +135,8 @@ class Stickyflow {
 Stickyflow.componentName = 'xt-stickyflow'
 Stickyflow.optionsDefault = {
   // elements
-  element: '.stickyflow',
-  filler: '.stickyflow-filler',
+  element: false,
+  filler: false,
 }
 
 //

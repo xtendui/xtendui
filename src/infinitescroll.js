@@ -414,18 +414,18 @@ Infinitescroll.optionsDefault = {
   get: false,
   // element
   elements: {
-    scrollOffset: '.infinitescroll',
-    trigger: '.infinitescroll-trigger .xt-button',
-    reset: '.infinitescroll-pre .xt-button',
-    items: '.listing-inner .xt-row',
-    spaceAdditional: '.infinitescroll-pre',
-    pagination: '.infinitescroll-pagination',
-    item: ':scope > *',
+    scrollOffset: false,
+    trigger: false,
+    reset: false,
+    items: false,
+    spaceAdditional: false,
+    pagination: false,
+    item: false,
   },
   // class
-  class: 'infinitescroll-loading',
-  classNoMore: 'infinitescroll-nomore',
-  classReset: 'infinitescroll-reset',
+  class: 'xt-infinitescroll-loading',
+  classNoMore: 'xt-infinitescroll-nomore',
+  classReset: 'xt-infinitescroll-reset',
   // quantity
   min: 1,
   max: 'Infinity',

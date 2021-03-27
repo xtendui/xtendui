@@ -37,7 +37,7 @@ const html = /* HTML */ `
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
-                    name="googlelocator-options"
+                    name="type-options"
                     value=""
                     checked
                   />
@@ -50,7 +50,7 @@ const html = /* HTML */ `
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
-                    name="googlelocator-options"
+                    name="type-options"
                     value="restaurant"
                   />
                   <span class="xt-check-content">Restaurant</span>
@@ -58,12 +58,11 @@ const html = /* HTML */ `
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check" for="googlelocator-options-school">
+                <label class="xt-label-check">
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
-                    id="googlelocator-options-school"
-                    name="googlelocator-options"
+                    name="type-options"
                     value="school"
                   />
                   <span class="xt-check-content">School</span>
@@ -71,11 +70,10 @@ const html = /* HTML */ `
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check" for="googlelocator-options-fav">
+                <label class="xt-label-check">
                   <input
                     type="checkbox"
                     class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
-                    id="googlelocator-options-fav"
                     name="googlelocator-fav"
                     value="fav"
                   />
