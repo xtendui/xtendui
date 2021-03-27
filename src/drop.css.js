@@ -11,8 +11,10 @@ module.exports = {
       right: '0 !important',
     },
   },
-  component: {
+  component: theme => ({
     '.xt-drop': {
+      position: 'absolute',
+      zIndex: theme('zIndex.overlay'),
       margin: '0 !important',
       '&:not(.in):not(.active):not(.out)': {
         display: 'none',
@@ -33,5 +35,5 @@ module.exports = {
       display: 'inline-block',
       lineHeight: 1,
     },
-  },
+  }),
 }

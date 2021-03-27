@@ -33,12 +33,12 @@ module.exports = {
       },
       zIndex: {
         below: '-1',
-        drop: '400', // theme.zIndex.drop same as Drop options.zIndex.targets.start
-        tooltip: '500', // theme.zIndex.tooltip same as Tooltip options.zIndex.targets.start
+        drop: '400', // same as options.zIndex.targets.start
+        tooltip: '500', // same as options.zIndex.targets.start
         sticky: '900',
-        above: '1000', // this is the z-index top for the page content, more z-index only for components over the content
-        overlay: '5000', // theme.zIndex.overlay same as Overlay options.zIndex.targets.start
-        last: '10000',
+        above: '1000', // this is the z-index above all page content
+        overlay: '5000', // same as options.zIndex.targets.start
+        last: '10000', // this is the z-index above all xtendui zIndex
       },
       flex: {
         full: '1 1 100%',

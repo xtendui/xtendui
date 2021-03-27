@@ -86,7 +86,7 @@ Overlay.optionsDefault = {
   focusLimit: true,
   zIndex: {
     targets: {
-      start: 5000, // theme.zIndex.overlay same as Overlay options.zIndex.targets.start
+      start: 5000, // same as options.zIndex.targets.start
       factor: 0,
     },
   },

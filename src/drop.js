@@ -174,7 +174,7 @@ Drop.optionsDefault = {
   popperjs: true,
   zIndex: {
     targets: {
-      start: 400, // theme.zIndex.drop same as Drop options.zIndex.targets.start
+      start: 400, // same as options.zIndex.targets.start
       factor: -1,
     },
   },

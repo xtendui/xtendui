@@ -8,10 +8,11 @@ module.exports = {
       DEFAULT: 0, // override padding first breakpoint
     },
   }),
-  component: {
+  component: theme => ({
     '.xt-overlay': {
       '@apply xt-overflow-main': '',
       position: 'fixed',
+      zIndex: theme('zIndex.overlay'),
       top: '0',
       left: '0',
       bottom: '0', // @FIX no height or it bugs collapse animation
@@ -59,5 +60,5 @@ module.exports = {
         right: 'var(--scrollbar-width)',
       },
     },
-  },
+  }),
 }
