@@ -74,15 +74,6 @@ Use this code to create a **close outside**.
   </demoinline>
 </demo>
 
-## Message Outside
-
-Use this code to create a **message outside**.
-
-<demo>
-  <demoinline src="demos/components/overlay/messageoutside">
-  </demoinline>
-</demo>
-
 ## Aria
 
 See [toggle aria](/components/toggle/other#aria) for aria options.

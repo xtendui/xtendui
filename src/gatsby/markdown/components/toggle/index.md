@@ -42,7 +42,7 @@ Use this code to create a **toggle** in **unique mode**.
 The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
 [[notePrimary]]
-| To activate **unique mode** you **need** to specify targets with **#id**.
+| When you specify **elements or targets with id** the query is **inside document not only inside object**.
 
 You can group elements activation with the option `groupElements: true`.
 

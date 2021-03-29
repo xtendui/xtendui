@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} active:z-drop"
+        >
           backdrop
         </button>
 

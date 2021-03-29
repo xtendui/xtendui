@@ -7,7 +7,11 @@ title: "Toggle"
 
 ## Usage
 
-Test activation and no close clicking inside with eventLimit.
+Test activation.
+
+Test overlay close on backdrop click.
+
+Test overlay no close clicking inside with eventLimit.
 
 <demo>
   <demoinline src="demos/components/toggle/usage-self">

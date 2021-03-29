@@ -1874,7 +1874,7 @@ class Toggle {
       self.specialClose(actionCurrent, el, type)
       if (options.focusLimit) {
         if (obj.targets) {
-          if (type === 'targets') {
+          if (type === 'targets' || (!self.targets.length && type === 'elements')) {
             Xt.focusLimit.on(obj.targets.queueEls[0])
           }
         } else if (type === 'elements') {
@@ -1889,7 +1889,7 @@ class Toggle {
             el.setAttribute('aria-selected', 'true')
           }
         }
-        if (type === 'targets') {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // expanded
           if (options.aria === true || options.aria.activation) {
             const role = el.getAttribute('role')
@@ -1900,7 +1900,7 @@ class Toggle {
         }
         // tabindex
         if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
-          if (type === 'targets') {
+          if (type === 'targets' || (!self.targets.length && type === 'elements')) {
             const focusables = el.querySelectorAll(Xt.focusables)
             for (const focusable of focusables) {
               focusable.removeAttribute('tabindex')
@@ -2040,7 +2040,7 @@ class Toggle {
             el.setAttribute('aria-selected', 'false')
           }
         }
-        if (type === 'targets') {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // expanded
           if (options.aria === true || options.aria.activation) {
             const role = el.getAttribute('role')
@@ -2678,33 +2678,33 @@ class Toggle {
         }
         // closeInside
         if (options.closeInside) {
-          const closeElements = document.querySelectorAll(options.closeInside)
-          for (const closeElement of closeElements) {
+          const insides = !self.targets.length ? self.elements : self.targets
+          for (const inside of insides) {
             const specialcloseinsideHandler = Xt.dataStorage.put(
-              closeElement,
+              inside,
               `click/close/${self.ns}`,
-              self.eventSpecialcloseinsideHandler.bind(self).bind(self, closeElement)
+              self.eventSpecialcloseinsideHandler.bind(self)
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              closeElement.removeEventListener('click', specialcloseinsideHandler)
-              closeElement.addEventListener('click', specialcloseinsideHandler)
+              inside.removeEventListener('click', specialcloseinsideHandler)
+              inside.addEventListener('click', specialcloseinsideHandler)
             })
           }
         }
         // closeOutside
         if (options.closeOutside) {
-          const closeElements = document.querySelectorAll(options.closeOutside)
-          for (const closeElement of closeElements) {
+          const outsides = document.querySelectorAll(options.closeOutside)
+          for (const outside of outsides) {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
-              closeElement,
+              outside,
               `click/close/${self.ns}`,
               self.eventSpecialcloseoutsideHandler.bind(self)
             )
             // @FIX do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              closeElement.removeEventListener('click', specialcloseoutsideHandler)
-              closeElement.addEventListener('click', specialcloseoutsideHandler)
+              outside.removeEventListener('click', specialcloseoutsideHandler)
+              outside.addEventListener('click', specialcloseoutsideHandler)
             })
           }
         }
@@ -2773,18 +2773,15 @@ class Toggle {
 
   /**
    * specialCloseinside handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
-  eventSpecialcloseinsideHandler(el, e) {
+  eventSpecialcloseinsideHandler(e) {
     const self = this
     // handler
-    if (e.target === el) {
-      if (Xt.contains([...self.elements, ...self.targets], e.target)) {
-        const currents = self.getCurrents()
-        for (const current of currents) {
-          self.eventOff(current, true)
-        }
+    if (e.target.matches(self.options.closeInside)) {
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
       }
     }
   }

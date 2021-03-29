@@ -150,7 +150,9 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">screen full</button>
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -178,7 +180,9 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Menu</button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-design bg-white ${animDesign}"></div>
@@ -225,7 +229,9 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">contact</button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
@@ -334,7 +340,9 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">newsletter</button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>

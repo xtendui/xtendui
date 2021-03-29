@@ -135,7 +135,9 @@ const html = /* HTML */ `
           screen full
         </button>
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -163,7 +165,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()} ${animDesignLeft}">
@@ -212,7 +216,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()} ${animDesign}">
@@ -326,7 +332,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-duration="700">
-          <div class="xt-backdrop bg-black transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()} ${animDesign}">

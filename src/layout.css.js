@@ -87,7 +87,6 @@ module.exports = {
       left: '0',
       right: '0',
       bottom: '0',
-      pointerEvents: 'none', // allow overlay scroll on backdrop
     },
     '.xt-design': {
       position: 'absolute',
