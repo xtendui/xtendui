@@ -1337,17 +1337,8 @@ class Toggle {
       el.classList.remove(...self.classes)
       el.classList.add(...self.classesOut)
       el.classList.remove(...self.classesDone)
-      // keep the same level of raf as others
+      el.classList.remove(...self.classesActive)
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
-      Xt.dataStorage.put(
-        el,
-        `${self.ns}ActivateFrame`,
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            el.classList.remove(...self.classesActive)
-          })
-        })
-      )
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
