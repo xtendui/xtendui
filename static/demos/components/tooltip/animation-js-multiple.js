@@ -18,8 +18,6 @@ Xt.mount.push({
 /* mountTooltips */
 
 const mountTooltip = ({ object }) => {
-  const tooltip = object.querySelector(':scope > .xt-list')
-
   // vars
 
   const targetTimeOn = 0.3
@@ -29,7 +27,9 @@ const mountTooltip = ({ object }) => {
 
   // init
 
-  let self = new Xt.Tooltip(tooltip, {
+  let self = new Xt.Tooltip(object, {
+    elements: '.xt-tooltip-item',
+    targets: '.xt-tooltip',
     duration: 300,
     delay: 25,
   })

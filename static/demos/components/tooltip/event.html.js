@@ -7,10 +7,10 @@ const html = /* HTML */ `
 
       <div class="xt-tooltip p-2">
         <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
-          Lorem ipsum dolor sit amet
+          Lorem ipsum
 
           <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', position: 'auto' }">
-            <a href="#">nested</a>
+            <a href="#">dolor</a>
 
             <div class="xt-tooltip p-2">
               <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
@@ -18,6 +18,8 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
+
+          sit amet
         </div>
       </div>
     </div>

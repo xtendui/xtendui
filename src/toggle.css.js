@@ -1,10 +1,6 @@
 module.exports = {
   variants: ['responsive'],
   utility: {
-    '.xt-toggle-item': {
-      display: 'inline-block',
-      lineHeight: 1,
-    },
     '.xt-toggle': {
       '&:not(.in):not(.active):not(.out)': {
         display: 'none',

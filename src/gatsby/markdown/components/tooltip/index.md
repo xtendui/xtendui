@@ -28,9 +28,9 @@ Pass **elements** and **targets** options if different from defaults. **Elements
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-tooltip-item'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, :scope > .xt-tooltip-item > .xt-toolti'`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query (scope inside elements)            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-tooltip'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 
 </div>

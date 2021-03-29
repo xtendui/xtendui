@@ -15,9 +15,13 @@ Test initial position and initial activation when disabled.
 
 Test overlay open on mobile > resize desktop is disabled.
 
-Test nested
-  Overlay open nested should close one by one clicking outside.
-  Overlay open nested and close should have classHtml scrollbar until all nested closed.
+Test nested check elements and targets length of nested parent components.
+
+Test nested should disable only parent.
+
+Test nested close should close only child.
+
+Test nested classhtml should have classHtml scrollbar until all nested closed.
 
 <demo>
   <demoinline src="demos/components/card/disable">

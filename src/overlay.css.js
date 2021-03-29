@@ -25,10 +25,6 @@ module.exports = {
         pointerEvents: 'none',
       },
     },
-    '.xt-overlay-item': {
-      display: 'inline-block',
-      lineHeight: 1,
-    },
     '.xt-overlay-container': {
       display: 'flex',
       flexWrap: 'nowrap',

@@ -22,7 +22,7 @@ Xt.mount.push({
 /* mountDrops */
 
 const mountDrops = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu-drop')
+  const megamenu = object.querySelector('.megamenu')
 
   // vars
 
@@ -46,6 +46,8 @@ const mountDrops = ({ object }) => {
   // init
 
   let self = new Xt.Drop(megamenu, {
+    elements: '.xt-drop-item',
+    targets: '.xt-drop',
     on: 'mouseenter',
     off: 'mouseleave',
     queue: false,
@@ -186,7 +188,7 @@ const mountDrops = ({ object }) => {
 /* mountLine */
 
 const mountLine = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu-drop')
+  const megamenu = object.querySelector('.megamenu')
 
   // vars
 
@@ -305,7 +307,7 @@ const mountLine = ({ object }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu-drop')
+  const megamenu = object.querySelector('.megamenu')
   const switcher = object.querySelector('input[type="checkbox"]')
 
   const change = () => {

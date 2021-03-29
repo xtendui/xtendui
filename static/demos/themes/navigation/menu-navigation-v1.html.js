@@ -2,7 +2,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--menu-navigation-v1">
-    <div class="relative bg-primary-500 text-white">
+    <div class="megamenu relative bg-primary-500 text-white">
       <form class="text-sm container pt-10">
         <label class="xt-label-check">
           <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
@@ -13,7 +13,7 @@ const html = /* HTML */ `
       <span class="megamenu-line absolute top-0 left-0 bg-white"></span>
 
       <div class="container">
-        <div class="xt-list -mx-4 megamenu-drop">
+        <div class="xt-list -mx-4">
           <div class="xt-drop-item">
             <a
               href="/"

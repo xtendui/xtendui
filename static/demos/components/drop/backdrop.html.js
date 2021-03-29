@@ -25,7 +25,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
+      <div data-xt-drop="{ elements: '.xt-drop-item', targets: '.xt-drop', on: 'mouseenter', off: 'mouseleave' }">
         <div class="xt-drop-item">
           <button
             type="button"

@@ -30,5 +30,8 @@
         @apply px-0;
       }
     }
+    > .xt-backdrop {
+      display: none;
+    }
   }
 }

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ queue: false }">
+    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ targets: '.xt-toggle', queue: false }">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 0
       </button>
@@ -11,7 +11,7 @@ const html = /* HTML */ `
         Toggle 1
       </button>
 
-      <div class="xt-toggle-item relative w-full">
+      <div class="relative w-full">
         <div
           class="xt-card xt-toggle xt-toggle-absolute rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0"
           data-xt-duration="500"

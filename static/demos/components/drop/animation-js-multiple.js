@@ -28,6 +28,8 @@ const mountDrops = ({ object }) => {
   // init
 
   let self = new Xt.Drop(object, {
+    elements: '.xt-drop-item',
+    targets: '.xt-drop',
     duration: 500,
   })
 

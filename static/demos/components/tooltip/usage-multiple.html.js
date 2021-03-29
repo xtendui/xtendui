@@ -2,7 +2,7 @@ const classes = require('src/gatsby/components/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-tooltip>
+    <div data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip' }">
       Lorem ipsum
       <span class="xt-tooltip-item">
         <a href="#">dolor</a>

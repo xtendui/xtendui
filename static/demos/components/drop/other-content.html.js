@@ -8,7 +8,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-drop p-4">
-        <form class="rounded-md shadow-drop">
+        <form class="rounded-md shadow-drop text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
             <div class="xt-list-inner flex-auto">
               <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
