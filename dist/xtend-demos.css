@@ -1,7 +1,7 @@
-@import 'xtendui/static/demos/components/card/disable.css';
+@import 'xtendui/static/demos/components/card/disabled.css';
 @import 'xtendui/static/demos/components/drop/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/drop/animation-css.css';
-@import 'xtendui/static/demos/components/drop/disable.css';
+@import 'xtendui/static/demos/components/drop/disabled.css';
 @import 'xtendui/static/demos/components/form/variant-primary.css';
 @import 'xtendui/static/demos/components/layout/googlelocator.css';
 @import 'xtendui/static/demos/components/layout/stickyfooter.css';
@@ -13,7 +13,7 @@
 @import 'xtendui/static/demos/components/navigation/multilevel.css';
 @import 'xtendui/static/demos/components/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/overlay/class-html.css';
-@import 'xtendui/static/demos/components/overlay/disable.css';
+@import 'xtendui/static/demos/components/overlay/disabled.css';
 @import 'xtendui/static/demos/components/overlay/messageoutside.css';
 @import 'xtendui/static/demos/components/row/overflow.css';
 @import 'xtendui/static/demos/components/scroll/fade-distance.css';
@@ -23,7 +23,7 @@
 @import 'xtendui/static/demos/components/scroll/fade.css';
 @import 'xtendui/static/demos/components/scroll/sticky-hide.css';
 @import 'xtendui/static/demos/components/slider/automaticscroll.css';
-@import 'xtendui/static/demos/components/slider/disable.css';
+@import 'xtendui/static/demos/components/slider/disabled.css';
 @import 'xtendui/static/demos/components/slider/expand.css';
 @import 'xtendui/static/demos/components/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/slider/overflow-auto.css';
@@ -36,7 +36,7 @@
 @import 'xtendui/static/demos/components/toggle/progress.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
-@import 'xtendui/static/demos/components/tooltip/disable.css';
+@import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
 @import 'xtendui/static/demos/themes/animation/ripple-animation-v1.css';
 @import 'xtendui/static/demos/themes/gallery/products-gallery-v1.css';

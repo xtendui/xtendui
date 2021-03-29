@@ -23,7 +23,7 @@ Example of **component disabled on desktop** with [match media](/components/drop
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="demos/components/drop/disable">
+  <demoinline src="demos/components/drop/disabled">
   </demoinline>
 </demo>
 

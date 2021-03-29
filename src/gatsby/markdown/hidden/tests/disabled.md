@@ -24,16 +24,16 @@ Test nested close should close only child.
 Test nested classhtml should have classHtml scrollbar until all nested closed.
 
 <demo>
-  <demoinline src="demos/components/card/disable">
+  <demoinline src="demos/components/card/disabled">
   </demoinline>
-  <demoinline src="demos/components/toggle/disable">
+  <demoinline src="demos/components/toggle/disabled">
   </demoinline>
-  <demoinline src="demos/components/overlay/disable">
+  <demoinline src="demos/components/overlay/disabled">
   </demoinline>
-  <demoinline src="demos/components/drop/disable">
+  <demoinline src="demos/components/drop/disabled">
   </demoinline>
-  <demoinline src="demos/components/tooltip/disable">
+  <demoinline src="demos/components/tooltip/disabled">
   </demoinline>
-  <demoinline src="demos/components/slider/disable">
+  <demoinline src="demos/components/slider/disabled">
   </demoinline>
 </demo>

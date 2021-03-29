@@ -11,7 +11,7 @@ date: "2005-10-10"
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="demos/components/card/disable">
+  <demoinline src="demos/components/card/disabled">
   </demoinline>
 </demo>
 

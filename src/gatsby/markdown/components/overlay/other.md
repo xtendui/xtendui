@@ -23,7 +23,7 @@ Example of **component disabled on desktop** with [match media](/components/over
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="demos/components/overlay/disable">
+  <demoinline src="demos/components/overlay/disabled">
   </demoinline>
 </demo>
 

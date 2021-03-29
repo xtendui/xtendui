@@ -23,7 +23,7 @@ Example of **component disabled on desktop** with [match media](/components/tool
 Disable and reset styles accordingly.
 
 <demo>
-  <demoinline src="demos/components/tooltip/disable">
+  <demoinline src="demos/components/tooltip/disabled">
   </demoinline>
 </demo>
 
