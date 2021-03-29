@@ -8,24 +8,31 @@ const html = /* HTML */ `
       get: false,
       max: 4,
       elements: {
-        scrollOffset: '.infinitescroll',
-        trigger: '.infinitescroll-trigger .xt-button',
-        reset: '.infinitescroll-pre .xt-button',
-        items: '.xt-row',
-        spaceAdditional: '.infinitescroll-pre',
-        pagination: '.infinitescroll-pagination',
+        itemsContainer: '.xt-row',
         item: ':scope > *',
+        scrollUp: '[data-xt-infinitescroll-up]',
+        scrollDown: '[data-xt-infinitescroll-down]',
+        spaceAdditional: '[data-xt-infinitescroll-up]',
+        pagination: '.infinitescroll-pagination',
       },
     }"
     >
       <div class="container">
-        <div class="infinitescroll-pre mb-4">
+        <div class="mb-4">
           <div class="xt-list xt-list-2 flex-col items-center">
-            <div>
-              <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
-                Load previous pages
-              </button>
-            </div>
+            <button
+              type="button"
+              class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+              data-xt-infinitescroll-up="-1"
+            >
+              <span class="content"> Load previous page </span>
+
+              <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+                <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
+                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
+                </span>
+              </span>
+            </button>
           </div>
         </div>
 
@@ -144,21 +151,21 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="infinitescroll mt-4">
+      <div class="mt-4">
         <div class="xt-list xt-list-2 flex-col items-center">
-          <div class="infinitescroll-trigger">
-            <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-              <span class="infinitescroll-trigger-content"> Show more products </span>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            data-xt-infinitescroll-down="+1"
+          >
+            <span class="content"> Show more products </span>
 
-              <span class="infinitescroll-trigger-content-nomore"> There are no more products </span>
-
-              <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
-                <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </span>
+            <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+              <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </span>
-            </button>
-          </div>
+            </span>
+          </button>
 
           <div class="infinitescroll-pagination h6">Page xt-num of xt-tot</div>
         </div>

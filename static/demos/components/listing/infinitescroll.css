@@ -1,10 +1,30 @@
 .demo--infinitescroll, .demo--infinitescroll-react {
-  /* spinner */
+  /* first and last */
+
+  .xt-infinitescroll-first {
+    [data-xt-infinitescroll-up] {
+      display: none;
+    }
+  }
+
+  .xt-infinitescroll-last {
+    [data-xt-infinitescroll-down] {
+      display: none;
+    }
+  }
+
+  /* loading */
 
   .infinitescroll-spinner {
     @apply transition opacity-0;
     .xt-spinner {
       @apply transition-all opacity-0 scale-75;
+    }
+  }
+
+  [data-xt-infinitescroll-up], [data-xt-infinitescroll-down] {
+    > .content {
+      @apply transition;
     }
   }
 
@@ -15,51 +35,11 @@
         @apply opacity-100 scale-100;
       }
     }
-  }
-
-  /* trigger */
-
-  .infinitescroll-trigger .xt-button {
-    .infinitescroll-trigger-content-nomore {
-      display: none;
-    }
-    .infinitescroll-trigger-content {
-      @apply transition;
-    }
-  }
-
-  .xt-infinitescroll-loading {
-    .infinitescroll-trigger .xt-button {
+    [data-xt-infinitescroll-up], [data-xt-infinitescroll-down] {
       pointer-events: none;
-      > .infinitescroll-trigger-content {
+      > .content {
         @apply opacity-0;
       }
-    }
-  }
-
-  /* nomore */
-
-  .xt-infinitescroll-nomore {
-    .infinitescroll-trigger .xt-button {
-      pointer-events: none;
-      .infinitescroll-trigger-content {
-        display: none;
-      }
-      .infinitescroll-trigger-content-nomore {
-        display: block;
-      }
-    }
-  }
-
-  /* pre */
-
-  .infinitescroll-pre {
-    display: none;
-  }
-
-  .xt-infinitescroll-reset {
-    .infinitescroll-pre {
-      display: block;
     }
   }
 }

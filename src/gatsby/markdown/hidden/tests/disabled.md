@@ -21,8 +21,6 @@ Test nested should disable only parent.
 
 Test nested close should close only child.
 
-Test nested classhtml should have classHtml scrollbar until all nested closed.
-
 <demo>
   <demoinline src="demos/components/card/disabled">
   </demoinline>

@@ -33,8 +33,6 @@ Remember to set a `options.get` variable for a **get request on current url** to
 
 Here are the main **javascript options**.
 
-For advanced options see javascript file source code `xtendui/src/infinitescroll.js`.
-
 Inside `elements.pagination:Query` you can use this strings that gets populated with variables:
 
 - `xt-num` replaced with current page number
@@ -47,17 +45,16 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
-| Option                    | `add:Number`                          | `1`        | Amount to increase page number            |
-| Option                    | `events.scroll:Boolean`                          | `true`        | Automatically activate on scroll            |
+| Option                    | `events.scrollUp:Boolean`                          | `true`        | Automatically activate on scroll up            |
+| Option                    | `events.scrollDown:Boolean`                          | `true`        | Automatically activate on scroll down            |
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
-| Option                    | `elements.scrollOffset:Query`                          | `false`        | Object query for automatic scroll element            |
-| Option                    | `elements.trigger:Query`                          | `false`        | Object query for trigger element            |
-| Option                    | `elements.reset:Query`                          | `false`        | Object query for reset element            |
-| Option                    | `elements.spaceAdditional:Query`                          | `false`        | Object query for additional space on reset            |
-| Option                    | `elements.pagination:Query`                          | `false`        | Object query for pagination            |
-| Option                    | `elements.items:Query`                          | `false`        | Object query for items container            |
+| Option                    | `elements.itemsContainer:Query`                          | `false`        | Object query for items container            |
 | Option                    | `elements.item:Query`                          | `false`        | Items container query for items            |
+| Option                    | `elements.scrollUp:Query`                          | `false`        | Object query for trigger elements when scrolling up            |
+| Option                    | `elements.scrollDown:Query`                          | `false`        | Object query for trigger elements when scrolling down            |
+| Option                    | `elements.spaceAdditional:Query`                          | `false`        | Object query for additional space when resuming pages            |
+| Option                    | `elements.pagination:Query`                          | `false`        | Object query for pagination            |
 
 </div>
 
@@ -86,9 +83,10 @@ Access properties by getting component object.
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `current:Number`       | Current page             |
-| Property                   | `scrollElement:Node`       | Scroll node             |
-| Property                   | `triggerElement:Node`       | Trigger node             |
-| Property                   | `resetElement:Node`       | Reset node             |
-| Property                   | `itemsElement:Node`       | Items node             |
+| Property                   | `elementsUp:Nodes`       | Trigger elements when scrolling up             |
+| Property                   | `elementsDown:Nodes`       | Trigger elements when scrolling down             |
+| Property                   | `itemsContainer:Node`       | Items container node             |
+| Property                   | `spaceAdditionals:Node`       | Nodes for space additional             |
+| Property                   | `paginations:Node`       | Paginations nodes             |
 
 </div>
