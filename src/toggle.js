@@ -190,8 +190,6 @@ class Toggle {
     self.currentIndex = null
     self.oldIndex = null
     Xt.running[self.ns] = []
-    // [disabled]
-    self.destroyDisabled()
     // check elements
     for (const element of self.elements) {
       // reset
@@ -1406,12 +1404,6 @@ class Toggle {
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
-      // [disabled]
-      if (options.autoDisable && options.min === options.max) {
-        for (const disable of elements) {
-          disable.setAttribute('disabled', 'disabled')
-        }
-      }
       // if currents > max
       const currents = self.getCurrents()
       if (currents.length > options.max) {
@@ -1464,12 +1456,6 @@ class Toggle {
       if (element.blur) {
         // @FIX :focus styles
         element.blur()
-      }
-      // [disabled]
-      if (options.autoDisable && options.min === options.max) {
-        for (const disable of elements) {
-          disable.removeAttribute('disabled')
-        }
       }
       // auto
       if (!self.getCurrents().length) {
@@ -3140,7 +3126,6 @@ class Toggle {
           el.setAttribute('aria-disabled', 'true')
         }
       }
-      // [disabled]
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
@@ -3204,8 +3189,6 @@ class Toggle {
    */
   destroy(weak = false) {
     const self = this
-    // [disabled]
-    self.destroyDisabled()
     // disable
     self.disable()
     // remove events
@@ -3250,19 +3233,6 @@ class Toggle {
     }
   }
 
-  /**
-   * destroy disabled
-   */
-  destroyDisabled() {
-    const self = this
-    const options = self.options
-    if (options.autoDisable) {
-      for (const el of self.elements) {
-        el.removeAttribute('disabled')
-      }
-    }
-  }
-
   //
 }
 
@@ -3290,7 +3260,6 @@ Toggle.optionsDefaultSuper = {
   // quantity
   min: 0,
   max: 1,
-  autoDisable: true,
   // event
   on: 'click',
   off: 'click',
