@@ -83,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: 'src/gatsby/components/pages/',
+        path: 'src/gatsby/templates/pages/',
       },
     },
     // contenful

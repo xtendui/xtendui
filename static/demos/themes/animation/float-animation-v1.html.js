@@ -1,4 +1,4 @@
-const classes = require('src/gatsby/components/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 const buttonDefault = () =>
   `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg active:shadow-sm`
 const buttonPrimary = () =>

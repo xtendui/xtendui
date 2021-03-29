@@ -5,7 +5,7 @@
  */
 
 import path from 'path'
-import { markdownSlug } from './src/gatsby/components/snippets/markdown-slug.js'
+import { markdownSlug } from './src/gatsby/templates/snippets/markdown-slug.js'
 
 // webpack config
 
@@ -39,8 +39,8 @@ exports.onCreateBabelConfig = ({ actions }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const docPageTemplate = path.resolve('src/gatsby/components/templates/doc-page.js')
-  const docCategoryTemplate = path.resolve('src/gatsby/components/templates/doc-category.js')
+  const docPageTemplate = path.resolve('src/gatsby/templates/doc-page.js')
+  const docCategoryTemplate = path.resolve('src/gatsby/templates/doc-category.js')
   return graphql(`
     {
       allMarkdownRemark {

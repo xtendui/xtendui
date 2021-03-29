@@ -1,4 +1,4 @@
-const markupFade = require('src/gatsby/components/snippets/markup-fade').default
+const markupFade = require('src/gatsby/templates/snippets/markup-fade').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `

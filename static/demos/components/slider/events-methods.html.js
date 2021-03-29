@@ -1,5 +1,5 @@
-const classes = require('src/gatsby/components/snippets/classes').classes
-const markupSlider = require('src/gatsby/components/snippets/markup-slider-eventmethods').default
+const classes = require('src/gatsby/templates/snippets/classes').classes
+const markupSlider = require('src/gatsby/templates/snippets/markup-slider-eventmethods').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `

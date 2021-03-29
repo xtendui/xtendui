@@ -9,7 +9,7 @@ require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 Prism.manual = true
 
-const classes = require('src/gatsby/components/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 /**
  * demoHash

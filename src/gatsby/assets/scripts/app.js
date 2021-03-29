@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 import 'src/gatsby/assets/scripts/shared'
-const classes = require('src/gatsby/components/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 /**
  * prevent href="#" links

@@ -1,4 +1,4 @@
-const classes = require('src/gatsby/components/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 const animDesign =
   'overflow-hidden transform transition ease-in-out-quint duration-500 delay-200 opacity-0 translate-y-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-y-0'
 const animItem =

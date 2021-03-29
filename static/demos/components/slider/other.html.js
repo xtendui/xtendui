@@ -1,4 +1,4 @@
-const markupSlider = require('src/gatsby/components/snippets/markup-slider-other').default
+const markupSlider = require('src/gatsby/templates/snippets/markup-slider-other').default
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
