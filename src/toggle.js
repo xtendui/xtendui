@@ -1833,13 +1833,6 @@ class Toggle {
           delay = queueInitial && !options.delayInitial ? 0 : delay
         }
       }
-      if (actionCurrent === 'On') {
-        // listener dispatch
-        el.dispatchEvent(new CustomEvent(`ondelay.${self.componentNs}`))
-      } else if (actionCurrent === 'Off') {
-        // listener dispatch
-        el.dispatchEvent(new CustomEvent(`offdelay.${self.componentNs}`))
-      }
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
