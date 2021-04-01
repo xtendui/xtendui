@@ -2,7 +2,6 @@ module.exports = {
   component: theme => ({
     '.xt-slider': {
       position: 'relative',
-      overflow: 'hidden',
     },
     '.xt-slides': {
       position: 'relative',
@@ -19,6 +18,7 @@ module.exports = {
       zIndex: theme('zIndex.slide'),
     },
     '.xt-slider-absolute': {
+      overflow: 'hidden',
       '.xt-slide': {
         position: 'relative',
         '&:not(.in):not(.active):not(.out)': {

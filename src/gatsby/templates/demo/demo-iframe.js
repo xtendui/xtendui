@@ -17,15 +17,17 @@ export default class DemoIframe extends React.Component {
     // iframe
     if (typeof window !== 'undefined') {
       document.documentElement.classList.add('gatsby_iframe-inside')
-      const object = require(`static/${src}.html.js`).object
-      if (object.container) {
-        document.documentElement.classList.add('gatsby_iframe-container')
-      }
       require('src/gatsby/assets/scripts/shared')
       document.documentElement.setAttribute('id', id)
     }
     // vanilla
-    const html = require(`static/${src}.html.js`).object.html
+    const object = require(`static/${src}.html.js`).object
+    const html = object.html
+    if (typeof window !== 'undefined') {
+      if (object.container) {
+        document.documentElement.classList.add('gatsby_iframe-container')
+      }
+    }
     try {
       require(`static/${src}.js`).default
       // eslint-disable-next-line no-empty
