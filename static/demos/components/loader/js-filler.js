@@ -33,7 +33,6 @@ const mountLoader = ({ ref }) => {
         gsap.to(filler, { width: '100%', duration: 1, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
       } else {
         Xt.animOff(loader)
-        loader.classList.remove('active')
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }

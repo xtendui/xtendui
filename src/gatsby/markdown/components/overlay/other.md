@@ -57,8 +57,8 @@ You can put **any content** inside, here are some examples.
 
 You can have the the close button with `.fixed` to have it **fixed inside the overlay**.
 
-[[noteDefault]]
-| Do not transition margin on`.fixed` because `.xt-scrollbar-overlay.xt-overlay .fixed` gets automatic `margin-right` to prevent moving with scrollbars.
+[[notePrimary]]
+| Do not transition margin on `.fixed` because of margin positioning, **transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/overlay/close-fixed">

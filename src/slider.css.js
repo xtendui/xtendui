@@ -16,21 +16,13 @@ module.exports = {
     },
     '.xt-slide': {
       position: 'relative',
+      zIndex: theme('zIndex.slide'),
     },
     '.xt-slider-absolute': {
       '.xt-slide': {
         position: 'relative',
-        display: 'none',
-        '&.in': {
-          display: 'block',
-          zIndex: theme('zIndex.10'),
-        },
-        '&.out': {
-          display: 'block',
-        },
-        '&.next': {
-          display: 'block',
-          zIndex: `calc(${theme('zIndex.10')} + 1)`,
+        '&:not(.in):not(.active):not(.out)': {
+          display: 'none',
         },
         '&:not(.in)': {
           position: 'absolute',
@@ -49,18 +41,13 @@ module.exports = {
       },
     },
     '.xt-slides-inner': {
+      flexWrap: 'nowrap',
+      alignItems: 'flex-start',
       // prevent browser selection
       '-webkit-user-select': 'none',
       '-moz-user-select': 'none',
       '-ms-user-select': 'none',
       'user-select': 'none',
-      // styles
-      flexWrap: 'nowrap',
-      alignItems: 'flex-start',
-      // animation dragger
-      transitionProperty: 'transform',
-      transitionDuration: theme('transitionDuration.700'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
   }),
 }

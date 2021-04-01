@@ -3,9 +3,7 @@ const indentString = require('indent-string')
 
 const html = /* HTML */ `
   <div class="demo--slider-overflow-auto">
-    <div class="xt-slider" data-xt-slider="{ align: 'center', drag: { wrap: true } }">
-      ${indentString(markupSlider(), 2)}
-    </div>
+    <div class="xt-slider">${indentString(markupSlider(), 2)}</div>
   </div>
 `
 

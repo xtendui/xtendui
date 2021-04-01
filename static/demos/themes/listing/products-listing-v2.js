@@ -26,7 +26,6 @@ Xt.mount({
 const mountSlider = ({ ref }) => {
   new Xt.Slider(ref.querySelector('.slider--listing'), {
     contain: true,
-    jumpOverflow: true,
   })
 
   // unmount

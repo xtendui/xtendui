@@ -71,6 +71,9 @@ Contain the slides and **automatically group** them when the scroll position is 
 
 You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
 
+[[notePrimary]]
+| Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |

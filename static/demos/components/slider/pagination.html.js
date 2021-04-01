@@ -2,8 +2,8 @@ const markupSlider = require('src/gatsby/templates/snippets/markup-slider-pagina
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div>
-    <div class="xt-slider" data-xt-slider="{ group: 1 }">${indentString(markupSlider(), 2)}</div>
+  <div div class="demo--slider-pagination">
+    <div class="xt-slider">${indentString(markupSlider(), 2)}</div>
   </div>
 `
 

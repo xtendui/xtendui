@@ -11,6 +11,11 @@ const keywords = pack.keywords
 require('dotenv').config()
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+    FAST_REFRESH: true,
+    QUERY_ON_DEMAND: true,
+  },
   siteMetadata: {
     siteUrl: `https://xtendui.com`,
     title: 'Xtend UI',

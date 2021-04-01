@@ -33,6 +33,7 @@ module.exports = {
       },
       zIndex: {
         below: '-1',
+        slide: '50', // same as options.zIndex.targets.start
         drop: '400', // same as options.zIndex.targets.start
         tooltip: '500', // same as options.zIndex.targets.start
         sticky: '900',

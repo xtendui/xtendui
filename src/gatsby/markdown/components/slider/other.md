@@ -61,6 +61,8 @@ Use the class `.xt-overflow-auto` to styles accordingly.
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">
   </demoinline>
+  <demoinline src="demos/components/slider/overflow-auto-false">
+  </demoinline>
 </demo>
 
 ## Expand
@@ -126,7 +128,6 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 | Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/toggle) |     
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
-| Option                  | `jumpOverflow:Boolean`                          | `false`        | Jump only activates if slide overflows the dragger            |
 | Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`)            |
 | Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
 

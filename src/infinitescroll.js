@@ -87,7 +87,7 @@ class Infinitescroll {
         add += additional.offsetHeight
       }
       document.scrollingElement.scrollTop = state.scrollResume - state.scrollRemove + add
-      // @TEST console.debug('xt-infinitescroll scrollResume', state.scrollResume)
+      // console.debug('xt-infinitescroll scrollResume', state.scrollResume)
     }
     // scrollRemove
     let space = 0
@@ -183,7 +183,7 @@ class Infinitescroll {
       if (linkOrigin === location.origin) {
         if (self.url.href !== location.href) {
           history.replaceState(null, '', self.url.href)
-          // @TEST console.debug('xt-infinitescroll history replace', self.url.href)
+          // console.debug('xt-infinitescroll history replace', self.url.href)
         }
       } else {
         console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
@@ -225,12 +225,12 @@ class Infinitescroll {
       const request = new XMLHttpRequest()
       request.open('GET', self.url.href, true)
       request.onload = () => {
-        // @TEST console.debug('xt-infinitescroll request success', request, self.url)
+        // console.debug('xt-infinitescroll request success', request, self.url)
         // response
         self.response(request)
       }
       request.onerror = () => {
-        // @TEST console.debug('xt-infinitescroll request failed', request)
+        // console.debug('xt-infinitescroll request failed', request)
         // response
         self.response(request)
       }
@@ -265,7 +265,7 @@ class Infinitescroll {
     if (self.options.get && itemsContainer) {
       self.populate(itemsContainer)
     } else {
-      // @TEST console.debug('xt-infinitescroll fake populate because no items found')
+      // console.debug('xt-infinitescroll fake populate because no items found')
       // fake
       setTimeout(() => {
         self.populate(self.itemsFake.cloneNode(true))

@@ -26,7 +26,7 @@ You can set it in the options or to **assign them also on single nodes** with `d
 </div>
 
 [[notePrimary]]
-| Do not animate `xt-tooltip` because of transform positioning, **animate the content instead**.
+| Do not transition transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
 
 [[notePrimary]]
 | Use `.xt-tooltip-item` as **elements** when using **multiple mode**.

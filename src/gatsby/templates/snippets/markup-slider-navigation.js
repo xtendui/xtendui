@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 export default () => /* HTML */ `
   <div class="xt-slides">
     <div class="xt-slides-inner xt-row xt-row-4">
-      <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-6/12 sm:w-4/12">
         <div class="xt-card rounded-md ${classes.cardSlide()}">
           <div class="xt-h4">1</div>
           <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -27,7 +27,7 @@ export default () => /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-6/12 sm:w-4/12">
         <div class="xt-card rounded-md ${classes.cardSlide()}">
           <div class="xt-h4">2</div>
           <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -51,7 +51,7 @@ export default () => /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-6/12 sm:w-4/12">
         <div class="xt-card rounded-md ${classes.cardSlide()}">
           <div class="xt-h4">3</div>
           <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -75,7 +75,7 @@ export default () => /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-7/12 sm:w-5/12">
         <div class="xt-card rounded-md ${classes.cardSlide()}">
           <div class="xt-h4">4</div>
           <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -99,7 +99,7 @@ export default () => /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-slide w-7/12 sm:w-5/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-7/12 sm:w-5/12">
         <div class="xt-card rounded-md ${classes.cardSlide()}">
           <div class="xt-h4">5</div>
           <nav class="xt-list xt-list-3 pt-4 items-center justify-center">

@@ -75,7 +75,6 @@ class Ajax extends Xt.Toggle {
     const self = this
     // initial
     self.initial = true
-    self.wrap = false
     self.currentIndex = null
     self.oldIndex = null
     // automatic initial currents
@@ -225,7 +224,7 @@ class Ajax extends Xt.Toggle {
       request.onerror = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
-      // @TEST console.debug('xt-ajax request', request)
+      // console.debug('xt-ajax request', request)
       // send
       request.send()
       self.detail.request = request
@@ -278,7 +277,7 @@ class Ajax extends Xt.Toggle {
   ajaxSuccess(element, url, request, date) {
     const self = this
     const options = self.options
-    // @TEST console.debug('xt-ajax request success', request)
+    // console.debug('xt-ajax request success', request)
     // set substitute
     let html = document.createElement('html')
     html.innerHTML = request.responseText.trim()

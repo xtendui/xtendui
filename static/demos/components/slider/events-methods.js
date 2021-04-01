@@ -1,5 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
+import gsap from 'gsap'
 
 Xt.mount({
   matches: '.demo--slider-events',
@@ -19,6 +20,11 @@ Xt.mount({
 const mountEventmethods = ({ ref }) => {
   const slider = ref.querySelector('#slider--eventmethods')
 
+  // vars
+
+  const dragTime = 1
+  const dragEase = 'quint.out'
+
   // init
 
   let self = new Xt.Slider(slider, {
@@ -36,6 +42,27 @@ const mountEventmethods = ({ ref }) => {
       },
     },
   })
+
+  // dragposition (set internal dragPosition to resume animation mid dragging)
+
+  const dragposition = () => {
+    // dragPosition tween with main time and ease
+    gsap.killTweensOf(self.detail)
+    gsap.to(self.detail, {
+      dragPosition: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+    // dragger tween with main time and ease
+    gsap.killTweensOf(self.dragger)
+    gsap.to(self.dragger, {
+      x: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+  }
+
+  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // log
 
@@ -58,7 +85,7 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>on 1st element</strong>')
-    const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+    const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
@@ -70,7 +97,7 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>on 1st target</strong>')
-    const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+    const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
@@ -107,10 +134,10 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // targets
-      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-      <div class="xt-slide w-6/12 sm:w-4/12 opacity-50 active:opacity-100">
+      <div class="xt-slide w-6/12 sm:w-4/12">
         <div class="xt-card rounded-md text-base p-8 text-center text-black bg-gray-200">
           <div class="xt-h4">${indexTr}</div>
         </div>
@@ -134,10 +161,10 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // elements
-      const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      const elements = self.elements
       elements[elements.length - 1].remove()
       // targets
-      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const targets = self.targets
       targets[targets.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')

@@ -186,7 +186,6 @@ class Toggle {
     // vars
     let currents = 0
     self.initial = true
-    self.wrap = false
     self.currentIndex = null
     self.oldIndex = null
     Xt.running[self.ns] = []
@@ -209,11 +208,6 @@ class Toggle {
     let todo = options.min - currents
     let start = 0
     if (todo > 0 && self.targets.length) {
-      // @FIX initial activation drag wrap
-      if ((!self.disabled || !self.initial) && self.wrapIndex) {
-        start = self.wrapIndex
-        todo += start
-      }
       // initial
       currents += todo
     }
@@ -1282,7 +1276,7 @@ class Toggle {
       el.classList.remove(...self.classesActive)
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
-      if (self.initial && !self.wrap) {
+      if (self.initial) {
         el.classList.add(...self.classesInitial)
       }
       // keep the same level of raf as others
@@ -1293,10 +1287,6 @@ class Toggle {
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             el.classList.add(...self.classesActive)
-            // remove initial instantly when wrap
-            if (el.classList.contains('xt-wrap')) {
-              el.classList.remove(...self.classesInitial)
-            }
           })
         })
       )
@@ -1553,7 +1543,7 @@ class Toggle {
       return
     }
     // start
-    if (options.auto && options.auto.time && Xt.autoTimescale && !self.wrap) {
+    if (options.auto && options.auto.time && Xt.autoTimescale) {
       // not when nothing activated
       if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
         // clear
@@ -1598,7 +1588,7 @@ class Toggle {
     const self = this
     const options = self.options
     // stop
-    if (options.auto && options.auto.time && !self.wrap) {
+    if (options.auto && options.auto.time) {
       // clear
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // aria
@@ -1722,7 +1712,7 @@ class Toggle {
    */
   eventMedialoadedReinit() {
     const self = this
-    // @TEST console.debug('mediaLoadedReinit', self.object)
+    // console.debug('mediaLoadedReinit', self.object)
     // reinit
     self.reinit()
   }
@@ -2143,7 +2133,6 @@ class Toggle {
         // reset
         self.inverse = null
         self.initial = false
-        self.wrap = false
       })
     }
   }

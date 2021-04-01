@@ -57,7 +57,7 @@ ScrollTrigger.addEventListener('refresh', () => {
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
 [[notePrimary]]
-| **Do not animate the sticky object when `pin: true`** because Scrolltrigger set transforms to pinned nodes. **Animate a inner div**.
+| Do not transition transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
 Here's an example of **complex sticky hide** when scrolling down but only after the first card.
 

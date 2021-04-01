@@ -95,7 +95,7 @@ const mountEventmethods = ({ ref }) => {
     tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
-      const elements = self.elements.filter(x => !x.classList.contains('xt-wrap'))
+      const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
         <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
@@ -103,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
         </button>
       `
       tooltip.append(Xt.createElement(strEl))
-      const targets = self.targets.filter(x => !x.classList.contains('xt-wrap'))
+      const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
         <div class="xt-tooltip p-2" title="Target ${indexTr}">

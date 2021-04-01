@@ -9,6 +9,21 @@ title: "Slider"
 
 Test contain grouping and position.
 
+Test jump classes.
+
+<demo>
+  <demoinline src="demos/components/slider/contain-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/contain-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/contain-right">
+  </demoinline>
+</demo>
+
+Test wrap position.
+
+Test jump classes.
+
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
   </demoinline>
@@ -18,23 +33,14 @@ Test contain grouping and position.
   </demoinline>
 </demo>
 
-Test wrap activation on drag.
+Test position and deactivation on resize.
 
-Test when not wrapping if active is not first or last.
-
-<demo>
-  <demoinline src="demos/components/slider/wrap-center">
-  </demoinline>
-  <demoinline src="demos/components/slider/wrap-left">
-  </demoinline>
-  <demoinline src="demos/components/slider/wrap-right">
-  </demoinline>
-</demo>
-
-Test activation and self.initial on overflow auto and back to not overflow auto.
+Test in overflow-auto-false wrap disabled when not overflowing.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">
+  </demoinline>
+  <demoinline src="demos/components/slider/overflow-auto-false">
   </demoinline>
 </demo>
 
@@ -53,3 +59,14 @@ Test wrap.
   <demoinline src="demos/components/slider/automaticscroll">
   </demoinline>
 </demo>
+
+Test no jump.
+
+Test no loop.
+
+Test autoheight.
+
+<demo>	
+  <demoinline src="demos/components/slider/progress">	
+  </demoinline>	
+</demo>	

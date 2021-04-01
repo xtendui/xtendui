@@ -40,7 +40,6 @@ const mountLoader = ({ ref }) => {
           .eventCallback('onComplete', loaderTimeout)
       } else {
         Xt.animOff(loader)
-        loader.classList.remove('active')
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }

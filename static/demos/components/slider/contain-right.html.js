@@ -2,8 +2,8 @@ const markupSlider = require('src/gatsby/templates/snippets/markup-slider').defa
 const indentString = require('indent-string')
 
 const html = /* HTML */ `
-  <div>
-    <div class="xt-slider" data-xt-slider="{ contain: true, align: 'right' }">${indentString(markupSlider(), 2)}</div>
+  <div class="demo--slider-contain-right">
+    <div class="xt-slider">${indentString(markupSlider(), 2)}</div>
   </div>
 `
 

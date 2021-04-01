@@ -9,13 +9,7 @@
       transform: none !important;
       transition: none !important;
     }
-    .xt-slide {
-      opacity: 1 !important;
-    }
     .xt-slider-pagination {
-      display: none !important;
-    }
-    .xt-wrap {
       display: none !important;
     }
   }

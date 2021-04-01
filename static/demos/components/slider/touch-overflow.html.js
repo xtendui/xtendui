@@ -3,9 +3,7 @@ const indentString = require('indent-string')
 
 const html = /* HTML */ `
   <div class="demo--slider-touch-overflow">
-    <div class="xt-slider" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
-      ${indentString(markupSlider(), 2)}
-    </div>
+    <div class="xt-slider">${indentString(markupSlider(), 2)}</div>
   </div>
 `
 

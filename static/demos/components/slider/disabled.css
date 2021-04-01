@@ -1,13 +1,7 @@
-.demo--slider-disable, .demo--slider-disable-react {
+.demo--slider-disabled, .demo--slider-disabled-react {
   .xt-slider-disabled {
-    .xt-slide {
-      opacity: 1 !important;
-    }
     .xt-slider-pagination {
       display: none;
-    }
-    .xt-wrap {
-      visibility: hidden !important;
     }
   }
 }
