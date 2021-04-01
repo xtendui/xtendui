@@ -516,7 +516,7 @@ class Slider extends Xt.Toggle {
     if (!e.button || e.button !== 2) {
       // handler
       if (options.eventLimit) {
-        const eventLimit = self.container.querySelectorAll(options.eventLimit)
+        const eventLimit = self.containerTargets.querySelectorAll(options.eventLimit)
         if (!Xt.contains(eventLimit, e.target)) {
           self.eventDragstart(e)
         }
@@ -545,7 +545,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // logic
     if (options.eventLimit) {
-      const eventLimit = self.container.querySelectorAll(options.eventLimit)
+      const eventLimit = self.containerTargets.querySelectorAll(options.eventLimit)
       if (!Xt.contains(eventLimit, e.target)) {
         self.eventDragend(e)
       }
