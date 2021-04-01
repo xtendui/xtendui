@@ -4,10 +4,10 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--slide-animation-v1',
-  mount: ({ object }) => {
-    const unmountSlide = mountSlide({ object })
+  mount: ({ ref }) => {
+    const unmountSlide = mountSlide({ ref })
 
     // unmount
 
@@ -19,8 +19,8 @@ Xt.mount.push({
 
 /* mountSlide */
 
-const mountSlide = ({ object }) => {
-  const items = object.querySelectorAll('.xt-button, a.xt-card')
+const mountSlide = ({ ref }) => {
+  const items = ref.querySelectorAll('.xt-button, a.xt-card')
 
   for (const item of items) {
     // vars

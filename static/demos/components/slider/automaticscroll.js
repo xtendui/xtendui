@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--slider-automaticscroll',
-  mount: ({ object }) => {
-    const unmountSliders = mountSliders({ object })
+  mount: ({ ref }) => {
+    const unmountSliders = mountSliders({ ref })
 
     // unmount
 
@@ -17,8 +17,8 @@ Xt.mount.push({
 
 /* mountSliders */
 
-const mountSliders = ({ object }) => {
-  const sliders = object.querySelectorAll('.xt-slider')
+const mountSliders = ({ ref }) => {
+  const sliders = ref.querySelectorAll('.xt-slider')
   const unmounts = []
 
   for (const slider of sliders) {

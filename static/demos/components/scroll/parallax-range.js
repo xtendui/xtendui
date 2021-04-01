@@ -3,10 +3,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--parallax-range',
-  mount: ({ object }) => {
-    const unmountParallax = mountParallax({ object })
+  mount: ({ ref }) => {
+    const unmountParallax = mountParallax({ ref })
 
     // unmount
 
@@ -18,10 +18,10 @@ Xt.mount.push({
 
 /* mountParallax */
 
-const mountParallax = ({ object }) => {
+const mountParallax = ({ ref }) => {
   // vars
 
-  const trigger = object.querySelector('.box-0')
+  const trigger = ref.querySelector('.box-0')
 
   // no scrub
 

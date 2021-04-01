@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--tooltip-swap-click',
-  mount: ({ object }) => {
-    const unmountButtonsSwap = mountButtonsSwap({ object })
+  mount: ({ ref }) => {
+    const unmountButtonsSwap = mountButtonsSwap({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountButtonsSwap */
 
-const mountButtonsSwap = ({ object }) => {
-  const buttonsSwap = object.querySelectorAll(':scope > .xt-button')
+const mountButtonsSwap = ({ ref }) => {
+  const buttonsSwap = ref.querySelectorAll(':scope > .xt-button')
 
   for (const buttonSwap of buttonsSwap) {
     // vars

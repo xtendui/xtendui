@@ -108,13 +108,13 @@ ${strImports}export default function component() {${
             ? `${test ? 'const [count, setCount] = useState(0)' : ''}
   const nodeRef = useRef(null)
   let unmount
-  const ref = useCallback(object => {
+  const ref = useCallback(ref => {
     if (nodeRef.current) {
       unmount(nodeRef.current)
     }
-    nodeRef.current = object
-    if (object !== null) {
-      unmount = mount({ object })
+    nodeRef.current = ref
+    if (ref !== null) {
+      unmount = mount({ ref })
     }
   }, [])
 `
@@ -127,7 +127,7 @@ ${strImports}export default function component() {${
 
 /* mount */
 
-const mount = ({ object }) => {${strMount}}`
+const mount = ({ ref }) => {${strMount}}`
             : ''
         }
 ${strMethods !== '' ? `${strMethods}` : ''}`

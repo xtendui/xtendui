@@ -7,55 +7,55 @@ Xt.ready(() => {
     'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
   )
   // images
-  Xt.mount.push({
+  Xt.mount({
     ignore: false,
     matches: 'img[src]:not([src^="data:"])',
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // loading
-      const loading = object.getAttribute('loading')
+      const loading = ref.getAttribute('loading')
       if (!loading) {
-        console.warn('Xtend usability detected an "image" without "loading" attribute', object)
+        console.warn('Xtend usability detected an "image" without "loading" attribute', ref)
       }
       // alt
-      const alt = object.getAttribute('alt')
+      const alt = ref.getAttribute('alt')
       if (!alt && alt !== '') {
-        console.warn('Xtend usability detected an "image" without "alt" attribute', object)
+        console.warn('Xtend usability detected an "image" without "alt" attribute', ref)
       }
     },
   })
   // input
-  Xt.mount.push({
+  Xt.mount({
     ignore: false,
     matches: 'input:not([type="hidden"]), select, textarea',
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // label
-      const labels = object.labels
-      const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
+      const labels = ref.labels
+      const label = ref.getAttribute('aria-label') || ref.getAttribute('aria-labelledby')
       if (!labels.length && (!label || label === '')) {
-        console.warn('Xtend usability detected an "input" without "label" or "aria-label" or "aria-labelledby"', object)
+        console.warn('Xtend usability detected an "input" without "label" or "aria-label" or "aria-labelledby"', ref)
       }
     },
   })
   // links
-  Xt.mount.push({
+  Xt.mount({
     ignore: false,
     matches: 'a[href]',
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // title
-      const text = object.textContent.trim()
-      const title = object.title
-      const label = object.getAttribute('aria-label') || object.getAttribute('aria-labelledby')
+      const text = ref.textContent.trim()
+      const title = ref.title
+      const label = ref.getAttribute('aria-label') || ref.getAttribute('aria-labelledby')
       if (!text.length && (!title || title === '') && (!label || label === '')) {
         console.warn(
           'Xtend usability detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"',
-          object
+          ref
         )
       }
       // target
-      const target = object.getAttribute('target')
+      const target = ref.getAttribute('target')
       if (target && target.toLowerCase() === '_blank') {
-        if (object.hostname.length && location.hostname !== object.hostname) {
-          const rel = object.getAttribute('rel')
+        if (ref.hostname.length && location.hostname !== ref.hostname) {
+          const rel = ref.getAttribute('rel')
           if (
             !rel ||
             rel === '' ||
@@ -63,7 +63,7 @@ Xt.ready(() => {
           ) {
             console.warn(
               'Xtend usability detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"',
-              object
+              ref
             )
           }
         }

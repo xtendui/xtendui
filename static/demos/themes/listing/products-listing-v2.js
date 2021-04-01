@@ -4,12 +4,12 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--products-listing-v2',
-  mount: ({ object }) => {
-    const unmountSlider = mountSlider({ object })
-    const unmountMedia = mountMedia({ object })
-    const unmountFade = mountFade({ object })
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+    const unmountMedia = mountMedia({ ref })
+    const unmountFade = mountFade({ ref })
 
     // unmount
 
@@ -23,8 +23,8 @@ Xt.mount.push({
 
 /* mountSlider */
 
-const mountSlider = ({ object }) => {
-  new Xt.Slider(object.querySelector('.slider--listing'), {
+const mountSlider = ({ ref }) => {
+  new Xt.Slider(ref.querySelector('.slider--listing'), {
     contain: true,
     jumpOverflow: true,
   })
@@ -36,8 +36,8 @@ const mountSlider = ({ object }) => {
 
 /* mountMedia */
 
-const mountMedia = ({ object }) => {
-  const items = object.querySelectorAll('.listing-item')
+const mountMedia = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
 
   // vars
 
@@ -129,8 +129,8 @@ const mountMedia = ({ object }) => {
 
 /* mountFade */
 
-const mountFade = ({ object }) => {
-  const items = object.querySelectorAll('.listing-item')
+const mountFade = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
 
   // vars
 

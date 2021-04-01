@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--slider-events',
-  mount: ({ object }) => {
-    const unmountEventmethods = mountEventmethods({ object })
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountEventmethods */
 
-const mountEventmethods = ({ object }) => {
-  const slider = object.querySelector('#slider--eventmethods')
+const mountEventmethods = ({ ref }) => {
+  const slider = ref.querySelector('#slider--eventmethods')
 
   // init
 

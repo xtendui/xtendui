@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--drop-animation-js-multiple',
-  mount: ({ object }) => {
-    const unmountDrops = mountDrops({ object })
+  mount: ({ ref }) => {
+    const unmountDrops = mountDrops({ ref })
 
     // unmount
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
 /* mountDrops */
 
-const mountDrops = ({ object }) => {
+const mountDrops = ({ ref }) => {
   // vars
 
   const targetTimeOn = 0.5
@@ -27,7 +27,7 @@ const mountDrops = ({ object }) => {
 
   // init
 
-  let self = new Xt.Drop(object, {
+  let self = new Xt.Drop(ref, {
     elements: '.xt-drop-item',
     targets: '.xt-drop',
     duration: 500,

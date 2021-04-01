@@ -187,10 +187,10 @@ const test = 'test'
 ```
 
 ```js
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--',
-  mount: ({ object }) => {
-    const unmountDrops = mountDrops({ object })
+  mount: ({ ref }) => {
+    const unmountDrops = mountDrops({ ref })
 
     // unmount
 
@@ -202,7 +202,7 @@ Xt.mount.push({
 
 /* mountDrops */
 
-const mountDrops = ({ object }) => {
+const mountDrops = ({ ref }) => {
   // unmount
 
   return () => {}
@@ -210,8 +210,8 @@ const mountDrops = ({ object }) => {
 
 /* mountDrops */
 
-const mountDrops = ({ object }) => {
-  const buttons = object.querySelectorAll('.xt-button')
+const mountDrops = ({ ref }) => {
+  const buttons = ref.querySelectorAll('.xt-button')
   const unmounts = []
 
   for (const button of buttons) {

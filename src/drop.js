@@ -170,17 +170,17 @@ Xt.Drop = Drop
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Drop.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Drop.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Drop.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Drop(object, options)
+      let self = new Xt.Drop(ref, options)
 
       // unmount
 

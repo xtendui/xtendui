@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--tooltip-animation-js',
-  mount: ({ object }) => {
-    const unmountTooltip = mountTooltip({ object })
+  mount: ({ ref }) => {
+    const unmountTooltip = mountTooltip({ ref })
 
     // unmount
 
@@ -17,8 +17,8 @@ Xt.mount.push({
 
 /* mountTooltip */
 
-const mountTooltip = ({ object }) => {
-  const tooltip = object.querySelector(':scope > .xt-list')
+const mountTooltip = ({ ref }) => {
+  const tooltip = ref.querySelector(':scope > .xt-list')
 
   // vars
 

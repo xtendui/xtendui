@@ -40,65 +40,48 @@ Or also have css respond to DOM ready with the selector `body.xt-ready`.
 
 You can add Javascript code as a **vanilla component** with `Xt.mount`.
 
-To execute javascript code we use `Xt.mount` for two important reasons:
+Mount listens and execute the query with [Mutation Obsever](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). So the **code gets executed also if the Node is added on the DOM asynchronously**.
 
-* Mount listens and execute the query with [Mutation Obsever](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). So the **code gets executed also if the Node is added on the DOM asynchronously**.
+You can return a function to execute when **the Node is removed from the DOM**.
 
-* It create a **anonymous functions to encapsulate code** so **each block is self contained** and it behaves as a sort of **component for Vanilla Html and Js components**.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `matches:Query`                          | `false`        | Query to match for mount            |
+| Option                    | `mount:Function`                          | `false`        | Function to execute on mount, returned function will be executed on unmount             |
+| Option                    | `ignore:Query`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
+
+</div>
+
+Here's **mount function arguments**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.mount:Array`              | Array of **mount objects**              |
-| Variable                  | `{ matches:String, mount:Function }`       | Example **mount object**                 |
-| Variable                  | `{ object:Node, mount:Function, index:Number, matches:String }`       | Example **mount callback**                 |
+| Variable                  | `ref:Node`       | Mounted node                 |
+| Variable                  | `object:Object`       | Mounted object                 |
+| Variable                  | `index:Number`       | Mounted index on the same mount                 |
 
 </div>
 
 [[notePrimary]]
 | Remember to **use `.xt-ignore` when moving object** to prevent **child multiple mount and unmount**. If you want to automatically remove the `.xt-ignore` class use `.xt-ignore.xt-ignore-once`.
 
-Here's an example of **mounting a query component**, the **return function to unmount** is executed on DOM removal of the query nodes.
-
 ```js
-Xt.mount.push({
+Xt.mount({
   matches: '.my-query',
-  mount: ({ object, mount, index, matches }) => {
+  mount: ({ ref, object, index }) => {
     // logic
 
-    console.debug('mounted', object)
+    console.debug('mounted', ref)
 
     // unmount
 
     return () => {
-      console.debug('unmounted', object)
+      console.debug('unmounted', ref)
     }
-  },
-})
-```
-
-By using `requestAnimationFrame` and `cancelAnimationFrame` you can **execute multiple object mounts** that happends at the same frame.
-
-```js
-Xt.mount.push({
-  matches: '.my-query',
-  mount: ({ object, mount, index, matches }) => {
-    // multiple mount object with raf
-
-    mount.objects = mount.objects ? mount.objects : []
-    mount.objects.push(object)
-    cancelAnimationFrame(mount.raf)
-    mount.raf = requestAnimationFrame(() => {
-      // reset mount object
-
-      const objects = mount.objects
-      mount.objects = []
-
-      // logic
-
-      console.debug(objects)
-    })
   },
 })
 ```

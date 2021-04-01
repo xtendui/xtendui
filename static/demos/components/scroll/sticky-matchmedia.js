@@ -3,10 +3,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--sticky-matchmedia',
-  mount: ({ object }) => {
-    const unmountSticky = mountSticky({ object })
+  mount: ({ ref }) => {
+    const unmountSticky = mountSticky({ ref })
 
     // unmount
 
@@ -18,13 +18,13 @@ Xt.mount.push({
 
 /* mountSticky */
 
-const mountSticky = ({ object }) => {
+const mountSticky = ({ ref }) => {
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {
       // sticky
 
       ScrollTrigger.create({
-        trigger: object.querySelector('.xt-sticky'),
+        trigger: ref.querySelector('.xt-sticky'),
         start: 'top top',
         endTrigger: 'html',
         end: 'bottom top',

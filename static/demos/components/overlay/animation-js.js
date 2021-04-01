@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--overlay-animation-js',
-  mount: ({ object }) => {
-    const unmountOverlay = mountOverlay({ object })
+  mount: ({ ref }) => {
+    const unmountOverlay = mountOverlay({ ref })
 
     // unmount
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
 /* mountOverlay */
 
-const mountOverlay = ({ object }) => {
+const mountOverlay = ({ ref }) => {
   // vars
 
   const targetTimeOn = 0.5
@@ -27,7 +27,7 @@ const mountOverlay = ({ object }) => {
 
   // init
 
-  let self = new Xt.Overlay(object, {
+  let self = new Xt.Overlay(ref, {
     duration: 500,
   })
 

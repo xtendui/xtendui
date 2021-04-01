@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--loader-js-spinner',
-  mount: ({ object }) => {
-    const unmountLoader = mountLoader({ object })
+  mount: ({ ref }) => {
+    const unmountLoader = mountLoader({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountLoader */
 
-const mountLoader = ({ object }) => {
-  const loaders = object.querySelectorAll('.xt-loader')
+const mountLoader = ({ ref }) => {
+  const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 
   for (const loader of loaders) {

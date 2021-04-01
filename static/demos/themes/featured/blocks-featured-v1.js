@@ -3,11 +3,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--blocks-featured-v1',
-  mount: ({ object }) => {
-    const unmountItemsParallax = mountItemsParallax({ object })
-    const unmountButtonsLine = mountButtonsLine({ object })
+  mount: ({ ref }) => {
+    const unmountItemsParallax = mountItemsParallax({ ref })
+    const unmountButtonsLine = mountButtonsLine({ ref })
 
     // unmount
 
@@ -20,8 +20,8 @@ Xt.mount.push({
 
 /* mountItemParallax */
 
-const mountItemsParallax = ({ object }) => {
-  const items = object.querySelectorAll('.featured-item')
+const mountItemsParallax = ({ ref }) => {
+  const items = ref.querySelectorAll('.featured-item')
 
   for (const item of items) {
     // vars
@@ -86,8 +86,8 @@ const mountItemsParallax = ({ object }) => {
 
 /* mountButtonsLine */
 
-const mountButtonsLine = ({ object }) => {
-  const buttonsLine = object.querySelectorAll('.button--line')
+const mountButtonsLine = ({ ref }) => {
+  const buttonsLine = ref.querySelectorAll('.button--line')
 
   for (const buttonLine of buttonsLine) {
     // vars
@@ -163,10 +163,10 @@ const mountButtonsLine = ({ object }) => {
       const mediaInner = link.querySelector('.xt-media-inner')
       gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
       // text
-      const text = object.querySelector('.button--line-content')
+      const text = ref.querySelector('.button--line-content')
       gsap.to(text, { x: 0, duration: 1, ease: 'expo.inOut' })
       // line
-      const line = object.querySelector('.button--line-design')
+      const line = ref.querySelector('.button--line-design')
       gsap.to(line, {
         width: lineWidth,
         x: 0,

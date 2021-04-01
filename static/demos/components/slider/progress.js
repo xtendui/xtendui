@@ -3,10 +3,10 @@ import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--slider-progress',
-  mount: ({ object }) => {
-    const unmountSlider = mountSlider({ object })
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
 
     // unmount
 
@@ -18,8 +18,8 @@ Xt.mount.push({
 
 /* mountSlider */
 
-const mountSlider = ({ object }) => {
-  const slider = object.querySelector('.xt-slider')
+const mountSlider = ({ ref }) => {
+  const slider = ref.querySelector('.xt-slider')
 
   // vars
 

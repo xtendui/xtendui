@@ -166,17 +166,17 @@ Xt.Groupnumber = Groupnumber
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Groupnumber.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Groupnumber.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Groupnumber.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Groupnumber(object, options)
+      let self = new Xt.Groupnumber(ref, options)
 
       // unmount
 

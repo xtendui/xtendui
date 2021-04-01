@@ -2,10 +2,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/googlelocator'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--googlelocator',
-  mount: ({ object }) => {
-    const unmountGooglelocator = mountGooglelocator({ object })
+  mount: ({ ref }) => {
+    const unmountGooglelocator = mountGooglelocator({ ref })
 
     // unmount
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
 /* mountGooglelocator */
 
-const mountGooglelocator = ({ object }) => {
+const mountGooglelocator = ({ ref }) => {
   // add yout api key here
 
   Xt.addScript(
@@ -29,7 +29,7 @@ const mountGooglelocator = ({ object }) => {
   // init
 
   window.demoGooglelocator = function () {
-    new Xt.Googlelocator(object, {
+    new Xt.Googlelocator(ref, {
       initialLocate: false,
       initialSearch: false,
       seachMapBounds: false,

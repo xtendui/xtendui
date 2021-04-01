@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--ripple-animation-v1',
-  mount: ({ object }) => {
-    const unmountRipple = mountRipple({ object })
+  mount: ({ ref }) => {
+    const unmountRipple = mountRipple({ ref })
 
     // unmount
 
@@ -17,8 +17,8 @@ Xt.mount.push({
 
 /* mountRipple */
 
-const mountRipple = ({ object }) => {
-  const items = object.querySelectorAll('.xt-button, .xt-card')
+const mountRipple = ({ ref }) => {
+  const items = ref.querySelectorAll('.xt-button, .xt-card')
   const unmounts = []
 
   for (const item of items) {

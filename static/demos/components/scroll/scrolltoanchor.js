@@ -6,11 +6,11 @@ gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--scrolltoanchor',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     const unmountScrolltoanchor = mountScrolltoanchor()
-    const unmountSticky = mountSticky({ object })
+    const unmountSticky = mountSticky({ ref })
 
     // unmount
 
@@ -63,9 +63,9 @@ const mountScrolltoanchor = () => {
 
 /* mountSticky */
 
-const mountSticky = ({ object }) => {
+const mountSticky = ({ ref }) => {
   ScrollTrigger.create({
-    trigger: object.querySelector('.xt-sticky'),
+    trigger: ref.querySelector('.xt-sticky'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',

@@ -185,17 +185,17 @@ Xt.Mousefollow = Mousefollow
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Mousefollow.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Mousefollow.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Mousefollow.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Mousefollow(object, options)
+      let self = new Xt.Mousefollow(ref, options)
 
       // unmount
 

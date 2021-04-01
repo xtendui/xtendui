@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--toggle-animation-js-multiple',
-  mount: ({ object }) => {
-    const unmountToggle = mountToggle({ object })
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
 
     // unmount
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
 /* mountToggle */
 
-const mountToggle = ({ object }) => {
+const mountToggle = ({ ref }) => {
   // vars
 
   const targetTimeOn = 0.5
@@ -27,7 +27,7 @@ const mountToggle = ({ object }) => {
 
   // init
 
-  let self = new Xt.Toggle(object.querySelector(':scope > .xt-list'), {
+  let self = new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
     duration: 500,
   })
 

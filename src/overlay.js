@@ -104,17 +104,17 @@ Xt.Overlay = Overlay
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Overlay.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Overlay.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Overlay.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Overlay(object, options)
+      let self = new Xt.Overlay(ref, options)
 
       // unmount
 

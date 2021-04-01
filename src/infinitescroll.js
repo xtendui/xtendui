@@ -440,17 +440,17 @@ Xt.Infinitescroll = Infinitescroll
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Infinitescroll.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Infinitescroll.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Infinitescroll.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Infinitescroll(object, options)
+      let self = new Xt.Infinitescroll(ref, options)
 
       // unmount
 

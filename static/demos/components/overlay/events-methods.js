@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--overlay-events',
-  mount: ({ object }) => {
-    const unmountEventmethods = mountEventmethods({ object })
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
 
     // unmount
 
@@ -16,9 +16,9 @@ Xt.mount.push({
 
 /* mountEventmethods */
 
-const mountEventmethods = ({ object }) => {
-  const overlay = object.querySelector('#overlay--eventmethods')
-  const overlayAlt = object.querySelector('#overlay--eventmethods-alt')
+const mountEventmethods = ({ ref }) => {
+  const overlay = ref.querySelector('#overlay--eventmethods')
+  const overlayAlt = ref.querySelector('#overlay--eventmethods-alt')
 
   // init
 
@@ -32,7 +32,7 @@ const mountEventmethods = ({ object }) => {
 
   // log
 
-  const log = object.querySelector('#card--overlay-eventmethods-log')
+  const log = ref.querySelector('#card--overlay-eventmethods-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -47,7 +47,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first element
 
-  const firstEl = object.querySelector('#button--overlay-eventmethods-first-element')
+  const firstEl = ref.querySelector('#button--overlay-eventmethods-first-element')
 
   const firstElFnc = () => {
     logAdd('<strong>on 1st element</strong>')
@@ -59,7 +59,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first target
 
-  const firstTr = object.querySelector('#button--overlay-eventmethods-first-target')
+  const firstTr = ref.querySelector('#button--overlay-eventmethods-first-target')
 
   const firstTrFnc = () => {
     logAdd('<strong>on 1st target</strong>')
@@ -71,11 +71,11 @@ const mountEventmethods = ({ object }) => {
 
   // reinit
 
-  const reinitBtn = object.querySelector('#button--overlay-eventmethods-reinit')
+  const reinitBtn = ref.querySelector('#button--overlay-eventmethods-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(object.dataset.reinitTimeout))
-    object.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
+    ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
     }, 200).toString()
@@ -85,7 +85,7 @@ const mountEventmethods = ({ object }) => {
 
   // restart
 
-  const restartBtn = object.querySelector('#button--overlay-eventmethods-restart')
+  const restartBtn = ref.querySelector('#button--overlay-eventmethods-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -96,7 +96,7 @@ const mountEventmethods = ({ object }) => {
 
   // destroy
 
-  const destroyBtn = object.querySelector('#button--overlay-eventmethods-destroy')
+  const destroyBtn = ref.querySelector('#button--overlay-eventmethods-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -107,7 +107,7 @@ const mountEventmethods = ({ object }) => {
 
   // unmount
 
-  const unmountBtn = object.querySelector('#button--overlay-eventmethods-unmount')
+  const unmountBtn = ref.querySelector('#button--overlay-eventmethods-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')
@@ -139,8 +139,8 @@ const mountEventmethods = ({ object }) => {
     logAdd(str)
   }
 
-  object.addEventListener('init.xt.overlay', events)
-  object.addEventListener('destroy.xt.overlay', events)
+  ref.addEventListener('init.xt.overlay', events)
+  ref.addEventListener('destroy.xt.overlay', events)
   document.addEventListener('on.xt.overlay', events, true)
   document.addEventListener('off.xt.overlay', events, true)
 
@@ -153,8 +153,8 @@ const mountEventmethods = ({ object }) => {
     restartBtn.removeEventListener('click', restartFnc)
     destroyBtn.removeEventListener('click', destroyFnc)
     unmountBtn.removeEventListener('click', unmountFnc)
-    object.removeEventListener('init.xt.overlay', events)
-    object.removeEventListener('destroy.xt.overlay', events)
+    ref.removeEventListener('init.xt.overlay', events)
+    ref.removeEventListener('destroy.xt.overlay', events)
     document.removeEventListener('on.xt.overlay', events, true)
     document.removeEventListener('off.xt.overlay', events, true)
     self.destroy()

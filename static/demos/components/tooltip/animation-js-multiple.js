@@ -2,10 +2,10 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--tooltip-animation-js-multiple',
-  mount: ({ object }) => {
-    const unmountTooltip = mountTooltip({ object })
+  mount: ({ ref }) => {
+    const unmountTooltip = mountTooltip({ ref })
 
     // unmount
 
@@ -17,7 +17,7 @@ Xt.mount.push({
 
 /* mountTooltips */
 
-const mountTooltip = ({ object }) => {
+const mountTooltip = ({ ref }) => {
   // vars
 
   const targetTimeOn = 0.3
@@ -27,7 +27,7 @@ const mountTooltip = ({ object }) => {
 
   // init
 
-  let self = new Xt.Tooltip(object, {
+  let self = new Xt.Tooltip(ref, {
     elements: '.xt-tooltip-item',
     targets: '.xt-tooltip',
     duration: 300,

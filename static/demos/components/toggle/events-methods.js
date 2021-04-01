@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--toggle-eventmethods',
-  mount: ({ object }) => {
-    const unmountEventmethods = mountEventmethods({ object })
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
 
     // unmount
 
@@ -16,10 +16,10 @@ Xt.mount.push({
 
 /* mountEventmethods */
 
-const mountEventmethods = ({ object }) => {
+const mountEventmethods = ({ ref }) => {
   // init
 
-  let self = new Xt.Toggle(object.querySelector('#toggle--eventmethods'), {
+  let self = new Xt.Toggle(ref.querySelector('#toggle--eventmethods'), {
     elements: 'a, button',
     targets: '.xt-toggle',
     min: 1,
@@ -95,8 +95,8 @@ const mountEventmethods = ({ object }) => {
   const addBtn = document.querySelector('#button--toggle-eventmethods-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(object.dataset.reinitTimeout))
-    object.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
+    ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
       const elIndex = self.getElementsGroups().length
@@ -119,8 +119,8 @@ const mountEventmethods = ({ object }) => {
   const removeBtn = document.querySelector('#button--toggle-eventmethods-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(object.dataset.reinitTimeout))
-    object.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
+    ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
       const elements = self.elements
@@ -141,8 +141,8 @@ const mountEventmethods = ({ object }) => {
   const reinitBtn = document.querySelector('#button--toggle-eventmethods-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(object.dataset.reinitTimeout))
-    object.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
+    ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
     }, 200).toString()
@@ -206,8 +206,8 @@ const mountEventmethods = ({ object }) => {
     logAdd(str)
   }
 
-  object.addEventListener('init.xt.toggle', events)
-  object.addEventListener('destroy.xt.toggle', events)
+  ref.addEventListener('init.xt.toggle', events)
+  ref.addEventListener('destroy.xt.toggle', events)
   document.addEventListener('on.xt.toggle', events, true)
   document.addEventListener('off.xt.toggle', events, true)
 
@@ -222,8 +222,8 @@ const mountEventmethods = ({ object }) => {
     restartBtn.removeEventListener('click', restartFnc)
     destroyBtn.removeEventListener('click', destroyFnc)
     unmountBtn.removeEventListener('click', unmountFnc)
-    object.removeEventListener('init.xt.toggle', events)
-    object.removeEventListener('destroy.xt.toggle', events)
+    ref.removeEventListener('init.xt.toggle', events)
+    ref.removeEventListener('destroy.xt.toggle', events)
     document.removeEventListener('on.xt.toggle', events, true)
     document.removeEventListener('off.xt.toggle', events, true)
     self.destroy()

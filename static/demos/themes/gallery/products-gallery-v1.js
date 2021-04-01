@@ -6,12 +6,12 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--products-gallery-v1',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     const unmountScrolltoanchor = mountScrolltoanchor()
-    const unmountImages = mountImages({ object })
-    const unmountArrow = mountArrow({ object })
+    const unmountImages = mountImages({ ref })
+    const unmountArrow = mountArrow({ ref })
 
     // unmount
 
@@ -59,12 +59,12 @@ const mountScrolltoanchor = () => {
 
 /* mountImages */
 
-const mountImages = ({ object }) => {
-  const images = object.querySelectorAll('.product-image')
+const mountImages = ({ ref }) => {
+  const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(object, {
+  new Xt.Overlay(ref, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
@@ -165,8 +165,8 @@ const mountImages = ({ object }) => {
 
 /* mountArrow */
 
-const mountArrow = ({ object }) => {
-  const arrow = object.querySelector('.product-arrow')
+const mountArrow = ({ ref }) => {
+  const arrow = ref.querySelector('.product-arrow')
 
   // vars
 

@@ -3,10 +3,10 @@ import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--toggle-progress',
-  mount: ({ object }) => {
-    const unmountToggle = mountToggle({ object })
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
 
     // unmount
 
@@ -18,8 +18,8 @@ Xt.mount.push({
 
 /* mountToggle */
 
-const mountToggle = ({ object }) => {
-  const toggle = object.querySelector(':scope > .xt-list')
+const mountToggle = ({ ref }) => {
+  const toggle = ref.querySelector(':scope > .xt-list')
 
   // vars
 

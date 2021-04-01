@@ -1,9 +1,9 @@
 import { Xt } from 'xtendui'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--form-validation',
-  mount: ({ object }) => {
-    const unmountValidation = mountValidation({ object })
+  mount: ({ ref }) => {
+    const unmountValidation = mountValidation({ ref })
 
     // unmount
 
@@ -15,8 +15,8 @@ Xt.mount.push({
 
 /* mountValidation */
 
-const mountValidation = ({ object }) => {
-  const input = object.querySelector('.input--constrains')
+const mountValidation = ({ ref }) => {
+  const input = ref.querySelector('.input--constrains')
 
   // validate
 

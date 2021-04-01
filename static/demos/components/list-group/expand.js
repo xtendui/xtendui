@@ -1,9 +1,9 @@
 import { Xt } from 'xtendui'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--group-expand',
-  mount: ({ object }) => {
-    const unmountExpand = mountExpand({ object })
+  mount: ({ ref }) => {
+    const unmountExpand = mountExpand({ ref })
 
     // unmount
 
@@ -15,8 +15,8 @@ Xt.mount.push({
 
 /* mountExpand */
 
-const mountExpand = ({ object }) => {
-  const lists = object.querySelectorAll('.xt-list')
+const mountExpand = ({ ref }) => {
+  const lists = ref.querySelectorAll('.xt-list')
 
   for (const list of lists) {
     // on

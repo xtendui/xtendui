@@ -1,9 +1,9 @@
 import { Xt } from 'xtendui'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--jumptocontent',
-  mount: ({ object }) => {
-    const unmountJumptocontents = mountJumptocontents({ object })
+  mount: ({ ref }) => {
+    const unmountJumptocontents = mountJumptocontents({ ref })
 
     // unmount
 
@@ -15,8 +15,8 @@ Xt.mount.push({
 
 /* mountJumptocontents */
 
-const mountJumptocontents = ({ object }) => {
-  const jumptocontents = object.querySelectorAll('.jumptocontent')
+const mountJumptocontents = ({ ref }) => {
+  const jumptocontents = ref.querySelectorAll('.jumptocontent')
   const unmounts = []
 
   for (const jumptocontent of jumptocontents) {

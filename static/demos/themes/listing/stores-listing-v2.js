@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--stores-listing-v2',
-  mount: ({ object }) => {
-    const unmountListing = mountListing({ object })
+  mount: ({ ref }) => {
+    const unmountListing = mountListing({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountListing */
 
-const mountListing = ({ object }) => {
-  const items = object.querySelectorAll('.listing-item')
+const mountListing = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
 
   // click
 

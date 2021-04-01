@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--tooltip-eventmethods',
-  mount: ({ object }) => {
-    const unmountEventmethods = mountEventmethods({ object })
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountEventmethods */
 
-const mountEventmethods = ({ object }) => {
-  const tooltip = object.querySelector('#tooltip--eventmethods')
+const mountEventmethods = ({ ref }) => {
+  const tooltip = ref.querySelector('#tooltip--eventmethods')
 
   // init
 
@@ -64,7 +64,7 @@ const mountEventmethods = ({ object }) => {
 
   // off first element
 
-  const firstElOff = object.querySelector('#button--tooltip-eventmethods-first-element-off')
+  const firstElOff = ref.querySelector('#button--tooltip-eventmethods-first-element-off')
 
   const firstElOffFnc = () => {
     logAdd('<strong>off 1st element</strong>')
@@ -76,7 +76,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first target
 
-  const firstTrOff = object.querySelector('#button--tooltip-eventmethods-first-target-off')
+  const firstTrOff = ref.querySelector('#button--tooltip-eventmethods-first-target-off')
 
   const firstTrOffFnc = () => {
     logAdd('<strong>off 1st target</strong>')

@@ -1,10 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--drop-events',
-  mount: ({ object }) => {
-    const unmountEventmethods = mountEventmethods({ object })
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
 
     // unmount
 
@@ -16,8 +16,8 @@ Xt.mount.push({
 
 /* mountEventmethods */
 
-const mountEventmethods = ({ object }) => {
-  const drop = object.querySelector('#drop--eventmethods')
+const mountEventmethods = ({ ref }) => {
+  const drop = ref.querySelector('#drop--eventmethods')
 
   // init
 
@@ -25,7 +25,7 @@ const mountEventmethods = ({ object }) => {
 
   // log
 
-  const log = object.querySelector('#card--drop-eventmethods-log')
+  const log = ref.querySelector('#card--drop-eventmethods-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -40,7 +40,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first element
 
-  const firstEl = object.querySelector('#button--drop-eventmethods-first-element')
+  const firstEl = ref.querySelector('#button--drop-eventmethods-first-element')
 
   const firstElFnc = () => {
     logAdd('<strong>on 1st element</strong>')
@@ -52,7 +52,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first target
 
-  const firstTr = object.querySelector('#button--drop-eventmethods-first-target')
+  const firstTr = ref.querySelector('#button--drop-eventmethods-first-target')
 
   const firstTrFnc = () => {
     logAdd('<strong>on 1st target</strong>')
@@ -64,7 +64,7 @@ const mountEventmethods = ({ object }) => {
 
   // off first element
 
-  const firstElOff = object.querySelector('#button--drop-eventmethods-first-element-off')
+  const firstElOff = ref.querySelector('#button--drop-eventmethods-first-element-off')
 
   const firstElOffFnc = () => {
     logAdd('<strong>off 1st element</strong>')
@@ -76,7 +76,7 @@ const mountEventmethods = ({ object }) => {
 
   // on first target
 
-  const firstTrOff = object.querySelector('#button--drop-eventmethods-first-target-off')
+  const firstTrOff = ref.querySelector('#button--drop-eventmethods-first-target-off')
 
   const firstTrOffFnc = () => {
     logAdd('<strong>off 1st target</strong>')
@@ -88,7 +88,7 @@ const mountEventmethods = ({ object }) => {
 
   // add
 
-  const addBtn = object.querySelector('#button--drop-eventmethods-add')
+  const addBtn = ref.querySelector('#button--drop-eventmethods-add')
 
   const addFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -133,7 +133,7 @@ const mountEventmethods = ({ object }) => {
 
   // remove
 
-  const removeBtn = object.querySelector('#button--drop-eventmethods-remove')
+  const removeBtn = ref.querySelector('#button--drop-eventmethods-remove')
 
   const removeFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -152,7 +152,7 @@ const mountEventmethods = ({ object }) => {
 
   // reinit
 
-  const reinitBtn = object.querySelector('#button--drop-eventmethods-reinit')
+  const reinitBtn = ref.querySelector('#button--drop-eventmethods-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(drop.dataset.reinitTimeout))
@@ -166,7 +166,7 @@ const mountEventmethods = ({ object }) => {
 
   // restart
 
-  const restartBtn = object.querySelector('#button--drop-eventmethods-restart')
+  const restartBtn = ref.querySelector('#button--drop-eventmethods-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -177,7 +177,7 @@ const mountEventmethods = ({ object }) => {
 
   // destroy
 
-  const destroyBtn = object.querySelector('#button--drop-eventmethods-destroy')
+  const destroyBtn = ref.querySelector('#button--drop-eventmethods-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -188,7 +188,7 @@ const mountEventmethods = ({ object }) => {
 
   // unmount
 
-  const unmountBtn = object.querySelector('#button--drop-eventmethods-unmount')
+  const unmountBtn = ref.querySelector('#button--drop-eventmethods-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

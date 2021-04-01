@@ -3,10 +3,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--fade-distance',
-  mount: ({ object }) => {
-    const unmountFade = mountFade({ object })
+  mount: ({ ref }) => {
+    const unmountFade = mountFade({ ref })
 
     // unmount
 
@@ -18,8 +18,8 @@ Xt.mount.push({
 
 /* mountFade */
 
-const mountFade = ({ object }) => {
-  const items = object.querySelectorAll('.xt-card')
+const mountFade = ({ ref }) => {
+  const items = ref.querySelectorAll('.xt-card')
 
   // fade
 

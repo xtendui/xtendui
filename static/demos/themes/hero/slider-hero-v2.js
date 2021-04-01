@@ -3,11 +3,11 @@ import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--slider-hero-v2',
-  mount: ({ object }) => {
-    const unmountSlider = mountSlider({ object })
-    const unmountSlide = mountSlide({ object })
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+    const unmountSlide = mountSlide({ ref })
 
     // unmount
 
@@ -20,7 +20,7 @@ Xt.mount.push({
 
 /* mountSlider */
 
-const mountSlider = ({ object }) => {
+const mountSlider = ({ ref }) => {
   // vars
 
   const assetCoverTime = 1.5
@@ -41,7 +41,7 @@ const mountSlider = ({ object }) => {
 
   // slider
 
-  let self = new Xt.Slider(object.querySelector('.xt-slider'), {
+  let self = new Xt.Slider(ref.querySelector('.xt-slider'), {
     mode: 'absolute',
     duration: 1500,
   })
@@ -240,14 +240,14 @@ const mountSlider = ({ object }) => {
 
 /* mountSlide */
 
-const mountSlide = ({ object }) => {
-  const slides = object.querySelectorAll('.xt-slide')
+const mountSlide = ({ ref }) => {
+  const slides = ref.querySelectorAll('.xt-slide')
 
   for (const slide of slides) {
     // vars
 
     const links =
-      slide.tagName === 'A' || slide.tagName === 'BUTTON' ? Xt.arrSingle(object) : slide.querySelectorAll('a, button')
+      slide.tagName === 'A' || slide.tagName === 'BUTTON' ? Xt.arrSingle(ref) : slide.querySelectorAll('a, button')
     const img = slide.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1

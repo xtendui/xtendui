@@ -120,17 +120,17 @@ Xt.Textareaautosize = Textareaautosize
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Textareaautosize.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Textareaautosize.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Textareaautosize.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Textareaautosize(object, options)
+      let self = new Xt.Textareaautosize(ref, options)
 
       // unmount
 

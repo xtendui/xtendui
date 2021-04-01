@@ -14,7 +14,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
                   </div>
@@ -29,7 +29,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -59,7 +59,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -74,7 +74,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -94,7 +94,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -109,7 +109,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -139,7 +139,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -154,7 +154,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -174,7 +174,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -189,7 +189,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -219,7 +219,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -234,7 +234,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card ${classes.cardSm()} flex-initial py-0 border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />

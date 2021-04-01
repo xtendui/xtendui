@@ -150,17 +150,17 @@ Xt.Stickyflow = Stickyflow
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Stickyflow.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Stickyflow.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Stickyflow.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Stickyflow(object, options)
+      let self = new Xt.Stickyflow(ref, options)
 
       // unmount
 

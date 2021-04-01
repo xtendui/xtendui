@@ -2,12 +2,12 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import gsap from 'gsap'
 
-Xt.mount.push({
+Xt.mount({
   matches: '.demo--menu-navigation-v1',
-  mount: ({ object }) => {
-    const unmountDrops = mountDrops({ object })
-    const unmountLine = mountLine({ object })
-    const unmountSwitcher = mountSwitcher({ object })
+  mount: ({ ref }) => {
+    const unmountDrops = mountDrops({ ref })
+    const unmountLine = mountLine({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
 
     // unmount
 
@@ -21,8 +21,8 @@ Xt.mount.push({
 
 /* mountDrops */
 
-const mountDrops = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
+const mountDrops = ({ ref }) => {
+  const megamenu = ref.querySelector('.megamenu')
 
   // vars
 
@@ -187,14 +187,14 @@ const mountDrops = ({ object }) => {
 
 /* mountLine */
 
-const mountLine = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
+const mountLine = ({ ref }) => {
+  const megamenu = ref.querySelector('.megamenu')
 
   // vars
 
-  const btns = object.querySelectorAll('.button--line')
-  const drops = object.querySelectorAll('.xt-drop-item')
-  const line = object.querySelector('.megamenu-line')
+  const btns = ref.querySelectorAll('.button--line')
+  const drops = ref.querySelectorAll('.xt-drop-item')
+  const line = ref.querySelector('.megamenu-line')
 
   const dropDelay = 150
   const lineHeight = 7
@@ -306,9 +306,9 @@ const mountLine = ({ object }) => {
 
 /* mountSwitcher */
 
-const mountSwitcher = ({ object }) => {
-  const megamenu = object.querySelector('.megamenu')
-  const switcher = object.querySelector('input[type="checkbox"]')
+const mountSwitcher = ({ ref }) => {
+  const megamenu = ref.querySelector('.megamenu')
+  const switcher = ref.querySelector('input[type="checkbox"]')
 
   const change = () => {
     const self = Xt.get('xt-drop', megamenu)

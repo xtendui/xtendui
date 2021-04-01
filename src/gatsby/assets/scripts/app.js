@@ -25,9 +25,9 @@ document.addEventListener('click', e => {
  * switcher
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '.button--switch-html',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // click
 
     const eventClick = () => {
@@ -46,19 +46,19 @@ Xt.mount.push({
       */
     }
 
-    object.addEventListener('click', eventClick)
+    ref.addEventListener('click', eventClick)
 
     // init
 
     if (localStorage.getItem('mode') !== 'react') {
-      object.classList.add('active')
+      ref.classList.add('active')
     }
   },
 })
 
-Xt.mount.push({
+Xt.mount({
   matches: '.button--switch-react',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // click
 
     const eventClick = () => {
@@ -77,12 +77,12 @@ Xt.mount.push({
       */
     }
 
-    object.addEventListener('click', eventClick)
+    ref.addEventListener('click', eventClick)
 
     // init
 
     if (localStorage.getItem('mode') === 'react') {
-      object.classList.add('active')
+      ref.classList.add('active')
     }
   },
 })
@@ -91,12 +91,12 @@ Xt.mount.push({
  * .gatsby_button--overlay
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '.gatsby_button--overlay',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // overlay
 
-    new Xt.Overlay(object, {
+    new Xt.Overlay(ref, {
       targets: '#gatsby_menu--overlay',
       appendTo: false,
       disabled: true,
@@ -109,9 +109,9 @@ Xt.mount.push({
  * .gatsby_site-header
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '.gatsby_site-header',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // match media
 
     ScrollTrigger.matchMedia({
@@ -119,7 +119,7 @@ Xt.mount.push({
         // sticky
 
         const sticky = ScrollTrigger.create({
-          trigger: object,
+          trigger: ref,
           start: 'top top',
           endTrigger: 'html',
           end: 'bottom top',
@@ -143,14 +143,14 @@ Xt.mount.push({
  * .gatsby_home-header
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '.gatsby_home-header',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // vars
 
-    const background = object.querySelector('.gatsby_home-header_background rect')
-    const content = object.querySelector('.gatsby_home-header_inner')
-    const logo = object.querySelector('.gatsby_logo-icon')
+    const background = ref.querySelector('.gatsby_home-header_background rect')
+    const content = ref.querySelector('.gatsby_home-header_inner')
+    const logo = ref.querySelector('.gatsby_logo-icon')
 
     // methods
 
@@ -168,14 +168,14 @@ Xt.mount.push({
 
     // mouse events
 
-    object.addEventListener('mouseenter', straight)
+    ref.addEventListener('mouseenter', straight)
 
-    object.addEventListener('mouseleave', curve)
+    ref.addEventListener('mouseleave', curve)
 
     // sticky
 
     const sticky = ScrollTrigger.create({
-      trigger: object,
+      trigger: ref,
       start: 'top top',
       endTrigger: 'html',
       end: 'bottom top',
@@ -225,9 +225,9 @@ Xt.mount.push({
     // hide depending on .gatsby_site-main_inner
 
     ScrollTrigger.create({
-      trigger: object,
+      trigger: ref,
       start: -1, // needs -1 because start trigger is sticky
-      end: () => `top top-=${object.offsetHeight}`,
+      end: () => `top top-=${ref.offsetHeight}`,
       onUpdate: self => {
         if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
           content.classList.remove('scrolling-hide')
@@ -251,71 +251,60 @@ Xt.mount.push({
  * .gatsby_home-main
  */
 
-Xt.mount.push({
-  matches: '.gatsby_home-main_scroll',
-  mount: ({ object, mount }) => {
-    // multiple mount object with raf
+Xt.mount({
+  matches: '.gatsby_home-main',
+  mount: ({ ref }) => {
+    const items = ref.querySelectorAll('.gatsby_home-main_scroll')
+    // parallax
 
-    mount.triggers = mount.triggers ? mount.triggers : []
-    mount.triggers.push(object)
-    cancelAnimationFrame(mount.raf)
-    mount.raf = requestAnimationFrame(() => {
-      // reset mount object
+    for (const item of items) {
+      // bottom
 
-      const triggers = mount.triggers
-      mount.triggers = []
-
-      // parallax
-
-      for (const trigger of triggers) {
-        // bottom
-
-        const scrollTriggerBottom = {
-          trigger: trigger,
-          start: 'top bottom',
-          end: 'top bottom-=150', // end 150px after
-          scrub: 1.5,
-        }
-
-        gsap
-          .timeline({
-            scrollTrigger: scrollTriggerBottom,
-          })
-          .set(trigger, {
-            y: 30,
-            opacity: 0,
-          })
-          .to(trigger, {
-            opacity: 1,
-            y: 0,
-            ease: 'quint.inOut',
-          })
-
-        // top
-
-        const scrollTriggerTop = {
-          trigger: trigger,
-          start: `bottom top+=200`, // 50px is header height, start 150px before
-          end: `bottom top+=50`, // 50px is header height
-          scrub: 1.5,
-        }
-
-        gsap
-          .timeline({
-            scrollTrigger: scrollTriggerTop,
-          })
-          .set(trigger, {
-            y: 0,
-            opacity: 1,
-          })
-          .to(trigger, {
-            opacity: 0,
-            y: -30,
-            ease: 'quint.inOut',
-            immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
-          })
+      const scrollTriggerBottom = {
+        trigger: item,
+        start: 'top bottom',
+        end: 'top bottom-=150', // end 150px after
+        scrub: 1.5,
       }
-    })
+
+      gsap
+        .timeline({
+          scrollTrigger: scrollTriggerBottom,
+        })
+        .set(item, {
+          y: 30,
+          opacity: 0,
+        })
+        .to(item, {
+          opacity: 1,
+          y: 0,
+          ease: 'quint.inOut',
+        })
+
+      // top
+
+      const scrollTriggerTop = {
+        trigger: item,
+        start: `bottom top+=200`, // 50px is header height, start 150px before
+        end: `bottom top+=50`, // 50px is header height
+        scrub: 1.5,
+      }
+
+      gsap
+        .timeline({
+          scrollTrigger: scrollTriggerTop,
+        })
+        .set(item, {
+          y: 0,
+          opacity: 1,
+        })
+        .to(item, {
+          opacity: 0,
+          y: -30,
+          ease: 'quint.inOut',
+          immediateRender: false, // when multiple scrolltrigger animate the same properties use immediateRender: false
+        })
+    }
   },
 })
 
@@ -323,19 +312,19 @@ Xt.mount.push({
  * .gatsby_site-article_hero
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '.gatsby_site-article_hero',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // sticky
 
     const heroParallax = {
-      trigger: object,
+      trigger: ref,
       start: 0,
       end: 'bottom top',
       scrub: true,
     }
 
-    gsap.to(object, {
+    gsap.to(ref, {
       scrollTrigger: heroParallax,
       y: '50%',
     })
@@ -346,12 +335,12 @@ Xt.mount.push({
  * #gatsby_open-full-trigger
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: '#gatsby_open-full-trigger',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(ref, {
       targets: '#gatsby_open-full',
       closeDeep: ':scope > .xt-dismiss',
       closeAuto: true,
@@ -388,12 +377,12 @@ Xt.mount.push({
  * xt-scrolltoanchor
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: 'body',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Scrolltoanchor(object, {
+    let self = new Xt.Scrolltoanchor(ref, {
       elements: '[href^="#"]:not([aria-controls])',
       hash: true,
       scrollDistance: () => {

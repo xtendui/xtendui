@@ -174,17 +174,17 @@ Xt.Tooltip = Tooltip
 //
 
 if (typeof window !== 'undefined') {
-  Xt.mount.push({
+  Xt.mount({
     matches: `[data-${Xt.Tooltip.componentName}]`,
-    mount: ({ object }) => {
+    mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = object.getAttribute(`data-${Xt.Tooltip.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Tooltip.componentName}`)
       const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Tooltip(object, options)
+      let self = new Xt.Tooltip(ref, options)
 
       // unmount
 

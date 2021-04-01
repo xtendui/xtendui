@@ -4,12 +4,12 @@ import { Xt } from './xt'
  * checks labels .active
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: 'label input[type="checkbox"], label input[type="radio"]',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // vars
 
-    const name = object.getAttribute('name')
+    const name = ref.getAttribute('name')
     const inputs = document.querySelectorAll(`[name="${name}"]`)
 
     // eventChange
@@ -29,11 +29,11 @@ Xt.mount.push({
           change(input)
         }
       } else {
-        change(object)
+        change(ref)
       }
     }
 
-    object.addEventListener('change', eventChange.bind(null, { initial: false }))
+    ref.addEventListener('change', eventChange.bind(null, { initial: false }))
     eventChange({ initial: true })
   },
 })
@@ -42,13 +42,13 @@ Xt.mount.push({
  * Validation
  */
 
-Xt.mount.push({
+Xt.mount({
   matches: 'form:not([novalidate])',
-  mount: ({ object }) => {
+  mount: ({ ref }) => {
     // vars
 
     const scrollWindowFactor = 0.2
-    const items = object.elements
+    const items = ref.elements
     let raf
 
     // valid
