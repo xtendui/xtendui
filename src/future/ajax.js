@@ -224,7 +224,7 @@ class Ajax extends Xt.Toggle {
       request.onerror = () => {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
-      // console.debug('xt-ajax request', request)
+      //console.debug('xt-ajax request', request)
       // send
       request.send()
       self.detail.request = request
@@ -277,7 +277,7 @@ class Ajax extends Xt.Toggle {
   ajaxSuccess(element, url, request, date) {
     const self = this
     const options = self.options
-    // console.debug('xt-ajax request success', request)
+    //console.debug('xt-ajax request success', request)
     // set substitute
     let html = document.createElement('html')
     html.innerHTML = request.responseText.trim()

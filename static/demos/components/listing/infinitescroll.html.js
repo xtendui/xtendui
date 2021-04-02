@@ -18,6 +18,8 @@ const html = /* HTML */ `
     }"
     >
       <div class="container">
+        <h1>Category Page</h1>
+
         <div class="mb-4">
           <div class="xt-list xt-list-2 flex-col items-center">
             <button

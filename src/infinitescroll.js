@@ -80,27 +80,33 @@ class Infinitescroll {
       }
     }
     // resume state
+    const add = self.additionalSpace()
     const state = history.state
     if (state && state.scrollResume) {
-      let add = 0
-      for (const additional of self.spaceAdditionals) {
-        add += additional.offsetHeight
-      }
-      document.scrollingElement.scrollTop = state.scrollResume - state.scrollRemove + add
-      // console.debug('xt-infinitescroll scrollResume', state.scrollResume)
+      const found = self.itemsContainer.querySelector(self.options.elements.item)
+      document.scrollingElement.scrollTop = state.scrollResume + found.offsetTop + add
+      //console.debug('xt-infinitescroll scrollResume', state.scrollResume, found.offsetTop, add)
     }
-    // scrollRemove
-    let space = 0
-    for (const additional of self.spaceAdditionals) {
-      space += additional.offsetHeight
-    }
-    self.scrollRemove = space
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
+  }
+
+  /**
+   * additionalSpace
+   * @return {Number} additionalSpace
+   */
+  additionalSpace() {
+    const self = this
+    // logic
+    let add = 0
+    for (const additional of self.spaceAdditionals) {
+      add += additional.offsetHeight
+    }
+    return add
   }
 
   //
@@ -124,7 +130,8 @@ class Infinitescroll {
       let current = self.current + amount
       current = current < options.min ? options.min : current
       current = current > options.max ? options.max : current
-      if (current !== self.current) {
+      const items = self.itemsContainer.querySelectorAll(`[data-item-first="${current}"]`)
+      if (current !== self.current && !items.length) {
         self.setCurrent(current)
         self.inverse = !!up
         self.request()
@@ -150,7 +157,7 @@ class Infinitescroll {
     const self = this
     // save scroll position
     if (self.scrollResume) {
-      history.replaceState({ scrollResume: self.scrollResume, scrollRemove: self.scrollRemove }, '', self.url.href)
+      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
     }
   }
 
@@ -159,57 +166,55 @@ class Infinitescroll {
    */
   eventScroll() {
     const self = this
-    // not if requesting
-    if (!self.object.classList.contains('xt-infinitescroll-loading')) {
-      // scroll
-      const scrollTop = document.scrollingElement.scrollTop
-      const windowHeight = window.innerHeight
-      // current page
-      let found = self.itemsContainer.querySelector(self.options.elements.item)
-      const scrollInitial = found.offsetTop
-      const items = self.itemsContainer.querySelectorAll('[data-item-first]')
-      for (const item of items) {
-        const itemTop = item.offsetTop
-        if (scrollTop > itemTop - windowHeight) {
-          found = item
-        }
+    // scroll
+    const scrollTop = document.scrollingElement.scrollTop
+    const windowHeight = window.innerHeight
+    // current page
+    let found = self.itemsContainer.querySelector(self.options.elements.item)
+    const items = self.itemsContainer.querySelectorAll('[data-item-first]')
+    for (const item of items) {
+      const itemTop = item.offsetTop
+      if (scrollTop > itemTop - windowHeight / 2) {
+        found = item
       }
-      self.setCurrent(parseFloat(found.getAttribute('data-item-first')))
-      self.paginate()
-      // save scroll position
-      self.scrollResume = scrollTop + scrollInitial - found.offsetTop
-      // replace state
-      const linkOrigin = self.url.origin || `${self.url.protocol}//${self.url.host}`
-      if (linkOrigin === location.origin) {
-        if (self.url.href !== location.href) {
-          history.replaceState(null, '', self.url.href)
-          // console.debug('xt-infinitescroll history replace', self.url.href)
-        }
-      } else {
-        console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
-      }
-      // triggers
-      if (self.options.events.scrollUp && self.scrollTopOld > scrollTop) {
-        for (const trigger of self.elementsUp) {
-          const top = trigger.offsetTop
-          if (scrollTop < top) {
-            const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
-            triggerHandler({ target: trigger })
-          }
-        }
-      }
-      if (self.options.events.scrollDown && self.scrollTopOld < scrollTop) {
-        for (const trigger of self.elementsDown) {
-          const top = trigger.offsetTop
-          const bottom = top + trigger.offsetHeight
-          if (scrollTop + windowHeight > bottom) {
-            const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
-            triggerHandler({ target: trigger })
-          }
-        }
-      }
-      self.scrollTopOld = scrollTop
     }
+    self.setCurrent(parseFloat(found.getAttribute('data-item-first')))
+    self.paginate()
+    // save scroll position
+    const add = self.additionalSpace()
+    self.scrollResume = scrollTop - found.offsetTop - add
+    //console.debug('xt-infinitescroll scrollResume', self.scrollResume, found.offsetTop, add)
+    // replace state
+    const linkOrigin = self.url.origin || `${self.url.protocol}//${self.url.host}`
+    if (linkOrigin === location.origin) {
+      if (self.url.href !== location.href) {
+        history.replaceState(null, '', self.url.href)
+        //console.debug('xt-infinitescroll history replace', self.url.href)
+      }
+    } else {
+      console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
+    }
+    // triggers
+    if (self.options.events.scrollUp && self.scrollTopOld > scrollTop) {
+      for (const trigger of self.elementsUp) {
+        const top = trigger.offsetTop
+        if (scrollTop < top) {
+          const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
+          triggerHandler({ target: trigger })
+        }
+      }
+    }
+    if (self.options.events.scrollDown && self.scrollTopOld < scrollTop) {
+      for (const trigger of self.elementsDown) {
+        const top = trigger.offsetTop
+        const bottom = top + trigger.offsetHeight
+        if (scrollTop + windowHeight > bottom) {
+          const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
+          triggerHandler({ target: trigger })
+        }
+      }
+    }
+    self.scrollTopOld = scrollTop
   }
 
   /**
@@ -225,12 +230,12 @@ class Infinitescroll {
       const request = new XMLHttpRequest()
       request.open('GET', self.url.href, true)
       request.onload = () => {
-        // console.debug('xt-infinitescroll request success', request, self.url)
+        //console.debug('xt-infinitescroll request success', request, self.url)
         // response
         self.response(request)
       }
       request.onerror = () => {
-        // console.debug('xt-infinitescroll request failed', request)
+        //console.debug('xt-infinitescroll request failed', request)
         // response
         self.response(request)
       }
@@ -265,7 +270,7 @@ class Infinitescroll {
     if (self.options.get && itemsContainer) {
       self.populate(itemsContainer)
     } else {
-      // console.debug('xt-infinitescroll fake populate because no items found')
+      //console.debug('xt-infinitescroll fake populate because no items found')
       // fake
       setTimeout(() => {
         self.populate(self.itemsFake.cloneNode(true))
@@ -372,6 +377,7 @@ class Infinitescroll {
     // set url
     url.search = searchParams.toString()
     self.url = url
+    //console.debug('xt-infinitescroll current', self.current)
   }
 
   /**

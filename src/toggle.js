@@ -1712,7 +1712,7 @@ class Toggle {
    */
   eventMedialoadedReinit() {
     const self = this
-    // console.debug('mediaLoadedReinit', self.object)
+    //console.debug('mediaLoadedReinit', self.object)
     // reinit
     self.reinit()
   }

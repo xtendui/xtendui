@@ -894,7 +894,7 @@ class Slider extends Xt.Toggle {
     const max = Xt.dataStorage.get(last, `${self.ns}GroupPos`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
     // fix absolute loop
-    // console.debug(tr.querySelector('.xt-h4').textContent.replace(/[^0-9]/g, ''))
+    //console.debug(tr.querySelector('.xt-h4').textContent.replace(/[^0-9]/g, ''))
     if (options.mode === 'absolute') {
       if (self.detail.dragDirection < 0 && self.detail.dragActive === min) {
         self.detail.dragFinal = self.detail.dragFinal + max - maxCheck
