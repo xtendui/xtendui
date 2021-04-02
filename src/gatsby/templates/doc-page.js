@@ -84,7 +84,7 @@ class Template extends React.Component {
                                               autoPlay>
                                               <source
                                                 type="video/mp4"
-                                                src={assets.item.file.url ? assets.item.file.url : null}
+                                                src={assets.item.localFile.url ? assets.item.localFile.url : null}
                                               />
                                             </video>
                                           </div>
@@ -147,7 +147,7 @@ export const query = graphql`
       items: edges {
         item: node {
           title
-          file {
+          localFile {
             url
           }
         }
