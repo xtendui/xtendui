@@ -689,7 +689,8 @@ class Slider extends Xt.Toggle {
         // console.debug(self.detail.moveFirst, self.detail.moveLast, dir, pos, first, min, last, max)
         let translate
         const moveEl = self.getElementsGroups()[moveIndex]
-        const move = self.getTargets(moveEl)[0]
+        const moveGroup = self.getTargets(moveEl)
+        const move = moveGroup[0]
         const moveLeft = Xt.dataStorage.get(move, `${self.ns}SlideLeft`)
         const moveWidth = Xt.dataStorage.get(move, `${self.ns}GroupWidth`)
         let movePos = pos
@@ -730,7 +731,9 @@ class Slider extends Xt.Toggle {
         } else if (options.align === 'right') {
           translate += self.detail.draggerWidth - width
         }
-        move.style.transform = `translateX(${translate}px)`
+        for (const tr of moveGroup) {
+          tr.style.transform = `translateX(${translate}px)`
+        }
         // keep index of moved slides
         self.detail.moveFirst =
           self.detail.moveFirst < self.group.length ? self.detail.moveFirst : self.detail.moveFirst - self.group.length
