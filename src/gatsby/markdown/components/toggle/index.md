@@ -18,7 +18,7 @@ Import the **javascript** file with `import 'xtendui/src/toggle'`.
 
 Initialize automatically **within markup** with `[data-xt-toggle="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Toggle(document.querySelector('#my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Toggle(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

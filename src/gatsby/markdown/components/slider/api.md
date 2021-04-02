@@ -18,52 +18,7 @@ date: "1980-05-05"
 
 ## Listen
 
-Listen to events on **single Nodes**.
-
-```js
-const el = document.querySelector('#my-element-or-target')
-
-const eventOn = e => {
-  if (e.target === el) {
-    // logic
-  }
-}
-
-el.addEventListener('on.xt.slider', eventOn)
-```
-
-Listen to events on **elements or targets**.
-
-```js
-let object = document.querySelector('#my-object')
-let self = Xt.get('xt-slider', object)
-
-const eventOn = e => {
-  const tr = e.target
-  // logic
-}
-
-for (const target of self.targets) {
-  target.addEventListener('on.xt.slider', eventOn)
-}
-```
-
-Listen to events delegation with **useCapture**.
-
-```js
-let object = document.querySelector('#my-object')
-let self = Xt.get('xt-slider', object)
-
-const eventOn = e => {
-  const tr = e.target
-  // useCapture delegation
-  if (self.targets.includes(tr)) {
-    // logic
-  }
-}
-
-object.addEventListener('on.xt.slider', eventOn, true)
-```
+See [javascript listeners](/introduction/javascript#listeners) for examples of listening to events.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -123,9 +78,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting component object.
 
 ```js
-let object = document.querySelector('#my-object')
-let self = Xt.get('xt-slider', object)
-const elements = self.elements
+let self = Xt.get('xt-slider', document.querySelector('.my-object'))
+const object = self.object
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -162,7 +116,7 @@ const elements = self.elements
 Call methods by getting component object.
 
 ```js
-const self = Xt.get('xt-slider', document.querySelector('#my-object'))
+const self = Xt.get('xt-slider', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```

@@ -17,10 +17,9 @@ class Infinitescroll {
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
-    // set self
-    Xt.set(self.componentName, self.object, self)
     // init
-    self.init()
+    self.initVars()
+    self.initLogic()
   }
 
   //
@@ -28,16 +27,26 @@ class Infinitescroll {
   //
 
   /**
-   * init
+   * init vars
    */
-  init() {
+  initVars() {
     const self = this
     // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])
+    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+  }
+
+  /**
+   * init logic
+   */
+  initLogic() {
+    const self = this
+    // set self
+    Xt.set(self.componentName, self.object, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
-    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // vars
     self.current = self.options.min
     // elements
@@ -93,20 +102,6 @@ class Infinitescroll {
     requestAnimationFrame(() => {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
-  }
-
-  /**
-   * additionalSpace
-   * @return {Number} additionalSpace
-   */
-  additionalSpace() {
-    const self = this
-    // logic
-    let add = 0
-    for (const additional of self.spaceAdditionals) {
-      add += additional.offsetHeight
-    }
-    return add
   }
 
   //
@@ -361,6 +356,20 @@ class Infinitescroll {
   //
 
   /**
+   * additionalSpace
+   * @return {Number} additionalSpace
+   */
+  additionalSpace() {
+    const self = this
+    // logic
+    let add = 0
+    for (const additional of self.spaceAdditionals) {
+      add += additional.offsetHeight
+    }
+    return add
+  }
+
+  /**
    * setCurrent
    * @param {Number} page Page number to set
    */
@@ -378,6 +387,15 @@ class Infinitescroll {
     url.search = searchParams.toString()
     self.url = url
     //console.debug('xt-infinitescroll current', self.current)
+  }
+
+  /**
+   * reinit
+   */
+  reinit() {
+    const self = this
+    // reinit
+    self.initLogic()
   }
 
   /**
@@ -420,8 +438,8 @@ Infinitescroll.optionsDefault = {
   max: 'Infinity',
   // event
   events: {
-    scrollUp: true,
-    scrollDown: true,
+    scrollUp: false,
+    scrollDown: false,
     on: 'click',
   },
   // element

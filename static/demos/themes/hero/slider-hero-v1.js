@@ -172,7 +172,7 @@ const mountSlider = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
       // raf because after off.xt.slider
       requestAnimationFrame(() => {
@@ -221,7 +221,7 @@ const mountSlider = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr)) {
       // mask
       const mask = tr.querySelector('.hero')

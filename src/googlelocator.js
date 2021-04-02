@@ -17,10 +17,9 @@ class Googlelocator {
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
-    // set self
-    Xt.set(self.componentName, self.object, self)
     // init
-    self.init()
+    self.initVars()
+    self.initLogic()
   }
 
   //
@@ -28,16 +27,26 @@ class Googlelocator {
   //
 
   /**
-   * init
+   * init vars
    */
-  init() {
+  initVars() {
     const self = this
     // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])
+    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+  }
+
+  /**
+   * init logic
+   */
+  initLogic() {
+    const self = this
+    // set self
+    Xt.set(self.componentName, self.object, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
-    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
+    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // vars
     self.locateCache = null
     self.loaderElement = self.object.querySelector(self.options.elements.loader)
@@ -530,8 +539,17 @@ class Googlelocator {
   }
 
   //
-  // destroy
+  // util
   //
+
+  /**
+   * reinit
+   */
+  reinit() {
+    const self = this
+    // reinit
+    self.initLogic()
+  }
 
   /**
    * destroy

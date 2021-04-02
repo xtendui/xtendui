@@ -2,23 +2,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--infinitescroll">
-    <div
-      class="py-10"
-      data-xt-infinitescroll="{
-      get: false,
-      max: 4,
-      elements: {
-        itemsContainer: '.xt-row',
-        item: ':scope > *',
-        scrollUp: '[data-xt-infinitescroll-up]',
-        scrollDown: '[data-xt-infinitescroll-down]',
-        spaceAdditional: '[data-xt-infinitescroll-up]',
-        pagination: '.infinitescroll-pagination',
-      },
-    }"
-    >
+    <div class="infinitescroll py-10">
       <div class="container">
         <h1>Category Page</h1>
+
+        <form class="text-sm mb-4">
+          <label class="xt-label-check">
+            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
+            <span class="xt-check-content">Activate on scroll</span>
+          </label>
+        </form>
 
         <div class="mb-4">
           <div class="xt-list xt-list-2 flex-col items-center">
@@ -169,7 +162,7 @@ const html = /* HTML */ `
             </span>
           </button>
 
-          <div class="infinitescroll-pagination h6">Page xt-num of xt-tot</div>
+          <div class="h6" data-xt-infinitescroll-pagination>Page xt-num of xt-tot</div>
         </div>
       </div>
     </div>

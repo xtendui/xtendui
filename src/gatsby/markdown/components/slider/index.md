@@ -16,7 +16,7 @@ Check [xtendui/src/slider.css.js](https://github.com/minimit/xtendui/blob/beta/s
 
 Import the **javascript** file with `import 'xtendui/src/slider'`.
 
-Initialize with **javascript** with `new Xt.Slider(document.querySelector('#my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Slider(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

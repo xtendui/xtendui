@@ -29,13 +29,9 @@ class Toggle {
 
   /**
    * init
-   * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsCustom User options
    */
-  init(object = null, optionsCustom = null) {
+  init() {
     const self = this
-    self.object = object || self.object
-    self.optionsCustom = optionsCustom || self.optionsCustom
     // vars
     self.classes = []
     self.classesActive = []
@@ -846,7 +842,7 @@ class Toggle {
    */
   eventJumpHandler(tr, e) {
     const self = this
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr)) {
       // handler
       self.eventJump(tr, e)

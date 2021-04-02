@@ -6,6 +6,7 @@ export default class Demo extends React.Component {
     super()
     this.demoRef = React.createRef()
   }
+
   componentDidMount() {
     if (typeof window !== 'undefined') {
       // populate
@@ -22,6 +23,7 @@ export default class Demo extends React.Component {
       }
     }
   }
+  
   render() {
     const { children } = this.props
     return (

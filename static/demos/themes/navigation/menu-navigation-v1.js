@@ -39,7 +39,6 @@ const mountDrops = ({ ref }) => {
   const innerTime = 1
   const innerEase = 'expo.out'
 
-  const dropDelay = 150
   let innerHeightFinal = 0
   let innerHeightCache = 0
 
@@ -47,12 +46,12 @@ const mountDrops = ({ ref }) => {
 
   let self = new Xt.Drop(megamenu, {
     elements: '.xt-drop-item',
-    targets: '.xt-drop',
-    on: 'mouseenter',
-    off: 'mouseleave',
+    targets: '.xt-drop-item > .xt-drop',
     queue: false,
     duration: 1000,
-    delay: dropDelay,
+    //on: 'mouseenter',
+    //off: 'mouseleave',
+    //delay: 150,
     preventEvent: true,
   })
 
@@ -69,7 +68,7 @@ const mountDrops = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr)) {
       // content
       const content = tr.querySelector('.xt-drop-content')
@@ -137,7 +136,7 @@ const mountDrops = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr)) {
       // content
       const content = tr.querySelector('.xt-drop-content')

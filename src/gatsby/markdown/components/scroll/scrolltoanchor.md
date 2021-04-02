@@ -11,7 +11,7 @@ date: "1900-10-10"
 
 Import the **javascript** file with `import 'xtendui/src/scrolltoanchor'`.
 
-Initialize with **javascript** with `new Xt.Scrolltoanchor(document.querySelector('#my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Scrolltoanchor(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 
@@ -77,6 +77,11 @@ Trigger events on **DOM elements**.
 
 Access properties by getting component object.
 
+```js
+let self = Xt.get('xt-scrolltoanchor', document.querySelector('.my-object'))
+const object = self.object
+```
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
@@ -88,5 +93,24 @@ Access properties by getting component object.
 | Property                   | `scrollPosition:Number`       | Current scroll position             |
 | Property                   | `scrollSpace:Number`       | Current scroll space             |
 | Property                   | `scrollDistance:Number`       | Current scroll distance             |
+
+</div>
+
+## Methods
+
+Call methods by getting component object.
+
+```js
+let self = Xt.get('xt-scrolltoanchor', document.querySelector('.my-object'))
+self.destroy()
+self = null
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

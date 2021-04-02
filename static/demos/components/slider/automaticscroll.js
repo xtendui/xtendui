@@ -44,7 +44,7 @@ const mountSliders = ({ ref }) => {
 
     const on = e => {
       const tr = e.target
-      // useCapture delegation
+      // check because of event propagation
       if (self.targets.includes(tr)) {
         if (self.intial || self.wrap) {
           // reset dragging position

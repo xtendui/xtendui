@@ -13,7 +13,7 @@ Import the **javascript** file with `import 'xtendui/src/infinitescroll'`.
 
 Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Infinitescroll(document.querySelector('#my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Infinitescroll(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 
@@ -45,8 +45,8 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
-| Option                    | `events.scrollUp:Boolean`                          | `true`        | Automatically activate on scroll up            |
-| Option                    | `events.scrollDown:Boolean`                          | `true`        | Automatically activate on scroll down            |
+| Option                    | `events.scrollUp:Boolean`                          | `false`        | Automatically activate on scroll up            |
+| Option                    | `events.scrollDown:Boolean`                          | `false`        | Automatically activate on scroll down            |
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
 | Option                    | `elements.itemsContainer:Query`                          | `false`        | Object query for items container            |
@@ -76,6 +76,11 @@ Listen to events.
 
 Access properties by getting component object.
 
+```js
+let self = Xt.get('xt-infinitescroll', document.querySelector('.my-object'))
+const object = self.object
+```
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
@@ -88,5 +93,24 @@ Access properties by getting component object.
 | Property                   | `itemsContainer:Node`       | Items container node             |
 | Property                   | `spaceAdditionals:Node`       | Nodes for space additional             |
 | Property                   | `paginations:Node`       | Paginations nodes             |
+
+</div>
+
+## Methods
+
+Call methods by getting component object.
+
+```js
+let self = Xt.get('xt-infinitescroll', document.querySelector('.my-object'))
+self.destroy()
+self = null
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

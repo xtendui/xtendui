@@ -19,7 +19,7 @@ Import the **javascript** file with `import 'xtendui/src/groupnumber'`.
 
 Initialize automatically **within markup** with `[data-xt-groupnumber="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Groupnumber(document.querySelector('#my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Groupnumber(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 
@@ -63,6 +63,11 @@ Listen to events.
 
 Access properties by getting component object.
 
+```js
+let self = Xt.get('xt-groupnumber', document.querySelector('.my-object'))
+const object = self.object
+```
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
@@ -71,5 +76,24 @@ Access properties by getting component object.
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `inputs:Nodes`       | Inputs nodes             |
 | Property                   | `steps:Nodes`       | Steps node             |
+
+</div>
+
+## Methods
+
+Call methods by getting component object.
+
+```js
+let self = Xt.get('xt-groupnumber', document.querySelector('.my-object'))
+self.destroy()
+self = null
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

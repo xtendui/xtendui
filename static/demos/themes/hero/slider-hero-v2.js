@@ -106,7 +106,7 @@ const mountSlider = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
       // cover
       const assetCover = tr.querySelector('.hero-cover')
@@ -182,7 +182,7 @@ const mountSlider = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
-    // useCapture delegation
+    // check because of event propagation
     if (self.targets.includes(tr)) {
       // cover
       const assetCover = tr.querySelector('.hero-cover')

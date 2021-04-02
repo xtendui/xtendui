@@ -17,10 +17,9 @@ class Stickyflow {
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
-    // set self
-    Xt.set(self.componentName, self.object, self)
     // init
-    self.init()
+    self.initVars()
+    self.initLogic()
   }
 
   //
@@ -28,16 +27,25 @@ class Stickyflow {
   //
 
   /**
-   * init
+   * init vars
    */
-  init() {
+  initVars() {
     const self = this
-    // namespace
+    // options
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])
+    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+  }
+
+  /**
+   * init logic
+   */
+  initLogic() {
+    const self = this
+    // set self
+    Xt.set(self.componentName, self.object, self)
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
-    // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // elements
     self.element = self.object.querySelector(self.options.element)
     self.filler = self.object.querySelector(self.options.filler)
@@ -107,6 +115,15 @@ class Stickyflow {
   //
   // util
   //
+
+  /**
+   * reinit
+   */
+  reinit() {
+    const self = this
+    // reinit
+    self.initLogic()
+  }
 
   /**
    * destroy
