@@ -142,7 +142,7 @@ class Slider extends Xt.Toggle {
     }
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
-    // fix disable slider if not overflowing
+    // disable slider if not overflowing
     if (options.overflowAuto) {
       if (self.detail.availableSpace >= 0) {
         self.object.classList.add('xt-overflow-auto')
