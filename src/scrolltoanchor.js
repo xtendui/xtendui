@@ -64,10 +64,7 @@ class Scrolltoanchor {
     )
     addEventListener('hashchange', hashHandler)
     // scroll
-    self.scrollElements = [
-      document.scrollingElement,
-      ...document.querySelectorAll(options.scrollElements),
-    ].reverse()
+    self.scrollElements = [document.scrollingElement, ...document.querySelectorAll(options.scrollElements)].reverse()
     for (const scrollElement of self.scrollElements) {
       if (scrollElement) {
         let scrollHandler = Xt.dataStorage.put(

@@ -23,7 +23,7 @@ export default class Demo extends React.Component {
       }
     }
   }
-  
+
   render() {
     const { children } = this.props
     return (

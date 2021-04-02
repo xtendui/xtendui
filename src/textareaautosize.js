@@ -22,7 +22,6 @@ class Textareaautosize {
     self.initLogic()
   }
 
-
   //
   // init
   //
@@ -30,7 +29,7 @@ class Textareaautosize {
   /**
    * init vars
    */
-   initVars() {
+  initVars() {
     const self = this
     // options
     self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])

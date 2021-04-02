@@ -144,7 +144,7 @@ class Ripple {
   /**
    * reinit
    */
-   reinit() {
+  reinit() {
     const self = this
     // reinit
     self.initLogic()
