@@ -197,10 +197,10 @@ Index methods:
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getNextIndex(amount:Number:1, loop:Boolean:null)`                          | Get next activation index             |
+| Method                  | `self.getNextIndex(index:Number:false, amount:Number:1, loop:Boolean:null)`                          | Get next activation index             |
 | Method                  | `self.getNext(amount:Number:1, loop:Boolean:null)`                          | Get next activation element             |
 | Method                  | `self.goToNext(amount:Number:1, force:Boolean:false, loop:Boolean:null)`                          | Activate next             |
-| Method                  | `self.getPrevIndex(amount:Number:1, loop:Boolean:null)`                          | Get prev activation index             |
+| Method                  | `self.getPrevIndex(index:Number:false, amount:Number:1, loop:Boolean:null)`                          | Get prev activation index             |
 | Method                  | `self.getPrev(amount:Number:1, loop:Boolean:null)`                          | Get prev activation element             |
 | Method                  | `self.goToPrev(amount:Number:1, force:Boolean:false, loop:Boolean:null)`                          | Activate prev             |
 | Method                  | `self.getNumIndex(index:Number, loop:Boolean:null)`                          | Get number activation index             |

@@ -2795,16 +2795,20 @@ class Toggle {
 
   /**
    * get next index
+   * @param {Number} index
    * @param {Number} amount
    * @param {Boolean} loop
    * @return {Number} index
    */
-  getNextIndex(amount = 1, loop = null) {
+  getNextIndex(index = false, amount = 1, loop = null) {
     const self = this
     // logic
-    let index = 0
-    if (self.currentIndex !== null) {
+    if (index !== false) {
+      index = index + amount
+    } else if (self.currentIndex !== null) {
       index = self.currentIndex + amount
+    } else {
+      index = 0
     }
     return self.getNumIndex(index, loop)
   }
@@ -2818,7 +2822,7 @@ class Toggle {
   getNext(amount = 1, loop = null) {
     const self = this
     // logic
-    const i = self.getNextIndex(amount, loop)
+    const i = self.getNextIndex(false, amount, loop)
     return self.getElementsGroups()[i]
   }
 
@@ -2833,23 +2837,27 @@ class Toggle {
     const self = this
     // goToNum
     self.inverse = false
-    const index = self.getNextIndex(amount, loop)
+    const index = self.getNextIndex(false, amount, loop)
     self.goToNum(index, force, loop)
     return index
   }
 
   /**
    * get prev index
+   * @param {Number} index
    * @param {Number} amount
    * @param {Boolean} loop
    * @return {Number} index
    */
-  getPrevIndex(amount = 1, loop = null) {
+  getPrevIndex(index = false, amount = 1, loop = null) {
     const self = this
     // logic
-    let index = self.getElementsGroups().length - 1
-    if (self.currentIndex !== null) {
+    if (index !== false) {
+      index = index - amount
+    } else if (self.currentIndex !== null) {
       index = self.currentIndex - amount
+    } else {
+      index = self.getElementsGroups().length - 1
     }
     return self.getNumIndex(index, loop)
   }
@@ -2863,7 +2871,7 @@ class Toggle {
   getPrev(amount = 1, loop = null) {
     const self = this
     // logic
-    const i = self.getPrevIndex(amount, loop)
+    const i = self.getPrevIndex(false, amount, loop)
     return self.getElementsGroups()[i]
   }
 
@@ -2878,7 +2886,7 @@ class Toggle {
     const self = this
     // goToNum
     self.inverse = true
-    const index = self.getPrevIndex(amount, loop)
+    const index = self.getPrevIndex(false, amount, loop)
     self.goToNum(index, force, loop)
     return index
   }
