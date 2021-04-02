@@ -41,17 +41,16 @@ class Groupnumber {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
-    // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // elements
-    self.inputs = self.object.querySelectorAll(self.options.inputs)
-    self.steps = self.object.querySelectorAll(self.options.steps)
+    self.inputs = self.object.querySelectorAll(options.inputs)
+    self.steps = self.object.querySelectorAll(options.steps)
     // steps
     for (const step of self.steps) {
       const qty = parseFloat(step.getAttribute('data-xt-step'))

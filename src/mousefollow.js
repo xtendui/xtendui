@@ -42,6 +42,7 @@ class Mousefollow {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
@@ -49,7 +50,7 @@ class Mousefollow {
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // targets
-    self.targets = self.object.querySelectorAll(self.options.targets)
+    self.targets = self.object.querySelectorAll(options.targets)
     // events
     let moveHandler = Xt.dataStorage.put(self.object, `mousemove/${self.ns}`, self.mousemove.bind(self))
     self.object.addEventListener('mousemove', moveHandler)

@@ -40,6 +40,7 @@ class Scrolltoanchor {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
@@ -47,7 +48,7 @@ class Scrolltoanchor {
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // class
-    self.classes = self.options.class ? [...self.options.class.split(' ')] : []
+    self.classes = options.class ? [...options.class.split(' ')] : []
     // click
     let clickHandler = Xt.dataStorage.put(
       self.object,
@@ -65,7 +66,7 @@ class Scrolltoanchor {
     // scroll
     self.scrollElements = [
       document.scrollingElement,
-      ...document.querySelectorAll(self.options.scrollElements),
+      ...document.querySelectorAll(options.scrollElements),
     ].reverse()
     for (const scrollElement of self.scrollElements) {
       if (scrollElement) {

@@ -34,6 +34,13 @@ class Infinitescroll {
     // options
     self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])
     self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    // vars
+    const options = self.options
+    self.current = options.min
+    // fake
+    if (!options.get) {
+      self.itemsFake = self.object.querySelector(options.elements.itemsContainer).cloneNode(true)
+    }
   }
 
   /**
@@ -41,24 +48,19 @@ class Infinitescroll {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
-    // vars
-    self.current = self.options.min
     // elements
-    self.elementsUp = self.object.querySelectorAll(self.options.elements.scrollUp)
-    self.elementsDown = self.object.querySelectorAll(self.options.elements.scrollDown)
-    self.itemsContainer = self.object.querySelector(self.options.elements.itemsContainer)
-    self.spaceAdditionals = self.object.querySelectorAll(self.options.elements.spaceAdditional)
-    self.paginations = self.object.querySelectorAll(self.options.elements.pagination)
-    // fake
-    if (!self.options.get) {
-      self.itemsFake = self.object.querySelector(self.options.elements.itemsContainer).cloneNode(true)
-    }
+    self.elementsUp = self.object.querySelectorAll(options.elements.scrollUp)
+    self.elementsDown = self.object.querySelectorAll(options.elements.scrollDown)
+    self.itemsContainer = self.object.querySelector(options.elements.itemsContainer)
+    self.spaceAdditionals = self.object.querySelectorAll(options.elements.spaceAdditional)
+    self.paginations = self.object.querySelectorAll(options.elements.pagination)
     // events
     let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnload.bind(self))
     addEventListener('unload', unloadHandler)
@@ -71,7 +73,7 @@ class Infinitescroll {
     self.update()
     self.paginate()
     if (self.itemsContainer) {
-      const found = self.itemsContainer.querySelector(self.options.elements.item)
+      const found = self.itemsContainer.querySelector(options.elements.item)
       if (found) {
         found.setAttribute('data-item-first', self.current)
       }
@@ -80,10 +82,10 @@ class Infinitescroll {
     for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
       const triggerHandler = Xt.dataStorage.put(
         trigger,
-        `${self.options.events.trigger}}/${self.ns}`,
+        `${options.events.trigger}}/${self.ns}`,
         self.eventTrigger.bind(self, trigger)
       )
-      const events = [...self.options.events.on.split(' ')]
+      const events = [...options.events.on.split(' ')]
       for (const event of events) {
         trigger.addEventListener(event, triggerHandler)
       }
@@ -92,7 +94,7 @@ class Infinitescroll {
     const add = self.additionalSpace()
     const state = history.state
     if (state && state.scrollResume) {
-      const found = self.itemsContainer.querySelector(self.options.elements.item)
+      const found = self.itemsContainer.querySelector(options.elements.item)
       document.scrollingElement.scrollTop = state.scrollResume + found.offsetTop + add
       //console.debug('xt-infinitescroll scrollResume', state.scrollResume, found.offsetTop, add)
     }
@@ -161,11 +163,12 @@ class Infinitescroll {
    */
   eventScroll() {
     const self = this
+    const options = self.options
     // scroll
     const scrollTop = document.scrollingElement.scrollTop
     const windowHeight = window.innerHeight
     // current page
-    let found = self.itemsContainer.querySelector(self.options.elements.item)
+    let found = self.itemsContainer.querySelector(options.elements.item)
     const items = self.itemsContainer.querySelectorAll('[data-item-first]')
     for (const item of items) {
       const itemTop = item.offsetTop
@@ -190,21 +193,21 @@ class Infinitescroll {
       console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
     }
     // triggers
-    if (self.options.events.scrollUp && self.scrollTopOld > scrollTop) {
+    if (options.events.scrollUp && self.scrollTopOld > scrollTop) {
       for (const trigger of self.elementsUp) {
         const top = trigger.offsetTop
         if (scrollTop < top) {
-          const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
+          const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
           triggerHandler({ target: trigger })
         }
       }
     }
-    if (self.options.events.scrollDown && self.scrollTopOld < scrollTop) {
+    if (options.events.scrollDown && self.scrollTopOld < scrollTop) {
       for (const trigger of self.elementsDown) {
         const top = trigger.offsetTop
         const bottom = top + trigger.offsetHeight
         if (scrollTop + windowHeight > bottom) {
-          const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
+          const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
           triggerHandler({ target: trigger })
         }
       }
@@ -258,11 +261,12 @@ class Infinitescroll {
    */
   success(request) {
     const self = this
+    const options = self.options
     // set substitute
     const html = document.createElement('html')
     html.innerHTML = request.responseText.trim()
-    const itemsContainer = html.querySelector(self.options.elements.itemsContainer)
-    if (self.options.get && itemsContainer) {
+    const itemsContainer = html.querySelector(options.elements.itemsContainer)
+    if (options.get && itemsContainer) {
       self.populate(itemsContainer)
     } else {
       //console.debug('xt-infinitescroll fake populate because no items found')
@@ -288,19 +292,20 @@ class Infinitescroll {
    */
   populate(itemsContainer) {
     const self = this
+    const options = self.options
     // vars
-    let items = itemsContainer.querySelectorAll(self.options.elements.item)
+    let items = itemsContainer.querySelectorAll(options.elements.item)
     // current page
     items[0].setAttribute('data-item-first', self.current)
     // populate dom
-    const first = self.itemsContainer.querySelector(`${self.options.elements.item}:first-child`)
+    const first = self.itemsContainer.querySelector(`${options.elements.item}:first-child`)
     let last
     for (const item of items) {
       if (self.inverse) {
         first.before(item)
       } else {
         // querySelector here because it always needs to be the last inside loop
-        last = self.itemsContainer.querySelector(`${self.options.elements.item}:last-child`)
+        last = self.itemsContainer.querySelector(`${options.elements.item}:last-child`)
         last.after(item)
       }
     }
@@ -403,6 +408,7 @@ class Infinitescroll {
    */
   destroy() {
     const self = this
+    const options = self.options
     // events
     let unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
     removeEventListener('unload', unloadHandler)
@@ -411,8 +417,8 @@ class Infinitescroll {
     let scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
     removeEventListener('scroll', scrollHandler)
     for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
-      const triggerHandler = Xt.dataStorage.get(trigger, `${self.options.events.trigger}}/${self.ns}`)
-      trigger.removeEventListener(self.options.events.trigger, triggerHandler)
+      const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
+      trigger.removeEventListener(options.events.trigger, triggerHandler)
     }
     // initialized class
     self.object.classList.remove(`${self.componentName}-init`)

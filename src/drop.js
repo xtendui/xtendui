@@ -80,13 +80,13 @@ class Drop extends Xt.Toggle {
             {
               name: 'preventOverflow',
               options: {
-                padding: self.options.spaceOverflow,
+                padding: options.spaceOverflow,
               },
             },
             {
               name: 'flip',
               options: {
-                padding: self.options.spaceFlip,
+                padding: options.spaceFlip,
               },
             },
             arrow
@@ -94,7 +94,7 @@ class Drop extends Xt.Toggle {
                   name: 'arrow',
                   options: {
                     element: arrow,
-                    padding: self.options.spaceArrow === false ? arrow.offsetHeight / 2 : self.options.spaceArrow,
+                    padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
                   },
                 }
               : {},

@@ -41,6 +41,7 @@ class Googlelocator {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
@@ -49,21 +50,20 @@ class Googlelocator {
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // vars
     self.locateCache = null
-    self.loaderElement = self.object.querySelector(self.options.elements.loader)
-    self.itemsTemplate = self.object.querySelector(self.options.elements.itemsTemplate)
-    self.itemsContainer = self.object.querySelector(self.options.elements.itemsContainer)
-    self.resultElement = self.object.querySelector(self.options.elements.results)
-    self.foundElement = self.object.querySelector(self.options.elements.resultsFound)
+    self.loaderElement = self.object.querySelector(options.elements.loader)
+    self.itemsTemplate = self.object.querySelector(options.elements.itemsTemplate)
+    self.itemsContainer = self.object.querySelector(options.elements.itemsContainer)
+    self.resultElement = self.object.querySelector(options.elements.results)
+    self.foundElement = self.object.querySelector(options.elements.resultsFound)
     // init
-    const options = self.options
-    self.mapElement = self.object.querySelector(self.options.elements.map)
+    self.mapElement = self.object.querySelector(options.elements.map)
     self.map = new google.maps.Map(self.mapElement, options.map)
-    self.searchInput = self.object.querySelector(self.options.elements.searchInput)
+    self.searchInput = self.object.querySelector(options.elements.searchInput)
     self.search = new google.maps.places.Autocomplete(self.searchInput)
     let searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
-    self.searchBtn = self.object.querySelector(self.options.elements.searchBtn)
+    self.searchBtn = self.object.querySelector(options.elements.searchBtn)
     let submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.searchClick.bind(self))
     self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
@@ -158,7 +158,7 @@ class Googlelocator {
       })
     }
     // locate
-    if (self.options.elements.locateBtn) {
+    if (options.elements.locateBtn) {
       self.locateElement = self.object.querySelector(options.elements.locateBtn)
       if (self.locateElement) {
         if (location.protocol === 'https:') {
@@ -496,7 +496,7 @@ class Googlelocator {
     // loader
     self.loaderHide()
     // position
-    self.searchInput.value = self.options.locateText
+    self.searchInput.value = options.locateText
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
     self.radius = options.locateRadius

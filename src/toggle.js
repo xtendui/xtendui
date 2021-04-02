@@ -67,13 +67,14 @@ class Toggle {
     self.optionsDefault = Xt.merge([self.optionsDefault, Xt.optionsGlobal[self.componentName]])
     self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
-    self.classes = self.options.class ? [...self.options.class.split(' ')] : []
-    self.classesActive = self.options.classActive ? [...self.options.classActive.split(' ')] : []
-    self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
-    self.classesDone = self.options.classDone ? [...self.options.classDone.split(' ')] : []
-    self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
-    self.classesBefore = self.options.classBefore ? [...self.options.classBefore.split(' ')] : []
-    self.classesAfter = self.options.classAfter ? [...self.options.classAfter.split(' ')] : []
+    const options = self.options
+    self.classes = options.class ? [...options.class.split(' ')] : []
+    self.classesActive = options.classActive ? [...options.classActive.split(' ')] : []
+    self.classesOut = options.classOut ? [...options.classOut.split(' ')] : []
+    self.classesDone = options.classDone ? [...options.classDone.split(' ')] : []
+    self.classesInitial = options.classInitial ? [...options.classInitial.split(' ')] : []
+    self.classesBefore = options.classBefore ? [...options.classBefore.split(' ')] : []
+    self.classesAfter = options.classAfter ? [...options.classAfter.split(' ')] : []
   }
 
   /**
@@ -2762,8 +2763,9 @@ class Toggle {
    */
   eventSpecialcloseinsideHandler(e) {
     const self = this
+    const options = self.options
     // handler
-    if (e.target.matches(self.options.closeInside)) {
+    if (e.target.matches(options.closeInside)) {
       const currents = self.getCurrents()
       for (const current of currents) {
         self.eventOff(current, true)

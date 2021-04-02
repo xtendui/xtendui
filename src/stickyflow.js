@@ -41,14 +41,15 @@ class Stickyflow {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // elements
-    self.element = self.object.querySelector(self.options.element)
-    self.filler = self.object.querySelector(self.options.filler)
+    self.element = self.object.querySelector(options.element)
+    self.filler = self.object.querySelector(options.filler)
     // vars
     self.scrollTopOld = 0
     // events

@@ -48,7 +48,7 @@ class Slider extends Xt.Toggle {
     self.dragger.classList.add('xt-grab')
     // not jump in absolute mode
     if (options.mode === 'absolute') {
-      self.options.jump = false
+      options.jump = false
     }
     // targets
     self.initScopeTargets()
