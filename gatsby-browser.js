@@ -57,7 +57,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     if (location.pathname !== prevLocation.pathname) {
       // scroll top
       document.scrollingElement.scrollTop = 0
-      // @FIX popstate #gatsby_open-full
+      // fix popstate #gatsby_open-full
       for (const link of document.querySelectorAll('.gatsby_button-site_article_sidebar.active')) {
         link.addEventListener('click', e => {
           e.preventDefault()

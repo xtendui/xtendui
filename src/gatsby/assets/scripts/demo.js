@@ -170,7 +170,7 @@ const populateBlock = () => {
     // trigger fullscreen or change tabs
     full.addEventListener('on.xt.toggle', () => {
       hashReset = true
-      // @FIX demo fullscreen
+      // fix demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.in')
       // hidden tooltip
@@ -229,9 +229,9 @@ const populateBlock = () => {
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
         if (appendOrigin) {
           const moving = content.childNodes[0]
-          moving.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+          moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendOrigin.before(moving)
-          // @FIX demo fullscreen
+          // fix demo fullscreen
           const previous = appendOrigin.previousSibling
           if (previous) {
             const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.in')
@@ -471,7 +471,7 @@ const populateDemo = container => {
         }
       })
     }
-    // @FIX demo fullscreen
+    // fix demo fullscreen
     item.addEventListener('on.xt.toggle', () => {
       if (!self.initial) {
         btnOpenIframe(item)

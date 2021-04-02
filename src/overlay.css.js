@@ -15,8 +15,8 @@ module.exports = {
       zIndex: theme('zIndex.overlay'),
       top: '0',
       left: '0',
-      bottom: '0', // @FIX no height or it bugs collapse animation
-      right: '0', // @FIX no width or it bugs collapse animation
+      bottom: '0', // fix no height or it bugs collapse animation
+      right: '0', // fix no width or it bugs collapse animation
       overflow: 'hidden',
       '&:not(.in):not(.active):not(.out)': {
         display: 'none',
@@ -31,7 +31,7 @@ module.exports = {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      margin: 'auto', // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+      margin: 'auto', // fix http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
       width: '100%',
       minHeight: '100vh',
     },

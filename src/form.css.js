@@ -19,7 +19,7 @@ module.exports = {
       display: 'flex',
     },
     '.xt-input': {
-      display: 'block', // @FIX select and textarea space below
+      display: 'block', // fix select and textarea space below
       width: '100%',
     },
     '.xt-select': {

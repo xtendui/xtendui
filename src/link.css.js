@@ -2,7 +2,7 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.xt-links-default': {
-      // @FIX specificity when nested .xt-links-default and .xt-links-inverse
+      // fix specificity when nested .xt-links-default and .xt-links-inverse
       '&, .xt-links-inverse &': {
         'a:not([class]), a[class=""], .xt-link': {
           // styles
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
     '.xt-links-inverse': {
-      // @FIX specificity when nested .xt-links-default and .xt-links-inverse
+      // fix specificity when nested .xt-links-default and .xt-links-inverse
       '&, .xt-links-default &': {
         'a:not([class]), a[class=""], .xt-link': {
           // styles

@@ -56,7 +56,7 @@ const mountSlider = ({ ref }) => {
           incoming.classList.remove('incoming')
         }
       })
-    //console.log(e.type, self.direction, self.detail.dragRatio, self.detail.dragPosition, self.detail.dragFinal)
+    //console.debug(e.type, self.direction, self.detail.dragRatio, self.detail.dragPosition, self.detail.dragFinal)
   }
 
   self.dragger.addEventListener('dragposition.xt.slider', dragposition)
@@ -90,7 +90,7 @@ const mountSlider = ({ ref }) => {
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
       incoming.classList.add('incoming')
-      //console.log('drag', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
+      //console.debug('drag', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -176,7 +176,7 @@ const mountSlider = ({ ref }) => {
     if (self.targets.includes(tr) && !self.initial) {
       // raf because after off.xt.slider
       requestAnimationFrame(() => {
-        //console.log('on', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
+        //console.debug('on', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
         // mask
         const mask = tr.querySelector('.hero')
         gsap.killTweensOf(mask)
@@ -247,7 +247,7 @@ const mountSlider = ({ ref }) => {
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
-        //console.log('off', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
+        //console.debug('off', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
         // mask
         const mask = incoming.querySelector('.hero')
         gsap.to(mask, {

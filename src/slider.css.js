@@ -5,8 +5,8 @@ module.exports = {
     },
     '.xt-slides': {
       position: 'relative',
-      display: 'inline-block', // @FIX autoheight values
-      verticalAlign: 'top', // @FIX inline-block margin below
+      display: 'inline-block', // fix autoheight values
+      verticalAlign: 'top', // fix inline-block margin below
       width: '100%',
       // styles
       transitionProperty: 'height',
@@ -30,7 +30,7 @@ module.exports = {
           left: '0',
         },
       },
-      // @FIX page load height without .active slides
+      // fix page load height without .active slides
       '&:not(.xt-slider)': {
         '.xt-slide': {
           '&:first-child': {

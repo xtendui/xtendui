@@ -15,7 +15,7 @@
       height: 100vh;
       visibility: hidden;
       pointer-events: none;
-      position: fixed; /* @FIX no absolute or bugs search */
+      position: fixed; /* fix no absolute or bugs search */
       z-index: -1;
       top: -100vh;
       left: -100vw;

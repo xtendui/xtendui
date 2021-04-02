@@ -10,7 +10,7 @@ module.exports = {
       flexDirection: 'row',
       alignItems: 'flex-start',
       '> *': {
-        // @FIX column flex shrink
+        // fix column flex shrink
         flex: '0 0 auto',
       },
       '&:empty': {

@@ -78,7 +78,7 @@ const mountMedia = ({ ref }) => {
       opacity: maskOpacityOn,
       duration: 0.5,
       ease: 'quart.out',
-    }) // @FIX to cover height: '150%'
+    }) // fix to cover height: '150%'
     gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
       gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
     })
@@ -111,7 +111,7 @@ const mountMedia = ({ ref }) => {
       opacity: maskOpacityOff,
       duration: 0.5,
       ease: 'quart.out',
-    }) // @FIX to cover height: '50%', y: '-100%'
+    }) // fix to cover height: '50%', y: '-100%'
     gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
       gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
     })

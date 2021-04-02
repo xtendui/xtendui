@@ -227,7 +227,7 @@ class Toggle {
     }
     // no currents
     if (currents === 0) {
-      // @FIX autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+      // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
       self.initial = false
       // auto
       self.eventAutostart()
@@ -480,7 +480,7 @@ class Toggle {
       )
       el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       if (options.off) {
-        // @FIX same event for on and off same namespace
+        // fix same event for on and off same namespace
         if (options.on !== options.off) {
           const offHandler = Xt.dataStorage.put(
             el,
@@ -498,7 +498,7 @@ class Toggle {
         if (options.preventEvent) {
           const events = [...options.on.split(' ')]
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
-            // @FIX prevents click links on click until clicked two times
+            // fix prevents click links on click until clicked two times
             const preventeventStartTouchHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
@@ -594,7 +594,7 @@ class Toggle {
           `click/jump/${self.ns}`,
           self.eventJumpHandler.bind(self).bind(self, jump)
         )
-        jump.addEventListener('click', jumpHandler, true) // @FIX elements inside targets (slider pagination)
+        jump.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
         // jump
         if (!self.disabled) {
           jump.classList.add('xt-jump')
@@ -730,7 +730,7 @@ class Toggle {
   eventOnHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
-    // @FIX groupElements and targets
+    // fix groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
     if (!force && options.eventLimit) {
@@ -755,7 +755,7 @@ class Toggle {
   eventOffHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
-    // @FIX groupElements and targets
+    // fix groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
     if (!force && options.eventLimit) {
@@ -953,7 +953,7 @@ class Toggle {
   eventMedialoadedHandler(img, el, deferred = false) {
     const self = this
     const options = self.options
-    // @FIX multiple calls
+    // fix multiple calls
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
@@ -1064,7 +1064,7 @@ class Toggle {
       } else {
         // not group targets by index if not group
         if (Array.from(self.elements).includes(el)) {
-          // @FIX when argument is already element
+          // fix when argument is already element
           final = Xt.arrSingle(el)
         } else {
           const index = groupTargets.findIndex(x => x === el)
@@ -1102,7 +1102,7 @@ class Toggle {
       } else {
         // not group targets by index if not group
         if (Array.from(self.targets).includes(el)) {
-          // @FIX when argument is already target
+          // fix when argument is already target
           final = Xt.arrSingle(el)
         } else {
           const index = groupElements.findIndex(x => x === el)
@@ -1167,7 +1167,7 @@ class Toggle {
   hasCurrent(element, running) {
     const self = this
     const options = self.options
-    // @FIX groupElements and targets
+    // fix groupElements and targets
     element = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // hasCurrent
     const arr = running ? Xt.running : Xt.currents
@@ -1233,7 +1233,7 @@ class Toggle {
    */
   setIndex(element) {
     const self = this
-    // @FIX groupElements and targets
+    // fix groupElements and targets
     element = self.getElements(element)[0]
     // set index
     let index = 0
@@ -1373,10 +1373,10 @@ class Toggle {
     }
     // toggle
     if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
-      // @FIX same event for on and off same namespace
+      // fix same event for on and off same namespace
       // auto
       self.eventAutostop()
-      // @FIX groupElements and targets
+      // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
       // on
       self.addCurrent(elements[0])
@@ -1403,7 +1403,7 @@ class Toggle {
       // activation
       return true
     } else if (options.on === options.off && e?.type !== `on.trigger.${self.componentNs}`) {
-      // @FIX same event for on and off same namespace
+      // fix same event for on and off same namespace
       self.eventOff(element, false, e)
     }
     // activation
@@ -1426,16 +1426,16 @@ class Toggle {
     }
     // toggle
     if (force || self.checkOff(element)) {
-      // @FIX groupElements and targets
+      // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
       // off
       self.removeCurrent(elements[0])
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
-      // @FIX sometimes blur is undefined
+      // fix sometimes blur is undefined
       if (element.blur) {
-        // @FIX :focus styles
+        // fix :focus styles
         element.blur()
       }
       // auto
@@ -1647,7 +1647,7 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // @FIX focus eventAutoresume happening after first interaction
+    // fix focus eventAutoresume happening after first interaction
     requestAnimationFrame(() => {
       // pause
       if (options.auto && options.auto.time) {
@@ -1749,7 +1749,7 @@ class Toggle {
       }
       */
       if (!objOther || !objOther[type] || objOther[type].done) {
-        // @FIX if initial must be instant, fixes queue
+        // fix if initial must be instant, fixes queue
         if (self.initial || !options.queue) {
           obj[type].instant = true
         } else if (options.queue && !options.queue[type]) {
@@ -2195,7 +2195,7 @@ class Toggle {
         if (composed instanceof Element) {
           const overflowY = getComputedStyle(composed).overflowY
           if (composed === document.body) {
-            composed = document.scrollingElement // @FIX use scrollingElement when body
+            composed = document.scrollingElement // fix use scrollingElement when body
           }
           if (
             composed === document.scrollingElement || // always when scrollingElement
@@ -2436,7 +2436,7 @@ class Toggle {
   specialZindex(actionCurrent, el, type) {
     const self = this
     const options = self.options
-    // @FIX when standalone !self.targets.length && type === 'elements'
+    // fix when standalone !self.targets.length && type === 'elements'
     if (!self.targets.length && type === 'elements') {
       type = 'targets'
     }
@@ -2499,7 +2499,7 @@ class Toggle {
     const options = self.options
     if (options.appendTo) {
       if (actionCurrent === 'On') {
-        // @FIX when standalone !self.targets.length && type === 'elements'
+        // fix when standalone !self.targets.length && type === 'elements'
         if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // appendTo
           const appendToTarget = document.querySelector(options.appendTo)
@@ -2507,17 +2507,17 @@ class Toggle {
           if (!appendOrigin) {
             el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
           }
-          el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+          el.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendToTarget.append(el)
         }
       } else if (actionCurrent === 'Off') {
-        // @FIX when standalone !self.targets.length && type === 'elements'
+        // fix when standalone !self.targets.length && type === 'elements'
         if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // appendTo
           if (options.appendTo) {
             const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
             if (appendOrigin) {
-              el.classList.add('xt-ignore', 'xt-ignore-once') // @FIX ignore once for mount when moving
+              el.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
               appendOrigin.before(el)
               appendOrigin.remove()
             }
@@ -2635,7 +2635,7 @@ class Toggle {
   specialClose(actionCurrent, el, type) {
     const self = this
     const options = self.options
-    // @FIX when standalone !self.targets.length && type === 'elements'
+    // fix when standalone !self.targets.length && type === 'elements'
     if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
       if (actionCurrent === 'On') {
         // closeDeep
@@ -2647,7 +2647,7 @@ class Toggle {
               `click/close/${self.ns}`,
               self.eventSpecialclosedeepHandler.bind(self)
             )
-            // @FIX do not close when clicking things that trigger this
+            // fix do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               closeElement.addEventListener('click', specialclosedeepHandler)
             })
@@ -2657,7 +2657,7 @@ class Toggle {
               `keydown/close/${self.ns}`,
               self.eventSpecialclosedeepKeydownHandler.bind(self).bind(self, closeElement)
             )
-            // @FIX do not close when clicking things that trigger this
+            // fix do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               closeElement.addEventListener('keydown', specialclosedeepKeydownHandler)
               closeElement.setAttribute('tabindex', '0')
@@ -2674,7 +2674,7 @@ class Toggle {
               `click/close/${self.ns}`,
               self.eventSpecialcloseinsideHandler.bind(self)
             )
-            // @FIX do not close when clicking things that trigger this
+            // fix do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               inside.removeEventListener('click', specialcloseinsideHandler)
               inside.addEventListener('click', specialcloseinsideHandler)
@@ -2690,7 +2690,7 @@ class Toggle {
               `click/close/${self.ns}`,
               self.eventSpecialcloseoutsideHandler.bind(self)
             )
-            // @FIX do not close when clicking things that trigger this
+            // fix do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               outside.removeEventListener('click', specialcloseoutsideHandler)
               outside.addEventListener('click', specialcloseoutsideHandler)
@@ -2999,7 +2999,7 @@ class Toggle {
     }
     // reinit one time only with raf
     if (!skipReinit) {
-      // @FIX appendTo close or self.targets are lost
+      // fix appendTo close or self.targets are lost
       if (options.appendTo) {
         for (const element of self.elements.filter(x => self.hasCurrent(x))) {
           self.eventOff(element)
@@ -3075,7 +3075,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // @FIX appendTo close or self.targets are lost
+      // fix appendTo close or self.targets are lost
       if (options.appendTo) {
         for (const element of self.elements.filter(x => self.hasCurrent(x))) {
           self.eventOff(element)

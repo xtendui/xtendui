@@ -130,7 +130,7 @@ class Slider extends Xt.Toggle {
         currentCount = draggerWidthAvailable
         currentCount -= targetWidth
       }
-      // @FIX when dragger not :visible with draggerWidth === 0 groups of 1 slide
+      // fix when dragger not :visible with draggerWidth === 0 groups of 1 slide
       if (self.detail.draggerWidth === 0 && doneFirst) {
         self.group.push([])
         currentGroup = self.group.length - 1
@@ -142,7 +142,7 @@ class Slider extends Xt.Toggle {
     }
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
-    // @FIX disable slider if not overflowing
+    // fix disable slider if not overflowing
     if (options.overflowAuto) {
       if (self.detail.availableSpace >= 0) {
         self.object.classList.add('xt-overflow-auto')
@@ -368,7 +368,7 @@ class Slider extends Xt.Toggle {
       for (const event of events) {
         addEventListener(event, dragstartHandler, { passive: false })
       }
-      // @FIX prevent dragging links and images
+      // fix prevent dragging links and images
       const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
       self.dragger.addEventListener('dragstart', dragstartFixHandler)
       // wheel
@@ -550,7 +550,7 @@ class Slider extends Xt.Toggle {
     if (self.disabled && !self.initial) {
       return
     }
-    // @FIX targets handler
+    // fix targets handler
     const slides = self.getTargets(element)
     const slide = slides[0]
     // only one call per group
@@ -571,7 +571,7 @@ class Slider extends Xt.Toggle {
     const max = Xt.dataStorage.get(last, `${self.ns}GroupPos`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
     /*
-    // @FIX absolute loop
+    // fix absolute loop
     if (options.mode === 'absolute' && !self.detail.dragging) {
       if (self.direction > 0 && self.detail.dragActive === min) {
         //self.detail.dragFinal = self.detail.dragFinal + max - maxCheck
@@ -654,7 +654,7 @@ class Slider extends Xt.Toggle {
     super.eventOn(element, force, e)
     // wrap
     self.eventWrap()
-    // @FIX no instant dragposition on dragend
+    // fix no instant dragposition on dragend
     // dragging
     self.detail.dragging = false
     // listener dispatch
@@ -676,7 +676,7 @@ class Slider extends Xt.Toggle {
       // direction
       let dir = self.direction
       if (!dir) {
-        // @FIX initial direction
+        // fix initial direction
         if (options.align === 'center') {
           dir = -1
         } else if (options.align === 'left') {
@@ -893,7 +893,7 @@ class Slider extends Xt.Toggle {
     const min = Xt.dataStorage.get(first, `${self.ns}GroupPos`)
     const max = Xt.dataStorage.get(last, `${self.ns}GroupPos`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
-    // @FIX absolute loop
+    // fix absolute loop
     // console.debug(tr.querySelector('.xt-h4').textContent.replace(/[^0-9]/g, ''))
     if (options.mode === 'absolute') {
       if (self.detail.dragDirection < 0 && self.detail.dragActive === min) {
@@ -907,14 +907,14 @@ class Slider extends Xt.Toggle {
       }
     }
     */
-    // @FIX no drag change when click
+    // fix no drag change when click
     if (self.detail.dragStart === self.detail.dragCurrent) {
       self.logicDragreset()
       return
     }
     // dragging
     self.detail.dragging = false
-    // @FIX on.xt.slider event after all drag.xt.slider
+    // fix on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // activation
       const direction = Math.sign(self.detail.dragDist)
@@ -1031,7 +1031,7 @@ class Slider extends Xt.Toggle {
     // ratio
     self.detail.dragRatio = Math.abs(self.detail.dragFinal - self.detail.dragActive) / Math.abs(maxCheck - min)
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
-    // @fix dragging furiously
+    // fix dragging furiously
     if (self.detail.dragRatio > 1 || self.detail.dragRatio < -1) {
       return
     }

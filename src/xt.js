@@ -127,7 +127,7 @@ if (typeof window !== 'undefined') {
       if (ignoreStr) {
         const ignore = added.closest(ignoreStr)
         if (ignore) {
-          Xt.ignoreOnce(ignore) // @FIX ignore once for mount when moving
+          Xt.ignoreOnce(ignore) // fix ignore once for mount when moving
           continue
         }
       }
@@ -142,7 +142,7 @@ if (typeof window !== 'undefined') {
       // call
       if (refs.length) {
         for (const [index, ref] of refs.entries()) {
-          // @FIX multiple initialization
+          // fix multiple initialization
           object.done = object.done ? object.done : []
           if (object.done.includes(ref)) {
             return
@@ -157,7 +157,7 @@ if (typeof window !== 'undefined') {
               matches: object.matches,
               unmount: call,
               unmountRemove: () => {
-                // @FIX multiple initialization
+                // fix multiple initialization
                 object.done = object.done.filter(x => x !== ref)
                 // unmount remove
                 Xt.unmountArr = Xt.unmountArr.filter(x => {
@@ -399,7 +399,7 @@ if (typeof window !== 'undefined') {
       // event key
       const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup/focus', Xt.focus.changeKey)
       document.addEventListener('keyup', focusChangeKeyHandler)
-      // @FIX switch mode
+      // fix switch mode
       if (!keepAll) {
         // event mouse
         const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown/focus')
@@ -414,7 +414,7 @@ if (typeof window !== 'undefined') {
      * @param {Boolean} keepAll
      */
     off: (keepAll = false) => {
-      // @FIX switch mode
+      // fix switch mode
       if (!keepAll) {
         // event
         const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup/focus')
@@ -450,7 +450,7 @@ if (typeof window !== 'undefined') {
         if (!document.documentElement.classList.contains('xt-focus-visible')) {
           // html.xt-focus-visible
           document.documentElement.classList.add('xt-focus-visible')
-          // @FIX switch mode
+          // fix switch mode
           Xt.focus.off()
         }
       }
@@ -468,7 +468,7 @@ if (typeof window !== 'undefined') {
       if (document.documentElement.classList.contains('xt-focus-visible')) {
         // html.xt-focus-visible
         document.documentElement.classList.remove('xt-focus-visible')
-        // @FIX switch mode
+        // fix switch mode
         Xt.focus.on()
       }
     },
@@ -505,9 +505,9 @@ if (typeof window !== 'undefined') {
         const focusLimitHandler = Xt.dataStorage.put(document, 'keydown/focusLimit', Xt.focusLimit.limit)
         document.addEventListener('keydown', focusLimitHandler)
       }
-      // @FIX Xt.focus when clicking and not used tab before
+      // fix Xt.focus when clicking and not used tab before
       Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
-      // @FIX switch mode
+      // fix switch mode
       Xt.focus.off(true)
       // actives
       Xt.focus.block = true
@@ -529,7 +529,7 @@ if (typeof window !== 'undefined') {
         Xt.focusLimit.actives = Xt.focusLimit.actives.filter(x => x !== active)
         Xt.focusLimit.on(active)
       } else {
-        // @FIX switch mode
+        // fix switch mode
         Xt.focus.on()
         // actives
         Xt.focus.block = false
@@ -846,7 +846,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.ignoreOnce = el => {
     if (el.classList.contains('xt-ignore-once')) {
-      // @FIX react when componentDidMount
+      // fix react when componentDidMount
       requestAnimationFrame(() => {
         el.classList.remove('xt-ignore', 'xt-ignore-once')
       })

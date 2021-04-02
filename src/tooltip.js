@@ -102,7 +102,7 @@ class Tooltip extends Xt.Toggle {
           ...options.popperjs,
         })
         Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
-        // @FIX recalc position with new css depending on position
+        // fix recalc position with new css depending on position
         requestAnimationFrame(() => {
           popperInstance.update()
         })

@@ -67,7 +67,7 @@ class Ripple {
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
       self.container.append(Xt.createElement('<div class="xt-ripple"></div>'))
-      // @FIX prevent dragging links and images
+      // fix prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()
       }
