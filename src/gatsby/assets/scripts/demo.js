@@ -189,7 +189,7 @@ const populateBlock = () => {
         })
       )
     })
-    full.addEventListener('off.xt.toggle', e => {
+    full.addEventListener('offdone.xt.toggle', e => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
         const container = content.querySelector('.gatsby_demo')
