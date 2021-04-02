@@ -700,7 +700,7 @@ class Slider extends Xt.Toggle {
           if (options.align === 'center') {
             movePos += width / 2 + moveWidth / 2
           } else if (options.align === 'left') {
-            movePos += -moveLeft
+            movePos += moveWidth
           } else if (options.align === 'right') {
             movePos += width
           }
@@ -713,24 +713,24 @@ class Slider extends Xt.Toggle {
           if (options.align === 'center') {
             movePos -= width / 2 + moveWidth / 2
           } else if (options.align === 'left') {
-            movePos -= -moveLeft
-          } else if (options.align === 'right') {
             movePos -= width
+          } else if (options.align === 'right') {
+            movePos -= moveWidth
           }
           // keep index of moved slides
           self.detail.moveFirst += 1
         }
+        // set new activation pos
+        Xt.dataStorage.set(move, `${self.ns}GroupPos`, movePos)
         // move translate
         if (options.align === 'center') {
           translate += self.detail.draggerWidth / 2 - width / 2
         } else if (options.align === 'left') {
-          translate += -moveLeft
+          translate += 0
         } else if (options.align === 'right') {
           translate += self.detail.draggerWidth - width
         }
         move.style.transform = `translateX(${translate}px)`
-        // set new activation pos
-        Xt.dataStorage.set(move, `${self.ns}GroupPos`, movePos)
         // keep index of moved slides
         self.detail.moveFirst =
           self.detail.moveFirst < self.group.length ? self.detail.moveFirst : self.detail.moveFirst - self.group.length
