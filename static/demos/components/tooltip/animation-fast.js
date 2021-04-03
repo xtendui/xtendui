@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 Xt.mount({
-  matches: '.demo--tooltip-activation-fast',
+  matches: '.demo--tooltip-animation-fast',
   mount: ({ ref }) => {
     const unmountTooltip = mountTooltip({ ref })
 
@@ -24,9 +24,8 @@ const mountTooltip = ({ ref }) => {
 
     const object = tooltip.closest('[data-xt-tooltip]')
     let timeout
-    const delay = 2000
-    const duration = 75
-    const durationDefault = 300
+    const delay = 1500
+    const duration = 50
 
     // fix only once when tooltip has multiple targets
 
@@ -39,6 +38,7 @@ const mountTooltip = ({ ref }) => {
       // make other tooltips fast
       const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
       for (const tooltip of tooltipsOther) {
+        tooltip.dataset.defaultXtDuration = tooltip.getAttribute('data-xt-duration')
         tooltip.setAttribute('data-xt-duration', duration)
         const inner = tooltip.querySelector(':scope > *')
         inner.style.transitionDuration = `${duration}ms`
@@ -47,7 +47,7 @@ const mountTooltip = ({ ref }) => {
       clearTimeout(timeout)
       timeout = setTimeout(() => {
         for (const tooltip of tooltips) {
-          tooltip.setAttribute('data-xt-duration', durationDefault)
+          tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
           const inner = tooltip.querySelector(':scope > *')
           inner.style.transitionDuration = ''
         }
