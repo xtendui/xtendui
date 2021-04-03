@@ -28,6 +28,8 @@ const mountScrollto = () => {
   // Scrollto
 
   let self = new Xt.Scrollto(document.documentElement, {
+    class: false, // example no class
+    scrollActivation: false, // example no scrollActivation
     scrollSpace: ({ self }) => {
       let space = 0
       const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')

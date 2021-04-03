@@ -73,7 +73,7 @@ class Scrollto {
         let scrollHandler = Xt.dataStorage.put(
           scroll,
           `scroll/${self.ns}`,
-          self.eventScrollHandler.bind(self).bind(self, scroll)
+          self.eventScrollactivationHandler.bind(self).bind(self, scroll)
         )
         if (scroll === document.scrollingElement) {
           addEventListener('scroll', scrollHandler)
@@ -84,7 +84,7 @@ class Scrollto {
         requestAnimationFrame(() => {
           self.scroll = scroll
           self.eventStart()
-          self.eventScrollHandler(scroll)
+          self.eventScrollactivationHandler(scroll)
         })
       }
     }
@@ -118,7 +118,8 @@ class Scrollto {
 
   /**
    * scrollto
-   * @param {Node|HTMLElement|EventTarget|Window} el Change element
+   * @param {Node|HTMLElement|EventTarget|Window} el element
+   * @param {Node|HTMLElement|EventTarget|Window} tr target
    * @param {Event} e
    */
   eventScrollto({ el = null, tr = null }, e = null) {
@@ -214,33 +215,36 @@ class Scrollto {
   }
 
   /**
-   * scroll handler
+   * scroll activation handler
    * @param {Node|HTMLElement|EventTarget|Window} scroll Scroll element
    */
-  eventScrollHandler(scroll) {
+  eventScrollactivationHandler(scroll) {
     const self = this
     const options = self.options
-    // timeout
-    clearTimeout(Xt.dataStorage.get(scroll, `${self.ns}ScrollTimeout`))
-    Xt.dataStorage.set(
-      scroll,
-      `${self.ns}ScrollTimeout`,
-      setTimeout(() => {
-        // handler
-        self.eventScroll(scroll)
-      }, options.scrollDelay)
-    )
+    // logic
+    if (options.scrollActivation) {
+      clearTimeout(Xt.dataStorage.get(scroll, `${self.ns}ScrollTimeout`))
+      Xt.dataStorage.set(
+        scroll,
+        `${self.ns}ScrollTimeout`,
+        setTimeout(() => {
+          // handler
+          self.eventScrollactivation(scroll)
+        }, options.scrollDelay)
+      )
+    }
   }
 
   /**
-   * scroll
+   * scroll activation
    */
-  eventScroll(scroll) {
+  eventScrollactivation(scroll) {
     const self = this
     const options = self.options
     // scroll
     let found = false
     let scrollTop = scroll.scrollTop
+    self.target = false
     // fake scroll position if on bottom of the page
     const scrollMax = scroll.scrollHeight
     if (scrollTop + scroll.clientHeight >= scrollMax) {
@@ -349,7 +353,8 @@ Scrollto.optionsDefault = {
   // class
   class: 'active',
   // event
-  scrollDelay: 50,
+  scrollActivation: true,
+  scrollDelay: 150,
   hash: false,
   // scroll
   scrollPosition: ({ self }) => {

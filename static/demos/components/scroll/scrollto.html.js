@@ -7,7 +7,12 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"> #0 </a>
           <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"> #1 </a>
-          <button type="button" class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"> custom </button>
+          <button
+            type="button"
+            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+          >
+            custom
+          </button>
           <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"> #2 </a>
         </div>
       </div>
@@ -26,7 +31,12 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
           <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
-          <button type="button" class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> custom </button>
+          <button
+            type="button"
+            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+          >
+            custom
+          </button>
           <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
         </div>
       </div>
@@ -47,7 +57,12 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
           <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
-          <button type="button" class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> custom </button>
+          <button
+            type="button"
+            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+          >
+            custom
+          </button>
           <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
         </div>
       </div>
@@ -68,7 +83,12 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
           <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
-          <button type="button" class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> custom </button>
+          <button
+            type="button"
+            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+          >
+            custom
+          </button>
           <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
         </div>
       </div>
@@ -89,7 +109,12 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
           <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
-          <button type="button" class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> custom </button>
+          <button
+            type="button"
+            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+          >
+            custom
+          </button>
           <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
         </div>
       </div>

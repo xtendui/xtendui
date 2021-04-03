@@ -49,10 +49,11 @@ const mountDrops = ({ ref }) => {
     targets: '.xt-drop-item > .xt-drop',
     queue: false,
     duration: 1000,
+    preventEvent: true,
+    // activated by switcher
     //on: 'mouseenter',
     //off: 'mouseleave',
     //delay: 150,
-    preventEvent: true,
   })
 
   // setup
