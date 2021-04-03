@@ -52,6 +52,19 @@ const mountScrollto = () => {
 
   self.object.addEventListener('scrollto.xt.scrollto', scrollto)
 
+  // custom
+
+  const buttons = self.object.querySelectorAll('.button--custom')
+  const custom = self.object.querySelector('#custom')
+
+  const click = () => {
+    custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', click)
+  }
+
   // unmount
 
   return () => {

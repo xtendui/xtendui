@@ -43,7 +43,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
+    const duration = overlay && !overlay.classList.contains('active') ? 0 : 1 // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
@@ -53,6 +53,19 @@ const mountScrollto = () => {
   }
 
   self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+
+  // custom
+
+  const buttons = self.object.querySelectorAll('.button--custom')
+  const custom = self.object.querySelector('#custom')
+
+  const click = () => {
+    custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', click)
+  }
 
   // unmount
 
@@ -66,8 +79,9 @@ const mountScrollto = () => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  const overlay = ref.querySelector('.xt-overlay')
   ScrollTrigger.create({
-    trigger: ref.querySelector('.xt-sticky'),
+    trigger: overlay.querySelector('.xt-sticky'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -75,19 +89,8 @@ const mountSticky = ({ ref }) => {
     pinSpacing: false,
   })
 
-  const overlay = ref.querySelector('.xt-overlay')
-  const initStickyOverlay = () => {
-    ScrollTrigger.create({
-      trigger: overlay.querySelector('.xt-sticky'),
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-    })
-  }
   overlay.addEventListener('on.xt.overlay', () => {
-    initStickyOverlay()
+    ScrollTrigger.refresh()
   })
 
   // unmount

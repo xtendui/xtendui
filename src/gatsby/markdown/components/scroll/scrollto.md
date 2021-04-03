@@ -36,7 +36,7 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
-| Option                    | `scrolls:Query`                          | `'.xt-overlay`        | Query for scroll nodes besides document (ordered parent > child)             |
+| Option                    | `scrolls:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class for anchors             |
 | Option                    | `scrollDelay:Number`                          | `50`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors             |
@@ -54,7 +54,7 @@ Listen to events.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scrollto.xt.scrollto`      | `object` | Change event            |
+| Event                   | `scrollto.xt.scrollto`      | `object` | Scrolto event           |
 | Event                   | `init.xt.scrollto`           | `object` | Init event             |
 | Event                   | `destroy.xt.scrollto`           | `object` | Destroy event             |
 

@@ -124,26 +124,33 @@ class Scrollto {
   eventScrollto({ el = null, tr = null }, e = null) {
     const self = this
     const options = self.options
-    // element
-    el = el ?? e.target
-    // not null and HTML element and not window
-    if (el && el.nodeName && el !== window) {
-      self.target = tr ?? el
-      if (self.target && Xt.visible(self.target)) {
-        // vars
-        self.scrollPosition = options.scrollPosition({ self })
-        self.scrollSpace = options.scrollSpace({ self })
-        self.scrollDistance = options.scrollDistance({ self })
-        self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
-        // val
-        const min = 0
-        const max = self.scroll.scrollHeight - self.scroll.clientHeight
-        self.position = self.position < min ? min : self.position
-        self.position = self.position > max ? max : self.position
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+    // keep after components activations
+    requestAnimationFrame(() => {
+      // element
+      el = el ?? e.target
+      // not null and HTML element and not window
+      if (el && el.nodeName && el !== window) {
+        self.target = tr ?? el
+        if (self.target && Xt.visible(self.target)) {
+          // vars
+          self.scrollPosition = options.scrollPosition({ self })
+          self.scrollSpace = options.scrollSpace({ self })
+          self.scrollDistance = options.scrollDistance({ self })
+          self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
+          // val
+          const min = 0
+          const max = self.scroll.scrollHeight - self.scroll.clientHeight
+          self.position = self.position < min ? min : self.position
+          self.position = self.position > max ? max : self.position
+          // fix activate also if scroll position remains the same
+          if (self.scroll.scrollTop === self.position) {
+            self.scroll.dispatchEvent(new CustomEvent('scroll'))
+          }
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        }
       }
-    }
+    })
   }
 
   /**
