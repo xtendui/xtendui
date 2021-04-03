@@ -2,16 +2,16 @@
 type: "Components"
 category: "Interaction"
 parent: "Scroll"
-title: "Scroll to Anchor"
-description: "Automatically scroll to an id clicking the relative anchor with that id."
+title: "Scroll to"
+description: "Automatically scroll to elements or anchors with automatic activation on scroll."
 date: "1900-10-10"
 ---
 
 ## Javascript
 
-Import the **javascript** file with `import 'xtendui/src/scrolltoanchor'`.
+Import the **javascript** file with `import 'xtendui/src/scrollto'`.
 
-Initialize with **javascript** with `new Xt.Scrolltoanchor(document.querySelector('.my-object'), {/* options */})`.
+Initialize with **javascript** with `new Xt.Scrollto(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 
@@ -21,9 +21,9 @@ Use this code to create a **scroll to anchor**.
 | This demo uses [scroll sticky](/components/scroll/sticky) and [overlay](/components/overlay) see documentation for more info.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrolltoanchor">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrolltoanchor-overlay">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto-overlay">
   </div>
 </demo>
 
@@ -36,7 +36,7 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
-| Option                    | `scrollElements:Query`                          | `'.xt-overlay`        | Query for scroll nodes besides document (ordered parent > child)             |
+| Option                    | `scrolls:Query`                          | `'.xt-overlay`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class for anchors             |
 | Option                    | `scrollDelay:Number`                          | `50`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors             |
@@ -54,9 +54,9 @@ Listen to events.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scrollto.xt.scrolltoanchor`      | `object` | Change event            |
-| Event                   | `init.xt.scrolltoanchor`           | `object` | Init event             |
-| Event                   | `destroy.xt.scrolltoanchor`           | `object` | Destroy event             |
+| Event                   | `scrollto.xt.scrollto`      | `object` | Change event            |
+| Event                   | `init.xt.scrollto`           | `object` | Init event             |
+| Event                   | `destroy.xt.scrollto`           | `object` | Destroy event             |
 
 </div>
 
@@ -68,7 +68,7 @@ Trigger events on **DOM elements**.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scrollto.trigger.xt.scrolltoanchor`       | `<any DOM node>` | Scroll to a Node also if not anchored              |
+| Event                   | `scrollto.trigger.xt.scrollto`       | `<any DOM node>` | Scroll to a Node also if not anchored              |
 
 </div>
 
@@ -77,7 +77,7 @@ Trigger events on **DOM elements**.
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-scrolltoanchor', document.querySelector('.my-object'))
+let self = Xt.get('xt-scrollto', document.querySelector('.my-object'))
 const object = self.object
 ```
 
@@ -88,7 +88,7 @@ const object = self.object
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `position:Number`       | Current scroll position to scroll to             |
-| Property                   | `scrollElement:Node`       | Current scrolling element             |
+| Property                   | `scroll:Node`       | Current scrolling element             |
 | Property                   | `scrollPosition:Number`       | Current scroll position             |
 | Property                   | `scrollSpace:Number`       | Current scroll space             |
 | Property                   | `scrollDistance:Number`       | Current scroll distance             |
@@ -100,7 +100,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-scrolltoanchor', document.querySelector('.my-object'))
+let self = Xt.get('xt-scrollto', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```

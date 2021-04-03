@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
-import 'xtendui/src/scrolltoanchor'
+import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -8,29 +8,29 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--scrolltoanchor-overlay',
+  matches: '.demo--scrollto-overlay',
   mount: ({ ref }) => {
-    const unmountScrolltoanchor = mountScrolltoanchor()
+    const unmountScrollto = mountScrollto()
     const unmountSticky = mountSticky({ ref })
 
     // unmount
 
     return () => {
-      unmountScrolltoanchor()
+      unmountScrollto()
       unmountSticky()
     }
   },
 })
 
-/* mountScrolltoanchor */
+/* mountScrollto */
 
-const mountScrolltoanchor = () => {
-  // Scrolltoanchor
+const mountScrollto = () => {
+  // Scrollto
 
-  let self = new Xt.Scrolltoanchor(document.documentElement, {
+  let self = new Xt.Scrollto(document.documentElement, {
     scrollSpace: ({ self }) => {
       let space = 0
-      const spaceEls = self.scrollElement.querySelectorAll('.xt-sticky[style*="position: fixed"]')
+      const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
       for (const spaceEl of spaceEls) {
         space += spaceEl.clientHeight
       }
@@ -44,20 +44,20 @@ const mountScrolltoanchor = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
     const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
-    gsap.killTweensOf(self.scrollElement)
-    gsap.to(self.scrollElement, {
+    gsap.killTweensOf(self.scroll)
+    gsap.to(self.scroll, {
       scrollTo: self.position,
       duration: duration,
       ease: 'quart.inOut',
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrolltoanchor', scrollto)
+  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrolltoanchor', scrollto)
+    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }

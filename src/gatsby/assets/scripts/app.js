@@ -1,6 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/dist/xtend-components'
-import 'xtendui/src/scrolltoanchor'
+import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -352,7 +352,7 @@ Xt.mount({
 })
 
 /**
- * xt-scrolltoanchor
+ * xt-scrollto
  */
 
 Xt.mount({
@@ -360,7 +360,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Scrolltoanchor(ref, {
+    let self = new Xt.Scrollto(ref, {
       hash: true,
       scrollDistance: () => {
         return window.innerHeight / 10
@@ -371,20 +371,20 @@ Xt.mount({
 
     const scrollto = () => {
       // scroll
-      gsap.killTweensOf(self.scrollElement)
-      gsap.to(self.scrollElement, {
+      gsap.killTweensOf(self.scroll)
+      gsap.to(self.scroll, {
         scrollTo: self.position,
         duration: 1,
         ease: 'quart.inOut',
       })
     }
 
-    self.object.addEventListener('scrollto.xt.scrolltoanchor', scrollto)
+    self.object.addEventListener('scrollto.xt.scrollto', scrollto)
 
     // unmount
 
     return () => {
-      self.object.removeEventListener('scrollto.xt.scrolltoanchor', scrollto)
+      self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
       self.destroy()
       self = null
     }
@@ -468,10 +468,10 @@ const makeDocument = () => {
 </span>`)
     )
   }
-  // restart xt-scrolltoanchor
+  // restart xt-scrollto
   const gatsby = document.querySelector('.gatsby_site-wrapper')
   if (gatsby) {
-    const scrollToAnchor = Xt.get('xt-scrolltoanchor', gatsby.closest('body'))
+    const scrollToAnchor = Xt.get('xt-scrollto', gatsby.closest('body'))
     if (scrollToAnchor) {
       scrollToAnchor.eventStart()
     }

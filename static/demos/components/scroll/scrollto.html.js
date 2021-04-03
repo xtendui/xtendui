@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--scrolltoanchor">
+  <div class="demo--scrollto">
     <div class="xt-sticky">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-list xt-list-3">

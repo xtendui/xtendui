@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import 'xtendui/src/stickyflow'
-import 'xtendui/src/scrolltoanchor'
+import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -9,27 +9,27 @@ gsap.registerPlugin(ScrollToPlugin)
 Xt.mount({
   matches: '.demo--products-gallery-v1',
   mount: ({ ref }) => {
-    const unmountScrolltoanchor = mountScrolltoanchor()
+    const unmountScrollto = mountScrollto()
     const unmountImages = mountImages({ ref })
     const unmountArrow = mountArrow({ ref })
 
     // unmount
 
     return () => {
-      unmountScrolltoanchor()
+      unmountScrollto()
       unmountImages()
       unmountArrow()
     }
   },
 })
 
-/* mountScrolltoanchor */
+/* mountScrollto */
 
-const mountScrolltoanchor = () => {
+const mountScrollto = () => {
   // init
 
-  let self = new Xt.Scrolltoanchor(document.documentElement, {
-    scrollElements: '.xt-overlay, .product-gallery',
+  let self = new Xt.Scrollto(document.documentElement, {
+    scrolls: '.xt-overlay, .product-gallery',
   })
 
   // scrollto
@@ -38,20 +38,20 @@ const mountScrolltoanchor = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
     const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
-    gsap.killTweensOf(self.scrollElement)
-    gsap.to(self.scrollElement, {
+    gsap.killTweensOf(self.scroll)
+    gsap.to(self.scroll, {
       scrollTo: self.position,
       duration: duration,
       ease: 'quart.inOut',
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrolltoanchor', scrollto)
+  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrolltoanchor', scrollto)
+    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }
