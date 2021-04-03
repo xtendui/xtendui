@@ -35,9 +35,8 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `elements:Array`                          | `[href*="#"]:not([aria-controls])`        | Elements nodes (filter out toggle components toggles with `:not([aria-controls])`)            |
-| Option                    | `matches:Query`                          | `'[href$="{hash}"]:not([aria-controls])'`        | Matches nodes (filter out toggle components toggles with `:not([aria-controls])`)               |
-| Option                    | `scrollElements:Query`                          | `'.xt-overlay`        | Query for scroll nodes (ordered parent > child)             |
+| Option                    | `elements:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
+| Option                    | `scrollElements:Query`                          | `'.xt-overlay`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'active'`        | Activation class             |
 | Option                    | `scrollDelay:Number`                          | `250`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash             |

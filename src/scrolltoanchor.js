@@ -107,7 +107,7 @@ class Scrolltoanchor {
     // hash trigger
     const hash = location.hash
     if (hash) {
-      const el = self.object.querySelector(options.elements.replace('#', hash))
+      const el = self.object.querySelector(options.elements.replace('{hash}', hash))
       if (el) {
         self.eventChange(false, el)
       }
@@ -128,14 +128,14 @@ class Scrolltoanchor {
     // hashchange
     if (hashchange) {
       const hash = location.hash
-      el = self.object.querySelector(options.elements.replace('#', hash))
+      el = self.object.querySelector(options.elements.replace('{hash}', hash))
     }
     // check because of event propagation
     el = el ? el : e.target
     // not null and HTML element and not window
     if (el && el.nodeName && el !== window) {
-      el = el.closest(options.elements)
-      if (el && el.matches(options.elements)) {
+      el = el.closest(options.elements.replace('{hash}', '#'))
+      if (el && el.matches(options.elements.replace('{hash}', '#'))) {
         // event
         const loc = new URL(el.getAttribute('href'), location)
         if (loc.hash && loc.pathname === location.pathname) {
@@ -157,7 +157,7 @@ class Scrolltoanchor {
                 }
               }
               // els
-              let els = Array.from(self.scrollElement.querySelectorAll(options.elements))
+              let els = Array.from(self.scrollElement.querySelectorAll(options.elements.replace('{hash}', '#')))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -222,7 +222,7 @@ class Scrolltoanchor {
       scrollTop = scrollMax
     }
     // els
-    let els = Array.from(scrollElement.querySelectorAll(options.elements))
+    let els = Array.from(scrollElement.querySelectorAll(options.elements.replace('{hash}', '#')))
     els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     // filter out other scrollElement
     let elsFiltered = els
@@ -259,7 +259,7 @@ class Scrolltoanchor {
           // check if activating
           if (scrollTop >= Math.floor(position - space - distance)) {
             // loop multiple els of
-            const matches = options.matches.replace('{hash}', loc.hash)
+            const matches = options.elements.replace('{hash}', loc.hash)
             const currents = els.filter(x => x.matches(matches))
             found = !!currents.length
             // reset others
@@ -336,8 +336,7 @@ class Scrolltoanchor {
 Scrolltoanchor.componentName = 'xt-scrolltoanchor'
 Scrolltoanchor.optionsDefault = {
   // elements
-  elements: '[href*="#"]',
-  matches: '[href$="{hash}"]',
+  elements: '[href*="{hash}"]',
   scrollElements: '.xt-overlay',
   // class
   class: 'active',

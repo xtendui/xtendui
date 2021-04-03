@@ -361,7 +361,6 @@ Xt.mount({
     // init
 
     let self = new Xt.Scrolltoanchor(ref, {
-      elements: '[href^="#"]:not([aria-controls])',
       hash: true,
       scrollDistance: () => {
         return window.innerHeight / 10
