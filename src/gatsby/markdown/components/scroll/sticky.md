@@ -31,7 +31,23 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 
 </div>
 
-Remember to **add and remove `.xt-ignore` to pinned nodes on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
+</demo>
+
+## Fixes
+
+- If you are initializing sticky inside [overlay](/components/overlay) or inside an element with `display: none` you need to refresh ScrollTrigger to recalculate positions.
+
+```js
+const overlay = document.querySelector('#my-overlay')
+
+overlay.addEventListener('on.xt.overlay', () => {
+  ScrollTrigger.refresh()
+})
+```
+  
+- If you are initializing sticky inside [Xt.mount](/introduction/javascript#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
 
 ```js
 const sticky = ScrollTrigger.create({
@@ -47,10 +63,6 @@ ScrollTrigger.addEventListener('refresh', () => {
   })
 })
 ```
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
-</demo>
 
 ## Event
 
