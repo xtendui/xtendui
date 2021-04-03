@@ -32,9 +32,9 @@ const mountScrolltoanchor = () => {
     scrollElements: '.xt-overlay, .product-gallery',
   })
 
-  // change
+  // scrollto
 
-  const change = () => {
+  const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
     const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
@@ -46,12 +46,12 @@ const mountScrolltoanchor = () => {
     })
   }
 
-  self.object.addEventListener('change.xt.scrolltoanchor', change)
+  self.object.addEventListener('scrollto.xt.scrolltoanchor', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('change.xt.scrolltoanchor', change)
+    self.object.removeEventListener('scrollto.xt.scrolltoanchor', scrollto)
     self.destroy()
     self = null
   }

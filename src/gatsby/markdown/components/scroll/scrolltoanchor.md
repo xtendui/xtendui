@@ -35,11 +35,11 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `elements:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
+| Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
 | Option                    | `scrollElements:Query`                          | `'.xt-overlay`        | Query for scroll nodes besides document (ordered parent > child)             |
-| Option                    | `class:String`                          | `'active'`        | Activation class             |
-| Option                    | `scrollDelay:Number`                          | `250`        | Delay on scroll checks             |
-| Option                    | `hash:Boolean`                          | `false`        | Update url with hash             |
+| Option                    | `class:String`                          | `'active'`        | Activation class for anchors             |
+| Option                    | `scrollDelay:Number`                          | `50`        | Delay on scroll checks             |
+| Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors             |
 | Option                    | `scrollPosition({ self }):Function`             | `<Function>`        | Positioning function return `Number`             |
 | Option                    | `scrollSpace({ self }):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
 | Option                    | `scrollDistance({ self }):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
@@ -54,7 +54,7 @@ Listen to events.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.scrolltoanchor`      | `object` | Change event            |
+| Event                   | `scrollto.xt.scrolltoanchor`      | `object` | Change event            |
 | Event                   | `init.xt.scrolltoanchor`           | `object` | Init event             |
 | Event                   | `destroy.xt.scrolltoanchor`           | `object` | Destroy event             |
 
@@ -68,7 +68,7 @@ Trigger events on **DOM elements**.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scroll.trigger.xt.scrolltoanchor`       | `scrollElement` | Scroll event             |
+| Event                   | `scrollto.trigger.xt.scrolltoanchor`       | `<any DOM node>` | Scroll to a Node also if not anchored              |
 
 </div>
 

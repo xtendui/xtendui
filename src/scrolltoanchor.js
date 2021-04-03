@@ -49,13 +49,16 @@ class Scrolltoanchor {
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
-    // click
-    let clickHandler = Xt.dataStorage.put(
+    // scrollto
+    let scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
+    addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
+    // change
+    let changeHandler = Xt.dataStorage.put(
       self.object,
       `click/${self.ns}`,
       self.eventChange.bind(self).bind(self, false, null)
     )
-    self.object.addEventListener('click', clickHandler)
+    self.object.addEventListener('click', changeHandler)
     // hash
     let hashHandler = Xt.dataStorage.put(
       window,
@@ -77,7 +80,6 @@ class Scrolltoanchor {
         } else {
           scrollElement.addEventListener('scroll', scrollHandler)
         }
-        scrollElement.addEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
         // initial
         requestAnimationFrame(() => {
           self.scrollElement = scrollElement
@@ -115,6 +117,36 @@ class Scrolltoanchor {
   }
 
   /**
+   * scrollto
+   * @param {Node|HTMLElement|EventTarget|Window} el Change element
+   * @param {Event} e
+   */
+  eventScrollto({ el = null, tr = null }, e = null) {
+    const self = this
+    const options = self.options
+    // element
+    el = el ?? e.target
+    // not null and HTML element and not window
+    if (el && el.nodeName && el !== window) {
+      self.target = tr ?? el
+      if (self.target && Xt.visible(self.target)) {
+        // vars
+        self.scrollPosition = options.scrollPosition({ self })
+        self.scrollSpace = options.scrollSpace({ self })
+        self.scrollDistance = options.scrollDistance({ self })
+        self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
+        // val
+        const min = 0
+        const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
+        self.position = self.position < min ? min : self.position
+        self.position = self.position > max ? max : self.position
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+      }
+    }
+  }
+
+  /**
    * change
    * @param {Boolean} hashchange
    * @param {Node|HTMLElement|EventTarget|Window} el Change element
@@ -123,15 +155,13 @@ class Scrolltoanchor {
   eventChange(hashchange = false, el = null, e = null) {
     const self = this
     const options = self.options
-    // reset
-    self.target = null
     // hashchange
     if (hashchange) {
       const hash = location.hash
       el = self.object.querySelector(options.elements.replace('{hash}', hash))
     }
     // check because of event propagation
-    el = el ? el : e.target
+    el = el ?? e.target
     // not null and HTML element and not window
     if (el && el.nodeName && el !== window) {
       el = el.closest(options.elements.replace('{hash}', '#'))
@@ -141,8 +171,8 @@ class Scrolltoanchor {
         if (loc.hash && loc.pathname === location.pathname) {
           if (!hashchange || location.hash === el.hash) {
             const hash = hashchange ? loc.hash : el.hash.toString()
-            self.target = self.object.querySelector(hash)
-            if (self.target && Xt.visible(self.target)) {
+            const tr = self.object.querySelector(hash)
+            if (tr) {
               // prevent page hash with automatic scroll
               if (e) {
                 e.preventDefault()
@@ -150,11 +180,15 @@ class Scrolltoanchor {
               // current scrollElement
               for (const scrollElement of self.scrollElements) {
                 if (scrollElement) {
-                  if (scrollElement.contains(self.target)) {
+                  if (scrollElement.contains(tr)) {
                     self.scrollElement = scrollElement
                     break
                   }
                 }
+              }
+              // prevent page hash with automatic scroll
+              if (options.hash && location.hash !== el.hash) {
+                history.pushState({}, '', loc.hash)
               }
               // els
               let els = Array.from(self.scrollElement.querySelectorAll(options.elements.replace('{hash}', '#')))
@@ -163,22 +197,8 @@ class Scrolltoanchor {
                 other.classList.remove(...self.classes)
               }
               el.classList.add(...self.classes)
-              // prevent page hash with automatic scroll
-              if (options.hash && location.hash !== el.hash) {
-                history.pushState({}, '', loc.hash)
-              }
-              // vars
-              self.scrollPosition = options.scrollPosition({ self })
-              self.scrollSpace = options.scrollSpace({ self })
-              self.scrollDistance = options.scrollDistance({ self })
-              self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
-              // val
-              const min = 0
-              const max = self.scrollElement.scrollHeight - self.scrollElement.clientHeight
-              self.position = self.position < min ? min : self.position
-              self.position = self.position > max ? max : self.position
-              // listener dispatch
-              self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+              // scrollto
+              self.eventScrollto({ el, tr })
             }
           }
         }
@@ -211,8 +231,6 @@ class Scrolltoanchor {
   eventScroll(scrollElement) {
     const self = this
     const options = self.options
-    // reset
-    self.target = null
     // scroll
     let found = false
     let scrollTop = scrollElement.scrollTop
@@ -221,21 +239,9 @@ class Scrolltoanchor {
     if (scrollTop + scrollElement.clientHeight >= scrollMax) {
       scrollTop = scrollMax
     }
-    // els
+    // elements
     let els = Array.from(scrollElement.querySelectorAll(options.elements.replace('{hash}', '#')))
     els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
-    // filter out other scrollElement
-    let elsFiltered = els
-    for (const scrollElementOther of self.scrollElements.filter(x => x !== scrollElement)) {
-      if (scrollElementOther) {
-        for (const el of els) {
-          if (scrollElementOther.contains(el)) {
-            elsFiltered = elsFiltered.filter(x => x !== el) // filter out ignore
-          }
-        }
-      }
-    }
-    els = elsFiltered.length > 0 ? elsFiltered : els
     // loop
     for (const el of els) {
       // event
@@ -303,19 +309,14 @@ class Scrolltoanchor {
   destroy() {
     const self = this
     // remove events
-    let clickHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
-    self.object.removeEventListener('click', clickHandler)
+    let changeHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
+    self.object.removeEventListener('click', changeHandler)
     let hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
     for (const scrollElement of self.scrollElements) {
       if (scrollElement) {
         let scrollHandler = Xt.dataStorage.get(scrollElement, `scroll/${self.ns}`)
-        if (scrollElement === document.scrollingElement) {
-          removeEventListener('scroll', scrollHandler)
-        } else {
-          scrollElement.removeEventListener('scroll', scrollHandler)
-        }
-        scrollElement.removeEventListener(`scroll.trigger.${self.componentNs}`, scrollHandler)
+        scrollElement.removeEventListener('scroll', scrollHandler)
       }
     }
     // initialized class
@@ -341,7 +342,7 @@ Scrolltoanchor.optionsDefault = {
   // class
   class: 'active',
   // event
-  scrollDelay: 75,
+  scrollDelay: 50,
   hash: false,
   // scroll
   scrollPosition: ({ self }) => {
