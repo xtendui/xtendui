@@ -22,6 +22,7 @@ const mountButtonsSwap = ({ ref }) => {
   for (const buttonSwap of buttonsSwap) {
     // vars
 
+    let self = Xt.get('xt-tooltip', buttonSwap)
     const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
     // swap
@@ -29,11 +30,8 @@ const mountButtonsSwap = ({ ref }) => {
     const swapBack = () => {
       tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
       // swap tooltip
-      let self = Xt.get('xt-tooltip', buttonSwap)
-      if (self) {
-        self.targets[0].classList.remove('hidden')
-        self.targets[1].classList.add('hidden')
-      }
+      self.targets[0].classList.remove('hidden')
+      self.targets[1].classList.add('hidden')
       // open
       tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     }
@@ -41,7 +39,6 @@ const mountButtonsSwap = ({ ref }) => {
     const swap = () => {
       tooltip.removeEventListener('offdone.xt.tooltip', swap)
       // swap
-      let self = Xt.get('xt-tooltip', buttonSwap)
       self.targets[0].classList.add('hidden')
       self.targets[1].classList.remove('hidden')
       // open
@@ -52,8 +49,8 @@ const mountButtonsSwap = ({ ref }) => {
 
     const on = () => {
       // swap
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       tooltip.addEventListener('offdone.xt.tooltip', swap)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 
     buttonSwap.addEventListener('on.xt.toggle', on, true)
@@ -62,8 +59,8 @@ const mountButtonsSwap = ({ ref }) => {
 
     const off = () => {
       // swap back
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
       tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 
     buttonSwap.addEventListener('off.xt.toggle', off, true)

@@ -51,7 +51,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
                         }}></a>
-                      <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
                           className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Twitter
@@ -68,7 +68,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
                         }}></a>
-                      <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
                           className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Npm
@@ -85,7 +85,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),
                         }}></a>
-                      <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
                           className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                           Visit on Github
@@ -140,7 +140,7 @@ export default function Header({ page }) {
                           className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
                           Html
                         </button>
-                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Switch to Html
@@ -153,7 +153,7 @@ export default function Header({ page }) {
                           className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 active:border-primary-700 active:bg-primary-700 transition`}>
                           React
                         </button>
-                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Switch to React

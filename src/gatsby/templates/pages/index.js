@@ -76,7 +76,7 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconTwitter(),
                           }}></a>
-                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Twitter
@@ -93,7 +93,7 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconPackage(),
                           }}></a>
-                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Npm
@@ -110,7 +110,7 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconGithub(),
                           }}></a>
-                        <div className="xt-tooltip p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0`}>
                             Visit on Github

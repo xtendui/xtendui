@@ -22,6 +22,53 @@ document.addEventListener('click', e => {
 })
 
 /**
+ * tooltip animation-fast
+ */
+
+Xt.mount({
+  matches: '.xt-tooltip--gatsby',
+  mount: ({ ref, obj }) => {
+    // vars
+
+    const tooltip = ref
+    const object = tooltip.closest('[data-xt-tooltip]')
+    let timeout
+    const delay = 2000
+    const duration = 75
+    const durationDefault = 300
+
+    // fix only once when tooltip has multiple targets
+
+    if (!object || object.dataset.onlyOnceDone) return
+    object.dataset.onlyOnceDone = 'true'
+
+    // on
+
+    const on = e => {
+      const tooltips = document.querySelectorAll(obj.matches)
+      // make other tooltips fast
+      const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
+      for (const tooltip of tooltipsOther) {
+        tooltip.setAttribute('data-xt-duration', duration)
+        const inner = tooltip.querySelector(':scope > *')
+        inner.style.transitionDuration = `${duration}ms`
+      }
+      // make all tooltips normal
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        for (const tooltip of tooltips) {
+          tooltip.setAttribute('data-xt-duration', durationDefault)
+          const inner = tooltip.querySelector(':scope > *')
+          inner.style.transitionDuration = ''
+        }
+      }, delay)
+    }
+
+    tooltip.addEventListener('on.xt.tooltip', on)
+  },
+})
+
+/**
  * switcher
  */
 
@@ -30,12 +77,12 @@ Xt.mount({
   mount: ({ ref }) => {
     // click
 
-    const eventClick = () => {
+    const click = () => {
       localStorage.setItem('mode', false)
       window.location.reload()
     }
 
-    ref.addEventListener('click', eventClick)
+    ref.addEventListener('click', click)
 
     // init
 
@@ -50,12 +97,12 @@ Xt.mount({
   mount: ({ ref }) => {
     // click
 
-    const eventClick = () => {
+    const click = () => {
       localStorage.setItem('mode', 'react')
       window.location.reload()
     }
 
-    ref.addEventListener('click', eventClick)
+    ref.addEventListener('click', click)
 
     // init
 
@@ -331,7 +378,7 @@ Xt.mount({
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--close-${closeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
+<div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
   <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
     Close Fullscreen
   </div>

@@ -12,9 +12,9 @@ Xt.mount({
     const name = ref.getAttribute('name')
     const inputs = document.querySelectorAll(`[name="${name}"]`)
 
-    // eventChange
+    // change
 
-    const change = input => {
+    const toggle = input => {
       const label = input.closest('label')
       if (input.checked) {
         label.classList.add('active')
@@ -23,18 +23,18 @@ Xt.mount({
       }
     }
 
-    const eventChange = ({ initial = false }) => {
+    const change = ({ initial = false }) => {
       if (!initial && inputs.length) {
         for (const input of inputs) {
-          change(input)
+          toggle(input)
         }
       } else {
-        change(ref)
+        toggle(ref)
       }
     }
 
-    ref.addEventListener('change', eventChange.bind(null, { initial: false }))
-    eventChange({ initial: true })
+    ref.addEventListener('change', change.bind(null, { initial: false }))
+    change({ initial: true })
   },
 })
 
@@ -53,7 +53,7 @@ Xt.mount({
 
     // valid
 
-    const eventChange = e => {
+    const change = e => {
       const item = e.target
       if (item.dataset.xtValidate === 'true') {
         item.classList.add('xt-form-valid')
@@ -63,44 +63,44 @@ Xt.mount({
     }
 
     for (const item of items) {
-      item.addEventListener('input', eventChange)
-      item.addEventListener('change', eventChange)
+      item.addEventListener('input', change)
+      item.addEventListener('change', change)
     }
 
     // invalid
 
-    const eventScroll = () => {
+    const scroll = () => {
       window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * scrollWindowFactor)
     }
 
-    const eventInvalid = e => {
+    const invalid = e => {
       const item = e.target
       item.classList.remove('xt-form-valid')
       item.classList.add('xt-form-invalid')
       item.dataset.xtValidate = 'true'
       // scroll to views
-      addEventListener('scroll', eventScroll)
+      addEventListener('scroll', scroll)
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
-        removeEventListener('scroll', eventScroll)
+        removeEventListener('scroll', scroll)
       })
     }
 
-    const eventSubmit = () => {
+    const submit = () => {
       for (const item of items) {
         delete item.dataset.xtValidate
       }
     }
 
     for (const item of items) {
-      item.addEventListener('invalid', eventInvalid)
-      item.addEventListener('submit', eventSubmit)
+      item.addEventListener('invalid', invalid)
+      item.addEventListener('submit', submit)
     }
 
     // unmount
 
     return () => {
-      removeEventListener('scroll', eventScroll)
+      removeEventListener('scroll', scroll)
     }
   },
 })

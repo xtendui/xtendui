@@ -1275,7 +1275,7 @@ Slider.optionsDefault = {
   },
   zIndex: {
     targets: {
-      start: 50, // same as options.zIndex.targets.start
+      start: 200, // same as options.zIndex.targets.start
       factor: -1,
     },
   },

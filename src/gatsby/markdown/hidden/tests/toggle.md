@@ -44,6 +44,8 @@ Test activation.
   </demoinline>
   <demoinline src="demos/components/tooltip/swap-toggle">
   </demoinline>
+  <demoinline src="demos/components/tooltip/activation-fast">
+  </demoinline>
 </demo>
 
 ## Class

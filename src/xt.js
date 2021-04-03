@@ -121,9 +121,9 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} added
    */
   Xt.mountCheck = (added = document.documentElement) => {
-    for (const object of Xt.mountArr) {
+    for (const obj of Xt.mountArr) {
       // ignore
-      const ignoreStr = object.ignore ? object.ignore : object.ignore === false ? false : '.xt-ignore'
+      const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
       if (ignoreStr) {
         const ignore = added.closest(ignoreStr)
         if (ignore) {
@@ -133,35 +133,35 @@ if (typeof window !== 'undefined') {
       }
       // check
       const refs = []
-      if (added.matches(object.matches)) {
+      if (added.matches(obj.matches)) {
         refs.push(added)
       }
-      for (const ref of added.querySelectorAll(object.matches)) {
+      for (const ref of added.querySelectorAll(obj.matches)) {
         refs.push(ref)
       }
       // call
       if (refs.length) {
         for (const [index, ref] of refs.entries()) {
           // fix multiple initialization
-          object.done = object.done ? object.done : []
-          if (object.done.includes(ref)) {
+          obj.done = obj.done ? obj.done : []
+          if (obj.done.includes(ref)) {
             return
           }
-          object.done.push(ref)
+          obj.done.push(ref)
           // call
-          const call = object.mount({ ref, object, index })
+          const call = obj.mount({ ref, obj, index })
           // destroy
           if (call) {
             Xt.unmount({
               ref: ref,
-              matches: object.matches,
+              matches: obj.matches,
               unmount: call,
               unmountRemove: () => {
                 // fix multiple initialization
-                object.done = object.done.filter(x => x !== ref)
+                obj.done = obj.done.filter(x => x !== ref)
                 // unmount remove
                 Xt.unmountArr = Xt.unmountArr.filter(x => {
-                  return x.ref !== ref && x.matches !== object.matches
+                  return x.ref !== ref && x.matches !== obj.matches
                 })
               },
             })
@@ -176,15 +176,15 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} removed
    */
   Xt.unmountCheck = (removed = document.documentElement) => {
-    for (const object of Xt.unmountArr) {
+    for (const obj of Xt.unmountArr) {
       // check
-      if (removed === object.ref || removed.contains(object.ref)) {
-        if (object.ref.closest('.xt-ignore')) {
+      if (removed === obj.ref || removed.contains(obj.ref)) {
+        if (obj.ref.closest('.xt-ignore')) {
           return
         }
         // call
-        object.unmount(object)
-        object.unmountRemove()
+        obj.unmount(obj)
+        obj.unmountRemove()
       }
     }
   }

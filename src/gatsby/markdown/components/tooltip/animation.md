@@ -88,3 +88,12 @@ Use `.xt-tooltip-inner` and assign design styles to `.xt-design` when you want t
   <demoinline src="demos/components/tooltip/animation-design">
   </demoinline>
 </demo>
+
+## Animation Fast
+
+Use this code to create **tooltips with fast animation on sequential interactions**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/animation-fast">
+  </demoinline>
+</demo>

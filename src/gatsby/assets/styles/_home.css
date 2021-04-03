@@ -88,8 +88,11 @@
 /* social */
 
 .gatsby_home-main_social {
-  @apply xt-list xt-list-3 mt-6;
+  @apply xt-list mt-6;
   justify-content: center;
+  .gatsby_home-main_social_btn {
+    @apply px-3;
+  }
   svg {
     width: 2em;
     height: 2em;

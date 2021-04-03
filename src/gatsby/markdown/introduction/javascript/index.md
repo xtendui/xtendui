@@ -115,7 +115,7 @@ Here's **mount function arguments**.
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Variable                  | `ref:Node`       | Mounted node                 |
-| Variable                  | `object:Object`       | Mounted object                 |
+| Variable                  | `obj:Object`       | Mounted object                 |
 | Variable                  | `index:Number`       | Mounted index on the same mount                 |
 
 </div>
@@ -126,7 +126,7 @@ Here's **mount function arguments**.
 ```js
 Xt.mount({
   matches: '.my-query',
-  mount: ({ ref, object, index }) => {
+  mount: ({ ref, obj, index }) => {
     // logic
 
     console.debug('mounted', ref)
@@ -223,11 +223,13 @@ dispatchEvent(new CustomEvent('resize', { detail: { container: document.querySel
 If you want to listen to it, this example explains the listener with a container check.
 
 ```js
-const checkResize = document.querySelector('.my-element')
-const eventResize = function (e) {
-  if (!e?.detail?.container || e.detail.container.contains(checkResize)) {
+const resizeCheck = document.querySelector('.my-element')
+
+const resize = function (e) {
+  if (!e?.detail?.container || e.detail.container.contains(resizeCheck)) {
     // logic
   }
 }
-document.querySelector.addEventListener(eventResize)
+
+document.querySelector.addEventListener(resize)
 ```

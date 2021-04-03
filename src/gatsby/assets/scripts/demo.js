@@ -289,12 +289,12 @@ const populateDemo = container => {
     <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
       ${classes.iconCode()}
     </button>
-    <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
+    <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
       <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
         Show Code
       </div>
     </div>
-    <div id="tooltip--show-code--off-${showCodeUid}" style="display: none" class="xt-tooltip p-2 group" data-xt-duration="300">
+    <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
       <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
         Hide Code
       </div>
@@ -307,7 +307,7 @@ const populateDemo = container => {
     <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
       ${classes.iconMaximize()}
     </button>
-    <div class="xt-tooltip p-2 group" data-xt-duration="300">
+    <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
       <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
         Open Fullscreen
       </div>
@@ -320,7 +320,7 @@ const populateDemo = container => {
     <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
       ${classes.iconExternal()}
     </a>
-    <div class="xt-tooltip p-2 group" data-xt-duration="300">
+    <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
       <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
         Open Iframe
       </div>
@@ -359,12 +359,12 @@ const populateDemo = container => {
           <button type="button" class="xt-button xt-button-clipboard" aria-label="Copy to Clipboard">
             ${classes.iconCopy()}
           </button>
-          <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip p-2 group" data-xt-duration="300">
+          <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
             <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
-          <div id="tooltip--clipboard--off-${clipboardUid}" style="display: none" class="xt-tooltip p-2 group" data-xt-duration="300">
+          <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
             <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
               Copied!
             </div>
@@ -441,34 +441,9 @@ const populateDemo = container => {
         if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
           Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
           e.clearSelection()
-          // tooltip
-          const btn = btnClipboard
-          const tooltip = btn.closest('[data-xt-tooltip]')
-          // close tooltip
-          tooltip.dispatchEvent(
-            new CustomEvent('off.trigger.xt.tooltip', {
-              detail: { skip: true },
-            })
-          )
-          // swap tooltip
-          let self = Xt.get('xt-tooltip', tooltip)
-          if (self) {
-            self.targets[0].style.display = 'none'
-            self.targets[1].style.display = 'block'
-            // open tooltip
-            tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-          }
-        }
-      })
-      const tooltip = btnClipboard.closest('[data-xt-tooltip]')
-      tooltip.addEventListener('off.xt.tooltip', e => {
-        if (!e?.detail?.skip) {
-          // swap tooltip
-          let self = Xt.get('xt-tooltip', tooltip)
-          if (self) {
-            self.targets[0].style.display = ''
-            self.targets[1].style.display = 'none'
-          }
+          // tooltip swap-click
+          const object = btnClipboard.closest('[data-xt-tooltip]')
+          swapClick({ tooltip: object.querySelector('.xt-tooltip'), self: Xt.get('xt-tooltip', object) })
         }
       })
     }
@@ -503,25 +478,92 @@ const populateDemo = container => {
     targets: `#${demoId} .gatsby_demo_code`,
     queue: false,
   })
-  btnCode.addEventListener('click', function () {
-    const btn = this
-    const tooltip = btn.closest('[data-xt-tooltip]')
-    // close tooltip
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    // swap tooltip
-    let self = Xt.get('xt-tooltip', tooltip)
-    if (self) {
-      if (btn.classList.contains('in')) {
-        self.targets[0].style.display = 'none'
-        self.targets[1].style.display = ''
-      } else {
-        self.targets[0].style.display = ''
-        self.targets[1].style.display = 'none'
-      }
-      // open tooltip
-      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-    }
+  // tooltip swap toggle
+  const object = btnCode.closest('[data-xt-tooltip]')
+  object.addEventListener('init.xt.tooltip', () => {
+    swapToggle({
+      tooltip: object.querySelector('.xt-tooltip'),
+      self: Xt.get('xt-tooltip', object),
+      buttonSwap: btnCode,
+    })
   })
+}
+
+/**
+ * swapClick
+ */
+
+const swapClick = ({ tooltip, self }) => {
+  // swap
+
+  const swapBack = () => {
+    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
+    // swap tooltip
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
+  }
+
+  const swap = () => {
+    tooltip.removeEventListener('offdone.xt.tooltip', swap)
+    // swap
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
+    // open
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    // swap back
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+  }
+
+  // swap
+
+  tooltip.addEventListener('offdone.xt.tooltip', swap)
+  tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+}
+
+/**
+ * swapToggle
+ */
+
+const swapToggle = ({ tooltip, self, buttonSwap }) => {
+  // swap
+
+  const swapBack = () => {
+    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
+    // swap tooltip
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
+    // open
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+  }
+
+  const swap = () => {
+    tooltip.removeEventListener('offdone.xt.tooltip', swap)
+    // swap
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
+    // open
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+  }
+
+  // on
+
+  const on = () => {
+    // swap
+    tooltip.addEventListener('offdone.xt.tooltip', swap)
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  buttonSwap.addEventListener('on.xt.toggle', on, true)
+
+  // off
+
+  const off = () => {
+    // swap back
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  buttonSwap.addEventListener('off.xt.toggle', off, true)
 }
 
 /**
