@@ -15,14 +15,16 @@ Initialize with **javascript** with `new Xt.Stickyflow(document.querySelector('.
 
 ## Usage
 
-[[notePrimary]]
-| This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
-
 Use this code to create a **sticky flow** (use large screen to see it in action).
 
 Pratically it's a solution that **scrolls sticky content** when it **overflow the window**, following scroll direction.
 
+Be sure that `sticky` parent has not `overflow-hidden` or `position: sticky;` doesn't work.
+
 Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
+
+[[notePrimary]]
+| This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/stickyflow">

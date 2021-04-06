@@ -593,10 +593,10 @@ class Toggle {
         )
         jump.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
         // jump
-        if (!self.disabled) {
-          jump.classList.add('xt-jump')
-        } else {
+        if (self.disabled) {
           jump.classList.remove('xt-jump')
+        } else {
+          jump.classList.add('xt-jump')
         }
       }
     }
@@ -1668,16 +1668,18 @@ class Toggle {
    * jump
    * @param {Node|HTMLElement|EventTarget|Window} tr
    */
-  eventJump(tr) {
+  eventJump(tr, e) {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // check disabled
-    if (tr.closest('.xt-jumps-none')) {
+    if (tr.classList.contains(...self.classes) || !tr.classList.contains('xt-jump')) {
       return
     }
+    // prevent default
+    e.preventDefault()
     // jump
     const element = self.getElements(tr)[0]
     if (self.checkOn(element)) {
@@ -3100,6 +3102,12 @@ class Toggle {
       if (options.aria === true || options.aria.activation) {
         for (const el of self.elements) {
           el.setAttribute('aria-disabled', 'true')
+        }
+      }
+      // jump
+      if (options.jump) {
+        for (const jump of self.targets) {
+          jump.classList.remove('xt-jump')
         }
       }
       // listener dispatch

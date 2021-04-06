@@ -51,17 +51,9 @@ module.exports = {
       '&:not(.in)': {
         cursor: 'pointer',
       },
-      '&.xt-jumps-none, .xt-jumps-none &': {
-        cursor: 'inherit',
-      },
     },
     '.xt-pointer-events-none': {
       pointerEvents: 'none',
-    },
-    '.xt-links-none': {
-      'a&, a': {
-        pointerEvents: 'none',
-      },
     },
     '.xt-grab': {
       cursor: 'grab',

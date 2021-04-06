@@ -44,13 +44,6 @@ Test in overflow-auto-false wrap disabled when not overflowing.
   </demoinline>
 </demo>
 
-Test auto.
-
-<demo>	
-  <demoinline src="demos/components/slider/progress">	
-  </demoinline>	
-</demo>	
-
 Test scroll position.
 
 Test wrap.
@@ -67,6 +60,6 @@ Test no loop.
 Test autoheight.
 
 <demo>	
-  <demoinline src="demos/components/slider/progress">	
+  <demoinline src="demos/components/slider/other">	
   </demoinline>	
 </demo>	

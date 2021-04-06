@@ -111,10 +111,12 @@ Test position and visibility.
 
 Test auto.
 
-<demo>
+<demo>	
+  <demoinline src="demos/components/slider/progress">	
+  </demoinline>
   <demoinline src="demos/components/toggle/auto">
   </demoinline>
-</demo>
+</demo>	
 
 ## Class Html
 

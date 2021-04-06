@@ -135,7 +135,7 @@ Use `loop: false` to disable looping on activation.
 
 ## Jump
 
-Use `jump: true` to enable clicking on a **target** to jump to them. You can disable jump interaction on single targets with the class `.xt-jumps-none`.
+Use `jump: true` to enable clicking on a **target** to jump to them.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
