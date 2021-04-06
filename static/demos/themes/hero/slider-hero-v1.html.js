@@ -12,7 +12,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -24,9 +23,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
 
           <div class="xt-slide w-full">
@@ -36,7 +32,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -52,9 +47,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
 
           <div class="xt-slide w-full">
@@ -64,7 +56,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -76,9 +67,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
 
           <div class="xt-slide w-full">
@@ -88,7 +76,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div
@@ -106,9 +93,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
 
           <div class="xt-slide w-full">
@@ -118,9 +102,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-l from-transparent to-black opacity-50"
-                  ></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div
@@ -138,9 +119,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
 
           <div class="xt-slide w-full in-slider">
@@ -150,9 +128,6 @@ const html = /* HTML */ `
                   <div class="xt-media-inner">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent to-black opacity-50"
-                  ></div>
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div
@@ -170,9 +145,6 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-            <div
-              class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-            ></div>
           </div>
         </div>
       </div>

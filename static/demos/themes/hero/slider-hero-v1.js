@@ -30,13 +30,12 @@ const mountSlider = ({ ref }) => {
   const maskInnerPercent = 50
   const maskInnerOpacity = 0.65
 
-  const assetZoom = 0.5
-
   // slider
 
   let self = new Xt.Slider(ref, {
     duration: dragTime * 1000,
     mode: 'absolute',
+    loop: false,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -77,12 +76,6 @@ const mountSlider = ({ ref }) => {
       x: `${maskInnerPercent * self.detail.dragRatio * self.direction}%`,
       opacity: 1 - maskInnerOpacity * self.detail.dragRatio,
     })
-    // asset
-    const asset = tr.querySelector('.xt-media')
-    gsap.killTweensOf(asset)
-    gsap.set(asset, {
-      scale: 1 + assetZoom * self.detail.dragRatio,
-    })
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming')
@@ -102,12 +95,6 @@ const mountSlider = ({ ref }) => {
       gsap.set(maskInner, {
         x: `${-maskInnerPercent * self.detail.dragRatioInverse * self.direction}%`,
         opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
-      })
-      // asset
-      const asset = incoming.querySelector('.xt-media')
-      gsap.killTweensOf(asset)
-      gsap.set(asset, {
-        scale: 1 + assetZoom * self.detail.dragRatioInverse,
       })
     }
   }
@@ -132,13 +119,6 @@ const mountSlider = ({ ref }) => {
       duration: dragTime,
       ease: dragEase,
     })
-    // asset
-    const asset = tr.querySelector('.xt-media')
-    gsap.to(asset, {
-      scale: 1,
-      duration: dragTime,
-      ease: dragEase,
-    })
     // incomings
     const incomings = self.targets.filter(x => x.classList.contains('incoming'))
     for (const incoming of incomings) {
@@ -153,13 +133,6 @@ const mountSlider = ({ ref }) => {
       gsap.to(maskInner, {
         x: `${-maskInnerPercent * self.direction}%`,
         opacity: 1 - maskInnerOpacity,
-        duration: dragTime,
-        ease: dragEase,
-      })
-      // asset
-      const asset = incoming.querySelector('.xt-media')
-      gsap.to(asset, {
-        scale: 1 + assetZoom,
         duration: dragTime,
         ease: dragEase,
       })
@@ -200,17 +173,6 @@ const mountSlider = ({ ref }) => {
           duration: dragTime,
           ease: dragEase,
         })
-        // asset
-        const asset = tr.querySelector('.xt-media')
-        gsap.killTweensOf(asset)
-        gsap.set(asset, {
-          scale: 1 + assetZoom * self.detail.dragRatioInverse,
-        })
-        gsap.to(asset, {
-          scale: 1,
-          duration: dragTime,
-          ease: dragEase,
-        })
       })
     }
   }
@@ -237,13 +199,6 @@ const mountSlider = ({ ref }) => {
         duration: dragTime,
         ease: dragEase,
       })
-      // asset
-      const asset = tr.querySelector('.xt-media')
-      gsap.to(asset, {
-        scale: 1 + assetZoom,
-        duration: dragTime,
-        ease: dragEase,
-      })
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -259,13 +214,6 @@ const mountSlider = ({ ref }) => {
         gsap.to(maskInner, {
           x: `${maskInnerPercent * self.direction}%`,
           opacity: 1 - maskInnerOpacity,
-          duration: dragTime,
-          ease: dragEase,
-        })
-        // asset
-        const asset = incoming.querySelector('.xt-media')
-        gsap.to(asset, {
-          scale: 1 + assetZoom,
           duration: dragTime,
           ease: dragEase,
         })
