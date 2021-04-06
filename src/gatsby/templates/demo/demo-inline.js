@@ -9,9 +9,6 @@ export default class DemoInline extends React.Component {
 
   componentDidMount() {
     this.container = this.ref.current
-    if (this.overflowHidden) {
-      this.container.classList.add('overflow-hidden')
-    }
   }
 
   render() {
@@ -22,7 +19,6 @@ export default class DemoInline extends React.Component {
     // vanilla
     const object = require(`static/${src}.html.js`).object
     const html = object.html
-    this.overflowHidden = object.overflowHidden
     try {
       require(`static/${src}.js`).default
       // eslint-disable-next-line no-empty

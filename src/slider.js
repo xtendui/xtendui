@@ -118,12 +118,12 @@ class Slider extends Xt.Toggle {
     self.group = []
     self.group.push([])
     let currentCount = draggerWidthAvailable
-    self.detail.availableSpace = self.detail.draggerWidth
+    self.detail.availableSpace = -self.detail.draggerWidth
     let doneFirst = false
     for (const target of self.targets) {
       let targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
       currentCount -= targetWidth
-      self.detail.availableSpace -= targetWidth
+      self.detail.availableSpace += targetWidth
       // overflow
       let currentGroup = self.group.length - 1
       if (currentCount < 0 && self.group[currentGroup].length) {
@@ -146,7 +146,7 @@ class Slider extends Xt.Toggle {
     self.detail.moveLast = self.group.length - 1
     // disable slider if not overflowing
     if (options.overflowAuto) {
-      if (self.detail.availableSpace >= 0) {
+      if (self.detail.availableSpace < 0) {
         self.object.classList.add('xt-overflow-auto')
         self.disable()
       } else {
@@ -651,17 +651,13 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // logic
-    if (options.drag.wrap && !options.drag.manual && self.detail.availableSpace < 0) {
+    if (options.drag.wrap && !options.drag.manual && self.detail.availableSpace >= 0) {
       const index = self.currentIndex
       const slide = self.group[index][0]
       const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
       // direction
-      let dir = self.direction
-      if (!dir) {
-        // fix initial direction
-        dir = -1
-      }
+      let dir = self.direction || -1 // fix initial direction
       self.eventMove({ index: false, dir, pos, width, movingSpace: width })
     }
   }
