@@ -52,9 +52,6 @@ module.exports = {
         cursor: 'pointer',
       },
     },
-    '.xt-pointer-events-none': {
-      pointerEvents: 'none',
-    },
     '.xt-grab': {
       cursor: 'grab',
       'a, img': {
