@@ -15,7 +15,7 @@
     }
     /* out */
     &.out {
-      @apply opacity-0 xt-transition-none;
+      @apply opacity-0 transition-none;
       &.direction-before {
         @apply -translate-x-4;
       }

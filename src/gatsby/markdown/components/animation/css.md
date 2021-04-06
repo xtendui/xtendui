@@ -6,21 +6,6 @@ title: "Css"
 date: "2050-10-10"
 ---
 
-## Utilities
-
-These are general **component utilities**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-transform-none`                     | `xt-transform-none`                | `responsive`                | Disable transform (!important)            |
-| Utility                  | `.xt-transition-none`                     | `xt-transition-none`                | `responsive`                | Disable transition (!important)            |
-| Utility                  | `.xt-animate-none`                     | `xt-animate-none`                | `responsive`                | Disable animation (!important)            |
-| Utility                  | `.xt-duration-none`                     | `xt-duration-none`                | `responsive`                | Instant transitions and animations (!important)            |
-
-</div>
-
 ## Timing Function
 
 We add in theme additional easing on [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).

@@ -94,23 +94,4 @@ module.exports = {
       },
     },
   }),
-  variants: ['responsive'],
-  utility: {
-    '.xt-transform-none': {
-      transform: 'none !important',
-    },
-    '.xt-transition-none': {
-      transition: 'none !important',
-    },
-    '.xt-animate-none': {
-      animation: 'none !important',
-    },
-    '.xt-duration-none': {
-      transitionDuration: 'initial !important',
-      transitionDelay: 'initial !important',
-      animationDuration: 'initial !important',
-      animationDelay: 'initial !important',
-      animationIterationCount: '1 !important',
-    },
-  },
 }
