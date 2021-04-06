@@ -85,7 +85,9 @@ class Slider extends Xt.Toggle {
       if (i === 0) {
         fixNegativeMargin = slideLeft
       }
-      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slideLeft - fixNegativeMargin)
+      const left = slideLeft - fixNegativeMargin
+      Xt.dataStorage.set(slide, `${self.ns}SlidePos`, left)
+      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left)
       Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
     }
     // initSliderGroup
@@ -165,36 +167,35 @@ class Slider extends Xt.Toggle {
     // reset done
     for (const slide of self.targets) {
       Xt.dataStorage.remove(slide, `${self.ns}GroupPosDone`)
-      Xt.dataStorage.remove(slide, `${self.ns}GroupContainDone`)
     }
     // @PERF
     for (const slide of self.targets) {
       Xt.dataStorage.set(slide, `${self.ns}SlideHeight`, slide.children[0].offsetHeight)
     }
     // slides pos
-    let slidesWidth = 0
+    let usedWidth = 0
     for (const slide of self.targets) {
       // once per group
       if (!Xt.dataStorage.get(slide, `${self.ns}GroupPosDone`)) {
         // vars
+        const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
         const targets = self.getTargets(slide)
         let slideLeft = Infinity
-        let slideWidth = 0
+        let groupWidth = 0
         let slideHeight = 0
         let slideHeightTemp = 0
         // vars
         for (const target of targets) {
           // @PERF
           const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
-          const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
           slideLeft = tl < slideLeft ? sl : slideLeft
           if (options.mode === 'absolute') {
             // when absolute mode make fake positions as if all items displaced inside dragger
-            slideLeft += slidesWidth
+            slideLeft += usedWidth
           }
-          slideWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+          groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
           slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
-          slidesWidth += slideWidth
+          usedWidth += groupWidth
           slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
         }
         for (const target of targets) {
@@ -204,21 +205,21 @@ class Slider extends Xt.Toggle {
         // pos with alignment
         let pos
         if (options.align === 'center') {
-          pos = self.detail.draggerWidth / 2 - slideLeft - slideWidth / 2
+          pos = self.detail.draggerWidth / 2 - slideLeft - groupWidth / 2
         } else if (options.align === 'left') {
           pos = -slideLeft
         } else if (options.align === 'right') {
-          pos = self.detail.draggerWidth - slideLeft - slideWidth
+          pos = self.detail.draggerWidth - slideLeft - groupWidth
         }
         // save pos
         for (const target of targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
-          Xt.dataStorage.set(target, `${self.ns}GroupWidth`, slideWidth)
+          Xt.dataStorage.set(target, `${self.ns}GroupPos`, Math.ceil(pos))
+          Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
         }
       }
     }
     // min max pos with contain
-    if (options.contain && slidesWidth > self.detail.draggerWidth) {
+    if (options.contain && usedWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
       const firstLeft = Xt.dataStorage.get(first, `${self.ns}SlideLeft`)
       const lastLeft = Xt.dataStorage.get(last, `${self.ns}SlideLeft`)
@@ -230,43 +231,49 @@ class Slider extends Xt.Toggle {
       for (let i = 0; i < self.group.length; i++) {
         const group = self.group[i]
         for (const slide of group) {
-          // once per group
-          if (!Xt.dataStorage.get(slide, `${self.ns}GroupContainDone`)) {
-            let pos = Math.ceil(Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
-            if (pos >= min) {
-              pos = min
-              // reassign group
-              const firstIndex = 0
-              if (i > firstIndex) {
-                for (const target of group) {
-                  self.group[firstIndex].push(target)
-                  target.setAttribute('data-xt-group', `${self.ns}-${firstIndex}`)
-                }
-                self.group.splice(i, 1)
-                // splice reindex
-                i--
-                iRemoved++
+          let pos = Math.ceil(Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
+          if (pos >= min) {
+            pos = min
+            // reassign group
+            const firstIndex = 0
+            if (i > firstIndex) {
+              for (const target of group) {
+                self.group[firstIndex].push(target)
+                target.setAttribute('data-xt-group', `${self.ns}-${firstIndex}`)
               }
-            } else if (pos <= max) {
-              pos = max
-              // reassign group
-              const lastIndex = self.group.length - 1 - iRemoved
-              if (i < lastIndex) {
-                for (const target of group) {
-                  self.group[lastIndex].push(target)
-                  target.setAttribute('data-xt-group', `${self.ns}-${lastIndex}`)
-                }
-                self.group.splice(i, 1)
-                // splice reindex
-                i--
-                iRemoved++
-              }
+              self.group.splice(i, 1)
+              // splice reindex
+              i--
+              iRemoved++
             }
-            for (const target of group) {
-              Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
-              Xt.dataStorage.set(target, `${self.ns}GroupContainDone`, true)
+          } else if (pos <= max) {
+            pos = max
+            // reassign group
+            const lastIndex = self.group.length - 1 - iRemoved
+            if (i < lastIndex) {
+              for (const target of group) {
+                self.group[lastIndex].push(target)
+                target.setAttribute('data-xt-group', `${self.ns}-${lastIndex}`)
+              }
+              self.group.splice(i, 1)
+              // splice reindex
+              i--
+              iRemoved++
             }
           }
+          Xt.dataStorage.set(slide, `${self.ns}GroupPos`, pos)
+        }
+      }
+      // save pos
+      for (const group of self.group) {
+        let groupWidth = 0
+        let pos = Xt.dataStorage.get(group[0], `${self.ns}GroupPos`)
+        for (const target of group) {
+          groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+        }
+        for (const target of group) {
+          Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+          Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
         }
       }
       // groupInitial
@@ -620,23 +627,13 @@ class Slider extends Xt.Toggle {
     // jump activation
     if (!options.drag.manual) {
       if (options.jump) {
-        for (const target of self.targets) {
-          let pos = Xt.dataStorage.get(target, `${self.ns}GroupPos`)
-          const width = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-          const moveAlignCenter = self.detail.draggerWidth / 2 - width / 2
-          const moveAlignNone = 0
-          const moveAlignFull = self.detail.draggerWidth - width
-          if (options.align === 'center') {
-            pos -= moveAlignCenter
-          } else if (options.align === 'left') {
-            pos -= moveAlignNone
-          } else if (options.align === 'right') {
-            pos -= moveAlignFull
-          }
-          if (pos > self.detail.dragFinal || pos - width < self.detail.dragFinal - self.detail.draggerWidth) {
-            target.classList.add('xt-jump')
+        for (const slide of self.targets) {
+          const pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)
+          const width = Xt.dataStorage.get(slide, `${self.ns}SlideWidth`)
+          if (pos < -self.detail.dragFinal || pos + width > -self.detail.dragFinal + self.detail.draggerWidth) {
+            slide.classList.add('xt-jump')
           } else {
-            target.classList.remove('xt-jump')
+            slide.classList.remove('xt-jump')
           }
         }
       }
@@ -725,7 +722,6 @@ class Slider extends Xt.Toggle {
     // set new activation pos
     for (const tr of moveGroup) {
       Xt.dataStorage.set(tr, `${self.ns}GroupPos`, movePos)
-      console.log(tr, movePos)
     }
     // move translate
     const moveAlignCenter = self.detail.draggerWidth / 2 - width / 2
@@ -740,6 +736,11 @@ class Slider extends Xt.Toggle {
     }
     for (const tr of moveGroup) {
       tr.style.transform = `translateX(${translate}px)`
+    }
+    // set new activation pos
+    for (const tr of moveGroup) {
+      const slideLeft = Xt.dataStorage.get(tr, `${self.ns}SlideLeft`)
+      Xt.dataStorage.set(tr, `${self.ns}SlidePos`, slideLeft + translate)
     }
     // keep index of moved slides
     self.detail.moveFirst =
@@ -779,15 +780,6 @@ class Slider extends Xt.Toggle {
    */
   eventMediaLoadedReinit() {
     const self = this
-    // mediaLoaded
-    // @PERF
-    for (const slide of self.targets) {
-      // needs to recalculate
-      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slide.offsetLeft)
-      Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slide.offsetWidth)
-      Xt.dataStorage.set(slide, `${self.ns}SlideHeight`, slide.children[0].offsetHeight)
-    }
-    //console.debug('Xt.debug mediaLoadedReinit', self.object)
     // restart
     self.reinit()
   }
