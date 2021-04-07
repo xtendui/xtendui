@@ -593,9 +593,7 @@ class Toggle {
         )
         jump.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
         // jump
-        if (self.disabled) {
-          jump.classList.remove('xt-jump')
-        } else {
+        if (!self.disabled) {
           jump.classList.add('xt-jump')
         }
       }
@@ -843,6 +841,10 @@ class Toggle {
    */
   eventJumpHandler(tr, e) {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // handler

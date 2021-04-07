@@ -45,7 +45,9 @@ class Slider extends Xt.Toggle {
     self.dragger = self.object.querySelector(options.drag.dragger)
     self.destroyElements.push(self.dragger)
     // grab
-    self.dragger.classList.add('xt-grab')
+    if (!self.disabled) {
+      self.dragger.classList.add('xt-grab')
+    }
     // not jump in absolute mode
     if (options.mode === 'absolute') {
       options.jump = false
@@ -633,7 +635,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // jump activation
-    if (!options.drag.manual) {
+    if (!self.disabled && !options.drag.manual) {
       if (options.jump) {
         for (const slide of self.targets) {
           const pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)

@@ -6,7 +6,6 @@
       overflow-y: hidden !important;
     }
     .xt-slides-inner {
-      cursor: auto !important;
       transform: none !important;
       transition: none !important;
     }
