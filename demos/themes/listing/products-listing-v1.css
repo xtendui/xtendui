@@ -1,11 +1,7 @@
-#iframe--products-listing-v1 {
-  /*##START*/
-  body:not(.xt-noscroll) {
-    /* add here all fade selectors css and js */
+.demo--products-listing-v1, .demo--products-listing-v1-react {
+  body:not(.xt-noscroll) & {
     .listing-item {
       opacity: 0;
     }
   }
-  /*##END*/
 }
-

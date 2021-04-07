@@ -1,0 +1,8 @@
+
+.demo--fade-distance, .demo--fade-distance-react {
+  body:not(.xt-noscroll) & {
+    .xt-card {
+      opacity: 0;
+    }
+  }
+}

@@ -1,33 +1,49 @@
 import { Xt } from 'xtendui'
 
-/**
- * .listing-item activation
- */
+Xt.mount({
+  matches: '.demo--stores-listing-v1',
+  mount: ({ ref }) => {
+    const unmountListing = mountListing({ ref })
 
-Xt.mount.push({
-  matches: '#iframe--stores-listing-v1 .listing-item',
-  mount: ({ object }) => {
-    // vars
+    // unmount
 
-    const actionBtn = object.querySelector('.listing-action')
-    const closeBtn = object.querySelector('.xt-dismiss')
-
-    // eventClick
-
-    const eventClick = e => {
-      e.stopPropagation()
-      object.classList.add('active')
+    return () => {
+      unmountListing()
     }
-
-    actionBtn.addEventListener('click', eventClick)
-
-    // eventClose
-
-    const eventClose = e => {
-      e.stopPropagation()
-      object.classList.remove('active')
-    }
-
-    closeBtn.addEventListener('click', eventClose)
   },
 })
+
+/* mountListing */
+
+const mountListing = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
+
+  for (const item of items) {
+    // vars
+
+    const actionBtn = item.querySelector('.listing-action')
+    const closeBtn = item.querySelector('.xt-dismiss')
+
+    // click
+
+    const click = e => {
+      e.stopPropagation()
+      item.classList.add('active')
+    }
+
+    actionBtn.addEventListener('click', click)
+
+    // close
+
+    const close = e => {
+      e.stopPropagation()
+      item.classList.remove('active')
+    }
+
+    closeBtn.addEventListener('click', close)
+  }
+
+  // unmount
+
+  return () => {}
+}

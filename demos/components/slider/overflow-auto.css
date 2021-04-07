@@ -1,0 +1,19 @@
+.demo--slider-overflow-auto, .demo--slider-overflow-auto-react {
+  .xt-overflow-auto {
+    .xt-slides-inner {
+      transform: none !important;
+      transition-duration: initial !important;
+      transition-delay: initial !important;
+      justify-content: center !important;
+    }
+    .xt-slides-inner {
+      justify-content: center !important;
+    }
+    .xt-slider-pagination {
+      display: none !important;
+    }
+    .xt-grab {
+      cursor: inherit !important;
+    }
+  }
+}

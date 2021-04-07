@@ -1,7 +1,0 @@
-.demo--overlay-class-html {
-  /* DO NOT APPLY to selector with descendants with position: fixed; or transforms bugs position: fixed; */
-  @apply transform transition;
-  .classhtml-custom & {
-    @apply translate-x-4;
-  }
-}

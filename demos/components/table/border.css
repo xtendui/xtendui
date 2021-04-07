@@ -1,0 +1,5 @@
+.demo--table-border, .demo--table-border-react {
+  table {
+    border-spacing: 0;
+  }
+}

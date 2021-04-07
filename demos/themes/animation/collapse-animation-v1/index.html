@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link id="gatsby-global-css" href="/styles.fd955da0eaebc54e9685.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 3.2.1"/><title data-react-helmet="true">Xtend UI - demos/themes/animation/collapse-animation-v1</title><meta data-react-helmet="true" name="description" content="demos/themes/animation/collapse-animation-v1"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Xtend UI - demos/themes/animation/collapse-animation-v1"/><meta data-react-helmet="true" property="og:description" content="demos/themes/animation/collapse-animation-v1"/><meta data-react-helmet="true" property="og:image" content="/social.jpg"/><meta data-react-helmet="true" name="twitter:xt-card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Xtend UI - demos/themes/animation/collapse-animation-v1"/><meta data-react-helmet="true" name="twitter:description" content="demos/themes/animation/collapse-animation-v1"/><meta data-react-helmet="true" name="keywords" content="react, javascript, components, ui, frontend, react-components, tailwindcss"/><link rel="sitemap" type="application/xml" href="/some-other-sitemap.xml"/><link rel="icon" href="/favicon-32x32.png?v=e0b663332599615823f64616e0743f98" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#0058C6"/><link rel="apple-touch-icon" sizes="512x512" href="./static/apple-touch-icon.png?v=e0b663332599615823f64616e0743f98"/><link as="script" rel="preload" href="/webpack-runtime-f4976c55bd465a45abbe.js"/><link as="script" rel="preload" href="/framework-3f0c9db065708f9044b5.js"/><link as="script" rel="preload" href="/a284c5a4-9f470720b6ed353b377f.js"/><link as="script" rel="preload" href="/app-828fce21753e479bfdc4.js"/><link as="fetch" rel="preload" href="/page-data/demos/themes/animation/collapse-animation-v1/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/111122508.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2871822651.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/56558860.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="body-outer"><div id="gatsby_body-inner" class="gatsby_demo_source--from">
+  <div>
+    <div class="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">List Group</div>
+
+    <form
+      class="text-xs"
+      data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', collapseWidth: 'targets' }"
+    >
+      <div class="xt-row xt-row-x-6 xt-row-y-4">
+        <div class="w-full md:w-auto">
+          <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            List group
+          </button>
+        </div>
+
+        <div class="w-full md:w-auto">
+          <div class="xt-list flex-nowrap max-w-sm w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 active:translate-x-0">
+            <div class="xt-list-inner flex-auto">
+              <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+              <input
+                type="text"
+                class="xt-input py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+                aria-label="Search"
+                placeholder="Seach Catalog"
+              />
+            </div>
+
+            <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">Drop</div>
+
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          list
+        </button>
+
+        <div class="xt-drop p-4 group" data-xt-duration="700">
+          <div class="xt-drop-inner rounded-md shadow-drop h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+            <div class="xt-card w-64 py-3.5 rounded-md text-black xt-links-default bg-white">
+              <nav class="xt-list flex-col rounded-mdtransform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </a>
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  Dolor sit
+                </button>
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  Amet
+                </button>
+              </nav>
+            </div>
+          </div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100"></div>
+        </div>
+      </div>
+
+      <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          card
+        </button>
+
+        <div class="xt-drop p-4 group" data-xt-duration="700">
+          <div class="xt-drop-inner rounded-md shadow-drop h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+            <div class="xt-card w-64 rounded-md text-black xt-links-default bg-white">
+              <button
+                type="button"
+                class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
+                aria-label="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+              <div class="text-sm py-6 px-7 rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                <div class="xt-h5">Lorem ipsum</div>
+                <p>
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">Tooltip</div>
+
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          tooltip
+        </button>
+
+        <div class="xt-tooltip p-2 group" data-xt-duration="700">
+          <div class="xt-tooltip-inner h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+            <div class="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+              <div class="transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">Lorem ipsum dolor sit amet</div>
+            </div>
+          </div>
+          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100"></div>
+        </div>
+      </div>
+
+      <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          list group
+        </button>
+
+        <div class="xt-tooltip p-2 group" data-xt-duration="700">
+          <div class="xt-tooltip-inner rounded-md shadow-tooltip text-black bg-white h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+            <form class="text-sm">
+              <div class="xt-list flex-nowrap max-w-sm transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                <div class="xt-list-inner flex-auto">
+                  <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon text-xl -my-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  </button>
+                  <input
+                    type="text"
+                    class="xt-input py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+                    aria-label="Search"
+                    placeholder="Seach Catalog"
+                  />
+                </div>
+
+                <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below transition-opacity ease-in-out-quint duration-300 opacity-0 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">Overlay</div>
+
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          screen full
+        </button>
+        <div class="xt-overlay group" data-xt-duration="700">
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
+          <div class="xt-overlay-container p-0">
+            <button
+              type="button"
+              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0"
+              aria-label="Close"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="xt-overlay-inner h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+              <div class="xt-card xt-min-h-screen items-center justify-center text-black xt-links-default bg-white">
+                <div class="xt-media-container bg-gray-600 xt-ratio-100 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <div class="xt-media-inner">
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          Menu
+        </button>
+
+        <div class="xt-overlay group" data-xt-duration="700">
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
+          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
+            <div class="xt-overlay-inner h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+              <div class="xt-card xt-min-h-screen text-black xt-links-default bg-white">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div class="xt-list bg-primary-500 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <button type="button" class="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">Menu</button>
+                  <button type="button" class="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">Info</button>
+                  <button type="button" class="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                    Account
+                  </button>
+                </div>
+                <div class="xt-media-container bg-gray-600 h-48 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <div class="xt-media-inner">
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                  </div>
+                </div>
+                <div class="text-base py-8 px-9 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <div class="xt-h4">Lorem ipsum</div>
+                  <p>
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  </p>
+                </div>
+                <div class="text-sm py-6 px-7 bg-gray-300 mt-auto transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                    turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          contact
+        </button>
+
+        <div class="xt-overlay group" data-xt-duration="700">
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
+          <div class="xt-overlay-container max-w-5xl">
+            <div class="xt-overlay-inner rounded-md shadow-overlay h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+              <div class="xt-card rounded-md text-black xt-links-default bg-white">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+
+                <div class="md:xt-card-group rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <div class="text-base py-8 px-9 md:w-7/12">
+                    <div class="xt-h4">Contact us</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
+                    <form class="text-sm">
+                      <div class="xt-row xt-row-x-6 xt-row-y-4">
+                        <div class="w-full md:w-6/12">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Name </label>
+                          <input type="text" class="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Name" />
+                        </div>
+
+                        <div class="w-full md:w-6/12">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Surname </label>
+                          <input
+                            type="text"
+                            class="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+                            aria-label="Surname"
+                          />
+                        </div>
+
+                        <div class="w-full md:w-6/12">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Email </label>
+                          <input type="text" class="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Email" />
+                        </div>
+
+                        <div class="w-full md:w-6/12">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Telephone </label>
+                          <input
+                            type="text"
+                            class="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+                            aria-label="Telephone"
+                          />
+                        </div>
+
+                        <div class="w-full">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Subject </label>
+                          <select class="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Subject">
+                            <option selected value="">Select an option</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                          </select>
+                        </div>
+
+                        <div class="w-full">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Message </label>
+                          <textarea
+                            class="xt-input xt-textarea rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition h-24 resize-vertical"
+                            aria-label="Message"
+                          ></textarea>
+                        </div>
+
+                        <div class="w-full">
+                          <label class="xt-label-check">
+                            <input type="checkbox" class="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
+                            <span class="xt-check-content">
+                              I <strong>read and accept</strong> the
+                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
+                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                            </span>
+                          </label>
+                        </div>
+
+                        <div class="w-full">
+                          <button
+                            type="submit"
+                            class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+                          >
+                            Send
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="md:w-5/12 flex flex-col transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                    <div class="xt-media-container bg-gray-600 md:rounded-tr-md h-48 md:xt-ratio-100">
+                      <div class="xt-media-inner">
+                        <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                      </div>
+                    </div>
+                    <div class="text-base py-8 px-9 bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
+                      <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
+                      <p>
+                        Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
+                        <a href="mailto:info@info.com">info@info.com</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          newsletter
+        </button>
+
+        <div class="xt-overlay group" data-xt-duration="700">
+          <div
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          ></div>
+          <div class="xt-overlay-container max-w-5xl">
+            <div class="xt-overlay-inner rounded-md shadow-overlay h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-active:translate-y-0">
+              <div class="xt-card rounded-md text-black xt-links-default bg-white">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="xt-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+
+                <div class="md:xt-card-group rounded-md transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <div class="md:w-5/12 flex flex-col">
+                    <div
+                      class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                    >
+                      <div class="xt-media-inner">
+                        <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-base py-8 px-9 md:w-7/12">
+                    <div class="xt-h4">Subscribe to our newsletter</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
+                    <form class="text-sm">
+                      <div class="xt-row xt-row-x-6 xt-row-y-4">
+                        <div class="w-full">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Email </label>
+                          <input type="text" class="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition" aria-label="Email" />
+                        </div>
+
+                        <div class="w-full">
+                          <label class="xt-label mb-3 text-black text-opacity-75 font-semibold"> Subject </label>
+
+                          <div class="xt-row xt-row-x-8 xt-row-y-2">
+                            <div class="w-full sm:w-auto">
+                              <label class="xt-label-check">
+                                <input
+                                  type="radio"
+                                  class="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                                  name="radio-usage"
+                                  checked
+                                />
+                                <span class="xt-check-content"> Option 1 </span>
+                              </label>
+                            </div>
+
+                            <div class="w-full sm:w-auto">
+                              <label class="xt-label-check">
+                                <input
+                                  type="radio"
+                                  class="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                                  name="radio-usage"
+                                />
+                                <span class="xt-check-content"> Option 2 </span>
+                              </label>
+                            </div>
+
+                            <div class="w-full sm:w-auto">
+                              <label class="xt-label-check">
+                                <input
+                                  type="radio"
+                                  class="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                                  name="radio-usage"
+                                />
+                                <span class="xt-check-content"> Option 3 </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="w-full">
+                          <label class="xt-label-check">
+                            <input type="checkbox" class="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all" />
+                            <span class="xt-check-content">
+                              I <strong>read and accept</strong> the
+                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
+                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                            </span>
+                          </label>
+                        </div>
+
+                        <div class="w-full">
+                          <button
+                            type="submit"
+                            class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+                          >
+                            Subscribe
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="text-sm py-6 px-7 rounded-b-md bg-gray-300 transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-y-0">
+                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/demos/themes/animation/collapse-animation-v1/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f0f176fae4d544d25342.js"],"app":["/app-828fce21753e479bfdc4.js"]};/*]]>*/</script><script src="/polyfill-f0f176fae4d544d25342.js" nomodule=""></script><script src="/app-828fce21753e479bfdc4.js" async=""></script><script src="/a284c5a4-9f470720b6ed353b377f.js" async=""></script><script src="/framework-3f0c9db065708f9044b5.js" async=""></script><script src="/webpack-runtime-f4976c55bd465a45abbe.js" async=""></script></body></html>

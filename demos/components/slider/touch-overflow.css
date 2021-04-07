@@ -1,0 +1,17 @@
+.demo--slider-touch-overflow, .demo--slider-touch-overflow-react {
+  @media (hover: none) {
+    .xt-slides {
+      @apply xt-overflow-sub !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+    }
+    .xt-slides-inner {
+      cursor: auto !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .xt-slider-pagination {
+      display: none !important;
+    }
+  }
+}

@@ -1,5 +1,4 @@
-#iframe--stores-listing-v1 {
-  /*##START*/
+.demo--stores-listing-v1, .demo--stores-listing-v1-react {
   .listing-item-front {
     backface-visibility: hidden;
   }
@@ -22,5 +21,4 @@
       }
     }
   }
-  /*##END*/
 }

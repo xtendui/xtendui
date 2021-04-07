@@ -1,5 +1,4 @@
-#iframe--stores-listing-v2 {
-  /*##START*/
+.demo--stores-listing-v2, .demo--stores-listing-v2-react {
   .listing-item {
     .listing-item-front {
       cursor: pointer;
@@ -15,5 +14,4 @@
       }
     }
   }
-  /*##END*/
 }

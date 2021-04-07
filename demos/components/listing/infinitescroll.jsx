@@ -1,0 +1,315 @@
+import React, { useRef, useCallback } from 'react'
+import { Xt } from 'xtendui'
+import 'xtendui/src/infinitescroll'
+
+export default function component() {
+  const nodeRef = useRef(null)
+  let unmount
+  const ref = useCallback(ref => {
+    if (nodeRef.current) {
+      unmount(nodeRef.current)
+    }
+    nodeRef.current = ref
+    if (ref !== null) {
+      unmount = mount({ ref })
+    }
+  }, [])
+
+  return (
+    <div className="demo--infinitescroll-react" ref={ref}>
+      <div className="infinitescroll py-10">
+        <div className="container">
+          <h1>Category Page</h1>
+
+          <form className="text-sm mb-4">
+            <label className="xt-label-check">
+              <input
+                type="checkbox"
+                className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                defaultChecked
+              />
+              <span className="xt-check-content">Activate on scroll</span>
+            </label>
+          </form>
+
+          <div className="mb-4">
+            <div className="xt-list xt-list-2 flex-col items-center">
+              <button
+                type="button"
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+                data-xt-infinitescroll-up="-1">
+                <span className="content"> Load previous page </span>
+
+                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+                  <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
+                    <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
+                      <circle
+                        className="stroke-current origin-center opacity-25"
+                        fill="none"
+                        strokeWidth="30"
+                        cx="120"
+                        cy="120"
+                        r="100"
+                        strokeDasharray="628"
+                        strokeDashoffset="0"
+                        pathLength="628"
+                      />
+                    </svg>
+                    <svg viewBox="0 0 240 240">
+                      <circle
+                        className="stroke-current origin-center relative animate-xt-spinner"
+                        fill="none"
+                        strokeWidth="30"
+                        cx="120"
+                        cy="120"
+                        r="100"
+                        strokeDasharray="628"
+                        strokeDashoffset="628"
+                        pathLength="628"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className="xt-row xt-row-6">
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Lorem ipsum</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Lorem ipsum</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12">
+              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+                <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+                  <div className="xt-media-inner">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  </div>
+                </div>
+                <div className="py-4">
+                  <div className="xt-h5">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <div className="xt-list xt-list-2 flex-col items-center">
+            <button
+              type="button"
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+              data-xt-infinitescroll-down="+1">
+              <span className="content"> Show more products </span>
+
+              <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+                <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
+                  <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
+                    <circle
+                      className="stroke-current origin-center opacity-25"
+                      fill="none"
+                      strokeWidth="30"
+                      cx="120"
+                      cy="120"
+                      r="100"
+                      strokeDasharray="628"
+                      strokeDashoffset="0"
+                      pathLength="628"
+                    />
+                  </svg>
+                  <svg viewBox="0 0 240 240">
+                    <circle
+                      className="stroke-current origin-center relative animate-xt-spinner"
+                      fill="none"
+                      strokeWidth="30"
+                      cx="120"
+                      cy="120"
+                      r="100"
+                      strokeDasharray="628"
+                      strokeDashoffset="628"
+                      pathLength="628"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+
+            <div className="h6" data-xt-infinitescroll-pagination>
+              Page xt-num of xt-tot
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountInfinitescroll = mountInfinitescroll({ ref })
+  const unmountSwitcher = mountSwitcher({ ref })
+
+  // unmount
+
+  return () => {
+    unmountInfinitescroll()
+    unmountSwitcher()
+  }
+}
+
+/* mountInfinitescroll */
+
+const mountInfinitescroll = ({ ref }) => {
+  const infinitescroll = ref.querySelector('.infinitescroll')
+
+  let self = new Xt.Infinitescroll(infinitescroll, {
+    get: false,
+    max: 4,
+    elements: {
+      itemsContainer: '.xt-row',
+      item: ':scope > *',
+      scrollUp: '[data-xt-infinitescroll-up]',
+      scrollDown: '[data-xt-infinitescroll-down]',
+      spaceAdditional: '[data-xt-infinitescroll-up]',
+      pagination: '[data-xt-infinitescroll-pagination]',
+    },
+    // activated by switcher
+    //scrollUp = true
+    //scrollDown = true
+  })
+
+  // unmount
+
+  return () => {
+    self.destroy()
+    self = null
+  }
+}
+
+/* mountSwitcher */
+
+const mountSwitcher = ({ ref }) => {
+  const infinitescroll = ref.querySelector('.infinitescroll')
+  const switcher = ref.querySelector('input[type="checkbox"]')
+
+  const change = () => {
+    const self = Xt.get('xt-infinitescroll', infinitescroll)
+    if (self) {
+      if (switcher.checked) {
+        self.options.events.scrollUp = true
+        self.options.events.scrollDown = true
+      } else {
+        self.options.events.scrollUp = false
+        self.options.events.scrollDown = false
+      }
+      self.destroy()
+      self.reinit()
+    }
+  }
+
+  switcher.addEventListener('change', change)
+
+  requestAnimationFrame(() => {
+    change()
+  })
+
+  // unmount
+
+  return () => {}
+}

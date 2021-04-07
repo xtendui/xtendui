@@ -1,0 +1,27 @@
+.demo--toggle-animation, .demo--toggle-animation-react {
+  .xt-card {
+    /* initial */
+    @apply transform ease-out duration-500;
+    @apply opacity-0;
+    &.direction-before {
+      @apply translate-x-4;
+    }
+    &.direction-after {
+      @apply -translate-x-4;
+    }
+    /* active */
+    &.active {
+      @apply opacity-100 translate-x-0;
+    }
+    /* out */
+    &.out {
+      @apply opacity-0;
+      &.direction-before {
+        @apply -translate-x-4;
+      }
+      &.direction-after {
+        @apply translate-x-4;
+      }
+    }
+  }
+}

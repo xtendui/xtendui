@@ -1,0 +1,450 @@
+import React, { useRef, useCallback } from 'react'
+import { Xt } from 'xtendui'
+import 'xtendui/src/slider'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+export default function component() {
+  const nodeRef = useRef(null)
+  let unmount
+  const ref = useCallback(ref => {
+    if (nodeRef.current) {
+      unmount(nodeRef.current)
+    }
+    nodeRef.current = ref
+    if (ref !== null) {
+      unmount = mount({ ref })
+    }
+  }, [])
+
+  return (
+    <div className="demo--products-listing-v1-react" ref={ref}>
+      <div className="py-10">
+        <div className="xt-slider slider--listing">
+          <div className="xt-slides">
+            <div className="container">
+              <div className="xt-h2 mb-8">Latest Products</div>
+
+              <div className="xt-slides-inner xt-row xt-row-4">
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                      </div>
+                      <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                        <div className="xt-list xt-list-3 items-center flex-nowrap">
+                          <div className="text-xl font-semibold">-35%</div>
+                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                            For Exhibition
+                            <br />
+                            Renewal
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                      </div>
+                      <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                        <div className="xt-list xt-list-3 items-center flex-nowrap">
+                          <div className="text-xl font-semibold">-40%</div>
+                          <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                            Black
+                            <br />
+                            Friday
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="xt-slide w-6/12 md:w-4/12">
+                  <a href="#" className="listing-item block">
+                    <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                      <div className="xt-media-inner">
+                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                      </div>
+                    </div>
+                    <div className="listing-item-content py-4">
+                      <div className="xt-h5">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <nav className="xt-slider-pagination">
+                <button
+                  type="button"
+                  className="xt-button button-default xt-ignore"
+                  data-xt-pag
+                  title="Slide xt-num"></button>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div className="listing">
+          <div className="container">
+            <div className="xt-h2 mb-8">Category</div>
+
+            <div className="xt-row xt-row-6">
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    </div>
+                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                      <div className="xt-list xt-list-3 items-center flex-nowrap">
+                        <div className="text-xl font-semibold">-35%</div>
+                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                          For Exhibition
+                          <br />
+                          Renewal
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    </div>
+                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                      <div className="xt-list xt-list-3 items-center flex-nowrap">
+                        <div className="text-xl font-semibold">-40%</div>
+                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
+                          Black
+                          <br />
+                          Friday
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Lorem Ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block">
+                  <div className="xt-media-container bg-gray-600 overflow-hidden xt-ratio-75">
+                    <div className="xt-media-inner">
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    </div>
+                  </div>
+                  <div className="listing-item-content py-4">
+                    <div className="xt-h5">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSlider = mountSlider({ ref })
+  const unmountMedia = mountMedia({ ref })
+  const unmountFade = mountFade({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSlider()
+    unmountMedia()
+    unmountFade()
+  }
+}
+
+/* mountSlider */
+
+const mountSlider = ({ ref }) => {
+  new Xt.Slider(ref.querySelector('.slider--listing'), {
+    contain: true,
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountMedia */
+
+const mountMedia = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
+
+  // vars
+
+  const mediaScale = 0.04
+  const mediaOpacityIn = 0.75
+  const mediaOpacityOut = 1
+  const contentY = -10
+
+  // enter
+
+  const enter = e => {
+    const tr = e.target
+    // media
+    const media = tr.querySelector('.xt-media-container')
+    gsap.to(media, {
+      opacity: mediaOpacityIn,
+      scale: 1 - mediaScale,
+      duration: 0.5,
+      ease: 'expo.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media-inner')
+    gsap.to(mediaInner, {
+      scale: 1 + mediaScale,
+      duration: 0.5,
+      ease: 'expo.out',
+    })
+    // content
+    const content = tr.querySelector('.listing-item-content')
+    if (content) {
+      gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
+    }
+  }
+
+  for (const item of items) {
+    item.addEventListener('mouseenter', enter)
+  }
+
+  // leave
+
+  const leave = e => {
+    const tr = e.target
+    // media
+    const media = tr.querySelector('.xt-media-container')
+    gsap.to(media, {
+      opacity: mediaOpacityOut,
+      scale: 1,
+      duration: 0.75,
+      ease: 'expo.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media-inner')
+    gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
+    // content
+    const content = tr.querySelector('.listing-item-content')
+    if (content) {
+      gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
+    }
+  }
+
+  for (const item of items) {
+    item.addEventListener('mouseleave', leave)
+  }
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountFade */
+
+const mountFade = ({ ref }) => {
+  const items = ref.querySelectorAll('.listing-item')
+
+  // vars
+
+  const scrollY = 30
+
+  // fade
+
+  ScrollTrigger.batch(items, {
+    once: true,
+    start: 'top bottom-=10%',
+    end: 'bottom top+=10%',
+    onEnter: (batch, scrollTriggers) => {
+      const direction = scrollTriggers[0].direction
+      const y = direction > 0 ? -scrollY : scrollY
+      gsap.killTweensOf(batch)
+      gsap.set(batch, { y: y })
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: 0.15,
+      })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}

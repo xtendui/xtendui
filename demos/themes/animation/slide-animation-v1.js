@@ -1,27 +1,46 @@
 import { Xt } from 'xtendui'
+import 'xtendui/src/overlay'
+import 'xtendui/src/drop'
+import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount.push({
-  matches: '#iframe--slide-animation-v1 .xt-button, #iframe--slide-animation-v1 a.xt-card',
-  mount: ({ object }) => {
+Xt.mount({
+  matches: '.demo--slide-animation-v1',
+  mount: ({ ref }) => {
+    const unmountSlide = mountSlide({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSlide()
+    }
+  },
+})
+
+/* mountSlide */
+
+const mountSlide = ({ ref }) => {
+  const items = ref.querySelectorAll('.xt-button, a.xt-card')
+
+  for (const item of items) {
     // vars
 
-    let content = object.querySelector('.content')
+    let content = item.querySelector('.content')
     const contentX = 20
 
-    let clone = object.querySelector('.clone')
+    let clone = item.querySelector('.clone')
     const cloneX = 20
 
     // inject
 
     if (!clone) {
-      object.classList.add('overflow-hidden')
-      const text = object.innerHTML
-      object.innerHTML = ''
-      object.append(Xt.createElement(`<span class="content"></span>`))
-      object.append(Xt.createElement(`<span class="clone absolute"></span>`))
-      content = object.querySelector('.content')
-      clone = object.querySelector('.clone')
+      item.classList.add('overflow-hidden')
+      const text = item.innerHTML
+      item.innerHTML = ''
+      item.append(Xt.createElement(`<span class="content"></span>`))
+      item.append(Xt.createElement(`<span class="clone absolute"></span>`))
+      content = item.querySelector('.content')
+      clone = item.querySelector('.clone')
       content.innerHTML = text
       clone.innerHTML = text
       gsap.set(clone, { x: -cloneX, opacity: 0 })
@@ -29,9 +48,9 @@ Xt.mount.push({
 
     // on
 
-    const eventOn = () => {
+    const on = () => {
       // content
-      const content = object.querySelector('.content')
+      const content = item.querySelector('.content')
       gsap.killTweensOf(content)
       gsap.set(content, { transformOrigin: 'right center' })
       gsap.set(content, { x: 0, opacity: 1 })
@@ -42,7 +61,7 @@ Xt.mount.push({
         ease: 'quint.out',
       })
       // clone
-      const clone = object.querySelector('.clone')
+      const clone = item.querySelector('.clone')
       gsap.killTweensOf(clone)
       gsap.set(clone, { transformOrigin: 'left center' })
       gsap.set(clone, { x: -cloneX, opacity: 0 })
@@ -55,6 +74,10 @@ Xt.mount.push({
       })
     }
 
-    object.addEventListener('click', eventOn)
-  },
-})
+    item.addEventListener('click', on)
+  }
+
+  // unmount
+
+  return () => {}
+}

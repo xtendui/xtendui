@@ -1,9 +1,0 @@
-
-body:not(.xt-noscroll) {
-  .demo--fade-infinite {
-    /* add here all fade selectors css and js */
-    .xt-card {
-      opacity: 0;
-    }
-  }
-}
