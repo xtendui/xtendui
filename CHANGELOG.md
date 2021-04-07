@@ -1,3 +1,73 @@
+# [1.0.0-beta.10](https://github.com/minimit/xtendui/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-04-07)
+
+
+### Bug Fixes
+
+* **infinitescroll:** fixed infinitescroll position resume and fixed general activation ([fa0afa9](https://github.com/minimit/xtendui/commit/fa0afa92f5be914e6132e0e6927c3a1e55b69810))
+* **scrolltoanchor:** refactor and changed events ([a0f6379](https://github.com/minimit/xtendui/commit/a0f63792f43d6da710fd1f07e516bee189ab9943))
+* **slider:** fix contain and wrap jump activation ([04c0ca0](https://github.com/minimit/xtendui/commit/04c0ca00e0c0b3836e6ec28778e689adfb8ee45c))
+* **toggle:** initial direction when inverse is set ([868d8f4](https://github.com/minimit/xtendui/commit/868d8f4622e5f899ceae5b2bb65e45deb326c497))
+* removed xt animation utils ([23e7e72](https://github.com/minimit/xtendui/commit/23e7e72f9cde8dc82d8f1cbf4e25bb504f36c9b2))
+* **slider:** slider no overflow hidden by default only on absolute mode ([0005a66](https://github.com/minimit/xtendui/commit/0005a6611adb8e060e9868b1936b0363e9ab0fe4))
+* defaults without elements and targets items ([712f43f](https://github.com/minimit/xtendui/commit/712f43f177f42828d0a28c5e8f154aaebd7b3806))
+* fixes options.closeInside and unique mode fixes on activation and xt-backdrop optional pointer-events-none ([6cb72d4](https://github.com/minimit/xtendui/commit/6cb72d4c612c91764dc322aa124dff028486c6ad))
+* **links:** fix specificity xt-links-default and xt-links-inverse when nested ([97ed9d3](https://github.com/minimit/xtendui/commit/97ed9d3e77f47258db1c7b56b768b8dbab14f572))
+* **toggle:** fix flickr on active display deactivation ([47e1a78](https://github.com/minimit/xtendui/commit/47e1a78b0d018d0499e0fd3fe7c90531159c6260))
+* **toggle:** options.elements now have unique mode with id selector ([c09e50e](https://github.com/minimit/xtendui/commit/c09e50ec51b2bbf029361e85ca1253059986293e))
+* google locator and infinitscroll and stickyflow default options ([e43e173](https://github.com/minimit/xtendui/commit/e43e1730188cb81eff1de28eeec3b9fdb28acfe3))
+* initial zindex for components ([f222bb0](https://github.com/minimit/xtendui/commit/f222bb0f858f9c2d63c6068676c93c84bb1716dc))
+* refactor build and generation ([7fa6377](https://github.com/minimit/xtendui/commit/7fa6377be3c4ec02de9e972467634f8a04c5ffde))
+* refactor demos react ([5a83beb](https://github.com/minimit/xtendui/commit/5a83beb6e726405d0169f223a000a1efa30297bd))
+* refactor events fixed multiple calls with destroy and off event triggering on event ([3c739bd](https://github.com/minimit/xtendui/commit/3c739bdfe705192858a7540dd94948b303a49cf1))
+* toggle and drop items selectors inside self.object ([14cd7c0](https://github.com/minimit/xtendui/commit/14cd7c0e964947911dede500e5c15d340cbdff7f))
+* tooltip and drop fixed strange behaviour on off, removed popperInstance destroy ([1fcdcc5](https://github.com/minimit/xtendui/commit/1fcdcc54365b3c96961e21b2698d1d76d391530e))
+* **toggle:** toggle unique mode can have multiple targets now ([529bb07](https://github.com/minimit/xtendui/commit/529bb07b3f9aa42c612d7231000a86cbcbaca3fb))
+* **typography:** revision spacing typography ([3e6e950](https://github.com/minimit/xtendui/commit/3e6e9501fa4f29a548bef5b129cc8bcaeedaa563))
+* toggle now has display css activation also on active ([aa6aae5](https://github.com/minimit/xtendui/commit/aa6aae57f05e9ac3d7791d0421c11ec6c0b29b97))
+* unique mode now can also have elements ([b4f5947](https://github.com/minimit/xtendui/commit/b4f5947e3f907ab7b09e753314f769e2dc54d4f8))
+
+
+* fix(slider) refactor jump and interaction slider ([ad4b422](https://github.com/minimit/xtendui/commit/ad4b4222a81e1a75045f7ba910ccd2c37306f7cd))
+
+
+### Features
+
+* **scrollto:** options.scrollActivation added ([75c52aa](https://github.com/minimit/xtendui/commit/75c52aabeb333a2c33aea0fa883fd58afd94964d))
+* **scrolltoanchor:** changed scrolltoanchor elements default query and removed matches options ([6427458](https://github.com/minimit/xtendui/commit/6427458e75a49c254d77d0b93e69eccb1e2129df))
+* **scrolltoanchor:** refactor scrolltoanchor component ([f79f52b](https://github.com/minimit/xtendui/commit/f79f52b45fb1dfb4a6b3283feb81538082e7e911))
+* fix reinit and self.options  refactor ([9697862](https://github.com/minimit/xtendui/commit/9697862e88a597113001b920aa4a46a774df3c05))
+* refactor structure with all components in src folder and removed addons ([9a1c55b](https://github.com/minimit/xtendui/commit/9a1c55ba27e289eabdbe0c056db88283d554921e))
+* reinit on components and refactor ([e0fabfe](https://github.com/minimit/xtendui/commit/e0fabfec6ef823e1cfa328b2bd9f7dd944d2da33))
+* **slider:** refactor slider always interactive ([f342847](https://github.com/minimit/xtendui/commit/f342847a1685e4b400486b053cf18aee6f9ea85f))
+* refactor infinite scroll ([db26fcf](https://github.com/minimit/xtendui/commit/db26fcf47038b5abfa60409d4f431b593a0ba947))
+* refactor xt.mount ([d2d29db](https://github.com/minimit/xtendui/commit/d2d29dbb067c14730bca9f2e406673a5663c9b05))
+
+
+### Reverts
+
+* Revert "Revert "Revert "chore: updated latest""" ([7ad09db](https://github.com/minimit/xtendui/commit/7ad09db6df7d889110321058cd3ad6d44f889820))
+
+
+### BREAKING CHANGES
+
+* xt-slider has overflow-hidden by default or the page scrolls
+* **scrolltoanchor:** change the following
+options.elements to options.anchors
+options.scrollElements to options.scrolls
+self.scrollElement to self.scroll
+src/scrolltoanchor to src/scrollto
+xt.scrolltoanchor to xt.scrollto
+Xt.Scrolltoanchor to Xt.Scrollto
+* **scrolltoanchor:** changed event change.xt.scrolltoanchor to scrollto.xt.scrolltoanchor and supported event on non anchors with trigger
+* **scrolltoanchor:** new default options.elements no options.matches for scrolltoanchor
+* **slider:** if you need overflow-hidden class on xt-slider add it on the markup
+* use function Xt.mount() instead of Xt.mount.push()
+use ref argument in Xt.mount instead of object
+* if you are activating xt-drop-item or xt-tooltip-item now tou have to query it in elements and targets
+* now drop and tooltip with xt-drop-item and xt-drop-tooltip must be direct descendant of the object
+* stickyflow googlelocator and infinitescroll set default options for selectors now are false by default
+* use src/componentName for all components and addons
+
 # [1.0.0-beta.9](https://github.com/minimit/xtendui/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2021-03-18)
 
 
