@@ -1250,10 +1250,10 @@ class Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
-      self.direction = 0
-    } else if (self.inverse !== null) {
+    if (self.inverse !== null) {
       self.direction = self.inverse ? -1 : 1
+    } else if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+      self.direction = 0
     } else {
       self.direction = self.currentIndex < self.oldIndex ? -1 : 1
     }
