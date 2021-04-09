@@ -37,6 +37,15 @@ const html = /* HTML */ `
       </div>
     </div>
 
+    <div class="container">
+      <form class="text-sm mt-4">
+        <label class="xt-label-check">
+          <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
+          <span class="xt-check-content">Deactivate classes</span>
+        </label>
+      </form>
+    </div>
+
     <div class="xt-overlay" id="overlay--scrollto">
       <div class="xt-backdrop bg-black opacity-25"></div>
       <div class="xt-overlay-container p-0">

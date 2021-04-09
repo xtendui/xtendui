@@ -12,12 +12,14 @@ Xt.mount({
   mount: ({ ref }) => {
     const unmountScrollto = mountScrollto()
     const unmountSticky = mountSticky({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
 
     // unmount
 
     return () => {
       unmountScrollto()
       unmountSticky()
+      unmountSwitcher()
     }
   },
 })
@@ -28,8 +30,9 @@ const mountScrollto = () => {
   // Scrollto
 
   let self = new Xt.Scrollto(document.documentElement, {
-    class: false, // example no class
-    scrollActivation: false, // example no scrollActivation
+    // activated by switcher
+    //class: false,
+    //scrollActivation: false,
     scrollSpace: ({ self }) => {
       let space = 0
       const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
@@ -93,6 +96,38 @@ const mountSticky = ({ ref }) => {
 
   overlay.addEventListener('on.xt.overlay', () => {
     ScrollTrigger.refresh()
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountSwitcher */
+
+const mountSwitcher = ({ ref }) => {
+  const scrollto = document.documentElement
+  const switcher = ref.querySelector('input[type="checkbox"]')
+
+  const change = () => {
+    const self = Xt.get('xt-scrollto', scrollto)
+    if (self) {
+      if (switcher.checked) {
+        self.options.class = false
+        self.options.scrollActivation = false
+      } else {
+        self.options.class = 'xt-active'
+        self.options.scrollActivation = true
+      }
+      self.destroy()
+      self.reinit()
+    }
+  }
+
+  switcher.addEventListener('change', change)
+
+  requestAnimationFrame(() => {
+    change()
   })
 
   // unmount
