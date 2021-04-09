@@ -13,6 +13,7 @@ require('dotenv').config()
 module.exports = {
   flags: {
     FAST_REFRESH: true,
+    DEV_SSR: true,
   },
   siteMetadata: {
     siteUrl: `https://xtendui.com`,
