@@ -133,7 +133,7 @@ const html = /* HTML */ `
             ></div>
           </div>
 
-          <div class="xt-slide w-full in-slider">
+          <div class="xt-slide w-full xt-in">
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
@@ -172,9 +172,9 @@ const html = /* HTML */ `
         aria-label="Previous slide"
         data-xt-mousefollow
       >
-        <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
+        <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 xt-active:opacity-100">
           ${classes.iconArrowLeft({
-            classes: 'transform transition-all group-active:opacity-75 group-active:scale-75',
+            classes: 'transform transition-all group-xt-active:opacity-75 group-xt-active:scale-75',
           })}
         </div>
       </button>
@@ -186,9 +186,9 @@ const html = /* HTML */ `
         aria-label="Next slide"
         data-xt-mousefollow
       >
-        <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
+        <div class="xt-mousefollow text-white text-4xl transition-opacity opacity-0 xt-active:opacity-100">
           ${classes.iconArrowRight({
-            classes: 'transform transition-all group-active:opacity-75 group-active:scale-75',
+            classes: 'transform transition-all group-xt-active:opacity-75 group-xt-active:scale-75',
           })}
         </div>
       </button>

@@ -100,7 +100,7 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>add</strong>')
       // elements
       const elIndex = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">Toggle ${elIndex}</button>`
+      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-active:bg-gray-400 transition">Toggle ${elIndex}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
       const indexTr = self.getTargetsGroups().length

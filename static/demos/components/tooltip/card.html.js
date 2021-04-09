@@ -15,7 +15,7 @@ const html = /* HTML */ `
           <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
-              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
               aria-label="Close"
             >
               ${classes.iconX()}
@@ -36,7 +36,7 @@ const html = /* HTML */ `
           <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
-              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
               aria-label="Close"
             >
               ${classes.iconX()}

@@ -1,7 +1,7 @@
 import { Xt } from './xt'
 
 /**
- * checks labels .active
+ * checks labels .xt-active
  */
 
 Xt.mount({
@@ -17,9 +17,9 @@ Xt.mount({
     const toggle = input => {
       const label = input.closest('label')
       if (input.checked) {
-        label.classList.add('active')
+        label.classList.add('xt-active')
       } else {
-        label.classList.remove('active')
+        label.classList.remove('xt-active')
       }
     }
 

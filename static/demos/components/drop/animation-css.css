@@ -6,13 +6,13 @@
       @apply opacity-0 -translate-x-4;
     }
     /* active */
-    &.active {
+    &.xt-active {
       > * {
         @apply opacity-100 translate-x-0;
       }
     }
     /* out */
-    &.out {
+    &.xt-out {
       > * {
         @apply translate-x-4 opacity-0;
       }

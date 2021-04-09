@@ -10,15 +10,6 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `class:String`                          | `in in-slider`        | Class name for activation            |	
-| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |	
-
-</div>	
-
 You can set initial activation by adding `in-slider` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.	

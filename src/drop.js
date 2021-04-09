@@ -123,15 +123,13 @@ Drop.optionsDefault = {
   elements: ':scope > a, :scope > button',
   targets: ':scope > .xt-drop',
   elementsInner: ':scope > a, :scope > button',
-  // class
-  class: 'in in-drop',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit, .xt-drop',
+  eventLimit: '.xt-event-limit, .xt-drop',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop',

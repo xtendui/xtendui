@@ -39,7 +39,7 @@ Xt.mount({
 
     // fix only once when tooltip has multiple targets
 
-    if (!object || object.dataset.onlyOnceDone) return
+    if (!object || object.dataset.onlyOnceDone) return () => {}
     object.dataset.onlyOnceDone = 'true'
 
     // on
@@ -88,7 +88,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') !== 'react') {
-      ref.classList.add('active')
+      ref.classList.add('xt-active')
     }
   },
 })
@@ -108,7 +108,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === 'react') {
-      ref.classList.add('active')
+      ref.classList.add('xt-active')
     }
   },
 })
@@ -380,7 +380,7 @@ Xt.mount({
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
 <div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-  <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0">
+  <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
     Close Fullscreen
   </div>
 </div>`)
@@ -480,16 +480,16 @@ const makeDocument = () => {
     /*
     if (el.tagName === 'H2') {
       let container = document.querySelector(
-        '.gatsby_button-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
+        '.gatsby_button-site_article_sidebar--adiacent.xt-active ~ .gatsby_site-header_adiacent_inner'
       )
       container = container
         ? container
-        : document.querySelector('.gatsby_button-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
+        : document.querySelector('.gatsby_button-site_article_sidebar--sub.xt-active ~ .gatsby_site-header_adiacent_inner')
       if (container) {
         const item = Xt.createElement(
           `<div><a href="#" class="xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent_inner"><span></span></button></div>`
         )
-        container.classList.add('active')
+        container.classList.add('xt-active')
         container.querySelector('.gatsby_site-header_item').append(item)
         item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
         item.querySelector('span').textContent = el.textContent.trim()

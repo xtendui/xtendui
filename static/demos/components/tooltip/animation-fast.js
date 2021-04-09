@@ -29,7 +29,7 @@ const mountTooltip = ({ ref }) => {
 
     // fix only once when tooltip has multiple targets
 
-    if (object.dataset.onlyOnceDone) return
+    if (object.dataset.onlyOnceDone) return () => {}
     object.dataset.onlyOnceDone = 'true'
 
     // on

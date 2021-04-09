@@ -2,10 +2,10 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.xt-toggle': {
-      '&:not(.in):not(.active):not(.out)': {
+      '&:not(.xt-in):not(.xt-active):not(.xt-out)': {
         display: 'none',
       },
-      '&.out': {
+      '&.xt-out': {
         pointerEvents: 'none',
       },
     },
@@ -13,16 +13,11 @@ module.exports = {
       position: 'relative',
     },
     '.xt-toggle-absolute': {
-      '&:not(.in)': {
+      '&:not(.xt-in)': {
         position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
-      },
-    },
-    '.xt-toggle-inverse': {
-      '&.done': {
-        display: 'none',
       },
     },
   },

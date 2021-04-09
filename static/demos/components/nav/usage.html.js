@@ -4,11 +4,11 @@ const html = /* HTML */ `
   <div>
     <nav class="nav">
       <div class="xt-list flex-col max-w-sm">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-t-md ${classes.buttonPrimary()}">
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} rounded-t-md">
           Lorem ipsum
         </button>
 
-        <button type="button" class="xt-button ${classes.buttonMd()} active ${classes.buttonPrimary()}">
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} xt-active">
           dolor sit amet
         </button>
 
@@ -18,7 +18,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} disabled ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} disabled"
           aria-disabled="true"
         >
           Lorem ipsum
@@ -26,7 +26,7 @@ const html = /* HTML */ `
 
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()}">dolor sit amet</button>
 
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-b-md ${classes.buttonPrimary()}">
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} rounded-b-md">
           Lorem ipsum dolor sit amet consectetur adipiscing elit
         </button>
       </div>

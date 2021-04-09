@@ -61,15 +61,13 @@ Overlay.optionsDefault = {
   elements: ':scope > a, :scope > button',
   targets: ':scope > .xt-overlay',
   elementsInner: ':scope > a, :scope > button',
-  // class
-  class: 'in in-overlay',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
-  eventLimit: '.event-limit, .xt-overlay',
+  eventLimit: '.xt-event-limit, .xt-overlay',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop, .xt-overlay, .xt-overlay-container',

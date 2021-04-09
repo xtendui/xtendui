@@ -209,17 +209,15 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
-    addVariant('group-active', ({ modifySelectors, separator }) => {
+    addVariant('group-xt-active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.group:active .${e(`group-active${separator}${className}`)},.group.active .${e(
-          `group-active${separator}${className}`
-        )}`
+        return `.group.xt-active .${e(`group-xt-active${separator}${className}`)}`
       })
     })
 
-    addVariant('active', ({ modifySelectors, separator }) => {
+    addVariant('xt-active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`active${separator}${className}`)}:active,.${e(`active${separator}${className}`)}.active`
+        return `.${e(`xt-active${separator}${className}`)}.xt-active`
       })
     })
   }

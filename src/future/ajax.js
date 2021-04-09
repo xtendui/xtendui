@@ -346,8 +346,6 @@ Ajax.optionsDefault = {
   // element
   elements: 'a[href]:not([href^="#"])',
   targets: false,
-  // class
-  class: 'in in-ajax',
   // quantity
   min: 0,
   max: 1,

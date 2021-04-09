@@ -2,7 +2,7 @@ const gatsbySidebarContain = () => {
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   sidebar.scrollTop = window.keepSidebarScroll
   let sidebarActive = document.querySelector(
-    '.gatsby_button-site_article_sidebar--sub.active, .gatsby_button-site_article_sidebar--sub.current'
+    '.gatsby_button-site_article_sidebar--sub.xt-active, .gatsby_button-site_article_sidebar--sub.current'
   )
   if (sidebarActive) {
     const add = 25

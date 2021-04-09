@@ -16,7 +16,7 @@ export default class Demo extends React.Component {
       // fix demo fullscreen
       const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
       for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
-        if (btnOpenFull.classList.contains('in-toggle')) {
+        if (btnOpenFull.classList.contains('xt-in')) {
           demoHash()
           break
         }

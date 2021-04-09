@@ -10,11 +10,11 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="500">
           <div
-            class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div
-              class="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0"
+              class="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-xt-active:opacity-100 group-xt-active:translate-y-0"
             >
               <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
                 <button
@@ -56,7 +56,7 @@ const html = /* HTML */ `
                           <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
                             <button
                               type="button"
-                              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                               aria-label="Close"
                             >
                               ${classes.iconX()}

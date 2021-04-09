@@ -8,7 +8,7 @@
       pointer-events: none;
       opacity: 0;
     }
-    &.active {
+    &.xt-active {
       .listing-item-back {
         pointer-events: all;
       }

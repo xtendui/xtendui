@@ -14,7 +14,7 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Toggle `display: none` on `.active` and `.out`            |
+| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Toggle `display: none` on `.xt-active` and `.xt-out`            |
 | Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.queue: false`            |
 
 </div>
@@ -47,14 +47,14 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 ## Css Animation
 
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
+You can use also **css animations**, just add them with **class names** `.xt-active`, `.xt-out`, `.xt-before` and `.xt-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.direction-before`       |  Class name for left direction activation            |
-| Class                  | `.direction-after`       |  Class name for left direction activation            |
+| Class                  | `.xt-before`       |  Class name for before direction activation            |
+| Class                  | `.xt-after`       |  Class name for after direction activation            |
 </div>
 
 <demo>

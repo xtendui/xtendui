@@ -14,7 +14,7 @@ Use **component classes** to style **active**.
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.active`                     | `active`                | Active styles            |
+| Component                  | `.xt-active`                     | `xt-active`                | Active styles            |
 
 </div>
 

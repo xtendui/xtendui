@@ -5,33 +5,33 @@
       @apply transform ease-out duration-300;
       @apply opacity-0;
     }
-    &.direction-before {
+    &.xt-before {
       > * {
         @apply translate-x-4;
       }
     }
-    &.direction-after {
+    &.xt-after {
       > * {
         @apply -translate-x-4;
       }
     }
     /* active */
-    &.active {
+    &.xt-active {
       > * {
         @apply opacity-100 translate-x-0;
       }
     }
     /* out */
-    &.out {
+    &.xt-out {
       > * {
         @apply opacity-0;
       }
-      &.direction-before {
+      &.xt-before {
         > * {
           @apply -translate-x-4;
         }
       }
-      &.direction-after {
+      &.xt-after {
         > * {
           @apply translate-x-4;
         }

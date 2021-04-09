@@ -14,39 +14,39 @@ export const classes = {
   cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
   // variant
   badgeDefaultInteractive: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 transition',
   badgePrimaryInteractive: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-500 active:bg-primary-600 transition',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-500 transition',
   badgeDefault: () => 'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200',
   badgePrimary: () => 'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () =>
-    'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600 md:active:bg-primary-700',
+    'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
-    'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition',
+    'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 transition',
   buttonDefaultGroup: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 group-hover:bg-gray-300 active:bg-gray-400 group-active:bg-gray-400',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 group-hover:bg-gray-300',
   buttonDefault: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-active:bg-gray-400 transition',
   buttonPrimaryDrop: () =>
-    'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition',
+    'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 transition',
   buttonPrimaryGroup: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 group-hover:bg-primary-600 active:bg-primary-700 group-active:bg-primary-700',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 xt-active:bg-primary-700 transition',
   buttonText: () =>
-    'font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-60 active:text-opacity-100 transition',
+    'font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-60 xt-active:text-opacity-100 transition',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:bg-gray-200 active:bg-gray-300',
+    'text-black xt-links-default transform transition hover:bg-gray-200',
   cardDefaultFull: () => 'text-black xt-links-default',
   cardDefaultInteractive: () =>
-    'text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400',
+    'text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300',
   cardDefault: () => 'text-black xt-links-default bg-gray-200',
   cardPrimaryFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600',
+    'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500',
   cardPrimaryFull: () => 'text-primary-600',
   cardPrimaryInteractive: () =>
-    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700',
+    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   cardSlide: () => 'text-base p-8 text-center text-black xt-links-default bg-gray-200',
   cardToggle: () => 'text-sm p-6 text-black xt-links-default bg-gray-200',

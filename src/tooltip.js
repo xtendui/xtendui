@@ -124,7 +124,6 @@ Tooltip.optionsDefault = {
   targets: ':scope > .xt-tooltip',
   elementsInner: ':scope > a, :scope > button',
   // class
-  class: 'in in-tooltip',
   classSkip: {
     elements: true,
     elementsInner: true,
@@ -135,7 +134,7 @@ Tooltip.optionsDefault = {
   // event
   on: 'mouseenter',
   off: 'mouseleave',
-  eventLimit: '.event-limit, .xt-tooltip',
+  eventLimit: '.xt-event-limit, .xt-tooltip',
   closeAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop',

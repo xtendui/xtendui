@@ -77,9 +77,9 @@
     .xt-card {
       @apply xt-min-h-screen;
       /* add to gatsby_menu--overlay group duration-700 */
-      /*@apply overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-active:ease-out-quint group-active:delay-0 group-active:opacity-100 group-active:translate-x-0;*/
+      /*@apply overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-xt-active:ease-out-quint group-xt-active:delay-0 group-xt-active:opacity-100 group-xt-active:translate-x-0;*/
       > * {
-        /*@apply transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/2 group-active:ease-out-quint group-active:delay-200 group-active:opacity-100 group-active:translate-x-0;*/
+        /*@apply transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/2 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100 group-xt-active:translate-x-0;*/
       }
     }
     .xt-overlay-disabled& {
@@ -200,7 +200,7 @@
 .gatsby_site-header_adiacent, .gatsby_site-header_adiacent_inner {
   @apply w-full;
   display: none;
-  &.active {
+  &.xt-active {
     display: block;
   }
 }
@@ -260,7 +260,7 @@
   border-width: 0;
   @apply w-full font-sans;
   > span {
-    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint active:ease-out-quint;
+    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint xt-active:ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.semibold');
@@ -301,7 +301,7 @@
       color: theme('colors.white');
     }
   }
-  &:active, &.active, &.current {
+  &:active, &.xt-active, &.current {
     > span {
       @apply bg-primary-900 bg-opacity-50;
       transform: none;

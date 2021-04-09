@@ -14,12 +14,11 @@ You can customize the **class names** used by the component. Refer to [toggle cl
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `in in-tooltip`        | Class name for activation            |
 | Option                  | `classSkip:Object`                          | `{ elements: true, elementsInner: true }`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
 
-You can set initial activation by adding `in-tooltip` to the **elements** or **targets**.
+You can set initial activation by adding `xt-in` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
 
@@ -33,7 +32,7 @@ You can specify **on** and **off** events for the tooltip. Fore example `on: 'cl
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                              | `'mouseenter'`                     | Set event to listen for activation           |
 | Option                  | `off:String`                             | `'mouseleave'`                       | Set event to listen for deactivation if not present `options.on` deactivate when already activated          |
-| Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-tooltip'`        | Limit on and off events within selector            |
+| Option                  | `eventLimit:Query`                          | `'.xt-event-limit, .xt-tooltip'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on window `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop'`        | Query Node inside to close on click, no nested Nodes            |
@@ -61,7 +60,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `active:z-tooltip` to have the button above the backdrop.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `xt-active:z-tooltip` to have the button above the backdrop.
 
 <demo>
   <demoinline src="demos/components/tooltip/backdrop">

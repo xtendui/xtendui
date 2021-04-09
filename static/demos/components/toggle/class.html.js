@@ -47,7 +47,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 3</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} in-toggle" data-xt-group="another-group">
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} in" data-xt-group="another-group">
         Target Group 3
       </div>
     </div>

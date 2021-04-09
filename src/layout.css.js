@@ -77,7 +77,7 @@ module.exports = {
     '[readonly], [disabled], .xt-disabled': {
       pointerEvents: 'none',
       // styles
-      '&:not(.active)': {
+      '&:not(.xt-active)': {
         opacity: '.5',
       },
     },

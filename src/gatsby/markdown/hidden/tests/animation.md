@@ -5,12 +5,33 @@ parent: "Tests"
 title: "Animation"
 ---
 
+## Class
+
+Test animation.
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-multiple">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation">
+  </demoinline>
+</demo>
+
 ## Css
 
-Test direction and queue timing.
+Test animation.
+
+Test direction.
+
+Test queue timing.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css-multiple">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-css">
   </demoinline>
   <demoinline src="demos/components/drop/animation-css-multiple">
   </demoinline>
@@ -24,6 +45,8 @@ Test direction and queue timing.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js-multiple">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-js">
   </demoinline>
   <demoinline src="demos/components/drop/animation-js-multiple">
   </demoinline>

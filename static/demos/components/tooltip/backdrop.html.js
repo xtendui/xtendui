@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="xt-tooltip-item">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} active:z-tooltip"
+            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} xt-active:z-tooltip"
           >
             backdrop
           </button>
@@ -25,7 +25,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} active:z-tooltip"
+          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} xt-active:z-tooltip"
         >
           backdrop click
         </button>

@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-slider">
       <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
         <span
-          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-active:opacity-100"
+          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-xt-active:opacity-100"
         >
           ${classes.spinner({})}
         </span>
@@ -78,7 +78,7 @@ const html = /* HTML */ `
       <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
         <button
           type="button"
-          class="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
+          class="xt-button text-2xs py-2 px-3.5 xt-active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-active:bg-gray-400 transition-all xt-ignore"
           data-xt-pag
           title="Slide xt-num"
         >

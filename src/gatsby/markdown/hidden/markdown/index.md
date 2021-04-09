@@ -55,14 +55,14 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 
 </div>
 
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.direction-before` and `.direction-after`.
+You can use also **css animations**, just add them with **class names** `.xt-active`, `.xt-out`, `.xt-before` and `.xt-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.direction-before`       |  Class name for left direction activation            |
-| Class                  | `.direction-after`       |  Class name for left direction activation            |
+| Class                  | `.xt-before`       |  Class name for before direction activation            |
+| Class                  | `.xt-after`       |  Class name for after direction activation            |
 </div>
 
 [[notePrimary]]

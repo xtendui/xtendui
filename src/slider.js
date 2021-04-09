@@ -1227,7 +1227,6 @@ Slider.optionsDefault = {
   elements: '[data-xt-pag]',
   targets: '.xt-slide',
   // class
-  class: 'in in-slider',
   groupElements: true,
   // quantity
   min: 1,

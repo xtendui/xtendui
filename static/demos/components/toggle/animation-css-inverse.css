@@ -1,25 +1,57 @@
 .demo--toggle-animation-inverse, .demo--toggle-animation-inverse-react {
-  .xt-card {
+  .xt-toggle-inverse {
+    &.xt-done {
+      display: none;
+    }
+  }
+
+  .xt-card.xt-toggle-inverse {
     /* initial */
     @apply transform ease-out duration-500;
     @apply opacity-100 translate-x-0;
     /* active */
-    &.active {
+    &.xt-active {
       @apply opacity-0 translate-x-0;
-      &.direction-before {
-        @apply translate-x-4;
-      }
-      &.direction-after {
+      &.xt-before {
         @apply -translate-x-4;
+      }
+      &.xt-after {
+        @apply translate-x-4;
       }
     }
     /* out */
-    &.out {
+    &.xt-out {
       @apply opacity-0 transition-none;
-      &.direction-before {
+      &.xt-before {
+        @apply translate-x-4;
+      }
+      &.xt-after {
         @apply -translate-x-4;
       }
-      &.direction-after {
+    }
+  }
+
+  .xt-card.xt-toggle {
+    /* initial */
+    @apply transform ease-out duration-500;
+    @apply opacity-0;
+    &.xt-before {
+      @apply translate-x-4;
+    }
+    &.xt-after {
+      @apply -translate-x-4;
+    }
+    /* active */
+    &.xt-active {
+      @apply opacity-100 translate-x-0;
+    }
+    /* out */
+    &.xt-out {
+      @apply opacity-0;
+      &.xt-before {
+        @apply -translate-x-4;
+      }
+      &.xt-after {
         @apply translate-x-4;
       }
     }

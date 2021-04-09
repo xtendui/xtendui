@@ -10,16 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `in in-overlay`        | Class name for activation            |
-| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
-
-</div>
-
-You can set initial activation by adding `in-overlay` to the **elements** or **targets**.
+You can set initial activation by adding `xt-in` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-overlay-init` gets added to the **object**.
 
@@ -33,7 +24,7 @@ You can specify **on** and **off** events for the overlay.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `'.event-limit, .xt-overlay'`        | Limit on and off events within selector            |
+| Option                  | `eventLimit:Query`                          | `'.xt-event-limit, .xt-overlay'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `true`        | Close automatically on window `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-overlay, .xt-overlay-container`        | Query Node inside to close on click, no nested Nodes            |

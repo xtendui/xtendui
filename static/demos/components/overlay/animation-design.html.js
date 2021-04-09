@@ -9,15 +9,15 @@ const html = /* HTML */ `
 
       <div class="xt-overlay group" data-xt-duration="500">
         <div
-          class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
         ></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
-              class="xt-design rounded-md shadow-overlay bg-white transform transition ease-out duration-500 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0"
+              class="xt-design rounded-md shadow-overlay bg-white transform transition ease-out duration-500 opacity-0 translate-y-4 group-xt-active:opacity-100 group-xt-active:translate-y-0"
             ></div>
 
-            <div class="xt-card transition ease-out duration-500 opacity-0 group-active:opacity-100">
+            <div class="xt-card transition ease-out duration-500 opacity-0 group-xt-active:opacity-100">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

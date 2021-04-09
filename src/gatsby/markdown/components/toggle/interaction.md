@@ -14,18 +14,18 @@ You can customize the **class names** used by the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `in in-toggle`        | Class name for activation            |
-| Option                  | `classActive:String`                          | `active`        | Class name for active            |
-| Option                  | `classOut:String`                          | `out`        | Class name for out            |
-| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
-| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
-| Option                  | `classBefore:String`                          | `direction-before`        | Class name for left direction activation            |
-| Option                  | `classAfter:String`                          | `direction-after`        | Class name for right direction activation            |
+| Option                  | `class:String`                          | `xt-in`        | Class name for activation            |
+| Option                  | `classActive:String`                          | `xt-active`        | Class name for active            |
+| Option                  | `classOut:String`                          | `xt-out`        | Class name for out            |
+| Option                  | `classDone:String`                          | `xt-done`        | Class name for in animation done            |
+| Option                  | `classInitial:String`                          | `xt-initial`        | Class name for initialization            |
+| Option                  | `classBefore:String`                          | `xt-before`        | Class name for before direction activation            |
+| Option                  | `classAfter:String`                          | `xt-after`        | Class name for after direction activation            |
 | Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
 
-You can set initial activation by adding `in-toggle` to the **elements** or **targets**.
+You can set initial activation by adding `xt-in` to the **elements** or **targets**.
 
 <demo>
   <demoinline src="demos/components/toggle/class">
@@ -67,7 +67,7 @@ You can specify **on** and **off** events for the toggle.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
 | Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `'.event-limit'`        | Limit on and off events within selector            |
+| Option                  | `eventLimit:Query`                          | `'.xt-event-limit'`        | Limit on and off events within selector            |
 | Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on window `closeauto.trigger.xt` event            |
 | Option                  | `closeDeep:Query`                          | `false`        | Query Node inside to close on click            |
 | Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |

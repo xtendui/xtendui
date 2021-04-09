@@ -116,7 +116,7 @@ pre {
     padding: .5em .75em;
     font-size: 12px;
     @apply text-black text-opacity-50 font-sans font-semibold leading-tight tracking-normal capitalize rounded-md border-gray-200 bg-gray-200 transition;
-    &:hover, &:active, &.active {
+    &:hover, &:active, &.xt-active {
       @apply border-white bg-white text-opacity-100;
     }
   }
@@ -132,7 +132,7 @@ pre {
     padding: .5em .75em;
     font-size: 12px;
     @apply text-white font-sans font-semibold leading-tight tracking-normal capitalize rounded-md border-code bg-code transition;
-    &:hover, &:active, &.active {
+    &:hover, &:active, &.xt-active {
       @apply bg-gray-800;
     }
   }
@@ -164,8 +164,8 @@ pre {
   .gatsby_demo_code {
     order: 2;
     @media (max-width: calc(theme('screens.lg') - 1px)) {
-      /*@apply toggle;*/
-      &:not(.in):not(.active):not(.out) {
+      /*@apply xt-toggle;*/
+      &:not(.xt-in):not(.xt-active):not(.xt-out) {
         display: none;
       }
     }
