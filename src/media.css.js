@@ -32,15 +32,8 @@ module.exports = {
       position: 'relative',
       width: '100%',
     },
-    '.xt-media-inner': {
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      bottom: '0',
-      right: '0',
-      borderRadius: 'inherit',
-    },
     '.xt-media': {
+      position: 'absolute',
       width: '100%',
       height: '100%',
       borderRadius: 'inherit',

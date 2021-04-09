@@ -9,9 +9,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -29,9 +27,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -53,9 +49,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <a
@@ -73,9 +67,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div
@@ -99,9 +91,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div
@@ -125,9 +115,7 @@ const html = /* HTML */ `
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="hero-content flex relative min-h-screen">
                   <div

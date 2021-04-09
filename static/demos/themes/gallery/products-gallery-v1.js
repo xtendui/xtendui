@@ -89,7 +89,7 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 1.5,
@@ -137,7 +137,7 @@ const mountImages = ({ ref }) => {
     // media
     const media = tr.querySelector('.xt-media-container')
     gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
     // mask
     const mask = tr.querySelector('.xt-media-mask')

@@ -23,9 +23,7 @@ const html = /* HTML */ `
                       title="Expand image 1"
                     >
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
-                        <div class="xt-media-inner relative">
-                          <img class="xt-media" src="/img.svg" loading="eager" alt="" />
-                        </div>
+                        <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
                         ></div>
@@ -39,9 +37,7 @@ const html = /* HTML */ `
                       title="Expand image 2"
                     >
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
-                        <div class="xt-media-inner relative">
-                          <img class="xt-media" src="/img-alt.svg" loading="eager" alt="" />
-                        </div>
+                        <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
                         ></div>
@@ -55,9 +51,7 @@ const html = /* HTML */ `
                       title="Expand image 3"
                     >
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
-                        <div class="xt-media-inner relative">
-                          <img class="xt-media" src="/img.svg" loading="eager" alt="" />
-                        </div>
+                        <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
                         ></div>
@@ -71,9 +65,7 @@ const html = /* HTML */ `
                       title="Expand image 4"
                     >
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
-                        <div class="xt-media-inner relative">
-                          <img class="xt-media" src="/img-alt.svg" loading="eager" alt="" />
-                        </div>
+                        <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
                         ></div>
@@ -87,9 +79,7 @@ const html = /* HTML */ `
                       title="Expand image 5"
                     >
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
-                        <div class="xt-media-inner relative">
-                          <img class="xt-media" src="/img.svg" loading="eager" alt="" />
-                        </div>
+                        <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
                         ></div>
@@ -170,63 +160,53 @@ const html = /* HTML */ `
                         <div class="xt-card items-center justify-center shadow-overlay ${classes.cardWhite()}">
                           <div class="w-full">
                             <div class="xt-media-container bg-gray-600 overflow-hidden">
-                              <div class="xt-media-inner relative">
-                                <img
-                                  class="xt-media"
-                                  id="product-image-overlay-1"
-                                  src="/img.svg"
-                                  loading="lazy"
-                                  alt=""
-                                />
-                              </div>
+                              <img
+                                class="xt-media relative"
+                                id="product-image-overlay-1"
+                                src="/img.svg"
+                                loading="lazy"
+                                alt=""
+                              />
                             </div>
 
                             <div class="xt-media-container bg-gray-600 overflow-hidden">
-                              <div class="xt-media-inner relative">
-                                <img
-                                  class="xt-media"
-                                  id="product-image-overlay-2"
-                                  src="/img-alt.svg"
-                                  loading="lazy"
-                                  alt=""
-                                />
-                              </div>
+                              <img
+                                class="xt-media relative"
+                                id="product-image-overlay-2"
+                                src="/img-alt.svg"
+                                loading="lazy"
+                                alt=""
+                              />
                             </div>
 
                             <div class="xt-media-container bg-gray-600 overflow-hidden">
-                              <div class="xt-media-inner relative">
-                                <img
-                                  class="xt-media"
-                                  id="product-image-overlay-3"
-                                  src="/img.svg"
-                                  loading="lazy"
-                                  alt=""
-                                />
-                              </div>
+                              <img
+                                class="xt-media relative"
+                                id="product-image-overlay-3"
+                                src="/img.svg"
+                                loading="lazy"
+                                alt=""
+                              />
                             </div>
 
                             <div class="xt-media-container bg-gray-600 overflow-hidden">
-                              <div class="xt-media-inner relative">
-                                <img
-                                  class="xt-media"
-                                  id="product-image-overlay-4"
-                                  src="/img-alt.svg"
-                                  loading="eagelazyr"
-                                  alt=""
-                                />
-                              </div>
+                              <img
+                                class="xt-media relative"
+                                id="product-image-overlay-4"
+                                src="/img-alt.svg"
+                                loading="eagelazyr"
+                                alt=""
+                              />
                             </div>
 
                             <div class="xt-media-container bg-gray-600 overflow-hidden">
-                              <div class="xt-media-inner relative">
-                                <img
-                                  class="xt-media"
-                                  id="product-image-overlay-5"
-                                  src="/img.svg"
-                                  loading="lazy"
-                                  alt=""
-                                />
-                              </div>
+                              <img
+                                class="xt-media relative"
+                                id="product-image-overlay-5"
+                                src="/img.svg"
+                                loading="lazy"
+                                alt=""
+                              />
                             </div>
                           </div>
                         </div>

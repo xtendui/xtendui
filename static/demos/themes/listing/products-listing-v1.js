@@ -57,7 +57,7 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'expo.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 0.5,
@@ -86,7 +86,7 @@ const mountMedia = ({ ref }) => {
       duration: 0.75,
       ease: 'expo.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
     // content
     const content = tr.querySelector('.listing-item-content')

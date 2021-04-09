@@ -113,7 +113,7 @@ const mountButtonsLine = ({ ref }) => {
         duration: 1,
         ease: 'expo.out',
       })
-      const mediaInner = link.querySelector('.xt-media-inner')
+      const mediaInner = link.querySelector('.xt-media')
       gsap.to(mediaInner, {
         scale: 1 + mediaScale,
         duration: 1,
@@ -160,7 +160,7 @@ const mountButtonsLine = ({ ref }) => {
         duration: 1,
         ease: 'expo.inOut',
       })
-      const mediaInner = link.querySelector('.xt-media-inner')
+      const mediaInner = link.querySelector('.xt-media')
       gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
       // text
       const text = ref.querySelector('.button--line-content')

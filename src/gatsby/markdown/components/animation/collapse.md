@@ -26,11 +26,8 @@ Collapse only work with **xtendui javascript components**, assign `options.colla
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 <demo>
-  <demoinline src="demos/components/animation/collapse-width">
-  </demoinline>
-</demo>
-
-<demo>
   <demoinline src="demos/components/animation/collapse-height">
+  </demoinline>
+  <demoinline src="demos/components/animation/collapse-width">
   </demoinline>
 </demo>

@@ -19,7 +19,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 ## Responsive
 
-Use **tailwind classes** on `.xt-media-inner` to assign relative position. The result is a **responsive media**.
+Use **tailwind classes** `.relative` on `.xt-media` to assign relative position. The result is a **responsive media**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
 

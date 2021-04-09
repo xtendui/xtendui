@@ -173,9 +173,7 @@ const html = /* HTML */ `
             <div class="xt-overlay-inner ${animDesign}">
               <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()}">
                 <div class="xt-media-container bg-gray-600 xt-ratio-100 ${animItem}">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
             </div>
@@ -210,9 +208,7 @@ const html = /* HTML */ `
                   </button>
                 </div>
                 <div class="xt-media-container bg-gray-600 h-48 ${animItem}">
-                  <div class="xt-media-inner">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                  </div>
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
                 <div class="${classes.cardMd()} ${animItem}">
                   <div class="xt-h4">Lorem ipsum</div>
@@ -331,9 +327,7 @@ const html = /* HTML */ `
 
                   <div class="md:w-5/12 flex flex-col ${animItem}">
                     <div class="xt-media-container bg-gray-600 md:rounded-tr-md h-48 md:xt-ratio-100">
-                      <div class="xt-media-inner">
-                        <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                      </div>
+                      <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div class="${classes.cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
@@ -375,9 +369,7 @@ const html = /* HTML */ `
                     <div
                       class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
                     >
-                      <div class="xt-media-inner">
-                        <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                      </div>
+                      <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                   </div>
 

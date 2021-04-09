@@ -74,20 +74,18 @@ class Template extends React.Component {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
                                         <div className="xt-media-container bg-gray-600" key={z}>
-                                          <div className="xt-media-inner">
-                                            <video
-                                              className="xt-media object-cover object-center"
-                                              preload="metadata"
-                                              muted
-                                              playsInline
-                                              loop
-                                              autoPlay>
-                                              <source
-                                                type="video/mp4"
-                                                src={assets.item.localFile.url ? assets.item.localFile.url : null}
-                                              />
-                                            </video>
-                                          </div>
+                                          <video
+                                            className="xt-media object-cover object-center"
+                                            preload="metadata"
+                                            muted
+                                            playsInline
+                                            loop
+                                            autoPlay>
+                                            <source
+                                              type="video/mp4"
+                                              src={assets.item.localFile.url ? assets.item.localFile.url : null}
+                                            />
+                                          </video>
                                         </div>
                                       )
                                     }
