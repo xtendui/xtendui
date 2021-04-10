@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="xt-list-inner">
           <input
             type="number"
-            class="xt-input w-16  rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${classes.inputDefault()}"
+            class="${classes.input()} w-16  rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 ${classes.inputDefault()}"
             aria-label="Quantity"
             value="1"
             min="0"

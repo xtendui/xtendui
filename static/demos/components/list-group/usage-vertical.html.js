@@ -10,7 +10,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="text"
-            class="xt-input rounded-tr-md ${classes.inputDefault()}"
+            class="${classes.input()} rounded-tr-md ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />

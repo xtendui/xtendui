@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}">
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}">
             Lorem ipsum
             <div class="ml-4">
               <div class="xt-list xt-list-3 items-center">
@@ -14,11 +14,11 @@ const html = /* HTML */ `
               </div>
             </div>
           </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}">
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}">
             Dolor sit amet
             <div class="ml-auto">
               <div class="xt-list xt-list-3 items-center">
@@ -27,13 +27,13 @@ const html = /* HTML */ `
               </div>
             </div>
           </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
         </div>
 
         <div class="w-full">
           <div class="xt-row xt-row-x-6 xt-row-y-4">
             <div class="w-full md:w-2/12 md:self-center">
-              <label class="xt-label flex-col ${classes.labelDefault()}">
+              <label class="${classes.label()} flex-col ${classes.labelDefault()}">
                 Lorem ipsum
                 <div class="mt-2">
                   <div class="xt-list xt-list-3 items-center">
@@ -45,7 +45,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-10/12">
-              <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <div class="xt-row xt-row-x-6 xt-row-y-4">
             <div class="w-full md:w-2/12 md:self-center">
-              <label class="xt-label flex-col ${classes.labelDefault()}">
+              <label class="${classes.label()} flex-col ${classes.labelDefault()}">
                 Dolor sit amet
                 <div class="mt-auto">
                   <div class="xt-list xt-list-3 items-center">
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-10/12">
-              <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
             </div>
           </div>
         </div>

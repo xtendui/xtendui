@@ -5,38 +5,38 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
         </div>
 
         <div class="w-full md:w-6/12">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Lorem Ipsum </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem Ipsum </label>
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
         </div>
 
         <div class="w-full md:w-6/12">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
+          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Checkbox </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
                   class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
                   checked
                   disabled
                 />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -45,9 +45,9 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -58,18 +58,18 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Radio </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full md:w-6/12">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
                   name="radio-row"
                   checked
                 />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -78,9 +78,9 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-6/12">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioDefault()}" name="radio-row" />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -91,13 +91,13 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelDefault()}"> Switch </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -106,14 +106,14 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-6/12">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
                   name="switch-row"
                   checked
                 />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -122,13 +122,13 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-6/12">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
                   name="switch-row"
                 />
-                <span class="xt-check-content"
+                <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span

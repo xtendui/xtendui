@@ -52,7 +52,7 @@ const html = /* HTML */ `
       <div data-xt-drop="{ elements: ':scope > input', on: 'focus', off: false }">
         <input
           type="text"
-          class="xt-input rounded-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-md ${classes.inputDefault()}"
           aria-label="Focus"
           placeholder="Focus"
         />

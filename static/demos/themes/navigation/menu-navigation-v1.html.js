@@ -4,9 +4,9 @@ const html = /* HTML */ `
   <div class="demo--menu-navigation-v1">
     <div class="megamenu relative bg-primary-500 text-white">
       <form class="text-sm container pt-10">
-        <label class="xt-label-check">
+        <label class="${classes.checkLabel()}">
           <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
-          <span class="xt-check-content">Use mouse events</span>
+          <span class="${classes.checkContent()}">Use mouse events</span>
         </label>
       </form>
 

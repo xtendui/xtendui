@@ -116,7 +116,7 @@ const html = /* HTML */ `
                     </button>
                     <input
                       type="text"
-                      class="xt-input ${classes.inputDefault()}"
+                      class="${classes.input()} ${classes.inputDefault()}"
                       aria-label="Search"
                       placeholder="Seach Catalog"
                     />
@@ -240,36 +240,36 @@ const html = /* HTML */ `
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full md:w-6/12">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Name </label>
-                          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Name" />
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Name </label>
+                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Name" />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Surname </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Surname </label>
                           <input
                             type="text"
-                            class="xt-input rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
                             aria-label="Surname"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Email </label>
-                          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Email" />
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Email" />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Telephone </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Telephone </label>
                           <input
                             type="text"
-                            class="xt-input rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
                             aria-label="Telephone"
                           />
                         </div>
 
                         <div class="w-full">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Subject </label>
-                          <select class="xt-input xt-select rounded-md ${classes.inputDefault()}" aria-label="Subject">
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <select class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}" aria-label="Subject">
                             <option selected value="">Select an option</option>
                             <option>Test</option>
                             <option>Test</option>
@@ -278,17 +278,17 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Message </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Message </label>
                           <textarea
-                            class="xt-input xt-textarea rounded-md ${classes.inputDefault()} h-24 resize-vertical"
+                            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputDefault()} h-24 resize-vertical"
                             aria-label="Message"
                           ></textarea>
                         </div>
 
                         <div class="w-full">
-                          <label class="xt-label-check">
+                          <label class="${classes.checkLabel()}">
                             <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
-                            <span class="xt-check-content">
+                            <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
                               <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.
@@ -362,54 +362,54 @@ const html = /* HTML */ `
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Email </label>
-                          <input type="text" class="xt-input rounded-md ${classes.inputDefault()}" aria-label="Email" />
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Email" />
                         </div>
 
                         <div class="w-full">
-                          <label class="xt-label mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
 
                           <div class="xt-row xt-row-x-8 xt-row-y-2">
                             <div class="w-full sm:w-auto">
-                              <label class="xt-label-check">
+                              <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
                                   class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
                                   name="radio-usage"
                                   checked
                                 />
-                                <span class="xt-check-content"> Option 1 </span>
+                                <span class="${classes.checkContent()}"> Option 1 </span>
                               </label>
                             </div>
 
                             <div class="w-full sm:w-auto">
-                              <label class="xt-label-check">
+                              <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
                                   class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
                                   name="radio-usage"
                                 />
-                                <span class="xt-check-content"> Option 2 </span>
+                                <span class="${classes.checkContent()}"> Option 2 </span>
                               </label>
                             </div>
 
                             <div class="w-full sm:w-auto">
-                              <label class="xt-label-check">
+                              <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
                                   class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
                                   name="radio-usage"
                                 />
-                                <span class="xt-check-content"> Option 3 </span>
+                                <span class="${classes.checkContent()}"> Option 3 </span>
                               </label>
                             </div>
                           </div>
                         </div>
 
                         <div class="w-full">
-                          <label class="xt-label-check">
+                          <label class="${classes.checkLabel()}">
                             <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
-                            <span class="xt-check-content">
+                            <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
                               <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.

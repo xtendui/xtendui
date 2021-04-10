@@ -10,7 +10,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="text"
-            class="xt-input ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />

@@ -39,9 +39,9 @@ const html = /* HTML */ `
 
     <div class="container">
       <form class="text-sm mt-4">
-        <label class="xt-label-check">
+        <label class="${classes.checkLabel()}">
           <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
-          <span class="xt-check-content">Deactivate classes</span>
+          <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>
     </div>

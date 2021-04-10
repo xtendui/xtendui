@@ -47,6 +47,9 @@ export const classes = {
   cardSlide: () => 'text-base p-8 text-center text-black xt-links-default bg-gray-200',
   cardToggle: () => 'text-sm p-6 text-black xt-links-default bg-gray-200',
   cardWhite: () => 'text-black xt-links-default bg-white',
+  // form
+  checkLabel: () => 'cursor-pointer inline-flex items-baseline',
+  checkContent: () => 'ml-4',
   checkDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
   checkPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
   radioDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
@@ -59,8 +62,11 @@ export const classes = {
     'py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700',
   inputUnderline: () =>
     'py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300',
-  labelDefault: () => 'text-black text-opacity-75 font-semibold',
-  labelPrimary: () => 'text-white text-opacity-75',
+  labelDefault: () => 'font-semibold text-gray-900',
+  labelPrimary: () => 'font-semibold text-white',
+  label: () => 'flex',
+  input: () => 'block w-full',
+  textarea: () => 'h-20 max-h-48',
   note: () => 'text-black text-opacity-50 text-xs leading-snug',
   // headers
   h1Display: () => {

@@ -15,13 +15,6 @@ module.exports = {
         marginLeft: theme('spacing.1'),
       },
     },
-    '.xt-label': {
-      display: 'flex',
-    },
-    '.xt-input': {
-      display: 'block', // fix select and textarea space below
-      width: '100%',
-    },
     '.xt-select': {
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
@@ -36,16 +29,6 @@ module.exports = {
         backgroundImage: 'none !important',
       },
     },
-    'xt-textarea': {
-      // styles
-      minHeight: '3.5rem',
-      maxHeight: '10.5rem',
-    },
-    '.xt-label-check': {
-      cursor: 'pointer',
-      display: 'inline-flex',
-      alignItems: 'baseline',
-    },
     '.xt-check': {
       appearance: 'none',
       cursor: 'pointer',
@@ -58,10 +41,6 @@ module.exports = {
         borderColor: `${theme('colors.gray.500')} !important`,
         opacity: '1',
       },
-    },
-    '.xt-check-content': {
-      // styles
-      marginLeft: '1em',
     },
     '.xt-checkbox': {
       appearance: 'none',

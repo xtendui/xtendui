@@ -39,28 +39,28 @@ const html = /* HTML */ `
       >
         <input
           type="text"
-          class="xt-input rounded-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-md ${classes.inputDefault()}"
           aria-label="Toggle 0"
           placeholder="Toggle 0"
         />
 
         <input
           type="text"
-          class="xt-input rounded-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-md ${classes.inputDefault()}"
           aria-label="Toggle 1"
           placeholder="Toggle 1"
         />
 
         <input
           type="text"
-          class="xt-input rounded-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-md ${classes.inputDefault()}"
           aria-label="Toggle 2"
           placeholder="Toggle 2"
         />
 
         <input
           type="text"
-          class="xt-input rounded-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-md ${classes.inputDefault()}"
           aria-label="Toggle 3"
           placeholder="Toggle 3"
         />
