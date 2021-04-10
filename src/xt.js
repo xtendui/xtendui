@@ -23,7 +23,6 @@ if (typeof window !== 'undefined') {
   Xt.scrollDelay = false
   Xt.resizeDelay = 250
   Xt.medialoadedDelay = false
-  Xt.stickyIndex = 800
   Xt.scrollRestoration = 'auto'
   Xt.focusables = 'a, button, details, input, iframe, select, textarea, .xt-dismiss'
   Xt.supportScroll = 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
@@ -683,14 +682,6 @@ if (typeof window !== 'undefined') {
   Xt.getuniqueId = () => {
     Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
     return `xt-${Xt.uid++}`
-  }
-
-  /**
-   * Get decresting number from Xt.stickyIndex
-   * @return {Number} Unique number
-   */
-  Xt.getStickyIndex = () => {
-    return Xt.stickyIndex--
   }
 
   /**
