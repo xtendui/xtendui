@@ -49,14 +49,14 @@ module.exports = {
         link: {
           utility: theme => ({
             '.xt-links-default': {
-              code: {
-                color: theme('colors.primary.600'),
+              'code:not([class])': {
+                color: theme('colors.primary.500'),
               },
             },
             '.xt-links-inverse': {
-              code: {
+              'code:not([class])': {
                 color: theme('colors.white'),
-                opacity: '0.8',
+                opacity: '0.85',
               },
             },
           }),
@@ -65,6 +65,10 @@ module.exports = {
           component: {
             body: {
               '@apply text-base xl:text-lg': '',
+            },
+            'code:not([class])': {
+              fontSize: '0.9em',
+              fontWeight: 600,
             },
           },
         },
