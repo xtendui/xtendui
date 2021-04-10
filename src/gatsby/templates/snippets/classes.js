@@ -14,27 +14,27 @@ export const classes = {
   cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
   // variant
   badgeDefaultInteractive: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 transition',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300',
   badgePrimaryInteractive: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-500 transition',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-500',
   badgeDefault: () => 'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200',
   badgePrimary: () => 'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () =>
     'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
-    'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 transition',
+    'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 group-hover:bg-gray-300',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
   buttonDefault: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-active:bg-gray-400 transition',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 xt-in:bg-gray-400',
   buttonPrimaryDrop: () =>
-    'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 transition',
+    'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 group-hover:bg-primary-600',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 xt-active:bg-primary-700 transition',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 xt-in:bg-primary-700',
   buttonText: () =>
-    'font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-60 xt-active:text-opacity-100 transition',
+    'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 xt-in:text-opacity-100',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFullInteractive: () =>
     'text-black xt-links-default transform transition hover:bg-gray-200',
@@ -58,11 +58,11 @@ export const classes = {
   switchDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
   switchPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
   inputDefault: () =>
-    'py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition',
+    'py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300',
   inputPrimary: () =>
     'py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700',
   inputUnderline: () =>
-    'py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition',
+    'py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300',
   labelDefault: () => 'text-black text-opacity-75 font-semibold',
   labelPrimary: () => 'text-white text-opacity-75',
   note: () => 'text-black text-opacity-50 text-xs leading-snug',

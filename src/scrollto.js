@@ -351,7 +351,7 @@ Scrollto.optionsDefault = {
   anchors: '[href*="{hash}"]',
   scrolls: '.xt-overlay',
   // class
-  class: 'xt-active',
+  class: 'xt-active xt-in',
   // event
   scrollActivation: true,
   scrollDelay: 150,

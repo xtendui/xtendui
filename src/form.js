@@ -17,9 +17,9 @@ Xt.mount({
     const toggle = input => {
       const label = input.closest('label')
       if (input.checked) {
-        label.classList.add('xt-active')
+        Xt.animOn(label)
       } else {
-        label.classList.remove('xt-active')
+        Xt.animOff(label)
       }
     }
 

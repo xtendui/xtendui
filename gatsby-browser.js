@@ -19,7 +19,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     if (location.pathname !== prevLocation.pathname) {
       // close demo full
-      const demoFull = document.querySelector('#gatsby_open-full-trigger.xt-in')
+      const demoFull = document.querySelector('#gatsby_open-full-trigger.xt-active')
       if (demoFull) {
         demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
       }
@@ -27,7 +27,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
       document.documentElement.setAttribute('data-demo-index', '0')
       // overlayOpen
       if (btn) {
-        window.overlayOpen = btn.classList.contains('xt-in')
+        window.overlayOpen = btn.classList.contains('xt-active')
       }
     }
   }
@@ -41,7 +41,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   if (overlay && sidebar) {
     // overlayOpen
     if (btn && !window.overlayOpen) {
-      overlay.classList.remove('xt-in')
+      overlay.classList.remove('xt-active')
     }
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {

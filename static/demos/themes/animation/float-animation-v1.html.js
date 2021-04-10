@@ -1,19 +1,19 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 const buttonDefault = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg xt-active:shadow-sm`
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg xt-in:shadow-sm`
 const buttonPrimary = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesPrimary} hover:shadow-lg xt-active:shadow-sm`
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesPrimary} hover:shadow-lg xt-in:shadow-sm`
 const cardWhite = () => 'text-black xt-links-default'
 const classesDefault =
-  'text-black rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 xt-active:bg-gray-400 xt-active:translate-y-0'
+  'text-black rounded-md bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 xt-in:bg-gray-400 xt-in:translate-y-0'
 const classesPrimary =
-  'text-white rounded-md bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 xt-active:bg-primary-700 xt-active:translate-y-0'
+  'text-white rounded-md bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 xt-in:bg-primary-700 xt-in:translate-y-0'
 const animDesign =
-  'transform transition ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-xt-active:ease-out-quint group-xt-active:delay-0 group-xt-active:opacity-100 group-xt-active:scale-100'
+  'transform transition ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-xt-in:ease-out-quint group-xt-in:delay-0 group-xt-in:opacity-100 group-xt-in:scale-100'
 const animItem =
-  'transform transition ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100 group-xt-active:translate-y-0'
+  'transform transition ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100 group-xt-in:translate-y-0'
 const animItemOpacity =
-  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100'
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100'
 
 const html = /* HTML */ `
   <div>
@@ -26,14 +26,14 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 xt-active:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 xt-in:translate-y-0"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 xt-active:translate-y-0"
+        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 xt-in:translate-y-0"
       >
         Link
       </button>
@@ -151,7 +151,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">screen full</button>
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -179,7 +179,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
@@ -226,7 +226,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -335,7 +335,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -444,7 +444,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card ${classesDefault} hover:shadow-xl xt-active:shadow-md">
+        <a role="button" class="xt-card ${classesDefault} hover:shadow-xl xt-in:shadow-md">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -457,7 +457,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card ${classesPrimary} hover:shadow-xl xt-active:shadow-md">
+        <a role="button" class="xt-card ${classesPrimary} hover:shadow-xl xt-in:shadow-md">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

@@ -48,7 +48,7 @@ module.exports = {
       width: '100%',
     },
     '.xt-jump': {
-      '&:not(.xt-in)': {
+      '&:not(.xt-active)': {
         cursor: 'pointer',
       },
     },

@@ -172,7 +172,7 @@ const populateBlock = () => {
       hashReset = true
       // fix demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
-      const current = content.querySelector('.gatsby_demo_item.xt-in')
+      const current = content.querySelector('.gatsby_demo_item.xt-active')
       // hidden tooltip
       const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
       if (tooltip) {
@@ -198,7 +198,7 @@ const populateBlock = () => {
         scrollToItem()
         // populate iframe
         if (container) {
-          for (const item of container.querySelectorAll('.gatsby_demo_item.xt-in')) {
+          for (const item of container.querySelectorAll('.gatsby_demo_item.xt-active')) {
             // spinner
             item.classList.remove('loaded')
           }
@@ -206,7 +206,7 @@ const populateBlock = () => {
         // iframe
         if (container && container.dataset.isFullscreenOnly) {
           // populate iframe
-          for (const item of container.querySelectorAll('.gatsby_demo_item.xt-in')) {
+          for (const item of container.querySelectorAll('.gatsby_demo_item.xt-active')) {
             if (item.getAttribute('data-iframe-fullscreen')) {
               item.dispatchEvent(new CustomEvent('offdone.xt.toggle'))
             }
@@ -218,13 +218,13 @@ const populateBlock = () => {
           }
         }
         // btnOpenFull
-        for (const btn of document.querySelectorAll('.button--open-full.xt-in')) {
-          btn.classList.remove('xt-in')
+        for (const btn of document.querySelectorAll('.button--open-full.xt-active')) {
+          btn.classList.remove('xt-active')
         }
         // toggles
         const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
         for (const el of listingToggles) {
-          el.classList.remove('xt-in')
+          el.classList.remove('xt-active')
         }
         // move code block
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
@@ -235,7 +235,7 @@ const populateBlock = () => {
           // fix demo fullscreen
           const previous = appendOrigin.previousSibling
           if (previous) {
-            const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.xt-in')
+            const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.xt-active')
             // triggering e.detail.container
             dispatchEvent(
               new CustomEvent('resize', {
@@ -290,12 +290,12 @@ const populateDemo = container => {
       ${classes.iconCode()}
     </button>
     <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
         Show Code
       </div>
     </div>
     <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
         Hide Code
       </div>
     </div>
@@ -308,7 +308,7 @@ const populateDemo = container => {
       ${classes.iconMaximize()}
     </button>
     <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
         Open Fullscreen
       </div>
     </div>
@@ -321,7 +321,7 @@ const populateDemo = container => {
       ${classes.iconExternal()}
     </a>
     <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
         Open Iframe
       </div>
     </div>
@@ -360,12 +360,12 @@ const populateDemo = container => {
             ${classes.iconCopy()}
           </button>
           <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
               Copy to Clipboard
             </div>
           </div>
           <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
-            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+            <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
               Copied!
             </div>
           </div>
@@ -406,7 +406,7 @@ const populateDemo = container => {
       scrollCache = document.scrollingElement.scrollTop
       // hash
       hashReset = false
-      location.hash = container.querySelector('.gatsby_demo_item.xt-in').getAttribute('id')
+      location.hash = container.querySelector('.gatsby_demo_item.xt-active').getAttribute('id')
     })
   }
   // get hash
@@ -414,8 +414,8 @@ const populateDemo = container => {
     const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       const demo = item.closest('.gatsby_demo')
-      demo.querySelector('.button--open-full').classList.add('xt-in')
-      item.classList.add('xt-in')
+      demo.querySelector('.button--open-full').classList.add('xt-active')
+      item.classList.add('xt-active')
     }
   }
   // gatsby_demo_tabs_left
@@ -433,7 +433,7 @@ const populateDemo = container => {
         text: trigger => {
           const elSourceCode = trigger
             .closest('.gatsby_demo')
-            .querySelector('.gatsby_demo_item.xt-in .gatsby_demo_code .gatsby_demo_code_body_item.xt-in pre code')
+            .querySelector('.gatsby_demo_item.xt-active .gatsby_demo_code .gatsby_demo_code_body_item.xt-active pre code')
           return Xt.dataStorage.get(elSourceCode, 'sourceCode')
         },
       })
@@ -463,7 +463,7 @@ const populateDemo = container => {
         )
       }
       // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('xt-in')) {
+      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('xt-active')) {
         // hash
         hashReset = false
         location.hash = item.getAttribute('id')
@@ -590,10 +590,10 @@ const makeFullscreen = container => {
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
-    listingToggle.classList.add('xt-in')
+    listingToggle.classList.add('xt-active')
   }
   // populate
-  const items = container.querySelectorAll('.gatsby_demo_item.xt-in')
+  const items = container.querySelectorAll('.gatsby_demo_item.xt-active')
   for (const item of items) {
     // spinner
     item.classList.remove('loaded')
@@ -607,7 +607,7 @@ const makeFullscreen = container => {
     }
   }
   // needs both or sometimes it doesn't open
-  toggle.classList.add('xt-in')
+  toggle.classList.add('xt-active')
   requestAnimationFrame(() => {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   })
@@ -625,7 +625,7 @@ const makeFullscreen = container => {
   // raf after initialization
   requestAnimationFrame(() => {
     // populate iframe after initialization
-    for (const item of container.querySelectorAll('.gatsby_demo_item.xt-in')) {
+    for (const item of container.querySelectorAll('.gatsby_demo_item.xt-active')) {
       if (item.getAttribute('data-iframe-fullscreen')) {
         item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
         initializeIframe(item)

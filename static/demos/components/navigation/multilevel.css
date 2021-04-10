@@ -10,7 +10,7 @@
       @apply translate-x-10;
     }
     /* active */
-    &.xt-active {
+    &.xt-in {
       @apply delay-200 opacity-100 translate-x-0;
     }
     /* out */

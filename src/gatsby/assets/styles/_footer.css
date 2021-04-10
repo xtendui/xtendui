@@ -11,7 +11,7 @@
     font-weight: theme('fontWeight.semibold');
     color: theme('colors.black') !important;
     text-decoration: none;
-    &:hover, &:active, &.xt-active {
+    &:hover, &:active, &.xt-in {
       text-decoration: underline;
     }
   }

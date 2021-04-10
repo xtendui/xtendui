@@ -53,7 +53,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -70,7 +70,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -87,7 +87,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -137,12 +137,12 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 xt-active:border-primary-700 xt-active:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 xt-in:border-primary-700 xt-in:bg-primary-700 transition`}>
                           Html
                         </button>
                         <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0`}>
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0`}>
                             Switch to Html
                           </div>
                         </div>
@@ -150,12 +150,12 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 xt-active:border-primary-700 xt-active:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 xt-in:border-primary-700 xt-in:bg-primary-700 transition`}>
                           React
                         </button>
                         <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
                           <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0`}>
+                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0`}>
                             Switch to React
                           </div>
                         </div>
@@ -206,7 +206,7 @@ export default function Header({ page }) {
                                             title={post.frontmatter.description}
                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'xt-active'
+                                                ? 'active'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
@@ -225,7 +225,7 @@ export default function Header({ page }) {
                                             title={post.frontmatter.description}
                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'xt-active'
+                                                ? 'active'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
@@ -251,7 +251,7 @@ export default function Header({ page }) {
                                                       className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
                                                         page.post.frontmatter.title === adiacent.frontmatter.title &&
                                                         post.frontmatter.category === page.post.frontmatter.category
-                                                          ? 'xt-active'
+                                                          ? 'active'
                                                           : ''
                                                       }`}>
                                                       <span>

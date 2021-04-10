@@ -98,7 +98,7 @@ const mountEventmethods = ({ ref }) => {
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 xt-active:bg-primary-700 transition">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 xt-in:bg-primary-700">
           Drop ${indexEl}
         </button>
       `
@@ -109,13 +109,13 @@ const mountEventmethods = ({ ref }) => {
         <div class="xt-drop p-4" title="Target ${indexTr}">
           <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
             <nav class="list flex-col">
-              <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 xt-active:text-opacity-75 transition">
+              <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 xt-in:text-opacity-75">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 xt-active:text-opacity-75 transition">
+              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 xt-in:text-opacity-75">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 xt-active:text-opacity-75 transition">
+              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 xt-in:text-opacity-75">
                 Amet
               </button>
             </nav>

@@ -21,10 +21,10 @@ module.exports = {
     '.xt-slider-absolute': {
       '.xt-slide': {
         position: 'relative',
-        '&:not(.xt-in):not(.xt-active):not(.xt-out)': {
+        '&:not(.xt-active):not(.xt-in):not(.xt-out)': {
           display: 'none',
         },
-        '&:not(.xt-in)': {
+        '&:not(.xt-active)': {
           position: 'absolute',
           top: '0',
           left: '0',

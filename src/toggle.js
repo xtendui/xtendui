@@ -34,7 +34,7 @@ class Toggle {
     const self = this
     // vars
     self.classes = []
-    self.classesActive = []
+    self.classesIn = []
     self.classesOut = []
     self.classesInitial = []
     self.classesBefore = []
@@ -69,7 +69,7 @@ class Toggle {
     // classes
     const options = self.options
     self.classes = options.class ? [...options.class.split(' ')] : []
-    self.classesActive = options.classActive ? [...options.classActive.split(' ')] : []
+    self.classesIn = options.classIn ? [...options.classIn.split(' ')] : []
     self.classesOut = options.classOut ? [...options.classOut.split(' ')] : []
     self.classesDone = options.classDone ? [...options.classDone.split(' ')] : []
     self.classesInitial = options.classInitial ? [...options.classInitial.split(' ')] : []
@@ -272,7 +272,7 @@ class Toggle {
     if (!saveCurrents) {
       el.classList.remove(
         ...self.classes,
-        ...self.classesActive,
+        ...self.classesIn,
         ...self.classesOut,
         ...self.classesDone,
         ...self.classesInitial,
@@ -283,7 +283,7 @@ class Toggle {
       for (const elInner of elsInner) {
         elInner.classList.remove(
           ...self.classes,
-          ...self.classesActive,
+          ...self.classesIn,
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
@@ -305,7 +305,7 @@ class Toggle {
       if (!saveCurrents) {
         tr.classList.remove(
           ...self.classes,
-          ...self.classesActive,
+          ...self.classesIn,
           ...self.classesOut,
           ...self.classesDone,
           ...self.classesInitial,
@@ -316,7 +316,7 @@ class Toggle {
         for (const trInner of trsInner) {
           trInner.classList.remove(
             ...self.classes,
-            ...self.classesActive,
+            ...self.classesIn,
             ...self.classesOut,
             ...self.classesDone,
             ...self.classesInitial,
@@ -1272,7 +1272,7 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classes)
-      el.classList.remove(...self.classesActive)
+      el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
       if (self.initial) {
@@ -1285,7 +1285,7 @@ class Toggle {
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            el.classList.add(...self.classesActive)
+            el.classList.add(...self.classesIn)
           })
         })
       )
@@ -1326,7 +1326,7 @@ class Toggle {
       el.classList.remove(...self.classes)
       el.classList.add(...self.classesOut)
       el.classList.remove(...self.classesDone)
-      el.classList.remove(...self.classesActive)
+      el.classList.remove(...self.classesIn)
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -3234,8 +3234,8 @@ Toggle.optionsDefaultSuper = {
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   // class
-  class: 'xt-in',
-  classActive: 'xt-active',
+  class: 'xt-active',
+  classIn: 'xt-in',
   classOut: 'xt-out',
   classDone: 'xt-done',
   classInitial: 'xt-initial',

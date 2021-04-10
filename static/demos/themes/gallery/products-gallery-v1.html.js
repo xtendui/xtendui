@@ -95,7 +95,7 @@ const html = /* HTML */ `
                         title="Go to image 1"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-xt-active:bg-transparent group-xt-active:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-xt-in:bg-transparent group-xt-in:border-black"
                         ></div>
                       </a>
 
@@ -105,7 +105,7 @@ const html = /* HTML */ `
                         title="Go to image 2"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-xt-active:bg-transparent group-xt-active:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-xt-in:bg-transparent group-xt-in:border-black"
                         ></div>
                       </a>
 
@@ -115,7 +115,7 @@ const html = /* HTML */ `
                         title="Go to image 3"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-xt-active:bg-transparent group-xt-active:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-xt-in:bg-transparent group-xt-in:border-black"
                         ></div>
                       </a>
 
@@ -125,7 +125,7 @@ const html = /* HTML */ `
                         title="Go to image 4"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-xt-active:bg-transparent group-xt-active:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-xt-in:bg-transparent group-xt-in:border-black"
                         ></div>
                       </a>
 
@@ -135,18 +135,18 @@ const html = /* HTML */ `
                         title="Go to image 5"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-xt-active:bg-transparent group-xt-active:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-xt-in:bg-transparent group-xt-in:border-black"
                         ></div>
                       </a>
                     </div>
                   </div>
 
                   <div
-                    class="xt-overlay ease-in-out-quint duration-500 opacity-0 xt-active:ease-out-quint xt-active:opacity-100"
+                    class="xt-overlay ease-in-out-quint duration-500 opacity-0 xt-in:ease-out-quint xt-in:opacity-100"
                     id="overlay--product-images"
                   >
                     <div
-                      class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+                      class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
                     ></div>
                     <div class="xt-overlay-container p-0">
                       <button

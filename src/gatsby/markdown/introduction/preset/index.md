@@ -24,8 +24,8 @@ The following theme values are added with the preset:
 
 ## Variants
 
-See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles
+See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles.
 
-* Added **custom tailwind variants** `xt-active` and `group-xt-active`. They styles **when the element is activated by javascript** with the class `.xt-active` and `.group.xt-active`.
+* Added **custom tailwind variants** `xt-in` and `group-xt-in` `xt-out` and `group-xt-out`. They style activation animations with `.xt-in` and `.xt-out`.
 
-* Added display variants `['responsive', 'group-hover', 'group-xt-active', 'hover', 'xt-active', 'focus']`
+* Added display an zIndex variants.

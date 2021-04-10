@@ -16,7 +16,7 @@ module.exports = {
       position: 'absolute',
       zIndex: theme('zIndex.drop'),
       margin: '0 !important',
-      '&:not(.xt-in):not(.xt-active):not(.xt-out)': {
+      '&:not(.xt-active):not(.xt-in):not(.xt-out)': {
         display: 'none',
       },
       '&.xt-out': {

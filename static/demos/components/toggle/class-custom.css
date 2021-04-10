@@ -1,5 +1,5 @@
 .demo--toggle-class-custom, .demo--toggle-class-custom-react {
   .active--toggle-custom-class {
-    color: red !important;
+    color: red;
   }
 }

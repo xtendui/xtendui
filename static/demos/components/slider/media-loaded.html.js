@@ -87,7 +87,7 @@ const html = /* HTML */ `
       <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
         <button
           type="button"
-          class="xt-button text-2xs py-2 px-3.5 xt-active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-active:bg-gray-400 transition-all xt-ignore"
+          class="xt-button text-2xs py-2 px-3.5 xt-in:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 xt-in:bg-gray-400 transition-all xt-ignore"
           data-xt-pag
           title="Slide xt-num"
         ></button>

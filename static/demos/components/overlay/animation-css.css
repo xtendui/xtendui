@@ -10,7 +10,7 @@
       @apply opacity-0 translate-y-4;
     }
     /* active */
-    &.xt-active {
+    &.xt-in {
       .xt-backdrop {
         @apply opacity-25;
       }

@@ -18,7 +18,7 @@ You can customize the **class names** used by the component. Refer to [toggle cl
 
 </div>
 
-You can set initial activation by adding `xt-in` to the **elements** or **targets**.
+You can set initial activation by adding `xt-active` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
 
@@ -60,7 +60,7 @@ You can have **element's link** and **click events** prevented when the tooltip 
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `xt-active:z-tooltip` to have the button above the backdrop.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop. Use the class `xt-in:z-tooltip` to have the button above the backdrop.
 
 <demo>
   <demoinline src="demos/components/tooltip/backdrop">

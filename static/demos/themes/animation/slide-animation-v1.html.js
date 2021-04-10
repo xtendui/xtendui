@@ -1,14 +1,14 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 const animDesign =
-  'overflow-hidden transform transition ease-in-out-quint duration-500 delay-200 opacity-0 translate-y-full group-xt-active:ease-out-quint group-xt-active:delay-0 group-xt-active:opacity-100 group-xt-active:translate-y-0'
+  'overflow-hidden transform transition ease-in-out-quint duration-500 delay-200 opacity-0 translate-y-full group-xt-in:ease-out-quint group-xt-in:delay-0 group-xt-in:opacity-100 group-xt-in:translate-y-0'
 const animItem =
-  'transform transition ease-in-out-quint duration-500 opacity-0 translate-y-1/4 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100 group-xt-active:translate-y-0'
+  'transform transition ease-in-out-quint duration-500 opacity-0 translate-y-1/4 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100 group-xt-in:translate-y-0'
 const animItemOpacity =
-  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100'
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100'
 const animDesignLeft =
-  'overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-xt-active:ease-out-quint group-xt-active:delay-0 group-xt-active:opacity-100 group-xt-active:translate-x-0'
+  'overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-xt-in:ease-out-quint group-xt-in:delay-0 group-xt-in:opacity-100 group-xt-in:translate-x-0'
 const animItemLeft =
-  'transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/4 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100 group-xt-active:translate-x-0'
+  'transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/4 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100 group-xt-in:translate-x-0'
 
 const html = /* HTML */ `
   <div class="demo--slide-animation-v1">
@@ -136,7 +136,7 @@ const html = /* HTML */ `
         </button>
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -164,7 +164,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
@@ -213,7 +213,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -327,7 +327,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">

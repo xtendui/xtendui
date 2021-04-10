@@ -9,7 +9,7 @@ const html = /* HTML */ `
 
       <div class="xt-tooltip p-2 group" data-xt-duration="300">
         <div
-          class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition ease-out duration-300 opacity-0 -translate-x-4 group-xt-active:opacity-100 group-xt-active:translate-x-0"
+          class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition ease-out duration-300 opacity-0 -translate-x-4 group-xt-in:opacity-100 group-xt-in:translate-x-0 group-xt-out:translate-x-4"
         >
           Lorem ipsum dolor sit amet
         </div>

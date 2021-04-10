@@ -14,9 +14,9 @@ You can customize the **class names** used by the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `xt-in`        | Class name for activation            |
-| Option                  | `classActive:String`                          | `xt-active`        | Class name for active            |
-| Option                  | `classOut:String`                          | `xt-out`        | Class name for out            |
+| Option                  | `class:String`                          | `xt-active`        | Class name for active            |
+| Option                  | `classIn:String`                          | `xt-in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `xt-out`        | Class name for out animation             |
 | Option                  | `classDone:String`                          | `xt-done`        | Class name for in animation done            |
 | Option                  | `classInitial:String`                          | `xt-initial`        | Class name for initialization            |
 | Option                  | `classBefore:String`                          | `xt-before`        | Class name for before direction activation            |
@@ -25,7 +25,7 @@ You can customize the **class names** used by the component.
 
 </div>
 
-You can set initial activation by adding `xt-in` to the **elements** or **targets**.
+You can set initial activation by adding `xt-active` to the **elements** or **targets**.
 
 <demo>
   <demoinline src="demos/components/toggle/class">

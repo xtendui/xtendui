@@ -54,7 +54,7 @@ Use **tailwind classes** to assign border.
 
 ## Merge
 
-You can make group a **single interactive object**, be sure to use `group` on the interactive element and the variants `group-hover:` and `group-xt-active:` classes.
+You can make group a **single interactive object**, be sure to use `group` on the interactive element.
 
 <demo>
   <demoinline src="demos/components/list-group/merge">

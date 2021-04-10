@@ -88,7 +88,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') !== 'react') {
-      ref.classList.add('xt-active')
+      ref.classList.add('xt-active', 'xt-in')
     }
   },
 })
@@ -108,7 +108,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === 'react') {
-      ref.classList.add('xt-active')
+      ref.classList.add('xt-active', 'xt-in')
     }
   },
 })
@@ -380,7 +380,7 @@ Xt.mount({
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
 <div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-  <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0">
+  <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0">
     Close Fullscreen
   </div>
 </div>`)
@@ -489,7 +489,7 @@ const makeDocument = () => {
         const item = Xt.createElement(
           `<div><a href="#" class="xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent_inner"><span></span></button></div>`
         )
-        container.classList.add('xt-active')
+        container.classList.add('xt-active', xt-in')
         container.querySelector('.gatsby_site-header_item').append(item)
         item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
         item.querySelector('span').textContent = el.textContent.trim()

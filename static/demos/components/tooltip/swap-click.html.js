@@ -12,7 +12,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group" id="tooltip--swap-click" data-xt-duration="300">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0"
+        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0"
       >
         Lorem ipsum dolor sit amet
       </div>
@@ -20,7 +20,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group hidden" id="tooltip--swap-click-swap" data-xt-duration="300">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-active:opacity-100 group-xt-active:translate-y-0"
+        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-xt-in:opacity-100 group-xt-in:translate-y-0"
       >
         Clicked!
       </div>

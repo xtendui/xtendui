@@ -15,11 +15,11 @@ const html = /* HTML */ `
         Toggle 2
       </button>
 
-      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-active:opacity-100">Target 0</div>
+      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-in:opacity-100">Target 0</div>
 
-      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-active:opacity-100">Target 1</div>
+      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-in:opacity-100">Target 1</div>
 
-      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-active:opacity-100">Target 2</div>
+      <div class="xt-card rounded-md ${classes.cardToggle()} transition opacity-50 xt-in:opacity-100">Target 2</div>
     </div>
   </div>
 `

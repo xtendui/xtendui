@@ -1,11 +1,11 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 const animDesign =
-  'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-xt-active:translate-y-0'
+  'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-xt-in:translate-y-0'
 const animItem =
-  'transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100 group-xt-active:translate-y-0'
+  'transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100 group-xt-in:translate-y-0'
 const animItemOpacity =
-  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-active:ease-out-quint group-xt-active:delay-200 group-xt-active:opacity-100'
-const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 xt-active:translate-x-0'
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-xt-in:ease-out-quint group-xt-in:delay-200 group-xt-in:opacity-100'
+const listCollapse = 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 xt-in:translate-x-0'
 
 const html = /* HTML */ `
   <div>
@@ -160,7 +160,7 @@ const html = /* HTML */ `
         </button>
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -188,7 +188,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner ${animDesign}">
@@ -237,7 +237,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign}">
@@ -351,7 +351,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay group" data-xt-duration="700">
           <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-active:opacity-25"
+            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-xt-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign}">

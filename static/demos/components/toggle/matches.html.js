@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 0</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} in">Target 1</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>
     </div>
   </div>
 `
