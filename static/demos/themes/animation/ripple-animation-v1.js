@@ -18,6 +18,8 @@ Xt.mount({
 /* mountRipple */
 
 const mountRipple = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-button, .xt-card')
   const unmounts = []
 

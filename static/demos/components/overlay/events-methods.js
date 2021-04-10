@@ -17,6 +17,8 @@ Xt.mount({
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const overlay = ref.querySelector('#overlay--eventmethods')
   const overlayAlt = ref.querySelector('#overlay--eventmethods-alt')
 

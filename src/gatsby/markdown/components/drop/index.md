@@ -8,7 +8,7 @@ description: "Nested navigation to show on user interaction, can contain lists a
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop`.
 
 Check [xtendui/src/drop.css.js](https://github.com/minimit/xtendui/blob/beta/src/drop.css.js) for default styles.
 

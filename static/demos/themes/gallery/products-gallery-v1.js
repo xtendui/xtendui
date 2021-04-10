@@ -60,11 +60,14 @@ const mountScrollto = () => {
 /* mountImages */
 
 const mountImages = ({ ref }) => {
+  // vars
+
+  const overlay = ref
   const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(ref, {
+  new Xt.Overlay(overlay, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
@@ -202,10 +205,9 @@ const mountImages = ({ ref }) => {
 /* mountArrow */
 
 const mountArrow = ({ ref }) => {
-  const arrow = ref.querySelector('.product-arrow')
-
   // vars
 
+  const arrow = ref.querySelector('.product-arrow')
   const icon = arrow.querySelector(':scope > *')
   const posY = 15
 

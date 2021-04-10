@@ -17,6 +17,8 @@ Xt.mount({
 /* mountListing */
 
 const mountListing = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.listing-item')
 
   // click

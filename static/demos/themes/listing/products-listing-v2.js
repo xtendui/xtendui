@@ -64,9 +64,9 @@ const mountSlider = ({ ref }) => {
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const mediaContainerScale = 0.015
   const mediaScale = 0.06
@@ -185,9 +185,9 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const scrollY = 15
   const scrollScale = 1.04

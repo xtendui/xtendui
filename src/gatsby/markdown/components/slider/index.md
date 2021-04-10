@@ -8,7 +8,7 @@ description: "Create visually stunning sliders, has a comprehensive javascript a
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider`.
 
 Check [xtendui/src/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/slider.css.js) for default styles.
 
@@ -23,7 +23,7 @@ Initialize with **javascript** with `new Xt.Slider(document.querySelector('.my-o
 Use this code to create a **slider**.
 
 [[notePrimary]]
-| `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.
+| `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `.xt-slider-pagination` but you can hide it using the class `.xt-slider-pagination.hidden`.
 
 <demo>
   <demoinline src="demos/components/slider/usage">

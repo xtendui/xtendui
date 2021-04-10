@@ -16,6 +16,8 @@ Xt.mount({
 /* mountJumptocontents */
 
 const mountJumptocontents = ({ ref }) => {
+  // vars
+
   const jumptocontents = ref.querySelectorAll('.jumptocontent')
   const unmounts = []
 

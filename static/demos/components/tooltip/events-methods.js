@@ -17,6 +17,8 @@ Xt.mount({
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const tooltip = ref.querySelector('#tooltip--eventmethods')
 
   // init

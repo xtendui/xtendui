@@ -53,7 +53,7 @@ const html = /* HTML */ `
       <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
       <nav class="xt-slider-pagination hidden">
-        <button type="button" class="xt-button button-default xt-ignore" data-xt-pag title="Slide xt-num"></button>
+        <button type="button" class="xt-button button-default hidden"></button>
       </nav>
     </div>
 
@@ -102,7 +102,7 @@ const html = /* HTML */ `
       <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
       <nav class="xt-slider-pagination hidden">
-        <button type="button" class="xt-button button-default xt-ignore" data-xt-pag title="Slide xt-num"></button>
+        <button type="button" class="xt-button button-default hidden" data-xt-pag></button>
       </nav>
     </div>
   </div>

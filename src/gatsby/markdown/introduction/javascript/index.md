@@ -9,7 +9,7 @@ date: "2020-08-05"
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript`.
 
 Check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/javascript.css.js) for default styles.
 

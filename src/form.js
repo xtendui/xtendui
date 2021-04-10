@@ -47,8 +47,8 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
-    const scrollWindowFactor = 0.2
     const items = ref.elements
+    const scrollWindowFactor = 0.2
     let raf
 
     // valid

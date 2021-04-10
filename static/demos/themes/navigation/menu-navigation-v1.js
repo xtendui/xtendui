@@ -22,9 +22,9 @@ Xt.mount({
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
-  const megamenu = ref.querySelector('.megamenu')
-
   // vars
+
+  const megamenu = ref.querySelector('.megamenu')
 
   const contentXOn = -40
   const contentXOff = -40
@@ -188,10 +188,9 @@ const mountDrops = ({ ref }) => {
 /* mountLine */
 
 const mountLine = ({ ref }) => {
-  const megamenu = ref.querySelector('.megamenu')
-
   // vars
 
+  const megamenu = ref.querySelector('.megamenu')
   const btns = ref.querySelectorAll('.button--line')
   const drops = ref.querySelectorAll('.xt-drop-item')
   const line = ref.querySelector('.megamenu-line')
@@ -307,8 +306,12 @@ const mountLine = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  // vars
+
   const megamenu = ref.querySelector('.megamenu')
   const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
 
   const change = () => {
     const self = Xt.get('xt-drop', megamenu)

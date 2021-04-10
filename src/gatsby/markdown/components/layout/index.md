@@ -8,7 +8,7 @@ description: "Structural and layout components."
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout`.
 
 Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 

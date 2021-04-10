@@ -9,7 +9,7 @@ date: "1900-10-10"
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple`.
 
 Check [xtendui/src/ripple.css.js](https://github.com/minimit/xtendui/blob/beta/src/ripple.css.js) for default styles.
 

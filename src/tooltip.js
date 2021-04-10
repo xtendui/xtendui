@@ -59,9 +59,9 @@ class Tooltip extends Xt.Toggle {
     if (options.popperjs) {
       if (type === 'targets') {
         // instant
-        el.classList.add('xt-instant')
+        el.style.transition = 'none'
         requestAnimationFrame(() => {
-          el.classList.remove('xt-instant')
+          el.style.transition = ''
         })
         // popperjs
         const element = self.getElements(el)[0]

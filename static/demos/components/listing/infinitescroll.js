@@ -19,7 +19,11 @@ Xt.mount({
 /* mountInfinitescroll */
 
 const mountInfinitescroll = ({ ref }) => {
+  // vars
+
   const infinitescroll = ref.querySelector('.infinitescroll')
+
+  // init
 
   let self = new Xt.Infinitescroll(infinitescroll, {
     get: false,
@@ -48,8 +52,12 @@ const mountInfinitescroll = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  // vars
+
   const infinitescroll = ref.querySelector('.infinitescroll')
   const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
 
   const change = () => {
     const self = Xt.get('xt-infinitescroll', infinitescroll)

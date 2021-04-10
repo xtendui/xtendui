@@ -15,8 +15,8 @@ module.exports = {
       zIndex: theme('zIndex.overlay'),
       top: '0',
       left: '0',
-      bottom: '0', // fix no height or it bugs collapse animation
-      right: '0', // fix no width or it bugs collapse animation
+      bottom: '0', // fix no width and height or it bugs
+      right: '0', // fix no width and height or it bugs
       overflow: 'hidden',
       '&:not(.active):not(.in):not(.out)': {
         display: 'none',

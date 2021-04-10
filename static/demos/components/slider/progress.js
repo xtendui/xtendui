@@ -19,6 +19,8 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
+  // vars
+
   const slider = ref.querySelector('.xt-slider')
 
   // vars

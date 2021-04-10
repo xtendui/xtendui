@@ -16,6 +16,8 @@ Xt.mount({
 /* mountExpand */
 
 const mountExpand = ({ ref }) => {
+  // vars
+
   const lists = ref.querySelectorAll('.xt-list')
 
   for (const list of lists) {

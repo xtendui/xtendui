@@ -17,6 +17,8 @@ Xt.mount({
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const drop = ref.querySelector('#drop--eventmethods')
 
   // init

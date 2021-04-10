@@ -79,12 +79,7 @@ class Slider extends Xt.Toggle {
       let slideWidth = slide.offsetWidth
       if (slideWidth === 0) {
         // when display none
-        const container = slide.parentNode
-        const cloned = slide.cloneNode(true)
-        cloned.classList.add('xt-calculating', 'xt-ignore')
-        container.append(cloned)
-        slideWidth = cloned.offsetWidth
-        cloned.remove()
+        slideWidth = self.detail.draggerWidth
       }
       if (i === 0) {
         fixNegativeMargin = slideLeft
@@ -312,7 +307,8 @@ class Slider extends Xt.Toggle {
     self.pags = self.pags ? self.pags : []
     for (const [z, pag] of pags.entries()) {
       // vars
-      const cloned = pag.querySelector('[data-xt-pag].xt-ignore')
+      const cloned = pag.querySelector('[data-xt-pag].hidden')
+      cloned.classList.add('xt-ignore')
       const container = cloned.parentNode
       const arr = self.group
       // populate
@@ -320,8 +316,7 @@ class Slider extends Xt.Toggle {
       for (const [i, group] of arr.entries()) {
         const item = document.createElement('div') // needed to set innerHTML instead of outerHTML to do html.search also attributes
         const clone = cloned.cloneNode(true)
-        clone.classList.remove('xt-ignore')
-        clone.classList.add('xt-clone')
+        clone.classList.remove('hidden', 'xt-ignore')
         item.append(clone)
         let html = item.innerHTML
         const classes = []
@@ -333,9 +328,9 @@ class Slider extends Xt.Toggle {
             if (content) {
               replace += `<span>${content.innerHTML}</span>`
             }
-            const attr = slide.querySelector('[data-slide-pagination-class]')
+            const attr = slide.querySelector('[data-xt-pag-classes]')
             if (attr) {
-              classes.push(attr.getAttribute('data-slide-pagination-class'))
+              classes.push(attr.getAttribute('data-xt-pag-classes'))
             }
           }
           html = html.replace(regex, replace)
@@ -355,7 +350,7 @@ class Slider extends Xt.Toggle {
         item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
         container.insertBefore(item.children[0], cloned)
         item.remove()
-        self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i]
+        self.pags[z][i] = container.querySelectorAll('[data-xt-pag]:not(.xt-ignore)')[i]
       }
     }
   }

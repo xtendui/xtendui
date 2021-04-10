@@ -16,6 +16,8 @@ Xt.mount({
 /* mountValidation */
 
 const mountValidation = ({ ref }) => {
+  // vars
+  
   const input = ref.querySelector('.input--constrains')
 
   // validate

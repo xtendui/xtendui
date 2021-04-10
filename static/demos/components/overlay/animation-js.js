@@ -20,6 +20,8 @@ Xt.mount({
 const mountOverlay = ({ ref }) => {
   // vars
 
+  const overlay = ref
+
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
   const targetTimeOff = 0.5
@@ -27,7 +29,7 @@ const mountOverlay = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Overlay(ref, {
+  let self = new Xt.Overlay(overlay, {
     duration: 500,
   })
 

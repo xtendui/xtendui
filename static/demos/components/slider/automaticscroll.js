@@ -18,6 +18,8 @@ Xt.mount({
 /* mountSliders */
 
 const mountSliders = ({ ref }) => {
+  // vars
+
   const sliders = ref.querySelectorAll('.xt-slider')
   const unmounts = []
 

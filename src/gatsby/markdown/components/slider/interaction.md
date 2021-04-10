@@ -16,14 +16,12 @@ Additionally on component initialization the class `.xt-slider-init` gets added 
 
 ## Pagination	
 
-You can add pagination with an element `[data-xt-pag].xt-ignore`, it gets cloned inside the closest `.xt-slider-pagination`.	
-
-Inside it you can use this strings that gets populated with variables:	
+Inside `[data-xt-pag].hidden` you can use this strings that gets populated with variables:	
 
 - `xt-num` replaced with pagination's number slide	
 - `xt-tot` replaced with pagination's total slides	
 - `xt-content` replaced with slide's `.xt-slide-content` **innerHTML**.	
-- Classes added with slide's `[data-slide-pagination-class]` **value**.	
+- Classes added with slide's `[data-xt-pag-classes]` **value**.	
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
 
@@ -34,7 +32,7 @@ Inside it you can use this strings that gets populated with variables:
 </div>	
 
 [[notePrimary]]
-| `[data-xt-pag].xt-ignore` is essential to the functioning of the slider, but you can hide it using the class `.hidden`.	
+| `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `.xt-slider-pagination` but you can hide it using the class `.xt-slider-pagination.hidden`.
 
 <demo>	
   <demoinline src="demos/components/slider/pagination">	

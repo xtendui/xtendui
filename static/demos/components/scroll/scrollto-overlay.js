@@ -84,7 +84,12 @@ const mountScrollto = () => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // vars
+
   const overlay = ref.querySelector('.xt-overlay')
+
+  // sticky
+
   ScrollTrigger.create({
     trigger: overlay.querySelector('.xt-sticky'),
     start: 'top top',
@@ -106,8 +111,12 @@ const mountSticky = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  // vars
+
   const scrollto = document.documentElement
   const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
 
   const change = () => {
     const self = Xt.get('xt-scrollto', scrollto)

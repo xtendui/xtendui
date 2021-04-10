@@ -17,6 +17,8 @@ Xt.mount({
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
+  // vars
+
   const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 

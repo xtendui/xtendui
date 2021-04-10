@@ -8,7 +8,7 @@ description: "Animation components and utilities with css or javascript transiti
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation`.
 
 Check [xtendui/src/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/animation.css.js) for default styles.
 

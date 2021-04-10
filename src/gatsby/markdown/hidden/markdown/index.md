@@ -219,6 +219,8 @@ const mountDrops = ({ ref }) => {
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
+  // vars
+  
   const buttons = ref.querySelectorAll('.xt-button')
   const unmounts = []
 

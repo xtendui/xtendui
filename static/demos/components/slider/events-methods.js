@@ -18,6 +18,8 @@ Xt.mount({
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const slider = ref.querySelector('#slider--eventmethods')
 
   // vars

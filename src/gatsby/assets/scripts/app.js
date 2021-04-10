@@ -287,7 +287,10 @@ Xt.mount({
 Xt.mount({
   matches: '.gatsby_home-main',
   mount: ({ ref }) => {
+    // vars
+
     const items = ref.querySelectorAll('.gatsby_home-main_scroll')
+
     // parallax
 
     for (const item of items) {

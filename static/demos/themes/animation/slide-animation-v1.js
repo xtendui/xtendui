@@ -20,6 +20,8 @@ Xt.mount({
 /* mountSlide */
 
 const mountSlide = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-button, a.xt-card')
 
   for (const item of items) {

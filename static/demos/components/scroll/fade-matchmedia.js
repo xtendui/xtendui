@@ -19,6 +19,8 @@ Xt.mount({
 /* mountFade */
 
 const mountFade = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-card')
 
   // match media

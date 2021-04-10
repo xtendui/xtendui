@@ -17,6 +17,8 @@ Xt.mount({
 /* mountTooltip */
 
 const mountTooltip = ({ ref }) => {
+  // vars
+
   const tooltips = ref.querySelectorAll('.xt-tooltip')
 
   for (const tooltip of tooltips) {

@@ -9,7 +9,7 @@ date: "1900-10-10"
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`.
 
 Check [xtendui/src/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
 

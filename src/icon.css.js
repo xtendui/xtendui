@@ -3,7 +3,6 @@ module.exports = {
   utility: {
     '.xt-icon': {
       display: 'inline-block',
-      // styles
       width: 'auto',
       height: '1em',
     },

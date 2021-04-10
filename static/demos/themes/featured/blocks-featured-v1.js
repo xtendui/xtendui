@@ -21,6 +21,8 @@ Xt.mount({
 /* mountItemParallax */
 
 const mountItemsParallax = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.featured-item')
 
   for (const item of items) {

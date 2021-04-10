@@ -34,19 +34,6 @@ module.exports = {
         },
       },
     },
-    '[data-xt-pag].xt-ignore': {
-      display: 'none !important',
-    },
-    '[data-xt-nav]': {
-      cursor: 'pointer',
-    },
-    '.xt-instant': {
-      transition: 'none !important',
-    },
-    '.xt-container': {
-      position: 'relative',
-      width: '100%',
-    },
     '.xt-jump': {
       '&:not(.active)': {
         cursor: 'pointer',
@@ -64,16 +51,6 @@ module.exports = {
         '-ms-user-select': 'none',
         'user-select': 'none',
       },
-    },
-    '.xt-calculating': {
-      display: 'block !important',
-      visibility: 'hidden !important',
-      opacity: '0 !important',
-      transitionDuration: 'initial !important',
-      transitionDelay: 'initial !important',
-      animationDuration: 'initial !important',
-      animationDelay: 'initial !important',
-      animationIterationCount: '1 !important',
     },
     '.xt-collapse-reset': {
       overflow: 'visible !important',

@@ -8,7 +8,7 @@ description: "Multi purpose component to style and contain content."
 
 ## Styles
 
-You can **customize this component** inside `tailwind.config.js` setting `theme.extend.xtendui.card`.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.card`.
 
 Check [xtendui/src/card.css.js](https://github.com/minimit/xtendui/blob/beta/src/card.css.js) for default styles.
 

@@ -19,10 +19,9 @@ Xt.mount({
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
-  const toggle = ref.querySelector(':scope > .xt-list')
-
   // vars
 
+  const toggle = ref.querySelector(':scope > .xt-list')
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
