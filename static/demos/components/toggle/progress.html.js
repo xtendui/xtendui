@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
         <span
-          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-xt-in:opacity-100"
+          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100"
         >
           ${classes.spinner({})}
         </span>

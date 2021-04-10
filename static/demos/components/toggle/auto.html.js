@@ -14,7 +14,7 @@ const html = /* HTML */ `
         Toggle 1
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} xt-active">
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} active">
         Toggle 2
       </button>
 

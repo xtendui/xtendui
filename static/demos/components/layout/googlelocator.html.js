@@ -108,7 +108,7 @@ const html = /* HTML */ `
 
           <div class="googlelocator-items mt-4">
             <script type="text/x-template">
-              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition xt-in:border-gray-600" tabindex="-1">
+              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
                   <div class="googlelocator-item-content">
                     <div class="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>

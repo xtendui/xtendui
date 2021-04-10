@@ -29,6 +29,10 @@ See [link if scrolls right](/components/slider/other#media-loaded).
 
 ## Markdown
 
+You can set activation styles by adding the class `.in`.
+
+Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
+
 Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
 The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/overlay.css.js) for default styles.
@@ -59,14 +63,14 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 
 </div>
 
-You can use also **css animations**, just add them with **class names** `.xt-active`, `.xt-out`, `.xt-before` and `.xt-after`.
+You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.xt-before`       |  Class name for before direction activation            |
-| Class                  | `.xt-after`       |  Class name for after direction activation            |
+| Class                  | `.dir-before`       |  Class name for before direction activation            |
+| Class                  | `.dir-after`       |  Class name for after direction activation            |
 </div>
 
 [[notePrimary]]

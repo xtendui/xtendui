@@ -285,7 +285,7 @@ class Scrollto {
             }
             // class
             for (const current of currents) {
-              if (!current.classList.contains('xt-active')) {
+              if (!current.classList.contains('active')) {
                 current.classList.add(...self.classes)
               }
             }
@@ -351,7 +351,7 @@ Scrollto.optionsDefault = {
   anchors: '[href*="{hash}"]',
   scrolls: '.xt-overlay',
   // class
-  class: 'xt-in',
+  class: 'in',
   // event
   scrollActivation: true,
   scrollDelay: 150,

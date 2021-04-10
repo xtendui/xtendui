@@ -51,7 +51,7 @@
     @apply xt-list-1 justify-center;
   }
   .xt-button {
-    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint xt-in:ease-out-quint;
+    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint in:ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.semibold');
@@ -193,7 +193,7 @@
 }
 
 .gatsby_home-main_support {
-  @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint xt-in:opacity-100 xt-in:ease-out-quint;
+  @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint in:opacity-100 in:ease-out-quint;
 }
 
 /* scroll */

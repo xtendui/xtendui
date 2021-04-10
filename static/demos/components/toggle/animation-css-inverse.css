@@ -1,6 +1,6 @@
 .demo--toggle-animation-inverse, .demo--toggle-animation-inverse-react {
   .xt-toggle-inverse {
-    &.xt-done {
+    &.done {
       display: none;
     }
   }
@@ -10,22 +10,22 @@
     @apply transform ease-out duration-500;
     @apply opacity-100 translate-x-0;
     /* active */
-    &.xt-in {
+    &.in {
       @apply opacity-0 translate-x-0;
-      &.xt-before {
+      &.dir-before {
         @apply -translate-x-4;
       }
-      &.xt-after {
+      &.dir-after {
         @apply translate-x-4;
       }
     }
     /* out */
-    &.xt-out {
+    &.out {
       @apply opacity-0 transition-none;
-      &.xt-before {
+      &.dir-before {
         @apply translate-x-4;
       }
-      &.xt-after {
+      &.dir-after {
         @apply -translate-x-4;
       }
     }
@@ -35,23 +35,23 @@
     /* initial */
     @apply transform ease-out duration-500;
     @apply opacity-0;
-    &.xt-before {
+    &.dir-before {
       @apply translate-x-4;
     }
-    &.xt-after {
+    &.dir-after {
       @apply -translate-x-4;
     }
     /* active */
-    &.xt-in {
+    &.in {
       @apply opacity-100 translate-x-0;
     }
     /* out */
-    &.xt-out {
+    &.out {
       @apply opacity-0;
-      &.xt-before {
+      &.dir-before {
         @apply -translate-x-4;
       }
-      &.xt-after {
+      &.dir-after {
         @apply translate-x-4;
       }
     }

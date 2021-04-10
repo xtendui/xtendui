@@ -116,7 +116,7 @@ pre {
     padding: .5em .75em;
     font-size: 12px;
     @apply text-black text-opacity-50 font-sans font-semibold leading-tight tracking-normal capitalize rounded-md border-gray-200 bg-gray-200 transition;
-    &:hover, &:active, &.xt-in {
+    &:hover, &:active, &.in {
       @apply border-white bg-white text-opacity-100;
     }
   }
@@ -132,7 +132,7 @@ pre {
     padding: .5em .75em;
     font-size: 12px;
     @apply text-white font-sans font-semibold leading-tight tracking-normal capitalize rounded-md border-code bg-code transition;
-    &:hover, &:active, &.xt-in {
+    &:hover, &:active, &.in {
       @apply bg-gray-800;
     }
   }
@@ -165,7 +165,7 @@ pre {
     order: 2;
     @media (max-width: calc(theme('screens.lg') - 1px)) {
       /*@apply xt-toggle;*/
-      &:not(.xt-active):not(.xt-in):not(.xt-out) {
+      &:not(.active):not(.in):not(.out) {
         display: none;
       }
     }

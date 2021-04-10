@@ -69,7 +69,7 @@ Check subpage to [customize interaction](/components/overlay/interaction) and [c
 
 Use this code to create a **overlay** in **self mode**.
 
-Just use the class `xt-active` if you want to automatically open, or use the [api](/components/overlay/api)
+Just use the class `active` if you want to automatically open, or use the [api](/components/overlay/api)
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/usage-self">

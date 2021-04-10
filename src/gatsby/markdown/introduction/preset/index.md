@@ -26,6 +26,6 @@ The following theme values are added with the preset:
 
 See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles.
 
-* Added **custom tailwind variants** `xt-in` and `group-xt-in` `xt-out` and `group-xt-out`. They style activation animations with `.xt-in` and `.xt-out`.
+* Added **custom tailwind variants** `in` and `group-in` `out` and `group-out`. They style activation animations with `.in` and `.out`.
 
-* Added display an zIndex variants.
+* Added variants for display an zIndex.

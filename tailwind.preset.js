@@ -78,112 +78,112 @@ module.exports = {
   variants: {
     backgroundColor: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     gradientColorStops: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     backgroundOpacity: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     borderColor: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     borderOpacity: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     boxShadow: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     opacity: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     padding: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     margin: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     textColor: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     textOpacity: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     textDecoration: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     scale: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     rotate: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     translate: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     skew: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-xt-out'], 'hover', after(['xt-out'], 'hover')))
+        after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover')))
       ),
     transitionProperty: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
-        after(['xt-in'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
+        after(['in'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))
       ),
     transitionTimingFunction: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
         after(
-          ['xt-in'],
+          ['in'],
           'hover',
           after(
             ['group-hover'],
@@ -194,10 +194,10 @@ module.exports = {
       ),
     transitionDuration: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
         after(
-          ['xt-in'],
+          ['in'],
           'hover',
           after(
             ['group-hover'],
@@ -208,10 +208,10 @@ module.exports = {
       ),
     transitionDelay: ({ after }) =>
       after(
-        ['group-xt-in'],
+        ['group-in'],
         'group-hover',
         after(
-          ['xt-in'],
+          ['in'],
           'hover',
           after(
             ['group-hover'],
@@ -222,11 +222,11 @@ module.exports = {
       ),
     zIndex: ({ after }) =>
       after(
-        ['group-xt-in'],
-        'xt-in',
-        after(['xt-in'], 'responsive', after(['group-xt-out'], 'xt-out', after(['xt-out'], 'responsive')))
+        ['group-in'],
+        'in',
+        after(['in'], 'responsive', after(['group-out'], 'out', after(['out'], 'responsive')))
       ),
-    display: ['responsive', 'group-hover', 'group-xt-in', 'group-xt-out', 'hover', 'xt-in', 'xt-out', 'focus'],
+    display: ['responsive', 'group-hover', 'group-in', 'group-out', 'hover', 'in', 'out', 'focus'],
   },
   plugins: [require('./tailwind.plugin')],
 }

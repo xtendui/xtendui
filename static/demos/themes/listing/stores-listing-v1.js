@@ -28,7 +28,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      item.classList.add('xt-active')
+      item.classList.add('active')
     }
 
     actionBtn.addEventListener('click', click)
@@ -37,7 +37,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      item.classList.remove('xt-active')
+      item.classList.remove('active')
     }
 
     closeBtn.addEventListener('click', close)

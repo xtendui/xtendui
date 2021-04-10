@@ -859,10 +859,10 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animOn = (el, suffix = '') => {
-    if (!el.classList.contains('xt-active')) {
-      el.classList.add('xt-active')
-      el.classList.remove('xt-in')
-      el.classList.remove('xt-out')
+    if (!el.classList.contains('active')) {
+      el.classList.add('active')
+      el.classList.remove('in')
+      el.classList.remove('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
       cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
       // keep the same level of raf as others
@@ -871,7 +871,7 @@ if (typeof window !== 'undefined') {
         `AnimFrame${suffix}`,
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            el.classList.add('xt-in')
+            el.classList.add('in')
           })
         })
       )
@@ -885,16 +885,16 @@ if (typeof window !== 'undefined') {
    * @param {Number} timing Optional force time
    */
   Xt.animOff = (el, suffix = '', timing = null) => {
-    if (el.classList.contains('xt-active')) {
-      el.classList.remove('xt-active')
-      el.classList.remove('xt-in')
-      el.classList.add('xt-out')
+    if (el.classList.contains('active')) {
+      el.classList.remove('active')
+      el.classList.remove('in')
+      el.classList.add('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
       cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
       Xt.animTimeout(
         el,
         () => {
-          el.classList.remove('xt-out')
+          el.classList.remove('out')
         },
         `AnimFrame${suffix}`,
         timing,

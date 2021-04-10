@@ -27,7 +27,7 @@ You can set it in the options or to **assign them also on single nodes** with `d
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
-Use **custom tailwind variants** `xt-in:` and `group-xt-in:` `xt-out:` and `group-xt-out:` to assign animations.
+Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
 
 You can also customize `xt-backdrop` animations.
 
@@ -38,14 +38,14 @@ You can also customize `xt-backdrop` animations.
 
 ## Css Animation
 
-You can use also **css animations**, just add them with **class names** `.xt-active`, `.xt-out`, `.xt-before` and `.xt-after`.
+You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.xt-before`       |  Class name for before direction activation            |
-| Class                  | `.xt-after`       |  Class name for after direction activation            |
+| Class                  | `.dir-before`       |  Class name for before direction activation            |
+| Class                  | `.dir-after`       |  Class name for after direction activation            |
 </div>
 
 <demo>

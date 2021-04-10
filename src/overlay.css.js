@@ -18,10 +18,10 @@ module.exports = {
       bottom: '0', // fix no height or it bugs collapse animation
       right: '0', // fix no width or it bugs collapse animation
       overflow: 'hidden',
-      '&:not(.xt-active):not(.xt-in):not(.xt-out)': {
+      '&:not(.active):not(.in):not(.out)': {
         display: 'none',
       },
-      '&.xt-out': {
+      '&.out': {
         pointerEvents: 'none',
       },
     },

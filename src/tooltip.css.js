@@ -16,10 +16,10 @@ module.exports = {
       position: 'absolute',
       zIndex: theme('zIndex.tooltip'),
       margin: '0 !important',
-      '&:not(.xt-active):not(.xt-in):not(.xt-out)': {
+      '&:not(.active):not(.in):not(.out)': {
         display: 'none',
       },
-      '&.xt-out': {
+      '&.out': {
         pointerEvents: 'none',
       },
       '> .xt-arrow': {

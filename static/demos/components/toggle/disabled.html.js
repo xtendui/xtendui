@@ -16,7 +16,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 0</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} xt-active">
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} active">
         Target 1
 
         <div class="xt-list xt-list-3 items-center mt-4" data-xt-toggle="{ min: 1 }">

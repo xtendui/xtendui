@@ -14,18 +14,18 @@ You can customize the **class names** used by the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `xt-active`        | Class name for active            |
-| Option                  | `classIn:String`                          | `xt-in`        | Class name for in animation            |
-| Option                  | `classOut:String`                          | `xt-out`        | Class name for out animation             |
-| Option                  | `classDone:String`                          | `xt-done`        | Class name for in animation done            |
-| Option                  | `classInitial:String`                          | `xt-initial`        | Class name for initialization            |
-| Option                  | `classBefore:String`                          | `xt-before`        | Class name for before direction activation            |
-| Option                  | `classAfter:String`                          | `xt-after`        | Class name for after direction activation            |
+| Option                  | `class:String`                          | `active`        | Class name for active            |
+| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
+| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
+| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
 | Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
 
-You can set initial activation by adding `xt-active` to the **elements** or **targets**.
+You can set initial activation by adding `active` to the **elements** or **targets**.
 
 <demo>
   <demoinline src="demos/components/toggle/class">

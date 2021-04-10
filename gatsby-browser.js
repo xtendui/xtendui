@@ -19,7 +19,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     if (location.pathname !== prevLocation.pathname) {
       // close demo full
-      const demoFull = document.querySelector('#gatsby_open-full-trigger.xt-active')
+      const demoFull = document.querySelector('#gatsby_open-full-trigger.active')
       if (demoFull) {
         demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
       }
@@ -27,7 +27,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
       document.documentElement.setAttribute('data-demo-index', '0')
       // overlayOpen
       if (btn) {
-        window.overlayOpen = btn.classList.contains('xt-active')
+        window.overlayOpen = btn.classList.contains('active')
       }
     }
   }
@@ -41,7 +41,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   if (overlay && sidebar) {
     // overlayOpen
     if (btn && !window.overlayOpen) {
-      overlay.classList.remove('xt-active')
+      overlay.classList.remove('active')
     }
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {
@@ -58,7 +58,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
       // scroll top
       document.scrollingElement.scrollTop = 0
       // fix popstate #gatsby_open-full
-      for (const link of document.querySelectorAll('.gatsby_button-site_article_sidebar.xt-active')) {
+      for (const link of document.querySelectorAll('.gatsby_button-site_article_sidebar.active')) {
         link.addEventListener('click', e => {
           e.preventDefault()
           // no location.hash or page scroll to top

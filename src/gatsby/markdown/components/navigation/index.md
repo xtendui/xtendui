@@ -16,9 +16,9 @@ Use [list group](/components/list-group) to create a **navigation**.
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.
 
-You can set activation styles by adding `xt-in`.
+You can set activation styles by adding the class `.in`.
 
-Use **custom tailwind variants** `xt-in:` and `group-xt-in:` `xt-out:` and `group-xt-out:` to assign animations.
+Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
 
 <demo>
   <demoinline src="demos/components/navigation/usage">

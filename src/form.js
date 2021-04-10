@@ -1,7 +1,7 @@
 import { Xt } from './xt'
 
 /**
- * checks labels .xt-active
+ * checks labels .active
  */
 
 Xt.mount({

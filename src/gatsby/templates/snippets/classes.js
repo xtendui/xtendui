@@ -26,15 +26,15 @@ export const classes = {
   buttonDefaultGroup: () =>
     'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
   buttonDefault: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 xt-in:bg-gray-400',
+    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 in:bg-gray-400',
   buttonPrimaryDrop: () =>
     'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
     'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 xt-in:bg-primary-700',
+    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 in:bg-primary-700',
   buttonText: () =>
-    'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 xt-in:text-opacity-100',
+    'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 in:text-opacity-100',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFullInteractive: () =>
     'text-black xt-links-default transform transition hover:bg-gray-200',

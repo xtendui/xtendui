@@ -21,16 +21,16 @@ module.exports = {
     '.xt-slider-absolute': {
       '.xt-slide': {
         position: 'relative',
-        '&:not(.xt-active):not(.xt-in):not(.xt-out)': {
+        '&:not(.active):not(.in):not(.out)': {
           display: 'none',
         },
-        '&:not(.xt-active)': {
+        '&:not(.active)': {
           position: 'absolute',
           top: '0',
           left: '0',
         },
       },
-      // fix page load height without .xt-active slides
+      // fix page load height without .active slides
       '&:not(.xt-slider)': {
         '.xt-slide': {
           '&:first-child': {

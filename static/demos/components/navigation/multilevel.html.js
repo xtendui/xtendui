@@ -7,7 +7,7 @@ const html = /* HTML */ `
       data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', min: 1, duration: 500, queue: false }"
     >
       <nav
-        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 xt-in:ease-out xt-in:delay-200 xt-in:translate-x-0 xt-in:opacity-100"
+        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 in:ease-out in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-group="initial"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -36,7 +36,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 xt-in:ease-out xt-in:delay-200 xt-in:translate-x-0 xt-in:opacity-100"
+        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 in:ease-out in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-group="cat-0"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -89,7 +89,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 xt-in:ease-out xt-in:delay-200 xt-in:translate-x-0 xt-in:opacity-100"
+        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 in:ease-out in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-group="cat-0b"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -110,7 +110,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 xt-in:ease-out xt-in:delay-200 xt-in:translate-x-0 xt-in:opacity-100"
+        class="xt-toggle xt-toggle-absolute transform ease-out duration-500 -translate-x-10 opacity-0 in:ease-out in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-group="cat-1"
       >
         <div class="xt-h5  flex items-center justify-between">

@@ -22,7 +22,7 @@ module.exports = {
         },
       },
     },
-    '.xt-initial': {
+    '.initial': {
       // instant animations on components init and reinit
       'body:not(.xt-nojs-initial)': {
         '&, *': {
@@ -48,7 +48,7 @@ module.exports = {
       width: '100%',
     },
     '.xt-jump': {
-      '&:not(.xt-active)': {
+      '&:not(.active)': {
         cursor: 'pointer',
       },
     },

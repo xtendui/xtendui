@@ -48,7 +48,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('xt-in') ? 0 : 1 // instant if inside overlay and initial activation
+    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
@@ -116,7 +116,7 @@ const mountSwitcher = ({ ref }) => {
         self.options.class = false
         self.options.scrollActivation = false
       } else {
-        self.options.class = 'xt-active xt-in'
+        self.options.class = 'active in'
         self.options.scrollActivation = true
       }
       self.destroy()

@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
 
-You can set initial activation by adding `xt-active` to the **elements** or **targets**.
+You can set initial activation by adding `active` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-overlay-init` gets added to the **object**.
 

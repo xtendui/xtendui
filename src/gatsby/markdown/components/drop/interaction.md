@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
 
-You can set initial activation by adding `xt-active` to the **elements** or **targets**.
+You can set initial activation by adding `active` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-drop-init` gets added to the **object**.
 
@@ -52,7 +52,9 @@ You can have **element's link** and **click events** prevented when the drop ope
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop. Use the class `xt-in:z-drop` to have the button above the backdrop.
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop.
+
+Use  `in:z-drop` to have the button above the backdrop.
 
 <demo>
   <demoinline src="demos/components/drop/backdrop">

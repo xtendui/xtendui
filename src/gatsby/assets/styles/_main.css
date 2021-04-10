@@ -151,7 +151,7 @@ body {
 
 .gatsby_listing-item {
   /* row same as card */
-  @apply p-3.5 sm:p-5 lg:p-6 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out xt-in:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 xt-in:text-white xt-in:bg-primary-600 xt-in:shadow-md xt-in:-translate-y-0.5;
+  @apply p-3.5 sm:p-5 lg:p-6 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out hover:ease-out in:ease-out hover:text-white hover:bg-primary-500 hover:shadow-xl hover:-translate-y-2 in:text-white in:bg-primary-600 in:shadow-md in:-translate-y-0.5;
   .gatsby_home-main_actions & {
     @apply text-sm;
   }

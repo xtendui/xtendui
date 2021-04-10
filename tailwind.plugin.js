@@ -209,27 +209,27 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
-    addVariant('group-xt-in', ({ modifySelectors, separator }) => {
+    addVariant('group-in', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.group.xt-in .${e(`group-xt-in${separator}${className}`)}`
+        return `.group.in .${e(`group-in${separator}${className}`)}`
       })
     })
 
-    addVariant('xt-in', ({ modifySelectors, separator }) => {
+    addVariant('in', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`xt-in${separator}${className}`)}.xt-in`
+        return `.${e(`in${separator}${className}`)}.in`
       })
     })
 
-    addVariant('group-xt-out', ({ modifySelectors, separator }) => {
+    addVariant('group-out', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.group.xt-out .${e(`group-xt-out${separator}${className}`)}`
+        return `.group.out .${e(`group-out${separator}${className}`)}`
       })
     })
 
-    addVariant('xt-out', ({ modifySelectors, separator }) => {
+    addVariant('out', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
-        return `.${e(`xt-out${separator}${className}`)}.xt-out`
+        return `.${e(`out${separator}${className}`)}.out`
       })
     })
   }
