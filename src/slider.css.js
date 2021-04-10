@@ -9,10 +9,6 @@ module.exports = {
       display: 'inline-block', // fix autoheight values
       verticalAlign: 'top', // fix inline-block margin below
       width: '100%',
-      // styles
-      transitionProperty: 'height',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
     },
     '.xt-slide': {
       position: 'relative',

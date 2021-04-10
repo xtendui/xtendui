@@ -117,10 +117,6 @@ See [toggle aria](/components/toggle/other#aria) for aria options.
 
 ## Other	
 
-Do not loop slides activation with `loop: false`.	
-
-Disable the jump feature (clicking on not activated slides jumps to the slide) with `jump: false`. Jump only if the slide isn't entirely on screen.	
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
@@ -128,7 +124,7 @@ Disable the jump feature (clicking on not activated slides jumps to the slide) w
 | Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/toggle) |     
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
-| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`)            |
+| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`), remember to transition height            |
 | Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
 
 </div>	
