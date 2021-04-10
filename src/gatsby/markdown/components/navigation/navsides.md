@@ -9,9 +9,7 @@ date: "1900-10-10"
 
 ## Usage
 
-#### Toggle
-
-Use this code to create a **navigation sides** on toggle. Mouse over the sides to see the navigation.
+Use this code to create a **navigation sides** on toggle (mouse over the sides to see the navigation).
 
 [[noteDefault]]
 | This addon uses [toggle](/components/toggle) and [mouse follow](/components/animation/mousefollow) see documentation for more info.
@@ -21,9 +19,7 @@ Use this code to create a **navigation sides** on toggle. Mouse over the sides t
   </demoinline>
 </demo>
 
-#### Slider
-
-Use this code to create a **navigation sides** on slider.
+Use this code to create a **navigation sides** on slider (mouse over the sides to see the navigation).
 
 [[noteDefault]]
 | This addon uses [slider](/components/slider) and [mouse follow](/components/animation/mousefollow) see documentation for more info.
