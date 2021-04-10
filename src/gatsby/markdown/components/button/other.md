@@ -8,18 +8,12 @@ date: "2005-10-10"
 
 ## Activation
 
-Use **component classes** to style **active**.
+You can set activation styles by adding `xt-in`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|               | Syntax                          | Mixin               | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.xt-active`                     | `xt-active`                | Active styles            |
-
-</div>
+Use **custom tailwind variants** `xt-in:` and `group-xt-in:` `xt-out:` and `group-xt-out:` to assign animations.
 
 <demo>
-  <demoinline src="demos/components/button/active">
+  <demoinline src="demos/components/button/activation">
   </demoinline>
 </demo>
 

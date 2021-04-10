@@ -18,6 +18,8 @@ Use [list group](/components/list-group) to create a **navigation**.
 
 You can set activation styles by adding `xt-in`.
 
+Use **custom tailwind variants** `xt-in:` and `group-xt-in:` `xt-out:` and `group-xt-out:` to assign animations.
+
 <demo>
   <demoinline src="demos/components/navigation/usage">
   </demoinline>
