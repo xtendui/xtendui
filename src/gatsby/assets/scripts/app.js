@@ -181,13 +181,21 @@ Xt.mount({
 
     const straight = () => {
       gsap.killTweensOf(background)
-      gsap.to(background, { rx: '0%', duration: 0.5, ease: 'quart.out' })
+      gsap.to(background, {
+        rx: '0%',
+        duration: 0.5,
+        ease: 'quart.out',
+      })
     }
 
     const curve = () => {
       if (!content.classList.contains('scrolling-down')) {
         gsap.killTweensOf(background)
-        gsap.to(background, { rx: '50%', duration: 0.5, ease: 'quart.out' })
+        gsap.to(background, {
+          rx: '50%',
+          duration: 0.5,
+          ease: 'quart.out',
+        })
       }
     }
 

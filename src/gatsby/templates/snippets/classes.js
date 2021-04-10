@@ -19,8 +19,7 @@ export const classes = {
     'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-500',
   badgeDefault: () => 'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200',
   badgePrimary: () => 'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500',
-  buttonCloseOutside: () =>
-    'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
+  buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
     'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
@@ -36,17 +35,14 @@ export const classes = {
   buttonText: () =>
     'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 in:text-opacity-100',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
-  cardDefaultFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:bg-gray-200',
+  cardDefaultFullInteractive: () => 'text-black xt-links-default transform transition hover:bg-gray-200',
   cardDefaultFull: () => 'text-black xt-links-default',
-  cardDefaultInteractive: () =>
-    'text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300',
+  cardDefaultInteractive: () => 'text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300',
   cardDefault: () => 'text-black xt-links-default bg-gray-200',
   cardPrimaryFullInteractive: () =>
     'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500',
   cardPrimaryFull: () => 'text-primary-600',
-  cardPrimaryInteractive: () =>
-    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600',
+  cardPrimaryInteractive: () => 'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   cardSlide: () => 'text-base p-8 text-center text-black xt-links-default bg-gray-200',
   cardToggle: () => 'text-sm p-6 text-black xt-links-default bg-gray-200',

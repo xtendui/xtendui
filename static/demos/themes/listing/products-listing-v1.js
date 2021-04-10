@@ -94,7 +94,11 @@ const mountMedia = ({ ref }) => {
     // content
     const content = tr.querySelector('.listing-item-content')
     if (content) {
-      gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
+      gsap.to(content, {
+        y: contentY,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -115,11 +119,19 @@ const mountMedia = ({ ref }) => {
       ease: 'expo.out',
     })
     const mediaInner = tr.querySelector('.xt-media')
-    gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 0.75,
+      ease: 'expo.out',
+    })
     // content
     const content = tr.querySelector('.listing-item-content')
     if (content) {
-      gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(content, {
+        y: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -151,7 +163,9 @@ const mountFade = ({ ref }) => {
       const direction = scrollTriggers[0].direction
       const y = direction > 0 ? -scrollY : scrollY
       gsap.killTweensOf(batch)
-      gsap.set(batch, { y: y })
+      gsap.set(batch, {
+        y: y,
+      })
       gsap.to(batch, {
         opacity: 1,
         y: 0,

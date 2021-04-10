@@ -30,7 +30,9 @@ const mountFade = ({ ref }) => {
       ScrollTrigger.batch(items, {
         onEnter: batch => {
           gsap.killTweensOf(batch)
-          gsap.set(batch, { opacity: 0 })
+          gsap.set(batch, {
+            opacity: 0,
+          })
           gsap.to(batch, {
             opacity: 1,
             duration: 0.5,
@@ -49,7 +51,9 @@ const mountFade = ({ ref }) => {
         },
         onEnterBack: batch => {
           gsap.killTweensOf(batch)
-          gsap.set(batch, { opacity: 0 })
+          gsap.set(batch, {
+            opacity: 0,
+          })
           gsap.to(batch, {
             opacity: 1,
             duration: 0.5,
@@ -72,7 +76,9 @@ const mountFade = ({ ref }) => {
       // fade
 
       for (const trigger of items) {
-        gsap.set(trigger, { opacity: 1 })
+        gsap.set(trigger, {
+          opacity: 1,
+        })
       }
     },
   })

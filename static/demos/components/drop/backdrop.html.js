@@ -4,10 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} in:z-drop"
-        >
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} in:z-drop">
           backdrop
         </button>
 
@@ -30,10 +27,7 @@ const html = /* HTML */ `
 
       <div data-xt-drop="{ elements: '.xt-drop-item', targets: '.xt-drop', on: 'mouseenter', off: 'mouseleave' }">
         <div class="xt-drop-item">
-          <button
-            type="button"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} in:z-drop"
-          >
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} in:z-drop">
             backdrop mouse
           </button>
 

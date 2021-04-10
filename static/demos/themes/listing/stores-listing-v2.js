@@ -27,11 +27,23 @@ const mountListing = ({ ref }) => {
       tr.classList.add('active')
       // front
       const front = tr.querySelector('.listing-item-front')
-      gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(front, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       // front
       const back = tr.querySelector('.listing-item-back')
-      gsap.set(back, { y: 40, opacity: 0 })
-      gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
+      gsap.set(back, {
+        y: 40,
+        opacity: 0,
+      })
+      gsap.to(back, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     } else {
       off(tr)
     }
@@ -43,11 +55,24 @@ const mountListing = ({ ref }) => {
       tr.classList.remove('active')
       // front
       const front = tr.querySelector('.listing-item-front')
-      gsap.set(front, { y: -40, opacity: 0 })
-      gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
+      gsap.set(front, {
+        y: -40,
+        opacity: 0,
+      })
+      gsap.to(front, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       // front
       const back = tr.querySelector('.listing-item-back')
-      gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(back, {
+        y: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 

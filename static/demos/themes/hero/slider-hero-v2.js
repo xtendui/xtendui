@@ -257,7 +257,11 @@ const mountSlide = ({ ref }) => {
 
     const enter = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: 0.5, ease: 'quart.out' })
+      gsap.to(img, {
+        opacity: imgOpacityIn,
+        duration: 0.5,
+        ease: 'quart.out',
+      })
     }
 
     for (const link of links) {

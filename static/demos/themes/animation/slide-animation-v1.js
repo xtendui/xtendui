@@ -43,7 +43,10 @@ const mountSlide = ({ ref }) => {
       clone = item.querySelector('.clone')
       content.innerHTML = text
       clone.innerHTML = text
-      gsap.set(clone, { x: -cloneX, opacity: 0 })
+      gsap.set(clone, {
+        x: -cloneX,
+        opacity: 0,
+      })
     }
 
     // on
@@ -52,8 +55,13 @@ const mountSlide = ({ ref }) => {
       // content
       const content = item.querySelector('.content')
       gsap.killTweensOf(content)
-      gsap.set(content, { transformOrigin: 'right center' })
-      gsap.set(content, { x: 0, opacity: 1 })
+      gsap.set(content, {
+        transformOrigin: 'right center',
+      })
+      gsap.set(content, {
+        x: 0,
+        opacity: 1,
+      })
       gsap.to(content, {
         x: contentX,
         opacity: 0,
@@ -63,8 +71,13 @@ const mountSlide = ({ ref }) => {
       // clone
       const clone = item.querySelector('.clone')
       gsap.killTweensOf(clone)
-      gsap.set(clone, { transformOrigin: 'left center' })
-      gsap.set(clone, { x: -cloneX, opacity: 0 })
+      gsap.set(clone, {
+        transformOrigin: 'left center',
+      })
+      gsap.set(clone, {
+        x: -cloneX,
+        opacity: 0,
+      })
       gsap.to(clone, {
         x: 0,
         opacity: 1,

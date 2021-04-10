@@ -221,11 +221,7 @@ module.exports = {
         )
       ),
     zIndex: ({ after }) =>
-      after(
-        ['group-in'],
-        'in',
-        after(['in'], 'responsive', after(['group-out'], 'out', after(['out'], 'responsive')))
-      ),
+      after(['group-in'], 'in', after(['in'], 'responsive', after(['group-out'], 'out', after(['out'], 'responsive')))),
     display: ['responsive', 'group-hover', 'group-in', 'group-out', 'hover', 'in', 'out', 'focus'],
   },
   plugins: [require('./tailwind.plugin')],

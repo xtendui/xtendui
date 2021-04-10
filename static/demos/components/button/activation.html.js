@@ -11,10 +11,7 @@ const html = /* HTML */ `
         Primary
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} in"
-      >
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md text-black ${classes.buttonText()} in">
         Text
       </button>
 

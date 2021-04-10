@@ -1,6 +1,5 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
-const animDesign =
-  'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-in:translate-y-0'
+const animDesign = 'h-0 overflow-hidden transform ease-in-out-quint duration-500 -translate-y-4 group-in:translate-y-0'
 const animItem =
   'transform ease-in-out-quint transition duration-500 opacity-0 -translate-y-4 group-in:ease-out-quint group-in:delay-200 group-in:opacity-100 group-in:translate-y-0'
 const animItemOpacity =
@@ -104,7 +103,9 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
+      <div
+        data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
+      >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
             tooltip
@@ -121,7 +122,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }">
+      <div
+        data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
+      >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
             list group
@@ -132,7 +135,10 @@ const html = /* HTML */ `
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem}">
                   <div class="xt-list-inner flex-auto">
-                    <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
+                    <button
+                      type="button"
+                      class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}"
+                    >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>
                     <input

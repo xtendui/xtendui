@@ -107,9 +107,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '150%'
-    gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: -10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     gsap.to(mask, {
       opacity: maskOpacityDone,
       duration: 0.75,
@@ -128,9 +138,17 @@ const mountMedia = ({ ref }) => {
     const tr = e.target
     // media
     const media = tr.querySelector('.xt-media-container')
-    gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
+    gsap.to(media, {
+      scale: 1,
+      duration: 0.5,
+      ease: 'quart.out',
+    })
     const mediaInner = tr.querySelector('.xt-media')
-    gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 1.5,
+      ease: 'quart.out',
+    })
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
@@ -140,9 +158,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '50%', y: '-100%'
-    gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: 10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
   }
 
   for (const item of items) {
@@ -174,7 +202,10 @@ const mountFade = ({ ref }) => {
       const direction = scrollTriggers[0].direction
       const y = direction > 0 ? -scrollY : scrollY
       gsap.killTweensOf(batch)
-      gsap.set(batch, { y: y, scale: scrollScale })
+      gsap.set(batch, {
+        y: y,
+        scale: scrollScale,
+      })
       gsap.to(batch, {
         opacity: 1,
         y: 0,

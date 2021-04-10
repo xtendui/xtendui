@@ -21,7 +21,7 @@ const html = /* HTML */ `
       <div class="xt-card xt-toggle-inverse rounded-md ${classes.cardToggle()}" data-xt-duration="500">
         Target 0 inverse
       </div>
-      
+
       <div class="xt-card xt-toggle-inverse rounded-md ${classes.cardToggle()}" data-xt-duration="500">
         Target 1 inverse
       </div>

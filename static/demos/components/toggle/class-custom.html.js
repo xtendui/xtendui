@@ -7,7 +7,10 @@ const html = /* HTML */ `
         Toggle 0
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} active--toggle-custom-class">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} active--toggle-custom-class"
+      >
         Toggle 1
       </button>
 

@@ -115,7 +115,9 @@ const html = /* HTML */ `
 
       <div data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip' }">
         <div class="xt-tooltip-item">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">list group</button>
+          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+            list group
+          </button>
 
           <div class="xt-tooltip p-2 group" data-xt-duration="700">
             <div class="xt-tooltip-inner">
@@ -198,9 +200,15 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
                 <div class="xt-list bg-primary-500">
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Info</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Account</button>
+                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                    Menu
+                  </button>
+                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                    Info
+                  </button>
+                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                    Account
+                  </button>
                 </div>
                 <div class="xt-media-container bg-gray-600 h-48">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -309,7 +317,9 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Send</button>
+                          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                            Send
+                          </button>
                         </div>
                       </div>
                     </form>

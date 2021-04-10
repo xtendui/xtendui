@@ -49,7 +49,9 @@ const mountSliders = ({ ref }) => {
         if (self.intial || self.wrap) {
           // reset dragging position
           gsap.killTweensOf(self.dragger)
-          gsap.set(self.dragger, { x: self.detail.dragPos })
+          gsap.set(self.dragger, {
+            x: self.detail.dragPos,
+          })
           if (self.intial) {
             self.goToNext()
           }
