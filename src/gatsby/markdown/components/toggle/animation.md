@@ -23,7 +23,7 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can set it in the options or to **assign them also on single nodes** with `data-xt-duration="Milliseconds"`.
+You can set it in the options or to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -31,8 +31,13 @@ You can set it in the options or to **assign them also on single nodes** with `d
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `queue:Object|Boolean`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
 | Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
 | Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 | Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
+| Option                  | `durationIn:Milliseconds`                          | `false`        | Activation duration            |
+| Option                  | `durationOut:Milliseconds`                          | `false`        | Deactivation duration            |
+
 
 </div>
 

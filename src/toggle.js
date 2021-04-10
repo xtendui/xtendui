@@ -48,8 +48,8 @@ class Toggle {
     self.initialCurrents = []
     self.detail = {}
     self.disabled = false
-    self.detail.queueOn = []
-    self.detail.queueOff = []
+    self.detail.queueIn = []
+    self.detail.queueOut = []
     self.detail.autopaused = false
     self.destroyElements = [document, window, self.object]
     // init
@@ -1391,8 +1391,8 @@ class Toggle {
         self.eventOff(currents[0])
       }
       // queue obj
-      const actionCurrent = 'On'
-      const actionOther = 'Off'
+      const actionCurrent = 'In'
+      const actionOther = 'Out'
       self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, e)
       // queue run
       // eslint-disable-next-line guard-for-in
@@ -1442,8 +1442,8 @@ class Toggle {
         self.eventAutostop()
       }
       // queue obj
-      const actionCurrent = 'Off'
-      const actionOther = 'On'
+      const actionCurrent = 'Out'
+      const actionOther = 'In'
       self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, e)
       // remove queue not started if queue too big
       if (self.detail[`queue${actionCurrent}`].length > options.max) {
@@ -1851,7 +1851,7 @@ class Toggle {
   queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
-    if (actionCurrent === 'On' && self.checkOnRunning(obj)) {
+    if (actionCurrent === 'In' && self.checkOnRunning(obj)) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.addCurrent(el, true)
@@ -1907,7 +1907,7 @@ class Toggle {
           })
         )
       }
-    } else if (actionCurrent === 'Off' && self.checkOffRunning(obj)) {
+    } else if (actionCurrent === 'Out' && self.checkOffRunning(obj)) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.removeCurrent(el, true)
@@ -1996,7 +1996,7 @@ class Toggle {
     const self = this
     const options = self.options
     // special
-    if (actionCurrent === 'On') {
+    if (actionCurrent === 'In') {
       // activation
       self.activateDone(el, type)
       // special
@@ -2009,7 +2009,7 @@ class Toggle {
           })
         )
       }
-    } else if (actionCurrent === 'Off') {
+    } else if (actionCurrent === 'Out') {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         // only if no currents
@@ -2118,7 +2118,7 @@ class Toggle {
   queueComplete(actionCurrent, obj) {
     const self = this
     // logic
-    if (actionCurrent === 'On') {
+    if (actionCurrent === 'In') {
       // auto
       self.eventAutostart()
       // raf because after .xt custom listeners
@@ -2443,11 +2443,11 @@ class Toggle {
     }
     // set zIndex
     if (options.zIndex && options.zIndex[type]) {
-      if (actionCurrent === 'On') {
+      if (actionCurrent === 'In') {
         self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
         self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
         el.style.zIndex = self.detail.zIndex
-      } else if (actionCurrent === 'Off') {
+      } else if (actionCurrent === 'Out') {
         self.detail.zIndex = options.zIndex[type].start
       }
     }
@@ -2461,7 +2461,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.classHtml) {
-      if (actionCurrent === 'On') {
+      if (actionCurrent === 'In') {
         for (const c of options.classHtml.split(' ')) {
           // checks
           Xt.classHtml.add({
@@ -2472,7 +2472,7 @@ class Toggle {
           const container = document.documentElement
           container.classList.add(c)
         }
-      } else if (actionCurrent === 'Off') {
+      } else if (actionCurrent === 'Out') {
         for (const c of options.classHtml.split(' ')) {
           // checks
           Xt.classHtml.remove({
@@ -2499,7 +2499,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.appendTo) {
-      if (actionCurrent === 'On') {
+      if (actionCurrent === 'In') {
         // fix when standalone !self.targets.length && type === 'elements'
         if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // appendTo
@@ -2511,7 +2511,7 @@ class Toggle {
           el.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendToTarget.append(el)
         }
-      } else if (actionCurrent === 'Off') {
+      } else if (actionCurrent === 'Out') {
         // fix when standalone !self.targets.length && type === 'elements'
         if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           // appendTo
@@ -2538,7 +2538,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (el instanceof HTMLElement) {
-      if (actionCurrent === 'On') {
+      if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
           el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
@@ -2577,7 +2577,7 @@ class Toggle {
             })
           )
         }
-      } else if (actionCurrent === 'Off') {
+      } else if (actionCurrent === 'Out') {
         if (options.collapseHeight === type) {
           el.classList.remove('xt-collapse-reset')
           el.classList.add('trans-anim-none')
@@ -2638,7 +2638,7 @@ class Toggle {
     const options = self.options
     // fix when standalone !self.targets.length && type === 'elements'
     if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
-      if (actionCurrent === 'On') {
+      if (actionCurrent === 'In') {
         // closeDeep
         if (options.closeDeep) {
           const closeElements = el.querySelectorAll(options.closeDeep)
@@ -2698,7 +2698,7 @@ class Toggle {
             })
           }
         }
-      } else if (actionCurrent === 'Off') {
+      } else if (actionCurrent === 'Out') {
         // closeDeep
         if (options.closeDeep) {
           const closeElements = el.querySelectorAll(options.closeDeep)
@@ -3262,12 +3262,12 @@ Toggle.optionsDefaultSuper = {
     targetsInner: true,
   },
   delay: false,
-  delayOn: false,
-  delayOff: false,
+  delayIn: false,
+  delayOut: false,
   delayInitial: true,
   duration: false,
-  durationOn: false,
-  durationOff: false,
+  durationIn: false,
+  durationOut: false,
   // auto
   auto: {
     time: false,

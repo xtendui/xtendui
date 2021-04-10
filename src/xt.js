@@ -898,7 +898,7 @@ if (typeof window !== 'undefined') {
         },
         `AnimFrame${suffix}`,
         timing,
-        'Off'
+        'Out'
       )
     }
   }
@@ -938,7 +938,7 @@ if (typeof window !== 'undefined') {
       return timing / Xt.durationTimescale
     } else if (
       (timing =
-        (actionCurrent && el.getAttribute(`data-xt-duration${actionCurrent}`)) ||
+        (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) ||
         (timing = el.getAttribute('data-xt-duration')))
     ) {
       return parseFloat(timing) / Xt.durationTimescale

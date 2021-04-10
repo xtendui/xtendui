@@ -175,7 +175,7 @@ class Ajax extends Xt.Toggle {
    */
   queueComplete(actionCurrent, obj) {
     const self = this
-    if (actionCurrent === 'On') {
+    if (actionCurrent === 'In') {
       if (!self.initial) {
         // trigger ajax request
         self.ajaxRequest(obj.elements.queueEls[0], null)
