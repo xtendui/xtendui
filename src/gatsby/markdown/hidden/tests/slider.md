@@ -33,9 +33,13 @@ Test jump classes.
   </demoinline>
 </demo>
 
-Test position and deactivation on resize.
+Test position.
 
-Test in overflow-auto-false wrap disabled when not overflowing.
+Test deactivation on resize.
+
+Test on deactivation should not have xt-grab and xt-jump.
+
+Test in wrap disabled on second demo.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">

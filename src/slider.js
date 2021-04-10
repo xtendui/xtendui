@@ -25,14 +25,13 @@ class Slider extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    super.initStart(saveCurrents)
-    // keep the same level of raf as others
+    // raf after initialization but before init // keep the same level of raf as others
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-      })
+      // listener dispatch
+      self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     })
+    // super
+    super.initStart(saveCurrents)
   }
 
   /**
@@ -147,10 +146,8 @@ class Slider extends Xt.Toggle {
     if (options.overflowAuto) {
       if (self.detail.availableSpace < 0) {
         self.object.classList.add('xt-overflow-auto')
-        self.disable()
       } else {
         self.object.classList.remove('xt-overflow-auto')
-        self.enable()
       }
     }
   }
@@ -308,6 +305,9 @@ class Slider extends Xt.Toggle {
     for (const [z, pag] of pags.entries()) {
       // vars
       const cloned = pag.querySelector('[data-xt-pag].hidden')
+      if (!cloned) {
+        console.error('Error: Xt.Slider [data-xt-pag].hidden not found for', self.object)
+      }
       cloned.classList.add('xt-ignore')
       const container = cloned.parentNode
       const arr = self.group
@@ -575,7 +575,7 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragFinalOld = self.detail.dragFinal
     self.detail.dragFinal = self.detail.dragActive = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
-    //console.log(slide, Xt.dataStorage.get(slide, `${self.ns}SlidePos`), Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
+    //console.debug(slide, Xt.dataStorage.get(slide, `${self.ns}SlidePos`), Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
     // calc
     const first = self.group[self.detail.moveFirst][0]
     const last = self.group[self.detail.moveLast][0]

@@ -192,7 +192,7 @@ class Infinitescroll {
         //console.debug('xt-infinitescroll history replace', self.url.href)
       }
     } else {
-      console.error('xt-infinitescroll cannot set history with different origin', linkOrigin)
+      console.error('Error: Xt.Infinitescroll cannot set history with different origin', linkOrigin)
     }
     // triggers
     if (options.events.scrollUp && self.scrollTopOld > scrollTop) {

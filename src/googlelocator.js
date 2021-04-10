@@ -519,7 +519,7 @@ class Googlelocator {
     // loader
     self.loaderHide()
     // error
-    console.error('Error: xt-googlelocator locate error', error)
+    console.error('Error: Xt.Googlelocator locate error', error)
   }
 
   /**

@@ -17,7 +17,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-slide w-6/12 sm:w-4/12 in">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>

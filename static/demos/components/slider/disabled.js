@@ -18,10 +18,6 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
-  // test disabled when activated the 4th slide
-
-  ref.querySelectorAll('.xt-slide')[3].classList.add('in-slider')
-
   // vars
 
   const dragTime = 1

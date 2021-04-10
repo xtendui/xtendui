@@ -122,13 +122,8 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <nav class="xt-slider-pagination">
-              <button
-                type="button"
-                class="xt-button button-default xt-ignore"
-                data-xt-pag
-                title="Slide xt-num"
-              ></button>
+            <nav class="xt-slider-pagination hidden">
+              <button type="button" class="xt-button hidden" data-xt-pag></button>
             </nav>
           </div>
         </div>
