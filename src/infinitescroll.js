@@ -93,10 +93,10 @@ class Infinitescroll {
     // resume state
     const add = self.additionalSpace()
     const state = history.state
-    if (state && state.scrollResume) {
+    if (state && state[`scrollResume${self.componentNs}`]) {
       const found = self.itemsContainer.querySelector(options.elements.item)
-      document.scrollingElement.scrollTop = state.scrollResume + found.offsetTop + add
-      //console.debug('xt-infinitescroll scrollResume', state.scrollResume, found.offsetTop, add)
+      document.scrollingElement.scrollTop = state[`scrollResume${self.componentNs}`] + found.offsetTop + add
+      //console.debug('xt-infinitescroll scrollResume', state[`scrollResume${self.componentNs}`], found.offsetTop, add)
     }
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -154,7 +154,9 @@ class Infinitescroll {
     const self = this
     // save scroll position
     if (self.scrollResume) {
-      history.replaceState({ scrollResume: self.scrollResume }, '', self.url.href)
+      const state = {}
+      state[`scrollResume${self.componentNs}`] = self.scrollResume
+      history.replaceState(state, '', self.url.href)
     }
   }
 
