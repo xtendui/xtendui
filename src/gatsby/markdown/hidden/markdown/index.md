@@ -23,6 +23,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 .featured
 .megamenu
 
+## Tests
+
+See [link if scrolls right](/components/slider/other#media-loaded).
+
 ## Markdown
 
 Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
