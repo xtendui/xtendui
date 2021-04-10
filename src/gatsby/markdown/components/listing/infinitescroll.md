@@ -1,10 +1,9 @@
 ---
 type: "Components"
-category: "Layout"
-parent: "Listing"
+category: "Other"
+parent: "Infinite Scroll"
 title: "Infinite Scroll"
 description: "Automatic pagination activable on click or on scroll, with browser navigation support that loads only the current page."
-date: "1900-10-10"
 ---
 
 ## Javascript
