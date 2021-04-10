@@ -23,8 +23,7 @@ const mountTooltip = ({ ref }) => {
     // vars
 
     const object = tooltip.closest('[data-xt-tooltip]')
-    let timeout
-    const delay = 1500
+    const delay = 1000
     const duration = 50
 
     // fix only once when tooltip has multiple targets
@@ -44,8 +43,8 @@ const mountTooltip = ({ ref }) => {
         inner.style.transitionDuration = `${duration}ms`
       }
       // make all tooltips normal
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
+      clearTimeout(window.xtTooltipFastTimeout)
+      window.xtTooltipFastTimeout = setTimeout(() => {
         for (const tooltip of tooltips) {
           tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
           const inner = tooltip.querySelector(':scope > *')

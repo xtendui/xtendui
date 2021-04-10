@@ -33,8 +33,7 @@ Xt.mount({
     // vars
 
     const object = tooltip.closest('[data-xt-tooltip]')
-    let timeout
-    const delay = 1500
+    const delay = 1000
     const duration = 50
 
     // fix only once when tooltip has multiple targets
@@ -55,8 +54,8 @@ Xt.mount({
         inner.style.transitionDuration = `${duration}ms`
       }
       // make all tooltips normal
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
+      clearTimeout(window.gatsbyTooltipFastTimeout)
+      window.gatsbyTooltipFastTimeout = setTimeout(() => {
         for (const tooltip of tooltips) {
           tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
           const inner = tooltip.querySelector(':scope > *')
