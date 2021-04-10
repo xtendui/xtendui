@@ -64,10 +64,6 @@
       @apply bg-primary-900 bg-opacity-50;
       color: theme('colors.white');
     }
-    &:active {
-      @apply bg-primary-900 bg-opacity-25;
-      color: theme('colors.white');
-    }
   }
 }
 
@@ -113,10 +109,6 @@
   &:hover {
     opacity: 1;
     transform: translateY(-4px);
-  }
-  &:active {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

@@ -10,14 +10,14 @@
   .slide-asset {
     width: 300px;
     @apply transform transition;
-    &:hover, &:active, &.in {
+    &:hover, &.in {
       transform: scale(0.98);
     }
   }
 
   .slide-text {
     @apply transform transition;
-    &:hover, &:active, &.in {
+    &:hover, &.in {
       color: theme('colors.primary.500');
     }
   }

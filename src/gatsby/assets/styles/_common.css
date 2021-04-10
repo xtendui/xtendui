@@ -71,7 +71,7 @@
       @apply transition-all;
     }
   }
-  &:hover, &:active {
+  &:hover {
     .gatsby_make-line_container {
       .gatsby_make-line_line:after {
         left: 0;
@@ -100,7 +100,7 @@
     opacity: 0;
     @apply transition-all delay-500;
   }
-  &:hover, &:active {
+  &:hover {
     .gatsby_site-article_anchor {
       opacity: 1;
     }

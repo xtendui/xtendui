@@ -16,7 +16,7 @@
       height: 7px;
       @apply transition-all;
     }
-    &:active, &.in {
+    &.in {
       > * {
         width: 9px;
         height: 9px;

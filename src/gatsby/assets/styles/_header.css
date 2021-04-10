@@ -121,7 +121,7 @@
   img {
     @apply transition;
   }
-  a&:hover, a&:active {
+  a&:hover {
     img {
       opacity: 0.9;
     }
@@ -171,10 +171,6 @@
   &:hover {
     opacity: 1;
     transform: translateY(4px);
-  }
-  &:active {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -260,7 +256,7 @@
   border-width: 0;
   @apply w-full font-sans;
   > span {
-    @apply transition duration-500 ease-in-out-quint hover:duration-300 hover:ease-out-quint in:ease-out-quint;
+    @apply transition duration-300 ease-out-quint;
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.semibold');
