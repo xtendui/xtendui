@@ -55,7 +55,7 @@
     border-radius: 6px;
     padding: .3125rem .5rem;
     font-weight: theme('fontWeight.semibold');
-    font-size: 0.8125rem;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.66);
     line-height: 1;
     letter-spacing: theme('letterSpacing.wide');
