@@ -29,7 +29,7 @@ You can set it in the options or to **assign them also on single nodes** with `d
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|Boolean`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
+| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
 | Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
 | Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
 | Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |

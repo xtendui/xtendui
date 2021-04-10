@@ -104,7 +104,7 @@ You can return a function to execute when **the Node is removed from the DOM**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `matches:Query`                          | `false`        | Query to match for mount            |
 | Option                    | `mount:Function`                          | `false`        | Function to execute on mount, returned function will be executed on unmount             |
-| Option                    | `ignore:Query`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
+| Option                    | `ignore:Query|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
 
 </div>
 
@@ -192,9 +192,9 @@ addEventListener('scroll', e => {
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
-| Variable                  | `Xt.scrollDelay:Number|Boolean`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
-| Variable                  | `Xt.resizeDelay:Number|Boolean`              | `250`        | Delay for the `resize` event with `Xt.eventDelay`            |
-| Variable                  | `Xt.medialoadedDelay:Number|Boolean`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
+| Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
+| Variable                  | `Xt.resizeDelay:Number|false`              | `250`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
 
 </div>
 

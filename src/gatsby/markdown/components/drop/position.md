@@ -51,7 +51,7 @@ Here are the main spacing javascript options, more [popperjs](https://popper.js.
 | Option                  | `strategy:String`                          | `'fixed'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the drop            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the drop            |
-| Option                  | `spaceArrow:Number|Boolean`                          | `false`        | Space for arrow, if false automatic            |
+| Option                  | `spaceArrow:Number|false`                          | `false`        | Space for arrow, if false automatic            |
 
 </div>
 

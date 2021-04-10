@@ -85,7 +85,7 @@ See [toggle aria](/components/toggle/other#aria) for aria options.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
-| Option                  | `zIndex:Object|Boolean`                 | `{ targets: { start: 500, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 500, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
 
 </div>

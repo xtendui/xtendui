@@ -61,7 +61,7 @@ You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for ini
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `popperjs:Object|Boolean`                          | `true`        | Options for popperjs or `false` to disable            |
+| Option                  | `popperjs:Object|false`                          | `true`        | Options for popperjs            |
 
 </div>
 
@@ -77,6 +77,6 @@ See [toggle aria](/components/toggle/other#aria) for aria options.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `zIndex:Object|Boolean`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 
 </div>
