@@ -200,7 +200,7 @@
 .gatsby_site-header_adiacent, .gatsby_site-header_adiacent_inner {
   @apply w-full;
   display: none;
-  &.xt-active {
+  &.active {
     display: block;
   }
 }

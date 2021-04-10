@@ -174,7 +174,7 @@ export default function Header({ page }) {
                             className={`xt-button gatsby_button-site-header_link ${
                               page && page.post
                                 ? markdownSlug(page.post) === markdownSlug(post)
-                                  ? 'xt-active'
+                                  ? 'active'
                                   : post.frontmatter.type === page.post.frontmatter.type
                                   ? 'current'
                                   : ''
@@ -240,7 +240,7 @@ export default function Header({ page }) {
                                       )}
                                       {post.frontmatter.parent === page.post.frontmatter.parent &&
                                       post.frontmatter.category === page.post.frontmatter.category ? (
-                                        <div className="gatsby_site-header_adiacent xt-active">
+                                        <div className="gatsby_site-header_adiacent active">
                                           <div className="gatsby_site-header_item">
                                             {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                               adiacent.frontmatter.title !== post.frontmatter.parent ? (
