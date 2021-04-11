@@ -18,7 +18,7 @@ You can customize the **class names** used by the component. Refer to [toggle cl
 
 </div>
 
-You can set initial activation by adding `active` to the **elements** or **targets**.
+You can set initial activation by adding `on` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
 

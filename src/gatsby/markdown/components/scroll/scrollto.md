@@ -37,7 +37,7 @@ Here are the main **javascript options**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
 | Option                    | `scrolls:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
-| Option                    | `class:String`                          | `'in'`        | Activation class for anchors              |
+| Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors             |

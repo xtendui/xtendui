@@ -75,7 +75,7 @@ Check subpage to [customize interaction](/components/drop/interaction) and [cust
 
 Use this code to create a **drop** in **self mode**.
 
-Just use the class `active` if you want to automatically open, or use the [api](/components/drop/api)
+Just use the class `on` if you want to automatically open, or use the [api](/components/drop/api)
 
 <demo>
   <demoinline src="demos/components/drop/usage-self">

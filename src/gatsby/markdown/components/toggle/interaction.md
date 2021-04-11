@@ -14,7 +14,7 @@ You can customize the **class names** used by the component.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `active`        | Class name for active            |
+| Option                  | `class:String`                          | `on`        | Class name for active            |
 | Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
 | Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
 | Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
@@ -25,7 +25,7 @@ You can customize the **class names** used by the component.
 
 </div>
 
-You can set initial activation by adding `active` to the **elements** or **targets**.
+You can set initial activation by adding `on` to the **elements** or **targets**.
 
 <demo>
   <demoinline src="demos/components/toggle/class">
