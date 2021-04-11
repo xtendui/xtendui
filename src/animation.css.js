@@ -1,7 +1,4 @@
 module.exports = {
-  transitionDelay: {
-    0: '0ms',
-  },
   transitionDuration: {
     DEFAULT: '700ms',
   },

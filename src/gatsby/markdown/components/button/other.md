@@ -8,9 +8,9 @@ date: "2005-10-10"
 
 ## Activation
 
-You can set activation styles by adding the class `.in`.
+You can set activation styles by adding the class `.on`.
 
-Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
+Use **custom tailwind variants** `active:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 <demo>
   <demoinline src="demos/components/button/activation">

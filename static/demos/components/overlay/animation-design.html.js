@@ -14,7 +14,7 @@ const html = /* HTML */ `
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
-              class="xt-design rounded-md shadow-overlay bg-white transform transition ease-out duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-4"
+              class="xt-design rounded-md shadow-overlay bg-white transform transition ease-out duration-500 opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12"
             ></div>
 
             <div class="xt-card transition ease-out duration-500 opacity-0 group-in:opacity-100">

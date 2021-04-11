@@ -142,7 +142,7 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 npm install gsap@3 --save
 ```
 
-Then set up animations see [javascript animation](/components/components/animation/javascript).
+Then set up animations see [animation javascript](/components/animation#javascript).
 
 #### Polyfill
 

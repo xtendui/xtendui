@@ -2541,11 +2541,9 @@ class Toggle {
       if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
           el.classList.remove('xt-collapse-reset')
-          el.classList.add('trans-anim-none')
           el.style.height = 'auto'
           const h = `${el.clientHeight}px`
           el.style.height = '0'
-          el.classList.remove('trans-anim-none')
           // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
@@ -2560,11 +2558,9 @@ class Toggle {
         }
         if (options.collapseWidth === type) {
           el.classList.remove('xt-collapse-reset')
-          el.classList.add('trans-anim-none')
           el.style.width = 'auto'
           const w = `${el.clientWidth}px`
           el.style.width = '0'
-          el.classList.remove('trans-anim-none')
           // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
@@ -2580,10 +2576,8 @@ class Toggle {
       } else if (actionCurrent === 'Out') {
         if (options.collapseHeight === type) {
           el.classList.remove('xt-collapse-reset')
-          el.classList.add('trans-anim-none')
           const h = `${el.offsetHeight}px`
           el.style.height = h
-          el.classList.remove('trans-anim-none')
           // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
@@ -2598,10 +2592,8 @@ class Toggle {
         }
         if (options.collapseWidth === type) {
           el.classList.remove('xt-collapse-reset')
-          el.classList.add('trans-anim-none')
           const w = `${el.offsetWidth}px`
           el.style.width = w
-          el.classList.remove('trans-anim-none')
           // keep the same level of raf as others
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.put(
@@ -3234,7 +3226,7 @@ Toggle.optionsDefaultSuper = {
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   // class
-  class: 'active',
+  class: 'on',
   classIn: 'in',
   classOut: 'out',
   classDone: 'done',

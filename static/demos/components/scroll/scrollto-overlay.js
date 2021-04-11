@@ -125,7 +125,7 @@ const mountSwitcher = ({ ref }) => {
         self.options.class = false
         self.options.scrollActivation = false
       } else {
-        self.options.class = 'active in'
+        self.options.class = 'on'
         self.options.scrollActivation = true
       }
       self.destroy()

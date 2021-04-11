@@ -29,9 +29,11 @@ See [link if scrolls right](/components/slider/other#media-loaded).
 
 ## Markdown
 
-You can set activation styles by adding the class `.in`.
+You can set activation styles by adding the class `.on`.
 
-Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
+Use **custom tailwind variants** `active:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+Use **custom tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
@@ -63,7 +65,7 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 
 </div>
 
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.dir-before` and `.dir-after`.
+You can use also **css animations**, just add them with **class names** `.on`, `.out`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -83,7 +85,7 @@ You can use also **css animations**, just add them with **class names** `.active
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
 
 [[noteDefault]]
-| This demos uses [multiple mount object](/components/getting-started/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
+| This demos uses [multiple mount object](/introduction/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 [[noteDefault]]
 | This demos uses [loader](/components/loader) see documentation to **customize**.

@@ -7,19 +7,19 @@ import gsap from 'gsap'
 Xt.mount({
   matches: '.demo--slide-animation-v1',
   mount: ({ ref }) => {
-    const unmountSlide = mountSlide({ ref })
+    const unmountInteraction = mountInteraction({ ref })
 
     // unmount
 
     return () => {
-      unmountSlide()
+      unmountInteraction()
     }
   },
 })
 
-/* mountSlide */
+/* mountInteraction */
 
-const mountSlide = ({ ref }) => {
+const mountInteraction = ({ ref }) => {
   // vars
 
   const items = ref.querySelectorAll('.xt-button, a.xt-card')

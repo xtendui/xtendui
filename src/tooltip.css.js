@@ -16,7 +16,7 @@ module.exports = {
       position: 'absolute',
       zIndex: theme('zIndex.tooltip'),
       margin: '0 !important',
-      '&:not(.active):not(.in):not(.out)': {
+      '&:not(.on):not(.in):not(.out)': {
         display: 'none',
       },
       '&.out': {

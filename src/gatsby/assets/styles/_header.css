@@ -196,7 +196,7 @@
 .gatsby_site-header_adiacent, .gatsby_site-header_adiacent_inner {
   @apply w-full;
   display: none;
-  &.active {
+  &.on {
     display: block;
   }
 }
@@ -300,7 +300,7 @@
       color: theme('colors.white');
     }
   }
-  &:active, &.active, &.current {
+  &.on, &.current, &:active, &:focus {
     > span {
       @apply bg-primary-900 bg-opacity-50;
       transform: none;

@@ -9,7 +9,7 @@
     &.dir-after {
       @apply -translate-x-4;
     }
-    /* active */
+    /* in */
     &.in {
       @apply opacity-100 translate-x-0;
     }

@@ -20,22 +20,32 @@ module.exports = {
     },
   },
   theme: {
-    extend: {
-      colors: {
-        code: '#2d3748',
-        gray: {
-          50: '#FCFDFF',
-          100: '#FAFCFF',
-          200: '#F2F6FF',
-          300: '#EAF1FF',
-          400: '#DBE7FF',
-          500: '#CBDCFF',
-          600: '#B7C6E6',
-          700: '#7A8499',
-          800: '#5B6373',
-          900: '#3D424D',
-        },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000',
+      white: '#fff',
+      code: '#2d3748',
+      gray: {
+        50: '#FCFDFF',
+        100: '#FAFCFF',
+        200: '#F2F6FF',
+        300: '#EAF1FF',
+        400: '#DBE7FF',
+        500: '#CBDCFF',
+        600: '#B7C6E6',
+        700: '#7A8499',
+        800: '#5B6373',
+        900: '#3D424D',
       },
+      red: {
+        500: '#ef4444',
+      },
+      green: {
+        500: '#22c55e',
+      },
+    },
+    extend: {
       fontFamily: {
         sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
       },

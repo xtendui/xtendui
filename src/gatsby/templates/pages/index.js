@@ -35,7 +35,7 @@ export default class Page extends React.Component {
                       </div>
                       <div className="gatsby_home-header_actions">
                         <div className="xt-list">
-                          <Link to="/introduction/getting-started/setup" className="xt-button">
+                          <Link to="/introduction/setup" className="xt-button">
                             Setup
                           </Link>
                           <Link to="/components" className="xt-button">
@@ -171,12 +171,8 @@ export default class Page extends React.Component {
                                 Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
                               </li>
                               <li>
-                                A system to{' '}
-                                <Link to="/components/getting-started/javascript#utilities-xt-mount">
-                                  mount components
-                                </Link>{' '}
-                                with <strong>mutation observer queries</strong>, to structure your javascript code
-                                better.
+                                A system tomount components with <strong>mutation observer queries</strong>, to
+                                structure your javascript code better.
                               </li>
                             </ul>
                           </div>
@@ -258,7 +254,7 @@ export default class Page extends React.Component {
                     <div className="gatsby_listing-items">
                       <div className="xt-row xt-row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
-                          <Link to="/introduction/getting-started/setup" className="xt-card gatsby_listing-item">
+                          <Link to="/introduction/setup" className="xt-card gatsby_listing-item">
                             <div className="xt-h4">Setup</div>
                             <p>Installation instructions to get Xtend UI up and running.</p>
                           </Link>

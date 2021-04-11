@@ -8,7 +8,7 @@ const html = /* HTML */ `
           Lorem ipsum
         </button>
 
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} in">
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()} on">
           dolor sit amet
         </button>
 

@@ -1,19 +1,22 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
-const buttonDefault = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesDefault} hover:shadow-lg in:shadow-sm`
-const buttonPrimary = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${classesPrimary} hover:shadow-lg in:shadow-sm`
+
 const cardWhite = () => 'text-black xt-links-default'
-const classesDefault =
-  'text-black bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 in:bg-gray-400 in:translate-y-0'
-const classesPrimary =
-  'text-white bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 in:bg-primary-700 in:translate-y-0'
-const animDesign =
-  'transform transition ease-in-out-quint duration-500 delay-200 opacity-0 scale-50 group-in:ease-out-quint group-in:delay-0 group-in:opacity-100 group-in:scale-100'
-const animItem =
-  'transform transition ease-in-out-quint duration-500 opacity-0 -translate-y-2 group-in:ease-out-quint group-in:delay-200 group-in:opacity-100 group-in:translate-y-0'
-const animItemOpacity =
-  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-in:ease-out-quint group-in:delay-200 group-in:opacity-100'
+
+const interactionDefault = () =>
+  'text-black bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0 on:bg-gray-400 on:translate-y-0'
+const interactionPrimary = () =>
+  'text-white bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0 on:bg-primary-700 on:translate-y-0'
+const buttonDefault = () =>
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm`
+const buttonPrimary = () =>
+  `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm`
+
+const animDesign = () =>
+  'transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:ease-out-quint group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint'
+const animItem = () =>
+  'transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+const animItemOpacity = () =>
+  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
 const html = /* HTML */ `
   <div>
@@ -26,14 +29,14 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 in:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 in:translate-y-0"
+        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Link
       </button>
@@ -45,10 +48,10 @@ const html = /* HTML */ `
       <div data-xt-drop>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">list</button>
 
-        <div class="xt-drop p-4 group" data-xt-duration="700">
+        <div class="xt-drop p-4 group" data-xt-duration="500">
           <div class="xt-drop-inner">
-            <div class="xt-design rounded-md shadow-drop bg-white ${animDesign}"></div>
-            <div class="xt-card w-64 py-3.5 ${animItem}">
+            <div class="xt-design rounded-md shadow-drop bg-white ${animDesign()}"></div>
+            <div class="xt-card w-64 py-3.5 ${animItem()}">
               <nav class="xt-list flex-col">
                 <a href="#" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -62,17 +65,17 @@ const html = /* HTML */ `
               </nav>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity}"></div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity()}"></div>
         </div>
       </div>
 
       <div data-xt-drop>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">card</button>
 
-        <div class="xt-drop p-4 group" data-xt-duration="700">
+        <div class="xt-drop p-4 group" data-xt-duration="500">
           <div class="xt-drop-inner">
-            <div class="xt-design rounded-md shadow-drop bg-white ${animDesign}"></div>
-            <div class="xt-card w-64 ${animItem}">
+            <div class="xt-design rounded-md shadow-drop bg-white ${animDesign()}"></div>
+            <div class="xt-card w-64 ${animItem()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -89,7 +92,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity}"></div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity()}"></div>
         </div>
       </div>
     </div>
@@ -101,14 +104,14 @@ const html = /* HTML */ `
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">tooltip</button>
 
-          <div class="xt-tooltip p-2 group" data-xt-duration="700">
+          <div class="xt-tooltip p-2 group" data-xt-duration="500">
             <div class="xt-tooltip-inner">
-              <div class="xt-design rounded-md shadow-tooltip bg-black ${animDesign}"></div>
-              <div class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse ${animItem}">
+              <div class="xt-design rounded-md shadow-tooltip bg-black ${animDesign()}"></div>
+              <div class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse ${animItem()}">
                 Lorem ipsum dolor sit amet
               </div>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
@@ -119,12 +122,12 @@ const html = /* HTML */ `
             list group
           </button>
 
-          <div class="xt-tooltip p-2 group" data-xt-duration="700">
+          <div class="xt-tooltip p-2 group" data-xt-duration="500">
             <div class="xt-tooltip-inner">
-              <div class="xt-design rounded-md shadow-tooltip bg-white ${animDesign}"></div>
-              <div class="font-semibold text-black xt-links-default ${animItem}">
+              <div class="xt-design rounded-md shadow-tooltip bg-white ${animDesign()}"></div>
+              <div class="font-semibold text-black xt-links-default ${animItem()}">
                 <form class="text-sm">
-                  <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem}">
+                  <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem()}">
                     <div class="xt-list-inner flex-auto">
                       <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
                         ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -144,7 +147,7 @@ const html = /* HTML */ `
                 </form>
               </div>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity}"></div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
@@ -155,22 +158,22 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
-        <div class="xt-overlay group" data-xt-duration="700">
+        <div class="xt-overlay group" data-xt-duration="500">
           <div
             class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
-              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${cardWhite()} ${animItem}"
+              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${cardWhite()} ${animItem()}"
               aria-label="Close"
             >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md bg-white ${animDesign}"></div>
+              <div class="xt-design rounded-md bg-white ${animDesign()}"></div>
 
-              <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem}">
+              <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem()}">
                 <div class="xt-media-container bg-gray-600 xt-ratio-100">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
@@ -183,15 +186,15 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
 
-        <div class="xt-overlay group" data-xt-duration="700">
+        <div class="xt-overlay group" data-xt-duration="500">
           <div
             class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
           ></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-design bg-white ${animDesign}"></div>
+              <div class="xt-design bg-white ${animDesign()}"></div>
 
-              <div class="xt-card xt-min-h-screen ${cardWhite()} ${animItem}">
+              <div class="xt-card xt-min-h-screen ${cardWhite()} ${animItem()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -236,15 +239,15 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
 
-        <div class="xt-overlay group" data-xt-duration="700">
+        <div class="xt-overlay group" data-xt-duration="500">
           <div
             class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
+              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
 
-              <div class="xt-card rounded-md ${cardWhite()} ${animItem}">
+              <div class="xt-card rounded-md ${cardWhite()} ${animItem()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
@@ -358,15 +361,15 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
 
-        <div class="xt-overlay group" data-xt-duration="700">
+        <div class="xt-overlay group" data-xt-duration="500">
           <div
             class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
           ></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign}"></div>
+              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
 
-              <div class="xt-card rounded-md ${cardWhite()} ${animItem}">
+              <div class="xt-card rounded-md ${cardWhite()} ${animItem()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
@@ -473,7 +476,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card ${classesDefault} hover:shadow-xl in:shadow-md">
+        <a role="button" class="xt-card ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -486,7 +489,10 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card rounded-md${classesPrimary} hover:shadow-xl in:shadow-md">
+        <a
+          role="button"
+          class="xt-card rounded-md ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm"
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

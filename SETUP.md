@@ -133,7 +133,7 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 npm install gsap@3 --save
 ```
 
-Then set up animations see [javascript animation](https://xtendui.com/components/components/animation/javascript).
+Then set up animations see [animation javascript](https://xtendui.com/components/animation#javascript).
 
 #### Polyfill
 

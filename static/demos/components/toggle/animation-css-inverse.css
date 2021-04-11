@@ -9,7 +9,7 @@
     /* initial */
     @apply transform ease-out duration-500;
     @apply opacity-100 translate-x-0;
-    /* active */
+    /* in */
     &.in {
       @apply opacity-0 translate-x-0;
       &.dir-before {
@@ -41,7 +41,7 @@
     &.dir-after {
       @apply -translate-x-4;
     }
-    /* active */
+    /* in */
     &.in {
       @apply opacity-100 translate-x-0;
     }

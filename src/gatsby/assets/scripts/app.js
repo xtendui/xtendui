@@ -87,7 +87,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') !== 'react') {
-      ref.classList.add('active', 'in')
+      ref.classList.add('on', 'in')
     }
   },
 })
@@ -107,7 +107,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === 'react') {
-      ref.classList.add('active', 'in')
+      ref.classList.add('on', 'in')
     }
   },
 })
@@ -490,16 +490,16 @@ const makeDocument = () => {
     /*
     if (el.tagName === 'H2') {
       let container = document.querySelector(
-        '.gatsby_button-site_article_sidebar--adiacent.active ~ .gatsby_site-header_adiacent_inner'
+        '.gatsby_button-site_article_sidebar--adiacent.on ~ .gatsby_site-header_adiacent_inner'
       )
       container = container
         ? container
-        : document.querySelector('.gatsby_button-site_article_sidebar--sub.active ~ .gatsby_site-header_adiacent_inner')
+        : document.querySelector('.gatsby_button-site_article_sidebar--sub.on ~ .gatsby_site-header_adiacent_inner')
       if (container) {
         const item = Xt.createElement(
           `<div><a href="#" class="xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent_inner"><span></span></button></div>`
         )
-        container.classList.add('active', in')
+        container.classList.add('on', in')
         container.querySelector('.gatsby_site-header_item').append(item)
         item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
         item.querySelector('span').textContent = el.textContent.trim()

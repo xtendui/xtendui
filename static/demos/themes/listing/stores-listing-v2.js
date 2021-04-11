@@ -24,9 +24,9 @@ const mountListing = ({ ref }) => {
   // click
 
   const on = tr => {
-    if (!tr.classList.contains('active')) {
+    if (!tr.classList.contains('on')) {
       // class
-      tr.classList.add('active')
+      tr.classList.add('on')
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.to(front, {
@@ -52,9 +52,9 @@ const mountListing = ({ ref }) => {
   }
 
   const off = tr => {
-    if (tr.classList.contains('active')) {
+    if (tr.classList.contains('on')) {
       // class
-      tr.classList.remove('active')
+      tr.classList.remove('on')
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.set(front, {

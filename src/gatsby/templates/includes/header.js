@@ -137,7 +137,7 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 in:border-primary-700 in:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                           Html
                         </button>
                         <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
@@ -150,7 +150,7 @@ export default function Header({ page }) {
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
                         <button
                           type="button"
-                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 in:border-primary-700 in:bg-primary-700 transition`}>
+                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                           React
                         </button>
                         <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
@@ -174,7 +174,7 @@ export default function Header({ page }) {
                             className={`xt-button gatsby_button-site-header_link ${
                               page && page.post
                                 ? markdownSlug(page.post) === markdownSlug(post)
-                                  ? 'active'
+                                  ? 'on'
                                   : post.frontmatter.type === page.post.frontmatter.type
                                   ? 'current'
                                   : ''
@@ -206,7 +206,7 @@ export default function Header({ page }) {
                                             title={post.frontmatter.description}
                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'active'
+                                                ? 'on'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
@@ -225,7 +225,7 @@ export default function Header({ page }) {
                                             title={post.frontmatter.description}
                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
                                               markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'active'
+                                                ? 'on'
                                                 : page.post.frontmatter.parent === post.frontmatter.parent &&
                                                   post.frontmatter.category === page.post.frontmatter.category
                                                 ? 'current'
@@ -240,7 +240,7 @@ export default function Header({ page }) {
                                       )}
                                       {post.frontmatter.parent === page.post.frontmatter.parent &&
                                       post.frontmatter.category === page.post.frontmatter.category ? (
-                                        <div className="gatsby_site-header_adiacent active">
+                                        <div className="gatsby_site-header_adiacent on">
                                           <div className="gatsby_site-header_item">
                                             {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                               adiacent.frontmatter.title !== post.frontmatter.parent ? (
@@ -251,7 +251,7 @@ export default function Header({ page }) {
                                                       className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
                                                         page.post.frontmatter.title === adiacent.frontmatter.title &&
                                                         post.frontmatter.category === page.post.frontmatter.category
-                                                          ? 'active'
+                                                          ? 'on'
                                                           : ''
                                                       }`}>
                                                       <span>

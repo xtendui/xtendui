@@ -9,23 +9,33 @@ date: "2020-10-05"
 
 ## Theme
 
-Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles. You can customize them in `tailwind.config.js` see [css custimization](/introduction/getting-started/setup#css-customization).
+Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default theme.
+
+You can customize them in `tailwind.config.js` see [css custimization](/introduction/setup#css-customization).
 
 The following theme values are added with the preset:
 
 * [container](https://tailwindcss.com/docs/container) **center by default** and **custom padding** and **fluid**.
-* [font-size](https://tailwindcss.com/docs/font-size) **text-xs** modified to `~13px`, **text-2xs** added with `~12px`, **text-3xs** added with `~11px`, for better control on small font sizes.
+* [font-size](https://tailwindcss.com/docs/font-size) `text-xs` modified to `~13px`, `text-2xs` added with `~12px`, `text-3xs*` added with `~11px`, for better control on small font sizes.
 * [colors](https://tailwindcss.com/docs/customizing-colors) a default `primary` color stack to be replaced with your primary color.
 * [z-index](https://tailwindcss.com/docs/font-size) **additional z-index** used by components, use `z-above` zindex to be sure it's **over anything except interactions components**, use `z-last` zindex to be sure it's **over anything**.
-* [flex](https://tailwindcss.com/docs/flex) **flex-full** added.
+* [flex](https://tailwindcss.com/docs/flex) `flex-full` added.
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
-* [border-radius](https://tailwindcss.com/docs/border-radius) **rounded-inherit** added.
-* [cursor](https://tailwindcss.com/docs/cursor) **cursor-none** added.
+* [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added.
+* [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
+* [transition-delay](https://tailwindcss.com/docs/transition-delay) `delay-0` added.
+* [transition-duration](https://tailwindcss.com/docs/transition-duration) `duration-0` added.
+* [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
+* [animations settings](/components/animation) added new settings see animation page.
 
 ## Variants
 
-See [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles.
+XtendUI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default variants.
 
-* Added **custom tailwind variants** `in` and `group-in` `out` and `group-out`. They style activation animations with `.in` and `.out`.
+For [all tailwind variants with hover already](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js) and for `transitionProperty`, `transitionTimingFunction`, `transitionDuration`, `transitionDelay`, `display`, `zIndex` we add the followind variants:
 
-* Added variants for display an zIndex.
+- added variants to style activation classes: `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`
+
+- activated `active:` variant.
+
+- activated `hover:` and `group-hover:` variant if not already present.

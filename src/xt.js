@@ -850,8 +850,8 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animOn = (el, suffix = '') => {
-    if (!el.classList.contains('active')) {
-      el.classList.add('active')
+    if (!el.classList.contains('on')) {
+      el.classList.add('on')
       el.classList.remove('in')
       el.classList.remove('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
@@ -876,8 +876,8 @@ if (typeof window !== 'undefined') {
    * @param {Number} timing Optional force time
    */
   Xt.animOff = (el, suffix = '', timing = null) => {
-    if (el.classList.contains('active')) {
-      el.classList.remove('active')
+    if (el.classList.contains('on')) {
+      el.classList.remove('on')
       el.classList.remove('in')
       el.classList.add('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
@@ -925,14 +925,12 @@ if (typeof window !== 'undefined') {
    * @return {Number} Time in milliseconds
    */
   Xt.animTime = (el, timing = null, actionCurrent = null) => {
-    if (timing || timing === 0) {
+    const custom =
+      (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
+    if (custom) {
+      return parseFloat(custom) / Xt.durationTimescale
+    } else if (timing || timing === 0) {
       return timing / Xt.durationTimescale
-    } else if (
-      (timing =
-        (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) ||
-        (timing = el.getAttribute('data-xt-duration')))
-    ) {
-      return parseFloat(timing) / Xt.durationTimescale
     } else {
       const style = getComputedStyle(el)
       const transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay)

@@ -9,7 +9,7 @@
     &.dir-after {
       @apply translate-x-10;
     }
-    /* active */
+    /* in */
     &.in {
       @apply delay-200 opacity-100 translate-x-0;
     }

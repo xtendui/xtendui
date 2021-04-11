@@ -17,16 +17,16 @@ module.exports = {
     '.xt-slider-absolute': {
       '.xt-slide': {
         position: 'relative',
-        '&:not(.active):not(.in):not(.out)': {
+        '&:not(.on):not(.in):not(.out)': {
           display: 'none',
         },
-        '&:not(.active)': {
+        '&:not(.on)': {
           position: 'absolute',
           top: '0',
           left: '0',
         },
       },
-      // fix page load height without .active slides
+      // fix page load height without .on slides
       '&:not(.xt-slider-init)': {
         '.xt-slide': {
           '&:first-child': {

@@ -16,9 +16,11 @@ Test direction and zIndex sequential activation and zIndex reset.
   </div>
 </demo>
 
+Test animation.
+
+Test overlay height inherit on animation done.
+
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/hero/slider-hero-v2">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/listing/products-listing-v1">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/animation/collapse-animation-v1">
   </div>
 </demo>

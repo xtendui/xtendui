@@ -14,7 +14,7 @@ date: "2050-09-10"
 </p>
 
 <p align="center">
-  <a href="/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/themes">Themes</a>
+  <a href="/introduction/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
@@ -48,7 +48,7 @@ Xtend UI is a framework for custom styling, interactions and animations. Extreme
 
 ## Setup
 
-For a complete css and js setup guide visit [online setup page](/introduction/getting-started/setup) or [github setup page](https://github.com/minimit/xtendui/blob/beta/SETUP.md).
+For a complete css and js setup guide visit [online setup page](/introduction/setup) or [github setup page](https://github.com/minimit/xtendui/blob/beta/SETUP.md).
 
 ## Contributing
 

@@ -111,7 +111,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-full active">
+          <div class="xt-slide w-full on">
             <div class="hero relative overflow-hidden bg-black">
               <div class="hero-inner">
                 <div class="xt-media-container bg-gray-700 w-full h-full absolute">

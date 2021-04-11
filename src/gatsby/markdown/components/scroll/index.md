@@ -14,7 +14,7 @@ Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/s
 
 ## Javascript
 
-This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/getting-started/setup#javascript-gsap) to **install and use gsap**.
+This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/setup#javascript-gsap) to **install and use gsap**.
 
 
 ## Usage

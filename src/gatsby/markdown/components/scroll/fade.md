@@ -22,7 +22,7 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 </div>
 
 [[noteDefault]]
-| This demos uses [multiple mount object](/components/getting-started/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
+| This demos uses [multiple mount object](/introduction/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>

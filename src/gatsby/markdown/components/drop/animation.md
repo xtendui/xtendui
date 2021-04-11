@@ -38,7 +38,7 @@ You can set it in the options or to **assign them also on single nodes** with `d
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
-Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to assign animations.
+Use **custom tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 <demo>
   <demoinline src="demos/components/drop/animation">
@@ -51,7 +51,7 @@ Use **custom tailwind variants** `in:` `out:` and `group-in:` `group-out:` to as
 
 ## Css Animation
 
-You can use also **css animations**, just add them with **class names** `.active`, `.out`, `.dir-before` and `.dir-after`.
+You can use also **css animations**, just add them with **class names** `.on`, `.out`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

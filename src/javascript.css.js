@@ -35,7 +35,7 @@ module.exports = {
       },
     },
     '.xt-jump': {
-      '&:not(.active)': {
+      '&:not(.on)': {
         cursor: 'pointer',
       },
     },

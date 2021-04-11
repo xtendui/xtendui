@@ -419,14 +419,14 @@ class Googlelocator {
     }
     // activation
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
-    const old = self.itemsContainer.querySelector('[data-xt-index].active')
+    const old = self.itemsContainer.querySelector('[data-xt-index].on')
     if (old) {
-      old.classList.remove('active')
+      old.classList.remove('on')
     }
     if (type === 'marker') {
       if (item) {
         item.focus()
-        item.classList.add('active')
+        item.classList.add('on')
       }
     }
     // infowindow
