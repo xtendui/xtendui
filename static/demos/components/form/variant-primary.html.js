@@ -41,7 +41,10 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select </label>
-          <select class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}" aria-label="Select">
+          <select
+            class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
+            aria-label="Select"
+          >
             <option selected value="">Select an option</option>
             <option>Option 1</option>
             <option>Option 2</option>

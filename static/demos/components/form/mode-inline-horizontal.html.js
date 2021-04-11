@@ -11,7 +11,11 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-auto md:self-center">
-              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+              <input
+                type="text"
+                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                aria-label="Lorem ipsum"
+              />
             </div>
           </div>
         </div>
@@ -23,7 +27,11 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-auto md:self-center">
-              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+              <input
+                type="text"
+                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                aria-label="Dolor sit amet"
+              />
             </div>
           </div>
         </div>
@@ -35,7 +43,11 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-auto md:self-center">
-              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+              <input
+                type="text"
+                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                aria-label="Lorem ipsum"
+              />
             </div>
           </div>
         </div>
@@ -47,7 +59,11 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full md:w-auto md:self-center">
-              <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+              <input
+                type="text"
+                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                aria-label="Dolor sit amet"
+              />
             </div>
           </div>
         </div>

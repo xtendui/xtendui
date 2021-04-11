@@ -11,7 +11,11 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+          <input
+            type="text"
+            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            aria-label="Dolor sit amet"
+          />
         </div>
 
         <div class="w-full md:w-6/12">
@@ -21,7 +25,11 @@ const html = /* HTML */ `
 
         <div class="w-full md:w-6/12">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+          <input
+            type="text"
+            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            aria-label="Dolor sit amet"
+          />
         </div>
 
         <div class="w-full">

@@ -11,7 +11,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12">
             <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem Ipsum </label>
-            <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+            <input
+              type="text"
+              class="${classes.input()} rounded-md ${classes.inputDefault()}"
+              aria-label="Lorem ipsum"
+            />
             <div class="mt-3 ${classes.note()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
@@ -21,19 +25,31 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12">
             <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-            <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+            <input
+              type="text"
+              class="${classes.input()} rounded-md ${classes.inputDefault()}"
+              aria-label="Dolor sit amet"
+            />
           </div>
 
           <div class="w-full">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
               <div class="w-full md:w-auto">
                 <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
-                <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+                <input
+                  type="text"
+                  class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                  aria-label="Lorem ipsum"
+                />
               </div>
 
               <div class="w-full md:w-auto">
                 <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
-                <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Dolor sit amet" />
+                <input
+                  type="text"
+                  class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                  aria-label="Dolor sit amet"
+                />
               </div>
             </div>
 

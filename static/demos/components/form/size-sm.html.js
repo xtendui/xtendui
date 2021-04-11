@@ -40,7 +40,11 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Select multiple </label>
-          <select class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}" multiple aria-label="Select multiple">
+          <select
+            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+            multiple
+            aria-label="Select multiple"
+          >
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>

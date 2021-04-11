@@ -6,7 +6,12 @@ const html = /* HTML */ `
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Input </label>
-          <input type="text" class="${classes.input()} ${classes.inputUnderline()}" aria-label="Input" placeholder="Input" />
+          <input
+            type="text"
+            class="${classes.input()} ${classes.inputUnderline()}"
+            aria-label="Input"
+            placeholder="Input"
+          />
         </div>
 
         <div class="w-full">
@@ -46,7 +51,11 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Select multiple </label>
-          <select class="${classes.input()} xt-select ${classes.inputUnderline()}" multiple aria-label="Select multiple">
+          <select
+            class="${classes.input()} xt-select ${classes.inputUnderline()}"
+            multiple
+            aria-label="Select multiple"
+          >
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>

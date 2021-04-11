@@ -261,7 +261,11 @@ const html = /* HTML */ `
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full md:w-6/12">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Name </label>
-                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Name" />
+                          <input
+                            type="text"
+                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            aria-label="Name"
+                          />
                         </div>
 
                         <div class="w-full md:w-6/12">
@@ -275,7 +279,11 @@ const html = /* HTML */ `
 
                         <div class="w-full md:w-6/12">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
-                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Email" />
+                          <input
+                            type="text"
+                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            aria-label="Email"
+                          />
                         </div>
 
                         <div class="w-full md:w-6/12">
@@ -289,7 +297,10 @@ const html = /* HTML */ `
 
                         <div class="w-full">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
-                          <select class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}" aria-label="Subject">
+                          <select
+                            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+                            aria-label="Subject"
+                          >
                             <option selected value="">Select an option</option>
                             <option>Test</option>
                             <option>Test</option>
@@ -380,7 +391,11 @@ const html = /* HTML */ `
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
-                          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Email" />
+                          <input
+                            type="text"
+                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            aria-label="Email"
+                          />
                         </div>
 
                         <div class="w-full">

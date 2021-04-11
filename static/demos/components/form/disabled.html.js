@@ -17,7 +17,12 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> File </label>
-          <input type="file" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="File" disabled />
+          <input
+            type="file"
+            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            aria-label="File"
+            disabled
+          />
         </div>
 
         <div class="w-full">
@@ -32,7 +37,11 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Select </label>
-          <select class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}" aria-label="Select" disabled>
+          <select
+            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+            aria-label="Select"
+            disabled
+          >
             <option selected value="">Select an option</option>
             <option>Test</option>
             <option>Test</option>

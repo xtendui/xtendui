@@ -53,7 +53,12 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> File </label>
-          <input type="file" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="File" required />
+          <input
+            type="file"
+            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            aria-label="File"
+            required
+          />
         </div>
 
         <div class="w-full">
@@ -68,7 +73,11 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select </label>
-          <select class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}" aria-label="Select" required>
+          <select
+            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+            aria-label="Select"
+            required
+          >
             <option selected value="">Select an option</option>
             <option>Test</option>
             <option>Test</option>
