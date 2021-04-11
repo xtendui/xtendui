@@ -18,7 +18,7 @@ Use [list group](/components/list-group) to create a **navigation**.
 
 You can set activation styles by adding the class `.on`.
 
-Use **custom tailwind variants** `active:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **tailwind variants** `active:`, `on:`, `group-on:` to assign animations.
 
 <demo>
   <demoinline src="demos/components/navigation/usage">

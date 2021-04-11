@@ -31,9 +31,9 @@ See [link if scrolls right](/components/slider/other#media-loaded).
 
 You can set activation styles by adding the class `.on`.
 
-Use **custom tailwind variants** `active:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **tailwind variants** `active:`, `on:`, `group-on:` to assign animations.
 
-Use **custom tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
