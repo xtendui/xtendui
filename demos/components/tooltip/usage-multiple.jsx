@@ -2,7 +2,7 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip' }">
+      <div data-xt-tooltip>
         Lorem ipsum
         <span className="xt-tooltip-item">
           <a href="#">dolor</a>

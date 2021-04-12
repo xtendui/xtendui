@@ -9,8 +9,8 @@
       @apply transform transition ease-out duration-500;
       @apply opacity-0 translate-y-4;
     }
-    /* active */
-    &.active {
+    /* in */
+    &.in {
       .xt-backdrop {
         @apply opacity-25;
       }

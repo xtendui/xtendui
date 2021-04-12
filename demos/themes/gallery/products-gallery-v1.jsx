@@ -42,9 +42,7 @@ export default function component() {
                         id="product-image-1"
                         title="Expand image 1">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
-                          <div className="xt-media-inner relative">
-                            <img className="xt-media" src="/img.svg" loading="eager" alt="" />
-                          </div>
+                          <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                         </div>
                       </a>
@@ -55,9 +53,7 @@ export default function component() {
                         id="product-image-2"
                         title="Expand image 2">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
-                          <div className="xt-media-inner relative">
-                            <img className="xt-media" src="/img-alt.svg" loading="eager" alt="" />
-                          </div>
+                          <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                         </div>
                       </a>
@@ -68,9 +64,7 @@ export default function component() {
                         id="product-image-3"
                         title="Expand image 3">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
-                          <div className="xt-media-inner relative">
-                            <img className="xt-media" src="/img.svg" loading="eager" alt="" />
-                          </div>
+                          <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                         </div>
                       </a>
@@ -81,9 +75,7 @@ export default function component() {
                         id="product-image-4"
                         title="Expand image 4">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
-                          <div className="xt-media-inner relative">
-                            <img className="xt-media" src="/img-alt.svg" loading="eager" alt="" />
-                          </div>
+                          <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                         </div>
                       </a>
@@ -94,9 +86,7 @@ export default function component() {
                         id="product-image-5"
                         title="Expand image 5">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
-                          <div className="xt-media-inner relative">
-                            <img className="xt-media" src="/img.svg" loading="eager" alt="" />
-                          </div>
+                          <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
                         </div>
                       </a>
@@ -108,43 +98,43 @@ export default function component() {
                           href="#product-image-1"
                           className="product-dot py-1.5 px-2 flex items-center justify-center group"
                           title="Go to image 1">
-                          <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
+                          <div className="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"></div>
                         </a>
 
                         <a
                           href="#product-image-2"
                           className="product-dot py-1.5 px-2 flex items-center justify-center group"
                           title="Go to image 2">
-                          <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
+                          <div className="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"></div>
                         </a>
 
                         <a
                           href="#product-image-3"
                           className="product-dot py-1.5 px-2 flex items-center justify-center group"
                           title="Go to image 3">
-                          <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
+                          <div className="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"></div>
                         </a>
 
                         <a
                           href="#product-image-4"
                           className="product-dot py-1.5 px-2 flex items-center justify-center group"
                           title="Go to image 4">
-                          <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
+                          <div className="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"></div>
                         </a>
 
                         <a
                           href="#product-image-5"
                           className="product-dot py-1.5 px-2 flex items-center justify-center group"
                           title="Go to image 5">
-                          <div className="bg-black rounded-full border-2 border-transparent group-active:bg-transparent group-active:border-black"></div>
+                          <div className="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"></div>
                         </a>
                       </div>
                     </div>
 
                     <div
-                      className="xt-overlay ease-in-out-quint duration-500 opacity-0 active:ease-out-quint active:opacity-100"
+                      className="xt-overlay ease-in-out-quint duration-500 opacity-0 in:ease-out-quint in:opacity-100"
                       id="overlay--product-images">
-                      <div className="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+                      <div className="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"></div>
                       <div className="xt-overlay-container p-0">
                         <button
                           type="button"
@@ -169,63 +159,53 @@ export default function component() {
                           <div className="xt-card items-center justify-center shadow-overlay text-black xt-links-default bg-white">
                             <div className="w-full">
                               <div className="xt-media-container bg-gray-600 overflow-hidden">
-                                <div className="xt-media-inner relative">
-                                  <img
-                                    className="xt-media"
-                                    id="product-image-overlay-1"
-                                    src="/img.svg"
-                                    loading="lazy"
-                                    alt=""
-                                  />
-                                </div>
+                                <img
+                                  className="xt-media relative"
+                                  id="product-image-overlay-1"
+                                  src="/img.svg"
+                                  loading="lazy"
+                                  alt=""
+                                />
                               </div>
 
                               <div className="xt-media-container bg-gray-600 overflow-hidden">
-                                <div className="xt-media-inner relative">
-                                  <img
-                                    className="xt-media"
-                                    id="product-image-overlay-2"
-                                    src="/img-alt.svg"
-                                    loading="lazy"
-                                    alt=""
-                                  />
-                                </div>
+                                <img
+                                  className="xt-media relative"
+                                  id="product-image-overlay-2"
+                                  src="/img-alt.svg"
+                                  loading="lazy"
+                                  alt=""
+                                />
                               </div>
 
                               <div className="xt-media-container bg-gray-600 overflow-hidden">
-                                <div className="xt-media-inner relative">
-                                  <img
-                                    className="xt-media"
-                                    id="product-image-overlay-3"
-                                    src="/img.svg"
-                                    loading="lazy"
-                                    alt=""
-                                  />
-                                </div>
+                                <img
+                                  className="xt-media relative"
+                                  id="product-image-overlay-3"
+                                  src="/img.svg"
+                                  loading="lazy"
+                                  alt=""
+                                />
                               </div>
 
                               <div className="xt-media-container bg-gray-600 overflow-hidden">
-                                <div className="xt-media-inner relative">
-                                  <img
-                                    className="xt-media"
-                                    id="product-image-overlay-4"
-                                    src="/img-alt.svg"
-                                    loading="eagelazyr"
-                                    alt=""
-                                  />
-                                </div>
+                                <img
+                                  className="xt-media relative"
+                                  id="product-image-overlay-4"
+                                  src="/img-alt.svg"
+                                  loading="eagelazyr"
+                                  alt=""
+                                />
                               </div>
 
                               <div className="xt-media-container bg-gray-600 overflow-hidden">
-                                <div className="xt-media-inner relative">
-                                  <img
-                                    className="xt-media"
-                                    id="product-image-overlay-5"
-                                    src="/img.svg"
-                                    loading="lazy"
-                                    alt=""
-                                  />
-                                </div>
+                                <img
+                                  className="xt-media relative"
+                                  id="product-image-overlay-5"
+                                  src="/img.svg"
+                                  loading="lazy"
+                                  alt=""
+                                />
                               </div>
                             </div>
                           </div>
@@ -248,14 +228,11 @@ export default function component() {
 
                   <a
                     href="#"
-                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                     Add to cart
                   </a>
 
                   <div className="text-opacity-75">
-                    <p>
-                      <strong>(navigate on mobile for different behaviour)</strong>
-                    </p>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas
                       efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut
@@ -349,7 +326,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
+    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
@@ -372,11 +349,14 @@ const mountScrollto = () => {
 /* mountImages */
 
 const mountImages = ({ ref }) => {
+  // vars
+
+  const overlay = ref
   const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(ref, {
+  new Xt.Overlay(overlay, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
@@ -401,7 +381,7 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 1.5,
@@ -422,9 +402,19 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: -10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     gsap.to(mask, {
       opacity: maskOpacityDone,
       duration: 0.75,
@@ -434,7 +424,11 @@ const mountImages = ({ ref }) => {
     // item
     const item = tr.querySelector('.xt-card-item')
     if (item) {
-      gsap.to(item, { y: titleY, duration: 0.5, ease: 'expo.out' })
+      gsap.to(item, {
+        y: titleY,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -448,9 +442,17 @@ const mountImages = ({ ref }) => {
     const tr = e.target
     // media
     const media = tr.querySelector('.xt-media-container')
-    gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-    const mediaInner = tr.querySelector('.xt-media-inner')
-    gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
+    gsap.to(media, {
+      scale: 1,
+      duration: 0.5,
+      ease: 'quart.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media')
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 1.5,
+      ease: 'quart.out',
+    })
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
@@ -460,13 +462,27 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: 10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     // item
     const item = tr.querySelector('.xt-card-item')
     if (item) {
-      gsap.to(item, { y: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(item, {
+        y: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -478,19 +494,30 @@ const mountImages = ({ ref }) => {
 /* mountArrow */
 
 const mountArrow = ({ ref }) => {
-  const arrow = ref.querySelector('.product-arrow')
-
   // vars
 
+  const arrow = ref.querySelector('.product-arrow')
   const icon = arrow.querySelector(':scope > *')
   const posY = 15
 
   // interval
 
   const move = () => {
-    gsap.to(icon, { y: 6, duration: 0.5, ease: 'back.out(4)' }).eventCallback('onComplete', () => {
-      gsap.to(icon, { y: 0, duration: 0.5, ease: 'quart.out' }).delay(0.25)
-    })
+    gsap
+      .to(icon, {
+        y: 6,
+        duration: 0.5,
+        ease: 'back.out(4)',
+      })
+      .eventCallback('onComplete', () => {
+        gsap
+          .to(icon, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
+          .delay(0.25)
+      })
   }
 
   let interval = setInterval(move, 2000)

@@ -23,9 +23,7 @@ export default function component() {
                 <div className="listing-item-inner h-full">
                   <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
                     <div className="text-sm py-6 px-7">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -34,7 +32,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -43,7 +41,7 @@ export default function component() {
                   <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -95,9 +93,7 @@ export default function component() {
                 <div className="listing-item-inner h-full">
                   <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
                     <div className="text-sm py-6 px-7">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -106,7 +102,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -115,7 +111,7 @@ export default function component() {
                   <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -151,9 +147,7 @@ export default function component() {
                 <div className="listing-item-inner h-full">
                   <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
                     <div className="text-sm py-6 px-7">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -162,7 +156,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -171,7 +165,7 @@ export default function component() {
                   <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -223,9 +217,7 @@ export default function component() {
                 <div className="listing-item-inner h-full">
                   <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
                     <div className="text-sm py-6 px-7">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -234,7 +226,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -243,7 +235,7 @@ export default function component() {
                   <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -279,9 +271,7 @@ export default function component() {
                 <div className="listing-item-inner h-full">
                   <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
                     <div className="text-sm py-6 px-7">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -290,7 +280,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -299,7 +289,7 @@ export default function component() {
                   <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -367,6 +357,8 @@ const mount = ({ ref }) => {
 /* mountListing */
 
 const mountListing = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.listing-item')
 
   for (const item of items) {
@@ -379,7 +371,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      item.classList.add('active')
+      item.classList.add('on')
     }
 
     actionBtn.addEventListener('click', click)
@@ -388,7 +380,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      item.classList.remove('active')
+      item.classList.remove('on')
     }
 
     closeBtn.addEventListener('click', close)

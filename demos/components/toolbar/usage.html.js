@@ -14,7 +14,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="text"
-            class="xt-input rounded-r-md ${classes.inputDefault()}"
+            class="${classes.input()} rounded-r-md ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />

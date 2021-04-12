@@ -9,7 +9,7 @@ const html = /* HTML */ `
 
       <div class="xt-overlay" data-xt-duration="500">
         <div
-          class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-active:opacity-25"
+          class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-in:opacity-25"
         ></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -22,9 +22,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>

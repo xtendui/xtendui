@@ -17,6 +17,8 @@ Xt.mount({
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
+  // vars
+
   const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 
@@ -29,8 +31,16 @@ const mountLoader = ({ ref }) => {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
         Xt.animOn(loader)
-        gsap.set(filler, { width: 0 })
-        gsap.to(filler, { width: '100%', duration: 1, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
+        gsap.set(filler, {
+          width: 0,
+        })
+        gsap
+          .to(filler, {
+            width: '100%',
+            duration: 1,
+            ease: 'linear',
+          })
+          .eventCallback('onComplete', loaderTimeout)
       } else {
         Xt.animOff(loader)
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)

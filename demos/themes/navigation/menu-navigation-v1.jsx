@@ -20,13 +20,13 @@ export default function component() {
     <div className="demo--menu-navigation-v1-react" ref={ref}>
       <div className="megamenu relative bg-primary-500 text-white">
         <form className="text-sm container pt-10">
-          <label className="xt-label-check">
+          <label className="cursor-pointer inline-flex items-baseline">
             <input
               type="checkbox"
               className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
               defaultChecked
             />
-            <span className="xt-check-content">Use mouse events</span>
+            <span className="ml-4">Use mouse events</span>
           </label>
         </form>
 
@@ -37,7 +37,7 @@ export default function component() {
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
@@ -81,7 +81,7 @@ export default function component() {
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
@@ -114,14 +114,14 @@ export default function component() {
 
             <a
               href="/"
-              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
               Link #3
             </a>
 
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #4
               </a>
 
@@ -185,7 +185,7 @@ export default function component() {
 
             <a
               href="/"
-              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100">
+              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
               Link #5
             </a>
           </div>
@@ -291,9 +291,9 @@ const mount = ({ ref }) => {
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
-  const megamenu = ref.querySelector('.megamenu')
-
   // vars
+
+  const megamenu = ref.querySelector('.megamenu')
 
   const contentXOn = -40
   const contentXOff = -40
@@ -457,10 +457,9 @@ const mountDrops = ({ ref }) => {
 /* mountLine */
 
 const mountLine = ({ ref }) => {
-  const megamenu = ref.querySelector('.megamenu')
-
   // vars
 
+  const megamenu = ref.querySelector('.megamenu')
   const btns = ref.querySelectorAll('.button--line')
   const drops = ref.querySelectorAll('.xt-drop-item')
   const line = ref.querySelector('.megamenu-line')
@@ -576,8 +575,12 @@ const mountLine = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  // vars
+
   const megamenu = ref.querySelector('.megamenu')
   const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
 
   const change = () => {
     const self = Xt.get('xt-drop', megamenu)

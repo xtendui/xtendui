@@ -17,6 +17,8 @@ Xt.mount({
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const tooltip = ref.querySelector('#tooltip--eventmethods')
 
   // init
@@ -98,7 +100,7 @@ const mountEventmethods = ({ ref }) => {
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
           Tooltip ${indexEl}
         </button>
       `
@@ -198,16 +200,27 @@ const mountEventmethods = ({ ref }) => {
     } else if (self.targets.includes(e.target)) {
       str += ` type <strong>target</strong>`
     }
+    let selector
     if (e.target.getAttribute('title')) {
-      str += ` from <strong>${e.target.getAttribute('title')}</strong>`
+      selector = e.target.getAttribute('title')
     } else if (e.target.querySelector(':scope > .xt-button')) {
-      str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      selector = e.target.querySelector(':scope > .xt-button').textContent
     } else if (e.target.querySelector('.xt-card > *')) {
-      str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
+      selector = e.target.querySelector('.xt-card > *').textContent
     } else if (e.target.querySelector(':scope > *')) {
-      str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
+      selector = e.target.querySelector(':scope > *').textContent
     } else if (!e.target.querySelector('*')) {
-      str += ` from <strong>${e.target.innerHTML}</strong>`
+      selector = e.target.innerHTML
+    }
+    if (selector) {
+      selector = selector
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\//g, '&#x2F;')
+      str += ` from <strong>${selector}</strong>`
     }
     logAdd(str)
   }

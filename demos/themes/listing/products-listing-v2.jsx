@@ -21,151 +21,128 @@ export default function component() {
   return (
     <div className="demo--products-listing-v2-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider slider--listing">
-          <div className="xt-slides">
-            <div className="container">
-              <div className="xt-h2 mb-8">Latest Products</div>
-
-              <div className="xt-slides-inner xt-row xt-row-4">
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                      <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-                        <div className="xt-list xt-list-3 items-center flex-nowrap">
-                          <div className="text-lg font-semibold">-35%</div>
-                        </div>
+        <div className="xt-slider slider--listing pb-10">
+          <div className="container">
+            <div className="xt-h2 mb-8">Latest Products</div>
+            <div className="xt-slides xt-row xt-row-4">
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+                      <div className="xt-list xt-list-3 items-center flex-nowrap">
+                        <div className="text-lg font-semibold">-35%</div>
                       </div>
                     </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                      <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
-                        <div className="xt-list xt-list-3 items-center flex-nowrap">
-                          <div className="text-lg font-semibold">-40%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="xt-slide w-6/12 md:w-4/12">
-                  <a href="#" className="listing-item block group">
-                    <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                      <div className="xt-media-inner">
-                        <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    </div>
-                    <div className="py-4">
-                      <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
-                      <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                    </div>
-                  </a>
-                </div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
               </div>
 
-              <nav className="xt-slider-pagination">
-                <button
-                  type="button"
-                  className="xt-button button-default xt-ignore"
-                  data-xt-pag
-                  title="Slide xt-num"></button>
-              </nav>
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
+                      <div className="xt-list xt-list-3 items-center flex-nowrap">
+                        <div className="text-lg font-semibold">-40%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="xt-slide w-6/12 md:w-4/12">
+                <a href="#" className="listing-item block group">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                  </div>
+                  <div className="py-4">
+                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  </div>
+                </a>
+              </div>
             </div>
+
+            <nav className="xt-slider-pagination hidden">
+              <button type="button" className="xt-button hidden" data-xt-pag></button>
+            </nav>
           </div>
         </div>
 
@@ -177,9 +154,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
@@ -197,9 +172,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
@@ -217,9 +190,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -232,9 +203,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -247,9 +216,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -262,9 +229,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -277,9 +242,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -292,9 +255,7 @@ export default function component() {
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="listing-item block group">
                   <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
@@ -330,9 +291,37 @@ const mount = ({ ref }) => {
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
-  new Xt.Slider(ref.querySelector('.slider--listing'), {
+  // vars
+
+  const dragTime = 1
+  const dragEase = 'quint.out'
+
+  // init
+
+  const self = new Xt.Slider(ref.querySelector('.slider--listing'), {
     contain: true,
   })
+
+  // dragposition (set internal dragPosition to resume animation mid dragging)
+
+  const dragposition = () => {
+    // dragPosition tween with main time and ease
+    gsap.killTweensOf(self.detail)
+    gsap.to(self.detail, {
+      dragPosition: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+    // dragger tween with main time and ease
+    gsap.killTweensOf(self.dragger)
+    gsap.to(self.dragger, {
+      x: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+  }
+
+  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // unmount
 
@@ -342,9 +331,9 @@ const mountSlider = ({ ref }) => {
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const mediaContainerScale = 0.015
   const mediaScale = 0.06
@@ -363,7 +352,7 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 1.5,
@@ -385,9 +374,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '150%'
-    gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: -10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     gsap.to(mask, {
       opacity: maskOpacityDone,
       duration: 0.75,
@@ -406,9 +405,17 @@ const mountMedia = ({ ref }) => {
     const tr = e.target
     // media
     const media = tr.querySelector('.xt-media-container')
-    gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-    const mediaInner = tr.querySelector('.xt-media-inner')
-    gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
+    gsap.to(media, {
+      scale: 1,
+      duration: 0.5,
+      ease: 'quart.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media')
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 1.5,
+      ease: 'quart.out',
+    })
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
@@ -418,9 +425,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '50%', y: '-100%'
-    gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: 10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
   }
 
   for (const item of items) {
@@ -435,9 +452,9 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const scrollY = 15
   const scrollScale = 1.04
@@ -452,7 +469,10 @@ const mountFade = ({ ref }) => {
       const direction = scrollTriggers[0].direction
       const y = direction > 0 ? -scrollY : scrollY
       gsap.killTweensOf(batch)
-      gsap.set(batch, { y: y, scale: scrollScale })
+      gsap.set(batch, {
+        y: y,
+        scale: scrollScale,
+      })
       gsap.to(batch, {
         opacity: 1,
         y: 0,

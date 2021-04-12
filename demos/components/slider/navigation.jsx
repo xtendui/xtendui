@@ -19,236 +19,234 @@ export default function component() {
   return (
     <div className="demo--slider-navigation-react" ref={ref}>
       <div className="xt-slider">
-        <div className="xt-slides">
-          <div className="xt-slides-inner xt-row xt-row-4">
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">1</div>
-                <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="-1"
-                    title="Previous slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="1"
-                    title="Next slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+        <div className="xt-slides xt-row xt-row-4">
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">1</div>
+              <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="-1"
+                  title="Previous slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="1"
+                  title="Next slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
             </div>
+          </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">2</div>
-                <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="-1"
-                    title="Previous slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="1"
-                    title="Next slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">2</div>
+              <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="-1"
+                  title="Previous slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="1"
+                  title="Next slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
             </div>
+          </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">3</div>
-                <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="-1"
-                    title="Previous slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="1"
-                    title="Next slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">3</div>
+              <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="-1"
+                  title="Previous slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="1"
+                  title="Next slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
             </div>
+          </div>
 
-            <div className="xt-slide w-7/12 sm:w-5/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">4</div>
-                <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="-1"
-                    title="Previous slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="1"
-                    title="Next slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+          <div className="xt-slide w-7/12 sm:w-5/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">4</div>
+              <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="-1"
+                  title="Previous slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="1"
+                  title="Next slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
             </div>
+          </div>
 
-            <div className="xt-slide w-7/12 sm:w-5/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">5</div>
-                <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="-1"
-                    title="Previous slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-                    data-xt-nav="1"
-                    title="Next slide">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon text-xl -my-1"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </button>
-                </nav>
-              </div>
+          <div className="xt-slide w-7/12 sm:w-5/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">5</div>
+              <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="-1"
+                  title="Previous slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                  data-xt-nav="1"
+                  title="Next slide">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="xt-icon text-xl -my-1"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
             </div>
           </div>
         </div>
@@ -256,7 +254,7 @@ export default function component() {
         <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
             data-xt-nav="-1"
             title="Previous slide">
             <svg
@@ -275,12 +273,12 @@ export default function component() {
           </button>
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
+            className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
             data-xt-pag
             title="Slide xt-num"></button>
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
             data-xt-nav="1"
             title="Next slide">
             <svg
@@ -322,6 +320,8 @@ const mountSlider = ({ ref }) => {
 
   const dragTime = 1
   const dragEase = 'quint.out'
+
+  // init
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {})
 

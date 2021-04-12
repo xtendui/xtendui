@@ -26,9 +26,9 @@ const html = /* HTML */ `
         aria-label="Previous slide"
         data-xt-mousefollow
       >
-        <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
+        <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
           ${classes.iconArrowLeft({
-            classes: 'transform transition-all group-active:opacity-75 group-active:scale-75',
+            classes: 'transform transition-all group-in:opacity-75 group-in:scale-75',
           })}
         </div>
       </button>
@@ -40,9 +40,9 @@ const html = /* HTML */ `
         aria-label="Next slide"
         data-xt-mousefollow
       >
-        <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 active:opacity-100">
+        <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
           ${classes.iconArrowRight({
-            classes: 'transform transition-all group-active:opacity-75 group-active:scale-75',
+            classes: 'transform transition-all group-in:opacity-75 group-in:scale-75',
           })}
         </div>
       </button>

@@ -3,11 +3,11 @@ export default function component() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip', classSkip: false }">
+        <div data-xt-tooltip="{ classSkip: false }">
           <div className="xt-tooltip-item">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition active:z-tooltip">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 on:z-tooltip">
               backdrop
             </button>
 
@@ -24,7 +24,7 @@ export default function component() {
         <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition active:z-tooltip">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 on:z-tooltip">
             backdrop click
           </button>
 

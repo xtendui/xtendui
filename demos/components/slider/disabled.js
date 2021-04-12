@@ -18,17 +18,15 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
-  // test disabled when activated the 4th slide
-
-  ref.querySelectorAll('.xt-slide')[3].classList.add('in-slider')
-
   // vars
 
   const dragTime = 1
   const dragEase = 'quint.out'
 
+  // init
+
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    drag: { wrap: true },
+    wrap: true,
     matches: {
       '(min-width: 768px)': {
         disabled: true,

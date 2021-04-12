@@ -26,10 +26,14 @@ const mountGooglelocator = ({ ref }) => {
 
   Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
 
+  // vars
+
+  const googlelocator = ref
+
   // init
 
   window.demoGooglelocator = function () {
-    new Xt.Googlelocator(ref, {
+    new Xt.Googlelocator(googlelocator, {
       initialLocate: false,
       initialSearch: false,
       seachMapBounds: false,

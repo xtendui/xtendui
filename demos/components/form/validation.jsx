@@ -18,13 +18,10 @@ export default function component() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required">
-              {' '}
-              Custom constrain{' '}
-            </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Custom constrain </label>
             <input
               type="text"
-              className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition input--constrains"
+              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 input--constrains"
               aria-label="Custom constrain"
               placeholder="Custom constrain"
               required
@@ -32,10 +29,10 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> Email </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Email </label>
             <input
               type="email"
-              className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Email"
               placeholder="Email"
               required
@@ -43,10 +40,10 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> Number </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Number </label>
             <input
               type="number"
-              className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Number"
               placeholder="Number"
               required
@@ -56,13 +53,10 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required">
-              {' '}
-              Letters{' '}
-            </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Letters </label>
             <input
               type="text"
-              className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Letters"
               placeholder="Letters"
               required
@@ -71,31 +65,28 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> File </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> File </label>
             <input
               type="file"
-              className="xt-input rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="File"
               required
             />
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required">
-              {' '}
-              Textarea{' '}
-            </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Textarea </label>
             <textarea
-              className="xt-input xt-textarea rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
               required></textarea>
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> Select </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select </label>
             <select
-              className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Select"
               required>
               <option defaultValue="">Select an option</option>
@@ -106,12 +97,9 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required">
-              {' '}
-              Select multiple{' '}
-            </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select multiple </label>
             <select
-              className="xt-input xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Select multiple"
               multiple
               required>
@@ -122,21 +110,18 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required">
-              {' '}
-              Checkbox{' '}
-            </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     required
                     disabled
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -145,13 +130,13 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     required
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -162,18 +147,18 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> Radio </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="radio-validation"
                     required
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -182,13 +167,13 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="radio-validation"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -199,17 +184,17 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold xt-label-required"> Switch </label>
+            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     required
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -218,14 +203,14 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="switch-validation"
                     required
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -234,13 +219,13 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="switch-validation"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -253,7 +238,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               submit
             </button>
           </div>
@@ -278,6 +263,8 @@ const mount = ({ ref }) => {
 /* mountValidation */
 
 const mountValidation = ({ ref }) => {
+  // vars
+
   const input = ref.querySelector('.input--constrains')
 
   // validate

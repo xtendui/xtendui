@@ -17,6 +17,8 @@ Xt.mount({
 /* mountButtonsSwap */
 
 const mountButtonsSwap = ({ ref }) => {
+  // vars
+
   const buttonsSwap = ref.querySelectorAll(':scope > .xt-button')
 
   for (const buttonSwap of buttonsSwap) {

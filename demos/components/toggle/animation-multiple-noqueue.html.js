@@ -13,14 +13,14 @@ const html = /* HTML */ `
 
       <div class="relative w-full">
         <div
-          class="xt-card xt-toggle xt-toggle-absolute rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0"
+          class="xt-card xt-toggle xt-toggle-absolute rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
           data-xt-duration="500"
         >
           Target 0
         </div>
 
         <div
-          class="xt-card xt-toggle xt-toggle-absolute rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0"
+          class="xt-card xt-toggle xt-toggle-absolute rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
           data-xt-duration="500"
         >
           Target 1

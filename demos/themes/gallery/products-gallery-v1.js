@@ -37,7 +37,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('active') ? 0 : 1
+    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
@@ -60,11 +60,14 @@ const mountScrollto = () => {
 /* mountImages */
 
 const mountImages = ({ ref }) => {
+  // vars
+
+  const overlay = ref
   const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(ref, {
+  new Xt.Overlay(overlay, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
@@ -89,7 +92,7 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 1.5,
@@ -110,9 +113,19 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: -10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     gsap.to(mask, {
       opacity: maskOpacityDone,
       duration: 0.75,
@@ -122,7 +135,11 @@ const mountImages = ({ ref }) => {
     // item
     const item = tr.querySelector('.xt-card-item')
     if (item) {
-      gsap.to(item, { y: titleY, duration: 0.5, ease: 'expo.out' })
+      gsap.to(item, {
+        y: titleY,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -136,9 +153,17 @@ const mountImages = ({ ref }) => {
     const tr = e.target
     // media
     const media = tr.querySelector('.xt-media-container')
-    gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-    const mediaInner = tr.querySelector('.xt-media-inner')
-    gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
+    gsap.to(media, {
+      scale: 1,
+      duration: 0.5,
+      ease: 'quart.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media')
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 1.5,
+      ease: 'quart.out',
+    })
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
@@ -148,13 +173,27 @@ const mountImages = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: 10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     // item
     const item = tr.querySelector('.xt-card-item')
     if (item) {
-      gsap.to(item, { y: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(item, {
+        y: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -166,19 +205,30 @@ const mountImages = ({ ref }) => {
 /* mountArrow */
 
 const mountArrow = ({ ref }) => {
-  const arrow = ref.querySelector('.product-arrow')
-
   // vars
 
+  const arrow = ref.querySelector('.product-arrow')
   const icon = arrow.querySelector(':scope > *')
   const posY = 15
 
   // interval
 
   const move = () => {
-    gsap.to(icon, { y: 6, duration: 0.5, ease: 'back.out(4)' }).eventCallback('onComplete', () => {
-      gsap.to(icon, { y: 0, duration: 0.5, ease: 'quart.out' }).delay(0.25)
-    })
+    gsap
+      .to(icon, {
+        y: 6,
+        duration: 0.5,
+        ease: 'back.out(4)',
+      })
+      .eventCallback('onComplete', () => {
+        gsap
+          .to(icon, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
+          .delay(0.25)
+      })
   }
 
   let interval = setInterval(move, 2000)

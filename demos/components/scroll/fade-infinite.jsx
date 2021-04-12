@@ -170,6 +170,8 @@ const mount = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-card')
 
   // fade

@@ -24,9 +24,37 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
-  new Xt.Slider(ref.querySelector('.slider--listing'), {
+  // vars
+
+  const dragTime = 1
+  const dragEase = 'quint.out'
+
+  // init
+
+  const self = new Xt.Slider(ref.querySelector('.slider--listing'), {
     contain: true,
   })
+
+  // dragposition (set internal dragPosition to resume animation mid dragging)
+
+  const dragposition = () => {
+    // dragPosition tween with main time and ease
+    gsap.killTweensOf(self.detail)
+    gsap.to(self.detail, {
+      dragPosition: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+    // dragger tween with main time and ease
+    gsap.killTweensOf(self.dragger)
+    gsap.to(self.dragger, {
+      x: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+  }
+
+  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // unmount
 
@@ -36,9 +64,9 @@ const mountSlider = ({ ref }) => {
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const mediaContainerScale = 0.015
   const mediaScale = 0.06
@@ -57,7 +85,7 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 1.5,
@@ -79,9 +107,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '150%'
-    gsap.to(mask, { skewY: -10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: -10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
     gsap.to(mask, {
       opacity: maskOpacityDone,
       duration: 0.75,
@@ -100,9 +138,17 @@ const mountMedia = ({ ref }) => {
     const tr = e.target
     // media
     const media = tr.querySelector('.xt-media-container')
-    gsap.to(media, { scale: 1, duration: 0.5, ease: 'quart.out' })
-    const mediaInner = tr.querySelector('.xt-media-inner')
-    gsap.to(mediaInner, { scale: 1, duration: 1.5, ease: 'quart.out' })
+    gsap.to(media, {
+      scale: 1,
+      duration: 0.5,
+      ease: 'quart.out',
+    })
+    const mediaInner = tr.querySelector('.xt-media')
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 1.5,
+      ease: 'quart.out',
+    })
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
@@ -112,9 +158,19 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'quart.out',
     }) // fix to cover height: '50%', y: '-100%'
-    gsap.to(mask, { skewY: 10, duration: 0.5 / 2, ease: 'quart.out' }).eventCallback('onComplete', () => {
-      gsap.to(mask, { skewY: 0, duration: 0.5 / 2, ease: 'quart.out' })
-    })
+    gsap
+      .to(mask, {
+        skewY: 10,
+        duration: 0.5 / 2,
+        ease: 'quart.out',
+      })
+      .eventCallback('onComplete', () => {
+        gsap.to(mask, {
+          skewY: 0,
+          duration: 0.5 / 2,
+          ease: 'quart.out',
+        })
+      })
   }
 
   for (const item of items) {
@@ -129,9 +185,9 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const scrollY = 15
   const scrollScale = 1.04
@@ -146,7 +202,10 @@ const mountFade = ({ ref }) => {
       const direction = scrollTriggers[0].direction
       const y = direction > 0 ? -scrollY : scrollY
       gsap.killTweensOf(batch)
-      gsap.set(batch, { y: y, scale: scrollScale })
+      gsap.set(batch, {
+        y: y,
+        scale: scrollScale,
+      })
       gsap.to(batch, {
         opacity: 1,
         y: 0,

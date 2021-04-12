@@ -22,7 +22,7 @@ export default function component() {
         <div className="xt-tooltip-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
@@ -36,7 +36,7 @@ export default function component() {
         <div className="xt-tooltip-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
@@ -68,6 +68,8 @@ const mount = ({ ref }) => {
 const mountTooltip = ({ ref }) => {
   // vars
 
+  const tooltip = ref.querySelector(':scope > .xt-list')
+
   const targetTimeOn = 0.3
   const targetEaseOn = 'quint.out'
   const targetTimeOff = 0.3
@@ -75,9 +77,7 @@ const mountTooltip = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Tooltip(ref, {
-    elements: '.xt-tooltip-item',
-    targets: '.xt-tooltip',
+  let self = new Xt.Tooltip(tooltip, {
     duration: 300,
     delay: 25,
   })

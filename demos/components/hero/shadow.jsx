@@ -4,9 +4,7 @@ export default function component() {
     <div>
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-600 w-full h-full absolute">
-          <div className="xt-media-inner">
-            <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-          </div>
+          <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
         </div>
         <div className="flex relative min-h-screen">
@@ -17,7 +15,7 @@ export default function component() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               {' '}
               Lorem ipsum{' '}
             </a>
@@ -27,9 +25,7 @@ export default function component() {
 
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-600 w-full h-full absolute">
-          <div className="xt-media-inner">
-            <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-          </div>
+          <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50"></div>
         </div>
         <div className="flex relative min-h-screen">
@@ -40,7 +36,7 @@ export default function component() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               {' '}
               Lorem ipsum{' '}
             </a>
@@ -50,9 +46,7 @@ export default function component() {
 
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-600 w-full h-full absolute">
-          <div className="xt-media-inner">
-            <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-          </div>
+          <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
         </div>
         <div className="flex relative min-h-screen">
@@ -63,7 +57,7 @@ export default function component() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               {' '}
               Lorem ipsum{' '}
             </a>

@@ -1,11 +1,9 @@
 import React from 'react'
 export default function component() {
   return (
-    <div className="CCC--media-usage">
+    <div className="demo--media-usage-react">
       <div className="xt-media-container bg-gray-200">
-        <div className="xt-media-inner">
-          <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-        </div>
+        <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
       </div>
     </div>
   )

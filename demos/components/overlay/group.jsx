@@ -6,7 +6,7 @@ export default function component() {
         <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             group
           </button>
 
@@ -60,7 +60,7 @@ export default function component() {
         <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             group complex
           </button>
 
@@ -113,9 +113,7 @@ export default function component() {
                     </div>
                   </div>
                   <div className="xt-media-container bg-gray-600 rounded-b-md h-40">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>

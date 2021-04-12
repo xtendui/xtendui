@@ -16,10 +16,10 @@ export default function component() {
 
   return (
     <div className="demo--jumptocontent-react" ref={ref}>
-      <div className="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 active:opacity-100 active:translate-y-0">
+      <div className="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
         <a
           href="#jumptocontent"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Jump to content
         </a>
       </div>
@@ -143,6 +143,8 @@ const mount = ({ ref }) => {
 /* mountJumptocontents */
 
 const mountJumptocontents = ({ ref }) => {
+  // vars
+
   const jumptocontents = ref.querySelectorAll('.jumptocontent')
   const unmounts = []
 

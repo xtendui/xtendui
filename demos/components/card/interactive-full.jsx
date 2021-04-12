@@ -6,7 +6,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <a
             role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition hover:bg-gray-200 active:bg-gray-300">
+            className="xt-card rounded-md text-black xt-links-default transform transition hover:bg-gray-200">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -21,7 +21,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <a
             role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600">
+            className="xt-card rounded-md text-black xt-links-default transform transition hover:text-white hover:bg-primary-500">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>

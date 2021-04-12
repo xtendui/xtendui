@@ -17,6 +17,8 @@ Xt.mount({
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
+  // vars
+
   const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 
@@ -29,7 +31,9 @@ const mountLoader = ({ ref }) => {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
         Xt.animOn(loader)
-        gsap.set(spinner, { strokeDashoffset: 628 })
+        gsap.set(spinner, {
+          strokeDashoffset: 628,
+        })
         gsap
           .to(spinner, {
             strokeDashoffset: 0,

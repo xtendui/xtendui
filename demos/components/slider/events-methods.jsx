@@ -21,97 +21,95 @@ export default function component() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-first-element">
           on 1st element
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-first-target">
           on 1st target
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--toggle-events-autostart">
           Autostart
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--toggle-events-autostop">
           Autostop
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-add">
           Add
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-remove">
           Remove
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-reinit">
           Reinit
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-restart">
           Restart
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-destroy">
           Destroy
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--slider-eventmethods-unmount">
           Unmount
         </button>
       </div>
 
       <div className="xt-slider" id="slider--eventmethods">
-        <div className="xt-slides">
-          <div className="xt-slides-inner xt-row xt-row-4" id="slider--eventmethods-targets">
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">1</div>
-              </div>
+        <div className="xt-slides xt-row xt-row-4" id="slider--eventmethods-targets">
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">1</div>
             </div>
+          </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">2</div>
-              </div>
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">2</div>
             </div>
+          </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">3</div>
-              </div>
+          <div className="xt-slide w-6/12 sm:w-4/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">3</div>
             </div>
+          </div>
 
-            <div className="xt-slide w-7/12 sm:w-5/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">4</div>
-              </div>
+          <div className="xt-slide w-7/12 sm:w-5/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">4</div>
             </div>
+          </div>
 
-            <div className="xt-slide w-7/12 sm:w-5/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
-                <div className="xt-h4">5</div>
-              </div>
+          <div className="xt-slide w-7/12 sm:w-5/12">
+            <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+              <div className="xt-h4">5</div>
             </div>
           </div>
         </div>
@@ -119,7 +117,7 @@ export default function component() {
         <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
             data-xt-nav="-1"
             title="Previous slide">
             <svg
@@ -138,12 +136,12 @@ export default function component() {
           </button>
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
+            className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
             data-xt-pag
             title="Slide xt-num"></button>
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+            className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
             data-xt-nav="1"
             title="Next slide">
             <svg
@@ -187,6 +185,8 @@ const mount = ({ ref }) => {
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
   const slider = ref.querySelector('#slider--eventmethods')
 
   // vars
@@ -201,10 +201,8 @@ const mountEventmethods = ({ ref }) => {
       time: 2000,
       initial: false,
     },
-    drag: {
-      wrap: true,
-    },
     group: 1,
+    wrap: true,
     matches: {
       '(min-width: 768px)': {
         group: 0.8,
@@ -399,16 +397,27 @@ const mountEventmethods = ({ ref }) => {
     } else if (self.targets.includes(e.target)) {
       str += ` type <strong>target</strong>`
     }
+    let selector
     if (e.target.getAttribute('title')) {
-      str += ` from <strong>${e.target.getAttribute('title')}</strong>`
+      selector = e.target.getAttribute('title')
     } else if (e.target.querySelector(':scope > .xt-button')) {
-      str += ` from <strong>${e.target.querySelector(':scope > .xt-button').textContent}</strong>`
+      selector = e.target.querySelector(':scope > .xt-button').textContent
     } else if (e.target.querySelector('.xt-card > *')) {
-      str += ` from <strong>${e.target.querySelector('.xt-card > *').textContent}</strong>`
+      selector = e.target.querySelector('.xt-card > *').textContent
     } else if (e.target.querySelector(':scope > *')) {
-      str += ` from <strong>${e.target.querySelector(':scope > *').textContent}</strong>`
+      selector = e.target.querySelector(':scope > *').textContent
     } else if (!e.target.querySelector('*')) {
-      str += ` from <strong>${e.target.innerHTML}</strong>`
+      selector = e.target.innerHTML
+    }
+    if (selector) {
+      selector = selector
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\//g, '&#x2F;')
+      str += ` from <strong>${selector}</strong>`
     }
     logAdd(str)
   }

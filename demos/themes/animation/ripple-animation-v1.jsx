@@ -25,19 +25,19 @@ export default function component() {
       <div className="xt-list xt-list-2 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Gray
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Primary
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-60 active:text-opacity-100 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
           Text
         </button>
 
@@ -54,7 +54,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <a
             role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400">
+            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -69,7 +69,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <a
             role="button"
-            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700">
+            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>
@@ -92,7 +92,7 @@ export default function component() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 Gray
               </button>
             </div>
@@ -110,7 +110,7 @@ export default function component() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                 Primary
               </button>
             </div>
@@ -136,6 +136,8 @@ const mount = ({ ref }) => {
 /* mountRipple */
 
 const mountRipple = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-button, .xt-card')
   const unmounts = []
 
@@ -158,7 +160,11 @@ const mountRipple = ({ ref }) => {
           scale: 1,
           opacity: 0,
         })
-        gsap.to(ripple, { opacity: 1, duration: 0.25, ease: 'quad.inOut' })
+        gsap.to(ripple, {
+          opacity: 1,
+          duration: 0.25,
+          ease: 'quad.inOut',
+        })
         gsap.to(ripple, {
           scale: self.scaleFinal,
           duration: 0.5,

@@ -12,7 +12,7 @@ const html = /* HTML */ `
                   <div class="xt-list-inner flex-auto">
                     <input
                       type="text"
-                      class="xt-input rounded-l-md ${classes.inputDefault()}"
+                      class="${classes.input()} rounded-l-md ${classes.inputDefault()}"
                       aria-label="Search"
                       placeholder="Search"
                     />
@@ -33,7 +33,7 @@ const html = /* HTML */ `
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check">
+                <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
@@ -41,43 +41,43 @@ const html = /* HTML */ `
                     value=""
                     checked
                   />
-                  <span class="xt-check-content">All types</span>
+                  <span class="${classes.checkContent()}">All types</span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check">
+                <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
                     name="type-options"
                     value="restaurant"
                   />
-                  <span class="xt-check-content">Restaurant</span>
+                  <span class="${classes.checkContent()}">Restaurant</span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check">
+                <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
                     class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
                     name="type-options"
                     value="school"
                   />
-                  <span class="xt-check-content">School</span>
+                  <span class="${classes.checkContent()}">School</span>
                 </label>
               </div>
 
               <div class="w-full">
-                <label class="xt-label-check">
+                <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
                     class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
                     name="googlelocator-fav"
                     value="fav"
                   />
-                  <span class="xt-check-content">Favourite</span>
+                  <span class="${classes.checkContent()}">Favourite</span>
                 </label>
               </div>
             </div>
@@ -108,7 +108,7 @@ const html = /* HTML */ `
 
           <div class="googlelocator-items mt-4">
             <script type="text/x-template">
-              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600" tabindex="-1">
+              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
                   <div class="googlelocator-item-content">
                     <div class="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>

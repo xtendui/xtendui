@@ -20,12 +20,12 @@ export default function component() {
         <div data-xt-tooltip="{ position: 'bottom' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
           <div className="xt-tooltip p-2 group" data-xt-duration="300">
-            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -34,12 +34,12 @@ export default function component() {
         <div data-xt-tooltip="{ position: 'bottom' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
           <div className="xt-tooltip p-2 group" data-xt-duration="300">
-            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -48,30 +48,28 @@ export default function component() {
         <div data-xt-tooltip="{ position: 'bottom' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
           <div className="xt-tooltip p-2 group" data-xt-duration="300">
-            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
               Lorem ipsum dolor sit amet
             </div>
           </div>
         </div>
 
         <div>
-          <div
-            className="xt-list xt-list-3 items-center"
-            data-xt-tooltip="{ position: 'bottom', elements: '.xt-tooltip-item', targets: '.xt-tooltip', delay: 25 }">
+          <div className="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'bottom', delay: 25 }">
             <div className="xt-tooltip-item">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 tooltip multiple
               </button>
 
               <div className="xt-tooltip p-2 group" data-xt-duration="300">
-                <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+                <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
                   Lorem ipsum dolor sit amet
                 </div>
               </div>
@@ -80,12 +78,12 @@ export default function component() {
             <div className="xt-tooltip-item">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 tooltip multiple
               </button>
 
               <div className="xt-tooltip p-2 group" data-xt-duration="300">
-                <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+                <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
                   Consectetur adipiscing elit
                 </div>
               </div>
@@ -112,19 +110,20 @@ const mount = ({ ref }) => {
 /* mountTooltip */
 
 const mountTooltip = ({ ref }) => {
+  // vars
+
   const tooltips = ref.querySelectorAll('.xt-tooltip')
 
   for (const tooltip of tooltips) {
     // vars
 
     const object = tooltip.closest('[data-xt-tooltip]')
-    let timeout
-    const delay = 1500
+    const delay = 1000
     const duration = 50
 
     // fix only once when tooltip has multiple targets
 
-    if (object.dataset.onlyOnceDone) return
+    if (object.dataset.onlyOnceDone) return () => {}
     object.dataset.onlyOnceDone = 'true'
 
     // on
@@ -139,8 +138,8 @@ const mountTooltip = ({ ref }) => {
         inner.style.transitionDuration = `${duration}ms`
       }
       // make all tooltips normal
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
+      clearTimeout(window.xtTooltipFastTimeout)
+      window.xtTooltipFastTimeout = setTimeout(() => {
         for (const tooltip of tooltips) {
           tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
           const inner = tooltip.querySelector(':scope > *')

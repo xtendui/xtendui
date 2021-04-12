@@ -22,7 +22,7 @@ export default function component() {
         <div className="xt-drop-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             list
           </button>
 
@@ -31,17 +31,17 @@ export default function component() {
               <nav className="xt-list flex-col">
                 <a
                   href="#"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase hover:text-opacity-75 active:text-opacity-75 transition">
+                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Amet
                 </button>
               </nav>
@@ -52,7 +52,7 @@ export default function component() {
         <div className="xt-drop-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             card
           </button>
 
@@ -110,6 +110,7 @@ const mount = ({ ref }) => {
 const mountDrops = ({ ref }) => {
   // vars
 
+  const drop = ref.querySelector(':scope > .xt-list')
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
   const targetTimeOff = 0.5
@@ -117,9 +118,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Drop(ref, {
-    elements: '.xt-drop-item',
-    targets: '.xt-drop',
+  let self = new Xt.Drop(drop, {
     duration: 500,
   })
 

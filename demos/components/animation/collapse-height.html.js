@@ -17,7 +17,10 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card rounded-md ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-              <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500" data-xt-duration="500">
+              <div
+                class="absolute inset-0 rounded-inherit xt-toggle overflow-hidden transition-all duration-500"
+                data-xt-duration="500"
+              >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
@@ -27,7 +30,10 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card rounded-md ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-              <div class="xt-media-inner xt-toggle overflow-hidden transition-all duration-500" data-xt-duration="500">
+              <div
+                class="absolute inset-0 rounded-inherit xt-toggle overflow-hidden transition-all duration-500"
+                data-xt-duration="500"
+              >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>

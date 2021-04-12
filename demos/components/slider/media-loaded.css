@@ -20,11 +20,11 @@
       }
     }
     /* animate media on mediaLoaded */
-    .xt-media-inner {
+    .xt-media {
       @apply transition opacity-0;
     }
     &.xt-medialoaded {
-      .xt-media-inner {
+      .xt-media {
         @apply opacity-100;
       }
     }

@@ -28,13 +28,13 @@ export default function component() {
                     <div className="xt-list-inner flex-auto">
                       <input
                         type="text"
-                        className="xt-input rounded-l-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 focus:bg-gray-300 transition"
+                        className="block w-full rounded-l-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
                         aria-label="Search"
                         placeholder="Search"
                       />
                       <button
                         type="button"
-                        className="button--locate xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                        className="button--locate xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -52,7 +52,7 @@ export default function component() {
                       </button>
                       <button
                         type="button"
-                        className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+                        className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -73,7 +73,7 @@ export default function component() {
                 </div>
 
                 <div className="w-full">
-                  <label className="xt-label-check">
+                  <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
                       className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
@@ -81,43 +81,43 @@ export default function component() {
                       defaultValue=""
                       defaultChecked
                     />
-                    <span className="xt-check-content">All types</span>
+                    <span className="ml-4">All types</span>
                   </label>
                 </div>
 
                 <div className="w-full">
-                  <label className="xt-label-check">
+                  <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
                       className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                       name="type-options"
                       defaultValue="restaurant"
                     />
-                    <span className="xt-check-content">Restaurant</span>
+                    <span className="ml-4">Restaurant</span>
                   </label>
                 </div>
 
                 <div className="w-full">
-                  <label className="xt-label-check">
+                  <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
                       className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                       name="type-options"
                       defaultValue="school"
                     />
-                    <span className="xt-check-content">School</span>
+                    <span className="ml-4">School</span>
                   </label>
                 </div>
 
                 <div className="w-full">
-                  <label className="xt-label-check">
+                  <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
                       className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                       name="googlelocator-fav"
                       defaultValue="fav"
                     />
-                    <span className="xt-check-content">Favourite</span>
+                    <span className="ml-4">Favourite</span>
                   </label>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function component() {
             <div className="googlelocator-items mt-4">
               <script type="text/x-template">
                 <div
-                  className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition active:border-gray-600"
+                  className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600"
                   tabIndex="-1">
                   <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
                     <div className="googlelocator-item-content">
@@ -194,7 +194,7 @@ export default function component() {
 
             <button
               type="button"
-              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               Search in this area
             </button>
           </div>
@@ -258,10 +258,14 @@ const mountGooglelocator = ({ ref }) => {
 
   Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
 
+  // vars
+
+  const googlelocator = ref
+
   // init
 
   window.demoGooglelocator = function () {
-    new Xt.Googlelocator(ref, {
+    new Xt.Googlelocator(googlelocator, {
       initialLocate: false,
       initialSearch: false,
       seachMapBounds: false,

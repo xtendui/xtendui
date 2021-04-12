@@ -4,9 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-600 w-full h-96">
-        <div class="xt-media-inner">
-          <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-        </div>
+        <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
       </div>
       <div class="flex relative">
         <a href="#" class="relative p-8 md:p-12 lg:p-16 xl:p-24 mx-auto max-w-2xl text-center group">

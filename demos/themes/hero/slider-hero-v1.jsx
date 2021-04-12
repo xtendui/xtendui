@@ -21,141 +21,127 @@ export default function component() {
     <div className="demo--slider-hero-v1-react" ref={ref}>
       <div className="xt-slider xt-slider-absolute">
         <div className="xt-slides">
-          <div className="xt-slides-inner">
-            <div className="xt-slide w-full">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
+          <div className="xt-slide w-full">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <a
+                    href="/"
+                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                    <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="xt-slide w-full">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <a
+                    href="/"
+                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                      turpis.
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="xt-slide w-full">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <a
+                    href="/"
+                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    <h2 className="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="xt-slide w-full">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    <h2 className="xt-h1">4. Lorem ipsum dolor sit amet</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                      turpis.
+                    </p>
                     <a
                       href="/"
-                      className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
-                      <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      Lorem ipsum
                     </a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="xt-slide w-full">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
+          <div className="xt-slide w-full">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    <h2 className="xt-h1">5. Lorem ipsum dolor sit amet</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                      turpis.
+                    </p>
                     <a
                       href="/"
-                      className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
-                      <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                        turpis.
-                      </p>
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      Lorem ipsum
                     </a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="xt-slide w-full">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
+          <div className="xt-slide w-full on">
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="hero-inner">
+                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div className="hero-content flex relative min-h-screen">
+                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
+                    <h2 className="xt-h1">6. Lorem ipsum dolor sit amet</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                      turpis.
+                    </p>
                     <a
                       href="/"
-                      className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
-                      <h2 className="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      Lorem ipsum
                     </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="xt-slide w-full">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
-                    <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
-                      <h2 className="xt-h1">4. Lorem ipsum dolor sit amet</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                        turpis.
-                      </p>
-                      <a
-                        href="/"
-                        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
-                        Lorem ipsum
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="xt-slide w-full">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
-                    <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
-                      <h2 className="xt-h1">5. Lorem ipsum dolor sit amet</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                        turpis.
-                      </p>
-                      <a
-                        href="/"
-                        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
-                        Lorem ipsum
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="xt-slide w-full in-slider">
-              <div className="hero relative overflow-hidden bg-black">
-                <div className="hero-inner">
-                  <div className="xt-media-container bg-gray-700 w-full h-full absolute">
-                    <div className="xt-media-inner">
-                      <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div className="hero-content flex relative min-h-screen">
-                    <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
-                      <h2 className="xt-h1">6. Lorem ipsum dolor sit amet</h2>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                        turpis.
-                      </p>
-                      <a
-                        href="/"
-                        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
-                        Lorem ipsum
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -169,10 +155,10 @@ export default function component() {
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
+          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all group-active:opacity-75 group-active:scale-75"
+              className="xt-icon transform transition-all group-in:opacity-75 group-in:scale-75"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -193,10 +179,10 @@ export default function component() {
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 active:opacity-100">
+          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all group-active:opacity-75 group-active:scale-75"
+              className="xt-icon transform transition-all group-in:opacity-75 group-in:scale-75"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -212,7 +198,7 @@ export default function component() {
         </button>
 
         <nav className="xt-slider-pagination hidden">
-          <button type="button" className="xt-button xt-ignore" data-xt-pag title="Slide xt-num"></button>
+          <button type="button" className="xt-button hidden" data-xt-pag></button>
         </nav>
       </div>
     </div>
@@ -238,6 +224,8 @@ const mount = ({ ref }) => {
 const mountSlider = ({ ref }) => {
   // vars
 
+  const slider = ref.querySelector('.xt-slider')
+
   const dragTime = 1.5
   const dragEase = 'quart.out'
 
@@ -247,7 +235,7 @@ const mountSlider = ({ ref }) => {
 
   // slider
 
-  let self = new Xt.Slider(ref, {
+  let self = new Xt.Slider(slider, {
     duration: dragTime * 1000,
     mode: 'absolute',
     loop: false,
@@ -449,6 +437,8 @@ const mountSlider = ({ ref }) => {
 /* mountSlide */
 
 const mountSlide = ({ ref }) => {
+  // vars
+
   const slides = ref.querySelectorAll('.xt-slide')
 
   for (const slide of slides) {
@@ -464,7 +454,11 @@ const mountSlide = ({ ref }) => {
 
     const enter = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: 0.5, ease: 'quart.out' })
+      gsap.to(img, {
+        opacity: imgOpacityIn,
+        duration: 0.5,
+        ease: 'quart.out',
+      })
     }
 
     for (const link of links) {

@@ -4,9 +4,9 @@ const html = /* HTML */ `
   <div class="demo--menu-navigation-v1">
     <div class="megamenu relative bg-primary-500 text-white">
       <form class="text-sm container pt-10">
-        <label class="xt-label-check">
+        <label class="${classes.checkLabel()}">
           <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
-          <span class="xt-check-content">Use mouse events</span>
+          <span class="${classes.checkContent()}">Use mouse events</span>
         </label>
       </form>
 
@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
             >
               Menu #1
             </a>
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
             >
               Menu #2
             </a>
@@ -96,7 +96,7 @@ const html = /* HTML */ `
 
           <a
             href="/"
-            class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
+            class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
           >
             Link #3
           </a>
@@ -104,7 +104,7 @@ const html = /* HTML */ `
           <div class="xt-drop-item">
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
             >
               Menu #4
             </a>
@@ -173,7 +173,7 @@ const html = /* HTML */ `
 
           <a
             href="/"
-            class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 active:opacity-100"
+            class="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
           >
             Link #5
           </a>

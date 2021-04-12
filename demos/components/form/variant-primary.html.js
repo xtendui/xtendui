@@ -5,20 +5,20 @@ const html = /* HTML */ `
     <form class="text-sm py-4 px-6 bg-primary-500">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Input </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Input </label>
           <input
             type="text"
-            class="xt-input rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} rounded-md ${classes.inputPrimary()}"
             aria-label="Input"
             placeholder="Input"
           />
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Disabled </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Disabled </label>
           <input
             type="text"
-            class="xt-input rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} rounded-md ${classes.inputPrimary()}"
             aria-label="Input"
             placeholder="Input"
             disabled
@@ -26,22 +26,25 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> File </label>
-          <input type="file" class="xt-input rounded-md ${classes.inputPrimary()}" aria-label="File" />
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> File </label>
+          <input type="file" class="${classes.input()} rounded-md ${classes.inputPrimary()}" aria-label="File" />
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Textarea </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Textarea </label>
           <textarea
-            class="xt-input xt-textarea rounded-md ${classes.inputPrimary()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputPrimary()} h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
           ></textarea>
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Select </label>
-          <select class="xt-input xt-select xt-select-primary rounded-md ${classes.inputPrimary()}" aria-label="Select">
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select </label>
+          <select
+            class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
+            aria-label="Select"
+          >
             <option selected value="">Select an option</option>
             <option>Option 1</option>
             <option>Option 2</option>
@@ -50,9 +53,9 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Select multiple </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select multiple </label>
           <select
-            class="xt-input xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
             aria-label="Select multiple"
             multiple
           >
@@ -63,11 +66,11 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Checkbox </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
                   class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}"
@@ -83,7 +86,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}" />
                 <span class="ml-3 text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -96,11 +99,11 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Radio </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-radio rounded-full ${classes.radioPrimary()}"
@@ -116,7 +119,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-radio rounded-full ${classes.radioPrimary()}"
@@ -133,11 +136,11 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="xt-label mb-3 ${classes.labelPrimary()}"> Switch </label>
+          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.radioPrimary()}" />
                 <span class="ml-3 text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -148,7 +151,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-switch rounded-full ${classes.switchPrimary()}"
@@ -164,7 +167,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="xt-label-check">
+              <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
                   class="xt-check xt-switch rounded-full ${classes.switchPrimary()}"

@@ -19,8 +19,8 @@ export default function component() {
   return (
     <div className="demo--slider-other-react" ref={ref}>
       <div className="xt-slider">
-        <div className="xt-slides">
-          <div className="xt-slides-inner xt-row xt-row-4">
+        <div className="xt-slides-autoheight transition-all duration-300">
+          <div className="xt-slides xt-row xt-row-4">
             <div className="xt-slide w-6/12 sm:w-4/12">
               <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
                 <div className="xt-h4">1</div>
@@ -56,7 +56,7 @@ export default function component() {
         <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
           <button
             type="button"
-            className="xt-button text-2xs py-2 px-3.5 active:px-5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition-all xt-ignore"
+            className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
             data-xt-pag
             title="Slide xt-num"></button>
         </nav>
@@ -85,10 +85,12 @@ const mountSlider = ({ ref }) => {
   const dragTime = 1
   const dragEase = 'quint.out'
 
+  // init
+
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
     loop: false,
     jump: false,
-    autoHeight: '.xt-slides',
+    autoHeight: '.xt-slides-autoheight',
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

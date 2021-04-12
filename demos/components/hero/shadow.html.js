@@ -4,9 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-600 w-full h-full absolute">
-        <div class="xt-media-inner">
-          <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-        </div>
+        <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"></div>
       </div>
       <div class="flex relative min-h-screen">
@@ -24,9 +22,7 @@ const html = /* HTML */ `
 
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-600 w-full h-full absolute">
-        <div class="xt-media-inner">
-          <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-        </div>
+        <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
         <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50"></div>
       </div>
       <div class="flex relative min-h-screen">
@@ -44,9 +40,7 @@ const html = /* HTML */ `
 
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-600 w-full h-full absolute">
-        <div class="xt-media-inner">
-          <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-        </div>
+        <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
       </div>
       <div class="flex relative min-h-screen">

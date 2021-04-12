@@ -24,9 +24,37 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
-  new Xt.Slider(ref.querySelector('.slider--listing'), {
+  // vars
+
+  const dragTime = 1
+  const dragEase = 'quint.out'
+
+  // init
+
+  const self = new Xt.Slider(ref.querySelector('.slider--listing'), {
     contain: true,
   })
+
+  // dragposition (set internal dragPosition to resume animation mid dragging)
+
+  const dragposition = () => {
+    // dragPosition tween with main time and ease
+    gsap.killTweensOf(self.detail)
+    gsap.to(self.detail, {
+      dragPosition: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+    // dragger tween with main time and ease
+    gsap.killTweensOf(self.dragger)
+    gsap.to(self.dragger, {
+      x: self.detail.dragFinal,
+      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      ease: dragEase,
+    })
+  }
+
+  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // unmount
 
@@ -36,9 +64,9 @@ const mountSlider = ({ ref }) => {
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const mediaScale = 0.04
   const mediaOpacityIn = 0.75
@@ -57,7 +85,7 @@ const mountMedia = ({ ref }) => {
       duration: 0.5,
       ease: 'expo.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
+    const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
       scale: 1 + mediaScale,
       duration: 0.5,
@@ -66,7 +94,11 @@ const mountMedia = ({ ref }) => {
     // content
     const content = tr.querySelector('.listing-item-content')
     if (content) {
-      gsap.to(content, { y: contentY, duration: 0.5, ease: 'expo.out' })
+      gsap.to(content, {
+        y: contentY,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -86,12 +118,20 @@ const mountMedia = ({ ref }) => {
       duration: 0.75,
       ease: 'expo.out',
     })
-    const mediaInner = tr.querySelector('.xt-media-inner')
-    gsap.to(mediaInner, { scale: 1, duration: 0.75, ease: 'expo.out' })
+    const mediaInner = tr.querySelector('.xt-media')
+    gsap.to(mediaInner, {
+      scale: 1,
+      duration: 0.75,
+      ease: 'expo.out',
+    })
     // content
     const content = tr.querySelector('.listing-item-content')
     if (content) {
-      gsap.to(content, { y: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(content, {
+        y: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 
@@ -107,9 +147,9 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  const items = ref.querySelectorAll('.listing-item')
-
   // vars
+
+  const items = ref.querySelectorAll('.listing-item')
 
   const scrollY = 30
 
@@ -123,7 +163,9 @@ const mountFade = ({ ref }) => {
       const direction = scrollTriggers[0].direction
       const y = direction > 0 ? -scrollY : scrollY
       gsap.killTweensOf(batch)
-      gsap.set(batch, { y: y })
+      gsap.set(batch, {
+        y: y,
+      })
       gsap.to(batch, {
         opacity: 1,
         y: 0,

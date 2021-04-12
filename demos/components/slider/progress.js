@@ -19,6 +19,8 @@ Xt.mount({
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
+  // vars
+
   const slider = ref.querySelector('.xt-slider')
 
   // vars
@@ -65,7 +67,9 @@ const mountSlider = ({ ref }) => {
   const autostart = () => {
     // slider
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
-    const timeline = gsap.timeline({ overwrite: false })
+    const timeline = gsap.timeline({
+      overwrite: false,
+    })
     gsap.killTweensOf(spinner)
     timeline.to(spinner, {
       strokeDashoffset: 628,
@@ -85,7 +89,10 @@ const mountSlider = ({ ref }) => {
       const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
-        gsap.set(filler, { height: 0, top: '100%' })
+        gsap.set(filler, {
+          height: 0,
+          top: '100%',
+        })
         gsap.to(filler, {
           height: '100%',
           top: 0,
@@ -100,7 +107,10 @@ const mountSlider = ({ ref }) => {
       const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
-        gsap.set(filler, { width: 0, left: 0 })
+        gsap.set(filler, {
+          width: 0,
+          left: 0,
+        })
         gsap.to(filler, {
           width: '100%',
           left: 0,

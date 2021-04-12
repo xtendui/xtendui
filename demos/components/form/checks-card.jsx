@@ -4,7 +4,7 @@ export default function component() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -23,7 +23,7 @@ export default function component() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -40,7 +40,7 @@ export default function component() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -59,7 +59,7 @@ export default function component() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -77,7 +77,7 @@ export default function component() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -96,7 +96,7 @@ export default function component() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 cursor-pointer">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>

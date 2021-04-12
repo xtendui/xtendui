@@ -21,7 +21,7 @@ export default function component() {
     <div className="demo--toggle-progress-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
         <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
-          <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-active:opacity-100">
+          <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
                 className="stroke-current origin-center opacity-25"
@@ -53,7 +53,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition in-toggle">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 0
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -65,7 +65,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 1
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -77,7 +77,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 2
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -89,7 +89,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 3
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -158,10 +158,9 @@ const mount = ({ ref }) => {
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
-  const toggle = ref.querySelector(':scope > .xt-list')
-
   // vars
 
+  const toggle = ref.querySelector(':scope > .xt-list')
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
@@ -182,7 +181,9 @@ const mountToggle = ({ ref }) => {
   const autostart = () => {
     // toggle
     const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
-    const timeline = gsap.timeline({ overwrite: false })
+    const timeline = gsap.timeline({
+      overwrite: false,
+    })
     gsap.killTweensOf(spinner)
     timeline.to(spinner, {
       strokeDashoffset: 628,
@@ -202,7 +203,10 @@ const mountToggle = ({ ref }) => {
       const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
-        gsap.set(filler, { height: 0, top: '100%' })
+        gsap.set(filler, {
+          height: 0,
+          top: '100%',
+        })
         gsap.to(filler, {
           height: '100%',
           top: 0,
@@ -217,7 +221,10 @@ const mountToggle = ({ ref }) => {
       const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
-        gsap.set(filler, { width: 0, left: 0 })
+        gsap.set(filler, {
+          width: 0,
+          left: 0,
+        })
         gsap.to(filler, {
           width: '100%',
           left: 0,

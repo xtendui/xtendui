@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="text"
-            class="xt-input rounded-tr-md border border-l-0 border-gray-500 ${classes.inputDefault()}"
+            class="${classes.input()} rounded-tr-md border border-l-0 border-gray-500 ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />

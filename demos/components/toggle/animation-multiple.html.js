@@ -12,14 +12,14 @@ const html = /* HTML */ `
       </button>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition ease-out duration-500 opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0"
+        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition ease-out duration-500 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-duration="500"
       >
         Target 0
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition ease-out duration-500 opacity-0 -translate-x-4 active:opacity-100 active:translate-x-0"
+        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition ease-out duration-500 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-duration="500"
       >
         Target 1

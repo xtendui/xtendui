@@ -5,20 +5,20 @@ export default function component() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Input </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Input </label>
             <input
               type="text"
-              className="xt-input py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition"
+              className="block w-full py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
               aria-label="Input"
               placeholder="Input"
             />
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Disabled </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Disabled </label>
             <input
               type="text"
-              className="xt-input py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition"
+              className="block w-full py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -26,26 +26,26 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> File </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> File </label>
             <input
               type="file"
-              className="xt-input py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition"
+              className="block w-full py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
               aria-label="File"
             />
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Textarea </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Textarea </label>
             <textarea
-              className="xt-input xt-textarea py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300 h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Select </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Select </label>
             <select
-              className="xt-input xt-select py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition"
+              className="block w-full xt-select py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Test</option>
@@ -55,9 +55,9 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Select multiple </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Select multiple </label>
             <select
-              className="xt-input xt-select py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent focus:border-gray-300 transition"
+              className="block w-full xt-select py-2.5 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
               multiple
               aria-label="Select multiple">
               <option>Option 1</option>
@@ -67,18 +67,18 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Checkbox </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     defaultChecked
                     disabled
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -87,12 +87,12 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -103,18 +103,18 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Radio </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="radio-default"
                     defaultChecked
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -123,13 +123,13 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="radio-default"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -140,16 +140,16 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-black text-opacity-75 font-semibold"> Switch </label>
+            <label className="flex mb-3 font-semibold text-gray-900"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -158,14 +158,14 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="switch-default"
                     defaultChecked
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -174,13 +174,13 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                     name="switch-default"
                   />
-                  <span className="xt-check-content">
+                  <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -193,7 +193,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               submit
             </button>
           </div>

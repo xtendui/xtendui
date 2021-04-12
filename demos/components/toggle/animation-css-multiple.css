@@ -3,23 +3,23 @@
     /* initial */
     @apply transform ease-out duration-500;
     @apply opacity-0;
-    &.direction-before {
+    &.dir-before {
       @apply translate-x-4;
     }
-    &.direction-after {
+    &.dir-after {
       @apply -translate-x-4;
     }
-    /* active */
-    &.active {
+    /* in */
+    &.in {
       @apply opacity-100 translate-x-0;
     }
     /* out */
     &.out {
       @apply opacity-0;
-      &.direction-before {
+      &.dir-before {
         @apply -translate-x-4;
       }
-      &.direction-after {
+      &.dir-after {
         @apply translate-x-4;
       }
     }

@@ -21,6 +21,8 @@ Xt.mount({
 /* mountItemParallax */
 
 const mountItemsParallax = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.featured-item')
 
   for (const item of items) {
@@ -52,7 +54,9 @@ const mountItemsParallax = ({ ref }) => {
       scrub: 1.5,
     }
 
-    gsap.set(content, { y: -contentY })
+    gsap.set(content, {
+      y: -contentY,
+    })
     gsap
       .timeline({
         scrollTrigger: scrollTrigger,
@@ -61,7 +65,9 @@ const mountItemsParallax = ({ ref }) => {
         y: contentY,
       })
 
-    gsap.set(media, { y: -mediaY })
+    gsap.set(media, {
+      y: -mediaY,
+    })
     gsap
       .timeline({
         scrollTrigger: scrollTrigger,
@@ -113,7 +119,7 @@ const mountButtonsLine = ({ ref }) => {
         duration: 1,
         ease: 'expo.out',
       })
-      const mediaInner = link.querySelector('.xt-media-inner')
+      const mediaInner = link.querySelector('.xt-media')
       gsap.to(mediaInner, {
         scale: 1 + mediaScale,
         duration: 1,
@@ -121,7 +127,12 @@ const mountButtonsLine = ({ ref }) => {
       })
       // text
       const text = buttonLine.querySelector('.button--line-content')
-      gsap.to(text, { x: lineX, duration: 1, delay: 0.5, ease: 'expo.out' })
+      gsap.to(text, {
+        x: lineX,
+        duration: 1,
+        delay: 0.5,
+        ease: 'expo.out',
+      })
       // line
       const line = buttonLine.querySelector('.button--line-design')
       gsap.set(line, {
@@ -160,11 +171,19 @@ const mountButtonsLine = ({ ref }) => {
         duration: 1,
         ease: 'expo.inOut',
       })
-      const mediaInner = link.querySelector('.xt-media-inner')
-      gsap.to(mediaInner, { scale: 1, duration: 1, ease: 'expo.inOut' })
+      const mediaInner = link.querySelector('.xt-media')
+      gsap.to(mediaInner, {
+        scale: 1,
+        duration: 1,
+        ease: 'expo.inOut',
+      })
       // text
       const text = ref.querySelector('.button--line-content')
-      gsap.to(text, { x: 0, duration: 1, ease: 'expo.inOut' })
+      gsap.to(text, {
+        x: 0,
+        duration: 1,
+        ease: 'expo.inOut',
+      })
       // line
       const line = ref.querySelector('.button--line-design')
       gsap.to(line, {

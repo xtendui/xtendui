@@ -23,10 +23,10 @@ const mountSlider = ({ ref }) => {
   const dragTime = 1
   const dragEase = 'quint.out'
 
+  // init
+
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    drag: {
-      wrap: true,
-    },
+    wrap: true,
     matches: {
       '(max-width: 767px)': {
         disabled: true,

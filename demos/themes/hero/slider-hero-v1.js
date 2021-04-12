@@ -23,6 +23,8 @@ Xt.mount({
 const mountSlider = ({ ref }) => {
   // vars
 
+  const slider = ref.querySelector('.xt-slider')
+
   const dragTime = 1.5
   const dragEase = 'quart.out'
 
@@ -32,7 +34,7 @@ const mountSlider = ({ ref }) => {
 
   // slider
 
-  let self = new Xt.Slider(ref, {
+  let self = new Xt.Slider(slider, {
     duration: dragTime * 1000,
     mode: 'absolute',
     loop: false,
@@ -234,6 +236,8 @@ const mountSlider = ({ ref }) => {
 /* mountSlide */
 
 const mountSlide = ({ ref }) => {
+  // vars
+
   const slides = ref.querySelectorAll('.xt-slide')
 
   for (const slide of slides) {
@@ -249,7 +253,11 @@ const mountSlide = ({ ref }) => {
 
     const enter = () => {
       // img
-      gsap.to(img, { opacity: imgOpacityIn, duration: 0.5, ease: 'quart.out' })
+      gsap.to(img, {
+        opacity: imgOpacityIn,
+        duration: 0.5,
+        ease: 'quart.out',
+      })
     }
 
     for (const link of links) {

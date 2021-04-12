@@ -2,7 +2,7 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip', matches: { '(min-width: 768px)': { position: 'top-start' } } }">
+      <div data-xt-tooltip="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">
         Lorem ipsum
         <div className="xt-tooltip-item">
           <a href="#">dolor</a>

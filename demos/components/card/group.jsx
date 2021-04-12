@@ -52,9 +52,7 @@ export default function component() {
               </div>
             </div>
             <div className="xt-media-container bg-gray-600 rounded-b-md h-40">
-              <div className="xt-media-inner">
-                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-              </div>
+              <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
           </div>
         </div>

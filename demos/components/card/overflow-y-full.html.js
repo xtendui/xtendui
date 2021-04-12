@@ -8,9 +8,7 @@ const html = /* HTML */ `
           class="xt-card rounded-md ${classes.cardDefaultFull()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
         >
           <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-            <div class="xt-media-inner">
-              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-            </div>
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="pt-6">
             <div class="xt-h4">Lorem ipsum</div>
@@ -36,9 +34,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <div class="xt-card rounded-md ${classes.cardDefaultFull()}">
           <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-            <div class="xt-media-inner">
-              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-            </div>
+            <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="pt-6 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">
             <div class="xt-h4">Lorem ipsum</div>

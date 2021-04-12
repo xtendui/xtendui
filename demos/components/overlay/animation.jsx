@@ -5,14 +5,14 @@ export default function component() {
       <div data-xt-overlay>
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           overlay
         </button>
 
         <div className="xt-overlay group" data-xt-duration="500">
-          <div className="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-active:opacity-25"></div>
+          <div className="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-active:opacity-100 group-active:translate-y-0">
+            <div className="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-4">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -34,9 +34,7 @@ export default function component() {
                   </svg>
                 </button>
                 <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="text-base py-8 px-9">
                   <div className="xt-h4">Lorem ipsum</div>

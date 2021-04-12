@@ -27,7 +27,7 @@ export default function component() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100">
+          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
               <span className="absolute bg-current opacity-25 w-full h-full"></span>
               <span className="absolute bg-current h-full"></span>
@@ -37,9 +37,9 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Lorem ipsum
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100">
+          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
               <span className="absolute bg-current opacity-25 w-full h-full"></span>
               <span className="absolute bg-current h-full"></span>
@@ -66,6 +66,8 @@ const mount = ({ ref }) => {
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
+  // vars
+
   const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 
@@ -78,8 +80,16 @@ const mountLoader = ({ ref }) => {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
         Xt.animOn(loader)
-        gsap.set(filler, { width: 0 })
-        gsap.to(filler, { width: '100%', duration: 1, ease: 'linear' }).eventCallback('onComplete', loaderTimeout)
+        gsap.set(filler, {
+          width: 0,
+        })
+        gsap
+          .to(filler, {
+            width: '100%',
+            duration: 1,
+            ease: 'linear',
+          })
+          .eventCallback('onComplete', loaderTimeout)
       } else {
         Xt.animOff(loader)
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)

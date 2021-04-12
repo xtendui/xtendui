@@ -5,20 +5,20 @@ export default function component() {
       <form className="text-sm py-4 px-6 bg-primary-500">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Input </label>
+            <label className="flex mb-3 font-semibold text-white"> Input </label>
             <input
               type="text"
-              className="xt-input rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
+              className="block w-full rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
               aria-label="Input"
               placeholder="Input"
             />
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Disabled </label>
+            <label className="flex mb-3 font-semibold text-white"> Disabled </label>
             <input
               type="text"
-              className="xt-input rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
+              className="block w-full rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -26,26 +26,26 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> File </label>
+            <label className="flex mb-3 font-semibold text-white"> File </label>
             <input
               type="file"
-              className="xt-input rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
+              className="block w-full rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
               aria-label="File"
             />
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Textarea </label>
+            <label className="flex mb-3 font-semibold text-white"> Textarea </label>
             <textarea
-              className="xt-input xt-textarea rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700 h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700 h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Select </label>
+            <label className="flex mb-3 font-semibold text-white"> Select </label>
             <select
-              className="xt-input xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
+              className="block w-full xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Option 1</option>
@@ -55,9 +55,9 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Select multiple </label>
+            <label className="flex mb-3 font-semibold text-white"> Select multiple </label>
             <select
-              className="xt-input xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
+              className="block w-full xt-select xt-select-primary rounded-md py-2.5 px-4 text-white placeholder-white placeholder-opacity-50 border border-primary-600 bg-primary-600 focus:bg-primary-700"
               aria-label="Select multiple"
               multiple>
               <option>Option 1</option>
@@ -67,11 +67,11 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Checkbox </label>
+            <label className="flex mb-3 font-semibold text-white"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -87,7 +87,7 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-checkbox rounded-md border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -103,11 +103,11 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Radio </label>
+            <label className="flex mb-3 font-semibold text-white"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -123,7 +123,7 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-radio rounded-full border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -140,11 +140,11 @@ export default function component() {
           </div>
 
           <div className="w-full">
-            <label className="xt-label mb-3 text-white text-opacity-75"> Switch </label>
+            <label className="flex mb-3 font-semibold text-white"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
                     className="xt-check xt-switch rounded-full border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -158,7 +158,7 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -174,7 +174,7 @@ export default function component() {
               </div>
 
               <div className="w-full">
-                <label className="xt-label-check">
+                <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
                     className="xt-check xt-switch rounded-full border text-primary-400 border-primary-600 bg-primary-400 transition-all"
@@ -193,7 +193,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               submit
             </button>
           </div>

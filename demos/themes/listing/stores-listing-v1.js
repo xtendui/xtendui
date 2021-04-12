@@ -16,6 +16,8 @@ Xt.mount({
 /* mountListing */
 
 const mountListing = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.listing-item')
 
   for (const item of items) {
@@ -28,7 +30,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      item.classList.add('active')
+      item.classList.add('on')
     }
 
     actionBtn.addEventListener('click', click)
@@ -37,7 +39,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      item.classList.remove('active')
+      item.classList.remove('on')
     }
 
     closeBtn.addEventListener('click', close)

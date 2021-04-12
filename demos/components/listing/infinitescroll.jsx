@@ -22,13 +22,13 @@ export default function component() {
           <h1>Category Page</h1>
 
           <form className="text-sm mb-4">
-            <label className="xt-label-check">
+            <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
                 className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
                 defaultChecked
               />
-              <span className="xt-check-content">Activate on scroll</span>
+              <span className="ml-4">Activate on scroll</span>
             </label>
           </form>
 
@@ -36,7 +36,7 @@ export default function component() {
             <div className="xt-list xt-list-2 flex-col items-center">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
@@ -78,9 +78,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Lorem ipsum</div>
@@ -92,9 +90,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Dolor sit amet</div>
@@ -106,9 +102,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Lorem ipsum</div>
@@ -120,9 +114,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Dolor sit amet</div>
@@ -134,9 +126,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Lorem Ipsum</div>
@@ -148,9 +138,7 @@ export default function component() {
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Dolor sit amet</div>
@@ -162,9 +150,7 @@ export default function component() {
             <div className="w-6/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Lorem Ipsum</div>
@@ -176,9 +162,7 @@ export default function component() {
             <div className="w-6/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
-                  <div className="xt-media-inner">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  </div>
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h5">Dolor sit amet</div>
@@ -193,7 +177,7 @@ export default function component() {
           <div className="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition"
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
@@ -256,7 +240,11 @@ const mount = ({ ref }) => {
 /* mountInfinitescroll */
 
 const mountInfinitescroll = ({ ref }) => {
+  // vars
+
   const infinitescroll = ref.querySelector('.infinitescroll')
+
+  // init
 
   let self = new Xt.Infinitescroll(infinitescroll, {
     get: false,
@@ -285,8 +273,12 @@ const mountInfinitescroll = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  // vars
+
   const infinitescroll = ref.querySelector('.infinitescroll')
   const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
 
   const change = () => {
     const self = Xt.get('xt-infinitescroll', infinitescroll)

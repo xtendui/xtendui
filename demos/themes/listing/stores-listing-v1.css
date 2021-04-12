@@ -15,7 +15,7 @@
       transform-style: preserve-3d;
       @apply transition ease-in-out-quad duration-500;
     }
-    &.active {
+    &.in {
       .listing-item-inner {
         transform: rotateY(180deg);
       }

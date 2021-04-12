@@ -18,41 +18,43 @@ export default function component() {
                 <div className="xt-list flex-col">
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-600">
-                      <div className="xt-media-inner relative">
-                        <img className="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-600">
-                      <div className="xt-media-inner relative">
-                        <img className="xt-media" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
+                      <img
+                        className="xt-media relative"
+                        id="product-image-5"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
                     </div>
                   </div>
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-600">
-                      <div className="xt-media-inner relative">
-                        <img className="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-600">
-                      <div className="xt-media-inner relative">
-                        <img className="xt-media" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
-                      </div>
+                      <img
+                        className="xt-media relative"
+                        id="product-image-5"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
                     </div>
                   </div>
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-600">
-                      <div className="xt-media-inner relative">
-                        <img className="xt-media" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
-                      </div>
+                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>
                 </div>
@@ -70,7 +72,7 @@ export default function component() {
 
                 <a
                   href="#"
-                  className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                  className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                   Add to cart
                 </a>
 

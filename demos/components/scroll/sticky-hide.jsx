@@ -144,7 +144,11 @@ const mountSticky = ({ ref }) => {
       ) {
         content.classList.remove('scrolling-down')
         gsap.killTweensOf(content)
-        gsap.to(content, { y: 0, duration: 0.5, ease: 'quart.out' })
+        gsap.to(content, {
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+        })
       } else if (
         !content.classList.contains('scrolling-down') &&
         content.classList.contains('scrolling-hide') &&
@@ -172,7 +176,11 @@ const mountSticky = ({ ref }) => {
       if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
         content.classList.remove('scrolling-hide')
         gsap.killTweensOf(content)
-        gsap.to(content, { y: 0, duration: 0.5, ease: 'quart.out' })
+        gsap.to(content, {
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+        })
       } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
         content.classList.add('scrolling-hide')
       }

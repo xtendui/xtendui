@@ -7,9 +7,9 @@ const html = /* HTML */ `
         <h1>Category Page</h1>
 
         <form class="text-sm mb-4">
-          <label class="xt-label-check">
+          <label class="${classes.checkLabel()}">
             <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
-            <span class="xt-check-content">Activate on scroll</span>
+            <span class="${classes.checkContent()}">Activate on scroll</span>
           </label>
         </form>
 
@@ -35,9 +35,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Lorem ipsum</div>
@@ -49,9 +47,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Dolor sit amet</div>
@@ -63,9 +59,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Lorem ipsum</div>
@@ -77,9 +71,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Dolor sit amet</div>
@@ -91,9 +83,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Lorem Ipsum</div>
@@ -105,9 +95,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Dolor sit amet</div>
@@ -119,9 +107,7 @@ const html = /* HTML */ `
           <div class="w-6/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Lorem Ipsum</div>
@@ -133,9 +119,7 @@ const html = /* HTML */ `
           <div class="w-6/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
-                <div class="xt-media-inner">
-                  <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                </div>
+                <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h5">Dolor sit amet</div>

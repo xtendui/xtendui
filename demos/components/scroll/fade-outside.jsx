@@ -170,6 +170,8 @@ const mount = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-card')
 
   // fade
@@ -191,7 +193,9 @@ const mountFade = ({ ref }) => {
         if (self.progress === 0) {
           self.trigger.dataset.todo = 'true'
           gsap.killTweensOf(self.trigger)
-          gsap.set(self.trigger, { opacity: 0 })
+          gsap.set(self.trigger, {
+            opacity: 0,
+          })
         }
       }
     },

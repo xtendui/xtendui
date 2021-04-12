@@ -5,7 +5,7 @@ export default function component() {
       <div data-xt-overlay="{ appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Overlay
         </button>
 
@@ -56,7 +56,7 @@ export default function component() {
                   <div data-xt-overlay>
                     <button
                       type="button"
-                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Overlay
                     </button>
 
@@ -67,7 +67,7 @@ export default function component() {
                           <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                             <button
                               type="button"
-                              className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                              className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                               aria-label="Close">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"

@@ -17,37 +17,64 @@ Xt.mount({
 /* mountListing */
 
 const mountListing = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.listing-item')
 
   // click
 
   const on = tr => {
-    if (!tr.classList.contains('active')) {
+    if (!tr.classList.contains('on')) {
       // class
-      tr.classList.add('active')
+      tr.classList.add('on')
       // front
       const front = tr.querySelector('.listing-item-front')
-      gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(front, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       // front
       const back = tr.querySelector('.listing-item-back')
-      gsap.set(back, { y: 40, opacity: 0 })
-      gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
+      gsap.set(back, {
+        y: 40,
+        opacity: 0,
+      })
+      gsap.to(back, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     } else {
       off(tr)
     }
   }
 
   const off = tr => {
-    if (tr.classList.contains('active')) {
+    if (tr.classList.contains('on')) {
       // class
-      tr.classList.remove('active')
+      tr.classList.remove('on')
       // front
       const front = tr.querySelector('.listing-item-front')
-      gsap.set(front, { y: -40, opacity: 0 })
-      gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
+      gsap.set(front, {
+        y: -40,
+        opacity: 0,
+      })
+      gsap.to(front, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
       // front
       const back = tr.querySelector('.listing-item-back')
-      gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
+      gsap.to(back, {
+        y: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
     }
   }
 

@@ -18,6 +18,8 @@ Xt.mount({
 /* mountSliders */
 
 const mountSliders = ({ ref }) => {
+  // vars
+
   const sliders = ref.querySelectorAll('.xt-slider')
   const unmounts = []
 
@@ -34,9 +36,9 @@ const mountSliders = ({ ref }) => {
     let self = new Xt.Slider(slider, {
       align: 'left',
       jump: false,
+      wrap: true,
       drag: {
         manual: true,
-        wrap: true,
       },
     })
 
@@ -49,7 +51,9 @@ const mountSliders = ({ ref }) => {
         if (self.intial || self.wrap) {
           // reset dragging position
           gsap.killTweensOf(self.dragger)
-          gsap.set(self.dragger, { x: self.detail.dragPos })
+          gsap.set(self.dragger, {
+            x: self.detail.dragPos,
+          })
           if (self.intial) {
             self.goToNext()
           }
@@ -66,7 +70,7 @@ const mountSliders = ({ ref }) => {
               ease: 'linear',
             })
             .eventCallback('onComplete', () => {
-              // wrap before changing slide if needed, needed with drag.wrap = true
+              // wrap before changing slide if needed, needed with wrap = true
               self.eventWrap()
               requestAnimationFrame(() => {
                 // go to next slide

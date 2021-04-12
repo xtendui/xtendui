@@ -27,7 +27,7 @@ export default function component() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100">
+          <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -61,9 +61,9 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Lorem ipsum
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition active:opacity-100">
+          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
               {' '}
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
@@ -115,6 +115,8 @@ const mount = ({ ref }) => {
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
+  // vars
+
   const loaders = ref.querySelectorAll('.xt-loader')
   const unmounts = []
 
@@ -127,7 +129,9 @@ const mountLoader = ({ ref }) => {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
         Xt.animOn(loader)
-        gsap.set(spinner, { strokeDashoffset: 628 })
+        gsap.set(spinner, {
+          strokeDashoffset: 628,
+        })
         gsap
           .to(spinner, {
             strokeDashoffset: 0,

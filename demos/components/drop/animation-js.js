@@ -18,6 +18,8 @@ Xt.mount({
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
+  // vars
+
   const drops = ref.querySelectorAll('.xt-drop-item')
   const unmounts = []
 

@@ -6,9 +6,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default">
             <div className="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-              <div className="xt-media-inner">
-                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-              </div>
+              <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
           </div>
         </div>
@@ -16,9 +14,7 @@ export default function component() {
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default">
             <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-              <div className="xt-media-inner">
-                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-              </div>
+              <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div className="text-base pt-6">
               <div className="xt-h4">Lorem ipsum</div>

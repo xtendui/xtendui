@@ -12,12 +12,14 @@ Xt.mount({
   mount: ({ ref }) => {
     const unmountScrollto = mountScrollto()
     const unmountSticky = mountSticky({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
 
     // unmount
 
     return () => {
       unmountScrollto()
       unmountSticky()
+      unmountSwitcher()
     }
   },
 })
@@ -28,8 +30,9 @@ const mountScrollto = () => {
   // Scrollto
 
   let self = new Xt.Scrollto(document.documentElement, {
-    class: false, // example no class
-    scrollActivation: false, // example no scrollActivation
+    // activated by switcher
+    //class: false,
+    //scrollActivation: false,
     scrollSpace: ({ self }) => {
       let space = 0
       const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
@@ -45,7 +48,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('active') ? 0 : 1 // instant if inside overlay and initial activation
+    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
@@ -81,7 +84,12 @@ const mountScrollto = () => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // vars
+
   const overlay = ref.querySelector('.xt-overlay')
+
+  // sticky
+
   ScrollTrigger.create({
     trigger: overlay.querySelector('.xt-sticky'),
     start: 'top top',
@@ -93,6 +101,42 @@ const mountSticky = ({ ref }) => {
 
   overlay.addEventListener('on.xt.overlay', () => {
     ScrollTrigger.refresh()
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountSwitcher */
+
+const mountSwitcher = ({ ref }) => {
+  // vars
+
+  const scrollto = document.documentElement
+  const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
+
+  const change = () => {
+    const self = Xt.get('xt-scrollto', scrollto)
+    if (self) {
+      if (switcher.checked) {
+        self.options.class = false
+        self.options.scrollActivation = false
+      } else {
+        self.options.class = 'on'
+        self.options.scrollActivation = true
+      }
+      self.destroy()
+      self.reinit()
+    }
+  }
+
+  switcher.addEventListener('change', change)
+
+  requestAnimationFrame(() => {
+    change()
   })
 
   // unmount

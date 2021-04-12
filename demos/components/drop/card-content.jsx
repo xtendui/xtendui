@@ -6,7 +6,7 @@ export default function component() {
         <div data-xt-drop>
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             asset
           </button>
 
@@ -32,9 +32,7 @@ export default function component() {
                 </svg>
               </button>
               <div className="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-                <div className="xt-media-inner">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
             </div>
           </div>
@@ -43,7 +41,7 @@ export default function component() {
         <div data-xt-drop>
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             asset and text
           </button>
 
@@ -69,9 +67,7 @@ export default function component() {
                 </svg>
               </button>
               <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-                <div className="xt-media-inner">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
+                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div className="text-base py-8 px-9">
                 <div className="xt-h4">Lorem ipsum</div>
@@ -87,7 +83,7 @@ export default function component() {
         <div data-xt-drop>
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 hover:bg-primary-600 active:bg-primary-700 transition">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             text
           </button>
 

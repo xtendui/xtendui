@@ -14,7 +14,7 @@ export default function component() {
           </p>
         </div>
         <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow">
-          <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-active:opacity-100">
+          <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
                 className="stroke-current origin-center opacity-25"

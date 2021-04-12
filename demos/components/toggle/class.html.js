@@ -6,9 +6,9 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="my-group"
+        data-xt-group="group"
       >
-        Toggle Group 0
+        Toggle Group
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
@@ -18,9 +18,9 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="another-group"
+        data-xt-group="group"
       >
-        Toggle Group 2
+        Toggle Group
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
@@ -32,23 +32,23 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="another-group"
       >
-        Toggle Group 2
+        Toggle Group another
       </button>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="my-group">Target Group 0</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="another-group">
-        Target Group 2
+        Target Group another
       </div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="my-group">Target Group 0</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 3</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} in-toggle" data-xt-group="another-group">
-        Target Group 3
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on" data-xt-group="another-group">
+        Target Group another
       </div>
     </div>
   </div>

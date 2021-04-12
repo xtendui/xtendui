@@ -10,9 +10,7 @@ const html = /* HTML */ `
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                    <div class="xt-media-inner">
-                      <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -31,7 +29,7 @@ const html = /* HTML */ `
                 <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
                   <button
                     type="button"
-                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -63,9 +61,7 @@ const html = /* HTML */ `
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                    <div class="xt-media-inner">
-                      <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -84,7 +80,7 @@ const html = /* HTML */ `
                 <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
                   <button
                     type="button"
-                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -106,9 +102,7 @@ const html = /* HTML */ `
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                    <div class="xt-media-inner">
-                      <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -127,7 +121,7 @@ const html = /* HTML */ `
                 <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
                   <button
                     type="button"
-                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -159,9 +153,7 @@ const html = /* HTML */ `
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                    <div class="xt-media-inner">
-                      <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    </div>
+                    <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -180,7 +172,7 @@ const html = /* HTML */ `
                 <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
                   <button
                     type="button"
-                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -202,9 +194,7 @@ const html = /* HTML */ `
               <div class="listing-item-inner h-full">
                 <div class="listing-item-front absolute inset-0 z-10 xt-card rounded-md ${classes.cardDefault()}">
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
-                    <div class="xt-media-inner">
-                      <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    </div>
+                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -223,7 +213,7 @@ const html = /* HTML */ `
                 <div class="listing-item-back relative h-full xt-card rounded-md ${classes.cardDefault()}">
                   <button
                     type="button"
-                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-xl"
+                    class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}

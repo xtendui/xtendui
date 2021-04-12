@@ -5,55 +5,55 @@ export default function component() {
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ groupElements: true }">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          data-xt-group="my-group">
-          Toggle Group 0
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          data-xt-group="group">
+          Toggle Group
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 1
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
-          data-xt-group="my-group">
-          Toggle Group 0
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          data-xt-group="group">
+          Toggle Group
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Toggle 2
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition"
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
           data-xt-group="another-group">
-          Toggle Group 3
+          Toggle Group another
         </button>
 
         <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 1</div>
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="my-group">
-          Target Group 0
+          data-xt-group="group">
+          Target Group
         </div>
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="another-group">
-          Target Group 3
+          Target Group another
         </div>
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="my-group">
-          Target Group 0
+          data-xt-group="group">
+          Target Group
         </div>
 
         <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 2</div>
@@ -61,7 +61,7 @@ export default function component() {
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="another-group">
-          Target Group 3
+          Target Group another
         </div>
       </div>
     </div>

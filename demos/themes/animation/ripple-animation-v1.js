@@ -18,6 +18,8 @@ Xt.mount({
 /* mountRipple */
 
 const mountRipple = ({ ref }) => {
+  // vars
+
   const items = ref.querySelectorAll('.xt-button, .xt-card')
   const unmounts = []
 
@@ -40,7 +42,11 @@ const mountRipple = ({ ref }) => {
           scale: 1,
           opacity: 0,
         })
-        gsap.to(ripple, { opacity: 1, duration: 0.25, ease: 'quad.inOut' })
+        gsap.to(ripple, {
+          opacity: 1,
+          duration: 0.25,
+          ease: 'quad.inOut',
+        })
         gsap.to(ripple, {
           scale: self.scaleFinal,
           duration: 0.5,

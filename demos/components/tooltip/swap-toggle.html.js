@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group" id="tooltip--swap-toggle" data-xt-duration="300">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0"
+        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
         Lorem ipsum dolor sit amet
       </div>
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group hidden" id="tooltip--swap-toggle-swap" data-xt-duration="300">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-active:opacity-100 group-active:translate-y-0"
+        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
         Toggled!
       </div>
