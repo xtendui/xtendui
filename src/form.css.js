@@ -2,11 +2,11 @@ module.exports = {
   component: theme => ({
     '.xt-form-valid': {
       // styles
-      borderColor: `${theme('colors.green.500')} !important`,
+      borderColor: `${theme('colors.success')} !important`,
     },
     '.xt-form-invalid': {
       // styles
-      borderColor: `${theme('colors.red.500')} !important`,
+      borderColor: `${theme('colors.error')} !important`,
     },
     '.xt-label-required': {
       // styles

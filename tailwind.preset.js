@@ -18,6 +18,8 @@ module.exports = {
         xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
       },
       colors: {
+        success: '#22c55e',
+        error: '#ef4444',
         primary: {
           50: '#F2F8FF',
           100: '#E6F2FF',
