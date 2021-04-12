@@ -91,9 +91,6 @@ class Slider extends Xt.Toggle {
       } else {
         slideWidth = slide.offsetWidth
       }
-      if (!slideWidth) {
-        console.error('Error: Xt.Slider one slide with display: none; or no width', slide)
-      }
       if (i === 0) {
         fixNegativeMargin = slideLeft
       }
