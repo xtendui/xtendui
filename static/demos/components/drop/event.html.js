@@ -17,9 +17,7 @@ const html = /* HTML */ `
               <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <div
-                data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }"
-              >
+              <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
                 <div class="xt-drop-item">
                   <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
                     nested
@@ -67,7 +65,9 @@ const html = /* HTML */ `
                 <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
                   Dolor sit
                 </button>
-                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">Amet</button>
+                <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
+                  Amet
+                </button>
               </nav>
             </div>
           </div>

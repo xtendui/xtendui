@@ -2,9 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--tooltip-disable">
-    <div
-      data-xt-tooltip="{ matches: { '(min-width: 768px)': { disabled: true } } }"
-    >
+    <div data-xt-tooltip="{ matches: { '(min-width: 768px)': { disabled: true } } }">
       Lorem ipsum
 
       <div class="xt-tooltip-item">

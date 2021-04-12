@@ -46,10 +46,7 @@ const html = /* HTML */ `
       </div>
 
       <div>
-        <div
-          class="xt-list xt-list-3 items-center"
-          data-xt-tooltip="{ position: 'bottom', delay: 25 }"
-        >
+        <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'bottom', delay: 25 }">
           <div class="xt-tooltip-item">
             <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
               tooltip multiple

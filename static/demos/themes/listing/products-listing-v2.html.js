@@ -5,7 +5,6 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-h2 mb-8">Latest Products</div>
           <div class="xt-slides xt-row xt-row-4">
-
             <div class="xt-slide w-6/12 md:w-4/12">
               <a href="#" class="listing-item block group">
                 <div class="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">

@@ -20,9 +20,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
@@ -45,9 +43,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
@@ -66,9 +62,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
@@ -93,9 +87,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
@@ -120,9 +112,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full on">
@@ -147,9 +137,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div
-            class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"
-          ></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
         </div>
       </div>
 
