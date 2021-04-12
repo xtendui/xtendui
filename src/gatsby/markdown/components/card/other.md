@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Disabled
 
-Disable and reset styles accordingly.
+Disable and style disabled.
 
 <demo>
   <demoinline src="demos/components/card/disabled">

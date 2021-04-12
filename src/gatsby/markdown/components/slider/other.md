@@ -20,7 +20,7 @@ If you want to **disable the component** use the `options.disabled`.
 
 Example of **component disabled on desktop** with [match media](/components/slider/api#match-media).
 
-Disable and reset styles accordingly.
+Disable and style disabled.
 
 <demo>
   <demoinline src="demos/components/slider/disabled">
@@ -56,7 +56,7 @@ Slider with `nooverflow: true` automatically disable when not overflowing.
 
 </div>
 
-Use the class `.xt-slider-nooverflow` to styles accordingly.
+Use the class `.xt-slider-nooverflow` to style nooverflow.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">
@@ -67,7 +67,7 @@ Use the class `.xt-slider-nooverflow` to styles accordingly.
 
 ## Expand
 
-Disable and reset styles accordingly. (use narrow screen to see it in action).
+Disable and style expand. (**use narrow screen to see it in action**).
 
 <demo>
   <demoinline src="demos/components/slider/expand">
@@ -76,7 +76,7 @@ Disable and reset styles accordingly. (use narrow screen to see it in action).
 
 ## Touch Overflow
 
-Disable and reset styles accordingly. (use touch device to see it in action).
+Disable and style touch overflow. (**use touch device to see it in action**).
 
 <demo>
   <demoinline src="demos/components/slider/touch-overflow">

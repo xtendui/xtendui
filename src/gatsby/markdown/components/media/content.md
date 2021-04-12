@@ -87,7 +87,7 @@ Use **tailwind classes** to assign height (e.g. [height](https://tailwindcss.com
   </demoinline>
 </demo>
 
-You can also use `min-height: <Value>` to have a min height (use narrow screen to see it in action).
+You can also use `min-height: <Value>` to have a min height (**use narrow screen to see it in action**).
 
 <demo>
   <demoinline src="demos/components/media/min-height">

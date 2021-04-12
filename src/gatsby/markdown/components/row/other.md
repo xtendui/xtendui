@@ -27,15 +27,7 @@ When using cards you can space with `margin auto` on **card content**. When not 
 
 ## Overflow
 
-Use `.xt-row-overflow` to have **overflow scroll when overflowing**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-row-overflow`                     | `xt-row-overflow`                | Overflow styles when overflowing            |
-
-</div>
+Style row to have **overflow scroll when overflowing** (**use narrow screen to see it in action**).
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/row/overflow">

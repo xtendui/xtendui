@@ -42,7 +42,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Overflow
 
-Use **tailwind classes** to overflow with scroll when content is too long (use narrow screen to see it in action).
+Use **tailwind classes** to overflow with scroll when content is too long (**use narrow screen to see it in action**).
 
 <demo>
   <demoinline src="demos/components/table/overflow">

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--row-overflow">
-    <div class="xt-row xt-row-4 xt-row-overflow">
+    <div class="xt-row xt-row-4">
       <div class="w-full md:w-4/12">
         <div class="xt-card rounded-md ${classes.cardDefault()}">
           <div class="${classes.cardMd()}">

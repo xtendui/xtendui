@@ -29,7 +29,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node inside to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop'`        | Query Node inside to close on click, no nested Nodes            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node outside to close on click            |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter, use touch device to see it in action)            |
+| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events            |
 
 </div>
 

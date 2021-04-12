@@ -20,7 +20,7 @@ If you want to **disable the component** use the `options.disabled`.
 
 Example of **component disabled on desktop** with [match media](/components/drop/api#match-media).
 
-Disable and reset styles accordingly.
+Disable and style disabled.
 
 <demo>
   <demoinline src="demos/components/drop/disabled">

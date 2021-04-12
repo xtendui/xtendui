@@ -233,7 +233,6 @@ const html = /* HTML */ `
                 </a>
 
                 <div class="text-opacity-75">
-                  <p><strong>(navigate on mobile for different behaviour)</strong></p>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas
                     efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut

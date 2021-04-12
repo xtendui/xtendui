@@ -15,7 +15,7 @@ Initialize with **javascript** with `new Xt.Stickyflow(document.querySelector('.
 
 ## Usage
 
-Use this code to create a **sticky flow** (use large screen to see it in action).
+Use this code to create a **sticky flow** (**use large screen to see it in action**).
 
 Pratically it's a solution that **scrolls sticky content** when it **overflow the window**, following scroll direction.
 

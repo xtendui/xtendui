@@ -110,13 +110,11 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 
-(use touch device to see it in action)
+(**use touch device to see it in action**)
 
-(use narrow screen to see it in action)
+(**use narrow screen to see it in action**)
 
-(use large screen to see it in action)
-
-(navigate on mobile for different behaviour)
+(**use large screen to see it in action**)
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
