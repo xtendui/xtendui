@@ -120,8 +120,8 @@ class Tooltip extends Xt.Toggle {
 Tooltip.componentName = 'xt-tooltip'
 Tooltip.optionsDefault = {
   // element
-  elements: ':scope > a, :scope > button',
-  targets: ':scope > .xt-tooltip',
+  elements: ':scope > a, :scope > button, :scope > .xt-tooltip-item',
+  targets: ':scope > .xt-tooltip, :scope > .xt-tooltip-item > .xt-tooltip',
   elementsInner: ':scope > a, :scope > button',
   // class
   classSkip: {

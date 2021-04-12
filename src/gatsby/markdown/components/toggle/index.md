@@ -20,29 +20,25 @@ Initialize automatically **within markup** with `[data-xt-toggle="{ <options> }"
 
 Initialize with **javascript** with `new Xt.Toggle(document.querySelector('.my-object'), {/* options */})`.
 
-## Usage
+## Usage Self
 
-Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
+Use this code to create a **toggle** in **self mode**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+<demo>
+  <demoinline src="demos/components/toggle/usage-self">
+  </demoinline>
+</demo>
 
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-toggle'`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+Check subpage to [customize interaction](/components/toggle/interaction).
 
-</div>
-
-#### Unique
+## Usage Unique
 
 Use this code to create a **toggle** in **unique mode**.
 
 The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
 [[notePrimary]]
-| When you specify **elements or targets with id** the query is **inside document not only inside object**.
+| Only when you specify **elements or targets with id** the query is **inside document not only inside object**.
 
 You can group elements activation with the option `groupElements: true`.
 
@@ -63,9 +59,20 @@ You can group elements activation with the option `groupElements: true`.
 
 Check subpage to [customize interaction](/components/toggle/interaction).
 
-#### Multiple
+## Usage Multiple
 
 Use this code to create a **toggle** in **multiple mode**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-toggle-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+
+</div>
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
@@ -85,17 +92,6 @@ You can group elements activation with the option `groupElements: true`.
   <demoinline src="demos/components/toggle/usage-multiple-group">
   </demoinline>
   <demoinline src="demos/components/toggle/usage-multiple-groupelements">
-  </demoinline>
-</demo>
-
-Check subpage to [customize interaction](/components/toggle/interaction).
-
-#### Self
-
-Use this code to create a **toggle** in **self mode**.
-
-<demo>
-  <demoinline src="demos/components/toggle/usage-self">
   </demoinline>
 </demo>
 

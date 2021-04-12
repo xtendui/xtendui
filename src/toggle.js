@@ -3222,8 +3222,8 @@ class Toggle {
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   // element
-  elements: ':scope > a, :scope > button',
-  targets: ':scope > .xt-toggle',
+  elements: ':scope > a, :scope > button, :scope > .xt-toggle-item',
+  targets: ':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle',
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   // class

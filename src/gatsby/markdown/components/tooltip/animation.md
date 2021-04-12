@@ -33,9 +33,6 @@ You can set it in the options or to **assign them also on single nodes** with `d
 [[notePrimary]]
 | Do not transition transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
 
-[[notePrimary]]
-| Use `.xt-tooltip-item` as **elements** when using **multiple mode**.
-
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.

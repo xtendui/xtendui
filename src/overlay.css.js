@@ -56,5 +56,9 @@ module.exports = {
         right: 'var(--scrollbar-width)',
       },
     },
+    '.xt-overlay-item': {
+      display: 'inline-block',
+      lineHeight: 1,
+    },
   }),
 }

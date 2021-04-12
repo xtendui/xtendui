@@ -20,7 +20,7 @@ Xt.mount({
 const mountDrops = ({ ref }) => {
   // vars
 
-  const drop = ref
+  const drop = ref.querySelector(':scope > .xt-list')
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
   const targetTimeOff = 0.5
@@ -29,8 +29,6 @@ const mountDrops = ({ ref }) => {
   // init
 
   let self = new Xt.Drop(drop, {
-    elements: '.xt-drop-item',
-    targets: '.xt-drop',
     duration: 500,
   })
 

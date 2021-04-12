@@ -106,7 +106,7 @@ const html = /* HTML */ `
 
     <div class="xt-list xt-list-3 items-center">
       <div
-        data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
+        data-xt-tooltip="{  targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
       >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">tooltip</button>
@@ -123,7 +123,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-tooltip="{  elements: '.xt-tooltip-item', targets: '.xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
+        data-xt-tooltip="{  targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner' }"
       >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">

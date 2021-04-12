@@ -20,5 +20,9 @@ module.exports = {
         width: '100%',
       },
     },
+    '.xt-toggle-item': {
+      display: 'inline-block',
+      lineHeight: 1,
+    },
   },
 }

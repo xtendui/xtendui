@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-tooltip="{ elements: '.xt-tooltip-item', targets: '.xt-tooltip' }"
+      data-xt-tooltip
     >
       <div class="xt-tooltip-item">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">

@@ -20,29 +20,27 @@ Initialize automatically **within markup** with `[data-xt-drop="{ <options> }"]`
 
 Initialize with **javascript** with `new Xt.Drop(document.querySelector('.my-object'), {/* options */})`.
 
-## Usage
+## Usage Self
 
-Pass **elements** and **targets** options if different from defaults. **Elements** listens to events, **targets and inners** activate on events.
+Use this code to create a **drop** in **self mode**.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+Just use the class `on` if you want to automatically open, or use the [api](/components/drop/api)
 
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-drop'`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
+<demo>
+  <demoinline src="demos/components/drop/usage-self">
+  </demoinline>
+</demo>
 
-</div>
+Check subpage to [customize interaction](/components/drop/interaction) and [customize lists](/components/drop/content-list) or [customize card](/components/drop/content-card).
 
-#### Unique
+## Usage Unique
 
 Use this code to create a **drop** in **unique mode**.
 
 The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
 [[notePrimary]]
-| When you specify **elements or targets with id** the query is **inside document not only inside object**.
+| Only when you specify **elements or targets with id** the query is **inside document not only inside object**.
 
 <demo>
   <demoinline src="demos/components/drop/usage-unique">
@@ -51,14 +49,22 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 
 Check subpage to [customize interaction](/components/drop/interaction) and [customize lists](/components/drop/content-list) or [customize card](/components/drop/content-card).
 
-#### Multiple
+## Usage Multiple
 
 Use this code to create **drop** in **multiple mode**.
 
-The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-[[notePrimary]]
-| Use `.xt-drop-item` as **elements** when using **multiple mode**.
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-drop-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-drop, :scope > .xt-drop-item > .xt-drop'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
+
+</div>
+
+The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
 
@@ -66,19 +72,6 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
   <demoinline src="demos/components/drop/usage-multiple">
   </demoinline>
   <demoinline src="demos/components/drop/usage-multiple-group">
-  </demoinline>
-</demo>
-
-Check subpage to [customize interaction](/components/drop/interaction) and [customize lists](/components/drop/content-list) or [customize card](/components/drop/content-card).
-
-#### Self
-
-Use this code to create a **drop** in **self mode**.
-
-Just use the class `on` if you want to automatically open, or use the [api](/components/drop/api)
-
-<demo>
-  <demoinline src="demos/components/drop/usage-self">
   </demoinline>
 </demo>
 
