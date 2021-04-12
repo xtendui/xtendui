@@ -1,3 +1,53 @@
+# [1.0.0-beta.11](https://github.com/minimit/xtendui/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-04-12)
+
+
+### Bug Fixes
+
+* **row:** xt-row-overlflow from css ([39cd2d0](https://github.com/minimit/xtendui/commit/39cd2d016a2a8a6e33e0aa0f804c6d9a62241c1a))
+* **slider:** autoheight transition with tailwind classes ([499e9af](https://github.com/minimit/xtendui/commit/499e9af05ca8ea07e5909481d331996aa0e2bb03))
+* **slider:** fix initial instant disabled and xt-overflow ([f98fa18](https://github.com/minimit/xtendui/commit/f98fa186bc4a48e2fb36b682a97445654f8b5d68))
+* fix toggle and slider xt-grab and xt-jump on activation deactivation ([e090709](https://github.com/minimit/xtendui/commit/e0907095b85440611e4ebafe60c91e9976edde9d))
+
+
+### Code Refactoring
+
+* **slider:** refactor slider overflow ([26ff9e9](https://github.com/minimit/xtendui/commit/26ff9e9fbe3e0cb913d2ec9e5e2c1f8a180fbd99))
+* **slider:** refactor some slider drag options ([745ea83](https://github.com/minimit/xtendui/commit/745ea835a4efabbddde0b59712cdbf4e4ad27ffc))
+* **slider:** removed xt-slides-inner ([26beff2](https://github.com/minimit/xtendui/commit/26beff2078719a2b7e7e5a0c0ba4a00decfcc9a7))
+* all interaction classes with xt- prefix and xt-active tailwind variant instead of active ([0f5a255](https://github.com/minimit/xtendui/commit/0f5a2550187cbfcb9ca9508a8f02544a29050f80))
+* on class instead of active and revision tailwind variants ([3205cb2](https://github.com/minimit/xtendui/commit/3205cb2b0f10755a656cd60705002593fc70cf04))
+* refactor slider pagination and no clone for calculating slideWidth ([4ff8383](https://github.com/minimit/xtendui/commit/4ff83836a956f14c9c2be2d8b8cb59c51aacfef8))
+* refactor tailwind variants and activation classes ([79a0f5a](https://github.com/minimit/xtendui/commit/79a0f5a88a195c6cff93b72e4f308c4aa9214eee))
+* revision activation classes and tailwind varians ([80fb28e](https://github.com/minimit/xtendui/commit/80fb28e6c57ea2e14fcdc5cbc1e4c2b101ace223))
+
+
+### Features
+
+* added new selector to toggle and drop and tooltip and overlay ([f9a6426](https://github.com/minimit/xtendui/commit/f9a64263fbebc232aaea29243ae51b2b3f33300a))
+* **form:** refactor form classes ([8bcc5c6](https://github.com/minimit/xtendui/commit/8bcc5c6b76a0fc2aa1911558198df77a7b7b2609))
+* **media:** removed xt-media-inner not needed ([f016fb2](https://github.com/minimit/xtendui/commit/f016fb2fd24a33664069b0bd9a08d610899d0906))
+
+
+### BREAKING CHANGES
+
+* **row:** if you use xt-row-overflow assign css because the class is not styled anymore
+* **slider:** drag.wrap e dra.nooverflow oustide drag object in options
+* **slider:** options.overflowAuto becomes options.drag.noooverflow and the html class applied from .xt-overflow-auto to .xt-slider-nooverflow
+* **slider:** use xt-slides instead of xt-slides-inner in all css and js, and revisit autoHeight as the demos
+* use .on instead of .active for activation and now you can use variants on: group-on: active:
+* data-xt-pag with hidden instead of xt-ignore
+* **slider:** use tailwind classes for slides autoheight transition
+* FINAL VERSION use this tailwind variants for animations: in: out: group-in: group-out:
+now activation classes are without xt- prefix: .active .in .out .initial .done .dir-before .dir-after
+* use tailwind variants xt-in: and group-xt-in: instead of xt-active: and group-xt-active:
+added xt-out: and group-xt-out: for out animation
+use xt-active instead of xt-in for initial activation
+use xt-active for activation and xt-in and xt-out for in and out animations
+* instead of active: and group-active: use xt-active: and group-xt-active:
+default classes for interaction now are .xt-in instead of .in, .xt-out instead of .out, .xt-active instead of .active, .xt-before instead of .direction-before, .xt-after instead of .direction-after, .xt-initial intead of .initial, .xt-done instead of .done
+removed in-toggle in-drop in-tooltip in-overlay for instant activation use instead the class xt-in
+* **media:** remove xt-media-inner div and use relative on xt-media instead of xt-media-inner
+
 # [1.0.0-beta.10](https://github.com/minimit/xtendui/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-04-07)
 
 
