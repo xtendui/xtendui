@@ -27,11 +27,5 @@ module.exports = {
         },
       },
     },
-    '.xt-row-overflow': {
-      '@apply xt-overflow-sub': '',
-      overflowX: 'auto',
-      overflowY: 'hidden',
-      flexWrap: 'nowrap',
-    },
   },
 }
