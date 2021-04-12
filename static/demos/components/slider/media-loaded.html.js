@@ -3,81 +3,79 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--slider-media-loaded">
     <div class="xt-slider">
-      <div class="xt-slides">
-        <div class="xt-slides-inner xt-row xt-row-4">
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="/img.svg" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+      <div class="xt-slides xt-row xt-row-4">
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="/img.svg" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="xt-slide">
-            <div class="xt-media-container bg-gray-600">
-              <img class="xt-media relative" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
-              <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
-                <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-                  ${classes.spinner({ classes: 'animate-xt-spinner' })}
-                </div>
+        <div class="xt-slide">
+          <div class="xt-media-container bg-gray-600">
+            <img class="xt-media relative" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
+            <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+              <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+                ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </div>
             </div>
           </div>

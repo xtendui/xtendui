@@ -124,7 +124,7 @@ See [toggle aria](/components/toggle/other#aria) for aria options.
 | Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/toggle) |     
 | Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
 | Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
-| Option                  | `autoHeight:Query`                          | `false`        | Elements to automaticaly height (ex: `.xt-slides`), remember to transition height            |
+| Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
 | Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
 
 </div>	

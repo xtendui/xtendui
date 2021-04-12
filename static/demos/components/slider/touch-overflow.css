@@ -4,8 +4,6 @@
       @apply xt-overflow-sub !important;
       overflow-x: auto !important;
       overflow-y: hidden !important;
-    }
-    .xt-slides-inner {
       transform: none !important;
       transition: none !important;
     }

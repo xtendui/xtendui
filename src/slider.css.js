@@ -6,9 +6,16 @@ module.exports = {
     },
     '.xt-slides': {
       position: 'relative',
-      display: 'inline-block', // fix autoheight values
-      verticalAlign: 'top', // fix inline-block margin below
+      display: 'inline-flex', // fix autoheight values
+      verticalAlign: 'top', // fix inline-flex margin below
       width: '100%',
+      flexWrap: 'nowrap',
+      alignItems: 'flex-start',
+      // prevent browser selection
+      '-webkit-user-select': 'none',
+      '-moz-user-select': 'none',
+      '-ms-user-select': 'none',
+      'user-select': 'none',
     },
     '.xt-slide': {
       position: 'relative',
@@ -35,15 +42,6 @@ module.exports = {
           },
         },
       },
-    },
-    '.xt-slides-inner': {
-      flexWrap: 'nowrap',
-      alignItems: 'flex-start',
-      // prevent browser selection
-      '-webkit-user-select': 'none',
-      '-moz-user-select': 'none',
-      '-ms-user-select': 'none',
-      'user-select': 'none',
     },
   }),
 }

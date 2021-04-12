@@ -62,7 +62,7 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.dragger:Query`                          | `'.xt-slides-inner'`        | Query for dragger element             |	
+| Option                  | `drag.dragger:Query`                          | `'.xt-slides'`        | Query for dragger element             |	
 | Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |	
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |	
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	

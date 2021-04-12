@@ -76,36 +76,34 @@ const html = /* HTML */ `
     </div>
 
     <div class="xt-slider" id="slider--eventmethods">
-      <div class="xt-slides">
-        <div class="xt-slides-inner xt-row xt-row-4" id="slider--eventmethods-targets">
-          <div class="xt-slide w-6/12 sm:w-4/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">1</div>
-            </div>
+      <div class="xt-slides xt-row xt-row-4" id="slider--eventmethods-targets">
+        <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-card rounded-md ${classes.cardSlide()}">
+            <div class="xt-h4">1</div>
           </div>
+        </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">2</div>
-            </div>
+        <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-card rounded-md ${classes.cardSlide()}">
+            <div class="xt-h4">2</div>
           </div>
+        </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">3</div>
-            </div>
+        <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-card rounded-md ${classes.cardSlide()}">
+            <div class="xt-h4">3</div>
           </div>
+        </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">4</div>
-            </div>
+        <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-card rounded-md ${classes.cardSlide()}">
+            <div class="xt-h4">4</div>
           </div>
+        </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">5</div>
-            </div>
+        <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-card rounded-md ${classes.cardSlide()}">
+            <div class="xt-h4">5</div>
           </div>
         </div>
       </div>

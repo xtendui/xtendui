@@ -27,7 +27,7 @@ const mountSlider = ({ ref }) => {
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
     wheel: {
-      selector: '.xt-slides-inner',
+      selector: '.xt-slides',
     },
   })
 

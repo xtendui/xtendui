@@ -73,12 +73,26 @@ class Slider extends Xt.Toggle {
     self.detail.draggerWidth = self.dragger.offsetWidth
     self.detail.draggerLeft = self.dragger.offsetLeft
     let fixNegativeMargin = 0
+    let slideWidthAbsolute
+    if (options.mode === 'absolute') {
+      for (const slide of self.targets) {
+        let slideWidth = slide.offsetWidth
+        if (slideWidth) {
+          slideWidthAbsolute = slideWidth
+          break
+        }
+      }
+    }
     for (const [i, slide] of self.targets.entries()) {
       const slideLeft = slide.offsetLeft
-      let slideWidth = slide.offsetWidth
-      if (slideWidth === 0) {
-        // when display none
-        slideWidth = self.detail.draggerWidth
+      let slideWidth
+      if (options.mode === 'absolute') {
+        slideWidth = slideWidthAbsolute
+      } else {
+        slideWidth = slide.offsetWidth
+      }
+      if (!slideWidth) {
+        console.error('Error: Xt.Slider one slide with display: none; or no width', slide)
       }
       if (i === 0) {
         fixNegativeMargin = slideLeft
@@ -1209,7 +1223,7 @@ Slider.optionsDefault = {
   pagination: '.xt-slider-pagination',
   overflowAuto: true,
   drag: {
-    dragger: '.xt-slides-inner',
+    dragger: '.xt-slides',
     wrap: false,
     manual: false,
     threshold: 25,

@@ -119,6 +119,11 @@ class Toggle {
     Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([])
+    // initialized class
+    if (!options.classSkip) {
+      // fix before initScope or slider absolute has multiple active and bugs initial calculations
+      self.object.classList.add(`${self.componentName}-init`)
+    }
   }
 
   /**
@@ -228,10 +233,6 @@ class Toggle {
       self.initial = false
       // auto
       self.eventAutostart()
-    }
-    // initialized class
-    if (!options.classSkip) {
-      self.object.classList.add(`${self.componentName}-init`)
     }
     // keep the same level of raf as others
     requestAnimationFrame(() => {
