@@ -36,9 +36,9 @@ const mountSliders = ({ ref }) => {
     let self = new Xt.Slider(slider, {
       align: 'left',
       jump: false,
+      wrap: true,
       drag: {
         manual: true,
-        wrap: true,
       },
     })
 
@@ -70,7 +70,7 @@ const mountSliders = ({ ref }) => {
               ease: 'linear',
             })
             .eventCallback('onComplete', () => {
-              // wrap before changing slide if needed, needed with drag.wrap = true
+              // wrap before changing slide if needed, needed with wrap = true
               self.eventWrap()
               requestAnimationFrame(() => {
                 // go to next slide

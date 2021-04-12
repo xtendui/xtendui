@@ -34,10 +34,8 @@ const mountEventmethods = ({ ref }) => {
       time: 2000,
       initial: false,
     },
-    drag: {
-      wrap: true,
-    },
     group: 1,
+    wrap: true,
     matches: {
       '(min-width: 768px)': {
         group: 0.8,

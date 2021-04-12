@@ -27,9 +27,7 @@ const mountSlider = ({ ref }) => {
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
     align: 'right',
-    drag: {
-      wrap: true,
-    },
+    wrap: true,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

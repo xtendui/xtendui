@@ -69,7 +69,7 @@ Contain the slides and **automatically group** them when the scroll position is 
 
 ## Wrap
 
-You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have to set `loop: true` and you can't use `contain: true`.
+You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: true` and you can't use `contain: true`.
 
 [[notePrimary]]
 | Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.
@@ -78,7 +78,7 @@ You can wrap the slides with `drag: { wrap: true }`. With `drag.wrap` you have t
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `drag.wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end             |
+| Option                  | `wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end             |
 
 </div>
 

@@ -154,7 +154,7 @@ class Slider extends Xt.Toggle {
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
     // disable slider if not overflowing
-    if (options.drag.nooverflow) {
+    if (options.nooverflow) {
       if (self.detail.availableSpace < 0) {
         self.object.classList.add('xt-slider-nooverflow')
       } else {
@@ -667,7 +667,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // logic
-    if (options.drag.wrap && !options.drag.manual && self.detail.availableSpace >= 0) {
+    if (options.wrap && !options.drag.manual && self.detail.availableSpace >= 0) {
       const slide = self.group[index][0]
       const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
@@ -1001,7 +1001,7 @@ class Slider extends Xt.Toggle {
     let dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragUpdated) * options.drag.factor
     self.detail.dragUpdated = self.detail.dragCurrent
     // overflow
-    if (options.mode !== 'absolute' && !options.drag.wrap && options.drag.overflow) {
+    if (options.mode !== 'absolute' && !options.wrap && options.drag.overflow) {
       // overflow
       const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
@@ -1194,7 +1194,7 @@ class Slider extends Xt.Toggle {
     // clean wrap
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
-    if (options.drag.wrap && !options.drag.manual) {
+    if (options.wrap && !options.drag.manual) {
       for (const slide of self.targets) {
         slide.style.transform = ''
       }
@@ -1217,12 +1217,12 @@ Slider.optionsDefault = {
   group: false,
   align: 'center',
   contain: false,
+  wrap: false,
+  nooverflow: true,
   pagination: '.xt-slider-pagination',
   drag: {
     dragger: '.xt-slides',
-    wrap: false,
     manual: false,
-    nooverflow: true,
     threshold: 25,
     factor: 1,
     overflow: overflow => {

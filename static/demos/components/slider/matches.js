@@ -26,13 +26,11 @@ const mountSlider = ({ ref }) => {
   // init
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    drag: { wrap: true },
+    wrap: true,
     matches: {
       '(min-width: 768px)': {
         align: 'left',
-        drag: {
-          wrap: false,
-        },
+        wrap: false,
       },
     },
   })
