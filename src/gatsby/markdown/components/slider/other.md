@@ -46,17 +46,17 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Overflow auto
 
-Slider with `overflowAuto:Boolean` automatically disable when not overflowing.
+Slider with `drag.nooverflow: true` automatically disable when not overflowing.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `overflowAuto:Boolean`                          | `true`        | When not overflowing disable slider           |
+| Option                  | `drag.nooverflow:Boolean`                          | `true`        | When not overflowing disable slider           |
 
 </div>
 
-Use the class `.xt-overflow-auto` to styles accordingly.
+Use the class `.xt-slider-nooverflow` to styles accordingly.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">

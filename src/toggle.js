@@ -3020,7 +3020,7 @@ class Toggle {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           // check
-          if (options.disabled || self.object.classList.contains('xt-overflow-auto')) {
+          if (options.disabled || self.object.classList.contains('xt-slider-nooverflow')) {
             self.disable()
           } else {
             self.enable()

@@ -1,6 +1,6 @@
 .demo--slider-automaticscroll, .demo--slider-automaticscroll-react {
   .xt-slider {
-    &.xt-overflow-auto {
+    &.xt-slider-nooverflow {
       .xt-slides {
         justify-content: center;
       }

@@ -29,8 +29,8 @@ const mountSlider = ({ ref }) => {
     align: 'center',
     drag: {
       wrap: true,
+      nooverflow: false,
     },
-    overflowAuto: false,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

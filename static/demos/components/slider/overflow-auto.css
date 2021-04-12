@@ -1,5 +1,5 @@
 .demo--slider-overflow-auto, .demo--slider-overflow-auto-react {
-  .xt-overflow-auto {
+  .xt-slider-nooverflow {
     .xt-slides {
       transform: none !important;
       transition: none !important;

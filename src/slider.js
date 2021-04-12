@@ -154,11 +154,11 @@ class Slider extends Xt.Toggle {
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
     // disable slider if not overflowing
-    if (options.overflowAuto) {
+    if (options.drag.nooverflow) {
       if (self.detail.availableSpace < 0) {
-        self.object.classList.add('xt-overflow-auto')
+        self.object.classList.add('xt-slider-nooverflow')
       } else {
-        self.object.classList.remove('xt-overflow-auto')
+        self.object.classList.remove('xt-slider-nooverflow')
       }
     }
   }
@@ -1218,11 +1218,11 @@ Slider.optionsDefault = {
   align: 'center',
   contain: false,
   pagination: '.xt-slider-pagination',
-  overflowAuto: true,
   drag: {
     dragger: '.xt-slides',
     wrap: false,
     manual: false,
+    nooverflow: true,
     threshold: 25,
     factor: 1,
     overflow: overflow => {
