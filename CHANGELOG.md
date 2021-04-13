@@ -1,3 +1,17 @@
+# [1.0.0-beta.12](https://github.com/minimit/xtendui/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-04-13)
+
+
+### Bug Fixes
+
+* tailwind default transition duration changed to 500ms ([36ad6a0](https://github.com/minimit/xtendui/commit/36ad6a080ab8d93355fb29ecf2556ffabb5c144e))
+
+
+### Features
+
+* **toggle:** options.groupSeparator and multiple groups ([56dca74](https://github.com/minimit/xtendui/commit/56dca7402b2372e0c5f0fe89cac5a635eea1995f))
+* added group-active variant ([5da544c](https://github.com/minimit/xtendui/commit/5da544c88f78359134fcfff33f84fd6002aa950d))
+* **slider:** xt-overflow-auto styles ([dd8579a](https://github.com/minimit/xtendui/commit/dd8579a04430c68278ee01466358d64fab0441ac))
+
 # [1.0.0-beta.11](https://github.com/minimit/xtendui/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-04-12)
 
 
