@@ -1,12 +1,4 @@
 .demo--slider-automaticscroll, .demo--slider-automaticscroll-react {
-  .xt-slider {
-    &.xt-slider-nooverflow {
-      .xt-slides {
-        justify-content: center;
-      }
-    }
-  }
-
   .slide-asset {
     width: 300px;
     @apply transform transition;

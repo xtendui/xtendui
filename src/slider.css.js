@@ -43,5 +43,14 @@ module.exports = {
         },
       },
     },
+    '.xt-slider-nooverflow': {
+      '.xt-slides': {
+        transform: 'none !important',
+        justifyContent: 'center !important',
+      },
+      '.xt-slider-pagination': {
+        display: 'none !important',
+      },
+    },
   }),
 }

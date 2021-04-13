@@ -44,7 +44,7 @@ You can add **additional options** that gets added on **match media query**. You
   </demoinline>
 </demo>
 
-## Overflow auto
+## Nooverflow
 
 Slider with `nooverflow: true` automatically disable when not overflowing.
 
@@ -56,7 +56,7 @@ Slider with `nooverflow: true` automatically disable when not overflowing.
 
 </div>
 
-Use the class `.xt-slider-nooverflow` to style nooverflow.
+Use the class `.xt-slider-nooverflow` to style `.xt-slides`, by default it has `justify-content: center`.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">
