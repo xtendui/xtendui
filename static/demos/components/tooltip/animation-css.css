@@ -2,7 +2,7 @@
   .xt-tooltip {
     /* initial */
     > * {
-      @apply transform ease-out duration-300;
+      @apply transform transition duration-300;
       @apply opacity-0 -translate-x-4;
     }
     /* in */

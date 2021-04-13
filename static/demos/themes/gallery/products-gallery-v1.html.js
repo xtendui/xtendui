@@ -142,11 +142,11 @@ const html = /* HTML */ `
                   </div>
 
                   <div
-                    class="xt-overlay ease-in-out-quint duration-500 opacity-0 in:ease-out-quint in:opacity-100"
+                    class="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                     id="overlay--product-images"
                   >
                     <div
-                      class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
+                      class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"
                     ></div>
                     <div class="xt-overlay-container p-0">
                       <button

@@ -76,10 +76,10 @@
     }
     .xt-card {
       @apply xt-min-h-screen;
-      /* add to gatsby_menu--overlay group duration-700 */
-      /*@apply overflow-hidden transform ease-in-out-quint duration-500 delay-200 opacity-0 -translate-x-full group-in:ease-out-quint group-in:delay-0 group-in:opacity-100 group-in:translate-x-0;*/
+      /* add to gatsby_menu--overlay group */
+      /*@apply overflow-hidden transform ease-in-out-quint delay-200 opacity-0 -translate-x-full group-in:ease-out-quint group-in:delay-0 group-in:opacity-100 group-in:translate-x-0;*/
       > * {
-        /*@apply transform ease-in-out-quint duration-500 opacity-0 -translate-x-1/2 group-in:ease-out-quint group-in:delay-200 group-in:opacity-100 group-in:translate-x-0;*/
+        /*@apply transform ease-in-out-quint opacity-0 -translate-x-1/2 group-in:ease-out-quint group-in:delay-200 group-in:opacity-100 group-in:translate-x-0;*/
       }
     }
     .xt-overlay-disabled& {

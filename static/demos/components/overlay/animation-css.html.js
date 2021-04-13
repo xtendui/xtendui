@@ -9,7 +9,7 @@ const html = /* HTML */ `
 
       <div class="xt-overlay" data-xt-duration="500">
         <div
-          class="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-in:opacity-25"
+          class="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"
         ></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">

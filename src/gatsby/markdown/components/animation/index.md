@@ -12,9 +12,24 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Check [xtendui/src/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/animation.css.js) for default styles.
 
+## Transition Duration
+
+Default `transitionDuration` changed to `500ms`. All [transition properties](https://tailwindcss.com/docs/transition-property) now have this duration.
+
 ## Timing Function
 
+Default `transitionTimingFunction` changed to `cubic-bezier(.23,1,.32,1)`. All [transition properties](https://tailwindcss.com/docs/transition-property) now have this easing.
+
 We add in theme additional easing on [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.ease-in`                     | `ease-in`                | Ease in            |
+| Component                  | `.ease-out`                     | `ease-out`                | Ease out            |
+
+</div>
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

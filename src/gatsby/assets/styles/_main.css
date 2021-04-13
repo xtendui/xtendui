@@ -151,7 +151,7 @@ body {
 
 .gatsby_listing-item {
   /* row same as card */
-  @apply p-3.5 sm:p-5 lg:p-6 text-xs md:text-sm text-black xt-links-default rounded-md transform transition duration-500 ease-in-out;
+  @apply p-3.5 sm:p-5 lg:p-6 text-xs md:text-sm text-black xt-links-default rounded-md transform transition ease-in-out;
   .gatsby_home-main_actions & {
     @apply text-sm;
   }

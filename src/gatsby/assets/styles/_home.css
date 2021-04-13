@@ -185,7 +185,7 @@
 }
 
 .gatsby_home-main_support {
-  @apply inline-block w-full transition duration-500 ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint;
+  @apply inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint;
 }
 
 /* scroll */

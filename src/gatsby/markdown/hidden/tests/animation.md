@@ -81,3 +81,16 @@ Test instant activation when switching.
   <demoinline src="demos/components/tooltip/animation-design">
   </demoinline>
 </demo>
+
+## Collapse
+
+Test height on activation.
+
+Test height reset on activation done.
+
+<demo>
+  <demoinline src="demos/components/animation/collapse-height">
+  </demoinline>
+  <demoinline src="demos/components/animation/collapse-width">
+  </demoinline>
+</demo>
