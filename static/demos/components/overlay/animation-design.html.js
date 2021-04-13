@@ -8,9 +8,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay group" data-xt-duration="500">
-        <div
-          class="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"
-        ></div>
+        <div class="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div

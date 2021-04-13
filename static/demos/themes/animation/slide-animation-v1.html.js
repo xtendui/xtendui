@@ -134,9 +134,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -160,9 +158,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()} ${animDesign()}">
@@ -205,9 +201,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()} ${animDesign()}">
@@ -325,9 +319,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()} ${animDesign()}">
