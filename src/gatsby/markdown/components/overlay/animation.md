@@ -8,7 +8,7 @@ date: "2010-10-09"
 
 Checkout out [overlay's themes](/themes/by-component/overlay) for **advanced animations**.
 
-## Queue and Duration
+## Duration and Delay
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -18,15 +18,9 @@ You can set it in the options or to **assign them also on single nodes** with `d
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 | Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
 | Option                  | `durationIn:Milliseconds`                          | `false`        | Activation duration            |
 | Option                  | `durationOut:Milliseconds`                          | `false`        | Deactivation duration            |
-
 
 </div>
 
@@ -40,6 +34,31 @@ You can also customize `xt-backdrop` animations.
   <demoinline src="demos/components/overlay/animation">
   </demoinline>
 </demo>
+
+You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
+
+</div>
+
+## Queue
+
+By default **multiple mode** queues the activations by waiting the end of duration.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
+
+</div>
 
 ## Css Animation
 

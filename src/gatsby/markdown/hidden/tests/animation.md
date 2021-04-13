@@ -12,6 +12,8 @@ Test animation.
 <demo>
   <demoinline src="demos/components/toggle/animation-multiple">
   </demoinline>
+  <demoinline src="demos/components/toggle/animation-multiple-delay">
+  </demoinline>
   <demoinline src="demos/components/overlay/animation">
   </demoinline>
   <demoinline src="demos/components/drop/animation">
