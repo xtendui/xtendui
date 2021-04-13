@@ -1059,14 +1059,14 @@ class Toggle {
       const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
       const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
       if (group) {
-        // all group targets if group
+        // if group all group targets
         final = Xt.arrSingle(groupElements)
       } else {
-        // not group targets by index if not group
+        // not group targets by index
         if (Array.from(self.elements).includes(el)) {
-          // fix when argument is already element
           final = Xt.arrSingle(el)
         } else {
+          // groupElements and groupTargets are elements and targets without data-xt-group here
           const index = groupTargets.findIndex(x => x === el)
           final = Xt.arrSingle(groupElements[index])
         }
@@ -1097,14 +1097,14 @@ class Toggle {
       const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
       const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
       if (group) {
-        // all group targets if group
+        // if group all group targets
         final = Xt.arrSingle(groupTargets)
       } else {
-        // not group targets by index if not group
+        // not group targets by index
         if (Array.from(self.targets).includes(el)) {
-          // fix when argument is already target
           final = Xt.arrSingle(el)
         } else {
+          // groupElements and groupTargets are elements and targets without data-xt-group here
           const index = groupElements.findIndex(x => x === el)
           final = Xt.arrSingle(groupTargets[index])
         }
