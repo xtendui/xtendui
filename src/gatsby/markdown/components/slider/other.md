@@ -56,7 +56,7 @@ Slider with `nooverflow: true` automatically disable when not overflowing.
 
 </div>
 
-Use the class `.xt-slider-nooverflow` to style `.xt-slides`, by default it has `justify-content: center`.
+Style the class `.xt-slider-nooverflow`, by default it has `justify-content: center`.
 
 <demo>
   <demoinline src="demos/components/slider/overflow-auto">
