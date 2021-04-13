@@ -990,20 +990,20 @@ class Toggle {
   getElementsGroups() {
     const self = this
     // groups
-    const found = []
+    const groups = []
     for (const element of self.elements) {
       // choose element by group
       const group = element.getAttribute('data-xt-group')
       if (group) {
-        const alreadyFound = found.filter(x => x.getAttribute('data-xt-group') === group)
+        const alreadyFound = groups.filter(x => x.getAttribute('data-xt-group') === group)
         if (!alreadyFound.length) {
-          found.push(element)
+          groups.push(element)
         }
       } else {
-        found.push(element)
+        groups.push(element)
       }
     }
-    return found
+    return groups
   }
 
   /**
@@ -1013,20 +1013,20 @@ class Toggle {
   getTargetsGroups() {
     const self = this
     // groups
-    const final = []
-    for (const targets of self.targets) {
+    const groups = []
+    for (const target of self.targets) {
       // choose element by group
-      const group = targets.getAttribute('data-xt-group')
+      const group = target.getAttribute('data-xt-group')
       if (group) {
-        const found = final.filter(x => x.getAttribute('data-xt-group') === group)
-        if (!found.length) {
-          final.push(targets)
+        const alreadyFound = groups.filter(x => x.getAttribute('data-xt-group') === group)
+        if (!alreadyFound.length) {
+          groups.push(target)
         }
       } else {
-        final.push(targets)
+        groups.push(target)
       }
     }
-    return final
+    return groups
   }
 
   /**
