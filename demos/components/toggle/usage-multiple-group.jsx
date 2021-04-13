@@ -6,6 +6,13 @@ export default function component() {
         <button
           type="button"
           className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          data-xt-group="group,group-another">
+          Toggle Group all
+        </button>
+
+        <button
+          type="button"
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
           data-xt-group="group">
           Toggle Group
         </button>
@@ -32,7 +39,7 @@ export default function component() {
         <button
           type="button"
           className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
-          data-xt-group="another-group">
+          data-xt-group="group-another">
           Toggle Group another
         </button>
 
@@ -46,7 +53,7 @@ export default function component() {
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="another-group">
+          data-xt-group="group-another">
           Target Group another
         </div>
 
@@ -60,7 +67,7 @@ export default function component() {
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="another-group">
+          data-xt-group="group-another">
           Target Group another
         </div>
       </div>

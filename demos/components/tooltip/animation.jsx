@@ -10,7 +10,7 @@ export default function component() {
         </button>
 
         <div className="xt-tooltip p-2 group" data-xt-duration="300">
-          <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition ease-out duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
+          <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
             Lorem ipsum dolor sit amet
           </div>
         </div>

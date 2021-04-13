@@ -10,10 +10,10 @@ const html = /* HTML */ `
       <div class="xt-tooltip p-2 group" data-xt-duration="300">
         <div class="xt-tooltip-inner">
           <div
-            class="xt-design rounded-md shadow-tooltip bg-black transform transition ease-out duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"
+            class="xt-design rounded-md shadow-tooltip bg-black transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"
           ></div>
           <div
-            class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse transition ease-out duration-300 opacity-0 group-in:opacity-100"
+            class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse transition duration-300 opacity-0 group-in:opacity-100"
           >
             Lorem ipsum dolor sit amet
           </div>

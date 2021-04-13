@@ -6,6 +6,14 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        data-xt-group="group,group-another"
+      >
+        Toggle Group all
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group"
       >
         Toggle Group
@@ -30,7 +38,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="another-group"
+        data-xt-group="group-another"
       >
         Toggle Group another
       </button>
@@ -39,7 +47,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="another-group">
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
         Target Group another
       </div>
 
@@ -47,7 +55,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 2</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="another-group">
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
         Target Group another
       </div>
     </div>

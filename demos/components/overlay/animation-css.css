@@ -2,11 +2,11 @@
   .xt-overlay {
     /* initial */
     .xt-backdrop {
-      @apply transition ease-out duration-500;
+      @apply transition;
       @apply opacity-0;
     }
     .xt-overlay-inner {
-      @apply transform transition ease-out duration-500;
+      @apply transform transition;
       @apply opacity-0 translate-y-4;
     }
     /* in */

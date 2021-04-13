@@ -10,7 +10,7 @@ export default function component() {
         </button>
 
         <div className="xt-overlay" data-xt-duration="500">
-          <div className="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">

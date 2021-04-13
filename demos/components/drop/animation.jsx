@@ -11,7 +11,7 @@ export default function component() {
           </button>
 
           <div className="xt-drop p-4 group" data-xt-duration="500">
-            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white transform transition ease-out duration-500 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
+            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white transform transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
               <nav className="xt-list flex-col">
                 <a
                   href="#"
@@ -41,7 +41,7 @@ export default function component() {
           </button>
 
           <div className="xt-drop p-4 group" data-xt-duration="500">
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white transform transition ease-out duration-500 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
+            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white transform transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"

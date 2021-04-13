@@ -3,18 +3,18 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const cardWhite = () => 'text-black xt-links-default'
 
 const interactionDefault = () =>
-  'text-black bg-gray-200 border-transparent transform ease-out-quint duration-500 border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0 on:bg-gray-400 on:translate-y-0'
+  'text-black bg-gray-200 border-transparent transform border hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0 on:bg-gray-400 on:translate-y-0 transition'
 const interactionPrimary = () =>
-  'text-white bg-primary-500 border-transparent transform ease-out-quint duration-500 border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0 on:bg-primary-700 on:translate-y-0'
+  'text-white bg-primary-500 border-transparent transform border hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0 on:bg-primary-700 on:translate-y-0 transition'
 const buttonDefault = () =>
   `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm`
 const buttonPrimary = () =>
   `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm`
 
 const animDesign = () =>
-  'transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:ease-out-quint group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint'
+  'transform opacity-0 scale-50 group-in:transition group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint'
 const animItem = () =>
-  'transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+  'transform opacity-0 translate-y-2 group-in:transition group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItemOpacity = () =>
   'transition-opacity ease-in-out-quint duration-300 opacity-0 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
@@ -29,14 +29,14 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform ease-out-quint duration-500 hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} rounded-md xt-link transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Link
       </button>
@@ -159,9 +159,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -187,9 +185,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-design bg-white ${animDesign()}"></div>
@@ -240,9 +236,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
@@ -362,9 +356,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>

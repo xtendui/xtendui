@@ -11,9 +11,9 @@ export default function component() {
           </button>
 
           <div className="xt-overlay group" data-xt-duration="500">
-            <div className="xt-backdrop bg-black pointer-events-none  transition ease-out duration-500 opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-              <div className="xt-overlay-inner transform transition ease-out duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
+              <div className="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
                 <div className="xt-card xt-min-h-screen shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"

@@ -11,8 +11,8 @@ export default function component() {
 
         <div className="xt-tooltip p-2 group" data-xt-duration="300">
           <div className="xt-tooltip-inner">
-            <div className="xt-design rounded-md shadow-tooltip bg-black transform transition ease-out duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"></div>
-            <div className="relative text-xs py-2 px-3.5 font-semibold text-white xt-links-inverse transition ease-out duration-300 opacity-0 group-in:opacity-100">
+            <div className="xt-design rounded-md shadow-tooltip bg-black transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"></div>
+            <div className="relative text-xs py-2 px-3.5 font-semibold text-white xt-links-inverse transition duration-300 opacity-0 group-in:opacity-100">
               Lorem ipsum dolor sit amet
             </div>
           </div>

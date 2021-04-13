@@ -1,14 +1,14 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const listCollapse = () => 'w-0 overflow-hidden transform ease-out-quint duration-500 -translate-x-4 in:translate-x-0'
+const listCollapse = () => 'w-0 overflow-hidden transform transition-all -translate-x-4 in:translate-x-0'
 
 const buttonDefault = () => classes.buttonDefault()
 const buttonPrimary = () => classes.buttonPrimary()
 
 const animDesign = () =>
-  'h-0 overflow-hidden transform -translate-y-4 group-in:transition-all group-in:duration-500 group-in:ease-out-quint group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2'
+  'h-0 overflow-hidden transform -translate-y-4 group-in:transition-all group-in:translate-y-0 group-out:transition-all group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItem = () =>
-  'transform opacity-0 -translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+  'transform opacity-0 -translate-y-2 group-in:transition group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItemOpacity = () =>
   'transition-opacity ease-in-out-quint duration-300 opacity-0 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
@@ -163,9 +163,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -189,9 +187,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner ${animDesign()}" data-xt-duration="500">
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()}">
@@ -234,9 +230,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign()}" data-xt-duration="500">
               <div class="xt-card rounded-md ${classes.cardWhite()}">
@@ -354,9 +348,7 @@ const html = /* HTML */ `
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
 
         <div class="xt-overlay group" data-xt-duration="500">
-          <div
-            class="xt-backdrop bg-black pointer-events-none transition ease-out duration-500 opacity-0 group-in:opacity-25"
-          ></div>
+          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign()}" data-xt-duration="500">
               <div class="xt-card rounded-md ${classes.cardWhite()}">

@@ -2,7 +2,14 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div className="xt-list xt-list-3 items-center" data-xt-toggle>
+      <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ max: 'Infinity' }">
+        <button
+          type="button"
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          data-xt-group="group,group-another">
+          Toggle Group all
+        </button>
+
         <button
           type="button"
           className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
@@ -32,7 +39,7 @@ export default function component() {
         <button
           type="button"
           className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
-          data-xt-group="another-group">
+          data-xt-group="group-another">
           Toggle Group another
         </button>
 
@@ -46,12 +53,12 @@ export default function component() {
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="another-group">
+          data-xt-group="group-another">
           Target Group another
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 on"
           data-xt-group="group">
           Target Group
         </div>
@@ -59,8 +66,8 @@ export default function component() {
         <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 3</div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 on"
-          data-xt-group="another-group">
+          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          data-xt-group="group-another">
           Target Group another
         </div>
       </div>
