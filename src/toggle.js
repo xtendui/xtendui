@@ -1067,7 +1067,6 @@ class Toggle {
    */
   getElements(el = null) {
     const self = this
-    const options = self.options
     // getElements
     if (!self.elements || !self.elements.length) {
       return []
@@ -1114,7 +1113,6 @@ class Toggle {
    */
   getTargets(el = null) {
     const self = this
-    const options = self.options
     // getTargets
     if (!self.targets || !self.targets.length) {
       return []

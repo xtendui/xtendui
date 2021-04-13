@@ -3,11 +3,19 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--toggle-animation-multiple-delay">
     <div class="xt-list xt-list-3 items-center">
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}" data-xt-group="0">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        data-xt-group="0"
+      >
         Toggle 0
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}" data-xt-group="1">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        data-xt-group="1"
+      >
         Toggle 1
       </button>
 
