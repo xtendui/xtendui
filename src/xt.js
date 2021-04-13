@@ -962,18 +962,18 @@ if (typeof window !== 'undefined') {
    * @param {String} query Query for querySelectorAll
    * @return {Array}
    */
-  Xt.queryAll = (element, query) => {
+  Xt.queryAll = (elements, query) => {
     // not when no query or empty array
-    if (!query || element.length === 0) {
+    if (!query || elements.length === 0) {
       return []
     }
-    if (!element.length) {
+    if (!elements.length) {
       // search element
-      return Xt.arrSingle(element.querySelectorAll(query))
+      return Xt.arrSingle(elements.querySelectorAll(query))
     } else {
       // search array
       const arr = []
-      for (const el of element) {
+      for (const el of elements) {
         arr.push(...el.querySelectorAll(query))
       }
       return arr

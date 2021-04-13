@@ -25,7 +25,10 @@ You can customize the **class names** used by the component.
 
 </div>
 
-You can set initial activation by adding `on` to the **elements** or **targets**.
+You can set initial activation by adding `on` to the **elements** or **targets**. It respects `min` and `max` settings.
+
+[[notePrimary]]
+| If initial activation is on a **target with multiple groups** it activates elements with **at least one of the groups** and in order of DOM elements.
 
 <demo>
   <demoinline src="demos/components/toggle/class">

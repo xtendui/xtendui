@@ -1030,12 +1030,44 @@ class Toggle {
   }
 
   /**
+   * filter elements or targets array with groups array
+   * @param {Array} arr Elements or Targets
+   * @param {String} attr Groups attribute
+   * @param {Boolean} some Filter also if some in Groups attribute
+   * @return {Array} Filtered array
+   */
+  groupFilter(elements, attr, some = false) {
+    const self = this
+    const options = self.options
+    // logic
+    const found = []
+    for (const el of elements) {
+      const currentAttr = el.getAttribute('data-xt-group')
+      // if same attr
+      if (currentAttr === attr) {
+        found.push(el)
+        continue
+      }
+      // if some in attr
+      if (some) {
+        const groups = attr?.split(options.groupSeparator).filter(x => x)
+        const currentGroups = currentAttr?.split(options.groupSeparator).filter(x => x)
+        if (currentGroups && groups && currentGroups.some(x => groups.includes(x))) {
+          found.push(el)
+        }
+      }
+    }
+    return found
+  }
+
+  /**
    * get elements from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @return {Array} The first element is the one on getElementsGroups()
    */
   getElements(el = null) {
     const self = this
+    const options = self.options
     // getElements
     if (!self.elements || !self.elements.length) {
       return []
@@ -1055,10 +1087,10 @@ class Toggle {
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final
-      const group = el.getAttribute('data-xt-group')
-      const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
-      if (group) {
+      const attr = el.getAttribute('data-xt-group')
+      const groupElements = self.groupFilter(self.elements, attr)
+      const groupTargets = self.groupFilter(self.targets, attr)
+      if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupElements)
       } else {
@@ -1082,6 +1114,7 @@ class Toggle {
    */
   getTargets(el = null) {
     const self = this
+    const options = self.options
     // getTargets
     if (!self.targets || !self.targets.length) {
       return []
@@ -1093,10 +1126,10 @@ class Toggle {
     } else if (self.mode === 'multiple') {
       // choose only target by group
       let final
-      const group = el.getAttribute('data-xt-group')
-      const groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      const groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group)
-      if (group) {
+      const attr = el.getAttribute('data-xt-group')
+      const groupElements = self.groupFilter(self.elements, attr, true)
+      const groupTargets = self.groupFilter(self.targets, attr, true)
+      if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupTargets)
       } else {
@@ -3235,6 +3268,7 @@ Toggle.optionsDefaultSuper = {
   classBefore: 'dir-before',
   classAfter: 'dir-after',
   classSkip: false,
+  groupSeparator: ',',
   groupElements: false,
   // quantity
   min: 0,

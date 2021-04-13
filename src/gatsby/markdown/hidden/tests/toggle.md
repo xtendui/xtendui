@@ -24,7 +24,7 @@ Test overlay no close clicking inside with eventLimit.
   </demoinline>
 </demo>
 
-Test activation and group.
+Test activation and group activation.
 
 <demo>
   <demoinline src="demos/components/toggle/usage-unique">
@@ -37,6 +37,17 @@ Test activation and group.
   </demoinline>
 </demo>
 
+Test initial group activation.
+
+Test initial custom activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/class">
+  </demoinline>
+  <demoinline src="demos/components/toggle/class-custom">
+  </demoinline>
+</demo>
+
 Test activation.
 
 <demo>
@@ -45,15 +56,6 @@ Test activation.
   <demoinline src="demos/components/tooltip/swap-toggle">
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-fast">
-  </demoinline>
-</demo>
-
-## Class
-
-Test initial activation.
-
-<demo>
-  <demoinline src="demos/components/toggle/class">
   </demoinline>
 </demo>
 

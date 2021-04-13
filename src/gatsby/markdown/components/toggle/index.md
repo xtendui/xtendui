@@ -40,6 +40,11 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
 [[notePrimary]]
 | Only when you specify **elements or targets with id** the query is **inside document not only inside object**.
 
+<demo>
+  <demoinline src="demos/components/toggle/usage-unique">
+  </demoinline>
+</demo>
+
 You can group elements activation with the option `groupElements: true`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -51,8 +56,6 @@ You can group elements activation with the option `groupElements: true`.
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/usage-unique">
-  </demoinline>
   <demoinline src="demos/components/toggle/usage-unique-groupelements">
   </demoinline>
 </demo>
@@ -74,7 +77,33 @@ Use this code to create a **toggle** in **multiple mode**.
 
 </div>
 
+<demo>
+  <demoinline src="demos/components/toggle/usage-multiple">
+  </demoinline>
+</demo>
+
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="group,group-another"`   |  Group or multiple groups on elements and targets            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/usage-multiple-group">
+  </demoinline>
+</demo>
 
 You can group elements activation with the option `groupElements: true`.
 
@@ -87,10 +116,6 @@ You can group elements activation with the option `groupElements: true`.
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/usage-multiple">
-  </demoinline>
-  <demoinline src="demos/components/toggle/usage-multiple-group">
-  </demoinline>
   <demoinline src="demos/components/toggle/usage-multiple-groupelements">
   </demoinline>
 </demo>

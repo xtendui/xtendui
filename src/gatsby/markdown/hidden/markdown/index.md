@@ -73,6 +73,15 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | ----------------------- | ---------------------------- | ----------------------------- |
 | Class                  | `.dir-before`       |  Class name for before direction activation            |
 | Class                  | `.dir-after`       |  Class name for after direction activation            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="group,group-another"`   |  Group or multiple groups on elements and targets            |
+
 </div>
 
 [[notePrimary]]
