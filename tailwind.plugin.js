@@ -209,6 +209,12 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
+    addVariant('group-active', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group:active .${e(`group-active${separator}${className}`)}`
+      })
+    })
+
     addVariant('on', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`on${separator}${className}`)}.on`

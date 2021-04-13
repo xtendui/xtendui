@@ -36,6 +36,6 @@ For [all tailwind variants with hover already](https://github.com/tailwindlabs/t
 
 - added variants to style activation classes: `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`
 
-- activated `active:` variant.
+- activated `active:` variant and added `group-active:` variant.
 
 - activated `hover:` and `group-hover:` variant if not already present.

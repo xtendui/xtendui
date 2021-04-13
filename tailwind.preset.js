@@ -90,7 +90,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -104,7 +112,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -118,7 +134,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -132,7 +156,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -146,7 +178,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -160,7 +200,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -174,7 +222,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -188,7 +244,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -202,7 +266,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -216,7 +288,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -230,7 +310,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -244,7 +332,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -258,7 +354,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -272,7 +376,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -286,7 +398,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -300,7 +420,15 @@ module.exports = {
           after(
             ['group-in'],
             'hover',
-            after(['in'], 'hover', after(['group-out'], 'hover', after(['out'], 'hover', after(['active'], 'hover'))))
+            after(
+              ['in'],
+              'hover',
+              after(
+                ['group-out'],
+                'hover',
+                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+              )
+            )
           )
         )
       ),
@@ -323,7 +451,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )
@@ -349,7 +481,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )
@@ -375,7 +511,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )
@@ -401,7 +541,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )
@@ -427,7 +571,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )
@@ -453,7 +601,11 @@ module.exports = {
                 after(
                   ['out'],
                   'hover',
-                  after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  after(
+                    ['group-active'],
+                    'hover',
+                    after(['active'], 'hover', before(['group-hover'], 'hover', after(['hover'], 'responsive')))
+                  )
                 )
               )
             )

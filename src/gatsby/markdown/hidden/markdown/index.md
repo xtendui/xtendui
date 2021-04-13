@@ -31,7 +31,7 @@ See [link if scrolls right](/components/slider/other#media-loaded).
 
 You can set activation styles by adding the class `.on`.
 
-Use **tailwind variants** `active:`, `on:`, `group-on:` to assign animations.
+Use **tailwind variants** `active:`, `group-active:`, `on:`, `group-on:` to assign animations.
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
