@@ -11,6 +11,8 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+  // instant animations
+  document.querySelector('body').classList.remove('xt-ready')
   // keepSidebarScroll
   if (overlay && sidebar) {
     window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
@@ -37,6 +39,10 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+  // instant animations
+  requestAnimationFrame(() => {
+    document.querySelector('body').classList.add('xt-ready')
+  })
   // keepSidebarScroll
   if (overlay && sidebar) {
     // overlayOpen
