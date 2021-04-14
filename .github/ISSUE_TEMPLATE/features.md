@@ -1,7 +1,7 @@
 ---
-name: Themes 📝
-about: Themes suggestions
-labels: "type: theme"
+name: Features 📝
+about: Features suggestions
+labels: "type: feature"
 ---
 
 ## Suggestion
