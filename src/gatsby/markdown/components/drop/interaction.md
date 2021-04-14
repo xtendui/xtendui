@@ -37,7 +37,9 @@ You can link the activation in the url hash, hash activation has precedence over
 
 ## Event
 
-You can specify **on** and **off** events for the drop. Fore example `on: 'mouseenter'` `off: 'mouseleave'`.
+See [toggle event](/components/toggle/interaction#event) for more informations.
+
+You can specify **on** and **off** events for the interactions.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -62,7 +64,7 @@ You can specify **on** and **off** events for the drop. Fore example `on: 'mouse
   </demoinline>
 </demo>
 
-You can have **element's link** and **click events** prevented when the drop opens with `preventEvent: true`, they will trigger only if the drop is already opened.
+You can have **links on elements on activation** with `preventEvent: true`, `on` event will be prevented if not already activated.
 
 <demo>
   <demoinline src="demos/components/drop/prevent-event">

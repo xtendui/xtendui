@@ -42,6 +42,12 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
   </div>
 </demo>
 
+## Event
+
+See [toggle event](/components/toggle/interaction#event) for more informations.
+
+You can specify **on** and **off** events for the interactions.
+
 ## Pagination	
 
 Inside `[data-xt-pag].hidden` you can use this strings that gets populated with variables:	
@@ -96,29 +102,6 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
 
 </div>	
-
-#### Overflow	
-
-@TODO	
-
-You can set overflow with `drag: { overflow: Function }`, for example `(overflow) => {return Math.pow(overflow, 0.73)}`.	
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.overflow:Function|false`                          | `<function>`        | Function for drag overflow             |	
-
-</div>	
-
-## Wheel	
-
-Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mousewheel navigation.	
-
-<demo>	
-  <demoinline src="demos/components/slider/wheel">	
-  </demoinline>	
-</demo>	
 
 ## Auto	
 

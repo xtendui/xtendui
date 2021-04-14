@@ -52,7 +52,9 @@ Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
 
 ## Event
 
-You can specify **on** and **off** events for the overlay.
+See [toggle event](/components/toggle/interaction#event) for more informations.
+
+You can specify **on** and **off** events for the interactions.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

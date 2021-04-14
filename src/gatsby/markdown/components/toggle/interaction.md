@@ -103,9 +103,7 @@ You can specify **on** and **off** events for the toggle.
   </demoinline>
 </demo>
 
-You can have **element's link** and **other events** that trigger after toggle with `preventEvent: true`.
-
-If the toggle is on `"on": "mouseenter"` or `"on": "mousehover"` the link gets activated on the second touch event on touch devices.
+You can have **links on elements on activation** with `preventEvent: true`, `on` event will be prevented if not already activated.
 
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">
