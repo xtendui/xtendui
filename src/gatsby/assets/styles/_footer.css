@@ -3,7 +3,7 @@
  */
 
 .gatsby_site-footer_inner {
-  @apply py-8;
+  @apply py-4 lg:py-8;
 }
 
 .gatsby_site-footer_bottom {

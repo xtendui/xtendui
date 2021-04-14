@@ -15,11 +15,15 @@ export default function Footer() {
   `)
   return (
     <div className="gatsby_site-footer_bottom">
-      <div className="xt-row xt-row-4 gatsby_site-footer_bottom_row">
+      <div className="xt-row gatsby_site-footer_bottom_row">
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version} licensed{' '}
           <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" target="_blank" rel="noopener noreferrer">
             MIT
+          </a>{' '}
+          Docs licensed{' '}
+          <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS" target="_blank" rel="noopener noreferrer">
+            CC BY 3.0
           </a>
         </div>
         <div>

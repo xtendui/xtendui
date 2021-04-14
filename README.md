@@ -65,4 +65,4 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 
 ## Copyright
 
-Licensed under [MIT license](https://github.com/minimit/xtendui/blob/beta/LICENSE).
+Code and documentation copyright 2017 - 2021 Riccardo Caroli. Code released under the [MIT license](https://github.com/minimit/xtendui/blob/beta/LICENSE). Docs released under [CC BY 3.0](https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS).
