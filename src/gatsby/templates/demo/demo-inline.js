@@ -30,7 +30,10 @@ export default class DemoInline extends React.Component {
       <div ref={this.ref} className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
         {mode === 'react' ? (
           <div>
-            <div className="gatsby_demo_source gatsby_demo_source--from">
+            <div
+              className={`gatsby_demo_source gatsby_demo_source--from ${
+                object.overflow ? 'gatsby_demo_source--overflow' : ''
+              }`}>
               <Demo />
             </div>
             <script
@@ -44,7 +47,11 @@ export default class DemoInline extends React.Component {
         ) : (
           <div>
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
-            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
+            <div
+              className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate ${
+                object.overflow ? 'gatsby_demo_source--overflow' : ''
+              }`}
+            />
             <div className="gatsby_demo_source xt-ignore" data-lang="css" data-fetch={`/${src}.css`} />
             <div className="gatsby_demo_source xt-ignore" data-lang="js" data-fetch={`/${src}.js`} />
           </div>

@@ -33,6 +33,11 @@
   }
 }
 
+.gatsby_demo_source--overflow {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
 /**
  * code
  */
