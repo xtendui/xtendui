@@ -6,6 +6,10 @@ labels: "type: bug"
 
 <!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
 
+## Versions
+
+<!-- XtenduUI version, browser, browser version, operating system -->
+
 ## Describe the bug
 
 <!-- What happends? describe the steps to reproduce the bug and how it should behave instead -->
