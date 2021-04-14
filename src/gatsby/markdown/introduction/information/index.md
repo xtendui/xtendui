@@ -1,9 +1,9 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Information"
-title: "Information"
-description: "Project informations readme."
+parent: "Informations"
+title: "Informations"
+description: "General project informations and browsers support."
 date: "2050-09-10"
 ---
 

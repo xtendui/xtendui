@@ -1,10 +1,9 @@
 ---
-type: "Introduction"
-category: "Getting Started"
+type: "Components"
+category: "Global"
 parent: "Javascript"
 title: "Javascript"
 description: "Javascript utilities and animations usability improvements."
-date: "2020-08-05"
 ---
 
 ## Styles

@@ -1,8 +1,8 @@
 ---
 type: "Introduction"
 category: "Getting Started"
-parent: "Preset"
-title: "Preset"
+parent: "Tailwind Preset"
+title: "Tailwind Preset"
 description: "Xtend UI preset with default theme that extends Tailwind default theme."
 date: "2020-10-05"
 ---
