@@ -60,11 +60,11 @@ class Googlelocator {
     self.map = new google.maps.Map(self.mapElement, options.map)
     self.searchInput = self.object.querySelector(options.elements.searchInput)
     self.search = new google.maps.places.Autocomplete(self.searchInput)
-    let searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
+    const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
     self.searchBtn = self.object.querySelector(options.elements.searchBtn)
-    let submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.searchClick.bind(self))
+    const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.searchClick.bind(self))
     self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
     if (options.map.zoomMin) {
@@ -141,7 +141,7 @@ class Googlelocator {
     if (options.elements.repeatBtn) {
       self.repeatElement = self.object.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
-        let repeatHandler = Xt.dataStorage.put(
+        const repeatHandler = Xt.dataStorage.put(
           self.repeatElement,
           `click/${self.ns}`,
           self.submitCurrent.bind(self).bind(self, false)
@@ -166,7 +166,7 @@ class Googlelocator {
             if (options.initialLocate) {
               self.locate(true)
             }
-            let locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.locate.bind(self))
+            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.locate.bind(self))
             self.locateElement.addEventListener('click', locateHandler)
           } else {
             self.locateElement.style.display = 'none'
@@ -557,16 +557,16 @@ class Googlelocator {
   destroy() {
     const self = this
     // events
-    let searchHandler = Xt.dataStorage.get(self.searchInput, `keypress/${self.ns}`)
+    const searchHandler = Xt.dataStorage.get(self.searchInput, `keypress/${self.ns}`)
     self.searchInput.removeEventListener('keypress', searchHandler)
-    let submitHandler = Xt.dataStorage.get(self.searchBtn, `click/${self.ns}`)
+    const submitHandler = Xt.dataStorage.get(self.searchBtn, `click/${self.ns}`)
     self.searchBtn.removeEventListener('click', submitHandler)
     if (self.locateElement) {
-      let locateHandler = Xt.dataStorage.get(self.locateElement, `click/${self.ns}`)
+      const locateHandler = Xt.dataStorage.get(self.locateElement, `click/${self.ns}`)
       self.locateElement.removeEventListener('click', locateHandler)
     }
     if (self.repeatElement) {
-      let repeatHandler = Xt.dataStorage.get(self.repeatElement, `click/${self.ns}`)
+      const repeatHandler = Xt.dataStorage.get(self.repeatElement, `click/${self.ns}`)
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
     // populate

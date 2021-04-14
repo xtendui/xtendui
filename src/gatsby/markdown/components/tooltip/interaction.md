@@ -6,9 +6,24 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
+## Quantity
+
+See [toggle quantity](/components/toggle/interaction#quantity) for more informations.
+
+You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
+| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+
+</div>
+
 ## Class
 
-You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
+See [toggle class](/components/toggle/interaction#class) for more informations.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -21,6 +36,12 @@ You can customize the **class names** used by the component. Refer to [toggle cl
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
+
+## Hash
+
+See [toggle hash](/components/toggle/interaction#hash) for more informations.
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
 
 ## Event
 

@@ -54,12 +54,12 @@ class Groupnumber {
     // steps
     for (const step of self.steps) {
       const qty = parseFloat(step.getAttribute('data-xt-step'))
-      let stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.eventChange.bind(self, qty))
+      const stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.eventChange.bind(self, qty))
       step.addEventListener('click', stepHandler)
     }
     // inputs
     for (const input of self.inputs) {
-      let inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, 0))
+      const inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, 0))
       input.addEventListener('change', inputHandler)
     }
     // initial
@@ -145,11 +145,11 @@ class Groupnumber {
     const self = this
     // remove events
     for (const step of self.steps) {
-      let stepHandler = Xt.dataStorage.get(step, `change/${self.ns}`)
+      const stepHandler = Xt.dataStorage.get(step, `change/${self.ns}`)
       step.removeEventListener('click', stepHandler)
     }
     for (const input of self.inputs) {
-      let inputHandler = Xt.dataStorage.get(input, `change/${self.ns}`)
+      const inputHandler = Xt.dataStorage.get(input, `change/${self.ns}`)
       input.removeEventListener('change', inputHandler)
     }
     // initialized class

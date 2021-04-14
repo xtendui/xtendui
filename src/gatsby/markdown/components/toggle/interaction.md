@@ -6,39 +6,6 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
-## Class
-
-You can customize the **class names** used by the component.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `on`        | Class name for active            |
-| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
-| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
-| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
-| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
-| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
-| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
-| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
-
-</div>
-
-You can set initial activation by adding `on` to the **elements** or **targets**. It respects `min` and `max` settings.
-
-[[notePrimary]]
-| If initial activation is on a **target with multiple groups** it activates elements with **at least one of the groups** and in order of DOM elements.
-
-<demo>
-  <demoinline src="demos/components/toggle/class">
-  </demoinline>
-  <demoinline src="demos/components/toggle/class-custom">
-  </demoinline>
-</demo>
-
-Additionally on component initialization the class `.xt-toggle-init` gets added to the **object**.
-
 ## Quantity
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
@@ -58,6 +25,58 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 <demo>
   <demoinline src="demos/components/toggle/quantity">
   </demoinline>
+</demo>
+
+## Class
+
+You can customize the **class names** used by the component.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `on`        | Class name for active            |
+| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
+| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
+| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
+| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
+
+</div>
+
+You can set initial activation by adding `on` to the **elements** or **targets**, class activation has precedence over automatic activation of `min` and `max`.
+
+[[notePrimary]]
+| If initial activation is on a **target with multiple groups** it activates elements with **at least one of the groups** and in DOM order.
+
+<demo>
+  <demoinline src="demos/components/toggle/class">
+  </demoinline>
+  <demoinline src="demos/components/toggle/class-custom">
+  </demoinline>
+</demo>
+
+## Hash
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:String`                          | `false`        | String with attribute name to test for hash            |
+
+</div>
+
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash).
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/toggle/hash">
+  </div>
 </demo>
 
 ## Event

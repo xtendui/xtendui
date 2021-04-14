@@ -191,21 +191,8 @@ class Toggle {
     self.currentIndex = null
     self.oldIndex = null
     Xt.running[self.ns] = []
-    // check elements
-    for (const element of self.elements) {
-      // reset
-      const found = self.initCheck(element, saveCurrents)
-      if (found && currents < options.max) {
-        // initial
-        currents++
-        // keep the same level of raf as others
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            self.eventOn(element, true)
-          })
-        })
-      }
-    }
+    // check initial activation
+    currents = self.initActivate(saveCurrents)
     // if currents < min
     let todo = options.min - currents
     let start = 0
@@ -244,33 +231,34 @@ class Toggle {
   }
 
   /**
-   * init check element activation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to check
+   * init activate
    * @param {Boolean} saveCurrents
-   * @return {Boolean} if element was activated
+   * @return {Number} currents count
    */
-  initCheck(el, saveCurrents = false) {
+  initActivate(saveCurrents = false) {
     const self = this
     const options = self.options
     // check
-    const check = elCheck => {
+    const checkClass = el => {
       for (const c of self.classes) {
-        if (elCheck.classList.contains(c)) {
+        if (el.classList.contains(c)) {
           return true
         }
       }
       return false
     }
-    // logic
-    let activated = false
-    // check if activated
-    if (saveCurrents) {
-      activated = check(el)
-    } else if (self.initialCurrents.includes(el)) {
-      activated = true
-    }
-    // remove classes !saveCurrents needed to not flickr on initialization
-    if (!saveCurrents) {
+    // check hash
+    let currents = self.hashChange(saveCurrents)
+    // check class
+    for (const el of self.elements) {
+      let activated = false
+      // check if activated
+      if (saveCurrents) {
+        activated = checkClass(el)
+      } else if (self.initialCurrents.includes(el)) {
+        activated = true
+      }
+      // remove classes !saveCurrents needed to not flickr on initialization
       el.classList.remove(
         ...self.classes,
         ...self.classesIn,
@@ -292,18 +280,14 @@ class Toggle {
           ...self.classesAfter
         )
       }
-    }
-    // check targets
-    const targets = self.getTargets(el)
-    for (const tr of targets) {
-      // check if activated
-      if (!activated) {
-        if (saveCurrents) {
-          activated = check(tr)
+      // check targets
+      const targets = self.getTargets(el)
+      for (const tr of targets) {
+        // check if activated
+        if (saveCurrents && !activated) {
+          activated = checkClass(tr)
         }
-      }
-      // remove classes !saveCurrents needed to not flickr on initialization
-      if (!saveCurrents) {
+        // remove classes !saveCurrents needed to not flickr on initialization
         tr.classList.remove(
           ...self.classes,
           ...self.classesIn,
@@ -326,8 +310,21 @@ class Toggle {
           )
         }
       }
+      // activate
+      if (activated && currents < options.max) {
+        // initial
+        currents++
+        // keep the same level of raf as others
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const event = options.on.split(' ')[0]
+            el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+          })
+        })
+      }
     }
-    return activated
+    // return
+    return currents
   }
 
   /**
@@ -584,6 +581,16 @@ class Toggle {
         }
       }
     }
+    // hash
+    if (options.hash) {
+      // hash
+      const hashHandler = Xt.dataStorage.put(
+        window,
+        `hashchange/${self.ns}`,
+        self.hashChange.bind(self).bind(self, true, null)
+      )
+      addEventListener('hashchange', hashHandler)
+    }
     // jump
     if (options.jump) {
       for (const jump of self.targets) {
@@ -726,6 +733,7 @@ class Toggle {
   eventOnHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
+    force = force ? force : e?.detail?.force
     // fix groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
@@ -739,7 +747,7 @@ class Toggle {
         }
       }
     }
-    self.eventOn(el, false, e)
+    self.eventOn(el, force, e)
   }
 
   /**
@@ -751,6 +759,7 @@ class Toggle {
   eventOffHandler({ element, force = false }, e) {
     const self = this
     const options = self.options
+    force = force ? force : e?.detail?.force
     // fix groupElements and targets
     const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
     // handler
@@ -764,7 +773,7 @@ class Toggle {
         }
       }
     }
-    self.eventOff(el, false, e)
+    self.eventOff(el, force, e)
   }
 
   /**
@@ -833,6 +842,72 @@ class Toggle {
     self.eventPreventeventEndHandler({ element })
     Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
     Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
+  }
+
+  /**
+   * hash change
+   * @param {Boolean} saveCurrents
+   * @return {Number} currents count
+   */
+  hashChange(saveCurrents) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // logic
+    let currents = 0
+    if (options.hash) {
+      if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
+        const hash = decodeURI(location.hash.split('#')[1])
+        if (hash) {
+          // check
+          const checkHash = (el, hash) => {
+            if (el.getAttribute(options.hash) === hash) {
+              return true
+            }
+            return false
+          }
+          // check hash
+          for (const el of self.elements) {
+            let activated = false
+            // check if activated
+            if (saveCurrents) {
+              activated = checkHash(el, hash)
+            }
+            // check targets
+            const targets = self.getTargets(el)
+            for (const tr of targets) {
+              // check if activated
+              if (saveCurrents && !activated) {
+                activated = checkHash(tr, hash)
+              }
+            }
+            // activate
+            if (activated && currents < options.max) {
+              // initial
+              currents++
+              // keep the same level of raf as others
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  const event = options.on.split(' ')[0]
+                  el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+                })
+              })
+            }
+          }
+        }
+      }
+      // keep the same level of raf as others
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
+        })
+      })
+    }
+    // return
+    return currents
   }
 
   /**
@@ -1310,6 +1385,16 @@ class Toggle {
       if (self.initial) {
         el.classList.add(...self.classesInitial)
       }
+      // input
+      el.checked = true
+      // hash
+      if (options.hash) {
+        const attr = el.getAttribute(options.hash)
+        if (attr) {
+          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+          location.hash = `#${encodeURIComponent(attr)}`
+        }
+      }
       // keep the same level of raf as others
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       Xt.dataStorage.put(
@@ -1359,6 +1444,9 @@ class Toggle {
       el.classList.add(...self.classesOut)
       el.classList.remove(...self.classesDone)
       el.classList.remove(...self.classesIn)
+      // input
+      el.checked = false
+      // keep the same level of raf as others
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -3266,6 +3354,7 @@ Toggle.optionsDefaultSuper = {
   classBefore: 'dir-before',
   classAfter: 'dir-after',
   classSkip: false,
+  hash: false,
   groupSeparator: ',',
   groupElements: false,
   // quantity

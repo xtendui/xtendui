@@ -20,8 +20,7 @@ Use this code to create a **infinite scroll**.
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 
-[[noteDefault]]
-| Check advanced feature [open this demo on a new page](/demos/components/listing/infinitescroll). You can see on page refresh and browser navigation that **the page is retained**.
+Try the demo [on a new page](/demos/components/listing/infinitescroll).
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll">

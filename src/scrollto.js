@@ -50,17 +50,17 @@ class Scrollto {
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
     // scrollto
-    let scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
+    const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
     addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
     // change
-    let changeHandler = Xt.dataStorage.put(
+    const changeHandler = Xt.dataStorage.put(
       self.object,
       `click/${self.ns}`,
       self.eventChange.bind(self).bind(self, false, null)
     )
     self.object.addEventListener('click', changeHandler)
     // hash
-    let hashHandler = Xt.dataStorage.put(
+    const hashHandler = Xt.dataStorage.put(
       window,
       `hashchange/${self.ns}`,
       self.eventChange.bind(self).bind(self, true, null)
@@ -70,7 +70,7 @@ class Scrollto {
     self.scrolls = [document.scrollingElement, ...document.querySelectorAll(options.scrolls)].reverse()
     for (const scroll of self.scrolls) {
       if (scroll) {
-        let scrollHandler = Xt.dataStorage.put(
+        const scrollHandler = Xt.dataStorage.put(
           scroll,
           `scroll/${self.ns}`,
           self.eventScrollactivationHandler.bind(self).bind(self, scroll)
@@ -320,9 +320,9 @@ class Scrollto {
   destroy() {
     const self = this
     // remove events
-    let changeHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
+    const changeHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
     self.object.removeEventListener('click', changeHandler)
-    let hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
+    const hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
     for (const scroll of self.scrolls) {
       if (scroll) {

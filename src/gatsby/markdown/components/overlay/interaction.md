@@ -6,13 +6,49 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
+## Quantity
+
+See [toggle quantity](/components/toggle/interaction#quantity) for more informations.
+
+You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
+| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+
+</div>
+
 ## Class
 
-You can customize the **class names** used by the component. Refer to [toggle class](/components/toggle/interaction#class).
+See [toggle class](/components/toggle/interaction#class) for more informations.
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
 Additionally on component initialization the class `.xt-overlay-init` gets added to the **object**.
+
+## Hash
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:String`                          | `'data-xt-hash'`        | String with attribute name to test for hash            |
+
+</div>
+
+Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/hash">
+  </div>
+</demo>
 
 ## Event
 

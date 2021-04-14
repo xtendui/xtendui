@@ -59,6 +59,20 @@ Test activation.
   </demoinline>
 </demo>
 
+## Hash
+
+Test initial hash activation.
+
+Test hash activation.
+
+Test browser location prev e next.
+
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-2).
+
+Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+
+Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
+
 ## Event
 
 Test toggle mouse should not close when clicking opened elements.

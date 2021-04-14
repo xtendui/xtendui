@@ -52,7 +52,7 @@ class Ripple {
       self.container = self.object.querySelector(':scope > .xt-ripple-container')
     }
     // on
-    let onHandler = Xt.dataStorage.put(self.object, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
+    const onHandler = Xt.dataStorage.put(self.object, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
     self.object.addEventListener('mousedown', onHandler)
     self.object.addEventListener('touchstart', onHandler, { passive: true })
     // initialized class
@@ -118,7 +118,7 @@ class Ripple {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       // off
-      let endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.eventEnd.bind(self))
+      const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.eventEnd.bind(self))
       addEventListener('mouseup', endHandler)
       addEventListener('touchend', endHandler, { passive: true })
     }
@@ -130,7 +130,7 @@ class Ripple {
   eventEnd() {
     const self = this
     // off
-    let endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
+    const endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
     // listener dispatch
@@ -159,11 +159,11 @@ class Ripple {
     self.object.querySelector(':scope > .xt-ripple-container').remove()
     // remove events
     // on
-    let onHandler = Xt.dataStorage.get(self.object, `mousedown touchstart/${self.ns}`)
+    const onHandler = Xt.dataStorage.get(self.object, `mousedown touchstart/${self.ns}`)
     self.object.removeEventListener('mousedown', onHandler)
     self.object.removeEventListener('touchstart', onHandler, { passive: true })
     // off
-    let endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
+    const endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
     // initialized class

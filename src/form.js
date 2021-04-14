@@ -23,18 +23,17 @@ Xt.mount({
       }
     }
 
-    const change = ({ initial = false }) => {
-      if (!initial && inputs.length) {
-        for (const input of inputs) {
-          toggle(input)
-        }
-      } else {
-        toggle(ref)
+    const change = () => {
+      for (const input of inputs) {
+        toggle(input)
       }
     }
 
-    ref.addEventListener('change', change.bind(null, { initial: false }))
-    change({ initial: true })
+    ref.addEventListener('change', change)
+
+    if (ref.checked) {
+      change()
+    }
   },
 })
 

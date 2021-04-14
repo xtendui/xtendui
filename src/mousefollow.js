@@ -52,11 +52,11 @@ class Mousefollow {
     // targets
     self.targets = self.object.querySelectorAll(options.targets)
     // events
-    let moveHandler = Xt.dataStorage.put(self.object, `mousemove/${self.ns}`, self.mousemove.bind(self))
+    const moveHandler = Xt.dataStorage.put(self.object, `mousemove/${self.ns}`, self.mousemove.bind(self))
     self.object.addEventListener('mousemove', moveHandler)
-    let enterHandler = Xt.dataStorage.put(self.object, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
+    const enterHandler = Xt.dataStorage.put(self.object, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
     self.object.addEventListener('mouseenter', enterHandler)
-    let leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
+    const leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
     self.object.addEventListener('mouseleave', leaveHandler)
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -160,11 +160,11 @@ class Mousefollow {
   destroy() {
     const self = this
     // remove events
-    let moveHandler = Xt.dataStorage.get(self.object, `mousemove/${self.ns}`)
+    const moveHandler = Xt.dataStorage.get(self.object, `mousemove/${self.ns}`)
     self.object.removeEventListener('mousemove', moveHandler)
-    let enterHandler = Xt.dataStorage.get(self.object, `mouseenter/${self.ns}`)
+    const enterHandler = Xt.dataStorage.get(self.object, `mouseenter/${self.ns}`)
     self.object.removeEventListener('mouseenter', enterHandler)
-    let leaveHandler = Xt.dataStorage.get(self.object, `mouseleave/${self.ns}`)
+    const leaveHandler = Xt.dataStorage.get(self.object, `mouseleave/${self.ns}`)
     self.object.removeEventListener('mouseleave', leaveHandler)
     // initialized class
     self.object.classList.remove(`${self.componentName}-init`)

@@ -67,10 +67,12 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 </div>
 
-You can pass `e.detail` to the trigger event. For example with this code triggered `on.xt.slider` and `ondone.xt.slider` will have `e.detail.skip = true`.
+You can pass `e.detail` to the trigger event.
+
+With on and off event `e.detail.force = true` will force the activation/deactivation skipping checks.
 
 ```js
-document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider', { detail: { skip: true } }))
+document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.slider', { detail: { force: true } }))
 ```
 
 ## Properties

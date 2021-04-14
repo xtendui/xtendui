@@ -62,11 +62,11 @@ class Infinitescroll {
     self.spaceAdditionals = self.object.querySelectorAll(options.elements.spaceAdditional)
     self.paginations = self.object.querySelectorAll(options.elements.pagination)
     // events
-    let unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnload.bind(self))
+    const unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnload.bind(self))
     addEventListener('unload', unloadHandler)
-    let beforeunloadHandler = Xt.dataStorage.put(window, `beforeunload/${self.ns}`, self.eventBeforeunload.bind(self))
+    const beforeunloadHandler = Xt.dataStorage.put(window, `beforeunload/${self.ns}`, self.eventBeforeunload.bind(self))
     addEventListener('beforeunload', beforeunloadHandler)
-    let scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScroll.bind(self))
+    const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
     // update
     self.setCurrent()
@@ -412,11 +412,11 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // events
-    let unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
+    const unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
     removeEventListener('unload', unloadHandler)
-    let beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
+    const beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
     removeEventListener('beforeunload', beforeunloadHandler)
-    let scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
+    const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
     removeEventListener('scroll', scrollHandler)
     for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
       const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
