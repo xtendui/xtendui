@@ -4,7 +4,7 @@ Ask first before starting work on any significant new features.
 
 ## Pull Request Guidelines
 
-- The master branch is just a snapshot of the latest stable release. All development should be done in dedicated branches. Do not submit PRs against the master branch.
+- The master branch is just a snapshot of the latest stable release. All development should be done in dedicated branches `<version>-dev`. Do not submit PRs against the master branch.
 
 - Checkout a topic branch from the relevant `-dev` branch (e.g.: `1.0-dev`), and merge back against that branch.
 
@@ -14,7 +14,7 @@ Ask first before starting work on any significant new features.
 
 - If fixing bug add issue linking with issue id (e.g.: `(close #xxxx)`).
 
-- Check and fix code formatting with `npm run lint --fix`.
+- Generate and fix code formatting with `npm run generate`.
 
 - Until we have javascript tests don't make complex javascript code changes.
 
