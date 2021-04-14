@@ -1,6 +1,10 @@
 module.exports = {
+  transitionDelay: {
+    0: '0ms',
+  },
   transitionDuration: {
     DEFAULT: '500ms',
+    0: '0ms',
   },
   transitionTimingFunction: {
     DEFAULT: 'cubic-bezier(.23,1,.32,1)', // out-quint

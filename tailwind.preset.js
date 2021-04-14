@@ -61,11 +61,9 @@ module.exports = {
         ...require('./src/tooltip.css.js').boxShadow,
       },
       transitionDelay: {
-        0: '0ms',
         ...require('./src/animation.css.js').transitionDelay,
       },
       transitionDuration: {
-        0: '0ms',
         ...require('./src/animation.css.js').transitionDuration,
       },
       transitionTimingFunction: {

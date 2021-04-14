@@ -23,8 +23,6 @@ The following theme values are added with the preset:
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
-* [transition-delay](https://tailwindcss.com/docs/transition-delay) `delay-0` added.
-* [transition-duration](https://tailwindcss.com/docs/transition-duration) `duration-0` added.
 * [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
 * [animations settings](/components/animation) added new settings see animation page.
 
