@@ -85,7 +85,7 @@ pre {
     .gatsby_demo_code_body,
     .gatsby_demo_item:not(.populated-iframe) {
       overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: scroll;
       @apply xt-overflow-main;
     }
     .gatsby_demo_tabs_right {
