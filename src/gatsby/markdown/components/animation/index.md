@@ -22,20 +22,38 @@ Added additional [transition-duration](https://tailwindcss.com/docs/transition-d
 
 Default `transitionDuration` changed to `500ms`, all [transition properties](https://tailwindcss.com/docs/transition-property) now have this duration.
 
+If you want to change the values or **restore tailwind defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
+
+```js
+theme: {
+  extend: {
+    transitionDuration: {
+      DEFAULT: '150ms',
+    },
+  },
+},
+```
+
 ## Timing Function
 
-Default `transitionTimingFunction` changed to `cubic-bezier(.23,1,.32,1)`, all [transition properties](https://tailwindcss.com/docs/transition-property) now have this easing.
+Default `transitionTimingFunction`, `ease-in`, `ease-out`, `ease-in-out` changed, all [transition properties](https://tailwindcss.com/docs/transition-property) now have this easing.
+
+If you want to change the values or **restore tailwind defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
+
+```js
+theme: {
+  extend: {
+    transitionTimingFunction: {
+      DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      in: 'cubic-bezier(0.4, 0, 1, 1)',
+      out: 'cubic-bezier(0, 0, 0.2, 1)',
+      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+    },
+  },
+},
+```
 
 Added additional easing for [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.ease-in`                     | `ease-in`                | Ease in            |
-| Component                  | `.ease-out`                     | `ease-out`                | Ease out            |
-
-</div>
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
