@@ -63,14 +63,12 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 * Use `npm run dev` to serve a develop version
 * Use `npm run serve` to serve a production version
 
-<!--
 ## Sponsors
 
 <a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
   <img src="https://raw.githubusercontent.com/minimit/xtendui/1.0-dev/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
 &nbsp;&nbsp;
--->
 
 ## Copyright and License
 

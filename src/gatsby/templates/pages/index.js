@@ -275,7 +275,6 @@ export default class Page extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/*
                 <div className="gatsby_home-main_supports">
                   <div className="container">
                     <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
@@ -288,8 +287,7 @@ export default class Page extends React.Component {
                           target="_blank"
                           rel="noopener noreferrer"
                           title="Webgriffe"
-                          className="gatsby_home-main_support"
-                        >
+                          className="gatsby_home-main_support">
                           <img
                             className="inline-block w-full"
                             src={'/support/webgriffe.svg'}
@@ -303,7 +301,6 @@ export default class Page extends React.Component {
                     </div>
                   </div>
                 </div>
-                */}
               </main>
             </div>
           </div>

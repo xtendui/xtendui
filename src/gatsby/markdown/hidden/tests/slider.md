@@ -76,14 +76,3 @@ Test in wrap disabled on second demo.
   <demoinline src="demos/components/slider/overflow-auto-false">
   </demoinline>
 </demo>
-
-## Auto
-
-Test auto.
-
-<demo>	
-  <demoinline src="demos/components/slider/auto">	
-  </demoinline>
-  <demoinline src="demos/components/toggle/auto">
-  </demoinline>
-</demo>	
