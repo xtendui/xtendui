@@ -18,6 +18,16 @@ You can set overflow with `drag: { overflow: Function }`, for example `(overflow
 
 </div>	
 
+Default functions as follow:
+
+```js
+drag: {
+  overflow: overflow => {
+    return Math.log(overflow / 1.5) * 10
+  },
+},
+```
+
 ## Wheel	
 
 Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mousewheel navigation.	

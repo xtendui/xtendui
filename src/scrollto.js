@@ -374,7 +374,7 @@ Scrollto.optionsDefault = {
     return position
   },
   space: () => {
-    return 0
+    return window.innerHeight / 10
   },
   duration: ({ self }) => {
     const dist = Math.abs(self.scroller.scrollTop - self.position)

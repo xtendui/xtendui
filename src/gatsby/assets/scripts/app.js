@@ -420,9 +420,6 @@ Xt.mount({
 
     let self = new Xt.Scrollto(ref, {
       hash: true,
-      space: () => {
-        return window.innerHeight / 10
-      },
     })
 
     // scrollto

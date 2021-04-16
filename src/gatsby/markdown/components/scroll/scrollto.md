@@ -47,6 +47,27 @@ Here are the main **javascript options**.
 
 </div>
 
+Default functions as follow:
+
+```js
+position: ({ self }) => {
+  const rect = self.target.getBoundingClientRect()
+  let position = rect.top + self.scroller.scrollTop
+  if (self.scroller !== document.scrollingElement) {
+    const rectScrollElement = self.scroller.getBoundingClientRect()
+    position = position - rectScrollElement.top
+  }
+  return position
+},
+space: () => {
+  return window.innerHeight / 10
+},
+duration: ({ self }) => {
+  const dist = Math.abs(self.scroller.scrollTop - self.position)
+  return Math.max(Math.min(dist / 500, 1), 0.5)
+},
+```
+
 ## Listen
 
 Listen to events.

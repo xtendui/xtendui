@@ -52,9 +52,17 @@ Here are the main **javascript options**.
 | Option                    | `targets:Query`                          | `':scope > .xt-mousefollow'`        | Mouse follow targets            |
 | Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
 | Option                    | `friction:Function`                          | `<function>`        | Function for friction             |
-| Option                    | `mouseCheck(self):Function|false`                          | `false`        | Function called on activate/deactivate, return false to not activate/deactivate             |
+| Option                    | `mouseCheck(self):Function|false`                          | `false`        | Function called on activate/deactivate, return false to skip activation/deactivation             |
 
 </div>
+
+Default functions as follow:
+
+```js
+friction: delta => {
+  return delta / 9
+},
+```
 
 ## Listen
 
