@@ -128,8 +128,6 @@ Test position and visibility.
 Test auto.
 
 <demo>	
-  <demoinline src="demos/components/slider/progress">	
-  </demoinline>
   <demoinline src="demos/components/toggle/auto">
   </demoinline>
 </demo>	

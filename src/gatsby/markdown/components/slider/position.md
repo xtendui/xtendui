@@ -71,6 +71,9 @@ Contain the slides and **automatically group** them when the scroll position is 
 
 You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: true` and you can't use `contain: true`.
 
+[[noteDefault]]
+| [loop](/components/slider/interaction#loop) is automatically enabled with [wrap](/components/slider/position#wrap).	
+
 [[notePrimary]]
 | Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.
 
@@ -90,3 +93,19 @@ You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: tr
   <demoinline src="demos/components/slider/wrap-right">
   </demoinline>
 </demo>
+
+## Autoheight
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
+
+</div>
+
+<demo>	
+  <demoinline src="demos/components/slider/autoheight">	
+  </demoinline>	
+</demo>	

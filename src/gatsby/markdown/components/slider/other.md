@@ -85,8 +85,6 @@ Disable and style touch overflow. (**use touch device to see it in action**).
 
 ## Media loaded
 
-Use `loading="lazy"` to lazy load images inside slider.
-
 If you want to animate on image loaded, with `mediaLoaded: true` use the class `.xt-medialoaded` or the js event `medialoaded.xt.slider`.
 
 When you need to reinit the component when the media is loaded and the **width** of the image is calculated with `mediaLoadedReinit: true`.
@@ -114,22 +112,3 @@ When you need to reinit the component when the media is loaded and the **width**
 ## Aria
 
 See [toggle aria](/components/toggle/other#aria) for aria options.
-
-## Other	
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group, refer to [toggle group elements](/components/toggle) |     
-| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |	
-| Option                  | `jump:Boolean`                          | `true`        | Clicking on targets triggers activation            |	
-| Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
-
-</div>	
-
-<demo>	
-  <demoinline src="demos/components/slider/other">	
-  </demoinline>	
-</demo>	

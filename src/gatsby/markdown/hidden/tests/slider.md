@@ -5,7 +5,34 @@ parent: "Tests"
 title: "Slider"
 ---
 
-## Slider
+## Interaction
+
+Test jump click.
+
+Test jump classes only when overflowing.
+
+<demo>	
+  <demoinline src="demos/components/slider/jump">	
+  </demoinline>	
+</demo>
+
+Test loop navigation.
+
+Test loop dragging beyond.
+
+<demo>	
+  <demoinline src="demos/components/slider/navigation">	
+  </demoinline>	
+</demo>
+
+Test autoheight.
+
+<demo>	
+  <demoinline src="demos/components/slider/autoheight">	
+  </demoinline>	
+</demo>
+
+## Position
 
 Test contain grouping and position.
 
@@ -33,6 +60,8 @@ Test jump classes.
   </demoinline>
 </demo>
 
+## Overflow
+
 Test position.
 
 Test deactivation on resize.
@@ -48,22 +77,13 @@ Test in wrap disabled on second demo.
   </demoinline>
 </demo>
 
-Test scroll position.
+## Auto
 
-Test wrap.
-
-<demo>
-  <demoinline src="demos/components/slider/automaticscroll">
-  </demoinline>
-</demo>
-
-Test no jump.
-
-Test no loop.
-
-Test autoheight.
+Test auto.
 
 <demo>	
-  <demoinline src="demos/components/slider/other">	
-  </demoinline>	
+  <demoinline src="demos/components/slider/auto">	
+  </demoinline>
+  <demoinline src="demos/components/toggle/auto">
+  </demoinline>
 </demo>	

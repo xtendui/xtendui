@@ -668,6 +668,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // logic
     if (options.wrap && !options.drag.manual && self.detail.availableSpace >= 0) {
+      options.loop = true
       const slide = self.group[index][0]
       const pos = Xt.dataStorage.get(slide, `${self.ns}GroupPos`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
@@ -1232,8 +1233,6 @@ Slider.optionsDefault = {
   // element
   elements: '[data-xt-pag]',
   targets: '.xt-slide',
-  // class
-  groupElements: true,
   // quantity
   min: 1,
   max: 1,
@@ -1259,8 +1258,8 @@ Slider.optionsDefault = {
     frictionLimit: 1.5,
   },
   // other
-  loop: true,
-  jump: true,
+  loop: false,
+  jump: false,
   navigation: '[data-xt-nav]',
   keyboard: {
     selector: '.xt-slides',

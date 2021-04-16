@@ -123,6 +123,7 @@ You can have **links on elements on activation** with `preventEvent: true`, `on`
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
 | Option                  | `auto.pause:Query`                          | `false`        | Elements that pause automatic on mouseenter            |
+| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
 
 </div>
 
@@ -140,18 +141,6 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
   <demoinline src="demos/components/toggle/progress">
   </demoinline>
 </demo>
-
-## Loop
-
-Use `loop: false` to disable looping on activation.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `loop:Boolean`                          | `true`        | Loop activation            |
-
-</div>
 
 ## Jump
 
@@ -179,6 +168,16 @@ You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[da
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `navigation:Query`                          | `false`        | Query for navigation elements             |
+
+</div>
+
+You can make the **activation loop** with `loop: true`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `loop:Boolean`                          | `false`        | Loop activation            |	
 
 </div>
 

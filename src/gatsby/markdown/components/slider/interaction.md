@@ -56,6 +56,19 @@ See [toggle event](/components/toggle/interaction#event) for more informations.
 
 You can specify **on** and **off** events for the interactions.
 
+## Drag	
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `drag.dragger:Query`                          | `'.xt-slides'`        | Query for dragger element             |	
+| Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |	
+| Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |	
+| Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
+
+</div>	
+
 ## Pagination	
 
 Inside `[data-xt-pag].hidden` you can use this strings that gets populated with variables:	
@@ -93,23 +106,40 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 
 </div>	
 
-<demo>	
-  <demoinline src="demos/components/slider/navigation">	
-  </demoinline>	
-</demo>	
-
-## Drag	
+You can make the **activation loop** with `loop: true`, also when dragging beyond the first and the last slide.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `drag.dragger:Query`                          | `'.xt-slides'`        | Query for dragger element             |	
-| Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |	
-| Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |	
-| Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
+| Option                  | `loop:Boolean`                          | `false`        | Loop activation            |	
 
-</div>	
+</div>
+
+[[noteDefault]]
+| [loop](/components/slider/interaction#loop) is automatically enabled with [wrap](/components/slider/position#wrap).	
+
+<demo>
+  <demoinline src="demos/components/slider/navigation">	
+  </demoinline>	
+</demo>	
+
+## Jump
+
+Use `jump: true` to enable clicking on a **target** to jump to them, only when overflowing the `drag.dragger`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
+
+</div>
+
+<demo>	
+  <demoinline src="demos/components/slider/jump">	
+  </demoinline>	
+</demo>	
 
 ## Auto	
 
@@ -122,6 +152,7 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |	
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |	
 | Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .xt-button'`        | Elements that pause automatic on mouseenter            |	
+| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
 
 </div>	
 
@@ -131,6 +162,6 @@ You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+
 Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
 
 <demo>	
-  <demoinline src="demos/components/slider/progress">	
+  <demoinline src="demos/components/slider/auto">	
   </demoinline>	
 </demo>	

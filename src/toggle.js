@@ -1642,9 +1642,9 @@ class Toggle {
       if (Xt.visible(self.object)) {
         // not when disabled
         if (options.auto.inverse) {
-          self.goToPrev(options.auto.step)
+          self.goToPrev(options.auto.step, false, options.auto.loop)
         } else {
-          self.goToNext(options.auto.step)
+          self.goToNext(options.auto.step, false, options.auto.loop)
         }
       }
     }
@@ -3389,11 +3389,12 @@ Toggle.optionsDefaultSuper = {
     step: 1,
     inverse: false,
     pause: false,
+    loop: true,
   },
   // other
   matches: false,
   disabled: false,
-  loop: true,
+  loop: false,
   jump: false,
   navigation: false,
   keyboard: {

@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-navigation',
+  matches: '.demo--slider-autoheight',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -26,7 +26,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    loop: true,
+    autoHeight: '.xt-slides-autoheight',
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
