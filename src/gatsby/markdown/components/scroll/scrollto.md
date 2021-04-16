@@ -44,6 +44,7 @@ Here are the main **javascript options**.
 | Option                    | `scrollPosition({ self }):Function`             | `<Function>`        | Positioning function return `Number`             |
 | Option                    | `scrollSpace({ self }):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
 | Option                    | `scrollDistance({ self }):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
+| Option                    | `scrollDuration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` return `Number`            |
 
 </div>
 

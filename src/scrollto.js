@@ -137,6 +137,7 @@ class Scrollto {
           self.scrollPosition = options.scrollPosition({ self })
           self.scrollSpace = options.scrollSpace({ self })
           self.scrollDistance = options.scrollDistance({ self })
+          self.duration = options.scrollDuration({ self })
           self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
           // val
           const min = 0
@@ -375,6 +376,10 @@ Scrollto.optionsDefault = {
   },
   scrollDistance: () => {
     return 0
+  },
+  scrollDuration: ({ self }) => {
+    const dist = Math.abs(self.scroll.scrollTop - self.position)
+    return Math.max(Math.min(dist / 500, 1), 0.5)
   },
 }
 

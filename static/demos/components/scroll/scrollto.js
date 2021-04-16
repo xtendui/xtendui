@@ -45,7 +45,7 @@ const mountScrollto = () => {
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
-      duration: 1,
+      duration: self.duration,
       ease: 'quart.inOut',
     })
   }

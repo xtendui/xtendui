@@ -37,7 +37,7 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
+    const duration = overlay && !overlay.classList.contains('in') ? 0 : self.duration // instant if inside overlay and initial activation
     gsap.killTweensOf(self.scroll)
     gsap.to(self.scroll, {
       scrollTo: self.position,
