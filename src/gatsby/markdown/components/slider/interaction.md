@@ -27,13 +27,21 @@ See [toggle class](/components/toggle/interaction#class) for more informations.
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
-Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.	
+Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.
 
 ## Hash
 
-See [toggle hash](/components/toggle/interaction#hash) for more informations.
-
 You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:Boolean`                          | `false`        | Link activation in location hash using `data-xt-hash` value            |
+
+</div>
 
 Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 

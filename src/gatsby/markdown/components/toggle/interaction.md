@@ -62,13 +62,13 @@ You can set initial activation by adding `on` to the **elements** or **targets**
 
 You can link the activation in the url hash, hash activation has precedence over class activation.
 
-Hash attribute can be on **elements** or **targets**, also hash activates on hash location change.
+Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:String`                          | `false`        | String with attribute name to test for hash            |
+| Option                  | `hash:Boolean`                          | `false`        | Link activation in location hash using `data-xt-hash` value            |
 
 </div>
 

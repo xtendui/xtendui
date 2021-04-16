@@ -72,7 +72,7 @@ Overlay.optionsDefault = {
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop, .xt-overlay, .xt-overlay-container',
   closeOutside: false,
-  hash: 'data-xt-hash',
+  hash: true,
   // timing
   queue: {
     elements: false,

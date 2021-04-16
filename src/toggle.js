@@ -864,7 +864,7 @@ class Toggle {
         if (hash) {
           // check
           const checkHash = (el, hash) => {
-            if (el.getAttribute(options.hash) === hash) {
+            if (el.getAttribute('data-xt-hash') === hash) {
               return true
             }
             return false
@@ -1389,7 +1389,7 @@ class Toggle {
       el.checked = true
       // hash
       if (options.hash) {
-        const attr = el.getAttribute(options.hash)
+        const attr = el.getAttribute('data-xt-hash')
         if (attr) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
           location.hash = `#${encodeURIComponent(attr)}`
