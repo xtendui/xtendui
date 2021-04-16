@@ -94,7 +94,7 @@ You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: tr
   </demoinline>
 </demo>
 
-## Autoheight
+## Auto Height
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
 

@@ -592,8 +592,8 @@ if (typeof window !== 'undefined') {
         // set
         if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX') && Xt.durationTimescale !== 1000) {
           // friction
-          xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
-          yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
+          xCurrent += fncFriction({ delta: Math.abs(xDist) }) * Math.sign(xDist)
+          yCurrent += fncFriction({ delta: Math.abs(yDist) }) * Math.sign(yDist)
           if (transform) {
             el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
           } else {

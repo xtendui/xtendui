@@ -6,9 +6,7 @@ module.exports = {
     },
     '.xt-slides': {
       position: 'relative',
-      display: 'inline-flex', // fix autoheight values
-      verticalAlign: 'top', // fix inline-flex margin below
-      width: '100%',
+      display: 'flex',
       flexWrap: 'nowrap',
       alignItems: 'flex-start',
       // prevent browser selection

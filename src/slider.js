@@ -72,7 +72,6 @@ class Slider extends Xt.Toggle {
     self.detail.objectWidth = self.object.offsetWidth
     self.detail.draggerWidth = self.dragger.offsetWidth
     self.detail.draggerLeft = self.dragger.offsetLeft
-    let fixNegativeMargin = 0
     let slideWidthAbsolute
     if (options.mode === 'absolute') {
       for (const slide of self.targets) {
@@ -83,7 +82,7 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    for (const [i, slide] of self.targets.entries()) {
+    for (const slide of self.targets) {
       const slideLeft = slide.offsetLeft
       let slideWidth
       if (options.mode === 'absolute') {
@@ -91,12 +90,8 @@ class Slider extends Xt.Toggle {
       } else {
         slideWidth = slide.offsetWidth
       }
-      if (i === 0) {
-        fixNegativeMargin = slideLeft
-      }
-      const left = slideLeft - fixNegativeMargin
-      Xt.dataStorage.set(slide, `${self.ns}SlidePos`, left)
-      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, left)
+      Xt.dataStorage.set(slide, `${self.ns}SlidePos`, slideLeft)
+      Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slideLeft)
       Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
     }
     // initSliderGroup
@@ -1009,11 +1004,11 @@ class Slider extends Xt.Toggle {
       if (dragFinal > min && direction < 0) {
         dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
         const overflow = dragFinal - min
-        dragFinal = min + fncOverflow(overflow)
+        dragFinal = min + fncOverflow({ overflow })
       } else if (dragFinal < max && direction > 0) {
         dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
         const overflow = dragFinal - max
-        dragFinal = max - fncOverflow(-overflow)
+        dragFinal = max - fncOverflow({ overflow: -overflow })
       }
     }
     // val
@@ -1226,8 +1221,9 @@ Slider.optionsDefault = {
     manual: false,
     threshold: 25,
     factor: 1,
-    overflow: overflow => {
-      return Math.log(overflow / 1.5) * 10
+    overflow: ({ overflow }) => {
+      return Math.pow(overflow, 0.73)
+      //return Math.log(overflow / 1.5) * 10
     },
   },
   // element

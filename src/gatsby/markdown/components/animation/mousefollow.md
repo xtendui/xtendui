@@ -59,7 +59,7 @@ Here are the main **javascript options**.
 Default functions as follow:
 
 ```js
-friction: delta => {
+friction: ({ delta }) => {
   return delta / 9
 },
 ```

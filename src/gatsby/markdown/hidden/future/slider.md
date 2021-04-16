@@ -22,8 +22,8 @@ Default functions as follow:
 
 ```js
 drag: {
-  overflow: overflow => {
-    return Math.log(overflow / 1.5) * 10
+  overflow: ({ overflow }) => {
+    return Math.pow(overflow, 0.73)
   },
 },
 ```

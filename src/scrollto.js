@@ -68,10 +68,7 @@ class Scrollto {
     addEventListener('hashchange', hashHandler)
     // scroll
     self.scroll = {}
-    self.scrollers = [
-      document.scrollingElement,
-      ...document.querySelectorAll(options.scrollers),
-    ].reverse()
+    self.scrollers = [document.scrollingElement, ...document.querySelectorAll(options.scrollers)].reverse()
     for (const scroll of self.scrollers) {
       if (scroll) {
         const scrollHandler = Xt.dataStorage.put(
