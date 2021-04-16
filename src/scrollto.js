@@ -198,6 +198,8 @@ class Scrollto {
               if (options.hash && location.hash !== el.hash) {
                 history.pushState({}, '', loc.hash)
               }
+              // prevent page scrolling on id automatically
+              self.scroll.scrollTop = Xt.dataStorage.get(self.scroll, `${self.ns}ScrollPosition`)
               // els
               let els = Array.from(self.scroll.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
@@ -221,6 +223,8 @@ class Scrollto {
   eventScrollactivationHandler(scroll) {
     const self = this
     const options = self.options
+    // prevent page scrolling on id automatically
+    Xt.dataStorage.set(scroll, `${self.ns}ScrollPosition`, scroll.scrollTop)
     // logic
     if (options.scrollActivation) {
       clearTimeout(Xt.dataStorage.get(scroll, `${self.ns}ScrollTimeout`))
