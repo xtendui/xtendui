@@ -420,7 +420,7 @@ Xt.mount({
 
     let self = new Xt.Scrollto(ref, {
       hash: true,
-      scrollDistance: () => {
+      space: () => {
         return window.innerHeight / 10
       },
     })
@@ -429,8 +429,8 @@ Xt.mount({
 
     const scrollto = () => {
       // scroll
-      gsap.killTweensOf(self.scroll)
-      gsap.to(self.scroll, {
+      gsap.killTweensOf(self.scroller)
+      gsap.to(self.scroller, {
         scrollTo: self.position,
         duration: self.duration,
         ease: 'quart.inOut',

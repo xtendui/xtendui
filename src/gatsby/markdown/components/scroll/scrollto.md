@@ -36,15 +36,14 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
-| Option                    | `scrolls:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors             |
-| Option                    | `scrollPosition({ self }):Function`             | `<Function>`        | Positioning function return `Number`             |
-| Option                    | `scrollSpace({ self }):Function`                          | `<Function>`        | Positioning space from top return `Number`             |
-| Option                    | `scrollDistance({ self }):Function`                          | `<Function>`        | Distance from top on scroll checks return `Number`            |
-| Option                    | `scrollDuration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` return `Number`            |
+| Option                    | `scrollers:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
+| Option                    | `position({ self }):Function`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
+| Option                    | `space({ self }):Function`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |
+| Option                    | `duration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` that sets `self.duration`, return `Number`            |
 
 </div>
 
@@ -90,10 +89,12 @@ const object = self.object
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `position:Number`       | Current scroll position to scroll to             |
-| Property                   | `scroll:Node`       | Current scrolling element             |
-| Property                   | `scrollPosition:Number`       | Current scroll position             |
-| Property                   | `scrollSpace:Number`       | Current scroll space             |
-| Property                   | `scrollDistance:Number`       | Current scroll distance             |
+| Property                   | `target:Node`       | Current scroll target             |
+| Property                   | `scrollers:Node`       | All scrolling element             |
+| Property                   | `scroller:Node`       | Current scrolling element             |
+| Property                   | `position:Number`       | Current scroll position             |
+| Property                   | `space:Number`       | Current scroll space             |
+| Property                   | `duration:Number`       | Current scroll duration             |
 
 </div>
 

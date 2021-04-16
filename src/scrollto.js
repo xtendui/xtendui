@@ -67,8 +67,12 @@ class Scrollto {
     )
     addEventListener('hashchange', hashHandler)
     // scroll
-    self.scrolls = [document.scrollingElement, ...document.querySelectorAll(options.scrolls)].reverse()
-    for (const scroll of self.scrolls) {
+    self.scroll = {}
+    self.scrollers = [
+      document.scrollingElement,
+      ...document.querySelectorAll(options.scrollers),
+    ].reverse()
+    for (const scroll of self.scrollers) {
       if (scroll) {
         const scrollHandler = Xt.dataStorage.put(
           scroll,
@@ -82,7 +86,7 @@ class Scrollto {
         }
         // initial
         requestAnimationFrame(() => {
-          self.scroll = scroll
+          self.scroller = scroll
           self.eventStart()
           self.eventScrollactivationHandler(scroll)
         })
@@ -134,19 +138,18 @@ class Scrollto {
         self.target = tr ?? el
         if (self.target && Xt.visible(self.target)) {
           // vars
-          self.scrollPosition = options.scrollPosition({ self })
-          self.scrollSpace = options.scrollSpace({ self })
-          self.scrollDistance = options.scrollDistance({ self })
-          self.duration = options.scrollDuration({ self })
-          self.position = self.scrollPosition - self.scrollSpace - self.scrollDistance
+          self.position = options.position({ self })
+          self.space = options.space({ self })
+          self.duration = options.duration({ self })
+          self.position = self.position - self.space
           // val
           const min = 0
-          const max = self.scroll.scrollHeight - self.scroll.clientHeight
+          const max = self.scroller.scrollHeight - self.scroller.clientHeight
           self.position = self.position < min ? min : self.position
           self.position = self.position > max ? max : self.position
           // fix activate also if scroll position remains the same
-          if (self.scroll.scrollTop === self.position) {
-            self.scroll.dispatchEvent(new CustomEvent('scroll'))
+          if (self.scroller.scrollTop === self.position) {
+            self.scroller.dispatchEvent(new CustomEvent('scroll'))
           }
           // listener dispatch
           self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
@@ -187,10 +190,10 @@ class Scrollto {
                 e.preventDefault()
               }
               // current scroll
-              for (const scroll of self.scrolls) {
+              for (const scroll of self.scrollers) {
                 if (scroll) {
                   if (scroll.contains(tr)) {
-                    self.scroll = scroll
+                    self.scroller = scroll
                     break
                   }
                 }
@@ -200,9 +203,9 @@ class Scrollto {
                 history.pushState({}, '', loc.hash)
               }
               // prevent page scrolling on id automatically
-              self.scroll.scrollTop = Xt.dataStorage.get(self.scroll, `${self.ns}ScrollPosition`)
+              self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
               // els
-              let els = Array.from(self.scroll.querySelectorAll(options.anchors.replace('{hash}', '#')))
+              let els = Array.from(self.scroller.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -266,20 +269,19 @@ class Scrollto {
         self.target = document.querySelector(loc.hash)
         if (self.target && Xt.visible(self.target)) {
           // current scroll
-          for (const scroll of self.scrolls) {
+          for (const scroll of self.scrollers) {
             if (scroll) {
               if (scroll.contains(self.target)) {
-                self.scroll = scroll
+                self.scroller = scroll
                 break
               }
             }
           }
           // vars
-          const position = options.scrollPosition({ self })
-          const space = options.scrollSpace({ self })
-          const distance = options.scrollDistance({ self })
+          const position = options.position({ self })
+          const space = options.space({ self })
           // check if activating
-          if (scrollTop >= Math.floor(position - space - distance)) {
+          if (scrollTop >= Math.floor(position - space)) {
             // loop multiple els of
             const matches = options.anchors.replace('{hash}', loc.hash)
             const currents = els.filter(x => x.matches(matches))
@@ -329,7 +331,7 @@ class Scrollto {
     self.object.removeEventListener('click', changeHandler)
     const hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
-    for (const scroll of self.scrolls) {
+    for (const scroll of self.scrollers) {
       if (scroll) {
         let scrollHandler = Xt.dataStorage.get(scroll, `scroll/${self.ns}`)
         scroll.removeEventListener('scroll', scrollHandler)
@@ -354,7 +356,6 @@ Scrollto.componentName = 'xt-scrollto'
 Scrollto.optionsDefault = {
   // elements
   anchors: '[href*="{hash}"]',
-  scrolls: '.xt-overlay',
   // class
   class: 'on',
   // event
@@ -362,23 +363,21 @@ Scrollto.optionsDefault = {
   scrollDelay: 150,
   hash: false,
   // scroll
-  scrollPosition: ({ self }) => {
+  scrollers: '.xt-overlay',
+  position: ({ self }) => {
     const rect = self.target.getBoundingClientRect()
-    let position = rect.top + self.scroll.scrollTop
-    if (self.scroll !== document.scrollingElement) {
-      const rectScrollElement = self.scroll.getBoundingClientRect()
+    let position = rect.top + self.scroller.scrollTop
+    if (self.scroller !== document.scrollingElement) {
+      const rectScrollElement = self.scroller.getBoundingClientRect()
       position = position - rectScrollElement.top
     }
     return position
   },
-  scrollSpace: () => {
+  space: () => {
     return 0
   },
-  scrollDistance: () => {
-    return 0
-  },
-  scrollDuration: ({ self }) => {
-    const dist = Math.abs(self.scroll.scrollTop - self.position)
+  duration: ({ self }) => {
+    const dist = Math.abs(self.scroller.scrollTop - self.position)
     return Math.max(Math.min(dist / 500, 1), 0.5)
   },
 }

@@ -33,11 +33,10 @@ const mountScrollto = () => {
     // activated by switcher
     //class: false,
     //scrollActivation: false,
-    scrollSpace: ({ self }) => {
+    space: ({ self }) => {
       let space = 0
-      const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
-      for (const spaceEl of spaceEls) {
-        space += spaceEl.clientHeight
+      for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
+        space += el.clientHeight
       }
       return space
     },
@@ -48,11 +47,10 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('in') ? 0 : self.duration // instant if inside overlay and initial activation
-    gsap.killTweensOf(self.scroll)
-    gsap.to(self.scroll, {
+    gsap.killTweensOf(self.scroller)
+    gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: duration,
+      duration: overlay && !overlay.classList.contains('in') ? 0 : self.duration, // instant if inside overlay and initial activation
       ease: 'quart.inOut',
     })
   }
