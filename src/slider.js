@@ -1034,7 +1034,7 @@ class Slider extends Xt.Toggle {
       self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStartUpdated) * options.drag.factor
     self.detail.dragStartUpdated = self.detail.dragCurrent
     // overflow
-    if (options.mode !== 'absolute' && !options.wrap && options.drag.overflow) {
+    if (options.drag.overflow) {
       const direction = Math.sign(self.detail.dragDist)
       if (dragFinal > min && direction < 0) {
         self.detail.dragStartOverflow = self.detail.dragStartOverflow
