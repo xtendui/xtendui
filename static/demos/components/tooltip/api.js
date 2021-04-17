@@ -1,8 +1,8 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/drop'
+import 'xtendui/src/tooltip'
 
 Xt.mount({
-  matches: '.demo--drop-events',
+  matches: '.demo--tooltip-api',
   mount: ({ ref }) => {
     const unmountEventmethods = mountEventmethods({ ref })
 
@@ -19,15 +19,15 @@ Xt.mount({
 const mountEventmethods = ({ ref }) => {
   // vars
 
-  const drop = ref.querySelector('#drop--eventmethods')
+  const tooltip = ref.querySelector('#tooltip--eventmethods')
 
   // init
 
-  let self = new Xt.Drop(drop, { closeOutside: false })
+  let self = new Xt.Tooltip(tooltip, { closeOutside: false })
 
   // log
 
-  const log = ref.querySelector('#card--drop-eventmethods-log')
+  const log = document.querySelector('#card--tooltip-api-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -42,91 +42,82 @@ const mountEventmethods = ({ ref }) => {
 
   // on first element
 
-  const firstEl = ref.querySelector('#button--drop-eventmethods-first-element')
+  const firstEl = document.querySelector('#button--tooltip-api-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>on 1st element</strong>')
+    logAdd('<strong>1st element</strong>')
     const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
+    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
 
   // on first target
 
-  const firstTr = ref.querySelector('#button--drop-eventmethods-first-target')
+  const firstTr = document.querySelector('#button--tooltip-api-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>on 1st target</strong>')
+    logAdd('<strong>1st target</strong>')
     const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
+    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
 
   // off first element
 
-  const firstElOff = ref.querySelector('#button--drop-eventmethods-first-element-off')
+  const firstElOff = ref.querySelector('#button--tooltip-api-first-element-off')
 
   const firstElOffFnc = () => {
     logAdd('<strong>off 1st element</strong>')
     const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    elements[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   firstElOff.addEventListener('click', firstElOffFnc)
 
   // on first target
 
-  const firstTrOff = ref.querySelector('#button--drop-eventmethods-first-target-off')
+  const firstTrOff = ref.querySelector('#button--tooltip-api-first-target-off')
 
   const firstTrOffFnc = () => {
     logAdd('<strong>off 1st target</strong>')
     const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    targets[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   firstTrOff.addEventListener('click', firstTrOffFnc)
 
   // add
 
-  const addBtn = ref.querySelector('#button--drop-eventmethods-add')
+  const addBtn = document.querySelector('#button--tooltip-api-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
+    tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
         <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
-          Drop ${indexEl}
+          Tooltip ${indexEl}
         </button>
       `
-      drop.append(Xt.createElement(strEl))
+      tooltip.append(Xt.createElement(strEl))
       const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-        <div class="xt-drop p-4" title="Target ${indexTr}">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-            <nav class="list flex-col">
-              <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </a>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
-                Dolor sit
-              </button>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
-                Amet
-              </button>
-            </nav>
+        <div class="xt-tooltip p-2" title="Target ${indexTr}">
+          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            Lorem ipsum dolor sit amet
           </div>
         </div>
       `
-      drop.append(Xt.createElement(strTr))
+      tooltip.append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
+      self.restart()
       self.reinit()
     }, 200).toString()
   }
@@ -135,17 +126,18 @@ const mountEventmethods = ({ ref }) => {
 
   // remove
 
-  const removeBtn = ref.querySelector('#button--drop-eventmethods-remove')
+  const removeBtn = document.querySelector('#button--tooltip-api-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
+    tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
       const elements = self.elements
       elements[elements.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
+      self.restart()
       self.reinit()
     }, 200).toString()
   }
@@ -154,13 +146,20 @@ const mountEventmethods = ({ ref }) => {
 
   // reinit
 
-  const reinitBtn = ref.querySelector('#button--drop-eventmethods-reinit')
+  const reinitBtn = document.querySelector('#button--tooltip-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
+    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
+    tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
+      // restart
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          logAdd('<strong>restart</strong>')
+          self.restart()
+        })
+      })
     }, 200).toString()
   }
 
@@ -168,7 +167,7 @@ const mountEventmethods = ({ ref }) => {
 
   // restart
 
-  const restartBtn = ref.querySelector('#button--drop-eventmethods-restart')
+  const restartBtn = document.querySelector('#button--tooltip-api-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -179,7 +178,7 @@ const mountEventmethods = ({ ref }) => {
 
   // destroy
 
-  const destroyBtn = ref.querySelector('#button--drop-eventmethods-destroy')
+  const destroyBtn = document.querySelector('#button--tooltip-api-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -190,7 +189,7 @@ const mountEventmethods = ({ ref }) => {
 
   // unmount
 
-  const unmountBtn = ref.querySelector('#button--drop-eventmethods-unmount')
+  const unmountBtn = document.querySelector('#button--tooltip-api-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')
@@ -233,10 +232,10 @@ const mountEventmethods = ({ ref }) => {
     logAdd(str)
   }
 
-  drop.addEventListener('init.xt.drop', events)
-  drop.addEventListener('destroy.xt.drop', events)
-  document.addEventListener('on.xt.drop', events, true)
-  document.addEventListener('off.xt.drop', events, true)
+  tooltip.addEventListener('init.xt.tooltip', events)
+  tooltip.addEventListener('destroy.xt.tooltip', events)
+  document.addEventListener('on.xt.tooltip', events, true)
+  document.addEventListener('off.xt.tooltip', events, true)
 
   // unmount
 
@@ -249,10 +248,10 @@ const mountEventmethods = ({ ref }) => {
     restartBtn.removeEventListener('click', restartFnc)
     destroyBtn.removeEventListener('click', destroyFnc)
     unmountBtn.removeEventListener('click', unmountFnc)
-    drop.removeEventListener('init.xt.drop', events)
-    drop.removeEventListener('destroy.xt.drop', events)
-    document.removeEventListener('on.xt.drop', events, true)
-    document.removeEventListener('off.xt.drop', events, true)
+    tooltip.removeEventListener('init.xt.tooltip', events)
+    tooltip.removeEventListener('destroy.xt.tooltip', events)
+    document.removeEventListener('on.xt.tooltip', events, true)
+    document.removeEventListener('off.xt.tooltip', events, true)
     self.destroy()
     self = null
   }

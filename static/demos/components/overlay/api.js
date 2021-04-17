@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 
 Xt.mount({
-  matches: '.demo--overlay-events',
+  matches: '.demo--overlay-api',
   mount: ({ ref }) => {
     const unmountEventmethods = mountEventmethods({ ref })
 
@@ -34,7 +34,7 @@ const mountEventmethods = ({ ref }) => {
 
   // log
 
-  const log = ref.querySelector('#card--overlay-eventmethods-log')
+  const log = ref.querySelector('#card--overlay-api-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -49,10 +49,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first element
 
-  const firstEl = ref.querySelector('#button--overlay-eventmethods-first-element')
+  const firstEl = ref.querySelector('#button--overlay-api-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>on 1st element</strong>')
+    logAdd('<strong>1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }
@@ -61,10 +61,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first target
 
-  const firstTr = ref.querySelector('#button--overlay-eventmethods-first-target')
+  const firstTr = ref.querySelector('#button--overlay-api-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>on 1st target</strong>')
+    logAdd('<strong>1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }
@@ -73,13 +73,20 @@ const mountEventmethods = ({ ref }) => {
 
   // reinit
 
-  const reinitBtn = ref.querySelector('#button--overlay-eventmethods-reinit')
+  const reinitBtn = ref.querySelector('#button--overlay-api-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(ref.dataset.reinitTimeout))
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
+      // restart
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          logAdd('<strong>restart</strong>')
+          self.restart()
+        })
+      })
     }, 200).toString()
   }
 
@@ -87,7 +94,7 @@ const mountEventmethods = ({ ref }) => {
 
   // restart
 
-  const restartBtn = ref.querySelector('#button--overlay-eventmethods-restart')
+  const restartBtn = ref.querySelector('#button--overlay-api-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -98,7 +105,7 @@ const mountEventmethods = ({ ref }) => {
 
   // destroy
 
-  const destroyBtn = ref.querySelector('#button--overlay-eventmethods-destroy')
+  const destroyBtn = ref.querySelector('#button--overlay-api-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -109,7 +116,7 @@ const mountEventmethods = ({ ref }) => {
 
   // unmount
 
-  const unmountBtn = ref.querySelector('#button--overlay-eventmethods-unmount')
+  const unmountBtn = ref.querySelector('#button--overlay-api-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

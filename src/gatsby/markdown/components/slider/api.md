@@ -123,6 +123,9 @@ self.destroy()
 self = null
 ```
 
+[[notePrimary]]
+| When using `self.reinit` give the component two `requestAnimationFrame` for initialization or listen for the `reinit.xt.slider` event.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
@@ -165,9 +168,9 @@ Index methods:
 
 </div>
 
-## Demo
+## API Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/slider/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/slider/api">
   </div>
 </demo>

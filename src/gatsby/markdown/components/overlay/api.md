@@ -96,6 +96,9 @@ self.destroy()
 self = null
 ```
 
+[[notePrimary]]
+| When using `self.reinit` give the component two `requestAnimationFrame` for initialization or listen for the `reinit.xt.overlay` event.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
@@ -120,9 +123,9 @@ self.elements.filter(x => self.hasCurrent(x))
 self.targets.filter(x => self.hasCurrent(x))
 ```
 
-## Demo
+## API Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/events-methods">
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/api">
   </div>
 </demo>

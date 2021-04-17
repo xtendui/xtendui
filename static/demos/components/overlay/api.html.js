@@ -1,47 +1,47 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--overlay-events">
+  <div class="demo--overlay-api">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-first-element"
+        id="button--overlay-api-first-element"
       >
-        on 1st element
+        1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-first-target"
+        id="button--overlay-api-first-target"
       >
-        on 1st target
+        1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-reinit"
+        id="button--overlay-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-restart"
+        id="button--overlay-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-destroy"
+        id="button--overlay-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--overlay-eventmethods-unmount"
+        id="button--overlay-api-unmount"
       >
         Unmount
       </button>
@@ -102,7 +102,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--overlay-eventmethods-log"
+        id="card--overlay-api-log"
       ></div>
     </div>
   </div>

@@ -1,114 +1,98 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--drop-events">
+  <div class="demo--tooltip-api">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-first-element"
+        id="button--tooltip-api-first-element"
       >
-        on 1st element
+        1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-first-target"
+        id="button--tooltip-api-first-target"
       >
-        on 1st target
+        1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-first-element-off"
+        id="button--tooltip-api-first-element-off"
       >
         off 1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-first-target-off"
+        id="button--tooltip-api-first-target-off"
       >
         off 1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-add"
+        id="button--tooltip-api-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-remove"
+        id="button--tooltip-api-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-reinit"
+        id="button--tooltip-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-restart"
+        id="button--tooltip-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-destroy"
+        id="button--tooltip-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--drop-eventmethods-unmount"
+        id="button--tooltip-api-unmount"
       >
         Unmount
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-        Drop 0
+        Tooltip 0
       </button>
 
-      <div class="xt-drop p-4" title="Target 0">
-        <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
-          <nav class="xt-list flex-col">
-            <a href="#" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">Amet</button>
-          </nav>
+      <div class="xt-tooltip p-2" title="Target 0">
+        <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          Lorem ipsum dolor sit amet
         </div>
       </div>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-        Drop 1
+        Tooltip 1
       </button>
 
-      <div class="xt-drop p-4" title="Target 1">
-        <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
-          <nav class="xt-list flex-col">
-            <a href="#" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </a>
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">
-              Dolor sit
-            </button>
-            <button type="button" class="xt-button text-2xs py-1.5 px-6 ${classes.buttonDefaultDrop()}">Amet</button>
-          </nav>
+      <div class="xt-tooltip p-2" title="Target 1">
+        <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          Lorem ipsum dolor sit amet
         </div>
       </div>
     </div>
@@ -116,7 +100,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--drop-eventmethods-log"
+        id="card--tooltip-api-log"
       ></div>
     </div>
   </div>

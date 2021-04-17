@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-events',
+  matches: '.demo--slider-api',
   mount: ({ ref }) => {
     const unmountEventmethods = mountEventmethods({ ref })
 
@@ -66,7 +66,7 @@ const mountEventmethods = ({ ref }) => {
 
   // log
 
-  const log = document.querySelector('#card--slider-eventmethods-log')
+  const log = document.querySelector('#card--slider-api-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -81,10 +81,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first element
 
-  const firstEl = document.querySelector('#button--slider-eventmethods-first-element')
+  const firstEl = document.querySelector('#button--slider-api-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>on 1st element</strong>')
+    logAdd('<strong>1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
@@ -93,10 +93,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first target
 
-  const firstTr = document.querySelector('#button--slider-eventmethods-first-target')
+  const firstTr = document.querySelector('#button--slider-api-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>on 1st target</strong>')
+    logAdd('<strong>1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
@@ -127,7 +127,7 @@ const mountEventmethods = ({ ref }) => {
 
   // add
 
-  const addBtn = document.querySelector('#button--slider-eventmethods-add')
+  const addBtn = document.querySelector('#button--slider-api-add')
 
   const addFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
@@ -154,7 +154,7 @@ const mountEventmethods = ({ ref }) => {
 
   // remove
 
-  const removeBtn = document.querySelector('#button--slider-eventmethods-remove')
+  const removeBtn = document.querySelector('#button--slider-api-remove')
 
   const removeFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
@@ -176,13 +176,20 @@ const mountEventmethods = ({ ref }) => {
 
   // reinit
 
-  const reinitBtn = document.querySelector('#button--slider-eventmethods-reinit')
+  const reinitBtn = document.querySelector('#button--slider-api-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
+      // restart
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          logAdd('<strong>restart</strong>')
+          self.restart()
+        })
+      })
     }, 200).toString()
   }
 
@@ -190,7 +197,7 @@ const mountEventmethods = ({ ref }) => {
 
   // restart
 
-  const restartBtn = document.querySelector('#button--slider-eventmethods-restart')
+  const restartBtn = document.querySelector('#button--slider-api-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -201,7 +208,7 @@ const mountEventmethods = ({ ref }) => {
 
   // destroy
 
-  const destroyBtn = document.querySelector('#button--slider-eventmethods-destroy')
+  const destroyBtn = document.querySelector('#button--slider-api-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -212,7 +219,7 @@ const mountEventmethods = ({ ref }) => {
 
   // unmount
 
-  const unmountBtn = document.querySelector('#button--slider-eventmethods-unmount')
+  const unmountBtn = document.querySelector('#button--slider-api-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

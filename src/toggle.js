@@ -3266,8 +3266,13 @@ class Toggle {
     const self = this
     // reinit
     self.initLogic(saveCurrents)
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
+    // keep the same level of raf as others
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
+      })
+    })
   }
 
   /**

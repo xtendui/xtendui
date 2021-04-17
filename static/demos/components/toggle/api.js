@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
 Xt.mount({
-  matches: '.demo--toggle-eventmethods',
+  matches: '.demo--toggle-api',
   mount: ({ ref }) => {
     const unmountEventmethods = mountEventmethods({ ref })
 
@@ -31,7 +31,7 @@ const mountEventmethods = ({ ref }) => {
 
   // log
 
-  const log = document.querySelector('#card--toggle-eventmethods-log')
+  const log = document.querySelector('#card--toggle-api-log')
 
   const logAdd = text => {
     log.innerHTML += `${text}<br/>`
@@ -46,10 +46,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first element
 
-  const firstEl = document.querySelector('#button--toggle-eventmethods-first-element')
+  const firstEl = document.querySelector('#button--toggle-api-first-element')
 
   const firstElFnc = () => {
-    logAdd('<strong>on 1st element</strong>')
+    logAdd('<strong>1st element</strong>')
     const elements = self.elements
     elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
@@ -58,10 +58,10 @@ const mountEventmethods = ({ ref }) => {
 
   // on first target
 
-  const firstTr = document.querySelector('#button--toggle-eventmethods-first-target')
+  const firstTr = document.querySelector('#button--toggle-api-first-target')
 
   const firstTrFnc = () => {
-    logAdd('<strong>on 1st target</strong>')
+    logAdd('<strong>1st target</strong>')
     const targets = self.targets
     targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
@@ -70,7 +70,7 @@ const mountEventmethods = ({ ref }) => {
 
   // autostart
 
-  const autostartEl = document.querySelector('#button--toggle-eventmethods-autostart')
+  const autostartEl = document.querySelector('#button--toggle-api-autostart')
 
   const autstartFnc = () => {
     logAdd('<strong>autostart</strong>')
@@ -81,7 +81,7 @@ const mountEventmethods = ({ ref }) => {
 
   // autostop
 
-  const autostopEl = document.querySelector('#button--toggle-eventmethods-autostop')
+  const autostopEl = document.querySelector('#button--toggle-api-autostop')
 
   const autostopFnc = () => {
     logAdd('<strong>autostop</strong>')
@@ -92,7 +92,7 @@ const mountEventmethods = ({ ref }) => {
 
   // add
 
-  const addBtn = document.querySelector('#button--toggle-eventmethods-add')
+  const addBtn = document.querySelector('#button--toggle-api-add')
 
   const addFnc = () => {
     clearTimeout(parseFloat(ref.dataset.reinitTimeout))
@@ -116,7 +116,7 @@ const mountEventmethods = ({ ref }) => {
 
   // remove
 
-  const removeBtn = document.querySelector('#button--toggle-eventmethods-remove')
+  const removeBtn = document.querySelector('#button--toggle-api-remove')
 
   const removeFnc = () => {
     clearTimeout(parseFloat(ref.dataset.reinitTimeout))
@@ -138,13 +138,20 @@ const mountEventmethods = ({ ref }) => {
 
   // reinit
 
-  const reinitBtn = document.querySelector('#button--toggle-eventmethods-reinit')
+  const reinitBtn = document.querySelector('#button--toggle-api-reinit')
 
   const reinitFnc = () => {
     clearTimeout(parseFloat(ref.dataset.reinitTimeout))
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
+      // restart
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          logAdd('<strong>restart</strong>')
+          self.restart()
+        })
+      })
     }, 200).toString()
   }
 
@@ -152,7 +159,7 @@ const mountEventmethods = ({ ref }) => {
 
   // restart
 
-  const restartBtn = document.querySelector('#button--toggle-eventmethods-restart')
+  const restartBtn = document.querySelector('#button--toggle-api-restart')
 
   const restartFnc = () => {
     logAdd('<strong>restart</strong>')
@@ -163,7 +170,7 @@ const mountEventmethods = ({ ref }) => {
 
   // destroy
 
-  const destroyBtn = document.querySelector('#button--toggle-eventmethods-destroy')
+  const destroyBtn = document.querySelector('#button--toggle-api-destroy')
 
   const destroyFnc = () => {
     logAdd('<strong>destroy</strong>')
@@ -174,7 +181,7 @@ const mountEventmethods = ({ ref }) => {
 
   // unmount
 
-  const unmountBtn = document.querySelector('#button--toggle-eventmethods-unmount')
+  const unmountBtn = document.querySelector('#button--toggle-api-unmount')
 
   const unmountFnc = () => {
     logAdd('<strong>unmount</strong>')

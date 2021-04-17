@@ -1,75 +1,75 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--toggle-eventmethods">
+  <div class="demo--toggle-api">
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-first-element"
+        id="button--toggle-api-first-element"
       >
-        on 1st element
+        1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-first-target"
+        id="button--toggle-api-first-target"
       >
-        on 1st target
+        1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-autostart"
+        id="button--toggle-api-autostart"
       >
         Autostart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-autostop"
+        id="button--toggle-api-autostop"
       >
         Autostop
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-add"
+        id="button--toggle-api-add"
       >
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-remove"
+        id="button--toggle-api-remove"
       >
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-reinit"
+        id="button--toggle-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-restart"
+        id="button--toggle-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-destroy"
+        id="button--toggle-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-eventmethods-unmount"
+        id="button--toggle-api-unmount"
       >
         Unmount
       </button>
@@ -110,7 +110,7 @@ const html = /* HTML */ `
     <div class="xt-card rounded-md ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--toggle-eventmethods-log"
+        id="card--toggle-api-log"
       ></div>
     </div>
   </div>
