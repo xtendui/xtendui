@@ -28,9 +28,7 @@ const mountSlider = ({ ref }) => {
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
     drag: {
       factor: 2,
-      overflow: ({ overflow }) => {
-        return Math.log(1 + overflow / 2) * 10
-      },
+      overflow: false,
     },
   })
 

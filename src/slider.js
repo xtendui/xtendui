@@ -948,7 +948,6 @@ class Slider extends Xt.Toggle {
         // get nearest
         const index = self.currentIndex
         const found = self.detail.dragIndex
-        //console.log(found, index, direction)
         // if on the same slide as we started dragging
         if (found !== index || Math.abs(self.detail.dragDist) >= self.detail.draggerWidth) {
           // goToNum
@@ -1035,18 +1034,14 @@ class Slider extends Xt.Toggle {
     self.detail.dragUpdated = self.detail.dragCurrent
     // overflow
     if (options.mode !== 'absolute' && !options.wrap && options.drag.overflow) {
-      // overflow
       const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
       if (dragFinal > min && direction < 0) {
-        let dragFinalOverflow =
-          self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
-        const overflow = dragFinalOverflow - min
+        const overflow = dragFinal - min
         dragFinal = overflow > 0 ? min + fncOverflow({ overflow }) : dragFinal
+        console.log(overflow, dragFinal)
       } else if (dragFinal < max && direction > 0) {
-        let dragFinalOverflow =
-          self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
-        const overflow = dragFinalOverflow - max
+        const overflow = dragFinal - max
         dragFinal = overflow < 0 ? max - fncOverflow({ overflow: -overflow }) : dragFinal
       }
     }
@@ -1068,7 +1063,6 @@ class Slider extends Xt.Toggle {
     if (options.mode !== 'absolute' && Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       const found = self.logicDragfind() ?? self.detail.dragIndex
-      //console.log(found)
       self.eventWrap(found)
       self.detail.dragIndex = found
     }
@@ -1107,7 +1101,7 @@ class Slider extends Xt.Toggle {
       arr.push(i)
     }
     if (self.detail.moveFirst !== 0) {
-      for (let i = 0; i < self.detail.moveLast + 1; i++) {
+      for (let i = 0; i <= self.detail.moveLast; i++) {
         arr.push(i)
       }
     }
@@ -1124,9 +1118,10 @@ class Slider extends Xt.Toggle {
         } else if (options.align === 'left') {
           pos += groupWidth / 2
         } else if (options.align === 'right') {
-          pos += -self.detail.draggerWidth / 2
+          pos += -self.detail.draggerWidth / 2 + groupWidth
         }
         // first inside dragger on the left
+        //console.debug(slide, self.detail.dragFinal, -pos)
         if (self.detail.dragFinal > -pos) {
           return arr[i]
         }
@@ -1145,6 +1140,7 @@ class Slider extends Xt.Toggle {
           pos -= self.detail.draggerWidth - groupWidth / 2
         }
         // last inside dragger on the right
+        //console.debug(slide, self.detail.dragFinal, -pos)
         if (self.detail.dragFinal < -pos) {
           return arr[i]
         }
@@ -1304,7 +1300,12 @@ Slider.optionsDefault = {
     threshold: 25,
     factor: 1,
     overflow: ({ overflow }) => {
-      return Math.pow(overflow, 0.73)
+      //return Math.log(1 + overflow / 2) * 10
+      //return Math.pow(overflow, 0.73)
+      //return Math.log(1 + overflow)
+      //return overflow / 2
+      //return overflow * 0.9
+      return overflow
     },
   },
   // element
