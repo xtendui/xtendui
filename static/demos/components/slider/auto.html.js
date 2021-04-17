@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </span>
 
         <div class="xt-slides xt-row xt-row-4">
-          <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-slide w-7/12 sm:w-6/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">

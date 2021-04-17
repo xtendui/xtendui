@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides-autoheight inline-block w-full transition-all duration-300">
           <div class="xt-slides xt-row xt-row-4">
-            <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-slide w-7/12 sm:w-6/12">
               <div class="xt-card rounded-md ${classes.cardSlide()}">
                 <div class="xt-h4">1</div>
               </div>

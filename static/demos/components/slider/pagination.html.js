@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="xt-slides xt-row xt-row-4">
           <div class="xt-slide w-6/12 sm:w-4/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4  xt-slide-content">1</div>
+              <div class="xt-h4 xt-slide-content">1</div>
               <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"
@@ -23,7 +23,7 @@ const html = /* HTML */ `
 
           <div class="xt-slide w-6/12 sm:w-4/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4  xt-slide-content">2</div>
+              <div class="xt-h4 xt-slide-content">2</div>
               <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"
@@ -39,7 +39,7 @@ const html = /* HTML */ `
 
           <div class="xt-slide w-6/12 sm:w-4/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4  xt-slide-content">3</div>
+              <div class="xt-h4 xt-slide-content">3</div>
               <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"
@@ -55,7 +55,7 @@ const html = /* HTML */ `
 
           <div class="xt-slide w-7/12 sm:w-5/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4  xt-slide-content">4</div>
+              <div class="xt-h4 xt-slide-content">4</div>
               <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"
@@ -71,7 +71,7 @@ const html = /* HTML */ `
 
           <div class="xt-slide w-7/12 sm:w-5/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4  xt-slide-content">5</div>
+              <div class="xt-h4 xt-slide-content">5</div>
               <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"

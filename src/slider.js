@@ -230,40 +230,75 @@ class Slider extends Xt.Toggle {
       const max = -lastLeft + self.detail.draggerWidth - lastWidth
       // group contain slides with same pos
       let iRemoved = 0
-      for (let i = 0; i < self.group.length; i++) {
+      for (let i = 0; i < self.group.length - iRemoved; i++) {
         const group = self.group[i]
         for (const slide of group) {
           let pos = Math.ceil(Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
           if (pos >= min) {
             pos = min
-            // reassign group
+            // first group
             const firstIndex = 0
+            let width = Xt.dataStorage.get(self.group[firstIndex][0], `${self.ns}GroupWidth`)
+            width += Xt.dataStorage.get(group[0], `${self.ns}GroupWidth`)
+            // set also first the first time it loops
+            for (const target of self.group[firstIndex]) {
+              Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            }
+            // regroup group
             if (i > firstIndex) {
               for (const target of group) {
                 self.group[firstIndex].push(target)
                 target.setAttribute('data-xt-group', `${self.ns}-${firstIndex}`)
+                Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+                Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
               }
-              self.group.splice(i, 1)
               // splice reindex
-              i--
+              self.group.splice(i, 1)
               iRemoved++
+              i--
             }
-          } else if (pos <= max) {
+          } else {
+            // break loop
+            i = self.group.length
+            break
+          }
+        }
+      }
+      iRemoved = 0
+      for (let i = self.group.length - 1; i >= 0; i--) {
+        const group = self.group[i]
+        for (const slide of group) {
+          let pos = Math.ceil(Xt.dataStorage.get(slide, `${self.ns}GroupPos`))
+          if (pos <= max) {
             pos = max
-            // reassign group
-            const lastIndex = self.group.length - 1 - iRemoved
+            // last group
+            let lastIndex = self.group.length - 1 - iRemoved
+            let width = Xt.dataStorage.get(self.group[lastIndex][0], `${self.ns}GroupWidth`)
+            width += Xt.dataStorage.get(group[0], `${self.ns}GroupWidth`)
+            // set also last the first time it loops
+            for (const target of self.group[lastIndex]) {
+              Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            }
+            // regroup group
             if (i < lastIndex) {
               for (const target of group) {
                 self.group[lastIndex].push(target)
                 target.setAttribute('data-xt-group', `${self.ns}-${lastIndex}`)
+                Xt.dataStorage.set(target, `${self.ns}GroupPos`, pos)
+                Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
               }
-              self.group.splice(i, 1)
               // splice reindex
-              i--
+              self.group.splice(i, 1)
               iRemoved++
+              i--
             }
+          } else {
+            // break loop
+            i = 0
+            break
           }
-          Xt.dataStorage.set(slide, `${self.ns}GroupPos`, pos)
         }
       }
       // save pos
@@ -913,6 +948,7 @@ class Slider extends Xt.Toggle {
         // get nearest
         const index = self.currentIndex
         const found = self.detail.dragIndex
+        //console.log(found, index, direction)
         // if on the same slide as we started dragging
         if (found !== index || Math.abs(self.detail.dragDist) >= self.detail.draggerWidth) {
           // goToNum
@@ -1003,11 +1039,13 @@ class Slider extends Xt.Toggle {
       const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
       if (dragFinal > min && direction < 0) {
-        let dragFinalOverflow = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
+        let dragFinalOverflow =
+          self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
         const overflow = dragFinalOverflow - min
         dragFinal = overflow > 0 ? min + fncOverflow({ overflow }) : dragFinal
       } else if (dragFinal < max && direction > 0) {
-        let dragFinalOverflow = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
+        let dragFinalOverflow =
+          self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
         const overflow = dragFinalOverflow - max
         dragFinal = overflow < 0 ? max - fncOverflow({ overflow: -overflow }) : dragFinal
       }
@@ -1030,6 +1068,7 @@ class Slider extends Xt.Toggle {
     if (options.mode !== 'absolute' && Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
       const found = self.logicDragfind() ?? self.detail.dragIndex
+      //console.log(found)
       self.eventWrap(found)
       self.detail.dragIndex = found
     }
@@ -1061,6 +1100,7 @@ class Slider extends Xt.Toggle {
    */
   logicDragfind() {
     const self = this
+    const options = self.options
     // array of orders based on current display order
     let arr = []
     for (let i = self.detail.moveFirst; i < self.group.length; i++) {
@@ -1076,26 +1116,67 @@ class Slider extends Xt.Toggle {
     if (direction < 0) {
       for (let i = 0; i < arr.length; i++) {
         const slide = self.group[arr[i]][0]
-        const pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)
-        const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        let pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)
+        const groupWidth = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        // loop available width
+        if (options.align === 'center') {
+          pos += 0
+        } else if (options.align === 'left') {
+          pos += groupWidth / 2
+        } else if (options.align === 'right') {
+          pos += -self.detail.draggerWidth / 2
+        }
         // first inside dragger on the left
-        if (self.detail.dragFinal > -pos - width) {
+        if (self.detail.dragFinal > -pos) {
           return arr[i]
         }
       }
     } else if (direction > 0) {
       for (let i = arr.length - 1; i >= 0; i--) {
         const slide = self.group[arr[i]][0]
-        const pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)
-        const width = self.detail.draggerWidth
+        let pos = Xt.dataStorage.get(slide, `${self.ns}SlidePos`)
+        const groupWidth = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        // loop available width
+        if (options.align === 'center') {
+          pos -= groupWidth
+        } else if (options.align === 'left') {
+          pos -= groupWidth / 2
+        } else if (options.align === 'right') {
+          pos -= self.detail.draggerWidth - groupWidth / 2
+        }
         // last inside dragger on the right
-        if (self.detail.dragFinal < -pos + width) {
+        if (self.detail.dragFinal < -pos) {
           return arr[i]
         }
       }
     }
     return
   }
+
+  /*
+
+    // loop available width
+    const moveAlignCenter = self.detail.draggerWidth / 2 - width / 2
+    const moveAlignNone = 0
+    const moveAlignFull = self.detail.draggerWidth - width
+    if (dir < 0) {
+      if (options.align === 'center') {
+        movingSpace += moveWidth + moveAlignCenter
+      } else if (options.align === 'left') {
+        movingSpace += moveWidth + moveAlignFull
+      } else if (options.align === 'right') {
+        movingSpace += moveWidth + moveAlignNone
+      }
+    } else if (dir > 0) {
+      if (options.align === 'center') {
+        movingSpace += moveWidth + moveAlignCenter
+      } else if (options.align === 'left') {
+        movingSpace += moveWidth + moveAlignNone
+      } else if (options.align === 'right') {
+        movingSpace += moveWidth + moveAlignFull
+      }
+    }
+    */
 
   //
   // status

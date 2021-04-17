@@ -5,6 +5,11 @@ parent: "Tests"
 title: "Slider"
 ---
 
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/hero/slider-hero-v1">
+  </div>
+</demo>
+
 ## Interaction
 
 Test jump click.
@@ -25,6 +30,13 @@ Test loop dragging beyond.
   </demoinline>	
 </demo>
 
+Test pagination.
+
+<demo>	
+  <demoinline src="demos/components/slider/pagination">	
+  </demoinline>	
+</demo>	
+
 Test autoheight.
 
 <demo>	
@@ -32,9 +44,22 @@ Test autoheight.
   </demoinline>	
 </demo>
 
+## Align
+
+Test drag activation.
+
+<demo>
+  <demoinline src="demos/components/slider/align-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/align-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/align-right">
+  </demoinline>
+</demo>
+
 ## Contain
 
-Test contain grouping and position.
+Test grouping and drag activation.
 
 <demo>
   <demoinline src="demos/components/slider/contain-center">
@@ -47,7 +72,7 @@ Test contain grouping and position.
 
 ## Wrap
 
-Test wrap position.
+Test wrap drag activation.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
