@@ -55,7 +55,7 @@ const html = /* HTML */ `
             data-xt-pag
             title="Slide xt-num"
           >
-          xt-content
+            xt-content
           </button>
         </nav>
       </div>

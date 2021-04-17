@@ -5,6 +5,15 @@ parent: "Tests"
 title: "Other"
 ---
 
+## Mouse Follow
+
+Test position.
+
+<demo>
+  <demoinline src="demos/components/animation/mousefollow">
+  </demoinline>
+</demo>
+
 ## Infinitescroll
 
 Test browser location prev e next.

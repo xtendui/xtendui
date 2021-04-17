@@ -869,7 +869,8 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // logic
-    self.detail.dragUpdated = self.detail.dragStart
+    self.detail.dragStartUpdated = self.detail.dragStart
+    self.detail.dragStartOverflow = null
     self.detail.dragIndex = self.currentIndex
     // dragging
     self.detail.dragging = true
@@ -1029,19 +1030,25 @@ class Slider extends Xt.Toggle {
     const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
     // val
-    let dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragUpdated) * options.drag.factor
-    self.detail.dragUpdated = self.detail.dragCurrent
+    let dragFinal =
+      self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStartUpdated) * options.drag.factor
+    self.detail.dragStartUpdated = self.detail.dragCurrent
     // overflow
     if (options.mode !== 'absolute' && !options.wrap && options.drag.overflow) {
       const direction = Math.sign(self.detail.dragDist)
-      const fncOverflow = options.drag.overflow
       if (dragFinal > min && direction < 0) {
-        const overflow = dragFinal - min
-        dragFinal = overflow > 0 ? min + fncOverflow({ overflow }) : dragFinal
+        self.detail.dragStartOverflow = self.detail.dragStartOverflow
+          ? self.detail.dragStartOverflow
+          : self.detail.dragStartUpdated
+        const overflow = self.detail.dragStartUpdated - self.detail.dragStartOverflow
+        dragFinal = overflow > 0 ? min + options.drag.overflow({ overflow }) : dragFinal
         //console.debug(overflow, dragFinal)
       } else if (dragFinal < max && direction > 0) {
-        const overflow = dragFinal - max
-        dragFinal = overflow < 0 ? max - fncOverflow({ overflow: -overflow }) : dragFinal
+        self.detail.dragStartOverflow = self.detail.dragStartOverflow
+          ? self.detail.dragStartOverflow
+          : self.detail.dragStartUpdated
+        const overflow = self.detail.dragStartUpdated - self.detail.dragStartOverflow
+        dragFinal = overflow < 0 ? max - options.drag.overflow({ overflow: -overflow }) : dragFinal
       }
     }
     // val
@@ -1297,12 +1304,7 @@ Slider.optionsDefault = {
     threshold: 25,
     factor: 1,
     overflow: ({ overflow }) => {
-      //return Math.log(1 + overflow / 2) * 10
-      //return Math.pow(overflow, 0.73)
-      //return Math.log(1 + overflow)
-      //return overflow / 2
-      //return overflow * 0.9
-      return overflow
+      return Math.min(Math.log(1 + overflow) * 10, overflow)
     },
   },
   // element
