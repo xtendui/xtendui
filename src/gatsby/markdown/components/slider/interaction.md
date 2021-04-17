@@ -64,10 +64,26 @@ You can specify **on** and **off** events for the interactions.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
 | Option                  | `drag.dragger:Query`                          | `'.xt-slides'`        | Query for dragger element             |	
 | Option                  | `drag.manual:Boolean`                          | `false`        | Manual dragger position            |	
-| Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for changing drag and disable links             |	
+| Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for activation and disable interactions on targets             |	
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
+| Option                  | `drag.overflow:Function|false`                          | `<Function>`        | Factor when dragging beyond the first and the last slide, return `Number`             |	
 
 </div>	
+
+Default functions as follow:
+
+```js
+drag: {
+  overflow: ({ overflow }) => {
+    return Math.pow(overflow, 0.73)
+  },
+},
+```
+
+<demo>	
+  <demoinline src="demos/components/slider/drag">	
+  </demoinline>	
+</demo>	
 
 ## Pagination	
 

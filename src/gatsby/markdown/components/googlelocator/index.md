@@ -30,9 +30,9 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 
 ## Options
 
-Here are the main **javascript options**.
+Here are the main **javascript options**. This component has complex options that are false by default see demo for custom values.
 
-Additionally you have to pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-xt-populate="<FunctionName>"`, see javascript file source code `xtendui/src/googlelocator.js`.
+Additionally you have to pass functions to `options.formatData` to populate inside `options.itemsTemplate` with query `data-xt-populate="<FunctionName>"`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -53,6 +53,8 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `elements.resultsFounds:Query`                          | `false`        | Object query for results found             |
 | Option                    | `elements.locateBtn:Query`                          | `false`        | Object query for locate button             |
 | Option                    | `elements.repeatBtn:Query`                          | `false`        | Object query for repeat search button             |
+| Option                    | `elements.formatData:Object`                          | `<Object>`        | Object fir format data function             |
+
 
 </div>
 

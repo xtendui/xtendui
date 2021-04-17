@@ -71,8 +71,8 @@ Test on deactivation should not have xt-grab and xt-jump.
 Test in wrap disabled on second demo.
 
 <demo>
-  <demoinline src="demos/components/slider/overflow-auto">
+  <demoinline src="demos/components/slider/nooverflow">
   </demoinline>
-  <demoinline src="demos/components/slider/overflow-auto-false">
+  <demoinline src="demos/components/slider/nooverflow-false">
   </demoinline>
 </demo>

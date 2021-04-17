@@ -1002,13 +1002,13 @@ class Slider extends Xt.Toggle {
       const direction = Math.sign(self.detail.dragDist)
       const fncOverflow = options.drag.overflow
       if (dragFinal > min && direction < 0) {
-        dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
-        const overflow = dragFinal - min
-        dragFinal = min + fncOverflow({ overflow })
+        let dragFinalOverflow = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
+        const overflow = dragFinalOverflow - min
+        dragFinal = overflow > 0 ? min + fncOverflow({ overflow }) : dragFinal
       } else if (dragFinal < max && direction > 0) {
-        dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
-        const overflow = dragFinal - max
-        dragFinal = max - fncOverflow({ overflow: -overflow })
+        let dragFinalOverflow = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragStart) * options.drag.factor
+        const overflow = dragFinalOverflow - max
+        dragFinal = overflow < 0 ? max - fncOverflow({ overflow: -overflow }) : dragFinal
       }
     }
     // val
@@ -1223,7 +1223,6 @@ Slider.optionsDefault = {
     factor: 1,
     overflow: ({ overflow }) => {
       return Math.pow(overflow, 0.73)
-      //return Math.log(overflow / 1.5) * 10
     },
   },
   // element

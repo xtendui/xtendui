@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-overflow-auto',
+  matches: '.demo--slider-drag',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -26,8 +26,12 @@ const mountSlider = ({ ref }) => {
   // init
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    align: 'center',
-    wrap: true,
+    drag: {
+      factor: 2,
+      overflow: ({ overflow }) => {
+        return Math.log(1 + overflow / 2) * 10
+      },
+    },
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

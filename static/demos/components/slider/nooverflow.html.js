@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--slider-jump">
+  <div class="demo--slider-nooverflow">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4">
@@ -11,27 +11,9 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12">
+          <div class="xt-slide w-10/12 sm:w-6/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
-            </div>
-          </div>
-
-          <div class="xt-slide w-6/12 sm:w-4/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">3</div>
-            </div>
-          </div>
-
-          <div class="xt-slide w-7/12 sm:w-6/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">4</div>
-            </div>
-          </div>
-
-          <div class="xt-slide w-7/12 sm:w-6/12">
-            <div class="xt-card rounded-md ${classes.cardSlide()}">
-              <div class="xt-h4">5</div>
             </div>
           </div>
         </div>
