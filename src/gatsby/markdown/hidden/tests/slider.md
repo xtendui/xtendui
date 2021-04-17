@@ -32,11 +32,9 @@ Test autoheight.
   </demoinline>	
 </demo>
 
-## Position
+## Contain
 
 Test contain grouping and position.
-
-Test jump classes.
 
 <demo>
   <demoinline src="demos/components/slider/contain-center">
@@ -47,9 +45,9 @@ Test jump classes.
   </demoinline>
 </demo>
 
-Test wrap position.
+## Wrap
 
-Test jump classes.
+Test wrap position.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -60,7 +58,7 @@ Test jump classes.
   </demoinline>
 </demo>
 
-## Overflow
+## Other
 
 Test position.
 

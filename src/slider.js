@@ -498,7 +498,6 @@ class Slider extends Xt.Toggle {
     }
     // logic
     self.logicDragstart(e)
-    self.logicDrag(e)
   }
 
   /**
@@ -977,12 +976,14 @@ class Slider extends Xt.Toggle {
         target.classList.add('pointer-events-none')
       }
     }
+    // check drag direction
     if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
-      // block drag if scrolling
+      // if dragging vertically return
       return
     } else {
+      // if not dragging vertically or already locked horizontally
       self.detail.dragBlock = true
-      // block scrolling if dragging
+      // block page scroll if dragging
       if (e.cancelable) {
         e.preventDefault()
       }
@@ -1233,6 +1234,7 @@ Slider.optionsDefault = {
   max: 1,
   // event
   on: 'click',
+  off: 'click',
   // timing
   queue: false,
   // auto

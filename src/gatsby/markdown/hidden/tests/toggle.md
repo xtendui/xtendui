@@ -37,6 +37,8 @@ Test activation and group activation.
   </demoinline>
 </demo>
 
+## Interaction
+
 Test initial group activation.
 
 Test initial custom activation.
