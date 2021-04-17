@@ -105,6 +105,8 @@ Inside `[data-xt-pag].hidden` you can use this strings that gets populated with 
 [[notePrimary]]
 | `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `.xt-slider-pagination` but you can hide it using the class `.xt-slider-pagination.hidden`.
 
+You can use pagination also inside targets as you can see in the demo.
+
 <demo>	
   <demoinline src="demos/components/slider/pagination">	
   </demoinline>	
@@ -134,6 +136,8 @@ You can make the **activation loop** with `loop: true`, also when dragging beyon
 
 [[noteDefault]]
 | [loop](/components/slider/interaction#loop) is automatically enabled with [wrap](/components/slider/position#wrap).	
+
+You can use navigation also inside targets as you can see in the demo.
 
 <demo>
   <demoinline src="demos/components/slider/navigation">	
