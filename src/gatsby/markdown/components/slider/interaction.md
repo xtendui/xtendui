@@ -75,7 +75,7 @@ Default functions as follow:
 ```js
 drag: {
   overflow: ({ overflow }) => {
-    return Math.min(Math.log(1 + overflow) * 10, overflow)
+    return Math.min(Math.log(1 + Math.pow(overflow, 10)), overflow)
     // other examples of overflow
     //return Math.pow(overflow, 0.6)
     //return overflow / 9
