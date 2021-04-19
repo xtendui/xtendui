@@ -941,7 +941,7 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       // activation
       const direction = Math.sign(self.detail.dragDist)
-      if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
+      if (self.detail.dragBlock) {
         // drag reset
         self.logicDragreset()
       } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
@@ -1012,13 +1012,12 @@ class Slider extends Xt.Toggle {
       }
     }
     // check drag direction
-    if (!self.detail.dragBlock && Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
-      // if dragging vertically return
+    if (self.detail.dragBlock || Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
+      // if dragging vertically block and return
+      self.detail.dragBlock = true
       return
     } else {
-      // if not dragging vertically or already locked horizontally
-      self.detail.dragBlock = true
-      // block page scroll if dragging
+      // prevent page scroll
       if (e.cancelable) {
         e.preventDefault()
       }
