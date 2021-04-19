@@ -404,6 +404,13 @@ Xt.mount({
     // init
 
     let self = new Xt.Scrollto(ref, {
+      space: ({ self }) => {
+        let space = window.innerHeight / 15
+        for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
+          space += el.clientHeight
+        }
+        return space
+      },
       hash: true,
     })
 
