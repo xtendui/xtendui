@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </span>
 
         <div class="xt-slides xt-row xt-row-4">
-          <div class="xt-slide w-7/12 sm:w-6/12">
+          <div class="xt-slide w-8/12 sm:w-6/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
@@ -49,7 +49,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-slide w-full">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
@@ -61,9 +61,33 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-slide w-6/12 sm:w-4/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
+              <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+                <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">6</div>
+              <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+                <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div class="xt-slide w-8/12 sm:w-6/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">7</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
                   <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>

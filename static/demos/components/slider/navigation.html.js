@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4">
-          <div class="xt-slide w-7/12 sm:w-6/12">
+          <div class="xt-slide w-8/12 sm:w-6/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
               <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -77,7 +77,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-slide w-full">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
               <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
@@ -101,9 +101,57 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-7/12 sm:w-5/12">
+          <div class="xt-slide w-6/12 sm:w-4/12">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
+              <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+                  data-xt-nav="-1"
+                  title="Previous slide"
+                >
+                  ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
+                </button>
+                <button
+                  type="button"
+                  class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+                  data-xt-nav="1"
+                  title="Next slide"
+                >
+                  ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
+                </button>
+              </nav>
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">6</div>
+              <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
+                <button
+                  type="button"
+                  class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+                  data-xt-nav="-1"
+                  title="Previous slide"
+                >
+                  ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
+                </button>
+                <button
+                  type="button"
+                  class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+                  data-xt-nav="1"
+                  title="Next slide"
+                >
+                  ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
+                </button>
+              </nav>
+            </div>
+          </div>
+
+          <div class="xt-slide w-8/12 sm:w-6/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">7</div>
               <nav class="xt-list xt-list-3 pt-4 items-center justify-center">
                 <button
                   type="button"

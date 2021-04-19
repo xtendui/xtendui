@@ -32,7 +32,7 @@ const html = /* HTML */ `
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
-        Toggle 3
+        Toggle 2
       </button>
 
       <button
@@ -53,7 +53,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on" data-xt-group="group">Target Group</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 2</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
         Target Group another

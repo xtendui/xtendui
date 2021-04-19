@@ -3029,14 +3029,14 @@ class Toggle {
       index = min
     } else {
       if (index > max) {
-        if (loop || (loop === null && options.loop)) {
+        if (loop || (loop === null && (options.loop || options.wrap))) {
           index = index - max - 1
           index = index > max ? max : index // prevent overflow
         } else {
           index = max
         }
       } else if (index < min) {
-        if (loop || (loop == null && options.loop)) {
+        if (loop || (loop == null && (options.loop || options.wrap))) {
           index = index + max + 1
           index = index < min ? min : index // prevent overflow
         } else {
@@ -3114,8 +3114,10 @@ class Toggle {
     const options = self.options
     // replace options
     if (mq.matches) {
+      // set options value
       self.options = Xt.merge([self.options, value])
     } else {
+      // set options value from initial
       self.options = Xt.mergeReset(self.options, self.optionsInitial, value)
     }
     // reinit one time only with raf

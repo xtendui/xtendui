@@ -7,7 +7,11 @@ title: "Matches"
 
 ## Matches
 
-Test matches functionality on mobile/desktop.
+Test matches.
+
+Test multiple matches in toggle.
+
+Test matches should change only options in matches.
 
 <demo>
   <demoinline src="demos/components/toggle/matches">

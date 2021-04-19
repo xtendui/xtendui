@@ -20,47 +20,13 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * init setup
-   */
-  initSetup() {
-    const self = this
-    const options = self.options
-    // defaults
-    if (options.mode === 'absolute') {
-      options.jump = false
-      options.contain = false
-      options.wrap = false
-    }
-    if (options.wrap) {
-      options.loop = true
-      options.contain = false
-    }
-    // dragger
-    self.dragger = self.object.querySelector(options.drag.dragger)
-    self.destroyElements.push(self.dragger)
-    // grab
-    if (!self.disabled) {
-      self.dragger.classList.add('xt-grab')
-    }
-    // autoHeight and keepHeight
-    if (options.autoHeight) {
-      self.autoHeight = self.object.querySelector(options.autoHeight)
-    }
-    if (options.keepHeight) {
-      self.keepHeight = self.object.querySelector(options.keepHeight)
-    }
-    // val
-    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
-    // super
-    super.initSetup()
-  }
-
-  /**
    * init elements, targets and currents
    */
   initScope() {
     const self = this
     const options = self.options
+    // vars
+    self.initSliderVars()
     // targets
     self.initScopeTargets()
     // @PERF
@@ -101,6 +67,30 @@ class Slider extends Xt.Toggle {
     self.initScopeElements()
     // clean wraps
     self.destroyWrap()
+  }
+
+  /**
+   * init slider vars
+   */
+  initSliderVars() {
+    const self = this
+    const options = self.options
+    // dragger
+    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.destroyElements.push(self.dragger)
+    // grab
+    if (!self.disabled) {
+      self.dragger.classList.add('xt-grab')
+    }
+    // autoHeight and keepHeight
+    if (options.autoHeight) {
+      self.autoHeight = self.object.querySelector(options.autoHeight)
+    }
+    if (options.keepHeight) {
+      self.keepHeight = self.object.querySelector(options.keepHeight)
+    }
+    // val
+    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
   }
 
   /**
@@ -218,7 +208,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // min max position with contain
-    if (options.contain && usedWidth > self.detail.draggerWidth) {
+    if (options.contain && options.mode !== 'absolute' && !options.wrap && usedWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
       const firstLeft = Xt.dataStorage.get(first, `${self.ns}SlideLeftInitial`)
       const lastLeft = Xt.dataStorage.get(last, `${self.ns}SlideLeftInitial`)
@@ -707,8 +697,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // logic
-    if (options.wrap && !options.drag.manual && self.detail.availableSpace >= 0) {
-      options.loop = true
+    if (options.wrap && options.mode !== 'absolute' && !options.drag.manual && self.detail.availableSpace >= 0) {
       const slide = self.group[index][0]
       const left = Xt.dataStorage.get(slide, `${self.ns}GroupLeft`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
@@ -969,10 +958,10 @@ class Slider extends Xt.Toggle {
           if (
             direction > 0 &&
             self.detail.dragDirection > 0 &&
-            (options.loop || index !== self.getElementsGroups().length - 1)
+            (options.loop || options.wrap || index !== self.getElementsGroups().length - 1)
           ) {
             self.goToNext(1)
-          } else if (direction < 0 && self.detail.dragDirection < 0 && (options.loop || index !== 0)) {
+          } else if (direction < 0 && self.detail.dragDirection < 0 && (options.loop || options.wrap || index !== 0)) {
             self.goToPrev(1)
           } else {
             self.logicDragreset()
@@ -1279,14 +1268,9 @@ class Slider extends Xt.Toggle {
    */
   destroyWrap() {
     const self = this
-    const options = self.options
-    // clean wrap
-    self.detail.moveFirst = 0
-    self.detail.moveLast = self.group.length - 1
-    if (options.wrap && !options.drag.manual) {
-      for (const slide of self.targets) {
-        slide.style.transform = ''
-      }
+    // clean wrap also if no wrap in options
+    for (const slide of self.targets) {
+      slide.style.transform = ''
     }
   }
 
@@ -1301,13 +1285,13 @@ Slider.componentName = 'xt-slider'
 Slider.optionsDefault = {
   // slider
   mode: 'relative',
-  autoHeight: false,
-  keepHeight: false,
   group: false,
   align: 'center',
-  contain: false,
+  contain: true,
   wrap: false,
   nooverflow: true,
+  autoHeight: false,
+  keepHeight: false,
   pagination: '.xt-slider-pagination',
   drag: {
     dragger: '.xt-slides',
@@ -1321,6 +1305,8 @@ Slider.optionsDefault = {
   // element
   elements: '[data-xt-pag]',
   targets: '.xt-slide',
+  // class
+  groupElements: true,
   // quantity
   min: 1,
   max: 1,

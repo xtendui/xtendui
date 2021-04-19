@@ -7,7 +7,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group,group-another"
-        data-xt-hash="demo--toggle-hash-0"
+        data-xt-hash="demo--toggle-hash-all"
       >
         Toggle Group all
       </button>
@@ -16,7 +16,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group"
-        data-xt-hash="demo--toggle-hash-1"
+        data-xt-hash="demo--toggle-hash-group-0"
       >
         Toggle Group
       </button>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-hash="demo--toggle-hash-2"
+        data-xt-hash="demo--toggle-hash-1"
       >
         Toggle 1
       </button>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group"
-        data-xt-hash="demo--toggle-hash-3"
+        data-xt-hash="demo--toggle-hash-group-1"
       >
         Toggle Group
       </button>
@@ -41,9 +41,9 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-hash="demo--toggle-hash-4"
+        data-xt-hash="demo--toggle-2"
       >
-        Toggle 3
+        Toggle 2
       </button>
 
       <button
@@ -64,7 +64,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on" data-xt-group="group">Target Group</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 2</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
         Target Group another

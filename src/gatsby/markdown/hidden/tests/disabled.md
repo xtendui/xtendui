@@ -21,7 +21,7 @@ Test nested should disable only parent.
 
 Test nested close should close only child.
 
-Test slider instant with initial dragposition.xt.slider should be self.initial true.
+Test slider instant position and wrap.
 
 <demo>
   <demoinline src="demos/components/card/disabled">

@@ -8,8 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Absolute
 
-[[noteDefault]]
-| Absolute mode automatically disables  [loop](/components/slider/interaction#loop), [contain](/components/slider/position#contain), [wrap](/components/slider/position#wrap).	
+Automatically has no [contain](/components/slider/position#contain) and no [wrap](/components/slider/position#wrap).
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/hero/slider-hero-v1">

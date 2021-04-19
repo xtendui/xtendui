@@ -8,20 +8,20 @@ date: "2009-10-10"
 
 ## Align
 
-Align the slides.
+Slide alignment on activation.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `align:String`                          | `'left'`        | Alignment 'left' or 'center' or 'right'           |
+| Option                  | `align:String`                          | `'center'`        | Alignment 'left' or 'center' or 'right'           |
 
 </div>
 
 <demo>
-  <demoinline src="demos/components/slider/align-left">
-  </demoinline>
   <demoinline src="demos/components/slider/align-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/align-left">
   </demoinline>
   <demoinline src="demos/components/slider/align-right">
   </demoinline>
@@ -29,7 +29,7 @@ Align the slides.
 
 ## Group
 
-With `group: Number` you set a decimal number from 0 to 1 to group the slides with a factor of the available `drag.dragger` width.
+With `group: Number` you set a number from 0 to 1 to automatically group the slides with a factor of the available `drag.dragger` width.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -39,22 +39,22 @@ With `group: Number` you set a decimal number from 0 to 1 to group the slides wi
 
 </div>
 
-Example of **responsive group** with [match media](/components/slider/api#match-media).
-
 <demo>
-  <demoinline src="demos/components/slider/group-responsive">
+  <demoinline src="demos/components/slider/group">
   </demoinline>
 </demo>
 
 ## Contain
 
-Contain the slides and **automatically group** them when the scroll position is the same of another slide.
+Disable slider containing the slides.
+
+Also when enabled **automatically group the slides** on start and end position (when position values would be the same).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `contain:Boolean`                          | `false`        | If true contain the slides on available width            |
+| Option                  | `contain:Boolean`                          | `true`        | If true contain the slides on available width            |
 
 </div>
 
@@ -69,10 +69,7 @@ Contain the slides and **automatically group** them when the scroll position is 
 
 ## Wrap
 
-You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: true` and you can't use `contain: true`.
-
-[[noteDefault]]
-| Wrap automatically enables [loop](/components/slider/interaction#loop) and disables [contain](/components/slider/position#contain).	
+Wrap the slides for an infinite activation. Automatically has [loop](/components/slider/interaction#loop) and no [contain](/components/slider/position#contain).
 
 [[notePrimary]]
 | Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.

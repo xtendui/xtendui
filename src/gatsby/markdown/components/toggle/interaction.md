@@ -72,7 +72,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash).
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/toggle/hash">
