@@ -102,7 +102,7 @@ self = null
 ```
 
 [[notePrimary]]
-| When using `self.reinit` give the component two `requestAnimationFrame` for initialization or listen for the `reinit.xt.toggle` event.
+| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `reinit.xt.toggle` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

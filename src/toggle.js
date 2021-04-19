@@ -207,11 +207,9 @@ class Toggle {
     }
     // currents
     if (saveCurrents) {
-      // keep the same level of raf as others
+      // keep the same level of raf as init
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          self.initialCurrents = self.getCurrents().slice(0)
-        })
+        self.initialCurrents = self.getCurrents().slice(0)
       })
     }
     // no currents
@@ -221,12 +219,10 @@ class Toggle {
       // auto
       self.eventAutostart()
     }
-    // keep the same level of raf as others
+    // keep the same level of raf as init
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
 
@@ -314,12 +310,10 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
-        // keep the same level of raf as others
+        // keep the same level of raf as init
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            const event = options.on.split(' ')[0]
-            el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
-          })
+          const event = options.on.split(' ')[0]
+          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
         })
       }
     }
@@ -888,22 +882,18 @@ class Toggle {
             if (activated && currents < options.max) {
               // initial
               currents++
-              // keep the same level of raf as others
+              // keep the same level of raf as init
               requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                  const event = options.on.split(' ')[0]
-                  el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
-                })
+                const event = options.on.split(' ')[0]
+                el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
               })
             }
           }
         }
       }
-      // keep the same level of raf as others
+      // keep the same level of raf as init
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
-        })
+        Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
       })
     }
     // return
@@ -1395,7 +1385,7 @@ class Toggle {
           location.hash = `#${encodeURIComponent(attr)}`
         }
       }
-      // keep the same level of raf as others
+      // keep the same level of raf as activation
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       Xt.dataStorage.put(
         el,
@@ -1446,7 +1436,7 @@ class Toggle {
       el.classList.remove(...self.classesIn)
       // input
       el.checked = false
-      // keep the same level of raf as others
+      // keep the same level of raf as activation
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -2664,7 +2654,7 @@ class Toggle {
           el.style.height = 'auto'
           const h = `${el.clientHeight}px`
           el.style.height = '0'
-          // keep the same level of raf as others
+          // keep the same level of raf as activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2681,7 +2671,7 @@ class Toggle {
           el.style.width = 'auto'
           const w = `${el.clientWidth}px`
           el.style.width = '0'
-          // keep the same level of raf as others
+          // keep the same level of raf as activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2698,7 +2688,7 @@ class Toggle {
           el.classList.remove('xt-collapse-reset')
           const h = `${el.offsetHeight}px`
           el.style.height = h
-          // keep the same level of raf as others
+          // keep the same level of raf as activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2714,7 +2704,7 @@ class Toggle {
           el.classList.remove('xt-collapse-reset')
           const w = `${el.offsetWidth}px`
           el.style.width = w
-          // keep the same level of raf as others
+          // keep the same level of raf as activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.put(
             el,
@@ -3131,20 +3121,18 @@ class Toggle {
   initStatus() {
     const self = this
     const options = self.options
-    // keep the same level of raf as others
+    // keep the same level of raf as init
     cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}StatusFrame`))
     Xt.dataStorage.put(
       self.object,
       `${self.ns}StatusFrame`,
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          // check
-          if (options.disabled || self.object.classList.contains('xt-slider-nooverflow')) {
-            self.disable()
-          } else {
-            self.enable()
-          }
-        })
+        // check
+        if (options.disabled || self.object.classList.contains('xt-slider-nooverflow')) {
+          self.disable()
+        } else {
+          self.enable()
+        }
       })
     )
   }
@@ -3266,12 +3254,10 @@ class Toggle {
     const self = this
     // reinit
     self.initLogic(saveCurrents)
-    // keep the same level of raf as others
+    // keep the same level of raf as init
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
-      })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
     })
   }
 

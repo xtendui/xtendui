@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ auto: { time: 2000, initial: false, step: 3, inverse: true, pause: ':scope > button, .xt-toggle' } }"
+      data-xt-toggle="{ auto: { time: 4000, initial: false, step: 3, inverse: true, pause: ':scope > button, .xt-toggle' } }"
     >
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Toggle 0

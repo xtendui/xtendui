@@ -81,11 +81,12 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
       // restart
+
+      // keep the same level of raf as init
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          logAdd('<strong>restart</strong>')
-          self.restart()
-        })
+        // restart
+        logAdd('<strong>restart</strong>')
+        self.restart()
       })
     }, 200).toString()
   }

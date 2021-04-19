@@ -25,7 +25,7 @@ class Slider extends Xt.Toggle {
    */
   initStart(saveCurrents = false) {
     const self = this
-    // raf after initialization but before init // keep the same level of raf as others
+    // keep the same level of raf as init
     requestAnimationFrame(() => {
       // listener dispatch
       self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
