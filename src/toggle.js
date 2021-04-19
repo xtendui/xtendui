@@ -577,13 +577,30 @@ class Toggle {
     }
     // hash
     if (options.hash) {
-      // hash
-      const hashHandler = Xt.dataStorage.put(
-        window,
-        `hashchange/${self.ns}`,
-        self.hashChange.bind(self).bind(self, true, null)
-      )
-      addEventListener('hashchange', hashHandler)
+      let hasHash = false
+      for (const element of self.elements) {
+        if (element.getAttribute(options.hash)) {
+          hasHash = true
+          break
+        }
+      }
+      if (!hasHash) {
+        for (const target of self.targets) {
+          if (target.getAttribute(options.hash)) {
+            hasHash = true
+            break
+          }
+        }
+      }
+      if (hasHash) {
+        // hash
+        const hashHandler = Xt.dataStorage.put(
+          window,
+          `hashchange/${self.ns}`,
+          self.hashChange.bind(self).bind(self, true, null)
+        )
+        addEventListener('hashchange', hashHandler)
+      }
     }
     // jump
     if (options.jump) {
@@ -858,7 +875,7 @@ class Toggle {
         if (hash) {
           // check
           const checkHash = (el, hash) => {
-            if (el.getAttribute('data-xt-hash') === hash) {
+            if (el.getAttribute(options.hash) === hash) {
               return true
             }
             return false
@@ -1379,7 +1396,7 @@ class Toggle {
       el.checked = true
       // hash
       if (options.hash) {
-        const attr = el.getAttribute('data-xt-hash')
+        const attr = el.getAttribute(options.hash)
         if (attr) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
           location.hash = `#${encodeURIComponent(attr)}`
@@ -3345,7 +3362,7 @@ Toggle.optionsDefaultSuper = {
   classBefore: 'dir-before',
   classAfter: 'dir-after',
   classSkip: false,
-  hash: false,
+  hash: 'data-xt-hash',
   groupSeparator: ',',
   groupElements: false,
   // quantity

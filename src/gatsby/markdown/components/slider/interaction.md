@@ -39,7 +39,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:Boolean`                          | `false`        | Link activation in location hash using `data-xt-hash` value            |
+| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
 
 </div>
 

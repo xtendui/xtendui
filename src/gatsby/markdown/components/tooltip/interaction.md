@@ -41,7 +41,6 @@ Additionally on component initialization the class `.xt-tooltip-init` gets added
 
 See [toggle hash](/components/toggle/interaction#hash) for more informations.
 
-
 You can link the activation in the url hash, hash activation has precedence over class activation.
 
 Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
@@ -50,7 +49,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:Boolean`                          | `false`        | Link activation in location hash using `data-xt-hash` value            |
+| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
 
 </div>
 
