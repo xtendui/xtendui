@@ -330,11 +330,42 @@ Xt.mount({
 })
 
 /**
- * .gatsby_site-article_hero
+ * .gatsby_home-main_head
  */
 
 Xt.mount({
-  matches: '.gatsby_site-article_hero',
+  matches: '.gatsby_home-main_head',
+  mount: ({ ref }) => {
+    // sticky
+
+    const heroParallax = {
+      trigger: ref,
+      start: 0,
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
+      scrub: 0.5,
+    }
+
+    gsap.set(ref, {
+      transformOrigin: 'top center',
+    })
+
+    gsap.to(ref, {
+      scrollTrigger: heroParallax,
+      scale: '0.9',
+      opacity: 0,
+      ease: 'quart.out',
+    })
+  },
+})
+
+/**
+ * .gatsby_site-article_hero-inner
+ */
+
+Xt.mount({
+  matches: '.gatsby_site-article_hero-inner',
   mount: ({ ref }) => {
     // sticky
 
