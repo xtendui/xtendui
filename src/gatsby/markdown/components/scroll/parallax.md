@@ -26,7 +26,7 @@ A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or
 
 ## Toggle Actions
 
-Use `toggleActions` to control the playhead on ScrollTrigger events.
+Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to the end and up to see it in action**).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -47,6 +47,9 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-multiple"></div>
 </demo>
+
+[[notePrimary]]
+| When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
 
 ## Distance
 

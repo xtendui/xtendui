@@ -21,9 +21,6 @@ Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batc
 
 </div>
 
-[[noteDefault]]
-| This demos uses [multiple mount object](/introduction/javascript#utilities-xt-mount) for **batching animations** also on content **added dynamically to the dom**.
-
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>
 </demo>
@@ -78,3 +75,12 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 | Option                  | `toggleClass:String|Object`                          | ``        | Toggle class with ScrollTrigger activation/deactivation             |
 
 </div>
+
+## Dynamic
+
+If you need to add [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) on **content added dynamically**, just add it to **items not already initialized**.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll-fade">
+  </div>
+</demo>

@@ -19,71 +19,76 @@ Xt.mount({
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // vars
+  // fade
 
-  const items = ref.querySelectorAll('.xt-card')
-
-  // match media
-
-  ScrollTrigger.matchMedia({
-    '(max-width: 767px)': () => {
-      // fade
-
-      ScrollTrigger.batch(items, {
-        onEnter: batch => {
-          gsap.killTweensOf(batch)
-          gsap.set(batch, {
-            opacity: 0,
-          })
-          gsap.to(batch, {
-            opacity: 1,
-            duration: 0.5,
-            ease: 'quart.out',
-            stagger: 0.15,
-          })
-        },
-        onLeave: batch => {
-          gsap.killTweensOf(batch)
-          gsap.to(batch, {
-            opacity: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-            stagger: 0.15,
-          })
-        },
-        onEnterBack: batch => {
-          gsap.killTweensOf(batch)
-          gsap.set(batch, {
-            opacity: 0,
-          })
-          gsap.to(batch, {
-            opacity: 1,
-            duration: 0.5,
-            ease: 'quart.out',
-            stagger: 0.15,
-          })
-        },
-        onLeaveBack: batch => {
-          gsap.killTweensOf(batch)
-          gsap.to(batch, {
-            opacity: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-            stagger: 0.15,
-          })
-        },
-      })
-    },
-    '(min-width: 640px)': () => {
-      // fade
-
-      for (const trigger of items) {
-        gsap.set(trigger, {
-          opacity: 1,
+  const fade = ({ container }) => {
+    // items inside container and not already faded
+    const items = container.querySelectorAll('.xt-card:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+    // match media
+    ScrollTrigger.matchMedia({
+      '(max-width: 767px)': () => {
+        // fade
+        ScrollTrigger.batch(items, {
+          onEnter: batch => {
+            gsap.killTweensOf(batch)
+            gsap.set(batch, {
+              opacity: 0,
+            })
+            gsap.to(batch, {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'quart.out',
+              stagger: 0.15,
+            })
+          },
+          onLeave: batch => {
+            gsap.killTweensOf(batch)
+            gsap.to(batch, {
+              opacity: 0,
+              duration: 0.5,
+              ease: 'quart.out',
+              stagger: 0.15,
+            })
+          },
+          onEnterBack: batch => {
+            gsap.killTweensOf(batch)
+            gsap.set(batch, {
+              opacity: 0,
+            })
+            gsap.to(batch, {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'quart.out',
+              stagger: 0.15,
+            })
+          },
+          onLeaveBack: batch => {
+            gsap.killTweensOf(batch)
+            gsap.to(batch, {
+              opacity: 0,
+              duration: 0.5,
+              ease: 'quart.out',
+              stagger: 0.15,
+            })
+          },
         })
-      }
-    },
-  })
+      },
+      '(min-width: 640px)': () => {
+        // fade
+
+        for (const trigger of items) {
+          gsap.set(trigger, {
+            opacity: 1,
+          })
+        }
+      },
+    })
+  }
+
+  fade({ container: ref })
 
   // unmount
 
