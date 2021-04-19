@@ -137,9 +137,6 @@ You can make the **activation loop** with `loop: true`, also when dragging beyon
 
 </div>
 
-[[noteDefault]]
-| [loop](/components/slider/interaction#loop) is automatically enabled with [wrap](/components/slider/position#wrap).	
-
 You can use navigation also inside targets as you can see in the demo.
 
 <demo>

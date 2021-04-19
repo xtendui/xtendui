@@ -5,11 +5,6 @@ parent: "Tests"
 title: "Slider"
 ---
 
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/hero/slider-hero-v1">
-  </div>
-</demo>
-
 ## Interaction
 
 Test jump click.

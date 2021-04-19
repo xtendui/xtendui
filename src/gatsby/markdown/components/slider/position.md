@@ -72,7 +72,7 @@ Contain the slides and **automatically group** them when the scroll position is 
 You can wrap the slides with `wrap: true`. With `wrap` you have to set `loop: true` and you can't use `contain: true`.
 
 [[noteDefault]]
-| [loop](/components/slider/interaction#loop) is automatically enabled with [wrap](/components/slider/position#wrap).	
+| Wrap automatically enables [loop](/components/slider/interaction#loop) and disables [contain](/components/slider/position#contain).	
 
 [[notePrimary]]
 | Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.

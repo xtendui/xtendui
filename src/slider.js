@@ -20,18 +20,39 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * init start
-   * @param {Boolean} saveCurrents
+   * init setup
    */
-  initStart(saveCurrents = false) {
+  initSetup() {
     const self = this
-    // keep the same level of raf as init
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    })
+    const options = self.options
+    // defaults
+    if (options.mode === 'absolute') {
+      options.jump = false
+      options.contain = false
+      options.wrap = false
+    }
+    if (options.wrap) {
+      options.loop = true
+      options.contain = false
+    }
+    // dragger
+    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.destroyElements.push(self.dragger)
+    // grab
+    if (!self.disabled) {
+      self.dragger.classList.add('xt-grab')
+    }
+    // autoHeight and keepHeight
+    if (options.autoHeight) {
+      self.autoHeight = self.object.querySelector(options.autoHeight)
+    }
+    if (options.keepHeight) {
+      self.keepHeight = self.object.querySelector(options.keepHeight)
+    }
+    // val
+    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
     // super
-    super.initStart(saveCurrents)
+    super.initSetup()
   }
 
   /**
@@ -40,32 +61,8 @@ class Slider extends Xt.Toggle {
   initScope() {
     const self = this
     const options = self.options
-    // dragger
-    self.dragger = self.object.querySelector(options.drag.dragger)
-    self.destroyElements.push(self.dragger)
-    // grab
-    if (!self.disabled) {
-      self.dragger.classList.add('xt-grab')
-    }
-    // not jump in absolute mode
-    if (options.mode === 'absolute') {
-      options.jump = false
-    }
     // targets
     self.initScopeTargets()
-    // autoHeight and keepHeight
-    if (options.autoHeight) {
-      self.autoHeight = self.object.querySelector(options.autoHeight)
-    }
-    if (options.keepHeight) {
-      self.keepHeight = self.object.querySelector(options.keepHeight)
-    }
-    // not when empty
-    if (!self.targets.length) {
-      return false
-    }
-    // val
-    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
     // @PERF
     self.detail.moveDir = 0
     self.detail.moveIndex = null
@@ -397,6 +394,25 @@ class Slider extends Xt.Toggle {
   }
 
   /**
+   * init aria
+   */
+  initAriaRole() {
+    const self = this
+    const options = self.options
+    // aria
+    if (options.aria) {
+      // role
+      if (options.aria === true || options.aria.role) {
+        for (const tr of self.targets) {
+          tr.setAttribute('role', 'group')
+          tr.setAttribute('aria-roledescription', 'slide')
+        }
+        self.object.setAttribute('aria-roledescription', 'carousel')
+      }
+    }
+  }
+
+  /**
    * init events
    */
   initEvents() {
@@ -432,22 +448,18 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * init aria
+   * init start
+   * @param {Boolean} saveCurrents
    */
-  initAriaRole() {
+  initStart(saveCurrents = false) {
     const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'group')
-          tr.setAttribute('aria-roledescription', 'slide')
-        }
-        self.object.setAttribute('aria-roledescription', 'carousel')
-      }
-    }
+    // keep the same level of raf as init
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    })
+    // super
+    super.initStart(saveCurrents)
   }
 
   //
