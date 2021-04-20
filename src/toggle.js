@@ -254,48 +254,11 @@ class Toggle {
       } else if (self.initialCurrents.includes(el)) {
         activated = true
       }
-      // remove classes !saveCurrents needed to not flickr on initialization
-      el.classList.remove(
-        ...self.classes,
-        ...self.classesIn,
-        ...self.classesOut,
-        ...self.classesDone,
-        ...self.classesInitial,
-        ...self.classesBefore,
-        ...self.classesAfter
-      )
-      const elsInner = Xt.queryAll(el, options.elementsInner)
-      for (const elInner of elsInner) {
-        elInner.classList.remove(
-          ...self.classes,
-          ...self.classesIn,
-          ...self.classesOut,
-          ...self.classesDone,
-          ...self.classesInitial,
-          ...self.classesBefore,
-          ...self.classesAfter
-        )
-      }
-      // check targets
-      const targets = self.getTargets(el)
-      for (const tr of targets) {
-        // check if activated
-        if (saveCurrents && !activated) {
-          activated = checkClass(tr)
-        }
+      // keep the same level of raf as init
+      requestAnimationFrame(() => {
         // remove classes !saveCurrents needed to not flickr on initialization
-        tr.classList.remove(
-          ...self.classes,
-          ...self.classesIn,
-          ...self.classesOut,
-          ...self.classesDone,
-          ...self.classesInitial,
-          ...self.classesBefore,
-          ...self.classesAfter
-        )
-        const trsInner = Xt.queryAll(tr, options.targetsInner)
-        for (const trInner of trsInner) {
-          trInner.classList.remove(
+        if (options.classSkip !== true && !options.classSkip['elements']) {
+          el.classList.remove(
             ...self.classes,
             ...self.classesIn,
             ...self.classesOut,
@@ -305,6 +268,57 @@ class Toggle {
             ...self.classesAfter
           )
         }
+        if (options.classSkip !== true && !options.classSkip['elementsInner']) {
+          const elsInner = Xt.queryAll(el, options.elementsInner)
+          for (const elInner of elsInner) {
+            elInner.classList.remove(
+              ...self.classes,
+              ...self.classesIn,
+              ...self.classesOut,
+              ...self.classesDone,
+              ...self.classesInitial,
+              ...self.classesBefore,
+              ...self.classesAfter
+            )
+          }
+        }
+      })
+      // check targets
+      const targets = self.getTargets(el)
+      for (const tr of targets) {
+        // check if activated
+        if (saveCurrents && !activated) {
+          activated = checkClass(tr)
+        }
+        // keep the same level of raf as init
+        requestAnimationFrame(() => {
+          // remove classes !saveCurrents needed to not flickr on initialization
+          if (options.classSkip !== true && !options.classSkip['targets']) {
+            tr.classList.remove(
+              ...self.classes,
+              ...self.classesIn,
+              ...self.classesOut,
+              ...self.classesDone,
+              ...self.classesInitial,
+              ...self.classesBefore,
+              ...self.classesAfter
+            )
+          }
+          if (options.classSkip !== true && !options.classSkip['targetsInner']) {
+            const trsInner = Xt.queryAll(tr, options.targetsInner)
+            for (const trInner of trsInner) {
+              trInner.classList.remove(
+                ...self.classes,
+                ...self.classesIn,
+                ...self.classesOut,
+                ...self.classesDone,
+                ...self.classesInitial,
+                ...self.classesBefore,
+                ...self.classesAfter
+              )
+            }
+          }
+        })
       }
       // activate
       if (activated && currents < options.max) {

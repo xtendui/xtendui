@@ -121,7 +121,7 @@ export default function Header({ page }) {
           </div>
         </header>
 
-        <div className="xt-overlay text-white xt-links-inverse active xt-overlay-disabled" id="gatsby_menu--overlay">
+        <div className="xt-overlay text-white xt-links-inverse on xt-overlay-disabled" id="gatsby_menu--overlay">
           <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="xt-overlay-inner">
@@ -135,28 +135,32 @@ export default function Header({ page }) {
                   <div className="gatsby_site-header_switcher_container">
                     <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
-                        <button
-                          type="button"
-                          className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
-                          Html
-                        </button>
-                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-                          <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
-                            Switch to Html
+                        <div className="xt-tooltip-item w-full">
+                          <button
+                            type="button"
+                            className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                            Html
+                          </button>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+                            <div
+                              className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                              Switch to Html
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div data-xt-tooltip="{ position: 'top' }" className="flex-full">
-                        <button
-                          type="button"
-                          className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
-                          React
-                        </button>
-                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-                          <div
-                            className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
-                            Switch to React
+                        <div className="xt-tooltip-item w-full">
+                          <button
+                            type="button"
+                            className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-sans font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                            React
+                          </button>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+                            <div
+                              className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                              Switch to React
+                            </div>
                           </div>
                         </div>
                       </div>
