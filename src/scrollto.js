@@ -52,13 +52,6 @@ class Scrollto {
     // scrollto
     const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
     addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
-    // change
-    const changeHandler = Xt.dataStorage.put(
-      self.object,
-      `click/${self.ns}`,
-      self.eventChange.bind(self).bind(self, false, null)
-    )
-    self.object.addEventListener('click', changeHandler)
     // hash
     const hashHandler = Xt.dataStorage.put(
       window,
@@ -126,14 +119,18 @@ class Scrollto {
   eventScrollto({ el = null, tr = null }, e = null) {
     const self = this
     const options = self.options
-    // keep after components activations
-    requestAnimationFrame(() => {
-      // element
-      el = el ?? e.target
-      // not null and HTML element and not window
-      if (el && el.nodeName && el !== window) {
-        self.target = tr ?? el
-        if (self.target && Xt.visible(self.target)) {
+    // element
+    el = el ?? e.target
+    // not null and HTML element and not window
+    if (el && el.nodeName && el !== window) {
+      self.target = tr ?? el
+      if (self.target) {
+        // openauto.trigger.xt
+        if (options.hash || el.getAttribute('data-xt-scrollto-hash')) {
+          self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
+        }
+        // raf after components activations and openauto.trigger.xt
+        requestAnimationFrame(() => {
           // vars
           self.position = options.position({ self })
           self.space = options.space({ self })
@@ -150,9 +147,9 @@ class Scrollto {
           }
           // listener dispatch
           self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
-        }
+        })
       }
-    })
+    }
   }
 
   /**
@@ -264,7 +261,7 @@ class Scrollto {
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
-        if (self.target && Xt.visible(self.target)) {
+        if (self.target) {
           // current scroll
           for (const scroll of self.scrollers) {
             if (scroll) {
@@ -289,7 +286,7 @@ class Scrollto {
             }
             // class
             for (const current of currents) {
-              if (!current.classList.contains(...self.classes)) {
+              if (self.classes.length && !current.classList.contains(...self.classes)) {
                 current.classList.add(...self.classes)
               }
             }

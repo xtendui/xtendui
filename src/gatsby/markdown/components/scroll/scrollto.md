@@ -17,12 +17,21 @@ Initialize with **javascript** with `new Xt.Scrollto(document.querySelector('.my
 
 Use this code to create a **scroll to anchor**.
 
+Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
+
 [[noteDefault]]
-| This demo uses [scroll sticky](/components/scroll/sticky) and [overlay](/components/overlay) see documentation for more info.
+| This demo uses [scroll sticky](/components/scroll/sticky) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">
   </div>
+</demo>
+
+It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openAuto: true`.
+
+Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).
+
+<demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto-overlay">
   </div>
 </demo>

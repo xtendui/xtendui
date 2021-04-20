@@ -35,7 +35,9 @@ Test activation classes and scroll position on page load and hash change.
 
 Test browser location prev e next.
 
-Test data-xt-scrollto-hash.
+Test initial scroll and overlay activation data-xt-scrollto-hash.
+
+Test scroll and overlay activation data-xt-scrollto-hash close overlay and browser location prev e next.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">

@@ -30,9 +30,6 @@ const mountScrollto = () => {
   // Scrollto
 
   let self = new Xt.Scrollto(document.documentElement, {
-    // activated by switcher
-    //class: false,
-    //scrollActivation: false,
     space: ({ self }) => {
       let space = 0
       for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
@@ -44,6 +41,9 @@ const mountScrollto = () => {
       const dist = Math.abs(self.scroller.scrollTop - self.position)
       return Math.max(Math.min(dist / 500, 1), 0.5)
     },
+    // deactivated by switcher
+    class: false,
+    scrollActivation: false,
   })
 
   // scrollto

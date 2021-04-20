@@ -51,7 +51,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt.drop`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt.drop`      | `elements` `targets` | Deactivation event            |
-| Event                   | `closeauto.trigger.xt`           | `window` | Autclose all components with `closeAuto: true` option             |
+| Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate that element or target if `openAuto: true` if `openAuto: true`             |
+| Event                   | `closeauto.trigger.xt`           | `window` | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`             |
 
 </div>
 

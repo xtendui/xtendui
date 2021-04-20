@@ -87,14 +87,8 @@ You can specify **on** and **off** events for the toggle.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String`                          | `'click'`        | Activation event to attach to elements            |
-| Option                  | `off:String`                          | `'click'`        | Dectivation event to attach to elements            |
-| Option                  | `eventLimit:Query`                          | `'.xt-event-limit'`        | Limit on and off events within selector            |
-| Option                  | `closeAuto:Boolean`                          | `false`        | Close automatically on window `closeauto.trigger.xt` event            |
-| Option                  | `closeDeep:Query`                          | `false`        | Query Node inside to close on click            |
-| Option                  | `closeInside:Query`                          | `false`        | Query Node inside to close on click, no nested Nodes            |
-| Option                  | `closeOutside:Query`                          | `false`        | Query Node outside to close on click            |
-| Option                  | `preventEvent:Boolean`                          | `false`        | Prevent interaction until activated depending on `on` and `off` events (second click or mouseenter)            |
+| Option                  | `on:String`                          | `'click'`        | Event to **listen for activation**            |
+| Option                  | `off:String`                          | `'click'`        | Event to **listen for deactivation**            |
 
 </div>
 
@@ -105,12 +99,35 @@ You can specify **on** and **off** events for the toggle.
 
 You can have **links on elements on activation** with `preventEvent: true`, `on` event will be prevented if not already activated.
 
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `preventEvent:Boolean`                          | `false`        | **Prevent links on elements or other interactions** until activated.            |
+
+</div>
+
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">
   </demoinline>
   <demoinline src="demos/components/toggle/prevent-event-hover">
   </demoinline>
 </demo>
+
+There some other event options.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `eventLimit:Query`                          | `'.xt-event-limit'`        | **Block on and off events** inside selector            |
+| Option                  | `openAuto:Boolean`                          | `false`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate that element or target if `openAuto: true`            |
+| Option                  | `closeAuto:Boolean`                          | `false`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`            |
+| Option                  | `closeDeep:Query`                          | `false`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node **inside targets** and listen on click events to automatically deactivate            |
+| Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
+
+</div>
 
 ## Auto
 

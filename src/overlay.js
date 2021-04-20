@@ -69,6 +69,7 @@ Overlay.optionsDefault = {
   off: 'click',
   eventLimit: '.xt-event-limit, .xt-overlay',
   closeAuto: true,
+  openAuto: true,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop, .xt-overlay, .xt-overlay-container',
   closeOutside: false,

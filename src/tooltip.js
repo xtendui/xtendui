@@ -136,6 +136,7 @@ Tooltip.optionsDefault = {
   off: 'mouseleave',
   eventLimit: '.xt-event-limit, .xt-tooltip',
   closeAuto: true,
+  openAuto: false,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop',
   closeOutside: 'body',
