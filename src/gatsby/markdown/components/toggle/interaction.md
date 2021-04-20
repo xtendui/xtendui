@@ -124,7 +124,7 @@ There some other event options.
 | Option                  | `openAuto:Boolean`                          | `false`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate that element or target if `openAuto: true`            |
 | Option                  | `closeAuto:Boolean`                          | `false`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`            |
 | Option                  | `closeDeep:Query`                          | `false`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
-| Option                  | `closeInside:Query`                          | `false`        | Query Node **inside targets** and listen on click events to automatically deactivate            |
+| Option                  | `closeInside:Query`                          | `false`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no nested events)            |
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
 
 </div>

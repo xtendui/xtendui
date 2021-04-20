@@ -2003,7 +2003,7 @@ class Toggle {
       self.specialZindex(actionCurrent, el, type)
       self.specialAppendto(actionCurrent, el, type)
       self.specialCollapse(actionCurrent, el, type)
-      self.specialClose(actionCurrent, el, type)
+      self.specialClose(actionCurrent, el, type, obj)
       if (options.focusLimit) {
         if (obj.targets) {
           if (type === 'targets' || (!self.targets.length && type === 'elements')) {
@@ -2063,7 +2063,7 @@ class Toggle {
       self.deactivate(el, type)
       // special
       self.specialCollapse(actionCurrent, el, type)
-      self.specialClose(actionCurrent, el, type)
+      self.specialClose(actionCurrent, el, type, obj)
       if (options.focusLimit) {
         const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
         Xt.focusLimit.off(el)
@@ -2765,15 +2765,51 @@ class Toggle {
    * @param {String} actionCurrent Current action
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {String} type Type of element
+   * @param {Object} obj Queue object
    */
-  specialClose(actionCurrent, el, type) {
+  specialClose(actionCurrent, el, type, obj) {
     const self = this
     const options = self.options
-    // fix when standalone !self.targets.length && type === 'elements'
-    if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
-      if (actionCurrent === 'In') {
-        // closeDeep
-        if (options.closeDeep) {
+    if (actionCurrent === 'In') {
+      // closeInside
+      if (options.closeInside) {
+        if (type === 'elements' || type === 'targets') {
+          const closeElement = el
+          const specialcloseinsideHandler = Xt.dataStorage.put(
+            closeElement,
+            `click/close/${self.ns}`,
+            self.eventSpecialcloseinsideHandler.bind(self)
+          )
+          // fix do not close when clicking things that trigger this
+          requestAnimationFrame(() => {
+            closeElement.removeEventListener('click', specialcloseinsideHandler)
+            closeElement.addEventListener('click', specialcloseinsideHandler)
+          })
+        }
+      }
+      // closeOutside
+      if (options.closeOutside) {
+        // only one time and if last element
+        if (type === 'elements' && el === obj.elements.queueEls[0]) {
+          const outsides = document.querySelectorAll(options.closeOutside)
+          for (const outside of outsides) {
+            const specialcloseoutsideHandler = Xt.dataStorage.put(
+              outside,
+              `click/close/${self.ns}`,
+              self.eventSpecialcloseoutsideHandler.bind(self)
+            )
+            // fix do not close when clicking things that trigger this
+            requestAnimationFrame(() => {
+              outside.removeEventListener('click', specialcloseoutsideHandler)
+              outside.addEventListener('click', specialcloseoutsideHandler)
+            })
+          }
+        }
+      }
+      // closeDeep
+      if (options.closeDeep) {
+        // fix when standalone !self.targets.length && type === 'elements'
+        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.put(
@@ -2799,41 +2835,31 @@ class Toggle {
             })
           }
         }
-        // closeInside
-        if (options.closeInside) {
-          const insides = !self.targets.length ? self.elements : self.targets
-          for (const inside of insides) {
-            const specialcloseinsideHandler = Xt.dataStorage.put(
-              inside,
-              `click/close/${self.ns}`,
-              self.eventSpecialcloseinsideHandler.bind(self)
-            )
-            // fix do not close when clicking things that trigger this
-            requestAnimationFrame(() => {
-              inside.removeEventListener('click', specialcloseinsideHandler)
-              inside.addEventListener('click', specialcloseinsideHandler)
-            })
+      }
+    } else if (actionCurrent === 'Out') {
+      // closeInside
+      if (options.closeInside) {
+        if (type === 'elements' || type === 'targets') {
+          const closeElement = el
+          const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+          closeElement.removeEventListener('click', specialcloseinsideHandler)
+        }
+      }
+      // closeOutside
+      if (options.closeOutside) {
+        // only one time and if last element
+        if (type === 'elements' && el === obj.elements.queueEls[0]) {
+          const closeElements = document.querySelectorAll(options.closeOutside)
+          for (const closeElement of closeElements) {
+            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+            closeElement.removeEventListener('click', specialcloseoutsideHandler)
           }
         }
-        // closeOutside
-        if (options.closeOutside) {
-          const outsides = document.querySelectorAll(options.closeOutside)
-          for (const outside of outsides) {
-            const specialcloseoutsideHandler = Xt.dataStorage.put(
-              outside,
-              `click/close/${self.ns}`,
-              self.eventSpecialcloseoutsideHandler.bind(self)
-            )
-            // fix do not close when clicking things that trigger this
-            requestAnimationFrame(() => {
-              outside.removeEventListener('click', specialcloseoutsideHandler)
-              outside.addEventListener('click', specialcloseoutsideHandler)
-            })
-          }
-        }
-      } else if (actionCurrent === 'Out') {
-        // closeDeep
-        if (options.closeDeep) {
+      }
+      // closeDeep
+      if (options.closeDeep) {
+        // fix when standalone !self.targets.length && type === 'elements'
+        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
@@ -2845,52 +2871,7 @@ class Toggle {
             closeElement.removeAttribute('role')
           }
         }
-        // closeInside
-        if (options.closeInside) {
-          const closeElements = document.querySelectorAll(options.closeOutside)
-          for (const closeElement of closeElements) {
-            const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
-            closeElement.removeEventListener('click', specialcloseinsideHandler)
-          }
-        }
-        // closeOutside
-        if (options.closeOutside) {
-          const closeElements = document.querySelectorAll(options.closeOutside)
-          for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
-            closeElement.removeEventListener('click', specialcloseoutsideHandler)
-          }
-        }
       }
-    }
-  }
-
-  /**
-   * specialClosedeep handler
-   * @param {Event} e
-   */
-  eventSpecialclosedeepHandler(e) {
-    const self = this
-    // handler
-    if (Xt.contains([...self.elements, ...self.targets], e.target)) {
-      const currents = self.getCurrents()
-      for (const current of currents) {
-        self.eventOff(current, true)
-      }
-    }
-  }
-
-  /**
-   * specialClosedeep keydown handler
-   * @param {Node|HTMLElement|EventTarget|Window} closeElement
-   * @param {Event} e
-   */
-  eventSpecialclosedeepKeydownHandler(closeElement, e) {
-    const code = e.keyCode ? e.keyCode : e.which
-    // key enter or space
-    if (code === 13 || code === 32) {
-      e.preventDefault()
-      closeElement.dispatchEvent(new CustomEvent('click'))
     }
   }
 
@@ -2925,6 +2906,36 @@ class Toggle {
     }
   }
 
+  /**
+   * specialClosedeep handler
+   * @param {Event} e
+   */
+  eventSpecialclosedeepHandler(e) {
+    const self = this
+    // handler
+    if (Xt.contains([...self.elements, ...self.targets], e.target)) {
+      const currents = self.getCurrents()
+      for (const current of currents) {
+        self.eventOff(current, true)
+      }
+    }
+  }
+
+  /**
+   * specialClosedeep keydown handler
+   * @param {Node|HTMLElement|EventTarget|Window} closeElement
+   * @param {Event} e
+   */
+  eventSpecialclosedeepKeydownHandler(closeElement, e) {
+    const code = e.keyCode ? e.keyCode : e.which
+    // key enter or space
+    if (code === 13 || code === 32) {
+      e.preventDefault()
+      closeElement.dispatchEvent(new CustomEvent('click'))
+    }
+  }
+
+  //
   // index
   //
 
