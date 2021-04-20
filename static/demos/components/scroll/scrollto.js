@@ -35,6 +35,10 @@ const mountScrollto = () => {
       }
       return space
     },
+    duration: ({ self }) => {
+      const dist = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
+    },
   })
 
   // scrollto

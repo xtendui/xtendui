@@ -8,28 +8,29 @@ const html = /* HTML */ `
           <a
             href="#anchor-0"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #0
           </a>
           <a
             href="#anchor-1"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #1
           </a>
           <button
             type="button"
             class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             custom
           </button>
           <a
             href="#anchor-2"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
+            data-xt-scrollto-hash="true"
           >
             #2
           </a>

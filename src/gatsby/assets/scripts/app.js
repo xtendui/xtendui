@@ -435,6 +435,7 @@ Xt.mount({
     // init
 
     let self = new Xt.Scrollto(ref, {
+      hash: true,
       space: ({ self }) => {
         let space = window.innerHeight / 20
         for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
@@ -442,7 +443,10 @@ Xt.mount({
         }
         return space
       },
-      hash: true,
+      duration: ({ self }) => {
+        const dist = Math.abs(self.scroller.scrollTop - self.position)
+        return Math.max(Math.min(dist / 500, 1), 0.5)
+      },
     })
 
     // scrollto

@@ -196,13 +196,13 @@ class Scrollto {
                 }
               }
               // prevent page hash with automatic scroll
-              if (options.hash && location.hash !== el.hash) {
+              if ((options.hash || el.getAttribute('data-xt-scrollto-hash')) && location.hash !== el.hash) {
                 history.pushState({}, '', loc.hash)
               }
               // prevent page scrolling on id automatically
               self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
               // els
-              let els = Array.from(self.scroller.querySelectorAll(options.anchors.replace('{hash}', '#')))
+              let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -256,7 +256,7 @@ class Scrollto {
       scrollTop = scrollMax
     }
     // anchors
-    let els = Array.from(scroll.querySelectorAll(options.anchors.replace('{hash}', '#')))
+    let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
     els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     // loop
     for (const el of els) {
@@ -289,7 +289,7 @@ class Scrollto {
             }
             // class
             for (const current of currents) {
-              if (!current.classList.contains('on')) {
+              if (!current.classList.contains(...self.classes)) {
                 current.classList.add(...self.classes)
               }
             }
@@ -373,10 +373,7 @@ Scrollto.optionsDefault = {
   space: () => {
     return window.innerHeight / 10
   },
-  duration: ({ self }) => {
-    const dist = Math.abs(self.scroller.scrollTop - self.position)
-    return Math.max(Math.min(dist / 500, 1), 0.5)
-  },
+  duration: false,
 }
 
 //
