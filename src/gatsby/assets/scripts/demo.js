@@ -31,9 +31,13 @@ const demoHash = () => {
   const demoFull = document.querySelector('#gatsby_open-full-trigger')
   // call offdone.xt
   if (demoFull) {
-    hashReset = false
     // close demo full
     demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+    // no location.hash
+    hashReset = false
+    requestAnimationFrame(() => {
+      hashReset = true
+    })
     // check hash
     if (location.hash) {
       const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
@@ -163,13 +167,10 @@ const populateBlock = () => {
       el.addEventListener('click', e => {
         e.preventDefault()
         // hash
-        hashReset = false
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item').getAttribute('id')
       })
     }
-    // trigger fullscreen or change tabs
     full.addEventListener('on.xt.toggle', () => {
-      hashReset = true
       // fix demo fullscreen
       const content = document.querySelector('#gatsby_open-full-content')
       const current = content.querySelector('.gatsby_demo_item.on')
@@ -257,7 +258,6 @@ const populateBlock = () => {
         if (hashReset) {
           history.pushState({}, '', '#')
         }
-        hashReset = true
       }
     })
   }
@@ -405,7 +405,6 @@ const populateDemo = container => {
       e.preventDefault()
       scrollCache = document.scrollingElement.scrollTop
       // hash
-      hashReset = false
       location.hash = container.querySelector('.gatsby_demo_item.on').getAttribute('id')
     })
   }
@@ -461,12 +460,11 @@ const populateDemo = container => {
             },
           })
         )
-      }
-      // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
-        // hash
-        hashReset = false
-        location.hash = item.getAttribute('id')
+        // only if demo opened
+        if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
+          // hash
+          location.hash = item.getAttribute('id')
+        }
       }
     })
   }
@@ -606,11 +604,11 @@ const makeFullscreen = container => {
       }
     }
   }
-  // needs both or sometimes it doesn't open
-  toggle.classList.add('on')
-  requestAnimationFrame(() => {
+  if (!firstMount) {
     toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-  })
+  } else {
+    toggle.classList.add('on')
+  }
   // move code block
   container.before(
     Xt.createElement(
