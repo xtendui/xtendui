@@ -1039,6 +1039,9 @@ class Toggle {
   eventOpenautoHandler(e) {
     const self = this
     // handler
+    for (const el of Array.from(self.elements).filter(x => x.contains(e.target))) {
+      self.eventOn(el, true, e)
+    }
     for (const tr of Array.from(self.targets).filter(x => x.contains(e.target))) {
       self.eventOn(tr, true, e)
     }
