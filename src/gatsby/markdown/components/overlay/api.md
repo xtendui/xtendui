@@ -32,7 +32,6 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `init.xt.overlay`           | `object` | Init event             |
 | Event                   | `status.xt.overlay`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.overlay`           | `object` | Restart event             |
-| Event                   | `reinit.xt.overlay`           | `object` | Reinit event             |
 | Event                   | `destroy.xt.overlay`           | `object` | Destroy event             |
 
 </div>
@@ -98,7 +97,7 @@ self = null
 ```
 
 [[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `reinit.xt.overlay` event.
+| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.overlay` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

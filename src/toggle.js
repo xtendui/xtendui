@@ -193,31 +193,31 @@ class Toggle {
     Xt.running[self.ns] = []
     // check initial activation
     currents = self.initActivate(saveCurrents)
+    // if currents < min
+    let todo = options.min - currents
+    let start = 0
+    if (todo > 0) {
+      // initial
+      currents += todo
+    }
+    if (todo > 0) {
+      for (let i = start; i < todo; i++) {
+        self.eventOn(self.elements[i], true)
+      }
+    }
+    // currents
+    if (saveCurrents) {
+      self.initialCurrents = self.getCurrents().slice(0)
+    }
+    // no currents
+    if (currents === 0) {
+      // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+      self.initial = false
+      // auto
+      self.eventAutostart()
+    }
     // keep the same level of raf as init
     requestAnimationFrame(() => {
-      // if currents < min
-      let todo = options.min - currents
-      let start = 0
-      if (todo > 0 && self.targets.length) {
-        // initial
-        currents += todo
-      }
-      if (todo > 0 && self.targets.length) {
-        for (let i = start; i < todo; i++) {
-          self.eventOn(self.elements[i], true)
-        }
-      }
-      // currents
-      if (saveCurrents) {
-        self.initialCurrents = self.getCurrents().slice(0)
-      }
-      // no currents
-      if (currents === 0) {
-        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.initial = false
-        // auto
-        self.eventAutostart()
-      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
@@ -251,11 +251,22 @@ class Toggle {
       } else if (self.initialCurrents.includes(el)) {
         activated = true
       }
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        // remove classes !saveCurrents needed to not flickr on initialization
-        if (options.classSkip !== true && !options.classSkip['elements']) {
-          el.classList.remove(
+      // remove classes !saveCurrents needed to not flickr on initialization
+      if (options.classSkip !== true && !options.classSkip['elements']) {
+        el.classList.remove(
+          ...self.classes,
+          ...self.classesIn,
+          ...self.classesOut,
+          ...self.classesDone,
+          ...self.classesInitial,
+          ...self.classesBefore,
+          ...self.classesAfter
+        )
+      }
+      if (options.classSkip !== true && !options.classSkip['elementsInner']) {
+        const elsInner = Xt.queryAll(el, options.elementsInner)
+        for (const elInner of elsInner) {
+          elInner.classList.remove(
             ...self.classes,
             ...self.classesIn,
             ...self.classesOut,
@@ -265,21 +276,7 @@ class Toggle {
             ...self.classesAfter
           )
         }
-        if (options.classSkip !== true && !options.classSkip['elementsInner']) {
-          const elsInner = Xt.queryAll(el, options.elementsInner)
-          for (const elInner of elsInner) {
-            elInner.classList.remove(
-              ...self.classes,
-              ...self.classesIn,
-              ...self.classesOut,
-              ...self.classesDone,
-              ...self.classesInitial,
-              ...self.classesBefore,
-              ...self.classesAfter
-            )
-          }
-        }
-      })
+      }
       // check targets
       const targets = self.getTargets(el)
       for (const tr of targets) {
@@ -287,11 +284,22 @@ class Toggle {
         if (saveCurrents && !activated) {
           activated = checkClass(tr)
         }
-        // keep the same level of raf as init
-        requestAnimationFrame(() => {
-          // remove classes !saveCurrents needed to not flickr on initialization
-          if (options.classSkip !== true && !options.classSkip['targets']) {
-            tr.classList.remove(
+        // remove classes !saveCurrents needed to not flickr on initialization
+        if (options.classSkip !== true && !options.classSkip['targets']) {
+          tr.classList.remove(
+            ...self.classes,
+            ...self.classesIn,
+            ...self.classesOut,
+            ...self.classesDone,
+            ...self.classesInitial,
+            ...self.classesBefore,
+            ...self.classesAfter
+          )
+        }
+        if (options.classSkip !== true && !options.classSkip['targetsInner']) {
+          const trsInner = Xt.queryAll(tr, options.targetsInner)
+          for (const trInner of trsInner) {
+            trInner.classList.remove(
               ...self.classes,
               ...self.classesIn,
               ...self.classesOut,
@@ -301,31 +309,14 @@ class Toggle {
               ...self.classesAfter
             )
           }
-          if (options.classSkip !== true && !options.classSkip['targetsInner']) {
-            const trsInner = Xt.queryAll(tr, options.targetsInner)
-            for (const trInner of trsInner) {
-              trInner.classList.remove(
-                ...self.classes,
-                ...self.classesIn,
-                ...self.classesOut,
-                ...self.classesDone,
-                ...self.classesInitial,
-                ...self.classesBefore,
-                ...self.classesAfter
-              )
-            }
-          }
-        })
+        }
       }
       // activate
       if (activated && currents < options.max) {
         // initial
         currents++
-        // keep the same level of raf as init
-        requestAnimationFrame(() => {
-          const event = options.on.split(' ')[0]
-          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
-        })
+        const event = options.on.split(' ')[0]
+        el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
       }
     }
     // return
@@ -3309,11 +3300,6 @@ class Toggle {
     const self = this
     // reinit
     self.initLogic(saveCurrents)
-    // keep the same level of raf as init
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`reinit.${self.componentNs}`))
-    })
   }
 
   /**

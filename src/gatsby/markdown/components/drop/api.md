@@ -32,7 +32,6 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `init.xt.drop`           | `object` | Init event             |
 | Event                   | `status.xt.drop`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.drop`           | `object` | Restart event             |
-| Event                   | `reinit.xt.drop`           | `object` | Reinit event             |
 | Event                   | `destroy.xt.drop`           | `object` | Destroy event             |
 
 </div>
@@ -98,7 +97,7 @@ self = null
 ```
 
 [[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `reinit.xt.drop` event.
+| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.drop` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

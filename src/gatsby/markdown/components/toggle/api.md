@@ -35,7 +35,6 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `init.xt.toggle`           | `object` | Init event             |
 | Event                   | `status.xt.toggle`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.toggle`           | `object` | Restart event             |
-| Event                   | `reinit.xt.toggle`           | `object` | Reinit event             |
 | Event                   | `destroy.xt.toggle`           | `object` | Destroy event             |
 
 </div>
@@ -103,7 +102,7 @@ self = null
 ```
 
 [[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `reinit.xt.toggle` event.
+| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.toggle` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

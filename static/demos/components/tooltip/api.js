@@ -153,8 +153,6 @@ const mountEventmethods = ({ ref }) => {
     tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-
       // keep the same level of raf as init
       requestAnimationFrame(() => {
         // restart
