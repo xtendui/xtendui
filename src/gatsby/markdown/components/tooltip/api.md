@@ -50,7 +50,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt.tooltip`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt.tooltip`      | `elements` `targets` | Deactivation event            |
-| Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate that element or target if `openAuto: true` if `openAuto: true`             |
+| Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside targets** to automatically activate that target if `openAuto: true`             |
 | Event                   | `closeauto.trigger.xt`           | `window` | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`             |
 
 </div>

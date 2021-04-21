@@ -27,6 +27,17 @@ Try the demo [on a new page](/demos/components/listing/infinitescroll).
 
 ## Scroll
 
+Test desktop stickyflow position.
+
+Test mobile initial activation.
+
+Test mobile scrollto activation.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/gallery/products-gallery-v1">
+  </div>
+</demo>
+
 Test activation classes on scroll.
 
 Test scroll position on click elements.
@@ -41,20 +52,6 @@ Test initial scroll and overlay activation data-xt-scrollto-hash.
 
 Test scroll and overlay activation data-xt-scrollto-hash close overlay and browser location prev e next.
 
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">
-  </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto-overlay">
-  </div>
-</demo>
+Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 
-Test desktop stickyflow position.
-
-Test mobile initial activation.
-
-Test mobile scrollto activation.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/gallery/products-gallery-v1">
-  </div>
-</demo>
+Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).

@@ -220,6 +220,7 @@ class Scrollto {
                 history.pushState({}, '', loc.hash)
               }
               // prevent page scrolling on id automatically
+              console.log(Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`))
               self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
               // els
               let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
