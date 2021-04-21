@@ -660,11 +660,11 @@ class Toggle {
       }
     }
     // closeauto
-    if (options.closeAuto) {
+    if (options.closeauto) {
       const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventCloseautoHandler.bind(self))
       addEventListener('closeauto.trigger.xt', closeautoHandler, true)
     }
-    if (options.openAuto) {
+    if (options.openauto) {
       const openautoHandler = Xt.dataStorage.put(window, `openauto/${self.ns}`, self.eventOpenautoHandler.bind(self))
       addEventListener('openauto.trigger.xt', openautoHandler, true)
     }
@@ -3439,8 +3439,8 @@ Toggle.optionsDefaultSuper = {
   },
   appendTo: false,
   classHtml: false,
-  closeAuto: false,
-  openAuto: false,
+  closeauto: false,
+  openauto: false,
   mediaLoaded: false,
   mediaLoadedReinit: false,
   zIndex: false,

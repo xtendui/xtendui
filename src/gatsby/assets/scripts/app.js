@@ -395,7 +395,7 @@ Xt.mount({
     let self = new Xt.Toggle(ref, {
       targets: '#gatsby_open-full',
       closeDeep: ':scope > .xt-dismiss',
-      closeAuto: true,
+      closeauto: true,
       classHtml: 'xt-scrollbar-overlay demo-full-open',
     })
 

@@ -79,8 +79,8 @@ There some other event options.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `eventLimit:Query`                          | `'.xt-event-limit, .xt-overlay'`        | **Block on and off events** inside selector            |
-| Option                  | `openAuto:Boolean`                          | `true`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openAuto: true`            |
-| Option                  | `closeAuto:Boolean`                          | `true`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`            |
+| Option                  | `openauto:Boolean`                          | `true`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openauto: true`            |
+| Option                  | `closeauto:Boolean`                          | `true`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeauto: true`            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-overlay, .xt-overlay-container`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no nested events)            |
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |

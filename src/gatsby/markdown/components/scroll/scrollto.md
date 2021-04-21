@@ -30,7 +30,7 @@ Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
   </div>
 </demo>
 
-It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openAuto: true`.
+It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openauto: true`.
 
 Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).
 

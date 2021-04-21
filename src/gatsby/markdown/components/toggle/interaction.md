@@ -121,8 +121,8 @@ There some other event options.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `eventLimit:Query`                          | `'.xt-event-limit'`        | **Block on and off events** inside selector            |
-| Option                  | `openAuto:Boolean`                          | `false`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openAuto: true`            |
-| Option                  | `closeAuto:Boolean`                          | `false`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`            |
+| Option                  | `openauto:Boolean`                          | `false`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openauto: true`            |
+| Option                  | `closeauto:Boolean`                          | `false`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeauto: true`            |
 | Option                  | `closeDeep:Query`                          | `false`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `false`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no nested events)            |
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |

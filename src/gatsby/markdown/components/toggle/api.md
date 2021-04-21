@@ -53,8 +53,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt.toggle`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt.toggle`      | `elements` `targets` | Deactivation event            |
-| Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openAuto: true`             |
-| Event                   | `closeauto.trigger.xt`           | `window` | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeAuto: true`             |
+| Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openauto: true`             |
+| Event                   | `closeauto.trigger.xt`           | `window` | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeauto: true`             |
 | Event                   | `autostart.trigger.xt.toggle`           | `object` | Auto start event             |
 | Event                   | `autostop.trigger.xt.toggle`           | `object` | Auto stop event             |
 
