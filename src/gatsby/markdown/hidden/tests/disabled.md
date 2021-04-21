@@ -11,6 +11,8 @@ Test no interactions.
 
 Test reenable from disable.
 
+Test current desktop > mobile > desktop > mobile current activation should remain the same.
+
 Test initial position and initial activation when disabled.
 
 Test overlay open on mobile > resize desktop is disabled.

@@ -241,7 +241,7 @@ class Toggle {
       return false
     }
     // check hash
-    let currents = self.hashChange(saveCurrents)
+    let currents = self.hashChange(saveCurrents) ?? 0
     // check class
     for (const el of self.elements) {
       let activated = false
@@ -871,7 +871,7 @@ class Toggle {
     const options = self.options
     // disabled
     if (self.disabled) {
-      return
+      return 0
     }
     // logic
     let currents = 0
