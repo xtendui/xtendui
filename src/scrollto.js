@@ -67,20 +67,23 @@ class Scrollto {
     )
     addEventListener('hashchange', hashHandler)
     // scroll
-    self.scroll = {}
-    self.scrollers = [document.scrollingElement, ...document.querySelectorAll(options.scrollers)].reverse()
-    for (const scroll of self.scrollers) {
-      if (scroll) {
+    self.scrollers = [document.scrollingElement, ...document.querySelectorAll(options.scrollers)].reverse() // need reverse for proper activation
+    for (const scroller of self.scrollers) {
+      if (scroller) {
         const scrollHandler = Xt.dataStorage.put(
-          scroll,
+          scroller,
           `scroll/${self.ns}`,
-          self.eventScrollactivationHandler.bind(self).bind(self, scroll)
+          self.eventActivationHandler.bind(self).bind(self, scroller)
         )
-        if (scroll === document.scrollingElement) {
+        if (scroller === document.scrollingElement) {
           addEventListener('scroll', scrollHandler)
         } else {
-          scroll.addEventListener('scroll', scrollHandler)
+          scroller.addEventListener('scroll', scrollHandler)
         }
+        // initial
+        requestAnimationFrame(() => {
+          self.eventActivationHandler(scroller)
+        })
       }
     }
     // initial
@@ -136,6 +139,15 @@ class Scrollto {
         }
         // raf after components activations and openauto.trigger.xt
         requestAnimationFrame(() => {
+          // current scroll
+          for (const scroller of self.scrollers) {
+            if (scroller) {
+              if (scroller.contains(self.target)) {
+                self.scroller = scroller
+                break
+              }
+            }
+          }
           // vars
           self.position = options.position({ self })
           self.space = options.space({ self })
@@ -169,7 +181,17 @@ class Scrollto {
     // hashchange
     if (hashchange) {
       const hash = location.hash
-      el = self.object.querySelector(options.anchors.replace('{hash}', hash))
+      const elCheck = self.object.querySelector(options.anchors.replace('{hash}', hash))
+      // do not listen to hash change when no hash on element
+      if (elCheck) {
+        if (options.hash || elCheck.getAttribute('data-xt-scrollto-hash')) {
+          el = elCheck
+        }
+        // prevent page hash on click anchors
+        if (e) {
+          e.preventDefault()
+        }
+      }
     }
     // check because of event propagation
     el = el ?? e.target
@@ -184,15 +206,11 @@ class Scrollto {
             const hash = hashchange ? loc.hash : el.hash.toString()
             const tr = self.object.querySelector(hash)
             if (tr) {
-              // prevent page hash on click anchors
-              if (e) {
-                e.preventDefault()
-              }
               // current scroll
-              for (const scroll of self.scrollers) {
-                if (scroll) {
-                  if (scroll.contains(tr)) {
-                    self.scroller = scroll
+              for (const scroller of self.scrollers) {
+                if (scroller) {
+                  if (scroller.contains(tr)) {
+                    self.scroller = scroller
                     break
                   }
                 }
@@ -221,22 +239,22 @@ class Scrollto {
 
   /**
    * scroll activation handler
-   * @param {Node|HTMLElement|EventTarget|Window} scroll Scroll element
+   * @param {Node|HTMLElement|EventTarget|Window} scroller Scroller element
    */
-  eventScrollactivationHandler(scroll) {
+  eventActivationHandler(scroller) {
     const self = this
     const options = self.options
     // prevent page scrolling on id automatically
-    Xt.dataStorage.set(scroll, `${self.ns}ScrollPosition`, scroll.scrollTop)
+    Xt.dataStorage.set(scroller, `${self.ns}ScrollPosition`, scroller.scrollTop)
     // logic
     if (options.scrollActivation) {
-      clearTimeout(Xt.dataStorage.get(scroll, `${self.ns}ScrollTimeout`))
+      clearTimeout(Xt.dataStorage.get(scroller, `${self.ns}ScrollTimeout`))
       Xt.dataStorage.set(
-        scroll,
+        scroller,
         `${self.ns}ScrollTimeout`,
         setTimeout(() => {
           // handler
-          self.eventScrollactivation(scroll)
+          self.eventActivation(scroller)
         }, options.scrollDelay)
       )
     }
@@ -244,15 +262,16 @@ class Scrollto {
 
   /**
    * scroll activation
+   * @param {Node|HTMLElement|EventTarget|Window} scroller Scroller element
    */
-  eventScrollactivation(scroll) {
+  eventActivation(scroller) {
     const self = this
     const options = self.options
     // scroll
-    let found = false
-    let scrollTop = scroll.scrollTop
     self.target = false
-    self.scroller = scroll
+    self.scroller = scroller
+    let found = false
+    let scrollTop = self.scroller.scrollTop
     // fake scroll position if on bottom of the page
     const scrollMax = self.scroller.scrollHeight
     if (scrollTop + self.scroller.clientHeight >= scrollMax) {
@@ -263,11 +282,21 @@ class Scrollto {
     els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     // loop
     for (const el of els) {
+      // fix don't activate if elements is inside a inner scroller
+      for (const scroller of self.scrollers) {
+        if (scroller) {
+          if (scroller === self.scroller) {
+            break
+          }
+          if (scroller.contains(el)) {
+            return
+          }
+        }
+      }
       // event
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
-        console.log(self.target)
         if (self.target) {
           // vars
           const position = options.position({ self })
@@ -292,7 +321,7 @@ class Scrollto {
         }
       }
     }
-    // reset others when not found elements and found target
+    // reset others when not found anchors and found target
     if (!found && self.target) {
       for (const other of els) {
         other.classList.remove(...self.classes)
@@ -323,10 +352,10 @@ class Scrollto {
     self.object.removeEventListener('click', changeHandler)
     const hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
-    for (const scroll of self.scrollers) {
-      if (scroll) {
-        let scrollHandler = Xt.dataStorage.get(scroll, `scroll/${self.ns}`)
-        scroll.removeEventListener('scroll', scrollHandler)
+    for (const scroller of self.scrollers) {
+      if (scroller) {
+        let scrollHandler = Xt.dataStorage.get(scroller, `scroll/${self.ns}`)
+        scroller.removeEventListener('scroll', scrollHandler)
       }
     }
     // initialized class
@@ -366,9 +395,11 @@ Scrollto.optionsDefault = {
     return position
   },
   space: () => {
-    return window.innerHeight / 10
+    return 0
   },
-  duration: false,
+  duration: () => {
+    return 0
+  },
 }
 
 //

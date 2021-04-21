@@ -29,7 +29,11 @@ const mountScrollto = () => {
   // init
 
   let self = new Xt.Scrollto(document.documentElement, {
-    scrolls: '.xt-overlay, .product-gallery',
+    scrollers: '.xt-overlay, .product-gallery',
+    duration: ({ self }) => {
+      const dist = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
+    },
   })
 
   // scrollto

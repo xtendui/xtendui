@@ -22,6 +22,9 @@ Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 [[noteDefault]]
 | This demo uses [scroll sticky](/components/scroll/sticky) see documentation for more info.
 
+[[notePrimary]]
+| Do not assign **other components** to scrollto `anchors` or it activates the other components on scrollto activation.
+
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">
   </div>
@@ -50,9 +53,9 @@ Here are the main **javascript options**.
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` on links to activate hash for only that link             |
 | Option                    | `scrollers:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
-| Option                    | `position({ self }):Function|Number`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
-| Option                    | `space({ self }):Function|Number`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |
-| Option                    | `duration({ self }):Function|Number`                          | `0`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` that sets `self.duration`, return `Number`            |
+| Option                    | `position({ self }):Function`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
+| Option                    | `space({ self }):Function`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |
+| Option                    | `duration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` that sets `self.duration`, return `Number`            |
 
 </div>
 
@@ -69,11 +72,10 @@ position: ({ self }) => {
   return position
 },
 space: () => {
-  return window.innerHeight / 10
+  return 0
 },
-duration: ({ self }) => {
-  const dist = Math.abs(self.scroller.scrollTop - self.position)
-  return Math.max(Math.min(dist / 500, 1), 0.5)
+duration: () => {
+  return 0
 },
 ```
 
