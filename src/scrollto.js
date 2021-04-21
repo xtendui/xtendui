@@ -187,10 +187,6 @@ class Scrollto {
         if (options.hash || elCheck.getAttribute('data-xt-scrollto-hash')) {
           el = elCheck
         }
-        // prevent page hash on click anchors
-        if (e) {
-          e.preventDefault()
-        }
       }
     }
     // check because of event propagation
@@ -206,6 +202,10 @@ class Scrollto {
             const hash = hashchange ? loc.hash : el.hash.toString()
             const tr = self.object.querySelector(hash)
             if (tr) {
+              // prevent page hash on click anchors
+              if (e) {
+                e.preventDefault()
+              }
               // current scroll
               for (const scroller of self.scrollers) {
                 if (scroller) {
