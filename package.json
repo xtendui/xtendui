@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "yarn packet && yarn clean && gatsby build",
-    "dev": "yarn packet && gatsby develop -p 8080",
+    "dev": "yarn packet && yarn clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
     "webpack": "yarn packet && webpack --progress",

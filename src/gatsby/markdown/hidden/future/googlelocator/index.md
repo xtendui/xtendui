@@ -1,7 +1,7 @@
 ---
-type: "Components"
-category: "Other"
-parent: "Google Locator"
+type: "Hidden"
+category: "Hidden"
+parent: "Future"
 title: "Google Locator"
 description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---

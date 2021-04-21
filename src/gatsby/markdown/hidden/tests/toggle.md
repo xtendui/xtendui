@@ -43,6 +43,8 @@ Test initial group activation.
 
 Test initial custom activation.
 
+Test multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
+
 <demo>
   <demoinline src="demos/components/toggle/class">
   </demoinline>
