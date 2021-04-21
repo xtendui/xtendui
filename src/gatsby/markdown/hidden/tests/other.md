@@ -48,6 +48,8 @@ Test scroll and overlay activation data-xt-scrollto-hash close overlay and brows
   </div>
 </demo>
 
+Test desktop stickyflow position.
+
 Test mobile initial activation.
 
 Test mobile scrollto activation.
