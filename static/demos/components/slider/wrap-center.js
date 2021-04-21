@@ -34,7 +34,6 @@ const mountSlider = ({ ref }) => {
 
   const dragposition = () => {
     // dragPosition tween with main time and ease
-    console.log(self.detail.dragFinal, self.initial)
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,

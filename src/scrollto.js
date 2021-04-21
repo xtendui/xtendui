@@ -137,17 +137,19 @@ class Scrollto {
         if (options.hash || el.getAttribute('data-xt-scrollto-hash')) {
           self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
-        // raf after components activations and openauto.trigger.xt
-        requestAnimationFrame(() => {
-          // current scroll
-          for (const scroller of self.scrollers) {
-            if (scroller) {
-              if (scroller.contains(self.target)) {
-                self.scroller = scroller
-                break
-              }
+        // current scroll
+        for (const scroller of self.scrollers) {
+          if (scroller) {
+            if (scroller.contains(self.target)) {
+              self.scroller = scroller
+              break
             }
           }
+        }
+        // before raf prevent page scrolling on id automatically and prevent automatic scroll with custom scrollto.trigger and hash change
+        self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
+        // raf after components activations and openauto.trigger.xt
+        requestAnimationFrame(() => {
           // vars
           self.position = options.position({ self })
           self.space = options.space({ self })
@@ -219,9 +221,6 @@ class Scrollto {
               if ((options.hash || el.getAttribute('data-xt-scrollto-hash')) && location.hash !== el.hash) {
                 history.pushState({}, '', loc.hash)
               }
-              // prevent page scrolling on id automatically
-              console.log(Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`))
-              self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
               // els
               let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
