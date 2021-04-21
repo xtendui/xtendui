@@ -57,7 +57,9 @@ class Stickyflow {
     addEventListener('scroll', changeHandler)
     addEventListener('resize', changeHandler)
     // initial
-    self.eventChange()
+    requestAnimationFrame(() => {
+      self.eventChange()
+    })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch

@@ -49,6 +49,13 @@ class Scrollto {
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
+    // prevent page hash on click anchors
+    const changeHandler = Xt.dataStorage.put(
+      self.object,
+      `click/${self.ns}`,
+      self.eventChange.bind(self).bind(self, false, null)
+    )
+    self.object.addEventListener('click', changeHandler)
     // scrollto
     const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
     addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
@@ -74,14 +81,12 @@ class Scrollto {
         } else {
           scroll.addEventListener('scroll', scrollHandler)
         }
-        // initial
-        requestAnimationFrame(() => {
-          self.scroller = scroll
-          self.eventStart()
-          self.eventScrollactivationHandler(scroll)
-        })
       }
     }
+    // initial
+    requestAnimationFrame(() => {
+      self.eventStart()
+    })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
@@ -179,7 +184,7 @@ class Scrollto {
             const hash = hashchange ? loc.hash : el.hash.toString()
             const tr = self.object.querySelector(hash)
             if (tr) {
-              // prevent page hash with automatic scroll
+              // prevent page hash on click anchors
               if (e) {
                 e.preventDefault()
               }
@@ -247,9 +252,10 @@ class Scrollto {
     let found = false
     let scrollTop = scroll.scrollTop
     self.target = false
+    self.scroller = scroll
     // fake scroll position if on bottom of the page
-    const scrollMax = scroll.scrollHeight
-    if (scrollTop + scroll.clientHeight >= scrollMax) {
+    const scrollMax = self.scroller.scrollHeight
+    if (scrollTop + self.scroller.clientHeight >= scrollMax) {
       scrollTop = scrollMax
     }
     // anchors
@@ -261,16 +267,8 @@ class Scrollto {
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
+        console.log(self.target)
         if (self.target) {
-          // current scroll
-          for (const scroll of self.scrollers) {
-            if (scroll) {
-              if (scroll.contains(self.target)) {
-                self.scroller = scroll
-                break
-              }
-            }
-          }
           // vars
           const position = options.position({ self })
           const space = options.space({ self })

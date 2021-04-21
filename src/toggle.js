@@ -193,34 +193,31 @@ class Toggle {
     Xt.running[self.ns] = []
     // check initial activation
     currents = self.initActivate(saveCurrents)
-    // if currents < min
-    let todo = options.min - currents
-    let start = 0
-    if (todo > 0 && self.targets.length) {
-      // initial
-      currents += todo
-    }
-    if (todo > 0 && self.targets.length) {
-      for (let i = start; i < todo; i++) {
-        self.eventOn(self.elements[i], true)
-      }
-    }
-    // currents
-    if (saveCurrents) {
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        self.initialCurrents = self.getCurrents().slice(0)
-      })
-    }
-    // no currents
-    if (currents === 0) {
-      // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-      self.initial = false
-      // auto
-      self.eventAutostart()
-    }
     // keep the same level of raf as init
     requestAnimationFrame(() => {
+      // if currents < min
+      let todo = options.min - currents
+      let start = 0
+      if (todo > 0 && self.targets.length) {
+        // initial
+        currents += todo
+      }
+      if (todo > 0 && self.targets.length) {
+        for (let i = start; i < todo; i++) {
+          self.eventOn(self.elements[i], true)
+        }
+      }
+      // currents
+      if (saveCurrents) {
+        self.initialCurrents = self.getCurrents().slice(0)
+      }
+      // no currents
+      if (currents === 0) {
+        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.initial = false
+        // auto
+        self.eventAutostart()
+      }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })

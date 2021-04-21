@@ -56,7 +56,9 @@ class Textareaautosize {
       self.form.addEventListener('reset', changeHandler)
     }
     // initial
-    self.keychange.bind(self)()
+    requestAnimationFrame(() => {
+      self.keychange.bind(self)()
+    })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch

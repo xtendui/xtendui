@@ -63,7 +63,9 @@ class Groupnumber {
       input.addEventListener('change', inputHandler)
     }
     // initial
-    self.eventChange.bind(self, 0)()
+    requestAnimationFrame(() => {
+      self.eventChange.bind(self, 0)()
+    })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
     // listener dispatch
