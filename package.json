@@ -3,7 +3,7 @@
   "version": "1.0.0-beta.12",
   "description": "Custom frontend development with Vanilla Javascript and Tailwind Components.",
   "homepage": "http://xtendui.com/",
-  "license": "MIT",
+  "license": "APACHE 2.0",
   "author": "Riccardo Caroli <beaver82+xtendui@gmail.com>",
   "repository": "https://github.com/minimit/xtendui.git",
   "keywords": [

@@ -17,11 +17,11 @@ export default function Footer() {
     <div className="gatsby_site-footer_bottom">
       <div className="xt-row gatsby_site-footer_bottom_row">
         <div>
-          {site.siteMetadata.title} v{site.siteMetadata.version} licensed{' '}
+          {site.siteMetadata.title} v{site.siteMetadata.version}{' '}
           <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" target="_blank" rel="noopener noreferrer">
-            MIT
+            APACHE 2.0
           </a>{' '}
-          Docs licensed{' '}
+          <span className="xt-separator xt-separator-dash"></span> Docs{' '}
           <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS" target="_blank" rel="noopener noreferrer">
             CC BY 3.0
           </a>
