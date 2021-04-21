@@ -24,7 +24,7 @@ module.exports = {
     },
     '.initial': {
       // instant animations on components init and reinit
-      'body:not(.xt-nojs-initial)': {
+      'body:not(.xt-nojs-initial) &': {
         '&, *': {
           transitionDuration: 'initial !important',
           transitionDelay: 'initial !important',

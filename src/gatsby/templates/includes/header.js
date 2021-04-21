@@ -121,12 +121,15 @@ export default function Header({ page }) {
           </div>
         </header>
 
-        <div className="xt-overlay text-white xt-links-inverse on xt-overlay-disabled" id="gatsby_menu--overlay">
-          <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+        <div
+          className="xt-overlay text-white xt-links-inverse group xt-overlay-disabled on in"
+          data-xt-duration="500"
+          id="gatsby_menu--overlay">
+          <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="xt-overlay-inner">
-              <div className="xt-design"></div>
-              <div className="xt-card">
+              <div className="xt-design overflow-hidden transform opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:translate-x-0"></div>
+              <div className="xt-card transform opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:translate-x-0 ">
                 <div
                   className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"

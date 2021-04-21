@@ -251,22 +251,14 @@ class Toggle {
       } else if (self.initialCurrents.includes(el)) {
         activated = true
       }
-      // remove classes !saveCurrents needed to not flickr on initialization
-      if (options.classSkip !== true && !options.classSkip['elements']) {
-        el.classList.remove(
-          ...self.classes,
-          ...self.classesIn,
-          ...self.classesOut,
-          ...self.classesDone,
-          ...self.classesInitial,
-          ...self.classesBefore,
-          ...self.classesAfter
-        )
-      }
-      if (options.classSkip !== true && !options.classSkip['elementsInner']) {
-        const elsInner = Xt.queryAll(el, options.elementsInner)
-        for (const elInner of elsInner) {
-          elInner.classList.remove(
+      // check if activated
+      if (activated) {
+        // instant animation
+        el.classList.add(...self.classesInitial)
+      } else {
+        // reset classes
+        if (options.classSkip !== true && !options.classSkip['elements']) {
+          el.classList.remove(
             ...self.classes,
             ...self.classesIn,
             ...self.classesOut,
@@ -275,6 +267,20 @@ class Toggle {
             ...self.classesBefore,
             ...self.classesAfter
           )
+        }
+        if (options.classSkip !== true && !options.classSkip['elementsInner']) {
+          const elsInner = Xt.queryAll(el, options.elementsInner)
+          for (const elInner of elsInner) {
+            elInner.classList.remove(
+              ...self.classes,
+              ...self.classesIn,
+              ...self.classesOut,
+              ...self.classesDone,
+              ...self.classesInitial,
+              ...self.classesBefore,
+              ...self.classesAfter
+            )
+          }
         }
       }
       // check targets
@@ -284,22 +290,14 @@ class Toggle {
         if (saveCurrents && !activated) {
           activated = checkClass(tr)
         }
-        // remove classes !saveCurrents needed to not flickr on initialization
-        if (options.classSkip !== true && !options.classSkip['targets']) {
-          tr.classList.remove(
-            ...self.classes,
-            ...self.classesIn,
-            ...self.classesOut,
-            ...self.classesDone,
-            ...self.classesInitial,
-            ...self.classesBefore,
-            ...self.classesAfter
-          )
-        }
-        if (options.classSkip !== true && !options.classSkip['targetsInner']) {
-          const trsInner = Xt.queryAll(tr, options.targetsInner)
-          for (const trInner of trsInner) {
-            trInner.classList.remove(
+        // check if activated
+        if (activated) {
+          // instant animation
+          tr.classList.add(...self.classesInitial)
+        } else {
+          // reset classes
+          if (options.classSkip !== true && !options.classSkip['targets']) {
+            tr.classList.remove(
               ...self.classes,
               ...self.classesIn,
               ...self.classesOut,
@@ -308,6 +306,20 @@ class Toggle {
               ...self.classesBefore,
               ...self.classesAfter
             )
+          }
+          if (options.classSkip !== true && !options.classSkip['targetsInner']) {
+            const trsInner = Xt.queryAll(tr, options.targetsInner)
+            for (const trInner of trsInner) {
+              trInner.classList.remove(
+                ...self.classes,
+                ...self.classesIn,
+                ...self.classesOut,
+                ...self.classesDone,
+                ...self.classesInitial,
+                ...self.classesBefore,
+                ...self.classesAfter
+              )
+            }
           }
         }
       }
@@ -1407,12 +1419,8 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classes)
-      el.classList.remove(...self.classesIn)
-      el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
-      if (self.initial) {
-        el.classList.add(...self.classesInitial)
-      }
+      el.classList.remove(...self.classesOut)
       // input
       el.checked = true
       // hash
@@ -1469,9 +1477,9 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classes)
-      el.classList.add(...self.classesOut)
-      el.classList.remove(...self.classesDone)
       el.classList.remove(...self.classesIn)
+      el.classList.remove(...self.classesDone)
+      el.classList.add(...self.classesOut)
       // input
       el.checked = false
       // keep the same level of raf as activation
