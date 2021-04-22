@@ -202,7 +202,10 @@ class Toggle {
     }
     if (todo > 0) {
       for (let i = start; i < todo; i++) {
-        self.eventOn(self.elements[i], true)
+        const el = self.elements[i]
+        if (el) {
+          self.eventOn(el, true)
+        }
       }
     }
     // currents
