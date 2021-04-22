@@ -146,8 +146,6 @@ class Scrollto {
             }
           }
         }
-        // before raf prevent page scrolling on id automatically and prevent automatic scroll with custom scrollto.trigger and hash change
-        self.scroller.scrollTop = Xt.dataStorage.get(self.scroller, `${self.ns}ScrollPosition`)
         // raf after components activations and openauto.trigger.xt
         requestAnimationFrame(() => {
           // vars
@@ -244,8 +242,6 @@ class Scrollto {
   eventActivationHandler(scroller) {
     const self = this
     const options = self.options
-    // prevent page scrolling on id automatically
-    Xt.dataStorage.set(scroller, `${self.ns}ScrollPosition`, scroller.scrollTop)
     // logic
     if (options.scrollActivation) {
       clearTimeout(Xt.dataStorage.get(scroller, `${self.ns}ScrollTimeout`))

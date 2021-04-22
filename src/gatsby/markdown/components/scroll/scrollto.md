@@ -39,6 +39,9 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
   </div>
 </demo>
 
+[[noteDefault]]
+| When you navigate history with browsers the scroll is instant not animated because of `history.scrollRestoration = 'auto'`.
+
 ## Options
  
 Here are the main **javascript options**.
