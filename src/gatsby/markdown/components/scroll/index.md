@@ -40,14 +40,11 @@ Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/com
 
 ## Fixes
 
-- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
+- If you **trigger DOM height changes** showing/hiding content you need to refresh ScrollTrigger this way.
 
 ```js
-const overlay = document.querySelector('#my-overlay')
-
-overlay.addEventListener('on.xt.overlay', () => {
-  ScrollTrigger.refresh()
-})
+// refresh ScrollTrigger DOM height changes
+ScrollTrigger.refresh(true)
 ```
 
 - If you have strange behaviours on resize, you can force ScrollTrigger to refresh on resize with [Xt.eventDelay](/components/javascript#xt-eventdelay).
@@ -63,6 +60,16 @@ addEventListener('resize', e => {
       ScrollTrigger.refresh()
     },
   })
+})
+```
+
+- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
+
+```js
+const overlay = document.querySelector('#my-overlay')
+
+overlay.addEventListener('on.xt.overlay', () => {
+  ScrollTrigger.refresh()
 })
 ```
 
