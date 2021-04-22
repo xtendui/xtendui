@@ -252,7 +252,8 @@ class Toggle {
         activated = true
       }
       // check if activated
-      if (activated) {
+      // fix check options.max for currents of hashChange current reset if hash has current
+      if (activated && currents < options.max) {
         // instant animation
         el.classList.add(...self.classesIn)
         el.classList.add(...self.classesInitial)
@@ -292,7 +293,8 @@ class Toggle {
           activated = checkClass(tr)
         }
         // check if activated
-        if (activated) {
+        // fix check options.max for currents of hashChange current reset if hash has current
+        if (activated && currents < options.max) {
           // instant animation
           tr.classList.add(...self.classesIn)
           tr.classList.add(...self.classesInitial)

@@ -65,7 +65,9 @@ Test activation.
 
 ## Hash
 
-Test initial hash activation.
+Test initial activation with hash in location.
+
+Test initial targets bug that doesn't deactivate initial `on`.
 
 Test hash activation.
 
