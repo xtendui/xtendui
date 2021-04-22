@@ -122,7 +122,7 @@ export default function Header({ page }) {
         </header>
 
         <div
-          className="xt-overlay text-white xt-links-inverse group xt-overlay-disabled on in"
+          className="xt-overlay text-white xt-links-inverse group xt-overlay-disabled on"
           data-xt-duration="500"
           id="gatsby_menu--overlay">
           <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>

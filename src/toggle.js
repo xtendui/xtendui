@@ -211,16 +211,16 @@ class Toggle {
     }
     // no currents
     if (currents === 0) {
-      // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-      self.initial = false
-      // auto
-      self.eventAutostart()
+      // keep the same level of raf as init
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        // initial
+        self.initial = false
+        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.eventAutostart()
+      })
     }
-    // keep the same level of raf as init
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
   }
 
   /**
@@ -254,6 +254,7 @@ class Toggle {
       // check if activated
       if (activated) {
         // instant animation
+        el.classList.add(...self.classesIn)
         el.classList.add(...self.classesInitial)
       } else {
         // reset classes
@@ -293,6 +294,7 @@ class Toggle {
         // check if activated
         if (activated) {
           // instant animation
+          tr.classList.add(...self.classesIn)
           tr.classList.add(...self.classesInitial)
         } else {
           // reset classes
@@ -2275,8 +2277,6 @@ class Toggle {
     const self = this
     // logic
     if (actionCurrent === 'In') {
-      // auto
-      self.eventAutostart()
       // raf because after .xt custom listeners
       requestAnimationFrame(() => {
         // remove class initial
@@ -2287,9 +2287,14 @@ class Toggle {
             }
           }
         }
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
         // reset
         self.inverse = null
+        // initial
         self.initial = false
+        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.eventAutostart()
       })
     }
   }
