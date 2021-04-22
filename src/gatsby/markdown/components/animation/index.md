@@ -108,14 +108,7 @@ animation: 'xt-filler-x 1500ms infinite',
 animation: 'xt-filler-y 1500ms infinite',
 ```
 
-## Javascript
-
-This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
-
-```js
-import gsap from 'gsap'
-gsap.config({ force3D: false }) // smoother pixels animations
-```
+## Defaults
 
 You can **opt out** some animations behaviour:
 
@@ -128,9 +121,7 @@ You can **opt out** some animations behaviour:
 * **Prefers Reduced Motion**: Xtend UI **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script:
 
 ```js
-/**
- * animation
- */
+/* animation */
 
 // accessibility
 
@@ -151,9 +142,7 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 You can play gsap and XtendUI settings, an **example setup** for for faster animation on mobile.
 
 ```js
-/**
- * animation
- */
+/* animation */
 
 // faster on mobile
 
@@ -171,4 +160,12 @@ const animationResponsive = () => {
 }
 addEventListener('resize', animationResponsive)
 animationResponsive()
+```
+
+Set gsap `force3D: false` for smoother pixels animations.
+
+```js
+/* animation */
+
+gsap.config({ force3D: false }) // smoother pixels animations
 ```

@@ -47,10 +47,20 @@ Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/com
 ScrollTrigger.refresh(true)
 ```
 
+- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
+
+```js
+const overlay = document.querySelector('#my-overlay')
+
+overlay.addEventListener('on.xt.overlay', () => {
+  ScrollTrigger.refresh()
+})
+```
+
 - If you have strange behaviours on resize, you can force ScrollTrigger to refresh on resize with [Xt.eventDelay](/components/javascript#xt-eventdelay).
 
 ```js
-/* ScrollTrigger fix resize pinned items */
+/* ScrollTrigger fix resize pin items */
 
 addEventListener('resize', e => {
   Xt.eventDelay({
@@ -63,29 +73,20 @@ addEventListener('resize', e => {
 })
 ```
 
-- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
-
-```js
-const overlay = document.querySelector('#my-overlay')
-
-overlay.addEventListener('on.xt.overlay', () => {
-  ScrollTrigger.refresh()
-})
-```
-
 - If you are initializing **sticky inside** [Xt.mount](/introduction/javascript#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
 
 ```js
-const sticky = ScrollTrigger.create({
-  pin: true,
-  ...
-})
+/* ScrollTrigger fix pin items with Xt.mount */
 
 ScrollTrigger.addEventListener('refresh', () => {
-  // fix ScrollTrigger pin mount ignore
-  sticky.pin.classList.add('xt-ignore')
+  const stickys = document.querySelectorAll('.xt-sticky')
+  for (const sticky of stickys) {
+    sticky.classList.add('xt-ignore')
+  }
   requestAnimationFrame(() => {
-    sticky.pin.classList.remove('xt-ignore')
+    for (const sticky of stickys) {
+      sticky.classList.remove('xt-ignore')
+    }
   })
 })
 ```

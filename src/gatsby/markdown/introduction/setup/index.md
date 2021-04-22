@@ -138,11 +138,11 @@ import 'xtendui/src/toggle'
 
 This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
 
-```
+```sh
 npm install gsap@3 --save
 ```
 
-Then set up animations see [animation javascript](/components/animation#javascript).
+Then set up animations see [animation javascript](/components/animation#defaults).
 
 #### Polyfill
 
@@ -153,6 +153,65 @@ npm install @babel/core @babel/preset-env --save-dev
 ```
 
 Then in the root of your project set up polyfills with [babel.config.js](https://github.com/minimit/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
+
+#### Boilerplate
+
+Add this javascript to setup [suggested animations defaults](/components/animation#defaults).
+
+```js
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+
+/* animation */
+
+gsap.config({ force3D: false }) // smoother pixels animations
+
+// accessibility
+
+if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  // instant animations
+  gsap.globalTimeline.timeScale(1000)
+  // instant interactions
+  Xt.durationTimescale = 1000
+  // double auto time
+  Xt.autoTimescale = 0.5
+}
+```
+
+Add this javascript to setup [suggested scrolltrigger fixes](/components/scroll#fixes).
+
+```js
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+/* ScrollTrigger fix resize pin items */
+
+addEventListener('resize', e => {
+  Xt.eventDelay({
+    event: e,
+    prefix: 'xtScrollTriggerRefresh',
+    func: () => {
+      ScrollTrigger.refresh()
+    },
+  })
+})
+
+/* ScrollTrigger fix pin items with Xt.mount */
+
+ScrollTrigger.addEventListener('refresh', () => {
+  const stickys = document.querySelectorAll('.xt-sticky')
+  for (const sticky of stickys) {
+    sticky.classList.add('xt-ignore')
+  }
+  requestAnimationFrame(() => {
+    for (const sticky of stickys) {
+      sticky.classList.remove('xt-ignore')
+    }
+  })
+})
+```
 
 ## CDN
 

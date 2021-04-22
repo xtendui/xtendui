@@ -143,21 +143,13 @@ Xt.mount({
       '(max-width: 1023px)': () => {
         // sticky
 
-        const sticky = ScrollTrigger.create({
+        ScrollTrigger.create({
           trigger: ref,
           start: 'top top',
           endTrigger: 'html',
           end: 'bottom top',
           pin: true,
           pinSpacing: false,
-        })
-
-        ScrollTrigger.addEventListener('refresh', () => {
-          // fix ScrollTrigger pin mount ignore
-          sticky.pin.classList.add('xt-ignore')
-          requestAnimationFrame(() => {
-            sticky.pin.classList.remove('xt-ignore')
-          })
         })
       },
     })
@@ -207,7 +199,7 @@ Xt.mount({
 
     // sticky
 
-    const sticky = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ref,
       start: 'top top',
       endTrigger: 'html',
@@ -245,14 +237,6 @@ Xt.mount({
           straight()
         }
       },
-    })
-
-    ScrollTrigger.addEventListener('refresh', () => {
-      // fix ScrollTrigger pin mount ignore
-      sticky.pin.classList.add('xt-ignore')
-      requestAnimationFrame(() => {
-        sticky.pin.classList.remove('xt-ignore')
-      })
     })
 
     // hide depending on .gatsby_site-main_inner
