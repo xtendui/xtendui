@@ -237,7 +237,7 @@ class Toggle {
     // check
     const checkClass = el => {
       for (const c of self.classes) {
-        if (el.classList.contains(c)) {
+        if (el.classList.contains(c) || el.checked) {
           return true
         }
       }
