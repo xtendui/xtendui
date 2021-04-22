@@ -200,30 +200,32 @@ class Toggle {
       // initial
       currents += todo
     }
-    if (todo > 0) {
-      for (let i = start; i < todo; i++) {
-        const el = self.elements[i]
-        if (el) {
-          self.eventOn(el, true)
+    // raf because after .xt custom listeners
+    // keep the same level of raf as init
+    requestAnimationFrame(() => {
+      // todo
+      if (todo > 0) {
+        for (let i = start; i < todo; i++) {
+          const el = self.elements[i]
+          if (el) {
+            self.eventOn(el, true)
+          }
         }
       }
-    }
-    // currents
-    if (saveCurrents) {
-      self.initialCurrents = self.getCurrents().slice(0)
-    }
-    // no currents
-    if (currents === 0) {
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
+      // currents
+      if (saveCurrents) {
+        self.initialCurrents = self.getCurrents().slice(0)
+      }
+      // no currents
+      if (currents === 0) {
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
         // initial
         self.initial = false
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
-      })
-    }
+      }
+    })
   }
 
   /**
@@ -334,8 +336,12 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
-        const event = options.on.split(' ')[0]
-        el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+        // raf because after .xt custom listeners
+        // keep the same level of raf as init
+        requestAnimationFrame(() => {
+          const event = options.on.split(' ')[0]
+          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+        })
       }
     }
     // return

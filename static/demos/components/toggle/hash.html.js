@@ -41,6 +41,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group-another"
+        data-xt-hash="demo--hash-group-another"
       >
         Toggle Group another
       </button>
