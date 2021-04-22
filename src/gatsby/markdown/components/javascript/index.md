@@ -16,7 +16,6 @@ Check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/be
 
 Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
-
 ## Usability
 
 Activate usability logs with `import 'xtendui/src/usability'`. Xtend will sends **warning messages with website usability suggestions**.
@@ -160,7 +159,7 @@ Or also use css variables for viewport height `--vh`.
 }
 ```
 
-## Event Delay
+## Xt.eventDelay
 
 For special events like the `resize` and `scroll` events we use a special wrapper `Xt.eventDelay` that set the delay on which the resize gets triggered. It's useful also if you need to **execute one time** a function **with multiple calls**.
 

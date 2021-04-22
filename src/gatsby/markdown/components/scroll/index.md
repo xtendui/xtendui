@@ -16,7 +16,6 @@ Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/s
 
 This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/setup#javascript-gsap) to **install and use gsap**.
 
-
 ## Usage
 
 Use this code to create a **fade**.
@@ -38,3 +37,48 @@ Use this code to create a **parallax**.
 </demo>
 
 Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/components/scroll/sticky) and [scroll parallax](/components/scroll/parallax).
+
+## Fixes
+
+- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
+
+```js
+const overlay = document.querySelector('#my-overlay')
+
+overlay.addEventListener('on.xt.overlay', () => {
+  ScrollTrigger.refresh()
+})
+```
+
+- If you have strange behaviours on resize, you can force ScrollTrigger to refresh on resize with [Xt.eventDelay](/components/javascript#xt-eventdelay).
+
+```js
+/* ScrollTrigger fix resize pinned items */
+
+addEventListener('resize', e => {
+  Xt.eventDelay({
+    event: e,
+    prefix: 'xtScrollTriggerRefresh',
+    func: () => {
+      ScrollTrigger.refresh()
+    },
+  })
+})
+```
+
+- If you are initializing **sticky inside** [Xt.mount](/introduction/javascript#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+
+```js
+const sticky = ScrollTrigger.create({
+  pin: true,
+  ...
+})
+
+ScrollTrigger.addEventListener('refresh', () => {
+  // fix ScrollTrigger pin mount ignore
+  sticky.pin.classList.add('xt-ignore')
+  requestAnimationFrame(() => {
+    sticky.pin.classList.remove('xt-ignore')
+  })
+})
+```
