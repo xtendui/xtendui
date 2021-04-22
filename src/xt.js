@@ -23,7 +23,6 @@ if (typeof window !== 'undefined') {
   Xt.scrollDelay = false
   Xt.resizeDelay = 250
   Xt.medialoadedDelay = false
-  Xt.scrollRestoration = 'auto'
   Xt.focusables = 'a, button, details, input, iframe, select, textarea, .xt-dismiss'
   Xt.supportScroll = 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
   Xt.durationTimescale = 1
@@ -1074,15 +1073,6 @@ if (typeof window !== 'undefined') {
     })
   })
   Xt.innerHeightSet()
-
-  /**
-   * scrollRestoration
-   */
-  Xt.ready(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = Xt.scrollRestoration
-    }
-  })
 
   //
 }
