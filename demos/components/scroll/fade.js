@@ -19,24 +19,30 @@ Xt.mount({
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // vars
-
-  const items = ref.querySelectorAll('.xt-card')
-
   // fade
 
-  ScrollTrigger.batch(items, {
-    once: true,
-    onEnter: batch => {
-      gsap.killTweensOf(batch)
-      gsap.to(batch, {
-        opacity: 1,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-  })
+  const fade = ({ container }) => {
+    // items inside container and not already faded
+    const items = container.querySelectorAll('.xt-card:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+    // fade
+    ScrollTrigger.batch(items, {
+      once: true,
+      onEnter: batch => {
+        gsap.killTweensOf(batch)
+        gsap.to(batch, {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+    })
+  }
+
+  fade({ container: ref })
 
   // unmount
 

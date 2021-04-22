@@ -29,7 +29,11 @@ const mountScrollto = () => {
   // init
 
   let self = new Xt.Scrollto(document.documentElement, {
-    scrolls: '.xt-overlay, .product-gallery',
+    scrollers: '.xt-overlay, .product-gallery',
+    duration: ({ self }) => {
+      const dist = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
+    },
   })
 
   // scrollto
@@ -37,11 +41,10 @@ const mountScrollto = () => {
   const scrollto = () => {
     // scroll
     const overlay = self.target.closest('.xt-overlay')
-    const duration = overlay && !overlay.classList.contains('in') ? 0 : 1 // instant if inside overlay and initial activation
-    gsap.killTweensOf(self.scroll)
-    gsap.to(self.scroll, {
+    gsap.killTweensOf(self.scroller)
+    gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: duration,
+      duration: overlay && !overlay.classList.contains('in') ? 0 : self.duration, // instant if inside overlay and initial activation
       ease: 'quart.inOut',
     })
   }
@@ -62,12 +65,12 @@ const mountScrollto = () => {
 const mountImages = ({ ref }) => {
   // vars
 
-  const overlay = ref
+  const container = ref
   const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(overlay, {
+  new Xt.Overlay(container, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })

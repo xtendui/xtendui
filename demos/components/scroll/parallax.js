@@ -19,58 +19,58 @@ Xt.mount({
 /* mountParallax */
 
 const mountParallax = ({ ref }) => {
-  // vars
+  // parallax
 
-  const trigger0 = ref.querySelector('.box-0')
-  const trigger1 = ref.querySelector('.box-1')
-  const trigger2 = ref.querySelector('.box-2')
-
-  // no scrub
-
-  const scrollTrigger0 = {
-    trigger: trigger0,
+  const parallax = ({ container }) => {
+    // items inside container and not already parallaxed
+    const items = container.querySelectorAll('.box:not(.parallaxed)')
+    for (const item of items) {
+      item.classList.add('parallaxed')
+    }
+    // no scrub
+    const item0 = items[0]
+    const scrollTrigger0 = {
+      trigger: item0,
+    }
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger0,
+      })
+      .to(item0, {
+        x: '50vw',
+        ease: 'quint.inOut',
+      })
+    // scrub
+    const item1 = items[1]
+    const scrollTrigger1 = {
+      trigger: item1,
+      scrub: true,
+    }
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger1,
+      })
+      .to(item1, {
+        x: '50vw',
+        ease: 'quint.inOut',
+      })
+    // scrub value
+    const item2 = items[2]
+    const scrollTrigger2 = {
+      trigger: item2,
+      scrub: 1.5,
+    }
+    gsap
+      .timeline({
+        scrollTrigger: scrollTrigger2,
+      })
+      .to(item2, {
+        x: '50vw',
+        ease: 'quint.inOut',
+      })
   }
 
-  gsap
-    .timeline({
-      scrollTrigger: scrollTrigger0,
-    })
-    .to(trigger0, {
-      x: '50vw',
-      ease: 'quint.inOut',
-    })
-
-  // scrub
-
-  const scrollTrigger1 = {
-    trigger: trigger1,
-    scrub: true,
-  }
-
-  gsap
-    .timeline({
-      scrollTrigger: scrollTrigger1,
-    })
-    .to(trigger1, {
-      x: '50vw',
-      ease: 'quint.inOut',
-    })
-
-  // scrub value
-
-  const scrollTrigger2 = {
-    trigger: trigger2,
-    scrub: 1.5,
-  }
-
-  gsap
-    .timeline({
-      scrollTrigger: scrollTrigger2,
-    })
-    .to(trigger2, {
-      x: '50vw',
-      ease: 'quint.inOut',
-    })
+  parallax({ container: ref })
 
   // unmount
 

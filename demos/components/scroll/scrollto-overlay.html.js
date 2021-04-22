@@ -8,28 +8,29 @@ const html = /* HTML */ `
           <a
             href="#anchor-0"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #0
           </a>
           <a
             href="#anchor-1"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #1
           </a>
           <button
             type="button"
             class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             custom
           </button>
           <a
             href="#anchor-2"
             class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto' }"
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
+            data-xt-scrollto-hash="true"
           >
             #2
           </a>
@@ -40,7 +41,7 @@ const html = /* HTML */ `
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
+          <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>
@@ -48,7 +49,7 @@ const html = /* HTML */ `
 
     <div class="xt-overlay" id="overlay--scrollto">
       <div class="xt-backdrop bg-black opacity-25"></div>
-      <div class="xt-overlay-container p-0">
+      <div class="xt-overlay-container py-0">
         <div class="xt-overlay-inner">
           <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
             ${classes.iconX()}
@@ -137,17 +138,6 @@ const html = /* HTML */ `
               Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
               feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
             </p>
-            <div class="xt-list xt-list-3">
-              <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
-              <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
-              <button
-                type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-              >
-                custom
-              </button>
-              <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
-            </div>
           </div>
 
           <br /><br /><br /><br /><br /><br /><br />

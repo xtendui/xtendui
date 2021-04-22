@@ -5,8 +5,17 @@
     }
     /* fixed height */
     img {
-      height: 30rem;
       width: auto;
+      height: 10rem;
+      @screen sm {
+        height: 15rem;
+      }
+      @screen md {
+        height: 20rem;
+      }
+      @screen lg {
+        height: 30rem;
+      }
     }
     /* full width when loading */
     width: 100%;

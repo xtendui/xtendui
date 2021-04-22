@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--navsides-slider">
     <div class="xt-slider">
       <div class="xt-slides xt-row xt-row-4">
-        <div class="xt-slide w-6/12 sm:w-4/12">
+        <div class="xt-slide w-7/12 sm:w-6/12">
           <div class="xt-card rounded-md ${classes.cardSlide()}">
             <div class="xt-h4">1</div>
           </div>
@@ -52,7 +52,7 @@ const html = /* HTML */ `
       >
         <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
           ${classes.iconArrowLeft({
-            classes: 'transform transition-all group-in:opacity-75 group-in:scale-75',
+            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
           })}
         </div>
       </button>
@@ -66,7 +66,7 @@ const html = /* HTML */ `
       >
         <div class="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
           ${classes.iconArrowRight({
-            classes: 'transform transition-all group-in:opacity-75 group-in:scale-75',
+            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
           })}
         </div>
       </button>

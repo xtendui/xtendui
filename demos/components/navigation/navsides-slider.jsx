@@ -21,7 +21,7 @@ export default function component() {
     <div className="demo--navsides-slider-react" ref={ref}>
       <div className="xt-slider">
         <div className="xt-slides xt-row xt-row-4">
-          <div className="xt-slide w-6/12 sm:w-4/12">
+          <div className="xt-slide w-7/12 sm:w-6/12">
             <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
               <div className="xt-h4">1</div>
             </div>
@@ -68,7 +68,7 @@ export default function component() {
           <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all group-in:opacity-75 group-in:scale-75"
+              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export default function component() {
           <div className="xt-mousefollow text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all group-in:opacity-75 group-in:scale-75"
+              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
               width="24"
               height="24"
               viewBox="0 0 24 24"

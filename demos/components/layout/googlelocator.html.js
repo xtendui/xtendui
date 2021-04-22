@@ -18,7 +18,7 @@ const html = /* HTML */ `
                     />
                     <button
                       type="button"
-                      class="button--locate xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+                      class="button--locate xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
                     >
                       ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     </button>

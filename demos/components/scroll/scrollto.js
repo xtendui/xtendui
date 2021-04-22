@@ -28,13 +28,16 @@ const mountScrollto = () => {
 
   let self = new Xt.Scrollto(document.documentElement, {
     hash: true,
-    scrollSpace: ({ self }) => {
+    space: ({ self }) => {
       let space = 0
-      const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
-      for (const spaceEl of spaceEls) {
-        space += spaceEl.clientHeight
+      for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
+        space += el.clientHeight
       }
       return space
+    },
+    duration: ({ self }) => {
+      const dist = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 
@@ -42,10 +45,10 @@ const mountScrollto = () => {
 
   const scrollto = () => {
     // scroll
-    gsap.killTweensOf(self.scroll)
-    gsap.to(self.scroll, {
+    gsap.killTweensOf(self.scroller)
+    gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: 1,
+      duration: self.duration,
       ease: 'quart.inOut',
     })
   }

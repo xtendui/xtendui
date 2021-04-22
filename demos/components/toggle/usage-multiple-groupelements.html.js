@@ -6,14 +6,6 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group,group-another"
-      >
-        Toggle Group all
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
         data-xt-group="group"
       >
         Toggle Group
@@ -41,6 +33,14 @@ const html = /* HTML */ `
         data-xt-group="group-another"
       >
         Toggle Group another
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        data-xt-group="group,group-another"
+      >
+        Toggle Group all
       </button>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>

@@ -298,9 +298,7 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  const self = new Xt.Slider(ref.querySelector('.slider--listing'), {
-    contain: true,
-  })
+  const self = new Xt.Slider(ref.querySelector('.slider--listing'), {})
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
@@ -454,35 +452,43 @@ const mountMedia = ({ ref }) => {
 const mountFade = ({ ref }) => {
   // vars
 
-  const items = ref.querySelectorAll('.listing-item')
-
   const scrollY = 15
   const scrollScale = 1.04
 
   // fade
 
-  ScrollTrigger.batch(items, {
-    once: true,
-    start: 'top bottom-=10%',
-    end: 'bottom top+=10%',
-    onEnter: (batch, scrollTriggers) => {
-      const direction = scrollTriggers[0].direction
-      const y = direction > 0 ? -scrollY : scrollY
-      gsap.killTweensOf(batch)
-      gsap.set(batch, {
-        y: y,
-        scale: scrollScale,
-      })
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-  })
+  const fade = ({ container }) => {
+    // items inside container and not already faded
+    const items = container.querySelectorAll('.listing-item:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+    // fade
+    ScrollTrigger.batch(items, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -scrollY : scrollY
+        gsap.killTweensOf(batch)
+        gsap.set(batch, {
+          y: y,
+          scale: scrollScale,
+        })
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+    })
+  }
+
+  fade({ container: ref })
 
   // unmount
 

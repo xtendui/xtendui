@@ -178,31 +178,6 @@ export default function component() {
             Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
             feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
           </p>
-          <div className="xt-list xt-list-3">
-            <a
-              href="#anchor-0"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-              {' '}
-              #0{' '}
-            </a>
-            <a
-              href="#anchor-1"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-              {' '}
-              #1{' '}
-            </a>
-            <button
-              type="button"
-              className="xt-button button--custom text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-              custom
-            </button>
-            <a
-              href="#anchor-2"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-              {' '}
-              #2{' '}
-            </a>
-          </div>
         </div>
 
         <br />
@@ -288,13 +263,16 @@ const mountScrollto = () => {
 
   let self = new Xt.Scrollto(document.documentElement, {
     hash: true,
-    scrollSpace: ({ self }) => {
+    space: ({ self }) => {
       let space = 0
-      const spaceEls = self.scroll.querySelectorAll('.xt-sticky[style*="position: fixed"]')
-      for (const spaceEl of spaceEls) {
-        space += spaceEl.clientHeight
+      for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
+        space += el.clientHeight
       }
       return space
+    },
+    duration: ({ self }) => {
+      const dist = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 
@@ -302,10 +280,10 @@ const mountScrollto = () => {
 
   const scrollto = () => {
     // scroll
-    gsap.killTweensOf(self.scroll)
-    gsap.to(self.scroll, {
+    gsap.killTweensOf(self.scroller)
+    gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: 1,
+      duration: self.duration,
       ease: 'quart.inOut',
     })
   }

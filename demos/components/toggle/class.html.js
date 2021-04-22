@@ -2,15 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ max: 'Infinity' }">
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group,group-another"
-      >
-        Toggle Group all
-      </button>
-
+    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ min: 2, max: 2 }">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
@@ -32,7 +24,7 @@ const html = /* HTML */ `
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
-        Toggle 3
+        Toggle 2
       </button>
 
       <button
@@ -43,6 +35,14 @@ const html = /* HTML */ `
         Toggle Group another
       </button>
 
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        data-xt-group="group,group-another"
+      >
+        Toggle Group all
+      </button>
+
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
@@ -51,9 +51,9 @@ const html = /* HTML */ `
         Target Group another
       </div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on" data-xt-group="group">Target Group</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on">Target 2</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
         Target Group another

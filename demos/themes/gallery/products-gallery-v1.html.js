@@ -95,7 +95,7 @@ const html = /* HTML */ `
                         title="Go to image 1"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
                         ></div>
                       </a>
 
@@ -105,7 +105,7 @@ const html = /* HTML */ `
                         title="Go to image 2"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
                         ></div>
                       </a>
 
@@ -115,7 +115,7 @@ const html = /* HTML */ `
                         title="Go to image 3"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
                         ></div>
                       </a>
 
@@ -125,7 +125,7 @@ const html = /* HTML */ `
                         title="Go to image 4"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
                         ></div>
                       </a>
 
@@ -135,7 +135,7 @@ const html = /* HTML */ `
                         title="Go to image 5"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-in:bg-transparent group-in:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
                         ></div>
                       </a>
                     </div>

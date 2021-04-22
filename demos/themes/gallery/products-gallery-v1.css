@@ -16,7 +16,7 @@
       height: 7px;
       @apply transition-all;
     }
-    &.in {
+    &.on {
       > * {
         width: 9px;
         height: 9px;

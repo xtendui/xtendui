@@ -6,11 +6,11 @@ const buttonDefault = () => classes.buttonDefault()
 const buttonPrimary = () => classes.buttonPrimary()
 
 const animDesign = () =>
-  'h-0 overflow-hidden transform -translate-y-4 group-in:transition-all group-in:translate-y-0 group-out:transition-all group-out:ease-in-out-quint group-out:-translate-y-2'
+  'h-0 overflow-hidden transform -translate-y-4 group-in:transition-all group-in:duration-500 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItem = () =>
-  'transform opacity-0 -translate-y-2 group-in:transition group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+  'transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItemOpacity = () =>
-  'transition-opacity ease-in-out-quint duration-300 opacity-0 group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
+  'opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
 const html = /* HTML */ `
   <div>

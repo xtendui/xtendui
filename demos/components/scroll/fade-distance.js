@@ -19,60 +19,65 @@ Xt.mount({
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // vars
-
-  const items = ref.querySelectorAll('.xt-card')
-
   // fade
 
-  gsap.set(items, {
-    y: 15,
-  })
+  const fade = ({ container }) => {
+    // items inside container and not already faded
+    const items = container.querySelectorAll('.xt-card:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+    // fade
+    gsap.set(items, {
+      y: 15,
+    })
+    ScrollTrigger.batch(items, {
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: batch => {
+        gsap.killTweensOf(batch)
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+      onLeave: batch => {
+        gsap.killTweensOf(batch)
+        gsap.to(batch, {
+          opacity: 0,
+          y: -15,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+      onEnterBack: batch => {
+        gsap.killTweensOf(batch)
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+      onLeaveBack: batch => {
+        gsap.killTweensOf(batch)
+        gsap.to(batch, {
+          opacity: 0,
+          y: 15,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: 0.15,
+        })
+      },
+    })
+  }
 
-  ScrollTrigger.batch(items, {
-    start: 'top bottom-=10%',
-    end: 'bottom top+=10%',
-    onEnter: batch => {
-      gsap.killTweensOf(batch)
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-    onLeave: batch => {
-      gsap.killTweensOf(batch)
-      gsap.to(batch, {
-        opacity: 0,
-        y: -15,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-    onEnterBack: batch => {
-      gsap.killTweensOf(batch)
-      gsap.to(batch, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-    onLeaveBack: batch => {
-      gsap.killTweensOf(batch)
-      gsap.to(batch, {
-        opacity: 0,
-        y: 15,
-        duration: 0.5,
-        ease: 'quart.out',
-        stagger: 0.15,
-      })
-    },
-  })
+  fade({ container: ref })
 
   // unmount
 
