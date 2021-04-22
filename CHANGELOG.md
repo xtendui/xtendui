@@ -1,3 +1,48 @@
+# [1.0.0-beta.13](https://github.com/minimit/xtendui/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-04-22)
+
+
+### Bug Fixes
+
+* **scrollto:** add option attribute for hash and some fixes ([3d33042](https://github.com/minimit/xtendui/commit/3d330425325468c40e7cd36c508130155e3ab3d7))
+* **scrollto:** fix automatic scroll on change hash ([503d2f3](https://github.com/minimit/xtendui/commit/503d2f3ebb788872ba503a29512ccd357317f537))
+* **scrollto:** fix hash change animation ([b27e827](https://github.com/minimit/xtendui/commit/b27e8276604509e1eeab23812fe22a265bdf2147))
+* **scrollto:** fix prevent page scrolling on hash change ([702fabb](https://github.com/minimit/xtendui/commit/702fabbeb486c51efdeeefcc40d0c81dc421db03))
+* **slider:** default contain true for slider and some fixes ([32e5fc7](https://github.com/minimit/xtendui/commit/32e5fc72c32f1c0739488c28dbfd74056dd07025))
+* **slider:** fix contain group and positioning and fix drag positioning ([4bc6358](https://github.com/minimit/xtendui/commit/4bc63583f9e935448451bda9506d2151d38eaf67))
+* **slider:** fix jump mobile and mobile lock scroll ([5088bbc](https://github.com/minimit/xtendui/commit/5088bbcc426bd7f9cfbbafa29305e3678db604df))
+* **slider:** fix slider calculations height and width and refactor functions in various components ([fca04d5](https://github.com/minimit/xtendui/commit/fca04d563ff83a2c92a579af37241cfe4d80f71c))
+* **slider:** fix slider overflow values and demos with custom overflow ([6150357](https://github.com/minimit/xtendui/commit/615035739385905bbc15d42bd9ecde55856a9d3a))
+* **toggle:** fix initial animations instant and fix reinit keep in class ([fdceab8](https://github.com/minimit/xtendui/commit/fdceab8448a55d5e62434baf01b950bdebf00a7e))
+* **toggle:** fix initialization remove classes with raf no flick and respect options.classSkip ([c283bb3](https://github.com/minimit/xtendui/commit/c283bb30583eebb84f16998a405952846f6e878c))
+* **toggle:** fix initialization with hash bug that didn't remove initial on ([097bdbe](https://github.com/minimit/xtendui/commit/097bdbe668ac00cfc8b42ce69a23c52e8742e6b9))
+* **toggle:** fix openauto triggering on wrong elements ([8c6dece](https://github.com/minimit/xtendui/commit/8c6deceac0e1ed4df01aa9a092653f2be89c5edb))
+* **toggle:** fix reinit after disable keep currents ([e3dd28c](https://github.com/minimit/xtendui/commit/e3dd28c7c38e80ff61e94890c23959adc1481e28))
+* fix toggle initialization classes and refactor scrollto ([eb48f53](https://github.com/minimit/xtendui/commit/eb48f53851f54db7daa534b710ee7ccebe01afd2))
+* **toggle:** hash activated by default and option is string ([95194fb](https://github.com/minimit/xtendui/commit/95194fb9daa6d2f60fbaf1ec72964378831d6e57))
+* initialization with one raf ([0b0864c](https://github.com/minimit/xtendui/commit/0b0864c03936793106a26381296c3ea63cef38b0))
+* toggle and slider defaults revision ([c6fa4eb](https://github.com/minimit/xtendui/commit/c6fa4eb5daa5a5b1dfb95b4b54651edc98fd79d5))
+* **toggle:** hash option toggle only true or false ([5ac9783](https://github.com/minimit/xtendui/commit/5ac9783819bcdce032555a9de5a9ef612b3fe846))
+
+
+### Code Refactoring
+
+* openauto and closeauto name ([8c72499](https://github.com/minimit/xtendui/commit/8c72499209a715a60b7166bbdc7946559f00dc52))
+
+
+### Features
+
+* **scrollto:** scrollto duration and removed distance and refactor ([f4f7195](https://github.com/minimit/xtendui/commit/f4f7195f90f87dc5c158dbd00dd9f43e2502d8be))
+* **toggle:** hash option with demos and fix form.js multiple triggers on initial ([977b0a3](https://github.com/minimit/xtendui/commit/977b0a34f5d20ad3faf25061202c9219c09c2dc7))
+
+
+### BREAKING CHANGES
+
+* closeAuto option to closeauto
+* **scrollto:** duration false by default scrollto use function or value if you want duration
+* **slider:** set contain: false if you don't want the contain in sliders
+* **slider:** mousefollow friction delta argument now as object
+* **scrollto:** new options. and self. for scrollto see documentation
+
 # [1.0.0-beta.12](https://github.com/minimit/xtendui/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-04-13)
 
 
