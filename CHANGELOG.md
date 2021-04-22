@@ -1,3 +1,10 @@
+# [1.0.0-beta.14](https://github.com/minimit/xtendui/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-04-22)
+
+
+### Bug Fixes
+
+* **toggle:** initial also if checked ([ea20130](https://github.com/minimit/xtendui/commit/ea20130d43a331ed5b2f21c582e76e8755b92bc7))
+
 # [1.0.0-beta.13](https://github.com/minimit/xtendui/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2021-04-22)
 
 
