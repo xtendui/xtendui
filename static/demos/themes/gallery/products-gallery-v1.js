@@ -65,12 +65,12 @@ const mountScrollto = () => {
 const mountImages = ({ ref }) => {
   // vars
 
-  const overlay = ref
+  const container = ref
   const images = ref.querySelectorAll('.product-image')
 
   // overlay
 
-  new Xt.Overlay(overlay, {
+  new Xt.Overlay(container, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
