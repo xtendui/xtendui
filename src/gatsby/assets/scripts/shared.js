@@ -22,6 +22,11 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 
 /* ScrollTrigger fix resize pin items */
 
+ScrollTrigger.config({
+  // removed resize we trigger it manually
+  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+})
+
 addEventListener('resize', e => {
   Xt.eventDelay({
     event: e,

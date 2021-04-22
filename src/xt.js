@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
   Xt.mountArr = []
   Xt.unmountArr = []
   Xt.scrollDelay = false
-  Xt.resizeDelay = 250
+  Xt.resizeDelay = 75
   Xt.medialoadedDelay = false
   Xt.focusables = 'a, button, details, input, iframe, select, textarea, .xt-dismiss'
   Xt.supportScroll = 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)

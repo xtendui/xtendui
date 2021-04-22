@@ -191,7 +191,7 @@ addEventListener('scroll', e => {
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
-| Variable                  | `Xt.resizeDelay:Number|false`              | `250`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Variable                  | `Xt.resizeDelay:Number|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
 
 </div>
