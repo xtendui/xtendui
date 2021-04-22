@@ -57,7 +57,7 @@ overlay.addEventListener('on.xt.overlay', () => {
 })
 ```
 
-- If you have strange behaviours on resize, you can force ScrollTrigger to refresh on resize with [Xt.eventDelay](/components/javascript#xt-eventdelay).
+- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh with [Xt.eventDelay](/components/javascript#xt-eventdelay) instead.
 
 ```js
 /* ScrollTrigger fix resize pin items */
