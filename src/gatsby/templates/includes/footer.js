@@ -19,12 +19,8 @@ export default function Footer() {
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version}{' '}
           <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" target="_blank" rel="noopener noreferrer">
-            APACHE 2.0
+            Apache-2.0
           </a>{' '}
-          <span className="xt-separator xt-separator-dash"></span> Docs{' '}
-          <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE-DOCS" target="_blank" rel="noopener noreferrer">
-            CC BY 3.0
-          </a>
         </div>
         <div>
           © 2017 <span className="xt-separator xt-separator-dash"></span> {new Date().getFullYear()}{' '}

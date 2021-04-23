@@ -1,3 +1,9 @@
+/*!
+ * Xtend (https://xtendui.com/)
+ * @copyright (c) 2017 - 2021 Riccardo Caroli
+ * @license Apache-2.0 (https://github.com/minimit/xtendui/blob/beta/LICENSE)
+ */
+
 module.exports = {
   boxShadow: {
     overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
