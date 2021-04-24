@@ -55,10 +55,22 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   }
 }
 
-exports.onRouteUpdate = () => {
+exports.onRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+  // close fullscreen and others
+  if (window.location.hash === '') {
+    dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+  }
+  // only if changing page
+  if (prevLocation) {
+    // only if new page
+    if (location.pathname !== prevLocation.pathname) {
+      // scroll page to top
+      document.scrollingElement.scrollTop = 0
+    }
+  }
   // instant animations
   requestAnimationFrame(() => {
     document.querySelector('body').classList.add('xt-ready')
@@ -79,13 +91,9 @@ exports.onRouteUpdate = () => {
     // contain
     gatsbySidebarContain()
   }
-  // close fullscreen and others
-  if (window.location.hash === '') {
-    dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
-  }
 }
 
-exports.shouldUpdateScroll = ({ routerProps: { location } }) => {
-  // prevent scroll on same page and on href="#" or role="button"
-  return location.pathname !== window.location.pathname
+exports.shouldUpdateScroll = () => {
+  // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
+  return false
 }
