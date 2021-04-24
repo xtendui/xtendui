@@ -82,7 +82,7 @@ const mountSlider = ({ ref }) => {
       incoming.classList.remove('incoming')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
-    for (const incoming of incomings) {
+    for (const incoming of incomings.filter(x => x !== tr)) {
       incoming.classList.add('incoming')
       //console.debug('drag', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
       // mask
@@ -122,7 +122,7 @@ const mountSlider = ({ ref }) => {
     })
     // incomings
     const incomings = self.targets.filter(x => x.classList.contains('incoming'))
-    for (const incoming of incomings) {
+    for (const incoming of incomings.filter(x => x !== tr)) {
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.to(mask, {
@@ -148,7 +148,6 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
-        console.log(tr)
       // raf because after off.xt.slider
       requestAnimationFrame(() => {
         //console.debug('on', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
@@ -203,7 +202,7 @@ const mountSlider = ({ ref }) => {
       })
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
-      for (const incoming of incomings) {
+      for (const incoming of incomings.filter(x => x !== tr)) {
         //console.debug('off', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
         // mask
         const mask = incoming.querySelector('.hero')
