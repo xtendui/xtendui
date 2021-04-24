@@ -75,7 +75,7 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
 
 |                      | Name                          | Example                   | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
-| Attribute                  | `data-xt-group`       | `data-xt-group="group,group-another"`   |  Group or multiple groups on elements and targets            |
+| Attribute                  | `data-xt-group`       | `data-xt-group="mygroup"`   |  Group or multiple groups on elements and targets            |
 
 </div>
 

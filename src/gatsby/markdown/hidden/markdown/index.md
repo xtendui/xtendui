@@ -80,7 +80,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 |                      | Name                          | Example                   | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
-| Attribute                  | `data-xt-group`       | `data-xt-group="group,group-another"`   |  Group or multiple groups on elements and targets            |
+| Attribute                  | `data-xt-group`       | `data-xt-group="mygroup"`   |  Group or multiple groups on elements and targets            |
 
 </div>
 
