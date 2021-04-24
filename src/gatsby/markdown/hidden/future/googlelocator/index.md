@@ -67,7 +67,7 @@ Listen to events.
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt.googlelocator`           | `object` | Change event             |
-| Event                   | `init.xt.googlelocator`           | `object` | Init event             |
+| Event                   | `init.xt.googlelocator`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.googlelocator`           | `object` | Destroy event             |
 
 </div>

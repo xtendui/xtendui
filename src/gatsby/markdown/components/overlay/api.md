@@ -29,7 +29,7 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `ondone.xt.overlay`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.overlay`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.overlay`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt.overlay`           | `object` | Init event             |
+| Event                   | `init.xt.overlay`           | `object` | Init or reinit event             |
 | Event                   | `status.xt.overlay`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.overlay`           | `object` | Restart event             |
 | Event                   | `destroy.xt.overlay`           | `object` | Destroy event             |
@@ -95,9 +95,6 @@ let self = Xt.get('xt-overlay', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```
-
-[[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.overlay` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

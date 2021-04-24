@@ -29,7 +29,7 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `ondone.xt.tooltip`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.tooltip`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.tooltip`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt.tooltip`           | `object` | Init event             |
+| Event                   | `init.xt.tooltip`           | `object` | Init or reinit event             |
 | Event                   | `status.xt.tooltip`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.tooltip`           | `object` | Restart event             |
 | Event                   | `destroy.xt.tooltip`           | `object` | Destroy event             |
@@ -95,9 +95,6 @@ let self = Xt.get('xt-tooltip', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```
-
-[[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `initxt.tooltip` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

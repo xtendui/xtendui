@@ -222,7 +222,7 @@ class Toggle {
     }
     // no currents
     if (currents === 0) {
-      // keep the same level of raf as init for custom listener
+      // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
@@ -1418,7 +1418,7 @@ class Toggle {
           location.hash = `#${encodeURIComponent(attr)}`
         }
       }
-      // keep the same level of raf as activation
+      // keep the same level of raf for activation
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       Xt.dataStorage.put(
         el,
@@ -1469,7 +1469,7 @@ class Toggle {
       el.classList.add(...self.classesOut)
       // input
       el.checked = false
-      // keep the same level of raf as activation
+      // keep the same level of raf for activation
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -2038,7 +2038,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf as init for custom listener
+        // keep the same level of raf for custom listener
         requestAnimationFrame(() => {
           el.dispatchEvent(
             new CustomEvent(`on.${self.componentNs}`, {
@@ -2069,7 +2069,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf as init for custom listener
+        // keep the same level of raf for custom listener
         requestAnimationFrame(() => {
           // raf because after on for setDirection etc..
           requestAnimationFrame(() => {
@@ -2146,7 +2146,7 @@ class Toggle {
       self.specialCollapse('Reset', el, type)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf as init for custom listener
+        // keep the same level of raf for custom listener
         requestAnimationFrame(() => {
           el.dispatchEvent(
             new CustomEvent(`ondone.${self.componentNs}`, {
@@ -2197,7 +2197,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf as init for custom listener
+        // keep the same level of raf for custom listener
         requestAnimationFrame(() => {
           // raf because after on for setDirection etc..
           requestAnimationFrame(() => {
@@ -2268,7 +2268,7 @@ class Toggle {
     const self = this
     // logic
     if (actionCurrent === 'In') {
-      // keep the same level of raf as init for custom listener
+      // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
         // remove class initial
         if (self.initial) {
@@ -2409,7 +2409,7 @@ class Toggle {
           el.style.height = 'auto'
           const h = `${el.clientHeight}px`
           el.style.height = '0'
-          // keep the same level of raf as activation
+          // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2426,7 +2426,7 @@ class Toggle {
           el.style.width = 'auto'
           const w = `${el.clientWidth}px`
           el.style.width = '0'
-          // keep the same level of raf as activation
+          // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2443,7 +2443,7 @@ class Toggle {
           el.classList.remove('xt-collapse-reset')
           const h = `${el.offsetHeight}px`
           el.style.height = h
-          // keep the same level of raf as activation
+          // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
             el,
@@ -2459,7 +2459,7 @@ class Toggle {
           el.classList.remove('xt-collapse-reset')
           const w = `${el.offsetWidth}px`
           el.style.width = w
-          // keep the same level of raf as activation
+          // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.put(
             el,
@@ -2889,7 +2889,7 @@ class Toggle {
   initStatus() {
     const self = this
     const options = self.options
-    // keep the same level of raf as init for custom listener
+    // keep the same level of raf for custom listener
     cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}StatusFrame`))
     Xt.dataStorage.put(
       self.object,

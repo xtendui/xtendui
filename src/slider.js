@@ -673,7 +673,7 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // keep the same level of raf as init for custom listener
+    // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
       self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))

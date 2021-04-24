@@ -64,7 +64,7 @@ class Mousefollow {
     self.object.addEventListener('mouseenter', enterHandler)
     const leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
     self.object.addEventListener('mouseleave', leaveHandler)
-    // keep the same level of raf as init for custom listener
+    // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))

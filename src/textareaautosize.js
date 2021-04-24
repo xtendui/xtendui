@@ -63,16 +63,13 @@ class Textareaautosize {
     if (self.form) {
       self.form.addEventListener('reset', changeHandler)
     }
-    // keep the same level of raf as init for custom listener
+    // initial
+    self.initStart()
+    // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
-      // initial
-      self.initStart()
-      // keep the same level of raf as init for custom listener
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        self.initial = false
-      })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.initial = false
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -136,8 +133,11 @@ class Textareaautosize {
     self.object.classList.remove(`${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    // keep the same level of raf for custom listener
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    })
   }
 
   //

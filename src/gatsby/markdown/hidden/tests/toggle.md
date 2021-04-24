@@ -67,7 +67,7 @@ Test activation.
 
 Test no hash must not add hash initial activation.
 
-Test initial activation with hash in location must remove initial `on` in targets.
+Test initial activation on browser location, must remove initial `on` in targets.
 
 Test hash activation.
 

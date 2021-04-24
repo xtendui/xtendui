@@ -61,7 +61,7 @@ class Ripple {
     const onHandler = Xt.dataStorage.put(self.object, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
     self.object.addEventListener('mousedown', onHandler)
     self.object.addEventListener('touchstart', onHandler, { passive: true })
-    // keep the same level of raf as init for custom listener
+    // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))

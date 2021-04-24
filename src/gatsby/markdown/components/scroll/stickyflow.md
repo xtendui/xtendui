@@ -53,7 +53,7 @@ Listen to events.
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt.stickyflow`                        | `input` | Position change event             |
-| Event                   | `init.xt.stickyflow`           | `object` | Init event             |
+| Event                   | `init.xt.stickyflow`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.stickyflow`           | `object` | Destroy event             |
 
 </div>

@@ -51,7 +51,7 @@ Listen to events.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.xt.ripple`       | `object` | Activation event             |
 | Event                   | `off.xt.ripple`      | `object` | Deactivation event            |
-| Event                   | `init.xt.ripple`           | `object` | Init event             |
+| Event                   | `init.xt.ripple`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.ripple`           | `object` | Destroy event             |
 
 </div>

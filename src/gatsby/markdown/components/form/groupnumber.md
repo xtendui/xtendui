@@ -54,7 +54,7 @@ Listen to events.
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change`                        | `input` | Value change event             |
-| Event                   | `init.xt.groupnumber`           | `object` | Init event             |
+| Event                   | `init.xt.groupnumber`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.groupnumber`           | `object` | Destroy event             |
 
 </div>

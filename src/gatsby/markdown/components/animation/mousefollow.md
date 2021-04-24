@@ -75,7 +75,7 @@ Listen to events.
 | Event                   | `on.xt.mousefollow`       | `object` | Activation event             |
 | Event                   | `off.xt.mousefollow`      | `object` | Deactivation event            |
 | Event                   | `change.xt.mousefollow`       | `object` | Change event             |
-| Event                   | `init.xt.mousefollow`           | `object` | Init event             |
+| Event                   | `init.xt.mousefollow`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.mousefollow`           | `object` | Destroy event             |
 
 </div>

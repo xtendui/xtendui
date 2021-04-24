@@ -855,7 +855,7 @@ if (typeof window !== 'undefined') {
       el.classList.remove('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
       cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
-      // keep the same level of raf as activation
+      // keep the same level of raf for activation
       Xt.dataStorage.put(
         el,
         `AnimFrame${suffix}`,

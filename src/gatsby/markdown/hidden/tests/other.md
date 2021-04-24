@@ -18,12 +18,9 @@ Test position.
 
 Test browser location prev e next.
 
-Try the demo [on a new page](/demos/components/listing/infinitescroll).
+Test initial activation on browser location.
 
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll">
-  </div>
-</demo>
+Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2).
 
 ## Scroll
 

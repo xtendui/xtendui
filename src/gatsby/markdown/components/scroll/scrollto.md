@@ -91,7 +91,7 @@ Listen to events.
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `scrollto.xt.scrollto`      | `object` | Scrolto event           |
-| Event                   | `init.xt.scrollto`           | `object` | Init event             |
+| Event                   | `init.xt.scrollto`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.scrollto`           | `object` | Destroy event             |
 
 </div>

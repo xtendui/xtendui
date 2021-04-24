@@ -88,16 +88,13 @@ class Infinitescroll {
         trigger.addEventListener(event, triggerHandler)
       }
     }
-    // keep the same level of raf as init for custom listener
+    // initial
+    self.initStart()
+    // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
-      // initial
-      self.initStart()
-      // keep the same level of raf as init for custom listener
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        self.initial = false
-      })
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.initial = false
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -341,8 +338,11 @@ class Infinitescroll {
     self.update()
     self.paginate()
     self.eventScroll()
-    // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
+    // keep the same level of raf for custom listener
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
+    })
   }
 
   /**

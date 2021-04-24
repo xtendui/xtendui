@@ -32,7 +32,7 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `autostart.xt.toggle`           | `object` | Auto start event             |
 | Event                   | `autostop.xt.toggle`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt.toggle`           | `object` | Auto pause event             |
-| Event                   | `init.xt.toggle`           | `object` | Init event             |
+| Event                   | `init.xt.toggle`           | `object` | Init or reinit event             |
 | Event                   | `status.xt.toggle`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.toggle`           | `object` | Restart event             |
 | Event                   | `destroy.xt.toggle`           | `object` | Destroy event             |
@@ -100,9 +100,6 @@ let self = Xt.get('xt-toggle', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```
-
-[[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.toggle` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

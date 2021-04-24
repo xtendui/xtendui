@@ -37,7 +37,7 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
 | Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
 | Event                   | `dragreset.xt.slider`           | `dragger` | Drag reset event             |
-| Event                   | `init.xt.slider`           | `object` | Init event             |
+| Event                   | `init.xt.slider`           | `object` | Init or reinit event             |
 | Event                   | `status.xt.slider`           | `object` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.slider`           | `object` | Restart event             |
 | Event                   | `destroy.xt.slider`           | `object` | Destroy event             |
@@ -115,9 +115,6 @@ const self = Xt.get('xt-slider', document.querySelector('.my-object'))
 self.destroy()
 self = null
 ```
-
-[[notePrimary]]
-| When using `self.reinit` give the component a `requestAnimationFrame` for initialization or listen for the `init.xt.slider` event.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

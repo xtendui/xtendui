@@ -32,7 +32,7 @@ Listen to events.
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `init.xt.textareaautosize`           | `object` | Init event             |
+| Event                   | `init.xt.textareaautosize`           | `object` | Init or reinit event             |
 | Event                   | `destroy.xt.textareaautosize`           | `object` | Destroy event             |
 
 </div>
