@@ -58,6 +58,23 @@ You can set initial activation by adding `on` to the **elements** or **targets**
   </demoinline>
 </demo>
 
+You can **disable same group elements activation** with the option `groupElements: false`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group |     
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
+  </demoinline>
+  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
+  </demoinline>
+</demo>
+
 ## Hash
 
 You can link the activation in the url hash, hash activation has precedence over class activation.

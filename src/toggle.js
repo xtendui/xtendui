@@ -3110,7 +3110,7 @@ Toggle.optionsDefaultSuper = {
   classSkip: false,
   hash: 'data-xt-hash',
   groupSeparator: ',',
-  groupElements: false,
+  groupElements: true,
   // quantity
   min: 0,
   max: 1,

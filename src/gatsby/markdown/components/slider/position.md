@@ -46,9 +46,9 @@ With `group: Number` you set a number from 0 to 1 to automatically group the sli
 
 ## Contain
 
-Disable slider containing the slides.
+**Activated by default**, contain the slides inside the `drag.dragger`.
 
-Also when enabled **automatically group the slides** on start and end position (when position values would be the same).
+Also when enabled it **automatically group the slides** on start and end position (when position values would be the same).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -59,11 +59,11 @@ Also when enabled **automatically group the slides** on start and end position (
 </div>
 
 <demo>
-  <demoinline src="demos/components/slider/contain-center">
+  <demoinline src="demos/components/slider/nocontain-center">
   </demoinline>
-  <demoinline src="demos/components/slider/contain-left">
+  <demoinline src="demos/components/slider/nocontain-left">
   </demoinline>
-  <demoinline src="demos/components/slider/contain-right">
+  <demoinline src="demos/components/slider/nocontain-right">
   </demoinline>
 </demo>
 

@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-contain-center',
+  matches: '.demo--slider-nocontain-center',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

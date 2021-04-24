@@ -1290,8 +1290,6 @@ Slider.optionsDefault = {
   // element
   elements: '[data-xt-pag]',
   targets: '.xt-slide',
-  // class
-  groupElements: true,
   // quantity
   min: 1,
   max: 1,

@@ -29,11 +29,11 @@ Test activation and group activation.
 <demo>
   <demoinline src="demos/components/toggle/usage-unique">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-unique-groupelements">
+  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
   </demoinline>
   <demoinline src="demos/components/toggle/usage-multiple-group">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-multiple-groupelements">
+  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
   </demoinline>
 </demo>
 

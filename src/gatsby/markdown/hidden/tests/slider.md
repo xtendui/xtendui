@@ -66,11 +66,11 @@ Test drag activation.
 Test grouping and drag activation.
 
 <demo>
-  <demoinline src="demos/components/slider/contain-center">
+  <demoinline src="demos/components/slider/nocontain-center">
   </demoinline>
-  <demoinline src="demos/components/slider/contain-left">
+  <demoinline src="demos/components/slider/nocontain-left">
   </demoinline>
-  <demoinline src="demos/components/slider/contain-right">
+  <demoinline src="demos/components/slider/nocontain-right">
   </demoinline>
 </demo>
 

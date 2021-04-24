@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-contain-right',
+  matches: '.demo--slider-nocontain-left',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -26,7 +26,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
-    align: 'right',
+    align: 'left',
     contain: false,
   })
 

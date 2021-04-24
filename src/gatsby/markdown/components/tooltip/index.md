@@ -64,13 +64,30 @@ Use this code to create **tooltip** in **multiple mode**.
 
 </div>
 
-The **multiple** mode is useful when using `mouse` events and **you want to interact with the targets**.
-
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
-
 <demo>
   <demoinline src="demos/components/tooltip/usage-multiple">
   </demoinline>
+</demo>
+
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="group,group-another"`   |  Group or multiple groups on elements and targets            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+
+</div>
+
+<demo>
   <demoinline src="demos/components/tooltip/usage-multiple-group">
   </demoinline>
 </demo>

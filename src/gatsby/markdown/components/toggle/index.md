@@ -45,21 +45,6 @@ The **unique mode** is useful when you want to **trigger targets outside the sco
   </demoinline>
 </demo>
 
-You can group **elements activation** with the option `groupElements: true`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/toggle/usage-unique-groupelements">
-  </demoinline>
-</demo>
-
 Check subpage to [customize interaction](/components/toggle/interaction).
 
 ## Usage Multiple
@@ -105,19 +90,5 @@ If you need to toggle **multiple targets** with the **same element** assign `dat
   </demoinline>
 </demo>
 
-You can group **elements activation** with the option `groupElements: true`, it activates **elements with the same exact groups**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupElements:Boolean`                          | `false`        | Elements activation as group |     
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/toggle/usage-multiple-groupelements">
-  </demoinline>
-</demo>
-
 Check subpage to [customize interaction](/components/toggle/interaction).
+
