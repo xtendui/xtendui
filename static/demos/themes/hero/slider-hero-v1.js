@@ -83,7 +83,7 @@ const mountSlider = ({ ref }) => {
       incoming.classList.remove('incoming')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
-    for (const incoming of incomings.filter(x => x !== tr)) {
+    for (const incoming of incomings) {
       incoming.classList.add('incoming')
       //console.debug('drag', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
       // mask
@@ -123,7 +123,7 @@ const mountSlider = ({ ref }) => {
     })
     // incomings
     const incomings = self.targets.filter(x => x.classList.contains('incoming'))
-    for (const incoming of incomings.filter(x => x !== tr)) {
+    for (const incoming of incomings) {
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.to(mask, {
@@ -203,7 +203,7 @@ const mountSlider = ({ ref }) => {
       })
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
-      for (const incoming of incomings.filter(x => x !== tr)) {
+      for (const incoming of incomings) {
         //console.debug('off', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''), incoming.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))
         // mask
         const mask = incoming.querySelector('.hero')

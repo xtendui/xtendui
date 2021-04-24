@@ -1173,7 +1173,9 @@ class Toggle {
     if (!self.elements || !self.elements.length) {
       return []
     }
-    if (self.mode === 'unique' || !el) {
+    if (!el) {
+      return []
+    } else if (self.mode === 'unique') {
       // xtNamespace linked components
       const final = []
       const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
@@ -1219,7 +1221,9 @@ class Toggle {
     if (!self.targets || !self.targets.length) {
       return []
     }
-    if (self.mode === 'unique' || !el) {
+    if (!el) {
+      return []
+    } else if (self.mode === 'unique') {
       // xtNamespace linked components
       const final = self.getTargetsGroups()
       return final
@@ -2701,15 +2705,15 @@ class Toggle {
    * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
-   * @return {Number} Index
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   goToNext(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
     self.inverse = false
     const index = self.getNextIndex(false, amount, loop)
-    self.goToNum(index, force, loop)
-    return index
+    const el = self.goToNum(index, force, loop)
+    return el
   }
 
   /**
@@ -2736,7 +2740,7 @@ class Toggle {
    * get prev element
    * @param {Number} amount
    * @param {Boolean} loop
-   * @return {Number} index
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   getPrev(amount = 1, loop = null) {
     const self = this
@@ -2750,15 +2754,15 @@ class Toggle {
    * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
-   * @return {Number} Index
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   goToPrev(amount = 1, force = false, loop = null) {
     const self = this
     // goToNum
     self.inverse = true
     const index = self.getPrevIndex(false, amount, loop)
-    self.goToNum(index, force, loop)
-    return index
+    const el = self.goToNum(index, force, loop)
+    return el
   }
 
   /**
@@ -2774,22 +2778,22 @@ class Toggle {
     const min = 0
     const max = self.getElementsGroups().length - 1
     if (min === max) {
-      // if only one go to the only one
-      index = min
+      // if only one
+      index = null
     } else {
       if (index > max) {
         if (loop || (loop === null && (options.loop || options.wrap))) {
           index = index - max - 1
           index = index > max ? max : index // prevent overflow
         } else {
-          index = max
+          index = null
         }
       } else if (index < min) {
         if (loop || (loop == null && (options.loop || options.wrap))) {
           index = index + max + 1
           index = index < min ? min : index // prevent overflow
         } else {
-          index = min
+          index = null
         }
       }
     }
@@ -2815,14 +2819,16 @@ class Toggle {
    * @param {Number} index
    * @param {Boolean} force
    * @param {Boolean} loop
-   * @return {Number} Index
+   * @return {Node|HTMLElement|EventTarget|Window} Element
    */
   goToNum(index, force = false, loop = null) {
     const self = this
     // go
     const el = self.getNum(index, loop)
-    self.eventOn(el, force)
-    return index
+    if (el) {
+      self.eventOn(el, force)
+    }
+    return el
   }
 
   //
