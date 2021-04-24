@@ -197,6 +197,7 @@ class Toggle {
     self.currentIndex = null
     self.oldIndex = null
     Xt.running[self.ns] = []
+    // INSTANT ACTIVATION because we need activation classes right away (e.g.: slider inside demos toggle must be visible to get values)
     // check initial activation
     currents = self.initActivate(saveCurrents)
     // if currents < min
@@ -206,32 +207,30 @@ class Toggle {
       // initial
       currents += todo
     }
-    // raf because after .xt custom listeners
-    // keep the same level of raf as init
-    requestAnimationFrame(() => {
-      // todo
-      if (todo > 0) {
-        for (let i = start; i < todo; i++) {
-          const el = self.elements[i]
-          if (el) {
-            self.eventOn(el, true)
-          }
+    // todo
+    if (todo > 0) {
+      for (let i = start; i < todo; i++) {
+        const el = self.elements[i]
+        if (el) {
+          self.eventOn(el, true)
         }
       }
-      // currents
-      if (saveCurrents) {
-        self.initialCurrents = self.getCurrents().slice(0)
-      }
-      // no currents
-      if (currents === 0) {
+    }
+    // currents
+    if (saveCurrents) {
+      self.initialCurrents = self.getCurrents().slice(0)
+    }
+    // no currents
+    if (currents === 0) {
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        // initial
         self.initial = false
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
-      }
-    })
+      })
+    }
   }
 
   /**
@@ -252,7 +251,8 @@ class Toggle {
       return false
     }
     // check hash
-    let currents = self.hashChange(saveCurrents) ?? 0
+    let obj = self.hashChange(saveCurrents)
+    let currents = obj.currents ?? 0
     // check class
     for (const el of self.elements) {
       let activated = false
@@ -264,7 +264,8 @@ class Toggle {
       }
       // check if activated
       // fix check options.max for currents of hashChange current reset if hash has current
-      if (activated && currents < options.max) {
+      // fix check obj.arr has element already activated
+      if ((activated && currents < options.max) || obj.arr.includes(el)) {
         // instant animation
         el.classList.add(...self.classesIn)
         el.classList.add(...self.classesInitial)
@@ -342,12 +343,8 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
-        // raf because after .xt custom listeners
-        // keep the same level of raf as init
-        requestAnimationFrame(() => {
-          const event = options.on.split(' ')[0]
-          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
-        })
+        const event = options.on.split(' ')[0]
+        el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
       }
     }
     // return
@@ -895,7 +892,9 @@ class Toggle {
   /**
    * hash change
    * @param {Boolean} saveCurrents
-   * @return {Number} currents count
+   * @return {Object} return
+   * @return {Number} return.currents
+   * @return {Array} return.arr
    */
   hashChange(saveCurrents) {
     const self = this
@@ -906,6 +905,7 @@ class Toggle {
     }
     // logic
     let currents = 0
+    const arr = []
     if (options.hash) {
       if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
         const hash = decodeURI(location.hash.split('#')[1])
@@ -936,22 +936,17 @@ class Toggle {
             if (activated && currents < options.max) {
               // initial
               currents++
-              // keep the same level of raf as init
-              requestAnimationFrame(() => {
-                const event = options.on.split(' ')[0]
-                el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
-              })
+              arr.push(el)
+              const event = options.on.split(' ')[0]
+              el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
             }
           }
         }
       }
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
-      })
+      Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
     }
     // return
-    return currents
+    return { currents, arr }
   }
 
   /**
@@ -1443,7 +1438,7 @@ class Toggle {
       // input
       el.checked = true
       // hash
-      if (options.hash) {
+      if (options.hash && !self.initial) {
         const attr = el.getAttribute(options.hash)
         if (attr) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
@@ -1724,32 +1719,29 @@ class Toggle {
         clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
         // auto
         const time = options.auto.time
-        // raf because after .xt custom listeners
-        requestAnimationFrame(() => {
-          // disabled
-          if (self.disabled) {
-            return
-          }
-          // timeout
-          Xt.dataStorage.set(
-            self.object,
-            `${self.ns}AutoTimeout`,
-            setTimeout(() => {
-              // auto
-              self.eventAuto()
-            }, time / Xt.autoTimescale)
-          )
-          // aria
-          if (options.aria === true || options.aria.activation) {
-            self.object.setAttribute('aria-live', 'off')
-          }
-          // listener dispatch
-          self.object.dispatchEvent(
-            new CustomEvent(`autostart.${self.componentNs}`, {
-              detail: e ? e.detail : null,
-            })
-          )
-        })
+        // disabled
+        if (self.disabled) {
+          return
+        }
+        // timeout
+        Xt.dataStorage.set(
+          self.object,
+          `${self.ns}AutoTimeout`,
+          setTimeout(() => {
+            // auto
+            self.eventAuto()
+          }, time / Xt.autoTimescale)
+        )
+        // aria
+        if (options.aria === true || options.aria.activation) {
+          self.object.setAttribute('aria-live', 'off')
+        }
+        // listener dispatch
+        self.object.dispatchEvent(
+          new CustomEvent(`autostart.${self.componentNs}`, {
+            detail: e ? e.detail : null,
+          })
+        )
       }
     }
   }
@@ -1821,24 +1813,21 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // fix focus eventAutoresume happening after first interaction
-    requestAnimationFrame(() => {
-      // pause
-      if (options.auto && options.auto.time) {
-        if (self.detail.autopaused) {
-          // paused
-          self.detail.autopaused = false
-          // resume
-          self.eventAutostart()
-          // listener dispatch
-          self.object.dispatchEvent(
-            new CustomEvent(`autoresume.${self.componentNs}`, {
-              detail: e ? e.detail : null,
-            })
-          )
-        }
+    // pause
+    if (options.auto && options.auto.time) {
+      if (self.detail.autopaused) {
+        // paused
+        self.detail.autopaused = false
+        // resume
+        self.eventAutostart()
+        // listener dispatch
+        self.object.dispatchEvent(
+          new CustomEvent(`autoresume.${self.componentNs}`, {
+            detail: e ? e.detail : null,
+          })
+        )
       }
-    })
+    }
   }
 
   /**
@@ -2076,11 +2065,14 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(
-          new CustomEvent(`on.${self.componentNs}`, {
-            detail: obj.elements.e ? obj.elements.e.detail : null,
-          })
-        )
+        // keep the same level of raf as init for custom listener
+        requestAnimationFrame(() => {
+          el.dispatchEvent(
+            new CustomEvent(`on.${self.componentNs}`, {
+              detail: obj.elements.e ? obj.elements.e.detail : null,
+            })
+          )
+        })
       }
     } else if (actionCurrent === 'Out' && self.checkOffRunning(obj)) {
       // only one time and if last element
@@ -2104,15 +2096,18 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // raf because setDirection
+        // keep the same level of raf as init for custom listener
         requestAnimationFrame(() => {
-          if (!self.disabled) {
-            el.dispatchEvent(
-              new CustomEvent(`off.${self.componentNs}`, {
-                detail: obj.elements.e ? obj.elements.e.detail : null,
-              })
-            )
-          }
+          // raf because after on for setDirection etc..
+          requestAnimationFrame(() => {
+            if (!self.disabled) {
+              el.dispatchEvent(
+                new CustomEvent(`off.${self.componentNs}`, {
+                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                })
+              )
+            }
+          })
         })
       }
     }
@@ -2178,11 +2173,14 @@ class Toggle {
       self.specialCollapse('Reset', el, type)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        el.dispatchEvent(
-          new CustomEvent(`ondone.${self.componentNs}`, {
-            detail: obj.elements.e ? obj.elements.e.detail : null,
-          })
-        )
+        // keep the same level of raf as init for custom listener
+        requestAnimationFrame(() => {
+          el.dispatchEvent(
+            new CustomEvent(`ondone.${self.componentNs}`, {
+              detail: obj.elements.e ? obj.elements.e.detail : null,
+            })
+          )
+        })
       }
     } else if (actionCurrent === 'Out') {
       // only one time and if last element
@@ -2226,15 +2224,18 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // raf because setDirection
+        // keep the same level of raf as init for custom listener
         requestAnimationFrame(() => {
-          if (!self.disabled) {
-            el.dispatchEvent(
-              new CustomEvent(`offdone.${self.componentNs}`, {
-                detail: obj.elements.e ? obj.elements.e.detail : null,
-              })
-            )
-          }
+          // raf because after on for setDirection etc..
+          requestAnimationFrame(() => {
+            if (!self.disabled) {
+              el.dispatchEvent(
+                new CustomEvent(`offdone.${self.componentNs}`, {
+                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                })
+              )
+            }
+          })
         })
       }
     }
@@ -2294,7 +2295,7 @@ class Toggle {
     const self = this
     // logic
     if (actionCurrent === 'In') {
-      // raf because after .xt custom listeners
+      // keep the same level of raf as init for custom listener
       requestAnimationFrame(() => {
         // remove class initial
         if (self.initial) {
@@ -2306,10 +2307,9 @@ class Toggle {
         }
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
         // reset
         self.inverse = null
-        // initial
-        self.initial = false
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
       })
@@ -3202,7 +3202,7 @@ class Toggle {
   initStatus() {
     const self = this
     const options = self.options
-    // keep the same level of raf as init
+    // keep the same level of raf as init for custom listener
     cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}StatusFrame`))
     Xt.dataStorage.put(
       self.object,

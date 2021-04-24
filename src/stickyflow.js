@@ -62,14 +62,16 @@ class Stickyflow {
     const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self.eventChange.bind(self))
     addEventListener('scroll', changeHandler)
     addEventListener('resize', changeHandler)
-    // initial
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // initial
       self.eventChange()
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // listener dispatch
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }

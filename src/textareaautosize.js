@@ -67,8 +67,9 @@ class Textareaautosize {
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // listener dispatch
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }

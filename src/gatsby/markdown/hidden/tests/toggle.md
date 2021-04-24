@@ -65,9 +65,9 @@ Test activation.
 
 ## Hash
 
-Test initial activation with hash in location.
+Test no hash must not add hash initial activation.
 
-Test initial targets bug that doesn't deactivate initial `on`.
+Test initial activation with hash in location must remove initial `on` in targets.
 
 Test hash activation.
 

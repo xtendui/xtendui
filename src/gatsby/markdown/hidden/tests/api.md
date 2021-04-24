@@ -7,6 +7,8 @@ title: "Api"
 
 ## Api
 
+Test on event on init must log to test activation // raf because after on for setDirection etc..
+
 Test add and remove.
 
 Test activated on change > reinit > change > restart.

@@ -86,20 +86,23 @@ class Scrollto {
         } else {
           scroller.addEventListener('scroll', scrollHandler)
         }
-        // initial
+        // keep the same level of raf as init for custom listener
         requestAnimationFrame(() => {
+          // initial
           self.eventActivationHandler(scroller)
         })
       }
     }
-    // initial
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // initial
       self.eventStart()
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // listener dispatch
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }

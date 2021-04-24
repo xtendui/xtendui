@@ -183,7 +183,7 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // keep the same level of raf as init
+      // keep the same level of raf as init for custom listener
       requestAnimationFrame(() => {
         // restart
         logAdd('<strong>restart</strong>')

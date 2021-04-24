@@ -32,6 +32,7 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
   const dragposition = () => {
+    console.log(self.initial)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

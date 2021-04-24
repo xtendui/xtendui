@@ -652,10 +652,8 @@ class Slider extends Xt.Toggle {
     // direction
     self.direction = self.detail.dragFinalOld - self.detail.dragFinal < 0 ? -1 : 1
     self.inverse = self.direction < 0
-    // super
-    super.eventOn(element, force, e)
-    // wrap
-    self.eventWrap(self.currentIndex)
+    // dragging
+    self.detail.dragging = false
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let slideHeight = Xt.dataStorage.get(slide, `${self.ns}SlideHeight`)
@@ -687,10 +685,15 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // dragging
-    self.detail.dragging = false
-    // listener dispatch
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    // keep the same level of raf as init for custom listener
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    })
+    // keep super after dragposition because it sets self.initial etc..
+    super.eventOn(element, force, e)
+    // wrap
+    self.eventWrap(self.currentIndex)
   }
 
   /**

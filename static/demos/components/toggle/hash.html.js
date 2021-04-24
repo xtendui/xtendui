@@ -6,69 +6,63 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group"
-        data-xt-hash="demo--toggle-hash-group-0"
+        data-xt-group="group0"
+        data-xt-hash="demo--toggle-hash-group-0a"
       >
-        Toggle Group
+        Toggle Group 0
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-hash="demo--toggle-hash-1"
-      >
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+      data-xt-hash="demo--toggle-hash-1">
         Toggle 1
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group"
-        data-xt-hash="demo--toggle-hash-group-1"
+        data-xt-group="group0"
+        data-xt-hash="demo--toggle-hash-group-0b"
       >
-        Toggle Group
+        Toggle Group 0
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-hash="demo--toggle-2"
-      >
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+      data-xt-hash="demo--toggle-hash-2">
         Toggle 2
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group-another"
-        data-xt-hash="demo--hash-group-another"
+        data-xt-group="group1"
+        data-xt-hash="demo--toggle-hash-group-1"
       >
-        Toggle Group another
+        Toggle Group 1
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
-        data-xt-group="group,group-another"
-        data-xt-hash="demo--toggle-hash-all"
+        data-xt-group="group0,group1"
+        data-xt-hash="demo--toggle-hash-group-01"
       >
-        Toggle Group all
+        Toggle Group 0 and 1
       </button>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0">Target Group 0a</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group-another">
-        Target Group another
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group1">
+        Target Group 1a
       </div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group">Target Group</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0">Target Group 0b</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 2</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on">Target 2</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} on" data-xt-group="group-another">
-        Target Group another
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group1">
+        Target Group 1b
       </div>
     </div>
   </div>

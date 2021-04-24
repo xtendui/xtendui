@@ -68,14 +68,16 @@ class Groupnumber {
       const inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, 0))
       input.addEventListener('change', inputHandler)
     }
-    // initial
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // initial
       self.eventChange.bind(self, 0)()
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // listener dispatch
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
+      // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
   }
