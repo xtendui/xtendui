@@ -55,6 +55,7 @@ class Googlelocator {
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
     // vars
+    self.initial = true
     self.locateCache = null
     self.loaderElement = self.object.querySelector(options.elements.loader)
     self.itemsTemplate = self.object.querySelector(options.elements.itemsTemplate)
@@ -155,14 +156,6 @@ class Googlelocator {
         self.repeatElement.addEventListener('click', repeatHandler)
       }
     }
-    // initialSearch
-    if (options.initialSearch) {
-      google.maps.event.addListenerOnce(self.map, 'idle', () => {
-        self.map.setCenter(options.map.center)
-        self.map.setZoom(options.map.zoom)
-        self.submitCurrent(true)
-      })
-    }
     // locate
     if (options.elements.locateBtn) {
       self.locateElement = self.object.querySelector(options.elements.locateBtn)
@@ -182,13 +175,36 @@ class Googlelocator {
         }
       }
     }
-    // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
     // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      // initial
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
+    // initialized class
+    self.object.classList.add(`${self.componentName}-init`)
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    const options = self.options
+    // logic
+    if (options.initialSearch) {
+      google.maps.event.addListenerOnce(self.map, 'idle', () => {
+        self.map.setCenter(options.map.center)
+        self.map.setZoom(options.map.zoom)
+        self.submitCurrent(true)
+      })
+    }
   }
 
   //

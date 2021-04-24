@@ -73,6 +73,7 @@ const object = self.object
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `element:Node`       | Sticky element             |
 | Property                   | `filler:Nodes`       | Filler element             |
 

@@ -92,6 +92,7 @@ const object = self.object
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `current:Number`       | Current page             |
 | Property                   | `elementsUp:Nodes`       | Trigger elements when scrolling up             |
 | Property                   | `elementsDown:Nodes`       | Trigger elements when scrolling down             |

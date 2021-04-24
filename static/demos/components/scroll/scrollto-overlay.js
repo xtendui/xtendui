@@ -39,7 +39,7 @@ const mountScrollto = () => {
     },
     duration: ({ self }) => {
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.max(Math.min(dist / 500, 1), 0.5)
+      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
     },
     // deactivated by switcher
     class: false,

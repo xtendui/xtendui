@@ -61,6 +61,8 @@ class Infinitescroll {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // elements
     self.elementsUp = self.object.querySelectorAll(options.elements.scrollUp)
     self.elementsDown = self.object.querySelectorAll(options.elements.scrollDown)
@@ -74,16 +76,6 @@ class Infinitescroll {
     addEventListener('beforeunload', beforeunloadHandler)
     const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
-    // update
-    self.setCurrent()
-    self.update()
-    self.paginate()
-    if (self.itemsContainer) {
-      const found = self.itemsContainer.querySelector(options.elements.item)
-      if (found) {
-        found.setAttribute('data-item-first', self.current)
-      }
-    }
     // trigger
     for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
       const triggerHandler = Xt.dataStorage.put(
@@ -96,6 +88,38 @@ class Infinitescroll {
         trigger.addEventListener(event, triggerHandler)
       }
     }
+    // keep the same level of raf as init for custom listener
+    requestAnimationFrame(() => {
+      // initial
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
+    })
+    // initialized class
+    self.object.classList.add(`${self.componentName}-init`)
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    const options = self.options
+    // logic
+    self.setCurrent()
+    self.update()
+    self.paginate()
+    if (self.itemsContainer) {
+      const found = self.itemsContainer.querySelector(options.elements.item)
+      if (found) {
+        found.setAttribute('data-item-first', self.current)
+      }
+    }
     // resume state
     const add = self.additionalSpace()
     const state = history.state
@@ -104,13 +128,6 @@ class Infinitescroll {
       document.scrollingElement.scrollTop = state[`scrollResume${self.componentNs}`] + found.offsetTop + add
       //console.debug('xt-infinitescroll scrollResume', state[`scrollResume${self.componentNs}`], found.offsetTop, add)
     }
-    // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
-    // keep the same level of raf as init for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
   }
 
   //
@@ -129,7 +146,7 @@ class Infinitescroll {
     const amount = up || down
     if (!amount) {
       self.setCurrent(options.min)
-      window.location = self.url.href
+      location = self.url.href
     } else {
       let current = self.current + amount
       current = current < options.min ? options.min : current

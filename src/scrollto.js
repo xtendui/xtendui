@@ -53,6 +53,8 @@ class Scrollto {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
     // prevent page hash on click anchors
@@ -96,15 +98,26 @@ class Scrollto {
     // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
       // initial
-      self.eventStart()
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // keep the same level of raf as init for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    // logic
+    self.eventStart()
   }
 
   //
@@ -129,8 +142,9 @@ class Scrollto {
 
   /**
    * scrollto
-   * @param {Node|HTMLElement|EventTarget|Window} el element
-   * @param {Node|HTMLElement|EventTarget|Window} tr target
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el element
+   * @param {Node|HTMLElement|EventTarget|Window} params.tr target
    * @param {Event} e
    */
   eventScrollto({ el = null, tr = null }, e = null) {
@@ -188,7 +202,9 @@ class Scrollto {
     const self = this
     const options = self.options
     // hashchange
+    self.hashchange = false
     if (hashchange) {
+      self.hashchange = true
       const hash = location.hash
       const elCheck = self.object.querySelector(options.anchors.replace('{hash}', hash))
       // do not listen to hash change when no hash on element
@@ -225,7 +241,11 @@ class Scrollto {
                 }
               }
               // prevent page hash with automatic scroll
-              if ((options.hash || el.getAttribute('data-xt-scrollto-hash')) && location.hash !== el.hash) {
+              if (
+                !hashchange &&
+                (options.hash || el.getAttribute('data-xt-scrollto-hash')) &&
+                location.hash !== el.hash
+              ) {
                 history.pushState({}, '', loc.hash)
               }
               // els

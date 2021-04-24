@@ -54,6 +54,8 @@ class Groupnumber {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // elements
     self.inputs = self.object.querySelectorAll(options.inputs)
     self.steps = self.object.querySelectorAll(options.steps)
@@ -71,15 +73,26 @@ class Groupnumber {
     // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
       // initial
-      self.eventChange.bind(self, 0)()
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // keep the same level of raf as init for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    // logic
+    self.eventChange.bind(self, 0)()
   }
 
   //

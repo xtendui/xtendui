@@ -53,6 +53,8 @@ class Stickyflow {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // elements
     self.element = self.object.querySelector(options.element)
     self.filler = self.object.querySelector(options.filler)
@@ -65,15 +67,26 @@ class Stickyflow {
     // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
       // initial
-      self.eventChange()
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // keep the same level of raf as init for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    // initial
+    self.eventChange()
   }
 
   //

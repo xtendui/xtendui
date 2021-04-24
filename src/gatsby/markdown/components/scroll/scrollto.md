@@ -123,6 +123,8 @@ const object = self.object
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `initial:Boolean`       | If initial or reset activation             |
+| Property                   | `hashchange:Boolean`       | If browser hash change activation             |
 | Property                   | `position:Number`       | Current scroll position to scroll to             |
 | Property                   | `target:Node`       | Current scroll target             |
 | Property                   | `scrollers:Node`       | All scrolling element             |

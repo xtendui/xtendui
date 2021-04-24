@@ -74,6 +74,7 @@ const object = self.object
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
+| Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `inputs:Nodes`       | Inputs nodes             |
 | Property                   | `steps:Nodes`       | Steps node             |
 

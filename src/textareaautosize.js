@@ -53,6 +53,8 @@ class Textareaautosize {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // key
     const changeHandler = Xt.dataStorage.put(self.object, `keydown keyup reset/${self.ns}`, self.keychange.bind(self))
     self.object.addEventListener('keydown', changeHandler)
@@ -61,17 +63,29 @@ class Textareaautosize {
     if (self.form) {
       self.form.addEventListener('reset', changeHandler)
     }
-    // initial
+    // keep the same level of raf as init for custom listener
     requestAnimationFrame(() => {
-      self.keychange.bind(self)()
+      // initial
+      self.initStart()
+      // keep the same level of raf as init for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
-    // keep the same level of raf as init for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-    })
+  }
+
+  /**
+   * init start
+   * @param {Boolean} saveCurrents
+   */
+  initStart() {
+    const self = this
+    // logic
+    self.keychange.bind(self)()
   }
 
   //

@@ -79,7 +79,7 @@ Xt.mount({
 
     const click = () => {
       localStorage.setItem('mode', false)
-      window.location.reload()
+      location.reload()
     }
 
     ref.addEventListener('click', click)
@@ -99,7 +99,7 @@ Xt.mount({
 
     const click = () => {
       localStorage.setItem('mode', 'react')
-      window.location.reload()
+      location.reload()
     }
 
     ref.addEventListener('click', click)
@@ -429,7 +429,7 @@ Xt.mount({
       },
       duration: ({ self }) => {
         const dist = Math.abs(self.scroller.scrollTop - self.position)
-        return Math.max(Math.min(dist / 500, 1), 0.5)
+        return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
       },
     })
 
