@@ -28,28 +28,16 @@ const html = /* HTML */ `
                 <div class="xt-drop-content">
                   <div class="pt-16 pb-24 text-white xt-links-inverse">
                     <div class="container">
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Lorem ipsum
                       </a>
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Dolor sit amet
                       </a>
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Consectetur adipiscing elit
                       </a>
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Morbi nec mauris est
                       </a>
                       <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0"> Show all </a>
@@ -74,16 +62,10 @@ const html = /* HTML */ `
                 <div class="xt-drop-content">
                   <div class="pt-16 pb-24 text-white xt-links-inverse">
                     <div class="container">
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Lorem ipsum
                       </a>
-                      <a
-                        href="#"
-                        class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                      >
+                      <a href="#" class="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                         Dolor sit amet
                       </a>
                       <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0"> Show all </a>
