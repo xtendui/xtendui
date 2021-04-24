@@ -17,24 +17,24 @@ export const classes = {
   cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
   // variant
   badgeDefaultInteractive: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300',
   badgePrimaryInteractive: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-500',
-  badgeDefault: () => 'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200',
-  badgePrimary: () => 'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-500',
+  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200',
+  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
-    'w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
+    'w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
   buttonDefault: () =>
-    'text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
   buttonPrimaryDrop: () =>
-    'w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
+    'w-full text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
-    'text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700',
   buttonText: () =>
     'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
@@ -73,28 +73,28 @@ export const classes = {
   note: () => 'text-black text-opacity-50 text-xs leading-snug',
   // headers
   h1Display: () => {
-    return `mt-10 mb-4 xt-my-auto font-sans font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none`
+    return `mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none`
   },
   h1: () => {
-    return `mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none`
+    return `mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none`
   },
   h2: () => {
-    return `mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none`
+    return `mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none`
   },
   h3: () => {
-    return `mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none`
+    return `mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none`
   },
   h4: () => {
-    return `mt-5 mb-3 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight`
+    return `mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight`
   },
   h5: () => {
-    return `mt-5 mb-3 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl`
+    return `mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl`
   },
   h6: () => {
-    return `mt-5 mb-2 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-lg`
+    return `mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg`
   },
   hBlock: () => {
-    return `mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg`
+    return `mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg`
   },
   // icons
   iconX: ({ classes = null } = {}) => {

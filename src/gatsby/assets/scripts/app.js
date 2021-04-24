@@ -524,7 +524,7 @@ const makeDocument = () => {
           Xt.createElement(`
 <a href="#${encodeURIComponent(
             id
-          )}" class="xt-button text-3xs py-0.5 px-3 w-full text-white font-sans font-normal leading-snug tracking-wider uppercase bg-primary-700 text-opacity-75 transition hover:bg-primary-800 active:bg-primary-800 on:bg-primary-800 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+          )}" class="xt-button text-3xs py-0.5 px-3 w-full text-white font-normal leading-snug tracking-wider uppercase bg-primary-700 text-opacity-75 transition hover:bg-primary-800 active:bg-primary-800 on:bg-primary-800 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
   ${el.textContent.trim()}
 </a>`)
         )

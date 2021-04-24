@@ -249,7 +249,7 @@
   padding: 0;
   padding-bottom: 2px;
   border-width: 0;
-  @apply w-full font-sans;
+  @apply w-full;
   .gatsby_button-site_article_sidebar_inner {
     @apply transition duration-300 ease-out-quint;
     border-radius: 6px;

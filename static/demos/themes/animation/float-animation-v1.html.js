@@ -29,7 +29,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-sans font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Text
       </button>
