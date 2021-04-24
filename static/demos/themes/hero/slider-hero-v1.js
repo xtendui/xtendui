@@ -37,7 +37,6 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {
     duration: dragTime * 1000,
     mode: 'absolute',
-    loop: false,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -149,6 +148,7 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
+        console.log(tr)
       // raf because after off.xt.slider
       requestAnimationFrame(() => {
         //console.debug('on', self.direction, self.detail.dragRatio, tr.querySelector('.xt-h1').textContent.replace(/[^0-9]/g, ''))

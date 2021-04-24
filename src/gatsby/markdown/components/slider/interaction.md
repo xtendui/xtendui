@@ -115,7 +115,7 @@ You can use pagination also inside targets as you can see in the demo.
   </demoinline>	
 </demo>	
 
-## Navigation	
+## Navigation and Loop
 
 You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.	
 

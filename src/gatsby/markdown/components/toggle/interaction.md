@@ -193,7 +193,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
   </demoinline>
 </demo>
 
-## Navigation
+## Navigation and Loop
 
 You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
 

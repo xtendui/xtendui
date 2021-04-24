@@ -1303,7 +1303,6 @@ Slider.optionsDefault = {
     pause: '[data-xt-pag], [data-xt-nav], .xt-button',
   },
   // other
-  loop: false,
   jump: false,
   navigation: '[data-xt-nav]',
   keyboard: {
