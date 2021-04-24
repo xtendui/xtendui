@@ -33,9 +33,6 @@ See [javascript listeners](/introduction/javascript#listeners) for examples of l
 | Event                   | `autostop.xt.slider`           | `object` | Auto stop event             |
 | Event                   | `autopause.xt.slider`           | `object` | Auto pause event             |
 | Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
-| Event                   | `wheelstart.xt.slider`           | `wheel` | Wheel start event             |
-| Event                   | `wheelend.xt.slider`           | `wheel` | Wheel end event             |
-| Event                   | `wheel.xt.slider`           | `wheel` | Wheel event             |
 | Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
 | Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
 | Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
@@ -96,7 +93,6 @@ const object = self.object
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 | Property                   | `dragger:Node`       | Dragger node             |
-| Property                   | `wheel:Node`       | Wheel node             |
 | Property                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
 | Property                   | `detail.dragBlock:Boolean`       | Returns true when slider is blocked on dragging and other interactions are prevented             |
 | Property                   | `detail.draggerWidth:Number`       | Dragger width             |
@@ -107,8 +103,6 @@ const object = self.object
 | Property                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |
 | Property                   | `detail.dragPosOld:Number`       | Drag distance from dragStart to dragCurrent with computation on the previous frame             |
 | Property                   | `detail.dragDirection:Number`       | Drag direction `1` or `-1`             |
-| Property                   | `detail.wheelCurrent:Number`       | Wheel current scroll position             |
-| Property                   | `detail.wheelEnd:Number`       | Wheel end scroll position             |
 
 </div>
 

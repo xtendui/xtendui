@@ -310,11 +310,6 @@ class Slider extends Xt.Toggle {
       self.detail.moveFirst = 0
       self.detail.moveLast = self.group.length - 1
     }
-    // set wheel min and max
-    if (options.wheel && options.wheel.selector) {
-      self.detail.wheelMin = -Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
-      self.detail.wheelMax = -Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
-    }
   }
 
   /**
@@ -430,13 +425,6 @@ class Slider extends Xt.Toggle {
       // fix prevent dragging links and images
       const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
       self.dragger.addEventListener('dragstart', dragstartFixHandler)
-      // wheel
-      if (options.wheel && options.wheel.selector) {
-        const wheel = self.wheel
-        wheel.addEventListener(`wheelstart.${self.componentNs}`, self.logicDragstart.bind(self))
-        wheel.addEventListener(`wheel.${self.componentNs}`, self.logicDrag.bind(self))
-        wheel.addEventListener(`wheelend.${self.componentNs}`, self.logicDragend.bind(self))
-      }
     }
     // resize
     const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, self.eventReinitHandler.bind(self))
@@ -863,10 +851,7 @@ class Slider extends Xt.Toggle {
       return
     }
     // save event
-    if (e.detail.wheelX !== undefined) {
-      self.detail.dragStart = e.detail.wheelX
-      self.detail.dragStartOther = e.detail.wheelY
-    } else if (e.clientX !== undefined) {
+    if (e.clientX !== undefined) {
       self.detail.dragStart = e.clientX
       self.detail.dragStartOther = e.clientY
     } else if (e.touches && e.touches.length) {
@@ -902,10 +887,7 @@ class Slider extends Xt.Toggle {
       return
     }
     // save event
-    if (e.detail.wheelX !== undefined) {
-      self.detail.dragCurrent = e.detail.wheelX
-      self.detail.dragCurrentOther = e.detail.wheelY
-    } else if (e.clientX !== undefined) {
+    if (e.clientX !== undefined) {
       self.detail.dragCurrent = e.clientX
       self.detail.dragCurrentOther = e.clientY
     } else if (e.touches && e.touches.length) {
@@ -999,10 +981,7 @@ class Slider extends Xt.Toggle {
       return
     }
     // save event
-    if (e.detail.wheelX !== undefined) {
-      self.detail.dragCurrent = e.detail.wheelX
-      self.detail.dragCurrentOther = e.detail.wheelY
-    } else if (e.clientX !== undefined) {
+    if (e.clientX !== undefined) {
       self.detail.dragCurrent = e.clientX
       self.detail.dragCurrentOther = e.clientY
     } else if (e.touches && e.touches.length) {
@@ -1324,19 +1303,6 @@ Slider.optionsDefault = {
   // auto
   auto: {
     pause: '[data-xt-pag], [data-xt-nav], .xt-button',
-  },
-  // wheel
-  wheel: {
-    selector: false,
-    block: true,
-    limit: false,
-    transform: true,
-    horizontal: true,
-    factor: 1,
-    friction: delta => {
-      return delta / 9
-    },
-    frictionLimit: 1.5,
   },
   // other
   loop: false,

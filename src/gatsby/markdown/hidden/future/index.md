@@ -47,12 +47,3 @@ Automatically has no [contain](/components/slider/position#contain) and no [wrap
   <demoinline src="demos/components/toggle/animation-css-inverse">
   </demoinline>
 </demo>
-
-## Slider Wheel	
-
-Use `wheel: { selector: 'object' }` or `wheel: { selector: Query }` to enable mousewheel navigation.	
-
-<demo>	
-  <demoinline src="demos/components/slider/wheel">	
-  </demoinline>	
-</demo>	
