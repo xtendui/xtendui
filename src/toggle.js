@@ -872,13 +872,14 @@ class Toggle {
   hashChange(saveCurrents) {
     const self = this
     const options = self.options
-    // disabled
-    if (self.disabled) {
-      return 0
-    }
-    // logic
+    // vars
     let currents = 0
     const arr = []
+    // disabled
+    if (self.disabled) {
+      return { currents, arr }
+    }
+    // logic
     if (options.hash) {
       if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
         const hash = decodeURI(location.hash.split('#')[1])

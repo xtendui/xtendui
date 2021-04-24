@@ -605,6 +605,8 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       Xt.dataStorage.remove(slide, `${self.ns}SlideonDone`)
     })
+    // vars
+    self.detail.dragging = false
     // val
     self.detail.dragFinalOld = self.detail.dragFinal
     self.detail.dragFinal = self.detail.dragActive = Xt.dataStorage.get(slide, `${self.ns}GroupLeft`)
@@ -640,8 +642,6 @@ class Slider extends Xt.Toggle {
     // direction
     self.direction = self.detail.dragFinalOld - self.detail.dragFinal < 0 ? -1 : 1
     self.inverse = self.direction < 0
-    // dragging
-    self.detail.dragging = false
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let slideHeight = Xt.dataStorage.get(slide, `${self.ns}SlideHeight`)
@@ -860,13 +860,11 @@ class Slider extends Xt.Toggle {
     }
     // auto
     self.eventAutopause()
-    // logic
+    // vars
+    self.detail.dragging = true
     self.detail.dragStartUpdated = self.detail.dragStart
     self.detail.dragStartOverflow = null
     self.detail.dragIndex = self.currentIndex
-    // dragging
-    self.detail.dragging = true
-    self.detail.dragBlock = false
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
   }
@@ -894,6 +892,8 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrent = e.touches[0].clientX
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
+    // vars
+    self.detail.dragging = false
     // disable interaction
     for (const target of self.targets) {
       target.classList.remove('pointer-events-none')
@@ -924,16 +924,11 @@ class Slider extends Xt.Toggle {
       self.logicDragreset()
       return
     }
-    // dragging
-    self.detail.dragging = false
     // fix on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // activation
       const direction = Math.sign(self.detail.dragDist)
-      if (self.detail.dragBlock) {
-        // drag reset
-        self.logicDragreset()
-      } else if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
+      if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
         // get nearest
         const index = self.currentIndex
         const found = self.detail.dragIndex
@@ -998,9 +993,8 @@ class Slider extends Xt.Toggle {
       }
     }
     // check drag direction
-    if (self.detail.dragBlock || Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
-      // if dragging vertically block and return
-      self.detail.dragBlock = true
+    if (Math.abs(self.detail.dragDistOther) > Math.abs(self.detail.dragDist)) {
+      // prevent drag logic
       return
     } else {
       // prevent page scroll
