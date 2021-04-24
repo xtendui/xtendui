@@ -55,7 +55,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   }
 }
 
-exports.onRouteUpdate = ({ location, prevLocation }) => {
+exports.onRouteUpdate = () => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
@@ -79,28 +79,13 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     // contain
     gatsbySidebarContain()
   }
-  // only if changing page
-  if (prevLocation) {
-    if (location.pathname !== prevLocation.pathname) {
-      // scroll top
-      document.scrollingElement.scrollTop = 0
-      // fix popstate #gatsby_open-full
-      for (const link of document.querySelectorAll('.gatsby_button-site_article_sidebar.on')) {
-        link.addEventListener('click', e => {
-          e.preventDefault()
-          // no location.hash or page scroll to top
-          history.pushState({}, '', '#')
-          document.querySelector('#gatsby_open-full-trigger').dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
-        })
-      }
-    } else if (location.hash === '') {
-      // close if clicking the active link in the sidebar
-      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
-    }
+  // close fullscreen and others
+  if (window.location.hash === '') {
+    dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
   }
 }
 
 exports.shouldUpdateScroll = ({ routerProps: { location } }) => {
-  // prevent scroll on href="#" or role="button"
-  return location.href !== window.location.href
+  // prevent scroll on same page and on href="#" or role="button"
+  return location.pathname !== window.location.pathname
 }

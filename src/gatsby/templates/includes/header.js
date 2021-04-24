@@ -177,7 +177,6 @@ export default function Header({ page }) {
                         <div key={i}>
                           <Link
                             to={markdownSlug(post)}
-                            title={post.frontmatter.description}
                             className={`xt-button gatsby_button-site-header_link ${
                               page && page.post
                                 ? markdownSlug(page.post) === markdownSlug(post)
@@ -187,7 +186,7 @@ export default function Header({ page }) {
                                   : ''
                                 : ''
                             }`}>
-                            <span>{post.frontmatter.title}</span>
+                            <div className="gatsby_button-site_article_sidebar_inner">{post.frontmatter.title}</div>
                           </Link>
                         </div>
                       ))}
@@ -204,47 +203,27 @@ export default function Header({ page }) {
                                 {category.posts.map(({ post }, z) =>
                                   post.frontmatter.parent === post.frontmatter.title ? (
                                     <div className="gatsby_site-header_item_container" key={z}>
-                                      {post.frontmatter.link ? (
-                                        <div>
-                                          <a
-                                            href={post.frontmatter.link}
-                                            rel="noopener noreferrer"
-                                            target="_blank"
-                                            title={post.frontmatter.description}
-                                            className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
-                                              markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'on'
-                                                : page.post.frontmatter.parent === post.frontmatter.parent &&
-                                                  post.frontmatter.category === page.post.frontmatter.category
-                                                ? 'current'
-                                                : ''
-                                            }`}>
-                                            <span>{post.frontmatter.title}</span>
-                                          </a>
-                                          <div className="gatsby_site-header_adiacent_inner">
-                                            <div className="gatsby_site-header_item"></div>
+                                      <div>
+                                        <Link
+                                          to={markdownSlug(post)}
+                                          className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
+                                            markdownSlug(page.post) === markdownSlug(post)
+                                              ? 'on'
+                                              : page.post.frontmatter.parent === post.frontmatter.parent &&
+                                                post.frontmatter.category === page.post.frontmatter.category
+                                              ? 'current'
+                                              : ''
+                                          }`}>
+                                          <div className="gatsby_button-site_article_sidebar_inner">
+                                            <div className="gatsby_button-site_article_sidebar_text">
+                                              {post.frontmatter.title}
+                                            </div>
                                           </div>
+                                        </Link>
+                                        <div className="gatsby_site-header_adiacent_inner">
+                                          <div className="gatsby_site-header_item"></div>
                                         </div>
-                                      ) : (
-                                        <div>
-                                          <Link
-                                            to={markdownSlug(post)}
-                                            title={post.frontmatter.description}
-                                            className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
-                                              markdownSlug(page.post) === markdownSlug(post)
-                                                ? 'on'
-                                                : page.post.frontmatter.parent === post.frontmatter.parent &&
-                                                  post.frontmatter.category === page.post.frontmatter.category
-                                                ? 'current'
-                                                : ''
-                                            }`}>
-                                            <span>{post.frontmatter.title}</span>
-                                          </Link>
-                                          <div className="gatsby_site-header_adiacent_inner">
-                                            <div className="gatsby_site-header_item"></div>
-                                          </div>
-                                        </div>
-                                      )}
+                                      </div>
                                       {post.frontmatter.parent === page.post.frontmatter.parent &&
                                       post.frontmatter.category === page.post.frontmatter.category ? (
                                         <div className="gatsby_site-header_adiacent on">
@@ -261,15 +240,18 @@ export default function Header({ page }) {
                                                           ? 'on'
                                                           : ''
                                                       }`}>
-                                                      <span>
-                                                        {adiacent.frontmatter.title
-                                                          .split(/[\s-]+/)
-                                                          .map(
-                                                            item =>
-                                                              item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
-                                                          )
-                                                          .join(' ')}
-                                                      </span>
+                                                      <div className="gatsby_button-site_article_sidebar_inner">
+                                                        <div className="gatsby_button-site_article_sidebar_text">
+                                                          {adiacent.frontmatter.title
+                                                            .split(/[\s-]+/)
+                                                            .map(
+                                                              item =>
+                                                                item.charAt(0).toUpperCase() +
+                                                                item.slice(1).toLowerCase()
+                                                            )
+                                                            .join(' ')}
+                                                        </div>
+                                                      </div>
                                                     </Link>
                                                     <div className="gatsby_site-header_adiacent_inner">
                                                       <div className="gatsby_site-header_item"></div>

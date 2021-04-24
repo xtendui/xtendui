@@ -255,7 +255,7 @@ const populateBlock = () => {
         }
         // no location.hash
         if (hashReset) {
-          history.pushState({}, '', '#')
+          history.pushState({}, '', '')
         }
         hashReset = true
       }

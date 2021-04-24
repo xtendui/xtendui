@@ -42,6 +42,21 @@ To not have **space** just omit `.xt-tooltip` **padding** and `.xt-arrow` **marg
   </demoinline>
 </demo>
 
+To **change the relative position of targets** you can specify a query inside element, it **doesn't change the element for events**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `positionInner:Query|false`                          | `false`        | Query **inside element** to use as relative for target position only if found            |----------------------------- |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/tooltip/position-inner">
+  </demoinline>
+</demo>
+
 Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/tooltip/other#popperjs).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

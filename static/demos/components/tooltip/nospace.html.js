@@ -12,7 +12,7 @@ const html = /* HTML */ `
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
+          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ const html = /* HTML */ `
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
+          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black"></div>
+          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
         </div>
       </div>
     </div>

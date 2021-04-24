@@ -45,7 +45,7 @@
     right: auto;
     width: auto;
     height: auto;
-    overflow-y: initial;
+    overflow: visible;
     .xt-overlay-container {
       padding: 0;
       width: 100%;
@@ -76,7 +76,6 @@
     }
     .xt-card {
       @apply xt-min-h-screen;
-      /* add to gatsby_menu--overlay group */
     }
     .xt-overlay-disabled& {
       display: none !important;
@@ -251,7 +250,7 @@
   padding-bottom: 2px;
   border-width: 0;
   @apply w-full font-sans;
-  > span {
+  .gatsby_button-site_article_sidebar_inner {
     @apply transition duration-300 ease-out-quint;
     border-radius: 6px;
     padding: 6px 9px;
@@ -263,21 +262,21 @@
     text-transform: none;
   }
   &.gatsby_button-site-header_link {
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       @apply w-full;
       font-weight: theme('fontWeight.bold');
       text-transform: uppercase;
     }
   }
   &.gatsby_button-site_article_sidebar--sub {
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       @apply w-full;
       padding: 5px 9px;
       font-size: 14px;
     }
   }
   &.gatsby_button-site_article_sidebar--adiacent {
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       @apply bg-primary-900 bg-opacity-25;
       padding: 5px 9px;
       font-size: 12px;
@@ -285,23 +284,27 @@
   }
   &.gatsby_button-site_article_sidebar--adiacent_inner {
     padding-bottom: 0;
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       font-size: 12px;
     }
   }
   &:hover {
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       @apply bg-primary-900 bg-opacity-25;
       transform: translateX(.25rem);
       color: theme('colors.white');
     }
   }
   &.on, &.current, &:active, &:focus {
-    > span {
+    .gatsby_button-site_article_sidebar_inner {
       @apply bg-primary-900 bg-opacity-50;
       transform: none;
       font-weight: theme('fontWeight.bold');
       color: theme('colors.white');
     }
   }
+}
+
+.gatsby_button-site_article_sidebar_text {
+  display: inline-block;
 }

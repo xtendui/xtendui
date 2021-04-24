@@ -2,11 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
-      <div class="xt-drop-item">
-        <a href="#drop-with-link-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
-          drop
-        </a>
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-drop="{ positionInner: 'span' }">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          <span class="m-4">relative to this span</span>
+        </button>
 
         <div class="xt-drop p-4">
           <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
@@ -22,6 +22,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
         </div>
       </div>
     </div>

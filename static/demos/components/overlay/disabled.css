@@ -12,7 +12,7 @@
     right: auto;
     width: auto;
     height: auto;
-    overflow-y: initial;
+    overflow: visible;
     .xt-overlay-container {
       padding: 0;
       width: 100%;

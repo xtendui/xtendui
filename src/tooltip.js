@@ -72,7 +72,8 @@ class Tooltip extends Xt.Toggle {
         // popperjs
         const element = self.getElements(el)[0]
         const arrow = el.querySelector(':scope > .xt-arrow')
-        const popperInstance = createPopper(element, el, {
+        const popperEl = options.positionInner ? element.querySelector(options.positionInner) : element
+        const popperInstance = createPopper(popperEl ?? element, el, {
           placement: el.getAttribute('data-xt-position') || options.position,
           strategy: options.strategy,
           resize: false,
@@ -156,6 +157,7 @@ Tooltip.optionsDefault = {
   },
   // other
   position: 'top',
+  positionInner: false,
   strategy: 'absolute',
   spaceOverflow: 15,
   spaceFlip: 15,

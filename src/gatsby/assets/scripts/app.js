@@ -495,25 +495,41 @@ const makeDocument = () => {
     }
     id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
     // sidebar links
-    /*
     if (el.tagName === 'H2') {
-      let container = document.querySelector(
-        '.gatsby_button-site_article_sidebar--adiacent.on ~ .gatsby_site-header_adiacent_inner'
-      )
-      container = container
-        ? container
-        : document.querySelector('.gatsby_button-site_article_sidebar--sub.on ~ .gatsby_site-header_adiacent_inner')
-      if (container) {
-        const item = Xt.createElement(
-          `<div><a href="#" class="xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent_inner"><span></span></button></div>`
+      let activeText =
+        document.querySelector(
+          '.gatsby_button-site_article_sidebar--adiacent.on .gatsby_button-site_article_sidebar_inner'
+        ) ??
+        document.querySelector('.gatsby_button-site_article_sidebar--sub.on .gatsby_button-site_article_sidebar_inner')
+      if (activeText) {
+        let activeTooltip = activeText.querySelector('.xt-tooltip')
+        if (!activeTooltip) {
+          activeText.append(
+            Xt.createElement(`
+<div class="xt-tooltip p-4 group" data-xt-duration="300">
+  <div class="relative py-2 rounded-md shadow-tooltip bg-primary-700 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
+    <nav class="xt-list flex-col">
+    </nav>
+  </div>
+</div>`)
+          )
+          activeText.setAttribute(
+            'data-xt-tooltip',
+            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text' }`
+          )
+          activeTooltip = activeText.querySelector('.xt-tooltip')
+        }
+        const activeList = activeTooltip.querySelector('.xt-list')
+        activeList.append(
+          Xt.createElement(`
+<a href="#${encodeURIComponent(
+            id
+          )}" class="xt-button text-3xs py-0.5 px-3 w-full text-white font-sans font-normal leading-snug tracking-wider uppercase bg-primary-700 text-opacity-75 transition hover:bg-primary-800 active:bg-primary-800 on:bg-primary-800 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+  ${el.textContent.trim()}
+</a>`)
         )
-        container.classList.add('on', in')
-        container.querySelector('.gatsby_site-header_item').append(item)
-        item.querySelector('a').setAttribute('href', `#${encodeURIComponent(id)}`)
-        item.querySelector('span').textContent = el.textContent.trim()
       }
     }
-    */
     // gatsby_make-anchor
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
@@ -539,7 +555,7 @@ const makeDocument = () => {
   if (gatsby) {
     const scrollToAnchor = Xt.get('xt-scrollto', gatsby.closest('body'))
     if (scrollToAnchor) {
-      scrollToAnchor.eventStart()
+      scrollToAnchor.reinit()
     }
   }
 }

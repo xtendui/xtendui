@@ -114,7 +114,7 @@ const mountEventmethods = ({ ref }) => {
               <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
+              <button type="button" class="xt-button text-2xs py-1.5 px-6} w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
                 Dolor sit
               </button>
               <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
