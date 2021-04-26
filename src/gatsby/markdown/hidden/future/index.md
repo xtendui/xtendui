@@ -33,7 +33,7 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 ## Toggle inverse	
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-css-multiple">
+  <demoinline src="demos/components/toggle/animation-css">
   </demoinline>
   <demoinline src="demos/components/toggle/animation-css-inverse">
   </demoinline>
