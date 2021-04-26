@@ -9,17 +9,34 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount({
   matches: '.demo--scrollto',
   mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto()
     const unmountSticky = mountSticky({ ref })
+    const unmountScrollto = mountScrollto()
 
     // unmount
 
     return () => {
-      unmountScrollto()
       unmountSticky()
+      unmountScrollto()
     }
   },
 })
+
+/* mountSticky */
+
+const mountSticky = ({ ref }) => {
+  ScrollTrigger.create({
+    trigger: ref.querySelector('.xt-sticky'),
+    start: 'top top',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountScrollto */
 
@@ -75,21 +92,4 @@ const mountScrollto = () => {
     self.destroy()
     self = null
   }
-}
-
-/* mountSticky */
-
-const mountSticky = ({ ref }) => {
-  ScrollTrigger.create({
-    trigger: ref.querySelector('.xt-sticky'),
-    start: 'top top',
-    endTrigger: 'html',
-    end: 'bottom top',
-    pin: true,
-    pinSpacing: false,
-  })
-
-  // unmount
-
-  return () => {}
 }

@@ -54,6 +54,7 @@ class Toggle {
     self.initialCurrents = []
     self.detail = {}
     self.disabled = false
+    self.hasHash = false
     self.detail.queueIn = []
     self.detail.queueOut = []
     self.detail.autopaused = false
@@ -607,30 +608,29 @@ class Toggle {
     }
     // hash
     if (options.hash) {
-      let hasHash = false
       for (const element of self.elements) {
         if (element.getAttribute(options.hash)) {
-          hasHash = true
+          self.hasHash = true
           break
         }
       }
-      if (!hasHash) {
+      if (!self.hasHash) {
         for (const target of self.targets) {
           if (target.getAttribute(options.hash)) {
-            hasHash = true
+            self.hasHash = true
             break
           }
         }
       }
-      if (hasHash) {
-        // hash
-        const hashHandler = Xt.dataStorage.put(
-          window,
-          `hashchange/${self.ns}`,
-          self.hashChange.bind(self).bind(self, true, null)
-        )
-        addEventListener('hashchange', hashHandler)
-      }
+    }
+    if (options.hash && self.hasHash) {
+      // hash
+      const hashHandler = Xt.dataStorage.put(
+        window,
+        `hashchange/${self.ns}`,
+        self.hashChange.bind(self).bind(self, true, null)
+      )
+      addEventListener('hashchange', hashHandler)
     }
     // jump
     if (options.jump) {
@@ -880,7 +880,7 @@ class Toggle {
       return { currents, arr }
     }
     // logic
-    if (options.hash) {
+    if (options.hash && self.hasHash) {
       if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
         const hash = decodeURI(location.hash.split('#')[1])
         if (hash) {
@@ -1416,7 +1416,7 @@ class Toggle {
       // input
       el.checked = true
       // hash
-      if (options.hash && !self.initial) {
+      if (options.hash && self.hasHash && !self.initial) {
         const attr = el.getAttribute(options.hash)
         if (attr) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
