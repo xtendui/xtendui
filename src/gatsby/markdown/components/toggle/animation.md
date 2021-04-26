@@ -14,8 +14,8 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Toggle `display: none` on `.on` and `.out`            |
-| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**, to be used with `options.queue: false`            |
+| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
+| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**            |
 
 </div>
 
