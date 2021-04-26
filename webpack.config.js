@@ -1,6 +1,5 @@
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -40,10 +39,14 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: false,
+              sourceMap: false,
             },
           },
           {
             loader: 'postcss-loader',
+            options: {
+              sourceMap: false,
+            },
           },
         ],
       },
@@ -62,17 +65,7 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [
-      new TerserJSPlugin(),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          },
-        },
-      }),
-    ],
+    minimizer: [new TerserJSPlugin()],
   },
   devtool: 'source-map',
 }

@@ -21,5 +21,6 @@ module.exports = {
     require(`tailwindcss`),
     require('postcss-nested'),
     require('autoprefixer'),
+    require('cssnano'),
   ],
 }

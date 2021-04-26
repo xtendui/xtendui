@@ -25,14 +25,14 @@ Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
 npm install tailwindcss@2 xtendui --save
-npm install postcss postcss-import postcss-nested autoprefixer --save-dev
+npm install postcss postcss-import postcss-nested autoprefixer cssnano --save-dev
 ```
 
 Then in `postcss.config.js` set up compilation.
 
 ```jsx
 module.exports = {
-  plugins: [require('postcss-import'), require('tailwindcss'), require('postcss-nested'), require('autoprefixer')],
+  plugins: [require('postcss-import'), require('tailwindcss'), require('postcss-nested'), require('autoprefixer'), require('cssnano')],
 };
 ```
 
