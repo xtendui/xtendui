@@ -13,14 +13,6 @@ export default class Demo extends React.Component {
       const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
       const container = this.demoRef.current
       populateDemo(container)
-      // fix demo fullscreen
-      const demoHash = require('src/gatsby/assets/scripts/demo').demoHash
-      for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
-        if (btnOpenFull.classList.contains('on')) {
-          demoHash()
-          break
-        }
-      }
     }
   }
 
