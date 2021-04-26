@@ -28,9 +28,18 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   </demoinline>
 </demo>
 
+## List
+
+Use [list component](/components/list) to populate the tooltip with **lists content**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/list">
+  </demoinline>
+</demo>
+
 ## Card
 
-Use [card component](/components/card) to populate the tooltip with **complex content** see for example the [drop content card](/components/drop/content-card).
+Use [card component](/components/card) to populate the tooltip with **complex content**.
 
 <demo>
   <demoinline src="demos/components/tooltip/card">
