@@ -59,16 +59,17 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  // close fullscreen and others
-  if (window.location.hash === '') {
-    dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
-  }
   // only if changing page
   if (prevLocation) {
     // only if new page
     if (location.pathname !== prevLocation.pathname) {
       // scroll page to top
       document.scrollingElement.scrollTop = 0
+      // close fullscreen and others
+      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+    } else {
+      // fix trigger hashchange when hash is removed (e.g.: clicking menu item)
+      dispatchEvent(new CustomEvent('hashchange'))
     }
   }
   // instant animations

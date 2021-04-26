@@ -188,7 +188,6 @@ const populateBlock = () => {
           detail: {
             force: true,
             container: current,
-            delay: 250, // needs or bugs reinitialization
           },
         })
       )
@@ -246,7 +245,6 @@ const populateBlock = () => {
                 detail: {
                   force: true,
                   container: current,
-                  delay: 250, // needs or bugs reinitialization
                 },
               })
             )
@@ -459,7 +457,6 @@ const populateDemo = container => {
             detail: {
               force: true,
               container: item,
-              delay: 250, // needs or bugs reinitialization
             },
           })
         )
