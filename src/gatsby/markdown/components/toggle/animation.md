@@ -64,7 +64,7 @@ You can set activation delay with a value or a function with arguments `current,
 
 ## Queue
 
-By default **multiple mode** queues the activations by waiting the end of duration.
+By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -92,7 +92,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-css-multiple">
+  <demoinline src="demos/components/toggle/animation-css">
   </demoinline>
 </demo>
 
@@ -109,7 +109,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-js-multiple">
+  <demoinline src="demos/components/toggle/animation-js">
   </demoinline>
 </demo>
 

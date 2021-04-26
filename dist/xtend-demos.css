@@ -1,5 +1,4 @@
 @import 'xtendui/static/demos/components/card/disabled.css';
-@import 'xtendui/static/demos/components/drop/animation-css-multiple.css';
 @import 'xtendui/static/demos/components/drop/animation-css.css';
 @import 'xtendui/static/demos/components/drop/disabled.css';
 @import 'xtendui/static/demos/components/form/variant-primary.css';
@@ -31,7 +30,7 @@
 @import 'xtendui/static/demos/components/slider/touch-overflow.css';
 @import 'xtendui/static/demos/components/table/border.css';
 @import 'xtendui/static/demos/components/toggle/animation-css-inverse.css';
-@import 'xtendui/static/demos/components/toggle/animation-css-multiple.css';
+@import 'xtendui/static/demos/components/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/toggle/class-custom.css';
 @import 'xtendui/static/demos/components/toggle/progress.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css-multiple.css';

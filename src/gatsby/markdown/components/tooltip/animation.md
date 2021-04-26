@@ -34,8 +34,6 @@ Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group
 <demo>
   <demoinline src="demos/components/tooltip/animation">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation-multiple">
-  </demoinline>
 </demo>
 
 You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
@@ -53,7 +51,7 @@ You can set activation delay with a value or a function with arguments `current,
 
 ## Queue
 
-By default **multiple mode** queues the activations by waiting the end of duration.
+By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -64,6 +62,8 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 <demo>
+  <demoinline src="demos/components/tooltip/animation-multiple">
+  </demoinline>
   <demoinline src="demos/components/tooltip/animation-multiple-noqueue">
   </demoinline>
 </demo>
@@ -83,8 +83,6 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 <demo>
   <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation-css-multiple">
-  </demoinline>
 </demo>
 
 ## Js Animation
@@ -101,8 +99,6 @@ You can use also **javascript animations**, just use [tooltip api](/components/t
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-js">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-js-multiple">
   </demoinline>
 </demo>
 

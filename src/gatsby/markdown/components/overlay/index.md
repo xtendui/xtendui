@@ -72,4 +72,27 @@ Use this code to create a **overlay** in **multiple mode**.
   </demoinline>
 </demo>
 
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="my-group,another-group"`   |  Group or multiple groups on elements and targets            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/overlay/usage-multiple-group">
+  </demoinline>
+</demo>
+
 Check subpage to [customize interaction](/components/overlay/interaction) and [customize content](/components/overlay/content).

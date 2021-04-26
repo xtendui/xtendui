@@ -14,11 +14,11 @@ Test animation.
   </demoinline>
   <demoinline src="demos/components/toggle/animation-multiple-delay">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation">
+  <demoinline src="demos/components/overlay/animation-multiple">
   </demoinline>
-  <demoinline src="demos/components/drop/animation">
+  <demoinline src="demos/components/drop/animation-multiple">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation">
+  <demoinline src="demos/components/tooltip/animation-multiple">
   </demoinline>
 </demo>
 
@@ -31,13 +31,13 @@ Test direction.
 Test queue timing.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-css-multiple">
+  <demoinline src="demos/components/toggle/animation-css">
   </demoinline>
   <demoinline src="demos/components/overlay/animation-css">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-css-multiple">
+  <demoinline src="demos/components/drop/animation-css">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation-css-multiple">
+  <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
 </demo>
 
@@ -46,13 +46,9 @@ Test queue timing.
 Test direction and queue timing.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-js-multiple">
+  <demoinline src="demos/components/toggle/animation-js">
   </demoinline>
   <demoinline src="demos/components/overlay/animation-js">
-  </demoinline>
-  <demoinline src="demos/components/drop/animation-js-multiple">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-js-multiple">
   </demoinline>
 </demo>
 
@@ -62,6 +58,8 @@ Test instant activation when switching.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
   </demoinline>
   <demoinline src="demos/components/drop/animation-multiple-noqueue">
   </demoinline>

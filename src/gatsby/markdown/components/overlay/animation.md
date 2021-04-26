@@ -50,7 +50,7 @@ You can set activation delay with a value or a function with arguments `current,
 
 ## Queue
 
-By default **multiple mode** queues the activations by waiting the end of duration.
+By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -59,6 +59,13 @@ By default **multiple mode** queues the activations by waiting the end of durati
 | Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
 
 </div>
+
+<demo>
+  <demoinline src="demos/components/overlay/animation-multiple">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
+  </demoinline>
+</demo>
 
 ## Css Animation
 
