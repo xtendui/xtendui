@@ -98,8 +98,7 @@ const mountButtonsLine = ({ ref }) => {
   for (const buttonLine of buttonsLine) {
     // vars
 
-    const link =
-      buttonLine.tagName === 'a' || buttonLine.tagName === 'button' ? buttonLine : buttonLine.closest('a, button')
+    const link = buttonLine.closest('a, button')
     const mediaScale = 0.04
     const mediaOpacityIn = 0.75
     const mediaOpacityOut = 1
