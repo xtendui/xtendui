@@ -251,7 +251,9 @@ const mountSlide = ({ ref }) => {
   for (const slide of slides) {
     // vars
 
-    let links = slide.closest('a, button') ?? slide.querySelectorAll('a, button')
+    let links = slide.closest('a, button')
+    links = links ? [links] : slide.querySelectorAll('a, button')
+    if (!links.length) return
     const img = slide.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
