@@ -78,7 +78,7 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ({ after }) =>
+    backgroundColor: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -94,13 +94,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    backgroundOpacity: ({ after }) =>
+    backgroundOpacity: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -116,13 +120,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    borderColor: ({ after }) =>
+    borderColor: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -138,13 +146,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    borderOpacity: ({ after }) =>
+    borderOpacity: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -160,13 +172,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    boxShadow: ({ after }) =>
+    boxShadow: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -182,13 +198,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    gradientColorStops: ({ after }) =>
+    gradientColorStops: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -204,13 +224,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    margin: ({ after }) =>
+    margin: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -226,13 +250,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    opacity: ({ after }) =>
+    opacity: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -248,13 +276,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    padding: ({ after }) =>
+    padding: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -270,13 +302,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    scale: ({ after }) =>
+    scale: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -292,13 +328,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    rotate: ({ after }) =>
+    rotate: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -314,13 +354,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    skew: ({ after }) =>
+    skew: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -336,13 +380,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    textColor: ({ after }) =>
+    textColor: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -358,13 +406,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    textDecoration: ({ after }) =>
+    textDecoration: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -380,13 +432,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    textOpacity: ({ after }) =>
+    textOpacity: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -402,13 +458,17 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
         )
       ),
-    translate: ({ after }) =>
+    translate: ({ after, before }) =>
       after(
         ['group-on'],
         'hover',
@@ -424,7 +484,11 @@ module.exports = {
               after(
                 ['group-out'],
                 'hover',
-                after(['out'], 'hover', after(['group-active'], 'hover', after(['active'], 'hover')))
+                after(
+                  ['out'],
+                  'hover',
+                  after(['group-active'], 'hover', after(['active'], 'hover', before(['group-hover'], 'hover')))
+                )
               )
             )
           )
