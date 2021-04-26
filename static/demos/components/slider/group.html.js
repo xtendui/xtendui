@@ -46,6 +46,24 @@ const html = /* HTML */ `
               <div class="xt-h4">7</div>
             </div>
           </div>
+
+          <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">8</div>
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">9</div>
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 sm:w-4/12">
+            <div class="xt-card rounded-md ${classes.cardSlide()}">
+              <div class="xt-h4">10</div>
+            </div>
+          </div>
         </div>
 
         <nav class="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
