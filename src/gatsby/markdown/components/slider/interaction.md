@@ -176,8 +176,8 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 </div>	
 
-[[notePrimary]]	
-| Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).	
+[[notePrimary]]
+| Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
 
 Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
 
@@ -185,3 +185,12 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
   <demoinline src="demos/components/slider/auto">	
   </demoinline>	
 </demo>	
+
+## Status
+
+Use the [api](/components/slider/api#listen) and listen to events to make slider status indicators.	
+
+<demo>
+  <demoinline src="demos/components/slider/status">
+  </demoinline>
+</demo>

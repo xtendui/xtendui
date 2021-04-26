@@ -16,6 +16,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 .googlelocator
 .multilevel
 .stickyflow
+.slider
 
 #### Themes
 
