@@ -53,7 +53,7 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `elements.resultsFounds:Query`                          | `false`        | Object query for results found             |
 | Option                    | `elements.locateBtn:Query`                          | `false`        | Object query for locate button             |
 | Option                    | `elements.repeatBtn:Query`                          | `false`        | Object query for repeat search button             |
-| Option                    | `elements.formatData:Object`                          | `<Object>`        | Object fir format data function             |
+| Option                    | `elements.formatData:Object`                          | `<Object>`        | Object for format data and filter functions             |
 
 
 </div>

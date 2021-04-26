@@ -262,15 +262,7 @@ class Googlelocator {
       return false
     }
     // filter
-    self.filters = []
-    if (options.elements.filter) {
-      const filterElements = self.object.querySelectorAll(options.elements.filter)
-      for (const filterElement of filterElements) {
-        if (filterElement.checked) {
-          self.filters.push(filterElement.value)
-        }
-      }
-    }
+    self.filters = self.object.querySelectorAll(options.elements.filter)
     // markers
     self.locations = []
     let index = 0
@@ -376,15 +368,7 @@ class Googlelocator {
     const self = this
     const options = self.options
     // filter
-    let passed = true
-    for (const filter of self.filters) {
-      const check = options.formatData.filter(self, marker, filter)
-      if (!check && filter !== '') {
-        // '' is filter all
-        passed = false
-      }
-    }
-    return passed
+    return options.formatData.filter(self, marker, self.filters)
   }
 
   /**
