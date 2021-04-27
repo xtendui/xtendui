@@ -54,8 +54,6 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 See [toggle event](/components/toggle/interaction#event) for more informations.
 
-You can specify **on** and **off** events for the interactions.
-
 ## Drag	
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
@@ -163,18 +161,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 ## Auto	
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |	
-| Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |	
-| Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |	
-| Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |	
-| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .xt-button'`        | Query inside `object` that pause automatic on mouseenter            |	
-| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
-
-</div>	
+See [toggle auto](/components/toggle/interaction#auto) for more informations.
 
 [[notePrimary]]
 | Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
@@ -185,3 +172,7 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
   <demoinline src="demos/components/slider/auto">	
   </demoinline>	
 </demo>	
+
+## Class html
+
+See [overlay class html](/components/toggle/interaction#class-html) for more informations.

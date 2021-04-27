@@ -1291,10 +1291,6 @@ Slider.optionsDefault = {
   off: 'click',
   // timing
   queue: false,
-  // auto
-  auto: {
-    pause: '[data-xt-pag], [data-xt-nav], .xt-button',
-  },
   // other
   jump: false,
   navigation: '[data-xt-nav]',

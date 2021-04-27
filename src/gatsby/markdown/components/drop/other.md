@@ -44,6 +44,17 @@ You can add **additional options** that gets added on **match media query**. You
   </demoinline>
 </demo>
 
+## Backdrop
+
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop.
+
+Use  `on:z-drop` to have the button above the backdrop.
+
+<demo>
+  <demoinline src="demos/components/drop/backdrop">
+  </demoinline>
+</demo>
+
 ## Other Content
 
 You can put **any content** inside, here are some examples.

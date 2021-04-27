@@ -146,53 +146,6 @@ There some other event options.
 
 </div>
 
-## Auto
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
-| Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
-| Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
-| Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
-| Option                  | `auto.pause:Query`                          | `false`        | Query inside `object` that pause automatic on mouseenter            |
-| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
-
-</div>
-
-[[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/toggle/api#trigger).
-
-<demo>
-  <demoinline src="demos/components/toggle/auto">
-  </demoinline>
-</demo>
-
-Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.
-
-<demo>
-  <demoinline src="demos/components/toggle/progress">
-  </demoinline>
-</demo>
-
-## Jump
-
-Use `jump: true` to enable clicking on a **target** to jump to them.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/toggle/jump">
-  </demoinline>
-</demo>
-
 ## Navigation and Loop
 
 You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.
@@ -220,19 +173,53 @@ You can make the **activation loop** with `loop: true`.
   </demoinline>
 </demo>
 
-## Keyboard
+## Jump
 
-Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
+Use `jump: true` to enable clicking on a **target** to jump to them.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
+| Option                  | `jump:Boolean`                          | `false`        | Clicking on targets triggers activation            |
 
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/usability-keyboard">
+  <demoinline src="demos/components/toggle/jump">
   </demoinline>
 </demo>
+
+## Auto
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
+| Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
+| Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
+| Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
+| Option                  | `auto.pause:Query`                          | `'a, button'`        | Query inside `object` that pause automatic on mouseenter            |
+| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
+
+</div>
+
+[[notePrimary]]
+| Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/toggle/api#trigger).
+
+<demo>
+  <demoinline src="demos/components/toggle/auto">
+  </demoinline>
+</demo>
+
+Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.
+
+<demo>
+  <demoinline src="demos/components/toggle/progress">
+  </demoinline>
+</demo>
+
+## Class html
+
+See [overlay class html](/components/toggle/interaction#class-html) for more informations.

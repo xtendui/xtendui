@@ -108,29 +108,18 @@ There some other event options.
 
 </div>
 
-## Backdrop
+## Navigation and Loop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop.
+See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more informations.
 
-Use `on:z-tooltip` to have the button above the backdrop.
+## Jump
 
-<demo>
-  <demoinline src="demos/components/tooltip/backdrop">
-  </demoinline>
-</demo>
+See [toggle jump](/components/toggle/interaction#jump) for more informations.
 
-## Swap
+## Auto	
 
-Use this code to create a **tooltip swap**.
+See [toggle auto](/components/toggle/interaction#auto) for more informations.
 
-<demo>
-  <demoinline src="demos/components/tooltip/swap-click">
-  </demoinline>
-</demo>
+## Class html
 
-Use this code to create a **tooltip swap toggle**.
-
-<demo>
-  <demoinline src="demos/components/tooltip/swap-toggle">
-  </demoinline>
-</demo>
+See [overlay class html](/components/toggle/interaction#class-html) for more informations.

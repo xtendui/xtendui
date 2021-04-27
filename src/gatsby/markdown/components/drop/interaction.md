@@ -100,13 +100,18 @@ There some other event options.
 
 </div>
 
-## Backdrop
+## Navigation and Loop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-drop` to add a customizzable backdrop.
+See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more informations.
 
-Use  `on:z-drop` to have the button above the backdrop.
+## Jump
 
-<demo>
-  <demoinline src="demos/components/drop/backdrop">
-  </demoinline>
-</demo>
+See [toggle jump](/components/toggle/interaction#jump) for more informations.
+
+## Auto	
+
+See [toggle auto](/components/toggle/interaction#auto) for more informations.
+
+## Class html
+
+See [overlay class html](/components/toggle/interaction#class-html) for more informations.

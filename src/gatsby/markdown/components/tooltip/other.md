@@ -44,12 +44,39 @@ You can add **additional options** that gets added on **match media query**. You
   </demoinline>
 </demo>
 
+## Backdrop
+
+Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop.
+
+Use `on:z-tooltip` to have the button above the backdrop.
+
+<demo>
+  <demoinline src="demos/components/tooltip/backdrop">
+  </demoinline>
+</demo>
+
 ## Other Content
 
 You can put **any content** inside, here are some examples.
 
 <demo>
   <demoinline src="demos/components/tooltip/other-content">
+  </demoinline>
+</demo>
+
+## Swap
+
+Use this code to create a **tooltip swap**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-click">
+  </demoinline>
+</demo>
+
+Use this code to create a **tooltip swap toggle**.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-toggle">
   </demoinline>
 </demo>
 

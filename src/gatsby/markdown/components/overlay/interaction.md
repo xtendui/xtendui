@@ -87,6 +87,18 @@ There some other event options.
 
 </div>
 
+## Navigation and Loop
+
+See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more informations.
+
+## Jump
+
+See [toggle jump](/components/toggle/interaction#jump) for more informations.
+
+## Auto	
+
+See [toggle auto](/components/toggle/interaction#auto) for more informations.
+
 ## Class html
 
 You can set **html classes on activation**, remember to keep default `classHtml` classes.

@@ -39,6 +39,23 @@ Use the [api](/components/slider/api#listen) and listen to events to make slider
   </demoinline>
 </demo>
 
+## Keyboard
+
+Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/usability-keyboard">
+  </demoinline>
+</demo>
+
 ## Toggle inverse	
 
 <demo>

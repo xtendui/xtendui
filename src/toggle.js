@@ -3167,7 +3167,7 @@ Toggle.optionsDefaultSuper = {
     initial: true,
     step: 1,
     inverse: false,
-    pause: false,
+    pause: 'a, button',
     loop: true,
   },
   // other
