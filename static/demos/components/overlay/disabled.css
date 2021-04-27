@@ -26,11 +26,11 @@
         box-shadow: none;
         color: inherit;
         padding: 0;
-        > * {
-          padding: 0;
-        }
         > .xt-dismiss {
           display: none;
+        }
+        > * {
+          padding: 0;
         }
       }
     }
