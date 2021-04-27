@@ -55,8 +55,6 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for more informations.
-
 You can specify **on** and **off** events for the interactions.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

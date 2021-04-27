@@ -44,6 +44,15 @@ You can add **additional options** that gets added on **match media query**. You
   </demoinline>
 </demo>
 
+## Unclosable
+
+You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/unclosable">
+  </div>
+</demo>
+
 ## Other Content
 
 You can put **any content** inside, here are some examples.

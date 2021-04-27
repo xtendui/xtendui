@@ -65,13 +65,6 @@ You can specify **on** and **off** events for the interactions.
 
 </div>
 
-You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/event">
-  </div>
-</demo>
-
 There some other event options.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
