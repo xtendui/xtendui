@@ -30,6 +30,15 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
   </demoinline>
 </demo>
 
+## Status
+
+Use the [api](/components/slider/api#listen) and listen to events to make slider status indicators.	
+
+<demo>
+  <demoinline src="demos/components/slider/status">
+  </demoinline>
+</demo>
+
 ## Toggle inverse	
 
 <demo>

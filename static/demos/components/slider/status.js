@@ -3,14 +3,16 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-usage',
+  matches: '.demo--slider-status',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
+    const unmountStatus = mountStatus({ ref })
 
     // unmount
 
     return () => {
       unmountSlider()
+      unmountStatus()
     }
   },
 })
@@ -49,15 +51,23 @@ const mountSlider = ({ ref }) => {
 
   self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
+  // unmount
+
+  return () => {}
+}
+
+/* mountStatus */
+
+const mountStatus = ({ ref }) => {
   // status
 
-  const current = ref.querySelector('.slider-status-current')
-  const container = ref.querySelector('.slider-status-container')
+  const slider = ref.querySelector('.xt-slider')
+  const current = slider.querySelector('.slider-status-current')
+  const container = slider.querySelector('.slider-status-container')
 
-  const status = () => {
+  const status = e => {
     const self = Xt.get('xt-slider', slider)
     if (!self) return
-    const containerWidth = container.offsetWidth
     // availableWidth
     let availableWidth = 0
     for (const tr of self.targets) {
@@ -72,17 +82,20 @@ const mountSlider = ({ ref }) => {
       width += slide.offsetWidth
     }
     // set
+    const containerWidth = container.offsetWidth
     const currentWidth = (width * containerWidth) / availableWidth
     const currentLeft = (left * containerWidth) / availableWidth
     current.style.width = `${currentWidth}px`
     current.style.left = `${currentLeft}px`
   }
 
-  slider.addEventListener('on.xt.slider', status, true)
-  slider.addEventListener('init.xt.slider', status, true)
+  slider.addEventListener('on.xt.slider', status)
+  slider.addEventListener('init.xt.slider', status)
   addEventListener('resize', status)
 
   // unmount
 
-  return () => {}
+  return () => {
+    removeEventListener('resize', status)
+  }
 }
