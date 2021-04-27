@@ -65,7 +65,7 @@ const mountStatus = ({ ref }) => {
   const current = slider.querySelector('.slider-status-current')
   const container = slider.querySelector('.slider-status-container')
 
-  const status = e => {
+  const status = () => {
     const self = Xt.get('xt-slider', slider)
     if (!self) return
     // availableWidth
