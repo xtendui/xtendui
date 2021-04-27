@@ -166,26 +166,26 @@ class Scrollto {
             }
           }
         }
-        // raf after components activations and openauto.trigger.xt
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          // vars
-          self.position = options.position({ self })
-          self.space = options.space({ self })
-          self.duration = options.duration({ self })
-          self.position = self.position - self.space
-          // val
-          const min = 0
-          const max = self.scroller.scrollHeight - self.scroller.clientHeight
-          self.position = self.position < min ? min : self.position
-          self.position = self.position > max ? max : self.position
-          // fix activate also if scroll position remains the same
-          if (self.scroller.scrollTop === self.position) {
-            self.scroller.dispatchEvent(new CustomEvent('scroll'))
-          }
-          // listener dispatch
-          self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
-        })
+        // fix not hashchange when custom
+        if (e?.type === 'scrollto.trigger.xt.scrollto') {
+          self.hashchange = Xt.hashChange
+        }
+        // vars
+        self.position = options.position({ self })
+        self.space = options.space({ self })
+        self.duration = options.duration({ self })
+        self.position = self.position - self.space
+        // val
+        const min = 0
+        const max = self.scroller.scrollHeight - self.scroller.clientHeight
+        self.position = self.position < min ? min : self.position
+        self.position = self.position > max ? max : self.position
+        // fix activate also if scroll position remains the same
+        if (self.scroller.scrollTop === self.position) {
+          self.scroller.dispatchEvent(new CustomEvent('scroll'))
+        }
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
       }
     }
   }

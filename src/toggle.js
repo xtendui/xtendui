@@ -916,6 +916,7 @@ class Toggle {
         }
       }
       Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
+      Xt.hashChange = true
     }
     // return
     return { currents, arr }
@@ -1413,17 +1414,9 @@ class Toggle {
       el.classList.remove(...self.classesOut)
       // input
       el.checked = true
-      // hash
-      if (options.hash && self.hasHash && !self.initial) {
-        const attr = el.getAttribute(options.hash)
-        if (attr) {
-          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-          location.hash = `#${encodeURIComponent(attr)}`
-        }
-      }
       // keep the same level of raf for activation
       cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
-      Xt.dataStorage.put(
+      Xt.dataStorage.set(
         el,
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
@@ -1438,6 +1431,17 @@ class Toggle {
         el.classList.add(...self.classesBefore)
       } else if (self.direction > 0) {
         el.classList.add(...self.classesAfter)
+      }
+    }
+    // hash
+    if (options.hash && self.hasHash && !self.initial) {
+      const attr = el.getAttribute(options.hash)
+      if (attr) {
+        // prevent hash on chained activations
+        cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+        Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+        Xt.hashChange = false
+        location.hash = `#${encodeURIComponent(attr)}`
       }
     }
   }
@@ -1480,6 +1484,23 @@ class Toggle {
         el.classList.add(...self.classesBefore)
       } else if (self.direction > 0) {
         el.classList.add(...self.classesAfter)
+      }
+    }
+    // hash
+    if (options.hash && self.hasHash && !self.initial) {
+      const attr = el.getAttribute(options.hash)
+      if (attr && attr === location.hash.split('#')[1]) {
+        // prevent hash on chained activations
+        cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+        Xt.dataStorage.set(
+          window,
+          `xtHashFrame`,
+          requestAnimationFrame(() => {
+            Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+            Xt.hashChange = false
+            location.hash = ''
+          })
+        )
       }
     }
   }
@@ -2464,7 +2485,7 @@ class Toggle {
           el.style.width = w
           // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
-          Xt.dataStorage.put(
+          Xt.dataStorage.set(
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
@@ -2896,7 +2917,7 @@ class Toggle {
     const options = self.options
     // keep the same level of raf for custom listener
     cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}StatusFrame`))
-    Xt.dataStorage.put(
+    Xt.dataStorage.set(
       self.object,
       `${self.ns}StatusFrame`,
       requestAnimationFrame(() => {
