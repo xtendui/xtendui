@@ -157,7 +157,6 @@ class Toggle {
         self.containerElements = document.documentElement
       }
       let arr = Array.from(Xt.arrSingle(self.containerElements.querySelectorAll(options.elements)))
-      arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
       self.destroyElements.push(...self.elements)
     }

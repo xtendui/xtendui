@@ -171,7 +171,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |	
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |	
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |	
-| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .xt-button'`        | Elements that pause automatic on mouseenter            |	
+| Option                  | `auto.pause:Query`                          | `'[data-xt-pag], [data-xt-nav], .xt-button'`        | Query inside `object` that pause automatic on mouseenter            |	
 | Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
 
 </div>	
