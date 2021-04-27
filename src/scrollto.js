@@ -302,7 +302,6 @@ class Scrollto {
     }
     // anchors
     let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
-    els = els.filter(x => !x.closest('.xt-ignore')) // filter out ignore
     // loop
     for (const el of els) {
       // fix don't activate if elements is inside a inner scroller

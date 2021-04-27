@@ -157,7 +157,6 @@ class Toggle {
         self.containerElements = document.documentElement
       }
       let arr = Array.from(Xt.arrSingle(self.containerElements.querySelectorAll(options.elements)))
-      arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       arr = arr.filter(x => !x.closest('[data-xt-nav]')) // filter out nav
       self.elements = arr
       self.destroyElements.push(...self.elements)
@@ -177,7 +176,6 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.containerTargets.querySelectorAll(options.targets))
-      arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
       self.targets = arr
       self.destroyElements.push(...self.targets)
     }
@@ -698,7 +696,7 @@ class Toggle {
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
-      for (const el of self.elements.filter(x => !x.classList.contains('xt-ignore'))) {
+      for (const el of self.elements) {
         const imgs = el.querySelectorAll('img')
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
@@ -717,7 +715,7 @@ class Toggle {
           }
         }
       }
-      for (const tr of self.targets.filter(x => !x.classList.contains('xt-ignore'))) {
+      for (const tr of self.targets) {
         const imgs = tr.querySelectorAll('img')
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
