@@ -30,6 +30,8 @@ These are layout **utilities**.
 
 </div>
 
+To have `.container` fluid so with only one `max-width` in tailwind preset set `theme.extend.container.fluid: '1536px'` with the desired `max-width`, see [tailwind container](https://tailwindcss.com/docs/container).
+
 ## Components
 
 These are layout **component classes**.
@@ -38,7 +40,6 @@ These are layout **component classes**.
 
 |               | Syntax                          | Mixin               | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.container`                     | `container`                | Container fluid `max-width` to disable it use in tailwind preset `theme.extend.container.fluid: false`            |
 | Component                  | `.xt-overflow-main`                     | `xt-overflow-main`                | Overflow scrollbar style            |
 | Component                  | `.xt-overflow-sub`                     | `xt-overflow-sub`                | Overflow scrollbar style small version            |
 | Component                  | `[readonly], [disabled], .xt-disabled`                     | `xt-disabled`                | Disabled styles            |

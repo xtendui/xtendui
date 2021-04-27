@@ -50,11 +50,11 @@ export default class Layout extends React.Component {
                   <DocFullscreen />
                   <main className="gatsby_site-article_inner" id="gatsby_open-full-inner">
                     {page && page.post ? <DocHead page={page} /> : null}
-                    <article className="gatsby_site-article_content">
+                    <article className="gatsby_site-article_content container">
                       <div className="gatsby_site-article_content_inner">{children}</div>
                     </article>
                     <footer className="gatsby_site-footer">
-                      <div className="gatsby_site-footer_inner">
+                      <div className="gatsby_site-footer_inner container">
                         {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
                           <DocFoot page={page} />
                         ) : null}

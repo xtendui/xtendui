@@ -41,7 +41,7 @@ module.exports = {
     },
     '.container': theme('container.fluid')
       ? {
-          maxWidth: theme('screens.2xl'), // fluid always max-with 2xl
+          maxWidth: `${theme('container.fluid')} !important`,
         }
       : {},
     '::selection': {

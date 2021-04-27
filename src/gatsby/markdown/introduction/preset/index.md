@@ -15,7 +15,6 @@ You can customize them in `tailwind.config.js` see [css custimization](/introduc
 
 The following theme values are added with the preset:
 
-* [container](https://tailwindcss.com/docs/container) **center by default** and **custom padding** and **fluid**.
 * [font-size](https://tailwindcss.com/docs/font-size) `text-xs` modified to `~13px`, `text-2xs` added with `~12px`, `text-3xs*` added with `~11px`, for better control on small font sizes.
 * [colors](https://tailwindcss.com/docs/customizing-colors) new colors `error` and `succes`, and a default `primary` color stack to be replaced with your primary color.
 * [z-index](https://tailwindcss.com/docs/font-size) **additional z-index** used by components, use `z-above` zindex to be sure it's **over anything except interactions components**, use `z-last` zindex to be sure it's **over anything**.

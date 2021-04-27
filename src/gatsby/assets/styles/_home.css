@@ -73,7 +73,7 @@
 
 .gatsby_home-main {
   .container {
-    @apply max-w-screen-lg;
+    @apply max-w-screen-lg !important;
   }
 }
 

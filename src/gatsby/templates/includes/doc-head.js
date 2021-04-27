@@ -8,7 +8,7 @@ export default class DocHead extends React.Component {
     const { page } = this.props
     return (
       <header className="gatsby_site-article_hero">
-        <div className="gatsby_site-article_hero-inner">
+        <div className="gatsby_site-article_hero-inner container">
           <div className="gatsby_site-article_hero-content">
             <div className="gatsby_site-article_hero-content-inner">
               <h2 className="xt-h1">

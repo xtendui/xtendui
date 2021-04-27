@@ -70,11 +70,8 @@ body {
     margin-left: 20rem;
   }
   .gatsby_site-article_hero-inner, .gatsby_site-article_content, .gatsby_site-footer_inner {
-    @apply container;
+    margin-left: 0 !important;
     max-width: 1152px !important;
-    @screen lg {
-      @apply ml-0;
-    }
   }
   .gatsby_site-article_content {
     @apply py-10 md:py-20;

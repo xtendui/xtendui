@@ -1,17 +1,6 @@
 module.exports = {
   theme: {
     extend: {
-      container: {
-        center: true,
-        fluid: true,
-        padding: {
-          DEFAULT: '1.25rem',
-          sm: '1.5rem',
-          md: '2rem',
-          lg: '3rem',
-          xl: '4rem',
-        },
-      },
       fontSize: {
         '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
         '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
