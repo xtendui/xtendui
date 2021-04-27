@@ -20,7 +20,7 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
   Xt.autoTimescale = 0.5
 }
 
-/* ScrollTrigger fix resize pin items */
+/* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 
 ScrollTrigger.config({
   // removed resize we trigger it manually

@@ -186,7 +186,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-/* ScrollTrigger fix resize pin items */
+/* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 
 ScrollTrigger.config({
   // removed resize we trigger it manually
