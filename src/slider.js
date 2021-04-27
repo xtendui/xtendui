@@ -337,7 +337,6 @@ class Slider extends Xt.Toggle {
       if (!cloned) {
         console.error('Error: Xt.Slider [data-xt-pag].hidden not found for', self.object)
       }
-      cloned.classList.add('xt-ignore')
       const container = cloned.parentNode
       const arr = self.group
       // populate
@@ -345,7 +344,7 @@ class Slider extends Xt.Toggle {
       for (const [i, group] of arr.entries()) {
         const item = document.createElement('div') // needed to set innerHTML instead of outerHTML to do html.search also attributes
         const clone = cloned.cloneNode(true)
-        clone.classList.remove('hidden', 'xt-ignore')
+        clone.classList.remove('hidden')
         item.append(clone)
         let html = item.innerHTML
         const classes = []
@@ -379,7 +378,7 @@ class Slider extends Xt.Toggle {
         item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'))
         container.insertBefore(item.children[0], cloned)
         item.remove()
-        self.pags[z][i] = container.querySelectorAll('[data-xt-pag]:not(.xt-ignore)')[i]
+        self.pags[z][i] = container.querySelectorAll('[data-xt-pag]:not(.hidden)')[i]
       }
     }
   }
@@ -1282,7 +1281,7 @@ Slider.optionsDefault = {
     },
   },
   // element
-  elements: '[data-xt-pag]',
+  elements: '[data-xt-pag]:not(.hidden)',
   targets: '.xt-slide',
   // quantity
   min: 1,
