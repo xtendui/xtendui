@@ -22,8 +22,8 @@ const scrollToItem = () => {
   const origin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
   if (origin) {
     scrollCache = origin.offsetTop
-    document.scrollingElement.scrollTo(0, scrollCache)
   }
+  document.scrollingElement.scrollTo(0, scrollCache)
 }
 
 const demoHash = () => {
@@ -44,8 +44,6 @@ const demoHash = () => {
           }
           // fullscreen
           makeFullscreen(demo)
-          // scrollToItem
-          scrollToItem()
         }
       }
     } else {
@@ -197,8 +195,6 @@ const populateBlock = () => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
         const container = content.querySelector('.gatsby_demo')
-        // scrollToItem
-        scrollToItem()
         // populate iframe
         if (container) {
           for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
@@ -259,6 +255,8 @@ const populateBlock = () => {
         // no location.hash
         if (location.hash) {
           location.hash = ''
+          // scrollToItem
+          scrollToItem()
         }
       }
     })
