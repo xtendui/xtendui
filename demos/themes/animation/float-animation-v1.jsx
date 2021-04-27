@@ -6,7 +6,7 @@ import 'xtendui/src/tooltip'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Button
       </div>
 
@@ -25,7 +25,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0">
+          className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0">
           Text
         </button>
 
@@ -36,7 +36,7 @@ export default function component() {
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Drop
       </div>
 
@@ -55,17 +55,17 @@ export default function component() {
                 <nav className="xt-list flex-col">
                   <a
                     href="#"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Dolor sit
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Amet
                   </button>
                 </nav>
@@ -119,7 +119,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Tooltip
       </div>
 
@@ -200,7 +200,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Overlay
       </div>
 
@@ -603,7 +603,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Card
       </div>
 

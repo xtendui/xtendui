@@ -40,7 +40,7 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {
     duration: dragTime * 1000,
     mode: 'absolute',
-    loop: false,
+    loop: true,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -251,8 +251,9 @@ const mountSlide = ({ ref }) => {
   for (const slide of slides) {
     // vars
 
-    const links =
-      slide.tagName === 'A' || slide.tagName === 'BUTTON' ? Xt.arrSingle(ref) : slide.querySelectorAll('a, button')
+    let links = slide.closest('a, button')
+    links = links ? [links] : slide.querySelectorAll('a, button')
+    if (!links.length) return
     const img = slide.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1

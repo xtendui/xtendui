@@ -6,7 +6,7 @@ import 'xtendui/src/tooltip'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         List Group
       </div>
 
@@ -17,7 +17,7 @@ export default function component() {
           <div className="w-full md:w-auto">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               List group
             </button>
           </div>
@@ -27,7 +27,7 @@ export default function component() {
               <div className="xt-list-inner flex-auto">
                 <button
                   type="button"
-                  className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                  className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-xl -my-1"
@@ -53,7 +53,7 @@ export default function component() {
 
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 Search
               </button>
             </div>
@@ -61,7 +61,7 @@ export default function component() {
         </div>
       </form>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Drop
       </div>
 
@@ -69,7 +69,7 @@ export default function component() {
         <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             list
           </button>
 
@@ -81,17 +81,17 @@ export default function component() {
                 <nav className="xt-list flex-col rounded-mdtransform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2">
                   <a
                     href="#"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Dolor sit
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                     Amet
                   </button>
                 </nav>
@@ -104,7 +104,7 @@ export default function component() {
         <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             card
           </button>
 
@@ -146,7 +146,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Tooltip
       </div>
 
@@ -155,7 +155,7 @@ export default function component() {
           <div className="xt-tooltip-item">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               tooltip
             </button>
 
@@ -178,7 +178,7 @@ export default function component() {
           <div className="xt-tooltip-item">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               list group
             </button>
 
@@ -191,7 +191,7 @@ export default function component() {
                     <div className="xt-list-inner flex-auto">
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="xt-button text-xs py-2 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -217,7 +217,7 @@ export default function component() {
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Search
                     </button>
                   </div>
@@ -229,7 +229,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Overlay
       </div>
 
@@ -237,7 +237,7 @@ export default function component() {
         <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             screen full
           </button>
           <div className="xt-overlay group" data-xt-duration="500">
@@ -278,7 +278,7 @@ export default function component() {
         <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             Menu
           </button>
 
@@ -311,17 +311,17 @@ export default function component() {
                   <div className="xt-list bg-primary-500 transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2">
                     <button
                       type="button"
-                      className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Menu
                     </button>
                     <button
                       type="button"
-                      className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Info
                     </button>
                     <button
                       type="button"
-                      className="xt-button text-xs py-2 px-3.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Account
                     </button>
                   </div>
@@ -351,7 +351,7 @@ export default function component() {
         <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             contact
           </button>
 
@@ -466,7 +466,7 @@ export default function component() {
                           <div className="w-full">
                             <button
                               type="submit"
-                              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                               Send
                             </button>
                           </div>
@@ -496,7 +496,7 @@ export default function component() {
         <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner' }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             newsletter
           </button>
 
@@ -611,7 +611,7 @@ export default function component() {
                           <div className="w-full">
                             <button
                               type="submit"
-                              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                               Subscribe
                             </button>
                           </div>

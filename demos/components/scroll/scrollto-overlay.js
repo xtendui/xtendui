@@ -10,19 +10,46 @@ gsap.registerPlugin(ScrollTrigger)
 Xt.mount({
   matches: '.demo--scrollto-overlay',
   mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto()
     const unmountSticky = mountSticky({ ref })
+    const unmountScrollto = mountScrollto()
     const unmountSwitcher = mountSwitcher({ ref })
 
     // unmount
 
     return () => {
-      unmountScrollto()
       unmountSticky()
+      unmountScrollto()
       unmountSwitcher()
     }
   },
 })
+
+/* mountSticky */
+
+const mountSticky = ({ ref }) => {
+  // vars
+
+  const overlay = ref.querySelector('.xt-overlay')
+
+  // sticky
+
+  ScrollTrigger.create({
+    trigger: overlay.querySelector('.xt-sticky'),
+    start: 'top top',
+    endTrigger: 'html',
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
+
+  overlay.addEventListener('on.xt.overlay', () => {
+    ScrollTrigger.refresh()
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountScrollto */
 
@@ -39,7 +66,7 @@ const mountScrollto = () => {
     },
     duration: ({ self }) => {
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.max(Math.min(dist / 500, 1), 0.5)
+      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
     },
     // deactivated by switcher
     class: false,
@@ -81,33 +108,6 @@ const mountScrollto = () => {
     self.destroy()
     self = null
   }
-}
-
-/* mountSticky */
-
-const mountSticky = ({ ref }) => {
-  // vars
-
-  const overlay = ref.querySelector('.xt-overlay')
-
-  // sticky
-
-  ScrollTrigger.create({
-    trigger: overlay.querySelector('.xt-sticky'),
-    start: 'top top',
-    endTrigger: 'html',
-    end: 'bottom top',
-    pin: true,
-    pinSpacing: false,
-  })
-
-  overlay.addEventListener('on.xt.overlay', () => {
-    ScrollTrigger.refresh()
-  })
-
-  // unmount
-
-  return () => {}
 }
 
 /* mountSwitcher */

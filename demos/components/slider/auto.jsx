@@ -141,7 +141,7 @@ export default function component() {
           <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
+              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
               data-xt-pag
               title="Slide xt-num">
               <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">

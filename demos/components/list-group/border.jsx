@@ -7,7 +7,7 @@ export default function component() {
           <div className="xt-list-inner flex-auto">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon text-xl -my-1"
@@ -33,7 +33,7 @@ export default function component() {
 
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             Lorem ipsum
           </button>
         </div>

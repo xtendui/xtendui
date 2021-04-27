@@ -19,12 +19,12 @@ export default function component() {
 
   return (
     <div className="demo--slider-hero-v2-react" ref={ref}>
-      <div className="xt-slider xt-slider-absolute">
+      <div className="xt-slider xt-slider-absolute bg-primary-500">
         <div className="xt-slides">
           <div className="xt-slide w-full">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -40,9 +40,9 @@ export default function component() {
           </div>
 
           <div className="xt-slide w-full">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -62,9 +62,9 @@ export default function component() {
           </div>
 
           <div className="xt-slide w-full">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -80,9 +80,9 @@ export default function component() {
           </div>
 
           <div className="xt-slide w-full">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -94,7 +94,7 @@ export default function component() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Lorem ipsum
                     </a>
                   </div>
@@ -105,9 +105,9 @@ export default function component() {
           </div>
 
           <div className="xt-slide w-full">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -119,7 +119,7 @@ export default function component() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Lorem ipsum
                     </a>
                   </div>
@@ -130,9 +130,9 @@ export default function component() {
           </div>
 
           <div className="xt-slide w-full on">
-            <div className="hero relative overflow-hidden bg-black">
+            <div className="hero relative overflow-hidden">
               <div className="hero-inner">
-                <div className="xt-media-container bg-gray-700 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="hero-content flex relative min-h-screen">
@@ -144,7 +144,7 @@ export default function component() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                       Lorem ipsum
                     </a>
                   </div>
@@ -247,7 +247,7 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {
     duration: dragTime * 1000,
     mode: 'absolute',
-    loop: false,
+    loop: true,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -458,8 +458,9 @@ const mountSlide = ({ ref }) => {
   for (const slide of slides) {
     // vars
 
-    const links =
-      slide.tagName === 'A' || slide.tagName === 'BUTTON' ? Xt.arrSingle(ref) : slide.querySelectorAll('a, button')
+    let links = slide.closest('a, button')
+    links = links ? [links] : slide.querySelectorAll('a, button')
+    if (!links.length) return
     const img = slide.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1

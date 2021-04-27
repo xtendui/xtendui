@@ -2,7 +2,7 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto font-sans font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none">
+      <div className="mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none">
         Lorem ipsum dolor sit amet
       </div>
 
@@ -12,7 +12,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none">
+      <div className="mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -22,7 +22,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none">
+      <div className="mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -32,7 +32,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-10 mb-4 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none">
+      <div className="mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -42,7 +42,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight">
+      <div className="mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -52,7 +52,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-xl">
+      <div className="mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -62,7 +62,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-5 mb-2 xt-my-auto font-sans font-bold leading-tight tracking-tight normal-case text-lg">
+      <div className="mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 
@@ -72,7 +72,7 @@ export default function component() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 

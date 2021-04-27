@@ -95,8 +95,22 @@ const mountGooglelocator = ({ ref }) => {
             })
           }
         },
-        filter: function (self, marker, filter) {
-          return marker[filter] || (marker.type && marker.type.includes(filter))
+        filter: function (self, marker, filters) {
+          let passed = true
+          for (const filter of filters) {
+            // if filter is checked
+            if (filter.checked) {
+              const val = filter.value
+              const check = marker[val] || (marker.type && marker.type.includes(val))
+              // if not checked and not '' (filter all)
+              if (!check && val !== '') {
+                // filter out
+                passed = false
+              }
+            }
+          }
+          // if passed filter in
+          return passed
         },
         name: function (self, loc, el) {
           const str = loc.marker.name

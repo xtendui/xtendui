@@ -18,11 +18,11 @@
       color: inherit;
       box-shadow: none;
       padding: 0;
-      > * {
-        padding: 0;
-      }
       > .xt-dismiss {
         display: none;
+      }
+      > * {
+        padding: 0;
       }
     }
     > .xt-card > .xt-list {

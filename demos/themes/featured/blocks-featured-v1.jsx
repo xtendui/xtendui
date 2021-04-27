@@ -36,7 +36,7 @@ export default function component() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
+                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
                       <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
                       <span className="button--line-content pl-8"> Discover </span>
                     </div>
@@ -64,7 +64,7 @@ export default function component() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
+                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
                       <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
                       <span className="button--line-content pl-8"> Discover </span>
                     </div>
@@ -92,7 +92,7 @@ export default function component() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
+                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
                       <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
                       <span className="button--line-content pl-8"> Discover </span>
                     </div>
@@ -122,7 +122,7 @@ export default function component() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-sans font-semibold leading-snug tracking-wider uppercase">
+                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
                       <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
                       <span className="button--line-content pl-8"> Discover </span>
                     </div>
@@ -231,8 +231,7 @@ const mountButtonsLine = ({ ref }) => {
   for (const buttonLine of buttonsLine) {
     // vars
 
-    const link =
-      buttonLine.tagName === 'a' || buttonLine.tagName === 'button' ? buttonLine : buttonLine.closest('a, button')
+    const link = buttonLine.closest('a, button')
     const mediaScale = 0.04
     const mediaOpacityIn = 0.75
     const mediaOpacityOut = 1

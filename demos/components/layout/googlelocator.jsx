@@ -34,7 +34,7 @@ export default function component() {
                       />
                       <button
                         type="button"
-                        className="button--locate xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="button--locate xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -52,7 +52,7 @@ export default function component() {
                       </button>
                       <button
                         type="button"
-                        className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -154,7 +154,7 @@ export default function component() {
                   <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
                     <div className="googlelocator-item-content">
                       <div
-                        className="mt-5 mb-3 xt-my-auto font-sans font-bold leading-none tracking-tight text-xl"
+                        className="mt-5 mb-3 xt-my-auto font-bold leading-none tracking-tight text-xl"
                         data-xt-populate="name"></div>
                       <address className="text-sm uppercase not-italic" data-xt-populate="address"></address>
                       <div className="text-sm uppercase" data-xt-populate="additional"></div>
@@ -194,7 +194,7 @@ export default function component() {
 
             <button
               type="button"
-              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               Search in this area
             </button>
           </div>
@@ -327,8 +327,22 @@ const mountGooglelocator = ({ ref }) => {
             })
           }
         },
-        filter: function (self, marker, filter) {
-          return marker[filter] || (marker.type && marker.type.includes(filter))
+        filter: function (self, marker, filters) {
+          let passed = true
+          for (const filter of filters) {
+            // if filter is checked
+            if (filter.checked) {
+              const val = filter.value
+              const check = marker[val] || (marker.type && marker.type.includes(val))
+              // if not checked and not '' (filter all)
+              if (!check && val !== '') {
+                // filter out
+                passed = false
+              }
+            }
+          }
+          // if passed filter in
+          return passed
         },
         name: function (self, loc, el) {
           const str = loc.marker.name

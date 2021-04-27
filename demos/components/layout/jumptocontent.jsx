@@ -19,7 +19,7 @@ export default function component() {
       <div className="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
         <a
           href="#jumptocontent"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Jump to content
         </a>
       </div>

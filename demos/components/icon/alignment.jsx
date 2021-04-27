@@ -2,14 +2,14 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Align items
       </div>
 
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           align items
           <br />
           default{' '}
@@ -31,7 +31,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md items-center text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md items-center text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           align items
           <br />
           center{' '}
@@ -53,7 +53,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md items-start text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md items-start text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           align items
           <br />
           items-start{' '}
@@ -75,7 +75,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md items-end text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md items-end text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           align items
           <br />
           items-end{' '}
@@ -96,14 +96,14 @@ export default function component() {
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Justify content
       </div>
 
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           justify content
           <br />
           default{' '}
@@ -125,7 +125,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-start text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-start text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           justify content
           <br />
           items-start{' '}
@@ -147,7 +147,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-center text-center text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-center text-center text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           justify content
           <br />
           items-center + text-center{' '}
@@ -169,7 +169,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-end text-right text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-end text-right text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           justify content
           <br />
           items-end + text-right{' '}
@@ -191,7 +191,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-between text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full justify-between text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           justify content
           <br />
           between{' '}
@@ -213,7 +213,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md w-full text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2 px-3.5 rounded-md w-full text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           margin
           <br />
           auto{' '}

@@ -228,7 +228,7 @@ export default function component() {
 
                   <a
                     href="#"
-                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                     Add to cart
                   </a>
 
@@ -321,7 +321,7 @@ const mountScrollto = () => {
     scrollers: '.xt-overlay, .product-gallery',
     duration: ({ self }) => {
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.max(Math.min(dist / 500, 1), 0.5)
+      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 

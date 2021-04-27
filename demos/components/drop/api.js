@@ -100,7 +100,7 @@ const mountEventmethods = ({ ref }) => {
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
           Drop ${indexEl}
         </button>
       `
@@ -111,13 +111,13 @@ const mountEventmethods = ({ ref }) => {
         <div class="xt-drop p-4" title="Target ${indexTr}">
           <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
             <nav class="list flex-col">
-              <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
+              <a href="#" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
+              <button type="button" class="xt-button text-2xs py-1.5 px-6} w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
+              <button type="button" class="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75 on:text-opacity-75">
                 Amet
               </button>
             </nav>
@@ -161,12 +161,9 @@ const mountEventmethods = ({ ref }) => {
     drop.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        // restart
-        logAdd('<strong>restart</strong>')
-        self.restart()
-      })
+      // restart
+      logAdd('<strong>restart</strong>')
+      self.restart()
     }, 200).toString()
   }
 

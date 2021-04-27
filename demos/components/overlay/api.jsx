@@ -20,37 +20,37 @@ export default function component() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-first-element">
           1st element
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-first-target">
           1st target
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-reinit">
           Reinit
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-restart">
           Restart
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-destroy">
           Destroy
         </button>
         <button
           type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--overlay-api-unmount">
           Unmount
         </button>
@@ -59,13 +59,13 @@ export default function component() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
           id="overlay--eventmethods">
           Overlay
         </button>
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
           id="overlay--eventmethods-alt">
           Overlay same
         </button>
@@ -207,12 +207,9 @@ const mountEventmethods = ({ ref }) => {
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        // restart
-        logAdd('<strong>restart</strong>')
-        self.restart()
-      })
+      // restart
+      logAdd('<strong>restart</strong>')
+      self.restart()
     }, 200).toString()
   }
 

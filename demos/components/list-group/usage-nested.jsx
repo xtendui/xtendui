@@ -16,12 +16,12 @@ export default function component() {
             <div className="xt-list-inner flex-col">
               <button
                 type="button"
-                className="xt-button text-2xs py-0.5 px-2 rounded-tr-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                className="xt-button text-2xs py-0.5 px-2 rounded-tr-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                 +
               </button>
               <button
                 type="button"
-                className="xt-button text-2xs py-0.5 px-2 rounded-br-md border border-t-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                className="xt-button text-2xs py-0.5 px-2 rounded-br-md border border-t-0 border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                 -
               </button>
             </div>

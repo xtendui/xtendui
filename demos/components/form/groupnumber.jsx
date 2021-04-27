@@ -4,7 +4,7 @@ import 'xtendui/src/groupnumber'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Horizontal
       </div>
 
@@ -13,7 +13,7 @@ export default function component() {
           <div className="xt-list-inner">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-step="-1">
               -
             </button>
@@ -27,7 +27,7 @@ export default function component() {
             />
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-step="1">
               +
             </button>
@@ -35,7 +35,7 @@ export default function component() {
         </div>
       </form>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-sans font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Vertical
       </div>
 
@@ -53,13 +53,13 @@ export default function component() {
             <div className="xt-list-inner flex-col">
               <button
                 type="button"
-                className="xt-button text-2xs py-0.5 px-2.5 rounded-tr-md border border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                className="xt-button text-2xs py-0.5 px-2.5 rounded-tr-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
                 data-xt-step="1">
                 +
               </button>
               <button
                 type="button"
-                className="xt-button text-2xs py-0.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                className="xt-button text-2xs py-0.5 px-2.5 rounded-br-md border border-t-0 border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
                 data-xt-step="-1">
                 -
               </button>

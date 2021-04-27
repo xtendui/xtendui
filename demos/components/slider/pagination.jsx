@@ -27,7 +27,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -42,7 +42,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -57,7 +57,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -72,7 +72,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -87,7 +87,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -102,7 +102,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -117,7 +117,7 @@ export default function component() {
                 <nav className="xt-slider-pagination w-full xt-list xt-list-1 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
+                    className="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:bg-gray-400 transition-all hidden"
                     data-xt-pag
                     title="Slide xt-num">
                     xt-content
@@ -130,7 +130,7 @@ export default function component() {
           <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-3.5 h-6 rounded-full text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
+              className="xt-button text-2xs py-2 px-3.5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
               data-xt-pag
               title="Slide xt-num">
               xt-num of xt-tot
@@ -159,12 +159,13 @@ const mount = ({ ref }) => {
 const mountSlider = ({ ref }) => {
   // vars
 
+  const slider = ref.querySelector('.xt-slider')
   const dragTime = 1
   const dragEase = 'quint.out'
 
   // init
 
-  const self = new Xt.Slider(ref.querySelector('.xt-slider'), {
+  const self = new Xt.Slider(slider, {
     group: 1,
   })
 

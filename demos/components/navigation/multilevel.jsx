@@ -18,25 +18,25 @@ export default function component() {
           <nav className="xt-list flex-col multilevel-list">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-group="cat-0">
               Category 0
             </button>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-group="cat-1">
               Category 1
             </button>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 0{' '}
             </a>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 1{' '}
             </a>
@@ -50,7 +50,7 @@ export default function component() {
             <div>Category 0</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
               data-xt-group="initial">
               Back
             </button>
@@ -59,25 +59,25 @@ export default function component() {
           <nav className="xt-list flex-col multilevel-list">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-group="cat-0a">
               Category 0a
             </button>
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-group="cat-0b">
               Category 0b
             </button>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 0{' '}
             </a>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 1{' '}
             </a>
@@ -89,7 +89,7 @@ export default function component() {
             <div>Category 0a</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
               data-xt-group="cat-0">
               Back
             </button>
@@ -98,13 +98,13 @@ export default function component() {
           <nav className="xt-list flex-col multilevel-list">
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 0{' '}
             </a>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 1{' '}
             </a>
@@ -118,7 +118,7 @@ export default function component() {
             <div>Category 0b</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
               data-xt-group="cat-0">
               Back
             </button>
@@ -127,13 +127,13 @@ export default function component() {
           <nav className="xt-list flex-col multilevel-list">
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 0{' '}
             </a>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 1{' '}
             </a>
@@ -147,7 +147,7 @@ export default function component() {
             <div>Category 1</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
               data-xt-group="initial">
               Back
             </button>
@@ -156,13 +156,13 @@ export default function component() {
           <nav className="xt-list flex-col multilevel-list">
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 0{' '}
             </a>
             <a
               href="#"
-              className="xt-button text-xs py-2 px-3.5 text-black font-sans font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
               {' '}
               Link 1{' '}
             </a>

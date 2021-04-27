@@ -100,7 +100,7 @@ const mountEventmethods = ({ ref }) => {
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-sans font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
           Tooltip ${indexEl}
         </button>
       `
@@ -153,12 +153,9 @@ const mountEventmethods = ({ ref }) => {
     tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // keep the same level of raf as init
-      requestAnimationFrame(() => {
-        // restart
-        logAdd('<strong>restart</strong>')
-        self.restart()
-      })
+      // restart
+      logAdd('<strong>restart</strong>')
+      self.restart()
     }, 200).toString()
   }
 

@@ -37,7 +37,7 @@ export default function component() {
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
@@ -49,22 +49,22 @@ export default function component() {
                       <div className="container">
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Lorem ipsum
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Dolor sit amet
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Consectetur adipiscing elit
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Morbi nec mauris est
                         </a>
                         <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -81,7 +81,7 @@ export default function component() {
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
@@ -93,12 +93,12 @@ export default function component() {
                       <div className="container">
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Lorem ipsum
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Dolor sit amet
                         </a>
                         <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -114,14 +114,14 @@ export default function component() {
 
             <a
               href="/"
-              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+              className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
               Link #3
             </a>
 
             <div className="xt-drop-item">
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #4
               </a>
 
@@ -135,39 +135,39 @@ export default function component() {
                           <div className="w-full md:w-6/12">
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Lorem ipsum
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Dolor sit amet
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Consectetur adipiscing elit
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Morbi nec mauris est
                             </a>
                           </div>
                           <div className="w-full md:w-6/12">
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Dolor sit amet
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Consectetur adipiscing elit
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-sans font-medium tracking-normal normal-case">
+                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Morbi nec mauris est
                             </a>
                             <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -185,7 +185,7 @@ export default function component() {
 
             <a
               href="/"
-              className="xt-button text-sm py-6 px-4 button--line text-white font-sans font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+              className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
               Link #5
             </a>
           </div>
