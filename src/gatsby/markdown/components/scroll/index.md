@@ -59,6 +59,8 @@ overlay.addEventListener('on.xt.overlay', () => {
 
 - If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
+Just need this code one time in the project.
+
 ```js
 /* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 
@@ -79,6 +81,8 @@ addEventListener('resize', e => {
 ```
 
 - If you are initializing **sticky inside** [Xt.mount](/introduction/javascript#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+
+Just need this code one time in the project.
 
 ```js
 /* ScrollTrigger fix pin items with Xt.mount */
