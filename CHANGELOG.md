@@ -1,3 +1,30 @@
+# [1.0.0-beta.15](https://github.com/minimit/xtendui/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2021-04-27)
+
+
+### Bug Fixes
+
+* **slider:** slider pagination hidden instead of xt-ignore ([80ee403](https://github.com/minimit/xtendui/commit/80ee403c740cb7f02a4f31bd03cc7676b397bd23))
+* removed xt-ignore from toggle and scrollto to mount on scrollTrigger pinned items ([8f593fe](https://github.com/minimit/xtendui/commit/8f593fedc5b702d3de5cafd7a30b3f6ba21d5b3d))
+* **scrollto:** fix scrollto initialization after overlay and fix scrollto only if hash in elements or targets ([0c68273](https://github.com/minimit/xtendui/commit/0c682739ae9abb55e5b6852979e84f6b0b2c252b))
+* added group-hover tailwind variant ([cd8327b](https://github.com/minimit/xtendui/commit/cd8327bbd1bedb5e5e289cf8448a153155cb54e2))
+* **scrollto:** do not force hash scroll position use scrollrestoration defaults of browser ([8ea14b3](https://github.com/minimit/xtendui/commit/8ea14b3756ab0eb5c25fdec73dc3a321c6d04857))
+* **scrollto:** scrollto new options initial and hashchange and new demos with instant duration on initial and hashchange + refactor initial event after activation in other components ([9507b5f](https://github.com/minimit/xtendui/commit/9507b5f4e6cf860e616af72b86deba3fbfdd18eb))
+* **toggle:** activation initial after custom listeners ([80d2d5b](https://github.com/minimit/xtendui/commit/80d2d5b72aecfa381e1f4c8a6461a9ab95005ac1))
+* **toggle:** default groupelements is true now ([682197c](https://github.com/minimit/xtendui/commit/682197c48801ce7b6a3379109bc05204c6066a0b))
+* **toggle:** fix getTargets and getElements return empty array if not applicable and no loop and various refactor index API ([fb1147c](https://github.com/minimit/xtendui/commit/fb1147c041b2e63d3322d0b9bbda49a53fea5e47))
+
+
+### Features
+
+* **css:** container defaults as tailwind ([d883bb6](https://github.com/minimit/xtendui/commit/d883bb6390d1f196b6725efe71e5a7ed101db454))
+* **googlelocator:** custom filters refactor ([9c777f2](https://github.com/minimit/xtendui/commit/9c777f2e375ff23b79e24196df71ad34d999f233))
+
+
+### BREAKING CHANGES
+
+* **css:** use container: settings for fluid container and custom padding and center
+* **toggle:** use groupelements: false if you don't want groupelements
+
 # [1.0.0-beta.14](https://github.com/minimit/xtendui/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2021-04-22)
 
 
