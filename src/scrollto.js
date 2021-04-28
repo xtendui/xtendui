@@ -90,7 +90,7 @@ class Scrollto {
         }
       }
     }
-    // document ready
+    // document ready because on change page ajax
     Xt.ready(() => {
       // initial
       self.initStart()

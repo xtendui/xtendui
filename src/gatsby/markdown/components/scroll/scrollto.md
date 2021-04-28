@@ -17,6 +17,8 @@ Initialize with **javascript** with `new Xt.Scrollto(document.querySelector('.my
 
 Use this code to create a **scroll to anchor**.
 
+Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
+
 Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 
 [[noteDefault]]
