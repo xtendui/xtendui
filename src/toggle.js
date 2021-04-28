@@ -915,7 +915,7 @@ class Toggle {
         }
       }
       Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
-      Xt.hashChange = true
+      Xt.hashchange = true
     }
     // return
     return { currents, arr }
@@ -1439,7 +1439,7 @@ class Toggle {
         // prevent hash on chained activations
         cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
         Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-        Xt.hashChange = false
+        Xt.hashchange = false
         location.hash = `#${encodeURIComponent(attr)}`
       }
     }
@@ -1496,7 +1496,7 @@ class Toggle {
           `xtHashFrame`,
           requestAnimationFrame(() => {
             Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-            Xt.hashChange = false
+            Xt.hashchange = false
             location.hash = ''
           })
         )

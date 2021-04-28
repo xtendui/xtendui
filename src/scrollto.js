@@ -63,7 +63,7 @@ class Scrollto {
       `click/${self.ns}`,
       self.eventChange.bind(self).bind(self, false, null)
     )
-    self.object.addEventListener('click', changeHandler)
+    self.object.addEventListener('click', changeHandler, true)
     // scrollto
     const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
     addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
@@ -90,13 +90,16 @@ class Scrollto {
         }
       }
     }
-    // initial
-    self.initStart()
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      self.initial = false
+    // document ready
+    Xt.ready(() => {
+      // initial
+      self.initStart()
+      // keep the same level of raf for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+      })
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -108,13 +111,14 @@ class Scrollto {
    */
   initStart() {
     const self = this
-    // logic
-    self.eventStart()
+    // initial activation
     for (const scroller of self.scrollers) {
       if (scroller) {
         self.eventActivationHandler(scroller)
       }
     }
+    // initial scrollto
+    self.eventStart()
   }
 
   //
@@ -168,7 +172,7 @@ class Scrollto {
         }
         // fix not hashchange when custom
         if (e?.type === 'scrollto.trigger.xt.scrollto') {
-          self.hashchange = Xt.hashChange
+          self.hashchange = Xt.hashchange
         }
         // vars
         self.position = options.position({ self })
@@ -180,12 +184,15 @@ class Scrollto {
         const max = self.scroller.scrollHeight - self.scroller.clientHeight
         self.position = self.position < min ? min : self.position
         self.position = self.position > max ? max : self.position
-        // fix activate also if scroll position remains the same
-        if (self.scroller.scrollTop === self.position) {
-          self.scroller.dispatchEvent(new CustomEvent('scroll'))
-        }
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        // keep the same level of raf for custom listener
+        requestAnimationFrame(() => {
+          // fix activate also if scroll position remains the same
+          if (self.scroller.scrollTop === self.position) {
+            self.scroller.dispatchEvent(new CustomEvent('scroll'))
+          }
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        })
       }
     }
   }
@@ -406,7 +413,7 @@ Scrollto.optionsDefault = {
   scrollDelay: 150,
   hash: false,
   // scroll
-  scrollers: '.xt-overlay',
+  scrollers: '.xt-overlay:not(.xt-overlay-disabled)',
   position: ({ self }) => {
     const rect = self.target.getBoundingClientRect()
     let position = rect.top + self.scroller.scrollTop

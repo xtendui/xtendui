@@ -55,7 +55,7 @@ Here are the main **javascript options**.
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` on links to activate hash for only that link             |
-| Option                    | `scrollers:Query`                          | `'.xt-overlay'`        | Query for scroll nodes besides document (ordered parent > child)             |
+| Option                    | `scrollers:Query`                          | `'.xt-overlay:not(.xt-overlay-disabled)'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `position({ self }):Function`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
 | Option                    | `space({ self }):Function`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |
 | Option                    | `duration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` that sets `self.duration`, return `Number`            |
