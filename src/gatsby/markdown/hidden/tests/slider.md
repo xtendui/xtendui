@@ -103,3 +103,10 @@ Test in wrap disabled on second demo.
   <demoinline src="demos/components/slider/nooverflow-false">
   </demoinline>
 </demo>
+
+Test medialoaded activation and position.
+
+<demo>
+  <demoinline src="demos/components/slider/media-loaded">
+  </demoinline>
+</demo>

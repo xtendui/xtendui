@@ -106,9 +106,6 @@ When you need to reinit the component when the media is loaded and the **width**
   </demoinline>
 </demo>
 
-[[noteDefault]]
-| Images from [Unsplash](https://source.unsplash.com/)
-
 ## Aria
 
 See [toggle aria](/components/toggle/other#aria) for aria options.

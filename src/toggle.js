@@ -705,11 +705,11 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self.eventMedialoadedHandler.bind(self).bind(self, el, true)
+                self.eventMedialoadedHandler.bind(self).bind(self, img, el, true)
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
-              self.eventMedialoadedHandler(el)
+              self.eventMedialoadedHandler(img, el)
             }
           }
         }
