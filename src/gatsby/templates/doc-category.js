@@ -59,7 +59,7 @@ export default class Template extends React.Component {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="xt-card gatsby_listing-item">
-                            <div className="xt-h4">
+                            <div className="xt-h4 mb-2">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -71,7 +71,7 @@ export default class Template extends React.Component {
                       ) : post.frontmatter.parent === post.frontmatter.title ? (
                         <div className="gatsby_listing-column" key={z}>
                           <Link to={markdownSlug(post)} className="xt-card gatsby_listing-item">
-                            <div className="xt-h4">
+                            <div className="xt-h4 mb-2">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())

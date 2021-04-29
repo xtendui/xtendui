@@ -153,7 +153,6 @@ body {
     @apply text-sm;
   }
   .xt-h4 {
-    @apply mb-2;
     font-size: 1.125rem;
     line-height: 1;
   }

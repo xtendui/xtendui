@@ -255,19 +255,19 @@ export default class Page extends React.Component {
                       <div className="xt-row xt-row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/introduction/setup" className="xt-card gatsby_listing-item">
-                            <div className="xt-h4">Setup</div>
+                            <div className="xt-h4 mb-2">Setup</div>
                             <p>Installation instructions to get Xtend UI up and running.</p>
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/components" className="xt-card gatsby_listing-item">
-                            <div className="xt-h4">Components</div>
+                            <div className="xt-h4 mb-2">Components</div>
                             <p>Customizable components with an ecosystem of plugins.</p>
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
                           <Link to="/themes" className="xt-card gatsby_listing-item">
-                            <div className="xt-h4">Themes</div>
+                            <div className="xt-h4 mb-2">Themes</div>
                             <p>UI themes with advanced interactions and animations.</p>
                           </Link>
                         </div>

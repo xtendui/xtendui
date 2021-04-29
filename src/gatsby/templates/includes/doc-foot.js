@@ -27,7 +27,7 @@ export default class DocFoot extends React.Component {
               {page.post.frontmatter.type !== 'Introduction' && postsIntroduction ? (
                 <div className="gatsby_listing-column">
                   <Link to={'/introduction'} className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Problems getting it to work?</div>
+                    <div className="xt-h4 mb-2">Problems getting it to work?</div>
                     <p>
                       Check out the <strong>Introduction</strong> pages.
                     </p>
@@ -40,7 +40,7 @@ export default class DocFoot extends React.Component {
                   <Link
                     to={`/components/${kebabCase(page.post.frontmatter.parent)}`}
                     className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Visit the Core pages</div>
+                    <div className="xt-h4 mb-2">Visit the Core pages</div>
                     <p>
                       There {postsCore.length === 1 ? 'is' : 'are'}{' '}
                       <strong>
@@ -58,7 +58,7 @@ export default class DocFoot extends React.Component {
                   <Link
                     to={`/themes/${kebabCase(page.post.frontmatter.parent)}`}
                     className="xt-card gatsby_listing-item">
-                    <div className="xt-h4">Visit the Theme page</div>
+                    <div className="xt-h4 mb-2">Visit the Theme page</div>
                     <p>
                       There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
                       <strong>

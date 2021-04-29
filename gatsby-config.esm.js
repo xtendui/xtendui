@@ -1,7 +1,3 @@
-/**
- * https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 const fs = require('fs')
 const path = require('path')
 const pack = JSON.parse(fs.readFileSync('package.json').toString())
@@ -15,7 +11,7 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    siteUrl: `https://xtendui.com`,
+    siteUrl: 'https://xtendui.com',
     title: 'Xtend UI',
     description: description,
     keywords: keywords,
@@ -33,10 +29,10 @@ module.exports = {
     'gatsby-plugin-postcss',
     // sitemap
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: `/some-other-sitemap.xml`,
-        exclude: [`/hidden/**/*`, `/demos/**/*`],
+        output: '/some-other-sitemap.xml',
+        exclude: ['/hidden/**/*', '/demos/**/*'],
       },
     },
     // manifest
@@ -50,13 +46,13 @@ module.exports = {
         display: 'minimal-ui',
         icon: './static/favicon.png',
         icon_options: {
-          purpose: `maskable any`,
+          purpose: 'maskable any',
         },
         icons: [
           {
-            src: `./static/apple-touch-icon.png`,
-            sizes: `512x512`,
-            type: `image/png`,
+            src: './static/apple-touch-icon.png',
+            sizes: '512x512',
+            type: 'image/png',
           },
         ],
       },
@@ -89,15 +85,6 @@ module.exports = {
         path: 'src/gatsby/templates/pages/',
       },
     },
-    // contenful
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
-      },
-    },
     // remark
     {
       resolve: 'gatsby-transformer-remark',
@@ -123,7 +110,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-classes`,
+            resolve: 'gatsby-remark-classes',
             options: {
               classMap: {
                 link: 'xt-link',
@@ -148,4 +135,17 @@ module.exports = {
       },
     },
   ],
+}
+
+// contenful
+
+if (process.env.CONTENTFUL_ACCESS_TOKEN) {
+  module.exports.plugins.push({
+    resolve: 'gatsby-source-contentful',
+    options: {
+      spaceId: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      downloadLocal: true,
+    },
+  })
 }

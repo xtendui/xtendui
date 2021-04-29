@@ -64,7 +64,7 @@ class Template extends React.Component {
                                 className="xt-card gatsby_listing-item gatsby_listing-item--themes"
                                 data-gatsby-listing-toggle>
                                 <div>
-                                  <div className="xt-h4">
+                                  <div className="xt-h4 mb-2">
                                     {adiacent.frontmatter.title
                                       .split(/[\s-]+/)
                                       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -108,7 +108,7 @@ class Template extends React.Component {
                           ) : (
                             <div className="gatsby_listing-column" key={i}>
                               <Link to={markdownSlug(adiacent)} className="xt-card gatsby_listing-item">
-                                <div className="xt-h4">
+                                <div className="xt-h4 mb-2">
                                   {adiacent.frontmatter.title
                                     .split(/[\s-]+/)
                                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())

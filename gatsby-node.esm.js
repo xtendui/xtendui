@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 import path from 'path'
 import { markdownSlug } from './src/gatsby/templates/snippets/markdown-slug.js'
 
@@ -73,5 +67,23 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
+  })
+}
+
+// contentful dummy content https://www.gatsbyjs.com/docs/recipes/sourcing-data/
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const contentfulAssets = [{ title: 'Dummu Asset', localFile: { url: 'dummy-url' } }]
+  contentfulAssets.forEach(contentfulAsset => {
+    const node = {
+      title: contentfulAsset.title,
+      localFile: contentfulAsset.localFile,
+      id: createNodeId(`ContentfulAsset-${contentfulAsset.name}`),
+      internal: {
+        type: 'ContentfulAsset',
+        contentDigest: createContentDigest(contentfulAsset),
+      },
+    }
+    actions.createNode(node)
   })
 }
