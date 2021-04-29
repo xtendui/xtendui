@@ -171,7 +171,8 @@ class Scrollto {
           }
         }
         // force no hashchange
-        self.hashchange = Xt.skiphash === true ? false : self.hashchange
+        self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
+        Xt.scrolltoHashforce = null
         // vars
         self.position = options.position({ self })
         self.space = options.space({ self })

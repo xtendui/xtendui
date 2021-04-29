@@ -71,7 +71,6 @@ module.exports = {
             '.xt-links-inverse': {
               'code:not([class])': {
                 color: theme('colors.white'),
-                opacity: '0.85',
               },
             },
           }),

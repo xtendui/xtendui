@@ -27,7 +27,7 @@ if (typeof window !== 'undefined') {
   Xt.supportScroll = 'onscroll' in window && !/(gle|ing)bot/.test(navigator.userAgent)
   Xt.durationTimescale = 1
   Xt.autoTimescale = 1
-  Xt.skiphash = false
+  Xt.scrolltoHashforce = null
 
   //
   // initialization

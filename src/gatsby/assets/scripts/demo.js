@@ -15,16 +15,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
  * demoHash
  */
 
-let scrollCache = 0
 let firstMount = true
-
-const scrollToItem = () => {
-  const origin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
-  if (origin) {
-    scrollCache = origin.offsetTop
-  }
-  document.scrollingElement.scrollTo(0, scrollCache)
-}
 
 const demoHash = () => {
   const demoFull = document.querySelector('#gatsby_open-full-trigger')
@@ -228,9 +219,18 @@ const populateBlock = () => {
         // move code block
         const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
         if (appendOrigin) {
+          // no location.hash
+          if (location.hash) {
+            location.hash = ''
+            // scrollto
+            Xt.scrolltoHashforce = true
+            appendOrigin.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+          }
+          // move back
           const moving = content.childNodes[0]
           moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendOrigin.before(moving)
+          appendOrigin.remove()
           // fix demo fullscreen
           const previous = appendOrigin.previousSibling
           if (previous) {
@@ -245,18 +245,11 @@ const populateBlock = () => {
               })
             )
           }
-          appendOrigin.remove()
         }
         // hidden tooltip
         const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
         if (tooltip) {
           tooltip.classList.remove('hidden')
-        }
-        // no location.hash
-        if (location.hash) {
-          location.hash = ''
-          // scrollToItem
-          scrollToItem()
         }
       }
     })
@@ -401,7 +394,6 @@ const populateDemo = container => {
   for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
     btnOpenFull.addEventListener('click', e => {
       e.preventDefault()
-      scrollCache = document.scrollingElement.scrollTop
       // hash
       location.hash = container.querySelector('.gatsby_demo_item.on').getAttribute('id')
     })

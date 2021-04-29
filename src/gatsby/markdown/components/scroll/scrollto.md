@@ -42,7 +42,7 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
 </demo>
 
 [[notePrimary]]
-| If you want to **change hash manually** manually set `Xt.skiphash = true` just before changing `location.hash` then set `Xt.skiphash = false` right after the change.
+| If you want to **force the self.hashchange value manually** set `Xt.scrolltoHashforce` to `true` or `false` just before changing `location.hash`.
 
 ## Options
  
