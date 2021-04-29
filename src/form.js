@@ -30,9 +30,12 @@ Xt.mount({
     }
 
     const change = () => {
-      for (const input of inputs) {
-        toggle(input)
-      }
+      // fix execute after activation/deactivation because sometimes component toggle is initialized after this javascript
+      requestAnimationFrame(() => {
+        for (const input of inputs) {
+          toggle(input)
+        }
+      })
     }
 
     ref.addEventListener('change', change)

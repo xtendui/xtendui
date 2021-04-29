@@ -210,7 +210,13 @@ class Toggle {
       for (let i = start; i < todo; i++) {
         const el = self.elements[i]
         if (el) {
-          self.eventOn(el, true)
+          // toggle event if present because of custom listeners
+          if (options.on) {
+            const event = options.on.split(' ')[0]
+            el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+          } else {
+            self.eventOn(el, true)
+          }
         }
       }
     }
@@ -341,8 +347,13 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
-        const event = options.on.split(' ')[0]
-        el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+        // toggle event if present because of custom listeners
+        if (options.on) {
+          const event = options.on.split(' ')[0]
+          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+        } else {
+          self.eventOn(el, true)
+        }
       }
     }
     // return
@@ -908,8 +919,13 @@ class Toggle {
               // initial
               currents++
               arr.push(el)
-              const event = options.on.split(' ')[0]
-              el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+              // toggle event if present because of custom listeners
+              if (options.on) {
+                const event = options.on.split(' ')[0]
+                el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+              } else {
+                self.eventOn(el, true)
+              }
             }
           }
         }
