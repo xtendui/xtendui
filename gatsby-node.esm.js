@@ -70,20 +70,23 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 
-// contentful dummy content https://www.gatsbyjs.com/docs/recipes/sourcing-data/
+// contenful
 
-exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const contentfulAssets = [{ title: 'Dummu Asset', localFile: { url: 'dummy-url' } }]
-  contentfulAssets.forEach(contentfulAsset => {
-    const node = {
-      title: contentfulAsset.title,
-      localFile: contentfulAsset.localFile,
-      id: createNodeId(`ContentfulAsset-${contentfulAsset.name}`),
-      internal: {
-        type: 'ContentfulAsset',
-        contentDigest: createContentDigest(contentfulAsset),
-      },
-    }
-    actions.createNode(node)
-  })
+if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
+  // contentful dummy content https://www.gatsbyjs.com/docs/recipes/sourcing-data/
+  exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+    const contentfulAssets = [{ title: 'Dummu Asset', localFile: { url: 'dummy-url' } }]
+    contentfulAssets.forEach(contentfulAsset => {
+      const node = {
+        title: contentfulAsset.title,
+        localFile: contentfulAsset.localFile,
+        id: createNodeId(`ContentfulAsset-${contentfulAsset.name}`),
+        internal: {
+          type: 'ContentfulAsset',
+          contentDigest: createContentDigest(contentfulAsset),
+        },
+      }
+      actions.createNode(node)
+    })
+  }
 }
