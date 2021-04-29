@@ -57,11 +57,10 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 ## Documentation
 
 * Clone the repository `git clone https://github.com/minimit/xtendui.git --depth 1`
-* Install required npm packages with `npm install`
-* Create a **dummy contentful space** and create a root file `.env` file with `CONTENTFUL_SPACE=<value>` and `CONTENTFUL_ACCESS_TOKEN=<value>`
-* Use `npm run build` to build the docs in `/public`
-* Use `npm run dev` to serve a develop version
-* Use `npm run serve` to serve a production version
+* Install required npm packages with `yarn install`
+* Use `yarn build` to build the docs in `/public`
+* Use `yarn dev` to serve a develop version
+* Use `yarn serve` to serve a production version
 
 ## Sponsors
 

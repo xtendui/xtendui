@@ -90,7 +90,7 @@ jobs:
     - name: Build
       run: yarn build
       env:
-        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
