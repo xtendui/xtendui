@@ -20,6 +20,8 @@ Test activations and animations.
   </demoinline>
 </demo>
 
+## Delay
+
 Test activations and animations.
 
 <demo>

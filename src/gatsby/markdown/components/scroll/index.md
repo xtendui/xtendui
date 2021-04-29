@@ -44,7 +44,7 @@ Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/com
 
 ```js
 // refresh ScrollTrigger DOM height changes
-ScrollTrigger.refresh(true)
+ScrollTrigger.refresh()
 ```
 
 - If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
@@ -99,3 +99,5 @@ ScrollTrigger.addEventListener('refresh', () => {
   })
 })
 ```
+
+- For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
