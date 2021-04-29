@@ -252,8 +252,9 @@ const mountSlide = ({ ref }) => {
     // vars
 
     let links = slide.closest('a, button')
-    links = links ? [links] : slide.querySelectorAll('a, button')
+    links = links ? [links] : Array.from(slide.querySelectorAll('a, button')) // query inside
     if (!links.length) return
+    links = links.filter(x => !x.parentElement.closest('a, button')) // filter nested
     const img = slide.querySelector('.xt-media')
     const imgOpacityIn = 0.75
     const imgOpacityOut = 1
