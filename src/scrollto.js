@@ -182,15 +182,12 @@ class Scrollto {
         const max = self.scroller.scrollHeight - self.scroller.clientHeight
         self.position = self.position < min ? min : self.position
         self.position = self.position > max ? max : self.position
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          // fix activate also if scroll position remains the same
-          if (self.scroller.scrollTop === self.position) {
-            self.scroller.dispatchEvent(new CustomEvent('scroll'))
-          }
-          // listener dispatch
-          self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
-        })
+        // fix activate also if scroll position remains the same
+        if (self.scroller.scrollTop === self.position) {
+          self.scroller.dispatchEvent(new CustomEvent('scroll'))
+        }
+        // listener dispatch
+        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
       }
     }
   }
