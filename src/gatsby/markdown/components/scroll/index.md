@@ -43,8 +43,14 @@ Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/com
 - If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.
 
 ```js
+/*
+here your custom code that trigger height change or show/hide elements
+*/
+
 // refresh ScrollTrigger DOM
-ScrollTrigger.refresh()
+Xt.ready(() => {
+  ScrollTrigger.refresh()
+})
 ```
 
 - For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
