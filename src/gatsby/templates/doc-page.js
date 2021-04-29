@@ -81,7 +81,7 @@ class Template extends React.Component {
                                             playsInline
                                             loop
                                             autoPlay>
-                                            <source type="video/mp4" src={assets.item.localFile.url} />
+                                            <source type="video/mp4" src={assets.item.file.url} />
                                           </video>
                                         </div>
                                       )
@@ -142,7 +142,7 @@ export const query = graphql`
       items: edges {
         item: node {
           title
-          localFile {
+          file {
             url
           }
         }
@@ -243,7 +243,7 @@ Template.propTypes = {
         PropTypes.shape({
           item: PropTypes.shape({
             title: PropTypes.string.isRequired,
-            localFile: PropTypes.shape({
+            file: PropTypes.shape({
               url: PropTypes.string.isRequired,
             }),
           }),

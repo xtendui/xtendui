@@ -75,11 +75,11 @@ exports.createPages = ({ actions, graphql }) => {
 if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
   // contentful dummy content https://www.gatsbyjs.com/docs/recipes/sourcing-data/
   exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-    const contentfulAssets = [{ title: 'dummy-asset', localFile: { url: 'dummy-url' } }]
+    const contentfulAssets = [{ title: 'dummy-asset', file: { url: 'dummy-url' } }]
     contentfulAssets.forEach(contentfulAsset => {
       const node = {
         title: contentfulAsset.title,
-        localFile: contentfulAsset.localFile,
+        file: contentfulAsset.file,
         id: createNodeId(`ContentfulAsset-${contentfulAsset.name}`),
         internal: {
           type: 'ContentfulAsset',
