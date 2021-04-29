@@ -37,6 +37,22 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Icons
+## Icons and Alignment
 
-Refer to [button and alignment](/components/icon/content#button-and-alignment).
+Refer to [icon button and alignment](/components/icon/content#button-and-alignment).
+
+## Group
+
+Refer to [group](/components/group).
+
+## Toolbar
+
+Refer to [toolbar](/components/toolbar).
+
+## Nav
+
+Refer to [nav](/components/nav).
+
+## Checks
+
+Refer to [form checks button](/components/form/other#checks-button).

@@ -36,19 +36,3 @@ Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.j
   <demoinline src="demos/components/button/disabled">
   </demoinline>
 </demo>
-
-## Group
-
-Refer to [group](/components/group).
-
-## Toolbar
-
-Refer to [toolbar](/components/toolbar).
-
-## Nav
-
-Refer to [nav](/components/nav).
-
-## Checks
-
-Refer to [form checks button](/components/form/other#checks-button).
