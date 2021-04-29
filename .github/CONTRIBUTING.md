@@ -14,12 +14,12 @@ Ask first before starting work on any significant new features.
 
 - If fixing bug add issue linking with issue id (e.g.: `(close #xxxx)`).
 
-- Generate and fix code formatting with `npm run generate`.
+- Generate and fix code formatting with `yarn generate`.
 
 - Until we have javascript tests don't make complex javascript code changes.
 
 <!--
-- Make sure npm test passes with `npm run test`.
+- Make sure all tests pass with `yarn test`.
 -->
 
 ## Committing Changes

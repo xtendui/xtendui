@@ -58,6 +58,7 @@ Read our [contributing docs](https://github.com/minimit/xtendui/blob/beta/.githu
 
 * Clone the repository `git clone https://github.com/minimit/xtendui.git --depth 1`
 * Install required npm packages with `yarn install`
+* Use `yarn generate` to generate react components
 * Use `yarn build` to build the docs in `/public`
 * Use `yarn dev` to serve a develop version
 * Use `yarn serve` to serve a production version
