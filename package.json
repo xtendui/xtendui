@@ -35,6 +35,7 @@
     "packet": "node ./build/packet.js",
     "generate": "node ./build/generate.js && yarn lint --fix",
     "lint": "eslint . --ext .js,.jsx",
+    "test": "",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postinstall": "yarn alias",
     "postuninstall": "yarn alias",

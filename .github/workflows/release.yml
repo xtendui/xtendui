@@ -42,6 +42,7 @@ jobs:
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
+    # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -92,6 +93,7 @@ jobs:
       env:
         CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+    # deploy/action.yml composite
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

@@ -81,10 +81,7 @@ class Template extends React.Component {
                                             playsInline
                                             loop
                                             autoPlay>
-                                            <source
-                                              type="video/mp4"
-                                              src={assets.item.localFile.url ? assets.item.localFile.url : null}
-                                            />
+                                            <source type="video/mp4" src={assets.item.localFile.url} />
                                           </video>
                                         </div>
                                       )
@@ -246,7 +243,7 @@ Template.propTypes = {
         PropTypes.shape({
           item: PropTypes.shape({
             title: PropTypes.string.isRequired,
-            file: PropTypes.shape({
+            localFile: PropTypes.shape({
               url: PropTypes.string.isRequired,
             }),
           }),
