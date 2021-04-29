@@ -5469,11 +5469,6 @@ gatsby-plugin-catch-links@^3.2.0:
     "@babel/runtime" "^7.12.5"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-contentful-optional-fields@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-contentful-optional-fields/-/gatsby-plugin-contentful-optional-fields-2.2.0.tgz#bb8168afbc2a7ca27649f049ac7362333e66dd6a"
-  integrity sha512-LCZbLZkeLDAnY3jupDrDsSyWMmouZHWZcVgMMy6DoL74gahchIB1iziTiUArTgqv6FmlkDBRSYq87OqQBE0QeA==
-
 gatsby-plugin-image@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-1.2.0.tgz#ad571ba270b5c1e8a679ac33eeccd01ac3370db3"
