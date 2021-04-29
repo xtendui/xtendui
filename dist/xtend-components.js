@@ -1,6 +1,6 @@
 import 'xtendui/src/drop.js'
 import 'xtendui/src/form.js'
-import 'xtendui/src/googlelocator.js'
+import 'xtendui/src/googlelocator.beta.1.js'
 import 'xtendui/src/groupnumber.js'
 import 'xtendui/src/infinitescroll.js'
 import 'xtendui/src/mousefollow.js'
