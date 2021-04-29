@@ -93,11 +93,13 @@ Test instant activation when switching.
 
 Test height on activation.
 
-Test height reset on activation done.
+Test height on deactivation.
 
 <demo>
   <demoinline src="demos/components/animation/collapse-height">
   </demoinline>
   <demoinline src="demos/components/animation/collapse-width">
+  </demoinline>
+  <demoinline src="demos/components/animation/collapse-text">
   </demoinline>
 </demo>

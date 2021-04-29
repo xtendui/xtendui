@@ -9,7 +9,10 @@ date: "1900-10-10"
 
 ## Usage
 
-Collapse only work with **xtendui javascript components**, assign `options.collapseHeight` or `options.collapseWidth` with also `overflow-hidden` and **css transition** on the collapse nodes.
+Collapse only work with **xtendui javascript components**, assign `options.collapseHeight` or `options.collapseWidth`.
+
+[[noteDefault]]
+| This component uses [toggle](/components/toggle) see documentation for more info.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -20,6 +23,9 @@ Collapse only work with **xtendui javascript components**, assign `options.colla
 
 </div>
 
+[[noteDefault]]
+| Remember to assign `overflow-hidden` on collapse nodes.
+
 [[notePrimary]]
 | On **collapse nodes** **do not to use padding**.
 
@@ -29,5 +35,16 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   <demoinline src="demos/components/animation/collapse-height">
   </demoinline>
   <demoinline src="demos/components/animation/collapse-width">
+  </demoinline>
+</demo>
+
+## Text
+
+You can use also with **initial values** for height and width.
+
+Use **tailwind classes** to assign size (e.g. [height](https://tailwindcss.com/docs/height), [width](https://tailwindcss.com/docs/width)).
+
+<demo>
+  <demoinline src="demos/components/animation/collapse-text">
   </demoinline>
 </demo>

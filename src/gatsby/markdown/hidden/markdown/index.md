@@ -101,7 +101,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | This component uses [card](/components/card) see documentation for more info.
 
 [[noteDefault]]
-| This addon uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
+| This component uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
 
 [[notePrimary]]
 | For aria purpose use `role="toolbar"`.

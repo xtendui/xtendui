@@ -18,7 +18,7 @@ Initialize with **javascript** with `new Xt.Googlelocator(document.querySelector
 Use this code to create a **google locator**. Search for "New York" to see it in action.
 
 [[noteDefault]]
-| This addon uses [loader](/components/loader) see documentation for more info.
+| This component uses [loader](/components/loader) see documentation for more info.
 
 [[notePrimary]]
 | Needs google API key with **Maps Javascript API**, **Places API**.

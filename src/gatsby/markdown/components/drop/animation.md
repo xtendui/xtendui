@@ -110,3 +110,7 @@ Use `.xt-drop-inner` and assign design styles to `.xt-design` when you want to *
   <demoinline src="demos/components/drop/animation-design">
   </demoinline>
 </demo>
+
+## Collapse
+
+Refer to [animation collapse](/components/animation/collapse).

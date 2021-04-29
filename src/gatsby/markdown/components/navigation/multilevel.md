@@ -12,7 +12,7 @@ date: "1900-10-10"
 Use this code to create a **toggle multilevel**.
 
 [[noteDefault]]
-| This addon uses [toggle](/components/toggle) see documentation for more info.
+| This component uses [toggle](/components/toggle) see documentation for more info.
 
 [[notePrimary]]
 | For aria purpose use `<nav></nav>`.

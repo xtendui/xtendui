@@ -119,3 +119,7 @@ Use this code to create **tooltips with fast animation on sequential interaction
   <demoinline src="demos/components/tooltip/animation-fast">
   </demoinline>
 </demo>
+
+## Collapse
+
+Refer to [animation collapse](/components/animation/collapse).

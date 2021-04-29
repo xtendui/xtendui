@@ -121,3 +121,7 @@ Use `.xt-toggle-inner` and assign design styles to `.xt-design` when you want to
   <demoinline src="demos/components/toggle/animation-design">
   </demoinline>
 </demo>
+
+## Collapse
+
+Refer to [animation collapse](/components/animation/collapse).

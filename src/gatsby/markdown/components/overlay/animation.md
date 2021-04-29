@@ -101,3 +101,7 @@ Use `.xt-overlay-inner` and assign design styles to `.xt-design` when you want t
   <demoinline src="demos/components/overlay/animation-design">
   </demoinline>
 </demo>
+
+## Collapse
+
+Refer to [animation collapse](/components/animation/collapse).
