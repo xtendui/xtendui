@@ -43,6 +43,7 @@ const mountSticky = ({ ref }) => {
   })
 
   overlay.addEventListener('on.xt.overlay', () => {
+    // refresh ScrollTrigger DOM
     ScrollTrigger.refresh()
   })
 

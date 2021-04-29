@@ -40,22 +40,14 @@ Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/com
 
 ## Fixes
 
-- If you **trigger DOM height changes** showing/hiding content you need to refresh ScrollTrigger this way.
+- If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.
 
 ```js
-// refresh ScrollTrigger DOM height changes
+// refresh ScrollTrigger DOM
 ScrollTrigger.refresh()
 ```
 
-- If you are initializing ScrollTrigger inside **inside an element with** `display: none` (e.g.: [overlay](/components/overlay)) you need to refresh ScrollTrigger to recalculate positions.
-
-```js
-const overlay = document.querySelector('#my-overlay')
-
-overlay.addEventListener('on.xt.overlay', () => {
-  ScrollTrigger.refresh()
-})
-```
+- For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
 
 - If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
@@ -99,5 +91,3 @@ ScrollTrigger.addEventListener('refresh', () => {
   })
 })
 ```
-
-- For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
