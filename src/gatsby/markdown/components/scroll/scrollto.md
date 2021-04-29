@@ -117,7 +117,7 @@ const object = self.object
 ```
 
 [[notePrimary]]
-| If you want to **force the self.hashchange value manually** set `Xt.scrolltoHashforce` to `true` or `false` just before changing `location.hash`.
+| If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
