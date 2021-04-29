@@ -23,7 +23,28 @@ const mountSticky = ({ ref }) => {
 
   const sticky = ref.querySelector('.xt-sticky')
   const content = sticky.querySelector('.sticky--hide-content')
-  const stickyInner = sticky.querySelector('.sticky--hide-top-main')
+  const inner = sticky.querySelector('.sticky--hide-sub')
+
+  // hide depending on inner (always before pin or bugs)
+
+  ScrollTrigger.create({
+    trigger: sticky,
+    start: -1, // needs -1 because start trigger is sticky
+    end: () => `top top-=${sticky.offsetHeight}`,
+    onUpdate: self => {
+      if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
+        content.classList.remove('scrolling-hide')
+        gsap.killTweensOf(content)
+        gsap.to(content, {
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+        })
+      } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
+        content.classList.add('scrolling-hide')
+      }
+    },
+  })
 
   // sticky
 
@@ -57,32 +78,10 @@ const mountSticky = ({ ref }) => {
         content.classList.add('scrolling-down')
         gsap.killTweensOf(content)
         gsap.to(content, {
-          y: -stickyInner.offsetHeight,
+          y: -(inner.offsetTop + inner.offsetHeight),
           duration: 0.5,
           ease: 'quart.out',
         })
-      }
-    },
-  })
-
-  // hide depending on content
-
-  ScrollTrigger.create({
-    trigger: sticky,
-    start: -1, // needs -1 because start trigger is sticky
-    endTrigger: content,
-    end: () => `bottom top+=${stickyInner.offsetHeight}`,
-    onUpdate: self => {
-      if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
-        content.classList.remove('scrolling-hide')
-        gsap.killTweensOf(content)
-        gsap.to(content, {
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-        })
-      } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
-        content.classList.add('scrolling-hide')
       }
     },
   })

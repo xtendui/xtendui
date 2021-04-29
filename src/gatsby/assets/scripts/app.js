@@ -165,9 +165,10 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
+    const sticky = ref
     const background = ref.querySelector('.gatsby_home-header_background rect')
     const content = ref.querySelector('.gatsby_home-header_inner')
-    const logo = ref.querySelector('.gatsby_logo-icon')
+    const inner = ref.querySelector('.gatsby_logo-icon')
 
     // methods
 
@@ -193,14 +194,37 @@ Xt.mount({
 
     // mouse events
 
-    ref.addEventListener('mouseenter', straight)
+    sticky.addEventListener('mouseenter', straight)
 
-    ref.addEventListener('mouseleave', curve)
+    sticky.addEventListener('mouseleave', curve)
+
+    // hide depending on inner (always before pin or bugs)
+
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: -1, // needs -1 because start trigger is sticky
+      end: () => `top top-=${sticky.offsetHeight}`,
+      onUpdate: self => {
+        if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
+          content.classList.remove('scrolling-hide')
+          gsap.killTweensOf(content)
+          gsap.to(content, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
+          curve()
+        } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
+          content.classList.add('scrolling-hide')
+          straight()
+        }
+      },
+    })
 
     // sticky
 
     ScrollTrigger.create({
-      trigger: ref,
+      trigger: sticky,
       start: 'top top',
       endTrigger: 'html',
       end: 'bottom top',
@@ -230,33 +254,10 @@ Xt.mount({
           content.classList.add('scrolling-down')
           gsap.killTweensOf(content)
           gsap.to(content, {
-            y: -(logo.offsetTop + logo.offsetHeight),
+            y: -(inner.offsetTop + inner.offsetHeight),
             duration: 0.5,
             ease: 'quart.out',
           })
-          straight()
-        }
-      },
-    })
-
-    // hide depending on .gatsby_site-main_inner
-
-    ScrollTrigger.create({
-      trigger: ref,
-      start: -1, // needs -1 because start trigger is sticky
-      end: () => `top top-=${ref.offsetHeight}`,
-      onUpdate: self => {
-        if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
-          content.classList.remove('scrolling-hide')
-          gsap.killTweensOf(content)
-          gsap.to(content, {
-            y: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          curve()
-        } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
-          content.classList.add('scrolling-hide')
           straight()
         }
       },
