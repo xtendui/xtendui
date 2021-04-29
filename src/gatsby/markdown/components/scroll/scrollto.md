@@ -41,8 +41,8 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
   </div>
 </demo>
 
-[[noteDefault]]
-| When you navigate history with browsers the scroll is instant not animated because of `history.scrollRestoration = 'auto'`.
+[[notePrimary]]
+| If you want to **change hash manually** manually set `Xt.skiphash = true` just before changing `location.hash` then set `Xt.skiphash = false` right after the change.
 
 ## Options
  

@@ -170,10 +170,8 @@ class Scrollto {
             }
           }
         }
-        // fix not hashchange when custom
-        if (e?.type === 'scrollto.trigger.xt.scrollto') {
-          self.hashchange = Xt.hashchange
-        }
+        // force no hashchange
+        self.hashchange = Xt.skiphash === true ? false : self.hashchange
         // vars
         self.position = options.position({ self })
         self.space = options.space({ self })
