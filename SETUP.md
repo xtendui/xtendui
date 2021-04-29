@@ -174,8 +174,19 @@ Add this javascript to setup [suggested scrolltrigger fixes](https://xtendui.com
 ```js
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+
+/* ScrollToPlugin fix stop scroll animation on user interaction */
+
+const stopScrolling = () => {
+  gsap.killTweensOf(document.scrollingElement)
+}
+
+addEventListener('touchstart', stopScrolling)
+addEventListener('wheel', stopScrolling)
 
 /* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 

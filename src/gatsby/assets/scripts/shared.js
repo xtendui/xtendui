@@ -1,6 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/usability'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,6 +20,15 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
   // double auto time
   Xt.autoTimescale = 0.5
 }
+
+/* ScrollToPlugin fix stop scroll animation on user interaction */
+
+const stopScrolling = () => {
+  gsap.killTweensOf(document.scrollingElement)
+}
+
+addEventListener('touchstart', stopScrolling)
+addEventListener('wheel', stopScrolling)
 
 /* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 

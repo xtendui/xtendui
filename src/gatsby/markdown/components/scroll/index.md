@@ -97,3 +97,17 @@ ScrollTrigger.addEventListener('refresh', () => {
   })
 })
 ```
+
+- If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
+
+Just need this code one time in the project.
+
+```js
+/* ScrollToPlugin fix stop scroll animation on user interaction */
+
+const stopScrolling = () => {
+  gsap.killTweensOf(document.scrollingElement)
+}
+
+addEventListener('touchstart', stopScrolling)
+addEventListener('wheel', stopScrolling)
