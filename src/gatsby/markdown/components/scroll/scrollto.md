@@ -41,9 +41,6 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
   </div>
 </demo>
 
-[[notePrimary]]
-| If you want to **force the self.hashchange value manually** set `Xt.scrolltoHashforce` to `true` or `false` just before changing `location.hash`.
-
 ## Options
  
 Here are the main **javascript options**.
@@ -118,6 +115,9 @@ Access properties by getting component object.
 let self = Xt.get('xt-scrollto', document.querySelector('.my-object'))
 const object = self.object
 ```
+
+[[notePrimary]]
+| If you want to **force the self.hashchange value manually** set `Xt.scrolltoHashforce` to `true` or `false` just before changing `location.hash`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
