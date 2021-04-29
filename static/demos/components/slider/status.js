@@ -59,13 +59,16 @@ const mountSlider = ({ ref }) => {
 /* mountStatus */
 
 const mountStatus = ({ ref }) => {
-  // status
+  // vars
 
   const slider = ref.querySelector('.xt-slider')
+  const status = ref.querySelector('.slider-status')
   const current = slider.querySelector('.slider-status-current')
   const container = slider.querySelector('.slider-status-container')
 
-  const status = () => {
+  // change
+
+  const change = () => {
     const self = Xt.get('xt-slider', slider)
     if (!self) return
     // availableWidth
@@ -87,15 +90,22 @@ const mountStatus = ({ ref }) => {
     const currentLeft = (left * containerWidth) / availableWidth
     current.style.width = `${currentWidth}px`
     current.style.left = `${currentLeft}px`
+    // disabled
+    if (self.disabled) {
+      status.classList.add('hidden')
+    } else {
+      status.classList.remove('hidden')
+    }
   }
 
-  slider.addEventListener('on.xt.slider', status)
-  slider.addEventListener('init.xt.slider', status)
-  addEventListener('resize', status)
+  slider.addEventListener('on.xt.slider', change)
+  slider.addEventListener('init.xt.slider', change)
+  slider.addEventListener('status.xt.slider', change)
+  addEventListener('resize', change)
 
   // unmount
 
   return () => {
-    removeEventListener('resize', status)
+    removeEventListener('resize', change)
   }
 }
