@@ -261,64 +261,63 @@ const populateBlock = () => {
  */
 
 const populateDemo = container => {
+  if (container.dataset.gatsbyDemoBuilt) return
   const items = container.querySelectorAll('.gatsby_demo_item')
   // fix demo index when changing page
   let i = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
   i++
   document.documentElement.setAttribute('data-demo-index', i.toString())
   // multiple elements
-  if (!container.dataset.gatsbyDemoBuilt) {
-    container.prepend(
-      Xt.createElement(
-        '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
-      )
+  container.prepend(
+    Xt.createElement(
+      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
     )
-    const showCodeUid = Xt.getuniqueId()
-    container.querySelector('.gatsby_demo_tabs_right').append(
-      Xt.createElement(`
-  <div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
-    <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
-      ${classes.iconCode()}
-    </button>
-    <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-        Show Code
-      </div>
+  )
+  const showCodeUid = Xt.getuniqueId()
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
+<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
+  <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
+    ${classes.iconCode()}
+  </button>
+  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      Show Code
     </div>
-    <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-        Hide Code
-      </div>
+  </div>
+  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      Hide Code
     </div>
-  </div>`)
-    )
-    container.querySelector('.gatsby_demo_tabs_right').append(
-      Xt.createElement(`
-  <div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
-    <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
-      ${classes.iconMaximize()}
-    </button>
-    <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-        Open Fullscreen
-      </div>
+  </div>
+</div>`)
+  )
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
+<div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
+  <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
+    ${classes.iconMaximize()}
+  </button>
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      Open Fullscreen
     </div>
-  </div>`)
-    )
-    container.querySelector('.gatsby_demo_tabs_right').append(
-      Xt.createElement(`
-  <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
-    <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
-      ${classes.iconExternal()}
-    </a>
-    <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
-      <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-        Open Iframe
-      </div>
+  </div>
+</div>`)
+  )
+  container.querySelector('.gatsby_demo_tabs_right').append(
+    Xt.createElement(`
+<div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
+  <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
+    ${classes.iconExternal()}
+  </a>
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+    <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      Open Iframe
     </div>
-  </div>`)
-    )
-  }
+  </div>
+</div>`)
+  )
   // loop items
   for (const [k, item] of items.entries()) {
     // populate tabs
@@ -328,11 +327,9 @@ const populateDemo = container => {
     name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
     item.setAttribute('id', kebabCase(id))
-    if (!container.dataset.gatsbyDemoBuilt) {
-      container
-        .querySelector('.gatsby_demo_tabs_left')
-        .append(Xt.createElement(`<button type="button" class="xt-button">${name}</button>`))
-    }
+    container
+      .querySelector('.gatsby_demo_tabs_left')
+      .append(Xt.createElement(`<button type="button" class="xt-button">${name}</button>`))
   }
   // set hash
   for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
@@ -343,13 +340,11 @@ const populateDemo = container => {
     })
   }
   // get hash
-  if (!container.dataset.gatsbyDemoBuilt) {
-    if (location.hash) {
-      const item = container.querySelector(`[id="${kebabCase(location.hash)}"]`)
-      if (item) {
-        item.classList.add('on')
-        demoHash()
-      }
+  if (location.hash) {
+    const item = container.querySelector(`[id="${kebabCase(location.hash)}"]`)
+    if (item) {
+      item.classList.add('on')
+      demoHash()
     }
   }
   // gatsby_demo_tabs_left
@@ -361,28 +356,6 @@ const populateDemo = container => {
   // raf because initial render not switched already because of localStorage
   requestAnimationFrame(() => {
     for (const item of items) {
-      // https://github.com/zenorocha/clipboard.js/
-      const btnClipboard = item.querySelector('.xt-button-clipboard')
-      if (!btnClipboard.dataset.clipboardDone) {
-        btnClipboard.dataset.clipboardDone = 'true'
-        const clipboard = new ClipboardJS(btnClipboard, {
-          text: trigger => {
-            const elSourceCode = trigger
-              .closest('.gatsby_demo')
-              .querySelector('.gatsby_demo_item.on .gatsby_demo_code .gatsby_demo_code_body_item.on pre code')
-            return Xt.dataStorage.get(elSourceCode, 'sourceCode')
-          },
-        })
-        clipboard.on('success', e => {
-          if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
-            Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
-            e.clearSelection()
-            // tooltip swap-click
-            const object = btnClipboard.closest('[data-xt-tooltip]')
-            swapClick({ tooltip: object.querySelector('.xt-tooltip'), self: Xt.get('xt-tooltip', object) })
-          }
-        })
-      }
       // fix demo fullscreen
       item.addEventListener('on.xt.toggle', () => {
         if (!self.initial) {
@@ -414,12 +387,10 @@ const populateDemo = container => {
     })
     // tooltip swap toggle
     const object = btnCode.closest('[data-xt-tooltip]')
-    object.addEventListener('init.xt.tooltip', () => {
-      swapToggle({
-        tooltip: object.querySelector('.xt-tooltip'),
-        self: Xt.get('xt-tooltip', object),
-        buttonSwap: btnCode,
-      })
+    swapToggle({
+      tooltip: object.querySelector('.xt-tooltip'),
+      self: Xt.get('xt-tooltip', object),
+      buttonSwap: btnCode,
     })
   })
   // only one time
@@ -467,6 +438,28 @@ const populateItem = item => {
 </div>`
     )
   )
+  // https://github.com/zenorocha/clipboard.js/
+  const btnClipboard = item.querySelector('.xt-button-clipboard')
+  if (!btnClipboard.dataset.clipboardDone) {
+    btnClipboard.dataset.clipboardDone = 'true'
+    const clipboard = new ClipboardJS(btnClipboard, {
+      text: trigger => {
+        const elSourceCode = trigger
+          .closest('.gatsby_demo')
+          .querySelector('.gatsby_demo_item.on .gatsby_demo_code .gatsby_demo_code_body_item.on pre code')
+        return Xt.dataStorage.get(elSourceCode, 'sourceCode')
+      },
+    })
+    clipboard.on('success', e => {
+      if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
+        Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
+        e.clearSelection()
+        // tooltip swap-click
+        const object = btnClipboard.closest('[data-xt-tooltip]')
+        swapClick({ tooltip: object.querySelector('.xt-tooltip'), self: Xt.get('xt-tooltip', object) })
+      }
+    })
+  }
   // inject
   if (!item.getAttribute('data-iframe-fullscreen')) {
     if (item.getAttribute('data-iframe')) {
