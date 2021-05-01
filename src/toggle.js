@@ -120,6 +120,8 @@ class Toggle {
     }
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
+    // remove namespace
+    self.removeNamespace()
     // xtNamespace linked components
     const arr = Xt.dataStorage.get(self.ns, 'xtNamespace') || []
     arr.push(self)
@@ -262,7 +264,9 @@ class Toggle {
       let activated = false
       // check if activated
       if (saveCurrents) {
-        activated = checkClass(el)
+        if (options.classSkip !== true && !options.classSkip['elements']) {
+          activated = checkClass(el)
+        }
       } else if (self.initialCurrents.includes(el)) {
         activated = true
       }
@@ -306,7 +310,9 @@ class Toggle {
       for (const tr of targets) {
         // check if activated
         if (saveCurrents && !activated) {
-          activated = checkClass(tr)
+          if (options.classSkip !== true && !options.classSkip['targets']) {
+            activated = checkClass(tr)
+          }
         }
         // check if activated
         // fix check options.max for currents of hashChange current reset if hash has current
@@ -480,6 +486,8 @@ class Toggle {
   initEvents() {
     const self = this
     const options = self.options
+    // remove events
+    self.removeEvents()
     // elements
     for (const el of self.elements) {
       // event on
@@ -1193,7 +1201,7 @@ class Toggle {
       // xtNamespace linked components
       const final = []
       const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
-      if (selfs.length) {
+      if (selfs) {
         for (const item of selfs) {
           // choose element by group
           final.push(...item.getElementsGroups())
@@ -3088,6 +3096,48 @@ class Toggle {
   }
 
   /**
+   * remove namespace
+   */
+  removeNamespace() {
+    const self = this
+    // xtNamespace linked components
+    const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
+    if (selfs) {
+      const newSelfs = selfs.filter(x => x !== self)
+      Xt.dataStorage.set(self.ns, 'xtNamespace', newSelfs)
+    }
+  }
+
+  /**
+   * removeEvents
+   */
+  removeEvents() {
+    const self = this
+    // remove internal events on self.destroyElements
+    for (const element of self.destroyElements) {
+      const storages = Xt.dataStorage.getAll(element)
+      if (storages) {
+        for (const [key] of storages) {
+          if (key) {
+            if (key.endsWith(self.ns)) {
+              const handler = Xt.dataStorage.get(element, key)
+              if (typeof handler === 'function') {
+                const events = key.split('/')[0].split(' ')
+                for (const event of events) {
+                  element.removeEventListener(event, handler)
+                  element.removeEventListener(event, handler, true)
+                }
+                // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times
+                //Xt.dataStorage.remove(element, key)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**
    * destroy
    * @param {Boolean} weak Do not destroy component
    */
@@ -3096,34 +3146,9 @@ class Toggle {
     // disable
     self.disable()
     // remove events
-    if (self.destroyElements) {
-      for (const element of self.destroyElements) {
-        const storages = Xt.dataStorage.getAll(element)
-        if (storages) {
-          for (const [key] of storages) {
-            if (key) {
-              if (key.endsWith(self.ns)) {
-                const handler = Xt.dataStorage.get(element, key)
-                if (typeof handler === 'function') {
-                  const events = key.split('/')[0].split(' ')
-                  for (const event of events) {
-                    element.removeEventListener(event, handler)
-                    element.removeEventListener(event, handler, true)
-                    // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    // xtNamespace linked components
-    const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
-    if (selfs.length) {
-      const newSelfs = selfs.filter(x => x !== self)
-      Xt.dataStorage.set(self.ns, 'xtNamespace', newSelfs)
-    }
+    self.removeEvents()
+    // remove namespace
+    self.removeNamespace()
     // weak
     if (!weak) {
       // initialized class
