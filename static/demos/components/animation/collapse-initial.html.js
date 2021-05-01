@@ -2,11 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div
-      id="demo--collapse-text-target"
-      class="mb-6 text-lg h-20 overflow-hidden transition-all"
-      data-xt-duration="500"
-    >
+    <div id="demo--collapse-text-target" class="mb-6 text-lg h-20 overflow-hidden transition-all">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum sed.
       Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam pellentesque.
       Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at, pretium nulla. Cras tincidunt
@@ -19,7 +15,7 @@ const html = /* HTML */ `
     <button
       type="button"
       class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} group"
-      data-xt-toggle="{ targets: '#demo--collapse-text-target', collapseHeight: 'targets' }"
+      data-xt-toggle="{ targets: '#demo--collapse-text-target', collapseHeight: 'targets', duration: 500 }"
     >
       <span class="group-on:hidden"> Show more </span>
       <span class="hidden group-on:block"> Show less </span>

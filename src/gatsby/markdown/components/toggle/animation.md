@@ -19,7 +19,7 @@ The util class `.xt-toggle` sets `display: none` when **not activated**.
 
 </div>
 
-## Duration and Delay
+## Duration
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -44,6 +44,25 @@ Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group
   </demoinline>
 </demo>
 
+## Queue
+
+By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  </demoinline>
+</demo>
+
+# Delay
+
 You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -59,23 +78,6 @@ You can set activation delay with a value or a function with arguments `current,
 
 <demo>
   <demoinline src="demos/components/toggle/animation-multiple-delay">
-  </demoinline>
-</demo>
-
-## Queue
-
-By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
   </demoinline>
 </demo>
 

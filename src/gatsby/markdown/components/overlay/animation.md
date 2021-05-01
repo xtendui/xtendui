@@ -8,7 +8,7 @@ date: "2010-10-09"
 
 Checkout out [overlay's themes](/themes/by-component/overlay) for **advanced animations**.
 
-## Duration and Delay
+## Duration
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -35,19 +35,6 @@ You can also customize `xt-backdrop` animations.
   </demoinline>
 </demo>
 
-You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-
-</div>
-
 ## Queue
 
 By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
@@ -66,6 +53,21 @@ By default **multiple mode** queues the activations by waiting the end of durati
   <demoinline src="demos/components/overlay/animation-multiple-noqueue">
   </demoinline>
 </demo>
+
+## Delay
+
+You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
+
+</div>
 
 ## Css Animation
 

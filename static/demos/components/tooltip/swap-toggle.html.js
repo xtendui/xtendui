@@ -6,12 +6,12 @@ const html = /* HTML */ `
       type="button"
       class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
       data-xt-toggle
-      data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap' }"
+      data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap', duration: 300 }"
     >
       Swap toggle
     </button>
 
-    <div class="xt-tooltip p-2 group" id="tooltip--swap-toggle" data-xt-duration="300">
+    <div class="xt-tooltip p-2 group" id="tooltip--swap-toggle">
       <div
         class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
@@ -19,7 +19,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-tooltip p-2 group hidden" id="tooltip--swap-toggle-swap" data-xt-duration="300">
+    <div class="xt-tooltip p-2 group hidden" id="tooltip--swap-toggle-swap">
       <div
         class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >

@@ -276,16 +276,16 @@ const populateDemo = container => {
   const showCodeUid = Xt.getuniqueId()
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end' }">
+<div data-xt-tooltip="{ targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end', duration: 300 }">
   <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
     ${classes.iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
     <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
+  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
     <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Hide Code
     </div>
@@ -294,11 +294,11 @@ const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end' }">
+<div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
   <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen">
     ${classes.iconMaximize()}
   </button>
-  <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group">
     <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Fullscreen
     </div>
@@ -307,11 +307,11 @@ const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end' }">
+<div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
   <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe">
     ${classes.iconExternal()}
   </a>
-  <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group">
     <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Iframe
     </div>
@@ -424,16 +424,16 @@ const populateItem = item => {
   <div class="gatsby_demo_code_tabs">
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
-      <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end' }">
+      <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end', duration: 300 }">
         <button type="button" class="xt-button xt-button-clipboard" aria-label="Copy to Clipboard">
           ${classes.iconCopy()}
         </button>
-        <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+        <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
           <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
             Copy to Clipboard
           </div>
         </div>
-        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-duration="300">
+        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
           <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
             Copied!
           </div>

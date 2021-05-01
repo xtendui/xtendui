@@ -54,6 +54,8 @@ Test multiple raf should always have `on` class until event `init.xt` and then s
 
 Test activation.
 
+Test animation fast duration with and without `data-xt-duration`.
+
 <demo>
   <demoinline src="demos/components/tooltip/swap-click">
   </demoinline>

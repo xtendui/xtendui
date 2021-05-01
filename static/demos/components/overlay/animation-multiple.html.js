@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-overlay="{ elements: ':scope > a, :scope > button, .xt-list > a, .xt-list > button' }"
+      data-xt-overlay="{ elements: ':scope > a, :scope > button, .xt-list > a, .xt-list > button', duration: 500 }"
     >
       <button
         type="button"
@@ -30,7 +30,7 @@ const html = /* HTML */ `
         overlay 2
       </button>
 
-      <div class="xt-overlay group" data-xt-group="group0" data-xt-duration="500">
+      <div class="xt-overlay group" data-xt-group="group0">
         <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -96,7 +96,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-group="group1" data-xt-duration="500">
+      <div class="xt-overlay group" data-xt-group="group1">
         <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -162,7 +162,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-group="group2" data-xt-duration="500">
+      <div class="xt-overlay group" data-xt-group="group2">
         <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div

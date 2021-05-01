@@ -20,6 +20,21 @@ Test activations and animations.
   </demoinline>
 </demo>
 
+## Queue
+
+Test instant activation when switching.
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-multiple-noqueue">
+  </demoinline>
+</demo>
+
 ## Delay
 
 Test activations and animations.
@@ -60,21 +75,6 @@ Test direction and queue timing.
   <demoinline src="demos/components/drop/animation-js">
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-js">
-  </demoinline>
-</demo>
-
-## Queue
-
-Test instant activation when switching.
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
-  </demoinline>
-  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
-  </demoinline>
-  <demoinline src="demos/components/drop/animation-multiple-noqueue">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-multiple-noqueue">
   </demoinline>
 </demo>
 

@@ -33,8 +33,8 @@ Xt.mount({
     // vars
 
     const object = tooltip.closest('[data-xt-tooltip]')
-    const delay = 1000
-    const duration = 50
+    const delayReset = 1000
+    const durationFast = 0
 
     // fix only once when tooltip has multiple targets
 
@@ -47,21 +47,21 @@ Xt.mount({
       const tooltips = document.querySelectorAll(obj.matches)
       // make other tooltips fast
       const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
-      for (const tooltip of tooltipsOther) {
-        tooltip.dataset.defaultXtDuration = tooltip.getAttribute('data-xt-duration')
-        tooltip.setAttribute('data-xt-duration', duration)
-        const inner = tooltip.querySelector(':scope > *')
-        inner.style.transitionDuration = `${duration}ms`
+      for (const tooltipOther of tooltipsOther) {
+        tooltipOther.dataset.defaultXtDuration = tooltipOther.getAttribute('data-xt-duration')
+        tooltipOther.setAttribute('data-xt-duration', durationFast)
+        const inner = tooltipOther.querySelector(':scope > *')
+        inner.style.transitionDuration = `${durationFast}ms`
       }
       // make all tooltips normal
       clearTimeout(window.gatsbyTooltipFastTimeout)
       window.gatsbyTooltipFastTimeout = setTimeout(() => {
-        for (const tooltip of tooltips) {
-          tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
-          const inner = tooltip.querySelector(':scope > *')
+        for (const tooltipOther of tooltips) {
+          tooltipOther.setAttribute('data-xt-duration', tooltipOther.dataset.defaultXtDuration)
+          const inner = tooltipOther.querySelector(':scope > *')
           inner.style.transitionDuration = ''
         }
-      }, delay)
+      }, delayReset)
     }
 
     tooltip.addEventListener('on.xt.tooltip', on)
@@ -422,7 +422,7 @@ Xt.mount({
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+<div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
   <div class="relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
     Close Fullscreen
   </div>
@@ -431,6 +431,7 @@ Xt.mount({
     new Xt.Tooltip(close, {
       targets: `#tooltip--close-${closeUid}`,
       position: 'bottom-end',
+      duration: 300,
     })
 
     // unmount
@@ -543,7 +544,7 @@ const makeDocument = () => {
         if (!activeTooltip) {
           activeText.append(
             Xt.createElement(`
-<div class="xt-tooltip px-5 group" data-xt-duration="300">
+<div class="xt-tooltip px-5 group">
   <div class="relative py-2 rounded-md shadow-tooltip bg-primary-600 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
     <nav class="xt-list flex-col">
     </nav>
@@ -552,7 +553,7 @@ const makeDocument = () => {
           )
           activeText.setAttribute(
             'data-xt-tooltip',
-            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text' }`
+            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
           )
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }

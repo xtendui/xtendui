@@ -32,10 +32,10 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop>
+      <div data-xt-drop="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">list</button>
 
-        <div class="xt-drop p-4 group" data-xt-duration="500">
+        <div class="xt-drop p-4 group">
           <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()} ${animDesign()}">
             <nav class="xt-list flex-col rounded-md ${animItem()}">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
@@ -53,10 +53,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop>
+      <div data-xt-drop="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">card</button>
 
-        <div class="xt-drop p-4 group" data-xt-duration="500">
+        <div class="xt-drop p-4 group">
           <div class="xt-card w-64 rounded-md shadow-drop ${classes.cardWhite()} ${animDesign()}">
             <button
               type="button"
@@ -81,11 +81,11 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ duration: 500 }">
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">tooltip</button>
 
-          <div class="xt-tooltip p-2 group" data-xt-duration="500">
+          <div class="xt-tooltip p-2 group">
             <div
               class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} ${animDesign()}"
             >
@@ -96,13 +96,13 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ duration: 500 }">
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
             list group
           </button>
 
-          <div class="xt-tooltip p-2 group" data-xt-duration="500">
+          <div class="xt-tooltip p-2 group">
             <div class="rounded-md shadow-tooltip ${classes.cardWhite()} ${animDesign()}">
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
@@ -133,9 +133,9 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay>
+      <div data-xt-overlay="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
-        <div class="xt-overlay group" data-xt-duration="500">
+        <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -156,10 +156,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay>
+      <div data-xt-overlay="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
 
-        <div class="xt-overlay group" data-xt-duration="500">
+        <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
@@ -199,10 +199,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay>
+      <div data-xt-overlay="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
 
-        <div class="xt-overlay group" data-xt-duration="500">
+        <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -317,10 +317,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay>
+      <div data-xt-overlay="{ duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
 
-        <div class="xt-overlay group" data-xt-duration="500">
+        <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">

@@ -66,7 +66,7 @@ export default class Page extends React.Component {
                       </span>
                     </h1>
                     <div className="gatsby_home-main_social gatsby_home-main_scroll">
-                      <div data-xt-tooltip="{ position: 'top' }">
+                      <div data-xt-tooltip="{ position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.twitter}
                           target="_blank"
@@ -76,14 +76,14 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconTwitter(),
                           }}></a>
-                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                             Visit on Twitter
                           </div>
                         </div>
                       </div>
-                      <div data-xt-tooltip="{ position: 'top' }">
+                      <div data-xt-tooltip="{ position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.npm}
                           target="_blank"
@@ -93,14 +93,14 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconPackage(),
                           }}></a>
-                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                             Visit on Npm
                           </div>
                         </div>
                       </div>
-                      <span data-xt-tooltip="{ position: 'top' }">
+                      <span data-xt-tooltip="{ position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.github}
                           target="_blank"
@@ -110,7 +110,7 @@ export default class Page extends React.Component {
                           dangerouslySetInnerHTML={{
                             __html: classes.iconGithub(),
                           }}></a>
-                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-duration="300">
+                        <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                           <div
                             className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                             Visit on Github
