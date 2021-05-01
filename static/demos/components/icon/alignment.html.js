@@ -46,7 +46,7 @@ const html = /* HTML */ `
 
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md w-full ${classes.buttonPrimary()}">
-        Justify default (start) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        Justify default (center) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
 
       <button

@@ -543,7 +543,7 @@ const makeDocument = () => {
         if (!activeTooltip) {
           activeText.append(
             Xt.createElement(`
-<div class="xt-tooltip p-4 group" data-xt-duration="300">
+<div class="xt-tooltip px-5 group" data-xt-duration="300">
   <div class="relative py-2 rounded-md shadow-tooltip bg-primary-600 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
     <nav class="xt-list flex-col">
     </nav>
@@ -561,8 +561,8 @@ const makeDocument = () => {
           Xt.createElement(`
 <a href="#${encodeURIComponent(
             id
-          )}" class="xt-button text-3xs py-1 px-3 w-full text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
-  ${el.textContent.trim()}
+          )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+  <span class="py-px">${el.textContent.trim()}</span>
 </a>`)
         )
       }

@@ -17,6 +17,7 @@ module.exports = {
       flexWrap: 'nowrap',
       alignItems: 'center',
       textAlign: 'center',
+      justifyContent: 'center',
     },
   },
 }

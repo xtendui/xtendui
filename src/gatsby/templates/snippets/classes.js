@@ -24,13 +24,13 @@ export const classes = {
   badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
-    'w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
+    'w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
   buttonDefault: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
   buttonPrimaryDrop: () =>
-    'w-full text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
+    'w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
