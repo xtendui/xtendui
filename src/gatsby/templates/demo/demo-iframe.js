@@ -51,7 +51,7 @@ export default class DemoIframe extends React.Component {
         Xt.ready(iframeLoaded)
       }
     }
-    // render with all
+    // render all
     return (
       <Layout>
         <SEO title={seo.title} description={seo.description} />
