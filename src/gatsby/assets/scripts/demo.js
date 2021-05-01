@@ -488,6 +488,12 @@ const populateItem = item => {
       }
     }
   }
+  // .button--show-code reinit
+  const btnCode = container.querySelector('.button--show-code')
+  const self = Xt.get('xt-toggle', btnCode)
+  if (self) {
+    self.reinit()
+  }
 }
 
 /**

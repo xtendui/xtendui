@@ -12,6 +12,7 @@ export default class DemoInline extends React.Component {
 
   componentDidMount() {
     this.item = this.ref.current
+    this.container = this.item.closest('.gatsby_demo')
     // currentDemos
     window.currentDemos = window.currentDemos ? window.currentDemos : []
     window.currentDemos.push(this)
@@ -36,6 +37,10 @@ export default class DemoInline extends React.Component {
     const code = this.item.querySelector('.gatsby_demo_code_body_item')
     if (code) {
       code.innerHTML = ''
+    }
+    const codeButton = this.container.querySelector('.button--show-code')
+    if (codeButton) {
+      codeButton.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
     }
   }
 
@@ -62,7 +67,10 @@ export default class DemoInline extends React.Component {
     return (
       <div ref={this.ref} className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
         {this.state.mode === 'react' ? (
-          <div className={`${this.state.mode === 'react' ? 'gatsby_demo_item--current' : 'hidden'}`}>
+          <div
+            className={`gatsby_demo_item_switch ${
+              this.state.mode === 'react' ? 'gatsby_demo_item--current' : 'hidden'
+            }`}>
             <div
               className={`gatsby_demo_source gatsby_demo_source--from ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
@@ -73,7 +81,10 @@ export default class DemoInline extends React.Component {
             <div className="gatsby_demo_source xt-ignore" data-lang="css" data-fetch={`/${src}.css`} />
           </div>
         ) : (
-          <div className={`${this.state.mode === 'null' ? 'gatsby_demo_item--current' : 'hidden'}`}>
+          <div
+            className={`gatsby_demo_item_switch ${
+              this.state.mode === 'null' ? 'gatsby_demo_item--current' : 'hidden'
+            }`}>
             <div
               className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
