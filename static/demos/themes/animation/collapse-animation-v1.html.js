@@ -1,7 +1,5 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const listCollapse = () => 'w-0 overflow-hidden transform transition-all -translate-x-4 in:translate-x-0'
-
 const buttonDefault = () => classes.buttonDefault()
 const buttonPrimary = () => classes.buttonPrimary()
 
@@ -9,6 +7,8 @@ const animDesign = () =>
   'h-0 overflow-hidden transform -translate-y-4 group-in:transition-all group-in:duration-500 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2'
 const animItem = () =>
   'transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+const animItemWidth = () =>
+  'transform opacity-0 -translate-x-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-x-2'
 const animItemOpacity = () =>
   'opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
@@ -16,19 +16,12 @@ const html = /* HTML */ `
   <div>
     <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">List Group</div>
 
-    <form
-      class="text-xs"
-      data-xt-toggle="{ elements: '.w-full > .xt-button', targets: '.w-full > .xt-list', collapseWidth: 'targets' }"
-    >
-      <div class="xt-row xt-row-x-6 xt-row-y-4">
-        <div class="w-full md:w-auto">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
-            List group
-          </button>
-        </div>
+    <form class="text-xs">
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets' }">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">List group</button>
 
-        <div class="w-full md:w-auto">
-          <div class="xt-list flex-nowrap max-w-sm ${listCollapse()}">
+        <div class="xt-toggle -my-px max-w-sm overflow-hidden transition-all group" data-xt-duration="500">
+          <div class="xt-list flex-nowrap ${animItemWidth()}">
             <div class="xt-list-inner flex-auto">
               <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -58,7 +51,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-4 group" data-xt-duration="500">
           <div class="xt-drop-inner rounded-md shadow-drop ${animDesign()}" data-xt-duration="500">
             <div class="xt-card w-64 py-3.5 rounded-md ${classes.cardWhite()}">
-              <nav class="xt-list flex-col rounded-md${animItem()}">
+              <nav class="xt-list flex-col rounded-md ${animItem()}">
                 <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>

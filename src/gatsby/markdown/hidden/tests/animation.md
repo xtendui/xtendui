@@ -102,6 +102,6 @@ Test height on deactivation.
   </demoinline>
   <demoinline src="demos/components/animation/collapse-width">
   </demoinline>
-  <demoinline src="demos/components/animation/collapse-text">
+  <demoinline src="demos/components/animation/collapse-initial">
   </demoinline>
 </demo>

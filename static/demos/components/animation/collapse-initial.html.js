@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       id="demo--collapse-text-target"
-      class="text-lg h-20 mb-6 overflow-hidden transition-all"
+      class="mb-6 text-lg h-20 overflow-hidden transition-all"
       data-xt-duration="500"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum sed.

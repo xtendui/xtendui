@@ -2489,7 +2489,7 @@ class Toggle {
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
-                el.style.width = final
+                el.style.width = `${final}px`
               })
             })
           )
@@ -2530,7 +2530,7 @@ class Toggle {
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
-                el.style.width = final
+                el.style.width = `${final}px`
               })
             })
           )
