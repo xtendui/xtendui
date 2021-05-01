@@ -2497,12 +2497,13 @@ class Toggle {
       } else if (actionCurrent === 'Out') {
         if (options.collapseHeight === type) {
           el.classList.remove('xt-collapse-reset')
+          const current = el.offsetHeight // fix keep current off initial
           el.style.height = ''
           let final = el.offsetHeight
           el.style.height = 'auto'
           const initial = el.offsetHeight
           final = initial === final ? 0 : final
-          el.style.height = `${initial}px`
+          el.style.height = `${current}px`
           // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(
@@ -2517,12 +2518,13 @@ class Toggle {
         }
         if (options.collapseWidth === type) {
           el.classList.remove('xt-collapse-reset')
+          const current = el.offsetHeight // fix keep current off initial
           el.style.width = ''
           let final = el.offsetWidth
           el.style.width = 'auto'
           const initial = el.offsetWidth
           final = initial === final ? 0 : final
-          el.style.width = `${initial}px`
+          el.style.width = `${current}px`
           // keep the same level of raf for activation
           cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
           Xt.dataStorage.set(

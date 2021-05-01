@@ -124,7 +124,7 @@ const html = /* HTML */ `
                 </div>
               </form>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity()}"></div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-400 z-below ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
