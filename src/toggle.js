@@ -1369,7 +1369,7 @@ class Toggle {
     const self = this
     // running check to stop multiple activation/deactivation with delay
     const check = obj.elements.runningOn || !self.hasCurrent(obj.elements.queueEls[0], true)
-    obj.elements.runningOn = check ? true : false
+    obj.elements.runningOn = check
     return check
   }
 
@@ -1382,7 +1382,7 @@ class Toggle {
     const self = this
     // running check to stop multiple activation/deactivation with delay
     const check = obj.elements.runningOff || self.hasCurrent(obj.elements.queueEls[0], true)
-    obj.elements.runningOff = check ? true : false
+    obj.elements.runningOff = check
     return check
   }
 
@@ -1580,7 +1580,7 @@ class Toggle {
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
-      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, e)
+      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
       // queue run
       // eslint-disable-next-line guard-for-in
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
@@ -1631,7 +1631,7 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
-      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, e)
+      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
       // remove queue not started if queue too big
       if (self.detail[`queue${actionCurrent}`].length > options.max) {
         // remove queue and stop
@@ -1660,15 +1660,17 @@ class Toggle {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targets
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
+   * @param {Boolean} force
    * @param {Event} e
    */
-  eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, e) {
+  eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e) {
     const self = this
     const options = self.options
     // populate
     const obj = {}
     obj.elements = {
       queueEls: elements,
+      force: force,
       e: e,
     }
     if (targets.length) {
@@ -2032,7 +2034,8 @@ class Toggle {
   queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
-    if (actionCurrent === 'In' && self.checkOnRunning(obj)) {
+    // check if not already running or if force
+    if (actionCurrent === 'In' && (self.checkOnRunning(obj) || obj.elements.force || obj.elements.e?.detail?.force)) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.addCurrent(el, true)
@@ -2091,7 +2094,10 @@ class Toggle {
           )
         })
       }
-    } else if (actionCurrent === 'Out' && self.checkOffRunning(obj)) {
+    } else if (
+      actionCurrent === 'Out' &&
+      (self.checkOffRunning(obj) || obj.elements.force || obj.elements.e?.detail?.force)
+    ) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.removeCurrent(el, true)
