@@ -159,7 +159,7 @@ pre {
 .gatsby_demo_item {
   position: relative;
   height: 100%;
-  .gatsby_demo_item_wrapper {
+  .gatsby_demo_item_switch {
     position: relative;
     #gatsby_open-full & {
       height: auto !important;
@@ -212,7 +212,7 @@ pre {
   }
   &[data-iframe] {
     &.loaded {
-      .gatsby_demo_item_wrapper > .xt-loader {
+      .gatsby_demo_item_switch > .xt-loader {
         display: none;
       }
     }
@@ -239,7 +239,7 @@ pre {
   display: none;
 }
 
-.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
+.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_switch, .gatsby_demo_item_switch iframe {
   display: flex;
   flex-direction: column;
   #gatsby_open-full & {

@@ -13,3 +13,5 @@ Test demos changing demo should change hash.
 Test demos initial activation on browser location.
 
 Test demo show code in fullscreen after switching mode.
+
+Test demo switcher initial and switched html class and code.

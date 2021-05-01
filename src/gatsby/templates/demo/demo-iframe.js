@@ -5,14 +5,44 @@ import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout-demo'
 
 export default class DemoIframe extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      mode: 'null',
+    }
+  }
+
+  componentDidMount() {
+    // currentDemos
+    window.parent.currentDemos.push(this)
+    // raf because initial render not switched already because of localStorage
+    requestAnimationFrame(() => {
+      this.refresh()
+    })
+  }
+
+  switchClean() {
+    // clean react conditional rendering and generated nodes
+    window.parent.switchClean(null, this.src)
+  }
+
+  refresh() {
+    this.setState({ mode: localStorage.getItem('mode') })
+    // populate
+    if (this.state.mode === 'react') {
+      window.parent.initIframe(this.src, false, `/${this.src}.jsx`, `/${this.src}.css`)
+    } else {
+      window.parent.initIframe(this.src, this.html, false, `/${this.src}.css`, `/${this.src}.js`)
+    }
+  }
+
   render() {
     const { location } = this.props
-    const src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
-    const id = src.split('/').join('-')
-    const mode = typeof window !== 'undefined' ? localStorage.getItem('mode') : null
+    this.src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
+    const id = this.src.split('/').join('-')
     // seo
     const seo = {}
-    seo.title = src
+    seo.title = this.src
     seo.description = seo.title
     // iframe
     if (typeof window !== 'undefined') {
@@ -21,42 +51,25 @@ export default class DemoIframe extends React.Component {
       document.documentElement.setAttribute('id', id)
     }
     // vanilla
-    const object = require(`static/${src}.html.js`).object
-    const html = object.html
+    const object = require(`static/${this.src}.html.js`).object
+    this.html = object.html
     if (typeof window !== 'undefined') {
       if (object.container) {
         document.documentElement.classList.add('gatsby_iframe-container')
       }
     }
     try {
-      require(`static/${src}.js`).default
+      require(`static/${this.src}.js`).default
       // eslint-disable-next-line no-empty
     } catch (ex) {}
     // react
-    const Demo = require(`static/${src}.jsx`).default
-    // code
-    if (typeof window !== 'undefined') {
-      if (window.self !== window.top) {
-        const Xt = require('xtendui').Xt
-        let iframeLoaded
-        if (mode === 'react') {
-          iframeLoaded = () => {
-            window.parent.initIframe(src, false, `/${src}.jsx`, `/${src}.css`)
-          }
-        } else {
-          iframeLoaded = () => {
-            window.parent.initIframe(src, html, false, `/${src}.css`, `/${src}.js`)
-          }
-        }
-        Xt.ready(iframeLoaded)
-      }
-    }
+    const Demo = require(`static/${this.src}.jsx`).default
     // render all
     return (
       <Layout>
         <SEO title={seo.title} description={seo.description} />
         <div id="body-outer">
-          {mode === 'react' ? (
+          {this.state.mode === 'react' ? (
             <div id="gatsby_body-inner" className="gatsby_demo_source--from">
               <Demo />
             </div>
@@ -64,7 +77,7 @@ export default class DemoIframe extends React.Component {
             <div
               id="gatsby_body-inner"
               className="gatsby_demo_source--from"
-              dangerouslySetInnerHTML={{ __html: html }}
+              dangerouslySetInnerHTML={{ __html: this.html }}
             />
           )}
         </div>

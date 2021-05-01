@@ -86,7 +86,7 @@ Xt.mount({
       localStorage.setItem('mode', mode)
       // currentDemos
       for (const demo of window.currentDemos) {
-        demo.empty()
+        demo.switchClean()
         demo.refresh()
       }
       // class
@@ -122,7 +122,7 @@ Xt.mount({
       localStorage.setItem('mode', mode)
       // currentDemos
       for (const demo of window.currentDemos) {
-        demo.empty()
+        demo.switchClean()
         demo.refresh()
       }
       // class

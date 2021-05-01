@@ -1,5 +1,6 @@
 window.keepSidebarScroll = 0
 window.overlayOpen = false
+window.currentDemos = []
 
 const gatsbySidebarContain = () => {
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
@@ -33,7 +34,10 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   }
   // only if changing page
   if (prevLocation) {
+    // only if new page
     if (location.pathname !== prevLocation.pathname) {
+      // currentDemos
+      window.currentDemos = []
       // close demo full
       const demoFull = document.querySelector('#gatsby_open-full-trigger.on')
       if (demoFull) {
@@ -62,7 +66,6 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
       // close fullscreen and others
       dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     } else {
-      // fix trigger hashchange when hash is removed (e.g.: clicking menu item)
       dispatchEvent(new CustomEvent('hashchange'))
     }
   }

@@ -206,6 +206,10 @@ const mountImages = ({ ref }) => {
   for (const image of images) {
     image.addEventListener('mouseleave', leave)
   }
+
+  // unmount
+
+  return () => {}
 }
 
 /* mountArrow */

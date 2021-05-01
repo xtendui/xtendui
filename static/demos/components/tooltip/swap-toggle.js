@@ -48,21 +48,26 @@ const mountButtonsSwap = ({ ref }) => {
     }
 
     // on
-
-    const on = () => {
-      // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const on = e => {
+      // check because of event propagation
+      if (e.target === buttonSwap) {
+        // swap
+        tooltip.addEventListener('offdone.xt.tooltip', swap)
+        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      }
     }
 
     buttonSwap.addEventListener('on.xt.toggle', on, true)
 
     // off
 
-    const off = () => {
-      // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const off = e => {
+      // check because of event propagation
+      if (e.target === buttonSwap) {
+        // swap back
+        tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      }
     }
 
     buttonSwap.addEventListener('off.xt.toggle', off, true)

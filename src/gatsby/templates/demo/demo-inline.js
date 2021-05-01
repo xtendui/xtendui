@@ -14,34 +14,16 @@ export default class DemoInline extends React.Component {
     this.item = this.ref.current
     this.container = this.item.closest('.gatsby_demo')
     // currentDemos
-    window.currentDemos = window.currentDemos ? window.currentDemos : []
     window.currentDemos.push(this)
     // raf because initial render not switched already because of localStorage
     requestAnimationFrame(() => {
-      this.setState({ mode: localStorage.getItem('mode') })
       this.refresh()
     })
   }
 
-  componentWillUnmount() {
-    // currentDemos
-    window.currentDemos.filter(x => x !== this)
-  }
-
-  empty() {
-    // clean
-    const populate = this.item.querySelector('.gatsby_demo_source_populate')
-    if (populate) {
-      populate.innerHTML = ''
-    }
-    const code = this.item.querySelector('.gatsby_demo_code_body_item')
-    if (code) {
-      code.innerHTML = ''
-    }
-    const codeButton = this.container.querySelector('.button--show-code')
-    if (codeButton) {
-      codeButton.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
-    }
+  switchClean() {
+    // clean react conditional rendering and generated nodes
+    window.switchClean(this.item)
   }
 
   refresh() {

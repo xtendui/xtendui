@@ -330,6 +330,14 @@ const populateDemo = container => {
     container
       .querySelector('.gatsby_demo_tabs_left')
       .append(Xt.createElement(`<button type="button" class="xt-button">${name}</button>`))
+    // if not iframe
+    if (item.getAttribute('data-iframe')) {
+      // if not themes
+      if (!item.getAttribute('data-iframe-fullscreen')) {
+        // populate
+        initializeIframe(item)
+      }
+    }
   }
   // set hash
   for (const btnOpenFull of container.querySelectorAll('.button--open-full')) {
@@ -462,9 +470,7 @@ const populateItem = item => {
   }
   // inject
   if (!item.getAttribute('data-iframe-fullscreen')) {
-    if (item.getAttribute('data-iframe')) {
-      initializeIframe(item)
-    } else {
+    if (!item.getAttribute('data-iframe')) {
       populateInline(item)
     }
   }
@@ -547,20 +553,26 @@ const swapToggle = ({ tooltip, self, buttonSwap }) => {
 
   // on
 
-  const on = () => {
-    // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap)
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  const on = e => {
+    // check because of event propagation
+    if (e.target === buttonSwap) {
+      // swap
+      tooltip.addEventListener('offdone.xt.tooltip', swap)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
   }
 
   buttonSwap.addEventListener('on.xt.toggle', on, true)
 
   // off
 
-  const off = () => {
-    // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  const off = e => {
+    // check because of event propagation
+    if (e.target === buttonSwap) {
+      // swap back
+      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
   }
 
   buttonSwap.addEventListener('off.xt.toggle', off, true)
@@ -606,13 +618,17 @@ const makeFullscreen = container => {
     container.classList.add('xt-ignore', 'xt-ignore-once')
   }
   content.append(container)
-  // populate iframe after initialization
+  // iframe
   for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
+    // if themes
     if (item.getAttribute('data-iframe-fullscreen')) {
+      // populate
       item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
       initializeIframe(item)
-      item.dispatchEvent(new CustomEvent('on.xt.toggle'))
+      item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle', { detail: { force: true } }))
     }
+    // spinner
+    item.classList.remove('loaded')
   }
 }
 
@@ -624,8 +640,12 @@ const initializeIframe = item => {
   if (!item.classList.contains('populated-iframe')) {
     item.classList.add('populated-iframe')
     const src = `/${item.getAttribute('data-iframe')}`
-    item.append(Xt.createElement(`<div class="gatsby_demo_item_wrapper"><iframe data-src="${src}"></iframe></div>`))
-    item.querySelector('.gatsby_demo_item_wrapper').append(
+    item.append(
+      Xt.createElement(
+        `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`
+      )
+    )
+    item.querySelector('.gatsby_demo_item_switch').append(
       Xt.createElement(`
           <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
@@ -634,20 +654,17 @@ const initializeIframe = item => {
           </div>`)
     )
     // load
-    if (!item.dataset.iframeLoadEvents) {
-      item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('on.xt.toggle', () => {
-        const iframe = item.querySelector('iframe')
-        loadIframe(iframe)
-        btnOpenIframe(item)
-      })
-      item.addEventListener('off.xt.toggle', () => {
-        const iframe = item.querySelector('iframe')
-        unloadIframe(iframe)
-        // spinner
-        item.classList.remove('loaded')
-      })
-    }
+    item.addEventListener('on.xt.toggle', () => {
+      const iframe = item.querySelector('iframe')
+      loadIframe(iframe)
+      btnOpenIframe(item)
+    })
+    item.addEventListener('off.xt.toggle', () => {
+      const iframe = item.querySelector('iframe')
+      unloadIframe(iframe)
+      // spinner
+      item.classList.remove('loaded')
+    })
   }
 }
 
@@ -660,13 +677,29 @@ const unloadIframe = iframe => {
 }
 
 window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
-  const selector = `iframe[data-src="/${src}"]`
-  const iframes = document.querySelectorAll(selector)
-  for (const iframe of iframes) {
-    const item = iframe.closest('.gatsby_demo_item')
-    populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
-    // spinner
-    item.classList.add('loaded')
+  const iframe = document.querySelector(`iframe[data-src="/${src}"]`)
+  const item = iframe.closest('.gatsby_demo_item')
+  // populate
+  require('src/gatsby/assets/scripts/demo').populateItem(item)
+  populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
+  // spinner
+  item.classList.add('loaded')
+}
+
+/**
+ * switchClean
+ */
+
+window.switchClean = (item, src) => {
+  item = item ?? document.querySelector(`iframe[data-src="/${src}"]`).closest('.gatsby_demo_item')
+  // clean
+  const populate = item.querySelector('.gatsby_demo_source_populate')
+  if (populate) {
+    populate.innerHTML = ''
+  }
+  const code = item.querySelector('.gatsby_demo_code_body_item')
+  if (code) {
+    code.innerHTML = ''
   }
 }
 
@@ -707,6 +740,7 @@ const populateInline = async item => {
       console.error(ex)
     }
   }
+  // code toggle
   new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
     elements: '.gatsby_demo_code_tabs_left .xt-button',
     targets: '.gatsby_demo_code_body_item',
@@ -716,35 +750,41 @@ const populateInline = async item => {
 }
 
 const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
+  const inner = item.querySelector('.gatsby_demo_item_switch')
+  // clean
+  for (const code of inner.querySelectorAll('.gatsby_demo_source')) {
+    code.remove()
+  }
   // inject code
   if (htmlSource) {
-    item.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
+    inner.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
   }
   if (jsxSource) {
-    item.append(
+    inner.append(
       Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx" data-fetch=${jsxSource}></div>`)
     )
   }
   if (cssSource) {
-    item.append(
+    inner.append(
       Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="css" data-fetch=${cssSource}></div>`)
     )
   }
   if (jsSource) {
-    item.append(
+    inner.append(
       Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js" data-fetch=${jsSource}></div>`)
     )
   }
   // populate
   const isReact = !!jsxSource
   const els = item.querySelectorAll('[data-lang]')
-  for (const el of els) {
+  for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
     try {
       await source(item, el, isReact)
     } catch (ex) {
       console.error(ex)
     }
   }
+  // code toggle
   new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
     elements: '.gatsby_demo_code_tabs_left .xt-button',
     targets: '.gatsby_demo_code_body_item',
