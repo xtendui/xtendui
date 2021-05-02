@@ -137,7 +137,7 @@ export default function Header({ page }) {
                 <div className="mt-16 md:mt-0">
                   <div className="gatsby_site-header_switcher_container">
                     <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
-                      <div data-xt-tooltip="{ position: 'top', duration: 300 }" className="flex-full">
+                      <div className="flex-full" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
                         <div className="xt-tooltip-item w-full">
                           <button
                             type="button"
@@ -152,7 +152,7 @@ export default function Header({ page }) {
                           </div>
                         </div>
                       </div>
-                      <div data-xt-tooltip="{ position: 'top', duration: 300 }" className="flex-full">
+                      <div className="flex-full" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
                         <div className="xt-tooltip-item w-full">
                           <button
                             type="button"
