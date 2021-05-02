@@ -108,14 +108,17 @@ class Scrollto {
    */
   initStart() {
     const self = this
-    // initial activation
-    for (const scroller of self.scrollers) {
-      if (scroller) {
-        self.eventActivationHandler(scroller)
-      }
-    }
     // initial scrollto
     self.eventStart()
+    // document ready fixes wrong activation on page load
+    Xt.ready(() => {
+      // initial activation
+      for (const scroller of self.scrollers) {
+        if (scroller) {
+          self.eventActivationHandler(scroller)
+        }
+      }
+    })
   }
 
   //
