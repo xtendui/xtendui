@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--toggle-animation-multiple-duration-delay">
+  <div class="demo--toggle-animation-duration-delay">
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"

@@ -36,7 +36,7 @@ When you use animations you need to **specity the duration of the animation** fo
 You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple-duration-delay">
+  <demoinline src="demos/components/toggle/animation-duration-delay">
   </demoinline>
 </demo>
 
@@ -58,7 +58,7 @@ You can set activation delay with a value or a function with arguments `{ curren
 You can also **assign them also on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple-duration-delay">
+  <demoinline src="demos/components/toggle/animation-duration-delay">
   </demoinline>
 </demo>
 
@@ -75,9 +75,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple">
+  <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  <demoinline src="demos/components/toggle/animation-noqueue">
   </demoinline>
 </demo>
 

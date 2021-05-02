@@ -71,9 +71,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 <demo>
-  <demoinline src="demos/components/drop/animation-multiple">
+  <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-multiple-noqueue">
+  <demoinline src="demos/components/drop/animation-noqueue">
   </demoinline>
 </demo>
 

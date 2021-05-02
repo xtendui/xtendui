@@ -10,21 +10,21 @@ title: "Animation"
 Test activations and animations.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple">
+  <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  <demoinline src="demos/components/toggle/animation-noqueue">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation-multiple">
+  <demoinline src="demos/components/overlay/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
+  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-multiple">
+  <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-multiple-noqueue">
+  <demoinline src="demos/components/drop/animation-noqueue">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation-multiple">
+  <demoinline src="demos/components/tooltip/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/tooltip/animation-multiple-noqueue">
+  <demoinline src="demos/components/tooltip/animation-noqueue">
   </demoinline>
 </demo>
 
@@ -33,7 +33,7 @@ Test activations and animations.
 Test activations and animations.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple-duration-delay">
+  <demoinline src="demos/components/toggle/animation-duration-delay">
   </demoinline>
 </demo>
 

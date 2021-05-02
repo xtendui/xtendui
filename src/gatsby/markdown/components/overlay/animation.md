@@ -74,9 +74,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-multiple">
+  <demoinline src="demos/components/overlay/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation-multiple-noqueue">
+  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
 </demo>
 
