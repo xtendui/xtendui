@@ -51,4 +51,6 @@ Test scroll and overlay activation data-xt-scrollto-hash close overlay and brows
 
 Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 
+Test clicking 2 should open overlay (test bug with openauto and overlay on same element).
+
 Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).

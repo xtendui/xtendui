@@ -1060,11 +1060,22 @@ class Toggle {
   eventOpenautoHandler(e) {
     const self = this
     // handler
+    let found
     for (const el of Array.from(self.elements).filter(x => x.contains(e.target))) {
-      self.eventOn(el, true, e)
+      found = el
+      break
     }
-    for (const tr of Array.from(self.targets).filter(x => x.contains(e.target))) {
-      self.eventOn(tr, true, e)
+    if (!found) {
+      for (const tr of Array.from(self.targets).filter(x => x.contains(e.target))) {
+        found = tr
+        break
+      }
+    }
+    if (found) {
+      // raf after event on (e.g: clicking elements of overlay with also data-xt-scrollto-hash)
+      requestAnimationFrame(() => {
+        self.eventOn(found, true, e)
+      })
     }
   }
 
