@@ -54,7 +54,7 @@ By default **multiple mode** queues the activations by waiting the end of durati
   </demoinline>
 </demo>
 
-# Delay
+## Delay
 
 You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
 
