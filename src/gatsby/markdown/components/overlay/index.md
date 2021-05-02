@@ -20,9 +20,6 @@ Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }
 
 Initialize with **javascript** with `new Xt.Overlay(document.querySelector('.my-object'), {/* options */})`.
 
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
-
 ## Usage Self
 
 Use this code to create a **overlay** in **self mode**.

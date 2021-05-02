@@ -12,24 +12,17 @@ Test activations and animations.
 <demo>
   <demoinline src="demos/components/toggle/animation-multiple">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation-multiple">
-  </demoinline>
-  <demoinline src="demos/components/drop/animation-multiple">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-multiple">
-  </demoinline>
-</demo>
-
-## Queue
-
-Test instant activation when switching.
-
-<demo>
   <demoinline src="demos/components/toggle/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-multiple">
   </demoinline>
   <demoinline src="demos/components/overlay/animation-multiple-noqueue">
   </demoinline>
+  <demoinline src="demos/components/drop/animation-multiple">
+  </demoinline>
   <demoinline src="demos/components/drop/animation-multiple-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-multiple">
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-multiple-noqueue">
   </demoinline>

@@ -2,8 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-animation-css">
-    <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ duration: 500 }">
+    <div class="xt-list xt-list-3 items-center" data-xt-drop="{ duration: 500 }">
+      <div class="xt-drop-item">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
           list
         </button>
@@ -25,12 +25,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop>
+      <div class="xt-drop-item">
         <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
           card
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4 group">
           <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}

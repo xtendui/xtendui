@@ -8,6 +8,9 @@ date: "2010-10-09"
 
 Check out [overlay's themes](/themes/by-component/overlay) for **advanced animations**.
 
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+
 ## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).

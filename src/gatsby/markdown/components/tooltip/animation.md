@@ -90,6 +90,9 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | Class                  | `.dir-after`       |  Class name for after direction activation            |
 </div>
 
+[[notePrimary]]
+| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
+
 <demo>
   <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
@@ -106,6 +109,9 @@ You can use also **javascript animations**, just use [tooltip api](/components/t
 | Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
 </div>
+
+[[notePrimary]]
+| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-js">
