@@ -6,13 +6,11 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Checkout out [tooltip's themes](/themes/by-component/tooltip) for **advanced animations**.
+Check out [tooltip's themes](/themes/by-component/tooltip) for **advanced animations**.
 
 ## Duration
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
-
-You can set it in the options or to **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -23,6 +21,8 @@ You can set it in the options or to **assign them also on single nodes** with `d
 | Option                  | `durationOut:Milliseconds`                          | `false`        | Deactivation duration            |
 
 </div>
+
+You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 [[notePrimary]]
 | Do not transition transform on `xt-tooltip` because of transform positioning, **transition the content instead**.

@@ -23,6 +23,19 @@ Initialize with **javascript** with `new Xt.Ripple(document.querySelector('.my-o
 
 Use this code to create a **ripple**.
 
+Initialize with javascript **on the selectors you want the ripple effect on**, `options.onlyInside` takes care of activating only on interactive elements.
+
+Style ripple effect **with css**.
+
+<demo>
+  <demoinline src="demos/components/animation/ripple">
+  </demoinline>
+</demo>
+
+## Themes
+
+Check out [animation themes](/themes/animation) for **advanced animations**.
+
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/animation/ripple-animation-v1">
   </div>
@@ -36,7 +49,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `sizeInitial:Boolean`                          | `0.1`        | Initial size factor            |
+| Option                    | `sizeInitial:Boolean`                          | `0.3`        | Initial size factor            |
 | Option                    | `onlyInside:Query`                          | `'a, button, .xt-button'`        | Only if selector else query closest             |
 
 </div>

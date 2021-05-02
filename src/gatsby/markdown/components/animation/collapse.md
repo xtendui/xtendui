@@ -48,3 +48,12 @@ Use **tailwind classes** to assign size (e.g. [height](https://tailwindcss.com/d
   <demoinline src="demos/components/animation/collapse-initial">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [animation themes](/themes/animation) for **advanced animations**.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>

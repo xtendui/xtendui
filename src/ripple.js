@@ -52,7 +52,7 @@ class Ripple {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
-    // generate
+    // container
     if (!self.container) {
       self.object.append(Xt.createElement('<div class="xt-ripple-container"></div>'))
       self.container = self.object.querySelector(':scope > .xt-ripple-container')
@@ -91,7 +91,7 @@ class Ripple {
       const h = self.object.offsetHeight
       const w = self.object.offsetWidth
       const sizeObject = h > w ? h : w
-      const size = sizeObject * options.sizeInitial
+      const size = sizeObject * options.sizeInitial + 1 // at least 1 pixel
       // scale from diagonal
       const sizeFinal = Math.sqrt(Math.pow(h, 2) + Math.pow(w, 2))
       const scaleFinal = (sizeFinal / size) * 2
@@ -162,8 +162,9 @@ class Ripple {
    */
   destroy() {
     const self = this
-    // generate
-    self.object.querySelector(':scope > .xt-ripple-container').remove()
+    // container
+    self.container.remove()
+    self.container = null
     // remove events
     // on
     const onHandler = Xt.dataStorage.get(self.object, `mousedown touchstart/${self.ns}`)
@@ -191,7 +192,7 @@ class Ripple {
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
   // ripple
-  sizeInitial: 0.1,
+  sizeInitial: 0.3,
   onlyInside: 'a, button, .xt-button',
 }
 
