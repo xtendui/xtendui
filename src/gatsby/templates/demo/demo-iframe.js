@@ -29,10 +29,12 @@ export default class DemoIframe extends React.Component {
   refresh() {
     this.setState({ mode: localStorage.getItem('mode') })
     // populate
-    if (this.state.mode === 'react') {
-      window.parent.initIframe(this.src, false, `/${this.src}.jsx`, `/${this.src}.css`)
-    } else {
-      window.parent.initIframe(this.src, this.html, false, `/${this.src}.css`, `/${this.src}.js`)
+    if (window !== window.parent) {
+      if (this.state.mode === 'react') {
+        window.parent.initIframe(this.src, false, `/${this.src}.jsx`, `/${this.src}.css`)
+      } else {
+        window.parent.initIframe(this.src, this.html, false, `/${this.src}.css`, `/${this.src}.js`)
+      }
     }
   }
 

@@ -90,16 +90,13 @@ class Scrollto {
         }
       }
     }
-    // document ready because on change page ajax
-    Xt.ready(() => {
-      // initial
-      self.initStart()
-      // keep the same level of raf for custom listener
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        self.initial = false
-      })
+    // initial
+    self.initStart()
+    // keep the same level of raf for custom listener
+    requestAnimationFrame(() => {
+      // listener dispatch
+      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.initial = false
     })
     // initialized class
     self.object.classList.add(`${self.componentName}-init`)
@@ -173,22 +170,25 @@ class Scrollto {
         // force no hashchange
         self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
         Xt.scrolltoHashforce = null
-        // vars
-        self.position = options.position({ self })
-        self.space = options.space({ self })
-        self.duration = options.duration({ self })
-        self.position = self.position - self.space
-        // val
-        const min = 0
-        const max = self.scroller.scrollHeight - self.scroller.clientHeight
-        self.position = self.position < min ? min : self.position
-        self.position = self.position > max ? max : self.position
-        // fix activate also if scroll position remains the same
-        if (self.scroller.scrollTop === self.position) {
-          self.scroller.dispatchEvent(new CustomEvent('scroll'))
-        }
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        // raf after openauto.trigger.xt
+        requestAnimationFrame(() => {
+          // vars
+          self.position = options.position({ self })
+          self.space = options.space({ self })
+          self.duration = options.duration({ self })
+          self.position = self.position - self.space
+          // val
+          const min = 0
+          const max = self.scroller.scrollHeight - self.scroller.clientHeight
+          self.position = self.position < min ? min : self.position
+          self.position = self.position > max ? max : self.position
+          // fix activate also if scroll position remains the same
+          if (self.scroller.scrollTop === self.position) {
+            self.scroller.dispatchEvent(new CustomEvent('scroll'))
+          }
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        })
       }
     }
   }

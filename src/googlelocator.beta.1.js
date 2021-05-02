@@ -428,12 +428,12 @@ class Googlelocator {
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
     const old = self.itemsContainer.querySelector('[data-xt-index].on')
     if (old) {
-      old.classList.remove('on')
+      Xt.animOff(old)
     }
     if (type === 'marker') {
       if (item) {
         item.focus()
-        item.classList.add('on')
+        Xt.animOn(item)
       }
     }
     // infowindow

@@ -92,10 +92,10 @@ Xt.mount({
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
-        el.classList.add('on')
+        Xt.animOn(el)
       }
       for (const el of document.querySelectorAll('.button--switch-react')) {
-        el.classList.remove('on')
+        Xt.animOff(el)
       }
     }
 
@@ -104,7 +104,7 @@ Xt.mount({
     // init
 
     if (!localStorage.getItem('mode') || localStorage.getItem('mode') === mode) {
-      ref.classList.add('on')
+      Xt.animOn(ref)
     }
   },
 })
@@ -128,10 +128,10 @@ Xt.mount({
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
-        el.classList.remove('on')
+        Xt.animOff(el)
       }
       for (const el of document.querySelectorAll('.button--switch-react')) {
-        el.classList.add('on')
+        Xt.animOn(el)
       }
     }
 
@@ -140,7 +140,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      ref.classList.add('on')
+      Xt.animOn(ref)
     }
   },
 })
