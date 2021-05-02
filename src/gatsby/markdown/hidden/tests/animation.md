@@ -35,12 +35,12 @@ Test instant activation when switching.
   </demoinline>
 </demo>
 
-## Delay
+## Duration and Delay
 
 Test activations and animations.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple-delay">
+  <demoinline src="demos/components/toggle/animation-multiple-duration-delay">
   </demoinline>
 </demo>
 

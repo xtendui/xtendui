@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more informations.
+See [toggle quantity](/components/toggle/interaction#quantity) for demos.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -23,9 +23,24 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Class	
 
-See [toggle class](/components/toggle/interaction#class) for more informations.
+See [toggle class](/components/toggle/interaction#class) for demos.
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `on`        | Class name for active            |
+| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
+| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
+| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
+| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
+
+</div>
 
 Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.
 
@@ -52,7 +67,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for more informations.
+See [toggle event](/components/toggle/interaction#event) for demos.
 
 ## Drag	
 
@@ -161,7 +176,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 ## Auto	
 
-See [toggle auto](/components/toggle/interaction#auto) for more informations.
+See [toggle auto](/components/toggle/interaction#auto) for demos.
 
 [[notePrimary]]
 | Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
@@ -175,4 +190,4 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for more informations.
+See [overlay class html](/components/toggle/interaction#class-html) for demos.

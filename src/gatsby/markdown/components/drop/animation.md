@@ -8,7 +8,23 @@ date: "2010-10-09"
 
 Check out [drop's themes](/themes/by-component/drop) for **advanced animations**.
 
+## Animation
+
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+
+Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+[[notePrimary]]
+| Do not transition or transform on `xt-drop` because of transform positioning, **transition the content instead**.
+
+<demo>
+  <demoinline src="demos/components/drop/animation">
+  </demoinline>
+</demo>
+
 ## Duration
+
+See [toggle duration](/components/toggle/animation#duration) for demos.
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -23,20 +39,24 @@ When you use animations you need to **specity the duration of the animation** fo
 </div>
 
 You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
+## Delay
 
-## Animation
+See [toggle delay](/components/toggle/animation#delay) for demos.
 
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+You can set activation delay with a value or a function with arguments `{ current, total, el }` and that returns a value.
 
-Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-[[notePrimary]]
-| Do not transition transform on `xt-drop` because of transform positioning, **transition the content instead**.
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 
-<demo>
-  <demoinline src="demos/components/drop/animation">
-  </demoinline>
-</demo>
+</div>
+
+You can also **assign them also on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
 
@@ -57,20 +77,6 @@ By default **multiple mode** queues the activations by waiting the end of durati
   </demoinline>
 </demo>
 
-## Delay
-
-You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-
-</div>
 
 ## Css Animation
 

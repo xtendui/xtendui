@@ -40,7 +40,7 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
 [[notePrimary]]
-| Do not transition transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
+| Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
 Here's an example of **complex sticky hide** when scrolling down but only after the first card.
 

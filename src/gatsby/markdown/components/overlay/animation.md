@@ -8,7 +8,22 @@ date: "2010-10-09"
 
 Check out [overlay's themes](/themes/by-component/overlay) for **advanced animations**.
 
+## Animation
+
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+
+Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+You can also customize `xt-backdrop` animations.
+
+<demo>
+  <demoinline src="demos/components/overlay/animation">
+  </demoinline>
+</demo>
+
 ## Duration
+
+See [toggle duration](/components/toggle/animation#duration) for demos.
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -24,18 +39,24 @@ When you use animations you need to **specity the duration of the animation** fo
 
 You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
-## Animation
+## Delay
 
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+See [toggle delay](/components/toggle/animation#delay) for demos.
 
-Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+You can set activation delay with a value or a function with arguments `{ current, total, el }` and that returns a value.
 
-You can also customize `xt-backdrop` animations.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-<demo>
-  <demoinline src="demos/components/overlay/animation">
-  </demoinline>
-</demo>
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
+
+</div>
+
+You can also **assign them also on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
 
@@ -55,21 +76,6 @@ By default **multiple mode** queues the activations by waiting the end of durati
   <demoinline src="demos/components/overlay/animation-multiple-noqueue">
   </demoinline>
 </demo>
-
-## Delay
-
-You can set activation delay with a value or a function with arguments `current, total` and that returns a value.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
-
-</div>
 
 ## Css Animation
 

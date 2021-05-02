@@ -11,7 +11,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Wrap the slides for an infinite activation. Automatically has [loop](/components/slider/interaction#loop) and no [contain](/components/slider/position#contain).
 
 [[notePrimary]]
-| Do not transition transform on `xt-slide` because of transform positioning, **transition the content instead**.
+| Do not transition or transform on `xt-slide` because of transform positioning, **transition the content instead**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

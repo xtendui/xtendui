@@ -60,9 +60,24 @@ You can **disable same group elements activation** with the option `groupElement
 
 ## Class
 
-See [toggle class](/components/toggle/interaction#class) for more informations.
+See [toggle class](/components/toggle/interaction#class) for demos.
 
 You can [style and animate](/components/overlay/animation#animation) **class names** used by the component.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `class:String`                          | `on`        | Class name for active            |
+| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
+| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
+| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
+| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
+| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
+| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
+
+</div>
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
@@ -70,7 +85,7 @@ Additionally on component initialization the class `.xt-overlay-init` gets added
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more informations.
+See [toggle quantity](/components/toggle/interaction#quantity) for demos.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -106,7 +121,7 @@ Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for more informations.
+See [toggle event](/components/toggle/interaction#event) for demos.
 
 You can specify **on** and **off** events for the interactions.
 
@@ -136,15 +151,15 @@ There some other event options.
 
 ## Navigation and Loop
 
-See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more informations.
+See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for demos.
 
 ## Jump
 
-See [toggle jump](/components/toggle/interaction#jump) for more informations.
+See [toggle jump](/components/toggle/interaction#jump) for demos.
 
 ## Auto	
 
-See [toggle auto](/components/toggle/interaction#auto) for more informations.
+See [toggle auto](/components/toggle/interaction#auto) for demos.
 
 ## Class html
 

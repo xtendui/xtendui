@@ -929,6 +929,8 @@ if (typeof window !== 'undefined') {
       (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
     if (custom) {
       return parseFloat(custom) / Xt.durationTimescale
+    } else if (typeof timing === 'function') {
+      return timing
     } else if (timing || timing === 0) {
       return timing / Xt.durationTimescale
     } else {
@@ -939,6 +941,25 @@ if (typeof window !== 'undefined') {
         timing = Math.max(transition, animation)
       }
       return timing * 1000
+    }
+  }
+
+  /**
+   * get delay time
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {Number} timing Force duration in milliseconds
+   * @param {String} actionCurrent Current action
+   * @return {Number} Time in milliseconds
+   */
+  Xt.delayTime = (el, timing = null, actionCurrent = null) => {
+    const custom =
+      (actionCurrent && el.getAttribute(`data-xt-delay-${actionCurrent}`)) || el.getAttribute('data-xt-delay')
+    if (custom) {
+      return parseFloat(custom) / Xt.durationTimescale
+    } else if (typeof timing === 'function') {
+      return timing
+    } else if (timing || timing === 0) {
+      return timing / Xt.durationTimescale
     }
   }
 

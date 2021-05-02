@@ -1986,19 +1986,17 @@ class Toggle {
     const els = obj[type].queueEls
     for (const el of els) {
       // delay
-      let delay = options.delay || options[`delay${actionCurrent}`]
+      let delay = Xt.delayTime(el, options.delay || options[`delay${actionCurrent}`], actionCurrent)
       if (delay) {
-        if (isNaN(delay)) {
+        if (typeof delay === 'function') {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
           const tot = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Tot`) || els.length
-          if (typeof delay === 'function') {
-            delay = delay(count, tot - 1)
-          }
+          delay = delay({ current: count, total: tot - 1, el })
         } else {
           delay = queueInitial && !options.delayInitial ? 0 : delay
         }
       }
-      // delay fnc
+      // fnc
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
       if (!delay) {
@@ -2159,10 +2157,18 @@ class Toggle {
   queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
-    // anim
-    const duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`], actionCurrent)
+    // duration
+    const els = obj[type].queueEls
+    let duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`], actionCurrent)
+    if (duration) {
+      if (typeof duration === 'function') {
+        const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
+        const tot = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Tot`) || els.length
+        duration = duration({ current: count, total: tot - 1, el })
+      }
+    }
+    // fnc
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
-    // queue done
     if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else {

@@ -107,6 +107,8 @@ You can set initial activation by adding `on` to the **elements** or **targets**
   </demoinline>
 </demo>
 
+Additionally on component initialization the class `.xt-toggle-init` gets added to the **object**.
+
 ## Quantity
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
@@ -275,4 +277,4 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for more informations.
+See [overlay class html](/components/toggle/interaction#class-html) for demos.
