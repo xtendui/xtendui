@@ -933,14 +933,6 @@ if (typeof window !== 'undefined') {
       return timing
     } else if (timing || timing === 0) {
       return timing / Xt.durationTimescale
-    } else {
-      const style = getComputedStyle(el)
-      const transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay)
-      const animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay)
-      if (transition || animation) {
-        timing = Math.max(transition, animation)
-      }
-      return timing * 1000
     }
   }
 
