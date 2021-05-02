@@ -31,5 +31,3 @@ Use `.xt-row` to create a **row**.
 
 [[notePrimary]]
 | You should always use **tailwind width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
-
-Check subpage to [customize content](/components/row/content).

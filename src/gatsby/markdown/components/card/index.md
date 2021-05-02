@@ -35,5 +35,3 @@ You can also **stack** card content.
   <demoinline src="demos/components/card/usage-stack">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/card/content).

@@ -43,5 +43,3 @@ Use this code to create **icons with img**.
 
 [[noteDefault]]
 | Icons from [Feather Icons](https://feathericons.com).
-
-Check subpage to [customize content](/components/icon/content).

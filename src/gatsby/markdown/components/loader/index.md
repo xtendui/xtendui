@@ -21,5 +21,3 @@ Use this code to create a **loader filler**.
   <demoinline src="demos/components/loader/filler-x">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/loader/content#filler).

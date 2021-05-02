@@ -6,30 +6,79 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
-## Quantity
+## Elements
 
-You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
+You can specify `elements` that listens to event for activation, and `targets` that gets activated.
+
+The query is inside `object`, only when specifying **elements and targets with `id`** the query is on all the `document`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
-| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-toggle-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
 
 </div>
 
-[[notePrimary]]
-| `data-xt-group` additional elements aren't counted for min and max.
+## Group
+
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="my-group,another-group"`   |  Group or multiple groups on elements and targets            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+
+</div>
 
 <demo>
-  <demoinline src="demos/components/toggle/quantity">
+  <demoinline src="demos/components/toggle/usage-multiple-group">
+  </demoinline>
+</demo>
+
+You can **disable same group elements activation** with the option `groupElements: false`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group |     
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
+  </demoinline>
+  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
   </demoinline>
 </demo>
 
 ## Class
 
-You can customize the **class names** used by the component.
+The util class `.xt-toggle` sets `display: none` when **not activated**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
+| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**            |
+
+</div>
+
+You can [style and animate](/components/toggle/animation#animation) **class names** used by the component.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -58,20 +107,24 @@ You can set initial activation by adding `on` to the **elements** or **targets**
   </demoinline>
 </demo>
 
-You can **disable same group elements activation** with the option `groupElements: false`.
+## Quantity
+
+You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group |     
+| Option                  | `min:Number`                          | `0`        | Minimum number of concurrent elements activated            |
+| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
 
 </div>
 
+[[notePrimary]]
+| `data-xt-group` additional elements aren't counted for min and max.
+
 <demo>
-  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
-  </demoinline>
-  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
+  <demoinline src="demos/components/toggle/quantity">
   </demoinline>
 </demo>
 

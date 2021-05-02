@@ -11,7 +11,3 @@ description: "Component for customize headers, body text, text tags and lists."
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.typography`.
 
 Check [xtendui/src/typography.css.js](https://github.com/minimit/xtendui/blob/beta/src/typography.css.js) for default styles.
-
-## Usage
-
-Check subpage to [customize content](/components/typography/content).

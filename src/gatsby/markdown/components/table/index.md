@@ -19,5 +19,3 @@ Use **tailwind classes** to assign [table-layout](https://tailwindcss.com/docs/t
   <demoinline src="demos/components/table/usage-fixed">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/table/content).

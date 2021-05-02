@@ -32,8 +32,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-Check subpage to [customize content](/components/list-group/content).
-
 #### Nested
 
 Use **component classes** to style **nested**.

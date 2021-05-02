@@ -36,8 +36,6 @@ Use this code to create a **list horizontal**.
   </demoinline>
 </demo>
 
-Check subpage to [customize content](/components/list/content).
-
 #### Vertical
 
 Use this code to create a **list vertical** with `.flex-col`.
@@ -49,5 +47,3 @@ Use this code to create a **list vertical** with `.flex-col`.
 
 [[notePrimary]]
 | You can space anything inside `.xt-list`. If you need to use **tailwind width classes** use [row](/components/row).
-
-Check subpage to [customize content](/components/list/content).

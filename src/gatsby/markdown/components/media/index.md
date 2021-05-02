@@ -18,5 +18,3 @@ Use this code to create a **media**.
   <demoinline src="demos/components/media/usage">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/media/content).

@@ -28,5 +28,3 @@ Use `.xt-button` to create a **button**.
   <demoinline src="demos/components/button/usage">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/button/content).

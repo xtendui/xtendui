@@ -24,12 +24,14 @@ When you use animations you need to **specity the duration of the animation** fo
 
 You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
-[[notePrimary]]
-| Do not transition transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
+## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+[[notePrimary]]
+| Do not transition transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation">

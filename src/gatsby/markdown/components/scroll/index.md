@@ -36,8 +36,6 @@ Use this code to create a **parallax**.
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
 
-Check subpage to [scroll fade](/components/scroll/fade) and [scroll sticky](/components/scroll/sticky) and [scroll parallax](/components/scroll/parallax).
-
 ## Fixes
 
 - If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.

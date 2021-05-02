@@ -6,6 +6,76 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
+## Elements
+
+You can specify `elements` that listens to event for activation, and `targets` that gets activated.
+
+The query is inside `object`, only when specifying **elements and targets with `id`** the query is on all the `document`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-tooltip-item'`        | Elements query            |
+| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, :scope > .xt-tooltip-item > .xt-tooltip'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
+
+</div>
+
+## Group
+
+If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Name                          | Example                   | Description                   |
+| ----------------------- | ---------------------------- | ----------------------------- | ----------------------------- |
+| Attribute                  | `data-xt-group`       | `data-xt-group="my-group,another-group"`   |  Group or multiple groups on elements and targets            |
+
+</div>
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/tooltip/usage-multiple-group">
+  </demoinline>
+</demo>
+
+You can **disable same group elements activation** with the option `groupElements: false`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `groupElements:Boolean`                          | `true`        | Elements activation as group |     
+
+</div>
+
+## Class
+
+See [toggle class](/components/toggle/interaction#class) for more informations.
+
+You can [style and animate](/components/tooltip/animation#animation) **class names** used by the component.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `classSkip:Object`                          | `{ elements: true, elementsInner: true }`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
+
+</div>
+
+You can set initial activation by adding `on` to the **elements** or **targets**.
+
+Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
+
 ## Quantity
 
 See [toggle quantity](/components/toggle/interaction#quantity) for more informations.
@@ -20,22 +90,6 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 | Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
 
 </div>
-
-## Class
-
-See [toggle class](/components/toggle/interaction#class) for more informations.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classSkip:Object`                          | `{ elements: true, elementsInner: true }`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
-
-</div>
-
-You can set initial activation by adding `on` to the **elements** or **targets**.
-
-Additionally on component initialization the class `.xt-tooltip-init` gets added to the **object**.
 
 ## Hash
 

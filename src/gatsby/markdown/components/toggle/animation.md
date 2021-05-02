@@ -6,18 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-## Toggle
-
-The util class `.xt-toggle` sets `display: none` when **not activated**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
-| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**            |
-
-</div>
+Check out [toggle's themes](/themes/by-component/toggl) for **advanced animations**.
 
 ## Duration
 
@@ -35,12 +24,14 @@ When you use animations you need to **specity the duration of the animation** fo
 
 You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
+## Animation
+
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-multiple">
+  <demoinline src="demos/components/toggle/animation">
   </demoinline>
 </demo>
 
@@ -57,6 +48,8 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 <demo>
+  <demoinline src="demos/components/toggle/animation-multiple">
+  </demoinline>
   <demoinline src="demos/components/toggle/animation-multiple-noqueue">
   </demoinline>
 </demo>

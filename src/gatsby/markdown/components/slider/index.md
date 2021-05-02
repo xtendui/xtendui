@@ -29,5 +29,3 @@ Use this code to create a **slider**.
   <demoinline src="demos/components/slider/usage">
   </demoinline>
 </demo>
-
-Check subpage to [customize interaction](/components/slider/interaction) and [customize position](/components/slider/position).

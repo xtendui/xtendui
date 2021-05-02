@@ -28,5 +28,3 @@ Use this code to create a **form items**.
   <demoinline src="demos/components/form/usage">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/form/content) and [customize layout](/components/form/layout).

@@ -28,5 +28,3 @@ Use `.xt-badge` to create a **badge**.
   <demoinline src="demos/components/badge/usage">
   </demoinline>
 </demo>
-
-Check subpage to [customize content](/components/badge/content).
