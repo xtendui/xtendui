@@ -153,7 +153,7 @@ const mountFade = ({ ref }) => {
   // fade
 
   const fade = ({ container }) => {
-    // items inside container and not already faded
+    // check if already faded for content added dynamically
     const items = container.querySelectorAll('.listing-item:not(.faded)')
     for (const item of items) {
       item.classList.add('faded')
@@ -175,7 +175,9 @@ const mountFade = ({ ref }) => {
           y: 0,
           duration: 0.5,
           ease: 'quart.out',
-          stagger: 0.15,
+          stagger: index => {
+            return Math.min(index * 0.15, 0.6)
+          },
         })
       },
     })

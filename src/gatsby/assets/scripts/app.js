@@ -313,7 +313,7 @@ Xt.mount({
     // fade
 
     const fade = ({ container }) => {
-      // items inside container and not already faded
+      // check if already faded for content added dynamically
       const items = container.querySelectorAll('.gatsby_home-main_scroll:not(.faded)')
       for (const item of items) {
         item.classList.add('faded')
@@ -337,7 +337,9 @@ Xt.mount({
             scale: 1,
             duration: 0.5,
             ease: 'quart.out',
-            stagger: 0.15,
+            stagger: index => {
+              return Math.min(index * 0.15, 0.6)
+            },
           })
         },
       })
