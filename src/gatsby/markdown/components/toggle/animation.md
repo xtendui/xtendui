@@ -94,7 +94,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-css-multiple">
+  <demoinline src="demos/components/toggle/animation-css">
   </demoinline>
 </demo>
 
