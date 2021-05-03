@@ -146,46 +146,47 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // vars
+  // init
 
-  const scrollY = 30
-
-  // fade
-
-  const fade = ({ container }) => {
-    // check if already faded for content added dynamically
-    const items = container.querySelectorAll('.listing-item:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // fade
-    ScrollTrigger.batch(items, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, {
-          y: y,
-        })
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(index * 0.15, 0.6)
-          },
-        })
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // vars
+
+  const scrollY = 30
+  // check if already faded for content added dynamically
+  const items = ref.querySelectorAll('.listing-item:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+  // fade
+  ScrollTrigger.batch(items, {
+    once: true,
+    start: 'top bottom-=10%',
+    end: 'bottom top+=10%',
+    onEnter: (batch, scrollTriggers) => {
+      const direction = scrollTriggers[0].direction
+      const y = direction > 0 ? -scrollY : scrollY
+      gsap.killTweensOf(batch)
+      gsap.set(batch, {
+        y: y,
+      })
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+  })
 }

@@ -19,66 +19,71 @@ Xt.mount({
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // fade
+  // init
 
-  const fade = ({ container }) => {
-    // check if already faded for content added dynamically
-    const items = container.querySelectorAll('.xt-card:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // fade
-    ScrollTrigger.batch(items, {
-      onEnter: batch => {
-        gsap.killTweensOf(batch)
-        gsap.to(batch, {
-          opacity: 1,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(index * 0.15, 0.6)
-          },
-        })
-      },
-      onLeave: batch => {
-        gsap.killTweensOf(batch)
-        gsap.to(batch, {
-          opacity: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(index * 0.15, 0.6)
-          },
-        })
-      },
-      onEnterBack: batch => {
-        gsap.killTweensOf(batch)
-        gsap.to(batch, {
-          opacity: 1,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(index * 0.15, 0.6)
-          },
-        })
-      },
-      onLeaveBack: batch => {
-        gsap.killTweensOf(batch)
-        gsap.to(batch, {
-          opacity: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(index * 0.15, 0.6)
-          },
-        })
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // check if already faded for content added dynamically
+
+  const items = ref.querySelectorAll('.xt-card:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+
+  // fade
+
+  ScrollTrigger.batch(items, {
+    onEnter: batch => {
+      gsap.killTweensOf(batch)
+      gsap.to(batch, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+    onLeave: batch => {
+      gsap.killTweensOf(batch)
+      gsap.to(batch, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+    onEnterBack: batch => {
+      gsap.killTweensOf(batch)
+      gsap.to(batch, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+    onLeaveBack: batch => {
+      gsap.killTweensOf(batch)
+      gsap.to(batch, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+  })
 }

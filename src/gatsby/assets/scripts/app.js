@@ -310,42 +310,39 @@ Xt.mount({
     const scrollY = 15
     const scrollScale = 1.04
 
-    // fade
+    // check if already faded for content added dynamically
 
-    const fade = ({ container }) => {
-      // check if already faded for content added dynamically
-      const items = container.querySelectorAll('.gatsby_home-main_scroll:not(.faded)')
-      for (const item of items) {
-        item.classList.add('faded')
-      }
-      // fade
-      ScrollTrigger.batch(items, {
-        once: true,
-        start: 'top bottom-=10%',
-        end: 'bottom top+=10%',
-        onEnter: (batch, scrollTriggers) => {
-          const direction = scrollTriggers[0].direction
-          const y = direction > 0 ? -scrollY : scrollY
-          gsap.killTweensOf(batch)
-          gsap.set(batch, {
-            y: y,
-            scale: scrollScale,
-          })
-          gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.5,
-            ease: 'quart.out',
-            stagger: index => {
-              return Math.min(index * 0.15, 0.6)
-            },
-          })
-        },
-      })
+    const items = ref.querySelectorAll('.gatsby_home-main_scroll:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
     }
 
-    fade({ container: ref })
+    // fade
+
+    ScrollTrigger.batch(items, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -scrollY : scrollY
+        gsap.killTweensOf(batch)
+        gsap.set(batch, {
+          y: y,
+          scale: scrollScale,
+        })
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: index => {
+            return Math.min(index * 0.15, 0.6)
+          },
+        })
+      },
+    })
   },
 })
 
