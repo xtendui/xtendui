@@ -330,4 +330,7 @@ pre {
   td {
     @apply py-2.5 px-5 text-sm leading-snug;
   }
+  code {
+    white-space: nowrap;
+  }
 }

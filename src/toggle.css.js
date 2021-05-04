@@ -15,8 +15,14 @@ module.exports = {
         pointerEvents: 'none',
       },
     },
-    '.xt-toggle-inner': {
-      position: 'relative',
+    '.xt-toggle-visible': {
+      '&:not(.on):not(.in):not(.out)': {
+        visibility: 'hidden',
+        pointerEvents: 'none',
+      },
+      '&.out': {
+        pointerEvents: 'none',
+      },
     },
     '.xt-toggle-absolute': {
       '&:not(.on)': {
@@ -25,6 +31,9 @@ module.exports = {
         left: '0',
         width: '100%',
       },
+    },
+    '.xt-toggle-inner': {
+      position: 'relative',
     },
     '.xt-toggle-item': {
       display: 'inline-block',

@@ -67,30 +67,19 @@ You can **disable same group elements activation** with the option `groupElement
 
 ## Class
 
-The util class `.xt-toggle` sets `display: none` when **not activated**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
-| Utility                  | `.xt-toggle.xt-toggle-absolute`                     | `xt-toggle xt-toggle-absolute`                | `responsive`                | Deactivating animation with `position: absolute` **relative to a parent Node with relative**            |
-
-</div>
-
 You can [style and animate](/components/toggle/animation#animation) **class names** used by the component.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `class:String`                          | `on`        | Class name for active            |
-| Option                  | `classIn:String`                          | `in`        | Class name for in animation            |
-| Option                  | `classOut:String`                          | `out`        | Class name for out animation             |
-| Option                  | `classDone:String`                          | `done`        | Class name for in animation done            |
-| Option                  | `classInitial:String`                          | `initial`        | Class name for initialization            |
-| Option                  | `classBefore:String`                          | `dir-before`        | Class name for before direction activation            |
-| Option                  | `classAfter:String`                          | `dir-after`        | Class name for after direction activation            |
+| Option                  | `class:String`                          | `on`        | Class name for **activation**            |
+| Option                  | `classIn:String`                          | `in`        | Class name for **in animation**            |
+| Option                  | `classOut:String`                          | `out`        | Class name for **out animation**             |
+| Option                  | `classDone:String`                          | `done`        | Class name for **in animation** done            |
+| Option                  | `classInitial:String`                          | `initial`        | Class name for **initialization**            |
+| Option                  | `classBefore:String`                          | `dir-before`        | Class name for **before** direction activation            |
+| Option                  | `classAfter:String`                          | `dir-after`        | Class name for **after** direction activation            |
 | Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans ex: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
@@ -108,6 +97,24 @@ You can set initial activation by adding `on` to the **elements** or **targets**
 </demo>
 
 Additionally on component initialization the class `.xt-toggle-init` gets added to the **object**.
+
+## Toggle
+
+Use the class `.xt-toggle` to hide nodes **with display** when not activated or animating.
+
+Use the class `.xt-toggle-visible` to hide nodes **with visibility** when not activated or animating, useful when you need **display for calculations**.
+
+Use the class `.xt-toggle-absolute` to position node in **absolute mode** when not activated, should be used in conjunction with `.xt-toggle` (remember to use `relative` on a chosen parent element), see [animation noqueue](/components/toggle/animation#queue) for demo.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Variants               | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
+| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
+| Utility                  | `.xt-toggle-visible`                     | `xt-toggle-visible`                | `responsive`                | Apply `visibility: hidden` and `pointer-events: none` when not `.on` or `.in` or `.out`            |
+| Utility                  | `.xt-toggle-absolute`                     | `xt-toggle-absolute`                | `responsive`                | Apply `position: absolute` when not `.on`             |
+
+</div>
 
 ## Quantity
 

@@ -89,8 +89,8 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 |                      | Name                          | Description                   |
 | ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.dir-before`       |  Class name for before direction activation            |
-| Class                  | `.dir-after`       |  Class name for after direction activation            |
+| Class                  | `.dir-before`       |  Class name for **before** direction activation            |
+| Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 </div>
 
 <demo>
