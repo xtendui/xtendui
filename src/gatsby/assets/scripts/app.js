@@ -80,6 +80,12 @@ Xt.mount({
 
     const mode = 'null'
 
+    // default
+    
+    if (!localStorage.getItem('mode')) {
+      localStorage.setItem('mode', mode)
+    }
+
     // click
 
     const click = () => {
@@ -103,7 +109,7 @@ Xt.mount({
 
     // init
 
-    if (!localStorage.getItem('mode') || localStorage.getItem('mode') === mode) {
+    if (localStorage.getItem('mode') === mode) {
       Xt.animOn(ref)
     }
   },
