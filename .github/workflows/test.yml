@@ -52,8 +52,10 @@ jobs:
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
     # build/action.yml composite
-    - name: Generate jsx and lint
-      run: yarn generate
+    - name: Generate demos
+      run: yarn generate-slim
+    - name: Lint
+      run: yarn lint
     - name: Check files changes
       run: echo "Use 'yarn generate' and commit if files changed:" && git diff --name-only --exit-code && echo "No files changed during lint."
     - name: Build

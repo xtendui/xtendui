@@ -27,7 +27,8 @@
   "scripts": {
     "clean": "gatsby clean",
     "setup": "yarn alias && node ./build/packet.js",
-    "generate": "yarn alias && node ./build/generate.js && yarn lint --fix",
+    "generate": "yarn alias && yarn generate-slim && yarn lint --fix",
+    "generate-slim": "node ./build/generate.js",
     "build": "yarn setup && yarn clean && gatsby build",
     "dev": "yarn setup && yarn clean && gatsby develop -p 8080",
     "serve": "yarn setup && yarn build && gatsby serve -p 8080",
