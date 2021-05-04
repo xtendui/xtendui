@@ -201,7 +201,7 @@ const fade = ({ ref }) => {
   const scrollY = 15
   const scrollScale = 1.04
 
-  // check if already faded for content added dynamically
+  // check if already done for content added dinamically
 
   const items = ref.querySelectorAll('.listing-item:not(.faded)')
   for (const item of items) {

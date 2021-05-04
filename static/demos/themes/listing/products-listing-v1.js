@@ -161,7 +161,7 @@ const fade = ({ ref }) => {
   // vars
 
   const scrollY = 30
-  // check if already faded for content added dynamically
+  // check if already done for content added dinamically
   const items = ref.querySelectorAll('.listing-item:not(.faded)')
   for (const item of items) {
     item.classList.add('faded')

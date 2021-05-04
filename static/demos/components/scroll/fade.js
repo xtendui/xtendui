@@ -31,7 +31,7 @@ const mountFade = ({ ref }) => {
 /* fade */
 
 const fade = ({ ref }) => {
-  // check if already faded for content added dynamically
+  // check if already done for content added dinamically
 
   const items = ref.querySelectorAll('.xt-card:not(.faded)')
   for (const item of items) {

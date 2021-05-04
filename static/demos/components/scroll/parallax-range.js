@@ -31,7 +31,7 @@ const mountParallax = ({ ref }) => {
 /* parallax */
 
 const parallax = ({ ref }) => {
-  // items inside container and not already parallaxed
+  // check if already done for content added dinamically
 
   const items = ref.querySelectorAll('.box:not(.parallaxed)')
   for (const item of items) {
