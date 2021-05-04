@@ -157,10 +157,6 @@ class Scrollto {
     if (el && el.nodeName && el !== window) {
       self.target = tr ?? el
       if (self.target) {
-        // openauto.trigger.xt
-        if (options.hash || el.getAttribute('data-xt-scrollto-hash')) {
-          self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
-        }
         // current scroll
         for (const scroller of self.scrollers) {
           if (scroller) {
@@ -170,27 +166,47 @@ class Scrollto {
             }
           }
         }
-        // force no hashchange
-        self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
-        Xt.scrolltoHashforce = null
-        // vars
-        self.position = options.position({ self })
-        self.space = options.space({ self })
-        self.duration = options.duration({ self })
-        self.position = self.position - self.space
-        // val
-        const min = 0
-        const max = self.scroller.scrollHeight - self.scroller.clientHeight
-        self.position = self.position < min ? min : self.position
-        self.position = self.position > max ? max : self.position
-        // fix activate also if scroll position remains the same
-        if (self.scroller.scrollTop === self.position) {
-          self.scroller.dispatchEvent(new CustomEvent('scroll'))
+        // openauto.trigger.xt
+        if (options.hash || el.getAttribute('data-xt-scrollto-hash')) {
+          self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+        if (self.initial) {
+          // keep the same level of raf for custom listener
+          requestAnimationFrame(() => {
+            self.eventScrolltoRaf()
+          })
+        } else {
+          self.eventScrolltoRaf()
+        }
       }
     }
+  }
+
+  /**
+   * scrollto requestAnimationFrame
+   */
+  eventScrolltoRaf() {
+    const self = this
+    const options = self.options
+    // force no hashchange
+    self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
+    Xt.scrolltoHashforce = null
+    // vars
+    self.position = options.position({ self })
+    self.space = options.space({ self })
+    self.duration = options.duration({ self })
+    self.position = self.position - self.space
+    // val
+    const min = 0
+    const max = self.scroller.scrollHeight - self.scroller.clientHeight
+    self.position = self.position < min ? min : self.position
+    self.position = self.position > max ? max : self.position
+    // fix activate also if scroll position remains the same
+    if (self.scroller.scrollTop === self.position) {
+      self.scroller.dispatchEvent(new CustomEvent('scroll'))
+    }
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
   }
 
   /**
