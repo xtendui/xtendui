@@ -1,3 +1,50 @@
+# [1.0.0-beta.16](https://github.com/minimit/xtendui/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-05-04)
+
+
+### Bug Fixes
+
+* **button:** default button text-center ([835aa50](https://github.com/minimit/xtendui/commit/835aa50b879bb56537c30c03cc4b0c24a9075dac))
+* **groupnumber:** fix css groupnumber ([e011cd4](https://github.com/minimit/xtendui/commit/e011cd4ad8f1e6c999e5b681572adf7b7dec247c))
+* **ripple:** fix ripple destroy and fix ripple no sizeInitial ([0836731](https://github.com/minimit/xtendui/commit/0836731b4281068e4d13dd50e9613d3fd95c44d1))
+* **scrollto:** fix activation only if target is visible ([8b2ee09](https://github.com/minimit/xtendui/commit/8b2ee09c3ffde3a0dc5f4cdbd198862acc462225))
+* **scrollto:** fix click usecapture and fix init on xt.ready and fix scrollers overlay disable ([e949163](https://github.com/minimit/xtendui/commit/e949163a067cf7859d6ad08b70662e35321caa46))
+* **scrollto:** fix hashchange value inside raf ([21707f2](https://github.com/minimit/xtendui/commit/21707f26e12298742edd857ae6d92f376e75cc98))
+* **scrollto:** fix raf after initial event ([7a9aac2](https://github.com/minimit/xtendui/commit/7a9aac21718733cfc141c967e74229294ac8e120))
+* **scrollto:** fixed scrollto openauto when clicking on anchors that are elements of openauto components ([7793b65](https://github.com/minimit/xtendui/commit/7793b651451eec88e5fd089404f7088562606976))
+* **scrollto:** initial activation and reverted demos duration ([7bd2bff](https://github.com/minimit/xtendui/commit/7bd2bff98a738d8ecf1b60868189c07fd07d37df))
+* **scrollto:** listener dispatch after raf and demos better and some other fixes ([01d0147](https://github.com/minimit/xtendui/commit/01d014761e9b1e47c06ed5e180033c3363b7bbd9))
+* **scrollto:** no raf fix flick on some occasion ([4ec8812](https://github.com/minimit/xtendui/commit/4ec8812fbe2ae73518fe531a20bc90acabeba721))
+* **scrollto:** no raf scrollto and toggle force hash ([9c97b23](https://github.com/minimit/xtendui/commit/9c97b23347ff90d3679a9900d44ec8fc145f1659))
+* **toggle:** fix collapse sequential off retain value ([dad97b4](https://github.com/minimit/xtendui/commit/dad97b4acccbea80785fcca1fbb44b2ff40e1d37))
+* **toggle:** fix collapse width values ([455d038](https://github.com/minimit/xtendui/commit/455d038cbdf3946bf2e80af5cf3badc5b1635ff0))
+* **toggle:** fix form when component is initialized after form js and fix initial activation when no event ([95adbee](https://github.com/minimit/xtendui/commit/95adbee66cfcd84a2f2c51bbf9726ac87c596f0d))
+* **toggle:** fix unique mode namespace reset on reinit, fixed multiple calls on events unique mode ([84adb34](https://github.com/minimit/xtendui/commit/84adb34f224f5e4569af01fafb721d20af9be391))
+* **toggle:** force events pass also if queue running ([7f26ff9](https://github.com/minimit/xtendui/commit/7f26ff93744cabedf0fa7d4866b84d0e058484bc))
+
+
+### Features
+
+* **animation:** refactor toggle collapse working also with initial values ([3587d96](https://github.com/minimit/xtendui/commit/3587d9638499b4fdb8e17073c48ff5bde9aa942a))
+* **button:** button default justify center ([1e9b5c7](https://github.com/minimit/xtendui/commit/1e9b5c798992c7cad27e3451b7f5a43ef9f86eed))
+* **scrollto:** manual hashchange skip with Xt.skiphash ([8ed7b47](https://github.com/minimit/xtendui/commit/8ed7b47eff77117af7836baa6304c979f858b494))
+* **toggle:** delay with data attributes and refactor duration and delay ([30284bf](https://github.com/minimit/xtendui/commit/30284bfb1e93598ace82353a1a893dcb8946af98))
+* **toggle:** xt-toggle-visible added ([fef7ed5](https://github.com/minimit/xtendui/commit/fef7ed524d6f84b161ddd5a7382037822e4340ad))
+
+
+* Xt.skipHash to Xt.scrolltoHashforce ([120e683](https://github.com/minimit/xtendui/commit/120e683775d72f23bd1ebfe32e8cb15dc25d1b65))
+
+
+### Code Refactoring
+
+* auto pause default refactor ([a2fcd04](https://github.com/minimit/xtendui/commit/a2fcd048be9d8265a37f7b56703e6c937c119222))
+
+
+### BREAKING CHANGES
+
+* **button:** use justify-start on button if you want that old default justification
+* use Xt.scrolltoHashforce instead of Xt.skipHash
+* now auto.pause is 'a, button' inside self.object
+
 # [1.0.0-beta.15](https://github.com/minimit/xtendui/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2021-04-27)
 
 
