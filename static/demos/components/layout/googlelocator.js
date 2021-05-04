@@ -1,6 +1,6 @@
 /* global google */
 import { Xt } from 'xtendui'
-import 'xtendui/src/googlelocator.beta.1'
+import 'xtendui/src/googlelocator'
 
 Xt.mount({
   matches: '.demo--googlelocator',

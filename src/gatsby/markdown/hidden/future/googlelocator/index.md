@@ -8,7 +8,7 @@ description: "Plug and play a google maps locator, with all the basic functional
 
 ## Javascript
 
-Import the **javascript** file with `import 'xtendui/src/googlelocator.beta.1'`.
+Import the **javascript** file with `import 'xtendui/src/googlelocator'`.
 
 Initialize with **javascript** with `new Xt.Googlelocator(document.querySelector('.my-object'), {/* options */})`.
 
