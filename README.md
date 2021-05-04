@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://xtendui.com/" title="Xtend UI" style="display: inline-block;">
-    <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo-readme.svg" loading="eager" alt="Xtend UI" width="200" height="47">
+    <img src="https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo-readme.svg" loading="eager" alt="Xtend UI" width="200" height="47">
   </a>
 </p>
 
