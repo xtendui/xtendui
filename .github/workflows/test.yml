@@ -53,9 +53,7 @@ jobs:
       run: yarn install --frozen-lockfile --prefer-offline
     # build/action.yml composite
     - name: Generate demos
-      run: yarn generate-slim
-    - name: Lint
-      run: yarn lint
+      run: yarn generate
     - name: Check files changes
       run: echo "Use 'yarn generate' and commit if files changed:" && git diff --name-only --exit-code && echo "No files changed during lint."
     - name: Build
@@ -64,5 +62,7 @@ jobs:
         CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     # test/action.yml composite
+    - name: Lint
+      run: yarn lint
     - name: Test
       run: yarn test

@@ -27,15 +27,15 @@
   "scripts": {
     "clean": "gatsby clean",
     "setup": "yarn alias && node ./build/packet.js",
-    "generate": "yarn alias && yarn generate-slim && yarn lint --fix",
-    "generate-slim": "node ./build/generate.js",
+    "generate": "yarn alias && node ./build/generate.js && yarn lint:generate",
     "build": "yarn setup && yarn clean && gatsby build",
     "dev": "yarn setup && yarn clean && gatsby develop -p 8080",
     "serve": "yarn setup && yarn build && gatsby serve -p 8080",
     "deploy": "yarn setup && yarn build && gh-pages -d public",
     "webpack": "yarn setup && webpack --progress",
     "release": "npx semantic-release --dry-run --no-ci",
-    "lint": "eslint . --ext .js,.jsx",
+    "lint": "eslint . --ext .js",
+    "lint:generate": "eslint . --ext .jsx --fix",
     "test": "echo '@todo tests'",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postversion": "yarn webpack"
