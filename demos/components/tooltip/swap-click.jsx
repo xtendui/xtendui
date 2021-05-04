@@ -3,13 +3,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -19,18 +19,18 @@ export default function component() {
     <div className="demo--tooltip-swap-click-react" ref={ref}>
       <button
         type="button"
-        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
-        data-xt-tooltip="{ targets: '#tooltip--swap-click, #tooltip--swap-click-swap' }">
+        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+        data-xt-tooltip="{ targets: '#tooltip--swap-click, #tooltip--swap-click-swap', duration: 300 }">
         Swap click
       </button>
 
-      <div className="xt-tooltip p-2 group" id="tooltip--swap-click" data-xt-duration="300">
+      <div className="xt-tooltip p-2 group" id="tooltip--swap-click">
         <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Lorem ipsum dolor sit amet
         </div>
       </div>
 
-      <div className="xt-tooltip p-2 group hidden" id="tooltip--swap-click-swap" data-xt-duration="300">
+      <div className="xt-tooltip p-2 group hidden" id="tooltip--swap-click-swap">
         <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Clicked!
         </div>

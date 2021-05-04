@@ -13,13 +13,13 @@ export default function component() {
           <div className="xt-list-inner">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-l-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2.5 px-3.5 rounded-l-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-step="-1">
               -
             </button>
             <input
               type="number"
-              className="block w-full w-16 border border-l-0 border-gray-500 py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full w-16 border border-l-0 border-gray-500 py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Quantity"
               defaultValue="1"
               min="0"
@@ -27,7 +27,7 @@ export default function component() {
             />
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-xs py-2.5 px-3.5 rounded-r-md border border-l-0 border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
               data-xt-step="1">
               +
             </button>
@@ -44,7 +44,7 @@ export default function component() {
           <div className="xt-list-inner">
             <input
               type="number"
-              className="block w-full w-16 rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full w-16 rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Quantity"
               defaultValue="1"
               min="0"

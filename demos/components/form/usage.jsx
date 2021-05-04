@@ -8,7 +8,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900"> Input </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Input"
               placeholder="Input"
             />
@@ -18,7 +18,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900"> Disabled </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -29,7 +29,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900"> File </label>
             <input
               type="file"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="File"
             />
           </div>
@@ -37,7 +37,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
@@ -45,7 +45,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Select </label>
             <select
-              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Test</option>
@@ -57,7 +57,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Select multiple </label>
             <select
-              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               multiple
               aria-label="Select multiple">
               <option>Option 1</option>
@@ -193,7 +193,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               submit
             </button>
           </div>

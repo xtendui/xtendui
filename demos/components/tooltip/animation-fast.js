@@ -25,8 +25,9 @@ const mountTooltip = ({ ref }) => {
     // vars
 
     const object = tooltip.closest('[data-xt-tooltip]')
-    const delay = 1000
-    const duration = 50
+    const self = Xt.get('xt-tooltip', object)
+    const delayReset = 1000
+    const durationFast = 100
 
     // fix only once when tooltip has multiple targets
 
@@ -36,23 +37,26 @@ const mountTooltip = ({ ref }) => {
     // on
 
     const on = e => {
+      for (const tooltip of tooltips) {
+        tooltip.dataset.defaultXtDuration = 'test'
+      }
       // make other tooltips fast
       const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
       for (const tooltip of tooltipsOther) {
-        tooltip.dataset.defaultXtDuration = tooltip.getAttribute('data-xt-duration')
-        tooltip.setAttribute('data-xt-duration', duration)
+        tooltip.dataset.defaultXtDuration = self.options.duration
+        self.options.duration = durationFast
         const inner = tooltip.querySelector(':scope > *')
-        inner.style.transitionDuration = `${duration}ms`
+        inner.style.transitionDuration = `${durationFast}ms`
       }
       // make all tooltips normal
       clearTimeout(window.xtTooltipFastTimeout)
       window.xtTooltipFastTimeout = setTimeout(() => {
         for (const tooltip of tooltips) {
-          tooltip.setAttribute('data-xt-duration', tooltip.dataset.defaultXtDuration)
+          self.options.duration = tooltip.dataset.defaultXtDuration
           const inner = tooltip.querySelector(':scope > *')
           inner.style.transitionDuration = ''
         }
-      }, delay)
+      }, delayReset)
     }
 
     tooltip.addEventListener('on.xt.tooltip', on)

@@ -9,7 +9,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Textarea autosize </label>
             <textarea
-              className="block w-full h-20 max-h-48 rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 overflow-hidden resize-none"
+              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 overflow-hidden resize-none"
               aria-label="Textarea autosize"
               data-xt-textareaautosize></textarea>
           </div>

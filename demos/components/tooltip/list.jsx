@@ -2,11 +2,11 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div className="xt-list xt-list-3 items-center" data-xt-tooltip>
+      <div className="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'right' }">
         <div className="xt-tooltip-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             list
           </button>
 
@@ -15,17 +15,17 @@ export default function component() {
               <nav className="xt-list flex-col">
                 <a
                   href="#"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Amet
                 </button>
               </nav>

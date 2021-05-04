@@ -22,7 +22,7 @@ export default function component() {
             </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Lorem ipsum"
             />
           </div>
@@ -45,7 +45,7 @@ export default function component() {
             </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Dolor sit amet"
             />
           </div>
@@ -73,7 +73,7 @@ export default function component() {
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function component() {
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Dolor sit amet"
                 />
               </div>

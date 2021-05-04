@@ -3,13 +3,13 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -61,7 +61,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Lorem ipsum
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">

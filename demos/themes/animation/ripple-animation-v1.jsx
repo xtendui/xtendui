@@ -4,13 +4,13 @@ import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -25,23 +25,23 @@ export default function component() {
       <div className="xt-list xt-list-2 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Gray
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Primary
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
           Text
         </button>
 
-        <button type="button" className="xt-button text-xs py-2 px-3.5 rounded-md xt-link">
+        <button type="button" className="xt-button text-xs py-2.5 px-3.5 rounded-md xt-link">
           Link
         </button>
       </div>
@@ -92,7 +92,7 @@ export default function component() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 Gray
               </button>
             </div>
@@ -110,7 +110,7 @@ export default function component() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                 Primary
               </button>
             </div>

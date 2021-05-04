@@ -3,13 +3,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -83,7 +83,7 @@ export default function component() {
       <div className="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Tooltip 0
         </button>
 
@@ -95,7 +95,7 @@ export default function component() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Tooltip 1
         </button>
 

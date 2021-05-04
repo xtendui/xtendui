@@ -3,13 +3,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -19,19 +19,19 @@ export default function component() {
     <div className="demo--tooltip-swap-toggle-react" ref={ref}>
       <button
         type="button"
-        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
         data-xt-toggle
-        data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap' }">
+        data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap', duration: 300 }">
         Swap toggle
       </button>
 
-      <div className="xt-tooltip p-2 group" id="tooltip--swap-toggle" data-xt-duration="300">
+      <div className="xt-tooltip p-2 group" id="tooltip--swap-toggle">
         <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Lorem ipsum dolor sit amet
         </div>
       </div>
 
-      <div className="xt-tooltip p-2 group hidden" id="tooltip--swap-toggle-swap" data-xt-duration="300">
+      <div className="xt-tooltip p-2 group hidden" id="tooltip--swap-toggle-swap">
         <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Toggled!
         </div>
@@ -86,21 +86,26 @@ const mountButtonsSwap = ({ ref }) => {
     }
 
     // on
-
-    const on = () => {
-      // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const on = e => {
+      // check because of event propagation
+      if (e.target === buttonSwap) {
+        // swap
+        tooltip.addEventListener('offdone.xt.tooltip', swap)
+        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      }
     }
 
     buttonSwap.addEventListener('on.xt.toggle', on, true)
 
     // off
 
-    const off = () => {
-      // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const off = e => {
+      // check because of event propagation
+      if (e.target === buttonSwap) {
+        // swap back
+        tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      }
     }
 
     buttonSwap.addEventListener('off.xt.toggle', off, true)

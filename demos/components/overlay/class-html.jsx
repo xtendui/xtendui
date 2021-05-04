@@ -3,14 +3,14 @@ export default function component() {
   return (
     <div className="demo--overlay-class-html-react">
       <div className="xt-list xt-list-3 items-center justify-center">
-        <div data-xt-overlay="{ classHtml: 'xt-scrollbar-overlay classhtml-custom' }">
+        <div data-xt-overlay="{ classHtml: 'xt-scrollbar-overlay classhtml-custom', duration: 500 }">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             class html
           </button>
 
-          <div className="xt-overlay group" data-xt-duration="500">
+          <div className="xt-overlay group">
             <div className="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
@@ -57,7 +57,7 @@ export default function component() {
                     <div data-xt-overlay>
                       <button
                         type="button"
-                        className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         Overlay
                       </button>
 

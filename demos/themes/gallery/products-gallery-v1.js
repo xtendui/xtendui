@@ -29,10 +29,12 @@ const mountScrollto = () => {
   // init
 
   let self = new Xt.Scrollto(document.documentElement, {
-    scrollers: '.xt-overlay, .product-gallery',
+    scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
     duration: ({ self }) => {
+      const overlay = self.target.closest('.xt-overlay')
+      if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 
@@ -40,11 +42,10 @@ const mountScrollto = () => {
 
   const scrollto = () => {
     // scroll
-    const overlay = self.target.closest('.xt-overlay')
     gsap.killTweensOf(self.scroller)
     gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: overlay && !overlay.classList.contains('in') ? 0 : self.duration, // instant if inside overlay and initial activation
+      duration: self.duration,
       ease: 'quart.inOut',
     })
   }
@@ -203,6 +204,10 @@ const mountImages = ({ ref }) => {
   for (const image of images) {
     image.addEventListener('mouseleave', leave)
   }
+
+  // unmount
+
+  return () => {}
 }
 
 /* mountArrow */

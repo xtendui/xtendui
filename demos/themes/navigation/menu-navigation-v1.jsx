@@ -4,13 +4,13 @@ import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -49,22 +49,22 @@ export default function component() {
                       <div className="container">
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Lorem ipsum
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Dolor sit amet
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Consectetur adipiscing elit
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Morbi nec mauris est
                         </a>
                         <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -93,12 +93,12 @@ export default function component() {
                       <div className="container">
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Lorem ipsum
                         </a>
                         <a
                           href="#"
-                          className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                           Dolor sit amet
                         </a>
                         <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -135,39 +135,39 @@ export default function component() {
                           <div className="w-full md:w-6/12">
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Lorem ipsum
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Dolor sit amet
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Consectetur adipiscing elit
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Morbi nec mauris est
                             </a>
                           </div>
                           <div className="w-full md:w-6/12">
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Dolor sit amet
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Consectetur adipiscing elit
                             </a>
                             <a
                               href="#"
-                              className="xt-button w-full py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
                               Morbi nec mauris est
                             </a>
                             <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">

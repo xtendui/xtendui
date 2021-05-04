@@ -42,8 +42,8 @@ const mountInfinitescroll = ({ ref }) => {
       pagination: '[data-xt-infinitescroll-pagination]',
     },
     // activated by switcher
-    //scrollUp = true
-    //scrollDown = true
+    //scrollUp = true,
+    //scrollDown = true,
   })
 
   // unmount
@@ -97,52 +97,61 @@ const mountFade = ({ ref }) => {
 
   const infinitescroll = ref.querySelector('.infinitescroll')
 
-  const scrollY = 30
-
   // populate
 
   const self = Xt.get('xt-infinitescroll', infinitescroll)
 
   const populate = () => {
-    fade({ container: self.object })
+    fade({ ref: self.object })
   }
 
   self.object.addEventListener('populate.xt.infinitescroll', populate)
 
-  // fade
+  // init
 
-  const fade = ({ container }) => {
-    // items inside container and not already faded
-    const items = container.querySelectorAll('.listing-item:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // fade
-    ScrollTrigger.batch(items, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, {
-          y: y,
-        })
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: 0.15,
-        })
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // vars
+
+  const scrollY = 30
+
+  // check if already done for content added dinamically
+
+  const items = ref.querySelectorAll('.listing-item:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+
+  // fade
+
+  ScrollTrigger.batch(items, {
+    once: true,
+    start: 'top bottom-=10%',
+    end: 'bottom top+=10%',
+    onEnter: (batch, scrollTriggers) => {
+      const direction = scrollTriggers[0].direction
+      const y = direction > 0 ? -scrollY : scrollY
+      gsap.killTweensOf(batch)
+      gsap.set(batch, {
+        y: y,
+      })
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+  })
 }

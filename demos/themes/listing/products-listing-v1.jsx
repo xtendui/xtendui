@@ -6,13 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -417,44 +417,47 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // vars
+  // init
 
-  const scrollY = 30
-
-  // fade
-
-  const fade = ({ container }) => {
-    // items inside container and not already faded
-    const items = container.querySelectorAll('.listing-item:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // fade
-    ScrollTrigger.batch(items, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, {
-          y: y,
-        })
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: 0.15,
-        })
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // vars
+
+  const scrollY = 30
+  // check if already done for content added dinamically
+  const items = ref.querySelectorAll('.listing-item:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+  // fade
+  ScrollTrigger.batch(items, {
+    once: true,
+    start: 'top bottom-=10%',
+    end: 'bottom top+=10%',
+    onEnter: (batch, scrollTriggers) => {
+      const direction = scrollTriggers[0].direction
+      const y = direction > 0 ? -scrollY : scrollY
+      gsap.killTweensOf(batch)
+      gsap.set(batch, {
+        y: y,
+      })
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+  })
 }

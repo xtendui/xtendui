@@ -33,7 +33,6 @@ const mountToggle = ({ ref }) => {
     min: 1,
     auto: {
       time: 4000,
-      pause: ':scope > button, .xt-toggle',
     },
   })
 

@@ -3,13 +3,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/infinitescroll'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -36,7 +36,7 @@ export default function component() {
             <div className="xt-list xt-list-2 flex-col items-center">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
@@ -177,7 +177,7 @@ export default function component() {
           <div className="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
@@ -258,8 +258,8 @@ const mountInfinitescroll = ({ ref }) => {
       pagination: '[data-xt-infinitescroll-pagination]',
     },
     // activated by switcher
-    //scrollUp = true
-    //scrollDown = true
+    //scrollUp = true,
+    //scrollDown = true,
   })
 
   // unmount

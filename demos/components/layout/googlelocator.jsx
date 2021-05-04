@@ -4,13 +4,13 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/googlelocator'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -28,13 +28,13 @@ export default function component() {
                     <div className="xt-list-inner flex-auto">
                       <input
                         type="text"
-                        className="block w-full rounded-l-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                        className="block w-full rounded-l-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                         aria-label="Search"
                         placeholder="Search"
                       />
                       <button
                         type="button"
-                        className="button--locate xt-button text-xs py-2 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="button--locate xt-button text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -52,7 +52,7 @@ export default function component() {
                       </button>
                       <button
                         type="button"
-                        className="button--search xt-button text-xs py-2 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="button--search xt-button text-xs py-2.5 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -194,7 +194,7 @@ export default function component() {
 
             <button
               type="button"
-              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               Search in this area
             </button>
           </div>

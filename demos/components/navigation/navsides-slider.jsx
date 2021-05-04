@@ -5,13 +5,13 @@ import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -134,7 +134,9 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  const self = new Xt.Slider(slider, {})
+  const self = new Xt.Slider(slider, {
+    loop: true,
+  })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

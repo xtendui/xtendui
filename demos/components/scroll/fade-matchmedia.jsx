@@ -4,13 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -170,78 +170,92 @@ const mount = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // fade
+  // init
 
-  const fade = ({ container }) => {
-    // items inside container and not already faded
-    const items = container.querySelectorAll('.xt-card:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // match media
-    ScrollTrigger.matchMedia({
-      '(max-width: 767px)': () => {
-        // fade
-        ScrollTrigger.batch(items, {
-          onEnter: batch => {
-            gsap.killTweensOf(batch)
-            gsap.set(batch, {
-              opacity: 0,
-            })
-            gsap.to(batch, {
-              opacity: 1,
-              duration: 0.5,
-              ease: 'quart.out',
-              stagger: 0.15,
-            })
-          },
-          onLeave: batch => {
-            gsap.killTweensOf(batch)
-            gsap.to(batch, {
-              opacity: 0,
-              duration: 0.5,
-              ease: 'quart.out',
-              stagger: 0.15,
-            })
-          },
-          onEnterBack: batch => {
-            gsap.killTweensOf(batch)
-            gsap.set(batch, {
-              opacity: 0,
-            })
-            gsap.to(batch, {
-              opacity: 1,
-              duration: 0.5,
-              ease: 'quart.out',
-              stagger: 0.15,
-            })
-          },
-          onLeaveBack: batch => {
-            gsap.killTweensOf(batch)
-            gsap.to(batch, {
-              opacity: 0,
-              duration: 0.5,
-              ease: 'quart.out',
-              stagger: 0.15,
-            })
-          },
-        })
-      },
-      '(min-width: 640px)': () => {
-        // fade
-
-        for (const trigger of items) {
-          gsap.set(trigger, {
-            opacity: 1,
-          })
-        }
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // check if already done for content added dinamically
+
+  const items = ref.querySelectorAll('.xt-card:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+
+  // match media
+
+  ScrollTrigger.matchMedia({
+    '(max-width: 767px)': () => {
+      // fade
+
+      ScrollTrigger.batch(items, {
+        onEnter: batch => {
+          gsap.killTweensOf(batch)
+          gsap.set(batch, {
+            opacity: 0,
+          })
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: index => {
+              return Math.min(index * 0.15, 0.6)
+            },
+          })
+        },
+        onLeave: batch => {
+          gsap.killTweensOf(batch)
+          gsap.to(batch, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: index => {
+              return Math.min(index * 0.15, 0.6)
+            },
+          })
+        },
+        onEnterBack: batch => {
+          gsap.killTweensOf(batch)
+          gsap.set(batch, {
+            opacity: 0,
+          })
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: index => {
+              return Math.min(index * 0.15, 0.6)
+            },
+          })
+        },
+        onLeaveBack: batch => {
+          gsap.killTweensOf(batch)
+          gsap.to(batch, {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+            stagger: index => {
+              return Math.min(index * 0.15, 0.6)
+            },
+          })
+        },
+      })
+    },
+    '(min-width: 640px)': () => {
+      // fade
+
+      for (const trigger of items) {
+        gsap.set(trigger, {
+          opacity: 1,
+        })
+      }
+    },
+  })
 }

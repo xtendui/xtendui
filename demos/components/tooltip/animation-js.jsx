@@ -4,13 +4,13 @@ import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -22,13 +22,27 @@ export default function component() {
         <div className="xt-tooltip-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             tooltip
           </button>
 
           <div className="xt-tooltip p-2">
             <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+              Consectetur adipiscing elit
+            </div>
+          </div>
+        </div>
+
+        <div className="xt-tooltip-item">
+          <button
+            type="button"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            tooltip
+          </button>
+
+          <div className="xt-tooltip p-2">
+            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+              Consectetur adipiscing elit
             </div>
           </div>
         </div>
@@ -49,86 +63,75 @@ const mount = ({ ref }) => {
   }
 }
 
-/* mountTooltip */
+/* mountTooltips */
 
 const mountTooltip = ({ ref }) => {
   // vars
 
-  const tooltips = ref.querySelectorAll('.xt-tooltip-item')
-  const unmounts = []
+  const tooltip = ref.querySelector(':scope > .xt-list')
 
-  for (const tooltip of tooltips) {
-    // vars
-    const targetTimeOn = 0.3
-    const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.3
-    const targetEaseOff = 'quint.out'
+  const targetTimeOn = 0.3
+  const targetEaseOn = 'quint.out'
+  const targetTimeOff = 0.3
+  const targetEaseOff = 'quint.out'
 
-    // init
+  // init
 
-    let self = new Xt.Tooltip(tooltip, {
-      duration: 300,
-    })
+  let self = new Xt.Tooltip(tooltip, {
+    duration: 300,
+    delay: 50,
+  })
 
-    // on
+  // on
 
-    const on = e => {
-      const tr = e.target
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        const inner = tr.querySelector(':scope > *')
-        gsap.killTweensOf(inner)
-        gsap.set(inner, {
-          x: -15,
-          opacity: 0,
-        })
-        gsap.to(inner, {
-          x: 0,
-          opacity: 1,
-          duration: targetTimeOn,
-          ease: targetEaseOn,
-        })
-      }
+  const on = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      const inner = tr.querySelector(':scope > *')
+      gsap.killTweensOf(inner)
+      gsap.set(inner, {
+        x: -self.direction * 15,
+        opacity: 0,
+      })
+      gsap.to(inner, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
     }
+  }
 
-    for (const target of self.targets) {
-      target.addEventListener('on.xt.tooltip', on)
+  for (const target of self.targets) {
+    target.addEventListener('on.xt.tooltip', on)
+  }
+
+  // off
+
+  const off = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      const inner = tr.querySelector(':scope > *')
+      gsap.killTweensOf(inner)
+      gsap.to(inner, {
+        x: self.direction * 15,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
     }
+  }
 
-    // off
-
-    const off = e => {
-      const tr = e.target
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        const inner = tr.querySelector(':scope > *')
-        gsap.killTweensOf(inner)
-        gsap.to(inner, {
-          x: 15,
-          opacity: 0,
-          duration: targetTimeOff,
-          ease: targetEaseOff,
-        })
-      }
-    }
-
-    for (const target of self.targets) {
-      target.addEventListener('off.xt.tooltip', off)
-    }
-
-    // unmount
-
-    unmounts.push(() => {
-      self.destroy()
-      self = null
-    })
+  for (const target of self.targets) {
+    target.addEventListener('off.xt.tooltip', off)
   }
 
   // unmount
 
   return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
+    self.destroy()
+    self = null
   }
 }

@@ -1,13 +1,13 @@
 import React, { useRef, useCallback } from 'react'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -21,7 +21,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Custom constrain </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 input--constrains"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 input--constrains"
               aria-label="Custom constrain"
               placeholder="Custom constrain"
               required
@@ -32,7 +32,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Email </label>
             <input
               type="email"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Email"
               placeholder="Email"
               required
@@ -43,7 +43,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Number </label>
             <input
               type="number"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Number"
               placeholder="Number"
               required
@@ -56,7 +56,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Letters </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Letters"
               placeholder="Letters"
               required
@@ -68,7 +68,7 @@ export default function component() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> File </label>
             <input
               type="file"
-              className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="File"
               required
             />
@@ -77,7 +77,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
               required></textarea>
@@ -86,7 +86,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select </label>
             <select
-              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Select"
               required>
               <option defaultValue="">Select an option</option>
@@ -99,7 +99,7 @@ export default function component() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select multiple </label>
             <select
-              className="block w-full xt-select rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
               aria-label="Select multiple"
               multiple
               required>
@@ -238,7 +238,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               submit
             </button>
           </div>

@@ -1,20 +1,20 @@
 import React from 'react'
 export default function component() {
   return (
-    <div className="xt-list xt-list-3 items-center" data-xt-toggle>
+    <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
       <button
         type="button"
-        className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
         Toggle 0
       </button>
 
       <button
         type="button"
-        className="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
         Toggle 1
       </button>
 
-      <div className="xt-card xt-toggle group" data-xt-duration="500">
+      <div className="xt-card xt-toggle group">
         <div className="xt-toggle-inner">
           <div className="xt-design rounded-md bg-gray-200 transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"></div>
           <div className="relative text-sm p-6 text-black xt-links-default transition duration-300 opacity-0 group-in:opacity-100">
@@ -23,7 +23,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="xt-card xt-toggle group" data-xt-duration="500">
+      <div className="xt-card xt-toggle group">
         <div className="xt-toggle-inner">
           <div className="xt-design rounded-md bg-gray-200 transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"></div>
           <div className="relative text-sm p-6 text-black xt-links-default transition duration-300 opacity-0 group-in:opacity-100">

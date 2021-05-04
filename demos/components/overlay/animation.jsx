@@ -2,14 +2,14 @@ import React from 'react'
 export default function component() {
   return (
     <div>
-      <div data-xt-overlay>
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           overlay
         </button>
 
-        <div className="xt-overlay group" data-xt-duration="500">
+        <div className="xt-overlay group">
           <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-4">

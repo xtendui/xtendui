@@ -53,8 +53,10 @@ const mountScrollto = () => {
       return space
     },
     duration: ({ self }) => {
+      const overlay = self.target.closest('.xt-overlay')
+      if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 

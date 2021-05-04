@@ -13,7 +13,7 @@ export default function component() {
               <div className="w-full md:w-auto md:self-center">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -29,7 +29,7 @@ export default function component() {
               <div className="w-full md:w-auto md:self-center">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Dolor sit amet"
                 />
               </div>
@@ -45,7 +45,7 @@ export default function component() {
               <div className="w-full md:w-auto md:self-center">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -61,7 +61,7 @@ export default function component() {
               <div className="w-full md:w-auto md:self-center">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2.5 px-4 text-black placeholder-black placeholder-opacity-50 border border-gray-200 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
                   aria-label="Dolor sit amet"
                 />
               </div>
@@ -184,7 +184,7 @@ export default function component() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               submit
             </button>
           </div>

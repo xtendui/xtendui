@@ -8,13 +8,13 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -228,7 +228,7 @@ export default function component() {
 
                   <a
                     href="#"
-                    className="xt-button text-base py-2.5 px-4 rounded-md mb-6 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button text-base py-3 px-4 rounded-md mb-6 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                     Add to cart
                   </a>
 
@@ -318,10 +318,12 @@ const mountScrollto = () => {
   // init
 
   let self = new Xt.Scrollto(document.documentElement, {
-    scrollers: '.xt-overlay, .product-gallery',
+    scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
     duration: ({ self }) => {
+      const overlay = self.target.closest('.xt-overlay')
+      if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
       const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return self.initial || self.hashchange ? 0 : Math.max(Math.min(dist / 500, 1), 0.5)
+      return Math.max(Math.min(dist / 500, 1), 0.5)
     },
   })
 
@@ -329,11 +331,10 @@ const mountScrollto = () => {
 
   const scrollto = () => {
     // scroll
-    const overlay = self.target.closest('.xt-overlay')
     gsap.killTweensOf(self.scroller)
     gsap.to(self.scroller, {
       scrollTo: self.position,
-      duration: overlay && !overlay.classList.contains('in') ? 0 : self.duration, // instant if inside overlay and initial activation
+      duration: self.duration,
       ease: 'quart.inOut',
     })
   }
@@ -492,6 +493,10 @@ const mountImages = ({ ref }) => {
   for (const image of images) {
     image.addEventListener('mouseleave', leave)
   }
+
+  // unmount
+
+  return () => {}
 }
 
 /* mountArrow */

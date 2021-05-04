@@ -10,7 +10,19 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-2">
           <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+            Consectetur adipiscing elit
+          </div>
+        </div>
+      </div>
+
+      <div class="xt-tooltip-item">
+        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          tooltip
+        </button>
+
+        <div class="xt-tooltip p-2">
+          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+            Consectetur adipiscing elit
           </div>
         </div>
       </div>

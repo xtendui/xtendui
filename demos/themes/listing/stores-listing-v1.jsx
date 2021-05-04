@@ -1,13 +1,14 @@
 import React, { useRef, useCallback } from 'react'
+import { Xt } from 'xtendui'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -32,7 +33,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="listing-action xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -102,7 +103,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="listing-action xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -156,7 +157,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="listing-action xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -226,7 +227,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="listing-action xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -280,7 +281,7 @@ export default function component() {
                     <div className="text-sm py-6 px-7 mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="listing-action xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                         More info
                       </button>
                     </div>
@@ -371,7 +372,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      item.classList.add('on')
+      Xt.animOn(item)
     }
 
     actionBtn.addEventListener('click', click)
@@ -380,7 +381,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      item.classList.remove('on')
+      Xt.animOff(item)
     }
 
     closeBtn.addEventListener('click', close)

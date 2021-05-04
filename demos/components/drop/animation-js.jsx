@@ -4,13 +4,13 @@ import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -22,26 +22,26 @@ export default function component() {
         <div className="xt-drop-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             list
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="xt-drop p-4 group">
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
                   href="#"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-1.5 px-6 w-full text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Amet
                 </button>
               </nav>
@@ -52,11 +52,11 @@ export default function component() {
         <div className="xt-drop-item">
           <button
             type="button"
-            className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             card
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="xt-drop p-4 group">
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
@@ -110,82 +110,69 @@ const mount = ({ ref }) => {
 const mountDrops = ({ ref }) => {
   // vars
 
-  const drops = ref.querySelectorAll('.xt-drop-item')
-  const unmounts = []
+  const drop = ref.querySelector(':scope > .xt-list')
 
-  for (const drop of drops) {
-    // vars
+  const targetTimeOn = 0.5
+  const targetEaseOn = 'quint.out'
+  const targetTimeOff = 0.5
+  const targetEaseOff = 'quint.out'
 
-    const targetTimeOn = 0.5
-    const targetEaseOn = 'quint.out'
-    const targetTimeOff = 0.5
-    const targetEaseOff = 'quint.out'
+  // init
 
-    // init
+  let self = new Xt.Drop(drop, {
+    duration: 500,
+  })
 
-    let self = new Xt.Drop(drop, {
-      duration: 500,
-    })
+  // on
 
-    // on
-
-    const on = e => {
-      const tr = e.target
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        const inner = tr.querySelector(':scope > *')
-        gsap.killTweensOf(inner)
-        gsap.set(inner, {
-          x: -15,
-          opacity: 0,
-        })
-        gsap.to(inner, {
-          x: 0,
-          opacity: 1,
-          duration: targetTimeOn,
-          ease: targetEaseOn,
-        })
-      }
+  const on = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      const inner = tr.querySelector(':scope > *')
+      gsap.killTweensOf(inner)
+      gsap.set(inner, {
+        x: -self.direction * 15,
+        opacity: 0,
+      })
+      gsap.to(inner, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
     }
+  }
 
-    for (const target of self.targets) {
-      target.addEventListener('on.xt.drop', on)
+  for (const target of self.targets) {
+    target.addEventListener('on.xt.drop', on)
+  }
+
+  // off
+
+  const off = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      const inner = tr.querySelector(':scope > *')
+      gsap.killTweensOf(inner)
+      gsap.to(inner, {
+        x: self.direction * 15,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
     }
+  }
 
-    // off
-
-    const off = e => {
-      const tr = e.target
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        const inner = tr.querySelector(':scope > *')
-        gsap.killTweensOf(inner)
-        gsap.to(inner, {
-          x: 15,
-          opacity: 0,
-          duration: targetTimeOff,
-          ease: targetEaseOff,
-        })
-      }
-    }
-
-    for (const target of self.targets) {
-      target.addEventListener('off.xt.drop', off)
-    }
-
-    // unmount
-
-    unmounts.push(() => {
-      self.destroy()
-      self = null
-    })
+  for (const target of self.targets) {
+    target.addEventListener('off.xt.drop', off)
   }
 
   // unmount
 
   return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
+    self.destroy()
+    self = null
   }
 }

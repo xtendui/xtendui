@@ -6,13 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -39,7 +39,7 @@ export default function component() {
             <div className="xt-list xt-list-2 flex-col items-center">
               <button
                 type="button"
-                className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
@@ -180,7 +180,7 @@ export default function component() {
           <div className="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
@@ -263,8 +263,8 @@ const mountInfinitescroll = ({ ref }) => {
       pagination: '[data-xt-infinitescroll-pagination]',
     },
     // activated by switcher
-    //scrollUp = true
-    //scrollDown = true
+    //scrollUp = true,
+    //scrollDown = true,
   })
 
   // unmount
@@ -318,52 +318,61 @@ const mountFade = ({ ref }) => {
 
   const infinitescroll = ref.querySelector('.infinitescroll')
 
-  const scrollY = 30
-
   // populate
 
   const self = Xt.get('xt-infinitescroll', infinitescroll)
 
   const populate = () => {
-    fade({ container: self.object })
+    fade({ ref: self.object })
   }
 
   self.object.addEventListener('populate.xt.infinitescroll', populate)
 
-  // fade
+  // init
 
-  const fade = ({ container }) => {
-    // items inside container and not already faded
-    const items = container.querySelectorAll('.listing-item:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-    // fade
-    ScrollTrigger.batch(items, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, {
-          y: y,
-        })
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: 0.15,
-        })
-      },
-    })
-  }
-
-  fade({ container: ref })
+  fade({ ref })
 
   // unmount
 
   return () => {}
+}
+
+/* fade */
+
+const fade = ({ ref }) => {
+  // vars
+
+  const scrollY = 30
+
+  // check if already done for content added dinamically
+
+  const items = ref.querySelectorAll('.listing-item:not(.faded)')
+  for (const item of items) {
+    item.classList.add('faded')
+  }
+
+  // fade
+
+  ScrollTrigger.batch(items, {
+    once: true,
+    start: 'top bottom-=10%',
+    end: 'bottom top+=10%',
+    onEnter: (batch, scrollTriggers) => {
+      const direction = scrollTriggers[0].direction
+      const y = direction > 0 ? -scrollY : scrollY
+      gsap.killTweensOf(batch)
+      gsap.set(batch, {
+        y: y,
+      })
+      gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'quart.out',
+        stagger: index => {
+          return Math.min(index * 0.15, 0.6)
+        },
+      })
+    },
+  })
 }

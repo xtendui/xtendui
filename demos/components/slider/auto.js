@@ -38,6 +38,7 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {
     auto: {
       time: 4000,
+      initial: false,
     },
   })
 

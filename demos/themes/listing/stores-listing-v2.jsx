@@ -1,14 +1,15 @@
 import React, { useRef, useCallback } from 'react'
+import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -379,7 +380,7 @@ const mountListing = ({ ref }) => {
   const on = tr => {
     if (!tr.classList.contains('on')) {
       // class
-      tr.classList.add('on')
+      Xt.animOn(tr)
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.to(front, {
@@ -407,7 +408,7 @@ const mountListing = ({ ref }) => {
   const off = tr => {
     if (tr.classList.contains('on')) {
       // class
-      tr.classList.remove('on')
+      Xt.animOff(tr)
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.set(front, {

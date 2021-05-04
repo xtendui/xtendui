@@ -2,13 +2,13 @@ import React, { useRef, useCallback } from 'react'
 import { Xt } from 'xtendui'
 
 export default function component() {
-  const nodeRef = useRef(null)
+  const refCurrent = useRef(null)
   let unmount
-  const ref = useCallback(ref => {
-    if (nodeRef.current) {
-      unmount(nodeRef.current)
+  let ref = useCallback(ref => {
+    if (refCurrent.current) {
+      unmount(refCurrent.current)
     }
-    nodeRef.current = ref
+    refCurrent.current = ref
     if (ref !== null) {
       unmount = mount({ ref })
     }
@@ -19,7 +19,7 @@ export default function component() {
       <div className="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
         <a
           href="#jumptocontent"
-          className="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Jump to content
         </a>
       </div>
