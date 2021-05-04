@@ -934,6 +934,7 @@ class Toggle {
               } else {
                 self.eventOn(el, true)
               }
+              Xt.scrolltoHashforce = true
             }
           }
         }
@@ -1072,10 +1073,7 @@ class Toggle {
       }
     }
     if (found) {
-      // raf after event on (e.g: clicking elements of overlay with also data-xt-scrollto-hash)
-      requestAnimationFrame(() => {
-        self.eventOn(found, true, e)
-      })
+      self.eventOn(found, true, e)
     }
   }
 
@@ -1473,6 +1471,7 @@ class Toggle {
         // prevent hash on chained activations
         cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
         Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+        Xt.scrolltoHashforce = false
         location.hash = `#${encodeURIComponent(attr)}`
       }
     }
@@ -1529,6 +1528,7 @@ class Toggle {
           `xtHashFrame`,
           requestAnimationFrame(() => {
             Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+            Xt.scrolltoHashforce = false
             location.hash = ''
           })
         )
