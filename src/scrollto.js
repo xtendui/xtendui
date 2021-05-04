@@ -338,7 +338,7 @@ class Scrollto {
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
         self.target = document.querySelector(loc.hash)
-        if (self.target) {
+        if (self.target && Xt.visible(self.target)) {
           // vars
           const position = options.position({ self })
           const space = options.space({ self })
