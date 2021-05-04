@@ -81,7 +81,7 @@ Xt.mount({
     const mode = 'null'
 
     // default
-    
+
     if (!localStorage.getItem('mode')) {
       localStorage.setItem('mode', mode)
     }
