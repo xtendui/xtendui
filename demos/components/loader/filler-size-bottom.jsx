@@ -14,8 +14,8 @@ export default function component() {
           </div>
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
             </span>
           </span>
         </div>
@@ -26,8 +26,8 @@ export default function component() {
           Lorem ipsum
           <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
             </span>
           </span>
         </button>

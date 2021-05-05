@@ -14,8 +14,8 @@ const html = /* HTML */ `
         </div>
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 bottom-auto">
-            <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-            <span class="absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
+            <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+            <span class="block absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
           </span>
         </span>
       </div>
@@ -24,8 +24,8 @@ const html = /* HTML */ `
         Lorem ipsum
         <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
           <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 bottom-auto">
-            <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-            <span class="absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
+            <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+            <span class="block absolute bg-current h-full bottom-0 left-0 animate-xt-filler-x"></span>
           </span>
         </span>
       </button>
