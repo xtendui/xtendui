@@ -78,7 +78,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
-    const mode = 'null'
+    const mode = 'html'
 
     // default
 

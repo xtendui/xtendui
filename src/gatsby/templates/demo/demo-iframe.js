@@ -8,7 +8,7 @@ export default class DemoIframe extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      mode: 'null',
+      mode: 'html',
     }
   }
 

@@ -1,5 +1,7 @@
 .demo--googlelocator, .demo--googlelocator-react {
   .googlelocator-main {
+    /* hide map on mobile needs to be visible to work */
+    @apply pointer-events-none invisible md:pointer-events-auto md:visible;
     @screen md {
       padding-left: 20rem;
     }
@@ -8,18 +10,6 @@
     }
     @screen xl {
       padding-left: 30rem;
-    }
-    /* hide map on mobile needs to be visible to work */
-    @media (max-width: calc(theme('screens.md') - 1px)) {
-      /*@TODO @apply sr-only;*/
-      height: 100vh;
-      visibility: hidden;
-      pointer-events: none;
-      position: fixed; /* fix no absolute or bugs search */
-      z-index: -1;
-      top: -100vh;
-      left: -100vw;
-      opacity: 0;
     }
   }
 

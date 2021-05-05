@@ -6,7 +6,7 @@ export default class DemoInline extends React.Component {
     super(props)
     this.ref = React.createRef()
     this.state = {
-      mode: 'null',
+      mode: 'html',
     }
   }
 
@@ -65,7 +65,7 @@ export default class DemoInline extends React.Component {
         ) : (
           <div
             className={`gatsby_demo_item_switch ${
-              this.state.mode === 'null' ? 'gatsby_demo_item--current' : 'hidden'
+              this.state.mode === 'html' ? 'gatsby_demo_item--current' : 'hidden'
             }`}>
             <div
               className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate ${
