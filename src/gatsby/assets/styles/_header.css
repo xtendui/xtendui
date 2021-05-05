@@ -24,9 +24,7 @@
 }
 
 .gatsby_site-header_menu_link {
-  @screen lg {
-    @apply hidden !important;
-  }
+  @apply lg:hidden !important;
   > .xt-button {
     padding: 0;
     padding-left: 1.5rem;

@@ -45,7 +45,7 @@
     "@popperjs/core": "^2.9.2",
     "gsap": "^3.6.1",
     "json5": "^2.2.0",
-    "tailwindcss": "^2.0.4"
+    "tailwindcss": "^2.1.2"
   },
   "peerDependencies": {
     "tailwindcss": "2.x"

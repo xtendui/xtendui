@@ -11,7 +11,7 @@
     }
     /* hide map on mobile needs to be visible to work */
     @media (max-width: calc(theme('screens.md') - 1px)) {
-      @apply sr-only;
+      /*@TODO @apply sr-only;*/
       height: 100vh;
       visibility: hidden;
       pointer-events: none;

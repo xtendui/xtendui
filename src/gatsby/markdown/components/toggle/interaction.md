@@ -284,4 +284,4 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for demos.
+See [overlay class html](/components/toggle/interaction#class-html) for more info.

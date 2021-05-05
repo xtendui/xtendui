@@ -60,7 +60,7 @@ You can **disable same group elements activation** with the option `groupElement
 
 ## Class
 
-See [toggle class](/components/toggle/interaction#class) for demos.
+See [toggle class](/components/toggle/interaction#class) for more info.
 
 You can [style and animate](/components/tooltip/animation#animation) **class names** used by the component.
 
@@ -85,7 +85,7 @@ Additionally on component initialization the class `.xt-tooltip-init` gets added
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for demos.
+See [toggle quantity](/components/toggle/interaction#quantity) for more info.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -100,7 +100,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Hash
 
-See [toggle hash](/components/toggle/interaction#hash) for demos.
+See [toggle hash](/components/toggle/interaction#hash) for more info.
 
 You can link the activation in the url hash, hash activation has precedence over class activation.
 
@@ -169,16 +169,16 @@ There some other event options.
 
 ## Navigation and Loop
 
-See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for demos.
+See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more info.
 
 ## Jump
 
-See [toggle jump](/components/toggle/interaction#jump) for demos.
+See [toggle jump](/components/toggle/interaction#jump) for more info.
 
 ## Auto	
 
-See [toggle auto](/components/toggle/interaction#auto) for demos.
+See [toggle auto](/components/toggle/interaction#auto) for more info.
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for demos.
+See [overlay class html](/components/toggle/interaction#class-html) for more info.

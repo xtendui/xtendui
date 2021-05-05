@@ -105,23 +105,14 @@ body {
 .gatsby_listing-items {
   @apply w-full text-left;
   .gatsby_listing .xt-h6 + & {
-    @apply my-5;
-    @screen sm {
-      @apply my-10;
-    }
+    @apply my-5 sm:my-10;
   }
   .gatsby_listing-group:last-child & {
     @apply mb-0;
   }
   > .xt-row {
     /* row same as card */
-    @apply -m-3.5;
-    @screen sm {
-      @apply -m-5;
-    }
-    @screen lg {
-      @apply -m-6;
-    }
+    @apply -m-3.5 md:-m-5 lg:-m-6;
     .gatsby_site-article_foot & {
       @apply my-0 !important;
       .gatsby_listing-column {

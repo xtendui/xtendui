@@ -3,10 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--slider-progress">
     <div class="xt-slider">
-      <div class="p-4 md:p-6 lg:p-8">
-        <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group pointer-events-none">
+      <div class="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
+        <span
+          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow hover-none:hidden"
+        >
           <span
-            class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100"
+            class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4"
           >
             ${classes.spinner({})}
           </span>

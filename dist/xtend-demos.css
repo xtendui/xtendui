@@ -23,7 +23,6 @@
 @import 'xtendui/static/demos/components/scroll/fade.css';
 @import 'xtendui/static/demos/components/scroll/sticky-hide.css';
 @import 'xtendui/static/demos/components/slider/api.css';
-@import 'xtendui/static/demos/components/slider/auto.css';
 @import 'xtendui/static/demos/components/slider/automaticscroll.css';
 @import 'xtendui/static/demos/components/slider/disabled.css';
 @import 'xtendui/static/demos/components/slider/expand.css';
@@ -33,7 +32,6 @@
 @import 'xtendui/static/demos/components/toggle/animation-css-inverse.css';
 @import 'xtendui/static/demos/components/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/toggle/class-custom.css';
-@import 'xtendui/static/demos/components/toggle/progress.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';

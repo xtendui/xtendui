@@ -24,7 +24,7 @@ Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group
 
 ## Duration
 
-See [toggle duration](/components/toggle/animation#duration) for demos.
+See [toggle duration](/components/toggle/animation#duration) for more info.
 
 When you use animations you need to **specity the duration of the animation** for proper interactions.
 
@@ -42,7 +42,7 @@ You can also **assign them also on single nodes** with `data-xt-duration="Millis
 
 ## Delay
 
-See [toggle delay](/components/toggle/animation#delay) for demos.
+See [toggle delay](/components/toggle/animation#delay) for more info.
 
 You can set activation delay with a value or a function with arguments `{ current, total, el }` and that returns a value.
 

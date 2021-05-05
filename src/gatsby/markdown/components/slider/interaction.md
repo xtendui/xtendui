@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for demos.
+See [toggle quantity](/components/toggle/interaction#quantity) for more info.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -23,7 +23,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Class	
 
-See [toggle class](/components/toggle/interaction#class) for demos.
+See [toggle class](/components/toggle/interaction#class) for more info.
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
@@ -67,7 +67,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for demos.
+See [toggle event](/components/toggle/interaction#event) for more info.
 
 ## Drag	
 
@@ -176,7 +176,18 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 ## Auto	
 
-See [toggle auto](/components/toggle/interaction#auto) for demos.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
+| Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
+| Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
+| Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
+| Option                  | `auto.pause:Query`                          | `'a, button'`        | Query inside `object` that pause automatic on mouseenter            |
+| Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
+
+</div>
 
 [[notePrimary]]
 | Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
@@ -184,10 +195,10 @@ See [toggle auto](/components/toggle/interaction#auto) for demos.
 Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
 
 <demo>	
-  <demoinline src="demos/components/slider/auto">	
+  <demoinline src="demos/components/slider/progress">	
   </demoinline>	
 </demo>	
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for demos.
+See [overlay class html](/components/toggle/interaction#class-html) for more info.

@@ -203,18 +203,10 @@ const mountSlider = ({ ref }) => {
 
   self.object.addEventListener('autopause.xt.slider', autopause)
 
-  // mousefollow
-
-  let mouseFollow = new Xt.Mousefollow(slider, {
-    targets: ':scope > .xt-loader',
-  })
-
   // unmount
 
   return () => {
     self.destroy()
     self = null
-    mouseFollow.destroy()
-    mouseFollow = null
   }
 }

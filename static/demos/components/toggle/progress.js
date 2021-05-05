@@ -176,18 +176,10 @@ const mountToggle = ({ ref }) => {
 
   self.object.addEventListener('autopause.xt.toggle', autopause)
 
-  // mousefollow
-
-  let mouseFollow = new Xt.Mousefollow(toggle, {
-    targets: ':scope > .xt-loader',
-  })
-
   // unmount
 
   return () => {
     self.destroy()
     self = null
-    mouseFollow.destroy()
-    mouseFollow = null
   }
 }

@@ -138,6 +138,10 @@ Test auto.
 <demo>	
   <demoinline src="demos/components/toggle/auto">
   </demoinline>
+  <demoinline src="demos/components/toggle/progress">
+  </demoinline>
+  <demoinline src="demos/components/slider/progress">
+  </demoinline>
 </demo>	
 
 ## Class Html

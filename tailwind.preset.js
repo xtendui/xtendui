@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
     extend: {
+      screens: {
+        'hover-none': { raw: '(hover: none)' },
+        'hover-hover': { raw: '(hover: hover)' },
+      },
       fontSize: {
         '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
         '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px

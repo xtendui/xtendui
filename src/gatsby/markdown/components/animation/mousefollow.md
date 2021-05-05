@@ -23,6 +23,8 @@ Initialize with **javascript** with `new Xt.Mousefollow(document.querySelector('
 
 ## Usage
 
+Initialize mousefollow `object` to the **element that bounds the mosefollow**, for the targets to actualli mousefollow use `options.targets`.
+
 Use **component classes** to create a **mouse follow**.
 
 [[notePrimary]]
