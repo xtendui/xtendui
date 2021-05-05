@@ -40,6 +40,7 @@ Create a `tailwind.config.js` and add **xtendui preset**, with this purge config
 
 ```jsx
 module.exports = {
+  mode: 'jit',
   presets: [
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
