@@ -20,8 +20,8 @@ const html = /* HTML */ `
               <div class="xt-h4">1</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -32,8 +32,8 @@ const html = /* HTML */ `
               <div class="xt-h4">2</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -44,8 +44,8 @@ const html = /* HTML */ `
               <div class="xt-h4">3</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -56,8 +56,8 @@ const html = /* HTML */ `
               <div class="xt-h4">4</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -68,8 +68,8 @@ const html = /* HTML */ `
               <div class="xt-h4">5</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -80,8 +80,8 @@ const html = /* HTML */ `
               <div class="xt-h4">6</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -92,8 +92,8 @@ const html = /* HTML */ `
               <div class="xt-h4">7</div>
               <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
                 <span class="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                  <span class="absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                  <span class="absolute bg-current h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                  <span class="block absolute bg-current h-full bottom-0 left-0"></span>
                 </span>
               </span>
             </div>
@@ -109,8 +109,8 @@ const html = /* HTML */ `
           >
             <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
               <span class="xt-filler absolute inset-0 m-auto text-primary-500">
-                <span class="absolute bg-current opacity-25 w-full h-full"></span>
-                <span class="absolute bg-current w-full"></span>
+                <span class="block absolute bg-current opacity-25 w-full h-full"></span>
+                <span class="block absolute bg-current w-full"></span>
               </span>
             </span>
           </button>
