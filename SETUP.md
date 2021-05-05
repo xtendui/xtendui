@@ -219,6 +219,14 @@ ScrollTrigger.addEventListener('refresh', () => {
     }
   })
 })
+
+/* ScrollToPlugin refresh on route update put after route update
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+ScrollTrigger.refresh()
+*/
 ```
 
 ## CDN

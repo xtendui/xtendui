@@ -2,6 +2,10 @@ window.keepSidebarScroll = 0
 window.overlayOpen = false
 window.currentDemos = []
 
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 const gatsbySidebarContain = () => {
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   sidebar.scrollTop = window.keepSidebarScroll
@@ -89,6 +93,8 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
     // contain
     gatsbySidebarContain()
   }
+  /* ScrollToPlugin refresh on route update put after route update */
+  ScrollTrigger.refresh()
 }
 
 exports.shouldUpdateScroll = () => {

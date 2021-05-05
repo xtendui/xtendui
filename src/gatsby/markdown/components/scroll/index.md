@@ -109,3 +109,16 @@ const stopScrolling = () => {
 
 addEventListener('touchstart', stopScrolling)
 addEventListener('wheel', stopScrolling)
+```
+
+- If you are using **single page app or route update** you have to refresh scrolltrigger on route update.
+
+```js
+/* ScrollToPlugin refresh on route update
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+ScrollTrigger.refresh()
+*/
+```
