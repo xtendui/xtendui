@@ -16,6 +16,7 @@ npm install postcss postcss-import postcss-nested autoprefixer cssnano --save-de
 </code></pre>
 <p>Create a <code>tailwind.config.js</code> and add <strong>xtendui preset</strong>, with this purge configuration.</p>
 <pre><code class="language-jsx">module.exports = {
+  mode: &#x27;jit&#x27;,
   presets: [
     require(&#x27;tailwindcss/defaultConfig&#x27;), require(&#x27;xtendui/tailwind.preset&#x27;),
   ],
