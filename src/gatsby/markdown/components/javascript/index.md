@@ -20,60 +20,6 @@ Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
 Activate usability logs with `import 'xtendui/src/usability'`. Xtend will sends **warning messages with website usability suggestions**.
 
-## Listeners
-
-There are three main methods to listen to XtendUI vanilla javascript events.
-
-We always check for `e.target` because **events propagate** and the event could be from a nested component of the same type.
-
-Listen to events on a **single Node**.
-
-```js
-const node = document.querySelector('.my-node')
-
-const on = e => {
-  // check because of event propagation
-  if (e.target === node) {
-    // logic
-  }
-}
-
-node.addEventListener('eventname.xt.componentname', on)
-```
-
-Listen to events on **multiple Nodes**.
-
-```js
-for (const node of document.querySelectorAll('.my-node')) {
-  const on = e => {
-    // check because of event propagation
-    if (e.target === node) {
-      // logic
-    }
-  }
-
-  node.addEventListener('eventname.xt.componentname', on)
-}
-```
-
-Listen to events delegation with **useCapture**. You listen to the event **propagating with useCapture**.
-
-```js
-const object = document.querySelector('.my-object')
-
-let self = Xt.get('xt-componentname', object)
-
-const on = e => {
-  const tr = e.target
-  // check because of event propagation
-  if (self.targets.includes(tr)) {
-    // logic
-  }
-}
-
-object.addEventListener('on.xt.componentname', on, true)
-```
-
 ## Xt.ready
 
 You can execute a function on DOM ready.
@@ -138,7 +84,26 @@ Xt.mount({
 })
 ```
 
-## Viewport height
+## Xt.animOn and Xt.animOff
+
+You can **toggle manually** activations.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.animOn:Function`              | Activate node with adding `.on` and `.in` classes after a frame              |
+| Variable                  | `Xt.animOf:Function`              | Dectivate node with `.out` classes removing `.in` and `.on`              |
+
+</div>
+
+Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`.
+
+To **toggle visibility** you can use the [toggle classes](/components/toggle/interaction#toggle).
+
+## Xt.innerHeight
 
 You have some utilities for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.
 
@@ -230,4 +195,58 @@ const resize = function (e) {
 }
 
 document.querySelector.addEventListener(resize)
+```
+
+## Listeners
+
+There are three main methods to listen to XtendUI vanilla javascript events.
+
+We always check for `e.target` because **events propagate** and the event could be from a nested component of the same type.
+
+Listen to events on a **single Node**.
+
+```js
+const node = document.querySelector('.my-node')
+
+const on = e => {
+  // check because of event propagation
+  if (e.target === node) {
+    // logic
+  }
+}
+
+node.addEventListener('eventname.xt.componentname', on)
+```
+
+Listen to events on **multiple Nodes**.
+
+```js
+for (const node of document.querySelectorAll('.my-node')) {
+  const on = e => {
+    // check because of event propagation
+    if (e.target === node) {
+      // logic
+    }
+  }
+
+  node.addEventListener('eventname.xt.componentname', on)
+}
+```
+
+Listen to events delegation with **useCapture**. You listen to the event **propagating with useCapture**.
+
+```js
+const object = document.querySelector('.my-object')
+
+let self = Xt.get('xt-componentname', object)
+
+const on = e => {
+  const tr = e.target
+  // check because of event propagation
+  if (self.targets.includes(tr)) {
+    // logic
+  }
+}
+
+object.addEventListener('on.xt.componentname', on, true)
 ```

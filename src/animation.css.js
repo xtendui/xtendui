@@ -101,4 +101,40 @@ module.exports = {
       },
     },
   }),
+  component: {
+    'body:not(.xt-nojs-fouc):not(.xt-ready)': {
+      // instant animations on page load
+      '*': {
+        transitionDuration: 'initial !important',
+        transitionDelay: 'initial !important',
+        animationDuration: 'initial !important',
+        animationDelay: 'initial !important',
+        animationIterationCount: '1 !important',
+      },
+    },
+    '@media (prefers-reduced-motion: reduce), (update: slow)': {
+      // instant animations accessibility
+      'body:not(.xt-nojs-prm)': {
+        '*': {
+          transitionDuration: 'initial !important',
+          transitionDelay: 'initial !important',
+          animationDuration: 'initial !important',
+          animationDelay: 'initial !important',
+          animationIterationCount: '1 !important',
+        },
+      },
+    },
+    '.initial': {
+      // instant animations on components init and reinit
+      'body:not(.xt-nojs-initial) &': {
+        '&, *': {
+          transitionDuration: 'initial !important',
+          transitionDelay: 'initial !important',
+          animationDuration: 'initial !important',
+          animationDelay: 'initial !important',
+          animationIterationCount: '1 !important',
+        },
+      },
+    },
+  },
 }

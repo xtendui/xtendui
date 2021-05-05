@@ -83,7 +83,7 @@ By default **multiple mode** queues the activations by waiting the end of durati
 
 ## Css Animation
 
-You can use also **css animations**, just add them with **class names** `.on`, `.out`, `.dir-before` and `.dir-after`.
+You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
