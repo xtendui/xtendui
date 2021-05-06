@@ -57,7 +57,7 @@ class Scrollto {
     self.initial = true
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
-    // prevent page hash on click anchors
+    // click
     const changeHandler = Xt.dataStorage.put(
       self.object,
       `click/${self.ns}`,
@@ -83,10 +83,15 @@ class Scrollto {
           `scroll/${self.ns}`,
           self.eventActivationHandler.bind(self).bind(self, scroller)
         )
+        const events = options.events ? [...options.events.split(' ')] : []
         if (scroller === document.scrollingElement) {
-          addEventListener('scroll', scrollHandler)
+          for (const event of events) {
+            addEventListener(event, scrollHandler)
+          }
         } else {
-          scroller.addEventListener('scroll', scrollHandler)
+          for (const event of events) {
+            scroller.addEventListener(event, scrollHandler)
+          }
         }
       }
     }
@@ -170,6 +175,7 @@ class Scrollto {
         if (options.hash || el.getAttribute('data-xt-scrollto-hash')) {
           self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
+        // logic
         if (self.initial) {
           // keep the same level of raf for custom listener
           requestAnimationFrame(() => {
@@ -364,8 +370,8 @@ class Scrollto {
     }
     // reset others when not found anchors and found target
     if (!found && self.target) {
-      for (const other of els) {
-        other.classList.remove(...self.classes)
+      for (const el of els) {
+        el.classList.remove(...self.classes)
       }
     }
   }
@@ -388,6 +394,7 @@ class Scrollto {
    */
   destroy() {
     const self = this
+    const options = self.options
     // remove events
     const changeHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
     self.object.removeEventListener('click', changeHandler)
@@ -395,8 +402,17 @@ class Scrollto {
     removeEventListener('hashchange', hashHandler)
     for (const scroller of self.scrollers) {
       if (scroller) {
-        let scrollHandler = Xt.dataStorage.get(scroller, `scroll/${self.ns}`)
-        scroller.removeEventListener('scroll', scrollHandler)
+        const scrollHandler = Xt.dataStorage.get(scroller, `scroll/${self.ns}`)
+        const events = options.events ? [...options.events.split(' ')] : []
+        if (scroller === document.scrollingElement) {
+          for (const event of events) {
+            removeEventListener(event, scrollHandler)
+          }
+        } else {
+          for (const event of events) {
+            scroller.removeEventListener(event, scrollHandler)
+          }
+        }
       }
     }
     // initialized class
@@ -418,14 +434,15 @@ Scrollto.componentName = 'xt-scrollto'
 Scrollto.optionsDefault = {
   // elements
   anchors: '[href*="{hash}"]',
+  scrollers: '.xt-overlay:not(.xt-overlay-disabled)',
   // class
   class: 'on',
   // event
+  events: 'scroll off.xt.overlay',
   scrollActivation: true,
   scrollDelay: 150,
   hash: false,
   // scroll
-  scrollers: '.xt-overlay:not(.xt-overlay-disabled)',
   position: ({ self }) => {
     const rect = self.target.getBoundingClientRect()
     let position = rect.top + self.scroller.scrollTop

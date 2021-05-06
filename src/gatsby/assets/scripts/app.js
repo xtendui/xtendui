@@ -592,12 +592,4 @@ export const makeDocument = () => {
 </span>`)
     )
   }
-  // restart xt-scrollto
-  const gatsby = document.querySelector('.gatsby_site-wrapper')
-  if (gatsby) {
-    const scrollToAnchor = Xt.get('xt-scrollto', gatsby.closest('body'))
-    if (scrollToAnchor) {
-      scrollToAnchor.reinit()
-    }
-  }
 }
