@@ -36,8 +36,11 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
 
+[[noteDefault]]
+| For usability purpose the label will style `label:focus-within` automatically with the browser default keyboard navigation: **arrows for radios**, **space for checkboxes**. 
+
 [[notePrimary]]
-| For usability purpose you can **hide the input inside** with `sr-only`, don't assign `display: none` because it would become inacessible to keyboard events. The label will style `label:focus-within` automatically. 
+| You can **hide the input inside** with `sr-only`, **don't assign `display: none`** because for usability purpose, it would become **inacessible to keyboard events**.
 
 Use [button](/components/button) with `label` to create **checks with button**.
 
