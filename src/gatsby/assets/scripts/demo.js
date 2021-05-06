@@ -138,7 +138,7 @@ const formatCode = (source, sourceCode, isReact = false) => {
  * populateBlock
  */
 
-const populateBlock = () => {
+export const populateBlock = () => {
   firstMount = false
   // prism
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
@@ -260,7 +260,7 @@ const populateBlock = () => {
  * populateDemo
  */
 
-const populateDemo = container => {
+export const populateDemo = container => {
   if (container.dataset.gatsbyDemoBuilt) return
   const items = container.querySelectorAll('.gatsby_demo_item')
   // fix demo index when changing page
@@ -409,7 +409,7 @@ const populateDemo = container => {
  * populateItem
  */
 
-const populateItem = item => {
+export const populateItem = item => {
   const container = item.closest('.gatsby_demo')
   // tabs
   const clipboardUid = Xt.getuniqueId()
@@ -833,5 +833,3 @@ const populateSources = (item, element, isReact = false) => {
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
 }
-
-export { populateBlock, populateDemo, populateItem }

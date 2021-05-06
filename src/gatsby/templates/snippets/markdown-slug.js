@@ -1,6 +1,6 @@
 import kebabCase from 'lodash.kebabcase'
 
-const markdownSlug = page => {
+export const markdownSlug = page => {
   const slugType = kebabCase(page.frontmatter.type)
   const slugParent = kebabCase(page.frontmatter.parent)
   const slugTitle = kebabCase(page.frontmatter.title)
@@ -16,5 +16,3 @@ const markdownSlug = page => {
   }
   return slug
 }
-
-export { markdownSlug }

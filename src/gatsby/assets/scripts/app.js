@@ -503,7 +503,7 @@ Xt.mount({
 // makeDocument
 //
 
-const makeDocument = () => {
+export const makeDocument = () => {
   // .gatsby_make-line
   for (const el of document.querySelectorAll(
     '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
@@ -601,5 +601,3 @@ const makeDocument = () => {
     }
   }
 }
-
-export { makeDocument }

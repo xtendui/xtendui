@@ -1,4 +1,4 @@
-const typeSort = (a, b) => {
+export const typeSort = (a, b) => {
   if (a.title === 'By Component') {
     // a is less than b by some ordering criterion
     return 1
@@ -10,5 +10,3 @@ const typeSort = (a, b) => {
   // a must be equal to b
   return 0
 }
-
-export { typeSort }
