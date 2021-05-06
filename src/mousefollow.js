@@ -26,7 +26,10 @@ class Mousefollow {
     self.componentNs = self.componentName.replace('-', '.')
     // init
     self.initVars()
-    self.initLogic()
+    // raf after automatic scroll on hash (fixes when you have mouse over self.object on page load and page automatically scrolls)
+    requestAnimationFrame(() => {
+      self.initLogic()
+    })
   }
 
   //
