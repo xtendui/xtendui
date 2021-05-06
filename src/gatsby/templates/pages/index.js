@@ -129,9 +129,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
-                              Tailwind Css
-                            </h2>
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Tailwind Css</h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
@@ -151,9 +149,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">
-                              Vanilla JS
-                            </h2>
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">Vanilla JS</h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
@@ -174,9 +170,7 @@ export default class Page extends React.Component {
                       <div className="gatsby_home-main_feature gatsby_home-main_scroll">
                         <div className="xt-row">
                           <div className="gatsby_home-main_feature_left">
-                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">
-                              Gsap
-                            </h2>
+                            <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Gsap</h2>
                           </div>
                           <div className="gatsby_home-main_feature_right">
                             <ul>
