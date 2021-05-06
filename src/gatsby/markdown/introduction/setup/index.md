@@ -238,6 +238,24 @@ ScrollTrigger.refresh()
 */
 ```
 
+## Unsupported browsers
+
+If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
+
+```html
+  <script>
+    // put at the end of body tag https://browser-update.org/
+    var $buoop = {required:{e:79,f:53,o:44,s:11,c:57},api:2021.03 };
+    function $buo_f(){
+    var e = document.createElement("script");
+    e.src = "//browser-update.org/update.min.js";
+    document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+  </script>
+```
+
 ## CDN
 
 If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
