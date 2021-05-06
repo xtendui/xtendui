@@ -75,16 +75,16 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can **customize theme** inside `tailwind.config.js.
+You can **customize theme** inside `tailwind.config.js`, use `theme.extend` to change XtendUI preset.
 
-Check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default styles.
+Check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default preset.
 
 ```jsx
 module.exports = {
   theme:{
     extend: {
       colors: {
-        // customize xtendui colors
+        // custom xtendui colors
         primary: {
           50: '#F8F7FF',
           100: '#F1F0FE',
@@ -103,9 +103,9 @@ module.exports = {
 }
 ```
 
-You can **customize components** inside `tailwind.config.js.
+You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change XtendUI default component styles.
 
-Check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default styles.
+Check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default component styles.
 
 ```jsx
 module.exports = {
