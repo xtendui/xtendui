@@ -544,6 +544,7 @@ export const makeDocument = () => {
         ) ??
         document.querySelector('.gatsby_button-site_article_sidebar--sub.on .gatsby_button-site_article_sidebar_inner')
       if (activeText) {
+        activeText = activeText.closest('.gatsby_tooltip_outside_link')
         let activeTooltip = activeText.querySelector('.xt-tooltip')
         if (!activeTooltip) {
           activeText.append(

@@ -231,7 +231,7 @@ export default function Header({ page }) {
                                             {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                               adiacent.frontmatter.title !== post.frontmatter.parent ? (
                                                 !adiacent.frontmatter.demos ? (
-                                                  <div key={i}>
+                                                  <div class="gatsby_tooltip_outside_link" key={i}>
                                                     <Link
                                                       to={markdownSlug(adiacent)}
                                                       className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
