@@ -87,7 +87,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`.
+| For usability purpose use `<nav></nav>`.
 
 [[noteDefault]]
 | List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
@@ -102,16 +102,16 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | This component uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
 
 [[notePrimary]]
-| For aria purpose use `role="toolbar"`.
+| For usability purpose use `role="toolbar"`.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
+| For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
 
 [[notePrimary]]
-| For aria purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+| For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+| For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 

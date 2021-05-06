@@ -15,7 +15,7 @@ Use this code to create a **toggle multilevel**.
 | This component uses [toggle](/components/toggle) see documentation for more info.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`.
+| For usability purpose use `<nav></nav>`.
 
 <demo>
   <demoinline src="demos/components/navigation/multilevel">

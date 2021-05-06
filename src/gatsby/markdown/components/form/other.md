@@ -11,7 +11,7 @@ date: "2005-10-10"
 Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
 [[notePrimary]]
-| For aria purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.
+| For usability purpose use `aria-disabled="true"` when using the **class** `.xt-disabled`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

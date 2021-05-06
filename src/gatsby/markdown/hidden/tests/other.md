@@ -5,6 +5,15 @@ parent: "Tests"
 title: "Other"
 ---
 
+## Usability
+
+Test navigation and focus styles.
+
+<demo>
+  <demoinline src="demos/components/form/checks-card">
+  </demoinline>
+</demo>
+
 ## Mouse Follow
 
 Test position.

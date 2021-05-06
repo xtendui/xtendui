@@ -25,4 +25,4 @@ Refer to [note component](/components/note).
 
 ## Checks
 
-Refer to [form checks card](/components/form/other#checks-card).
+Refer to [form checks custom](/components/form/other#checks-custom).

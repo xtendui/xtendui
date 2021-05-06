@@ -14,7 +14,7 @@ Use [list group](/components/list-group) to create a **navigation**.
 | This component uses [list group](/components/list-group) see documentation for more info.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`.
+| For usability purpose use `<nav></nav>`.
 
 You can set activation styles by adding the class `.on`.
 

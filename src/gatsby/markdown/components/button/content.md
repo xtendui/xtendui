@@ -55,4 +55,4 @@ Refer to [nav](/components/nav).
 
 ## Checks
 
-Refer to [form checks button](/components/form/other#checks-button).
+Refer to [form checks custom](/components/form/other#checks-custom).

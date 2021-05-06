@@ -17,7 +17,7 @@ Check [xtendui/src/list.css.js](https://github.com/minimit/xtendui/blob/beta/src
 Use `.xt-list` to create a **list**.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`.
+| For usability purpose use `<nav></nav>`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

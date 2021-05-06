@@ -22,7 +22,7 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()}"
+          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()} sr-only"
           name="radio-button"
           checked
         />
@@ -32,7 +32,7 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()}"
+          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()} sr-only"
           name="radio-button"
         />
       </label>

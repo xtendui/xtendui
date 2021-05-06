@@ -32,7 +32,12 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Checks button
+## Checks Custom
+
+You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
+
+[[notePrimary]]
+| For usability purpose you can **hide the input inside** with `sr-only`, don't assign `display: none` because it would become inacessible to keyboard events. The label will style `label:focus-within` automatically. 
 
 Use [button](/components/button) with `label` to create **checks with button**.
 
@@ -40,8 +45,6 @@ Use [button](/components/button) with `label` to create **checks with button**.
   <demoinline src="demos/components/form/checks-button">
   </demoinline>
 </demo>
-
-## Checks card
 
 Use [card](/components/card) with `label` to create **checks with card**.
 

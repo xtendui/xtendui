@@ -14,7 +14,7 @@ Use this code to create a **breadcrumbs**.
 | This component uses [separator](/components/typography/separator) see documentation for more info.
 
 [[notePrimary]]
-| For aria purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+| For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <demo>
   <demoinline src="demos/components/breadcrumbs/usage">

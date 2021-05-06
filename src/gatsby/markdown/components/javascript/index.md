@@ -16,7 +16,7 @@ Check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/be
 
 Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
-## Usability
+## Usability and Seo
 
 Activate usability logs with `import 'xtendui/src/usability'`. Xtend will sends **warning messages with website usability suggestions**.
 

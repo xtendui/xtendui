@@ -12,7 +12,13 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked disabled />
+            <input
+              type="checkbox"
+              class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+              name="checkbox-card-0"
+              checked
+              disabled
+            />
           </div>
         </label>
       </div>
@@ -26,7 +32,11 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+            <input
+              type="checkbox"
+              class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+              name="checkbox-card-1"
+            />
           </div>
         </label>
       </div>
@@ -42,7 +52,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
-              class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+              class="xt-check xt-radio rounded-full ${classes.radioDefault()} sr-only"
               name="radio-card"
               checked
             />
@@ -59,7 +69,7 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioDefault()}" name="radio-card" />
+            <input type="radio" class="xt-check xt-radio rounded-full ${classes.radioDefault()} sr-only" name="radio-card" />
           </div>
         </label>
       </div>

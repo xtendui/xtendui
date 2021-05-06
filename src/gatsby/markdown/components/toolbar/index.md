@@ -14,7 +14,7 @@ Use [list group](/components/list-group) to create a **toolbar**.
 | This component uses [list group](/components/list-group) see documentation for more info.
 
 [[notePrimary]]
-| For aria purpose use `role="toolbar"`.
+| For usability purpose use `role="toolbar"`.
 
 <demo>
   <demoinline src="demos/components/toolbar/usage">
