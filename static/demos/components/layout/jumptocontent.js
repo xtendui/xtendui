@@ -27,9 +27,9 @@ const mountJumptocontents = ({ ref }) => {
     const focusIn = e => {
       const active = jumptocontent.contains(e.target)
       if (active) {
-        Xt.animOn(jumptocontent)
+        Xt.on(jumptocontent)
       } else {
-        Xt.animOff(jumptocontent)
+        Xt.off(jumptocontent)
       }
     }
 

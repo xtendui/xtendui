@@ -23,9 +23,9 @@ Xt.mount({
     const toggle = input => {
       const label = input.closest('label')
       if (input.checked) {
-        Xt.animOn(label)
+        Xt.on(label)
       } else {
-        Xt.animOff(label)
+        Xt.off(label)
       }
     }
 

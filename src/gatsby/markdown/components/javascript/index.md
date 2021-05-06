@@ -84,7 +84,7 @@ Xt.mount({
 })
 ```
 
-## Xt.animOn and Xt.animOff
+## Xt.on and Xt.off
 
 You can **toggle manually** activations.
 
@@ -92,7 +92,7 @@ You can **toggle manually** activations.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.animOn:Function`              | Activate node with adding `.on` and `.in` classes after a frame              |
+| Variable                  | `Xt.on:Function`              | Activate node with adding `.on` and `.in` classes after a frame              |
 | Variable                  | `Xt.animOf:Function`              | Dectivate node with `.out` classes removing `.in` and `.on`              |
 
 </div>

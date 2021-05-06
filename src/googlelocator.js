@@ -428,12 +428,12 @@ class Googlelocator {
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
     const old = self.itemsContainer.querySelector('[data-xt-index].on')
     if (old) {
-      Xt.animOff(old)
+      Xt.off(old)
     }
     if (type === 'marker') {
       if (item) {
         item.focus()
-        Xt.animOn(item)
+        Xt.on(item)
       }
     }
     // infowindow
@@ -534,7 +534,7 @@ class Googlelocator {
    */
   loaderShow() {
     const self = this
-    Xt.animOn(self.loaderElement)
+    Xt.on(self.loaderElement)
   }
 
   /**
@@ -542,7 +542,7 @@ class Googlelocator {
    */
   loaderHide() {
     const self = this
-    Xt.animOff(self.loaderElement)
+    Xt.off(self.loaderElement)
   }
 
   //

@@ -116,7 +116,7 @@ class Mousefollow {
         self.width = rect.width
         self.height = rect.height
         // class
-        Xt.animOn(tr)
+        Xt.on(tr)
         // set
         const x = e.clientX - self.width / 2
         const y = e.clientY - self.height / 2
@@ -141,7 +141,7 @@ class Mousefollow {
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       for (const tr of self.targets) {
         // class
-        Xt.animOff(tr)
+        Xt.off(tr)
       }
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))

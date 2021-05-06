@@ -849,7 +849,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {String} suffix Timeout suffix
    */
-  Xt.animOn = (el, suffix = '') => {
+  Xt.on = (el, suffix = '') => {
     if (!el.classList.contains('on')) {
       el.classList.add('on')
       el.classList.remove('in')
@@ -875,7 +875,7 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    * @param {Number} timing Optional force time
    */
-  Xt.animOff = (el, suffix = '', timing = null) => {
+  Xt.off = (el, suffix = '', timing = null) => {
     if (el.classList.contains('on')) {
       el.classList.remove('on')
       el.classList.remove('in')
