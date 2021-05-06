@@ -6,6 +6,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
+export const shouldUpdateScroll = () => {
+  // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
+  return false
+}
+
 const gatsbySidebarContain = () => {
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   sidebar.scrollTop = window.keepSidebarScroll
@@ -95,9 +100,4 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   }
   /* ScrollToPlugin refresh on route update */
   ScrollTrigger.refresh()
-}
-
-export const shouldUpdateScroll = () => {
-  // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
-  return false
 }

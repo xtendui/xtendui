@@ -101,9 +101,9 @@ module.exports = {
       },
     },
   }),
-  component: {
-    'body:not(.xt-nojs-fouc):not(.xt-ready)': {
-      // instant animations on page load
+  base: {
+    // instant animations on page load
+    '.xt-body:not(.xt-optout-fouc):not(.xt-ready)': {
       '*': {
         transitionDuration: 'initial !important',
         transitionDelay: 'initial !important',
@@ -112,10 +112,10 @@ module.exports = {
         animationIterationCount: '1 !important',
       },
     },
-    '@media (prefers-reduced-motion: reduce), (update: slow)': {
-      // instant animations accessibility
-      'body:not(.xt-nojs-prm)': {
-        '*': {
+    // instant animations on components init and reinit
+    '.xt-body:not(.xt-optout-initial)': {
+      '.initial': {
+        '&, *': {
           transitionDuration: 'initial !important',
           transitionDelay: 'initial !important',
           animationDuration: 'initial !important',
@@ -124,10 +124,10 @@ module.exports = {
         },
       },
     },
-    '.initial': {
-      // instant animations on components init and reinit
-      'body:not(.xt-nojs-initial) &': {
-        '&, *': {
+    // instant animations accessibility
+    '@media (prefers-reduced-motion: reduce), (update: slow)': {
+      '.xt-body:not(.xt-optout-prm)': {
+        '*': {
           transitionDuration: 'initial !important',
           transitionDelay: 'initial !important',
           animationDuration: 'initial !important',

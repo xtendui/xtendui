@@ -12,7 +12,15 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
-## Utilities
+## Base Styles
+
+Add to the `body` the class `xt-body` to have this features:
+
+* **Custom `:focus` styles only on keyboard activation** sort of `:focus-visible`. You can disable this feature with `xt-optout-focus` and keep others `xt-body` features.
+
+* **Custom body scrollbar** [components styles](/components/layout#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
+
+## Utilities Styles
 
 These are layout **utilities**.
 
@@ -32,7 +40,7 @@ These are layout **utilities**.
 
 To have `.container` fluid so with only one `max-width` in tailwind preset set `theme.extend.container.fluid: '1536px'` with the desired `max-width`, see [tailwind container](https://tailwindcss.com/docs/container).
 
-## Components
+## Components Styles
 
 These are layout **component classes**.
 
@@ -47,15 +55,3 @@ These are layout **component classes**.
 | Component                  | `.xt-design`                     | `xt-design`                | Setup design styles in position absolute            |
 
 </div>
-
-Xtend has custom `:focus` styles, sort of `:focus-visbile` polyfill. You can customize the global `.xt-focus-visible` style or **disable focus management and styles** with the class `body.xt-focus-disable`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|               | Syntax                          | Mixin               | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `body.xt-focus-disable`                     | `NOT POSSIBLE`                | Disable focus management and styles            |
-
-</div>
-
-There are many more **component classes for javascript** inside `layoutjs.css.js` but they shouldn't be changed.

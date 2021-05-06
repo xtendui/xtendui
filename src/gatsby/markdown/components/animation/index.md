@@ -108,17 +108,19 @@ animation: 'xt-filler-x 1500ms infinite',
 animation: 'xt-filler-y 1500ms infinite',
 ```
 
-## Defaults
+## Base Styles
 
-You can **opt out** some animations behaviour:
+Add to the `body` the class `xt-body` to have this features:
 
-* **Flash of Unstyled Content (FOUC)**: Xtend UI **automatically disables page load duration** for animation and transition until javascript is loaded, add `body.xt-nojs-fouc` to disable this behaviour.
+* **Flash of Unstyled Content (FOUC)**, **automatically disables page load duration** for animation and transition until javascript is loaded. You can disable this feature with `xt-optout-fouc` and keep others `xt-body` features.
 
-* **Initial component animations**: Xtend UI **automatically disables duration** for animation and transition on `initial` class used in components init and reinit, add `body.xt-nojs-initial` to disable this behaviour.
+* **Initial component animations**, **automatically disables duration** for animation and transition on `initial` class used in components init and reinit. You can disable this feature with `xt-optout-initial` and keep others `xt-body` features.
 
-* **Prefers Reduced Motion**: Xtend UI **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion", add `body.xt-nojs-prm` to disable this behaviour.
+* **Prefers Reduced Motion**, **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion". You can disable this feature with `xt-optout-prm` and keep others `xt-body` features.
 
-* **Prefers Reduced Motion**: Xtend UI **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script:
+## Javascript
+
+* **Prefers Reduced Motion**, **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script:
 
 ```js
 /* animation */
@@ -135,9 +137,9 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 }
 ```
 
-* **Global Duration Timescale**: Xtend UI have an option to **change javascript durations timescales**, for example set this variables `Xt.durationTimescale = 1.5` to have faster animations by an half.
+* **Global Duration Timescale**, **change javascript durations timescales**, for example set this variables `Xt.durationTimescale = 1.5` to have faster animations by an half.
 
-* **Global Auto Timescale**: Xtend UI have an option to **change javascript auto duration timescales**, for example set this variables `Xt.autoTimescale = 0.5` to have double time on component auto changes.
+* **Global Auto Timescale**, **change javascript auto duration timescales**, for example set this variables `Xt.autoTimescale = 0.5` to have double time on component auto changes.
 
 You can play gsap and XtendUI settings, an **example setup** for for faster animation on mobile.
 

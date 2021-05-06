@@ -3,9 +3,26 @@ const merge = require('lodash/merge')
 const castArray = require('lodash/castArray')
 
 module.exports = plugin.withOptions(() => {
-  return function ({ addComponents, addVariant, e, theme }) {
+  return function ({ addComponents, addBase, addVariant, e, theme }) {
     const componentsBase = require('./tailwind.components.js') || {}
     const componentsCustom = theme(`xtendui`, {}) || {}
+
+    /**
+     * base
+     */
+
+    for (const component of Object.keys(componentsBase)) {
+      const componentBase = componentsBase[component] || {}
+      const componentCustom = componentsCustom[component] || {}
+      if (componentCustom !== false && componentCustom.base !== false) {
+        const base = typeof componentBase.base === 'function' ? componentBase.base(theme) : componentBase.base
+        const custom = typeof componentCustom.base === 'function' ? componentCustom.base(theme) : componentCustom.base
+        const css = merge(...castArray(base || {}), custom || {})
+        addBase(css, {
+          respectPrefix: false,
+        })
+      }
+    }
 
     /**
      * components

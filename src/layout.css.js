@@ -31,13 +31,30 @@ module.exports = {
       maxHeight: 'calc(var(--vh, 1vh) * 100) !important',
     },
   }),
+  base: {
+    // overflow
+    '.xt-body:not(.xt-optout-scroll)': {
+      '@apply xt-overflow-main': '',
+    },
+    // custom focus
+    '.xt-body:not(.xt-optout-focus)': {
+      ':focus': {
+        outline: '1px dotted',
+        // eslint-disable-next-line no-dupe-keys
+        outline: '5px auto -webkit-focus-ring-color',
+      },
+      // focus-visible
+      '&:not(.xt-focus-visible)': {
+        ':focus': {
+          outline: 'none !important',
+        },
+      },
+    },
+  },
   component: theme => ({
     html: {
       touchAction: 'manipulation', // disable double-tap
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
-    },
-    body: {
-      '@apply xt-overflow-main': '',
     },
     '.container': theme('container.fluid')
       ? {
@@ -100,21 +117,6 @@ module.exports = {
       left: '0',
       bottom: '0',
       right: '0',
-    },
-    'body:not(.xt-focus-disable)': {
-      ':focus': {
-        outline: 'none !important',
-      },
-      '&.xt-focus-visible': {
-        ':focus': {
-          outline: `5px auto ${theme('colors.primary.700')} !important`,
-        },
-        'input:not([type="checkbox"]):not([type="radio"]), select, textarea': {
-          '&:focus': {
-            outline: 'none !important',
-          },
-        },
-      },
     },
   }),
 }

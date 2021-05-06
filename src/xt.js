@@ -446,9 +446,9 @@ if (typeof window !== 'undefined') {
           // remember Xt.focus
           Xt.focus.current = document.activeElement
         }
-        if (!document.documentElement.classList.contains('xt-focus-visible')) {
-          // html.xt-focus-visible
-          document.documentElement.classList.add('xt-focus-visible')
+        if (!document.querySelector('body').classList.contains('xt-focus-visible')) {
+          // focus-visible
+          document.querySelector('body').classList.add('xt-focus-visible')
           // fix switch mode
           Xt.focus.off()
         }
@@ -464,9 +464,9 @@ if (typeof window !== 'undefined') {
         // remember Xt.focus
         Xt.focus.current = e.target
       }
-      if (document.documentElement.classList.contains('xt-focus-visible')) {
-        // html.xt-focus-visible
-        document.documentElement.classList.remove('xt-focus-visible')
+      if (document.querySelector('body').classList.contains('xt-focus-visible')) {
+        // focus-visible
+        document.querySelector('body').classList.remove('xt-focus-visible')
         // fix switch mode
         Xt.focus.on()
       }

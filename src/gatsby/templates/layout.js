@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 import Header from 'src/gatsby/templates/includes/header'
 import Footer from 'src/gatsby/templates/includes/footer'
@@ -22,6 +23,9 @@ export default class Layout extends React.Component {
     const { children, page, seo } = this.props
     return (
       <>
+        <Helmet>
+          <body className="xt-body" />
+        </Helmet>
         {seo && seo.title === 'Home' ? (
           <div className="gatsby_site-wrapper">
             <div className="gatsby_site-main">
