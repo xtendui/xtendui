@@ -26,7 +26,7 @@ const gatsbySidebarContain = () => {
   }
 }
 
-exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
@@ -57,7 +57,7 @@ exports.onPreRouteUpdate = ({ location, prevLocation }) => {
   }
 }
 
-exports.onRouteUpdate = ({ location, prevLocation }) => {
+export const onRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
@@ -97,7 +97,7 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   ScrollTrigger.refresh()
 }
 
-exports.shouldUpdateScroll = () => {
+export const shouldUpdateScroll = () => {
   // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
   return false
 }
