@@ -53,6 +53,17 @@ Xt.ready(() => {
 
 - For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
 
+- If you are using **single page app or route update** you have to refresh scrolltrigger on route update.
+
+```js
+/* ScrollToPlugin refresh on route update */
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+ScrollTrigger.refresh()
+```
+
 - If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
 Just need this code one time in the project.
@@ -109,16 +120,4 @@ const stopScrolling = () => {
 
 addEventListener('touchstart', stopScrolling)
 addEventListener('wheel', stopScrolling)
-```
-
-- If you are using **single page app or route update** you have to refresh scrolltrigger on route update.
-
-```js
-/* ScrollToPlugin refresh on route update
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-
-ScrollTrigger.refresh()
-*/
 ```

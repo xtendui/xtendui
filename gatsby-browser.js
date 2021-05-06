@@ -93,7 +93,7 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
     // contain
     gatsbySidebarContain()
   }
-  /* ScrollToPlugin refresh on route update put after route update */
+  /* ScrollToPlugin refresh on route update */
   ScrollTrigger.refresh()
 }
 
