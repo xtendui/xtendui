@@ -27,23 +27,6 @@ Slide alignment on activation.
   </demoinline>
 </demo>
 
-## Group
-
-With `group: Number` you set a number from 0 to 1 to automatically group the slides with a factor of the available `drag.dragger` width.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `group:Number`                          | `false`        | Set automatic grouping based on available width from 0 to 1            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/slider/group">
-  </demoinline>
-</demo>
-
 ## Contain
 
 **Activated by default**, contain the slides inside the `drag.dragger`.
@@ -64,6 +47,49 @@ Also when enabled it **automatically group the slides** on start and end positio
   <demoinline src="demos/components/slider/nocontain-left">
   </demoinline>
   <demoinline src="demos/components/slider/nocontain-right">
+  </demoinline>
+</demo>
+
+## Wrap
+
+Wrap the slides for an infinite activation. Automatically has [loop](/components/slider/interaction#loop) and no [contain](/components/slider/position#contain).
+
+[[notePrimary]]
+| Do not transition or transform on `xt-slide` because of transform positioning, **transition the content instead**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end             |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/slider/wrap-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/wrap-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/wrap-right">
+  </demoinline>
+</demo>
+
+## Group
+
+With `group: Number` you set a number from 0 to 1 to automatically group the slides with a factor of the available `drag.dragger` width.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `group:Number`                          | `false`        | Set automatic grouping based on available width from 0 to 1            |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/slider/group">
+  </demoinline>
+  <demoinline src="demos/components/slider/group-wrap">
   </demoinline>
 </demo>
 

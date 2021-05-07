@@ -18,15 +18,6 @@ Test drag activation.
   </demoinline>
 </demo>
 
-## Group
-
-Test groups.
-
-<demo>
-  <demoinline src="demos/components/slider/group">
-  </demoinline>
-</demo>
-
 ## Contain
 
 Test grouping and drag activation.
@@ -50,6 +41,17 @@ Test wrap drag activation.
   <demoinline src="demos/components/slider/wrap-left">
   </demoinline>
   <demoinline src="demos/components/slider/wrap-right">
+  </demoinline>
+</demo>
+
+## Group
+
+Test groups.
+
+<demo>
+  <demoinline src="demos/components/slider/group">
+  </demoinline>
+  <demoinline src="demos/components/slider/group-wrap">
   </demoinline>
 </demo>
 
