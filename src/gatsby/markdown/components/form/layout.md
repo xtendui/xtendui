@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Form"
 title: "Layout"
 date: "2030-05-05"

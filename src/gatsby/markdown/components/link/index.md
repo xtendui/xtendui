@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Link"
 title: "Link"
 description: "Default link styles for html links, can also be applied to buttons and other tags."

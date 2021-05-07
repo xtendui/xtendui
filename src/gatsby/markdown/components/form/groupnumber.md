@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Form"
 title: "Group Number"
 description: "Input number with list group and javascript for and effective interaction."

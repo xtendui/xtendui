@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Typography"
 title: "Typography"
 description: "Component for customize headers, body text, text tags and lists."

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Row"
 title: "Other"
 date: "2005-10-10"

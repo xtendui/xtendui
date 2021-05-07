@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Typography"
 title: "Content"
 date: "2030-10-10"

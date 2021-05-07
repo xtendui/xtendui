@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Icon"
 title: "Icon"
 description: "Everything you need to stylize svg icons."

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "List"
 title: "List"
 description: "Flex component to space any element with margins, also spaces vertically."

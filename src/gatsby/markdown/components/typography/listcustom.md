@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Typography"
 title: "List Custom"
 description: "Customize ordered and unordered lists with svg instead of bullet points."

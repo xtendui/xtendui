@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Form"
 title: "Validation"
 date: "2010-10-09"

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Table"
 title: "Table"
 description: "Base styles for all tables overridable with tailwind classes."

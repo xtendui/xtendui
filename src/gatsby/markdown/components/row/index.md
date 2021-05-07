@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Row"
 title: "Row"
 description: "Flex component to space columns with paddings, also spaces vertically."

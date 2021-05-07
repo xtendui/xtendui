@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Typography"
 title: "Separator"
 description: "Separator to be used in text content"

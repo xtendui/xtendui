@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Layout"
 parent: "Icon"
 title: "Content"
 date: "2030-10-10"
