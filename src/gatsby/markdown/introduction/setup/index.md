@@ -7,8 +7,6 @@ description: "Installation instructions to get Xtend UI up and running."
 date: "2050-09-10"
 ---
 
-## Boilerplate
-
 If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate).
 
 ## Installation
@@ -75,56 +73,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can **customize theme** inside `tailwind.config.js`, use `theme.extend` to change XtendUI preset.
-
-Check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default preset.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      colors: {
-        // custom xtendui colors
-        primary: {
-          50: '#F8F7FF',
-          100: '#F1F0FE',
-          200: '#DDD9FD',
-          300: '#C8C2FC',
-          400: '#9E95FA',
-          500: '#7567F8',
-          600: '#695DDF',
-          700: '#463E95',
-          800: '#352E70',
-          900: '#231F4A',
-        },
-      },
-    },
-  },
-}
-```
-
-You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change XtendUI default component styles.
-
-Check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default component styles.
-
-```jsx
-module.exports = {
-  theme:{
-    extend: {
-      xtendui: {
-        layout: { // layout component
-          utility: theme => ({
-            // modify utilities
-          }),
-          component: theme => ({
-            // modify components
-          }),
-        },
-      },
-    },
-  },
-}
-```
+You can [customize preset or theme](/introduction/tailwind-preset#customization).
 
 ## Javascript
 
@@ -155,9 +104,11 @@ npm install @babel/core @babel/preset-env --save-dev
 
 Then in the root of your project set up polyfills with [babel.config.js](https://github.com/minimit/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
 
-#### Boilerplate
+## Boilerplate
 
-Add this javascript to setup [suggested animations defaults](/components/animation#defaults).
+Add `xt-body` class to `body` to setup [animations defaults](/components/animation#base-styles) and [layout defaults](/components/layout#base-styles).
+
+Add this javascript to setup [animations defaults](/components/animation#defaults).
 
 ```js
 import { Xt } from 'xtendui'
@@ -179,7 +130,7 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 }
 ```
 
-Add this javascript to setup [suggested scrolltrigger fixes](/components/scroll#fixes).
+Add this javascript to setup [scrolltrigger fixes](/components/scroll#fixes).
 
 ```js
 import { Xt } from 'xtendui'

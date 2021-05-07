@@ -7,11 +7,60 @@ description: "Xtend UI preset with default theme that extends Tailwind default t
 date: "2020-10-05"
 ---
 
+## Customization
+
+You can **customize preset** inside `tailwind.config.js`, use `theme.extend` to change XtendUI preset default.
+
+Check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default preset.
+
+```jsx
+module.exports = {
+  theme:{
+    extend: {
+      colors: {
+        // custom xtendui colors
+        primary: {
+          50: '#F8F7FF',
+          100: '#F1F0FE',
+          200: '#DDD9FD',
+          300: '#C8C2FC',
+          400: '#9E95FA',
+          500: '#7567F8',
+          600: '#695DDF',
+          700: '#463E95',
+          800: '#352E70',
+          900: '#231F4A',
+        },
+      },
+    },
+  },
+}
+```
+
+You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change XtendUI default component styles.
+
+Check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default component styles.
+
+```jsx
+module.exports = {
+  theme:{
+    extend: {
+      xtendui: {
+        layout: { // layout component
+          utility: theme => ({
+            // modify utilities
+          }),
+          component: theme => ({
+            // modify components
+          }),
+        },
+      },
+    },
+  },
+}
+```
+
 ## Theme
-
-Xtend adds a **default tailwind theme**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default theme.
-
-You can customize them in `tailwind.config.js` see [css custimization](/introduction/setup#css-customization).
 
 The following theme values are added with the preset:
 

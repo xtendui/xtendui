@@ -174,7 +174,7 @@ export default function Header({ page }) {
                   <div className="gatsby_site-header_links_container">
                     <div className="gatsby_site-header_links">
                       {page.menus.posts.map(({ post }, i) => (
-                        <div key={i}>
+                        <div className="gatsby_tooltip_outside_link" key={i}>
                           <Link
                             to={markdownSlug(post)}
                             className={`xt-button gatsby_button-site-header_link ${
@@ -203,7 +203,7 @@ export default function Header({ page }) {
                                 {category.posts.map(({ post }, z) =>
                                   post.frontmatter.parent === post.frontmatter.title ? (
                                     <div className="gatsby_site-header_item_container" key={z}>
-                                      <div>
+                                      <div className="gatsby_tooltip_outside_link">
                                         <Link
                                           to={markdownSlug(post)}
                                           className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
@@ -231,7 +231,7 @@ export default function Header({ page }) {
                                             {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                                               adiacent.frontmatter.title !== post.frontmatter.parent ? (
                                                 !adiacent.frontmatter.demos ? (
-                                                  <div class="gatsby_tooltip_outside_link" key={i}>
+                                                  <div className="gatsby_tooltip_outside_link" key={i}>
                                                     <Link
                                                       to={markdownSlug(adiacent)}
                                                       className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
