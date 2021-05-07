@@ -159,58 +159,51 @@ class Slider extends Xt.Toggle {
     const options = self.options
     const first = self.group[self.detail.moveFirst][0]
     const last = self.group[self.detail.moveLast][0]
-    // reset done
-    for (const slide of self.targets) {
-      Xt.dataStorage.remove(slide, `${self.ns}GroupLeftDone`)
-    }
     // @PERF
     for (const slide of self.targets) {
       Xt.dataStorage.set(slide, `${self.ns}SlideHeight`, slide.children[0].offsetHeight)
     }
     // slides position
     let usedWidth = 0
-    for (const slide of self.targets) {
-      // once per group
-      if (!Xt.dataStorage.get(slide, `${self.ns}GroupLeftDone`)) {
-        // vars
-        const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
-        const targets = self.getTargets(slide)
-        let slideLeft = Infinity
-        let groupWidth = 0
-        let slideHeight = 0
-        let slideHeightTemp = 0
-        // vars
-        for (const target of targets) {
-          // @PERF
-          const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
-          slideLeft = tl < slideLeft ? sl : slideLeft
-          if (options.mode === 'absolute') {
-            // when absolute mode make fake positions as if all items displaced inside dragger
-            slideLeft += usedWidth
-          }
-          groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-          slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
-          usedWidth += groupWidth
-          slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
+    for (const group of self.group) {
+      const slide = group[0]
+      // vars
+      const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
+      const targets = self.getTargets(slide)
+      let slideLeft = Infinity
+      let groupWidth = 0
+      let slideHeight = 0
+      let slideHeightTemp = 0
+      // vars
+      for (const target of targets) {
+        // @PERF
+        const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
+        slideLeft = tl < slideLeft ? sl : slideLeft
+        if (options.mode === 'absolute') {
+          // when absolute mode make fake positions as if all items displaced inside dragger
+          slideLeft += usedWidth
         }
-        for (const target of targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupLeftDone`, true)
-          Xt.dataStorage.set(target, `${self.ns}GroupHeight`, slideHeight)
-        }
-        // left with alignment
-        let left
-        if (options.align === 'center') {
-          left = self.detail.draggerWidth / 2 - slideLeft - groupWidth / 2
-        } else if (options.align === 'left') {
-          left = -slideLeft
-        } else if (options.align === 'right') {
-          left = self.detail.draggerWidth - slideLeft - groupWidth
-        }
-        // save position
-        for (const target of targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-          Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
-        }
+        groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+        slideHeightTemp = Xt.dataStorage.get(target, `${self.ns}SlideHeight`)
+        usedWidth += groupWidth
+        slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight
+      }
+      for (const target of targets) {
+        Xt.dataStorage.set(target, `${self.ns}GroupHeight`, slideHeight)
+      }
+      // left with alignment
+      let left
+      if (options.align === 'center') {
+        left = self.detail.draggerWidth / 2 - slideLeft - groupWidth / 2
+      } else if (options.align === 'left') {
+        left = -slideLeft
+      } else if (options.align === 'right') {
+        left = self.detail.draggerWidth - slideLeft - groupWidth
+      }
+      // save position
+      for (const target of targets) {
+        Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
+        Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
       }
     }
     // min max position with contain

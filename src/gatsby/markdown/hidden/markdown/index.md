@@ -6,6 +6,11 @@ title: "Markdown"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+<demo>
+  <demoinline src="demos/components/slider/align-center">
+  </demoinline>
+</demo>
+
 ## Classes not xt
 
 #### Components
