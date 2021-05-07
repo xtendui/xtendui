@@ -37,7 +37,6 @@ export default class Template extends React.Component {
         ? data.post.frontmatter.type
         : ''
     seo.description = data.post.frontmatter.description
-    seo.title = markdownSlug(data.post) === '/introduction' ? seo.description : seo.title // @DOCINDEX
     return (
       <Layout page={data}>
         <SEO title={seo.title} description={seo.description} />

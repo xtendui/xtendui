@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Form"
 title: "Group Number"
 description: "Input number with list group and javascript for and effective interaction."
@@ -9,9 +9,7 @@ date: "1900-10-10"
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber`.
-
-Check [xtendui/src/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/minimit/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
 
 ## Javascript
 

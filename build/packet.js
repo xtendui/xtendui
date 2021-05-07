@@ -12,12 +12,12 @@ cssDemosGlob.on('end', () => {
   writeFile('./dist/xtend-demos.css', cssDemos)
 })
 
-let jsCore = ''
-const jsCoreGlob = new glob.Glob('src/*.js', { ignore: ['src/*.css.js'] }, (er, files) => {
+let jsComponents = ''
+const jsComponentsGlob = new glob.Glob('src/*.js', { ignore: ['src/*.css.js'] }, (er, files) => {
   for (const file of files) {
-    jsCore += `import 'xtendui/${file}'\n`
+    jsComponents += `import 'xtendui/${file}'\n`
   }
 })
-jsCoreGlob.on('end', () => {
-  writeFile('./dist/xtend-components.js', jsCore)
+jsComponentsGlob.on('end', () => {
+  writeFile('./dist/xtend-components.js', jsComponents)
 })

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Form"
 title: "Textarea Autosize"
 description: "Textarea with dynamic height depending on content."

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Button"
 title: "Content"
 date: "2030-10-10"

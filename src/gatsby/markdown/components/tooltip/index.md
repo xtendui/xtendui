@@ -8,9 +8,7 @@ description: "Informations or elements to show on user interaction, can contain 
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip`.
-
-Check [xtendui/src/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/tooltip.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/minimit/xtendui/blob/beta/src/tooltip.css.js) for default styles.
 
 ## Javascript
 

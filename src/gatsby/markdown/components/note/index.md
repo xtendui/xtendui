@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Note"
 title: "Note"
 description: "Small cards to display notes."

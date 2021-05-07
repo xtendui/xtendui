@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Icon"
 title: "Icon"
 description: "Everything you need to stylize svg icons."
@@ -8,9 +8,7 @@ description: "Everything you need to stylize svg icons."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.icon`.
-
-Check [xtendui/src/icon.css.js](https://github.com/minimit/xtendui/blob/beta/src/icon.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.icon` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/icon.css.js](https://github.com/minimit/xtendui/blob/beta/src/icon.css.js) for default styles.
 
 ## Usage
 

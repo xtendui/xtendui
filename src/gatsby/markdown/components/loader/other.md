@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Loader"
 title: "Other"
 date: "2005-10-10"

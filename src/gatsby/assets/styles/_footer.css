@@ -19,11 +19,10 @@
 
 .gatsby_site-footer_bottom_row {
   @apply text-black text-opacity-75;
+  justify-content: space-between;
   flex: 1 1 auto;
-  font-size: 11px;
+  font-size: 10px;
   @screen md {
-    flex-wrap: nowrap;
-    justify-content: space-between;
     font-size: 12px;
   }
   @screen lg {

@@ -1,12 +1,14 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Table"
 title: "Table"
 description: "Base styles for all tables overridable with tailwind classes."
 ---
 
 ## Usage
+
+Use this code to create a **table**.
 
 <demo>
   <demoinline src="demos/components/table/usage">

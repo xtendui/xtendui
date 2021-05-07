@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Interaction"
 parent: "Navigation"
 title: "Navigation"
 description: "Various navigation components from basic to advanced."

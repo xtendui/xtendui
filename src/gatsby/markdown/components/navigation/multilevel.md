@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Interaction"
 parent: "Navigation"
 title: "Multilevel"
 description: "Simple example of multilevel navigation with toggle component."

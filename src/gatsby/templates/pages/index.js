@@ -35,7 +35,7 @@ export default class Page extends React.Component {
                       </div>
                       <div className="gatsby_home-header_actions">
                         <div className="xt-list">
-                          <Link to="/introduction/setup" className="xt-button">
+                          <Link to="/components/setup" className="xt-button">
                             Setup
                           </Link>
                           <Link to="/components" className="xt-button">
@@ -241,7 +241,7 @@ export default class Page extends React.Component {
                     <div className="gatsby_listing-items">
                       <div className="xt-row xt-row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll">
-                          <Link to="/introduction/setup" className="xt-card gatsby_listing-item">
+                          <Link to="/components/setup" className="xt-card gatsby_listing-item">
                             <div className="xt-h4 mb-2">Setup</div>
                             <p>Installation instructions to get Xtend UI up and running.</p>
                           </Link>

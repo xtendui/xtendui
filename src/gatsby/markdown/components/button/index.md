@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Button"
 title: "Button"
 description: "Simple and extensible button styles."
@@ -8,9 +8,7 @@ description: "Simple and extensible button styles."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button`.
-
-Check [xtendui/src/button.css.js](https://github.com/minimit/xtendui/blob/beta/src/button.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/button.css.js](https://github.com/minimit/xtendui/blob/beta/src/button.css.js) for default styles.
 
 ## Usage
 

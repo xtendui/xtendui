@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Interaction"
 parent: "Navigation"
 title: "Nav Sides"
 description: "Arrow navigation on sides that appears and follows the mouse."

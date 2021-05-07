@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Media"
 title: "Media"
 description: "Wrapper to have media with aspect ratio, also on page load, useful also for advanced animations."

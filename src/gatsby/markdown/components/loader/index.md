@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Loader"
 title: "Loader"
 description: "Plug and play visual loaders, can easily integrate with javascript."

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Badge"
 title: "Badge"
 description: "Component for showing short and relevant tags."
@@ -8,9 +8,7 @@ description: "Component for showing short and relevant tags."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.badge`.
-
-Check [xtendui/src/badge.css.js](https://github.com/minimit/xtendui/blob/beta/src/badge.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.badge` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/badge.css.js](https://github.com/minimit/xtendui/blob/beta/src/badge.css.js) for default styles.
 
 ## Usage
 

@@ -48,7 +48,7 @@ class Template extends React.Component {
             <div className="gatsby_listing">
               <div className="xt-row xt-row-6">
                 <div className="gatsby_listing-group">
-                  {data.post.frontmatter.category === 'Core' ? (
+                  {data.post.frontmatter.category === 'Components' ? (
                     <h2 className="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
                       {'Customization and interactions'}
                     </h2>

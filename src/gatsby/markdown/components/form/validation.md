@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Form"
 title: "Validation"
 date: "2010-10-09"

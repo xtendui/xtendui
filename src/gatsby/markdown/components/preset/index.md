@@ -1,8 +1,8 @@
 ---
-type: "Introduction"
+type: "Components"
 category: "Getting Started"
-parent: "Tailwind Preset"
-title: "Tailwind Preset"
+parent: "Preset"
+title: "Preset"
 description: "Xtend UI preset with default theme that extends Tailwind default theme."
 date: "2020-10-05"
 ---
@@ -73,7 +73,9 @@ The following theme values are added with the preset:
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
 * [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
-* [animations settings](/components/animation) added new settings see animation page.
+* Added new settings see [animation preset](/components/animation/preset).
+
+## Theme Animations
 
 ## Variants
 

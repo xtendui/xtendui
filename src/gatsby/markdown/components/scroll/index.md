@@ -8,13 +8,11 @@ description: "Content interactions and animations when you scroll the page, stic
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll`.
-
-Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/scroll.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/scroll.css.js) for default styles.
 
 ## Javascript
 
-This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/setup#javascript-gsap) to **install and use gsap**.
+This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/components/setup#javascript-gsap) to **install and use gsap**.
 
 ## Usage
 
@@ -64,7 +62,7 @@ gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.refresh()
 ```
 
-- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
+- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript/api#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
 Just need this code one time in the project.
 
@@ -87,7 +85,7 @@ addEventListener('resize', e => {
 })
 ```
 
-- If you are initializing **sticky inside** [Xt.mount](/introduction/javascript#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+- If you are initializing **sticky inside** [Xt.mount](/components/javascript/api#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
 
 Just need this code one time in the project.
 

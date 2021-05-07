@@ -9,9 +9,7 @@ date: "1900-10-10"
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow`.
-
-Check [xtendui/src/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/mousefollow.css.js](https://github.com/minimit/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
 
 ## Javascript
 

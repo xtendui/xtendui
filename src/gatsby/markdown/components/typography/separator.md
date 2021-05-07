@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Layout"
+category: "Design"
 parent: "Typography"
 title: "Separator"
 description: "Separator to be used in text content"
@@ -9,9 +9,7 @@ date: "1900-10-10"
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator`.
-
-Check [xtendui/src/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/separator.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/separator.css.js](https://github.com/minimit/xtendui/blob/beta/src/separator.css.js) for default styles.
 
 ## Usage
 

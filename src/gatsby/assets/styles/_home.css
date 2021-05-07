@@ -105,7 +105,7 @@
     padding-right: 0;
   }
   @apply transition;
-  opacity: 0.25;
+  opacity: .25;
   &:hover {
     opacity: 1;
     transform: translateY(-4px);
@@ -161,7 +161,7 @@
   }
   p {
     @apply text-sm;
-    opacity: 0.5;
+    opacity: .5;
   }
 }
 
