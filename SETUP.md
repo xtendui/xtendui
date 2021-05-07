@@ -83,8 +83,6 @@ This library uses [gsap](https://github.com/greensock/GSAP) for javascript anima
 npm install gsap@3 --save
 ```
 
-Then set up animations see [animation javascript](https://xtendui.com/components/animation#defaults).
-
 #### Polyfill
 
 You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env).
@@ -99,7 +97,7 @@ Then in the root of your project set up polyfills with [babel.config.js](https:/
 
 Add `xt-body` class to `body` to setup [animations defaults](https://xtendui.com/components/animation#base-styles) and [layout defaults](https://xtendui.com/components/layout#base-styles).
 
-Add this javascript to setup [animations defaults](https://xtendui.com/components/animation#defaults).
+Add this javascript to setup [animations defaults](https://xtendui.com/components/animation#javascript).
 
 ```js
 import { Xt } from 'xtendui'

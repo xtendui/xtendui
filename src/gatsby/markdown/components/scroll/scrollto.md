@@ -41,6 +41,10 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
   </div>
 </demo>
 
+## Dynamic Content
+
+If you need to add **scrollto on content added dynamically**, just initialize `object` it on **a div container that changes on route update**.
+
 ## Options
  
 Here are the main **javascript options**.

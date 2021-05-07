@@ -78,7 +78,7 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 ## Dynamic Content
 
-If you need to add [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) on **content added dynamically**, just add it to **items not already initialized**.
+If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) on content added dynamically**, just add it to **items not already initialized**.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll-fade">

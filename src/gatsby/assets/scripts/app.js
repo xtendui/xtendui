@@ -454,7 +454,7 @@ Xt.mount({
  */
 
 Xt.mount({
-  matches: 'body',
+  matches: '.gatsby_site-wrapper',
   mount: ({ ref }) => {
     // init
 
