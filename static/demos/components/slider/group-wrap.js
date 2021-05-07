@@ -30,6 +30,11 @@ const mountSlider = ({ ref }) => {
     align: 'center',
     wrap: true,
     group: 1,
+    matches: {
+      '(min-width: 768px)': {
+        group: 0.8,
+      },
+    },
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

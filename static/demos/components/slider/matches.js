@@ -27,11 +27,12 @@ const mountSlider = ({ ref }) => {
   // init
 
   const self = new Xt.Slider(slider, {
+    align: 'left',
     wrap: true,
     matches: {
       '(min-width: 768px)': {
-        align: 'left',
         wrap: false,
+        group: 1,
       },
     },
   })

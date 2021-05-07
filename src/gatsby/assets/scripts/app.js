@@ -164,7 +164,11 @@ Xt.mount({
       targets: '#gatsby_menu--overlay',
       appendTo: false,
       disabled: true,
-      matches: { '(max-width: 1023px)': { disabled: false } },
+      matches: {
+        '(max-width: 1023px)': {
+          disabled: false,
+        },
+      },
     })
   },
 })

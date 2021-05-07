@@ -34,13 +34,8 @@ const mountEventmethods = ({ ref }) => {
       time: 4000,
       initial: false,
     },
-    group: 1,
     wrap: true,
-    matches: {
-      '(min-width: 768px)': {
-        group: 0.8,
-      },
-    },
+    group: 1,
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
