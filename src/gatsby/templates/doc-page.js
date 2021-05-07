@@ -9,6 +9,8 @@ import Layout from 'src/gatsby/templates/layout'
 import Demo from 'src/gatsby/templates/demo/demo'
 import DemoInline from 'src/gatsby/templates/demo/demo-inline'
 
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: { demo: Demo, demoinline: DemoInline },
@@ -47,12 +49,10 @@ class Template extends React.Component {
           data.postsAdiacent.posts.length > 1 ? (
             <div className="gatsby_listing">
               <div className="xt-row xt-row-6">
+                {data.post.frontmatter.type === 'Components' ? (
+                  <h2 className={`${classes.hBlock()} rounded-md text-black bg-gray-200 text-center`}>{'Sub Pages'}</h2>
+                ) : null}
                 <div className="gatsby_listing-group">
-                  {data.post.frontmatter.category === 'Components' ? (
-                    <h2 className="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">
-                      {'Customization and interactions'}
-                    </h2>
-                  ) : null}
                   <div className="gatsby_listing-items">
                     <div className="xt-row xt-row-stretch">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>

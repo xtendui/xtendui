@@ -96,7 +96,7 @@ export const classes = {
     return `mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg`
   },
   hBlock: () => {
-    return `mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg`
+    return `mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg`
   },
   // icons
   iconX: ({ classes = null } = {}) => {
