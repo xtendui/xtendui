@@ -232,9 +232,10 @@ class Toggle {
       requestAnimationFrame(() => {
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        self.initial = false
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
+        // initial after autostart
+        self.initial = false
       })
     }
   }
@@ -1846,16 +1847,19 @@ class Toggle {
     // pause
     if (options.auto && options.auto.time) {
       if (self.detail.autopaused) {
-        // paused
-        self.detail.autopaused = false
-        // resume
-        self.eventAutostart()
-        // listener dispatch
-        self.object.dispatchEvent(
-          new CustomEvent(`autoresume.${self.componentNs}`, {
-            detail: e ? e.detail : null,
-          })
-        )
+        // not when nothing activated
+        if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
+          // paused
+          self.detail.autopaused = false
+          // resume
+          self.eventAutostart()
+          // listener dispatch
+          self.object.dispatchEvent(
+            new CustomEvent(`autoresume.${self.componentNs}`, {
+              detail: e ? e.detail : null,
+            })
+          )
+        }
       }
     }
   }
@@ -2347,11 +2351,12 @@ class Toggle {
         }
         // listener dispatch
         self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.eventAutostart()
+        // initial after autostart
         self.initial = false
         // reset
         self.inverse = null
-        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.eventAutostart()
       })
     }
   }
