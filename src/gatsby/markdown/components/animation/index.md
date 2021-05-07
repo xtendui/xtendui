@@ -10,8 +10,7 @@ description: "Animation components and utilities with css or javascript transiti
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/animation.css.js](https://github.com/minimit/xtendui/blob/beta/src/animation.css.js) for default styles.
 
-
-## Base Styles
+## Global Styles
 
 Add to the `body` the class `xt-body` to have this features:
 

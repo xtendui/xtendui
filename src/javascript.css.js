@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  base: {
+  component: {
     '.xt-jump': {
       '&:not(.on)': {
         cursor: 'pointer',

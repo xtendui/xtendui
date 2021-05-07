@@ -101,7 +101,7 @@ module.exports = {
       },
     },
   }),
-  base: {
+  component: {
     // instant animations on page load
     '.xt-body:not(.xt-optout-fouc):not(.xt-ready)': {
       '*': {

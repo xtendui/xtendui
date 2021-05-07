@@ -10,7 +10,7 @@ description: "Structural and layout components."
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/layout.css.js](https://github.com/minimit/xtendui/blob/beta/src/layout.css.js) for default styles.
 
-## Base Styles
+## Global Styles
 
 Add to the `body` the class `xt-body` to have this features:
 

@@ -104,9 +104,9 @@ Then in the root of your project set up polyfills with [babel.config.js](https:/
 
 ## Boilerplate
 
-Add `xt-body` class to `body` to setup [animations defaults](/components/animation#base-styles) and [layout defaults](/components/layout#base-styles).
+Add `xt-body` class to `body` to setup [animations global styles](/components/animation#global-styles) and [layout global styles](/components/layout#global-styles).
 
-Add this javascript to setup [animations defaults](/components/animation#javascript).
+Add this javascript to setup [animations javascript](/components/animation#javascript).
 
 ```js
 import { Xt } from 'xtendui'
