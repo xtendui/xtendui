@@ -199,9 +199,9 @@ class Slider extends Xt.Toggle {
       // only if slides overflow dragger
       const firstLeft = Xt.dataStorage.get(first, `${self.ns}SlideLeftInitial`)
       const lastLeft = Xt.dataStorage.get(last, `${self.ns}SlideLeftInitial`)
-      const lastWidth = Xt.dataStorage.get(last, `${self.ns}SlideWidth`)
+      const lastWidth = Xt.dataStorage.get(last, `${self.ns}GroupWidth`)
       const min = -firstLeft
-      const max = -lastLeft + self.detail.draggerWidth - lastWidth
+      const max = -lastLeft - lastWidth + self.detail.draggerWidth
       // group contain slides with same position
       let iRemoved = 0
       for (let i = 0; i < self.group.length - iRemoved; i++) {
@@ -214,21 +214,21 @@ class Slider extends Xt.Toggle {
             const firstIndex = 0
             let width = Xt.dataStorage.get(self.group[firstIndex].target, `${self.ns}GroupWidth`)
             width += Xt.dataStorage.get(group.target, `${self.ns}GroupWidth`)
-            // first group contain new position on dragger limit
-            for (const target of self.group[firstIndex].targets) {
-              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
-            }
-            // regroup group
+            // put group in firstIndex group
             if (i > firstIndex) {
               const groupStr = self.group[firstIndex].target.getAttribute('data-xt-group')
               for (const target of group.targets) {
                 self.group[firstIndex].targets.push(target)
                 target.setAttribute('data-xt-group', groupStr)
-                Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-                Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
               }
-              // splice reindex
+            }
+            // group firstIndex contain new position on dragger limit
+            for (const target of self.group[firstIndex].targets) {
+              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
+              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            }
+            // splice reindex
+            if (i > firstIndex) {
               self.group.splice(i, 1)
               iRemoved++
               i--
@@ -251,21 +251,21 @@ class Slider extends Xt.Toggle {
             let lastIndex = self.group.length - 1 - iRemoved
             let width = Xt.dataStorage.get(self.group[lastIndex].target, `${self.ns}GroupWidth`)
             width += Xt.dataStorage.get(group.target, `${self.ns}GroupWidth`)
-            // last group contain new position on dragger limit
-            for (const target of self.group[lastIndex].targets) {
-              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
-            }
-            // regroup group
+            // put group in lastIndex group
             if (i < lastIndex) {
               const groupStr = self.group[lastIndex].target.getAttribute('data-xt-group')
               for (const target of group.targets) {
                 self.group[lastIndex].targets.push(target)
                 target.setAttribute('data-xt-group', groupStr)
-                Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-                Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
               }
-              // splice reindex
+            }
+            // group lastIndex contain new position on dragger limit
+            for (const target of self.group[lastIndex].targets) {
+              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
+              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            }
+            // splice reindex
+            if (i < lastIndex) {
               self.group.splice(i, 1)
               iRemoved++
               i--

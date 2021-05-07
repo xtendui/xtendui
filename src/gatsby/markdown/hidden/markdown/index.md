@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demoinline src="demos/components/slider/align-center">
+  <demoinline src="demos/components/slider/group">
   </demoinline>
 </demo>
 
@@ -176,15 +176,15 @@ You can set **scroll mode** with css selectors.
 
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/list-group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
-<script type="text/plain" class="language-markup">
-  <a href="#" class="xt-button">
-    <!-- content -->
-  </a>
+```html
+<a href="#" class="xt-button">
+  <!-- content -->
+</a>
 
-  <button type="button" class="xt-button">
-    <!-- content -->
-  </button>
-</script>
+<button type="button" class="xt-button">
+  <!-- content -->
+</button>
+```
 
 ```
 mkdir -p xtendui/
