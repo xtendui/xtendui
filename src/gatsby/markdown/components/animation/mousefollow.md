@@ -68,7 +68,7 @@ friction: ({ delta }) => {
 
 ## Listen
 
-Listen to events.
+Listen to events, for listeners use [this guideline](/components/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

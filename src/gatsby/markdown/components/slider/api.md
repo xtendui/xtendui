@@ -18,7 +18,7 @@ date: "1980-05-05"
 
 ## Listen
 
-See [javascript listeners](/introduction/javascript#listeners) for examples of listening to events.
+Listen to events, for listeners use [this guideline](/components/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
