@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 <demo>
-  <demoinline src="demos/components/slider/group">
+  <demoinline src="demos/components/slider/nocontain-center">
   </demoinline>
 </demo>
 

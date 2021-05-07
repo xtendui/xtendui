@@ -30,11 +30,49 @@ class Slider extends Xt.Toggle {
    */
   initScope() {
     const self = this
-    const options = self.options
-    // vars
-    self.initSliderVars()
     // targets
     self.initScopeTargets()
+    // initGroups
+    self.initGroups()
+    // initPagination
+    self.initPagination()
+    // elements
+    self.initScopeElements()
+    // clean wraps
+    self.destroyWrap()
+  }
+
+  /**
+   * init vars
+   */
+  initVars() {
+    super.initVars()
+    const self = this
+    const options = self.options
+    // dragger
+    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.destroyElements.push(self.dragger)
+    // grab
+    if (!self.disabled) {
+      self.dragger.classList.add('xt-grab')
+    }
+    // autoHeight and keepHeight
+    if (options.autoHeight) {
+      self.autoHeight = self.object.querySelector(options.autoHeight)
+    }
+    if (options.keepHeight) {
+      self.keepHeight = self.object.querySelector(options.keepHeight)
+    }
+    // val
+    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
+  }
+
+  /**
+   * init groups
+   */
+  initGroups() {
+    const self = this
+    const options = self.options
     // @PERF
     self.detail.moveDir = 0
     self.detail.moveIndex = null
@@ -63,53 +101,10 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(slide, `${self.ns}SlideLeftInitial`, slideLeft)
       Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
     }
-    // initSliderGroup
-    self.initSliderGroup()
-    // initSliderPos
-    self.initSliderPos()
-    // initSliderPags
-    self.initSliderPags()
-    // elements
-    self.initScopeElements()
-    // clean wraps
-    self.destroyWrap()
-  }
-
-  /**
-   * init slider vars
-   */
-  initSliderVars() {
-    const self = this
-    const options = self.options
-    // dragger
-    self.dragger = self.object.querySelector(options.drag.dragger)
-    self.destroyElements.push(self.dragger)
-    // grab
-    if (!self.disabled) {
-      self.dragger.classList.add('xt-grab')
-    }
-    // autoHeight and keepHeight
-    if (options.autoHeight) {
-      self.autoHeight = self.object.querySelector(options.autoHeight)
-    }
-    if (options.keepHeight) {
-      self.keepHeight = self.object.querySelector(options.keepHeight)
-    }
-    // val
-    self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
-  }
-
-  /**
-   * init slider group
-   */
-  initSliderGroup() {
-    const self = this
-    const options = self.options
-    // draggerWidthAvailable
-    let draggerWidthAvailable = options.group ? self.detail.draggerWidth * options.group : 0
-    // groupInitial
+    // inital groups
     self.group = []
     let currentGroup = 0
+    let draggerWidthAvailable = options.group ? self.detail.draggerWidth * options.group : 0
     let currentCount = draggerWidthAvailable
     self.detail.availableSpace = -self.detail.draggerWidth
     for (const [i, target] of self.targets.entries()) {
@@ -138,8 +133,6 @@ class Slider extends Xt.Toggle {
       }
       target.setAttribute('data-xt-group', `${self.ns}-${currentGroup}`)
     }
-    self.detail.moveFirst = 0
-    self.detail.moveLast = self.group.length - 1
     // disable slider if not overflowing
     if (options.nooverflow) {
       if (self.detail.availableSpace < 0) {
@@ -148,17 +141,7 @@ class Slider extends Xt.Toggle {
         self.object.classList.remove('xt-slider-nooverflow')
       }
     }
-  }
-
-  /**
-   * init slider group positions
-   */
-  initSliderPos() {
-    const self = this
-    const options = self.options
-    const first = self.group[self.detail.moveFirst].target
-    const last = self.group[self.detail.moveLast].target
-    // slides position
+    // groups position
     let usedWidth = 0
     for (const group of self.group) {
       const slide = group.target
@@ -194,9 +177,14 @@ class Slider extends Xt.Toggle {
         Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
       }
     }
-    // min max position with contain
+    // wrap indexes
+    self.detail.moveFirst = 0
+    self.detail.moveLast = self.group.length - 1
+    // contain groups
     if (options.contain && options.mode !== 'absolute' && !options.wrap && usedWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
+      const first = self.group[self.detail.moveFirst].target
+      const last = self.group[self.detail.moveLast].target
       const firstLeft = Xt.dataStorage.get(first, `${self.ns}SlideLeftInitial`)
       const lastLeft = Xt.dataStorage.get(last, `${self.ns}SlideLeftInitial`)
       const lastWidth = Xt.dataStorage.get(last, `${self.ns}GroupWidth`)
@@ -289,7 +277,7 @@ class Slider extends Xt.Toggle {
           Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
         }
       }
-      // groupInitial
+      // wrap indexes
       self.detail.moveFirst = 0
       self.detail.moveLast = self.group.length - 1
     }
@@ -307,7 +295,7 @@ class Slider extends Xt.Toggle {
   /**
    * init slider pagination
    */
-  initSliderPags() {
+  initPagination() {
     const self = this
     const options = self.options
     // not when empty
