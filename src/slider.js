@@ -146,18 +146,19 @@ class Slider extends Xt.Toggle {
     for (const group of self.group) {
       const slide = group.target
       // vars
-      const sl = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
+      const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
       const targets = self.getTargets(slide)
-      let slideLeft = Infinity
+      let groupLeft = Infinity
       let groupWidth = 0
       // vars
       for (const target of targets) {
         // @PERF
-        const tl = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
-        slideLeft = tl < slideLeft ? sl : slideLeft
+        const targetLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
+        // groupLeft is last on the left
+        groupLeft = targetLeft < groupLeft ? slideLeft : groupLeft
         if (options.mode === 'absolute') {
           // when absolute mode make fake positions as if all items displaced inside dragger
-          slideLeft += usedWidth
+          groupLeft += usedWidth
         }
         groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
         usedWidth += groupWidth
@@ -165,11 +166,11 @@ class Slider extends Xt.Toggle {
       // left with alignment
       let left
       if (options.align === 'center') {
-        left = self.detail.draggerWidth / 2 - slideLeft - groupWidth / 2
+        left = self.detail.draggerWidth / 2 - groupLeft - groupWidth / 2
       } else if (options.align === 'left') {
-        left = -slideLeft
+        left = -groupLeft
       } else if (options.align === 'right') {
-        left = self.detail.draggerWidth - slideLeft - groupWidth
+        left = self.detail.draggerWidth - groupLeft - groupWidth
       }
       // save position
       for (const target of targets) {
@@ -281,6 +282,45 @@ class Slider extends Xt.Toggle {
       self.detail.moveFirst = 0
       self.detail.moveLast = self.group.length - 1
     }
+    /*
+    // groups multiple targets inside dragger
+    let usedWidth = 0
+    for (const group of self.group) {
+      const slide = group.target
+      // vars
+      const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
+      const targets = self.getTargets(slide)
+      let groupLeft = Infinity
+      let groupWidth = 0
+      // vars
+      for (const target of targets) {
+        // @PERF
+        const targetLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
+        // groupLeft is last on the left
+        groupLeft = targetLeft < groupLeft ? slideLeft : groupLeft
+        if (options.mode === 'absolute') {
+          // when absolute mode make fake positions as if all items displaced inside dragger
+          groupLeft += usedWidth
+        }
+        groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+        usedWidth += groupWidth
+      }
+      // left with alignment
+      let left
+      if (options.align === 'center') {
+        left = self.detail.draggerWidth / 2 - groupLeft - groupWidth / 2
+      } else if (options.align === 'left') {
+        left = -groupLeft
+      } else if (options.align === 'right') {
+        left = self.detail.draggerWidth - groupLeft - groupWidth
+      }
+      // save position
+      for (const target of targets) {
+        Xt.dataStorage.set(target, `${self.ns}GroupLeft`, Math.floor(left))
+        Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
+      }
+    }
+    */
     // @PERF
     for (const group of self.group) {
       let groupHeight = 0
