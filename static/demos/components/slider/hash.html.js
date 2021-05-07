@@ -5,43 +5,43 @@ const html = /* HTML */ `
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4">
-          <div class="xt-slide w-8/12 sm:w-6/12" data-xt-hash="demo--slider-hash-1">
+          <div class="xt-slide w-8/12 sm:w-6/12 ${classes.slide()}" data-xt-hash="demo--slider-hash-1">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12" data-xt-hash="demo--slider-hash-2">
+          <div class="xt-slide w-6/12 sm:w-4/12 ${classes.slide()}" data-xt-hash="demo--slider-hash-2">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12" data-xt-hash="demo--slider-hash-3">
+          <div class="xt-slide w-6/12 sm:w-4/12 ${classes.slide()}" data-xt-hash="demo--slider-hash-3">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>
           </div>
 
-          <div class="xt-slide w-full" data-xt-hash="demo--slider-hash-4">
+          <div class="xt-slide w-full ${classes.slide()}" data-xt-hash="demo--slider-hash-4">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12" data-xt-hash="demo--slider-hash-5">
+          <div class="xt-slide w-6/12 sm:w-4/12 ${classes.slide()}" data-xt-hash="demo--slider-hash-5">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12" data-xt-hash="demo--slider-hash-6">
+          <div class="xt-slide w-6/12 sm:w-4/12 ${classes.slide()}" data-xt-hash="demo--slider-hash-6">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
             </div>
           </div>
 
-          <div class="xt-slide w-8/12 sm:w-6/12 on" data-xt-hash="demo--slider-hash-7">
+          <div class="xt-slide w-8/12 sm:w-6/12 ${classes.slide()} on" data-xt-hash="demo--slider-hash-7">
             <div class="xt-card rounded-md ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
             </div>

@@ -49,9 +49,11 @@ export const classes = {
   cardPrimaryFullInteractive: () =>
     'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 on:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
-  cardSlide: () => 'text-base p-8 text-center text-black xt-links-default bg-gray-200',
   cardToggle: () => 'text-sm p-6 text-black xt-links-default bg-gray-200',
   cardWhite: () => 'text-black xt-links-default bg-white',
+  cardSlide: () =>
+    'text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400',
+  slide: () => 'group',
   // form
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',

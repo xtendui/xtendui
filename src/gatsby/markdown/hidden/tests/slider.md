@@ -5,6 +5,54 @@ parent: "Tests"
 title: "Slider"
 ---
 
+## Align
+
+Test drag activation.
+
+<demo>
+  <demoinline src="demos/components/slider/align-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/align-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/align-right">
+  </demoinline>
+</demo>
+
+## Contain
+
+Test grouping and drag activation.
+
+<demo>
+  <demoinline src="demos/components/slider/nocontain-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/nocontain-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/nocontain-right">
+  </demoinline>
+</demo>
+
+## Wrap
+
+Test wrap drag activation.
+
+<demo>
+  <demoinline src="demos/components/slider/wrap-center">
+  </demoinline>
+  <demoinline src="demos/components/slider/wrap-left">
+  </demoinline>
+  <demoinline src="demos/components/slider/wrap-right">
+  </demoinline>
+</demo>
+
+## Group
+
+Test groups.
+
+<demo>
+  <demoinline src="demos/components/slider/group">
+  </demoinline>
+</demo>
+
 ## Interaction
 
 Test jump click.
@@ -47,45 +95,6 @@ Test overflow.
   <demoinline src="demos/components/slider/drag">	
   </demoinline>	
 </demo>	
-
-## Align
-
-Test drag activation.
-
-<demo>
-  <demoinline src="demos/components/slider/align-center">
-  </demoinline>
-  <demoinline src="demos/components/slider/align-left">
-  </demoinline>
-  <demoinline src="demos/components/slider/align-right">
-  </demoinline>
-</demo>
-
-## Contain
-
-Test grouping and drag activation.
-
-<demo>
-  <demoinline src="demos/components/slider/nocontain-center">
-  </demoinline>
-  <demoinline src="demos/components/slider/nocontain-left">
-  </demoinline>
-  <demoinline src="demos/components/slider/nocontain-right">
-  </demoinline>
-</demo>
-
-## Wrap
-
-Test wrap drag activation.
-
-<demo>
-  <demoinline src="demos/components/slider/wrap-center">
-  </demoinline>
-  <demoinline src="demos/components/slider/wrap-left">
-  </demoinline>
-  <demoinline src="demos/components/slider/wrap-right">
-  </demoinline>
-</demo>
 
 ## Other
 
