@@ -30,6 +30,16 @@ class Slider extends Xt.Toggle {
    */
   initScope() {
     const self = this
+    // @PERF
+    self.detail.moveDir = 0
+    self.detail.moveIndex = null
+    self.detail.objectWidth = self.object.offsetWidth
+    self.detail.draggerWidth = self.dragger.offsetWidth
+    self.detail.draggerLeft = self.dragger.offsetLeft
+    // fix when dragger not :visible (offsetWidth === 0) do not initialize
+    if (self.detail.draggerWidth === 0) {
+      return
+    }
     // targets
     self.initScopeTargets()
     // initGroups
@@ -74,11 +84,6 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // @PERF
-    self.detail.moveDir = 0
-    self.detail.moveIndex = null
-    self.detail.objectWidth = self.object.offsetWidth
-    self.detail.draggerWidth = self.dragger.offsetWidth
-    self.detail.draggerLeft = self.dragger.offsetLeft
     let slideWidthAbsolute
     if (options.mode === 'absolute') {
       for (const slide of self.targets) {
@@ -111,10 +116,7 @@ class Slider extends Xt.Toggle {
       let targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
       currentCount -= targetWidth
       self.detail.availableSpace += targetWidth
-      if (self.detail.draggerWidth === 0) {
-        // fix when dragger not :visible with draggerWidth === 0 groups of 1 slide
-        currentGroup = 0
-      } else if (currentCount >= 0) {
+      if (currentCount >= 0) {
         // add to previous group
       } else if (i !== 0) {
         // next group and reset count
