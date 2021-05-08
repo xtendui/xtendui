@@ -1080,7 +1080,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragFinal = dragFinal
     self.detail.dragDirection = self.detail.dragFinal > self.detail.dragFinalOld ? -1 : 1
     // direction
-    self.setDirection()
+    self.direction = self.detail.dragActive - self.detail.dragFinal < 0 ? -1 : 1
+    self.inverse = self.direction < 0
     // ratio
     self.detail.dragRatio = Math.abs(self.detail.dragFinal - self.detail.dragActive) / Math.abs(maxCheck - min)
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
