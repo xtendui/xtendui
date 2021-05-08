@@ -1425,6 +1425,7 @@ class Toggle {
     if (self.inverse !== null) {
       self.direction = self.inverse ? -1 : 1
     } else if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+      // initial direction and same index direction
       self.direction = 0
     } else {
       self.direction = self.currentIndex < self.oldIndex ? -1 : 1

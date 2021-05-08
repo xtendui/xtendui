@@ -35,6 +35,10 @@ Test grouping and drag activation.
 
 Test wrap drag activation.
 
+Test browser resize should keep activate.
+
+Test browser resize should wrap on left or on right.
+
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
   </demoinline>

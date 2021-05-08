@@ -161,26 +161,6 @@ export const populateBlock = () => {
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item').getAttribute('id')
       })
     }
-    // trigger fullscreen or change tabs
-    full.addEventListener('on.xt.toggle', () => {
-      // fix demo fullscreen
-      const content = document.querySelector('#gatsby_open-full-content')
-      const current = content.querySelector('.gatsby_demo_item.on')
-      // hidden tooltip
-      const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
-      if (tooltip) {
-        tooltip.classList.add('hidden')
-      }
-      // triggering e.detail.container
-      dispatchEvent(
-        new CustomEvent('resize', {
-          detail: {
-            force: true,
-            container: current,
-          },
-        })
-      )
-    })
     full.addEventListener('off.xt.toggle', e => {
       // check because of event propagation
       if (e.target === full) {
@@ -230,21 +210,17 @@ export const populateBlock = () => {
           const moving = content.childNodes[0]
           moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendOrigin.before(moving)
+          // triggering e.detail.container
+          dispatchEvent(
+            new CustomEvent('resize', {
+              detail: {
+                force: true,
+                container: moving,
+              },
+            })
+          )
+          // move back
           appendOrigin.remove()
-          // fix demo fullscreen
-          const previous = appendOrigin.previousSibling
-          if (previous) {
-            const current = appendOrigin.previousSibling.querySelector('.gatsby_demo_item.on')
-            // triggering e.detail.container
-            dispatchEvent(
-              new CustomEvent('resize', {
-                detail: {
-                  force: true,
-                  container: current,
-                },
-              })
-            )
-          }
         }
         // hidden tooltip
         const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
@@ -364,7 +340,6 @@ export const populateDemo = container => {
   // raf because initial render not switched already because of localStorage
   requestAnimationFrame(() => {
     for (const item of items) {
-      // fix demo fullscreen
       item.addEventListener('on.xt.toggle', () => {
         if (!self.initial) {
           btnOpenIframe(item)

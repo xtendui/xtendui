@@ -686,9 +686,6 @@ class Slider extends Xt.Toggle {
     self.detail.dragRatio = 0
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     */
-    // direction
-    self.direction = self.detail.dragFinalOld - self.detail.dragFinal < 0 ? -1 : 1
-    self.inverse = self.direction < 0
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let groupHeight = Xt.dataStorage.get(slide, `${self.ns}GroupHeight`)
@@ -716,6 +713,21 @@ class Slider extends Xt.Toggle {
   }
 
   /**
+   * set direction
+   */
+  setDirection() {
+    const self = this
+    // set direction
+    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+      // initial direction and same index direction
+      self.direction = 0
+    } else if (self.detail.dragFinalOld !== self.detail.dragFinal) {
+      self.direction = self.detail.dragFinalOld - self.detail.dragFinal < 0 ? -1 : 1
+    }
+    self.inverse = self.direction < 0
+  }
+
+  /**
    * wrap
    */
   eventWrap(index) {
@@ -727,7 +739,11 @@ class Slider extends Xt.Toggle {
       const left = Xt.dataStorage.get(slide, `${self.ns}GroupLeft`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
       // only one call
-      const dir = self.direction
+      let dir = self.direction
+      if (dir === 0) {
+        // fix on resize and reinit set direction to left (-1) if on left, to right (1) if on right
+        dir = self.detail.dragFinal > -self.detail.draggerWidth ? -1 : 1
+      }
       if (self.detail.moveDir !== dir || self.detail.moveIndex !== index) {
         self.detail.moveDir = dir
         self.detail.moveIndex = index
@@ -771,10 +787,11 @@ class Slider extends Xt.Toggle {
       self.detail.moveFirst = self.detail.moveFirst < tot ? self.detail.moveFirst : self.detail.moveFirst - tot
       self.detail.moveFirst = self.detail.moveFirst >= 0 ? self.detail.moveFirst : tot + self.detail.moveFirst
     }
+    // when only one item index is null
+    if (index === null) return
     // logic
     let translate
-    const moveEl = self.getElementsGroups()[index]
-    const moveGroup = self.getTargets(moveEl)
+    const moveGroup = self.group[index].targetsInitial
     const move = moveGroup[0]
     const moveLeftInitial = Xt.dataStorage.get(move, `${self.ns}SlideLeftInitial`)
     const moveWidth = Xt.dataStorage.get(move, `${self.ns}GroupWidth`)
@@ -1061,8 +1078,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragFinal = dragFinal
     self.detail.dragDirection = self.detail.dragFinal > self.detail.dragFinalOld ? -1 : 1
     // direction
-    self.direction = self.detail.dragActive - self.detail.dragFinal < 0 ? -1 : 1
-    self.inverse = self.direction < 0
+    self.setDirection()
     // ratio
     self.detail.dragRatio = Math.abs(self.detail.dragFinal - self.detail.dragActive) / Math.abs(maxCheck - min)
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
