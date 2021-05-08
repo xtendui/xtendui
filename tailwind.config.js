@@ -78,9 +78,6 @@ module.exports = {
         },
         typography: {
           component: {
-            body: {
-              '@apply text-base xl:text-lg': '',
-            },
             'code:not([class])': {
               fontSize: '0.9em',
               fontWeight: 600,
