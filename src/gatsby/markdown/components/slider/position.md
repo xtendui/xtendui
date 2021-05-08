@@ -31,7 +31,7 @@ Slide alignment on activation.
 
 **Activated by default**, contain the slides inside the `drag.dragger`.
 
-Also when enabled it **automatically group the slides** on start and end position (when position values would be the same).
+Also when enabled it **groups the slides positions values** when position values would be the same on start and end.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -53,6 +53,8 @@ Also when enabled it **automatically group the slides** on start and end positio
 ## Group
 
 With `group: Number` you set a number from 0 to 1 to automatically group the slides with a factor of the available `drag.dragger` width.
+
+It's different from the **automatic grouping of slides activations** because this grouping also **groups the slides position values**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -75,7 +75,7 @@ Test loop dragging beyond.
   </demoinline>	
 </demo>
 
-Test pagination.
+Test pagination all elements should activate also on init.
 
 <demo>	
   <demoinline src="demos/components/slider/pagination">	

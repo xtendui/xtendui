@@ -6,6 +6,8 @@ title: "Tests"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+USARE valori console.debug per tests magari.
+
 Test demos with all: inline and iframe and react inline and react iframe.
 
 Test demos changing demo should change hash.

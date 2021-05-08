@@ -9,6 +9,11 @@ date: "1900-10-10"
 
 Here are some examples of **slider status** to show slider activation or progress.
 
-## 
+## Status
 
-Use this code to create a **slider infinite**.
+Use the [api](/components/slider/api#listen) and listen to events to make slider status indicators.	
+
+<demo>
+  <demoinline src="demos/components/slider/status">
+  </demoinline>
+</demo>

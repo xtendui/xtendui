@@ -1881,9 +1881,8 @@ class Toggle {
     // prevent default
     e.preventDefault()
     // jump
-    const element = self.getElements(tr)[0]
-    if (self.checkOn(element)) {
-      self.eventOn(element)
+    if (self.checkOn(tr)) {
+      self.eventOn(tr)
     }
   }
 

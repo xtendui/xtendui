@@ -207,7 +207,7 @@ class Slider extends Xt.Toggle {
             if (i > firstIndex) {
               const groupStr = self.group[firstIndex].target.getAttribute('data-xt-group')
               for (const target of group.targets) {
-                self.group[firstIndex].targets.push(target)
+                self.group[firstIndex].targets.push(target) // put at end
                 target.setAttribute('data-xt-group', groupStr)
               }
             }
@@ -244,7 +244,7 @@ class Slider extends Xt.Toggle {
             if (i < lastIndex) {
               const groupStr = self.group[lastIndex].target.getAttribute('data-xt-group')
               for (const target of group.targets) {
-                self.group[lastIndex].targets.push(target)
+                self.group[lastIndex].targets.unshift(target) // put at start
                 target.setAttribute('data-xt-group', groupStr)
               }
             }
@@ -282,45 +282,72 @@ class Slider extends Xt.Toggle {
       self.detail.moveFirst = 0
       self.detail.moveLast = self.group.length - 1
     }
-    /*
-    // groups multiple targets inside dragger
-    let usedWidth = 0
+    // save group initial
     for (const group of self.group) {
       const slide = group.target
-      // vars
-      const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
-      const targets = self.getTargets(slide)
-      let groupLeft = Infinity
-      let groupWidth = 0
-      // vars
-      for (const target of targets) {
-        // @PERF
-        const targetLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeftInitial`)
-        // groupLeft is last on the left
-        groupLeft = targetLeft < groupLeft ? slideLeft : groupLeft
-        if (options.mode === 'absolute') {
-          // when absolute mode make fake positions as if all items displaced inside dragger
-          groupLeft += usedWidth
+      Xt.dataStorage.set(slide, `${self.ns}GroupInitial`, slide.getAttribute('data-xt-group'))
+    }
+    // save cloned array of targets because we change it in the first loop and breaks second loop
+    for (const group of self.group) {
+      group.targetsInitial = [...group.targets]
+    }
+    // groups multiple targets if are inside dragger
+    if (options.mode !== 'absolute') {
+      for (const [z, group] of self.group.entries()) {
+        const slide = group.target
+        const groupGroup = Xt.dataStorage.get(slide, `${self.ns}GroupInitial`)
+        const groupWidth = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
+        const groupLeft = Xt.dataStorage.get(slide, `${self.ns}GroupLeft`)
+        const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeftInitial`)
+        const spaceLeft = slideLeft + groupLeft // left space available from slide to dragger
+        const spaceRight = self.detail.draggerWidth - spaceLeft - groupWidth // right space available from slide to dragger
+        //console.debug(spaceLeft, spaceRight, slide)
+        // group on the right of current
+        let usedWidth = 0
+        for (let i = z + 1; i <= self.group.length - 1; i++) {
+          const groupCurrent = self.group[z]
+          for (let k = 0; k < self.group[i].targetsInitial.length; k++) {
+            const targetTargets = self.group[i].targetsInitial[k]
+            const width = Xt.dataStorage.get(targetTargets, `${self.ns}SlideWidth`)
+            usedWidth += width
+            //console.debug(slide, targetTargets, usedWidth, spaceRight)
+            if (usedWidth <= spaceRight) {
+              // add to current group this target
+              groupCurrent.targets.push(targetTargets) // put at end
+              // add to target current group
+              const groupStr = groupGroup + options.groupSeparator + targetTargets.getAttribute('data-xt-group')
+              targetTargets.setAttribute('data-xt-group', groupStr)
+            } else {
+              // break loop
+              i = self.group.length - 1
+              break
+            }
+          }
         }
-        groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-        usedWidth += groupWidth
-      }
-      // left with alignment
-      let left
-      if (options.align === 'center') {
-        left = self.detail.draggerWidth / 2 - groupLeft - groupWidth / 2
-      } else if (options.align === 'left') {
-        left = -groupLeft
-      } else if (options.align === 'right') {
-        left = self.detail.draggerWidth - groupLeft - groupWidth
-      }
-      // save position
-      for (const target of targets) {
-        Xt.dataStorage.set(target, `${self.ns}GroupLeft`, Math.floor(left))
-        Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
+        // group on the left of current
+        usedWidth = 0
+        for (let i = z - 1; i >= 0; i--) {
+          const groupCurrent = self.group[z]
+          for (let k = self.group[i].targetsInitial.length - 1; k >= 0; k--) {
+            const targetTargets = self.group[i].targetsInitial[k]
+            const width = Xt.dataStorage.get(targetTargets, `${self.ns}SlideWidth`)
+            usedWidth += width
+            //console.debug(slide, targetTargets, usedWidth, spaceLeft)
+            if (usedWidth <= spaceLeft) {
+              // add to current group this target
+              groupCurrent.targets.unshift(targetTargets) // put at start
+              // add to target current group
+              const groupStr = targetTargets.getAttribute('data-xt-group') + options.groupSeparator + groupGroup
+              targetTargets.setAttribute('data-xt-group', groupStr)
+            } else {
+              // break loop
+              i = 0
+              break
+            }
+          }
+        }
       }
     }
-    */
     // @PERF
     for (const group of self.group) {
       let groupHeight = 0
@@ -338,7 +365,7 @@ class Slider extends Xt.Toggle {
   initPagination() {
     const self = this
     const options = self.options
-    // not when empty
+    // not when empty it's possible to start empty
     if (!self.targets.length) {
       return false
     }
@@ -394,10 +421,12 @@ class Slider extends Xt.Toggle {
         if (classes.length) {
           item.children[0].classList.add(...classes)
         }
-        item.children[0].setAttribute('data-xt-group', group.target.getAttribute('data-xt-group'))
+        item.children[0].setAttribute('data-xt-group', Xt.dataStorage.get(group.target, `${self.ns}GroupInitial`))
         container.insertBefore(item.children[0], cloned)
         item.remove()
         self.pags[z][i] = container.querySelectorAll('[data-xt-pag]:not(.hidden)')[i]
+        // save group element for activation
+        self.group[i].element = self.pags[0][i]
       }
     }
   }
@@ -612,17 +641,17 @@ class Slider extends Xt.Toggle {
     if (self.disabled && !self.initial) {
       return
     }
-    // fix targets handler
-    const slides = self.getTargets(element)
-    const slide = slides[0]
-    // only one call per group
-    if (Xt.dataStorage.get(slide, `${self.ns}SlideonDone`)) {
-      return false
+    // get the right slide
+    let found
+    for (const group of self.group) {
+      // targetsInitial because multiple pagination
+      if (group.element === element || group.targetsInitial.includes(element)) {
+        found = group
+      }
     }
-    Xt.dataStorage.set(slide, `${self.ns}SlideonDone`, true)
-    requestAnimationFrame(() => {
-      Xt.dataStorage.remove(slide, `${self.ns}SlideonDone`)
-    })
+    if (!found) return
+    element = found.element
+    const slide = found.target
     // vars
     self.detail.dragging = false
     // val
@@ -672,20 +701,6 @@ class Slider extends Xt.Toggle {
         }
         if (self.keepHeight && self.initial) {
           self.keepHeight.style.height = groupHeight
-        }
-      }
-    }
-    // jump activation
-    if (!self.disabled && !options.drag.manual) {
-      if (options.jump) {
-        for (const slide of self.targets) {
-          const left = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
-          const width = Xt.dataStorage.get(slide, `${self.ns}SlideWidth`)
-          if (left < -self.detail.dragFinal || left + width > -self.detail.dragFinal + self.detail.draggerWidth) {
-            slide.classList.add('xt-jump')
-          } else {
-            slide.classList.remove('xt-jump')
-          }
         }
       }
     }
