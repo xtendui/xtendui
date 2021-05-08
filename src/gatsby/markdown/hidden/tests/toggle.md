@@ -135,9 +135,9 @@ Test position and visibility.
 
 Test auto.
 
+Test window blur and focus shouldn't start if no started and should pause and resume if started.
+
 <demo>	
-  <demoinline src="demos/components/toggle/auto">
-  </demoinline>
   <demoinline src="demos/components/toggle/progress">
   </demoinline>
   <demoinline src="demos/components/slider/progress">
