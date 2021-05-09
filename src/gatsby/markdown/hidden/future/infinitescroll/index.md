@@ -27,12 +27,7 @@ Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2).
   </div>
 </demo>
 
-If you need to add [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) on **content added dynamically**, just add it to **items not already initialized**.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll-fade">
-  </div>
-</demo>
+If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on content added dynamically**, just **check if already done for content added dinamically**.
 
 ## Options
 
