@@ -1015,18 +1015,14 @@ if (typeof window !== 'undefined') {
     cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
     clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
     if (event) {
-      const delay =
-        event.detail !== undefined && event.detail.delay !== undefined
-          ? event.detail.delay
-          : instant
-          ? 0
-          : Xt[`${event.type}Delay`]
+      let delay = event?.detail?.delay
+      delay = delay ? delay : instant ? 0 : Xt[`${event.type}Delay`]
       if (event.type === 'resize') {
         const w = window.innerWidth
         const h = window.innerHeight
         // multiple calls check
         if (
-          (event.detail === undefined || event.detail.force === undefined) && // not when setting delay on event
+          !event?.detail?.force && // not when setting delay on event
           Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
           (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
         ) {
