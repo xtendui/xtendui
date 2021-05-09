@@ -252,7 +252,7 @@ Xt.mount({
           content.classList.remove('scrolling-hide')
           gsap.killTweensOf(content)
           gsap.to(content, {
-            y: 0,
+            marginTop: 0,
             duration: 0.5,
             ease: 'quart.out',
           })
@@ -284,7 +284,7 @@ Xt.mount({
           content.classList.remove('scrolling-down')
           gsap.killTweensOf(content)
           gsap.to(content, {
-            y: 0,
+            marginTop: 0,
             duration: 0.5,
             ease: 'quart.out',
           })
@@ -297,7 +297,7 @@ Xt.mount({
           content.classList.add('scrolling-down')
           gsap.killTweensOf(content)
           gsap.to(content, {
-            y: -(inner.offsetTop + inner.offsetHeight),
+            marginTop: -(inner.offsetTop + inner.offsetHeight),
             duration: 0.5,
             ease: 'quart.out',
           })

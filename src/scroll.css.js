@@ -8,9 +8,9 @@ module.exports = {
   component: theme => ({
     '.xt-sticky': {
       position: 'relative',
-      zIndex: theme('zIndex.sticky') - 1,
       height: 'auto !important',
       maxHeight: 'none !important',
+      zIndex: theme('zIndex.sticky') - 1,
       '&[style*="position: fixed"]': {
         zIndex: theme('zIndex.sticky'),
       },

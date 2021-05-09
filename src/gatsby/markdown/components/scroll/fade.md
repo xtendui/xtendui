@@ -6,30 +6,42 @@ title: "Fade"
 date: "2010-10-12"
 ---
 
-## Usage
-
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
+## Usage
+
 Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `triggers:String|Nodes`                          | `undefined`        | Scroll triggers           |
-| Option                  | `vars:Object`                          | `undefined`        | ScrollTrigger options            |
-
-</div>
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>
 </demo>
 
+You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `toggleClass:String|Object`                          | `null`        | Toggle class with ScrollTrigger activation/deactivation             |
+
+</div>
+
+You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
+
+</div>
+
 ## Event
 
-Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
-
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
+
+[[notePrimary]]
+| Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
 
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
@@ -43,6 +55,8 @@ Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animatio
 ## Distance
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
+
+Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -61,21 +75,6 @@ Here's an example of **distance fade** with **animation depending on direction**
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-distance"></div>
 </demo>
 
-## Other
-
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
-
-You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
-| Option                  | `toggleClass:String|Object`                          | ``        | Toggle class with ScrollTrigger activation/deactivation             |
-
-</div>
-
 ## Dynamic Content
 
-If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on content added dynamically**, just **check if already done for content added dinamically**.
+If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on live content**, just **check if already done for content added dinamically**.

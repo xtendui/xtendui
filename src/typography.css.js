@@ -127,6 +127,12 @@ module.exports = {
       lineHeight: theme('lineHeight.tight'),
       letterSpacing: theme('letterSpacing.tight'),
       textTransform: 'none',
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
     },
     '.xt-p': {
       fontFamily: 'inherit',

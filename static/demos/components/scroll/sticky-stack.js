@@ -23,7 +23,7 @@ const mountSticky = ({ ref }) => {
     trigger: ref.querySelector('.sticky--stack-top'),
     start: 'top top',
     endTrigger: '.sticky--stack-topsecond',
-    end: () => `top ${ref.offsetHeight}px`,
+    end: () => `top ${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
     pin: true,
     pinSpacing: false,
   })
@@ -35,6 +35,7 @@ const mountSticky = ({ ref }) => {
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
+    toggleClass: 'on',
   })
 
   ScrollTrigger.create({
@@ -44,6 +45,10 @@ const mountSticky = ({ ref }) => {
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
+    onToggle: scrollTrigger => {
+      // refresh because height start changes
+      scrollTrigger.refresh()
+    },
   })
 
   ScrollTrigger.create({

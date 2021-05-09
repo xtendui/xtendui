@@ -23,9 +23,9 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="xt-sticky sticky--stack-topsecond">
+    <div class="xt-sticky sticky--stack-topsecond group">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
-        <div class="xt-h6">Top Second</div>
+        <div class="xt-h4 transition-all group-on:xt-h6">Top Second</div>
       </div>
     </div>
 

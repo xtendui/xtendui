@@ -6,9 +6,9 @@ title: "Parallax"
 date: "2010-10-10"
 ---
 
-## Usage
-
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+
+## Usage
 
 A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or a timeline** and by setting `scrub: true` to animate only when scrolling, or `scrub: <Number>` for the number of seconds to animate during scrolling.
 
@@ -23,6 +23,26 @@ A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
+
+You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `toggleClass:String|Object`                          | `null`        | Toggle class with ScrollTrigger activation/deactivation             |
+
+</div>
+
+You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
+
+</div>
 
 ## Toggle Actions
 
@@ -72,17 +92,19 @@ If you need **full range of animation** also on top and bottom of the page, calc
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
 </demo>
 
-## Other
+## Pin
 
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
-
-You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+You can pin the element with `pin: true`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
-| Option                  | `toggleClass:String|Object`                          | ``        | Toggle class with ScrollTrigger activation/deactivation             |
+| Option                  | `pin:Boolean|String|Element`                          | `false`        | Pin the scroll element           |
+| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add spacing for the pinned element            |
 
 </div>
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
+</demo>

@@ -6,9 +6,9 @@ title: "Sticky"
 date: "2010-10-11"
 ---
 
-## Usage
-
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+
+## Usage
 
 Use the **component classes** to create a **sticky**.
 
@@ -34,6 +34,26 @@ A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
 </demo>
+
+You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `toggleClass:String|Object`                          | `null`        | Toggle class with ScrollTrigger activation/deactivation             |
+
+</div>
+
+You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
+
+</div>
 
 ## Event
 
@@ -70,18 +90,3 @@ Here's an example of **complex sticky stacking**.
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-stack"></div>
 </demo>
-
-## Other
-
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
-
-You can also use `once: true` to destroy ScrollTrigger as soon as the end position is reached once.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `once:Boolean`                          | `false`        | Activate only once             |
-| Option                  | `toggleClass:String|Object`                          | ``        | Toggle class with ScrollTrigger activation/deactivation             |
-
-</div>
