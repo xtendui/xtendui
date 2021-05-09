@@ -56,7 +56,8 @@ Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animatio
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
-Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+[[noteDefault]]
+| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -74,6 +75,14 @@ Here's an example of **distance fade** with **animation depending on direction**
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-distance"></div>
 </demo>
+
+## Actions
+
+@TODO SCROLLTRIGGER
+
+## Multiple
+
+@TODO SCROLLTRIGGER
 
 ## Dynamic Content
 

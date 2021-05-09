@@ -7,9 +7,10 @@
 module.exports = {
   component: theme => ({
     '.xt-sticky': {
-      position: 'relative',
       height: 'auto !important',
       maxHeight: 'none !important',
+      // needs zIndex because after ScrollTrigger end
+      position: 'relative',
       zIndex: theme('zIndex.sticky') - 1,
       '&[style*="position: fixed"]': {
         zIndex: theme('zIndex.sticky'),

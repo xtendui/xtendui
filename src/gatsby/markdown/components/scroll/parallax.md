@@ -44,7 +44,39 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 </div>
 
-## Toggle Actions
+## Pin
+
+@TODO SCROLLTRIGGER
+
+## Event
+
+@TODO SCROLLTRIGGER
+
+## Distance
+
+Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
+
+[[noteDefault]]
+| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `trigger:String|Element`                          | `undefined`        | Scroll trigger           |
+| Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
+| Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
+| Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
+
+</div>
+
+If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
+</demo>
+
+## Actions
 
 Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to the end and up to see it in action**).
 
@@ -70,41 +102,3 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 
 [[notePrimary]]
 | When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
-
-## Distance
-
-Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `trigger:String|Element`                          | `undefined`        | Scroll trigger           |
-| Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
-| Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
-| Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
-
-</div>
-
-If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
-</demo>
-
-## Pin
-
-You can pin the element with `pin: true`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `pin:Boolean|String|Element`                          | `false`        | Pin the scroll element           |
-| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add spacing for the pinned element            |
-
-</div>
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
-</demo>

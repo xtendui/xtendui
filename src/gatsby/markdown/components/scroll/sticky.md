@@ -72,7 +72,8 @@ Here's an example of **complex sticky hide** when scrolling down but only after 
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
 
-Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+[[noteDefault]]
+| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -90,3 +91,11 @@ Here's an example of **complex sticky stacking**.
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-stack"></div>
 </demo>
+
+## Actions
+
+@TODO SCROLLTRIGGER
+
+## Multiple
+
+@TODO SCROLLTRIGGER

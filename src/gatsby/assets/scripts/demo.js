@@ -337,44 +337,41 @@ export const populateDemo = container => {
     targets: '.gatsby_demo_item',
     min: 1,
   })
-  // raf because initial render not switched already because of localStorage
-  requestAnimationFrame(() => {
-    for (const item of items) {
-      item.addEventListener('on.xt.toggle', () => {
-        if (!self.initial) {
-          btnOpenIframe(item)
-          // triggering e.detail.container
-          dispatchEvent(
-            new CustomEvent('resize', {
-              detail: {
-                force: true,
-                container: item,
-              },
-            })
-          )
-          // only if demo opened
-          if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
-            // hash
-            location.hash = item.getAttribute('id')
-          }
+  for (const item of items) {
+    item.addEventListener('on.xt.toggle', () => {
+      if (!self.initial) {
+        btnOpenIframe(item)
+        // triggering e.detail.container
+        dispatchEvent(
+          new CustomEvent('resize', {
+            detail: {
+              force: true,
+              container: item,
+            },
+          })
+        )
+        // only if demo opened
+        if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
+          // hash
+          location.hash = item.getAttribute('id')
         }
-      })
-    }
-    // .button--show-code
-    const demoId = `gatsby_demo_${i}`
-    container.setAttribute('id', demoId)
-    const btnCode = container.querySelector('.button--show-code')
-    new Xt.Toggle(btnCode, {
-      targets: `#${demoId} .gatsby_demo_code`,
-      queue: false,
+      }
     })
-    // tooltip swap toggle
-    const object = btnCode.closest('[data-xt-tooltip]')
-    swapToggle({
-      tooltip: object.querySelector('.xt-tooltip'),
-      self: Xt.get('xt-tooltip', object),
-      buttonSwap: btnCode,
-    })
+  }
+  // .button--show-code
+  const demoId = `gatsby_demo_${i}`
+  container.setAttribute('id', demoId)
+  const btnCode = container.querySelector('.button--show-code')
+  new Xt.Toggle(btnCode, {
+    targets: `#${demoId} .gatsby_demo_code`,
+    queue: false,
+  })
+  // tooltip swap toggle
+  const object = btnCode.closest('[data-xt-tooltip]')
+  swapToggle({
+    tooltip: object.querySelector('.xt-tooltip'),
+    self: Xt.get('xt-tooltip', object),
+    buttonSwap: btnCode,
   })
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'
