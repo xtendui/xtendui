@@ -184,10 +184,11 @@ pre {
     }
     .gatsby_demo_code_body {
       @apply bg-code;
-      height: 21rem;
+      max-height: 21rem;
       #gatsby_open-full & {
-        height: auto;
         flex: 1;
+        height: auto;
+        max-height: none;
       }
     }
     .gatsby_demo_code_inner {
@@ -204,9 +205,10 @@ pre {
       @apply xt-toggle;
       display: flex;
       align-items: stretch;
-      height: 21rem;
+      max-height: 21rem;
       #gatsby_open-full & {
         height: 100%;
+        max-height: none;
       }
     }
   }

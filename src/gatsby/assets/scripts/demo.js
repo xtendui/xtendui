@@ -368,10 +368,12 @@ export const populateDemo = container => {
   })
   // tooltip swap toggle
   const object = btnCode.closest('[data-xt-tooltip]')
-  swapToggle({
-    tooltip: object.querySelector('.xt-tooltip'),
-    self: Xt.get('xt-tooltip', object),
-    buttonSwap: btnCode,
+  requestAnimationFrame(() => {
+    swapToggle({
+      tooltip: object.querySelector('.xt-tooltip'),
+      self: Xt.get('xt-tooltip', object),
+      buttonSwap: btnCode,
+    })
   })
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'

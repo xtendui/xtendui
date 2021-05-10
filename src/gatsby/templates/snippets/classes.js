@@ -17,9 +17,9 @@ export const classes = {
   cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
   // variant
   badgeDefaultInteractive: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
   badgePrimaryInteractive: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-500',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700',
   badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200',
   badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',

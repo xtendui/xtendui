@@ -1,6 +1,5 @@
 module.exports = {
   animation: require('./src/animation.css.js'),
-  badge: require('./src/badge.css.js'),
   button: require('./src/button.css.js'),
   card: require('./src/card.css.js'),
   drop: require('./src/drop.css.js'),
