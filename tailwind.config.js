@@ -66,12 +66,12 @@ module.exports = {
           utility: theme => ({
             '.xt-links-default': {
               'code:not([class])': {
-                color: theme('colors.primary.500'),
+                color: `${theme('colors.primary.500')}!important`,
               },
             },
             '.xt-links-inverse': {
               'code:not([class])': {
-                color: theme('colors.white'),
+                color: `${theme('colors.white')}!important`,
               },
             },
           }),
