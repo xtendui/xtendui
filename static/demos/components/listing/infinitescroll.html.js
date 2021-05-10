@@ -22,7 +22,7 @@ const html = /* HTML */ `
             >
               <span class="content"> Load previous page </span>
 
-              <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+              <span class="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
                 <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                   ${classes.spinner({ classes: 'animate-xt-spinner' })}
                 </span>
@@ -139,7 +139,7 @@ const html = /* HTML */ `
           >
             <span class="content"> Show more products </span>
 
-            <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+            <span class="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
               <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                 ${classes.spinner({ classes: 'animate-xt-spinner' })}
               </span>

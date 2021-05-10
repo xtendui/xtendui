@@ -621,7 +621,7 @@ const initializeIframe = item => {
     )
     item.querySelector('.gatsby_demo_item_switch').append(
       Xt.createElement(`
-          <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+          <div class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
               ${classes.spinner({ classes: 'animate-xt-spinner' })}
             </div>

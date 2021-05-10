@@ -12,7 +12,7 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <div class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+        <div class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem ipsum
-        <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+        <span class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
           <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             ${classes.spinner({ classes: 'animate-xt-spinner' })}
           </span>
