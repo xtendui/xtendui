@@ -199,73 +199,75 @@ export default function Header({ page }) {
                           <div className="gatsby_site-header_cat">
                             <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
                             <div className="gatsby_site-header_sub">
-                              <div className="gatsby_site-header_item">
-                                {category.posts.map(({ post }, z) =>
-                                  post.frontmatter.parent === post.frontmatter.title ? (
-                                    <div className="gatsby_site-header_item_container" key={z}>
-                                      <div className="gatsby_tooltip_outside_link">
-                                        <Link
-                                          to={markdownSlug(post)}
-                                          className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
-                                            markdownSlug(page.post) === markdownSlug(post)
-                                              ? 'on'
-                                              : page.post.frontmatter.parent === post.frontmatter.parent &&
-                                                post.frontmatter.category === page.post.frontmatter.category
-                                              ? 'current'
-                                              : ''
-                                          }`}>
-                                          <div className="gatsby_button-site_article_sidebar_inner">
-                                            <div className="gatsby_button-site_article_sidebar_text">
-                                              {post.frontmatter.title}
+                              <div className="gatsby_site-header_sub_inner">
+                                <div className="gatsby_site-header_item">
+                                  {category.posts.map(({ post }, z) =>
+                                    post.frontmatter.parent === post.frontmatter.title ? (
+                                      <div className="gatsby_site-header_item_container" key={z}>
+                                        <div className="gatsby_tooltip_outside_link">
+                                          <Link
+                                            to={markdownSlug(post)}
+                                            className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--sub ${
+                                              markdownSlug(page.post) === markdownSlug(post)
+                                                ? 'on'
+                                                : page.post.frontmatter.parent === post.frontmatter.parent &&
+                                                  post.frontmatter.category === page.post.frontmatter.category
+                                                ? 'current'
+                                                : ''
+                                            }`}>
+                                            <div className="gatsby_button-site_article_sidebar_inner">
+                                              <div className="gatsby_button-site_article_sidebar_text">
+                                                {post.frontmatter.title}
+                                              </div>
+                                            </div>
+                                          </Link>
+                                          <div className="gatsby_site-header_adiacent_inner">
+                                            <div className="gatsby_site-header_item"></div>
+                                          </div>
+                                        </div>
+                                        {post.frontmatter.parent === page.post.frontmatter.parent &&
+                                        post.frontmatter.category === page.post.frontmatter.category ? (
+                                          <div className="gatsby_site-header_adiacent on">
+                                            <div className="gatsby_site-header_item">
+                                              {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
+                                                adiacent.frontmatter.title !== post.frontmatter.parent ? (
+                                                  !adiacent.frontmatter.demos ? (
+                                                    <div className="gatsby_tooltip_outside_link" key={i}>
+                                                      <Link
+                                                        to={markdownSlug(adiacent)}
+                                                        className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
+                                                          page.post.frontmatter.title === adiacent.frontmatter.title &&
+                                                          post.frontmatter.category === page.post.frontmatter.category
+                                                            ? 'on'
+                                                            : ''
+                                                        }`}>
+                                                        <div className="gatsby_button-site_article_sidebar_inner">
+                                                          <div className="gatsby_button-site_article_sidebar_text">
+                                                            {adiacent.frontmatter.title
+                                                              .split(/[\s-]+/)
+                                                              .map(
+                                                                item =>
+                                                                  item.charAt(0).toUpperCase() +
+                                                                  item.slice(1).toLowerCase()
+                                                              )
+                                                              .join(' ')}
+                                                          </div>
+                                                        </div>
+                                                      </Link>
+                                                      <div className="gatsby_site-header_adiacent_inner">
+                                                        <div className="gatsby_site-header_item"></div>
+                                                      </div>
+                                                    </div>
+                                                  ) : null
+                                                ) : null
+                                              )}
                                             </div>
                                           </div>
-                                        </Link>
-                                        <div className="gatsby_site-header_adiacent_inner">
-                                          <div className="gatsby_site-header_item"></div>
-                                        </div>
+                                        ) : null}
                                       </div>
-                                      {post.frontmatter.parent === page.post.frontmatter.parent &&
-                                      post.frontmatter.category === page.post.frontmatter.category ? (
-                                        <div className="gatsby_site-header_adiacent on">
-                                          <div className="gatsby_site-header_item">
-                                            {page.postsAdiacent.posts.map(({ post: adiacent }, i) =>
-                                              adiacent.frontmatter.title !== post.frontmatter.parent ? (
-                                                !adiacent.frontmatter.demos ? (
-                                                  <div className="gatsby_tooltip_outside_link" key={i}>
-                                                    <Link
-                                                      to={markdownSlug(adiacent)}
-                                                      className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
-                                                        page.post.frontmatter.title === adiacent.frontmatter.title &&
-                                                        post.frontmatter.category === page.post.frontmatter.category
-                                                          ? 'on'
-                                                          : ''
-                                                      }`}>
-                                                      <div className="gatsby_button-site_article_sidebar_inner">
-                                                        <div className="gatsby_button-site_article_sidebar_text">
-                                                          {adiacent.frontmatter.title
-                                                            .split(/[\s-]+/)
-                                                            .map(
-                                                              item =>
-                                                                item.charAt(0).toUpperCase() +
-                                                                item.slice(1).toLowerCase()
-                                                            )
-                                                            .join(' ')}
-                                                        </div>
-                                                      </div>
-                                                    </Link>
-                                                    <div className="gatsby_site-header_adiacent_inner">
-                                                      <div className="gatsby_site-header_item"></div>
-                                                    </div>
-                                                  </div>
-                                                ) : null
-                                              ) : null
-                                            )}
-                                          </div>
-                                        </div>
-                                      ) : null}
-                                    </div>
-                                  ) : null
-                                )}
+                                    ) : null
+                                  )}
+                                </div>
                               </div>
                             </div>
                           </div>
