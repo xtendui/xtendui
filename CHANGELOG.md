@@ -1,3 +1,38 @@
+# [1.0.0-beta.17](https://github.com/minimit/xtendui/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-05-10)
+
+
+### Bug Fixes
+
+* removed important from cssinjs when possible ([06bd97e](https://github.com/minimit/xtendui/commit/06bd97e34c4597e1125275e19a5494a33c230155))
+* **card:** card text align left when used with button tag ([303c00a](https://github.com/minimit/xtendui/commit/303c00a84783abac0d7f4a38103c007c7de1d038))
+* fix xt event delay when no detail ([a428a4b](https://github.com/minimit/xtendui/commit/a428a4b74e2275e8bd4c461d83c8277959c2526d))
+* **mousefollow:** page load with automatic scroll fix ([56e6909](https://github.com/minimit/xtendui/commit/56e69099a9d2e3f0c3517654e7de2dc59e98de7c))
+* **slider:** do not initialize slider when hidden ([bb41397](https://github.com/minimit/xtendui/commit/bb413976d1cadc31191da6ffa2c88d7808fb2c92))
+* **slider:** fix contain and group options together wrong final grouping ([51c621a](https://github.com/minimit/xtendui/commit/51c621a335a8b231a82159d3ebbf85eac6fc78e5))
+* **slider:** revert direction drag ([cfcaf73](https://github.com/minimit/xtendui/commit/cfcaf73b08568a0b41637ef06e41728b4507741f))
+* **slider:** slider wrap calculations fixes with new automatic group and refactor slider direction ([1f753f4](https://github.com/minimit/xtendui/commit/1f753f44c260f02ef3c1278c99eb363d9ad9001b))
+* **toggle:** fix autostart did start on window focus ([04bb316](https://github.com/minimit/xtendui/commit/04bb3165d391507b618a24cc0096415e2ce1a94c))
+
+
+### Code Refactoring
+
+* refactor base styles and layout and animation body classes ([4a63f92](https://github.com/minimit/xtendui/commit/4a63f9234ba9a97fbfc6025eb8ae0d762b511650))
+* Xt.animOn and Xt.animOff to Xt.on and Xt.off ([2f1771e](https://github.com/minimit/xtendui/commit/2f1771ead2dd7de3933d00b4a310f9af9eebb023))
+
+
+### Features
+
+* xt-body also have links and typography now ([ec5ec02](https://github.com/minimit/xtendui/commit/ec5ec024249fe002af0d3dc1e0f93589560aba28))
+* **scrollto:** scrollto events ([0b53f5a](https://github.com/minimit/xtendui/commit/0b53f5af2937bbc96f796a7d6d0b03b6d72dce3a))
+* **slider:** slider relative with automatic grouping activation ([019a1da](https://github.com/minimit/xtendui/commit/019a1dac79ec758fb3cfa8fb881a462d85bf2506))
+* added focus on labels with checks and radio ([05a9c43](https://github.com/minimit/xtendui/commit/05a9c433309dd6f6ff740166748c8c464e332331))
+
+
+### BREAKING CHANGES
+
+* use Xt.on instead of Xt.animOn and Xt.off instead of Xt.animOff
+* changed animation and layout opt out body classes and now you need to add xt-body class to body to opt-in to all body features
+
 # [1.0.0-beta.16](https://github.com/minimit/xtendui/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2021-05-04)
 
 
