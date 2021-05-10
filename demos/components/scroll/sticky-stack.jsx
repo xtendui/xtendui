@@ -39,9 +39,9 @@ export default function component() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="xt-sticky sticky--stack-topsecond">
+      <div className="xt-sticky sticky--stack-topsecond group">
         <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
-          <div className="xt-h6">Top Second</div>
+          <div className="xt-h4 transition-all group-on:xt-h6">Top Second</div>
         </div>
       </div>
 
@@ -145,7 +145,7 @@ const mountSticky = ({ ref }) => {
     trigger: ref.querySelector('.sticky--stack-top'),
     start: 'top top',
     endTrigger: '.sticky--stack-topsecond',
-    end: () => `top ${ref.offsetHeight}px`,
+    end: () => `top ${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
     pin: true,
     pinSpacing: false,
   })
@@ -157,6 +157,7 @@ const mountSticky = ({ ref }) => {
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
+    toggleClass: 'on',
   })
 
   ScrollTrigger.create({
@@ -166,6 +167,10 @@ const mountSticky = ({ ref }) => {
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
+    onToggle: scrollTrigger => {
+      // refresh because height start changes
+      scrollTrigger.refresh()
+    },
   })
 
   ScrollTrigger.create({

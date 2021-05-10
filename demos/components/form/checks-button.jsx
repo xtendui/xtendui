@@ -25,7 +25,7 @@ export default function component() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+            className="xt-check xt-radio top-auto ml-2 rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all sr-only"
             name="radio-button"
             defaultChecked
           />
@@ -35,7 +35,7 @@ export default function component() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+            className="xt-check xt-radio top-auto ml-2 rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all sr-only"
             name="radio-button"
           />
         </label>

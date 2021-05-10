@@ -4,9 +4,9 @@ export default function component() {
     <div>
       <div className="xt-row">
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition hover:bg-gray-200">
+          <button
+            type="button"
+            className="xt-card rounded-md text-black xt-links-default transform transition hover:bg-gray-200 on:bg-gray-40">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -15,13 +15,13 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
 
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition hover:text-white hover:bg-primary-500">
+          <button
+            type="button"
+            className="xt-card rounded-md text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 on:bg-primary-600">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>
@@ -30,7 +30,7 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>

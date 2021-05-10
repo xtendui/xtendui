@@ -18,20 +18,24 @@ const html = /* HTML */ `
         <nav class="xt-list flex-col multilevel-list">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+            class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
             data-xt-group="cat-0"
           >
             Category 0
           </button>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+            class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
             data-xt-group="cat-1"
           >
             Category 1
           </button>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 1 </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 0
+          </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 1
+          </a>
         </nav>
       </nav>
 
@@ -53,20 +57,24 @@ const html = /* HTML */ `
         <nav class="xt-list flex-col multilevel-list">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+            class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
             data-xt-group="cat-0a"
           >
             Category 0a
           </button>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+            class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
             data-xt-group="cat-0b"
           >
             Category 0b
           </button>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 1 </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 0
+          </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 1
+          </a>
         </nav>
       </nav>
 
@@ -83,8 +91,12 @@ const html = /* HTML */ `
         </div>
 
         <nav class="xt-list flex-col multilevel-list">
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 1 </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 0
+          </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 1
+          </a>
         </nav>
       </nav>
 
@@ -104,8 +116,12 @@ const html = /* HTML */ `
         </div>
 
         <nav class="xt-list flex-col multilevel-list">
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 1 </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 0
+          </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 1
+          </a>
         </nav>
       </nav>
 
@@ -125,8 +141,12 @@ const html = /* HTML */ `
         </div>
 
         <nav class="xt-list flex-col multilevel-list">
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 0 </a>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"> Link 1 </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 0
+          </a>
+          <a href="#" class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}">
+            Link 1
+          </a>
         </nav>
       </nav>
     </div>

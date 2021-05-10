@@ -3,11 +3,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div class="xt-badge ${classes.badgeSm()} ${classes.badgeDefault()}">Small</div>
+      <div class="inline-block align-middle ${classes.badgeSm()} ${classes.badgeDefault()}">Small</div>
 
-      <div class="xt-badge ${classes.badgeMd()} ${classes.badgeDefault()}">Medium</div>
+      <div class="inline-block align-middle ${classes.badgeMd()} ${classes.badgeDefault()}">Medium</div>
 
-      <div class="xt-badge ${classes.badgeLg()} ${classes.badgeDefault()}">Large</div>
+      <div class="inline-block align-middle ${classes.badgeLg()} ${classes.badgeDefault()}">Large</div>
     </div>
   </div>
 `

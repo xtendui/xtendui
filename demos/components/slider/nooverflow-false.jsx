@@ -21,14 +21,14 @@ export default function component() {
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8">
           <div className="xt-slides xt-row xt-row-4">
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                 <div className="xt-h4">1</div>
               </div>
             </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200">
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                 <div className="xt-h4">2</div>
               </div>
             </div>

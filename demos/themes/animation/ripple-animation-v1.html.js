@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
+        <button type="button" class="xt-card rounded-md ${classes.cardDefaultInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -31,11 +31,11 @@ const html = /* HTML */ `
               magna eget, vehicula scelerisque elit.
             </p>
           </div>
-        </a>
+        </button>
       </div>
 
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card rounded-md ${classes.cardPrimaryInteractive()}">
+        <button type="button" class="xt-card rounded-md ${classes.cardPrimaryInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>
@@ -44,7 +44,7 @@ const html = /* HTML */ `
               magna eget, vehicula scelerisque elit.
             </p>
           </div>
-        </a>
+        </button>
       </div>
 
       <div class="w-full md:w-6/12">

@@ -380,7 +380,7 @@ const mountListing = ({ ref }) => {
   const on = tr => {
     if (!tr.classList.contains('on')) {
       // class
-      Xt.animOn(tr)
+      Xt.on(tr)
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.to(front, {
@@ -408,7 +408,7 @@ const mountListing = ({ ref }) => {
   const off = tr => {
     if (tr.classList.contains('on')) {
       // class
-      Xt.animOff(tr)
+      Xt.off(tr)
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.set(front, {

@@ -30,7 +30,7 @@ export default function component() {
         </label>
       </form>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Button
       </div>
 
@@ -58,15 +58,15 @@ export default function component() {
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Card
       </div>
 
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300">
+          <button
+            type="button"
+            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -75,13 +75,13 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
 
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
-            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600">
+          <button
+            type="button"
+            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 on:bg-primary-600">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>
@@ -90,7 +90,7 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
 
         <div className="w-full md:w-6/12">

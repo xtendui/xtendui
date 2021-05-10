@@ -372,7 +372,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      Xt.animOn(item)
+      Xt.on(item)
     }
 
     actionBtn.addEventListener('click', click)
@@ -381,7 +381,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      Xt.animOff(item)
+      Xt.off(item)
     }
 
     closeBtn.addEventListener('click', close)

@@ -20,7 +20,7 @@ export default function component() {
   return (
     <div className="demo--toggle-progress-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center" data-xt-mousefollow>
-        <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow hover-none:hidden">
+        <span className="xt-loader z-above group xt-mousefollow fixed hover-none:hidden">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -169,9 +169,9 @@ const mountToggle = ({ ref }) => {
   // init
 
   let self = new Xt.Toggle(toggle, {
-    min: 1,
     auto: {
       time: 4000,
+      initial: false,
     },
   })
 

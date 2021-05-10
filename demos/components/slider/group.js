@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-group-responsive',
+  matches: '.demo--slider-group',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

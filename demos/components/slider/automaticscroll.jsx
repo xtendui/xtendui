@@ -18,14 +18,14 @@ export default function component() {
 
   return (
     <div className="demo--slider-automaticscroll-react" ref={ref}>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Constant speed
       </div>
 
       <div className="xt-slider slider--text my-12">
         <div className="p-4 md:p-6 lg:p-8">
           <div className="xt-slides xt-row xt-row-10">
-            <div className="xt-slide xt-list xt-list-10 flex-nowrap whitespace-nowrap">
+            <div className="xt-slide group xt-list xt-list-10 flex-nowrap whitespace-nowrap">
               <a href="#test-link-1" className="slide-text" title="item 1">
                 <div className="xt-h4">One</div>
               </a>
@@ -74,14 +74,14 @@ export default function component() {
           </nav>
         </div>
 
-        <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+        <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
           Images
         </div>
 
         <div className="xt-slider slider--img my-12">
           <div className="p-4 md:p-6 lg:p-8">
             <div className="xt-slides xt-row xt-row-px">
-              <div className="xt-slide xt-list xt-list-px flex-nowrap">
+              <div className="xt-slide group xt-list xt-list-px flex-nowrap">
                 <a href="#test-link-1" className="slide-asset" title="item 0">
                   <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

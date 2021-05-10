@@ -6,7 +6,7 @@ import 'xtendui/src/tooltip'
 export default function component() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Button
       </div>
 
@@ -36,7 +36,7 @@ export default function component() {
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Drop
       </div>
 
@@ -119,7 +119,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Tooltip
       </div>
 
@@ -200,7 +200,7 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Overlay
       </div>
 
@@ -603,14 +603,14 @@ export default function component() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
         Card
       </div>
 
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
+          <button
+            type="button"
             className="xt-card text-black bg-gray-200 border-transparent border transform transition hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0 on:bg-gray-400 on:translate-y-0 hover:shadow-lg active:shadow-sm on:shadow-sm">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
@@ -620,12 +620,12 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
 
         <div className="w-full md:w-6/12">
-          <a
-            role="button"
+          <button
+            type="button"
             className="xt-card rounded-md text-white bg-primary-500 border-transparent border transform transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0 on:bg-primary-700 on:translate-y-0 hover:shadow-lg active:shadow-sm on:shadow-sm">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
@@ -635,7 +635,7 @@ export default function component() {
                 magna eget, vehicula scelerisque elit.
               </p>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>

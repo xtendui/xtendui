@@ -21,7 +21,7 @@ export default function component() {
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8">
           <div className="xt-slides xt-row xt-row-4">
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img className="xt-media relative" src="/img.svg" loading="lazy" alt="" />
                 <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
@@ -57,7 +57,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img className="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
                 <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
@@ -93,7 +93,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img
                   className="xt-media relative"
@@ -134,7 +134,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img
                   className="xt-media relative"
@@ -175,7 +175,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img
                   className="xt-media relative"
@@ -216,7 +216,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img
                   className="xt-media relative"
@@ -257,7 +257,7 @@ export default function component() {
               </div>
             </div>
 
-            <div className="xt-slide">
+            <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img
                   className="xt-media relative"

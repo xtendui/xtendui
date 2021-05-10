@@ -33,7 +33,7 @@ const mountSticky = ({ ref }) => {
 
   // sticky
 
-  ScrollTrigger.create({
+  const scrollTrigger = ScrollTrigger.create({
     trigger: overlay.querySelector('.xt-sticky'),
     start: 'top top',
     endTrigger: 'html',
@@ -45,7 +45,7 @@ const mountSticky = ({ ref }) => {
   overlay.addEventListener('on.xt.overlay', () => {
     // refresh ScrollTrigger DOM
     Xt.ready(() => {
-      ScrollTrigger.refresh()
+      scrollTrigger.refresh()
     })
   })
 

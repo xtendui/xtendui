@@ -161,7 +161,7 @@ export default function component() {
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div className="xt-mousefollow fixed text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -185,7 +185,7 @@ export default function component() {
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div className="xt-mousefollow fixed text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
