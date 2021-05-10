@@ -8,7 +8,7 @@ description: "Examples of breadcrumbs, with all the basic functionality and more
 
 ## Usage
 
-Use this code to create a **breadcrumbs**.
+Use **tailwind classes** to create a **breadcrumbs**.
 
 [[noteDefault]]
 | This component uses [separator](/components/typography/separator) see documentation for more info.
