@@ -10,6 +10,12 @@ description: "Default link styles for html links, can also be applied to buttons
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/link.css.js](https://github.com/minimit/xtendui/blob/beta/src/link.css.js) for default styles.
 
+## Global Styles
+
+Add to the `body` the class `xt-body` to have this features:
+
+* **Default links styles** with `xt-links-default`. You can disable this feature with `xt-optout-links` and keep others `xt-body` features.
+
 ## Usage
 
 Use `a` without classes or `.xt-link` to create a **link**.

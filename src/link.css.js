@@ -27,7 +27,8 @@ module.exports = {
     },
   }),
   component: theme => ({
-    body: {
+    // body links
+    '.xt-body:not(.xt-optout-links)': {
       '@apply xt-links-default': '',
     },
     'a:not([class]), a[class=""], .xt-link': {

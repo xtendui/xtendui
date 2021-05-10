@@ -246,7 +246,8 @@ module.exports = {
     },
   }),
   component: {
-    body: {
+    // body typography
+    '.xt-body:not(.xt-optout-typography)': {
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
     },
