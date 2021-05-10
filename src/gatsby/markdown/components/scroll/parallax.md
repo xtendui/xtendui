@@ -10,7 +10,9 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 ## Usage
 
-A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or a timeline** and by setting `scrub: true` to animate only when scrolling, or `scrub: <Number>` for the number of seconds to animate during scrolling.
+A **parallax** can be achieved by assigning **ScrollTrigger** to a **tween or a timeline**.
+
+You can use `scrub: true` to animate only when scrolling, or `scrub: <Number>` for the number of seconds to animate during scrolling.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -24,7 +26,7 @@ A parallax effect can be achieved by assigning **ScrollTrigger** to a **tween or
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
 
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+You can **toggle classes on activation** using `toggleClass: '<className>'`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -44,38 +46,6 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 </div>
 
-## Pin
-
-@TODO SCROLLTRIGGER
-
-## Event
-
-@TODO SCROLLTRIGGER
-
-## Distance
-
-Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
-
-[[noteDefault]]
-| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `trigger:String|Element`                          | `undefined`        | Scroll trigger           |
-| Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
-| Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
-| Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
-
-</div>
-
-If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
-</demo>
-
 ## Actions
 
 Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to the end and up to see it in action**).
@@ -92,13 +62,52 @@ Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-actions"></div>
 </demo>
 
+## Distance
+
+Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
+
+[[noteDefault]]
+| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `trigger:String|Element`                          | `undefined`        | Scroll trigger           |
+| Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
+| Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
+| Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
+
+</div>
+
+Use `pin: true` to **pin the trigger** when scrolling.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `pin:Boolean|String|Element`                          | `false`        | **Pin the trigger** when scrolling           |
+| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add **distance spacing** for the pinned element            |
+
+</div>
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-pin"></div>
+</demo>
+
+If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
+</demo>
+
 ## Multiple
 
 You can add **multiple ScrollTriggers and animations** on the same elements.
 
+[[notePrimary]]
+| When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
+
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-multiple"></div>
 </demo>
-
-[[notePrimary]]
-| When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.

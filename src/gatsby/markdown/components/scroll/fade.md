@@ -10,13 +10,13 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 ## Usage
 
-Use [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
+A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/components/scroll/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>
 </demo>
 
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+You can **toggle classes on activation** using `toggleClass: '<className>'`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -36,25 +36,9 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 </div>
 
-## Event
-
-You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
-
-[[notePrimary]]
-| Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
-
-Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-infinite"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-inside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside-infinite"></div>
-</demo>
-
 ## Distance
 
-Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
+Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
 
 [[noteDefault]]
 | Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
@@ -76,13 +60,21 @@ Here's an example of **distance fade** with **animation depending on direction**
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-distance"></div>
 </demo>
 
-## Actions
+## Event
 
-@TODO SCROLLTRIGGER
+You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate depending on scroll position relative to the trigger element**.
 
-## Multiple
+[[notePrimary]]
+| Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
 
-@TODO SCROLLTRIGGER
+Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-infinite"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-inside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside"></div>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside-infinite"></div>
+</demo>
 
 ## Dynamic Content
 

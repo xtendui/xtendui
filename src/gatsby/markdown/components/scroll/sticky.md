@@ -10,6 +10,17 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 ## Usage
 
+A **sticky** can be achieved by assigning **ScrollTrigger** with `pin: true` and `pinSpacing: false`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `pin:Boolean|String|Element`                          | `false`        | **Pin the trigger** when scrolling           |
+| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add **distance spacing** for the pinned element            |
+
+</div>
+
 Use the **component classes** to create a **sticky**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -20,22 +31,11 @@ Use the **component classes** to create a **sticky**.
 
 </div>
 
-A **sticky pinned to a scroller** has also to `pin: true` and `pinSpacing: false` to control **pinner position**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `pin:Boolean|String|Element`                          | `false`        | Pin the scroll element           |
-| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add spacing for the pinned element            |
-
-</div>
-
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
 </demo>
 
-You can **toggle classes** with ScrollTrigger using `toggleClass: '<className>'`.
+You can **toggle classes on activation** using `toggleClass: '<className>'`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -55,22 +55,9 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 </div>
 
-## Event
-
-You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
-
-[[notePrimary]]
-| Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
-
-Here's an example of **complex sticky hide** when scrolling down but only after the first card.
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-hide"></div>
-</demo>
-
 ## Distance
 
-Use `trigger`, `start`, `endTrigger`, `end` to control **viewport start and end**.
+Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
 
 [[noteDefault]]
 | Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
@@ -92,10 +79,15 @@ Here's an example of **complex sticky stacking**.
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-stack"></div>
 </demo>
 
-## Actions
+## Event
 
-@TODO SCROLLTRIGGER
+You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
-## Multiple
+[[notePrimary]]
+| Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
-@TODO SCROLLTRIGGER
+Here's an example of **complex sticky hide** when scrolling down but only after the first card.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-hide"></div>
+</demo>
