@@ -32,7 +32,7 @@ module.exports = {
       backgroundSize: '1em',
       backgroundPosition: 'right 1rem center',
       '&[multiple]': {
-        backgroundImage: 'none !important',
+        backgroundImage: 'none',
       },
     },
     '.xt-check': {
@@ -41,12 +41,6 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      // styles
-      '&[readonly], &[disabled], &.xt-disabled': {
-        backgroundColor: `${theme('colors.gray.500')} !important`,
-        borderColor: `${theme('colors.gray.500')} !important`,
-        opacity: '1',
-      },
     },
     '.xt-checkbox': {
       appearance: 'none',

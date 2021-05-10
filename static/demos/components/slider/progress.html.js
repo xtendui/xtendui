@@ -4,9 +4,7 @@ const html = /* HTML */ `
   <div class="demo--slider-progress">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
-        <span
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow hover-none:hidden"
-        >
+        <span class="xt-loader z-above group xt-mousefollow fixed hover-none:hidden">
           <span
             class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4"
           >

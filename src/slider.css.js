@@ -41,8 +41,8 @@ module.exports = {
       '&:not(.xt-slider-init)': {
         '.xt-slide': {
           '&:first-child': {
-            display: 'block !important',
-            position: 'relative !important',
+            display: 'block',
+            position: 'relative',
           },
         },
       },

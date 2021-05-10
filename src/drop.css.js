@@ -12,16 +12,15 @@ module.exports = {
   utility: {
     '.xt-drop-static': {
       padding: 0,
-      top: '100% !important',
-      left: '0 !important',
-      right: '0 !important',
+      top: '100%',
+      left: '0',
+      right: '0',
     },
   },
   component: theme => ({
     '.xt-drop': {
       position: 'absolute',
       zIndex: theme('zIndex.drop'),
-      margin: '0 !important',
       '&:not(.on):not(.in):not(.out)': {
         display: 'none',
       },

@@ -21,9 +21,9 @@ Initialize with **javascript** with `new Xt.Mousefollow(document.querySelector('
 
 ## Usage
 
-Initialize mousefollow `object` to the **element that bounds the mosefollow**, for the targets to actualli mousefollow use `options.targets`.
+Initialize mousefollow `object` to the **element that bounds the mosefollow**, for the targets to actually mousefollow use `options.targets`.
 
-Use **component classes** to create a **mouse follow**.
+Use **component classes** to create a **mouse follow** and add `fixed` position.
 
 [[notePrimary]]
 | Remember **not to transition transform** of `.xt-mousefollow` element.
@@ -32,7 +32,7 @@ Use **component classes** to create a **mouse follow**.
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-mousefollow`                     | `mousefollow`                | Styles for mouse follow            |
+| Component                  | `.xt-mousefollow`                     | `xt-mousefollow`                | Styles for mouse follow            |
 
 </div>
 
