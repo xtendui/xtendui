@@ -16,8 +16,8 @@ module.exports = {
       verticalAlign: 'middle',
       flexWrap: 'nowrap',
       alignItems: 'center',
-      textAlign: 'center',
       justifyContent: 'center',
+      textAlign: 'center',
     },
   },
 }

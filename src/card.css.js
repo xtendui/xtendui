@@ -19,6 +19,7 @@ module.exports = {
       flexDirection: 'column',
       alignItems: 'stretch',
       justifyContent: 'flex-start',
+      textAlign: 'left',
       flex: '1 1 auto',
       width: '100%',
     },
