@@ -468,7 +468,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <a role="button" class="xt-card ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm">
+        <button type="button" class="xt-card ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -477,12 +477,12 @@ const html = /* HTML */ `
               magna eget, vehicula scelerisque elit.
             </p>
           </div>
-        </a>
+        </button>
       </div>
 
       <div class="w-full md:w-6/12">
-        <a
-          role="button"
+        <button
+          type="button"
           class="xt-card rounded-md ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm"
         >
           <div class="${classes.cardMd()}">
@@ -493,7 +493,7 @@ const html = /* HTML */ `
               magna eget, vehicula scelerisque elit.
             </p>
           </div>
-        </a>
+        </button>
       </div>
     </div>
   </div>
