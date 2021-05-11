@@ -22,7 +22,7 @@ export default function Header({ page }) {
     }
   `)
   return (
-    <div className="gatsby_site-article_sidebar">
+    <div className="gatsby_site-article_sidebar text-white xt-links-inverse xt-overflow-sub bg-primary-500 leading-none">
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky">
           <div className="gatsby_site-header_inner">

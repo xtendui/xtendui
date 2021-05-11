@@ -2,18 +2,8 @@
  * header
  */
 
-.gatsby_home-header_inner {
-  @apply relative;
-  .container {
-    @apply max-w-screen-lg;
-  }
-}
 
 .gatsby_home-header_content {
-  @apply relative z-20 py-6 text-white xt-links-inverse text-center transition-all duration-300 ease-out-quart;
-  .gatsby_logo-icon {
-    @apply mb-4 transition-all duration-300 ease-out-quart;
-  }
   .scrolling-down & {
     .gatsby_logo-icon {
       @apply opacity-0 pointer-events-none;
@@ -25,8 +15,6 @@
 }
 
 .gatsby_home-header_background {
-  @apply absolute z-10;
-  z-index: 12;
   top: -100%;
   left: -30%;
   width: 160%;
@@ -47,9 +35,6 @@
 }
 
 .gatsby_home-header_actions {
-  .xt-list {
-    @apply xt-list-1 justify-center;
-  }
   .xt-button {
     @apply transition duration-300 ease-out-quint;
     border-radius: 6px;
@@ -71,24 +56,15 @@
  * main
  */
 
-.gatsby_home-main {
+.gatsby_home-header_inner, .gatsby_site-article--home {
   .container {
     @apply max-w-screen-lg !important;
   }
 }
 
-.gatsby_home-main_head {
-  @apply my-28 text-center;
-}
-
 /* social */
 
 .gatsby_home-main_social {
-  @apply xt-list mt-6;
-  justify-content: center;
-  .gatsby_home-main_social_btn {
-    @apply px-3;
-  }
   svg {
     width: 2em;
     height: 2em;
@@ -110,82 +86,6 @@
     opacity: 1;
     transform: translateY(-4px);
   }
-}
-
-/* features */
-
-.gatsby_home-main_features {
-  @apply my-28 text-center;
-  .xt-row {
-    @apply xt-row-12;
-  }
-}
-
-.gatsby_home-main_feature {
-  @apply inline-block w-full text-left;
-  .xt-row {
-    @apply xt-row-4;
-  }
-}
-
-.gatsby_home-main_feature_left {
-  @apply w-full md:w-6/12 lg:w-5/12;
-  .xt-icon {
-    width: 1em;
-    height: 1em;
-  }
-}
-
-.gatsby_home-main_feature_right {
-  @apply w-full md:w-6/12 lg:w-7/12;
-}
-
-/* philosophies */
-
-.gatsby_home-main_philosophies {
-  @apply my-28 text-center;
-  .xt-row {
-    @apply xt-row-3.5 md:xt-row-10;
-  }
-}
-
-.gatsby_home-main_philosophy_col {
-  @apply w-6/12 md:w-2/6;
-}
-
-.gatsby_home-main_philosophy {
-  @apply text-left text-sm;
-  .h4 {
-    @apply mb-1.5;
-    font-size: 1rem;
-  }
-  p {
-    @apply text-sm;
-    opacity: .5;
-  }
-}
-
-/* actions */
-
-.gatsby_home-main_actions {
-  @apply my-28 text-center;
-}
-
-/* supports */
-
-.gatsby_home-main_supports {
-  @apply my-28 text-center;
-  .xt-row {
-    @apply xt-row-8 items-center justify-center;
-  }
-}
-
-.gatsby_home-main_support_col {
-  @apply w-6/12 md:w-4/12 lg:w-3/12;
-}
-
-.gatsby_home-main_support {
-  @apply inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint;
 }
 
 /* scroll */

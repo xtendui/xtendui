@@ -72,13 +72,13 @@ export default class DemoIframe extends React.Component {
         <SEO title={seo.title} description={seo.description} />
         <div id="body-outer">
           {this.state.mode === 'react' ? (
-            <div id="gatsby_body-inner" className="gatsby_demo_source--from">
+            <div id="gatsby_body-inner" className="gatsby_demo_source--from invisible relative xt-h-screen">
               <Demo />
             </div>
           ) : (
             <div
               id="gatsby_body-inner"
-              className="gatsby_demo_source--from"
+              className="gatsby_demo_source--from invisible relative xt-h-screen"
               dangerouslySetInnerHTML={{ __html: this.html }}
             />
           )}

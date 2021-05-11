@@ -14,11 +14,15 @@ export default function Footer() {
     }
   `)
   return (
-    <div className="gatsby_site-footer_bottom">
-      <div className="xt-row gatsby_site-footer_bottom_row">
+    <div className="text-2xs md:text-xs lg:text-sm">
+      <div className="xt-row xt-row-1.5 text-black text-opacity-75 justify-between flex-auto">
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version}{' '}
-          <a href="https://github.com/minimit/xtendui/blob/beta/LICENSE" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/minimit/xtendui/blob/beta/LICENSE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-black no-underline hover:underline">
             Apache-2.0
           </a>{' '}
         </div>

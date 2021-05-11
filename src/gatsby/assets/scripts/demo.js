@@ -246,7 +246,7 @@ export const populateDemo = container => {
   // multiple elements
   container.prepend(
     Xt.createElement(
-      '<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
+      '<div class="gatsby_demo_tabs bg-gray-200"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
     )
   )
   const showCodeUid = Xt.getuniqueId()
@@ -395,7 +395,7 @@ export const populateItem = item => {
       `
 <div class="gatsby_demo_code">
 <div class="gatsby_demo_code_inner">
-  <div class="gatsby_demo_code_tabs">
+  <div class="gatsby_demo_code_tabs bg-code">
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
       <div data-xt-tooltip="{ targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end', duration: 300 }">
@@ -415,7 +415,7 @@ export const populateItem = item => {
       </div>
     </div>
   </div>
-  <div class="gatsby_demo_code_body"></div>
+  <div class="gatsby_demo_code_body bg-code"></div>
 </div>
 </div>`
     )
@@ -731,21 +731,27 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   }
   // inject code
   if (htmlSource) {
-    inner.append(Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="html">${htmlSource}</div>`))
+    inner.append(
+      Xt.createElement(`<div class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</div>`)
+    )
   }
   if (jsxSource) {
     inner.append(
-      Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="jsx" data-fetch=${jsxSource}></div>`)
+      Xt.createElement(
+        `<div class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></div>`
+      )
     )
   }
   if (cssSource) {
     inner.append(
-      Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="css" data-fetch=${cssSource}></div>`)
+      Xt.createElement(
+        `<div class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></div>`
+      )
     )
   }
   if (jsSource) {
     inner.append(
-      Xt.createElement(`<div class="gatsby_demo_source xt-ignore" data-lang="js" data-fetch=${jsSource}></div>`)
+      Xt.createElement(`<div class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></div>`)
     )
   }
   // populate

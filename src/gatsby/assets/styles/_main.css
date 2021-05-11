@@ -2,67 +2,26 @@
  * layout
  */
 
-body {
-  @apply bg-white;
-}
-
 /* prevent horizontal overflow */
-
-.gatsby_site-wrapper {
-  overflow: hidden;
-}
 
 .gatsby_site-header, .gatsby_site-main, .gatsby_site-footer {
   @apply w-full;
 }
 
-/* sticky footer */
-
-.gatsby_site-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
-}
-
-.gatsby_site-main,
-.gatsby_site-main_inner,
-.gatsby_site-article,
-.gatsby_site-article_inner {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-}
-
-.gatsby_site-article_content {
-  flex: 1 1 auto;
-}
 
 /* layout */
 
 .gatsby_site-article_hero {
-  @apply py-10 md:py-16;
-  border-bottom: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
   background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
 }
 
 .gatsby_site-footer {
-  border-top: 1px solid theme('colors.gray.200');
   background: theme('colors.gray.100');
   background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
 }
 
-.gatsby_site-article--home {
-  @apply bg-white;
-  .gatsby_site-footer_inner {
-    @apply container;
-  }
-}
-
 .gatsby_site-article--markdown {
-  @apply bg-white;
   @screen lg {
     margin-left: 20rem;
   }
@@ -72,10 +31,6 @@ body {
   .gatsby_site-article_hero-inner, .gatsby_site-article_content, .gatsby_site-footer_inner {
     margin-left: 0 !important;
     max-width: 1152px !important;
-  }
-  .gatsby_site-article_content {
-    @apply py-10 md:py-20;
-    background: theme('colors.white');
   }
 }
 
@@ -119,52 +74,5 @@ body {
         @apply mb-4 !important;
       }
     }
-  }
-}
-
-.gatsby_listing-column {
-  @apply w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6;
-  .gatsby_home-main_actions & {
-    @apply w-2/4 md:w-2/6;
-  }
-  .gatsby_site-article_foot & {
-    &:nth-child(3) {
-      display: none;
-      @screen md {
-        display: block;
-      }
-    }
-  }
-}
-
-.gatsby_listing-item {
-  /* row same as card */
-  @apply p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out;
-  .gatsby_home-main_actions & {
-    @apply text-sm;
-  }
-  .xt-h4 {
-    font-size: 1rem;
-    line-height: 1;
-    @screen md {
-      font-size: 1.125rem;
-    }
-  }
-  p {
-    @apply text-2xs md:text-sm;
-    opacity: .6;
-  }
-  .gatsby_listing-item--themes& {
-    text-align: center;
-  }
-  .xt-media-container {
-    @apply mt-3 rounded-md border-3 border-gray-500 border-opacity-25 bg-gray-200;
-    padding-bottom: 55.8%;
-  }
-  &:hover {
-    @apply ease-out text-white bg-primary-500 shadow-lg -translate-y-1;
-  }
-  &:active, &:focus {
-    @apply ease-out text-white bg-primary-500 shadow-sm translate-y-0;
   }
 }

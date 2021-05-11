@@ -3,12 +3,6 @@
  */
 
 .gatsby_site-article_sidebar {
-}
-
-.gatsby_site-article_sidebar {
-  @apply text-white xt-links-inverse xt-overflow-sub;
-  background: theme('colors.primary.500');
-  line-height: 1;
   @screen lg {
     position: fixed;
     z-index: 2;

@@ -2,20 +2,7 @@
  * demo
  */
 
-#gatsby_body-inner {
-  visibility: hidden;
-  position: relative;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-
 .gatsby_iframe-inside {
-  body {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background: theme('colors.white') !important;
-    @apply xt-overflow-main;
-  }
   #gatsby_body-inner {
     visibility: visible;
     height: initial;
@@ -23,13 +10,6 @@
     .gatsby_iframe-container& {
       @apply p-4 md:p-6 lg:p-8;
     }
-  }
-}
-
-.gatsby_demo_source {
-  @apply relative p-4 md:p-6 lg:p-8;
-  #gatsby_open-full & {
-    @apply z-0;
   }
 }
 
@@ -97,20 +77,6 @@ pre {
 }
 
 .gatsby_demo_tabs {
-  @apply bg-gray-200;
-}
-
-.gatsby_demo_code_tabs {
-  @apply bg-code;
-}
-
-.gatsby_demo_code_body {
-  #gatsby_open-full & {
-    @apply bg-code;
-  }
-}
-
-.gatsby_demo_tabs {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -148,12 +114,6 @@ pre {
 
 .gatsby_demo_tabs_inner {
   margin-top: -3px;
-}
-
-.gatsby_demo_source {
-  &:not(.gatsby_demo_source--from) {
-    display: none !important;
-  }
 }
 
 .gatsby_demo_item {

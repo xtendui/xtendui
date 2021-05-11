@@ -52,31 +52,33 @@ export default class Template extends React.Component {
                   <div className="xt-row xt-row-stretch">
                     {category.posts.map(({ post }, z) =>
                       post.frontmatter.link ? (
-                        <div className="gatsby_listing-column" key={z}>
+                        <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
                           <a
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="xt-card gatsby_listing-item">
-                            <div className="xt-h4 mb-2">
+                            className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                 .join(' ')}
                             </div>
-                            <p>{post.frontmatter.description}</p>
+                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
                           </a>
                         </div>
                       ) : post.frontmatter.parent === post.frontmatter.title ? (
-                        <div className="gatsby_listing-column" key={z}>
-                          <Link to={markdownSlug(post)} className="xt-card gatsby_listing-item">
-                            <div className="xt-h4 mb-2">
+                        <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
+                          <Link
+                            to={markdownSlug(post)}
+                            className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title
                                 .split(/[\s-]+/)
                                 .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                 .join(' ')}
                             </div>
-                            <p>{post.frontmatter.description}</p>
+                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
                             {post.frontmatter.link}
                           </Link>
                         </div>

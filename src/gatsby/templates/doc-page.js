@@ -58,13 +58,13 @@ class Template extends React.Component {
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
                           adiacent.frontmatter.demos ? (
-                            <div className="gatsby_listing-column" key={i}>
+                            <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
                               <button
                                 type="button"
-                                className="xt-card gatsby_listing-item gatsby_listing-item--themes"
+                                className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0 text-center"
                                 data-gatsby-listing-toggle>
                                 <div>
-                                  <div className="xt-h4 mb-2">
+                                  <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                                     {adiacent.frontmatter.title
                                       .split(/[\s-]+/)
                                       .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
@@ -73,7 +73,9 @@ class Template extends React.Component {
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
-                                        <div className="xt-media-container bg-gray-600" key={z}>
+                                        <div
+                                          className="xt-media-container bg-gray-200 mt-3 rounded-md border-3 border-primary-300 xt-ratio-56.2"
+                                          key={z}>
                                           <video
                                             className="xt-media object-cover object-center"
                                             preload="metadata"
@@ -103,15 +105,17 @@ class Template extends React.Component {
                               ) : null}
                             </div>
                           ) : (
-                            <div className="gatsby_listing-column" key={i}>
-                              <Link to={markdownSlug(adiacent)} className="xt-card gatsby_listing-item">
-                                <div className="xt-h4 mb-2">
+                            <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
+                              <Link
+                                to={markdownSlug(adiacent)}
+                                className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
+                                <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                                   {adiacent.frontmatter.title
                                     .split(/[\s-]+/)
                                     .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                                     .join(' ')}
                                 </div>
-                                <p>
+                                <p className="xt-p text-sm leading-snug opacity-50">
                                   {adiacent.frontmatter.description
                                     ? adiacent.frontmatter.description
                                     : `${adiacent.frontmatter.parent}'s ${adiacent.frontmatter.title
