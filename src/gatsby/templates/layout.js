@@ -13,10 +13,10 @@ import 'src/gatsby/assets/styles/app.css'
 export default class Layout extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      const makeDocument = require('src/gatsby/assets/scripts/app').makeDocument
-      const populateBlock = require('src/gatsby/assets/scripts/demo').populateBlock
-      populateBlock()
-      makeDocument()
+      require('src/gatsby/assets/scripts/shared')
+      require('src/gatsby/assets/scripts/app')
+      require('src/gatsby/assets/scripts/demo').populateBlock()
+      require('src/gatsby/assets/scripts/demo').makeDocument()
     }
   }
   render() {

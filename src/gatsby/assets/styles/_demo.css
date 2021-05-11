@@ -1,6 +1,4 @@
-/**
- * demo
- */
+/* demo */
 
 .gatsby_iframe-inside {
   #gatsby_body-inner {
@@ -18,9 +16,7 @@
   overflow: hidden;
 }
 
-/**
- * code
- */
+/* code */
 
 pre[class*="language-"] {
   @apply xt-overflow-sub my-5 xt-my-auto py-5 px-5 bg-code;
@@ -45,9 +41,7 @@ pre[class*="language-"] {
   }
 }
 
-/**
- * .demo
- */
+/* .demo */
 
 pre {
   max-height: 21rem;

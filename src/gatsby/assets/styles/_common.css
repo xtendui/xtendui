@@ -1,6 +1,4 @@
-/**
- * docs icons
- */
+/* docs icons */
 
 .gatsby_demo_tabs, .gatsby_demo_code_tabs {
   .xt-button:not(.xt-dismiss) {
@@ -10,9 +8,7 @@
   }
 }
 
-/**
- * .gatsby_make-line
- */
+/* .gatsby_make-line */
 
 .gatsby_make-line {
   position: relative;
@@ -56,9 +52,7 @@
   }
 }
 
-/**
- * .gatsby_make-anchor
- */
+/* .gatsby_make-anchor */
 
 .gatsby_make-anchor {
   position: relative;

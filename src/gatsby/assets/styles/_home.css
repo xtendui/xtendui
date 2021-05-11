@@ -1,7 +1,4 @@
-/**
- * header
- */
-
+/* header */
 
 .gatsby_home-header_content {
   .scrolling-down & {
@@ -52,9 +49,7 @@
   }
 }
 
-/**
- * main
- */
+/* main */
 
 .gatsby_home-header_inner, .gatsby_site-article--home {
   .container {

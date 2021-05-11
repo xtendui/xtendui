@@ -813,3 +813,97 @@ const populateSources = (item, element, isReact = false) => {
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
 }
+
+/* makeDocument */
+
+export const makeDocument = () => {
+  // .gatsby_make-line
+  for (const el of document.querySelectorAll(
+    '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
+  )) {
+    el.classList.add('gatsby_make-line')
+  }
+  for (const el of document.querySelectorAll('.gatsby_make-line')) {
+    el.innerHTML = `<span class="gatsby_make-line_line">${el.innerHTML}</span>`
+    el.innerHTML = `<span class="gatsby_make-line_container">${el.innerHTML}</span>`
+  }
+  // .gatsby_make-anchor
+  for (const el of document.querySelectorAll(
+    '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
+  )) {
+    el.classList.add('gatsby_make-line')
+    // previous h2 if h4
+    let prevElement
+    if (el.tagName === 'H4') {
+      prevElement = el
+      while (prevElement.previousElementSibling) {
+        if (prevElement.tagName === 'H2') {
+          break
+        }
+        prevElement = prevElement.previousElementSibling
+      }
+    }
+    // id
+    let id = ''
+    if (prevElement) {
+      id += `${prevElement.textContent.trim().replace(/\W/g, '-').toLowerCase()}-`
+    }
+    id += el.textContent.trim().replace(/\W/g, '-').toLowerCase()
+    // sidebar links
+    if (el.tagName === 'H2') {
+      let activeText =
+        document.querySelector(
+          '.gatsby_button-site_article_sidebar--adiacent.on .gatsby_button-site_article_sidebar_inner'
+        ) ??
+        document.querySelector('.gatsby_button-site_article_sidebar--sub.on .gatsby_button-site_article_sidebar_inner')
+      if (activeText) {
+        activeText = activeText.closest('.gatsby_tooltip_outside_link')
+        let activeTooltip = activeText.querySelector('.xt-tooltip')
+        if (!activeTooltip) {
+          activeText.append(
+            Xt.createElement(`
+<div class="xt-tooltip px-5 group">
+  <div class="relative py-2 rounded-md shadow-tooltip bg-primary-600 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
+    <nav class="xt-list flex-col">
+    </nav>
+  </div>
+</div>`)
+          )
+          activeText.setAttribute(
+            'data-xt-tooltip',
+            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
+          )
+          activeTooltip = activeText.querySelector('.xt-tooltip')
+        }
+        const activeList = activeTooltip.querySelector('.xt-list')
+        activeList.append(
+          Xt.createElement(`
+<a href="#${encodeURIComponent(
+            id
+          )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+  <span class="py-px">${el.textContent.trim()}</span>
+</a>`)
+        )
+      }
+    }
+    // gatsby_make-anchor
+    el.setAttribute('id', id)
+    el.classList.add('gatsby_make-anchor')
+    // wrapInner
+    const link = Xt.createElement(`<a href="#"></a>`)
+    link.setAttribute('href', `#${encodeURIComponent(id)}`)
+    el.classList.add('xt-ignore')
+    el.before(link)
+    const inner = el.querySelector(':scope > *')
+    el.append(link)
+    link.append(inner)
+    el.append(
+      Xt.createElement(`
+<span class="gatsby_site-article_anchor">
+  <span class="xt-button">
+  ${classes.iconLink()}
+  </span>
+</span>`)
+    )
+  }
+}

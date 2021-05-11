@@ -1,6 +1,4 @@
-/**
- * sidebar
- */
+/* sidebar */
 
 .gatsby_site-article_sidebar {
   @screen lg {
@@ -75,9 +73,7 @@
   }
 }
 
-/**
- * header
- */
+/* header */
 
 .gatsby_site-header {
   /* hide sticky when demo-full-open */

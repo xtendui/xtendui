@@ -1,13 +1,8 @@
-/**
- * layout
- */
-
 /* prevent horizontal overflow */
 
 .gatsby_site-header, .gatsby_site-main, .gatsby_site-footer {
   @apply w-full;
 }
-
 
 /* layout */
 
@@ -42,9 +37,7 @@
   max-width: 70rem;
 }
 
-/**
- * listing
- */
+/* listing */
 
 .gatsby_listing {
   @apply mt-10 md:mt-20 xt-mt-auto;
