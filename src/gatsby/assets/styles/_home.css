@@ -85,8 +85,6 @@
 
 /* scroll */
 
-body:not(.xt-noscroll) {
-  .gatsby_home-main_scroll {
-    opacity: 0;
-  }
+.gatsby_home-main_scroll {
+  opacity: 0;
 }

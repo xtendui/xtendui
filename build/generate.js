@@ -103,7 +103,7 @@ const test = false
         let str = `import React${
           strMount !== '' ? `${refs ? `, { useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
-${strImports}export default function component() {${
+${strImports}export default function demo() {${
           strMount !== ''
             ? `${test ? 'const [count, setCount] = useState(0)' : ''}
   const refCurrent = useRef(null)

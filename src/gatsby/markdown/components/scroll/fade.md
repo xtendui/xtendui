@@ -64,9 +64,6 @@ Here's an example of **distance fade** with **animation depending on direction**
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate depending on scroll position relative to the trigger element**.
 
-[[notePrimary]]
-| Always hide the elements only if `body:not(.xt-noscroll)` to make them **visible if browser doesn't support scroll** (e.g.: crawlers).
-
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>

@@ -1,8 +1,6 @@
 
 .demo--fade-matchmedia, .demo--fade-matchmedia-react {
-  body:not(.xt-noscroll) & {
-    .xt-card {
-      opacity: 0;
-    }
+  .xt-card {
+    opacity: 0;
   }
 }
