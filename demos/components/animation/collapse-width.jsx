@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div data-xt-toggle="{ elements: '.xt-button', targets: '.xt-toggle', collapseWidth: 'targets', duration: 500 }">

@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <nav className="xt-list xt-list-4 flex-col">

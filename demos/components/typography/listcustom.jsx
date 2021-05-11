@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <ul className="demo--listcustom-react">
       <ul>

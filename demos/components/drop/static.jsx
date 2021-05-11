@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="relative py-4 px-6 bg-primary-500">

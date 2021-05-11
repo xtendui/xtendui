@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {

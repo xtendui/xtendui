@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ loop: true, navigation: '[data-xt-nav]' }">
@@ -33,7 +33,7 @@ export default function component() {
         <div>
           <button
             type="button"
-            className="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
+            className="hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group"
             data-xt-nav="-1"
             aria-label="Previous slide"
             data-xt-mousefollow>
@@ -57,7 +57,7 @@ export default function component() {
 
           <button
             type="button"
-            className="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
+            className="hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group"
             data-xt-nav="1"
             aria-label="Next slide"
             data-xt-mousefollow>

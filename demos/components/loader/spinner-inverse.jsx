@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center justify-center">
@@ -12,7 +12,7 @@ export default function component() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+          <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -48,7 +48,7 @@ export default function component() {
           type="button"
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Lorem ipsum
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle

@@ -4,7 +4,7 @@ import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -20,7 +20,95 @@ export default function component() {
   return (
     <div className="demo--toggle-progress-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center" data-xt-mousefollow>
-        <span className="xt-loader z-above group xt-mousefollow fixed hover-none:hidden">
+        <button
+          type="button"
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          Toggle 0
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
+              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
+              <span className="block absolute bg-current w-full"></span>
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          Toggle 1
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
+              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
+              <span className="block absolute bg-current w-full"></span>
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          Toggle 2
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
+              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
+              <span className="block absolute bg-current w-full"></span>
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          Toggle 3
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
+              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
+              <span className="block absolute bg-current w-full"></span>
+            </span>
+          </span>
+        </button>
+
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          Target 0
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+            </span>
+          </span>
+        </div>
+
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          Target 1
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+            </span>
+          </span>
+        </div>
+
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          Target 2
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+            </span>
+          </span>
+        </div>
+
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          Target 3
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+            </span>
+          </span>
+        </div>
+
+        <span className="xt-mousefollow fixed xt-loader group hover-none:hidden">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -50,94 +138,6 @@ export default function component() {
             </svg>
           </span>
         </span>
-
-        <button
-          type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-          Toggle 0
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current w-full"></span>
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-          Toggle 1
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current w-full"></span>
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-          Toggle 2
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current w-full"></span>
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
-          Toggle 3
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current w-full"></span>
-            </span>
-          </span>
-        </button>
-
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-          Target 0
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-            </span>
-          </span>
-        </div>
-
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-          Target 1
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-            </span>
-          </span>
-        </div>
-
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-          Target 2
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-            </span>
-          </span>
-        </div>
-
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
-          Target 3
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-              <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-            </span>
-          </span>
-        </div>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import 'xtendui/src/overlay'
 import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">

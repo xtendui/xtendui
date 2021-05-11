@@ -57,7 +57,7 @@ const html = /* HTML */ `
       </nav>
       <button
         type="button"
-        class="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
+        class="hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group"
         data-xt-nav="-1"
         aria-label="Previous slide"
         data-xt-mousefollow
@@ -71,7 +71,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
+        class="hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group"
         data-xt-nav="1"
         aria-label="Next slide"
         data-xt-mousefollow

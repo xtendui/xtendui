@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--media-minheight-react">
       <div className="xt-media-container bg-gray-200 xt-ratio-75">

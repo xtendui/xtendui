@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--overlay-disable-react">
       <div data-xt-overlay="{ appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">

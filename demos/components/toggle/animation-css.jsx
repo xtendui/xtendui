@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--toggle-animation-react">
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">

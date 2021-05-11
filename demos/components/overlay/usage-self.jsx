@@ -1,7 +1,7 @@
 import React from 'react'
 import 'xtendui/src/overlay'
 
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="xt-overlay on" data-xt-overlay>

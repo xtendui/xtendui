@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <table className="table-fixed my-4 xt-my-auto w-full">

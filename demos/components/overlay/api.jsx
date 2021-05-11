@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {

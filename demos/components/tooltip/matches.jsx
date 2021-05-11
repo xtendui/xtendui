@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div data-xt-tooltip="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">

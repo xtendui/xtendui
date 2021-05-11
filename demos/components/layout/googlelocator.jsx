@@ -3,7 +3,7 @@ import React, { useRef, useCallback } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/googlelocator'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -200,7 +200,7 @@ export default function component() {
           </div>
         </div>
 
-        <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
+        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle

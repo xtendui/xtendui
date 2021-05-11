@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </p>
         </div>
         <div
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100"
+          class="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100"
         >
           <div class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">${classes.spinner({})}</div>
         </div>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem ipsum
         <span
-          class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100"
+          class="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100"
         >
           <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500"> ${classes.spinner({})} </span>
         </span>

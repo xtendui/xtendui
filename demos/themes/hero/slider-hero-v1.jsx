@@ -4,7 +4,7 @@ import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -151,7 +151,7 @@ export default function component() {
 
         <button
           type="button"
-          className="hidden md:block cursor-none z-above absolute top-0 left-0 w-24 h-full group"
+          className="hidden md:block cursor-none absolute z-above top-0 left-0 w-24 h-full group"
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
@@ -175,7 +175,7 @@ export default function component() {
 
         <button
           type="button"
-          className="hidden md:block cursor-none z-above absolute top-0 right-0 w-24 h-full group"
+          className="hidden md:block cursor-none absolute z-above top-0 right-0 w-24 h-full group"
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>

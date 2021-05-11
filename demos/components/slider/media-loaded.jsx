@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -24,7 +24,7 @@ export default function component() {
             <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img className="xt-media relative" src="/img.svg" loading="lazy" alt="" />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -60,7 +60,7 @@ export default function component() {
             <div className="xt-slide group group">
               <div className="xt-media-container bg-gray-600">
                 <img className="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -101,7 +101,7 @@ export default function component() {
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -142,7 +142,7 @@ export default function component() {
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -183,7 +183,7 @@ export default function component() {
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -224,7 +224,7 @@ export default function component() {
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -265,7 +265,7 @@ export default function component() {
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle

@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from 'react'
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -27,7 +27,7 @@ export default function component() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
               <span className="block absolute bg-current opacity-25 w-full h-full"></span>
               <span className="block absolute bg-current h-full"></span>
@@ -39,7 +39,7 @@ export default function component() {
           type="button"
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
           Lorem ipsum
-          <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
+          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle opacity-0 transition in:opacity-100">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 left-1/4 right-1/4">
               <span className="block absolute bg-current opacity-25 w-full h-full"></span>
               <span className="block absolute bg-current h-full"></span>

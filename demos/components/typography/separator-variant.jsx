@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       Lorem ipsum <span className="xt-separator xt-separator-dash mx-2 text-primary-500"></span> dolor sit amet

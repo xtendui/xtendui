@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/infinitescroll'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -40,7 +40,7 @@ export default function component() {
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
                   <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -181,7 +181,7 @@ export default function component() {
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
-              <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+              <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
                 <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                   <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                     <circle

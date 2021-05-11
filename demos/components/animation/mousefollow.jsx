@@ -1,7 +1,7 @@
 import React from 'react'
 import 'xtendui/src/mousefollow'
 
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div className="xt-card rounded-md text-black xt-links-default bg-gray-200" data-xt-mousefollow>
@@ -13,7 +13,7 @@ export default function component() {
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow fixed">
+        <span className="xt-mousefollow fixed xt-loader group">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle

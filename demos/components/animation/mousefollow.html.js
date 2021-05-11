@@ -11,7 +11,7 @@ const html = /* HTML */ `
           vitae magna eget, vehicula scelerisque elit.
         </p>
       </div>
-      <span class="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden group xt-mousefollow fixed">
+      <span class="xt-mousefollow fixed xt-loader group">
         <span
           class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100"
         >

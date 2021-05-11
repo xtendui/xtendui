@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--form-variant-primary-react">
       <form className="text-sm py-4 px-6 bg-primary-500">

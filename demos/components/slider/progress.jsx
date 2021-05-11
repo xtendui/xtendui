@@ -4,7 +4,7 @@ import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {
@@ -21,7 +21,107 @@ export default function component() {
     <div className="demo--slider-progress-react" ref={ref}>
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
-          <span className="xt-loader z-above group xt-mousefollow fixed hover-none:hidden">
+          <div className="xt-slides xt-row xt-row-4">
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">1</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">2</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">3</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="xt-slide w-full group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">4</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">5</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">6</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
+              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+                <div className="xt-h4">7</div>
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
+                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
+                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
+            <button
+              type="button"
+              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
+              data-xt-pag
+              title="Slide xt-num">
+              <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+                <span className="xt-filler absolute inset-0 m-auto text-primary-500">
+                  <span className="block absolute bg-current opacity-25 w-full h-full"></span>
+                  <span className="block absolute bg-current w-full"></span>
+                </span>
+              </span>
+            </button>
+          </nav>
+
+          <span className="xt-mousefollow fixed xt-loader group hover-none:hidden">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -51,106 +151,6 @@ export default function component() {
               </svg>
             </span>
           </span>
-
-          <div className="xt-slides xt-row xt-row-4">
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">1</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">2</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">3</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="xt-slide w-full group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">4</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">5</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">6</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-              <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                <div className="xt-h4">7</div>
-                <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                  <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
-                    <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
-                    <span className="block absolute bg-current h-full bottom-0 left-0"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
-            <button
-              type="button"
-              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
-              data-xt-pag
-              title="Slide xt-num">
-              <span className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden">
-                <span className="xt-filler absolute inset-0 m-auto text-primary-500">
-                  <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-                  <span className="block absolute bg-current w-full"></span>
-                </span>
-              </span>
-            </button>
-          </nav>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div>
       <div id="demo--collapse-text-target" className="mb-6 text-lg h-20 overflow-hidden transition-all">

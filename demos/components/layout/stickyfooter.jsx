@@ -1,15 +1,15 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--stickyfooter-react">
-      <div className="site-wrapper">
+      <div className="flex flex-col xt-min-h-screen">
         <header className="site-header">
           <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
             <div className="xt-h4">Header</div>
           </div>
         </header>
 
-        <main className="site-main">
+        <main className="flex flex-col flex-auto">
           <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
             <div className="xt-h4">Main</div>
             <p>
@@ -20,7 +20,7 @@ export default function component() {
           </div>
         </main>
 
-        <footer className="site-footer">
+        <footer>
           <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
             <div className="xt-h4">Footer</div>
           </div>

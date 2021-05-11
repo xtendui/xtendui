@@ -5,7 +5,7 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-export default function component() {
+export default function demo() {
   const refCurrent = useRef(null)
   let unmount
   let ref = useCallback(ref => {

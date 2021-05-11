@@ -1,8 +1,6 @@
 .demo--products-listing-v2, .demo--products-listing-v2-react {
-  body:not(.xt-noscroll) & {
-    .listing-item {
-      opacity: 0;
-    }
+  .listing-item {
+    opacity: 0;
   }
 }
 

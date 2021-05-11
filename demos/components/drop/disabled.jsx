@@ -1,5 +1,5 @@
 import React from 'react'
-export default function component() {
+export default function demo() {
   return (
     <div className="demo--drop-disable-react">
       <div data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
