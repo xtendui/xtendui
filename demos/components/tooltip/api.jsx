@@ -264,6 +264,7 @@ const mountEventmethods = ({ ref }) => {
   const reinitFnc = () => {
     clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
     tooltip.dataset.reinitTimeout = setTimeout(() => {
+      // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
       // restart

@@ -34,7 +34,7 @@ const mountEventmethods = ({ ref }) => {
       time: 4000,
       initial: false,
     },
-    wrap: true,
+    //wrap: true,
     group: 1,
   })
 
@@ -176,6 +176,7 @@ const mountEventmethods = ({ ref }) => {
   const reinitFnc = () => {
     clearTimeout(parseFloat(slider.dataset.reinitTimeout))
     slider.dataset.reinitTimeout = setTimeout(() => {
+      // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
       // restart
