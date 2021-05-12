@@ -20,6 +20,7 @@ The query is inside `object`, only when specifying **elements and targets with `
 | Option                  | `targets:Query`                          | `':scope > .xt-drop, :scope > .xt-drop-item > .xt-drop'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
 
@@ -98,22 +99,6 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 </div>
 
-## Hash
-
-See [toggle hash](/components/toggle/interaction#hash) for more info.
-
-You can link the activation in the url hash, hash activation has precedence over class activation.
-
-Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
-
-</div>
-
 ## Event
 
 You can specify **on** and **off** events for the interactions.
@@ -164,6 +149,22 @@ There some other event options.
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
 | Option                  | `closeInside:Query`                          | `'.xt-backdrop'`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no click inside)            |
 | Option                  | `closeOutside:Query`                          | `'body'`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
+
+</div>
+
+## Hash
+
+See [toggle hash](/components/toggle/interaction#hash) for more info.
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
 
 </div>
 

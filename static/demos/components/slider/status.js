@@ -68,33 +68,37 @@ const mountStatus = ({ ref }) => {
 
   // change
 
-  const change = () => {
-    const self = Xt.get('xt-slider', slider)
-    if (!self) return
-    // availableWidth
-    let availableWidth = 0
-    for (const tr of self.targets) {
-      availableWidth += tr.offsetWidth
-    }
-    // width
-    const el = self.elements.filter(x => self.hasCurrent(x))
-    const slides = self.getTargets(el[0])
-    let width = 0
-    let left = slides[0].offsetLeft
-    for (const slide of slides) {
-      width += slide.offsetWidth
-    }
-    // set
-    const containerWidth = container.offsetWidth
-    const currentWidth = (width * containerWidth) / availableWidth
-    const currentLeft = (left * containerWidth) / availableWidth
-    current.style.width = `${currentWidth}px`
-    current.style.left = `${currentLeft}px`
-    // disabled
-    if (self.disabled) {
-      status.classList.add('hidden')
-    } else {
-      status.classList.remove('hidden')
+  const change = e => {
+    // check because of event propagation
+    if (e.target === slider) {
+      const self = Xt.get('xt-slider', slider)
+      if (!self) return
+      if (!self.targets.length) return
+      // availableWidth
+      let availableWidth = 0
+      for (const tr of self.targets) {
+        availableWidth += tr.offsetWidth
+      }
+      // width
+      const el = self.elements.filter(x => self.hasCurrent(x))
+      const slides = self.getTargets(el[0])
+      let width = 0
+      let left = slides[0].offsetLeft
+      for (const slide of slides) {
+        width += slide.offsetWidth
+      }
+      // set
+      const containerWidth = container.offsetWidth
+      const currentWidth = (width * containerWidth) / availableWidth
+      const currentLeft = (left * containerWidth) / availableWidth
+      current.style.width = `${currentWidth}px`
+      current.style.left = `${currentLeft}px`
+      // disabled
+      if (self.disabled) {
+        status.classList.add('hidden')
+      } else {
+        status.classList.remove('hidden')
+      }
     }
   }
 

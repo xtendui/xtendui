@@ -19,7 +19,8 @@ The query is inside `object`, only when specifying **elements and targets with `
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-toggle-item'`        | Elements query            |
 | Option                  | `targets:Query`                          | `':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
 
@@ -98,24 +99,6 @@ You can set initial activation by adding `on` to the **elements** or **targets**
 
 Additionally on component initialization the class `.xt-toggle-init` gets added to the **object**.
 
-## Toggle
-
-Use the class `.xt-toggle` to hide nodes **with display** when not activated or animating.
-
-Use the class `.xt-toggle-visible` to hide nodes **with visibility** when not activated or animating, useful when you need **display for calculations**.
-
-Use the class `.xt-toggle-absolute` to position node in **absolute mode** when not activated, should be used in conjunction with `.xt-toggle` (remember to use `relative` on a chosen parent element), see [animation noqueue](/components/toggle/animation#queue) for demo.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
-| Utility                  | `.xt-toggle-visible`                     | `xt-toggle-visible`                | `responsive`                | Apply `visibility: hidden` and `pointer-events: none` when not `.on` or `.in` or `.out`            |
-| Utility                  | `.xt-toggle-absolute`                     | `xt-toggle-absolute`                | `responsive`                | Apply `position: absolute` when not `.on`             |
-
-</div>
-
 ## Quantity
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
@@ -135,27 +118,6 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 <demo>
   <demoinline src="demos/components/toggle/quantity">
   </demoinline>
-</demo>
-
-## Hash
-
-You can link the activation in the url hash, hash activation has precedence over class activation.
-
-Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
-
-</div>
-
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/toggle/hash">
-  </div>
 </demo>
 
 ## Event
@@ -207,6 +169,27 @@ There some other event options.
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
 
 </div>
+
+## Hash
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
+
+</div>
+
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/toggle/hash">
+  </div>
+</demo>
 
 ## Navigation and Loop
 

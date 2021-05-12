@@ -160,6 +160,9 @@ class Toggle {
         self.containerElements = document.documentElement
       }
       let arr = Array.from(Xt.arrSingle(self.containerElements.querySelectorAll(options.elements)))
+      if (options.exclude) {
+        arr = arr.filter(x => !x.matches(options.exclude))
+      }
       self.elements = arr
       self.destroyElements.push(...self.elements)
     }
@@ -178,6 +181,9 @@ class Toggle {
     // targets
     if (options.targets) {
       let arr = Array.from(self.containerTargets.querySelectorAll(options.targets))
+      if (options.exclude) {
+        arr = arr.filter(x => !x.matches(options.exclude))
+      }
       self.targets = arr
       self.destroyElements.push(...self.targets)
     }
@@ -3188,6 +3194,7 @@ Toggle.optionsDefaultSuper = {
   targets: ':scope > .xt-toggle, :scope > .xt-toggle-item > .xt-toggle',
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
+  exclude: false,
   // class
   class: 'on',
   classIn: 'in',

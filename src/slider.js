@@ -61,7 +61,7 @@ class Slider extends Xt.Toggle {
     self.destroyNooverflow()
     self.destroyDrag()
     self.destroyWrap()
-    self.destroyPags()
+    self.destroyPagination()
     // targets
     self.initScopeTargets()
     // initGroups
@@ -1247,7 +1247,7 @@ class Slider extends Xt.Toggle {
     self.destroyNooverflow()
     self.destroyDrag()
     self.destroyAutoheight()
-    self.destroyPags()
+    self.destroyPagination()
     self.destroyWrap()
     // super
     super.destroy(weak)
@@ -1308,7 +1308,7 @@ class Slider extends Xt.Toggle {
   /**
    * destroy pagination
    */
-  destroyPags() {
+  destroyPagination() {
     const self = this
     // clean pagination
     if (self.pags && self.pags.length) {
@@ -1363,6 +1363,8 @@ Slider.optionsDefault = {
   // element
   elements: '[data-xt-pag]:not(.hidden)',
   targets: '.xt-slide',
+  elementsInner: ':scope > a, :scope > button',
+  targetsInner: false,
   // quantity
   min: 1,
   max: 1,

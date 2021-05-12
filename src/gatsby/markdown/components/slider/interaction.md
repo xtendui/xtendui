@@ -6,18 +6,21 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
-## Quantity
+## Elements
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more info.
+See [toggle elements](/components/toggle/interaction#elements) for more info.
 
-You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
+You can specify `elements` that listens to event for activation, and `targets` that gets activated.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `min:Number`                          | `1`        | Minimum number of concurrent elements activated            |
-| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+| Option                  | `elements:Query`                          | `'[data-xt-pag]:not(.hidden)'`        | Elements query            |
+| Option                  | `targets:Query`                          | `'.xt-slide'`        | Targets query            |
+| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
 
@@ -44,6 +47,25 @@ You can set initial activation by adding `on` to the **elements** or **targets**
 
 Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.
 
+## Quantity
+
+See [toggle quantity](/components/toggle/interaction#quantity) for more info.
+
+You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `min:Number`                          | `1`        | Minimum number of concurrent elements activated            |
+| Option                  | `max:Number`                          | `1`        | Maximum number of concurrent elements activated            |
+
+</div>
+
+## Event
+
+See [toggle event](/components/toggle/interaction#event) for more info.
+
 ## Hash
 
 You can link the activation in the url hash, hash activation has precedence over class activation.
@@ -64,10 +86,6 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/slider/hash">
   </div>
 </demo>
-
-## Event
-
-See [toggle event](/components/toggle/interaction#event) for more info.
 
 ## Drag	
 

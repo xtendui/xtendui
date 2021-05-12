@@ -19,7 +19,8 @@ The query is inside `object`, only when specifying **elements and targets with `
 | Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-overlay-item'`        | Elements query            |
 | Option                  | `targets:Query`                          | `':scope > .xt-overlay, :scope > .xt-overlay-item > .xt-overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
 
@@ -98,27 +99,6 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 </div>
 
-## Hash
-
-You can link the activation in the url hash, hash activation has precedence over class activation.
-
-Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
-
-</div>
-
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
-
-<demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/hash">
-  </div>
-</demo>
-
 ## Event
 
 See [toggle event](/components/toggle/interaction#event) for more info.
@@ -148,6 +128,27 @@ There some other event options.
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
 
 </div>
+
+## Hash
+
+You can link the activation in the url hash, hash activation has precedence over class activation.
+
+Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
+
+</div>
+
+Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/hash">
+  </div>
+</demo>
 
 ## Navigation and Loop
 
