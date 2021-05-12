@@ -58,7 +58,6 @@ class Toggle {
     self.detail.queueIn = []
     self.detail.queueOut = []
     self.detail.autopaused = false
-    self.destroyElements = [document, window, self.object]
     // init
     self.initVars()
     self.initLogic()
@@ -90,6 +89,8 @@ class Toggle {
    */
   initLogic(saveCurrents = true) {
     const self = this
+    // vars
+    self.destroyElements = [document, window, self.object]
     // init
     self.initSetup()
     self.initMatch()

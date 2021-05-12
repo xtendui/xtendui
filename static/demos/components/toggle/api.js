@@ -143,6 +143,7 @@ const mountEventmethods = ({ ref }) => {
   const reinitFnc = () => {
     clearTimeout(parseFloat(ref.dataset.reinitTimeout))
     ref.dataset.reinitTimeout = setTimeout(() => {
+      // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
       // restart

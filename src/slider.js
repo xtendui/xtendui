@@ -30,6 +30,10 @@ class Slider extends Xt.Toggle {
    */
   initScope() {
     const self = this
+    const options = self.options
+    // dragger
+    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.destroyElements.push(self.dragger)
     // @PERF
     self.detail.moveDir = 0
     self.detail.moveIndex = null
@@ -40,28 +44,6 @@ class Slider extends Xt.Toggle {
     if (self.detail.draggerWidth === 0) {
       return
     }
-    // targets
-    self.initScopeTargets()
-    // initGroups
-    self.initGroups()
-    // initPagination
-    self.initPagination()
-    // elements
-    self.initScopeElements()
-    // clean wraps
-    self.destroyWrap()
-  }
-
-  /**
-   * init vars
-   */
-  initVars() {
-    super.initVars()
-    const self = this
-    const options = self.options
-    // dragger
-    self.dragger = self.object.querySelector(options.drag.dragger)
-    self.destroyElements.push(self.dragger)
     // grab
     if (!self.disabled) {
       self.dragger.classList.add('xt-grab')
@@ -75,6 +57,19 @@ class Slider extends Xt.Toggle {
     }
     // val
     self.detail.dragPosition = self.detail.dragFinal = self.detail.dragActive = 0
+    // clean
+    self.destroyNooverflow()
+    self.destroyDrag()
+    self.destroyWrap()
+    self.destroyPags()
+    // targets
+    self.initScopeTargets()
+    // initGroups
+    self.initGroups()
+    // initPagination
+    self.initPagination()
+    // elements
+    self.initScopeElements()
   }
 
   /**
@@ -376,8 +371,6 @@ class Slider extends Xt.Toggle {
     if (!pags.length) {
       console.error('Error: Xt.Slider pagination not found for', self.object)
     }
-    // clean pagination
-    self.destroyPags()
     // pags
     self.pags = self.pags ? self.pags : []
     for (const [z, pag] of pags.entries()) {
@@ -1228,21 +1221,11 @@ class Slider extends Xt.Toggle {
    */
   disable() {
     const self = this
-    const options = self.options
     // disable
     if (!self.disabled) {
-      if (!options.drag.manual) {
-        // grab
-        self.dragger.classList.remove('xt-grab')
-        // disable interaction
-        for (const target of self.targets) {
-          target.classList.remove('pointer-events-none')
-        }
-      }
-      if (self.autoHeight || self.keepHeight) {
-        // autoHeight
-        self.autoHeight.style.height = ''
-      }
+      // clean
+      self.destroyGrab()
+      self.destroyIntraction()
     }
     // super
     super.disable()
@@ -1258,17 +1241,68 @@ class Slider extends Xt.Toggle {
    */
   destroy(weak = false) {
     const self = this
+    // clean
+    self.destroyGrab()
+    self.destroyIntraction()
+    self.destroyNooverflow()
+    self.destroyDrag()
+    self.destroyAutoheight()
+    self.destroyPags()
+    self.destroyWrap()
+    // super
+    super.destroy(weak)
+  }
+
+  /**
+   * destroy grab
+   */
+  destroyGrab() {
+    const self = this
+    // grab
+    self.dragger.classList.remove('xt-grab')
+  }
+
+  /**
+   * destroy intraction
+   */
+  destroyIntraction() {
+    const self = this
+    // disable interaction
+    for (const target of self.targets) {
+      target.classList.remove('pointer-events-none')
+    }
+  }
+
+  /**
+   * destroy drag
+   */
+  destroyDrag() {
+    const self = this
     const options = self.options
     // drag position
     if (!options.drag.manual) {
       self.dragger.style.transform = ''
     }
-    // clean pagination
-    self.destroyPags()
-    // clean wraps
-    self.destroyWrap()
-    // super
-    super.destroy(weak)
+  }
+
+  /**
+   * destroy nooverflow
+   */
+  destroyNooverflow() {
+    const self = this
+    // nooverflow
+    self.object.classList.remove('xt-slider-nooverflow')
+  }
+
+  /**
+   * destroy autoheight
+   */
+  destroyAutoheight() {
+    const self = this
+    // autoHeight
+    if (self.autoHeight || self.keepHeight) {
+      self.autoHeight.style.height = ''
+    }
   }
 
   /**
