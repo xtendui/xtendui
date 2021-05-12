@@ -205,7 +205,7 @@ You can add navigation with `navigation: '[data-xt-nav]'` option, then with `[da
 
 You can make the **activation loop** with `loop: true`.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	

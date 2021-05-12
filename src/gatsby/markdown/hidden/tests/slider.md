@@ -65,42 +65,42 @@ Test jump click.
 
 Test jump classes only when overflowing.
 
-<demo>	
-  <demoinline src="demos/components/slider/jump">	
-  </demoinline>	
+<demo>
+  <demoinline src="demos/components/slider/jump">
+  </demoinline>
 </demo>
 
 Test loop navigation.
 
 Test loop dragging beyond.
 
-<demo>	
-  <demoinline src="demos/components/slider/navigation">	
-  </demoinline>	
+<demo>
+  <demoinline src="demos/components/slider/navigation">
+  </demoinline>
 </demo>
 
 Test pagination all elements should activate also on init.
 
-<demo>	
-  <demoinline src="demos/components/slider/pagination">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/pagination">
+  </demoinline>
+</demo>
 
 Test autoheight.
 
-<demo>	
-  <demoinline src="demos/components/slider/autoheight">	
-  </demoinline>	
+<demo>
+  <demoinline src="demos/components/slider/autoheight">
+  </demoinline>
 </demo>
 
 Test factor.
 
 Test overflow.
 
-<demo>	
-  <demoinline src="demos/components/slider/drag">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/drag">
+  </demoinline>
+</demo>
 
 ## Other
 

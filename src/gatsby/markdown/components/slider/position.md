@@ -73,7 +73,7 @@ It's different from the **automatic grouping of slides activations** because thi
 
 ## Auto Height
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -82,7 +82,7 @@ It's different from the **automatic grouping of slides activations** because thi
 
 </div>
 
-<demo>	
-  <demoinline src="demos/components/slider/autoheight">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/autoheight">
+  </demoinline>
+</demo>

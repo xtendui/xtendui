@@ -137,12 +137,12 @@ Test auto.
 
 Test window blur and focus shouldn't start if no started and should pause and resume if started.
 
-<demo>	
+<demo>
   <demoinline src="demos/components/toggle/progress">
   </demoinline>
   <demoinline src="demos/components/slider/progress">
   </demoinline>
-</demo>	
+</demo>
 
 ## Class Html
 

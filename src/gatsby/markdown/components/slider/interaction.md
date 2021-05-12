@@ -89,7 +89,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 ## Drag	
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -99,7 +99,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
 | Option                  | `drag.overflow:Function|false`                          | `<Function>`        | Factor when dragging beyond the first and the last slide, return `Number`             |	
 
-</div>	
+</div>
 
 Default functions as follow:
 
@@ -114,10 +114,10 @@ drag: {
 },
 ```
 
-<demo>	
-  <demoinline src="demos/components/slider/drag">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/drag">
+  </demoinline>
+</demo>
 
 ## Pagination	
 
@@ -128,39 +128,39 @@ Inside `[data-xt-pag].hidden` you can use this strings that gets populated with 
 - `xt-content` replaced with slide's `.xt-slide-content` **innerHTML**.	
 - Classes added with slide's `[data-xt-pag-classes]` **value**.	
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
 | Option                  | `pagination:Query`                          | `'.xt-slider-pagination'`        | Query for pagination element             |	
 
-</div>	
+</div>
 
 [[notePrimary]]
 | `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `.xt-slider-pagination` but you can hide it using the class `.xt-slider-pagination.hidden`.
 
 You can use pagination also inside targets as you can see in the demo.
 
-<demo>	
-  <demoinline src="demos/components/slider/pagination">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/pagination">
+  </demoinline>
+</demo>
 
 ## Navigation and Loop
 
 You can add navigation with `[data-xt-nav="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current activation index.	
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
 | Option                  | `navigation:Query`                          | `'[data-xt-nav]'`        | Query for navigation elements             |	
 
-</div>	
+</div>
 
 You can make the **activation loop** with `loop: true`, also when dragging beyond the first and the last slide.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">	
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
@@ -171,9 +171,9 @@ You can make the **activation loop** with `loop: true`, also when dragging beyon
 You can use navigation also inside targets as you can see in the demo.
 
 <demo>
-  <demoinline src="demos/components/slider/navigation">	
-  </demoinline>	
-</demo>	
+  <demoinline src="demos/components/slider/navigation">
+  </demoinline>
+</demo>
 
 ## Jump
 
@@ -187,10 +187,10 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 </div>
 
-<demo>	
-  <demoinline src="demos/components/slider/jump">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/jump">
+  </demoinline>
+</demo>
 
 ## Auto	
 
@@ -212,10 +212,10 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
 
-<demo>	
-  <demoinline src="demos/components/slider/progress">	
-  </demoinline>	
-</demo>	
+<demo>
+  <demoinline src="demos/components/slider/progress">
+  </demoinline>
+</demo>
 
 ## Class html
 
