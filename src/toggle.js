@@ -317,7 +317,7 @@ class Toggle {
         }
         // check if activated
         // fix check options.max for currents of hashChange current reset if hash has current
-        if (activated && currents < options.max) {
+        if ((activated && currents < options.max) || obj.arr.includes(el)) {
           // instant animation
           tr.classList.add(...self.classesIn)
           tr.classList.add(...self.classesInitial)
