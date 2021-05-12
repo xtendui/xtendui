@@ -170,7 +170,7 @@ You can set **html classes on activation**, remember to keep default `classHtml`
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `'xt-scrollbar-overlay`        | Add class to `html` on activation            |
+| Option                  | `classHtml:String`                          | `'xt-scrollbar-overlay'`        | Add class to `html` on activation            |
 
 </div>
 

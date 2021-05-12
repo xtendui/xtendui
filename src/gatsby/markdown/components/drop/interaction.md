@@ -182,4 +182,4 @@ See [toggle auto](/components/toggle/interaction#auto) for more info.
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for more info.
+See [overlay class html](/components/overlay/interaction#class-html) for more info.

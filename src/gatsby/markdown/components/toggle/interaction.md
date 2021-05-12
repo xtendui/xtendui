@@ -267,4 +267,4 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 ## Class html
 
-See [overlay class html](/components/toggle/interaction#class-html) for more info.
+See [overlay class html](/components/overlay/interaction#class-html) for more info.
