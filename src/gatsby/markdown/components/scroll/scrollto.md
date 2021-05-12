@@ -25,7 +25,7 @@ Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 | This demo uses [scroll sticky](/components/scroll/sticky) see documentation for more info.
 
 [[notePrimary]]
-| Do not assign **other components** to scrollto `anchors` or it activates the other components on scrollto activation.
+| Do not assign **other components** to `anchors` or the components activations conflict.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">

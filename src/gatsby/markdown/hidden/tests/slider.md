@@ -61,6 +61,13 @@ Test groups.
 
 ## Interaction
 
+Test exclude.
+
+<demo>
+  <demoinline src="demos/components/slider/exclude">
+  </demoinline>
+</demo>
+
 Test jump click.
 
 Test jump classes only when overflowing.

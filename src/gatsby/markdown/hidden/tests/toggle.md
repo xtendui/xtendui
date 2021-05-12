@@ -65,22 +65,6 @@ Test animation fast duration with and without `data-xt-duration`.
   </demoinline>
 </demo>
 
-## Hash
-
-Test no hash must not add hash initial activation.
-
-Test initial activation on browser location, must remove initial `on` in targets.
-
-Test hash activation.
-
-Test browser location prev e next.
-
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
-
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
-
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
-
 ## Event
 
 Test toggle mouse should not close when clicking opened elements.
@@ -106,6 +90,22 @@ Test prevent event.
   <demoinline src="demos/components/toggle/prevent-event-hover">
   </demoinline>
 </demo>
+
+## Hash
+
+Test no hash must not add hash initial activation.
+
+Test initial activation on browser location, must remove initial `on` in targets.
+
+Test hash activation.
+
+Test browser location prev e next.
+
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+
+Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+
+Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
 
 ## Backdrop
 

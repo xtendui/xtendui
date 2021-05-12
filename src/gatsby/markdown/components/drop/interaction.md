@@ -24,6 +24,8 @@ The query is inside `object`, only when specifying **elements and targets with `
 
 </div>
 
+See [slider elements exclude](/components/slider/interaction#elements) for demo.
+
 ## Group
 
 If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.

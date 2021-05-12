@@ -287,6 +287,8 @@ pre {
     @apply py-2.5 px-5 text-sm leading-snug;
   }
   code {
-    white-space: nowrap;
+    @media (max-width: calc(theme('screens.md') - 1px)) {
+      white-space: nowrap;
+    }
   }
 }

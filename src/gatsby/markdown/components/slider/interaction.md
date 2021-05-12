@@ -24,6 +24,16 @@ You can specify `elements` that listens to event for activation, and `targets` t
 
 </div>
 
+You can **filter elements and targets dynamically** with `exclude`, just **reinit the component when you want to update** the component with new elements and targets.
+
+[[notePrimary]]
+| Do not assign **other components** to `xt-slide` or the components activations conflict.
+
+<demo>
+  <demoinline src="demos/components/slider/exclude">
+  </demoinline>
+</demo>
+
 ## Class	
 
 See [toggle class](/components/toggle/interaction#class) for more info.
