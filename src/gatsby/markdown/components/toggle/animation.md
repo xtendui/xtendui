@@ -33,7 +33,7 @@ When you use animations you need to **specity the duration of the animation** fo
 
 </div>
 
-You can also **assign them also on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
+You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
@@ -55,7 +55,7 @@ You can set activation delay with a value or a function with arguments `{ curren
 
 </div>
 
-You can also **assign them also on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
+You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">

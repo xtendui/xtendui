@@ -78,10 +78,12 @@ You can **toggle manually** activations.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.on:Function`              | Activate node with adding `.on` and `.in` classes after a frame              |
-| Variable                  | `Xt.animOf:Function`              | Dectivate node with `.out` classes removing `.in` and `.on`              |
+| Method                  | `Xt.on(el:Node, suffix:String = '')`                          | Activate node with adding `.on` and `.in` classes after a frame             |
+| Method                  | `Xt.off(el:Node, suffix:String = '', timing:Number = null)`                          | Dectivate node with `.out` classes removing `.in` and `.on`             |
 
 </div>
+
+You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 

@@ -145,15 +145,15 @@ Index methods, they all consider `options.loop`.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getNextIndex(index:Number:false, amount:Number:1, loop:Boolean:null)`                          | Get next activation index, returns `Number|null`             |
-| Method                  | `self.getNext(amount:Number:1, loop:Boolean:null)`                          | Get next element, returns `Node|null`             |
-| Method                  | `self.goToNext(amount:Number:1, force:Boolean:false, loop:Boolean:null)`                          | Activate next element, returns `Node|null`             |
-| Method                  | `self.getPrevIndex(index:Number:false, amount:Number:1, loop:Boolean:null)`                          | Get prev activation index, returns `Number|null`             |
-| Method                  | `self.getPrev(amount:Number:1, loop:Boolean:null)`                          | Get previous element, returns `Node|null`             |
-| Method                  | `self.goToPrev(amount:Number:1, force:Boolean:false, loop:Boolean:null)`                          | Activate previous element, returns `Node|null`             |
-| Method                  | `self.getNumIndex(index:Number, loop:Boolean:null)`                          | Get index from number, return `Number|null`             |
-| Method                  | `self.getNum(index:Number, loop:Boolean:null)`                          | Get element from index, returns `Node|null`             |
-| Method                  | `self.goToNum(index:Number, force:Boolean:false, loop:Boolean:null)`                          | Activate index, returns `Node|null`             |
+| Method                  | `self.getNextIndex(index:Number = false, amount:Number = 1, loop:Boolean = null)`                          | Get next activation index, returns `Number|null`             |
+| Method                  | `self.getNext(amount:Number = 1, loop:Boolean = null)`                          | Get next element, returns `Node|null`             |
+| Method                  | `self.goToNext(amount:Number = 1, force:Boolean:false, loop:Boolean = null)`                          | Activate next element, returns `Node|null`             |
+| Method                  | `self.getPrevIndex(index:Number = false, amount:Number = 1, loop:Boolean = null)`                          | Get prev activation index, returns `Number|null`             |
+| Method                  | `self.getPrev(amount:Number = 1, loop:Boolean = null)`                          | Get previous element, returns `Node|null`             |
+| Method                  | `self.goToPrev(amount:Number = 1, force:Boolean:false, loop:Boolean = null)`                          | Activate previous element, returns `Node|null`             |
+| Method                  | `self.getNumIndex(index:Number, loop:Boolean = null)`                          | Get index from number, return `Number|null`             |
+| Method                  | `self.getNum(index:Number, loop:Boolean = null)`                          | Get element from index, returns `Node|null`             |
+| Method                  | `self.goToNum(index:Number, force:Boolean = false, loop:Boolean = null)`                          | Activate index, returns `Node|null`             |
 
 </div>
 
