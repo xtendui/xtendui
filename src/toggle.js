@@ -1144,29 +1144,6 @@ class Toggle {
   }
 
   /**
-   * get targets groups (one target per group)
-   * @return {Array} array of targets
-   */
-  getTargetsGroups() {
-    const self = this
-    // groups
-    const groups = []
-    for (const target of self.targets) {
-      // choose element by group
-      const group = target.getAttribute('data-xt-group')
-      if (group) {
-        const alreadyFound = groups.filter(x => x.getAttribute('data-xt-group') === group)
-        if (!alreadyFound.length) {
-          groups.push(target)
-        }
-      } else {
-        groups.push(target)
-      }
-    }
-    return groups
-  }
-
-  /**
    * filter elements or targets array with groups array
    * @param {Array} arr Elements or Targets
    * @param {String} attr Groups attribute
@@ -1215,9 +1192,9 @@ class Toggle {
       const final = []
       const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
       if (selfs) {
-        for (const item of selfs) {
+        for (const s of selfs) {
           // choose element by group
-          final.push(...item.getElementsGroups())
+          final.push(...s.elements)
         }
         return final
       }
@@ -1226,8 +1203,9 @@ class Toggle {
       // choose element by group
       let final
       const attr = el.getAttribute('data-xt-group')
-      const groupElements = self.groupFilter(self.elements, attr)
-      const groupTargets = self.groupFilter(self.targets, attr)
+      const some = self.elements.includes(el) ? false : true // data-xt-group some only if finding elements from targets
+      const groupElements = self.groupFilter(self.elements, attr, some)
+      const groupTargets = self.groupFilter(self.targets, attr, some)
       if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupElements)
@@ -1260,14 +1238,15 @@ class Toggle {
       return []
     } else if (self.mode === 'unique') {
       // xtNamespace linked components
-      const final = self.getTargetsGroups()
+      const final = self.targets
       return final
     } else if (self.mode === 'multiple') {
       // choose only target by group
       let final
       const attr = el.getAttribute('data-xt-group')
-      const groupElements = self.groupFilter(self.elements, attr, true)
-      const groupTargets = self.groupFilter(self.targets, attr, true)
+      const some = self.targets.includes(el) ? false : true // data-xt-group some only if finding targets from elements
+      const groupElements = self.groupFilter(self.elements, attr, some)
+      const groupTargets = self.groupFilter(self.targets, attr, some)
       if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupTargets)

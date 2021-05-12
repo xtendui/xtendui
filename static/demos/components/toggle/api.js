@@ -99,12 +99,11 @@ const mountEventmethods = ({ ref }) => {
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
-      const elIndex = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 on:bg-gray-400">Toggle ${elIndex}</button>`
+      const index = self.getElementsGroups().length
+      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 on:bg-gray-400">Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
-      const indexTr = self.getTargetsGroups().length
-      const strTr = `<div class="xt-card xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${indexTr}</div>`
+      const strTr = `<div class="xt-card xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
