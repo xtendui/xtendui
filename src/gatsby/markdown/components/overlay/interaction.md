@@ -20,7 +20,7 @@ The query is inside `object`, only when specifying **elements and targets with `
 | Option                  | `targets:Query`                          | `':scope > .xt-overlay, :scope > .xt-overlay-item > .xt-overlay'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
-| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query (e.g.: `.hidden`)           |
 
 </div>
 
