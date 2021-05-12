@@ -6,6 +6,18 @@ title: "Future"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## Toggle inverse	
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-css-inverse">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-css">
+  </demoinline>
+</demo>
+
 ## Keyboard
 
 Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
@@ -20,14 +32,5 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 <demo>
   <demoinline src="demos/components/toggle/usability-keyboard">
-  </demoinline>
-</demo>
-
-## Toggle inverse	
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-css">
-  </demoinline>
-  <demoinline src="demos/components/toggle/animation-css-inverse">
   </demoinline>
 </demo>

@@ -21,7 +21,7 @@
     }
     /* out */
     &.out {
-      @apply opacity-0 transition-none;
+      @apply opacity-0 duration-0;
       &.dir-before {
         @apply translate-x-4;
       }
