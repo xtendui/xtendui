@@ -96,7 +96,7 @@ export default class Template extends React.Component {
 }
 
 export const query = graphql`
-  query ($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+  query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
     menus: allMarkdownRemark(
       filter: { frontmatter: { menu: { eq: true } } }
       sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }

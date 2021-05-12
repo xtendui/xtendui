@@ -141,7 +141,7 @@ class Template extends React.Component {
 }
 
 export const query = graphql`
-  query ($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
+  query($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
     media: allContentfulAsset {
       items: edges {
         item: node {
