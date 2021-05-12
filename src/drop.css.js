@@ -11,10 +11,10 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.xt-drop-static': {
-      padding: 0,
-      top: '100%',
-      left: '0',
-      right: '0',
+      padding: '0 !important',
+      top: '100% !important',
+      left: '0 !important',
+      right: '0 !important',
     },
   },
   component: theme => ({
