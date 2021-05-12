@@ -277,6 +277,7 @@ class Toggle {
       // fix check obj.arr has element already activated
       if ((activated && currents < options.max) || obj.arr.includes(el)) {
         // instant animation
+        el.classList.add(...self.classes)
         el.classList.add(...self.classesIn)
         el.classList.add(...self.classesInitial)
       } else {
@@ -320,6 +321,7 @@ class Toggle {
         // fix check options.max for currents of hashChange current reset if hash has current
         if ((activated && currents < options.max) || obj.arr.includes(el)) {
           // instant animation
+          tr.classList.add(...self.classes)
           tr.classList.add(...self.classesIn)
           tr.classList.add(...self.classesInitial)
         } else {
