@@ -1,3 +1,24 @@
+# [1.0.0-beta.18](https://github.com/minimit/xtendui/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-05-12)
+
+
+### Bug Fixes
+
+* **drop:** fix xt-drop-static reset styles ([9b986c6](https://github.com/minimit/xtendui/commit/9b986c61b0e5fe5d5772f271a5fb967c77cc0d37))
+* **slider:** fix slider nooverflow when exactly the size ([4792c65](https://github.com/minimit/xtendui/commit/4792c658fbd8b2b2ea7cbf873dd7ecdb4d167a3f))
+* **toggle:** fix api multiple groups ([a90c436](https://github.com/minimit/xtendui/commit/a90c436a3da1f087f69bcb889c5d1ad2249ab63d))
+* **toggle:** hash fix targets classes on hash activation ([ac7b8e5](https://github.com/minimit/xtendui/commit/ac7b8e5434019722e728010e011ead774b37ea13))
+* **toggle:** initialization add also options.class ([2d53937](https://github.com/minimit/xtendui/commit/2d53937d6eb192b80aae9ccf9f6b10066f41a1ce))
+
+
+### Features
+
+* **toggle:** options.exclude to exclude elements or targets matches ([2abc074](https://github.com/minimit/xtendui/commit/2abc074dccb171f586adce5839b7586133a6b3fa))
+
+
+### BREAKING CHANGES
+
+* **toggle:** removed getTargetsGroups from api not needed
+
 # [1.0.0-beta.17](https://github.com/minimit/xtendui/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2021-05-10)
 
 
