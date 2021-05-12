@@ -137,7 +137,7 @@ class Slider extends Xt.Toggle {
     }
     // disable slider if not overflowing
     if (options.nooverflow) {
-      if (self.detail.availableSpace < 0) {
+      if (self.detail.availableSpace <= 0) {
         self.object.classList.add('xt-slider-nooverflow')
       } else {
         self.object.classList.remove('xt-slider-nooverflow')
