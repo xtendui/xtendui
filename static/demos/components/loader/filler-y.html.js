@@ -12,8 +12,8 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <span class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-          <span class="xt-filler absolute inset-0 m-auto text-primary-500 text-opacity-50">
+        <span class="${classes.loader()}">
+          <span class="${classes.filler()} text-primary-500 text-opacity-50">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current w-full animate-xt-filler-y"></span>
           </span>
@@ -22,8 +22,8 @@ const html = /* HTML */ `
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
         Lorem ipsum
-        <span class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-          <span class="xt-filler absolute inset-0 m-auto text-primary-500 text-opacity-50">
+        <span class="${classes.loader()}">
+          <span class="${classes.filler()} text-primary-500 text-opacity-50">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current w-full animate-xt-filler-y"></span>
           </span>

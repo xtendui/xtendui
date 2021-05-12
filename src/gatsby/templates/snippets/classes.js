@@ -53,7 +53,11 @@ export const classes = {
   cardWhite: () => 'text-black xt-links-default bg-white',
   cardSlide: () =>
     'text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400',
+  // components
   slide: () => 'group',
+  loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',
+  spinner: () => 'xt-spinner absolute inset-0 m-auto',
+  filler: () => 'xt-filler absolute inset-0 m-auto',
   // form
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
@@ -178,7 +182,7 @@ export const classes = {
     return `<svg xmlns="http://www.w3.org/2000/svg" class="xt-icon${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`
   },
   // other
-  spinner: ({ classes = null, dimension = 120, radius = 100, dash = 628 }) => {
+  svgSpinner: ({ classes = null, dimension = 120, radius = 100, dash = 628 }) => {
     classes = classes ? ` ${classes}` : ''
     return `<svg viewBox="0 0 ${dimension * 2} ${
       dimension * 2

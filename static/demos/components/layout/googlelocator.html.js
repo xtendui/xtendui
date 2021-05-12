@@ -139,9 +139,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
-        <span class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
-          ${classes.spinner({ classes: 'animate-xt-spinner' })}
+      <div class="${classes.loader()} bg-white bg-opacity-75 xt-toggle">
+        <span class="${classes.spinner()} w-6 h-6 text-primary-500">
+          ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
         </span>
       </div>
     </div>
