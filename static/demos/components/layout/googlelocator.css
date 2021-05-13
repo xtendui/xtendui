@@ -33,6 +33,12 @@
     }
   }
 
+  .googlelocator-item-content {
+    a {
+      word-break: break-all;
+    }
+  }
+
   /* results */
 
   .googlelocator-result {
