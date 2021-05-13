@@ -39,9 +39,6 @@ Use `a` without classes or `.xt-link` to create a **link**.
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| Right now nested links are bugged because `@apply` nested bugs.
-
 ## Variant
 
 Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **parent elements** to style **child links**.
@@ -56,6 +53,9 @@ You can nest **up to two time included the body** to override links styles.
 | Utility                  | `.xt-links-inverse`       | `xt-links-inverse`                | `responsive`                | Inverse links colors            |
 
 </div>
+
+[[notePrimary]]
+| Right now **nested variants are bugged** because `@apply` nested bugs.
 
 <demo>
   <demoinline src="demos/components/link/variant-inverse">
