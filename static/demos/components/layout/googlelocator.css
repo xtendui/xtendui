@@ -101,14 +101,10 @@
     }
     /* box */
     .gm-style-iw-c {
-      @apply py-2 px-6 !important;
+      @apply p-4 !important;
       border: 0;
       border-radius: 0;
       background: theme('colors.white');
-      .googlelocator-item {
-        @apply border-0;
-        cursor: inherit;
-      }
       /* scroll */
       @apply xt-overflow-sub;
       overflow-x: hidden !important;
@@ -122,6 +118,7 @@
       width: 2rem !important;
       height: 2rem !important;
       background: theme('colors.primary.500') !important;
+      border-bottom-left-radius: 0.7rem;
       font-size: 25px;
       color: theme('colors.white') !important;
       line-height: 0;
@@ -130,6 +127,7 @@
       &:before {
         content: '×';
         position: relative;
+        top: -2px;
       }
       img {
         display: none !important;
