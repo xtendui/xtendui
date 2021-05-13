@@ -84,6 +84,7 @@ class Googlelocator {
     }
     // search place
     google.maps.event.addListener(self.search, 'place_changed', () => {
+      // search place
       let place = self.search.getPlace()
       if (place && place.name && place.name !== '') {
         if (place.geometry) {
@@ -99,7 +100,7 @@ class Googlelocator {
       if (self.locateCache && self.locateCache.value === self.searchInput.value) {
         self.position = self.locateCache.position
         self.viewport = null
-        self.radius = null
+        self.radius = options.locateRadius
         self.submit()
         return
       }
@@ -331,7 +332,8 @@ class Googlelocator {
       self.object.classList.remove('found')
       self.object.classList.remove('error')
     }
-    //console.debug('xt-googlelocator locations', self.locations)
+    // eslint-disable-next-line no-console
+    console.debug('xt-googlelocator locations', self.locations)
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
@@ -506,7 +508,8 @@ class Googlelocator {
       value: self.searchInput.value,
       position: self.position,
     }
-    //console.debug('xt-googlelocator locate', pos, self.position)
+    // eslint-disable-next-line no-console
+    console.debug('xt-googlelocator locate', pos, self.position)
     // submit on zoom only one time
     self.map.setCenter(self.position)
     self.submit()
