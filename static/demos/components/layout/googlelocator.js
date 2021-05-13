@@ -104,7 +104,10 @@ const initGooglelocator = ({ ref }) => {
         return passed
       },
       name: function (self, loc, el) {
-        const str = loc.marker.name
+        let str = ''
+        if (loc.marker.name) {
+          str += `${loc.marker.name}`
+        }
         if (!str || str === '') {
           el.remove()
         } else {
@@ -112,7 +115,10 @@ const initGooglelocator = ({ ref }) => {
         }
       },
       address: function (self, loc, el) {
-        const str = loc.marker.address
+        let str = ''
+        if (loc.marker.address) {
+          str += `${loc.marker.address}`
+        }
         if (!str || str === '') {
           el.remove()
         } else {
@@ -120,7 +126,10 @@ const initGooglelocator = ({ ref }) => {
         }
       },
       additional: function (self, loc, el) {
-        const str = loc.marker.additional
+        let str = ''
+        if (loc.marker.additional) {
+          str += `${loc.marker.additional}`
+        }
         if (!str || str === '') {
           el.remove()
         } else {
@@ -129,8 +138,12 @@ const initGooglelocator = ({ ref }) => {
       },
       direction: function (self, loc, el) {
         let str = 'https://www.google.com/maps/dir/?api=1&destination='
-        str += loc.marker.name
-        str += `+${loc.marker.address}`
+        if (loc.marker.name) {
+          str += `${loc.marker.name}`
+        }
+        if (loc.marker.address) {
+          str += `,+${loc.marker.address}`
+        }
         el.setAttribute('href', encodeURI(str))
       },
       distance: function (self, loc, el) {
