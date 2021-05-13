@@ -48,6 +48,7 @@ const initGooglelocator = ({ ref }) => {
       infoWindowMarkerClick: true,
     },
     map: {
+      //icon: icon, // custom icon here
       center: { lat: 40, lng: -74 },
       zoom: 2.5,
       zoomMin: 14,

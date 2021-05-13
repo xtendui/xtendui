@@ -108,8 +108,8 @@ const html = /* HTML */ `
 
           <div class="googlelocator-items">
             <script type="text/x-template">
-              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
-                <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
+              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-primary-500">
+                <div class="xt-list xt-list-8 flex-nowrap items-center justify-between">
                   <div class="googlelocator-item-content text-xs leading-relaxed">
                     <div class="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
                     <address class="not-italic" data-xt-populate="address"></address>

@@ -30,15 +30,15 @@ module.exports = {
     // body links
     '.xt-body:not(.xt-optout-links)': {
       '@apply xt-links-default': '',
-    },
-    'a:not([class]), a[class=""], .xt-link': {
-      wordWrap: 'break-word',
-      overflowWrap: 'break-word',
-      // styles
-      textDecoration: 'underline',
-      transitionProperty: 'all',
-      transitionDuration: theme('transitionDuration.500'),
-      transitionTimingFunction: theme('transitionTimingFunction.out'),
+      'a:not([class]), a[class=""], .xt-link': {
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        // styles
+        textDecoration: 'underline',
+        transitionProperty: 'all',
+        transitionDuration: theme('transitionDuration.500'),
+        transitionTimingFunction: theme('transitionTimingFunction.out'),
+      },
     },
   }),
 }
