@@ -6,6 +6,8 @@
 
 import { Xt } from './xt'
 
+Xt.usabilityIgnore = '.gm-style'
+
 Xt.ready(() => {
   // eslint-disable-next-line no-console
   console.debug(
@@ -17,6 +19,7 @@ Xt.ready(() => {
     ignore: false,
     matches: 'img[src]:not([src^="data:"])',
     mount: ({ ref }) => {
+      if (ref.closest(Xt.usabilityIgnore)) return
       // loading
       const loading = ref.getAttribute('loading')
       if (!loading) {
@@ -34,6 +37,7 @@ Xt.ready(() => {
     ignore: false,
     matches: 'input:not([type="hidden"]), select, textarea',
     mount: ({ ref }) => {
+      if (ref.closest(Xt.usabilityIgnore)) return
       // label
       const labels = ref.labels
       const label = ref.getAttribute('aria-label') || ref.getAttribute('aria-labelledby')
@@ -47,6 +51,7 @@ Xt.ready(() => {
     ignore: false,
     matches: 'a[href]',
     mount: ({ ref }) => {
+      if (ref.closest(Xt.usabilityIgnore)) return
       // title
       const text = ref.textContent.trim()
       const title = ref.title

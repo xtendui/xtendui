@@ -29,44 +29,46 @@
 
   /* results */
 
-  .googlelocator-aside-body {
+  .googlelocator-result {
+    display: none;
+  }
+  .googlelocator-result--initial {
+    display: block;
+  }
+
+  &.found {
     .googlelocator-result {
       display: none;
     }
-    .googlelocator-result--initial {
+    .googlelocator-result--founds {
       display: block;
     }
-    &.found {
-      .googlelocator-result {
-        display: none;
-      }
-      .googlelocator-result--founds {
-        display: block;
-      }
+  }
+
+  &.noplace {
+    .googlelocator-result {
+      display: none;
     }
-    &.noplace {
-      .googlelocator-result {
-        display: none;
-      }
-      .googlelocator-result--noplace {
-        display: block;
-      }
+    .googlelocator-result--noplace {
+      display: block;
     }
-    &.empty {
-      .googlelocator-result {
-        display: none;
-      }
-      .googlelocator-result--empty {
-        display: block;
-      }
+  }
+
+  &.empty {
+    .googlelocator-result {
+      display: none;
     }
-    &.error {
-      .googlelocator-result {
-        display: none;
-      }
-      .googlelocator-result--error {
-        display: block;
-      }
+    .googlelocator-result--empty {
+      display: block;
+    }
+  }
+  
+  &.error {
+    .googlelocator-result {
+      display: none;
+    }
+    .googlelocator-result--error {
+      display: block;
     }
   }
 

@@ -60,7 +60,6 @@ class Googlelocator {
     self.loaderElement = self.object.querySelector(options.elements.loader)
     self.itemsTemplate = self.object.querySelector(options.elements.itemsTemplate)
     self.itemsContainer = self.object.querySelector(options.elements.itemsContainer)
-    self.resultElement = self.object.querySelector(options.elements.results)
     self.foundElement = self.object.querySelector(options.elements.resultsFound)
     // init
     self.mapElement = self.object.querySelector(options.elements.map)
@@ -137,10 +136,10 @@ class Googlelocator {
         } else {
           self.locations = []
           self.populateItems()
-          self.resultElement.classList.add('noplace')
-          self.resultElement.classList.remove('empty')
-          self.resultElement.classList.remove('found')
-          self.resultElement.classList.remove('error')
+          self.object.classList.add('noplace')
+          self.object.classList.remove('empty')
+          self.object.classList.remove('found')
+          self.object.classList.remove('error')
         }
       })
     })
@@ -316,12 +315,10 @@ class Googlelocator {
     }
     // populate
     if (self.locations.length) {
-      if (self.resultElement) {
-        self.resultElement.classList.remove('noplace')
-        self.resultElement.classList.remove('empty')
-        self.resultElement.classList.add('found')
-        self.resultElement.classList.remove('error')
-      }
+      self.object.classList.remove('noplace')
+      self.object.classList.remove('empty')
+      self.object.classList.add('found')
+      self.object.classList.remove('error')
       if (self.foundElement) {
         self.foundElement.innerHTML = self.locations.length
       }
@@ -329,12 +326,10 @@ class Googlelocator {
       self.map.fitBounds(bounds)
       self.map.panToBounds(bounds)
     } else {
-      if (self.resultElement) {
-        self.resultElement.classList.remove('noplace')
-        self.resultElement.classList.add('empty')
-        self.resultElement.classList.remove('found')
-        self.resultElement.classList.remove('error')
-      }
+      self.object.classList.remove('noplace')
+      self.object.classList.add('empty')
+      self.object.classList.remove('found')
+      self.object.classList.remove('error')
     }
     //console.debug('xt-googlelocator locations', self.locations)
     // keep the same level of raf for custom listener
@@ -577,12 +572,10 @@ class Googlelocator {
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
     // populate
-    if (self.resultElement) {
-      self.resultElement.classList.remove('noplace')
-      self.resultElement.classList.remove('empty')
-      self.resultElement.classList.remove('found')
-      self.resultElement.classList.remove('error')
-    }
+    self.object.classList.remove('noplace')
+    self.object.classList.remove('empty')
+    self.object.classList.remove('found')
+    self.object.classList.remove('error')
     // clone
     const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {

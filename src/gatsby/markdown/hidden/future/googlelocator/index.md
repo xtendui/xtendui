@@ -83,6 +83,7 @@ Access properties by getting component object.
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `object:Node`       | Object node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
+| Property                   | `locations:Array`       | Current found locations             |
 | Property                   | `locateCache:Object`       | Locate cache object             |
 | Property                   | `loaderElement:Node`       | Loader node             |
 | Property                   | `itemsTemplate:Node`       | Items template node             |
