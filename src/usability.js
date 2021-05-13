@@ -6,7 +6,7 @@
 
 import { Xt } from './xt'
 
-Xt.usabilityIgnore = '.gm-style'
+Xt.usabilityIgnore = '.sf-toolbar, .gm-style'
 
 Xt.ready(() => {
   // eslint-disable-next-line no-console

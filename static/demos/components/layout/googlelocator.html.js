@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--googlelocator">
     <div class="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
-      <div class="googlelocator-aside relative z-10">
+      <div class="googlelocator-aside flex flex-col w-full relative z-10">
         <div class="relative p-6 border-b border-gray-200">
           <form class="text-sm">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
@@ -84,7 +84,7 @@ const html = /* HTML */ `
           </form>
         </div>
 
-        <div class="googlelocator-aside-body relative p-6">
+        <div class="googlelocator-aside-body relative w-full p-6 xt-overflow-sub overflow-y-scroll">
           <div class="googlelocator-result googlelocator-result--initial text-xs pb-4 border-b border-gray-200">
             Insert your position and find a place near you
           </div>
@@ -106,14 +106,14 @@ const html = /* HTML */ `
             places found
           </div>
 
-          <div class="googlelocator-items mt-4">
+          <div class="googlelocator-items">
             <script type="text/x-template">
               <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
-                  <div class="googlelocator-item-content">
-                    <div class="mt-5 mb-3 xt-my-auto font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
-                    <address class="text-sm uppercase not-italic" data-xt-populate="address"></address>
-                    <div class="text-sm uppercase" data-xt-populate="additional"></div>
+                  <div class="googlelocator-item-content text-xs leading-relaxed">
+                    <div class="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
+                    <address class="not-italic" data-xt-populate="address"></address>
+                    <div data-xt-populate="additional"></div>
                   </div>
                   <a href="#" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
                     ${classes.iconLocate({ classes: 'text-xl -my-1' })}
@@ -126,7 +126,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="googlelocator-main relative flex-auto min-h-full md:fixed md:inset-0">
+      <div class="googlelocator-main relative flex-auto min-h-full md:absolute md:inset-0">
         <div class="relative w-full h-full">
           <div class="googlelocator-main-map w-full h-full"></div>
 

@@ -127,14 +127,6 @@ const initGooglelocator = ({ ref }) => {
           el.innerHTML = str
         }
       },
-      img: function (self, loc, el) {
-        const str = loc.marker.img
-        if (!str || str === '') {
-          el.remove()
-        } else {
-          el.setAttribute('src', str)
-        }
-      },
       direction: function (self, loc, el) {
         let str = 'https://www.google.com/maps/dir/?api=1&destination='
         str += loc.marker.name
@@ -211,7 +203,7 @@ const initGooglelocator = ({ ref }) => {
   // change
 
   const change = () => {
-    console.debug(self.locations)
+    //console.debug(self.locations)
   }
 
   self.object.addEventListener('change.xt.googlelocator', change)

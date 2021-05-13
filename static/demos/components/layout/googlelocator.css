@@ -27,6 +27,18 @@
     }
   }
 
+  .googlelocator-aside-body {
+    @screen md {
+      flex: 1 1 0;
+    }
+  }
+
+  .googlelocator-item-content {
+    a {
+      word-break: break-all;
+    }
+  }
+
   /* results */
 
   .googlelocator-result {
@@ -62,7 +74,7 @@
       display: block;
     }
   }
-  
+
   &.error {
     .googlelocator-result {
       display: none;
