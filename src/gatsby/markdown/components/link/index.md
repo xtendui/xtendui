@@ -39,6 +39,9 @@ Use `a` without classes or `.xt-link` to create a **link**.
   </demoinline>
 </demo>
 
+[[notePrimary]]
+| Right now nested links are bugged because `@apply` nested bugs.
+
 ## Variant
 
 Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **parent elements** to style **child links**.
