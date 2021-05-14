@@ -28,7 +28,6 @@ module.exports = {
       white: '#fff',
       code: '#2d3748',
       gray: {
-        50: '#FCFDFF',
         100: '#FAFCFF',
         200: '#F2F6FF',
         300: '#EAF1FF',
@@ -64,14 +63,20 @@ module.exports = {
       xtendui: {
         link: {
           utility: theme => ({
-            '.xt-links-default': {
-              'code:not([class])': {
-                color: `${theme('colors.primary.500')}!important`,
+            '.xt-links-inverse': {
+              // fix specificity when nested .xt-links-default and .xt-links-inverse
+              '&, .xt-links-default &': {
+                'code:not([class])': {
+                  color: `${theme('colors.white')}!important`,
+                },
               },
             },
-            '.xt-links-inverse': {
-              'code:not([class])': {
-                color: `${theme('colors.white')}!important`,
+            '.xt-links-default': {
+              // fix specificity when nested .xt-links-default and .xt-links-inverse
+              '&, .xt-links-inverse &': {
+                'code:not([class])': {
+                  color: `${theme('colors.primary.500')}!important`,
+                },
               },
             },
           }),

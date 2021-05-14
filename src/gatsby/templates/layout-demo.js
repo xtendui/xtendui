@@ -10,7 +10,7 @@ export default class Layout extends React.Component {
     return (
       <>
         <Helmet>
-          <body className="xt-body xl:text-lg" />
+          <body className="xt-body xt-links-default xl:text-lg" />
         </Helmet>
         {children}
       </>

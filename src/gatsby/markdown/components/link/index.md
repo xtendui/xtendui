@@ -12,9 +12,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Global Styles
 
-Add to the `body` the class `xt-body` to have this features:
-
-* **Default links styles** with `xt-links-default`. You can disable this feature with `xt-optout-links` and keep others `xt-body` features.
+Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have automatic links styles.
 
 ## Usage
 
@@ -43,8 +41,6 @@ Use `a` without classes or `.xt-link` to create a **link**.
 
 Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **parent elements** to style **child links**.
 
-You can nest **up to two time included the body** to override links styles.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
@@ -55,7 +51,7 @@ You can nest **up to two time included the body** to override links styles.
 </div>
 
 [[notePrimary]]
-| Right now **nested variants are bugged** because `@apply` nested bugs.
+| You can **nest up to two time included the body** to override links styles.
 
 <demo>
   <demoinline src="demos/components/link/variant-inverse">

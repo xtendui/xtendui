@@ -24,7 +24,7 @@ export default class Layout extends React.Component {
     return (
       <>
         <Helmet>
-          <body className="xt-body xl:text-lg xt-overflow-main" />
+          <body className="xt-body xt-links-default xl:text-lg xt-overflow-main" />
         </Helmet>
         {seo && seo.title === 'Home' ? (
           <div className="gatsby_site-wrapper overflow-hidden flex flex-col xt-min-h-screen">
