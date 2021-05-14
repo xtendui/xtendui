@@ -81,7 +81,7 @@ const mountStatus = ({ ref }) => {
       }
       // width
       const el = self.elements.filter(x => self.hasCurrent(x))
-      const slides = self.getTargets(el[0])
+      const slides = self.getTargets(el[0], true)
       let width = 0
       let left = slides[0].offsetLeft
       for (const slide of slides) {
