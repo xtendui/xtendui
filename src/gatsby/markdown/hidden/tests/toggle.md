@@ -52,6 +52,13 @@ Test multiple raf should always have `on` class until event `init.xt` and then s
   </demoinline>
 </demo>
 
+Test exclude.
+
+<demo>
+  <demoinline src="demos/components/slider/exclude">
+  </demoinline>
+</demo>
+
 Test activation.
 
 Test animation fast duration with and without `data-xt-duration`.

@@ -1348,10 +1348,10 @@ class Toggle {
     const self = this
     const options = self.options
     // fix groupElements and targets
-    element = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
+    const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
     // hasCurrent
     const arr = running ? Xt.running : Xt.currents
-    return arr[self.ns].filter(x => x === element).length
+    return arr[self.ns].filter(x => elements.includes(x)).length
   }
 
   /**

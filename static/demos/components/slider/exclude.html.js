@@ -37,7 +37,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
-              <div class="xt-toggle" data-xt-group="group0">
+              <div class="xt-toggle" data-xt-group="group0,group1">
                 <div class="xt-card rounded-md ${classes.cardSlide()}">
                   <div class="xt-h4">2</div>
                 </div>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
-              <div class="xt-toggle" data-xt-group="group0">
+              <div class="xt-toggle" data-xt-group="group0,group1">
                 <div class="xt-card rounded-md ${classes.cardSlide()}">
                   <div class="xt-h4">6</div>
                 </div>
