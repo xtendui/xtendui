@@ -8,6 +8,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Toggle inverse	
 
+Devo switchare la queue mettendo un data-xt-inverse su targets inverse e tenere classi uguali.
+
+Forse basta che metto nella queue inversa in eventOn ed eventOff.
+
 <demo>
   <demoinline src="demos/components/toggle/animation-css-inverse">
   </demoinline>
