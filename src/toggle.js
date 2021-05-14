@@ -649,12 +649,12 @@ class Toggle {
         }
       }
     }
-    if (options.hash && self.hasHash) {
+    if (self.hasHash) {
       // hash
       const hashHandler = Xt.dataStorage.put(
         window,
         `hashchange/${self.ns}`,
-        self.hashChange.bind(self).bind(self, true, null)
+        self.hashChange.bind(self).bind(self, true)
       )
       addEventListener('hashchange', hashHandler)
     }
@@ -906,7 +906,7 @@ class Toggle {
       return { currents, arr }
     }
     // logic
-    if (options.hash && self.hasHash) {
+    if (self.hasHash) {
       if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
         const hash = decodeURI(location.hash.split('#')[1])
         if (hash) {
@@ -1154,15 +1154,22 @@ class Toggle {
    * @param {Array} arr Elements or Targets
    * @param {String} attr Groups attribute
    * @param {Boolean} some Filter also if some in Groups attribute
+   * @param {Boolean} same Use also data-xt-group-same
    * @return {Array} Filtered array
    */
-  groupFilter(elements, attr, some = false) {
+  groupFilter(elements, attr, some = false, same = false) {
     const self = this
     const options = self.options
     // logic
     const found = []
     for (const el of elements) {
-      const currentAttr = el.getAttribute('data-xt-group')
+      let currentAttr = el.getAttribute('data-xt-group')
+      if (same) {
+        const currentAttrSame = el.getAttribute('data-xt-group-same')
+        if (currentAttrSame) {
+          currentAttr += options.groupSeparator + currentAttrSame
+        }
+      }
       // if same attr
       if (currentAttr === attr) {
         found.push(el)
@@ -1183,10 +1190,12 @@ class Toggle {
   /**
    * get elements from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
+   * @param {Boolean} same Use also data-xt-group-same
    * @return {Array} The first element is the one on getElementsGroups()
    */
-  getElements(el = null) {
+  getElements(el = null, same = false) {
     const self = this
+    const options = self.options
     // getElements
     if (!self.elements || !self.elements.length) {
       return []
@@ -1208,10 +1217,16 @@ class Toggle {
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final
-      const attr = el.getAttribute('data-xt-group')
+      let attr = el.getAttribute('data-xt-group')
+      if (same) {
+        const attrSame = el.getAttribute('data-xt-group-same')
+        if (attrSame) {
+          attr += options.groupSeparator + attrSame
+        }
+      }
       const some = self.elements.includes(el) ? false : true // data-xt-group some only if finding elements from targets
-      const groupElements = self.groupFilter(self.elements, attr, some)
-      const groupTargets = self.groupFilter(self.targets, attr, some)
+      const groupElements = self.groupFilter(self.elements, attr, some, same)
+      const groupTargets = self.groupFilter(self.targets, attr, some, same)
       if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupElements)
@@ -1232,10 +1247,12 @@ class Toggle {
   /**
    * get targets from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
+   * @param {Boolean} same Use also data-xt-group-same
    * @return {Array}
    */
-  getTargets(el = null) {
+  getTargets(el = null, same = false) {
     const self = this
+    const options = self.options
     // getTargets
     if (!self.targets || !self.targets.length) {
       return []
@@ -1249,10 +1266,16 @@ class Toggle {
     } else if (self.mode === 'multiple') {
       // choose only target by group
       let final
-      const attr = el.getAttribute('data-xt-group')
+      let attr = el.getAttribute('data-xt-group')
+      if (same) {
+        const attrSame = el.getAttribute('data-xt-group-same')
+        if (attrSame) {
+          attr += options.groupSeparator + attrSame
+        }
+      }
       const some = self.targets.includes(el) ? false : true // data-xt-group some only if finding targets from elements
-      const groupElements = self.groupFilter(self.elements, attr, some)
-      const groupTargets = self.groupFilter(self.targets, attr, some)
+      const groupElements = self.groupFilter(self.elements, attr, some, same)
+      const groupTargets = self.groupFilter(self.targets, attr, some, same)
       if (attr) {
         // if group all group targets
         final = Xt.arrSingle(groupTargets)
@@ -1454,23 +1477,6 @@ class Toggle {
         el.classList.add(...self.classesAfter)
       }
     }
-    // hash
-    if (options.hash && self.hasHash && !self.initial) {
-      const attr = el.getAttribute(options.hash)
-      if (attr) {
-        // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-        cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-        Xt.dataStorage.set(
-          window,
-          `xtHashFrame`,
-          requestAnimationFrame(() => {
-            Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-            Xt.scrolltoHashforce = false
-            location.hash = `#${encodeURIComponent(attr)}`
-          })
-        )
-      }
-    }
   }
 
   /**
@@ -1484,6 +1490,41 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.add(...self.classesDone)
+    }
+  }
+
+  /**
+   * activate hash
+   * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {String} type Type of element
+   */
+  activateHash(obj, el, type) {
+    const self = this
+    const options = self.options
+    // hash
+    if (self.hasHash && !self.initial) {
+      // fix no data-xt-group-same
+      const elMain = obj.elements.queueEls[0]
+      if (
+        (type === 'elements' && self.getElements(elMain).includes(el)) ||
+        (type === 'targets' && self.getTargets(elMain).includes(el))
+      ) {
+        const attr = el.getAttribute(options.hash)
+        if (attr) {
+          // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
+          cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+          Xt.dataStorage.set(
+            window,
+            `xtHashFrame`,
+            requestAnimationFrame(() => {
+              Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+              Xt.scrolltoHashforce = false
+              location.hash = `#${encodeURIComponent(attr)}`
+            })
+          )
+        }
+      }
     }
   }
 
@@ -1513,23 +1554,6 @@ class Toggle {
         el.classList.add(...self.classesAfter)
       }
     }
-    // hash
-    if (options.hash && self.hasHash && !self.initial) {
-      const attr = el.getAttribute(options.hash)
-      if (attr && attr === location.hash.split('#')[1]) {
-        // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-        cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-        Xt.dataStorage.set(
-          window,
-          `xtHashFrame`,
-          requestAnimationFrame(() => {
-            Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-            Xt.scrolltoHashforce = false
-            location.hash = ''
-          })
-        )
-      }
-    }
   }
 
   /**
@@ -1543,6 +1567,41 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       el.classList.remove(...self.classesOut)
+    }
+  }
+
+  /**
+   * deactivate hash
+   * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   * @param {String} type Type of element
+   */
+  deactivateHash(obj, el, type) {
+    const self = this
+    const options = self.options
+    // hash
+    if (options.hash && self.hasHash && !self.initial) {
+      // fix no data-xt-group-same
+      const elMain = obj.elements.queueEls[0]
+      if (
+        (type === 'elements' && self.getElements(elMain).includes(el)) ||
+        (type === 'targets' && self.getTargets(elMain).includes(el))
+      ) {
+        const attr = el.getAttribute(options.hash)
+        if (attr && attr === location.hash.split('#')[1]) {
+          // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
+          cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+          Xt.dataStorage.set(
+            window,
+            `xtHashFrame`,
+            requestAnimationFrame(() => {
+              Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+              Xt.scrolltoHashforce = false
+              location.hash = ''
+            })
+          )
+        }
+      }
     }
   }
 
@@ -1570,12 +1629,13 @@ class Toggle {
       // auto
       self.eventAutostop()
       // fix groupElements and targets
-      const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
+      const elements =
+        options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
       // on
       self.addCurrent(elements[0])
       self.setIndex(elements[0])
       self.setDirection()
-      const targets = self.getTargets(element)
+      const targets = self.getTargets(element, true)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // if currents > max
@@ -1620,10 +1680,11 @@ class Toggle {
     // toggle
     if (force || self.checkOff(element)) {
       // fix groupElements and targets
-      const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
+      const elements =
+        options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
       // off
       self.removeCurrent(elements[0])
-      const targets = self.getTargets(element)
+      const targets = self.getTargets(element, true)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // fix sometimes blur is undefined
@@ -2049,6 +2110,7 @@ class Toggle {
       }
       // activation
       self.activate(el, type)
+      self.activateHash(obj, el, type)
       // special
       self.specialZindex(actionCurrent, el, type)
       self.specialAppendto(actionCurrent, el, type)
@@ -2117,6 +2179,7 @@ class Toggle {
       }
       // activation
       self.deactivate(el, type)
+      self.deactivateHash(obj, el, type)
       // special
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type, obj)

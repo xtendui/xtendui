@@ -313,7 +313,7 @@ class Slider extends Xt.Toggle {
               groupCurrent.targets.push(targetTargets) // put at end
               // add to target current group
               const groupStr = groupGroup + options.groupSeparator + targetTargets.getAttribute('data-xt-group')
-              targetTargets.setAttribute('data-xt-group', groupStr)
+              targetTargets.setAttribute('data-xt-group-same', groupStr)
             } else {
               // break loop
               i = self.group.length - 1
@@ -335,7 +335,7 @@ class Slider extends Xt.Toggle {
               groupCurrent.targets.unshift(targetTargets) // put at start
               // add to target current group
               const groupStr = targetTargets.getAttribute('data-xt-group') + options.groupSeparator + groupGroup
-              targetTargets.setAttribute('data-xt-group', groupStr)
+              targetTargets.setAttribute('data-xt-group-same', groupStr)
             } else {
               // break loop
               i = 0
