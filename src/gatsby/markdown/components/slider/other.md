@@ -105,7 +105,3 @@ When you need to reinit the component when the media is loaded and the **width**
   <demoinline src="demos/components/slider/media-loaded">
   </demoinline>
 </demo>
-
-## Aria
-
-See [toggle aria](/components/toggle/other#aria) for aria options.

@@ -83,10 +83,6 @@ Use this code to create a **close outside**.
   </demoinline>
 </demo>
 
-## Aria
-
-See [toggle aria](/components/toggle/other#aria) for aria options.
-
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

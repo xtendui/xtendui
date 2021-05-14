@@ -78,10 +78,6 @@ You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for ini
 
 If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'PopperInstance')`, for example when you want to `.update()` it.
 
-## Aria
-
-See [toggle aria](/components/toggle/other#aria) for aria options.
-
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
