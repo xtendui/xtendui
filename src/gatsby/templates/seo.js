@@ -49,8 +49,8 @@ export default function SEO({ title, description, lang, meta }) {
           content: site.siteMetadata.image,
         },
         {
-          name: 'twitter:xt-card',
-          content: 'summary_large_image',
+          name: 'twitter:card',
+          content: site.siteMetadata.image,
         },
         {
           name: 'twitter:creator',
