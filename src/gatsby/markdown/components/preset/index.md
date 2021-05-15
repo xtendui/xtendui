@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Getting Started"
+category: "Introduction"
 parent: "Preset"
 title: "Preset"
 description: "Xtend UI preset with default theme that extends Tailwind default theme."

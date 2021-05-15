@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Getting Started"
+category: "Introduction"
 parent: "Brand"
 title: "Brand"
 description: "XtendUI brand assets for sharing."

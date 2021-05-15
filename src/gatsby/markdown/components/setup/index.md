@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Getting Started"
+category: "Introduction"
 parent: "Setup"
 title: "Setup"
 description: "Installation instructions to get Xtend UI up and running."

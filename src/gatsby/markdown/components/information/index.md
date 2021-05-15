@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Getting Started"
+category: "Introduction"
 parent: "Informations"
 title: "Informations"
 description: "General project informations and browsers support."
