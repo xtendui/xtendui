@@ -50,9 +50,6 @@ module.exports = {
       },
       outline: {
         browser: '5px auto Highlight',
-        //outline: '1px dotted',
-        // eslint-disable-next-line no-dupe-keys
-        //outline: '5px auto -webkit-focus-ring-color',
       },
       boxShadow: {
         ...require('./src/drop.css.js').boxShadow,

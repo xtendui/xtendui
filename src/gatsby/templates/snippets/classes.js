@@ -61,18 +61,18 @@ export const classes = {
   // form
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
-  checkDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
-  checkPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
-  radioDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
-  radioPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
-  switchDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
-  switchPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
+  checkDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  checkPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
+  radioDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  radioPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
+  switchDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
   inputDefault: () =>
-    'py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-400 focus:outline-none',
+    'py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none',
   inputPrimary: () =>
-    'py-2 px-4 text-white placeholder-white placeholder-opacity-50 bg-primary-600 transition focus:bg-primary-700 focus:outline-none',
+    'py-2 px-4 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
-    'py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-400 focus:outline-none',
+    'py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none',
   labelDefault: () => 'font-semibold text-gray-900',
   labelPrimary: () => 'font-semibold text-white',
   label: () => 'flex',
