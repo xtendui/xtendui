@@ -243,7 +243,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `auto.time:Milliseconds`                          | `false`        | Automatic activation time            |
+| Option                  | `auto.time:Number`                          | `false`        | Automatic activation time            |
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |

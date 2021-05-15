@@ -696,11 +696,17 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
+    // logic
+    if (self.initial) {
+      // keep the same level of raf for custom listener
+      requestAnimationFrame(() => {
+        // listener dispatch
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+      })
+    } else {
       // listener dispatch
       self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    })
+    }
     // keep super after dragposition because it sets self.initial etc..
     super.eventOn(element, force, e)
     // wrap

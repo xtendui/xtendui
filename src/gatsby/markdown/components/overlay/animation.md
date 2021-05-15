@@ -24,42 +24,45 @@ You can also customize `xt-backdrop` animations.
   </demoinline>
 </demo>
 
-## Duration
+## Duration and Delay
 
-See [toggle duration](/components/toggle/animation#duration) for more info.
+See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
 
-When you use animations you need to **specity the duration of the animation** for proper interactions.
+[[notePrimary]]
+| When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+#### Duration
 
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `duration:Milliseconds`                          | `false`        | Activation and Deactivation duration            |
-| Option                  | `durationIn:Milliseconds`                          | `false`        | Activation duration            |
-| Option                  | `durationOut:Milliseconds`                          | `false`        | Deactivation duration            |
-
-</div>
+You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
 
 You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
-## Delay
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-See [toggle delay](/components/toggle/animation#delay) for more info.
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `duration:Function|Number`                          | `false`        | Activation and Deactivation duration            |
+| Option                  | `durationIn:Function|Number`                          | `false`        | Activation duration            |
+| Option                  | `durationOut:Function|Number`                          | `false`        | Deactivation duration            |
 
-You can set activation delay with a value or a function with arguments `{ current, total, el }` and that returns a value.
+</div>
+
+#### Delay
+
+You can set activation delay with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
+
+You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Milliseconds|Function`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Milliseconds|Function`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Milliseconds|Function`                          | `false`        | Deactivation delay            |
+| Option                  | `delay:Function|Number`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Function|Number`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Function|Number`                          | `false`        | Deactivation delay            |
 | Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 
 </div>
-
-You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
 

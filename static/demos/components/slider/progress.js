@@ -25,8 +25,11 @@ const mountSlider = ({ ref }) => {
 
   // vars
 
-  const dragTime = 1
-  const dragEase = 'quint.out'
+  const dragTimeMax = 1
+  const dragTimeMin = 0.25
+  const dragEase = 'quart.out'
+  let dragDistance
+  let dragDuration
 
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
@@ -45,18 +48,21 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
   const dragposition = () => {
+    // dragDuration depending on distance
+    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
+    dragDuration = Math.max(Math.min(dragDistance / 250, dragTimeMax), dragTimeMin)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
-      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      duration: self.initial || self.detail.dragging ? 0 : dragDuration,
       ease: dragEase,
     })
     // dragger tween with main time and ease
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,
-      duration: self.initial || self.detail.dragging ? 0 : dragTime,
+      duration: self.initial || self.detail.dragging ? 0 : dragDuration,
       ease: dragEase,
     })
   }

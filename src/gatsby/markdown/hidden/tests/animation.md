@@ -30,7 +30,7 @@ Test activations and animations.
 
 ## Duration and Delay
 
-Test activations and animations.
+Test duration and delay.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
