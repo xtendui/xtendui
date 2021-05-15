@@ -95,7 +95,9 @@ Then in the root of your project set up polyfills with [babel.config.js](https:/
 
 ## Boilerplate
 
-Add `xt-body` class to `body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles) and [layout global styles](https://xtendui.com/components/layout#global-styles).
+Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles) and [layout global styles](https://xtendui.com/components/layout#global-styles).
+
+Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
 
 Add this javascript to setup [animations javascript](https://xtendui.com/components/animation#javascript).
 
@@ -119,7 +121,7 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 }
 ```
 
-Add this javascript to setup [scrolltrigger fixes](https://xtendui.com/components/scroll#fixes).
+Add this javascript to setup [scroll fixes](https://xtendui.com/components/scroll#fixes).
 
 ```js
 import { Xt } from 'xtendui'

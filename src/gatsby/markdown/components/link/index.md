@@ -12,7 +12,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Global Styles
 
-Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have automatic links styles.
+Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have link global styles.
 
 ## Usage
 

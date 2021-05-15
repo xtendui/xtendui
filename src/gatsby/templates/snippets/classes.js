@@ -68,11 +68,11 @@ export const classes = {
   switchDefault: () => 'border text-primary-500 border-gray-400 bg-gray-200 transition-all',
   switchPrimary: () => 'border text-primary-400 border-primary-600 bg-primary-400 transition-all',
   inputDefault: () =>
-    'py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300',
+    'py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-400',
   inputPrimary: () =>
-    'py-2 px-4 text-white placeholder-white placeholder-opacity-50 bg-primary-600 focus:bg-primary-700',
+    'py-2 px-4 text-white placeholder-white placeholder-opacity-50 bg-primary-600 transition focus:bg-primary-700',
   inputUnderline: () =>
-    'py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300',
+    'py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-400',
   labelDefault: () => 'font-semibold text-gray-900',
   labelPrimary: () => 'font-semibold text-white',
   label: () => 'flex',
