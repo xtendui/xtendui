@@ -33,7 +33,7 @@ Xt.mount({
         const overlay = self.target.closest('.xt-overlay')
         if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
         const distance = Math.abs(self.scroller.scrollTop - self.position)
-        return Math.max(Math.min(distance / 250, 1), 0.25)
+        return Math.min(Math.log(1 + distance / 200), 1)
       },
     })
 
@@ -45,7 +45,7 @@ Xt.mount({
       gsap.to(self.scroller, {
         scrollTo: self.position,
         duration: self.duration,
-        ease: 'quart.inOut',
+        ease: 'quint.out',
       })
     }
 

@@ -24,8 +24,6 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const dragTimeMax = 1
-  const dragTimeMin = 0.25
   const dragEase = 'quart.out'
   let dragDistance
   let dragDuration
@@ -47,13 +45,13 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = Math.max(Math.min(dragDistance / 250, dragTimeMax), dragTimeMin)
+    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
     // dragPosition tween with main duration and ease
     gsap.killTweensOf(self.detail)
     gsap
       .to(self.detail, {
         dragPosition: self.detail.dragFinal,
-        duration: self.initial || self.detail.dragging ? 0 : dragDuration,
+        duration: dragDuration,
         ease: dragEase,
       })
       .eventCallback('onComplete', () => {
