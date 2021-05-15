@@ -729,7 +729,9 @@ class Slider extends Xt.Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+    if (self.inverse !== null) {
+      self.direction = self.inverse ? -1 : 1
+    } else if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
       // initial direction and same index direction
       self.direction = 0
     } else if (self.detail.dragFinalOld !== self.detail.dragFinal) {
