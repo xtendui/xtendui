@@ -72,6 +72,7 @@ The following theme values are added with the preset:
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
+* [outline](https://tailwindcss.com/docs/outline) `outline-browser` added.
 * [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
 * Added new settings see [animation preset](/components/animation/preset).
 

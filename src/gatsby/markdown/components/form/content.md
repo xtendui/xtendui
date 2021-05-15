@@ -42,6 +42,9 @@ You can have custom design that contains the `input[type="checkbox"]` or `input[
 [[notePrimary]]
 | You can **hide the input inside** with `sr-only`, **don't assign `display: none`** because for usability purpose, it would become **inacessible to keyboard events**.
 
+[[notePrimary]]
+| Remember to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`.
+
 Use [button](/components/button) with `label` to create **checks with button**.
 
 <demo>

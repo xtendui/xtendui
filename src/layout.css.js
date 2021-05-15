@@ -38,14 +38,9 @@ module.exports = {
     },
     // custom focus
     '.xt-body:not(.xt-optout-focus)': {
-      ':focus, label:focus-within': {
-        outline: '1px dotted',
-        // eslint-disable-next-line no-dupe-keys
-        outline: '5px auto -webkit-focus-ring-color',
-      },
       // focus-visible
       '&:not(.xt-focus-visible)': {
-        ':focus, label:focus-within': {
+        ':focus, :focus-within': {
           outline: 'none',
         },
       },
