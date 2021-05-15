@@ -38,6 +38,9 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    drag: {
+      overflow: false,
+    },
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -47,6 +50,7 @@ const mountSlider = ({ ref }) => {
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
     dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
     // dragPosition tween with main duration and ease
+        console.log(self.detail.dragFinal, dragDuration)
     gsap.killTweensOf(self.detail)
     gsap
       .to(self.detail, {
@@ -84,6 +88,7 @@ const mountSlider = ({ ref }) => {
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming')
     }
+    //console.log(self.detail.dragFinal)
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
       incoming.classList.add('incoming')
