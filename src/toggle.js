@@ -2034,7 +2034,8 @@ class Toggle {
       if (obj[type].done) {
         for (const el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
           // done other queue
@@ -2543,14 +2544,14 @@ class Toggle {
           initial = initial === final ? 0 : initial
           el.style.height = `${initial}px`
           // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
           Xt.dataStorage.set(
             el,
-            `${self.ns}CollapseFrame`,
+            `${self.ns}CollapseHeightFrame`,
             requestAnimationFrame(() => {
               Xt.dataStorage.set(
                 el,
-                `${self.ns}CollapseFrame`,
+                `${self.ns}CollapseHeightFrame`,
                 requestAnimationFrame(() => {
                   el.style.height = `${final}px`
                 })
@@ -2567,14 +2568,14 @@ class Toggle {
           initial = initial === final ? 0 : initial
           el.style.width = `${initial}px`
           // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
           Xt.dataStorage.set(
             el,
-            `${self.ns}CollapseFrame`,
+            `${self.ns}CollapseWidthFrame`,
             requestAnimationFrame(() => {
               Xt.dataStorage.set(
                 el,
-                `${self.ns}CollapseFrame`,
+                `${self.ns}CollapseWidthFrame`,
                 requestAnimationFrame(() => {
                   el.style.width = `${final}px`
                 })
@@ -2593,14 +2594,14 @@ class Toggle {
           final = initial === final ? 0 : final
           el.style.height = `${current}px`
           // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
           Xt.dataStorage.set(
             el,
-            `${self.ns}CollapseFrame`,
+            `${self.ns}CollapseHeightFrame`,
             requestAnimationFrame(() => {
               Xt.dataStorage.set(
                 el,
-                `${self.ns}CollapseFrame`,
+                `${self.ns}CollapseHeightFrame`,
                 requestAnimationFrame(() => {
                   el.style.height = `${final}px`
                 })
@@ -2610,7 +2611,7 @@ class Toggle {
         }
         if (options.collapseWidth === type) {
           el.classList.remove('xt-collapse-reset')
-          const current = el.offsetHeight // fix keep current off initial
+          const current = el.offsetWidth // fix keep current off initial
           el.style.width = ''
           let final = el.offsetWidth
           el.style.width = 'auto'
@@ -2618,14 +2619,14 @@ class Toggle {
           final = initial === final ? 0 : final
           el.style.width = `${current}px`
           // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseFrame`))
+          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
           Xt.dataStorage.set(
             el,
-            `${self.ns}CollapseFrame`,
+            `${self.ns}CollapseWidthFrame`,
             requestAnimationFrame(() => {
               Xt.dataStorage.set(
                 el,
-                `${self.ns}CollapseFrame`,
+                `${self.ns}CollapseWidthFrame`,
                 requestAnimationFrame(() => {
                   el.style.width = `${final}px`
                 })
