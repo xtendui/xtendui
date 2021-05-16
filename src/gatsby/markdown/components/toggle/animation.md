@@ -53,7 +53,6 @@ You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"
 | Option                  | `delay:Function|Number`                          | `false`        | Activation and Deactivation delay            |
 | Option                  | `delayIn:Function|Number`                          | `false`        | Activation delay            |
 | Option                  | `delayOut:Function|Number`                          | `false`        | Deactivation delay            |
-| Option                  | `delayInitial:Boolean`                          | `true`        | Initial activation delay            |
 
 </div>
 

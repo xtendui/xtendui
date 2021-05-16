@@ -1652,7 +1652,7 @@ class Toggle {
       // queue run
       // eslint-disable-next-line guard-for-in
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
-        self.queueStart(actionCurrent, actionOther, type, 0, true)
+        self.queueStart(actionCurrent, actionOther, type, 0)
       }
       // activation
       return true
@@ -1713,7 +1713,7 @@ class Toggle {
       // queue run
       // eslint-disable-next-line guard-for-in
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
-        self.queueStart(actionCurrent, actionOther, type, 0, true)
+        self.queueStart(actionCurrent, actionOther, type, 0)
       }
       // deactivated
       return true
@@ -1982,9 +1982,8 @@ class Toggle {
    * @param {String} actionOther Other action
    * @param {String} type Type of element
    * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueStart(actionCurrent, actionOther, type, index, queueInitial = false) {
+  queueStart(actionCurrent, actionOther, type, index) {
     const self = this
     const options = self.options
     // queue start
@@ -2013,7 +2012,7 @@ class Toggle {
         // special
         self.specialClassHtml(actionCurrent)
         // start queue
-        self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial)
+        self.queueDelay(actionCurrent, actionOther, obj, type)
       }
     }
   }
@@ -2048,9 +2047,8 @@ class Toggle {
    * @param {String} actionOther Other action
    * @param {Object} obj Queue object
    * @param {String} type Type of elements
-   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueDelay(actionCurrent, actionOther, obj, type, queueInitial) {
+  queueDelay(actionCurrent, actionOther, obj, type) {
     const self = this
     const options = self.options
     // delay
@@ -2063,8 +2061,6 @@ class Toggle {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
           const tot = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Tot`) || els.length
           delay = delay({ current: count, total: tot - 1, el })
-        } else {
-          delay = queueInitial && !options.delayInitial ? 0 : delay
         }
       }
       // fnc
@@ -3298,7 +3294,6 @@ Toggle.optionsDefaultSuper = {
   delay: false,
   delayIn: false,
   delayOut: false,
-  delayInitial: true,
   duration: false,
   durationIn: false,
   durationOut: false,
