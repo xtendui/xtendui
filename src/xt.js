@@ -851,15 +851,19 @@ if (typeof window !== 'undefined') {
       el.classList.remove('in')
       el.classList.remove('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-      cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
+      cancelAnimationFrame(Xt.dataStorage.get(el, `ActivateFrame${suffix}`))
       // keep the same level of raf for activation
-      Xt.dataStorage.put(
+      Xt.dataStorage.set(
         el,
-        `AnimFrame${suffix}`,
+        `ActivateFrame${suffix}`,
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            el.classList.add('in')
-          })
+          Xt.dataStorage.set(
+            el,
+            `ActivateFrame${suffix}`,
+            requestAnimationFrame(() => {
+              el.classList.add('in')
+            })
+          )
         })
       )
     }
@@ -877,13 +881,13 @@ if (typeof window !== 'undefined') {
       el.classList.remove('in')
       el.classList.add('out')
       clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-      cancelAnimationFrame(Xt.dataStorage.get(el, `AnimFrame${suffix}`))
+      cancelAnimationFrame(Xt.dataStorage.get(el, `ActivateFrame${suffix}`))
       Xt.animTimeout(
         el,
         () => {
           el.classList.remove('out')
         },
-        `AnimFrame${suffix}`,
+        `AnimTimeout${suffix}`,
         duration,
         'Out'
       )

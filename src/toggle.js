@@ -1465,9 +1465,13 @@ class Toggle {
         el,
         `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            el.classList.add(...self.classesIn)
-          })
+          Xt.dataStorage.set(
+            el,
+            `${self.ns}ActivateFrame`,
+            requestAnimationFrame(() => {
+              el.classList.add(...self.classesIn)
+            })
+          )
         })
       )
       // direction
@@ -2544,9 +2548,13 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                el.style.height = `${final}px`
-              })
+              Xt.dataStorage.set(
+                el,
+                `${self.ns}CollapseFrame`,
+                requestAnimationFrame(() => {
+                  el.style.height = `${final}px`
+                })
+              )
             })
           )
         }
@@ -2564,9 +2572,13 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                el.style.width = `${final}px`
-              })
+              Xt.dataStorage.set(
+                el,
+                `${self.ns}CollapseFrame`,
+                requestAnimationFrame(() => {
+                  el.style.width = `${final}px`
+                })
+              )
             })
           )
         }
@@ -2586,9 +2598,13 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                el.style.height = `${final}px`
-              })
+              Xt.dataStorage.set(
+                el,
+                `${self.ns}CollapseFrame`,
+                requestAnimationFrame(() => {
+                  el.style.height = `${final}px`
+                })
+              )
             })
           )
         }
@@ -2607,9 +2623,13 @@ class Toggle {
             el,
             `${self.ns}CollapseFrame`,
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                el.style.width = `${final}px`
-              })
+              Xt.dataStorage.set(
+                el,
+                `${self.ns}CollapseFrame`,
+                requestAnimationFrame(() => {
+                  el.style.width = `${final}px`
+                })
+              )
             })
           )
         }
