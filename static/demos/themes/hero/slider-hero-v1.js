@@ -50,7 +50,7 @@ const mountSlider = ({ ref }) => {
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
     dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
     // dragPosition tween with main duration and ease
-        console.log(self.detail.dragFinal, dragDuration)
+        //console.log(self.detail.dragFinal, dragDuration)
     gsap.killTweensOf(self.detail)
     gsap
       .to(self.detail, {
@@ -88,7 +88,7 @@ const mountSlider = ({ ref }) => {
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming')
     }
-    //console.log(self.detail.dragFinal)
+      //console.log(self.detail.dragFinal)
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
       incoming.classList.add('incoming')
@@ -155,32 +155,33 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
-      // raf because after off.xt.slider
-      requestAnimationFrame(() => {
-        // mask
-        const mask = tr.querySelector('.hero')
-        gsap.killTweensOf(mask)
-        gsap.set(mask, {
-          x: `${maskPercent * self.detail.dragRatioInverse * self.direction}%`,
-        })
-        gsap.to(mask, {
-          x: '0%',
-          duration: dragDuration,
-          ease: dragEase,
-        })
-        const maskInner = mask.querySelector('.hero-inner')
-        gsap.killTweensOf(maskInner)
-        gsap.set(maskInner, {
-          x: `${-maskInnerPercent * self.detail.dragRatioInverse * self.direction}%`,
-          opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
-        })
-        gsap.to(maskInner, {
-          x: '0%',
-          opacity: 1,
-          duration: dragDuration,
-          ease: dragEase,
-        })
+      // mask
+      const mask = tr.querySelector('.hero')
+      gsap.killTweensOf(mask)
+      gsap.set(mask, {
+        x: `${maskPercent * self.detail.dragRatioInverse * self.direction}%`,
       })
+      gsap.to(mask, {
+        x: '0%',
+        duration: dragDuration,
+        ease: dragEase,
+      })
+      const maskInner = mask.querySelector('.hero-inner')
+      gsap.killTweensOf(maskInner)
+      gsap.set(maskInner, {
+        x: `${-maskInnerPercent * self.detail.dragRatioInverse * self.direction}%`,
+        opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
+      })
+      gsap.to(maskInner, {
+        x: '0%',
+        opacity: 1,
+        duration: dragDuration,
+        ease: dragEase,
+      })
+      // incomings
+      for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
+        incoming.classList.remove('incoming')
+      }
     }
   }
 

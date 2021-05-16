@@ -568,6 +568,7 @@ class Slider extends Xt.Toggle {
     }
     // logic
     self.logicDragstart(e)
+    self.logicDrag(e)
   }
 
   /**
