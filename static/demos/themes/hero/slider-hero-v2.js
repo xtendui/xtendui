@@ -28,10 +28,10 @@ const mountSlider = ({ ref }) => {
   let dragDistance
   let dragDuration
 
-  const mediaZoom = 0.5
-  const mediaTime = 1.5
-  const mediaDelay = 0.25
-  const mediaEase = 'expo.out'
+  const assetZoom = 0.5
+  const assetTime = 1.5
+  const assetDelay = 0.25
+  const assetEase = 'expo.out'
 
   const contentX = 50
 
@@ -65,10 +65,10 @@ const mountSlider = ({ ref }) => {
   const drag = () => {
     const tr = self.targets.filter(x => self.hasCurrent(x))[0]
     // cover
-    const mediaCover = tr.querySelector('.hero-cover')
+    const assetCover = tr.querySelector('.hero-cover')
     const skew = self.detail.dragRatio < 0.5 ? 10 * self.detail.dragRatio : 10 * self.detail.dragRatioInverse
-    gsap.killTweensOf(mediaCover)
-    gsap.set(mediaCover, {
+    gsap.killTweensOf(assetCover)
+    gsap.set(assetCover, {
       x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
       skewX: skew * self.direction,
     })
@@ -88,9 +88,9 @@ const mountSlider = ({ ref }) => {
   const dragreset = () => {
     const tr = self.targets.filter(x => self.hasCurrent(x))[0]
     // cover
-    const mediaCover = tr.querySelector('.hero-cover')
-    gsap.killTweensOf(mediaCover)
-    gsap.to(mediaCover, {
+    const assetCover = tr.querySelector('.hero-cover')
+    gsap.killTweensOf(assetCover)
+    gsap.to(assetCover, {
       x: `${100 * self.direction}%`,
       skewX: 0,
       duration: dragDuration,
@@ -115,38 +115,38 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr) && !self.initial) {
-      // mediaMask
-      const mediaMask = tr.querySelector('.hero')
-      gsap.killTweensOf(mediaMask)
-      gsap.set(mediaMask, {
+      // assetMask
+      const assetMask = tr.querySelector('.hero')
+      gsap.killTweensOf(assetMask)
+      gsap.set(assetMask, {
         x: `${100 * self.direction}%`,
       })
-      gsap.to(mediaMask, {
+      gsap.to(assetMask, {
         x: 0,
         duration: dragDuration,
         ease: dragEase,
       })
-      const mediaMaskInner = mediaMask.querySelector('.hero-inner')
-      gsap.killTweensOf(mediaMaskInner)
-      gsap.set(mediaMaskInner, {
+      const assetMaskInner = assetMask.querySelector('.hero-inner')
+      gsap.killTweensOf(assetMaskInner)
+      gsap.set(assetMaskInner, {
         x: `${-100 * self.direction}%`,
       })
-      gsap.to(mediaMaskInner, {
+      gsap.to(assetMaskInner, {
         x: 0,
         duration: dragDuration,
         ease: dragEase,
       })
-      // media
-      const media = tr.querySelector('.xt-media')
-      gsap.killTweensOf(media)
-      gsap.set(media, {
-        scale: 1 + mediaZoom,
+      // asset
+      const asset = tr.querySelector('.xt-media')
+      gsap.killTweensOf(asset)
+      gsap.set(asset, {
+        scale: 1 + assetZoom,
       })
-      gsap.to(media, {
+      gsap.to(asset, {
         scale: 1,
-        duration: mediaTime,
-        ease: mediaEase,
-        delay: mediaDelay,
+        duration: assetTime,
+        ease: assetEase,
+        delay: assetDelay,
       })
       // content
       const content = tr.querySelector('.hero-content')
@@ -165,9 +165,9 @@ const mountSlider = ({ ref }) => {
       const outgoings = self.direction < 0 ? self.getTargets(self.getNext()) : self.getTargets(self.getPrev())
       for (const outgoing of outgoings) {
         // cover
-        const mediaCover = outgoing.querySelector('.hero-cover')
-        gsap.killTweensOf(mediaCover)
-        gsap.set(mediaCover, {
+        const assetCover = outgoing.querySelector('.hero-cover')
+        gsap.killTweensOf(assetCover)
+        gsap.set(assetCover, {
           x: `${100 * self.direction}%`,
           skewX: 0,
         })
@@ -185,37 +185,37 @@ const mountSlider = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // cover
-      const mediaCover = tr.querySelector('.hero-cover')
-      gsap.killTweensOf(mediaCover)
-      gsap.to(mediaCover, {
+      const assetCover = tr.querySelector('.hero-cover')
+      gsap.killTweensOf(assetCover)
+      gsap.to(assetCover, {
         x: `${-100 * self.direction}%`,
         duration: dragDuration,
         ease: dragEase,
       })
       gsap
-        .to(mediaCover, {
+        .to(assetCover, {
           skewX: 10 * self.direction,
           duration: dragDuration / 2,
           ease: dragEase,
         })
         .eventCallback('onComplete', () => {
-          gsap.to(mediaCover, {
+          gsap.to(assetCover, {
             skewX: 0,
             duration: dragDuration / 2,
             ease: dragEase,
           })
         })
-      // mediaMask
-      const mediaMask = tr.querySelector('.hero')
-      gsap.killTweensOf(mediaMask)
-      gsap.to(mediaMask, {
+      // assetMask
+      const assetMask = tr.querySelector('.hero')
+      gsap.killTweensOf(assetMask)
+      gsap.to(assetMask, {
         x: `${-100 * self.direction}%`,
         duration: dragDuration,
         ease: dragEase,
       })
-      const mediaMaskInner = mediaMask.querySelector('.hero-inner')
-      gsap.killTweensOf(mediaMaskInner)
-      gsap.to(mediaMaskInner, {
+      const assetMaskInner = assetMask.querySelector('.hero-inner')
+      gsap.killTweensOf(assetMaskInner)
+      gsap.to(assetMaskInner, {
         x: `${100 * self.direction}%`,
         duration: dragDuration,
         ease: dragEase,
