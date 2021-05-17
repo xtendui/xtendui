@@ -34,8 +34,8 @@ const mountItemsParallax = ({ ref }) => {
     const media = item.querySelector('.xt-media-container')
     const mediaY = '50'
 
-    const asset = media.querySelector('.xt-media')
-    const assetScale = 0.5
+    const media = media.querySelector('.xt-media')
+    const mediaScale = 0.5
 
     // parallax
 
@@ -80,8 +80,8 @@ const mountItemsParallax = ({ ref }) => {
       .timeline({
         scrollTrigger: scrollTrigger,
       })
-      .to(asset, {
-        scale: 1 + assetScale,
+      .to(media, {
+        scale: 1 + mediaScale,
       })
   }
 
