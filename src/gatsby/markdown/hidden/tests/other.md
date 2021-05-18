@@ -9,6 +9,8 @@ title: "Other"
 
 Test direction and other drag values on initial, same index, reset, drag, nav.
 
+Test click should not change slide.
+
 Test activation drag reset.
 
 Test activation drag overflow.
