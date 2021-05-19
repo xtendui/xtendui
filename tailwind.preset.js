@@ -6,6 +6,7 @@ module.exports = {
         'hover-hover': { raw: '(hover: hover)' },
       },
       fontSize: {
+        '4xs': ['0.625rem', { lineHeight: '1rem' }], // 10px
         '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
         '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
         xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
@@ -44,6 +45,8 @@ module.exports = {
       },
       borderRadius: {
         inherit: 'inherit',
+        xs: '0.125rem', // 2px
+        sm: '0.1875rem', // 3px
       },
       cursor: {
         none: 'none',
