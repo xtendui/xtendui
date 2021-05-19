@@ -1,3 +1,40 @@
+# [1.0.0-beta.19](https://github.com/minimit/xtendui/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-05-19)
+
+
+### Bug Fixes
+
+* **googlelocator:** fix sequential locate search radius ([3632734](https://github.com/minimit/xtendui/commit/3632734958d834542dc83053b3a5f476579625bc))
+* **googlelocator:** result classes on self.object ([18b5b0b](https://github.com/minimit/xtendui/commit/18b5b0b212d58c01630c22b132ca9ad7bf25ddfe))
+* **scroll:** fix fade demos once bug ([3fa9317](https://github.com/minimit/xtendui/commit/3fa93176ed36bcdc4ff840a9b1a19b3a8f51490d))
+* **slider:** fix multiple group-same ([f4a71c4](https://github.com/minimit/xtendui/commit/f4a71c4536326e42101daa0fc9c0e5a7e0d01131))
+* **slider:** fix slider direction when looping ([12a00a4](https://github.com/minimit/xtendui/commit/12a00a4a57401637bad18fa83507e53a1370dafb))
+* **toggle:** fix collape width animation and refactor raf names for both height and width ([db9b2c6](https://github.com/minimit/xtendui/commit/db9b2c668ee19c6bb02f1143a9b8105400cb4fff))
+* **toggle:** fix hash change non activating sometimes ([181d975](https://github.com/minimit/xtendui/commit/181d9757e6e813c93f367054a6a0a77612c614c4))
+* fix hash multiple activations with multiple hash activations ([1d4f17c](https://github.com/minimit/xtendui/commit/1d4f17cbd87e5321029b286fa5e077c001556144))
+* fix xt and toggle activation multiple frame ([3c756b1](https://github.com/minimit/xtendui/commit/3c756b1a9ab1fcbb253ba1e54b154c9233090c23))
+* **toggle:** fix hasCurrent with multiple groups ([59c0aa8](https://github.com/minimit/xtendui/commit/59c0aa8f027b896736bd044b45ec1a989c49521c))
+
+
+### Code Refactoring
+
+* **link:** refactor xt-body class links ([8605e8b](https://github.com/minimit/xtendui/commit/8605e8b1cec7f18dd6574cfaa4dd8e3a2d400720))
+
+
+### Features
+
+* **toggle:** removed delayInitial option was not working ([144095c](https://github.com/minimit/xtendui/commit/144095c41a94caabf54a84be04b363ad5cd387dc))
+* disabled options.aria for now until refactor usability ([c6c8d01](https://github.com/minimit/xtendui/commit/c6c8d01c329ba56503ec0b88f3113067a2694712))
+
+
+### Reverts
+
+* Revert "docs: links styles inside xt-body" ([06debc9](https://github.com/minimit/xtendui/commit/06debc91f66449a67099937433cd81f064076da2))
+
+
+### BREAKING CHANGES
+
+* **link:** you need to specify body class xt-links-default or xt-links-inverse to have automatic links styles
+
 # [1.0.0-beta.18](https://github.com/minimit/xtendui/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2021-05-12)
 
 
