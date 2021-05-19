@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input
           type="checkbox"
@@ -13,12 +13,12 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input type="checkbox" class="xt-check xt-checkbox top-auto ml-2 rounded-md ${classes.checkDefault()}" />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input
           type="radio"
@@ -28,7 +28,7 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input
           type="radio"
@@ -37,7 +37,7 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input
           type="radio"
@@ -47,7 +47,7 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
         Lorem ipsum
         <input
           type="radio"

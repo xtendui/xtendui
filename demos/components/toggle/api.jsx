@@ -110,7 +110,7 @@ export default function demo() {
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
             data-xt-group="0">
-            Target Group 0a
+            Target Group 0
           </div>
           <div
             className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"

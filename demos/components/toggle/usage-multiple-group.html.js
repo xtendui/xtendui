@@ -45,15 +45,17 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 1</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0">Target Group 0a</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0">Target Group 0</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group1">Target Group 1a</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0">Target Group 0b</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group1">Target Group 1b</div>
 
       <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}">Target 2</div>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group1">Target Group 1b</div>
+      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" data-xt-group="group0,group1">
+        Target Group 0 and 1
+      </div>
     </div>
   </div>
 `

@@ -11,7 +11,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
-            class="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-4"
+            class="xt-overlay-inner transform transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4"
           >
             <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
               <button
@@ -21,9 +21,6 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-              </div>
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>
                 <p>

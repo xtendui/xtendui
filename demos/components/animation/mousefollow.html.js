@@ -13,9 +13,9 @@ const html = /* HTML */ `
       </div>
       <span class="xt-mousefollow fixed xt-loader group">
         <span
-          class="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100"
+          class="${classes.spinner()} w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100"
         >
-          ${classes.spinner({ classes: 'animate-xt-spinner' })}
+          ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
         </span>
       </span>
     </div>

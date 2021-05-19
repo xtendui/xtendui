@@ -56,7 +56,7 @@ export default function demo() {
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="group0">
-          Target Group 0a
+          Target Group 0
         </div>
 
         <div
@@ -67,8 +67,8 @@ export default function demo() {
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="group0">
-          Target Group 0b
+          data-xt-group="group1">
+          Target Group 1b
         </div>
 
         <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 on">
@@ -77,8 +77,8 @@ export default function demo() {
 
         <div
           className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-          data-xt-group="group1">
-          Target Group 1b
+          data-xt-group="group0,group1">
+          Target Group 0 and 1
         </div>
       </div>
     </div>

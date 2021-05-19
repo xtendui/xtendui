@@ -21,7 +21,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Custom constrain </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 input--constrains"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none input--constrains"
               aria-label="Custom constrain"
               placeholder="Custom constrain"
               required
@@ -32,7 +32,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Email </label>
             <input
               type="email"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Email"
               placeholder="Email"
               required
@@ -43,7 +43,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Number </label>
             <input
               type="number"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Number"
               placeholder="Number"
               required
@@ -56,7 +56,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Letters </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Letters"
               placeholder="Letters"
               required
@@ -68,7 +68,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> File </label>
             <input
               type="file"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="File"
               required
             />
@@ -77,7 +77,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300 h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
               required></textarea>
@@ -86,7 +86,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select </label>
             <select
-              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Select"
               required>
               <option defaultValue="">Select an option</option>
@@ -99,7 +99,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select multiple </label>
             <select
-              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Select multiple"
               multiple
               required>
@@ -117,7 +117,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                     required
                     disabled
                   />
@@ -133,7 +133,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                     required
                   />
                   <span className="ml-4">
@@ -154,7 +154,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="radio-validation"
                     required
                   />
@@ -170,7 +170,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="radio-validation"
                   />
                   <span className="ml-4">
@@ -191,7 +191,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                     required
                   />
                   <span className="ml-4">
@@ -206,7 +206,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="switch-validation"
                     required
                   />
@@ -222,7 +222,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="switch-validation"
                   />
                   <span className="ml-4">

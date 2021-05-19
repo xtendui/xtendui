@@ -22,7 +22,7 @@ export default function demo() {
         <label className="cursor-pointer inline-flex items-baseline">
           <input
             type="checkbox"
-            className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+            className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
           />
           <span className="ml-4">
             No <code>sizeInitial</code> and no <code>onlyInside</code>

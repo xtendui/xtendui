@@ -7,7 +7,7 @@ export default function demo() {
           <div className="xt-list-inner">
             <input
               type="number"
-              className="block w-full w-16  rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+              className="block w-full w-16  rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Quantity"
               defaultValue="1"
               min="0"

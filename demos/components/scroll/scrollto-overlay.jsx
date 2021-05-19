@@ -66,7 +66,7 @@ export default function demo() {
           <label className="cursor-pointer inline-flex items-baseline">
             <input
               type="checkbox"
-              className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+              className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
             />
             <span className="ml-4">Deactivate classes</span>
           </label>
@@ -381,8 +381,8 @@ const mountScrollto = () => {
     duration: ({ self }) => {
       const overlay = self.target.closest('.xt-overlay')
       if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
-      const dist = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.max(Math.min(dist / 500, 1), 0.5)
+      const distance = Math.abs(self.scroller.scrollTop - self.position)
+      return Math.min(Math.log(1 + distance / 200), 1)
     },
     // deactivated by switcher
     class: false,
@@ -397,7 +397,7 @@ const mountScrollto = () => {
     gsap.to(self.scroller, {
       scrollTo: self.position,
       duration: self.duration,
-      ease: 'quart.inOut',
+      ease: 'quint.out',
     })
   }
 

@@ -12,7 +12,7 @@ export default function demo() {
         <div className="xt-overlay group">
           <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-4">
+            <div className="xt-overlay-inner transform transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -33,9 +33,6 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
                 <div className="text-base py-8 px-9">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>

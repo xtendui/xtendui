@@ -8,7 +8,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900"> Input </label>
             <input
               type="text"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
+              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
             />
@@ -18,7 +18,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900"> Disabled </label>
             <input
               type="text"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
+              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -29,7 +29,7 @@ export default function demo() {
             <label className="flex mb-3 font-semibold text-gray-900"> File </label>
             <input
               type="file"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
+              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="File"
             />
           </div>
@@ -37,7 +37,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300 h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
@@ -45,7 +45,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Select </label>
             <select
-              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
+              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Test</option>
@@ -57,7 +57,7 @@ export default function demo() {
           <div className="w-full">
             <label className="flex mb-3 font-semibold text-gray-900"> Select multiple </label>
             <select
-              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-50 border-b-2 border-gray-200 bg-transparent transition focus:border-gray-300"
+              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               multiple
               aria-label="Select multiple">
               <option>Option 1</option>
@@ -74,7 +74,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                     defaultChecked
                     disabled
                   />
@@ -90,7 +90,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -110,7 +110,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="radio-default"
                     defaultChecked
                   />
@@ -126,7 +126,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="radio-default"
                   />
                   <span className="ml-4">
@@ -147,7 +147,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -161,7 +161,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="switch-default"
                     defaultChecked
                   />
@@ -177,7 +177,7 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
-                    className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                    className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                     name="switch-default"
                   />
                   <span className="ml-4">

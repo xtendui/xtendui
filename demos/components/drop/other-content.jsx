@@ -33,7 +33,7 @@ export default function demo() {
                 </button>
                 <input
                   type="text"
-                  className="block w-full py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+                  className="block w-full py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Search"
                   placeholder="Seach Catalog"
                 />

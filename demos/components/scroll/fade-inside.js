@@ -43,7 +43,7 @@ const fade = ({ ref }) => {
   ScrollTrigger.batch(items, {
     once: true,
     onEnter: batch => {
-      const triggers = batch.filter(x => !x.dataset.animated)
+      const triggers = batch.filter(x => !x.dataset.fadesetup)
       if (triggers.length) {
         gsap.killTweensOf(triggers)
         gsap.to(triggers, {
@@ -58,8 +58,8 @@ const fade = ({ ref }) => {
     },
     onRefresh: (batch, scrollTriggers) => {
       for (const self of scrollTriggers) {
-        if (self.progress === 0) {
-          self.trigger.dataset.animated = 'true'
+        if (!self.trigger.dataset.fadesetup && self.progress === 0) {
+          self.trigger.dataset.fadesetup = 'true'
           gsap.killTweensOf(self.trigger)
           gsap.set(self.trigger, {
             opacity: 1,

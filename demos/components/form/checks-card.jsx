@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -14,7 +14,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                 name="checkbox-card-0"
                 defaultChecked
                 disabled
@@ -24,7 +24,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -34,7 +34,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
                 name="checkbox-card-1"
               />
             </div>
@@ -42,7 +42,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -52,7 +52,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all sr-only"
                 name="radio-card"
                 defaultChecked
               />
@@ -61,7 +61,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -71,7 +71,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all sr-only"
                 name="radio-card"
               />
             </div>
@@ -79,7 +79,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -89,7 +89,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                 name="switch-card"
                 defaultChecked
               />
@@ -98,7 +98,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
+          <label className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer focus-within:outline-browser">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
@@ -108,7 +108,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                 name="switch-card"
               />
             </div>

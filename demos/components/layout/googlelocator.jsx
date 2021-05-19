@@ -19,7 +19,7 @@ export default function demo() {
   return (
     <div className="demo--googlelocator-react" ref={ref}>
       <div className="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
-        <div className="googlelocator-aside relative z-10">
+        <div className="googlelocator-aside flex flex-col w-full relative z-10">
           <div className="relative p-6 border-b border-gray-200">
             <form className="text-sm">
               <div className="xt-row xt-row-x-6 xt-row-y-4">
@@ -28,7 +28,7 @@ export default function demo() {
                     <div className="xt-list-inner flex-auto">
                       <input
                         type="text"
-                        className="block w-full rounded-l-md py-2 px-4 text-black placeholder-black placeholder-opacity-50 bg-gray-200 transition focus:bg-gray-300"
+                        className="block w-full rounded-l-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                         aria-label="Search"
                         placeholder="Search"
                       />
@@ -76,7 +76,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                       name="type-options"
                       defaultValue=""
                       defaultChecked
@@ -89,7 +89,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                       name="type-options"
                       defaultValue="restaurant"
                     />
@@ -101,7 +101,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
                       name="type-options"
                       defaultValue="school"
                     />
@@ -113,7 +113,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
-                      className="xt-check xt-switch rounded-full border text-primary-500 border-gray-400 bg-gray-200 transition-all"
+                      className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
                       name="googlelocator-fav"
                       defaultValue="fav"
                     />
@@ -124,7 +124,7 @@ export default function demo() {
             </form>
           </div>
 
-          <div className="googlelocator-aside-body relative p-6">
+          <div className="googlelocator-aside-body relative w-full p-6 xt-overflow-sub overflow-y-scroll">
             <div className="googlelocator-result googlelocator-result--initial text-xs pb-4 border-b border-gray-200">
               Insert your position and find a place near you
             </div>
@@ -146,22 +146,23 @@ export default function demo() {
               places found
             </div>
 
-            <div className="googlelocator-items mt-4">
+            <div className="googlelocator-items">
               <script type="text/x-template">
                 <div
                   className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600"
                   tabIndex="-1">
                   <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
-                    <div className="googlelocator-item-content">
+                    <div className="googlelocator-item-content text-xs leading-relaxed">
                       <div
-                        className="mt-5 mb-3 xt-my-auto font-bold leading-none tracking-tight text-xl"
+                        className="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl"
                         data-xt-populate="name"></div>
-                      <address className="text-sm uppercase not-italic" data-xt-populate="address"></address>
-                      <div className="text-sm uppercase" data-xt-populate="additional"></div>
+                      <address className="not-italic" data-xt-populate="address"></address>
+                      <div data-xt-populate="additional"></div>
                     </div>
                     <a
                       href="#"
                       target="_blank"
+                      rel="noopener"
                       className="text-2xs uppercase xt-list xt-list-2 flex-col items-center"
                       title="directions"
                       data-xt-populate="direction">
@@ -188,7 +189,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="googlelocator-main relative flex-auto min-h-full md:fixed md:inset-0">
+        <div className="googlelocator-main relative flex-auto min-h-full md:absolute md:inset-0">
           <div className="relative w-full h-full">
             <div className="googlelocator-main-map w-full h-full"></div>
 
@@ -200,7 +201,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle">
+        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle z-10">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -247,6 +248,213 @@ const mount = ({ ref }) => {
   }
 }
 
+/* initGooglelocator */
+
+const initGooglelocator = ({ ref }) => {
+  // vars
+
+  const googlelocator = ref
+
+  // init
+
+  const self = new Xt.Googlelocator(googlelocator, {
+    initialLocate: false,
+    initialSearch: false,
+    seachMapBounds: false,
+    locateRadius: 25000,
+    locateText: 'Locate',
+    elements: {
+      loader: '.xt-loader',
+      searchInput: 'input[type="text"]',
+      searchBtn: '.button--search',
+      map: '.googlelocator-main-map',
+      itemsTemplate: 'script[type="text/x-template"]',
+      itemsContainer: '.googlelocator-items',
+      results: '.googlelocator-aside-body',
+      resultsFound: '.googlelocator-result--found',
+      locateBtn: '.button--locate',
+      repeatBtn: '.button--repeat',
+      filter: 'input[type="checkbox"], input[type="radio"]',
+    },
+    events: {
+      animateMarkerResultClick: google.maps.Animation.BOUNCE,
+      infoWindowMarkerClick: true,
+    },
+    map: {
+      center: { lat: 40, lng: -74 },
+      zoom: 2.5,
+      zoomMin: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_CENTER,
+      },
+      cluster: {
+        minimumClusterSize: 5,
+        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+      },
+    },
+    formatData: {
+      lat: function (self, marker) {
+        return marker.lat
+      },
+      lng: function (self, marker) {
+        return marker.lng
+      },
+      sort: function (self) {
+        if (self.searchInput.value === '') {
+          self.locations.sort((a, b) => {
+            const aName = a.marker.name.toUpperCase()
+            const bName = b.marker.name.toUpperCase()
+            if (aName > bName) {
+              return 1
+            }
+            if (aName < bName) {
+              return -1
+            }
+            return 0
+          })
+        } else {
+          self.locations.sort((a, b) => {
+            return a.distance - b.distance
+          })
+        }
+      },
+      filter: function (self, marker, filters) {
+        let passed = true
+        for (const filter of filters) {
+          // if filter is checked
+          if (filter.checked) {
+            const val = filter.value
+            const check = marker[val] || (marker.type && marker.type.includes(val))
+            // if not checked and not '' (filter all)
+            if (!check && val !== '') {
+              // filter out
+              passed = false
+            }
+          }
+        }
+        // if passed filter in
+        return passed
+      },
+      name: function (self, loc, el) {
+        let str = ''
+        if (loc.marker.name) {
+          str += `${loc.marker.name}`
+        }
+        if (!str || str === '') {
+          el.remove()
+        } else {
+          el.innerHTML = str
+        }
+      },
+      address: function (self, loc, el) {
+        let str = ''
+        if (loc.marker.address) {
+          str += `${loc.marker.address}`
+        }
+        if (!str || str === '') {
+          el.remove()
+        } else {
+          el.innerHTML = str
+        }
+      },
+      additional: function (self, loc, el) {
+        let str = ''
+        if (loc.marker.additional) {
+          str += `${loc.marker.additional}`
+        }
+        if (!str || str === '') {
+          el.remove()
+        } else {
+          el.innerHTML = str
+        }
+      },
+      direction: function (self, loc, el) {
+        let str = 'https://www.google.com/maps/dir/?api=1&destination='
+        if (loc.marker.name) {
+          str += `${loc.marker.name}`
+        }
+        if (loc.marker.address) {
+          str += `,+${loc.marker.address}`
+        }
+        el.setAttribute('href', encodeURI(str))
+      },
+      distance: function (self, loc, el) {
+        let distance
+        if (loc.distance > 1000) {
+          distance = `${Math.round(loc.distance / 1000)} Km`
+        } else {
+          distance = `${Math.round(loc.distance)} m`
+        }
+        el.innerHTML = distance
+      },
+      info: function (self, loc, el) {
+        return el.outerHTML
+      },
+    },
+    markers: [
+      {
+        lat: 40.724165,
+        lng: -73.983883,
+        name: 'School 2',
+        address: 'Via Foo, 19 - 35141 City PD',
+        additional:
+          '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+        type: ['school'],
+        fav: false,
+      },
+      {
+        lat: 40.721819,
+        lng: -73.991358,
+        name: 'Restaurant 2',
+        address: 'Via Foo, 19 - 35141 City PD',
+        additional:
+          '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+        type: ['restaurant'],
+        fav: false,
+      },
+      {
+        lat: 40.72308,
+        lng: -73.98434,
+        name: 'Restaurant 1',
+        address: 'Via Foo, 19 - 35141 City PD',
+        additional:
+          '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+        type: ['restaurant'],
+        fav: true,
+      },
+      {
+        lat: 40.724705,
+        lng: -73.986611,
+        name: 'School 1',
+        address: 'Via Foo, 19 - 35141 City PD',
+        additional:
+          '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+        type: ['school'],
+        fav: true,
+      },
+      {
+        lat: 40.732056,
+        lng: -73.998683,
+        name: 'School 3',
+        address: 'Via Foo, 19 - 35141 City PD',
+        additional:
+          '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
+        type: ['school'],
+        fav: false,
+      },
+    ],
+  })
+
+  // change
+
+  const change = () => {
+    //console.debug(self.locations)
+  }
+
+  self.object.addEventListener('change.xt.googlelocator', change)
+}
+
 /* mountGooglelocator */
 
 const mountGooglelocator = ({ ref }) => {
@@ -258,196 +466,10 @@ const mountGooglelocator = ({ ref }) => {
 
   Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
 
-  // vars
-
-  const googlelocator = ref
-
   // init
 
   window.demoGooglelocator = function () {
-    new Xt.Googlelocator(googlelocator, {
-      initialLocate: false,
-      initialSearch: false,
-      seachMapBounds: false,
-      locateRadius: 25000,
-      locateText: 'Locate',
-      elements: {
-        loader: '.xt-loader',
-        searchInput: 'input[type="text"]',
-        searchBtn: '.button--search',
-        map: '.googlelocator-main-map',
-        itemsTemplate: 'script[type="text/x-template"]',
-        itemsContainer: '.googlelocator-items',
-        results: '.googlelocator-aside-body',
-        resultsFound: '.googlelocator-result--found',
-        locateBtn: '.button--locate',
-        repeatBtn: '.button--repeat',
-        filter: 'input[type="checkbox"], input[type="radio"]',
-      },
-      events: {
-        animateMarkerResultClick: google.maps.Animation.BOUNCE,
-        infoWindowMarkerClick: true,
-      },
-      map: {
-        center: { lat: 40, lng: -74 },
-        zoom: 2.5,
-        zoomMin: 14,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        zoomControlOptions: {
-          position: google.maps.ControlPosition.RIGHT_CENTER,
-        },
-        cluster: {
-          minimumClusterSize: 5,
-          imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-        },
-      },
-      formatData: {
-        lat: function (self, marker) {
-          return marker.lat
-        },
-        lng: function (self, marker) {
-          return marker.lng
-        },
-        sort: function (self) {
-          if (self.searchInput.value === '') {
-            self.locations.sort((a, b) => {
-              const aName = a.marker.name.toUpperCase()
-              const bName = b.marker.name.toUpperCase()
-              if (aName > bName) {
-                return 1
-              }
-              if (aName < bName) {
-                return -1
-              }
-              return 0
-            })
-          } else {
-            self.locations.sort((a, b) => {
-              return a.distance - b.distance
-            })
-          }
-        },
-        filter: function (self, marker, filters) {
-          let passed = true
-          for (const filter of filters) {
-            // if filter is checked
-            if (filter.checked) {
-              const val = filter.value
-              const check = marker[val] || (marker.type && marker.type.includes(val))
-              // if not checked and not '' (filter all)
-              if (!check && val !== '') {
-                // filter out
-                passed = false
-              }
-            }
-          }
-          // if passed filter in
-          return passed
-        },
-        name: function (self, loc, el) {
-          const str = loc.marker.name
-          if (!str || str === '') {
-            el.remove()
-          } else {
-            el.innerHTML = str
-          }
-        },
-        address: function (self, loc, el) {
-          const str = loc.marker.address
-          if (!str || str === '') {
-            el.remove()
-          } else {
-            el.innerHTML = str
-          }
-        },
-        additional: function (self, loc, el) {
-          const str = loc.marker.additional
-          if (!str || str === '') {
-            el.remove()
-          } else {
-            el.innerHTML = str
-          }
-        },
-        img: function (self, loc, el) {
-          const str = loc.marker.img
-          if (!str || str === '') {
-            el.remove()
-          } else {
-            el.setAttribute('src', str)
-          }
-        },
-        direction: function (self, loc, el) {
-          let str = 'https://www.google.com/maps/dir/?api=1&destination='
-          str += loc.marker.name
-          str += `+${loc.marker.address}`
-          el.setAttribute('href', encodeURI(str))
-        },
-        distance: function (self, loc, el) {
-          let distance
-          if (loc.distance > 1000) {
-            distance = `${Math.round(loc.distance / 1000)} Km`
-          } else {
-            distance = `${Math.round(loc.distance)} m`
-          }
-          el.innerHTML = distance
-        },
-        info: function (self, loc, el) {
-          return el.outerHTML
-        },
-      },
-      markers: [
-        {
-          lat: 40.724165,
-          lng: -73.983883,
-          name: 'School 2',
-          address: 'Via Foo, 19 - 35141 City PD',
-          additional:
-            '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-          type: ['school'],
-          fav: false,
-        },
-        {
-          lat: 40.721819,
-          lng: -73.991358,
-          name: 'Restaurant 2',
-          address: 'Via Foo, 19 - 35141 City PD',
-          additional:
-            '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-          type: ['restaurant'],
-          fav: false,
-        },
-        {
-          lat: 40.72308,
-          lng: -73.98434,
-          name: 'Restaurant 1',
-          address: 'Via Foo, 19 - 35141 City PD',
-          additional:
-            '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-          type: ['restaurant'],
-          fav: true,
-        },
-        {
-          lat: 40.724705,
-          lng: -73.986611,
-          name: 'School 1',
-          address: 'Via Foo, 19 - 35141 City PD',
-          additional:
-            '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-          type: ['school'],
-          fav: true,
-        },
-        {
-          lat: 40.732056,
-          lng: -73.998683,
-          name: 'School 3',
-          address: 'Via Foo, 19 - 35141 City PD',
-          additional:
-            '<a href="tel:+39333010101">+39 333 010101</a><br/><a href="mailto:info@info.com">info@info.com</a>',
-          type: ['school'],
-          fav: false,
-        },
-      ],
-    })
+    initGooglelocator({ ref })
   }
 
   // unmount
