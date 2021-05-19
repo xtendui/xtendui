@@ -8,7 +8,7 @@ description: "Create advanced interactions with ease, has a comprehensive javasc
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/toggle.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle` see [preset customization](/components/preset#customization). Check [xtendui/src/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/toggle.css.js) for default styles.
 
 ## Javascript
 

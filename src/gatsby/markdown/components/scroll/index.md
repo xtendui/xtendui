@@ -8,7 +8,7 @@ description: "Content interactions and animations when you scroll the page, stic
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/scroll.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [preset customization](/components/preset#customization). Check [xtendui/src/scroll.css.js](https://github.com/minimit/xtendui/blob/beta/src/scroll.css.js) for default styles.
 
 ## Javascript
 

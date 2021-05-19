@@ -8,7 +8,7 @@ description: "Flex component to space any element with margins, also spaces vert
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list` see [preset customization](/components/tailwind-preset#customization). Check [xtendui/src/list.css.js](https://github.com/minimit/xtendui/blob/beta/src/list.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list` see [preset customization](/components/preset#customization). Check [xtendui/src/list.css.js](https://github.com/minimit/xtendui/blob/beta/src/list.css.js) for default styles.
 
 ## Usage
 

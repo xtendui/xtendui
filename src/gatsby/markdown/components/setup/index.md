@@ -73,7 +73,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can [customize preset or theme](/components/tailwind-preset#customization).
+You can [customize preset or theme](/components/preset#customization).
 
 ## Javascript
 

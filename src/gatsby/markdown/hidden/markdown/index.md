@@ -95,9 +95,6 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | For usability purpose use `<nav></nav>`.
 
 [[noteDefault]]
-| List `ul` and `old` are automatically styled when they **don't have `[class]`**. To have custom styles use **tailwind classes**.
-
-[[noteDefault]]
 | This demos uses [loader](/components/loader) see documentation to **customize**.
 
 [[noteDefault]]
