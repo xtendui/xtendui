@@ -28,7 +28,7 @@ See [slider elements exclude](/components/slider/interaction#elements) for demo.
 
 ## Group
 
-If you need to toggle **multiple targets** with the **same element** assign `data-xt-group` to **elements** and the associated **targets**.
+If you need to toggle **multiple elements or targets** with the **same element or target** assign `data-xt-group` to **elements** and the associated **targets**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
