@@ -16,7 +16,7 @@ Import the **javascript** file with `import 'xtendui/src/tooltip'`.
 
 Initialize automatically **within markup** with `[data-xt-tooltip="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Tooltip(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Tooltip(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage Self
 

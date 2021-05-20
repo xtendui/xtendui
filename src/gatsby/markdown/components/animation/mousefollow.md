@@ -17,7 +17,7 @@ Import the **javascript** file with `import 'xtendui/src/mousefollow'`.
 
 Initialize automatically **within markup** with `[data-xt-mousefollow="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Mousefollow(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Mousefollow(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

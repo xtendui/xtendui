@@ -17,7 +17,7 @@ Import the **javascript** file with `import 'xtendui/src/groupnumber'`.
 
 Initialize automatically **within markup** with `[data-xt-groupnumber="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Groupnumber(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Groupnumber(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

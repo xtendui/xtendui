@@ -12,7 +12,7 @@ Import the **javascript** file with `import 'xtendui/src/infinitescroll'`.
 
 Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Infinitescroll(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Infinitescroll(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

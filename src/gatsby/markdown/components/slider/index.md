@@ -14,7 +14,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Import the **javascript** file with `import 'xtendui/src/slider'`.
 
-Initialize with **javascript** with `new Xt.Slider(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Slider(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

@@ -16,7 +16,7 @@ Import the **javascript** file with `import 'xtendui/src/overlay'`.
 
 Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Overlay(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Overlay(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage Self
 

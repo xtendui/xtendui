@@ -15,7 +15,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Import the **javascript** file with `import 'xtendui/src/ripple'`.
 
-Initialize with **javascript** with `new Xt.Ripple(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Ripple(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

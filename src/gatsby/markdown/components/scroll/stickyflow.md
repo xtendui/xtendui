@@ -11,7 +11,7 @@ date: "1900-10-10"
 
 Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
 
-Initialize with **javascript** with `new Xt.Stickyflow(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Stickyflow(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 

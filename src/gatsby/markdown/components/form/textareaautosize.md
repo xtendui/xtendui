@@ -13,7 +13,7 @@ Import the **javascript** file with `import 'xtendui/src/textareaautosize'`.
 
 Initialize automatically **within markup** with `[data-xt-textareaautosize="{ <options> }"]`.
 
-Initialize with **javascript** with `new Xt.Textareaautosize(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Textareaautosize(document.querySelector('.my-object'), {/* options */})`.
 
 ## Usage
 
