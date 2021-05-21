@@ -216,7 +216,6 @@ class Slider extends Xt.Toggle {
           }
         }
       }
-      iRemoved = 0
       for (let i = self.group.length - 1; i >= 0; i--) {
         const group = self.group[i]
         for (const slide of group.targets) {
@@ -224,7 +223,7 @@ class Slider extends Xt.Toggle {
           if (left <= max) {
             left = max
             // last group
-            let lastIndex = self.group.length - 1 - iRemoved
+            let lastIndex = self.group.length - 1
             let width = Xt.dataStorage.get(self.group[lastIndex].target, `${self.ns}GroupWidth`)
             width += Xt.dataStorage.get(group.target, `${self.ns}GroupWidth`)
             // put group in lastIndex group
@@ -243,8 +242,6 @@ class Slider extends Xt.Toggle {
             // splice reindex
             if (i < lastIndex) {
               self.group.splice(i, 1)
-              iRemoved++
-              i--
             }
           } else {
             // break loop
