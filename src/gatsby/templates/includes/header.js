@@ -218,6 +218,17 @@ export default function Header({ page }) {
                                             <div className="gatsby_button-site_article_sidebar_inner">
                                               <div className="gatsby_button-site_article_sidebar_text">
                                                 {post.frontmatter.title}
+                                                {post.frontmatter.tags
+                                                  ? post.frontmatter.tags.map((tag, z) => {
+                                                      return (
+                                                        <div
+                                                          key={z}
+                                                          className={`inline-block text-white text-4xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
+                                                          {tag}
+                                                        </div>
+                                                      )
+                                                    })
+                                                  : null}
                                               </div>
                                             </div>
                                           </Link>
@@ -313,6 +324,7 @@ Header.propTypes = {
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string,
+                  tags: PropTypes.Array,
                 }),
               }),
             })

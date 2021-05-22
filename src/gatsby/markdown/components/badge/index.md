@@ -4,6 +4,7 @@ category: "Design"
 parent: "Badge"
 title: "Badge"
 description: "Component for showing short and relevant tags."
+tags: ['wip']
 ---
 
 ## Usage

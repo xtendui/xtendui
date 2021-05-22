@@ -238,6 +238,10 @@ export default class Page extends React.Component {
                         <div className="text-left text-sm">
                           <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                             Usability
+                            <div
+                              className={`inline-block text-black text-3xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
+                              WIP
+                            </div>
                           </h3>
                           <p className="xt-p text-sm leading-snug opacity-50">
                             A keen eye on usability. Aria injected automaticaly with js.

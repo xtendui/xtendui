@@ -4,6 +4,7 @@ category: "Design"
 parent: "Toolbar"
 title: "Toolbar"
 description: "Simple toolbar component as a subcomponent of list group."
+tags: ['wip']
 ---
 
 ## Usage
