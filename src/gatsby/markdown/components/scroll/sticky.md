@@ -28,6 +28,8 @@ Use the **component classes** to create a **sticky**.
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `.xt-sticky`                     | `xt-sticky`                | Styles for sticky            |
+| Component                  | `.xt-sticky.xt-sticky-nozindex`                     | `xt-sticky xt-sticky-nozindex`                | Do not set `z-index` for this sticky             |
+| Component                  | `.xt-sticky.xt-sticky-noheight`                     | `xt-sticky xt-sticky-noheight`                | Do not set `height` and `maxHeight` for this sticky             |
 
 </div>
 

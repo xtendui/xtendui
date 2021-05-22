@@ -54,7 +54,7 @@ export default class Page extends React.Component {
                 </div>
               </header>
               <main className="gatsby_home-main">
-                <div className="gatsby_home-main_head my-28 text-center">
+                <div className="gatsby_home-main_head xt-sticky xt-sticky-nozindex my-28 text-center">
                   <div className="container">
                     <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                       A new paradigm for Custom Frontend Development
