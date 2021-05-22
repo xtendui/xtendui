@@ -23,10 +23,6 @@ const mountEventmethods = ({ ref }) => {
     elements: 'a, button',
     targets: '.xt-toggle',
     min: 1,
-    auto: {
-      time: 4000,
-      initial: false,
-    },
   })
 
   // log
@@ -67,28 +63,6 @@ const mountEventmethods = ({ ref }) => {
   }
 
   firstTr.addEventListener('click', firstTrFnc)
-
-  // autostart
-
-  const autostartEl = document.querySelector('#button--toggle-api-autostart')
-
-  const autstartFnc = () => {
-    logAdd('<strong>autostart</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt.toggle'))
-  }
-
-  autostartEl.addEventListener('click', autstartFnc)
-
-  // autostop
-
-  const autostopEl = document.querySelector('#button--toggle-api-autostop')
-
-  const autostopFnc = () => {
-    logAdd('<strong>autostop</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt.toggle'))
-  }
-
-  autostopEl.addEventListener('click', autostopFnc)
 
   // add
 

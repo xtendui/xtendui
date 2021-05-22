@@ -31,11 +31,7 @@ const mountEventmethods = ({ ref }) => {
   // init
 
   let self = new Xt.Slider(slider, {
-    auto: {
-      time: 4000,
-      initial: false,
-    },
-    //wrap: true,
+    wrap: true,
     group: 1,
   })
 
@@ -101,28 +97,6 @@ const mountEventmethods = ({ ref }) => {
   }
 
   firstTr.addEventListener('click', firstTrFnc)
-
-  // autostart
-
-  const autostartEl = document.querySelector('#button--toggle-events-autostart')
-
-  const autstartFnc = () => {
-    logAdd('<strong>autostart</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt.slider'))
-  }
-
-  autostartEl.addEventListener('click', autstartFnc)
-
-  // autostop
-
-  const autostopEl = document.querySelector('#button--toggle-events-autostop')
-
-  const autostopFnc = () => {
-    logAdd('<strong>autostop</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt.slider'))
-  }
-
-  autostopEl.addEventListener('click', autostopFnc)
 
   // add
 

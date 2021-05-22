@@ -20,20 +20,6 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-api-autostart"
-      >
-        Autostart
-      </button>
-      <button
-        type="button"
-        class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
-        id="button--toggle-api-autostop"
-      >
-        Autostop
-      </button>
-      <button
-        type="button"
-        class="xt-button ${classes.buttonSm()} rounded-md ${classes.buttonPrimary()}"
         id="button--toggle-api-add"
       >
         Add
