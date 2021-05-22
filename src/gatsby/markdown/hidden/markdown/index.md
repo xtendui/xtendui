@@ -9,10 +9,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
   </demoinline>
-  <demoinline src="demos/components/slider/nooverflow">
-  </demoinline>
-  <demoinline src="demos/components/slider/nooverflow-false">
-  </demoinline>
 </demo>
 
 ## Classes not xt

@@ -292,13 +292,17 @@ class Slider extends Xt.Toggle {
         const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
         const spaceLeft = slideLeft + groupLeft // left space available from slide to dragger
         const spaceRight = self.detail.draggerWidth - spaceLeft - groupWidth // right space available from slide to dragger
-        //console.debug(spaceLeft, spaceRight, slide)
         // group on the right of current
         let usedWidth = 0
-        for (let i = z + 1; i <= self.group.length - 1; i++) {
+        for (let i = 0; i <= self.group.length - 1; i++) {
+          // loop from current group to nexts
+          let iLoop = z + 1 + i
+          // when wrap and more than length, loop to first
+          iLoop = self.wrap && iLoop > self.group.length - 1 ? iLoop - self.group.length : iLoop
+          if (iLoop > self.group.length - 1) break
           const groupCurrent = self.group[z]
-          for (let k = 0; k < self.group[i].targetsInitial.length; k++) {
-            const targetTargets = self.group[i].targetsInitial[k]
+          for (let k = 0; k < self.group[iLoop].targetsInitial.length; k++) {
+            const targetTargets = self.group[iLoop].targetsInitial[k]
             const width = Xt.dataStorage.get(targetTargets, `${self.ns}SlideWidth`)
             usedWidth += width
             //console.debug(slide, targetTargets, usedWidth, spaceRight)
@@ -322,10 +326,15 @@ class Slider extends Xt.Toggle {
         }
         // group on the left of current
         usedWidth = 0
-        for (let i = z - 1; i >= 0; i--) {
+        for (let i = 0; i <= self.group.length - 1; i++) {
+          // loop from current group to previouses
+          let iLoop = z - 1 - i
+          // when wrap and less than 0, loop to last
+          iLoop = self.wrap && iLoop < 0 ? iLoop + self.group.length : iLoop
+          if (iLoop < 0) break
           const groupCurrent = self.group[z]
-          for (let k = self.group[i].targetsInitial.length - 1; k >= 0; k--) {
-            const targetTargets = self.group[i].targetsInitial[k]
+          for (let k = self.group[iLoop].targetsInitial.length - 1; k >= 0; k--) {
+            const targetTargets = self.group[iLoop].targetsInitial[k]
             const width = Xt.dataStorage.get(targetTargets, `${self.ns}SlideWidth`)
             usedWidth += width
             //console.debug(slide, targetTargets, usedWidth, spaceLeft)
@@ -342,7 +351,7 @@ class Slider extends Xt.Toggle {
               targetTargets.setAttribute('data-xt-group-same', groupStr)
             } else {
               // break loop
-              i = 0
+              i = self.group.length - 1
               break
             }
           }
