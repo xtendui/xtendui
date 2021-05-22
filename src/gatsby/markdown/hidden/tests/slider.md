@@ -110,7 +110,7 @@ Test deactivation on resize.
 
 Test on deactivation should not have xt-grab and xt-jump.
 
-Test in wrap disabled on second demo.
+Test in `self.wrap` on responsive.
 
 <demo>
   <demoinline src="demos/components/slider/nooverflow">

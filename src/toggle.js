@@ -2941,14 +2941,14 @@ class Toggle {
       index = null
     } else {
       if (index > max) {
-        if (loop || (loop === null && (options.loop || options.wrap))) {
+        if (loop || (loop === null && (options.loop || self.wrap))) {
           index = index - max - 1
           index = index > max ? max : index // prevent overflow
         } else {
           index = null
         }
       } else if (index < min) {
-        if (loop || (loop == null && (options.loop || options.wrap))) {
+        if (loop || (loop == null && (options.loop || self.wrap))) {
           index = index + max + 1
           index = index < min ? min : index // prevent overflow
         } else {

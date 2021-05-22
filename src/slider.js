@@ -165,11 +165,22 @@ class Slider extends Xt.Toggle {
         Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
       }
     }
+    // wrap
+    if (
+      options.wrap &&
+      options.mode !== 'absolute' &&
+      !options.drag.manual &&
+      self.detail.availableSpace >= self.detail.draggerWidth
+    ) {
+      self.wrap = true
+    } else {
+      self.wrap = false
+    }
     // wrap indexes
     self.detail.moveFirst = 0
     self.detail.moveLast = self.group.length - 1
     // contain groups
-    if (options.contain && !options.wrap && options.mode !== 'absolute' && usedWidth > self.detail.draggerWidth) {
+    if (options.contain && !self.wrap && options.mode !== 'absolute' && usedWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
       const first = self.group[self.detail.moveFirst].target
       const last = self.group[self.detail.moveLast].target
@@ -734,9 +745,8 @@ class Slider extends Xt.Toggle {
    */
   eventWrap(index) {
     const self = this
-    const options = self.options
     // logic
-    if (options.wrap && options.mode !== 'absolute' && !options.drag.manual && self.detail.availableSpace >= 0) {
+    if (self.wrap) {
       const slide = self.group[index].target
       const left = Xt.dataStorage.get(slide, `${self.ns}GroupLeft`)
       const width = Xt.dataStorage.get(slide, `${self.ns}GroupWidth`)
@@ -966,10 +976,10 @@ class Slider extends Xt.Toggle {
           if (
             direction > 0 &&
             self.detail.dragDirection > 0 &&
-            (options.loop || options.wrap || index !== self.getElementsGroups().length - 1)
+            (options.loop || self.wrap || index !== self.getElementsGroups().length - 1)
           ) {
             self.goToNext(1)
-          } else if (direction < 0 && self.detail.dragDirection < 0 && (options.loop || options.wrap || index !== 0)) {
+          } else if (direction < 0 && self.detail.dragDirection < 0 && (options.loop || self.wrap || index !== 0)) {
             self.goToPrev(1)
           } else {
             self.logicDragreset()
@@ -1037,7 +1047,7 @@ class Slider extends Xt.Toggle {
     let dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragOld) * options.drag.factor
     self.detail.dragOld = self.detail.dragCurrent
     // overflow
-    if (options.drag.overflow && !options.wrap) {
+    if (options.drag.overflow && !self.wrap) {
       const direction = Math.sign(self.detail.dragDist)
       if (dragFinal > min && direction < 0) {
         self.detail.dragOverflow = self.detail.dragOverflow ? self.detail.dragOverflow : self.detail.dragCurrent
