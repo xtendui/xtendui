@@ -119,6 +119,7 @@ class Slider extends Xt.Toggle {
         self.group[currentGroup].targets.push(target)
       }
       target.setAttribute('data-xt-group', `${self.ns}-${currentGroup}`)
+      target.removeAttribute('data-xt-group-same')
     }
     // disable slider if not overflowing
     if (options.nooverflow) {
@@ -310,7 +311,7 @@ class Slider extends Xt.Toggle {
                 options.groupSeparator +
                 targetTargets.getAttribute('data-xt-group') +
                 options.groupSeparator +
-                targetTargets.getAttribute('data-xt-group-same')
+                (targetTargets.getAttribute('data-xt-group-same') ?? '')
               targetTargets.setAttribute('data-xt-group-same', groupStr)
             } else {
               // break loop
@@ -337,7 +338,7 @@ class Slider extends Xt.Toggle {
                 options.groupSeparator +
                 groupGroup +
                 options.groupSeparator +
-                targetTargets.getAttribute('data-xt-group-same')
+                (targetTargets.getAttribute('data-xt-group-same') ?? '')
               targetTargets.setAttribute('data-xt-group-same', groupStr)
             } else {
               // break loop
