@@ -6,7 +6,7 @@
 
 import { Xt } from './xt'
 import './toggle'
-import JSON5 from 'json5'
+import RJSON from 'relaxed-json'
 
 /**
  * Overlay
@@ -115,7 +115,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Overlay.componentName}`)
-      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 
