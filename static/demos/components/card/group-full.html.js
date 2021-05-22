@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card rounded-md ${classes.cardDefaultFull()}">
+        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
           <div class="md:xt-card-group">
             <div class="md:w-7/12 pb-6 md:pb-0 md:pr-6">
               <div class="xt-h4">Lorem ipsum</div>
@@ -26,7 +26,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card rounded-md ${classes.cardDefaultFull()}">
+        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
           <div class="md:xt-card-group">
             <div class="md:w-7/12 pb-6 md:pb-0 md:pr-6">
               <div class="xt-h4">Lorem ipsum</div>

@@ -14,7 +14,11 @@ const html = /* HTML */ `
               </div>
             </div>
           </label>
-          <input type="text" class="${classes.input()} rounded-md ${classes.inputDefault()}" aria-label="Lorem ipsum" />
+          <input
+            type="text"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            aria-label="Lorem ipsum"
+          />
         </div>
 
         <div class="w-full">
@@ -29,7 +33,7 @@ const html = /* HTML */ `
           </label>
           <input
             type="text"
-            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Dolor sit amet"
           />
         </div>
@@ -51,7 +55,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-10/12">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Lorem ipsum"
               />
             </div>
@@ -75,7 +79,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-10/12">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Dolor sit amet"
               />
             </div>

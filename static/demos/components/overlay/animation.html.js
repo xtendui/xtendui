@@ -3,7 +3,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div data-xt-overlay="{ duration: 500 }">
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+      >
         overlay
       </button>
 
@@ -13,7 +16,7 @@ const html = /* HTML */ `
           <div
             class="xt-overlay-inner transform transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4"
           >
-            <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+            <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

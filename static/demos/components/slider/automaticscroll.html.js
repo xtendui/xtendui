@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-automaticscroll">
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Constant speed</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Constant speed</div>
 
     <div class="xt-slider slider--text my-12">
       <div class="p-4 md:p-6 lg:p-8">
@@ -56,7 +56,7 @@ const html = /* HTML */ `
         </nav>
       </div>
 
-      <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Images</div>
+      <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Images</div>
 
       <div class="xt-slider slider--img my-12">
         <div class="p-4 md:p-6 lg:p-8">

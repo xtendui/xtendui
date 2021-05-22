@@ -3,32 +3,36 @@ export const classes = {
   badgeSm: () => 'text-3xs py-1.5 px-2.5',
   badgeMd: () => 'text-xs py-2.5 px-3.5',
   badgeLg: () => 'text-base py-3 px-4',
+  badgeRadius: () => 'rounded-xs',
   buttonSm: () => 'text-3xs py-1.5 px-2.5',
   buttonMd: () => 'text-xs py-2.5 px-3.5',
   buttonLg: () => 'text-base py-3 px-4',
   buttonSmDrop: () => 'text-3xs py-1 px-5',
   buttonMdDrop: () => 'text-2xs py-2 px-6',
   buttonLgDrop: () => 'text-xs py-2.5 px-7',
+  buttonRadius: () => 'rounded-md',
   tooltipSm: () => 'text-3xs py-1 px-2',
   tooltipMd: () => 'text-xs py-2 px-3.5',
   tooltipLg: () => 'text-base py-2.5 px-4',
+  tooltipRadius: () => 'rounded-sm',
   cardSm: () => 'text-sm py-6 px-7',
   cardMd: () => 'text-base py-8 px-9',
   cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
+  cardRadius: () => 'rounded-md',
   // variant
   badgeDefaultInteractive: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-400 transition hover:bg-gray-500 active:bg-gray-600 on:bg-gray-600',
   badgePrimaryInteractive: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700',
-  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200',
-  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 transition hover:bg-primary-700 active:bg-primary-800 on:bg-primary-800',
+  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-400',
+  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
     'w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 group-hover:bg-gray-400',
   buttonDefault: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500',
   buttonPrimaryDrop: () =>
     'w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
@@ -63,10 +67,13 @@ export const classes = {
   checkContent: () => 'ml-4',
   checkDefault: () => 'text-primary-500 bg-gray-300 transition-all',
   checkPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
+  checkRadius: () => 'rounded-md',
   radioDefault: () => 'text-primary-500 bg-gray-300 transition-all',
   radioPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
+  radioRadius: () => 'rounded-full',
   switchDefault: () => 'text-primary-500 bg-gray-300 transition-all',
   switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
+  switchRadius: () => 'rounded-full',
   inputDefault: () =>
     'py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none',
   inputPrimary: () =>
@@ -77,6 +84,7 @@ export const classes = {
   labelPrimary: () => 'font-semibold text-white',
   label: () => 'flex',
   input: () => 'block w-full',
+  inputRadius: () => 'rounded-md',
   textarea: () => 'h-20 max-h-48',
   note: () => 'text-black text-opacity-50 text-xs leading-snug',
   // headers
@@ -102,7 +110,7 @@ export const classes = {
     return `mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg`
   },
   hBlock: () => {
-    return `mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg`
+    return `mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg`
   },
   // icons
   iconX: ({ classes = null } = {}) => {

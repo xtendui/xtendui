@@ -109,7 +109,7 @@ const mountEventmethods = ({ ref }) => {
       const indexTr = targets.length + 1
       const strTr = `
         <div class="xt-tooltip p-2" title="Target ${indexTr}">
-          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div class="text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
             Lorem ipsum dolor sit amet
           </div>
         </div>

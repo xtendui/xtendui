@@ -4,12 +4,15 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center" data-xt-tooltip>
       <div class="xt-tooltip-item">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           asset
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -25,12 +28,15 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-tooltip-item">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           asset and text
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

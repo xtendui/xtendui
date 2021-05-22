@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -16,7 +16,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="checkbox"
-              class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
               name="checkbox-card-0"
               checked
               disabled
@@ -27,7 +27,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="checkbox"
-              class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
               name="checkbox-card-1"
             />
           </div>
@@ -47,7 +47,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -58,7 +58,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
-              class="xt-check xt-radio rounded-full ${classes.radioDefault()} sr-only"
+              class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()} sr-only"
               name="radio-card"
               checked
             />
@@ -68,7 +68,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -79,7 +79,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
-              class="xt-check xt-radio rounded-full ${classes.radioDefault()} sr-only"
+              class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()} sr-only"
               name="radio-card"
             />
           </div>
@@ -88,7 +88,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -99,7 +99,7 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
-              class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+              class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
               name="switch-card"
               checked
             />
@@ -109,7 +109,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="xt-card rounded-md ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer focus-within:outline-browser"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -118,7 +118,11 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="radio" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" name="switch-card" />
+            <input
+              type="radio"
+              class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+              name="switch-card"
+            />
           </div>
         </label>
       </div>

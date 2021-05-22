@@ -4,12 +4,15 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           separator
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-screen max-w-2xl rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-screen max-w-2xl ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="md:xt-card-group">
               <div class="${classes.cardMd()} md:w-7/12">
                 <div class="xt-h4">Lorem ipsum</div>

@@ -4,12 +4,15 @@ const html = /* HTML */ `
   <div>
     <div data-xt-tooltip>
       <div class="xt-tooltip-item">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           list group
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="rounded-md shadow-tooltip text-black xt-links-default bg-white">
+          <div class="${classes.tooltipRadius()} shadow-tooltip text-black xt-links-default bg-white">
             <form class="text-sm">
               <div class="xt-list flex-nowrap max-w-sm">
                 <div class="xt-list-inner flex-auto">

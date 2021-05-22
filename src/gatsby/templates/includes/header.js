@@ -53,7 +53,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -70,7 +70,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -87,7 +87,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -97,7 +97,7 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className={`xt-button ${classes.buttonMd()} rounded-md gatsby_button--overlay`}
+                    className={`xt-button ${classes.buttonMd()} ${classes.buttonRadius()} gatsby_button--overlay`}
                     aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ export default function Header({ page }) {
                           </button>
                           <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                             <div
-                              className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                              className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to Html
                             </div>
                           </div>
@@ -161,7 +161,7 @@ export default function Header({ page }) {
                           </button>
                           <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
                             <div
-                              className={`relative ${classes.tooltipSm()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                              className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to React
                             </div>
                           </div>

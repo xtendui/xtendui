@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div class="xt-overlay-inner">
-          <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+          <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

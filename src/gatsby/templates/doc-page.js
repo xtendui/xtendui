@@ -50,7 +50,7 @@ class Template extends React.Component {
             <div className="gatsby_listing">
               <div className="xt-row xt-row-6">
                 {data.post.frontmatter.type === 'Components' ? (
-                  <h2 className={`${classes.hBlock()} rounded-md text-black bg-gray-200 text-center`}>{'Sub Pages'}</h2>
+                  <h2 className={`${classes.hBlock()} text-black bg-gray-200 text-center`}>{'Sub Pages'}</h2>
                 ) : null}
                 <div className="gatsby_listing-group">
                   <div className="gatsby_listing-items">

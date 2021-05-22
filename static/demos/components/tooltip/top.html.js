@@ -4,10 +4,15 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ position: 'top' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">top</button>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
+          top
+        </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
@@ -15,12 +20,15 @@ const html = /* HTML */ `
       </div>
 
       <div data-xt-tooltip="{ position: 'top-start' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           top start
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
@@ -28,12 +36,15 @@ const html = /* HTML */ `
       </div>
 
       <div data-xt-tooltip="{ position: 'top-end' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           top end
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>

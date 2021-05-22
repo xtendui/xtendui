@@ -4,12 +4,15 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ positionInner: 'span' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           <span class="m-4">relative to this span</span>
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit

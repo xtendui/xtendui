@@ -4,13 +4,16 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           group
         </button>
 
         <div class="xt-drop p-4">
           <div
-            class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
+            class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
           >
             <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -38,12 +41,15 @@ const html = /* HTML */ `
       </div>
 
       <div data-xt-drop>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           group
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-80 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>

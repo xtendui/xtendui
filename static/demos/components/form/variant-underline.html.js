@@ -70,7 +70,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
                   checked
                   disabled
                 />
@@ -84,7 +84,10 @@ const html = /* HTML */ `
 
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -103,7 +106,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                   name="radio-default"
                   checked
                 />
@@ -119,7 +122,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                   name="radio-default"
                 />
                 <span class="${classes.checkContent()}"
@@ -138,7 +141,10 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -151,7 +157,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                   name="switch-default"
                   checked
                 />
@@ -167,7 +173,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                   name="switch-default"
                 />
                 <span class="${classes.checkContent()}"
@@ -181,7 +187,10 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          <button
+            type="submit"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             submit
           </button>
         </div>

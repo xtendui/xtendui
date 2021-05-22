@@ -16,7 +16,10 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           Search
         </button>
       </div>

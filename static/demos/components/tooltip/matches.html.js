@@ -9,7 +9,7 @@ const html = /* HTML */ `
         <a href="#">dolor</a>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
         </div>

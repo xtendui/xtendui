@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Input </label>
           <input
             type="text"
-            class="${classes.input()} rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
             aria-label="Input"
             placeholder="Input"
           />
@@ -18,7 +18,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Disabled </label>
           <input
             type="text"
-            class="${classes.input()} rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
             aria-label="Input"
             placeholder="Input"
             disabled
@@ -27,13 +27,17 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> File </label>
-          <input type="file" class="${classes.input()} rounded-md ${classes.inputPrimary()}" aria-label="File" />
+          <input
+            type="file"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
+            aria-label="File"
+          />
         </div>
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputPrimary()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputPrimary()} h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
           ></textarea>
@@ -42,7 +46,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select </label>
           <select
-            class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} xt-select xt-select-primary ${classes.inputRadius()} ${classes.inputPrimary()}"
             aria-label="Select"
           >
             <option selected value="">Select an option</option>
@@ -55,7 +59,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select multiple </label>
           <select
-            class="${classes.input()} xt-select xt-select-primary rounded-md ${classes.inputPrimary()}"
+            class="${classes.input()} xt-select xt-select-primary ${classes.inputRadius()} ${classes.inputPrimary()}"
             aria-label="Select multiple"
             multiple
           >
@@ -73,7 +77,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkPrimary()}"
                   checked
                   disabled
                 />
@@ -87,7 +91,10 @@ const html = /* HTML */ `
 
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkPrimary()}" />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkPrimary()}"
+                />
                 <span class="ml-3 text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -106,7 +113,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioPrimary()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioPrimary()}"
                   name="radio-primary"
                   checked
                 />
@@ -122,7 +129,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioPrimary()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioPrimary()}"
                   name="radio-primary"
                 />
                 <span class="ml-3 text-white xt-links-inverse"
@@ -141,7 +148,7 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.radioPrimary()}" />
+                <input type="checkbox" class="xt-check xt-switch ${classes.radioRadius()} ${classes.radioPrimary()}" />
                 <span class="ml-3 text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -154,7 +161,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchPrimary()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchPrimary()}"
                   name="switch-primary"
                   checked
                 />
@@ -170,7 +177,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchPrimary()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchPrimary()}"
                   name="switch-primary"
                 />
                 <span class="ml-3 text-white xt-links-inverse"
@@ -184,7 +191,10 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+          <button
+            type="submit"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+          >
             submit
           </button>
         </div>

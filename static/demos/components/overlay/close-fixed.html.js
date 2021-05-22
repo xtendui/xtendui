@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           closed fixed
         </button>
 
@@ -19,7 +22,9 @@ const html = /* HTML */ `
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
-              <div class="xt-card items-center justify-center rounded-md shadow-overlay ${classes.cardWhite()}">
+              <div
+                class="xt-card items-center justify-center ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}"
+              >
                 <div class="${classes.cardMd()}">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
@@ -98,7 +103,10 @@ const html = /* HTML */ `
       </div>
 
       <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           screen closed fixed
         </button>
 

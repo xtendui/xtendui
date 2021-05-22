@@ -7,28 +7,28 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3">
           <a
             href="#anchor-0"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #0
           </a>
           <a
             href="#anchor-1"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #1
           </a>
           <button
             type="button"
-            class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             custom
           </button>
           <a
             href="#anchor-2"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
             data-xt-scrollto-hash="true"
           >
@@ -36,7 +36,7 @@ const html = /* HTML */ `
           </a>
           <a
             href="#anchor-2"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-scrollto-hash="true"
           >
             #2 only anchor
@@ -48,7 +48,7 @@ const html = /* HTML */ `
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+          <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>
@@ -65,19 +65,28 @@ const html = /* HTML */ `
           <div class="xt-sticky">
             <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
               <div class="xt-list xt-list-3">
-                <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                <a
+                  href="#anchor-0"
+                  class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                >
                   #0
                 </a>
-                <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                <a
+                  href="#anchor-1"
+                  class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                >
                   #1
                 </a>
                 <button
                   type="button"
-                  class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+                  class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
                 >
                   custom
                 </button>
-                <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                <a
+                  href="#anchor-2"
+                  class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                >
                   #2
                 </a>
               </div>
@@ -94,15 +103,30 @@ const html = /* HTML */ `
               feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
             </p>
             <div class="xt-list xt-list-3">
-              <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
-              <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
+              <a
+                href="#anchor-0"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #0
+              </a>
+              <a
+                href="#anchor-1"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #1
+              </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 custom
               </button>
-              <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
+              <a
+                href="#anchor-2"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #2
+              </a>
             </div>
           </div>
 
@@ -120,15 +144,30 @@ const html = /* HTML */ `
               feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
             </p>
             <div class="xt-list xt-list-3">
-              <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
-              <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
+              <a
+                href="#anchor-0"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #0
+              </a>
+              <a
+                href="#anchor-1"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #1
+              </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 custom
               </button>
-              <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
+              <a
+                href="#anchor-2"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #2
+              </a>
             </div>
           </div>
 
@@ -161,15 +200,30 @@ const html = /* HTML */ `
               feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
             </p>
             <div class="xt-list xt-list-3">
-              <a href="#anchor-0" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #0 </a>
-              <a href="#anchor-1" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #1 </a>
+              <a
+                href="#anchor-0"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #0
+              </a>
+              <a
+                href="#anchor-1"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #1
+              </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 custom
               </button>
-              <a href="#anchor-2" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"> #2 </a>
+              <a
+                href="#anchor-2"
+                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              >
+                #2
+              </a>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <div
-          class="xt-card rounded-md ${classes.cardDefaultFull()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
+          class="xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
         >
           <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -32,7 +32,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded-md ${classes.cardDefaultFull()}">
+        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
           <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>

@@ -5,7 +5,11 @@ const html = /* HTML */ `
     <div class="megamenu relative bg-primary-500 text-white">
       <form class="text-sm container pt-10">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
+          <input
+            type="checkbox"
+            class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+            checked
+          />
           <span class="${classes.checkContent()}">Use mouse events</span>
         </label>
       </form>

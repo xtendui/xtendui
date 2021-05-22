@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <form class="text-xs">
       <div class="xt-list xt-list-2 flex-full justify-end" role="toolbar">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        >
           Back
         </button>
 

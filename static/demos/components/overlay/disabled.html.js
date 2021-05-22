@@ -3,7 +3,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--overlay-disable">
     <div data-xt-overlay="{ appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+      >
         Overlay
       </button>
 
@@ -11,7 +14,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
-            <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+            <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -40,7 +43,10 @@ const html = /* HTML */ `
                 </p>
 
                 <div data-xt-overlay>
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  >
                     Overlay
                   </button>
 
@@ -48,7 +54,7 @@ const html = /* HTML */ `
                     <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
                     <div class="xt-overlay-container max-w-3xl">
                       <div class="xt-overlay-inner">
-                        <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+                        <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                           <button
                             type="button"
                             class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

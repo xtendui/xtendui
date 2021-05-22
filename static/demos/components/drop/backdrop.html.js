@@ -4,13 +4,16 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} on:z-drop">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-drop"
+        >
           backdrop
         </button>
 
         <div class="xt-drop p-4">
           <div class="xt-backdrop bg-black opacity-25"></div>
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -29,13 +32,16 @@ const html = /* HTML */ `
 
       <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
         <div class="xt-drop-item">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()} on:z-drop">
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-drop"
+          >
             backdrop mouse
           </button>
 
           <div class="xt-drop p-4">
             <div class="xt-backdrop bg-black opacity-25"></div>
-            <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+            <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
               <nav class="xt-list flex-col">
                 <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit

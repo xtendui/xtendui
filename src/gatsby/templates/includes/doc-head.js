@@ -24,7 +24,7 @@ export default class DocHead extends React.Component {
                 ) : null}
                 {page.post.frontmatter.category ? (
                   <div
-                    className={`inline-block align-middle ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-gray-300 bg-gray-300 -mt-4 ml-2`}>
+                    className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-gray-400 bg-gray-400 -mt-4 ml-2`}>
                     {page.post.frontmatter.category}
                   </div>
                 ) : null}
@@ -33,7 +33,7 @@ export default class DocHead extends React.Component {
                       return (
                         <div
                           key={z}
-                          className={`inline-block align-middle ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-primary-500 bg-primary-500 text-white -mt-4 ml-2`}>
+                          className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-primary-600 bg-primary-600 text-white -mt-4 ml-2`}>
                           {tag}
                         </div>
                       )

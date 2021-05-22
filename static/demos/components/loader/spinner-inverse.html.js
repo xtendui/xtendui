@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div class="xt-card rounded-md ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardRadius()} ${classes.cardPrimary()}">
         <div class="${classes.cardSm()}">
           <div class="xt-h5">Small</div>
           <p>
@@ -19,7 +19,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+      >
         Lorem ipsum
         <span class="${classes.loader()}">
           <span class="${classes.spinner()} w-6 h-6 text-white">

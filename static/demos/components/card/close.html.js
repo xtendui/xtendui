@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded-md ${classes.cardDefault()}">
+        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
           <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
             ${classes.iconX()}
           </button>
@@ -20,7 +20,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded-md ${classes.cardPrimary()}">
+        <div class="xt-card ${classes.cardRadius()} ${classes.cardPrimary()}">
           <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
             ${classes.iconX()}
           </button>

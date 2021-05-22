@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           inner
         </button>
 
@@ -13,7 +16,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded-md shadow-overlay ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
+                class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
               >
                 <button
                   type="button"
@@ -50,7 +53,10 @@ const html = /* HTML */ `
       </div>
 
       <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           block
         </button>
 
@@ -58,7 +64,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

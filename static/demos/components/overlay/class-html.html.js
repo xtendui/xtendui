@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div data-xt-overlay="{ classHtml: 'xt-scrollbar-overlay classhtml-custom', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           class html
         </button>
 
@@ -43,7 +46,10 @@ const html = /* HTML */ `
                   </p>
 
                   <div data-xt-overlay>
-                    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                    <button
+                      type="button"
+                      class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    >
                       Overlay
                     </button>
 
@@ -51,7 +57,7 @@ const html = /* HTML */ `
                       <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">
-                          <div class="xt-card rounded-md shadow-overlay ${classes.cardWhite()}">
+                          <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                             <button
                               type="button"
                               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

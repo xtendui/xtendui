@@ -6,25 +6,34 @@ const html = /* HTML */ `
       class="xt-list xt-list-3 items-center"
       data-xt-toggle="{ targets: ':scope > .xt-toggle, :scope > .xt-toggle-inverse', min: 1, duration: 500 }"
     >
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Toggle normal
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Toggle 0 inverse
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Toggle 1 inverse
       </button>
 
-      <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()} ">Target normal</div>
+      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} ">Target normal</div>
 
-      <div class="xt-card xt-toggle-inverse rounded-md ${classes.cardToggle()}" data-xt-duration-out="25">
+      <div class="xt-card xt-toggle-inverse ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
         Target 0 inverse
       </div>
 
-      <div class="xt-card xt-toggle-inverse rounded-md ${classes.cardToggle()}" data-xt-duration-out="25">
+      <div class="xt-card xt-toggle-inverse ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
         Target 1 inverse
       </div>
     </div>

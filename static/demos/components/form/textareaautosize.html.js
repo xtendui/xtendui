@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Textarea autosize </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputDefault()} overflow-hidden resize-none"
+            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} overflow-hidden resize-none"
             aria-label="Textarea autosize"
             data-xt-textareaautosize
           ></textarea>

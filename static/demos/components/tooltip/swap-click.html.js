@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--tooltip-swap-click">
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+      class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       data-xt-tooltip="{ targets: '#tooltip--swap-click, #tooltip--swap-click-swap', duration: 300 }"
     >
       Swap click
@@ -12,7 +12,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group" id="tooltip--swap-click">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
+        class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
         Lorem ipsum dolor sit amet
       </div>
@@ -20,7 +20,7 @@ const html = /* HTML */ `
 
     <div class="xt-tooltip p-2 group hidden" id="tooltip--swap-click-swap">
       <div
-        class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
+        class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
         Clicked!
       </div>

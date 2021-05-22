@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Horizontal</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Horizontal</div>
 
     <form class="text-sm">
       <div class="xt-list" data-xt-groupnumber>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Vertical</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Vertical</div>
 
     <form class="text-sm">
       <div class="xt-list" data-xt-groupnumber>
