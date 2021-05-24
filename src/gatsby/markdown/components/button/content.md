@@ -37,9 +37,21 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Icons and Alignment
+## Icon and Alignment
 
-Refer to [icon button and alignment](/components/icon/content#button-and-alignment).
+Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
+
+<demo>
+  <demoinline src="demos/components/icon/alignment">
+  </demoinline>
+</demo>
+
+Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon is bigger than the button **to prevent vertical resize**.
+
+<demo>
+  <demoinline src="demos/components/icon/button">
+  </demoinline>
+</demo>
 
 ## Group
 

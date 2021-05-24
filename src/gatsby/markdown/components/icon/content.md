@@ -38,16 +38,4 @@ Change [font-size](https://tailwindcss.com/docs/font-size) to change the icon si
 
 ## Button and Alignment
 
-Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
-
-<demo>
-  <demoinline src="demos/components/icon/alignment">
-  </demoinline>
-</demo>
-
-Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon is bigger than the button **to prevent vertical resize**.
-
-<demo>
-  <demoinline src="demos/components/icon/button">
-  </demoinline>
-</demo>
+Refer to [button icon and alignment](/components/button/content#icon-and-alignment).
