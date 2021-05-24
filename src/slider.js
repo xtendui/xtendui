@@ -1321,7 +1321,7 @@ Slider.optionsDefault = {
   drag: {
     dragger: '.xt-slides',
     manual: false,
-    threshold: 25,
+    threshold: 15,
     factor: 1,
     overflow: ({ overflow }) => {
       return Math.min(Math.log(1 + Math.pow(overflow, 10)), overflow)
