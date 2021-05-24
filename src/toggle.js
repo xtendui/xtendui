@@ -268,7 +268,7 @@ class Toggle {
     let obj = self.hashChange(saveCurrents)
     let currents = obj.currents ?? 0
     // check class
-    for (const el of self.elements) {
+    for (const el of self.getElementsGroups()) {
       let activated = false
       // check if activated
       if (saveCurrents) {
