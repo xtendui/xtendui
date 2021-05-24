@@ -2,7 +2,9 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-list xt-list-3 items-center" data-xt-tooltip>
+      <div
+        className="xt-list xt-list-3 items-center"
+        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip' }">
         <div className="xt-tooltip-item">
           <button
             type="button"

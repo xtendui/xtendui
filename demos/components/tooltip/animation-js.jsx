@@ -27,7 +27,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Consectetur adipiscing elit
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Consectetur adipiscing elit
             </div>
           </div>
@@ -78,6 +78,8 @@ const mountTooltip = ({ ref }) => {
   // init
 
   let self = new Xt.Tooltip(tooltip, {
+    elements: ':scope > .xt-tooltip-item',
+    targets: ':scope > .xt-tooltip-item > .xt-tooltip',
     duration: 300,
     delay: 50,
   })

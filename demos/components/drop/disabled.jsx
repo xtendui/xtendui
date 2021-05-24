@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div className="demo--drop-disable-react">
-      <div data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+      <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', matches: { '(min-width: 768px)': { disabled: true } } }">
         <div className="xt-drop-item">
           <button
             type="button"
@@ -23,7 +23,7 @@ export default function demo() {
                   className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
-                <div data-xt-drop>
+                <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop' }">
                   <div className="xt-drop-item">
                     <button
                       type="button"

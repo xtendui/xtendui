@@ -35,18 +35,6 @@ export default function demo() {
           <button
             type="button"
             className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
-            id="button--toggle-events-autostart">
-            Autostart
-          </button>
-          <button
-            type="button"
-            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
-            id="button--toggle-events-autostop">
-            Autostop
-          </button>
-          <button
-            type="button"
-            className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
             id="button--slider-api-add">
             Add
           </button>
@@ -132,7 +120,7 @@ export default function demo() {
           <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
               data-xt-nav="-1"
               title="Previous slide">
               <svg
@@ -153,10 +141,12 @@ export default function demo() {
               type="button"
               className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
               data-xt-pag
-              title="Slide xt-num"></button>
+              title="Slide xt-num">
+              xt-num
+            </button>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
               data-xt-nav="1"
               title="Next slide">
               <svg
@@ -216,11 +206,7 @@ const mountEventmethods = ({ ref }) => {
   // init
 
   let self = new Xt.Slider(slider, {
-    auto: {
-      time: 4000,
-      initial: false,
-    },
-    //wrap: true,
+    wrap: true,
     group: 1,
   })
 
@@ -229,7 +215,7 @@ const mountEventmethods = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
+    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
@@ -286,28 +272,6 @@ const mountEventmethods = ({ ref }) => {
   }
 
   firstTr.addEventListener('click', firstTrFnc)
-
-  // autostart
-
-  const autostartEl = document.querySelector('#button--toggle-events-autostart')
-
-  const autstartFnc = () => {
-    logAdd('<strong>autostart</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt.slider'))
-  }
-
-  autostartEl.addEventListener('click', autstartFnc)
-
-  // autostop
-
-  const autostopEl = document.querySelector('#button--toggle-events-autostop')
-
-  const autostopFnc = () => {
-    logAdd('<strong>autostop</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt.slider'))
-  }
-
-  autostopEl.addEventListener('click', autostopFnc)
 
   // add
 

@@ -3,8 +3,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           Default
         </button>
 
@@ -12,7 +15,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card rounded-md md:rounded-tr-none shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card ${classes.cardRadius()} md:rounded-tr-none shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
@@ -46,8 +49,11 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           Left
         </button>
 
@@ -89,8 +95,11 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay>
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           Right
         </button>
 

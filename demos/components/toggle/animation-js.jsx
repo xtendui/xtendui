@@ -21,13 +21,13 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Toggle 0
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Toggle 1
         </button>
 
@@ -64,6 +64,8 @@ const mountToggle = ({ ref }) => {
   // init
 
   let self = new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
+    elements: ':scope > .xt-button',
+    targets: ':scope > .xt-toggle',
     duration: 500,
   })
 

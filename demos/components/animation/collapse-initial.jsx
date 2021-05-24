@@ -14,7 +14,7 @@ export default function demo() {
 
       <button
         type="button"
-        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400 group"
+        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 group"
         data-xt-toggle="{ targets: '#demo--collapse-text-target', collapseHeight: 'targets', duration: 500 }">
         <span className="group-on:hidden"> Show more </span>
         <span className="hidden group-on:block"> Show less </span>

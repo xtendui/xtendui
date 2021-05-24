@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div className="demo--overlay-disable-react">
-      <div data-xt-overlay="{ appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">
         <button
           type="button"
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -53,7 +53,7 @@ export default function demo() {
                     justo.
                   </p>
 
-                  <div data-xt-overlay>
+                  <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
                     <button
                       type="button"
                       className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">

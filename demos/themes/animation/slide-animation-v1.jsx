@@ -20,14 +20,14 @@ export default function demo() {
 
   return (
     <div className="demo--slide-animation-v1-react" ref={ref}>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Button
       </div>
 
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Gray
         </button>
 
@@ -48,12 +48,12 @@ export default function demo() {
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Drop
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-drop="{ duration: 500 }">
+        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -84,7 +84,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-drop="{ duration: 500 }">
+        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -125,12 +125,12 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Tooltip
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ duration: 500 }">
+        <div data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', duration: 500 }">
           <div className="xt-tooltip-item">
             <button
               type="button"
@@ -139,7 +139,7 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2 group">
-              <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4">
+              <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4">
                 <div className="transform opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4">
                   Lorem ipsum dolor sit amet
                 </div>
@@ -149,7 +149,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ duration: 500 }">
+        <div data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', duration: 500 }">
           <div className="xt-tooltip-item">
             <button
               type="button"
@@ -158,13 +158,13 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2 group">
-              <div className="rounded-md shadow-tooltip text-black xt-links-default bg-white overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4">
+              <div className="rounded-sm shadow-tooltip text-black xt-links-default bg-white overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4">
                 <form className="text-sm">
                   <div className="xt-list flex-nowrap max-w-sm transform opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4">
                     <div className="xt-list-inner flex-auto">
                       <button
                         type="button"
-                        className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -202,12 +202,12 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Overlay
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-overlay="{ duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -246,7 +246,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -317,7 +317,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -460,7 +460,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -597,7 +597,7 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Card
       </div>
 

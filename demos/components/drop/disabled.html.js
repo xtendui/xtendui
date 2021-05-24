@@ -2,14 +2,19 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-disable">
-    <div data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+    <div
+      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', matches: { '(min-width: 768px)': { disabled: true } } }"
+    >
       <div class="xt-drop-item">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           drop
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -17,7 +22,7 @@ const html = /* HTML */ `
               <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <div data-xt-drop>
+              <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop' }">
                 <div class="xt-drop-item">
                   <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                     nested
@@ -25,7 +30,7 @@ const html = /* HTML */ `
 
                   <div class="xt-drop p-4">
                     <div class="xt-backdrop bg-black opacity-25"></div>
-                    <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardPrimary()}">
+                    <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()}">
                       <nav class="xt-list flex-col">
                         <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit

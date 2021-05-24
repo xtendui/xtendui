@@ -6,12 +6,14 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         List Group
       </div>
 
       <form className="text-xs">
-        <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
+        <div
+          className="xt-list xt-list-3 items-center"
+          data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', collapseWidth: 'targets', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -23,7 +25,7 @@ export default function demo() {
               <div className="xt-list-inner flex-auto">
                 <button
                   type="button"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                  className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-xl -my-1"
@@ -57,12 +59,12 @@ export default function demo() {
         </div>
       </form>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Drop
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -95,7 +97,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -138,12 +140,12 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Tooltip
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <div className="xt-tooltip-item">
             <button
               type="button"
@@ -153,7 +155,7 @@ export default function demo() {
 
             <div className="xt-tooltip p-2 group">
               <div className="xt-tooltip-inner overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2">
-                <div className="relative text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+                <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
                   <div className="transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2">
                     Lorem ipsum dolor sit amet
                   </div>
@@ -164,7 +166,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{  targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <div className="xt-tooltip-item">
             <button
               type="button"
@@ -173,13 +175,13 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2 group">
-              <div className="xt-tooltip-inner rounded-md shadow-tooltip text-black bg-white overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2">
+              <div className="xt-tooltip-inner rounded-sm shadow-tooltip text-black bg-white overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2">
                 <form className="text-sm">
                   <div className="xt-list flex-nowrap max-w-sm transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2">
                     <div className="xt-list-inner flex-auto">
                       <button
                         type="button"
-                        className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                        className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -217,12 +219,12 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full font-bold leading-tight tracking-tight normal-case text-lg rounded-md text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
         Overlay
       </div>
 
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -261,7 +263,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -332,7 +334,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -475,7 +477,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">

@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+      <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
         <div className="xt-drop-item">
           <a
             href="#drop-with-link-1"

@@ -36,7 +36,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value=""
                     checked
@@ -49,7 +49,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value="restaurant"
                   />
@@ -61,7 +61,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio rounded-full ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value="school"
                   />
@@ -73,7 +73,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
-                    class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                    class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="googlelocator-fav"
                     value="fav"
                   />
@@ -132,7 +132,7 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="button--repeat absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="button--repeat absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             Search in this area
           </button>

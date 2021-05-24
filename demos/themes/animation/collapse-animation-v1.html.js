@@ -14,11 +14,16 @@ const animItemOpacity = () =>
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">List Group</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">List Group</div>
 
     <form class="text-xs">
-      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">List group</button>
+      <div
+        class="xt-list xt-list-3 items-center"
+        data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', collapseWidth: 'targets', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          List group
+        </button>
 
         <div class="xt-toggle max-w-sm overflow-hidden transition-all group">
           <div class="xt-list flex-nowrap ${animItemWidth()}">
@@ -42,15 +47,19 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Drop</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">list</button>
+      <div
+        data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          list
+        </button>
 
         <div class="xt-drop p-4 group">
-          <div class="xt-drop-inner rounded-md shadow-drop ${animDesign()}">
-            <div class="xt-card w-64 py-3.5 rounded-md ${classes.cardWhite()}">
+          <div class="xt-drop-inner ${classes.cardRadius()} shadow-drop ${animDesign()}">
+            <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} ${classes.cardWhite()}">
               <nav class="xt-list flex-col rounded-md ${animItem()}">
                 <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -68,12 +77,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">card</button>
+      <div
+        data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          card
+        </button>
 
         <div class="xt-drop p-4 group">
-          <div class="xt-drop-inner rounded-md shadow-drop ${animDesign()}">
-            <div class="xt-card w-64 rounded-md ${classes.cardWhite()}">
+          <div class="xt-drop-inner ${classes.cardRadius()} shadow-drop ${animDesign()}">
+            <div class="xt-card w-64 ${classes.cardRadius()} ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${animItem()}"
@@ -95,16 +108,22 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Tooltip</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
+      <div
+        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
         <div class="xt-tooltip-item">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">tooltip</button>
+          <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+            tooltip
+          </button>
 
           <div class="xt-tooltip p-2 group">
             <div class="xt-tooltip-inner ${animDesign()}">
-              <div class="relative ${classes.tooltipMd()} rounded-md shadow-tooltip ${classes.cardBlack()}">
+              <div
+                class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              >
                 <div class="${animItem()}">Lorem ipsum dolor sit amet</div>
               </div>
             </div>
@@ -113,14 +132,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{  targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }">
+      <div
+        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
         <div class="xt-tooltip-item">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+          <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             list group
           </button>
 
           <div class="xt-tooltip p-2 group">
-            <div class="xt-tooltip-inner rounded-md shadow-tooltip text-black bg-white ${animDesign()}">
+            <div class="xt-tooltip-inner ${classes.tooltipRadius()} shadow-tooltip text-black bg-white ${animDesign()}">
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
                   <div class="xt-list-inner flex-auto">
@@ -147,11 +168,15 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} rounded-md text-black bg-gray-200 text-center">Overlay</div>
+    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">screen full</button>
+      <div
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          screen full
+        </button>
         <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
@@ -173,8 +198,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">Menu</button>
+      <div
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          Menu
+        </button>
 
         <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
@@ -216,14 +245,18 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">contact</button>
+      <div
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          contact
+        </button>
 
         <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign()}">
-              <div class="xt-card rounded-md ${classes.cardWhite()}">
+            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
+              <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -242,7 +275,7 @@ const html = /* HTML */ `
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Name </label>
                           <input
                             type="text"
-                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Name"
                           />
                         </div>
@@ -251,7 +284,7 @@ const html = /* HTML */ `
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Surname </label>
                           <input
                             type="text"
-                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Surname"
                           />
                         </div>
@@ -260,7 +293,7 @@ const html = /* HTML */ `
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Email"
                           />
                         </div>
@@ -269,7 +302,7 @@ const html = /* HTML */ `
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Telephone </label>
                           <input
                             type="text"
-                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Telephone"
                           />
                         </div>
@@ -277,7 +310,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
                           <select
-                            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Subject"
                           >
                             <option selected value="">Select an option</option>
@@ -290,14 +323,17 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Message </label>
                           <textarea
-                            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputDefault()} h-24 resize-vertical"
+                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} h-24 resize-vertical"
                             aria-label="Message"
                           ></textarea>
                         </div>
 
                         <div class="w-full">
                           <label class="${classes.checkLabel()}">
-                            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+                            <input
+                              type="checkbox"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                            />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
                               <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
@@ -307,7 +343,10 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                          <button
+                            type="submit"
+                            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+                          >
                             Send
                           </button>
                         </div>
@@ -334,14 +373,18 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">newsletter</button>
+      <div
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
+      >
+        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+          newsletter
+        </button>
 
         <div class="xt-overlay group">
           <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner rounded-md shadow-overlay ${animDesign()}">
-              <div class="xt-card rounded-md ${classes.cardWhite()}">
+            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
+              <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -368,7 +411,7 @@ const html = /* HTML */ `
                           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                             aria-label="Email"
                           />
                         </div>
@@ -381,7 +424,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                                   name="radio-usage"
                                   checked
                                 />
@@ -393,7 +436,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 2 </span>
@@ -404,7 +447,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 3 </span>
@@ -415,7 +458,10 @@ const html = /* HTML */ `
 
                         <div class="w-full">
                           <label class="${classes.checkLabel()}">
-                            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+                            <input
+                              type="checkbox"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                            />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
                               <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
@@ -425,7 +471,10 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${buttonPrimary()}">
+                          <button
+                            type="submit"
+                            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+                          >
                             Subscribe
                           </button>
                         </div>

@@ -8,7 +8,11 @@ const html = /* HTML */ `
 
         <form class="text-sm mb-4">
           <label class="${classes.checkLabel()}">
-            <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" checked />
+            <input
+              type="checkbox"
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+              checked
+            />
             <span class="${classes.checkContent()}">Activate on scroll</span>
           </label>
         </form>
@@ -17,7 +21,7 @@ const html = /* HTML */ `
           <div class="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
               data-xt-infinitescroll-up="-1"
             >
               <span class="content"> Load previous page </span>
@@ -134,7 +138,7 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-2 flex-col items-center">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-infinitescroll-down="+1"
           >
             <span class="content"> Show more products </span>

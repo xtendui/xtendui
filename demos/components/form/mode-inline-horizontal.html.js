@@ -13,7 +13,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-auto md:self-center">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Lorem ipsum"
               />
             </div>
@@ -29,7 +29,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-auto md:self-center">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Dolor sit amet"
               />
             </div>
@@ -45,7 +45,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-auto md:self-center">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Lorem ipsum"
               />
             </div>
@@ -61,7 +61,7 @@ const html = /* HTML */ `
             <div class="w-full md:w-auto md:self-center">
               <input
                 type="text"
-                class="${classes.input()} rounded-md ${classes.inputDefault()}"
+                class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
                 aria-label="Dolor sit amet"
               />
             </div>
@@ -80,7 +80,7 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="checkbox"
-                      class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+                      class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
                       checked
                       disabled
                     />
@@ -90,7 +90,10 @@ const html = /* HTML */ `
 
                 <div class="w-full md:w-auto">
                   <label class="${classes.checkLabel()}">
-                    <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" />
+                    <input
+                      type="checkbox"
+                      class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                    />
                     <span class="${classes.checkContent()}">Lorem ipsum</span>
                   </label>
                 </div>
@@ -111,7 +114,7 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
-                      class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                      class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                       name="radio-horizontal"
                       checked
                     />
@@ -123,7 +126,7 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
-                      class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                      class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                       name="radio-horizontal"
                     />
                     <span class="${classes.checkContent()}">Lorem ipsum</span>
@@ -144,7 +147,10 @@ const html = /* HTML */ `
               <div class="xt-row xt-row-x-8 xt-row-y-2">
                 <div class="w-full md:w-auto">
                   <label class="${classes.checkLabel()}">
-                    <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" />
+                    <input
+                      type="checkbox"
+                      class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                    />
                     <span class="${classes.checkContent()}">Lorem ipsum</span>
                   </label>
                 </div>
@@ -153,7 +159,7 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
-                      class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                      class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                       name="switch-horizontal"
                     />
                     <span class="${classes.checkContent()}">Lorem ipsum</span>
@@ -164,7 +170,7 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
-                      class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                      class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                       name="switch-horizontal"
                     />
                     <span class="${classes.checkContent()}">Lorem ipsum</span>
@@ -176,7 +182,10 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          <button
+            type="submit"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             submit
           </button>
         </div>

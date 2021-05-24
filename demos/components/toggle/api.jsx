@@ -33,18 +33,6 @@ export default function demo() {
         <button
           type="button"
           className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
-          id="button--toggle-api-autostart">
-          Autostart
-        </button>
-        <button
-          type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
-          id="button--toggle-api-autostop">
-          Autostop
-        </button>
-        <button
-          type="button"
-          className="xt-button text-3xs py-1.5 px-2.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
           id="button--toggle-api-add">
           Add
         </button>
@@ -84,24 +72,24 @@ export default function demo() {
         <div className="xt-list xt-list-3 items-center mb-4" id="toggle--eventmethods-elements">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
             data-xt-group="0">
             Toggle Group 0
           </button>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
             data-xt-group="0">
             Toggle Group 0
           </button>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
             Toggle 1
           </button>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
             Toggle 2
           </button>
         </div>
@@ -156,10 +144,6 @@ const mountEventmethods = ({ ref }) => {
     elements: 'a, button',
     targets: '.xt-toggle',
     min: 1,
-    auto: {
-      time: 4000,
-      initial: false,
-    },
   })
 
   // log
@@ -200,28 +184,6 @@ const mountEventmethods = ({ ref }) => {
   }
 
   firstTr.addEventListener('click', firstTrFnc)
-
-  // autostart
-
-  const autostartEl = document.querySelector('#button--toggle-api-autostart')
-
-  const autstartFnc = () => {
-    logAdd('<strong>autostart</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostart.trigger.xt.toggle'))
-  }
-
-  autostartEl.addEventListener('click', autstartFnc)
-
-  // autostop
-
-  const autostopEl = document.querySelector('#button--toggle-api-autostop')
-
-  const autostopFnc = () => {
-    logAdd('<strong>autostop</strong>')
-    self.object.dispatchEvent(new CustomEvent('autostop.trigger.xt.toggle'))
-  }
-
-  autostopEl.addEventListener('click', autostopFnc)
 
   // add
 

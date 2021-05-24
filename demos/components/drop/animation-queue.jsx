@@ -2,7 +2,9 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-list xt-list-3 items-center" data-xt-drop="{ duration: 500 }">
+      <div
+        className="xt-list xt-list-3 items-center"
+        data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', duration: 500 }">
         <div className="xt-drop-item">
           <button
             type="button"

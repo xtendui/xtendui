@@ -57,7 +57,10 @@ const html = /* HTML */ `
 
               <div class="xt-h5 mb-6">€&nbsp;229,00</div>
 
-              <a href="#" class="xt-button ${classes.buttonLg()} rounded-md mb-6 ${classes.buttonPrimary()}">
+              <a
+                href="#"
+                class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} mb-6 ${classes.buttonPrimary()}"
+              >
                 Add to cart
               </a>
 

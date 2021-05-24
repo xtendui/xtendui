@@ -30,6 +30,8 @@ const mountTooltip = ({ ref }) => {
   // init
 
   let self = new Xt.Tooltip(tooltip, {
+    elements: ':scope > .xt-tooltip-item',
+    targets: ':scope > .xt-tooltip-item > .xt-tooltip',
     duration: 300,
     delay: 50,
   })

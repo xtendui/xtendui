@@ -3,55 +3,70 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
         <input
           type="checkbox"
-          class="xt-check xt-checkbox top-auto ml-2 rounded-md ${classes.checkDefault()}"
+          class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkDefault()}"
           checked
           disabled
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
-        <input type="checkbox" class="xt-check xt-checkbox top-auto ml-2 rounded-md ${classes.checkDefault()}" />
+        <input
+          type="checkbox"
+          class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkDefault()}"
+        />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()} sr-only"
+          class="xt-check xt-radio top-auto ml-2 ${classes.radioRadius()} ${classes.radioDefault()} sr-only"
           name="radio-button"
           checked
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-radio top-auto ml-2 rounded-full ${classes.radioDefault()} sr-only"
+          class="xt-check xt-radio top-auto ml-2 ${classes.radioRadius()} ${classes.radioDefault()} sr-only"
           name="radio-button"
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-switch top-auto ml-2 rounded-full ${classes.switchDefault()}"
+          class="xt-check xt-switch top-auto ml-2 ${classes.switchRadius()} ${classes.switchDefault()}"
           name="switch-button"
           checked
         />
       </label>
 
-      <label class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} focus-within:outline-browser">
+      <label
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+      >
         Lorem ipsum
         <input
           type="radio"
-          class="xt-check xt-switch top-auto ml-2 rounded-full ${classes.switchDefault()}"
+          class="xt-check xt-switch top-auto ml-2 ${classes.switchRadius()} ${classes.switchDefault()}"
           name="switch-button"
         />
       </label>

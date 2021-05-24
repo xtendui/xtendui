@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div data-xt-drop="{ matches: { '(min-width: 768px)': { position: 'top-start' } } }">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', matches: { '(min-width: 768px)': { position: 'top-start' } } }">
         <button
           type="button"
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">

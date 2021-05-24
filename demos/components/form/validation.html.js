@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Custom constrain </label>
           <input
             type="text"
-            class="${classes.input()} rounded-md ${classes.inputDefault()} input--constrains"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()} input--constrains"
             aria-label="Custom constrain"
             placeholder="Custom constrain"
             required
@@ -19,7 +19,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Email </label>
           <input
             type="email"
-            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Email"
             placeholder="Email"
             required
@@ -30,7 +30,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Number </label>
           <input
             type="number"
-            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Number"
             placeholder="Number"
             required
@@ -43,7 +43,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Letters </label>
           <input
             type="text"
-            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Letters"
             placeholder="Letters"
             required
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> File </label>
           <input
             type="file"
-            class="${classes.input()} rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="File"
             required
           />
@@ -64,7 +64,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} rounded-md ${classes.inputDefault()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
             required
@@ -74,7 +74,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select </label>
           <select
-            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Select"
             required
           >
@@ -88,7 +88,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select multiple </label>
           <select
-            class="${classes.input()} xt-select rounded-md ${classes.inputDefault()}"
+            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
             aria-label="Select multiple"
             multiple
             required
@@ -107,7 +107,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
                   required
                   disabled
                 />
@@ -121,7 +121,11 @@ const html = /* HTML */ `
 
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-checkbox rounded-md ${classes.checkDefault()}" required />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                  required
+                />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -140,7 +144,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                   name="radio-validation"
                   required
                 />
@@ -156,7 +160,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio rounded-full ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
                   name="radio-validation"
                 />
                 <span class="${classes.checkContent()}"
@@ -175,7 +179,11 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-switch rounded-full ${classes.switchDefault()}" required />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                  required
+                />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -188,7 +196,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                   name="switch-validation"
                   required
                 />
@@ -204,7 +212,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch rounded-full ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                   name="switch-validation"
                 />
                 <span class="${classes.checkContent()}"
@@ -218,7 +226,10 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <button type="submit" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+          <button
+            type="submit"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             submit
           </button>
         </div>

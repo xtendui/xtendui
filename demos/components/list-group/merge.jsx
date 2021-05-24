@@ -8,7 +8,7 @@ export default function demo() {
             Search
           </div>
 
-          <div className="xt-button text-xs py-2.5 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 group-hover:bg-gray-300">
+          <div className="xt-button text-xs py-2.5 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 group-hover:bg-gray-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon text-xl -my-1"

@@ -5,14 +5,17 @@ const html = /* HTML */ `
     <div
       class="jumptocontent xt-toggle fixed z-above left-0 py-4 w-full flex justify-center transform transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0"
     >
-      <a href="#jumptocontent" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <a
+        href="#jumptocontent"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+      >
         Jump to content
       </a>
     </div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card rounded-md p-6 ${classes.cardDefault()}">
+        <div class="xt-card ${classes.cardRadius()} p-6 ${classes.cardDefault()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -23,7 +26,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card rounded-md p-6 ${classes.cardDefault()}">
+        <div class="xt-card ${classes.cardRadius()} p-6 ${classes.cardDefault()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

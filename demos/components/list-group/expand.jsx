@@ -20,7 +20,7 @@ export default function demo() {
           <div className="xt-list-inner flex-auto">
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+              className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon text-xl -my-1"

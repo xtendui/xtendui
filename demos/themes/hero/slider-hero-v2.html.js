@@ -80,7 +80,10 @@ const html = /* HTML */ `
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
                   </p>
-                  <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                  <a
+                    href="/"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  >
                     Lorem ipsum
                   </a>
                 </div>
@@ -105,7 +108,10 @@ const html = /* HTML */ `
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
                   </p>
-                  <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                  <a
+                    href="/"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  >
                     Lorem ipsum
                   </a>
                 </div>
@@ -130,7 +136,10 @@ const html = /* HTML */ `
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
                   </p>
-                  <a href="/" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+                  <a
+                    href="/"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  >
                     Lorem ipsum
                   </a>
                 </div>

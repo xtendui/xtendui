@@ -22,14 +22,14 @@ export default function demo() {
         <div className="xt-list xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
             data-xt-group="group0">
             Group0
           </button>
 
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400 on"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 on"
             data-xt-group="group1">
             Group1
           </button>
@@ -205,7 +205,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
+    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

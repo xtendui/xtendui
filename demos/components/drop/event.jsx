@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
+      <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave' }">
         <div className="xt-drop-item">
           <button
             type="button"
@@ -23,7 +23,7 @@ export default function demo() {
                   className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
-                <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
+                <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
                   <div className="xt-drop-item">
                     <button
                       type="button"
@@ -61,7 +61,7 @@ export default function demo() {
       </div>
 
       <form className="text-sm mt-4">
-        <div data-xt-drop="{ elements: ':scope > .xt-drop-item > input', on: 'focus', off: false }">
+        <div data-xt-drop="{ elements: ':scope > .xt-drop-item > input', targets: ':scope > .xt-drop-item > .xt-drop', on: 'focus', off: false }">
           <div className="xt-drop-item">
             <input
               type="text"

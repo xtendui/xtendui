@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         data-xt-toggle="{ targets: '#toggle--animation-0' }"
       >
         Toggle 0
@@ -13,21 +13,21 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         data-xt-toggle="{ targets: '#toggle--animation-1' }"
       >
         Toggle 1
       </button>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         id="toggle--animation-0"
       >
         Target 0
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         id="toggle--animation-1"
       >
         Target 1

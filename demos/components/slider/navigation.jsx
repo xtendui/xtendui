@@ -27,7 +27,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -46,7 +46,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -73,7 +73,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -92,7 +92,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -119,7 +119,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -138,7 +138,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -165,7 +165,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -184,7 +184,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -211,7 +211,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -230,7 +230,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -256,7 +256,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -275,7 +275,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -302,7 +302,7 @@ export default function demo() {
                 <nav className="xt-list xt-list-3 pt-4 items-center justify-center">
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="-1"
                     title="Previous slide">
                     <svg
@@ -321,7 +321,7 @@ export default function demo() {
                   </button>
                   <button
                     type="button"
-                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+                    className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
                     data-xt-nav="1"
                     title="Next slide">
                     <svg
@@ -346,7 +346,7 @@ export default function demo() {
           <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
               data-xt-nav="-1"
               title="Previous slide">
               <svg
@@ -370,7 +370,7 @@ export default function demo() {
               title="Slide xt-num"></button>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
               data-xt-nav="1"
               title="Next slide">
               <svg
@@ -427,7 +427,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 150), 1.5)
+    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

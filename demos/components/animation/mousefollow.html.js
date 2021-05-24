@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card rounded-md ${classes.cardDefault()}" data-xt-mousefollow>
+    <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}" data-xt-mousefollow>
       <div class="${classes.cardMd()}">
         <div class="xt-h4">Default</div>
         <p>

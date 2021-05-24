@@ -15,8 +15,7 @@ export default function demo() {
             <a
               href="#"
               className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
-              {' '}
-              Lorem ipsum{' '}
+              Lorem ipsum
             </a>
           </div>
         </div>
@@ -35,8 +34,7 @@ export default function demo() {
             <a
               href="#"
               className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
-              {' '}
-              Lorem ipsum{' '}
+              Lorem ipsum
             </a>
           </div>
         </div>
@@ -55,8 +53,7 @@ export default function demo() {
             <a
               href="#"
               className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
-              {' '}
-              Lorem ipsum{' '}
+              Lorem ipsum
             </a>
           </div>
         </div>

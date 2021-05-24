@@ -14,6 +14,12 @@ export default function demo() {
         eget, vehicula scelerisque elit.
       </div>
 
+      <p className="text-4xs mb-3 xt-mb-auto">
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
+        eget, vehicula scelerisque elit.
+      </p>
+
       <p className="text-3xs mb-3 xt-mb-auto">
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna

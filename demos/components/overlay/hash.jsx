@@ -4,7 +4,10 @@ import 'xtendui/src/overlay'
 export default function demo() {
   return (
     <div>
-      <div className="xt-overlay on" data-xt-overlay data-xt-hash="demo--overlay-hash">
+      <div
+        className="xt-overlay on"
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }"
+        data-xt-hash="demo--overlay-hash">
         <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
         <div className="xt-overlay-container max-w-3xl">
           <div className="xt-overlay-inner">

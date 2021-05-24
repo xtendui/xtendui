@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} group"
+      class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
       data-xt-toggle="{ targets: '#demo--collapse-text-target', collapseHeight: 'targets', duration: 500 }"
     >
       <span class="group-on:hidden"> Show more </span>

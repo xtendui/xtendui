@@ -3,13 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ position: 'bottom' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', position: 'bottom' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           bottom
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -26,13 +29,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ position: 'bottom-start' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', position: 'bottom-start' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           bottom start
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -49,13 +55,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ position: 'bottom-end' }">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonPrimary()}">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', position: 'bottom-end' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        >
           bottom end
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit

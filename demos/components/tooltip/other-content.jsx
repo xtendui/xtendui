@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip' }">
         <div className="xt-tooltip-item">
           <button
             type="button"
@@ -11,13 +11,13 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="rounded-md shadow-tooltip text-black xt-links-default bg-white">
+            <div className="rounded-sm shadow-tooltip text-black xt-links-default bg-white">
               <form className="text-sm">
                 <div className="xt-list flex-nowrap max-w-sm">
                   <div className="xt-list-inner flex-auto">
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 active:bg-gray-400 on:bg-gray-400">
+                      className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="xt-icon text-xl -my-1"

@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
           data-xt-group="group0"
         >
           Group0
@@ -14,15 +14,19 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()} on"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} on"
           data-xt-group="group1"
         >
           Group1
         </button>
 
-        <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" id="toggle--unique-0">Target 0</div>
+        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-0">
+          Target 0
+        </div>
 
-        <div class="xt-card xt-toggle rounded-md ${classes.cardToggle()}" id="toggle--unique-1">Target 1</div>
+        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-1">
+          Target 1
+        </div>
       </div>
 
       <div class="xt-slider">
@@ -30,7 +34,7 @@ const html = /* HTML */ `
           <div class="xt-slides xt-row xt-row-4">
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group1">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">1</div>
                 </div>
               </div>
@@ -38,7 +42,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group0,group1">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">2</div>
                 </div>
               </div>
@@ -46,7 +50,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group0">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">3</div>
                 </div>
               </div>
@@ -54,7 +58,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-full ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group1">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">4</div>
                 </div>
               </div>
@@ -62,7 +66,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group0">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">5</div>
                 </div>
               </div>
@@ -70,7 +74,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group0,group1">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">6</div>
                 </div>
               </div>
@@ -78,7 +82,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}">
               <div class="xt-toggle" data-xt-group="group1">
-                <div class="xt-card rounded-md ${classes.cardSlide()}">
+                <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
                   <div class="xt-h4">7</div>
                 </div>
               </div>

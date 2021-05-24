@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         data-xt-group="0"
       >
         Toggle 0
@@ -13,42 +13,42 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         data-xt-group="1"
       >
         Toggle 1
       </button>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="0"
       >
         Target 0a
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="0"
       >
         Target 0b
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="0"
       >
         Target 0c
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="0"
       >
         Target 0d
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="1"
         data-xt-duration-in="1000"
         data-xt-duration-out="0"
@@ -59,7 +59,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="1"
         data-xt-duration-in="500"
         data-xt-duration-out="500"
@@ -70,7 +70,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="1"
         data-xt-duration-in="0"
         data-xt-duration-out="1000"
@@ -81,7 +81,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="xt-card xt-toggle rounded-md ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+        class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
         data-xt-group="1"
         data-xt-duration-in="0"
         data-xt-duration-out="1000"

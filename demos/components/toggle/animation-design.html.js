@@ -1,12 +1,15 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
-    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+  <div
+    class="xt-list xt-list-3 items-center"
+    data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', duration: 500 }"
+  >
+    <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
       Toggle 0
     </button>
 
-    <button type="button" class="xt-button ${classes.buttonMd()} rounded-md ${classes.buttonDefault()}">
+    <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
       Toggle 1
     </button>
 
