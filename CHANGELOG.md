@@ -1,3 +1,34 @@
+# [1.0.0-beta.20](https://github.com/minimit/xtendui/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-05-24)
+
+
+### Bug Fixes
+
+* **groupnumber:** no event on init ([c408c67](https://github.com/minimit/xtendui/commit/c408c67364028160f8300855cddd0e72c69cf3ae))
+* **scrollto:** fix scrollto hashchange instant with null value ([b0162f8](https://github.com/minimit/xtendui/commit/b0162f882f105e0d194a156fc9f5b3daad7a0ae0))
+* **slider:** automatically disable wrap if there's not enough space ([77ce605](https://github.com/minimit/xtendui/commit/77ce60581346f9f1ac72c06e24d413ca45e7aa77))
+* **slider:** clean data-xt-group-same ([e1d8cb8](https://github.com/minimit/xtendui/commit/e1d8cb833ed0b54a26a1f401d9f4c708ebbe833e))
+* **slider:** fix contain end slides automatic groups ([f898f3d](https://github.com/minimit/xtendui/commit/f898f3dd2cc4dc931d2df93129a46f0866bbec10))
+* **slider:** fix wrap activation and some refactor ([92da975](https://github.com/minimit/xtendui/commit/92da97543d96164ff4196b05cc0e83ab7d597b7d))
+* **slider:** fix wrap data-xt-group-same when wrapping ([644af6a](https://github.com/minimit/xtendui/commit/644af6af201e0f628d6f5cbf3823f35c0c5f40a3))
+* **toggle:** fix initialization starting classes when multiple elements in groups ([3570203](https://github.com/minimit/xtendui/commit/357020396e25496aac99a4eb1975080e555b09cc))
+
+
+### Code Refactoring
+
+* removed defaults elements and targets from interactions ([522071b](https://github.com/minimit/xtendui/commit/522071bd40fd437a1fc62a6274ad899b8689f6b8))
+
+
+### Features
+
+* relaxed-json instead of json5 less kb ([71eefd1](https://github.com/minimit/xtendui/commit/71eefd16124ad5300aa847ce23678718a306b6ca))
+* **sticky:** added classes options xt-sticky-nozindex adn xt-sticky-noheight ([480af8b](https://github.com/minimit/xtendui/commit/480af8b42026b7bbe75c3ad9a15f89afb59139a9))
+* **typography:** added text 4xs and revision border radius ([c0e4e07](https://github.com/minimit/xtendui/commit/c0e4e07efa68e36349a28e68e65bff3c12215001))
+
+
+### BREAKING CHANGES
+
+* always set delements and targets on xt-drop xt-tooltip xt-toggle xt-overlay close#32
+
 # [1.0.0-beta.19](https://github.com/minimit/xtendui/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2021-05-19)
 
 
