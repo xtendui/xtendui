@@ -950,6 +950,7 @@ class Toggle {
         }
       }
       Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
+      Xt.scrolltoHashforce = null
     }
     // return
     return { currents, arr }
@@ -1524,7 +1525,6 @@ class Toggle {
             window,
             `xtHashFrame`,
             requestAnimationFrame(() => {
-              Xt.scrolltoHashforce = false
               location.hash = `#${encodeURIComponent(attr)}`
             })
           )
@@ -1601,7 +1601,6 @@ class Toggle {
             window,
             `xtHashFrame`,
             requestAnimationFrame(() => {
-              Xt.scrolltoHashforce = false
               location.hash = ''
             })
           )
