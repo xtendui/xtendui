@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-overlay="{ elements: ':scope > button, .xt-list > button', duration: 500 }"
+      data-xt-overlay="{ elements: ':scope > .xt-button, .xt-list > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }"
     >
       <button
         type="button"

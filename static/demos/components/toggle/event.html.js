@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Mouseenter</div>
 
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter', off: false }">
+    <div
+      class="xt-list xt-list-3 items-center"
+      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', on: 'mouseenter', off: false }"
+    >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
@@ -47,7 +50,7 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div
         class="xt-list xt-list-3 items-center"
-        data-xt-toggle="{ elements: ':scope > input', on: 'focus', off: false }"
+        data-xt-toggle="{ elements: ':scope > input', targets: ':scope > .xt-toggle', on: 'focus', off: false }"
       >
         <input
           type="text"

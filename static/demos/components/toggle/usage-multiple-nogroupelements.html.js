@@ -2,7 +2,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ groupElements: false }">
+    <div
+      class="xt-list xt-list-3 items-center"
+      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', groupElements: false }"
+    >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"

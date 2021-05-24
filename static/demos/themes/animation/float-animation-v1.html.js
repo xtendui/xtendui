@@ -49,7 +49,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           list
         </button>
@@ -75,7 +75,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           card
         </button>
@@ -108,7 +108,9 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ duration: 500 }">
+      <div
+        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', duration: 500 }"
+      >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             tooltip
@@ -126,7 +128,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ duration: 500 }">
+      <div
+        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', duration: 500 }"
+      >
         <div class="xt-tooltip-item">
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             list group
@@ -166,7 +170,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ duration: 500 }">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           screen full
         </button>
@@ -193,7 +197,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ duration: 500 }">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           Menu
         </button>
@@ -255,7 +259,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ duration: 500 }">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           contact
         </button>
@@ -383,7 +387,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ duration: 500 }">
+      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
         <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
           newsletter
         </button>

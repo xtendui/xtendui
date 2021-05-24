@@ -2,7 +2,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-drop="{ queue: false, duration: 500 }">
+    <div
+      class="xt-list xt-list-3 items-center"
+      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', queue: false, duration: 500 }"
+    >
       <div class="xt-drop-item">
         <button
           type="button"

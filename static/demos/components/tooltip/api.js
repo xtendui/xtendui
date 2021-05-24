@@ -23,7 +23,11 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Tooltip(tooltip, { closeOutside: false })
+  let self = new Xt.Tooltip(tooltip, {
+    elements: ':scope > .xt-button',
+    targets: ':scope > .xt-tooltip',
+    closeOutside: false,
+  })
 
   // log
 

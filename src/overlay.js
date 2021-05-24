@@ -64,8 +64,8 @@ class Overlay extends Xt.Toggle {
 Overlay.componentName = 'xt-overlay'
 Overlay.optionsDefault = {
   // element
-  elements: ':scope > a, :scope > button, :scope > .xt-overlay-item',
-  targets: ':scope > .xt-overlay, :scope > .xt-overlay-item > .xt-overlay',
+  elements: false,
+  targets: false,
   elementsInner: ':scope > a, :scope > button',
   // quantity
   min: 0,

@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ auto: { time: 4000, initial: false, step: 3, inverse: true } }"
+      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', auto: { time: 4000, initial: false, step: 3, inverse: true } }"
     >
       <button
         type="button"

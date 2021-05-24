@@ -2,7 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+    <div
+      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave', preventEvent: true }"
+    >
       <div class="xt-drop-item">
         <a
           href="#drop-with-link-1"

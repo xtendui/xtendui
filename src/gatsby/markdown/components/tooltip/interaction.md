@@ -16,8 +16,8 @@ The query is inside `object`, only when specifying **elements and targets with `
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `':scope > a, :scope > button, :scope > .xt-tooltip-item'`        | Elements query            |
-| Option                  | `targets:Query`                          | `':scope > .xt-tooltip, :scope > .xt-tooltip-item > .xt-tooltip'`        | Targets query            |
+| Option                  | `elements:Query`                          | `false`        | Elements query            |
+| Option                  | `targets:Query`                          | `false`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
 | Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query (e.g.: `.hidden`)           |

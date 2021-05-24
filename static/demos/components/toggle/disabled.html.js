@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ matches: { '(min-width: 768px)': { disabled: true } } }"
+      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', matches: { '(min-width: 768px)': { disabled: true } } }"
     >
       <button
         type="button"
@@ -25,7 +25,10 @@ const html = /* HTML */ `
       <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} on">
         Target 1
 
-        <div class="xt-list xt-list-3 items-center mt-4" data-xt-toggle="{ min: 1 }">
+        <div
+          class="xt-list xt-list-3 items-center mt-4"
+          data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', min: 1 }"
+        >
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

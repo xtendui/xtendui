@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ matches: { '(max-width: 767px)': { max: 2 }, '(min-width: 768px)': { max: 3 } } }"
+      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', matches: { '(max-width: 767px)': { max: 2 }, '(min-width: 768px)': { max: 3 } } }"
     >
       <button
         type="button"

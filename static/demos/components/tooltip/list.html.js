@@ -2,7 +2,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'right' }">
+    <div
+      class="xt-list xt-list-3 items-center"
+      data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', position: 'right' }"
+    >
       <div class="xt-tooltip-item">
         <button
           type="button"

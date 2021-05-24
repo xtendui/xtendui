@@ -66,7 +66,7 @@ export default class Page extends React.Component {
                       </span>
                     </h1>
                     <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
-                      <div data-xt-tooltip="{ position: 'top', duration: 300 }">
+                      <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.twitter}
                           target="_blank"
@@ -83,7 +83,7 @@ export default class Page extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div data-xt-tooltip="{ position: 'top', duration: 300 }">
+                      <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.npm}
                           target="_blank"
@@ -100,7 +100,7 @@ export default class Page extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <span data-xt-tooltip="{ position: 'top', duration: 300 }">
+                      <span data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
                         <a
                           href={data.site.siteMetadata.github}
                           target="_blank"

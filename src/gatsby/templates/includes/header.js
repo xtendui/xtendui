@@ -41,7 +41,7 @@ export default function Header({ page }) {
                 </div>
                 <div className="gatsby_site-header_top_social_container">
                   <div className="gatsby_site-header_top_social">
-                    <div data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.twitter}
                         target="_blank"
@@ -58,7 +58,7 @@ export default function Header({ page }) {
                         </div>
                       </div>
                     </div>
-                    <div data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
@@ -75,7 +75,7 @@ export default function Header({ page }) {
                         </div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
+                    <span data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"
@@ -137,7 +137,9 @@ export default function Header({ page }) {
                 <div className="mt-16 md:mt-0">
                   <div className="gatsby_site-header_switcher_container">
                     <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
-                      <div className="flex-full" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
+                      <div
+                        className="flex-full"
+                        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', position: 'bottom', duration: 300 }">
                         <div className="xt-tooltip-item w-full">
                           <button
                             type="button"
@@ -152,7 +154,9 @@ export default function Header({ page }) {
                           </div>
                         </div>
                       </div>
-                      <div className="flex-full" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
+                      <div
+                        className="flex-full"
+                        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', position: 'bottom', duration: 300 }">
                         <div className="xt-tooltip-item w-full">
                           <button
                             type="button"

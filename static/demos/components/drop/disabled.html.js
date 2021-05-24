@@ -2,7 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-disable">
-    <div data-xt-drop="{ matches: { '(min-width: 768px)': { disabled: true } } }">
+    <div
+      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', matches: { '(min-width: 768px)': { disabled: true } } }"
+    >
       <div class="xt-drop-item">
         <button
           type="button"
@@ -20,7 +22,7 @@ const html = /* HTML */ `
               <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <div data-xt-drop>
+              <div data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop' }">
                 <div class="xt-drop-item">
                   <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                     nested

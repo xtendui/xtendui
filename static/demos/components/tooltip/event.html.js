@@ -2,7 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-tooltip="{ on: 'click', off: 'click' }">
+    <div
+      data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', on: 'click', off: 'click' }"
+    >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -14,7 +16,10 @@ const html = /* HTML */ `
         <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
           Lorem ipsum
 
-          <div class="inline-block" data-xt-tooltip="{ on: 'click', off: 'click', position: 'auto' }">
+          <div
+            class="inline-block"
+            data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', on: 'click', off: 'click', position: 'auto' }"
+          >
             <a href="#">dolor</a>
 
             <div class="xt-tooltip p-2">
@@ -32,7 +37,7 @@ const html = /* HTML */ `
     </div>
 
     <form class="text-sm mt-4">
-      <div data-xt-tooltip="{ elements: ':scope > input', on: 'focus', off: 'blur' }">
+      <div data-xt-tooltip="{ elements: ':scope > input', targets: ':scope > .xt-tooltip', on: 'focus', off: 'blur' }">
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
