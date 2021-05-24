@@ -141,7 +141,9 @@ class Groupnumber {
       // set value
       input.value = val
       // trigger external events and skip internal events
-      input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
+      if (!self.initial) {
+        input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
+      }
     }
   }
 
