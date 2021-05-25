@@ -43,7 +43,7 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 
 * **Global Auto Timescale**, **change javascript auto duration timescales**, for example set this variables `Xt.autoTimescale = 0.5` to have double time on component auto changes.
 
-You can play with gsap and XtendUI settings, an **example setup** for for faster animation on mobile.
+You can play with gsap and Xtend UI settings, an **example setup** for for faster animation on mobile.
 
 ```js
 /* animation */

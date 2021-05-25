@@ -20,7 +20,7 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend will sends 
 
 ## Listeners
 
-There are three main methods to listen to XtendUI vanilla javascript events.
+There are three main methods to listen to Xtend UI vanilla javascript events.
 
 We always check for `e.target` because **events propagate** and the event could be from a nested component of the same type.
 

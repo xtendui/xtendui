@@ -9,7 +9,7 @@ date: "2020-10-05"
 
 ## Customization
 
-You can **customize preset** inside `tailwind.config.js`, use `theme.extend` to change XtendUI preset default.
+You can **customize preset** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI preset default.
 
 Check [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default preset.
 
@@ -37,7 +37,7 @@ module.exports = {
 }
 ```
 
-You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change XtendUI default component styles.
+You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI default component styles.
 
 Check [xtendui/tailwind.components.js](https://github.com/minimit/xtendui/blob/beta/tailwind.components.js) for default component styles.
 
@@ -80,7 +80,7 @@ The following theme values are added with the preset:
 
 ## Variants
 
-XtendUI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default variants.
+Xtend UI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js) for default variants.
 
 For [all tailwind variants with hover already](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js) and for `transitionProperty`, `transitionTimingFunction`, `transitionDuration`, `transitionDelay`, `display`, `zIndex` we add the followind variants:
 

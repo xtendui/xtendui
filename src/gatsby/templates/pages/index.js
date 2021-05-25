@@ -56,13 +56,13 @@ export default class Page extends React.Component {
               <main className="gatsby_home-main">
                 <div className="gatsby_home-main_head xt-sticky xt-sticky-nozindex my-28 text-center">
                   <div className="container">
-                    <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                      A new paradigm for Custom Frontend Development
+                    <h3 className="mt-10 mb-4 xt-my-auto font-black text-3xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
+                      Complex UI made easy with simplicity and total freedom
                     </h3>
-                    <h1 className="xt-h4 font-normal gatsby_home-main_scroll">
+                    <h1 className="mt-5 mb-3 xt-my-auto font-normal leading-tight tracking-tight normal-case text-lg lg:text-2xl lg:leading-tight gatsby_home-main_scroll">
                       <span className="gatsby_home-main_head_description opacity-50">
-                        Xtend UI is a framework for custom styling, interactions and animations. Extremely customizable
-                        and designed for building complex user interfaces.
+                        Xtend UI is a powerfull library to create advanced UI with custom tailwind components and
+                        advanced interactions and animations
                       </span>
                     </h1>
                     <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">

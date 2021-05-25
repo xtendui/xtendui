@@ -32,11 +32,9 @@ date: "2050-09-10"
   </a>
 </p>
 
-## About
+## Complex UI made easy with simplicity and total freedom
 
-##### Custom frontend development with Vanilla Javascript and Tailwind Components
-
-Xtend UI is a framework for custom styling, interactions and animations. Extremely customizable and designed for building complex user interfaces.
+Xtend UI is a powerfull library to create advanced UI with custom tailwind components and advanced interactions and animations.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)

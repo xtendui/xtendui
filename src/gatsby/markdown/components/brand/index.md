@@ -3,7 +3,7 @@ type: "Components"
 category: "Introduction"
 parent: "Brand"
 title: "Brand"
-description: "XtendUI brand assets for sharing."
+description: "Xtend UI brand assets for sharing."
 date: "2005-10-10"
 ---
 
