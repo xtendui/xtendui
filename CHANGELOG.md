@@ -1,3 +1,10 @@
+# [1.0.0-beta.24](https://github.com/minimit/xtendui/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-05-25)
+
+
+### Bug Fixes
+
+* test fix release github ([942f505](https://github.com/minimit/xtendui/commit/942f5050e393b32b9c0eb12e7328cc66bc470775))
+
 # [1.0.0-beta.23](https://github.com/minimit/xtendui/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2021-05-25)
 
 
