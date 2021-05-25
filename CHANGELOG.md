@@ -1,3 +1,10 @@
+# [1.0.0-beta.21](https://github.com/minimit/xtendui/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2021-05-25)
+
+
+### Bug Fixes
+
+* added relaxed json to dependencies ([20c5a60](https://github.com/minimit/xtendui/commit/20c5a60594ebfcfc3d3537ac8e11f19c01c08d0f))
+
 # [1.0.0-beta.20](https://github.com/minimit/xtendui/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2021-05-24)
 
 
