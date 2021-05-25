@@ -59,7 +59,7 @@ if (typeof window !== 'undefined') {
     document.querySelector('body').classList.add('xt-ready')
     Xt.setScrollbarWidth()
     Xt.innerHeightSet()
-    Xt.mountCheck(document.documentElement)
+    // fix first observe then mountCheck or overlay with on has xt-ignore xt-ignore-once
     Xt.observer.disconnect()
     Xt.observer.observe(document.documentElement, {
       characterData: false,
@@ -67,6 +67,7 @@ if (typeof window !== 'undefined') {
       childList: true,
       subtree: true,
     })
+    Xt.mountCheck(document.documentElement)
   })
 
   //
