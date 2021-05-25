@@ -166,6 +166,16 @@ export const populateBlock = () => {
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
         const container = content.querySelector('.gatsby_demo')
+        // hidden tooltip
+        const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
+        if (tooltip) {
+          tooltip.classList.remove('hidden')
+        }
+        // code tooltip
+        const btnCode = container.querySelector('.button--show-code')
+        if (btnCode) {
+          btnCode.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+        }
         // populate iframe
         if (container) {
           for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
@@ -221,11 +231,6 @@ export const populateBlock = () => {
           )
           // move back
           appendOrigin.remove()
-        }
-        // hidden tooltip
-        const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
-        if (tooltip) {
-          tooltip.classList.remove('hidden')
         }
       }
     })
@@ -871,7 +876,7 @@ export const makeDocument = () => {
           )
           activeText.setAttribute(
             'data-xt-tooltip',
-            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
+            `{ elements: false, targets: '.xt-tooltip', position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
           )
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }

@@ -7,7 +7,7 @@ export default class DocHead extends React.Component {
   render() {
     const { page } = this.props
     return (
-      <header className="gatsby_site-article_hero py-10 md:py-16 border-b border-gray-200">
+      <header className="gatsby_site-article_hero overflow-hidden py-10 md:py-16 border-b border-gray-200">
         <div className="gatsby_site-article_hero-inner container">
           <div className="gatsby_site-article_hero-content">
             <div className="gatsby_site-article_hero-content-inner">
