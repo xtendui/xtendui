@@ -33,7 +33,7 @@ export default class DocHead extends React.Component {
                       return (
                         <div
                           key={z}
-                          className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-primary-600 bg-primary-600 text-white -mt-4 ml-2`}>
+                          className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-white font-semibold leading-snug tracking-wider uppercase border-primary-600 bg-primary-600 -mt-4 ml-2`}>
                           {tag}
                         </div>
                       )
