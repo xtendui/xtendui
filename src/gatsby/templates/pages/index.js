@@ -134,13 +134,13 @@ export default class Page extends React.Component {
                           <div className="w-full md:w-6/12 lg:w-7/12">
                             <ul>
                               <li>
-                                <strong>Tailwind plugin</strong> with <strong>overridable cssinjs setup styles</strong>.
+                                <strong>Tailwind plugin</strong> with overridable cssinjs setup styles.
                               </li>
                               <li>
                                 <strong>Tailwind components</strong> that supports a wide range of designs.
                               </li>
                               <li>
-                                <strong>Css animations</strong> for simple class based animations.
+                                <strong>Tailwind custom variants</strong> for simple class based animations.
                               </li>
                             </ul>
                           </div>
@@ -154,13 +154,13 @@ export default class Page extends React.Component {
                           <div className="w-full md:w-6/12 lg:w-7/12">
                             <ul>
                               <li>
-                                <strong>API</strong> with customizzable behaviour.
+                                Ecosystem of <strong>vanilla javascript</strong> plugins.
                               </li>
                               <li>
-                                Ecosystem of vanilla javascript <strong>plugins and addons</strong>.
+                                <strong>Strong API</strong> with customizzable behaviour.
                               </li>
                               <li>
-                                A system tomount components with <strong>mutation observer queries</strong>, to
+                                A system to mount components with <strong>mutation observer queries</strong>, to
                                 structure your javascript code better.
                               </li>
                             </ul>
@@ -175,11 +175,18 @@ export default class Page extends React.Component {
                           <div className="w-full md:w-6/12 lg:w-7/12">
                             <ul>
                               <li>
-                                Complex UI components with <strong>custom Javascript animations</strong>.
+                                Complex interaction components you only need to specify{' '}
+                                <strong>custom animations</strong>.
                               </li>
                               <li>
-                                <strong>Gsap ScrollTrigger</strong> for{' '}
-                                <Link to="/components/interaction/scroll">scroll interactions</Link>.
+                                <strong>Scroll and parallax animations</strong> with{' '}
+                                <a
+                                  href="https://greensock.com/docs/v3/Plugins/ScrollTrigger"
+                                  target="_blank"
+                                  rel="noopener noreferrer">
+                                  Gsap ScrollTrigger
+                                </a>
+                                .
                               </li>
                             </ul>
                           </div>
@@ -207,7 +214,7 @@ export default class Page extends React.Component {
                       <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                         <div className="text-left text-sm">
                           <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Complex UI
+                            Interaction
                           </h3>
                           <p className="xt-p text-sm leading-snug opacity-50">
                             Makes complex interactions trivial with well thought components.
@@ -220,7 +227,7 @@ export default class Page extends React.Component {
                             User Explerience
                           </h3>
                           <p className="xt-p text-sm leading-snug opacity-50">
-                            Support for advanced interactions and animations.
+                            Complex UI logic to be used with custom animations.
                           </p>
                         </div>
                       </div>
@@ -254,7 +261,7 @@ export default class Page extends React.Component {
                             UX Themes
                           </h3>
                           <p className="xt-p text-sm leading-snug opacity-50">
-                            Granular themes focused on interactions and animations instead of design.
+                            Themes focused on interactions and animations instead of design.
                           </p>
                         </div>
                       </div>
