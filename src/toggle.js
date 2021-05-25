@@ -1518,6 +1518,7 @@ class Toggle {
         const attr = el.getAttribute(options.hash)
         if (attr) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+          Xt.scrolltoHashforce = false
           // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
           cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
           Xt.dataStorage.set(
@@ -1594,6 +1595,7 @@ class Toggle {
         const attr = el.getAttribute(options.hash)
         if (attr && attr === location.hash.split('#')[1]) {
           Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+          Xt.scrolltoHashforce = false
           // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
           cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
           Xt.dataStorage.set(
