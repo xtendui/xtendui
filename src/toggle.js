@@ -950,7 +950,6 @@ class Toggle {
         }
       }
       Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
-      Xt.scrolltoHashforce = null
     }
     // return
     return { currents, arr }
