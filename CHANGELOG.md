@@ -1,3 +1,12 @@
+# [1.0.0-beta.22](https://github.com/minimit/xtendui/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2021-05-25)
+
+
+### Bug Fixes
+
+* **scrollto:** fix toggle hash force false on activation ([170db95](https://github.com/minimit/xtendui/commit/170db955ccf903e196adfb1ad38b80b93b69bf74))
+* fix order Xt.read first observe then mount to fix xt-ignore-once ([15cb7fc](https://github.com/minimit/xtendui/commit/15cb7fc68305db3fbb05f3196917604673ebadff))
+* removed toggle Xt.scrolltoHashforce ([362a8d1](https://github.com/minimit/xtendui/commit/362a8d10774c5eb9d819ff9f8feedb67121a0d59))
+
 # [1.0.0-beta.21](https://github.com/minimit/xtendui/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2021-05-25)
 
 
