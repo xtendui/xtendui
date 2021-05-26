@@ -18,7 +18,6 @@ module.exports = {
       // styles
       '&:after': {
         content: '"*"',
-        marginLeft: theme('spacing.1'),
       },
     },
     '.xt-select': {

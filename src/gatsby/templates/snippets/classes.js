@@ -82,7 +82,7 @@ export const classes = {
     'py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none',
   labelDefault: () => 'font-semibold text-gray-900',
   labelPrimary: () => 'font-semibold text-white',
-  label: () => 'flex',
+  label: () => 'block',
   input: () => 'block w-full',
   inputRadius: () => 'rounded-md',
   textarea: () => 'h-20 max-h-48',
