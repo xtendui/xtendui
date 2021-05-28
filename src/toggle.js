@@ -2156,14 +2156,19 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          el.dispatchEvent(
-            new CustomEvent(`on.${self.componentNs}`, {
-              detail: obj.elements.e ? obj.elements.e.detail : null,
-            })
-          )
-        })
+        // keep the same level of raf for activation
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}DelayDoneFrame`))
+        Xt.dataStorage.set(
+          el,
+          `${self.ns}${actionCurrent}DelayDoneFrame`,
+          requestAnimationFrame(() => {
+            el.dispatchEvent(
+              new CustomEvent(`on.${self.componentNs}`, {
+                detail: obj.elements.e ? obj.elements.e.detail : null,
+              })
+            )
+          })
+        )
       }
     } else if (
       actionCurrent === 'Out' &&
@@ -2191,19 +2196,28 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          // raf because after on for setDirection etc..
+        // keep the same level of raf for activation
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}DelayDoneFrame`))
+        Xt.dataStorage.set(
+          el,
+          `${self.ns}${actionCurrent}DelayDoneFrame`,
           requestAnimationFrame(() => {
-            if (!self.disabled) {
-              el.dispatchEvent(
-                new CustomEvent(`off.${self.componentNs}`, {
-                  detail: obj.elements.e ? obj.elements.e.detail : null,
-                })
-              )
-            }
+            // raf because after on for setDirection etc..
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}${actionCurrent}DelayDoneFrame`,
+              requestAnimationFrame(() => {
+                if (!self.disabled) {
+                  el.dispatchEvent(
+                    new CustomEvent(`off.${self.componentNs}`, {
+                      detail: obj.elements.e ? obj.elements.e.detail : null,
+                    })
+                  )
+                }
+              })
+            )
           })
-        })
+        )
       }
     }
     // queue
@@ -2276,14 +2290,19 @@ class Toggle {
       self.specialCollapse('Reset', el, type)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          el.dispatchEvent(
-            new CustomEvent(`ondone.${self.componentNs}`, {
-              detail: obj.elements.e ? obj.elements.e.detail : null,
-            })
-          )
-        })
+        // keep the same level of raf for activation
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}AnimDoneFrame`))
+        Xt.dataStorage.set(
+          el,
+          `${self.ns}${actionCurrent}AnimDoneFrame`,
+          requestAnimationFrame(() => {
+            el.dispatchEvent(
+              new CustomEvent(`ondone.${self.componentNs}`, {
+                detail: obj.elements.e ? obj.elements.e.detail : null,
+              })
+            )
+          })
+        )
       }
     } else if (actionCurrent === 'Out') {
       // only one time and if last element
@@ -2327,19 +2346,28 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for custom listener
-        requestAnimationFrame(() => {
-          // raf because after on for setDirection etc..
+        // keep the same level of raf for activation
+        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}AnimDoneFrame`))
+        Xt.dataStorage.set(
+          el,
+          `${self.ns}${actionCurrent}AnimDoneFrame`,
           requestAnimationFrame(() => {
-            if (!self.disabled) {
-              el.dispatchEvent(
-                new CustomEvent(`offdone.${self.componentNs}`, {
-                  detail: obj.elements.e ? obj.elements.e.detail : null,
-                })
-              )
-            }
+            // raf because after on for setDirection etc..
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}${actionCurrent}AnimDoneFrame`,
+              requestAnimationFrame(() => {
+                if (!self.disabled) {
+                  el.dispatchEvent(
+                    new CustomEvent(`offdone.${self.componentNs}`, {
+                      detail: obj.elements.e ? obj.elements.e.detail : null,
+                    })
+                  )
+                }
+              })
+            )
           })
-        })
+        )
       }
     }
     // queue
