@@ -43,7 +43,7 @@ export default function demo() {
                 </button>
                 <input
                   type="text"
-                  className="block w-full py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Search"
                   placeholder="Seach Catalog"
                 />
@@ -199,7 +199,7 @@ export default function demo() {
                       </button>
                       <input
                         type="text"
-                        className="block w-full py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                        className="block w-full py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                         aria-label="Search"
                         placeholder="Seach Catalog"
                       />
@@ -373,45 +373,45 @@ export default function demo() {
                       <form className="text-sm">
                         <div className="xt-row xt-row-x-6 xt-row-y-4">
                           <div className="w-full md:w-6/12">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Name </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Name </label>
                             <input
                               type="text"
-                              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Name"
                             />
                           </div>
 
                           <div className="w-full md:w-6/12">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Surname </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Surname </label>
                             <input
                               type="text"
-                              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Surname"
                             />
                           </div>
 
                           <div className="w-full md:w-6/12">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Email </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Email </label>
                             <input
                               type="text"
-                              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Email"
                             />
                           </div>
 
                           <div className="w-full md:w-6/12">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Telephone </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Telephone </label>
                             <input
                               type="text"
-                              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Telephone"
                             />
                           </div>
 
                           <div className="w-full">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Subject </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Subject </label>
                             <select
-                              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full xt-select rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Subject">
                               <option defaultValue="">Select an option</option>
                               <option>Test</option>
@@ -421,9 +421,9 @@ export default function demo() {
                           </div>
 
                           <div className="w-full">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Message </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Message </label>
                             <textarea
-                              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
+                              className="block w-full h-20 max-h-48 rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
                               aria-label="Message"></textarea>
                           </div>
 
@@ -522,16 +522,16 @@ export default function demo() {
                       <form className="text-sm">
                         <div className="xt-row xt-row-x-6 xt-row-y-4">
                           <div className="w-full">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Email </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Email </label>
                             <input
                               type="text"
-                              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                               aria-label="Email"
                             />
                           </div>
 
                           <div className="w-full">
-                            <label className="flex mb-3 font-semibold text-gray-900"> Subject </label>
+                            <label className="block mb-3 font-semibold text-gray-900"> Subject </label>
 
                             <div className="xt-row xt-row-x-8 xt-row-y-2">
                               <div className="w-full sm:w-auto">

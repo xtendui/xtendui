@@ -52,28 +52,28 @@ export default function demo() {
           data-xt-toggle="{ elements: ':scope > input', targets: ':scope > .xt-toggle', on: 'focus', off: false }">
           <input
             type="text"
-            className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
             aria-label="Toggle 0"
             placeholder="Toggle 0"
           />
 
           <input
             type="text"
-            className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
             aria-label="Toggle 1"
             placeholder="Toggle 1"
           />
 
           <input
             type="text"
-            className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
             aria-label="Toggle 2"
             placeholder="Toggle 2"
           />
 
           <input
             type="text"
-            className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
             aria-label="Toggle 3"
             placeholder="Toggle 3"
           />

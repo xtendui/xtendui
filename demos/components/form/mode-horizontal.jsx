@@ -7,13 +7,13 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-center">
-                <label className="flex font-semibold text-gray-900"> Lorem ipsum </label>
+                <label className="block font-semibold text-gray-900"> Lorem ipsum </label>
               </div>
 
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -23,13 +23,13 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-center">
-                <label className="flex font-semibold text-gray-900"> Dolor sit amet </label>
+                <label className="block font-semibold text-gray-900"> Dolor sit amet </label>
               </div>
 
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Dolor sit amet"
                 />
               </div>
@@ -39,13 +39,13 @@ export default function demo() {
           <div className="w-full md:w-6/12">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-4/12 md:self-center">
-                <label className="flex font-semibold text-gray-900"> Lorem ipsum </label>
+                <label className="block font-semibold text-gray-900"> Lorem ipsum </label>
               </div>
 
               <div className="w-full md:w-8/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -55,13 +55,13 @@ export default function demo() {
           <div className="w-full md:w-6/12">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-4/12 md:self-center">
-                <label className="flex font-semibold text-gray-900"> Dolor sit amet </label>
+                <label className="block font-semibold text-gray-900"> Dolor sit amet </label>
               </div>
 
               <div className="w-full md:w-8/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Dolor sit amet"
                 />
               </div>
@@ -71,7 +71,7 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-baseline">
-                <label className="flex font-semibold text-gray-900"> Checkbox </label>
+                <label className="block font-semibold text-gray-900"> Checkbox </label>
               </div>
 
               <div className="w-full md:w-10/12">
@@ -113,7 +113,7 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-baseline">
-                <label className="flex font-semibold text-gray-900"> Radio </label>
+                <label className="block font-semibold text-gray-900"> Radio </label>
               </div>
 
               <div className="w-full md:w-10/12">
@@ -156,7 +156,7 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-baseline">
-                <label className="flex font-semibold text-gray-900"> Switch </label>
+                <label className="block font-semibold text-gray-900"> Switch </label>
               </div>
 
               <div className="w-full md:w-10/12">

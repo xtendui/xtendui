@@ -5,43 +5,43 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Lorem ipsum </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Lorem ipsum </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Lorem ipsum"
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Dolor sit amet"
             />
           </div>
 
           <div className="w-full md:w-6/12">
-            <label className="flex mb-3 font-semibold text-gray-900"> Lorem Ipsum </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Lorem Ipsum </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Lorem ipsum"
             />
           </div>
 
           <div className="w-full md:w-6/12">
-            <label className="flex mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Dolor sit amet"
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Checkbox </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -77,7 +77,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Radio </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full md:w-6/12">
@@ -114,7 +114,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Switch </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">

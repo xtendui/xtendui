@@ -32,7 +32,7 @@ export default function demo() {
         <div data-xt-tooltip="{ elements: ':scope > input', targets: ':scope > .xt-tooltip', on: 'focus', off: 'blur' }">
           <input
             type="text"
-            className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
             aria-label="Focus"
             placeholder="Focus"
           />

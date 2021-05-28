@@ -5,7 +5,7 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900">
+            <label className="block mb-3 font-semibold text-gray-900">
               Lorem ipsum
               <div className="ml-4">
                 <div className="xt-list xt-list-3 items-center">
@@ -22,13 +22,13 @@ export default function demo() {
             </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Lorem ipsum"
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900">
+            <label className="block mb-3 font-semibold text-gray-900">
               Dolor sit amet
               <div className="ml-auto">
                 <div className="xt-list xt-list-3 items-center">
@@ -45,7 +45,7 @@ export default function demo() {
             </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Dolor sit amet"
             />
           </div>
@@ -53,7 +53,7 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-center">
-                <label className="flex flex-col font-semibold text-gray-900">
+                <label className="block flex-col font-semibold text-gray-900">
                   Lorem ipsum
                   <div className="mt-2">
                     <div className="xt-list xt-list-3 items-center">
@@ -73,7 +73,7 @@ export default function demo() {
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Lorem ipsum"
                 />
               </div>
@@ -83,7 +83,7 @@ export default function demo() {
           <div className="w-full">
             <div className="xt-row xt-row-x-6 xt-row-y-4">
               <div className="w-full md:w-2/12 md:self-center">
-                <label className="flex flex-col font-semibold text-gray-900">
+                <label className="block flex-col font-semibold text-gray-900">
                   Dolor sit amet
                   <div className="mt-auto">
                     <div className="xt-list xt-list-3 items-center">
@@ -103,7 +103,7 @@ export default function demo() {
               <div className="w-full md:w-10/12">
                 <input
                   type="text"
-                  className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
                   aria-label="Dolor sit amet"
                 />
               </div>

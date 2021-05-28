@@ -5,20 +5,20 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Input </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Input </label>
             <input
               type="text"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
+              className="block w-full py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Disabled </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Disabled </label>
             <input
               type="text"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
+              className="block w-full py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -26,26 +26,26 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> File </label>
+            <label className="block mb-3 font-semibold text-gray-900"> File </label>
             <input
               type="file"
-              className="block w-full py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
+              className="block w-full py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="File"
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Textarea </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Select </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Select </label>
             <select
-              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
+              className="block w-full xt-select py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Test</option>
@@ -55,9 +55,9 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Select multiple </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Select multiple </label>
             <select
-              className="block w-full xt-select py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
+              className="block w-full xt-select py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none"
               multiple
               aria-label="Select multiple">
               <option>Option 1</option>
@@ -67,7 +67,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Checkbox </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -103,7 +103,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Radio </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -140,7 +140,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900"> Switch </label>
+            <label className="block mb-3 font-semibold text-gray-900"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">

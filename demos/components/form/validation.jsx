@@ -18,10 +18,10 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Custom constrain </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Custom constrain </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none input--constrains"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none input--constrains"
               aria-label="Custom constrain"
               placeholder="Custom constrain"
               required
@@ -29,10 +29,10 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Email </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Email </label>
             <input
               type="email"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Email"
               placeholder="Email"
               required
@@ -40,10 +40,10 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Number </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Number </label>
             <input
               type="number"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Number"
               placeholder="Number"
               required
@@ -53,10 +53,10 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Letters </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Letters </label>
             <input
               type="text"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Letters"
               placeholder="Letters"
               required
@@ -65,28 +65,28 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> File </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> File </label>
             <input
               type="file"
-              className="block w-full rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="File"
               required
             />
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Textarea </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
               required></textarea>
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Select </label>
             <select
-              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full xt-select rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Select"
               required>
               <option defaultValue="">Select an option</option>
@@ -97,9 +97,9 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Select multiple </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Select multiple </label>
             <select
-              className="block w-full xt-select rounded-md py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full xt-select rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Select multiple"
               multiple
               required>
@@ -110,7 +110,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Checkbox </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -147,7 +147,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Radio </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -184,7 +184,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="flex mb-3 font-semibold text-gray-900 xt-label-required"> Switch </label>
+            <label className="block mb-3 font-semibold text-gray-900 xt-label-required"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">

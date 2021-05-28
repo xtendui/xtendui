@@ -164,8 +164,8 @@
 <url> <loc>https://xtendui.com/themes/listing/stores-listing-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/navigation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/navigation/menu-navigation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://xtendui.com/themes/animation/ripple-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/animation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/themes/animation/float-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://xtendui.com/themes/animation/ripple-animation-v-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://xtendui.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
