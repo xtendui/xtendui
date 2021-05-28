@@ -2116,8 +2116,12 @@ class Toggle {
       // special
       self.specialZindex(actionCurrent, el, type)
       self.specialAppendto(actionCurrent, el, type)
-      self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type, obj)
+      if (!self.initial) {
+        self.specialCollapse(actionCurrent, el, type)
+      } else {
+        self.specialCollapse('Reset', el, type)
+      }
       if (options.focusLimit) {
         if (obj.targets) {
           if (type === 'targets' || (!self.targets.length && type === 'elements')) {

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div id="demo--collapse-text-target" class="mb-6 text-lg h-20 overflow-hidden transition-all">
+    <div id="demo--collapse-text-target" class="mb-6 text-lg h-20 overflow-hidden transition-all on">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum sed.
       Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam pellentesque.
       Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at, pretium nulla. Cras tincidunt
