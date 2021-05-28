@@ -1,3 +1,16 @@
+# [1.0.0-beta.25](https://github.com/minimit/xtendui/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2021-05-28)
+
+
+### Bug Fixes
+
+* **toggle:** fix collapse initial with no animation ([0f08129](https://github.com/minimit/xtendui/commit/0f0812910b77b58cb70c1f243acf33ec114f0dd3))
+* **toggle:** fix multiple delay and anim on document mode on same targets ([258bb71](https://github.com/minimit/xtendui/commit/258bb71dd8e90e3b9f6cd5bdc54b5dbd2c1ffb8f))
+
+
+### Features
+
+* **form:** new switch svg and form paddings ([fa1321a](https://github.com/minimit/xtendui/commit/fa1321a6e86c6d27dce90c7861bd42a9754bad2c))
+
 # [1.0.0-beta.24](https://github.com/minimit/xtendui/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2021-05-25)
 
 
