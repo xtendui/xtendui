@@ -75,14 +75,14 @@ export const classes = {
   switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
   switchRadius: () => 'rounded-full',
   inputDefault: () =>
-    'py-2 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none',
+    'py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none',
   inputPrimary: () =>
-    'py-2 px-4 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
+    'py-3 px-4 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
-    'py-2 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none',
+    'py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none',
   labelDefault: () => 'font-semibold text-gray-900',
   labelPrimary: () => 'font-semibold text-white',
-  label: () => 'block',
+  label: () => 'block', // no flex or tags inside have no space (e.g. links)
   input: () => 'block w-full',
   inputRadius: () => 'rounded-md',
   textarea: () => 'h-20 max-h-48',

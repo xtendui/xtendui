@@ -93,15 +93,14 @@ module.exports = {
       top: '.2em',
       width: '2.25em',
       height: '1.25em',
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-5 -5 10 10" fill="${encodeURIComponent(
-        theme('colors.gray.600')
-      )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 36.3 36.3" fill="${encodeURIComponent(
+        theme('colors.white')
+      )}" stroke="${encodeURIComponent(
+        theme('colors.gray.300')
+      )}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="18" cy="18" r="17"/></svg>')`,
       backgroundSize: 'contain',
       backgroundPosition: 'left center',
       '&:checked': {
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-5 -5 10 10" fill="${encodeURIComponent(
-          theme('colors.white')
-        )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
         backgroundPosition: 'right center',
         backgroundColor: 'currentColor',
         borderColor: 'currentColor',
