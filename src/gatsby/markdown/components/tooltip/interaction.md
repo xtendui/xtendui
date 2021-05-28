@@ -109,13 +109,13 @@ You can specify **on** and **off** events for the interactions.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String`                              | `'mouseenter'`                     | Event to **listen for activation**           |
-| Option                  | `off:String`                             | `'mouseleave'`                       | Event to **listen for deactivation**          |
+| Option                  | `on:String|false`                              | `'mouseenter'`                     | Event to **listen for activation**           |
+| Option                  | `off:String|false`                             | `'mouseleave'`                       | Event to **listen for deactivation**          |
 
 </div>
 
 [[notePrimary]]
-| When using `mouse` events use only [multiple mode](/components/drop#usage-multiple) **when you want to interact with the targets**.
+| When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
 
 <demo>
   <demoinline src="demos/components/tooltip/event">
