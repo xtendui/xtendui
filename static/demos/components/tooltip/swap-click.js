@@ -47,6 +47,17 @@ const mountButtonsSwap = ({ ref }) => {
       tooltip.addEventListener('offdone.xt.tooltip', swapBack)
     }
 
+    // resetTooltip: fix when swapping and moving away
+
+    const resetTooltip = () => {
+      // trigger our swap
+      tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+      // trigger tooltip deactivation
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
+
+    buttonSwap.addEventListener('mouseleave', resetTooltip)
+
     // click
 
     const click = () => {

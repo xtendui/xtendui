@@ -163,11 +163,6 @@ export const populateBlock = () => {
         if (tooltip) {
           tooltip.classList.remove('hidden')
         }
-        // code tooltip
-        const btnCode = container.querySelector('.button--show-code')
-        if (btnCode) {
-          btnCode.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-        }
         // populate iframe
         if (container) {
           for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
@@ -522,31 +517,39 @@ const swapToggle = ({ tooltip, self, buttonSwap }) => {
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
-  // on
+  // resetTooltip: fix when swapping and moving away
 
-  const on = e => {
-    // check because of event propagation
-    if (e.target === buttonSwap) {
-      // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    }
+  const resetTooltip = () => {
+    // trigger our swap
+    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    // trigger tooltip deactivation
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    // remove our listeners
+    tooltip.removeEventListener('offdone.xt.tooltip', swap)
+    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
   }
 
-  buttonSwap.addEventListener('on.xt.toggle', on, true)
+  buttonSwap.addEventListener('mouseleave', resetTooltip)
+
+  // on
+
+  const on = () => {
+    // swap
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    tooltip.addEventListener('offdone.xt.tooltip', swap)
+  }
+
+  buttonSwap.addEventListener('on.xt.toggle', on)
 
   // off
 
-  const off = e => {
-    // check because of event propagation
-    if (e.target === buttonSwap) {
-      // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    }
+  const off = () => {
+    // swap back
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
   }
 
-  buttonSwap.addEventListener('off.xt.toggle', off, true)
+  buttonSwap.addEventListener('off.xt.toggle', off)
 }
 
 /**

@@ -47,30 +47,39 @@ const mountButtonsSwap = ({ ref }) => {
       tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     }
 
-    // on
-    const on = e => {
-      // check because of event propagation
-      if (e.target === buttonSwap) {
-        // swap
-        tooltip.addEventListener('offdone.xt.tooltip', swap)
-        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-      }
+    // resetTooltip: fix when swapping and moving away
+
+    const resetTooltip = () => {
+      // trigger our swap
+      tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+      // trigger tooltip deactivation
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+      // remove our listeners
+      tooltip.removeEventListener('offdone.xt.tooltip', swap)
+      tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
     }
 
-    buttonSwap.addEventListener('on.xt.toggle', on, true)
+    buttonSwap.addEventListener('mouseleave', resetTooltip)
+
+    // on
+
+    const on = () => {
+      // swap
+      tooltip.addEventListener('offdone.xt.tooltip', swap)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
+
+    buttonSwap.addEventListener('on.xt.toggle', on)
 
     // off
 
-    const off = e => {
-      // check because of event propagation
-      if (e.target === buttonSwap) {
-        // swap back
-        tooltip.addEventListener('offdone.xt.tooltip', swapBack)
-        tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-      }
+    const off = () => {
+      // swap back
+      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 
-    buttonSwap.addEventListener('off.xt.toggle', off, true)
+    buttonSwap.addEventListener('off.xt.toggle', off)
   }
 
   // unmount
