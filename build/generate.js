@@ -4,7 +4,11 @@ const path = require('path')
 const glob = require('glob')
 const writeFile = require('write')
 const indentString = require('indent-string')
-const test = false
+let test = false
+/*
+test = true
+console.log(test)
+*/
 
 ;(async () => {
   await del(['static/demos/**/**.jsx'])
@@ -85,7 +89,7 @@ const test = false
           html = html.replace(/(?<=class="demo--(.*?))"/g, '" ref={ref}')
         }
         // test
-        if (test) {
+        if (test && refs) {
           html = html.replace(
             /(^ {2}<div *.+)/gm,
             `$1<button onClick={() => setCount(count + 1)}>You clicked {count} times</button>`
@@ -101,21 +105,14 @@ const test = false
         html = html.replace(/frameborder/g, 'frameBorder')
         // str
         let str = `import React${
-          strMount !== '' ? `${refs ? `, { useRef, useCallback${test ? `, useState` : ''} }` : ''}` : ''
+          strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function demo() {${
           strMount !== ''
-            ? `${test ? 'const [count, setCount] = useState(0)' : ''}
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+            ? `${test && refs ? 'const [count, setCount] = useState(0)' : ''}
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 `
             : ''
