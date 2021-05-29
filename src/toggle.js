@@ -2206,20 +2206,13 @@ class Toggle {
           el,
           `${self.ns}${actionCurrent}DelayDoneFrame`,
           requestAnimationFrame(() => {
-            // raf because after on for setDirection etc..
-            Xt.dataStorage.set(
-              el,
-              `${self.ns}${actionCurrent}DelayDoneFrame`,
-              requestAnimationFrame(() => {
-                if (!self.disabled) {
-                  el.dispatchEvent(
-                    new CustomEvent(`off.${self.componentNs}`, {
-                      detail: obj.elements.e ? obj.elements.e.detail : null,
-                    })
-                  )
-                }
-              })
-            )
+            if (!self.disabled) {
+              el.dispatchEvent(
+                new CustomEvent(`off.${self.componentNs}`, {
+                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                })
+              )
+            }
           })
         )
       }
@@ -2356,20 +2349,13 @@ class Toggle {
           el,
           `${self.ns}${actionCurrent}AnimDoneFrame`,
           requestAnimationFrame(() => {
-            // raf because after on for setDirection etc..
-            Xt.dataStorage.set(
-              el,
-              `${self.ns}${actionCurrent}AnimDoneFrame`,
-              requestAnimationFrame(() => {
-                if (!self.disabled) {
-                  el.dispatchEvent(
-                    new CustomEvent(`offdone.${self.componentNs}`, {
-                      detail: obj.elements.e ? obj.elements.e.detail : null,
-                    })
-                  )
-                }
-              })
-            )
+            if (!self.disabled) {
+              el.dispatchEvent(
+                new CustomEvent(`offdone.${self.componentNs}`, {
+                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                })
+              )
+            }
           })
         )
       }

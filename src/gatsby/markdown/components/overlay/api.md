@@ -83,6 +83,7 @@ const object = self.object
 | Property                   | `initial:Boolean`       | If initial or reset activation            |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `currentIndex|null:Number`       | Current activated index            |
 
 </div>
 

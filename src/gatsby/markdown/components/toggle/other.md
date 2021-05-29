@@ -61,6 +61,15 @@ When you need to reinit the component when the media is loaded and the **width**
 
 See [slider media loaded](/components/slider/other#media-loaded) for demo.
 
+## Reset to Current
+
+Use this code to create a **toggle that resets to current** automatically on deactivation.
+
+<demo>
+  <demoinline src="demos/components/toggle/reset-to-current">
+  </demoinline>
+</demo>
+
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

@@ -64,6 +64,15 @@ You can put **any content** inside, here are some examples.
   </demoinline>
 </demo>
 
+## Reset to Current
+
+Use this code to create a **drop that resets to current** automatically on deactivation.
+
+<demo>
+  <demoinline src="demos/components/drop/reset-to-current">
+  </demoinline>
+</demo>
+
 ## Popperjs
 
 You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.

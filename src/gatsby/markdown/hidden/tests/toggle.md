@@ -59,19 +59,6 @@ Test exclude.
   </demoinline>
 </demo>
 
-Test activation.
-
-Test animation fast duration with and without `data-xt-duration`.
-
-<demo>
-  <demoinline src="demos/components/tooltip/swap-click">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/swap-toggle">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-fast">
-  </demoinline>
-</demo>
-
 ## Event
 
 Test toggle mouse should not close when clicking opened elements.
@@ -159,6 +146,28 @@ Test close all should remove all class.
 
 <demo>
   <demoinline src="demos/components/overlay/class-html">
+  </demoinline>
+</demo>
+
+## Other
+
+Test no empty frame when switching from off to reset.
+
+<demo>
+  <demoinline src="demos/components/drop/reset-to-current">
+  </demoinline>
+</demo>
+
+Test activation.
+
+Test animation fast duration with and without `data-xt-duration`.
+
+<demo>
+  <demoinline src="demos/components/tooltip/swap-click">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/swap-toggle">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-fast">
   </demoinline>
 </demo>
 

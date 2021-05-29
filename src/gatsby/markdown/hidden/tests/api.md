@@ -7,7 +7,7 @@ title: "Api"
 
 ## Api
 
-Test on event on init must log to test activation // raf because after on for setDirection etc..
+Test on event on init must log to test activation
 
 Test add and remove.
 
