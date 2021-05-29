@@ -49,68 +49,28 @@ Xt.ready(() => {
 })
 
 /**
- * formatCode
+ * highlightCode
  */
 
-const formatCode = (source, sourceCode, isReact = false) => {
-  let text = source.innerHTML
+const highlightCode = (pre, element, language, isReact = false) => {
+  const code = pre.querySelector('code')
+  let text = element.innerHTML
+  language = language ?? element.getAttribute('class') ?? 'language-sh'
+  if (language === 'language-html') {
+    language = 'html'
+  } else if (language === 'language-css') {
+    language = 'css'
+  } else if (language === 'language-js') {
+    language = 'js'
+  } else if (language === 'language-jsx') {
+    language = 'jsx'
+  }
   // css refs
   if (isReact) {
     text = text.replace(/\.demo--(.*?), /, '')
   } else {
     text = text.replace(/, \.demo--(.*?)-react/, '')
   }
-  // ##START and ##END
-  // const metas = text.match(/[ ]*\/\*##START\*\/\n*([\S\s]*?)[ ]*\/\*##END\*\/\n*/g)
-  // if (metas) {
-  //   text = ''
-  //   for (const meta of metas.entries()) {
-  //     text += meta[1]
-  //   }
-  // }
-  // remove ##
-  // text = text.replace(/\n*[ ]*\/\*##(.*)*/g, '')
-  // refs
-  // const ref = text.match(/( {2}<div class="demo--(.*?)$)/gm)
-  // if (ref) {
-  //   text = text.replace(/( {2}<div class="demo--(.*?)$)/gm, '')
-  //   text = text.replace(/(^ {2}<\/div>)/gm, '')
-  // }
-  // ref
-  // const refs = text.match(/(\.demo--(.*?)$)/gm)
-  // if (refs) {
-  //   text = text.replace(/^(\.demo--(.*?)$)/gm, '')
-  //   text = text.replace(/^}$/gm, '')
-  // }
-  // clipboard
-  Xt.dataStorage.set(
-    sourceCode,
-    'sourceCode',
-    text
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/&#x2F;/g, '/')
-      .replace(/&amp;/g, '&')
-  )
-  // search html tags
-  const re = /<[^>]*>/g
-  text = text.replace(re, match => {
-    // replace quote entities
-    match = match.replace(/&quot;/g, '"')
-    // replace entities
-    match = match
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;')
-      .replace(/\//g, '&#x2F;')
-    // replace empty quotes
-    match = match.replace(/=&quot;&quot;/g, '')
-    return match
-  })
   // remove tabs
   const arr = text.split('\n')
   let search
@@ -130,8 +90,41 @@ const formatCode = (source, sourceCode, isReact = false) => {
   }
   // remove newline at start and end
   text = text.replace(/^\s+|\s+$/g, '')
-  // return
-  return text
+  // hightlight
+  let highlighted = Prism.highlight(text, Prism.languages[language] ?? false, language)
+  if (language === 'js' || language === 'jsx') {
+    highlighted = highlighted.replace(
+      /<.*?\/\*\*\/.*?>\s(.*?)\s<span class="token comment">\/\*\*\/.*?>/g,
+      (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    )
+  }
+  if (language === 'html' || language === 'jsx') {
+    highlighted = highlighted.replace(
+      /\*\*(.*?)\*\*/g,
+      (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    )
+  }
+  code.innerHTML = highlighted
+  // clipboard
+  if (language === 'js' || language === 'jsx') {
+    text = text.replace(/\/\*\*\/\s(.*?)\s\/\*\*\//g, (_, str) => str)
+  }
+  if (language === 'html' || language === 'jsx') {
+    text = text.replace(/\*\*(.*?)\*\*/g, (_, str) => str)
+  }
+  Xt.dataStorage.set(pre, 'sourceCode', text)
+  // set language
+  if (language === 'html') {
+    language = 'language-html'
+  } else if (language === 'css') {
+    language = 'language-css'
+  } else if (language === 'js') {
+    language = 'language-js'
+  } else if (language === 'jsx') {
+    language = 'language-jsx'
+  }
+  pre.classList.add(language)
+  code.classList.add(language)
 }
 
 /**
@@ -146,10 +139,10 @@ export const populateBlock = () => {
     el.after(Xt.createElement(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`))
     el.remove()
   }
-  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
-    // set text
-    el.innerHTML = formatCode(el, el)
-    Prism.highlightElement(el)
+  for (const pre of document.querySelectorAll('pre:not(.noedit)')) {
+    // highlightCode
+    const code = pre.querySelector('code')
+    highlightCode(pre, code)
   }
   // overlay fullscreen
   const full = document.querySelector('#gatsby_open-full')
@@ -433,7 +426,7 @@ export const populateItem = item => {
       text: trigger => {
         const elSourceCode = trigger
           .closest('.gatsby_demo')
-          .querySelector('.gatsby_demo_item.on .gatsby_demo_code .gatsby_demo_code_body_item.on pre code')
+          .querySelector('.gatsby_demo_item.on .gatsby_demo_code .gatsby_demo_code_body_item.on pre')
         return Xt.dataStorage.get(elSourceCode, 'sourceCode')
       },
     })
@@ -737,26 +730,30 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   // inject code
   if (htmlSource) {
     inner.append(
-      Xt.createElement(`<div class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</div>`)
+      Xt.createElement(
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
+      )
     )
   }
   if (jsxSource) {
     inner.append(
       Xt.createElement(
-        `<div class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></div>`
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
       )
     )
   }
   if (cssSource) {
     inner.append(
       Xt.createElement(
-        `<div class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></div>`
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
       )
     )
   }
   if (jsSource) {
     inner.append(
-      Xt.createElement(`<div class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></div>`)
+      Xt.createElement(
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
+      )
     )
   }
   // populate
@@ -785,7 +782,7 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
 const populateSources = (item, element, isReact = false) => {
   let lang = element.getAttribute('data-lang')
   // set text
-  if (lang === 'language-markup') {
+  if (lang === 'language-html') {
     lang = 'html'
   } else if (lang === 'language-css') {
     lang = 'css'
@@ -803,20 +800,8 @@ const populateSources = (item, element, isReact = false) => {
     .append(Xt.createElement(`<button type="button" class="xt-button">${lang}</button>`))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')
-  const codeInside = itemInside[itemInside.length - 1].querySelector('pre code')
-  // set text
-  if (lang === 'html') {
-    lang = 'language-markup'
-  } else if (lang === 'css') {
-    lang = 'language-css'
-  } else if (lang === 'js') {
-    lang = 'language-js'
-  } else if (lang === 'jsx') {
-    lang = 'language-jsx'
-  }
-  codeInside.innerHTML = formatCode(element, codeInside, isReact)
-  codeInside.classList.add(lang)
-  Prism.highlightElement(codeInside)
+  const pre = itemInside[itemInside.length - 1].querySelector('pre')
+  highlightCode(pre, element, lang, isReact)
 }
 
 /* makeDocument */

@@ -17,3 +17,5 @@ Test demos initial activation on browser location.
 Test demo show code in fullscreen after switching mode.
 
 Test demo switcher initial and switched html class and code.
+
+Test demo copy code not to have highlight comments see regex.
