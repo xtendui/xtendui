@@ -91,10 +91,66 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(slide, `${self.ns}SlideLeft`, slideLeft)
       Xt.dataStorage.set(slide, `${self.ns}SlideWidth`, slideWidth)
     }
+    // initGroupsInitial
+    self.initGroupsInitial()
+    // disable slider if not overflowing
+    if (options.nooverflow) {
+      if (self.detail.availableSpace <= 0) {
+        self.object.classList.add('xt-slider-nooverflow')
+        // needed for activation all slides
+        self.initGroupsInitial({ group: 1 })
+      } else {
+        self.object.classList.remove('xt-slider-nooverflow')
+      }
+    }
+    // initGroupsPosition
+    self.initGroupsPosition()
+    // wrap
+    if (
+      options.wrap &&
+      options.mode !== 'absolute' &&
+      !options.drag.manual &&
+      self.detail.availableSpace >= self.detail.draggerWidth
+    ) {
+      self.wrap = true
+    } else {
+      self.wrap = false
+    }
+    // wrap indexes
+    self.detail.moveFirst = 0
+    self.detail.moveLast = self.groups.length - 1
+    // initGroupsContain
+    self.initGroupsContain()
+    // save cloned array of targets because we change it in the first loop and breaks second loop
+    for (const group of self.groups) {
+      group.targetsInitial = [...group.targets]
+    }
+    // initGroupsSame
+    self.initGroupsSame()
+    // @PERF
+    for (const group of self.groups) {
+      let groupHeight = 0
+      for (const target of group.targets) {
+        const height = target.children[0].offsetHeight
+        groupHeight = height > groupHeight ? height : groupHeight
+      }
+      Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
+    }
+  }
+
+  /**
+   * init groups initial
+   * @param {Object} params
+   * @param {Number} params.group
+   */
+  initGroupsInitial({ group } = {}) {
+    const self = this
+    const options = self.options
     // inital groups
     self.groups = []
     let currentGroup = 0
-    let draggerWidthAvailable = options.group ? self.detail.draggerWidth * options.group : 0
+    group = group ?? options.group
+    let draggerWidthAvailable = group ? self.detail.draggerWidth * group : 0
     let currentCount = draggerWidthAvailable
     self.detail.availableSpace = -self.detail.draggerWidth
     for (const [i, target] of self.targets.entries()) {
@@ -118,19 +174,20 @@ class Slider extends Xt.Toggle {
       } else {
         self.groups[currentGroup].targets.push(target)
       }
+      target.removeAttribute('data-xt-group') // needed or nooverflow doesn't reset
       target.setAttribute('data-xt-group', `${self.ns}-${currentGroup}`)
       target.removeAttribute('data-xt-group-same')
     }
-    // disable slider if not overflowing
-    if (options.nooverflow) {
-      if (self.detail.availableSpace <= 0) {
-        self.object.classList.add('xt-slider-nooverflow')
-      } else {
-        self.object.classList.remove('xt-slider-nooverflow')
-      }
-    }
+  }
+
+  /**
+   * init groups position
+   */
+  initGroupsPosition() {
+    const self = this
+    const options = self.options
     // groups position
-    let usedWidth = 0
+    self.usedWidth = 0
     for (const group of self.groups) {
       const slide = group.target
       // vars
@@ -146,10 +203,10 @@ class Slider extends Xt.Toggle {
         groupLeft = targetLeft < groupLeft ? slideLeft : groupLeft
         if (options.mode === 'absolute') {
           // when absolute mode make fake positions as if all items displaced inside dragger
-          groupLeft += usedWidth
+          groupLeft += self.usedWidth
         }
         groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
-        usedWidth += groupWidth
+        self.usedWidth += groupWidth
       }
       // left with alignment
       let left
@@ -166,22 +223,16 @@ class Slider extends Xt.Toggle {
         Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
       }
     }
-    // wrap
-    if (
-      options.wrap &&
-      options.mode !== 'absolute' &&
-      !options.drag.manual &&
-      self.detail.availableSpace >= self.detail.draggerWidth
-    ) {
-      self.wrap = true
-    } else {
-      self.wrap = false
-    }
-    // wrap indexes
-    self.detail.moveFirst = 0
-    self.detail.moveLast = self.groups.length - 1
+  }
+
+  /**
+   * init groups contain
+   */
+  initGroupsContain() {
+    const self = this
+    const options = self.options
     // contain groups
-    if (options.contain && !self.wrap && options.mode !== 'absolute' && usedWidth > self.detail.draggerWidth) {
+    if (options.contain && !self.wrap && options.mode !== 'absolute' && self.usedWidth > self.detail.draggerWidth) {
       // only if slides overflow dragger
       const first = self.groups[self.detail.moveFirst].target
       const last = self.groups[self.detail.moveLast].target
@@ -278,10 +329,14 @@ class Slider extends Xt.Toggle {
       self.detail.moveFirst = 0
       self.detail.moveLast = self.groups.length - 1
     }
-    // save cloned array of targets because we change it in the first loop and breaks second loop
-    for (const group of self.groups) {
-      group.targetsInitial = [...group.targets]
-    }
+  }
+
+  /**
+   * init groups same
+   */
+  initGroupsSame() {
+    const self = this
+    const options = self.options
     // groups multiple targets if are inside dragger
     if (options.mode !== 'absolute') {
       for (const [z, group] of self.groups.entries()) {
@@ -357,15 +412,6 @@ class Slider extends Xt.Toggle {
           }
         }
       }
-    }
-    // @PERF
-    for (const group of self.groups) {
-      let groupHeight = 0
-      for (const target of group.targets) {
-        const height = target.children[0].offsetHeight
-        groupHeight = height > groupHeight ? height : groupHeight
-      }
-      Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
     }
   }
 
@@ -784,7 +830,7 @@ class Slider extends Xt.Toggle {
    * @param {Number} params.width
    * @param {Number} params.movingSpace
    */
-  eventMove({ index, dir, left, width, movingSpace }) {
+  eventMove({ index, dir, left, width, movingSpace } = {}) {
     const self = this
     const options = self.options
     // index

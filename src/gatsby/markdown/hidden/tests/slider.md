@@ -35,6 +35,8 @@ Test grouping and drag activation.
 
 Test wrap drag activation.
 
+Test group same on wrap.
+
 Test browser resize should keep activate.
 
 Test browser resize should wrap on left or on right.
@@ -111,6 +113,8 @@ Test deactivation on resize.
 Test on deactivation should not have xt-grab and xt-jump.
 
 Test in `self.wrap` on responsive.
+
+Test resize grouping.
 
 <demo>
   <demoinline src="demos/components/slider/nooverflow">

@@ -153,7 +153,7 @@ class Scrollto {
    * @param {Node|HTMLElement|EventTarget|Window} params.tr target
    * @param {Event} e
    */
-  eventScrollto({ el = null, tr = null }, e = null) {
+  eventScrollto({ el, tr } = {}, e = null) {
     const self = this
     const options = self.options
     // element
