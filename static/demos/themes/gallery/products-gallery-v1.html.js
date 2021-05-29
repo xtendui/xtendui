@@ -2,6 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--products-gallery-v1">
+    <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
     <div class="site-wrapper">
       <header class="site-header">
         <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">

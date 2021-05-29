@@ -24,6 +24,8 @@ console.log(test)
       // refs
       const refs = html.match(/class="demo--(.*?)"/g)
       html = html.replace(/(?<=class="demo--(.*?))"/g, '-react"')
+      // jsx comments
+      html = html.replace(/<!--(.*)-->/g, (_, str) => `{/*${str}*/}`)
       // js
       const jsGlob = new glob.Glob(`${src}.js`, (er, jsSources) => {
         if (jsSources.length) {
