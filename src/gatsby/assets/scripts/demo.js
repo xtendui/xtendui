@@ -92,26 +92,18 @@ const highlightCode = (pre, element, language, isReact = false) => {
   text = text.replace(/^\s+|\s+$/g, '')
   // hightlight
   let highlighted = Prism.highlight(text, Prism.languages[language] ?? false, language)
-  if (language === 'js' || language === 'jsx') {
-    highlighted = highlighted.replace(
-      /<.*?\/\*\*\/.*?>\s(.*?)\s<span class="token comment">\/\*\*\/.*?>/g,
-      (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
-    )
-  }
-  if (language === 'html' || language === 'jsx') {
-    highlighted = highlighted.replace(
-      /\*\*\s(.*?)\s\*\*/g,
-      (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
-    )
-  }
+  highlighted = highlighted.replace(
+    /<.*?\/\*\*\/.*?>\s?(.*?)\s?<span class="token comment">\/\*\*\/.*?>/g,
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+  )
+  highlighted = highlighted.replace(
+    /\/?\*\*\/?\s?(.*?)\s?\/?\*\*\/?/g,
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+  )
   code.innerHTML = highlighted
   // clipboard
-  if (language === 'js' || language === 'jsx') {
-    text = text.replace(/\/\*\*\/\s(.*?)\s\/\*\*\//g, (_, str) => str)
-  }
-  if (language === 'html' || language === 'jsx') {
-    text = text.replace(/\*\*\s(.*?)\s\*\*/g, (_, str) => str)
-  }
+  text = text.replace(/\/\*\*\/\s?(.*?)\s?\/\*\*\//g, (_, str) => str)
+  text = text.replace(/\/?\*\*\/?\s?(.*?)\s?\/?\*\*\//g, (_, str) => str)
   Xt.dataStorage.set(pre, 'sourceCode', text)
   // set language
   if (language === 'html') {

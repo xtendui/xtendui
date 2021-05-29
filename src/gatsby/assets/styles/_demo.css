@@ -48,8 +48,8 @@ pre[class*="language-"] {
 }
 
 .bg-code-highlight {
-  //background-color: rgba(181, 244, 165, .15);
-  background-color: rgba(147, 221, 253, .15);
+  /*background-color: rgba(181, 244, 165, .20);*/
+  background-color: rgba(147, 221, 253, .20);
 }
 
 /* .demo */
