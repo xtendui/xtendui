@@ -73,6 +73,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 
 </div>
 
+[[notePrimary]]
+| Queue needs [multiple mode](/components/toggle#usage-multiple) to work.
+
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
@@ -92,6 +95,9 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 </div>
 
+[[notePrimary]]
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
+
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
   </demoinline>
@@ -108,6 +114,9 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 | Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
 </div>
+
+[[notePrimary]]
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">

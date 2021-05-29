@@ -73,6 +73,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 
 </div>
 
+[[notePrimary]]
+| Queue needs [multiple mode](/components/tooltip#usage-multiple) to work.
+
 <demo>
   <demoinline src="demos/components/tooltip/animation-queue">
   </demoinline>
@@ -93,7 +96,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 </div>
 
 [[notePrimary]]
-| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
+| Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-css">
@@ -113,7 +116,7 @@ You can use also **javascript animations**, just use [tooltip api](/components/t
 </div>
 
 [[notePrimary]]
-| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
+| Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-js">

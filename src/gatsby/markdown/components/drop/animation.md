@@ -73,6 +73,9 @@ By default **multiple mode** queues the activations by waiting the end of durati
 
 </div>
 
+[[notePrimary]]
+| Queue needs [multiple mode](/components/drop#usage-multiple) to work.
+
 <demo>
   <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
@@ -94,7 +97,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 </div>
 
 [[notePrimary]]
-| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/drop/animation-css">
@@ -114,7 +117,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 </div>
 
 [[notePrimary]]
-| Use a **slight delay on multiple mode with mouse events** when you want to use **sequential activation direction**.
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/drop/animation-js">
