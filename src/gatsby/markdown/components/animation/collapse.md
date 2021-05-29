@@ -31,6 +31,7 @@ Collapse only work with **xtendui interaction components**, assign `options.coll
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
 
+
 <demo>
   <demoinline src="demos/components/animation/collapse-height">
   </demoinline>
@@ -38,14 +39,16 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   </demoinline>
 </demo>
 
-## Initial value
+## Text
 
 You can use also with **initial values** for height and width.
 
 Use **tailwind classes** to assign size (e.g. [height](https://tailwindcss.com/docs/height), [width](https://tailwindcss.com/docs/width)).
 
+Just use the class `on` if you want to automatically open instantly.
+
 <demo>
-  <demoinline src="demos/components/animation/collapse-initial">
+  <demoinline src="demos/components/animation/collapse-text">
   </demoinline>
 </demo>
 

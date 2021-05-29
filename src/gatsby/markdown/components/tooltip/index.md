@@ -22,7 +22,7 @@ Initialize manually **within javascript** with `new Xt.Tooltip(document.querySel
 
 Use this code to create a **tooltip** in **self mode**.
 
-Just use the class `on` if you want to automatically open, or use the [api](/components/tooltip/api)
+Just use the class `on` if you want to automatically open, or use the [api](/components/tooltip/api).
 
 <demo>
   <demoinline src="demos/components/tooltip/usage-self">

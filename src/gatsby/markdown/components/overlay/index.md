@@ -22,7 +22,7 @@ Initialize manually **within javascript** with `new Xt.Overlay(document.querySel
 
 Use this code to create a **overlay** in **self mode**.
 
-Just use the class `on` if you want to automatically open, or use the [api](/components/overlay/api)
+Just use the class `on` if you want to automatically open, or use the [api](/components/overlay/api).
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/usage-self">
