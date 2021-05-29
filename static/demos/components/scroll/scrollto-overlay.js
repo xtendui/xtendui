@@ -117,6 +117,8 @@ const mountScrollto = () => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const scrollto = document.documentElement

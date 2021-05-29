@@ -2,6 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--ripple">
+    <!-- switcher for demo purpose remove this -->
     <form class="text-sm mb-4">
       <label class="${classes.checkLabel()}">
         <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}" />

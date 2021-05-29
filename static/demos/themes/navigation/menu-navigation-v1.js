@@ -306,6 +306,8 @@ const mountLine = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const megamenu = ref.querySelector('.megamenu')

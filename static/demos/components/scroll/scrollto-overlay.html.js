@@ -45,6 +45,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
+    <!-- switcher for demo purpose remove this -->
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">

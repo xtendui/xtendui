@@ -100,7 +100,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
   }
   if (language === 'html' || language === 'jsx') {
     highlighted = highlighted.replace(
-      /\*\*(.*?)\*\*/g,
+      /\*\*\s(.*?)\s\*\*/g,
       (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
     )
   }
@@ -110,7 +110,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
     text = text.replace(/\/\*\*\/\s(.*?)\s\/\*\*\//g, (_, str) => str)
   }
   if (language === 'html' || language === 'jsx') {
-    text = text.replace(/\*\*(.*?)\*\*/g, (_, str) => str)
+    text = text.replace(/\*\*\s(.*?)\s\*\*/g, (_, str) => str)
   }
   Xt.dataStorage.set(pre, 'sourceCode', text)
   // set language

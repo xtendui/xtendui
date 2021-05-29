@@ -1,22 +1,21 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const cardWhite = () => 'text-black xt-links-default'
-
 const interactionDefault = () =>
-  'text-black bg-gray-200 border-transparent border transform transition hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 active:bg-gray-400 active:translate-y-0 on:bg-gray-400 on:translate-y-0'
+  '** bg-gray-200 border-transparent border transform transition hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 hover:shadow-lg active:bg-gray-400 active:translate-y-0 active:shadow-sm on:bg-gray-400 on:translate-y-0 on:shadow-sm **'
 const interactionPrimary = () =>
-  'text-white bg-primary-500 border-transparent border transform transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 active:bg-primary-700 active:translate-y-0 on:bg-primary-700 on:translate-y-0'
-const buttonDefault = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm`
-const buttonPrimary = () =>
-  `font-sans font-semibold leading-snug tracking-wider uppercase ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm`
-
+  '** bg-primary-500 border-transparent border transform transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-sm on:bg-primary-700 on:translate-y-0 on:shadow-sm **'
 const animDesign = () =>
-  'transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint'
+  '** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint **'
 const animItem = () =>
-  'transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
+  '** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **'
 const animItemOpacity = () =>
-  'opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
+  '** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 **'
+
+const buttonDefault = () => `font-semibold leading-snug tracking-wider uppercase text-black ${interactionDefault()}`
+const buttonPrimary = () => `font-semibold leading-snug tracking-wider uppercase text-white ${interactionPrimary()}`
+const cardDefault = () => `${classes.cardRadius()} text-black ${interactionDefault()}`
+const cardPrimary = () => `${classes.cardRadius()} text-white ${interactionPrimary()}`
+const cardWhite = () => 'text-black xt-links-default'
 
 const html = /* HTML */ `
   <div>
@@ -71,7 +70,7 @@ const html = /* HTML */ `
               </nav>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
         </div>
       </div>
 
@@ -100,7 +99,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${cardWhite()} ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
         </div>
       </div>
     </div>
@@ -179,7 +178,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0">
             <button
               type="button"
-              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${cardWhite()} ${animItem()}"
+              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${animItem()}"
               aria-label="Close"
             >
               ${classes.iconX()}
@@ -511,7 +510,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${interactionDefault()} hover:shadow-lg active:shadow-sm on:shadow-sm">
+        <button type="button" class="xt-card ${cardDefault()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -524,10 +523,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <button
-          type="button"
-          class="xt-card ${classes.cardRadius()} ${interactionPrimary()} hover:shadow-lg active:shadow-sm on:shadow-sm"
-        >
+        <button type="button" class="xt-card ${cardPrimary()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

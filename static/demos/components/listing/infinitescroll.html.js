@@ -6,6 +6,7 @@ const html = /* HTML */ `
       <div class="container">
         <h1>Category Page</h1>
 
+        <!-- switcher for demo purpose remove this -->
         <form class="text-sm mb-4">
           <label class="${classes.checkLabel()}">
             <input
