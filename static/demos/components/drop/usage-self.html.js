@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div
-      class="xt-drop p-4 relative inline-block on"
+      class="xt-drop p-4 relative inline-block ** on **"
       data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', closeOutside: false }"
     >
       <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">

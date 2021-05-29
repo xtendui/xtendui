@@ -6,14 +6,14 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+          class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         >
           Toggle 0
         </button>
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+          class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
         >
           Toggle 1
         </button>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-              <div class="absolute inset-0 rounded-inherit xt-toggle overflow-hidden transition-all">
+              <div class="absolute inset-0 rounded-inherit ** xt-toggle ** ** overflow-hidden transition-all **">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
-              <div class="absolute inset-0 rounded-inherit xt-toggle overflow-hidden transition-all">
+              <div class="absolute inset-0 rounded-inherit ** xt-toggle ** ** overflow-hidden transition-all **">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>

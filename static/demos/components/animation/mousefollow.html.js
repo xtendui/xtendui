@@ -13,7 +13,7 @@ const html = /* HTML */ `
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <span class="xt-mousefollow fixed xt-loader group">
+          <span class="** xt-mousefollow fixed ** xt-loader group">
             <span
               class="${classes.spinner()} w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100"
             >
@@ -33,7 +33,7 @@ const html = /* HTML */ `
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <span class="xt-mousefollow fixed xt-loader group">
+          <span class="** xt-mousefollow fixed ** xt-loader group">
             <span
               class="${classes.spinner()} w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100"
             >

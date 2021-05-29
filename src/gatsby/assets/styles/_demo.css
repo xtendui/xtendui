@@ -34,7 +34,7 @@ pre[class*="language-"] {
   font-size: 1rem;
   code {
     width: 100%;
-    background: transparent !important;
+    /*background: transparent !important;*/
     @apply font-mono;
     font-size: .875em;
     line-height: 1.7142857;
@@ -48,8 +48,11 @@ pre[class*="language-"] {
 }
 
 .bg-code-highlight {
-  /*background-color: rgba(181, 244, 165, .20);*/
+  /*
+  background-color: rgba(181, 244, 165, .20);
   background-color: rgba(147, 221, 253, .20);
+  */
+  background-color: rgba(127, 219, 212, .20);
 }
 
 /* .demo */

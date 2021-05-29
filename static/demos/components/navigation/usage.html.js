@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} on"
+          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} ** on **"
         >
           dolor sit amet
         </button>
