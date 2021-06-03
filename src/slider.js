@@ -1158,6 +1158,13 @@ class Slider extends Xt.Toggle {
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
+    /*
+    console.log(self.detail.dragIndex, self.detail.dragging)
+    const current = self.getElementsGroups()[self.detail.dragIndex]
+    self.eventOff(current, true)
+    self.eventOn(current, true)*/
+    //console.log(self.detail.dragIndex, self.currentIndex)
+    //self.goToNum(self.currentIndex, true)
     // val
     self.detail.dragFinalOld = self.detail.dragFinal
     // auto
