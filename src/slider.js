@@ -715,12 +715,12 @@ class Slider extends Xt.Toggle {
     // fix absolute loop
     if (options.mode === 'absolute' && options.loop) {
       if (self.detail.dragFinalOld > min) {
-        self.detail.dragging = true
+        self.detail.instant = true
         self.detail.dragFinal = max - min + self.detail.dragFinalOld - Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       } else if (self.detail.dragFinalOld < max) {
-        self.detail.dragging = true
+        self.detail.instant = true
         self.detail.dragFinal = min - max + self.detail.dragFinalOld + Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
@@ -749,13 +749,13 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // fix dragging false for dragposition but keep for on and off event
-    const dragging = self.detail.dragging
-    self.detail.dragging = false
+    // fix instant false for dragposition but keep for on and off event
+    const instant = self.detail.instant
+    self.detail.instant = false
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // fix dragging false for dragposition but keep for on and off event
-    self.detail.dragging = dragging
+    // fix instant false for dragposition but keep for on and off event
+    self.detail.instant = instant
     // keep super after dragposition because it sets self.initial etc..
     super.eventOn(element, force, e)
     // wrap
@@ -764,8 +764,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragFinalOld = self.detail.dragFinal
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
-      // fix dragging false for dragposition but keep for on and off event
-      self.detail.dragging = false
+      // fix instant false for dragposition but keep for on and off event
+      self.detail.instant = false
     })
   }
 
@@ -788,7 +788,7 @@ class Slider extends Xt.Toggle {
       self.direction = left > leftOld ? -1 : 1
     }
     self.inverse = self.direction < 0
-    //console.debug(self.direction, self.currentIndex, self.oldIndex, self.detail.dragging, self.detail.dragInitial, self.detail.dragFinal)
+    //console.debug(self.direction, self.currentIndex, self.oldIndex, self.detail.instant, self.detail.dragInitial, self.detail.dragFinal)
   }
 
   /**
@@ -968,7 +968,7 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // vars
-    self.detail.dragging = true
+    self.detail.instant = true
     self.detail.dragIndex = self.currentIndex
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
@@ -1152,7 +1152,7 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
     /*
-    console.log(self.detail.dragIndex, self.detail.dragging)
+    console.log(self.detail.dragIndex, self.detail.instant)
     const current = self.getElementsGroups()[self.detail.dragIndex]
     self.eventOff(current, true)
     self.eventOn(current, true)*/

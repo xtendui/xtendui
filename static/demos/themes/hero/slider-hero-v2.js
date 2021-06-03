@@ -48,7 +48,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
@@ -193,7 +193,7 @@ const mountSlider = ({ ref }) => {
       // cover
       const mediaCover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(mediaCover)
-      if (!self.detail.dragging) {
+      if (!self.detail.instant) {
         gsap.set(mediaCover, {
           x: `${100 * self.direction}%`,
           skewX: 0,
