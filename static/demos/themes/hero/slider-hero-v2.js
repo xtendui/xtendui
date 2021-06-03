@@ -86,6 +86,7 @@ const mountSlider = ({ ref }) => {
   // dragreset (set animation on drag reset, when dragging opposite position from initial dragging)
 
   const dragreset = () => {
+    /* @TODO
     const tr = self.targets.filter(x => self.hasCurrent(x))[0]
     // cover
     const mediaCover = tr.querySelector('.hero-cover')
@@ -104,7 +105,7 @@ const mountSlider = ({ ref }) => {
       opacity: 1,
       duration: dragDuration,
       ease: dragEase,
-    })
+    })*/
   }
 
   self.dragger.addEventListener('dragreset.xt.slider', dragreset)
@@ -165,7 +166,7 @@ const mountSlider = ({ ref }) => {
       gsap.set(self.detail, {
         dragPosition: self.detail.dragFinal,
       })
-      /*
+      /* @TODO
       // outgoings
       const outgoings = self.direction < 0 ? self.getTargets(self.getNext()) : self.getTargets(self.getPrev())
       for (const outgoing of outgoings) {
@@ -192,6 +193,12 @@ const mountSlider = ({ ref }) => {
       // cover
       const mediaCover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(mediaCover)
+      if (!self.detail.dragging) {
+        gsap.set(mediaCover, {
+          x: `${100 * self.direction}%`,
+          skewX: 0,
+        })
+      }
       gsap.to(mediaCover, {
         x: `${-100 * self.direction}%`,
         duration: dragDuration,

@@ -103,6 +103,7 @@ const mountSlider = ({ ref }) => {
   // dragreset (set animation on drag reset, when dragging opposite position from initial dragging)
 
   const dragreset = () => {
+    /* @TODO
     const tr = self.targets.filter(x => self.hasCurrent(x))[0]
     // mask
     const mask = tr.querySelector('.hero')
@@ -140,7 +141,7 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
-    }
+    }*/
   }
 
   self.dragger.addEventListener('dragreset.xt.slider', dragreset)
