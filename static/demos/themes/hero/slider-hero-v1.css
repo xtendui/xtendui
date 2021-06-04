@@ -1,8 +1,0 @@
-.demo--slider-hero-v1, .demo--slider-hero-v1-react {
-  .xt-slide {
-    &.incoming {
-      display: block !important;
-    }
-  }
-}
-
