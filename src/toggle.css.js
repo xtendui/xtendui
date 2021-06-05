@@ -8,7 +8,7 @@ module.exports = {
   variants: ['responsive'],
   utility: {
     '.xt-toggle': {
-      '&:not(.on):not(.in):not(.out)': {
+      '&:not(.on):not(.in):not(.out):not(.display)': {
         display: 'none',
       },
       '&.out': {
@@ -16,7 +16,7 @@ module.exports = {
       },
     },
     '.xt-toggle-visible': {
-      '&:not(.on):not(.in):not(.out)': {
+      '&:not(.on):not(.in):not(.out):not(.display)': {
         visibility: 'hidden',
         pointerEvents: 'none',
       },

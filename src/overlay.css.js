@@ -24,7 +24,7 @@ module.exports = {
       bottom: '0', // fix no width and height or it bugs
       right: '0', // fix no width and height or it bugs
       overflow: 'hidden',
-      '&:not(.on):not(.in):not(.out)': {
+      '&:not(.on):not(.in):not(.out):not(.display)': {
         display: 'none',
       },
       '&.out': {

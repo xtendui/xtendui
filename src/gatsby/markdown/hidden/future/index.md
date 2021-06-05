@@ -6,6 +6,18 @@ title: "Future"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## Slider Absolute
+
+The class `.xt-slider-absolute` hides the element **with `display: none`** when **not activated by the component**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|               | Syntax                          | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.xt-slider-absolute`                     | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
+
+</div>
+
 ## Toggle inverse	
 
 Devo switchare la queue mettendo un data-xt-inverse su targets inverse e tenere classi uguali.

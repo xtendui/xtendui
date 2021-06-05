@@ -20,7 +20,7 @@ module.exports = {
     '.xt-drop': {
       position: 'absolute',
       zIndex: theme('zIndex.drop'),
-      '&:not(.on):not(.in):not(.out)': {
+      '&:not(.on):not(.in):not(.out):not(.display)': {
         display: 'none',
       },
       '&.out': {

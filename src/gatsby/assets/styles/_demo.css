@@ -137,7 +137,7 @@ pre {
     order: 2;
     @media (max-width: calc(theme('screens.lg') - 1px)) {
       /*@apply xt-toggle;*/
-      &:not(.on):not(.in):not(.out) {
+      &:not(.on):not(.in):not(.out):not(.display) {
         display: none;
       }
     }

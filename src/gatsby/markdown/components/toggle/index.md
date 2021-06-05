@@ -20,16 +20,16 @@ Initialize manually **within javascript** with `new Xt.Toggle(document.querySele
 
 ## Toggle
 
-Use the class `.xt-toggle` to hide nodes **with `display: none`** when **not activated by Xtend Toggle**.
+The class `.xt-toggle` hides the element **with `display: none`** when **not activated by the component**.
 
-Use the class `.xt-toggle-visible` to hide nodes **with `visibility: hidden`** when not activated or animating, useful when you need **display for calculations**.
+The class `.xt-toggle-visible` hides the element  **with `visibility: hidden`** when not activated or animating, useful when you need **display for calculations**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out`            |
-| Utility                  | `.xt-toggle-visible`                     | `xt-toggle-visible`                | `responsive`                | Apply `visibility: hidden` and `pointer-events: none` when not `.on` or `.in` or `.out`            |
+| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
+| Utility                  | `.xt-toggle-visible`                     | `xt-toggle-visible`                | `responsive`                | Apply `visibility: hidden` and `pointer-events: none` when not `.on` or `.in` or `.out` or `.display`            |
 | Utility                  | `.xt-toggle-absolute`                     | `xt-toggle-absolute`                | `responsive`                | Apply `position: absolute` when not `.on`             |
 
 </div>

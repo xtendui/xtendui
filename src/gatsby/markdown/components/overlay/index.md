@@ -18,6 +18,18 @@ Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }
 
 Initialize manually **within javascript** with `new Xt.Overlay(document.querySelector('.my-object'), {/* options */})`.
 
+## Overlay
+
+The class `.xt-overlay` hides the element **with `display: none`** when **not activated by the component**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|               | Syntax                          | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Component                  | `.xt-overlay`                     | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
+
+</div>
+
 ## Usage Self
 
 Use this code to create a **overlay** in **self mode**.
