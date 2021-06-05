@@ -719,15 +719,15 @@ class Slider extends Xt.Toggle {
     const instant = self.detail.instant
     // fix absolute loop
     if (options.mode === 'absolute' && options.loop) {
-      if (self.detail.dragPosition >= min) {
+      if (self.detail.dragDirection < 0 && self.detail.dragPosition >= min) {
         // val
         self.detail.instant = true
-        self.detail.dragFinal = max - min + self.detail.dragPosition - Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
+        self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-      } else if (self.detail.dragPosition <= max) {
+      } else if (self.detail.dragDirection > 0 && self.detail.dragPosition <= max) {
         self.detail.instant = true
-        self.detail.dragFinal = min - max + self.detail.dragPosition + Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
+        self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
@@ -977,6 +977,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragIndex = self.currentIndex
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
+    // fix dragging furiously more than one
+    self.detail.dragPosition = self.detail.dragFinal
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
   }
@@ -1016,8 +1018,8 @@ class Slider extends Xt.Toggle {
     }
     // fix on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
-      // activation
       const direction = Math.sign(self.detail.dragDist)
+      // only if dragging enough
       if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
         // get nearest
         const index = self.currentIndex
@@ -1123,6 +1125,10 @@ class Slider extends Xt.Toggle {
     // ratio
     self.detail.dragRatio = Math.abs(self.detail.dragFinal - self.detail.dragInitial) / Math.abs(maxCheck - min)
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
+    // fix dragging furiously more than one
+    if (options.mode === 'absolute' && (self.detail.dragRatio > 1 || self.detail.dragRatio < -1)) {
+      return
+    }
     // activation
     if (options.mode !== 'absolute' && Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // get nearest
