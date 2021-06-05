@@ -718,14 +718,14 @@ class Slider extends Xt.Toggle {
     // fix instant false for dragposition but keep for on and off event
     const instant = self.detail.instant
     // fix absolute loop
-    if (options.mode === 'absolute' && options.loop) {
-      if (self.detail.dragDirection < 0 && self.detail.dragPosition >= min) {
+    if (options.mode === 'absolute' && options.loop && !self.initial) {
+      if (slide === last && self.detail.dragPosition >= min) {
         // val
         self.detail.instant = true
         self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-      } else if (self.detail.dragDirection > 0 && self.detail.dragPosition <= max) {
+      } else if (slide === first && self.detail.dragPosition <= max) {
         self.detail.instant = true
         self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
@@ -977,8 +977,6 @@ class Slider extends Xt.Toggle {
     self.detail.dragIndex = self.currentIndex
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
-    // fix dragging furiously more than one
-    self.detail.dragPosition = self.detail.dragFinal
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
   }
