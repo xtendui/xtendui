@@ -1014,26 +1014,23 @@ class Slider extends Xt.Toggle {
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
       return
     }
-    // fix on.xt.slider event after all drag.xt.slider
+    // raf because on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
-      const direction = Math.sign(self.detail.dragDist)
       // only if dragging enough
       if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
-        // get nearest
         const index = self.currentIndex
+        // if on the same slide as we started dragging
         if (index !== self.detail.dragIndex || Math.abs(self.detail.dragDist) >= self.detail.draggerWidth) {
           // goToNum
           self.goToNum(index)
         } else {
-          // if on the same slide as we started dragging
           // depending on direction and if direction is also activation direction and drag direction
           if (
-            direction > 0 &&
             self.detail.dragDirection > 0 &&
             (options.loop || self.wrap || index !== self.getElementsGroups().length - 1)
           ) {
             self.goToNext(1)
-          } else if (direction < 0 && self.detail.dragDirection < 0 && (options.loop || self.wrap || index !== 0)) {
+          } else if (self.detail.dragDirection < 0 && (options.loop || self.wrap || index !== 0)) {
             self.goToPrev(1)
           } else {
             self.logicDragreset()
