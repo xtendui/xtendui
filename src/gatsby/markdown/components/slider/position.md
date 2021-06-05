@@ -52,7 +52,7 @@ Also when enabled it **groups the slides positions values** when position values
 
 ## Wrap
 
-Wrap the slides for an infinite activation. Automatically has [`loop: true`](/components/slider/interaction#navigation-and-loop) and [`contain: false`](/components/slider/position#contain).
+Wrap the slides for an infinite activation. Automatically has [loop](/components/slider/interaction#navigation-and-loop) and [no contain](/components/slider/position#contain).
 
 [[noteDefault]]
 | Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**double the width** of `drag.dragger`), see [Nooverflow demo](/components/slider/other#nooverflow).

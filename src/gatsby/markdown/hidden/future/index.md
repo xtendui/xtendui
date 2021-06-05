@@ -8,6 +8,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Slider Absolute
 
+Make a slider with absolute positioning. Automatically has [no drag overflow](/components/slider/interaction#drag) and [no contain](/components/slider/position#contain) and [no wrap](/components/slider/position#wrap).
+
 The class `.xt-slider-absolute` hides the element **with `display: none`** when **not activated by the component**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

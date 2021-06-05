@@ -38,9 +38,6 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
-    drag: {
-      overflow: false,
-    },
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
