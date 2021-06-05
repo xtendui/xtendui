@@ -719,13 +719,13 @@ class Slider extends Xt.Toggle {
     const instant = self.detail.instant
     // fix absolute loop
     if (options.mode === 'absolute' && options.loop && !self.initial) {
-      if (slide === last && self.detail.dragPosition >= min) {
+      if (slide === last && (self.detail.dragDirection < 0 || self.detail.dragPosition >= min)) {
         // val
         self.detail.instant = true
         self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-      } else if (slide === first && self.detail.dragPosition <= max) {
+      } else if (slide === first && (self.detail.dragDirection > 0 || self.detail.dragPosition <= max)) {
         self.detail.instant = true
         self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
@@ -793,7 +793,6 @@ class Slider extends Xt.Toggle {
       self.direction = left > leftOld ? -1 : 1
     }
     self.inverse = self.direction < 0
-    //console.debug(self.direction, self.currentIndex, self.oldIndex, self.detail.instant, self.detail.dragInitial, self.detail.dragFinal)
   }
 
   /**
