@@ -73,7 +73,7 @@ class Drop extends Xt.Toggle {
         const element = self.getElements(el)[0]
         const arrow = el.querySelector(':scope > .xt-arrow')
         const popperEl = options.positionInner ? element.querySelector(options.positionInner) : element
-        const popperInstance = createPopper(popperEl ?? element, el, {
+        const popperOptionsDefault = {
           placement: el.getAttribute('data-xt-position') || options.position,
           strategy: options.strategy,
           resize: false,
@@ -106,8 +106,9 @@ class Drop extends Xt.Toggle {
                 }
               : {},
           ],
-          ...options.popperjs,
-        })
+        }
+        const popperOptions = Xt.merge([popperOptionsDefault, options.popperjs])
+        const popperInstance = createPopper(popperEl ?? element, el, popperOptions)
         Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
         // fix recalc position with new css depending on position
         requestAnimationFrame(() => {

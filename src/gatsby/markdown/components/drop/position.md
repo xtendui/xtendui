@@ -57,18 +57,42 @@ To **change the relative position of targets** you can specify a query inside el
   </demoinline>
 </demo>
 
-Here are the main spacing javascript options, more [popperjs](https://popper.js.org/docs/v2/) options with [popperjs options](/components/drop/other#popperjs).
+## Popperjs
+
+Here are the main spacing javascript options.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `strategy:String`                          | `'fixed'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
+| Option                  | `strategy:String`                          | `'absolute'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the drop            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the drop            |
 | Option                  | `spaceArrow:Number|false`                          | `false`        | Space for arrow, if false automatic            |
 
 </div>
+
+You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
+
+If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'PopperInstance')`, for example when you want to `.update()` it.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `popperjs:Object|false`                          | `true`        | Options for popperjs            |
+
+</div>
+
+[[notePrimary]]
+| Use [strategy fixed](https://popper.js.org/docs/v2/constructors//#strategy) when positioning inside **fixed elements**.
+
+For example you can set [preventOverflow boundary](https://popper.js.org/docs/v2/modifiers/prevent-overflow/#boundary) to constrain popperjs inside an element.
+
+<demo>
+  <demoinline src="demos/components/drop/prevent-overflow">
+  </demoinline>
+</demo>
 
 ## Static
 

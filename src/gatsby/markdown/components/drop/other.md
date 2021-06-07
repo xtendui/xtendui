@@ -73,20 +73,6 @@ Use this code to create a **drop that resets to current** automatically on deact
   </demoinline>
 </demo>
 
-## Popperjs
-
-You can **pass an option** to [popperjs](https://popper.js.org/docs/v2/) for initialization.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `popperjs:Object|false`                          | `true`        | Options for popperjs            |
-
-</div>
-
-If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'PopperInstance')`, for example when you want to `.update()` it.
-
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

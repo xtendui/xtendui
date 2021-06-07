@@ -13,11 +13,9 @@ Test click should not change slide.
 
 Test activation drag reset.
 
-Test activation drag overflow.
-
 Test activation drag loop.
 
-Test drag left and right and repeat (sometimes animation jaggy).
+Test drag left and right and repeat.
 
 <demo>
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/hero/slider-hero-v1">
