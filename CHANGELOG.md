@@ -1,3 +1,29 @@
+# [1.0.0-beta.26](https://github.com/minimit/xtendui/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2021-06-07)
+
+
+### Bug Fixes
+
+* **drop, tooltip:** fix popperjs drop and tooltip with merge options now it overrides default options with custom options + demos ([edacaca](https://github.com/minimit/xtendui/commit/edacaca2ef208bdb773077dc01c0d74ff17094c6))
+* **slider:** fix absolute loop when dragging ([c9583ea](https://github.com/minimit/xtendui/commit/c9583ea796124172377b95bd7edb8fdf7a55eeb6))
+* **slider:** fix slider absolute loop and fix dragreset ([00dd69b](https://github.com/minimit/xtendui/commit/00dd69b345e97a30844ad29a33d60c78b294e9f5))
+* **slider:** fix slider absolute loop animation ([edd68e2](https://github.com/minimit/xtendui/commit/edd68e21a8053158e25e91eeee4b44bcb09bede7))
+* **slider:** fix slider absolute loop wwith fake direction ([01e4bee](https://github.com/minimit/xtendui/commit/01e4beef38ee7fd6eef1310cb0471bed0c6d9c2c))
+* **slider:** initial dragposition ([b63cfe4](https://github.com/minimit/xtendui/commit/b63cfe4fc0b671f36e093e23d4b30704be070954))
+* **slider:** slider absolute no overflow possible ([cfe6285](https://github.com/minimit/xtendui/commit/cfe628512f009cd1240a6ca023880b795973ad42))
+* **slider:** slider absolute self.detail.dragging inside on and off events ([84396ef](https://github.com/minimit/xtendui/commit/84396ef837f733850f75fe8692b578e05892eaac))
+* **slider:** slider nooverflow automatic group and some refactor slider ([2951316](https://github.com/minimit/xtendui/commit/2951316f7a30e1db82ddabebbba29cad4536f569))
+* **slider:** WIP fix slider absolute ([40d4aeb](https://github.com/minimit/xtendui/commit/40d4aeb11282ca5f4537566654f36ecaf6a24af1))
+
+
+### Code Refactoring
+
+* **slider:** self.detail.dragging to self.detail.instant ([c64499a](https://github.com/minimit/xtendui/commit/c64499a5785ad62ca440a5fcdd2a39993f3616f6))
+
+
+### BREAKING CHANGES
+
+* **slider:** use self.detail.instant instead of self.detail.dragging
+
 # [1.0.0-beta.25](https://github.com/minimit/xtendui/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2021-05-28)
 
 
