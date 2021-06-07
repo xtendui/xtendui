@@ -1,7 +1,7 @@
 ---
-type: "Components"
-category: "Interaction"
-parent: "Slider"
+type: "Hidden"
+category: "Hidden"
+parent: "Future"
 title: "Automatic Scroll"
 description: "Infinite scrolling slider, pauses on interaction and automatic disable if not needed."
 date: "1900-10-10"
