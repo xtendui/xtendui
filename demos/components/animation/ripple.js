@@ -104,6 +104,8 @@ const mountRipple = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const items = ref.querySelectorAll('.xt-button, .xt-card')

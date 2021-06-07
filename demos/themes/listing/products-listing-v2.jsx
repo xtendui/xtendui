@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
@@ -6,30 +6,23 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--products-listing-v2-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider slider--listing pb-10">
+        <div className="xt-slider ** slider--listing ** pb-10">
           <div className="container">
             <div className="xt-h2 mb-8">Latest Products</div>
             <div className="xt-slides xt-row xt-row-4">
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-35%</div>
@@ -37,17 +30,22 @@ export default function demo() {
                     </div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-40%</div>
@@ -55,85 +53,100 @@ export default function demo() {
                     </div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
@@ -152,10 +165,10 @@ export default function demo() {
 
             <div className="xt-row xt-row-6">
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-35%</div>
@@ -163,17 +176,22 @@ export default function demo() {
                     </div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-40%</div>
@@ -181,85 +199,100 @@ export default function demo() {
                     </div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Lorem ipsum</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="listing-item block group">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div className="xt-media-mask absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="** listing-item ** block group">
+                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img
+                      className="** xt-media ** object-cover object-center"
+                      src="/img-alt.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
-                    <div className="xt-h5  group-hover:text-primary-500">Dolor sit amet</div>
+                    <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
                 </a>
@@ -307,7 +340,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

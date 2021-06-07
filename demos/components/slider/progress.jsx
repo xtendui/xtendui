@@ -1,20 +1,13 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -121,7 +114,7 @@ export default function demo() {
             </button>
           </nav>
 
-          <span className="xt-mousefollow fixed xt-loader group hover-none:hidden">
+          <span className="** xt-mousefollow fixed ** xt-loader group hover-none:hidden">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -201,7 +194,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main time and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

@@ -72,7 +72,7 @@ const html = /* HTML */ `
         Target Group 1b
       </div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} on">Target 2</div>
+      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} ** on **">Target 2</div>
 
       <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="group0,group1">
         Target Group 0 and 1

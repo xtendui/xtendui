@@ -1,20 +1,13 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -155,7 +148,7 @@ export default function demo() {
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow fixed text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div className="** xt-mousefollow fixed ** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -179,7 +172,7 @@ export default function demo() {
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
-          <div className="xt-mousefollow fixed text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div className="** xt-mousefollow fixed ** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -239,9 +232,6 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
-    drag: {
-      overflow: false,
-    },
   })
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -249,7 +239,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.dragging ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition tween with main duration and ease
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
@@ -279,11 +269,11 @@ const mountSlider = ({ ref }) => {
     })
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
-      incoming.classList.remove('incoming')
+      incoming.classList.remove('incoming', 'display')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
-      incoming.classList.add('incoming')
+      incoming.classList.add('incoming', 'display')
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -305,42 +295,8 @@ const mountSlider = ({ ref }) => {
 
   const dragreset = () => {
     const tr = self.targets.filter(x => self.hasCurrent(x))[0]
-    // mask
-    const mask = tr.querySelector('.hero')
-    gsap.killTweensOf(mask)
-    gsap.to(mask, {
-      x: '0%',
-      duration: dragDuration,
-      ease: dragEase,
-    })
-    const maskInner = mask.querySelector('.hero-inner')
-    gsap.killTweensOf(maskInner)
-    gsap.to(maskInner, {
-      x: '0%',
-      opacity: 1,
-      duration: dragDuration,
-      ease: dragEase,
-    })
-    // incomings
-    const incomings = self.targets.filter(x => x.classList.contains('incoming'))
-    for (const incoming of incomings) {
-      // mask
-      const mask = incoming.querySelector('.hero')
-      gsap.killTweensOf(mask)
-      gsap.to(mask, {
-        x: `${maskPercent * self.direction}%`,
-        duration: dragDuration,
-        ease: dragEase,
-      })
-      const maskInner = mask.querySelector('.hero-inner')
-      gsap.killTweensOf(maskInner)
-      gsap.to(maskInner, {
-        x: `${-maskInnerPercent * self.direction}%`,
-        opacity: 1 - maskInnerOpacity,
-        duration: dragDuration,
-        ease: dragEase,
-      })
-    }
+    off({ target: tr })
+    on({ target: tr })
   }
 
   self.dragger.addEventListener('dragreset.xt.slider', dragreset)
@@ -401,6 +357,31 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
+      // incomings
+      const incomings = self.targets.filter(x => x.classList.contains('incoming'))
+      for (const incoming of incomings) {
+        incoming.classList.remove('incoming')
+        // mask
+        const mask = incoming.querySelector('.hero')
+        gsap.killTweensOf(mask)
+        gsap
+          .to(mask, {
+            x: `${-maskPercent * self.direction}%`,
+            duration: dragDuration,
+            ease: dragEase,
+          })
+          .eventCallback('onComplete', () => {
+            incoming.classList.remove('display')
+          })
+        const maskInner = mask.querySelector('.hero-inner')
+        gsap.killTweensOf(maskInner)
+        gsap.to(maskInner, {
+          x: `${maskInnerPercent * self.direction}%`,
+          opacity: 1 - maskInnerOpacity,
+          duration: dragDuration,
+          ease: dragEase,
+        })
+      }
     }
   }
 

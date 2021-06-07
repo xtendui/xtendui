@@ -1,20 +1,13 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -108,7 +101,7 @@ export default function demo() {
           </span>
         </div>
 
-        <span className="xt-mousefollow fixed xt-loader group hover-none:hidden">
+        <span className="** xt-mousefollow fixed ** xt-loader group hover-none:hidden">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle

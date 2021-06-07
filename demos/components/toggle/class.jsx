@@ -65,7 +65,7 @@ export default function demo() {
           Target Group 1b
         </div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 on">
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 ** on **">
           Target 2
         </div>
 

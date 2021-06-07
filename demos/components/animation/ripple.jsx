@@ -1,23 +1,17 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--ripple-react" ref={ref}>
+      {/* switcher for demo purpose remove this */}
       <form className="text-sm mb-4">
         <label className="cursor-pointer inline-flex items-baseline">
           <input
@@ -37,23 +31,23 @@ export default function demo() {
       <div className="xt-list xt-list-2 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Gray
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
           Primary
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
+          className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
           Text
         </button>
 
-        <button type="button" className="xt-button text-xs py-2.5 px-3.5 rounded-md xt-link">
+        <button type="button" className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md xt-link">
           Link
         </button>
       </div>
@@ -66,7 +60,7 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400">
+            className="** xt-card** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -81,7 +75,7 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 on:bg-primary-600">
+            className="** xt-card** rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 on:bg-primary-600">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>
@@ -94,7 +88,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
+          <div className="** xt-card** rounded-md text-black xt-links-default bg-gray-200">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -104,7 +98,7 @@ export default function demo() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
                 Gray
               </button>
             </div>
@@ -112,7 +106,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
+          <div className="** xt-card** rounded-md text-white xt-links-inverse bg-primary-500">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>
@@ -122,7 +116,7 @@ export default function demo() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                className="** xt-button ** text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
                 Primary
               </button>
             </div>
@@ -234,6 +228,8 @@ const mountRipple = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const items = ref.querySelectorAll('.xt-button, .xt-card')

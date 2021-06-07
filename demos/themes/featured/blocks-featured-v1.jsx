@@ -1,34 +1,27 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--blocks-featured-v1-react" ref={ref}>
-      <div className="featured inline-block w-full bg-primary-900 text-white xt-links-inverse">
-        <a href="#" className="featured-item block my-28">
+      <div className="** featured ** inline-block w-full bg-primary-900 text-white xt-links-inverse">
+        <a href="#" className="** featured-item ** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <div className="** xt-media-container ** bg-gray-600 xt-ratio-75 overflow-hidden">
+                  <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
-                <div className="featured-content pt-16 md:pt-0 md:pl-12">
+                <div className="** featured-content ** pt-16 md:pt-0 md:pl-12">
                   <div className="xt-h1 mb-6 md:-ml-32">Lorem ipsum</div>
                   <div className="leading-loose">
                     <p>
@@ -36,9 +29,9 @@ export default function demo() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
-                      <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
-                      <span className="button--line-content pl-8"> Discover </span>
+                    <div className="xt-button ** button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase **">
+                      <span className="** button--line-design absolute w-4 border-t border-current opacity-50 **"></span>
+                      <span className="** button--line-content pl-8 **"> Discover </span>
                     </div>
                   </div>
                 </div>
@@ -47,16 +40,16 @@ export default function demo() {
           </div>
         </a>
 
-        <a href="#" className="featured-item block my-28">
+        <a href="#" className="** featured-item ** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <div className="** xt-media-container ** bg-gray-600 xt-ratio-75 overflow-hidden">
+                  <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10 sm:order-1">
-                <div className="featured-content pt-16 md:pt-0 md:pr-12">
+                <div className="** featured-content ** pt-16 md:pt-0 md:pr-12">
                   <div className="xt-h1 mb-6">Dolor sit amet</div>
                   <div className="leading-loose md:-mr-32 md:pl-12">
                     <p>
@@ -64,9 +57,9 @@ export default function demo() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
-                      <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
-                      <span className="button--line-content pl-8"> Discover </span>
+                    <div className="xt-button ** button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase **">
+                      <span className="** button--line-design absolute w-4 border-t border-current opacity-50 **"></span>
+                      <span className="** button--line-content pl-8 **"> Discover </span>
                     </div>
                   </div>
                 </div>
@@ -75,16 +68,16 @@ export default function demo() {
           </div>
         </a>
 
-        <a href="#" className="featured-item block my-28">
+        <a href="#" className="** featured-item ** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <div className="** xt-media-container ** bg-gray-600 xt-ratio-75 overflow-hidden">
+                  <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
-                <div className="featured-content pt-16 md:pt-0 md:pl-12">
+                <div className="** featured-content ** pt-16 md:pt-0 md:pl-12">
                   <div className="xt-h1 mb-6 md:-ml-32">Consectetur adipiscing elit</div>
                   <div className="leading-loose">
                     <p>
@@ -92,9 +85,9 @@ export default function demo() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
-                      <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
-                      <span className="button--line-content pl-8"> Discover </span>
+                    <div className="xt-button ** button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase **">
+                      <span className="** button--line-design absolute w-4 border-t border-current opacity-50 **"></span>
+                      <span className="** button--line-content pl-8 **"> Discover </span>
                     </div>
                   </div>
                 </div>
@@ -104,17 +97,17 @@ export default function demo() {
         </a>
       </div>
 
-      <div className="featured inline-block w-full bg-white">
-        <a href="#" className="featured-item block my-28">
+      <div className="** featured ** inline-block w-full bg-white">
+        <a href="#" className="** featured-item ** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 overflow-hidden">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <div className="** xt-media-container ** bg-gray-600 xt-ratio-75 overflow-hidden">
+                  <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
-                <div className="featured-content pt-16 md:pt-0 md:pr-12 md:text-right sm:order-1">
+                <div className="** featured-content ** pt-16 md:pt-0 md:pr-12 md:text-right sm:order-1">
                   <div className="xt-h1 mb-6 md:-mr-32">Lorem ipsum</div>
                   <div className="leading-loose">
                     <p>
@@ -122,9 +115,9 @@ export default function demo() {
                       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue,
                       sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
-                    <div className="xt-button button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase">
-                      <span className="button--line-design absolute w-4 border-t border-current opacity-50"></span>
-                      <span className="button--line-content pl-8"> Discover </span>
+                    <div className="xt-button ** button--line px-0 text-xs font-semibold leading-snug tracking-wider uppercase **">
+                      <span className="** button--line-design absolute w-4 border-t border-current opacity-50 **"></span>
+                      <span className="** button--line-content pl-8 **"> Discover </span>
                     </div>
                   </div>
                 </div>

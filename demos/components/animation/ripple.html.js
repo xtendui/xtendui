@@ -2,6 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--ripple">
+    <!-- switcher for demo purpose remove this -->
     <form class="text-sm mb-4">
       <label class="${classes.checkLabel()}">
         <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}" />
@@ -14,33 +15,35 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-2 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
       >
         Gray
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} text-black ${classes.buttonText()}"
+        class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} text-black ${classes.buttonText()}"
       >
         Text
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">Link</button>
+      <button type="button" class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">
+        Link
+      </button>
     </div>
 
     <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()}">
+        <button type="button" class="** xt-card** ${classes.cardRadius()} ${classes.cardDefaultInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -53,7 +56,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${classes.cardPrimaryInteractive()}">
+        <button type="button" class="** xt-card** ${classes.cardRadius()} ${classes.cardPrimaryInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>
@@ -66,7 +69,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="** xt-card** ${classes.cardRadius()} ${classes.cardDefault()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -76,7 +79,7 @@ const html = /* HTML */ `
             </p>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
             >
               Gray
             </button>
@@ -85,7 +88,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardPrimary()}">
+        <div class="** xt-card** ${classes.cardRadius()} ${classes.cardPrimary()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>
@@ -95,7 +98,7 @@ const html = /* HTML */ `
             </p>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              class="** xt-button ** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
             >
               Primary
             </button>

@@ -1,18 +1,11 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/infinitescroll'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -21,6 +14,7 @@ export default function demo() {
         <div className="container">
           <h1>Category Page</h1>
 
+          {/* switcher for demo purpose remove this */}
           <form className="text-sm mb-4">
             <label className="cursor-pointer inline-flex items-baseline">
               <input
@@ -273,6 +267,8 @@ const mountInfinitescroll = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const infinitescroll = ref.querySelector('.infinitescroll')

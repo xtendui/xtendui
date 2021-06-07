@@ -5,7 +5,7 @@ export default function demo() {
   return (
     <div>
       <div
-        className="xt-overlay on"
+        className="xt-overlay ** on **"
         data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
         <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
         <div className="xt-overlay-container max-w-3xl">

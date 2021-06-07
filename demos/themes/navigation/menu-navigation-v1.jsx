@@ -1,24 +1,18 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--menu-navigation-v1-react" ref={ref}>
-      <div className="megamenu relative bg-primary-500 text-white">
+      <div className="** megamenu ** relative bg-primary-500 text-white">
+        {/* switcher for demo purpose remove this */}
         <form className="text-sm container pt-10">
           <label className="cursor-pointer inline-flex items-baseline">
             <input
@@ -30,21 +24,21 @@ export default function demo() {
           </label>
         </form>
 
-        <span className="megamenu-line absolute top-0 left-0 bg-white"></span>
+        <span className="** megamenu-line ** absolute top-0 left-0 bg-white"></span>
 
         <div className="container">
           <div className="xt-list -mx-4">
-            <div className="xt-drop-item">
+            <div className="** xt-drop-item **">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
-              <div className="xt-drop xt-drop-static">
-                <div className="xt-drop-inner">
-                  <div className="xt-design bg-primary-700 border-b-4 border-gray-500"></div>
-                  <div className="xt-drop-content">
+              <div className="** xt-drop ** xt-drop-static">
+                <div className="** xt-drop-inner **">
+                  <div className="** xt-design ** bg-primary-700 border-b-4 border-gray-500"></div>
+                  <div className="** xt-drop-content **">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
                         <a
@@ -78,17 +72,17 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-drop-item">
+            <div className="** xt-drop-item **">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
-              <div className="xt-drop xt-drop-static">
-                <div className="xt-drop-inner">
-                  <div className="xt-design bg-gray-900 border-b-4 border-gray-500"></div>
-                  <div className="xt-drop-content">
+              <div className="** xt-drop ** xt-drop-static">
+                <div className="** xt-drop-inner **">
+                  <div className="** xt-design ** bg-gray-900 border-b-4 border-gray-500"></div>
+                  <div className="** xt-drop-content **">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
                         <a
@@ -118,17 +112,17 @@ export default function demo() {
               Link #3
             </a>
 
-            <div className="xt-drop-item">
+            <div className="** xt-drop-item **">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #4
               </a>
 
-              <div className="xt-drop xt-drop-static">
-                <div className="xt-drop-inner">
-                  <div className="xt-design bg-gray-200 border-b-4 border-gray-500"></div>
-                  <div className="xt-drop-content">
+              <div className="** xt-drop ** xt-drop-static">
+                <div className="** xt-drop-inner **">
+                  <div className="** xt-design ** bg-gray-200 border-b-4 border-gray-500"></div>
+                  <div className="** xt-drop-content **">
                     <div className="pt-16 pb-24 text-black xt-links-default">
                       <div className="container">
                         <div className="xt-row xt-row-x-8">
@@ -575,6 +569,8 @@ const mountLine = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const megamenu = ref.querySelector('.megamenu')

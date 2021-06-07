@@ -52,6 +52,8 @@ const mountInfinitescroll = ({ ref }) => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const infinitescroll = ref.querySelector('.infinitescroll')

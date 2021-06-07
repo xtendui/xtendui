@@ -19,7 +19,7 @@ export default function demo() {
 
         <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 0</div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 on">
+        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 ** on **">
           Target 1
           <div
             className="xt-list xt-list-3 items-center mt-4"

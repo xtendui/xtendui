@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import 'xtendui/src/scrollto'
@@ -9,16 +9,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -61,6 +54,7 @@ export default function demo() {
         </div>
       </div>
 
+      {/* switcher for demo purpose remove this */}
       <div className="container">
         <form className="text-sm mt-4">
           <label className="cursor-pointer inline-flex items-baseline">
@@ -419,6 +413,8 @@ const mountScrollto = () => {
 /* mountSwitcher */
 
 const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
   // vars
 
   const scrollto = document.documentElement

@@ -1,18 +1,11 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
@@ -83,6 +76,17 @@ const mountButtonsSwap = ({ ref }) => {
       // swap back
       tooltip.addEventListener('offdone.xt.tooltip', swapBack)
     }
+
+    // resetTooltip: fix when swapping and moving away
+
+    const resetTooltip = () => {
+      // trigger our swap
+      tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+      // trigger tooltip deactivation
+      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
+
+    buttonSwap.addEventListener('mouseleave', resetTooltip)
 
     // click
 

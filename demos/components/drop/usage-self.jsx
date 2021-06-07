@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div
-        className="xt-drop p-4 relative inline-block on"
+        className="xt-drop p-4 relative inline-block ** on **"
         data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', closeOutside: false }">
         <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
           <nav className="xt-list flex-col">

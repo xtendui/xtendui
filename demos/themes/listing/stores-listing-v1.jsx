@@ -1,28 +1,21 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--stores-listing-v1-react" ref={ref}>
-      <div className="listing py-10">
+      <div className="** listing ** py-10">
         <div className="container">
           <div className="xt-row xt-row-6 xt-row-stretch">
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="listing-item block w-full">
-                <div className="listing-item-inner h-full">
-                  <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
+              <div className="** listing-item ** block w-full">
+                <div className="** listing-item-inner ** h-full">
+                  <div className="** listing-item-front ** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -39,10 +32,10 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
+                  <div className="** listing-item-back ** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                      className="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -90,9 +83,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="listing-item block w-full">
-                <div className="listing-item-inner h-full">
-                  <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
+              <div className="** listing-item ** block w-full">
+                <div className="** listing-item-inner ** h-full">
+                  <div className="** listing-item-front ** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                       <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -109,10 +102,10 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
+                  <div className="** listing-item-back ** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                      className="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -144,9 +137,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="listing-item block w-full">
-                <div className="listing-item-inner h-full">
-                  <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
+              <div className="** listing-item ** block w-full">
+                <div className="** listing-item-inner ** h-full">
+                  <div className="** listing-item-front ** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -163,10 +156,10 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
+                  <div className="** listing-item-back ** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                      className="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -214,9 +207,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="listing-item block w-full">
-                <div className="listing-item-inner h-full">
-                  <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
+              <div className="** listing-item ** block w-full">
+                <div className="** listing-item-inner ** h-full">
+                  <div className="** listing-item-front ** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                       <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
@@ -233,10 +226,10 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
+                  <div className="** listing-item-back ** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                      className="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -268,9 +261,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="listing-item block w-full">
-                <div className="listing-item-inner h-full">
-                  <div className="listing-item-front absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
+              <div className="** listing-item ** block w-full">
+                <div className="** listing-item-inner ** h-full">
+                  <div className="** listing-item-front ** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <div className="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
@@ -287,10 +280,10 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="listing-item-back relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
+                  <div className="** listing-item-back ** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-200">
                     <button
                       type="button"
-                      className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                      className="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

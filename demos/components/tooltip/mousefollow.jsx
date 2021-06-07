@@ -13,7 +13,7 @@ export default function demo() {
           mouse follow
         </button>
 
-        <div className="xt-mousefollow fixed xt-tooltip p-2 group">
+        <div className="** xt-mousefollow fixed ** xt-tooltip p-2 group">
           <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black -mt-1 ml-4 pointer-events-none transform transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0">
             Lorem ipsum dolor sit amet
           </div>

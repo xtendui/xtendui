@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import 'xtendui/src/stickyflow'
@@ -8,20 +8,14 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
 export default function demo() {
-  const refCurrent = useRef(null)
-  let unmount
-  let ref = useCallback(ref => {
-    if (refCurrent.current) {
-      unmount(refCurrent.current)
-    }
-    refCurrent.current = ref
-    if (ref !== null) {
-      unmount = mount({ ref })
-    }
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
   }, [])
 
   return (
     <div className="demo--products-gallery-v1-react" ref={ref}>
+      {/* For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product */}
       <div className="site-wrapper">
         <header className="site-header">
           <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
