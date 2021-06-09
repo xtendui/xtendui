@@ -51,8 +51,10 @@ pre[class*="language-"] {
   /*
   background-color: rgba(181, 244, 165, .20);
   background-color: rgba(147, 221, 253, .20);
+  background-color: rgba(0, 219, 212, .20);
+  background-color: rgba(0, 224, 224, .20);
   */
-  background-color: rgba(127, 219, 212, .20);
+  background-color: rgba(171, 227, 56, .15);
 }
 
 /* .demo */

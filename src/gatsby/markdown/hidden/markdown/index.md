@@ -173,7 +173,7 @@ You can set **scroll mode** with css selectors.
 
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/list-group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
-```html
+<script type="text/plain" class="language-html">
 <a href="#" class="xt-button">
   <!-- content -->
 </a>
@@ -181,7 +181,7 @@ Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet
 <button type="button" class="xt-button">
   <!-- content -->
 </button>
-```
+</script>
 
 ```
 mkdir -p xtendui/
