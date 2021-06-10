@@ -31,8 +31,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: '/some-other-sitemap.xml',
-        exclude: ['/hidden/**/*', '/demos/**/*'],
+        excludes: ['/hidden/**/*', '/demos/**/*'],
       },
     },
     // manifest
