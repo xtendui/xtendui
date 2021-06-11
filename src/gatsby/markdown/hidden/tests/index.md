@@ -12,6 +12,8 @@ Test demos with all: inline and iframe and react inline and react iframe.
 
 Test demos changing demo should change hash.
 
+Test browser location prev e next should change demo.
+
 Test demos initial activation on browser location.
 
 Test demo show code in fullscreen after switching mode.

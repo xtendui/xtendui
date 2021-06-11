@@ -18,9 +18,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 let firstMount = true
 
 const demoHash = () => {
-  const demoFull = document.querySelector('#gatsby_open-full-trigger')
-  if (demoFull) {
+  const full = document.querySelector('#gatsby_open-full')
+  if (full) {
     if (location.hash) {
+      //full.dispatchEvent(new CustomEvent('off.xt.toggle'))
       // if hash activate demo from hash
       const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
       if (item) {
@@ -39,7 +40,7 @@ const demoHash = () => {
       }
     } else {
       // close demo full if no hash
-      demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+      full.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
     }
   }
 }
@@ -193,32 +194,8 @@ export const populateBlock = () => {
         for (const el of listingToggles) {
           el.classList.remove('on')
         }
-        // move code block
-        const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
-        if (appendOrigin) {
-          // no location.hash
-          if (location.hash) {
-            location.hash = ''
-            // scrollto
-            Xt.scrolltoHashforce = true
-            appendOrigin.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-          }
-          // move back
-          const moving = content.childNodes[0]
-          moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
-          appendOrigin.before(moving)
-          // triggering e.detail.container
-          dispatchEvent(
-            new CustomEvent('resize', {
-              detail: {
-                force: true,
-                container: moving,
-              },
-            })
-          )
-          // move back
-          appendOrigin.remove()
-        }
+        // empty demo
+        demoEmpty({ reset: true })
       }
     })
   }
@@ -573,6 +550,8 @@ const btnOpenIframe = item => {
 const makeFullscreen = container => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
+  // empty demo
+  demoEmpty()
   // toggles
   const listingToggle = container.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
@@ -603,6 +582,36 @@ const makeFullscreen = container => {
     }
     // spinner
     item.classList.remove('loaded')
+  }
+}
+
+const demoEmpty = ({ reset = false } = {}) => {
+  const content = document.querySelector('#gatsby_open-full-content')
+  // move code block
+  const appendOrigin = document.querySelector('[data-xt-origin="gatsby_open-full-content"]')
+  if (appendOrigin) {
+    // no location.hash
+    if (reset && location.hash) {
+      location.hash = ''
+      // scrollto
+      Xt.scrolltoHashforce = true
+      appendOrigin.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+    }
+    // move back
+    const moving = content.childNodes[0]
+    moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
+    appendOrigin.before(moving)
+    // triggering e.detail.container
+    dispatchEvent(
+      new CustomEvent('resize', {
+        detail: {
+          force: true,
+          container: moving,
+        },
+      })
+    )
+    // move back
+    appendOrigin.remove()
   }
 }
 
