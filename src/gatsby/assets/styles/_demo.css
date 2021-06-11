@@ -145,12 +145,11 @@ pre {
     }
     #gatsby_open-full & {
       @apply xt-toggle !important;
-      z-index: theme('zIndex.10');
+      z-index: theme('zIndex.above');
       order: -1;
       position: absolute;
       width: 100%;
       height: 100%;
-
     }
     .gatsby_demo_code_body {
       @apply bg-code;
