@@ -13,7 +13,7 @@ const html = /* HTML */ `
         mouse follow
       </button>
 
-      <div class="** xt-mousefollow fixed ** xt-tooltip p-2 group">
+      <div class="*** xt-mousefollow fixed *** xt-tooltip p-2 group">
         <div
           class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
         >

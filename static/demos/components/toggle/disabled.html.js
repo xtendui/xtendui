@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
       <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} ** on **">
+      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} *** on ***">
         Target 1
 
         <div

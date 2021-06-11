@@ -2,14 +2,14 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--stores-listing-v1">
-    <div class="** listing ** py-10">
+    <div class="*** listing *** py-10">
       <div class="container">
         <div class="xt-row xt-row-6 xt-row-stretch">
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="** listing-item ** block w-full">
-              <div class="** listing-item-inner ** h-full">
+            <div class="*** listing-item *** block w-full">
+              <div class="*** listing-item-inner *** h-full">
                 <div
-                  class="** listing-item-front ** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -29,11 +29,11 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="** listing-item-back ** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-back *** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <button
                     type="button"
-                    class="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
+                    class="xt-button *** xt-dismiss *** absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -61,10 +61,10 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="** listing-item ** block w-full">
-              <div class="** listing-item-inner ** h-full">
+            <div class="*** listing-item *** block w-full">
+              <div class="*** listing-item-inner *** h-full">
                 <div
-                  class="** listing-item-front ** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -84,11 +84,11 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="** listing-item-back ** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-back *** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <button
                     type="button"
-                    class="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
+                    class="xt-button *** xt-dismiss *** absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -106,10 +106,10 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="** listing-item ** block w-full">
-              <div class="** listing-item-inner ** h-full">
+            <div class="*** listing-item *** block w-full">
+              <div class="*** listing-item-inner *** h-full">
                 <div
-                  class="** listing-item-front ** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -129,11 +129,11 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="** listing-item-back ** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-back *** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <button
                     type="button"
-                    class="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
+                    class="xt-button *** xt-dismiss *** absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -161,10 +161,10 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="** listing-item ** block w-full">
-              <div class="** listing-item-inner ** h-full">
+            <div class="*** listing-item *** block w-full">
+              <div class="*** listing-item-inner *** h-full">
                 <div
-                  class="** listing-item-front ** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -184,11 +184,11 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="** listing-item-back ** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-back *** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <button
                     type="button"
-                    class="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
+                    class="xt-button *** xt-dismiss *** absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}
@@ -206,10 +206,10 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="** listing-item ** block w-full">
-              <div class="** listing-item-inner ** h-full">
+            <div class="*** listing-item *** block w-full">
+              <div class="*** listing-item-inner *** h-full">
                 <div
-                  class="** listing-item-front ** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -229,11 +229,11 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="** listing-item-back ** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
+                  class="*** listing-item-back *** relative h-full xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
                   <button
                     type="button"
-                    class="xt-button ** xt-dismiss ** absolute z-last top-0 right-0 p-5 text-2xl"
+                    class="xt-button *** xt-dismiss *** absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close"
                   >
                     ${classes.iconX()}

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--menu-navigation-v1">
-    <div class="** megamenu ** relative bg-primary-500 text-white">
+    <div class="*** megamenu *** relative bg-primary-500 text-white">
       <!-- switcher for demo purpose remove this -->
       <form class="text-sm container pt-10">
         <label class="${classes.checkLabel()}">
@@ -15,11 +15,11 @@ const html = /* HTML */ `
         </label>
       </form>
 
-      <span class="** megamenu-line ** absolute top-0 left-0 bg-white"></span>
+      <span class="*** megamenu-line *** absolute top-0 left-0 bg-white"></span>
 
       <div class="container">
         <div class="xt-list -mx-4">
-          <div class="** xt-drop-item **">
+          <div class="*** xt-drop-item ***">
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -27,10 +27,10 @@ const html = /* HTML */ `
               Menu #1
             </a>
 
-            <div class="** xt-drop ** xt-drop-static">
-              <div class="** xt-drop-inner **">
-                <div class="** xt-design ** bg-primary-700 border-b-4 border-gray-500"></div>
-                <div class="** xt-drop-content **">
+            <div class="*** xt-drop *** xt-drop-static">
+              <div class="*** xt-drop-inner ***">
+                <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-500"></div>
+                <div class="*** xt-drop-content ***">
                   <div class="pt-16 pb-24 text-white xt-links-inverse">
                     <div class="container">
                       <a
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="** xt-drop-item **">
+          <div class="*** xt-drop-item ***">
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -73,10 +73,10 @@ const html = /* HTML */ `
               Menu #2
             </a>
 
-            <div class="** xt-drop ** xt-drop-static">
-              <div class="** xt-drop-inner **">
-                <div class="** xt-design ** bg-gray-900 border-b-4 border-gray-500"></div>
-                <div class="** xt-drop-content **">
+            <div class="*** xt-drop *** xt-drop-static">
+              <div class="*** xt-drop-inner ***">
+                <div class="*** xt-design *** bg-gray-900 border-b-4 border-gray-500"></div>
+                <div class="*** xt-drop-content ***">
                   <div class="pt-16 pb-24 text-white xt-links-inverse">
                     <div class="container">
                       <a
@@ -106,7 +106,7 @@ const html = /* HTML */ `
             Link #3
           </a>
 
-          <div class="** xt-drop-item **">
+          <div class="*** xt-drop-item ***">
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -114,10 +114,10 @@ const html = /* HTML */ `
               Menu #4
             </a>
 
-            <div class="** xt-drop ** xt-drop-static">
-              <div class="** xt-drop-inner **">
-                <div class="** xt-design ** bg-gray-200 border-b-4 border-gray-500"></div>
-                <div class="** xt-drop-content **">
+            <div class="*** xt-drop *** xt-drop-static">
+              <div class="*** xt-drop-inner ***">
+                <div class="*** xt-design *** bg-gray-200 border-b-4 border-gray-500"></div>
+                <div class="*** xt-drop-content ***">
                   <div class="pt-16 pb-24 text-black xt-links-default">
                     <div class="container">
                       <div class="xt-row xt-row-x-8">
