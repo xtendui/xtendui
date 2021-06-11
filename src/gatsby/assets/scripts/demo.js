@@ -90,7 +90,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
   }
   // remove newline at start and end
   text = text.replace(/^\s+|\s+$/g, '')
-  // hightlight
+  // highlight
   let highlighted = Prism.highlight(text, Prism.languages[language] ?? false, language)
   highlighted = highlighted.replace(
     /<span class="token comment">\/\*\*\*\/<\/span>\n*\s*([\s\S\r]*?)\n*\s*<span class="token comment">\/\*\*\*\/.*?>/g,

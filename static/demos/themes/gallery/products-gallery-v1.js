@@ -111,7 +111,10 @@ const mountImages = ({ ref }) => {
       opacity: maskOpacityOff,
     })
     gsap.to(mask, {
-      height: '150%', // fix to cover height: '150%'
+      /***/
+      // fix to cover height: '150%'
+      /***/
+      height: '150%',
       y: 0,
       opacity: maskOpacityOn,
       duration: 0.5,
@@ -171,7 +174,10 @@ const mountImages = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
-      height: '50%', // fix to cover height: '50%', y: '-100%'
+      /***/
+      // fix to cover height: '50%', y: '-100%'
+      /***/
+      height: '50%',
       y: '-100%',
       opacity: maskOpacityOff,
       duration: 0.5,

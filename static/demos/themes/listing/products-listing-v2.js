@@ -104,12 +104,15 @@ const mountMedia = ({ ref }) => {
       opacity: maskOpacityOff,
     })
     gsap.to(mask, {
+      /***/
+      // fix to cover height: '150%'
+      /***/
       height: '150%',
       y: 0,
       opacity: maskOpacityOn,
       duration: 0.5,
       ease: 'quart.out',
-    }) // fix to cover height: '150%'
+    })
     gsap
       .to(mask, {
         skewY: -10,
@@ -155,12 +158,15 @@ const mountMedia = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
+      /***/
+      // fix to cover height: '50%', y: '-100%'
+      /***/
       height: '50%',
       y: '-100%',
       opacity: maskOpacityOff,
       duration: 0.5,
       ease: 'quart.out',
-    }) // fix to cover height: '50%', y: '-100%'
+    })
     gsap
       .to(mask, {
         skewY: 10,
