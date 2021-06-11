@@ -93,7 +93,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
   // hightlight
   let highlighted = Prism.highlight(text, Prism.languages[language] ?? false, language)
   highlighted = highlighted.replace(
-    /<span class="token comment">\/\*\*\*\/<\/span>\s?(.*?)\s?<span class="token comment">\/\*\*\*\/.*?>/g,
+    /<span class="token comment">\/\*\*\*\/<\/span>\n*\s*([\s\S\r]*?)\n*\s*<span class="token comment">\/\*\*\*\/.*?>/g,
     (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
   ) // js
   highlighted = highlighted.replace(
@@ -110,7 +110,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
   ) // data-xt-
   code.innerHTML = highlighted
   // clipboard
-  text = text.replace(/\/?\*\*\*\/?\s?(.*?)\s?\/?\*\*\*\//g, (_, str) => str) // remove highlight syntax
+  text = text.replace(/\/?\*\*\*\/?\n*\s*([\s\S\r]*?)\n*\s*\/?\*\*\*\/?/g, (_, str) => str) // remove highlight syntax
   Xt.dataStorage.set(pre, 'sourceCode', text)
   // set language
   if (language === 'html') {

@@ -160,11 +160,13 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
+      /***/
       // dragposition (set internal dragPosition to instant position after on)
       gsap.killTweensOf(self.detail)
       gsap.set(self.detail, {
         dragPosition: self.detail.dragFinal,
       })
+      /***/
     }
   }
 

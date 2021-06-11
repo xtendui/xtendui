@@ -73,6 +73,7 @@ const mountSlider = ({ ref }) => {
       x: `${maskInnerPercent * self.detail.dragRatio * self.direction}%`,
       opacity: 1 - maskInnerOpacity * self.detail.dragRatio,
     })
+    /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', 'display')
@@ -93,6 +94,7 @@ const mountSlider = ({ ref }) => {
         opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
       })
     }
+    /***/
   }
 
   self.dragger.addEventListener('drag.xt.slider', drag)
@@ -163,6 +165,7 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
+      /***/
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -188,6 +191,7 @@ const mountSlider = ({ ref }) => {
           ease: dragEase,
         })
       }
+      /***/
     }
   }
 
