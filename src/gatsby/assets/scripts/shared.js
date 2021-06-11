@@ -60,22 +60,3 @@ ScrollTrigger.addEventListener('refresh', () => {
     }
   })
 })
-
-/* favicon dark */
-
-const changeMq = () => {
-  const colorSchemeMq = matchMedia('(prefers-color-scheme: dark)')
-  const favicon = document.querySelector('link[rel="icon"]')
-  if (favicon) {
-    favicon.remove()
-  }
-  if (colorSchemeMq.matches) {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon-dark.png">')
-    document.head.append(icon)
-  } else {
-    const icon = Xt.createElement('<link rel="icon" href="/favicon.png">')
-    document.head.append(icon)
-  }
-}
-
-changeMq()

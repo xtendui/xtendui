@@ -43,7 +43,7 @@ module.exports = {
         background_color: '#0078ff',
         theme_color: '#0058C6',
         display: 'minimal-ui',
-        icon: './static/favicon.png',
+        icon: './static/favicon.svg',
         icon_options: {
           purpose: 'maskable any',
         },
