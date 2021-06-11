@@ -24,6 +24,7 @@ const initGooglelocator = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Googlelocator(googlelocator, {
     initialLocate: false,
     initialSearch: false,
@@ -212,6 +213,7 @@ const initGooglelocator = ({ ref }) => {
       },
     ],
   })
+  /***/
 
   // change
 

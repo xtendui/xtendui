@@ -29,11 +29,13 @@ const mountOverlay = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Overlay(overlay, {
     elements: ':scope > .xt-button, .xt-list > .xt-button',
     targets: ':scope > .xt-overlay',
     duration: 500,
   })
+  /***/
 
   // on
 

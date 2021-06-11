@@ -30,10 +30,12 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Slider(slider, {
     wrap: true,
     group: 1,
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

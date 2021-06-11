@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container max-w-xl">
+          <div class="xt-overlay-container *** max-w-xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
@@ -23,7 +23,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="${classes.cardSm()}">
+                <div class="*** ${classes.cardSm()} ***">
                   <div class="xt-h5">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -59,7 +59,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container max-w-3xl">
+          <div class="xt-overlay-container *** max-w-3xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
@@ -69,7 +69,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="${classes.cardMd()}">
+                <div class="*** ${classes.cardMd()} ***">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -105,7 +105,7 @@ const html = /* HTML */ `
 
         <div class="xt-overlay">
           <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container max-w-5xl">
+          <div class="xt-overlay-container *** max-w-5xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
@@ -115,7 +115,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="${classes.cardLg()}">
+                <div class="*** ${classes.cardLg()} ***">
                   <div class="xt-h3">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -161,7 +161,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="${classes.cardLg()}">
+                <div class="*** ${classes.cardLg()} ***">
                   <div class="xt-h3">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

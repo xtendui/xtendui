@@ -44,6 +44,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Drop(megamenu, {
     elements: '.xt-drop-item',
     targets: '.xt-drop-item > .xt-drop',
@@ -55,6 +56,7 @@ const mountDrops = ({ ref }) => {
     //off: 'mouseleave',
     //delay: 150,
   })
+  /***/
 
   // setup
 

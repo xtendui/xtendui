@@ -23,11 +23,13 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Drop(drop, {
     elements: ':scope > .xt-button',
     targets: ':scope > .xt-drop',
     closeOutside: false,
   })
+  /***/
 
   // log
 

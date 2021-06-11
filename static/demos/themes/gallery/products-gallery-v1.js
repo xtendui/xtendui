@@ -28,6 +28,7 @@ Xt.mount({
 const mountScrollto = () => {
   // init
 
+  /***/
   let self = new Xt.Scrollto(document.documentElement, {
     scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
     duration: ({ self }) => {
@@ -37,6 +38,7 @@ const mountScrollto = () => {
       return Math.min(Math.log(1 + distance / 200), 1)
     },
   })
+  /***/
 
   // scrollto
 
@@ -71,10 +73,12 @@ const mountImages = ({ ref }) => {
 
   // overlay
 
+  /***/
   new Xt.Overlay(container, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
+  /***/
 
   // vars
 

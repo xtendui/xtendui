@@ -5,21 +5,21 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonSm()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
         small
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
         medium
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonLg()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
         large
       </button>

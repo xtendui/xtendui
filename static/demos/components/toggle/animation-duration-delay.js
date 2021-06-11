@@ -19,6 +19,7 @@ Xt.mount({
 const mountToggle = ({ ref }) => {
   // init
 
+  /***/
   new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
     elements: ':scope > .xt-button',
     targets: ':scope > .xt-toggle',
@@ -35,6 +36,7 @@ const mountToggle = ({ ref }) => {
       return Math.min((total - current) * 250, 500)
     },
   })
+  /***/
 
   // unmount
 

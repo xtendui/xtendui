@@ -9,21 +9,21 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon small ${classes.iconSearch({ classes: 'text-xs ml-1' })}
+        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon medium ${classes.iconSearch({ classes: 'text-base -my-1 ml-1' })}
+        icon medium ${classes.iconSearch({ classes: '*** text-base -my-1 *** ml-1' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon large ${classes.iconSearch({ classes: 'text-xl -my-1 ml-1' })}
+        icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-1' })}
       </button>
     </div>
 
@@ -34,21 +34,21 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon small ${classes.iconSearch({ classes: 'text-xs ml-1.5' })}
+        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1.5' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon medium ${classes.iconSearch({ classes: 'text-base ml-1.5' })}
+        icon medium ${classes.iconSearch({ classes: '*** text-base *** ml-1.5' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon large ${classes.iconSearch({ classes: 'text-xl -my-1 ml-1.5' })}
+        icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-1.5' })}
       </button>
     </div>
 
@@ -59,21 +59,21 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon small ${classes.iconSearch({ classes: 'text-xs ml-2' })}
+        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-2' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon medium ${classes.iconSearch({ classes: 'text-base ml-2' })}
+        icon medium ${classes.iconSearch({ classes: '*** text-base *** ml-2' })}
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
-        icon large ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-2' })}
       </button>
     </div>
   </div>

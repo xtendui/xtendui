@@ -13,15 +13,15 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4">
           <div class="xt-card w-screen max-w-2xl ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
-            <div class="md:xt-card-group">
-              <div class="${classes.cardMd()} md:w-7/12">
+            <div class="*** md:xt-card-group ***">
+              <div class="${classes.cardMd()} *** md:w-7/12 ***">
                 <div class="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>
-              <div class="${classes.cardSm()} md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+              <div class="${classes.cardSm()} *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
@@ -42,15 +42,15 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4">
           <div class="xt-card w-screen max-w-2xl ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
-            <div class="md:xt-card-group">
-              <div class="${classes.cardMd()} md:w-7/12 bg-gray-300 md:rounded-tl-md">
+            <div class="*** md:xt-card-group ***">
+              <div class="${classes.cardMd()} *** md:w-7/12 *** bg-gray-300 md:rounded-tl-md">
                 <div class="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>
-              <div class="md:w-5/12">
+              <div class="*** md:w-5/12 ***">
                 <div class="${classes.cardSm()} bg-gray-300 md:rounded-tr-md">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat

@@ -29,11 +29,13 @@ const mountDrops = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Drop(drop, {
     elements: ':scope > .xt-drop-item',
     targets: ':scope > .xt-drop-item > .xt-drop',
     duration: 500,
   })
+  /***/
 
   // on
 

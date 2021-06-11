@@ -27,9 +27,11 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     autoHeight: '.xt-slides-autoheight',
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

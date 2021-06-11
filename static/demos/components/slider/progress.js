@@ -36,12 +36,14 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Slider(slider, {
     auto: {
       time: 4000,
       initial: false,
     },
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

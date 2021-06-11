@@ -5,26 +5,26 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** ${classes.buttonDefault()} ***"
       >
         Gray
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()} ***"
       >
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} text-black ${classes.buttonText()}"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** text-black ${classes.buttonText()} ***"
       >
         Text
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">Link</button>
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** xt-link ***">Link</button>
     </div>
   </div>
 `

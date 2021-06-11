@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="inline-block align-middle ${classes.badgeRadius()} ${classes.badgeMd()} ${classes.badgeDefault()}">
+    <div class="*** inline-block align-middle ${classes.badgeMd()} ${classes.badgeRadius()} ${classes.badgeDefault()} ***">
       Lorem ipsum
     </div>
   </div>

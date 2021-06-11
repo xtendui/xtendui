@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
-          <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 text-2xl" aria-label="Close">
+          <button type="button" class="*** xt-button xt-dismiss absolute top-0 right-0 text-2xl ***" aria-label="Close">
             ${classes.iconX()}
           </button>
           <div class="text-base">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardPrimaryFull()}">
-          <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 text-2xl" aria-label="Close">
+          <button type="button" class="*** xt-button xt-dismiss absolute top-0 right-0 text-2xl ***" aria-label="Close">
             ${classes.iconX()}
           </button>
           <div class="text-base">

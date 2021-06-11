@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="md:xt-card-group">
+          <div class="*** md:xt-card-group ***">
             <div class="${classes.cardMd()} md:w-7/12">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
@@ -27,8 +27,8 @@ const html = /* HTML */ `
 
       <div class="w-full">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="md:xt-card-group">
-            <div class="${classes.cardMd()} md:w-7/12 bg-gray-300 md:rounded-tl-md">
+          <div class="*** md:xt-card-group ***">
+            <div class="${classes.cardMd()} *** md:w-7/12 *** bg-gray-300 md:rounded-tl-md">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -36,7 +36,7 @@ const html = /* HTML */ `
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <div class="md:w-5/12">
+            <div class="*** md:w-5/12 ***">
               <div class="${classes.cardSm()} bg-gray-300 md:rounded-tr-md">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat

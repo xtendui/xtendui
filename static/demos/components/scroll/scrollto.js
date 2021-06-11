@@ -41,8 +41,9 @@ const mountSticky = ({ ref }) => {
 /* mountScrollto */
 
 const mountScrollto = () => {
-  // Scrollto
+  // init
 
+  /***/
   let self = new Xt.Scrollto(document.documentElement, {
     hash: true,
     space: ({ self }) => {
@@ -59,6 +60,7 @@ const mountScrollto = () => {
       return Math.min(Math.log(1 + distance / 200), 1)
     },
   })
+  /***/
 
   // scrollto
 

@@ -27,10 +27,12 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     mediaLoaded: true,
     mediaLoadedReinit: true,
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

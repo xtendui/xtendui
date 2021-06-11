@@ -42,14 +42,14 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
 <demo>
-  <demoinline src="demos/components/icon/alignment">
+  <demoinline src="demos/components/button/alignment">
   </demoinline>
 </demo>
 
 Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon is bigger than the button **to prevent vertical resize**.
 
 <demo>
-  <demoinline src="demos/components/icon/button">
+  <demoinline src="demos/components/button/icon">
   </demoinline>
 </demo>
 
