@@ -32,7 +32,9 @@ const html = /* HTML */ `
             velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
             vitae magna eget, vehicula scelerisque elit.
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">1200</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">
+            1200
+          </td>
         </tr>
         <tr>
           <th
@@ -60,7 +62,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">
             Consectetur adipiscing elit
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">2400</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">
+            2400
+          </td>
         </tr>
         <tr>
           <th

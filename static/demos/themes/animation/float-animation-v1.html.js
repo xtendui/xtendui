@@ -267,7 +267,9 @@ const html = /* HTML */ `
           <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
+              <div
+                class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
+              ></div>
 
               <div class="xt-card ${classes.cardRadius()} ${cardWhite()} ${animItem()}">
                 <button
@@ -395,7 +397,9 @@ const html = /* HTML */ `
           <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
+              <div
+                class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
+              ></div>
 
               <div class="xt-card ${classes.cardRadius()} ${cardWhite()} ${animItem()}">
                 <button

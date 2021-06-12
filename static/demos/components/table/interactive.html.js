@@ -26,7 +26,9 @@ const html = /* HTML */ `
             velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
             vitae magna eget, vehicula scelerisque elit.
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">1200</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
+            1200
+          </td>
         </tr>
         <tr class="cursor-pointer group">
           <th
@@ -37,7 +39,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
             Dolor sit amet
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">200</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
+            200
+          </td>
         </tr>
         <tr class="cursor-pointer group">
           <th
@@ -48,7 +52,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
             Consectetur adipiscing elit
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">2400</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
+            2400
+          </td>
         </tr>
         <tr class="cursor-pointer group">
           <th
@@ -59,7 +65,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
             Dolor sit amet
           </td>
-          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">200</td>
+          <td class="py-2 px-4 text-sm align-top leading-snug border *** transition group-hover:bg-gray-300 ***">
+            200
+          </td>
         </tr>
       </tbody>
     </table>

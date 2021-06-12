@@ -148,7 +148,10 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="*** ${classes.checkLabel()} ***">
-                <input type="checkbox" class="xt-check xt-switch *** ${classes.radioRadius()} ${classes.radioPrimary()} ***" />
+                <input
+                  type="checkbox"
+                  class="xt-check xt-switch *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
+                />
                 <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris

@@ -12,7 +12,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative *** ${classes.tooltipSm()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative *** ${classes.tooltipSm()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -27,7 +29,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative *** ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative *** ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -42,7 +46,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative *** ${classes.tooltipLg()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative *** ${classes.tooltipLg()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>

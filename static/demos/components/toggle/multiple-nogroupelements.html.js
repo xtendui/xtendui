@@ -68,7 +68,10 @@ const html = /* HTML */ `
 
       <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="group0,group1">
+      <div
+        class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+        data-xt-group="group0,group1"
+      >
         Target Group 0 and 1
       </div>
     </div>
