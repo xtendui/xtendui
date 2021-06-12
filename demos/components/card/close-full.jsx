@@ -5,7 +5,10 @@ export default function demo() {
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default">
-            <button type="button" className="xt-button xt-dismiss absolute top-0 right-0 text-2xl" aria-label="Close">
+            <button
+              type="button"
+              className="*** xt-button xt-dismiss absolute top-0 right-0 text-2xl ***"
+              aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon"
@@ -34,7 +37,10 @@ export default function demo() {
 
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-primary-600">
-            <button type="button" className="xt-button xt-dismiss absolute top-0 right-0 text-2xl" aria-label="Close">
+            <button
+              type="button"
+              className="*** xt-button xt-dismiss absolute top-0 right-0 text-2xl ***"
+              aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon"

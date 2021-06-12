@@ -5,7 +5,7 @@ export default function demo() {
       <div className="xt-row xt-row-6">
         <div className="w-full">
           <div className="xt-card rounded-md text-black xt-links-default">
-            <div className="md:xt-card-group">
+            <div className="*** md:xt-card-group ***">
               <div className="md:w-7/12 pb-6 md:pb-0 md:pr-6">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
@@ -27,8 +27,8 @@ export default function demo() {
 
         <div className="w-full">
           <div className="xt-card rounded-md text-black xt-links-default">
-            <div className="md:xt-card-group">
-              <div className="md:w-7/12 pb-6 md:pb-0 md:pr-6">
+            <div className="*** md:xt-card-group ***">
+              <div className="*** md:w-7/12 *** pb-6 md:pb-0 md:pr-6">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -36,7 +36,7 @@ export default function demo() {
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
-              <div className="md:w-5/12">
+              <div className="*** md:w-5/12 ***">
                 <div className="text-sm py-6 px-7 rounded-md bg-gray-300">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat

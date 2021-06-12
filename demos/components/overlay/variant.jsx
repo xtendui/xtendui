@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/overlay'
+
 export default function demo() {
   return (
     <div>
@@ -11,10 +14,10 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop *** bg-black pointer-events-none opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
-                <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
+                <div className="xt-card rounded-md *** shadow-overlay text-black xt-links-default bg-white ***">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -68,10 +71,10 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-primary-700 bg-opacity-25"></div>
+            <div className="xt-backdrop *** bg-primary-700 bg-opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
-                <div className="xt-card rounded-md shadow-overlay text-white xt-links-inverse bg-primary-500">
+                <div className="xt-card rounded-md *** shadow-overlay text-white xt-links-inverse bg-primary-500 ***">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
@@ -127,7 +130,7 @@ export default function demo() {
           <div className="xt-overlay">
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
-                <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
+                <div className="xt-card rounded-md *** shadow-overlay text-black xt-links-default bg-white ***">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

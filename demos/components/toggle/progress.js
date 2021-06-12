@@ -29,6 +29,7 @@ const mountToggle = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Toggle(toggle, {
     elements: ':scope > .xt-button',
     targets: ':scope > .xt-toggle',
@@ -37,6 +38,7 @@ const mountToggle = ({ ref }) => {
       initial: false,
     },
   })
+  /***/
 
   // autostart
 

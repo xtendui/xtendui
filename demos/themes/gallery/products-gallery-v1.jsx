@@ -214,8 +214,8 @@ export default function demo() {
                 className="w-full md:w-7/12 lg:w-6/12 xl:w-5/12"
                 id="product-arrow-target"
                 data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}">
-                <div className="stickyflow-filler pointer-events-none absolute md:relative"></div>
-                <div className="pb-12 md:py-12 md:sticky stickyflow">
+                <div className="*** stickyflow-filler pointer-events-none absolute md:relative ***"></div>
+                <div className="pb-12 md:py-12 *** md:sticky stickyflow ***">
                   <h1 className="xt-h2">Lorem ipsum dolor sit amet</h1>
 
                   <div className="xt-h5 mb-6">€&nbsp;229,00</div>
@@ -311,6 +311,7 @@ const mount = ({ ref }) => {
 const mountScrollto = () => {
   // init
 
+  /***/
   let self = new Xt.Scrollto(document.documentElement, {
     scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
     duration: ({ self }) => {
@@ -320,6 +321,7 @@ const mountScrollto = () => {
       return Math.min(Math.log(1 + distance / 200), 1)
     },
   })
+  /***/
 
   // scrollto
 
@@ -354,10 +356,12 @@ const mountImages = ({ ref }) => {
 
   // overlay
 
+  /***/
   new Xt.Overlay(container, {
     elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
+  /***/
 
   // vars
 
@@ -394,7 +398,10 @@ const mountImages = ({ ref }) => {
       opacity: maskOpacityOff,
     })
     gsap.to(mask, {
-      height: '150%', // fix to cover height: '150%'
+      /***/
+      // fix to cover height: '150%'
+      /***/
+      height: '150%',
       y: 0,
       opacity: maskOpacityOn,
       duration: 0.5,
@@ -454,7 +461,10 @@ const mountImages = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
-      height: '50%', // fix to cover height: '50%', y: '-100%'
+      /***/
+      // fix to cover height: '50%', y: '-100%'
+      /***/
+      height: '50%',
       y: '-100%',
       opacity: maskOpacityOff,
       duration: 0.5,

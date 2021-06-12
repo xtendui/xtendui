@@ -240,6 +240,7 @@ const mountInfinitescroll = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Infinitescroll(infinitescroll, {
     get: false,
     max: 4,
@@ -255,6 +256,7 @@ const mountInfinitescroll = ({ ref }) => {
     //scrollUp = true,
     //scrollDown = true,
   })
+  /***/
 
   // unmount
 

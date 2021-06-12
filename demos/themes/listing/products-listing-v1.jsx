@@ -14,14 +14,14 @@ export default function demo() {
   return (
     <div className="demo--products-listing-v1-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider ** slider--listing ** pb-10">
+        <div className="xt-slider *** slider--listing *** pb-10">
           <div className="container">
             <div className="xt-h2 mb-8">Latest Products</div>
             <div className="xt-slides xt-row xt-row-4">
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-xl font-semibold">-35%</div>
@@ -33,7 +33,7 @@ export default function demo() {
                       </div>
                     </div>
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -41,10 +41,10 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
@@ -60,7 +60,7 @@ export default function demo() {
                       </div>
                     </div>
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -68,11 +68,11 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -80,16 +80,16 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -97,11 +97,11 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -109,16 +109,16 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -126,11 +126,11 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -138,16 +138,16 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -167,9 +167,9 @@ export default function demo() {
 
             <div className="xt-row xt-row-6">
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-xl font-semibold">-35%</div>
@@ -181,7 +181,7 @@ export default function demo() {
                       </div>
                     </div>
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -189,10 +189,10 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
@@ -208,7 +208,7 @@ export default function demo() {
                       </div>
                     </div>
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -216,11 +216,11 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -228,16 +228,16 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -245,11 +245,11 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem Ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -257,16 +257,16 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -274,11 +274,11 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Lorem ipsum</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -286,16 +286,16 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block">
-                  <div className="** xt-media-container ** bg-gray-600 overflow-hidden xt-ratio-75">
+                <a href="#" className="*** listing-item *** block">
+                  <div className="*** xt-media-container *** bg-gray-600 overflow-hidden xt-ratio-75">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
                   </div>
-                  <div className="** listing-item ** -content py-4">
+                  <div className="*** listing-item *** -content py-4">
                     <div className="xt-h5">Dolor sit amet</div>
                     <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
                   </div>
@@ -337,7 +337,9 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {})
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

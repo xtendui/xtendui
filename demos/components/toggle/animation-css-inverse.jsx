@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/toggle'
+
 export default function demo() {
   return (
     <div className="demo--toggle-animation-inverse-react">

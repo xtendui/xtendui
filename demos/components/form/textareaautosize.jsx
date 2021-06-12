@@ -1,4 +1,5 @@
 import React from 'react'
+import 'xtendui'
 import 'xtendui/src/textareaautosize'
 
 export default function demo() {

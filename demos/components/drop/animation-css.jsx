@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/drop'
+
 export default function demo() {
   return (
     <div className="demo--drop-animation-css-react">

@@ -1,10 +1,13 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/toggle'
+
 export default function demo() {
   return (
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <div id="demo--collapse-text-target" className="mb-6 text-lg h-20 ** overflow-hidden transition-all **">
+          <div id="demo--collapse-text-target" className="mb-6 text-lg h-20 *** overflow-hidden transition-all ***">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
             vestibulum sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna
             aliquam pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at,
@@ -27,7 +30,7 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <div
             id="demo--collapse-text-on-target"
-            className="mb-6 text-lg h-20 ** overflow-hidden transition-all ** ** on **">
+            className="mb-6 text-lg h-20 *** overflow-hidden transition-all *** *** on ***">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
             vestibulum sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna
             aliquam pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at,

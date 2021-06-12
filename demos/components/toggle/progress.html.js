@@ -95,7 +95,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <span class="** xt-mousefollow fixed ** xt-loader group hover-none:hidden">
+      <span class="*** xt-mousefollow fixed *** xt-loader group hover-none:hidden">
         <span
           class="${classes.spinner()} w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4"
         >

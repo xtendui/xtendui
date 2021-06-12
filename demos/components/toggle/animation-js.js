@@ -27,11 +27,13 @@ const mountToggle = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
     elements: ':scope > .xt-button',
     targets: ':scope > .xt-toggle',
     duration: 500,
   })
+  /***/
 
   // on
 

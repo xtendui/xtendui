@@ -16,7 +16,7 @@ export default function demo() {
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <span className="** xt-mousefollow fixed ** xt-loader group">
+            <span className="*** xt-mousefollow fixed *** xt-loader group">
               <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
                 <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                   <circle
@@ -61,7 +61,7 @@ export default function demo() {
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <span className="** xt-mousefollow fixed ** xt-loader group">
+            <span className="*** xt-mousefollow fixed *** xt-loader group">
               <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
                 <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                   <circle

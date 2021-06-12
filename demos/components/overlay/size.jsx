@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/overlay'
+
 export default function demo() {
   return (
     <div>
@@ -12,7 +15,7 @@ export default function demo() {
 
           <div className="xt-overlay">
             <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container max-w-xl">
+            <div className="xt-overlay-container *** max-w-xl ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                   <button
@@ -34,7 +37,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="text-sm py-6 px-7">
+                  <div className="*** text-sm py-6 px-7 ***">
                     <div className="xt-h5">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -69,7 +72,7 @@ export default function demo() {
 
           <div className="xt-overlay">
             <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container max-w-3xl">
+            <div className="xt-overlay-container *** max-w-3xl ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                   <button
@@ -91,7 +94,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="text-base py-8 px-9">
+                  <div className="*** text-base py-8 px-9 ***">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -126,7 +129,7 @@ export default function demo() {
 
           <div className="xt-overlay">
             <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container max-w-5xl">
+            <div className="xt-overlay-container *** max-w-5xl ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                   <button
@@ -148,7 +151,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="text-base py-8 px-9 md:text-lg md:py-9 md:px-10">
+                  <div className="*** text-base py-8 px-9 md:text-lg md:py-9 md:px-10 ***">
                     <div className="xt-h3">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -205,7 +208,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="text-base py-8 px-9 md:text-lg md:py-9 md:px-10">
+                  <div className="*** text-base py-8 px-9 md:text-lg md:py-9 md:px-10 ***">
                     <div className="xt-h3">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

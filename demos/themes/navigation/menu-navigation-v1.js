@@ -44,6 +44,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Drop(megamenu, {
     elements: '.xt-drop-item',
     targets: '.xt-drop-item > .xt-drop',
@@ -55,6 +56,7 @@ const mountDrops = ({ ref }) => {
     //off: 'mouseleave',
     //delay: 150,
   })
+  /***/
 
   // setup
 
@@ -111,6 +113,7 @@ const mountDrops = ({ ref }) => {
         .eventCallback('onUpdate', () => {
           innerHeightCache = inner.clientHeight
         })
+      /***/
       // when sequential interaction
       if (self.direction) {
         // not current targets
@@ -128,6 +131,7 @@ const mountDrops = ({ ref }) => {
           })
         }
       }
+      /***/
     }
   }
 
@@ -157,6 +161,7 @@ const mountDrops = ({ ref }) => {
         ease: designEase,
         delay: designDelayOff,
       })
+      /***/
       // when not sequential interaction
       if (!self.direction) {
         // inner
@@ -172,6 +177,7 @@ const mountDrops = ({ ref }) => {
             innerHeightCache = inner.clientHeight
           })
       }
+      /***/
     }
   }
 
@@ -200,17 +206,21 @@ const mountLine = ({ ref }) => {
   const lineTime = 0.5
   const lineEase = 'quint.out'
   let lineFirst = true
+  /***/
   let btnOn = false
+  /***/
 
   // enter
 
   const enter = e => {
     let el = e.target
+    /***/
     if (e.type === 'on.xt.drop') {
       el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
+    /***/
     // line
     const lineX = el.offsetLeft
     const lineY = el.offsetTop + el.offsetHeight
@@ -248,22 +258,30 @@ const mountLine = ({ ref }) => {
 
   const leave = e => {
     let el = e.target
+    /***/
     if (e.type === 'off.xt.drop') {
       el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }
+    /***/
+    /***/
     // same delay as drop
+    /***/
     setTimeout(() => {
+      /***/
       // when one button still hover
       if (btnOn) {
         return
       }
+      /***/
       // check open drops
       const self = Xt.get('xt-drop', megamenu)
       const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
       if (dropBtnActive) {
+        /***/
         // when one drop still open
+        /***/
         const lineX = dropBtnActive.offsetLeft
         const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
         const lineWidth = dropBtnActive.offsetWidth
@@ -277,7 +295,9 @@ const mountLine = ({ ref }) => {
           ease: lineEase,
         })
       } else {
+        /***/
         // when no drop still open
+        /***/
         const lineY = el.offsetTop + el.offsetHeight
         lineFirst = true
         gsap.to(line, {

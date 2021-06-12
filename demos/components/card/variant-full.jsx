@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default">
+          <div className="xt-card rounded-md *** text-black xt-links-default ***">
             <div className="text-base">
               <div className="xt-h4">Default</div>
               <p>
@@ -17,7 +17,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-primary-600">
+          <div className="xt-card rounded-md *** text-primary-600 ***">
             <div className="text-base">
               <div className="xt-h4">Primary</div>
               <p>

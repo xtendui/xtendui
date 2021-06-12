@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/drop'
+
 export default function demo() {
   return (
     <div>
@@ -13,7 +16,7 @@ export default function demo() {
           <div className="xt-drop p-4">
             <div className="xt-card w-96 rounded-md shadow-drop text-black xt-links-default bg-white">
               <div className="text-base py-8 px-9">
-                <div className="xt-list xt-list-6 md:flex-nowrap items-baseline">
+                <div className="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

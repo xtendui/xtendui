@@ -14,15 +14,15 @@ export default function demo() {
   return (
     <div className="demo--products-listing-v2-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider ** slider--listing ** pb-10">
+        <div className="xt-slider *** slider--listing *** pb-10">
           <div className="container">
             <div className="xt-h2 mb-8">Latest Products</div>
             <div className="xt-slides xt-row xt-row-4">
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-35%</div>
@@ -37,15 +37,15 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-40%</div>
@@ -60,10 +60,10 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -73,15 +73,15 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -91,10 +91,10 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -104,15 +104,15 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -122,10 +122,10 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -135,15 +135,15 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -165,10 +165,10 @@ export default function demo() {
 
             <div className="xt-row xt-row-6">
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-35%</div>
@@ -183,15 +183,15 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
                         <div className="text-lg font-semibold">-40%</div>
@@ -206,10 +206,10 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -219,15 +219,15 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -237,10 +237,10 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -250,15 +250,15 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -268,10 +268,10 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
-                    <img className="** xt-media ** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Lorem ipsum</div>
@@ -281,15 +281,15 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12">
-                <a href="#" className="** listing-item ** block group">
-                  <div className="** xt-media-container ** bg-gray-600 xt-ratio-125 overflow-hidden">
+                <a href="#" className="*** listing-item *** block group">
+                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
                     <img
-                      className="** xt-media ** object-cover object-center"
+                      className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
                       loading="lazy"
                       alt=""
                     />
-                    <div className="** xt-media-mask ** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
+                    <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
                   <div className="py-4">
                     <div className="xt-h5 group-hover:text-primary-500">Dolor sit amet</div>
@@ -333,7 +333,9 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {})
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
@@ -404,12 +406,15 @@ const mountMedia = ({ ref }) => {
       opacity: maskOpacityOff,
     })
     gsap.to(mask, {
+      /***/
+      // fix to cover height: '150%'
+      /***/
       height: '150%',
       y: 0,
       opacity: maskOpacityOn,
       duration: 0.5,
       ease: 'quart.out',
-    }) // fix to cover height: '150%'
+    })
     gsap
       .to(mask, {
         skewY: -10,
@@ -455,12 +460,15 @@ const mountMedia = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.xt-media-mask')
     gsap.to(mask, {
+      /***/
+      // fix to cover height: '50%', y: '-100%'
+      /***/
       height: '50%',
       y: '-100%',
       opacity: maskOpacityOff,
       duration: 0.5,
       ease: 'quart.out',
-    }) // fix to cover height: '50%', y: '-100%'
+    })
     gsap
       .to(mask, {
         skewY: 10,

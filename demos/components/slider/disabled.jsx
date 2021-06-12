@@ -50,7 +50,7 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group ** on **">
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group *** on ***">
               <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                 <div className="xt-h4">7</div>
               </div>
@@ -94,6 +94,7 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     wrap: true,
     matches: {
@@ -102,6 +103,7 @@ const mountSlider = ({ ref }) => {
       },
     },
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

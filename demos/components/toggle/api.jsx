@@ -133,11 +133,13 @@ const mount = ({ ref }) => {
 const mountEventmethods = ({ ref }) => {
   // init
 
+  /***/
   let self = new Xt.Toggle(ref.querySelector('#toggle--eventmethods'), {
     elements: 'a, button',
     targets: '.xt-toggle',
     min: 1,
   })
+  /***/
 
   // log
 

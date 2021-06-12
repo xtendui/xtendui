@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--menu-navigation-v1-react" ref={ref}>
-      <div className="** megamenu ** relative bg-primary-500 text-white">
+      <div className="*** megamenu *** relative bg-primary-500 text-white">
         {/* switcher for demo purpose remove this */}
         <form className="text-sm container pt-10">
           <label className="cursor-pointer inline-flex items-baseline">
@@ -24,21 +24,21 @@ export default function demo() {
           </label>
         </form>
 
-        <span className="** megamenu-line ** absolute top-0 left-0 bg-white"></span>
+        <span className="*** megamenu-line *** absolute top-0 left-0 bg-white"></span>
 
         <div className="container">
           <div className="xt-list -mx-4">
-            <div className="** xt-drop-item **">
+            <div className="*** xt-drop-item ***">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
-              <div className="** xt-drop ** xt-drop-static">
-                <div className="** xt-drop-inner **">
-                  <div className="** xt-design ** bg-primary-700 border-b-4 border-gray-500"></div>
-                  <div className="** xt-drop-content **">
+              <div className="*** xt-drop *** xt-drop-static">
+                <div className="*** xt-drop-inner ***">
+                  <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-500"></div>
+                  <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
                         <a
@@ -72,17 +72,17 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="** xt-drop-item **">
+            <div className="*** xt-drop-item ***">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
-              <div className="** xt-drop ** xt-drop-static">
-                <div className="** xt-drop-inner **">
-                  <div className="** xt-design ** bg-gray-900 border-b-4 border-gray-500"></div>
-                  <div className="** xt-drop-content **">
+              <div className="*** xt-drop *** xt-drop-static">
+                <div className="*** xt-drop-inner ***">
+                  <div className="*** xt-design *** bg-gray-900 border-b-4 border-gray-500"></div>
+                  <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
                         <a
@@ -112,17 +112,17 @@ export default function demo() {
               Link #3
             </a>
 
-            <div className="** xt-drop-item **">
+            <div className="*** xt-drop-item ***">
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #4
               </a>
 
-              <div className="** xt-drop ** xt-drop-static">
-                <div className="** xt-drop-inner **">
-                  <div className="** xt-design ** bg-gray-200 border-b-4 border-gray-500"></div>
-                  <div className="** xt-drop-content **">
+              <div className="*** xt-drop *** xt-drop-static">
+                <div className="*** xt-drop-inner ***">
+                  <div className="*** xt-design *** bg-gray-200 border-b-4 border-gray-500"></div>
+                  <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-black xt-links-default">
                       <div className="container">
                         <div className="xt-row xt-row-x-8">
@@ -307,6 +307,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Drop(megamenu, {
     elements: '.xt-drop-item',
     targets: '.xt-drop-item > .xt-drop',
@@ -318,6 +319,7 @@ const mountDrops = ({ ref }) => {
     //off: 'mouseleave',
     //delay: 150,
   })
+  /***/
 
   // setup
 
@@ -374,6 +376,7 @@ const mountDrops = ({ ref }) => {
         .eventCallback('onUpdate', () => {
           innerHeightCache = inner.clientHeight
         })
+      /***/
       // when sequential interaction
       if (self.direction) {
         // not current targets
@@ -391,6 +394,7 @@ const mountDrops = ({ ref }) => {
           })
         }
       }
+      /***/
     }
   }
 
@@ -420,6 +424,7 @@ const mountDrops = ({ ref }) => {
         ease: designEase,
         delay: designDelayOff,
       })
+      /***/
       // when not sequential interaction
       if (!self.direction) {
         // inner
@@ -435,6 +440,7 @@ const mountDrops = ({ ref }) => {
             innerHeightCache = inner.clientHeight
           })
       }
+      /***/
     }
   }
 
@@ -463,17 +469,21 @@ const mountLine = ({ ref }) => {
   const lineTime = 0.5
   const lineEase = 'quint.out'
   let lineFirst = true
+  /***/
   let btnOn = false
+  /***/
 
   // enter
 
   const enter = e => {
     let el = e.target
+    /***/
     if (e.type === 'on.xt.drop') {
       el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
+    /***/
     // line
     const lineX = el.offsetLeft
     const lineY = el.offsetTop + el.offsetHeight
@@ -511,22 +521,30 @@ const mountLine = ({ ref }) => {
 
   const leave = e => {
     let el = e.target
+    /***/
     if (e.type === 'off.xt.drop') {
       el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }
+    /***/
+    /***/
     // same delay as drop
+    /***/
     setTimeout(() => {
+      /***/
       // when one button still hover
       if (btnOn) {
         return
       }
+      /***/
       // check open drops
       const self = Xt.get('xt-drop', megamenu)
       const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
       if (dropBtnActive) {
+        /***/
         // when one drop still open
+        /***/
         const lineX = dropBtnActive.offsetLeft
         const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
         const lineWidth = dropBtnActive.offsetWidth
@@ -540,7 +558,9 @@ const mountLine = ({ ref }) => {
           ease: lineEase,
         })
       } else {
+        /***/
         // when no drop still open
+        /***/
         const lineY = el.offsetTop + el.offsetHeight
         lineFirst = true
         gsap.to(line, {

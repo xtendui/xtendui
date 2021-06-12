@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/drop'
+
 export default function demo() {
   return (
     <div>
@@ -12,15 +15,15 @@ export default function demo() {
 
           <div className="xt-drop p-4">
             <div className="xt-card w-screen max-w-2xl rounded-md shadow-drop text-black xt-links-default bg-white">
-              <div className="md:xt-card-group">
-                <div className="text-base py-8 px-9 md:w-7/12">
+              <div className="*** md:xt-card-group ***">
+                <div className="text-base py-8 px-9 *** md:w-7/12 ***">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>
-                <div className="text-sm py-6 px-7 md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+                <div className="text-sm py-6 px-7 *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
@@ -40,15 +43,15 @@ export default function demo() {
 
           <div className="xt-drop p-4">
             <div className="xt-card w-screen max-w-2xl rounded-md shadow-drop text-black xt-links-default bg-white">
-              <div className="md:xt-card-group">
-                <div className="text-base py-8 px-9 md:w-7/12 bg-gray-300 md:rounded-tl-md">
+              <div className="*** md:xt-card-group ***">
+                <div className="text-base py-8 px-9 *** md:w-7/12 *** bg-gray-300 md:rounded-tl-md">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>
-                <div className="md:w-5/12">
+                <div className="*** md:w-5/12 ***">
                   <div className="text-sm py-6 px-7 bg-gray-300 md:rounded-tr-md">
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat

@@ -70,7 +70,7 @@ export default function demo() {
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
-          <div className="** xt-mousefollow fixed ** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+          <div className="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -94,7 +94,7 @@ export default function demo() {
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
-          <div className="** xt-mousefollow fixed ** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+          <div className="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -140,9 +140,11 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     loop: true,
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

@@ -22,22 +22,28 @@ Xt.mount({
 const mountRipple = ({ ref }) => {
   // vars
 
+  /***/
   const items = ref.querySelectorAll('.xt-button, .xt-card')
+  /***/
   const unmounts = []
 
   for (const item of items) {
     // init
 
+    /***/
     let self = new Xt.Ripple(item, {
       // activated by switcher
       //sizeInitial = 0,
       //onlyInside = false,
     })
+    /***/
 
     // on
 
     const on = () => {
+      /***/
       const ripple = self.container.querySelector('.xt-ripple:last-child')
+      /***/
       // animate
       if (ripple) {
         gsap.set(ripple, {
@@ -66,7 +72,9 @@ const mountRipple = ({ ref }) => {
     // off
 
     const off = () => {
+      /***/
       const ripple = self.container.querySelector('.xt-ripple:last-child')
+      /***/
       // animate
       if (ripple) {
         gsap

@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/overlay'
+
 export default function demo() {
   return (
     <div className="demo--overlay-class-html-react">

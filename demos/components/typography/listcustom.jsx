@@ -1,7 +1,7 @@
 import React from 'react'
 export default function demo() {
   return (
-    <ul className="demo--listcustom-react">
+    <ul className="xt-ul demo--listcustom">
       <ul>
         <li>
           <p>

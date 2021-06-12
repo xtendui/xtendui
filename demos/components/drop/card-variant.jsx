@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/drop'
+
 export default function demo() {
   return (
     <div>
@@ -11,7 +14,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4">
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card w-80 rounded-md *** shadow-drop text-black xt-links-default bg-white ***">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
@@ -50,7 +53,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4">
-            <div className="xt-card w-80 rounded-md shadow-drop text-white xt-links-inverse bg-primary-500">
+            <div className="xt-card w-80 rounded-md *** shadow-drop text-white xt-links-inverse bg-primary-500 ***">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"

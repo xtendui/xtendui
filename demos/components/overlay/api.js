@@ -24,13 +24,17 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Overlay(overlay, {
     targets: '#overlay--nested',
   })
+  /***/
 
+  /***/
   new Xt.Overlay(overlayAlt, {
     targets: '#overlay--nested',
   })
+  /***/
 
   // log
 

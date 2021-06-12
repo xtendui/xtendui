@@ -14,14 +14,14 @@ export default function demo() {
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
-              <div className="border-t md:w-5/12 md:border-t-0 md:border-l border-solid border-gray-500">
+              <div className="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-500 ***">
                 <div className="text-sm py-6 md:p-8">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
                   </p>
                 </div>
-                <div className="pt-6 md:p-8 border-t border-solid border-gray-500">
+                <div className="pt-6 md:p-8 *** border-t border-solid border-gray-500 ***">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.

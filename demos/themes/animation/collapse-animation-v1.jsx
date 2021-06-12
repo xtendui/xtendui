@@ -1,4 +1,5 @@
 import React from 'react'
+import 'xtendui'
 import 'xtendui/src/overlay'
 import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
@@ -21,7 +22,7 @@ export default function demo() {
           </button>
 
           <div className="xt-toggle max-w-sm overflow-hidden transition-all group">
-            <div className="xt-list flex-nowrap ** transform opacity-0 -translate-x-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-x-2 **">
+            <div className="xt-list flex-nowrap *** transform opacity-0 -translate-x-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-x-2 ***">
               <div className="xt-list-inner flex-auto">
                 <button
                   type="button"
@@ -72,9 +73,9 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4 group">
-            <div className="xt-drop-inner rounded-md shadow-drop ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+            <div className="xt-drop-inner rounded-md shadow-drop *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
               <div className="xt-card w-64 py-3.5 rounded-md text-black xt-links-default bg-white">
-                <nav className="xt-list flex-col rounded-md ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                <nav className="xt-list flex-col rounded-md *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <a
                     href="#"
                     className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
@@ -93,7 +94,7 @@ export default function demo() {
                 </nav>
               </div>
             </div>
-            <div className="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 **"></div>
+            <div className="xt-arrow -inset-1 m-4 w-4 h-4 bg-white *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </div>
 
@@ -105,11 +106,11 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4 group">
-            <div className="xt-drop-inner rounded-md shadow-drop ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+            <div className="xt-drop-inner rounded-md shadow-drop *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
               <div className="xt-card w-64 rounded-md text-black xt-links-default bg-white">
                 <button
                   type="button"
-                  className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **"
+                  className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +127,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-sm py-6 px-7 rounded-md ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                <div className="text-sm py-6 px-7 rounded-md *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <div className="xt-h5">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -135,7 +136,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 **"></div>
+            <div className="xt-arrow -inset-1 m-4 w-4 h-4 bg-white *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </div>
       </div>
@@ -154,14 +155,14 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2 group">
-              <div className="xt-tooltip-inner ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-tooltip-inner *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-                  <div className="** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="*** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     Lorem ipsum dolor sit amet
                   </div>
                 </div>
               </div>
-              <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 **"></div>
+              <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
             </div>
           </div>
         </div>
@@ -175,9 +176,9 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2 group">
-              <div className="xt-tooltip-inner rounded-sm shadow-tooltip text-black bg-white ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-tooltip-inner rounded-sm shadow-tooltip text-black bg-white *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <form className="text-sm">
-                  <div className="xt-list flex-nowrap max-w-sm ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="xt-list flex-nowrap max-w-sm *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <div className="xt-list-inner flex-auto">
                       <button
                         type="button"
@@ -213,7 +214,7 @@ export default function demo() {
                   </div>
                 </form>
               </div>
-              <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-400 z-below ** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 **"></div>
+              <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-400 z-below *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
             </div>
           </div>
         </div>
@@ -235,7 +236,7 @@ export default function demo() {
             <div className="xt-overlay-container p-0">
               <button
                 type="button"
-                className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **"
+                className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -252,9 +253,9 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="xt-overlay-inner ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-overlay-inner *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card xt-min-h-screen items-center justify-center text-black xt-links-default bg-white">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-100 ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="xt-media-container bg-gray-600 xt-ratio-100 *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </div>
@@ -273,7 +274,7 @@ export default function demo() {
           <div className="xt-overlay group">
             <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-              <div className="xt-overlay-inner ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-overlay-inner *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card xt-min-h-screen text-black xt-links-default bg-white">
                   <button
                     type="button"
@@ -294,7 +295,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-list bg-primary-500 ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="xt-list bg-primary-500 *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <button
                       type="button"
                       className="xt-button text-xs py-2.5 px-3.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
@@ -311,10 +312,10 @@ export default function demo() {
                       Account
                     </button>
                   </div>
-                  <div className="xt-media-container bg-gray-600 h-48 ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="xt-media-container bg-gray-600 h-48 *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
-                  <div className="text-base py-8 px-9 ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="text-base py-8 px-9 *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -322,7 +323,7 @@ export default function demo() {
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
                   </div>
-                  <div className="text-sm py-6 px-7 bg-gray-300 mt-auto ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="text-sm py-6 px-7 bg-gray-300 mt-auto *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                       turpis.
@@ -344,7 +345,7 @@ export default function demo() {
           <div className="xt-overlay group">
             <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
-              <div className="xt-overlay-inner rounded-md shadow-overlay ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-overlay-inner rounded-md shadow-overlay *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card rounded-md text-black xt-links-default bg-white">
                   <button
                     type="button"
@@ -366,7 +367,7 @@ export default function demo() {
                     </svg>
                   </button>
 
-                  <div className="md:xt-card-group rounded-md ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="md:xt-card-group rounded-md *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <div className="text-base py-8 px-9 md:w-7/12">
                       <div className="xt-h4">Contact us</div>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -458,7 +459,7 @@ export default function demo() {
                       </form>
                     </div>
 
-                    <div className="md:w-5/12 flex flex-col ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                    <div className="md:w-5/12 flex flex-col *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                       <div className="xt-media-container bg-gray-600 md:rounded-tr-md h-48 md:xt-ratio-100">
                         <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                       </div>
@@ -487,7 +488,7 @@ export default function demo() {
           <div className="xt-overlay group">
             <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
-              <div className="xt-overlay-inner rounded-md shadow-overlay ** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+              <div className="xt-overlay-inner rounded-md shadow-overlay *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card rounded-md text-black xt-links-default bg-white">
                   <button
                     type="button"
@@ -509,7 +510,7 @@ export default function demo() {
                     </svg>
                   </button>
 
-                  <div className="md:xt-card-group rounded-md ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="md:xt-card-group rounded-md *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <div className="md:w-5/12 flex flex-col">
                       <div className="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full">
                         <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -602,7 +603,7 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="text-sm py-6 px-7 rounded-b-md bg-gray-300 ** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 **">
+                  <div className="text-sm py-6 px-7 rounded-b-md bg-gray-300 *** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <p>
                       Receive <strong>free discount</strong> periodically on all our products.
                     </p>

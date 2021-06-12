@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/drop'
+
 export default function demo() {
   return (
     <div>
@@ -11,7 +14,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4">
-            <div className="xt-card w-64 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card *** w-64 *** rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-lg"
@@ -31,7 +34,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="text-sm py-6 px-7">
+              <div className="*** text-sm py-6 px-7 ***">
                 <div className="xt-h5">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -50,7 +53,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4">
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card *** w-80 *** rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
@@ -70,7 +73,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="text-base py-8 px-9">
+              <div className="*** text-base py-8 px-9 ***">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -89,7 +92,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4">
-            <div className="xt-card w-96 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card *** w-96 *** rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-2xl"
@@ -109,7 +112,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="text-base py-8 px-9 md:text-lg md:py-9 md:px-10">
+              <div className="*** text-base py-8 px-9 md:text-lg md:py-9 md:px-10 ***">
                 <div className="xt-h3">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

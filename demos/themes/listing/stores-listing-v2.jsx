@@ -10,12 +10,12 @@ export default function demo() {
 
   return (
     <div className="demo--stores-listing-v2-react" ref={ref}>
-      <div className="** listing ** py-10">
+      <div className="*** listing *** py-10">
         <div className="container">
           <div className="xt-row xt-row-6 xt-row-stretch">
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -27,7 +27,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -77,8 +77,8 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -90,7 +90,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -124,8 +124,8 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -137,7 +137,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -187,8 +187,8 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -200,7 +200,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -234,8 +234,8 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -247,7 +247,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -297,8 +297,8 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="** listing-item ** block relative overflow-hidden w-full">
-                <div className="** listing-item-front ** absolute inset-0 xt-card rounded-md text-black xt-links-default">
+              <div className="*** listing-item *** block relative overflow-hidden w-full">
+                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
                   <div className="xt-media-container bg-gray-600 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -310,7 +310,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="** listing-item-back ** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"

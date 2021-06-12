@@ -24,6 +24,7 @@ const initGooglelocator = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Googlelocator(googlelocator, {
     initialLocate: false,
     initialSearch: false,
@@ -61,13 +62,13 @@ const initGooglelocator = ({ ref }) => {
       },
     },
     formatData: {
-      lat: function (self, marker) {
+      lat: (self, marker) => {
         return marker.lat
       },
-      lng: function (self, marker) {
+      lng: (self, marker) => {
         return marker.lng
       },
-      sort: function (self) {
+      sort: self => {
         if (self.searchInput.value === '') {
           self.locations.sort((a, b) => {
             const aName = a.marker.name.toUpperCase()
@@ -86,7 +87,7 @@ const initGooglelocator = ({ ref }) => {
           })
         }
       },
-      filter: function (self, marker, filters) {
+      filter: (self, marker, filters) => {
         let passed = true
         for (const filter of filters) {
           // if filter is checked
@@ -103,7 +104,7 @@ const initGooglelocator = ({ ref }) => {
         // if passed filter in
         return passed
       },
-      name: function (self, loc, el) {
+      name: (self, loc, el) => {
         let str = ''
         if (loc.marker.name) {
           str += `${loc.marker.name}`
@@ -114,7 +115,7 @@ const initGooglelocator = ({ ref }) => {
           el.innerHTML = str
         }
       },
-      address: function (self, loc, el) {
+      address: (self, loc, el) => {
         let str = ''
         if (loc.marker.address) {
           str += `${loc.marker.address}`
@@ -125,7 +126,7 @@ const initGooglelocator = ({ ref }) => {
           el.innerHTML = str
         }
       },
-      additional: function (self, loc, el) {
+      additional: (self, loc, el) => {
         let str = ''
         if (loc.marker.additional) {
           str += `${loc.marker.additional}`
@@ -136,7 +137,7 @@ const initGooglelocator = ({ ref }) => {
           el.innerHTML = str
         }
       },
-      direction: function (self, loc, el) {
+      direction: (self, loc, el) => {
         let str = 'https://www.google.com/maps/dir/?api=1&destination='
         if (loc.marker.name) {
           str += `${loc.marker.name}`
@@ -146,7 +147,7 @@ const initGooglelocator = ({ ref }) => {
         }
         el.setAttribute('href', encodeURI(str))
       },
-      distance: function (self, loc, el) {
+      distance: (self, loc, el) => {
         let distance
         if (loc.distance > 1000) {
           distance = `${Math.round(loc.distance / 1000)} Km`
@@ -155,7 +156,7 @@ const initGooglelocator = ({ ref }) => {
         }
         el.innerHTML = distance
       },
-      info: function (self, loc, el) {
+      info: (self, loc, el) => {
         return el.outerHTML
       },
     },
@@ -212,6 +213,7 @@ const initGooglelocator = ({ ref }) => {
       },
     ],
   })
+  /***/
 
   // change
 
@@ -236,7 +238,7 @@ const mountGooglelocator = ({ ref }) => {
 
   // init
 
-  window.demoGooglelocator = function () {
+  window.demoGooglelocator = () => {
     initGooglelocator({ ref })
   }
 

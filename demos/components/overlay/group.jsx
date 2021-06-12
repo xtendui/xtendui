@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/overlay'
+
 export default function demo() {
   return (
     <div>
@@ -34,8 +37,8 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="md:xt-card-group">
-                    <div className="text-base py-8 px-9 md:w-7/12">
+                  <div className="*** md:xt-card-group ***">
+                    <div className="text-base py-8 px-9 *** md:w-7/12 ***">
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -43,7 +46,7 @@ export default function demo() {
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                     </div>
-                    <div className="text-sm py-6 px-7 md:w-5/12 rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+                    <div className="text-sm py-6 px-7 *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
@@ -88,8 +91,8 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="md:xt-card-group">
-                    <div className="text-base py-8 px-9 md:w-7/12 bg-gray-300 md:rounded-tl-md">
+                  <div className="*** md:xt-card-group ***">
+                    <div className="text-base py-8 px-9 *** md:w-7/12 *** bg-gray-300 md:rounded-tl-md">
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -97,7 +100,7 @@ export default function demo() {
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
                     </div>
-                    <div className="md:w-5/12">
+                    <div className="*** md:w-5/12 ***">
                       <div className="text-sm py-6 px-7 bg-gray-300 md:rounded-tr-md">
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec

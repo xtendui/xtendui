@@ -7,7 +7,7 @@ export default function demo() {
           <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
             <button
               type="button"
-              className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
+              className="*** xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl ***"
               aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export default function demo() {
           <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
             <button
               type="button"
-              className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
+              className="*** xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl ***"
               aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

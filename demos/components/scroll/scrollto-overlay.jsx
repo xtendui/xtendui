@@ -353,8 +353,9 @@ const mountSticky = ({ ref }) => {
 /* mountScrollto */
 
 const mountScrollto = () => {
-  // Scrollto
+  // init
 
+  /***/
   let self = new Xt.Scrollto(document.documentElement, {
     space: ({ self }) => {
       let space = 0
@@ -373,6 +374,7 @@ const mountScrollto = () => {
     class: false,
     scrollActivation: false,
   })
+  /***/
 
   // scrollto
 

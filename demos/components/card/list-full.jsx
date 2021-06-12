@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-card rounded-md text-black xt-links-default">
         <div className="text-base">
-          <div className="xt-list xt-list-6 md:flex-nowrap items-baseline">
+          <div className="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

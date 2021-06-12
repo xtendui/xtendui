@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
+          <div className="xt-card rounded-md *** text-black xt-links-default bg-gray-200 ***">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Default</div>
               <p>
@@ -17,7 +17,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
+          <div className="xt-card rounded-md *** text-white xt-links-inverse bg-primary-500 ***">
             <div className="text-base py-8 px-9">
               <div className="xt-h4">Primary</div>
               <p>

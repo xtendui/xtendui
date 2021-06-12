@@ -94,6 +94,7 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     matches: {
       '(hover: none)': {
@@ -101,6 +102,7 @@ const mountSlider = ({ ref }) => {
       },
     },
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

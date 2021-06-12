@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/overlay'
+
 export default function demo() {
   return (
     <div>
@@ -34,7 +37,7 @@ export default function demo() {
                   </svg>
                 </button>
                 <div className="text-base py-8 px-9">
-                  <div className="xt-list xt-list-6 md:flex-nowrap items-baseline">
+                  <div className="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

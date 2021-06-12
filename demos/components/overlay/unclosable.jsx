@@ -1,4 +1,5 @@
 import React from 'react'
+import 'xtendui'
 import 'xtendui/src/overlay'
 
 export default function demo() {

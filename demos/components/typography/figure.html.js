@@ -9,7 +9,7 @@ const html = /* HTML */ `
     </figure>
 
     <figure>
-      <video class="xt-media" poster="/placeholder-1080.jpg" muted loop playsinline controls>
+      <video poster="/placeholder-1080.jpg" muted loop playsinline controls>
         <source type="video/mp4" src="/placeholder-1080.mp4" />
       </video>
     </figure>

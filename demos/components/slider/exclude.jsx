@@ -22,7 +22,7 @@ export default function demo() {
 
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 ** on **"
+            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 *** on ***"
             data-xt-group="group1">
             Group1
           </button>
@@ -138,11 +138,13 @@ const mountToggle = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Toggle(toggle, {
     elements: '.xt-list > button',
     targets: '.xt-toggle',
     min: 1,
   })
+  /***/
 
   // change
 
@@ -189,9 +191,11 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   const self = new Xt.Slider(slider, {
     exclude: '.hidden',
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 

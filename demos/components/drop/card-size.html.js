@@ -12,11 +12,11 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-64 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-lg" aria-label="Close">
               ${classes.iconX()}
             </button>
-            <div class="${classes.cardSm()}">
+            <div class="*** ${classes.cardSm()} ***">
               <div class="xt-h5">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -36,11 +36,11 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-80 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
             </button>
-            <div class="${classes.cardMd()}">
+            <div class="*** ${classes.cardMd()} ***">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -60,11 +60,11 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-96 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-96 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${classes.iconX()}
             </button>
-            <div class="${classes.cardLg()}">
+            <div class="*** ${classes.cardLg()} ***">
               <div class="xt-h3">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

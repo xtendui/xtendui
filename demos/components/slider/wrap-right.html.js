@@ -41,7 +41,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} ** on **">
+          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** on ***">
             <div class="xt-card ${classes.cardRadius()} ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
             </div>

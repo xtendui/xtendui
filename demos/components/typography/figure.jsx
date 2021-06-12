@@ -11,7 +11,7 @@ export default function demo() {
       </figure>
 
       <figure>
-        <video className="xt-media" poster="/placeholder-1080.jpg" muted loop playsInline controls>
+        <video poster="/placeholder-1080.jpg" muted loop playsInline controls>
           <source type="video/mp4" src="/placeholder-1080.mp4" />
         </video>
       </figure>

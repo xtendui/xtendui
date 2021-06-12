@@ -37,11 +37,13 @@ const mountSlider = ({ ref }) => {
 
   // slider
 
+  /***/
   let self = new Xt.Slider(slider, {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
@@ -160,11 +162,13 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
+      /***/
       // dragposition (set internal dragPosition to instant position after on)
       gsap.killTweensOf(self.detail)
       gsap.set(self.detail, {
         dragPosition: self.detail.dragFinal,
       })
+      /***/
     }
   }
 

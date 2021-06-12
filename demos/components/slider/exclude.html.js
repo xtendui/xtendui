@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} ** on **"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** on ***"
           data-xt-group="group1"
         >
           Group1

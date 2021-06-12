@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/tooltip'
+
 export default function demo() {
   return (
     <div className="demo--tooltip-disable-react">

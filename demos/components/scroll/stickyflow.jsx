@@ -1,4 +1,5 @@
 import React from 'react'
+import 'xtendui'
 import 'xtendui/src/stickyflow'
 
 export default function demo() {

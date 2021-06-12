@@ -152,6 +152,7 @@ const mountSliders = ({ ref }) => {
 
     // slider
 
+    /***/
     let self = new Xt.Slider(slider, {
       align: 'left',
       jump: false,
@@ -160,6 +161,7 @@ const mountSliders = ({ ref }) => {
         manual: true,
       },
     })
+    /***/
 
     // on
 

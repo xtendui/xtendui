@@ -114,7 +114,7 @@ export default function demo() {
             </button>
           </nav>
 
-          <span className="** xt-mousefollow fixed ** xt-loader group hover-none:hidden">
+          <span className="*** xt-mousefollow fixed *** xt-loader group hover-none:hidden">
             <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -182,12 +182,14 @@ const mountSlider = ({ ref }) => {
 
   // init
 
+  /***/
   let self = new Xt.Slider(slider, {
     auto: {
       time: 4000,
       initial: false,
     },
   })
+  /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
 
