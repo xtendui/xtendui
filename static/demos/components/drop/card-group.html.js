@@ -21,7 +21,9 @@ const html = /* HTML */ `
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>
-              <div class="${classes.cardSm()} *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+              <div
+                class="${classes.cardSm()} *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300"
+              >
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.

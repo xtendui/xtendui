@@ -32,7 +32,9 @@ const html = /* HTML */ `
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
                   </div>
-                  <div class="${classes.cardSm()} *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+                  <div
+                    class="${classes.cardSm()} *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300"
+                  >
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed

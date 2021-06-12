@@ -21,7 +21,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -66,7 +68,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -101,7 +105,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -146,7 +152,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -181,7 +189,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
@@ -226,7 +236,9 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}">
+              <div
+                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"

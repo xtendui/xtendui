@@ -24,7 +24,9 @@ const html = /* HTML */ `
         Text
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** xt-link ***">Link</button>
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} *** xt-link ***">
+        Link
+      </button>
     </div>
   </div>
 `
