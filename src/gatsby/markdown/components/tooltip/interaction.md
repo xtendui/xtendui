@@ -47,7 +47,7 @@ If you need to toggle **multiple elements or targets** with the **same element o
 </div>
 
 <demo>
-  <demoinline src="demos/components/tooltip/usage-multiple-group">
+  <demoinline src="demos/components/tooltip/multiple-group">
   </demoinline>
 </demo>
 

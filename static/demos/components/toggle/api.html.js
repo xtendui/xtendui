@@ -92,14 +92,14 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
-        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
+        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
           Target Group 0
         </div>
-        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
+        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
           Target Group 0b
         </div>
-        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
-        <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
       </div>
     </div>
 

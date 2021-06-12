@@ -11,10 +11,10 @@ const html = /* HTML */ `
           screen
         </button>
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container p-0">
+          <div class="xt-backdrop bg-black opacity-25"></div>
+          <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
@@ -58,10 +58,10 @@ const html = /* HTML */ `
           screen full
         </button>
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container p-0">
+          <div class="xt-backdrop bg-black opacity-25"></div>
+          <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
@@ -86,10 +86,10 @@ const html = /* HTML */ `
           screen group
         </button>
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div class="xt-overlay-container p-0">
+          <div class="xt-backdrop bg-black opacity-25"></div>
+          <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"

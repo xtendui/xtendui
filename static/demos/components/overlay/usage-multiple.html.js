@@ -13,10 +13,10 @@ const html = /* HTML */ `
         overlay 0
       </button>
 
-      <div class="xt-overlay">
-        <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-        <div class="xt-overlay-container max-w-3xl">
-          <div class="xt-overlay-inner">
+      <div class="*** xt-overlay ***">
+        <div class="xt-backdrop bg-black opacity-25"></div>
+        <div class="*** xt-overlay-container *** max-w-3xl">
+          <div class="*** xt-overlay-inner ***">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
@@ -57,10 +57,10 @@ const html = /* HTML */ `
         overlay 1
       </button>
 
-      <div class="xt-overlay">
-        <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-        <div class="xt-overlay-container max-w-3xl">
-          <div class="xt-overlay-inner">
+      <div class="*** xt-overlay ***">
+        <div class="xt-backdrop bg-black opacity-25"></div>
+        <div class="*** xt-overlay-container *** max-w-3xl">
+          <div class="*** xt-overlay-inner ***">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"

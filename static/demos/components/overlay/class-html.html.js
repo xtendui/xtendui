@@ -14,7 +14,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop bg-black  transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div
               class="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0"
@@ -56,7 +56,7 @@ const html = /* HTML */ `
                     </button>
 
                     <div class="xt-overlay">
-                      <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+                      <div class="xt-backdrop bg-black opacity-25"></div>
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">
                           <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">

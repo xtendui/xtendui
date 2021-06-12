@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Input </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputUnderline()}"
+            class="${classes.input()} *** ${classes.inputUnderline()} ***"
             aria-label="Input"
             placeholder="Input"
           />
@@ -18,7 +18,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Disabled </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputUnderline()}"
+            class="${classes.input()} *** ${classes.inputUnderline()} ***"
             aria-label="Input"
             placeholder="Input"
             disabled
@@ -27,13 +27,13 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> File </label>
-          <input type="file" class="${classes.input()} ${classes.inputUnderline()}" aria-label="File" />
+          <input type="file" class="${classes.input()} *** ${classes.inputUnderline()} ***" aria-label="File" />
         </div>
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} ${classes.inputUnderline()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} *** ${classes.inputUnderline()} *** h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
           ></textarea>
@@ -41,7 +41,7 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Select </label>
-          <select class="${classes.input()} xt-select ${classes.inputUnderline()}" aria-label="Select">
+          <select class="${classes.input()} xt-select *** ${classes.inputUnderline()} ***" aria-label="Select">
             <option selected value="">Select an option</option>
             <option>Test</option>
             <option>Test</option>
@@ -52,7 +52,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Select multiple </label>
           <select
-            class="${classes.input()} xt-select ${classes.inputUnderline()}"
+            class="${classes.input()} xt-select *** ${classes.inputUnderline()} ***"
             multiple
             aria-label="Select multiple"
           >

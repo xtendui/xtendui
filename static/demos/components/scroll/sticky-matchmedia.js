@@ -19,6 +19,9 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // match media
+
+  /***/
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {
       // sticky
@@ -32,6 +35,7 @@ const mountSticky = ({ ref }) => {
         pinSpacing: false,
       })
     },
+    /***/
   })
 
   // unmount

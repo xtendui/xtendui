@@ -19,11 +19,11 @@ const html = /* HTML */ `
         Toggle same
       </button>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-2">
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-2">
         Target 0
       </div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-3">
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-3">
         Target 1
       </div>
     </div>

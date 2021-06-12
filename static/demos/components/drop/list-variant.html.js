@@ -12,15 +12,15 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <a href="#" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()} ***">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()} ***">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()} ***">
                 Amet
               </button>
             </nav>
@@ -37,15 +37,15 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()}">
+          <div class="xt-card w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()} ***">
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}">
+              <a href="#" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonPrimaryDrop()} ***">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}">
+              <button type="button" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonPrimaryDrop()} ***">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}">
+              <button type="button" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonPrimaryDrop()} ***">
                 Amet
               </button>
             </nav>

@@ -12,11 +12,11 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div class="xt-backdrop bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
+                class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96 ***"
               >
                 <button
                   type="button"
@@ -61,7 +61,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div class="xt-backdrop bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
@@ -75,7 +75,7 @@ const html = /* HTML */ `
                 <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div class="${classes.cardMd()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">
+                <div class="${classes.cardMd()} *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64 ***">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

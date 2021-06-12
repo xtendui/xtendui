@@ -41,15 +41,15 @@ const html = /* HTML */ `
         Toggle 4
       </button>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 4</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 4</div>
     </div>
   </div>
 `

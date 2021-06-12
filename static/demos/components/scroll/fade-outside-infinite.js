@@ -40,6 +40,7 @@ const fade = ({ ref }) => {
 
   // fade
 
+  /***/
   ScrollTrigger.batch(items, {
     onEnter: batch => {
       gsap.killTweensOf(batch)
@@ -101,4 +102,5 @@ const fade = ({ ref }) => {
       }
     },
   })
+  /***/
 }

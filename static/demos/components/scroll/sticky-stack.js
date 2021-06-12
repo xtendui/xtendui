@@ -19,6 +19,9 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // sticky
+
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-top'),
     start: 'top top',
@@ -27,7 +30,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-topsecond'),
     start: 'top top',
@@ -37,7 +42,9 @@ const mountSticky = ({ ref }) => {
     pinSpacing: false,
     toggleClass: 'on',
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-topthird'),
     start: () => `top top+=${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
@@ -50,7 +57,9 @@ const mountSticky = ({ ref }) => {
       scrollTrigger.refresh()
     },
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-bottom'),
     start: 'bottom bottom',
@@ -59,7 +68,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-bottomsecond'),
     start: () => `bottom bottom-=${document.querySelector('.sticky--stack-bottom').offsetHeight}px`,
@@ -68,6 +79,7 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
   // unmount
 

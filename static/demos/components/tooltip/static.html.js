@@ -11,7 +11,7 @@ const html = /* HTML */ `
           static
         </button>
 
-        <div class="xt-tooltip p-2 xt-tooltip-static xt-tooltip-nospace">
+        <div class="xt-tooltip *** xt-tooltip-static ***">
           <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}

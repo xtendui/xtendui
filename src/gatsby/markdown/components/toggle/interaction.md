@@ -47,7 +47,7 @@ If you need to toggle **multiple elements or targets** with the **same element o
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/usage-multiple-group">
+  <demoinline src="demos/components/toggle/multiple-group">
   </demoinline>
 </demo>
 
@@ -62,9 +62,9 @@ You can **disable same group elements activation** with the option `groupElement
 </div>
 
 <demo>
-  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
+  <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
+  <demoinline src="demos/components/toggle/unique-nogroupelements">
   </demoinline>
 </demo>
 

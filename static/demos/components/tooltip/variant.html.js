@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} ***">
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
             molestie ${classes.iconLink()} diam nec euismod commodo.
           </div>
@@ -29,7 +29,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-2">
           <div
-            class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardPrimary()}"
+            class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardPrimary()} ***"
           >
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
             molestie ${classes.iconLink()} diam nec euismod commodo.

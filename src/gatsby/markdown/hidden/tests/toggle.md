@@ -31,9 +31,9 @@ Test activation and group activation.
   </demoinline>
   <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-multiple-group">
+  <demoinline src="demos/components/toggle/multiple-group">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-multiple-nogroupelements">
+  <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
 </demo>
 

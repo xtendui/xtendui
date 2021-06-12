@@ -24,6 +24,9 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  /* sticky for demo purpose remove this */
+  // sticky
+
   ScrollTrigger.create({
     trigger: ref.querySelector('.xt-sticky'),
     start: 'top top',

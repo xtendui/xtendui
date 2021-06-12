@@ -17,7 +17,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="xt-sticky sticky--top">
+    <div class="*** xt-sticky *** *** sticky--top ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
@@ -56,9 +56,9 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="relative">
-      <div class="absolute w-full">
-        <div class="xt-sticky sticky--bottom">
+    <div class="*** relative ***">
+      <div class="*** absolute w-full ***">
+        <div class="*** xt-sticky *** *** sticky--bottom ***">
           <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
             <div class="xt-h4">Bottom</div>
           </div>

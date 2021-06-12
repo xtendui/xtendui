@@ -31,7 +31,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay" data-xt-group="group0">
-        <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+        <div class="xt-backdrop bg-black opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
@@ -93,7 +93,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay" data-xt-group="group1">
-        <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+        <div class="xt-backdrop bg-black opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
@@ -155,7 +155,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay" data-xt-group="group2">
-        <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+        <div class="xt-backdrop bg-black opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">

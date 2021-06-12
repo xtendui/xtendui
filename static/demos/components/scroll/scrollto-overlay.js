@@ -27,6 +27,7 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  /* sticky for demo purpose remove this */
   // vars
 
   const overlay = ref.querySelector('.xt-overlay')

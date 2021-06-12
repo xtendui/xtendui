@@ -40,6 +40,7 @@ const fade = ({ ref }) => {
 
   // match media
 
+  /***/
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {
       // fade
@@ -107,4 +108,5 @@ const fade = ({ ref }) => {
       }
     },
   })
+  /***/
 }

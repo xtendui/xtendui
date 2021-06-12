@@ -29,6 +29,7 @@ const mountDrops = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
+    /***/
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // reset to current when no activation
@@ -37,6 +38,7 @@ const mountDrops = ({ ref }) => {
         current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
       }
     }
+    /***/
   }
 
   for (const target of self.targets) {

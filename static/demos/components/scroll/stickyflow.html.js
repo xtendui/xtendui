@@ -51,8 +51,8 @@ const html = /* HTML */ `
             class="w-full md:w-6/12 lg:w-5/12"
             data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}"
           >
-            <div class="stickyflow-filler pointer-events-none absolute md:relative"></div>
-            <div class="md:py-12 md:sticky stickyflow">
+            <div class="*** stickyflow-filler pointer-events-none absolute md:relative ***"></div>
+            <div class="md:py-12 *** md:sticky stickyflow ***">
               <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
 
               <div class="xt-h5 mb-6">€&nbsp;229,00</div>

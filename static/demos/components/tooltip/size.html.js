@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative *** ${classes.tooltipSm()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -27,7 +27,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative *** ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -42,7 +42,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="relative ${classes.tooltipLg()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div class="relative *** ${classes.tooltipLg()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -58,7 +58,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-2">
           <div
-            class="relative ${classes.tooltipMd()} max-w-lg ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative *** ${classes.tooltipMd()} max-w-lg ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
             fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus

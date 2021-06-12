@@ -39,7 +39,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
-            <div class="${classes.cardMd()}">
+            <div class="*** ${classes.cardMd()} ***">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

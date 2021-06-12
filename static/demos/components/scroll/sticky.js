@@ -19,6 +19,9 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // sticky
+
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--top'),
     start: 'top top',
@@ -27,7 +30,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--bottom'),
     start: 'bottom bottom',
@@ -36,6 +41,7 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
   // unmount
 

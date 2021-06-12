@@ -47,7 +47,7 @@ If you need to toggle **multiple elements or targets** with the **same element o
 </div>
 
 <demo>
-  <demoinline src="demos/components/overlay/usage-multiple-group">
+  <demoinline src="demos/components/overlay/multiple-group">
   </demoinline>
 </demo>
 

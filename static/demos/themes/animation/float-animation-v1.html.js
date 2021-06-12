@@ -55,7 +55,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4 group">
           <div class="xt-drop-inner">
-            <div class="xt-design ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
+            <div class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
             <div class="xt-card w-64 py-3.5 ${animItem()}">
               <nav class="xt-list flex-col">
                 <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
@@ -81,7 +81,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4 group">
           <div class="xt-drop-inner">
-            <div class="xt-design ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
+            <div class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
             <div class="xt-card w-64 ${animItem()}">
               <button
                 type="button"
@@ -117,7 +117,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-2 group">
             <div class="xt-tooltip-inner">
-              <div class="xt-design ${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"></div>
+              <div class="*** xt-design *** ${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"></div>
               <div class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse ${animItem()}">
                 Lorem ipsum dolor sit amet
               </div>
@@ -137,7 +137,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-2 group">
             <div class="xt-tooltip-inner">
-              <div class="xt-design ${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** ${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"></div>
               <div class="font-semibold text-black xt-links-default ${animItem()}">
                 <form class="text-sm">
                   <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem()}">
@@ -174,7 +174,7 @@ const html = /* HTML */ `
           screen full
         </button>
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -184,7 +184,7 @@ const html = /* HTML */ `
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** rounded-md bg-white ${animDesign()}"></div>
 
               <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem()}">
                 <div class="xt-media-container bg-gray-600 xt-ratio-100">
@@ -202,10 +202,10 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-design bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** bg-white ${animDesign()}"></div>
 
               <div class="xt-card xt-min-h-screen ${cardWhite()} ${animItem()}">
                 <button
@@ -264,10 +264,10 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
 
               <div class="xt-card ${classes.cardRadius()} ${cardWhite()} ${animItem()}">
                 <button
@@ -392,10 +392,10 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"></div>
 
               <div class="xt-card ${classes.cardRadius()} ${cardWhite()} ${animItem()}">
                 <button

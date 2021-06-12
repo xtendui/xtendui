@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div class="xt-backdrop bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
@@ -41,7 +41,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div class="xt-backdrop bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
@@ -55,7 +55,7 @@ const html = /* HTML */ `
                 <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div class="${classes.cardMd()}">
+                <div class="*** ${classes.cardMd()} ***">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -90,7 +90,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay">
-          <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div class="xt-backdrop bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">

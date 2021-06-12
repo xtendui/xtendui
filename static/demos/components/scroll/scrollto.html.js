@@ -2,6 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--scrollto">
+    <!-- sticky for demo purpose remove this -->
     <div class="xt-sticky">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-list xt-list-3">

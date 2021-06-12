@@ -27,13 +27,13 @@ const html = /* HTML */ `
         Toggle 1 inverse
       </button>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()} ">Target normal</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} ">Target normal</div>
 
-      <div class="xt-card xt-toggle-inverse ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
+      <div class="xt-card *** xt-toggle-inverse *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
         Target 0 inverse
       </div>
 
-      <div class="xt-card xt-toggle-inverse ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
+      <div class="xt-card *** xt-toggle-inverse *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-duration-out="25">
         Target 1 inverse
       </div>
     </div>

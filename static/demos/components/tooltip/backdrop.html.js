@@ -15,7 +15,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-tooltip p-2">
-            <div class="xt-backdrop bg-black opacity-25"></div>
+            <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
             <div
               class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
@@ -37,7 +37,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="xt-backdrop bg-black opacity-25"></div>
+          <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
