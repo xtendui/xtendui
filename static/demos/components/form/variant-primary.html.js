@@ -5,20 +5,20 @@ const html = /* HTML */ `
     <form class="text-sm py-4 px-6 bg-primary-500">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Input </label>
+          <label class="${classes.label()} mb-3 *** ${classes.labelPrimary()} ***"> Input </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
+            class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputPrimary()} ***"
             aria-label="Input"
             placeholder="Input"
           />
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Disabled </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Disabled </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
+            class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputPrimary()} ***"
             aria-label="Input"
             placeholder="Input"
             disabled
@@ -26,27 +26,27 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> File </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> File </label>
           <input
             type="file"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputPrimary()}"
+            class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputPrimary()} ***"
             aria-label="File"
           />
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Textarea </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputPrimary()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} *** ${classes.inputRadius()} ${classes.inputPrimary()} *** h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
           ></textarea>
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Select </label>
           <select
-            class="${classes.input()} xt-select xt-select-primary ${classes.inputRadius()} ${classes.inputPrimary()}"
+            class="${classes.input()} xt-select *** xt-select-primary  ${classes.inputRadius()} ${classes.inputPrimary()} ***"
             aria-label="Select"
           >
             <option selected value="">Select an option</option>
@@ -57,9 +57,9 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Select multiple </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Select multiple </label>
           <select
-            class="${classes.input()} xt-select xt-select-primary ${classes.inputRadius()} ${classes.inputPrimary()}"
+            class="${classes.input()} xt-select *** xt-select-primary ${classes.inputRadius()} ${classes.inputPrimary()} ***"
             aria-label="Select multiple"
             multiple
           >
@@ -70,18 +70,18 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Checkbox </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkPrimary()}"
+                  class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkPrimary()} ***"
                   checked
                   disabled
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -90,12 +90,12 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkPrimary()}"
+                  class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkPrimary()} ***"
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -106,18 +106,18 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Radio </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
-                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioPrimary()}"
+                  class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                   name="radio-primary"
                   checked
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -126,13 +126,13 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
-                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioPrimary()}"
+                  class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                   name="radio-primary"
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -143,13 +143,13 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelPrimary()}"> Switch </label>
+          <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-switch ${classes.radioRadius()} ${classes.radioPrimary()}" />
-                <span class="ml-3 text-white xt-links-inverse"
+              <label class="*** ${classes.checkLabel()} ***">
+                <input type="checkbox" class="xt-check xt-switch *** ${classes.radioRadius()} ${classes.radioPrimary()} ***" />
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -158,14 +158,14 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
-                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchPrimary()}"
+                  class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchPrimary()} ***"
                   name="switch-primary"
                   checked
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -174,13 +174,13 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-full">
-              <label class="${classes.checkLabel()}">
+              <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
-                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchPrimary()}"
+                  class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchPrimary()} ***"
                   name="switch-primary"
                 />
-                <span class="ml-3 text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span

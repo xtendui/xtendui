@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--infinitescroll">
-    <div class="infinitescroll py-10">
+    <div class="*** infinitescroll *** py-10">
       <div class="container">
         <h1>Category Page</h1>
 
@@ -27,7 +27,7 @@ const html = /* HTML */ `
             >
               <span class="content"> Load previous page </span>
 
-              <span class="${classes.loader()} infinitescroll-spinner">
+              <span class="${classes.loader()} *** infinitescroll-spinner ***">
                 <span class="${classes.spinner()} w-6 h-6 text-white">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </span>
@@ -144,7 +144,7 @@ const html = /* HTML */ `
           >
             <span class="content"> Show more products </span>
 
-            <span class="${classes.loader()} infinitescroll-spinner">
+            <span class="${classes.loader()} *** infinitescroll-spinner ***">
               <span class="${classes.spinner()} w-6 h-6 text-white">
                 ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
               </span>

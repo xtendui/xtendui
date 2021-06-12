@@ -13,9 +13,9 @@ const html = /* HTML */ `
           </p>
         </div>
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500 w-1 top-1/4 bottom-1/4">
+          <span class="${classes.filler()} text-primary-500 *** w-1 top-1/4 bottom-1/4 ***">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
-            <span class="block absolute bg-current w-full animate-xt-filler-y"></span>
+            <span class="block absolute bg-current *** w-full animate-xt-filler-y ***"></span>
           </span>
         </span>
       </div>
@@ -26,9 +26,9 @@ const html = /* HTML */ `
       >
         Lorem ipsum
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500 w-1 top-1/4 bottom-1/4">
+          <span class="${classes.filler()} text-primary-500 *** w-1 top-1/4 bottom-1/4 ***">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
-            <span class="block absolute bg-current w-full animate-xt-filler-y"></span>
+            <span class="block absolute bg-current *** w-full animate-xt-filler-y ***"></span>
           </span>
         </span>
       </button>

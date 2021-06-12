@@ -1,6 +1,6 @@
 const html = /* HTML */ `
   <div class="demo--table-border">
-    <table class="my-4 xt-my-auto w-full rounded-xl border-2 border-separate">
+    <table class="my-4 xt-my-auto w-full rounded-xl border-2 *** border-separate ***">
       <thead>
         <tr>
           <th class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">

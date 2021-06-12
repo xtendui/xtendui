@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
-        <div class="w-full md:w-auto">
+        <div class="w-full *** md:w-auto ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
           <input
             type="text"
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full md:w-auto">
+        <div class="w-full *** md:w-auto ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
           <input
             type="text"
@@ -22,7 +22,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full md:w-auto">
+        <div class="w-full *** md:w-auto ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
           <input
             type="text"
@@ -31,7 +31,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full md:w-auto">
+        <div class="w-full *** md:w-auto ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
           <input
             type="text"
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -56,7 +56,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -72,7 +72,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -84,7 +84,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -101,7 +101,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -111,7 +111,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -123,7 +123,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-auto">
+            <div class="w-full *** md:w-auto ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"

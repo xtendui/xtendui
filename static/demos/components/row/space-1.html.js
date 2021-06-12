@@ -1,6 +1,6 @@
 const html = /* HTML */ `
   <div>
-    <div class="xt-row xt-row-1">
+    <div class="xt-row *** xt-row-1 ***">
       <div class="w-4/12">
         <div class="w-full h-12 bg-gray-300"></div>
       </div>

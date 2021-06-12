@@ -2,8 +2,8 @@ const html = /* HTML */ `
   <div>
     <div class="listing py-10">
       <div class="container">
-        <div class="xt-row xt-row-6">
-          <div class="w-6/12 md:w-4/12">
+        <div class="*** xt-row xt-row-6 ***">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -15,7 +15,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12 md:w-4/12">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -27,7 +27,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12 md:w-4/12">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -39,7 +39,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12 md:w-4/12">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -51,7 +51,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12 md:w-4/12">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -63,7 +63,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12 md:w-4/12">
+          <div class="*** w-6/12 md:w-4/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -75,7 +75,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12">
+          <div class="*** w-6/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -87,7 +87,7 @@ const html = /* HTML */ `
             </a>
           </div>
 
-          <div class="w-6/12">
+          <div class="*** w-6/12 ***">
             <a href="#" class="listing-item text-black">
               <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />

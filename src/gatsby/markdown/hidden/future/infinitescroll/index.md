@@ -115,3 +115,7 @@ self = null
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>
+
+## Other
+
+Style on `self.object` the classes `.xt-infinitescroll-first` and `.xt-infinitescroll-last` for when the infinitescroll is on first or on last page.

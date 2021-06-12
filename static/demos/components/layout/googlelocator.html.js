@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--googlelocator">
     <div class="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
-      <div class="googlelocator-aside flex flex-col w-full relative z-10">
+      <div class="*** googlelocator-aside *** flex flex-col w-full relative z-10">
         <div class="relative p-6 border-b border-gray-200">
           <form class="text-sm">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
@@ -74,7 +74,7 @@ const html = /* HTML */ `
                   <input
                     type="checkbox"
                     class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
-                    name="googlelocator-fav"
+                    name="type-fav"
                     value="fav"
                   />
                   <span class="${classes.checkContent()}">Favourite</span>
@@ -84,33 +84,33 @@ const html = /* HTML */ `
           </form>
         </div>
 
-        <div class="googlelocator-aside-body relative w-full p-6 xt-overflow-sub overflow-y-scroll">
-          <div class="googlelocator-result googlelocator-result--initial text-xs pb-4 border-b border-gray-200">
+        <div class="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll">
+          <div class="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-200">
             Insert your position and find a place near you
           </div>
 
-          <div class="googlelocator-result googlelocator-result--error text-xs pb-4 border-b border-gray-200">
+          <div class="*** googlelocator-result googlelocator-result--error *** text-xs pb-4 border-b border-gray-200">
             Request timed out, retry
           </div>
 
-          <div class="googlelocator-result googlelocator-result--noplace text-xs pb-4 border-b border-gray-200">
+          <div class="*** googlelocator-result googlelocator-result--noplace *** text-xs pb-4 border-b border-gray-200">
             Not a valid place
           </div>
 
-          <div class="googlelocator-result googlelocator-result--empty text-xs pb-4 border-b border-gray-200">
+          <div class="*** googlelocator-result googlelocator-result--empty *** text-xs pb-4 border-b border-gray-200">
             No place found
           </div>
 
-          <div class="googlelocator-result googlelocator-result--founds text-xs pb-4 border-b border-gray-200">
-            <span class="googlelocator-result--found"></span>
+          <div class="*** googlelocator-result googlelocator-result--founds *** text-xs pb-4 border-b border-gray-200">
+            <span class="*** googlelocator-result--found ***"></span>
             places found
           </div>
 
-          <div class="googlelocator-items">
+          <div class="*** googlelocator-items ***">
             <script type="text/x-template">
-              <div class="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
+              <div class="*** googlelocator-item *** py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600" tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
-                  <div class="googlelocator-item-content text-xs leading-relaxed">
+                  <div class="*** googlelocator-item-content *** text-xs leading-relaxed">
                     <div class="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
                     <address class="not-italic" data-xt-populate="address"></address>
                     <div data-xt-populate="additional"></div>
@@ -126,9 +126,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="googlelocator-main relative flex-auto min-h-full md:absolute md:inset-0">
+      <div class="*** googlelocator-main *** relative flex-auto min-h-full md:absolute md:inset-0">
         <div class="relative w-full h-full">
-          <div class="googlelocator-main-map w-full h-full"></div>
+          <div class="*** googlelocator-main-map *** w-full h-full"></div>
 
           <button
             type="button"

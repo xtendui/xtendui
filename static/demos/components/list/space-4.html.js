@@ -2,11 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <nav class="xt-list xt-list-4 flex-col">
+    <nav class="xt-list *** xt-list-4 *** flex-col">
       <div>
-        <div class="xt-list xt-list-4">
+        <div class="xt-list *** xt-list-4 ***">
           <div>
-            <div class="xt-list xt-list-4 flex-col">
+            <div class="xt-list *** xt-list-4 *** flex-col">
               <button
                 type="button"
                 class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
@@ -47,7 +47,7 @@ const html = /* HTML */ `
       </div>
 
       <div>
-        <div class="xt-list xt-list-4">
+        <div class="xt-list *** xt-list-4 ***">
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"

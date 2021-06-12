@@ -28,4 +28,4 @@ Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com
 
 ## Form note
 
-Refer to [form notes](/components/form/other#fieldset-legend-and-note).
+Refer to [form notes](/components/form/other#other).

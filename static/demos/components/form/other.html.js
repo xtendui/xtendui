@@ -3,10 +3,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <form class="text-sm">
-      <fieldset class="my-8 xt-my-auto">
+      <fieldset class="*** my-8 xt-my-auto ***">
         <div class="xt-row xt-row-x-6 xt-row-y-4">
           <div class="w-full">
-            <legend class="text-2xl font-bold leading-snug">Legend #1</legend>
+            <legend class="*** text-2xl font-bold leading-snug ***">Legend #1</legend>
           </div>
 
           <div class="w-full md:w-6/12">
@@ -16,7 +16,7 @@ const html = /* HTML */ `
               class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
               aria-label="Lorem ipsum"
             />
-            <div class="mt-3 ${classes.note()}">
+            <div class="*** mt-3 ${classes.note()} ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
@@ -53,7 +53,7 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div class="mt-3 ${classes.note()}">
+            <div class="*** mt-3 ${classes.note()} ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
@@ -62,10 +62,10 @@ const html = /* HTML */ `
         </div>
       </fieldset>
 
-      <fieldset class="my-8 xt-my-auto">
+      <fieldset class="*** my-8 xt-my-auto ***">
         <div class="xt-row xt-row-x-6 xt-row-y-4">
           <div class="w-full">
-            <legend class="text-2xl font-bold leading-snug">Legend #2</legend>
+            <legend class="*** text-2xl font-bold leading-snug ***">Legend #2</legend>
           </div>
 
           <div class="w-full">
@@ -99,7 +99,7 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                   >
                 </label>
-                <div class="mt-3 ${classes.note()}">
+                <div class="*** mt-3 ${classes.note()} ***">
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -144,7 +144,7 @@ const html = /* HTML */ `
                         Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                       >
                     </label>
-                    <div class="mt-3 ${classes.note()}">
+                    <div class="*** mt-3 ${classes.note()} ***">
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
@@ -156,7 +156,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full">
-            <legend class="text-2xl font-bold leading-snug">Legend #3</legend>
+            <legend class="*** text-2xl font-bold leading-snug ***">Legend #3</legend>
           </div>
 
           <div class="w-full">
@@ -185,7 +185,7 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div class="mt-3 ${classes.note()}">
+            <div class="*** mt-3 ${classes.note()} ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.

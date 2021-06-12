@@ -1,5 +1,5 @@
 const html = /* HTML */ `
-  <ul class="xt-ul demo--listcustom">
+  <ul class="*** xt-ul demo--listcustom ***">
     <ul>
       <li>
         <p><strong>Lorem ipsum dolor sit amet.</strong></p>

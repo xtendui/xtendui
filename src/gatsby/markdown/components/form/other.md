@@ -26,12 +26,12 @@ Use **component classes** to style **disabled**. Check [xtendui/src/layout.css.j
   </demoinline>
 </demo>
 
-## Fieldset Legend and Note
+## Other
 
 Use **tailwind classes** to style **fieldset**, **legend** and **note**.
 
 <demo>
-  <demoinline src="demos/components/form/fieldset-legend">
+  <demoinline src="demos/components/form/other">
   </demoinline>
 </demo>
 

@@ -2,14 +2,14 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--stickyfooter">
-    <div class="flex flex-col xt-min-h-screen">
-      <header class="site-header">
+    <div class="*** flex flex-col xt-min-h-screen ***">
+      <header>
         <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
           <div class="xt-h4">Header</div>
         </div>
       </header>
 
-      <main class="flex flex-col flex-auto">
+      <main class="*** flex flex-col flex-auto ***">
         <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
           <div class="xt-h4">Main</div>
           <p>

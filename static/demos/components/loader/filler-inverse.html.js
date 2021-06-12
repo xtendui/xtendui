@@ -12,10 +12,10 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-white text-opacity-50">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
-            <span class="block absolute bg-current h-full animate-xt-filler-x"></span>
+        <span class="*** ${classes.loader()} ***">
+          <span class="*** ${classes.filler()} text-white text-opacity-50 ***">
+            <span class="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
+            <span class="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
           </span>
         </span>
       </div>
@@ -25,10 +25,10 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
         Lorem ipsum
-        <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-white text-opacity-50">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
-            <span class="block absolute bg-current h-full animate-xt-filler-x"></span>
+        <span class="*** ${classes.loader()} ***">
+          <span class="*** ${classes.filler()} text-white text-opacity-50 ***">
+            <span class="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
+            <span class="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
           </span>
         </span>
       </button>
