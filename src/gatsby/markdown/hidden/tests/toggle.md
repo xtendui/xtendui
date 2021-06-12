@@ -52,13 +52,6 @@ Test multiple raf should always have `on` class until event `init.xt` and then s
   </demoinline>
 </demo>
 
-Test exclude.
-
-<demo>
-  <demoinline src="demos/components/slider/exclude">
-  </demoinline>
-</demo>
-
 ## Event
 
 Test toggle mouse should not close when clicking opened elements.

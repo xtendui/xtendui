@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--multilevel">
     <div
       class="multilevel relative"
-      data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', min: 1, duration: 500, queue: false }"
+      data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', targets: ':scope > .xt-toggle', min: 1, duration: 500, queue: false }"
     >
       <nav
         class="xt-toggle xt-toggle-absolute ransform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
@@ -12,7 +12,7 @@ const html = /* HTML */ `
       >
         <div class="xt-h5  flex items-center justify-between">
           <div>Menu</div>
-          <button type="button" class="hidden multilevel-reset" data-xt-group="initial">Back</button>
+          <button type="button" class="multilevel-reset" data-xt-group="initial"></button>
         </div>
 
         <nav class="xt-list flex-col multilevel-list">

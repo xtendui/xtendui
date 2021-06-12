@@ -3303,7 +3303,7 @@ Toggle.optionsDefaultSuper = {
   targets: false,
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
-  exclude: false,
+  exclude: '.hidden',
   // class
   class: 'on',
   classIn: 'in',
