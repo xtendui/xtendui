@@ -28,9 +28,6 @@ Text styles on **parent elements** are applied when **inerithed**.
 
 See [link variant](/components/link#variant) to style **links**.
 
-[[notePrimary]]
-| You can **nest up to two time included the body** to override links styles.
-
 <demo>
   <demoinline src="demos/components/typography/variant">
   </demoinline>
