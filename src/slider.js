@@ -765,8 +765,6 @@ class Slider extends Xt.Toggle {
     super.eventOn(element, force, e)
     // wrap
     self.eventWrap(self.currentIndex)
-    // val
-    self.detail.dragFinalOld = self.detail.dragFinal
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // fix instant false for dragposition but keep for on and off event
@@ -1023,13 +1021,18 @@ class Slider extends Xt.Toggle {
           // goToNum
           self.goToNum(index)
         } else {
-          // depending on direction and if direction is also activation direction and drag direction
+          // depending on direction and if direction is not going back
           if (
+            Math.sign(self.detail.dragDist) > 0 &&
             self.detail.dragDirection > 0 &&
             (options.loop || self.wrap || index !== self.getElementsGroups().length - 1)
           ) {
             self.goToNext(1)
-          } else if (self.detail.dragDirection < 0 && (options.loop || self.wrap || index !== 0)) {
+          } else if (
+            Math.sign(self.detail.dragDist) < 0 &&
+            self.detail.dragDirection < 0 &&
+            (options.loop || self.wrap || index !== 0)
+          ) {
             self.goToPrev(1)
           } else {
             self.logicDragreset()
@@ -1095,6 +1098,7 @@ class Slider extends Xt.Toggle {
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
     // val
     let dragFinal = self.detail.dragPosition + (self.detail.dragCurrent - self.detail.dragOld) * options.drag.factor
+    self.detail.dragDirection = self.detail.dragCurrent > self.detail.dragOld ? -1 : 1
     self.detail.dragOld = self.detail.dragCurrent
     // overflow
     if (options.drag.overflow && !self.wrap && options.mode !== 'absolute') {
@@ -1112,7 +1116,6 @@ class Slider extends Xt.Toggle {
     }
     // val
     self.detail.dragFinal = dragFinal
-    self.detail.dragDirection = self.detail.dragFinal > self.detail.dragFinalOld ? -1 : 1
     // set direction
     self.direction = self.detail.dragInitial - self.detail.dragFinal < 0 ? -1 : 1
     self.inverse = self.direction < 0
@@ -1137,8 +1140,6 @@ class Slider extends Xt.Toggle {
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
-    // val
-    self.detail.dragFinalOld = self.detail.dragFinal
   }
 
   /**
@@ -1159,8 +1160,6 @@ class Slider extends Xt.Toggle {
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
-    // val
-    self.detail.dragFinalOld = self.detail.dragFinal
     // auto
     self.eventAutostart()
   }
