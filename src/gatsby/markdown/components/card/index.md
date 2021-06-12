@@ -12,7 +12,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use `.xt-card` to create a **button**.
+Use `.xt-card` to create a **card**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -27,7 +27,7 @@ Use `.xt-card` to create a **button**.
   </demoinline>
 </demo>
 
-You can also **stack** card content.
+You can also **stack content inside**, assigning variant and size **inside the card**.
 
 <demo>
   <demoinline src="demos/components/card/usage-stack">

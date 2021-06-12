@@ -60,19 +60,21 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-4">
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
-            <div class="${classes.cardMd()} rounded-t-md bg-gray-300">
+            <div class="*** ${classes.cardMd()} rounded-t-md ${classes.cardDefault()} ***">
               <div class="xt-h4">Lorem ipsum</div>
             </div>
-            <div class="${classes.cardMd()}">
+            <div class="*** ${classes.cardMd()} bg-gray-300 ***">
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                suscipit, velit eu tristique mollis.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+                velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+                vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <div class="${classes.cardSm()} pt-0">
+            <div class="*** ${classes.cardSm()} rounded-b-md ${classes.cardPrimary()} ***">
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                suscipit, velit eu tristique mollis.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+                velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+                vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
           </div>
