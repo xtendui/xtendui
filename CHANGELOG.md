@@ -1,3 +1,10 @@
+# [1.0.0-beta.27](https://github.com/minimit/xtendui/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2021-06-12)
+
+
+### Bug Fixes
+
+* **slider:** refactor slider dragDirection fix slider relative bugs and fix slider direction when going back ([5613015](https://github.com/minimit/xtendui/commit/561301550c99f442b72b2e2c7d0b3b35397d79c3))
+
 # [1.0.0-beta.26](https://github.com/minimit/xtendui/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2021-06-07)
 
 
