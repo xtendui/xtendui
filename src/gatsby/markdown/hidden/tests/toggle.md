@@ -29,7 +29,7 @@ Test activation and group activation.
 <demo>
   <demoinline src="demos/components/toggle/usage-unique">
   </demoinline>
-  <demoinline src="demos/components/toggle/usage-unique-nogroupelements">
+  <demoinline src="demos/components/toggle/unique-nogroupelements">
   </demoinline>
   <demoinline src="demos/components/toggle/multiple-group">
   </demoinline>
