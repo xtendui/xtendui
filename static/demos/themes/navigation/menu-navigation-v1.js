@@ -302,6 +302,7 @@ const mountLine = ({ ref }) => {
         lineFirst = true
         gsap.to(line, {
           y: lineY,
+          height: 0,
           opacity: 0,
           duration: lineTime,
           ease: lineEase,
