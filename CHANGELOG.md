@@ -1,3 +1,10 @@
+# [1.0.0-beta.28](https://github.com/minimit/xtendui/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2021-06-14)
+
+
+### Features
+
+* exclude hidden class by default on element and targets ([6c636df](https://github.com/minimit/xtendui/commit/6c636dfcdaab913316da0e8b445b6c2640cd8427))
+
 # [1.0.0-beta.27](https://github.com/minimit/xtendui/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2021-06-12)
 
 
