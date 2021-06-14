@@ -54,32 +54,34 @@ export default function demo() {
           Toggle Group 0 and 1
         </button>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">Target 1</div>
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          Target 1
+        </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="group0">
           Target Group 0
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="group1">
           Target Group 1a
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="group1">
           Target Group 1b
         </div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** on ***">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** on ***">
           Target 2
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-group="group0,group1">
           Target Group 0 and 1
         </div>

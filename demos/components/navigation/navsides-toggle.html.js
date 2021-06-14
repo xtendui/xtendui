@@ -34,43 +34,41 @@ const html = /* HTML */ `
         Toggle 3
       </button>
 
-      <div>
-        <button
-          type="button"
-          class="hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group"
-          data-xt-nav="-1"
-          aria-label="Previous slide"
-          data-xt-mousefollow
-        >
-          <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
-            ${classes.iconArrowLeft({
-              classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-            })}
-          </div>
-        </button>
+      <button
+        type="button"
+        class="*** hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group ***"
+        data-xt-nav="-1"
+        aria-label="Previous slide"
+        data-xt-mousefollow
+      >
+        <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+          ${classes.iconArrowLeft({
+            classes: '*** transform transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
+          })}
+        </div>
+      </button>
 
-        <button
-          type="button"
-          class="hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group"
-          data-xt-nav="1"
-          aria-label="Next slide"
-          data-xt-mousefollow
-        >
-          <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
-            ${classes.iconArrowRight({
-              classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-            })}
-          </div>
-        </button>
-      </div>
+      <button
+        type="button"
+        class="*** hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group ***"
+        data-xt-nav="1"
+        aria-label="Next slide"
+        data-xt-mousefollow
+      >
+        <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+          ${classes.iconArrowRight({
+            classes: '*** transform transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
+          })}
+        </div>
+      </button>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
     </div>
   </div>
 `

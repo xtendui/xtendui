@@ -11,9 +11,9 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-hide-react" ref={ref}>
-      <div className="xt-sticky">
-        <div className="sticky--hide-content">
-          <div className="xt-card p-4 text-black xt-links-default bg-gray-200 sticky--hide-sub">
+      <div className="*** xt-sticky ***">
+        <div className="*** sticky--hide-content ***">
+          <div className="xt-card p-4 text-black xt-links-default bg-gray-200 *** sticky--hide-sub ***">
             <div className="xt-h6">Sub</div>
           </div>
           <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
@@ -120,6 +120,7 @@ const mountSticky = ({ ref }) => {
 
   // hide depending on inner (always before pin or bugs)
 
+  /***/
   ScrollTrigger.create({
     trigger: sticky,
     start: -1, // needs -1 because start trigger is sticky
@@ -138,9 +139,11 @@ const mountSticky = ({ ref }) => {
       }
     },
   })
+  /***/
 
   // sticky
 
+  /***/
   ScrollTrigger.create({
     trigger: sticky,
     start: 'top top',
@@ -178,6 +181,7 @@ const mountSticky = ({ ref }) => {
       }
     },
   })
+  /***/
 
   // unmount
 

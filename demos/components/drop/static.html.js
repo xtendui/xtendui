@@ -15,7 +15,7 @@ const html = /* HTML */ `
             Drop
           </button>
 
-          <div class="xt-drop xt-drop-static">
+          <div class="xt-drop *** xt-drop-static ***">
             <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}

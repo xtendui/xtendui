@@ -34,7 +34,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -70,7 +70,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -111,7 +111,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -152,7 +152,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -193,7 +193,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -234,7 +234,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -275,7 +275,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"

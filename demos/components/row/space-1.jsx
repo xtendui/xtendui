@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-row xt-row-1">
+      <div className="xt-row *** xt-row-1 ***">
         <div className="w-4/12">
           <div className="w-full h-12 bg-gray-300"></div>
         </div>

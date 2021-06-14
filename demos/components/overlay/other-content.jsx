@@ -13,7 +13,7 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay">
-          <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+          <div className="xt-backdrop bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <button
               type="button"
@@ -21,7 +21,7 @@ export default function demo() {
               aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="xt-icon"
+                className="xt-icon "
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

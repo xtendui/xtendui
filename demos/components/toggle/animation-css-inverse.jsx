@@ -26,18 +26,18 @@ export default function demo() {
           Toggle 1 inverse
         </button>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 ">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 ">
           Target normal
         </div>
 
         <div
-          className="xt-card xt-toggle-inverse rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle-inverse *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-duration-out="25">
           Target 0 inverse
         </div>
 
         <div
-          className="xt-card xt-toggle-inverse rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+          className="xt-card *** xt-toggle-inverse *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
           data-xt-duration-out="25">
           Target 1 inverse
         </div>

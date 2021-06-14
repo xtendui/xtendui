@@ -14,13 +14,13 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative text-xs py-2 px-3.5 rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
               <br />
               Proin molestie{' '}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="xt-icon"
+                className="xt-icon "
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -45,13 +45,13 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip text-white xt-links-inverse bg-primary-500">
+            <div className="relative text-xs py-2 px-3.5 rounded-sm *** shadow-tooltip text-white xt-links-inverse bg-primary-500 ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
               <br />
               Proin molestie{' '}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="xt-icon"
+                className="xt-icon "
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"

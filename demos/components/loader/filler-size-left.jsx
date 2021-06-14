@@ -13,9 +13,9 @@ export default function demo() {
             </p>
           </div>
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 w-1 right-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full left-0"></span>
-              <span className="block absolute bg-current w-full left-0 animate-xt-filler-y"></span>
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 *** w-1 right-auto ***">
+              <span className="block absolute bg-current opacity-25 w-full h-full *** left-0 ***"></span>
+              <span className="block absolute bg-current *** w-full left-0 animate-xt-filler-y ***"></span>
             </span>
           </span>
         </div>
@@ -25,9 +25,9 @@ export default function demo() {
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Lorem ipsum
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-filler absolute inset-0 m-auto text-primary-500 w-1 right-auto">
-              <span className="block absolute bg-current opacity-25 w-full h-full left-0"></span>
-              <span className="block absolute bg-current w-full left-0 animate-xt-filler-y"></span>
+            <span className="xt-filler absolute inset-0 m-auto text-primary-500 *** w-1 right-auto ***">
+              <span className="block absolute bg-current opacity-25 w-full h-full *** left-0 ***"></span>
+              <span className="block absolute bg-current *** w-full left-0 animate-xt-filler-y ***"></span>
             </span>
           </span>
         </button>

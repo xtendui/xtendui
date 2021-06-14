@@ -30,7 +30,7 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay group" data-xt-group="group0">
-          <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -40,7 +40,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function demo() {
         </div>
 
         <div className="xt-overlay group" data-xt-group="group1">
-          <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -111,7 +111,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -172,7 +172,7 @@ export default function demo() {
         </div>
 
         <div className="xt-overlay group" data-xt-group="group2">
-          <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -182,7 +182,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"

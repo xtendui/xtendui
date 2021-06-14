@@ -114,7 +114,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -232,7 +232,7 @@ export default function demo() {
             screen full
           </button>
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0">
               <button
                 type="button"
@@ -240,7 +240,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -272,7 +272,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card xt-min-h-screen text-black xt-links-default bg-white">
@@ -282,7 +282,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -343,7 +343,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner rounded-md shadow-overlay *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card rounded-md text-black xt-links-default bg-white">
@@ -353,7 +353,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -486,7 +486,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner rounded-md shadow-overlay *** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <div className="xt-card rounded-md text-black xt-links-default bg-white">
@@ -496,7 +496,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

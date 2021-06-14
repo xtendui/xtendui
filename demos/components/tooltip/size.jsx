@@ -14,7 +14,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-3xs py-1 px-2 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative *** text-3xs py-1 px-2 rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative *** text-xs py-2 px-3.5 rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-base py-2.5 px-4 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative *** text-base py-2.5 px-4 rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 max-w-lg rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+            <div className="relative *** text-xs py-2 px-3.5 max-w-lg rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
               fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
               egestas congue.

@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-stack-react" ref={ref}>
-      <div className="xt-sticky sticky--stack-top">
+      <div className="*** xt-sticky *** *** sticky--stack-top ***">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
@@ -32,7 +32,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="xt-sticky sticky--stack-topsecond group">
+      <div className="*** xt-sticky *** *** sticky--stack-topsecond *** group">
         <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
           <div className="xt-h4 transition-all group-on:xt-h6">Top Second</div>
         </div>
@@ -53,7 +53,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="xt-sticky sticky--stack-topthird">
+      <div className="*** xt-sticky *** *** sticky--stack-topthird ***">
         <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
           <div className="xt-h6">Top Third</div>
         </div>
@@ -74,7 +74,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="xt-sticky sticky--stack-bottom">
+      <div className="*** xt-sticky *** *** sticky--stack-bottom ***">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Bottom</div>
         </div>
@@ -95,7 +95,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="xt-sticky sticky--stack-bottomsecond">
+      <div className="*** xt-sticky *** *** sticky--stack-bottomsecond ***">
         <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
           <div className="xt-h6">Bottom Second</div>
         </div>
@@ -134,6 +134,9 @@ const mount = ({ ref }) => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // sticky
+
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-top'),
     start: 'top top',
@@ -142,7 +145,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-topsecond'),
     start: 'top top',
@@ -152,7 +157,9 @@ const mountSticky = ({ ref }) => {
     pinSpacing: false,
     toggleClass: 'on',
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-topthird'),
     start: () => `top top+=${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
@@ -165,7 +172,9 @@ const mountSticky = ({ ref }) => {
       scrollTrigger.refresh()
     },
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-bottom'),
     start: 'bottom bottom',
@@ -174,7 +183,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--stack-bottomsecond'),
     start: () => `bottom bottom-=${document.querySelector('.sticky--stack-bottom').offsetHeight}px`,
@@ -183,6 +194,7 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
   // unmount
 

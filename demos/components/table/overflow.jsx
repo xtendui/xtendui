@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+      <div className="*** xt-overflow-sub overflow-y-hidden overflow-x-scroll *** my-5 xt-my-auto w-full">
         <table className="my-4 xt-my-auto w-full">
           <thead>
             <tr>

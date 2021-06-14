@@ -3,17 +3,17 @@ export default function demo() {
   return (
     <div>
       <form className="text-xs">
-        <div className="xt-list xt-list-2 flex-full justify-end" role="toolbar">
+        <div className="*** xt-list xt-list-2 flex-full justify-end ***" role="toolbar">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
             Back
           </button>
 
-          <div className="xt-list-inner flex-auto">
+          <div className="*** xt-list-inner flex-auto ***">
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+              className="xt-button text-xs py-2.5 px-3.5 *** rounded-l-md *** text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="xt-icon text-xl -my-1"
@@ -31,21 +31,21 @@ export default function demo() {
             </button>
             <input
               type="text"
-              className="block w-full rounded-r-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="block w-full *** rounded-r-md *** py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
               aria-label="Search"
               placeholder="Seach Catalog"
             />
           </div>
 
-          <div className="xt-list-inner">
+          <div className="*** xt-list-inner ***">
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+              className="xt-button text-xs py-2.5 px-3.5 *** rounded-l-md *** text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
               Clear
             </button>
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button text-xs py-2.5 px-3.5 *** rounded-r-md *** text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
               Submit
             </button>
           </div>

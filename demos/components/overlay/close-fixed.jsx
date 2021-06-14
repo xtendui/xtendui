@@ -14,15 +14,15 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <button
                 type="button"
-                className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                className="xt-button xt-dismiss *** fixed *** z-last top-0 right-0 p-5 text-2xl"
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -122,7 +122,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container p-0">
               <button
                 type="button"
@@ -130,7 +130,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"

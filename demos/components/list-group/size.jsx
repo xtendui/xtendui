@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <form className="text-sm">
-        <div className="xt-list flex-nowrap max-w-sm">
+        <div className="xt-list flex-nowrap *** max-w-sm ***">
           <div className="xt-list-inner flex-auto">
             <button
               type="button"

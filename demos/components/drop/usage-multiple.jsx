@@ -8,14 +8,14 @@ export default function demo() {
       <div
         className="xt-list xt-list-3 items-center"
         data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop' }">
-        <div className="xt-drop-item">
+        <div className="*** xt-drop-item ***">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             drop
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="*** xt-drop *** p-4">
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
@@ -38,14 +38,14 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-drop-item">
+        <div className="*** xt-drop-item ***">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
             drop
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="*** xt-drop *** p-4">
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a

@@ -14,17 +14,17 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
-                <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96">
+                <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96 ***">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -82,7 +82,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ export default function demo() {
                   <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="text-base py-8 px-9 overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">
+                  <div className="text-base py-8 px-9 *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64 ***">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

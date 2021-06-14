@@ -21,13 +21,13 @@ export default function demo() {
         </button>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           id="toggle--animation-0">
           Target 0
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           id="toggle--animation-1">
           Target 1
         </div>

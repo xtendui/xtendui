@@ -61,7 +61,7 @@ export default function demo() {
           </span>
         </button>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
           Target 0
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -71,7 +71,7 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
           Target 1
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -81,7 +81,7 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
           Target 2
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -91,7 +91,7 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
           Target 3
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -118,7 +118,7 @@ export default function demo() {
             </svg>
             <svg viewBox="0 0 240 240">
               <circle
-                className="stroke-current origin-center relative"
+                className="stroke-current origin-center relativext-icon "
                 fill="none"
                 strokeWidth="30"
                 cx="120"

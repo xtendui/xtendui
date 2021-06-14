@@ -13,17 +13,17 @@ export default function demo() {
             screen
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container p-0">
+            <div className="xt-backdrop bg-black opacity-25"></div>
+            <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
-                <div className="xt-card xt-min-h-screen items-center justify-center shadow-overlay text-black xt-links-default bg-white">
+                <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
                     className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -71,17 +71,17 @@ export default function demo() {
             screen full
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container p-0">
+            <div className="xt-backdrop bg-black opacity-25"></div>
+            <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
-                <div className="xt-card xt-min-h-screen items-center justify-center shadow-overlay text-black xt-links-default bg-white">
+                <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
                     className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -110,17 +110,17 @@ export default function demo() {
             screen group
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-            <div className="xt-overlay-container p-0">
+            <div className="xt-backdrop bg-black opacity-25"></div>
+            <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
-                <div className="xt-card xt-min-h-screen items-center justify-center shadow-overlay text-black xt-links-default bg-white">
+                <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
                     className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

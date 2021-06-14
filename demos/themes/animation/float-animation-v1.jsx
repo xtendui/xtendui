@@ -51,7 +51,7 @@ export default function demo() {
 
           <div className="xt-drop p-4 group">
             <div className="xt-drop-inner">
-              <div className="xt-design rounded-md shadow-drop bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
               <div className="xt-card w-64 py-3.5 *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <nav className="xt-list flex-col">
                   <a
@@ -85,7 +85,7 @@ export default function demo() {
 
           <div className="xt-drop p-4 group">
             <div className="xt-drop-inner">
-              <div className="xt-design rounded-md shadow-drop bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
               <div className="xt-card w-64 *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                 <button
                   type="button"
@@ -93,7 +93,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -135,7 +135,7 @@ export default function demo() {
 
             <div className="xt-tooltip p-2 group">
               <div className="xt-tooltip-inner">
-                <div className="xt-design rounded-sm shadow-tooltip bg-black *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** rounded-sm shadow-tooltip bg-black *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
                 <div className="relative text-xs py-2 px-3.5 font-semibold text-white xt-links-inverse *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   Lorem ipsum dolor sit amet
                 </div>
@@ -155,7 +155,7 @@ export default function demo() {
 
             <div className="xt-tooltip p-2 group">
               <div className="xt-tooltip-inner">
-                <div className="xt-design rounded-sm shadow-tooltip bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** rounded-sm shadow-tooltip bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
                 <div className="font-semibold text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <form className="text-sm">
                     <div className="xt-list flex-nowrap max-w-sm text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
@@ -213,7 +213,7 @@ export default function demo() {
             screen full
           </button>
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0">
               <button
                 type="button"
@@ -221,7 +221,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -235,7 +235,7 @@ export default function demo() {
                 </svg>
               </button>
               <div className="xt-overlay-inner">
-                <div className="xt-design rounded-md bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** rounded-md bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
 
                 <div className="xt-card xt-min-h-screen items-center justify-center rounded-md text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <div className="xt-media-container bg-gray-600 xt-ratio-100">
@@ -255,10 +255,10 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner">
-                <div className="xt-design bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
 
                 <div className="xt-card xt-min-h-screen text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <button
@@ -267,7 +267,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -328,10 +328,10 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
-                <div className="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
 
                 <div className="xt-card rounded-md text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <button
@@ -340,7 +340,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -473,10 +473,10 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
-                <div className="xt-design rounded-md md:rounded-tr-none shadow-overlay bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** rounded-md md:rounded-tr-none shadow-overlay bg-white *** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
 
                 <div className="xt-card rounded-md text-black xt-links-default *** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <button
@@ -485,7 +485,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

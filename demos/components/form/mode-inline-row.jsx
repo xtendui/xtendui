@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
-          <div className="w-full md:w-auto">
+          <div className="w-full *** md:w-auto ***">
             <label className="block mb-3 font-semibold text-gray-900"> Lorem ipsum </label>
             <input
               type="text"
@@ -13,7 +13,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full md:w-auto">
+          <div className="w-full *** md:w-auto ***">
             <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
@@ -22,7 +22,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full md:w-auto">
+          <div className="w-full *** md:w-auto ***">
             <label className="block mb-3 font-semibold text-gray-900"> Lorem ipsum </label>
             <input
               type="text"
@@ -31,7 +31,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full md:w-auto">
+          <div className="w-full *** md:w-auto ***">
             <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
@@ -44,7 +44,7 @@ export default function demo() {
             <label className="block mb-3 font-semibold text-gray-900"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -56,7 +56,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -72,7 +72,7 @@ export default function demo() {
             <label className="block mb-3 font-semibold text-gray-900"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -84,7 +84,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -101,7 +101,7 @@ export default function demo() {
             <label className="block mb-3 font-semibold text-gray-900"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -111,7 +111,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -123,7 +123,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-auto">
+              <div className="w-full *** md:w-auto ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"

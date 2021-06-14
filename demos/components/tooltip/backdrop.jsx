@@ -15,7 +15,7 @@ export default function demo() {
             </button>
 
             <div className="xt-tooltip p-2">
-              <div className="xt-backdrop bg-black opacity-25"></div>
+              <div className="*** xt-backdrop bg-black opacity-25 ***"></div>
               <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
                 Lorem ipsum dolor sit amet
               </div>
@@ -32,7 +32,7 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="xt-backdrop bg-black opacity-25"></div>
+            <div className="*** xt-backdrop bg-black opacity-25 ***"></div>
             <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>

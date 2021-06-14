@@ -13,26 +13,26 @@ const html = /* HTML */ `
       Toggle 1
     </button>
 
-    <div class="xt-card xt-toggle group">
+    <div class="xt-card *** xt-toggle *** group">
       <div class="xt-toggle-inner">
         <div
-          class="xt-design rounded-md bg-gray-200 transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"
+          class="*** xt-design *** rounded-md bg-gray-200 *** transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
         <div
-          class="relative text-sm p-6 text-black xt-links-default transition duration-300 opacity-0 group-in:opacity-100"
+          class="relative text-sm p-6 text-black xt-links-default *** transition duration-300 opacity-0 group-in:opacity-100 ***"
         >
           Target 0
         </div>
       </div>
     </div>
 
-    <div class="xt-card xt-toggle group">
+    <div class="xt-card *** xt-toggle *** group">
       <div class="xt-toggle-inner">
         <div
-          class="xt-design rounded-md bg-gray-200 transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4"
+          class="*** xt-design *** rounded-md bg-gray-200 *** transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
         <div
-          class="relative text-sm p-6 text-black xt-links-default transition duration-300 opacity-0 group-in:opacity-100"
+          class="relative text-sm p-6 text-black xt-links-default *** transition duration-300 opacity-0 group-in:opacity-100 ***"
         >
           Target 1
         </div>

@@ -15,7 +15,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-2">
-          <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="*** xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"

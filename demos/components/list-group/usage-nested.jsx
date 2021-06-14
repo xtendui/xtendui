@@ -3,8 +3,8 @@ export default function demo() {
   return (
     <div>
       <form className="text-sm">
-        <div className="xt-list">
-          <div className="xt-list-inner">
+        <div className="*** xt-list ***">
+          <div className="*** xt-list-inner ***">
             <input
               type="number"
               className="block w-full w-16  rounded-tl-md rounded-bl-md border border-r-0 border-gray-500 py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
@@ -13,7 +13,7 @@ export default function demo() {
               min="0"
               max="100"
             />
-            <div className="xt-list-inner flex-col">
+            <div className="*** xt-list-inner flex-col ***">
               <button
                 type="button"
                 className="xt-button text-2xs py-0.5 px-2 rounded-tr-md border border-gray-500 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">

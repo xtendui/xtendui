@@ -3,8 +3,8 @@ export default function demo() {
   return (
     <div>
       <form className="text-sm">
-        <div className="xt-row xt-row-x-6 xt-row-y-4">
-          <div className="w-full">
+        <div className="*** xt-row xt-row-x-6 xt-row-y-4 ***">
+          <div className="*** w-full ***">
             <label className="block mb-3 font-semibold text-gray-900"> Lorem ipsum </label>
             <input
               type="text"
@@ -13,7 +13,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full">
+          <div className="*** w-full ***">
             <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
@@ -22,7 +22,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full md:w-6/12">
+          <div className="*** w-full md:w-6/12 ***">
             <label className="block mb-3 font-semibold text-gray-900"> Lorem Ipsum </label>
             <input
               type="text"
@@ -31,7 +31,7 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full md:w-6/12">
+          <div className="*** w-full md:w-6/12 ***">
             <label className="block mb-3 font-semibold text-gray-900"> Dolor sit amet </label>
             <input
               type="text"
@@ -40,11 +40,11 @@ export default function demo() {
             />
           </div>
 
-          <div className="w-full">
+          <div className="*** w-full ***">
             <label className="block mb-3 font-semibold text-gray-900"> Checkbox </label>
 
-            <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full">
+            <div className="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+              <div className="*** w-full ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -60,7 +60,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full">
+              <div className="*** w-full ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -76,11 +76,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="*** w-full ***">
             <label className="block mb-3 font-semibold text-gray-900"> Radio </label>
 
-            <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full md:w-6/12">
+            <div className="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+              <div className="*** w-full md:w-6/12 ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -96,7 +96,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-6/12">
+              <div className="*** w-full md:w-6/12 ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -113,11 +113,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="*** w-full ***">
             <label className="block mb-3 font-semibold text-gray-900"> Switch </label>
 
-            <div className="xt-row xt-row-x-8 xt-row-y-2">
-              <div className="w-full">
+            <div className="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+              <div className="*** w-full ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
@@ -131,7 +131,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-6/12">
+              <div className="*** w-full md:w-6/12 ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -147,7 +147,7 @@ export default function demo() {
                 </label>
               </div>
 
-              <div className="w-full md:w-6/12">
+              <div className="*** w-full md:w-6/12 ***">
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
@@ -164,7 +164,7 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="*** w-full ***">
             <button
               type="submit"
               className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">

@@ -13,19 +13,19 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay group">
-          <div className="xt-backdrop bg-black pointer-events-none  transition opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
-              <div className="xt-design rounded-md shadow-overlay bg-white transform transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12"></div>
+              <div className="*** xt-design *** rounded-md shadow-overlay bg-white *** transform transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-1 ***2"></div>
 
-              <div className="xt-card transition opacity-0 group-in:opacity-100">
+              <div className="xt-card *** transition opacity-0 group-in:opacity-100 ***">
                 <button
                   type="button"
                   className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"

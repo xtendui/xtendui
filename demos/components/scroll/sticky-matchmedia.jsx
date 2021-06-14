@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-matchmedia-react" ref={ref}>
-      <div className="xt-sticky">
+      <div className="*** xt-sticky ***">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
@@ -107,6 +107,9 @@ const mount = ({ ref }) => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // match media
+
+  /***/
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {
       // sticky
@@ -120,6 +123,7 @@ const mountSticky = ({ ref }) => {
         pinSpacing: false,
       })
     },
+    /***/
   })
 
   // unmount

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--sticky-matchmedia">
-    <div class="xt-sticky">
+    <div class="*** xt-sticky ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>

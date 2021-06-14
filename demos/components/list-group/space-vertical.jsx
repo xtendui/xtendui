@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <form className="text-sm">
-        <div className="xt-list xt-list-2 flex-col">
+        <div className="xt-list *** xt-list-2 flex-col ***">
           <div className="xt-list-inner">
             <button
               type="button"

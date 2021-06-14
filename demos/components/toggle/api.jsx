@@ -89,19 +89,19 @@ export default function demo() {
 
         <div className="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
           <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
             data-xt-group="0">
             Target Group 0
           </div>
           <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
             data-xt-group="0">
             Target Group 0b
           </div>
-          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
             Target 1
           </div>
-          <div className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+          <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
             Target 2
           </div>
         </div>

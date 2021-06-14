@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -16,7 +16,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -26,7 +26,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -38,7 +38,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -49,7 +49,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -61,7 +61,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} focus-within:outline-browser"
+        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input

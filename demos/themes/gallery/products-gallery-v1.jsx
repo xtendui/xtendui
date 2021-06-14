@@ -128,7 +128,7 @@ export default function demo() {
                     <div
                       className="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                       id="overlay--product-images">
-                      <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+                      <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
                       <div className="xt-overlay-container p-0">
                         <button
                           type="button"
@@ -136,7 +136,7 @@ export default function demo() {
                           aria-label="Close">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon"
+                            className="xt-icon "
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -266,7 +266,7 @@ export default function demo() {
             title="Scroll to content">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon"
+              className="xt-icon "
               width="24"
               height="24"
               viewBox="0 0 24 24"

@@ -29,7 +29,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -163,6 +163,7 @@ const mountDrops = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
+    /***/
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // reset to current when no activation
@@ -171,6 +172,7 @@ const mountDrops = ({ ref }) => {
         current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
       }
     }
+    /***/
   }
 
   for (const target of self.targets) {

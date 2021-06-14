@@ -64,16 +64,17 @@ export default function demo() {
             data-xt-pag
             title="Slide xt-num"></button>
         </nav>
+
         <button
           type="button"
-          className="hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group"
+          className="*** hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group ***"
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
           <div className="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
+              className="xt-icon *** transform transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -90,14 +91,14 @@ export default function demo() {
 
         <button
           type="button"
-          className="hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group"
+          className="*** hidden md:block cursor-none absolute top-0 right-0 w-24 h-full group ***"
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
           <div className="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
+              className="xt-icon *** transform transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***"
               width="24"
               height="24"
               viewBox="0 0 24 24"

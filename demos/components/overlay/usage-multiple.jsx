@@ -14,10 +14,10 @@ export default function demo() {
           overlay 0
         </button>
 
-        <div className="xt-overlay">
-          <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner">
+        <div className="*** xt-overlay ***">
+          <div className="xt-backdrop bg-black opacity-25"></div>
+          <div className="*** xt-overlay-container *** max-w-3xl">
+            <div className="*** xt-overlay-inner ***">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -25,7 +25,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -69,10 +69,10 @@ export default function demo() {
           overlay 1
         </button>
 
-        <div className="xt-overlay">
-          <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
-          <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner">
+        <div className="*** xt-overlay ***">
+          <div className="xt-backdrop bg-black opacity-25"></div>
+          <div className="*** xt-overlay-container *** max-w-3xl">
+            <div className="*** xt-overlay-inner ***">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -80,7 +80,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"

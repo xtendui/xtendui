@@ -7,7 +7,7 @@ export default function demo() {
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
-          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto *** mx-auto md:ml-0 *** max-w-2xl text-white xt-links-inverse *** text-center md:text-left *** group">
             <h2 className="xt-h1">Lorem ipsum dolor sit amet</h2>
             <h3 className="xt-p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
@@ -26,7 +26,7 @@ export default function demo() {
           <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
-          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
+          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto *** mx-auto md:ml-0 *** max-w-2xl text-white xt-links-inverse *** text-center md:text-left *** group">
             <h2 className="xt-h1">Lorem ipsum dolor sit amet</h2>
             <h3 className="xt-p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
@@ -45,7 +45,7 @@ export default function demo() {
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
-          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right group">
+          <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto *** mx-auto md:mr-0 *** max-w-2xl text-white xt-links-inverse *** text-center md:text-right *** group">
             <h2 className="xt-h1">Lorem ipsum dolor sit amet</h2>
             <h3 className="xt-p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.

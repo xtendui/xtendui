@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-row xt-row-4 xt-row-stretch">
+      <div className="xt-row xt-row-4 *** xt-row-stretch ***">
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
             <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">

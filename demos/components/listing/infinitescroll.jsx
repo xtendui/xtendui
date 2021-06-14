@@ -10,7 +10,7 @@ export default function demo() {
 
   return (
     <div className="demo--infinitescroll-react" ref={ref}>
-      <div className="infinitescroll py-10">
+      <div className="*** infinitescroll *** py-10">
         <div className="container">
           <h1>Category Page</h1>
 
@@ -34,7 +34,7 @@ export default function demo() {
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
-                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
                   <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -51,7 +51,7 @@ export default function demo() {
                     </svg>
                     <svg viewBox="0 0 240 240">
                       <circle
-                        className="stroke-current origin-center relative animate-xt-spinner"
+                        className="stroke-current origin-center relativext-icon animate-xt-spinner"
                         fill="none"
                         strokeWidth="30"
                         cx="120"
@@ -175,7 +175,7 @@ export default function demo() {
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
-              <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden infinitescroll-spinner">
+              <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
                 <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                   <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                     <circle
@@ -192,7 +192,7 @@ export default function demo() {
                   </svg>
                   <svg viewBox="0 0 240 240">
                     <circle
-                      className="stroke-current origin-center relative animate-xt-spinner"
+                      className="stroke-current origin-center relativext-icon animate-xt-spinner"
                       fill="none"
                       strokeWidth="30"
                       cx="120"

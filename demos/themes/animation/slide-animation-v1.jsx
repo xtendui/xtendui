@@ -92,7 +92,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -207,7 +207,7 @@ export default function demo() {
             screen full
           </button>
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0">
               <button
                 type="button"
@@ -215,7 +215,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -247,7 +247,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner">
                 <div className="xt-card xt-min-h-screen text-black xt-links-default bg-white *** overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4 ***">
@@ -257,7 +257,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -318,7 +318,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white *** overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4 ***">
@@ -328,7 +328,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -461,7 +461,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white *** overflow-hidden transform opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4 ***">
@@ -471,7 +471,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

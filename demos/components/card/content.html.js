@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-600 *** rounded-md *** xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
         </div>
@@ -16,7 +16,7 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <div class="${classes.cardMd()}">
+          <div class="*** ${classes.cardMd()} ***">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -28,18 +28,18 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="${classes.cardMd()} rounded-t-md bg-gray-300">
+        <div class="xt-card">
+          <div class="*** ${classes.cardMd()} rounded-t-md ${classes.cardDefault()} ***">
             <div class="xt-h4">Lorem ipsum</div>
           </div>
-          <div class="${classes.cardMd()}">
+          <div class="*** ${classes.cardMd()} bg-gray-300 ***">
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div class="${classes.cardSm()} pt-0">
+          <div class="*** ${classes.cardSm()} rounded-b-md ${classes.cardPrimary()} ***">
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis

@@ -12,15 +12,15 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonSmDrop()} ${classes.buttonDefaultDrop()}">
+              <a href="#" class="xt-button *** ${classes.buttonSmDrop()} *** ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonSmDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonSmDrop()} *** ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonSmDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonSmDrop()} *** ${classes.buttonDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -37,15 +37,15 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="w-80 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-80 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <a href="#" class="xt-button *** ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()}">
                 Amet
               </button>
             </nav>
@@ -62,15 +62,15 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-4">
-          <div class="w-96 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card *** w-96 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonLgDrop()} ${classes.buttonDefaultDrop()}">
+              <a href="#" class="xt-button *** ${classes.buttonLgDrop()} *** ${classes.buttonDefaultDrop()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonLgDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonLgDrop()} *** ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonLgDrop()} ${classes.buttonDefaultDrop()}">
+              <button type="button" class="xt-button *** ${classes.buttonLgDrop()} *** ${classes.buttonDefaultDrop()}">
                 Amet
               </button>
             </nav>

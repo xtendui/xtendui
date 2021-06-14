@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div className="xt-media-container bg-gray-200 xt-ratio-37.5">
-        <img className="xt-media object-contain object-center" src="/img.svg" loading="lazy" alt="" />
+        <img className="xt-media *** object-contain object-center ***" src="/img.svg" loading="lazy" alt="" />
       </div>
     </div>
   )

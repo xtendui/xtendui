@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--sticky-stack">
-    <div class="xt-sticky sticky--stack-top">
+    <div class="*** xt-sticky *** *** sticky--stack-top ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="xt-sticky sticky--stack-topsecond group">
+    <div class="*** xt-sticky *** *** sticky--stack-topsecond *** group">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h4 transition-all group-on:xt-h6">Top Second</div>
       </div>
@@ -44,7 +44,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="xt-sticky sticky--stack-topthird">
+    <div class="*** xt-sticky *** *** sticky--stack-topthird ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h6">Top Third</div>
       </div>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-sticky sticky--stack-bottom">
+    <div class="*** xt-sticky *** *** sticky--stack-bottom ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Bottom</div>
       </div>
@@ -74,7 +74,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="xt-sticky sticky--stack-bottomsecond">
+    <div class="*** xt-sticky *** *** sticky--stack-bottomsecond ***">
       <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
         <div class="xt-h6">Bottom Second</div>
       </div>

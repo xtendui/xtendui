@@ -7,13 +7,13 @@ const html = /* HTML */ `
         <div class="xt-list-inner flex-auto">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-l-md border border-gray-500 ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} *** rounded-l-md border border-gray-500 *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input
             type="text"
-            class="${classes.input()} border border-l-0 border-gray-500 ${classes.inputDefault()}"
+            class="${classes.input()} *** border border-l-0 border-gray-500 *** ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-r-md border border-l-0 border-gray-500 ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} *** rounded-r-md border border-l-0 border-gray-500 *** ${classes.buttonPrimary()}"
         >
           Lorem ipsum
         </button>

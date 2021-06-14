@@ -12,7 +12,7 @@ export default function demo() {
         drop
       </button>
 
-      <div className="xt-drop p-4" id="drop--unique-1">
+      <div className="*** xt-drop *** p-4" id="drop--unique-1">
         <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
           <nav className="xt-list flex-col">
             <a
@@ -34,12 +34,12 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="xt-drop p-4" id="drop--unique-2" data-xt-position="right-end">
+      <div className="*** xt-drop *** p-4" id="drop--unique-2" data-xt-position="right-end">
         <div className="xt-card w-64 rounded-md shadow-drop text-black xt-links-default bg-white">
           <button type="button" className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon"
+              className="xt-icon "
               width="24"
               height="24"
               viewBox="0 0 24 24"

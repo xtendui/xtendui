@@ -27,6 +27,7 @@ const mountSticky = ({ ref }) => {
 
   // hide depending on inner (always before pin or bugs)
 
+  /***/
   ScrollTrigger.create({
     trigger: sticky,
     start: -1, // needs -1 because start trigger is sticky
@@ -45,9 +46,11 @@ const mountSticky = ({ ref }) => {
       }
     },
   })
+  /***/
 
   // sticky
 
+  /***/
   ScrollTrigger.create({
     trigger: sticky,
     start: 'top top',
@@ -85,6 +88,7 @@ const mountSticky = ({ ref }) => {
       }
     },
   })
+  /***/
 
   // unmount
 

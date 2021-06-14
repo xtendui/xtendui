@@ -13,9 +13,9 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay group">
-          <div className="xt-backdrop bg-black pointer-events-none transition opacity-0 group-in:opacity-25"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner transform transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4">
+            <div className="xt-overlay-inner *** transform transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -23,7 +23,7 @@ export default function demo() {
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon"
+                    className="xt-icon "
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"

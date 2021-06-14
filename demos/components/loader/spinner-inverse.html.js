@@ -12,8 +12,8 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <div class="${classes.loader()}">
-          <div class="${classes.spinner()} w-6 h-6 text-white">
+        <div class="*** ${classes.loader()} ***">
+          <div class="*** ${classes.spinner()} w-6 h-6 text-white ***">
             ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
           </div>
         </div>
@@ -24,8 +24,8 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
       >
         Lorem ipsum
-        <span class="${classes.loader()}">
-          <span class="${classes.spinner()} w-6 h-6 text-white">
+        <span class="*** ${classes.loader()} ***">
+          <span class="*** ${classes.spinner()} w-6 h-6 text-white ***">
             ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
           </span>
         </span>

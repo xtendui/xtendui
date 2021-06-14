@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <table className="table-fixed my-4 xt-my-auto w-full">
+      <table className="*** table-fixed *** my-4 xt-my-auto w-full">
         <thead>
           <tr>
             <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border">

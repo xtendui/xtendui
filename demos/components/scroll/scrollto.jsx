@@ -15,6 +15,7 @@ export default function demo() {
 
   return (
     <div className="demo--scrollto-react" ref={ref}>
+      {/* sticky for demo purpose remove this */}
       <div className="xt-sticky">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-list xt-list-3">
@@ -240,6 +241,9 @@ const mount = ({ ref }) => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  /* sticky for demo purpose remove this */
+  // sticky
+
   ScrollTrigger.create({
     trigger: ref.querySelector('.xt-sticky'),
     start: 'top top',

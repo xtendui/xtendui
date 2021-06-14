@@ -16,6 +16,7 @@ export default function demo() {
 
   return (
     <div className="demo--scrollto-overlay-react" ref={ref}>
+      {/* sticky for demo purpose remove this */}
       <div className="xt-sticky">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-list xt-list-3">
@@ -77,7 +78,7 @@ export default function demo() {
               aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="xt-icon"
+                className="xt-icon "
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -323,6 +324,7 @@ const mount = ({ ref }) => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  /* sticky for demo purpose remove this */
   // vars
 
   const overlay = ref.querySelector('.xt-overlay')

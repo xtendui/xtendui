@@ -3,8 +3,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <form class="text-sm">
-      <div class="xt-list flex-nowrap">
-        <div class="xt-list-inner flex-auto">
+      <div class="*** xt-list flex-nowrap ***">
+        <div class="*** xt-list-inner flex-auto ***">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>

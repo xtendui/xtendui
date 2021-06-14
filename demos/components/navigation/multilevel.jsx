@@ -7,18 +7,16 @@ export default function demo() {
     <div className="demo--multilevel-react">
       <div
         className="multilevel relative"
-        data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', min: 1, duration: 500, queue: false }">
+        data-xt-toggle="{ elements: '.multilevel-reset, .multilevel-list > button', targets: ':scope > .xt-toggle', min: 1, duration: 500, queue: false }">
         <nav
-          className="xt-toggle xt-toggle-absolute ransform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+          className="*** xt-toggle *** *** xt-toggle-absolute *** transform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
           data-xt-group="initial">
           <div className="xt-h5  flex items-center justify-between">
             <div>Menu</div>
-            <button type="button" className="hidden multilevel-reset" data-xt-group="initial">
-              Back
-            </button>
+            <button type="button" className="*** multilevel-reset ***" data-xt-group="initial"></button>
           </div>
 
-          <nav className="xt-list flex-col multilevel-list">
+          <nav className="xt-list flex-col *** multilevel-list ***">
             <button
               type="button"
               className="xt-button w-full justify-start text-left text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
@@ -45,19 +43,19 @@ export default function demo() {
         </nav>
 
         <nav
-          className="xt-toggle xt-toggle-absolute ransform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+          className="*** xt-toggle *** *** xt-toggle-absolute *** transform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
           data-xt-group="cat-0">
           <div className="xt-h5  flex items-center justify-between">
             <div>Category 0</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 *** multilevel-reset ***"
               data-xt-group="initial">
               Back
             </button>
           </div>
 
-          <nav className="xt-list flex-col multilevel-list">
+          <nav className="xt-list flex-col *** multilevel-list ***">
             <button
               type="button"
               className="xt-button w-full justify-start text-left text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
@@ -83,18 +81,18 @@ export default function demo() {
           </nav>
         </nav>
 
-        <nav className="xt-toggle xt-toggle-absolute" data-xt-group="cat-0a">
+        <nav className="*** xt-toggle *** xt-toggle-absolute" data-xt-group="cat-0a">
           <div className="xt-h5  flex items-center justify-between">
             <div>Category 0a</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 *** multilevel-reset ***"
               data-xt-group="cat-0">
               Back
             </button>
           </div>
 
-          <nav className="xt-list flex-col multilevel-list">
+          <nav className="xt-list flex-col *** multilevel-list ***">
             <a
               href="#"
               className="xt-button w-full justify-start text-left text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
@@ -109,19 +107,19 @@ export default function demo() {
         </nav>
 
         <nav
-          className="xt-toggle xt-toggle-absolute ransform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+          className="*** xt-toggle *** *** xt-toggle-absolute *** transform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
           data-xt-group="cat-0b">
           <div className="xt-h5  flex items-center justify-between">
             <div>Category 0b</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 *** multilevel-reset ***"
               data-xt-group="cat-0">
               Back
             </button>
           </div>
 
-          <nav className="xt-list flex-col multilevel-list">
+          <nav className="xt-list flex-col *** multilevel-list ***">
             <a
               href="#"
               className="xt-button w-full justify-start text-left text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
@@ -136,19 +134,19 @@ export default function demo() {
         </nav>
 
         <nav
-          className="xt-toggle xt-toggle-absolute ransform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+          className="*** xt-toggle *** *** xt-toggle-absolute *** transform transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
           data-xt-group="cat-1">
           <div className="xt-h5  flex items-center justify-between">
             <div>Category 1</div>
             <button
               type="button"
-              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 multilevel-reset"
+              className="xt-button text-3xs py-1.5 px-2.5 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700 *** multilevel-reset ***"
               data-xt-group="initial">
               Back
             </button>
           </div>
 
-          <nav className="xt-list flex-col multilevel-list">
+          <nav className="xt-list flex-col *** multilevel-list ***">
             <a
               href="#"
               className="xt-button w-full justify-start text-left text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">

@@ -3,10 +3,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <nav class="nav">
-      <div class="xt-list flex-col max-w-sm">
+      <div class="*** xt-list flex-col max-w-sm ***">
         <button
           type="button"
-          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} rounded-t-md"
+          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} *** rounded-t-md ***"
         >
           Lorem ipsum
         </button>
@@ -42,7 +42,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} rounded-b-md"
+          class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonPrimary()} *** rounded-b-md ***"
         >
           Lorem ipsum dolor sit amet consectetur adipiscing elit
         </button>

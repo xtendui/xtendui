@@ -12,8 +12,8 @@ export default function demo() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-            <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+          <div className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+            <div className="*** xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 ***">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
                   className="stroke-current origin-center opacity-25"
@@ -29,7 +29,7 @@ export default function demo() {
               </svg>
               <svg viewBox="0 0 240 240">
                 <circle
-                  className="stroke-current origin-center relative animate-xt-spinner"
+                  className="stroke-current origin-center relativext-icon animate-xt-spinner"
                   fill="none"
                   strokeWidth="30"
                   cx="120"
@@ -48,8 +48,8 @@ export default function demo() {
           type="button"
           className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
           Lorem ipsum
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
-            <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
+          <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+            <span className="*** xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 ***">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
                   className="stroke-current origin-center opacity-25"
@@ -65,7 +65,7 @@ export default function demo() {
               </svg>
               <svg viewBox="0 0 240 240">
                 <circle
-                  className="stroke-current origin-center relative animate-xt-spinner"
+                  className="stroke-current origin-center relativext-icon animate-xt-spinner"
                   fill="none"
                   strokeWidth="30"
                   cx="120"

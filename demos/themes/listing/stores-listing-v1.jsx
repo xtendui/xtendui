@@ -39,7 +39,7 @@ export default function demo() {
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
+                        className="xt-icon "
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ export default function demo() {
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
+                        className="xt-icon "
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -163,7 +163,7 @@ export default function demo() {
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
+                        className="xt-icon "
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -233,7 +233,7 @@ export default function demo() {
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
+                        className="xt-icon "
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -287,7 +287,7 @@ export default function demo() {
                       aria-label="Close">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="xt-icon"
+                        className="xt-icon "
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"

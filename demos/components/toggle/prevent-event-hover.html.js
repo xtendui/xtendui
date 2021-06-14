@@ -20,9 +20,9 @@ const html = /* HTML */ `
         Toggle 2 hover
       </a>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 1 hover</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1 hover</div>
 
-      <div class="xt-card xt-toggle ${classes.cardRadius()} ${classes.cardToggle()}">Target 2 hover</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2 hover</div>
     </div>
   </div>
 `

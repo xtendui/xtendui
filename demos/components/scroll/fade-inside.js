@@ -40,6 +40,7 @@ const fade = ({ ref }) => {
 
   // fade
 
+  /***/
   ScrollTrigger.batch(items, {
     once: true,
     onEnter: batch => {
@@ -68,4 +69,5 @@ const fade = ({ ref }) => {
       }
     },
   })
+  /***/
 }

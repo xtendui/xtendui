@@ -26,7 +26,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="xt-sticky sticky--top">
+      <div className="*** xt-sticky *** *** sticky--top ***">
         <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
@@ -77,9 +77,9 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="relative">
-        <div className="absolute w-full">
-          <div className="xt-sticky sticky--bottom">
+      <div className="*** relative ***">
+        <div className="*** absolute w-full ***">
+          <div className="*** xt-sticky *** *** sticky--bottom ***">
             <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
               <div className="xt-h4">Bottom</div>
             </div>
@@ -120,6 +120,9 @@ const mount = ({ ref }) => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // sticky
+
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--top'),
     start: 'top top',
@@ -128,7 +131,9 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
+  /***/
   ScrollTrigger.create({
     trigger: ref.querySelector('.sticky--bottom'),
     start: 'bottom bottom',
@@ -137,6 +142,7 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
 
   // unmount
 

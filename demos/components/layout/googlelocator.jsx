@@ -12,7 +12,7 @@ export default function demo() {
   return (
     <div className="demo--googlelocator-react" ref={ref}>
       <div className="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
-        <div className="googlelocator-aside flex flex-col w-full relative z-10">
+        <div className="*** googlelocator-aside *** flex flex-col w-full relative z-10">
           <div className="relative p-6 border-b border-gray-200">
             <form className="text-sm">
               <div className="xt-row xt-row-x-6 xt-row-y-4">
@@ -107,7 +107,7 @@ export default function demo() {
                     <input
                       type="checkbox"
                       className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
-                      name="googlelocator-fav"
+                      name="type-fav"
                       defaultValue="fav"
                     />
                     <span className="ml-4">Favourite</span>
@@ -117,35 +117,35 @@ export default function demo() {
             </form>
           </div>
 
-          <div className="googlelocator-aside-body relative w-full p-6 xt-overflow-sub overflow-y-scroll">
-            <div className="googlelocator-result googlelocator-result--initial text-xs pb-4 border-b border-gray-200">
+          <div className="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll">
+            <div className="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-200">
               Insert your position and find a place near you
             </div>
 
-            <div className="googlelocator-result googlelocator-result--error text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--error *** text-xs pb-4 border-b border-gray-200">
               Request timed out, retry
             </div>
 
-            <div className="googlelocator-result googlelocator-result--noplace text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--noplace *** text-xs pb-4 border-b border-gray-200">
               Not a valid place
             </div>
 
-            <div className="googlelocator-result googlelocator-result--empty text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--empty *** text-xs pb-4 border-b border-gray-200">
               No place found
             </div>
 
-            <div className="googlelocator-result googlelocator-result--founds text-xs pb-4 border-b border-gray-200">
-              <span className="googlelocator-result--found"></span>
+            <div className="*** googlelocator-result googlelocator-result--founds *** text-xs pb-4 border-b border-gray-200">
+              <span className="*** googlelocator-result--found ***"></span>
               places found
             </div>
 
-            <div className="googlelocator-items">
+            <div className="*** googlelocator-items ***">
               <script type="text/x-template">
                 <div
-                  className="googlelocator-item py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600"
+                  className="*** googlelocator-item *** py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600"
                   tabIndex="-1">
                   <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
-                    <div className="googlelocator-item-content text-xs leading-relaxed">
+                    <div className="*** googlelocator-item-content *** text-xs leading-relaxed">
                       <div
                         className="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl"
                         data-xt-populate="name"></div>
@@ -182,9 +182,9 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="googlelocator-main relative flex-auto min-h-full md:absolute md:inset-0">
+        <div className="*** googlelocator-main *** relative flex-auto min-h-full md:absolute md:inset-0">
           <div className="relative w-full h-full">
-            <div className="googlelocator-main-map w-full h-full"></div>
+            <div className="*** googlelocator-main-map *** w-full h-full"></div>
 
             <button
               type="button"
@@ -194,7 +194,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 xt-toggle z-10">
+        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 *** xt-toggle *** z-10">
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -211,7 +211,7 @@ export default function demo() {
             </svg>
             <svg viewBox="0 0 240 240">
               <circle
-                className="stroke-current origin-center relative animate-xt-spinner"
+                className="stroke-current origin-center relativext-icon animate-xt-spinner"
                 fill="none"
                 strokeWidth="30"
                 cx="120"

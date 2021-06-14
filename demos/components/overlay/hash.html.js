@@ -7,7 +7,7 @@ const html = /* HTML */ `
       data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }"
       data-xt-hash="demo--overlay-hash"
     >
-      <div class="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+      <div class="xt-backdrop bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div class="xt-overlay-inner">
           <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">

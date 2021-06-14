@@ -21,7 +21,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -56,7 +56,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function demo() {
               <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div className="text-base py-8 px-9">
+              <div className="*** text-base py-8 px-9 ***">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -92,19 +92,21 @@ export default function demo() {
 
           <div className="xt-drop p-4">
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
-              <div className="text-base py-8 px-9 rounded-t-md bg-gray-300">
+              <div className="*** text-base py-8 px-9 rounded-t-md text-black xt-links-default bg-gray-200 ***">
                 <div className="xt-h4">Lorem ipsum</div>
               </div>
-              <div className="text-base py-8 px-9">
+              <div className="*** text-base py-8 px-9 bg-gray-300 ***">
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis.
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
-              <div className="text-sm py-6 px-7 pt-0">
+              <div className="*** text-sm py-6 px-7 rounded-b-md text-white xt-links-inverse bg-primary-500 ***">
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis.
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
             </div>

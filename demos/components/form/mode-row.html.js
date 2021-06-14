@@ -3,8 +3,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <form class="text-sm">
-      <div class="xt-row xt-row-x-6 xt-row-y-4">
-        <div class="w-full">
+      <div class="*** xt-row xt-row-x-6 xt-row-y-4 ***">
+        <div class="*** w-full ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem ipsum </label>
           <input
             type="text"
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full">
+        <div class="*** w-full ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
           <input
             type="text"
@@ -22,7 +22,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full md:w-6/12">
+        <div class="*** w-full md:w-6/12 ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Lorem Ipsum </label>
           <input
             type="text"
@@ -31,7 +31,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full md:w-6/12">
+        <div class="*** w-full md:w-6/12 ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Dolor sit amet </label>
           <input
             type="text"
@@ -40,11 +40,11 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="w-full">
+        <div class="*** w-full ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Checkbox </label>
 
-          <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full">
+          <div class="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+            <div class="*** w-full ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -60,7 +60,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full">
+            <div class="*** w-full ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -76,11 +76,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="w-full">
+        <div class="*** w-full ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Radio </label>
 
-          <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full md:w-6/12">
+          <div class="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+            <div class="*** w-full md:w-6/12 ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -96,7 +96,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-6/12">
+            <div class="*** w-full md:w-6/12 ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -113,11 +113,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="w-full">
+        <div class="*** w-full ***">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Switch </label>
 
-          <div class="xt-row xt-row-x-8 xt-row-y-2">
-            <div class="w-full">
+          <div class="*** xt-row xt-row-x-8 xt-row-y-2 ***">
+            <div class="*** w-full ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
@@ -131,7 +131,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-6/12">
+            <div class="*** w-full md:w-6/12 ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -147,7 +147,7 @@ const html = /* HTML */ `
               </label>
             </div>
 
-            <div class="w-full md:w-6/12">
+            <div class="*** w-full md:w-6/12 ***">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
@@ -164,7 +164,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="w-full">
+        <div class="*** w-full ***">
           <button
             type="submit"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

@@ -14,8 +14,8 @@ export default function demo() {
           </div>
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 text-opacity-50">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current h-full animate-xt-filler-x"></span>
+              <span className="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
+              <span className="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
             </span>
           </span>
         </div>
@@ -26,8 +26,8 @@ export default function demo() {
           Lorem ipsum
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 text-opacity-50">
-              <span className="block absolute bg-current opacity-25 w-full h-full"></span>
-              <span className="block absolute bg-current h-full animate-xt-filler-x"></span>
+              <span className="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
+              <span className="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
             </span>
           </span>
         </button>

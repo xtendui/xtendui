@@ -16,14 +16,14 @@ export default function demo() {
           </button>
 
           <div className="xt-tooltip p-2">
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="*** xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white ***">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ export default function demo() {
                 aria-label="Close">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="xt-icon"
+                  className="xt-icon "
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"

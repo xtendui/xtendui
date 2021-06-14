@@ -14,17 +14,17 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md md:rounded-tr-none shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl transition md:text-white md:bg-primary-500 md:hover:bg-primary-600 md:p-3 md:right-auto md:left-100"
+                    className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl *** transition md:text-white md:bg-primary-500 md:hover:bg-primary-600 md:p-3 md:right-auto md:left-100 ***"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner">
                 <div className="xt-card xt-min-h-screen shadow-overlay text-black xt-links-default bg-white">
@@ -81,7 +81,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop bg-black pointer-events-none opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
               <div className="xt-overlay-inner">
                 <div className="xt-card xt-min-h-screen shadow-overlay text-black xt-links-default bg-white">
@@ -138,7 +138,7 @@ export default function demo() {
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="xt-icon"
+                      className="xt-icon "
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

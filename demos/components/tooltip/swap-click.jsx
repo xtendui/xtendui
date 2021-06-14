@@ -23,7 +23,7 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="xt-tooltip p-2 group hidden" id="tooltip--swap-click-swap">
+      <div className="xt-tooltip p-2 group *** hidden ***" id="tooltip--swap-click-swap">
         <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Clicked!
         </div>

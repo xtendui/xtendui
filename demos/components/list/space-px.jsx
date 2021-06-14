@@ -2,11 +2,11 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="xt-list xt-list-px flex-col">
+      <nav className="xt-list *** xt-list-px *** flex-col">
         <div>
-          <div className="xt-list xt-list-px">
+          <div className="xt-list *** xt-list-px ***">
             <div>
-              <div className="xt-list xt-list-px flex-col">
+              <div className="xt-list *** xt-list-px *** flex-col">
                 <button
                   type="button"
                   className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
@@ -42,7 +42,7 @@ export default function demo() {
         </div>
 
         <div>
-          <div className="xt-list xt-list-px">
+          <div className="xt-list *** xt-list-px ***">
             <button
               type="button"
               className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">

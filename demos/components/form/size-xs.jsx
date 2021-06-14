@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <form className="text-xs">
+      <form className="*** text-xs ***">
         <div className="xt-row xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
             <label className="block mb-3 font-semibold text-gray-900"> Input </label>

@@ -12,7 +12,7 @@ export default function demo() {
   return (
     <div className="demo--slider-exclude-react" ref={ref}>
       <div className="demo--slider-exclude-toggle-react" ref={ref}>
-        <div className="xt-list xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
+        <div className="*** xt-list *** xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
           <button
             type="button"
             className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
@@ -28,13 +28,13 @@ export default function demo() {
           </button>
 
           <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
             id="toggle--unique-0">
             Target 0
           </div>
 
           <div
-            className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
+            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
             id="toggle--unique-1">
             Target 1
           </div>
@@ -44,7 +44,7 @@ export default function demo() {
           <div className="p-4 md:p-6 lg:p-8">
             <div className="xt-slides xt-row xt-row-4">
               <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="xt-toggle" data-xt-group="group1">
+                <div className="*** xt-toggle *** ***" data-xt-group="group1">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">1</div>
                   </div>
@@ -52,7 +52,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="xt-toggle" data-xt-group="group0,group1">
+                <div className="*** xt-toggle *** ***" data-xt-group="group0,group1">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">2</div>
                   </div>
@@ -60,7 +60,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-                <div className="xt-toggle" data-xt-group="group0">
+                <div className="*** xt-toggle *** ***" data-xt-group="group0">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">3</div>
                   </div>
@@ -68,7 +68,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-full group">
-                <div className="xt-toggle" data-xt-group="group1">
+                <div className="*** xt-toggle *** ***" data-xt-group="group1">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">4</div>
                   </div>
@@ -76,7 +76,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-                <div className="xt-toggle" data-xt-group="group0">
+                <div className="*** xt-toggle *** ***" data-xt-group="group0">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">5</div>
                   </div>
@@ -84,7 +84,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="xt-toggle" data-xt-group="group0,group1">
+                <div className="*** xt-toggle *** ***" data-xt-group="group0,group1">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">6</div>
                   </div>
@@ -92,7 +92,7 @@ export default function demo() {
               </div>
 
               <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="xt-toggle" data-xt-group="group1">
+                <div className="*** xt-toggle *** ***" data-xt-group="group1">
                   <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
                     <div className="xt-h4">7</div>
                   </div>
@@ -192,9 +192,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
-    exclude: '.hidden',
-  })
+  const self = new Xt.Slider(slider, {})
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

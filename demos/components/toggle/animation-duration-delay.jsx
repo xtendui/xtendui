@@ -26,31 +26,31 @@ export default function demo() {
         </button>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="0">
           Target 0a
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="0">
           Target 0b
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="0">
           Target 0c
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="0">
           Target 0d
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-1000 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="1"
           data-xt-duration-in="1000"
           data-xt-duration-out="0"
@@ -60,7 +60,7 @@ export default function demo() {
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-500 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="1"
           data-xt-duration-in="500"
           data-xt-duration-out="500"
@@ -70,7 +70,7 @@ export default function demo() {
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="1"
           data-xt-duration-in="0"
           data-xt-duration-out="1000"
@@ -80,7 +80,7 @@ export default function demo() {
         </div>
 
         <div
-          className="xt-card xt-toggle rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4"
+          className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:duration-0 in:translate-x-0 out:duration-500 out:translate-x-4 ***"
           data-xt-group="1"
           data-xt-duration-in="0"
           data-xt-duration-out="1000"

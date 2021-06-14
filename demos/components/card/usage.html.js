@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card ${classes.cardMd()} ${classes.cardRadius()} ${classes.cardDefault()}">
+    <div class="*** xt-card ${classes.cardMd()} ${classes.cardRadius()} ${classes.cardDefault()} ***">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
