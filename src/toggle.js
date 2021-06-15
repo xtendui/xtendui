@@ -1602,7 +1602,7 @@ class Toggle {
             window,
             `xtHashFrame`,
             requestAnimationFrame(() => {
-              location.hash = ''
+              history.pushState({}, '', '#')
             })
           )
         }
