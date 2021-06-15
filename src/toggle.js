@@ -1602,6 +1602,7 @@ class Toggle {
             window,
             `xtHashFrame`,
             requestAnimationFrame(() => {
+              // pushState to prevent page scroll
               history.pushState({}, '', '#')
             })
           )
