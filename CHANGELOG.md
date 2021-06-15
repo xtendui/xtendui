@@ -1,3 +1,10 @@
+# [1.0.0-beta.29](https://github.com/minimit/xtendui/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2021-06-15)
+
+
+### Bug Fixes
+
+* **toggle:** prevent page scroll on hash off ([0dc76d6](https://github.com/minimit/xtendui/commit/0dc76d6755f6de4e709e154098f4e495d3de57f0))
+
 # [1.0.0-beta.28](https://github.com/minimit/xtendui/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2021-06-14)
 
 
