@@ -32,10 +32,11 @@ Xtend UI is a powerfull library to create advanced UI with custom tailwind compo
 * Positioning with [Popperjs](https://popper.js.org/)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Release with [Semantic Release](https://github.com/semantic-release/semantic-release)
-* Docs icons with [Feather Icons](https://feathericons.com/)
-* Docs images with [Unsplash](https://source.unsplash.com/)
+* Polyfill with [Babel](https://babeljs.io/) and [Core Js](https://github.com/zloirock/core-js)
+* Icons with [Feather Icons](https://feathericons.com/)
+* Hosting with [Github Pages](https://pages.github.com/) and [Cloudflare](https://www.cloudflare.com/)
 
-[Supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc) are browsers that supports `css variables`, `css grid`, `async`, `:scope`,  `composedPath`.
+[Supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc) are browsers that supports `css variables`, `css grid`, `async`, `:scope`,  `composedPath`, `es6-module` and `es6-module-dynamic-import`.
 
 ## Setup
 

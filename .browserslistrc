@@ -3,8 +3,8 @@ not ie 11
 not edge <= 18
 not op_mini all
 Edge >= 79
-Firefox >= 53
-Chrome >= 57
-Safari >= 11
-Opera >= 44
+Firefox >= 67
+Chrome >= 63
+Safari >= 11.1
+Opera >= 50
 iOS >= 11
