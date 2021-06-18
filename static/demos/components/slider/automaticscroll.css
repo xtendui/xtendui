@@ -1,14 +1,14 @@
 .demo--slider-automaticscroll, .demo--slider-automaticscroll-react {
   .slide-asset {
     width: 300px;
-    @apply transform transition;
+    @apply transition;
     &:hover, &.in {
       transform: scale(0.98);
     }
   }
 
   .slide-text {
-    @apply transform transition;
+    @apply transition;
     &:hover, &.in {
       color: theme('colors.primary.500');
     }

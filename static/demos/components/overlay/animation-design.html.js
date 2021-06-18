@@ -15,7 +15,7 @@ const html = /* HTML */ `
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
-              class="*** xt-design *** ${classes.cardRadius()} shadow-overlay bg-white *** transform transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-1 ***2"
+              class="*** xt-design *** ${classes.cardRadius()} shadow-overlay bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-1 ***2"
             ></div>
 
             <div class="xt-card *** transition opacity-0 group-in:opacity-100 ***">

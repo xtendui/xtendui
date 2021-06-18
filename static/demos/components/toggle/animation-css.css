@@ -1,7 +1,7 @@
 .demo--toggle-animation, .demo--toggle-animation-react {
   .xt-card {
     /* initial */
-    @apply transform transition;
+    @apply transition;
     @apply opacity-0;
     &.dir-before {
       @apply translate-x-4;

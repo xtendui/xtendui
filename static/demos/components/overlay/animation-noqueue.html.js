@@ -34,7 +34,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
-            class="xt-overlay-inner transform *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
           >
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
@@ -98,7 +98,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
-            class="xt-overlay-inner transform *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
           >
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
@@ -162,7 +162,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
-            class="xt-overlay-inner transform *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
           >
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button

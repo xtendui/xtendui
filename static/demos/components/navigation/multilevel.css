@@ -1,7 +1,7 @@
 .demo--multilevel, .demo--multilevel-react {
   .xt-toggle {
     /* initial */
-    @apply transform transition;
+    @apply transition;
     @apply opacity-0;
     &.dir-before {
       @apply -translate-x-10;

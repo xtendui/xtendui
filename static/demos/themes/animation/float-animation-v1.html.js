@@ -1,13 +1,13 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const interactionDefault = () =>
-  '*** bg-gray-200 border-transparent border transform transition hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 hover:shadow-lg active:bg-gray-400 active:translate-y-0 active:shadow-sm on:bg-gray-400 on:translate-y-0 on:shadow-sm ***'
+  '*** bg-gray-200 border-transparent border transition hover:bg-gray-300 hover:border-gray-400 hover:-translate-y-1 hover:shadow-lg active:bg-gray-400 active:translate-y-0 active:shadow-sm on:bg-gray-400 on:translate-y-0 on:shadow-sm ***'
 const interactionPrimary = () =>
-  '*** bg-primary-500 border-transparent border transform transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-sm on:bg-primary-700 on:translate-y-0 on:shadow-sm ***'
+  '*** bg-primary-500 border-transparent border transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-sm on:bg-primary-700 on:translate-y-0 on:shadow-sm ***'
 const animDesign = () =>
-  '*** transform opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***'
+  '*** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***'
 const animItem = () =>
-  '*** transform opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
+  '*** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
 const animItemOpacity = () =>
   '*** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
 
@@ -32,14 +32,14 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-semibold leading-snug tracking-wider uppercase transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-semibold leading-snug tracking-wider uppercase transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link transform transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Link
       </button>
