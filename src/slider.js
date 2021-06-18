@@ -131,7 +131,7 @@ class Slider extends Xt.Toggle {
     for (const group of self.groups) {
       let groupHeight = 0
       for (const target of group.targets) {
-        const height = target.children[0].offsetHeight
+        const height = target.offsetHeight
         groupHeight = height > groupHeight ? height : groupHeight
       }
       Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
@@ -454,7 +454,7 @@ class Slider extends Xt.Toggle {
           for (const slide of group.targets) {
             const content = slide.querySelector('.xt-slide-content')
             if (content) {
-              replace += `<span>${content.innerHTML}</span>`
+              replace += content.innerHTML
             }
             const attr = slide.querySelector('[data-xt-pag-classes]')
             if (attr) {
