@@ -46,7 +46,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Backdrop
 
-Use `<div class="xt-backdrop bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop.
+Use `<div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>` inside `.xt-tooltip` to add a customizzable backdrop.
 
 Use `on:z-tooltip` to have the button above the backdrop.
 

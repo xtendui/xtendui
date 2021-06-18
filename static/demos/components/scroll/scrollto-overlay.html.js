@@ -57,7 +57,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="xt-overlay" id="overlay--scrollto">
-      <div class="xt-backdrop bg-black opacity-25"></div>
+      <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
       <div class="xt-overlay-container py-0">
         <div class="xt-overlay-inner">
           <button type="button" class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl" aria-label="Close">
