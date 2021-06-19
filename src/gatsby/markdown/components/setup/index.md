@@ -174,9 +174,11 @@ ScrollTrigger.addEventListener('refresh', () => {
     sticky.classList.add('xt-ignore')
   }
   requestAnimationFrame(() => {
-    for (const sticky of stickys) {
-      sticky.classList.remove('xt-ignore')
-    }
+    requestAnimationFrame(() => {
+      for (const sticky of stickys) {
+        sticky.classList.remove('xt-ignore')
+      }
+    })
   })
 })
 ```
