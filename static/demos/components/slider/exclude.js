@@ -32,7 +32,6 @@ const mountToggle = ({ ref }) => {
     elements: '.xt-list > button',
     targets: '.xt-toggle',
     min: 1,
-    exclude: '.hidden',
   })
   /***/
 
@@ -82,7 +81,9 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {})
+  const self = new Xt.Slider(slider, {
+    exclude: '.hidden',
+  })
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
