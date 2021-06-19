@@ -32,6 +32,7 @@ const mountToggle = ({ ref }) => {
     elements: '.xt-list > button',
     targets: '.xt-toggle',
     min: 1,
+    exclude: '.hidden',
   })
   /***/
 

@@ -20,7 +20,7 @@ The query is inside `object`, only when specifying **elements and targets with `
 | Option                  | `targets:Query`                          | `false`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
-| Option                  | `exclude:Query`                          | `'.hidden'`        | **Exclude elements and targets** if they matches the query           |
+| Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
 
