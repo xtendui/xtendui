@@ -651,12 +651,8 @@ class Toggle {
     }
     if (self.hasHash) {
       // hash
-      const hashHandler = Xt.dataStorage.put(
-        window,
-        `hashchange/${self.ns}`,
-        self.hashChange.bind(self).bind(self, true)
-      )
-      addEventListener('hashchange', hashHandler)
+      const hashHandler = Xt.dataStorage.put(window, `popstate/${self.ns}`, self.hashChange.bind(self).bind(self, true))
+      addEventListener('popstate', hashHandler)
     }
     // jump
     if (options.jump) {
@@ -938,18 +934,18 @@ class Toggle {
               currents++
               arr.push(el)
               // toggle event if present because of custom listeners
+              Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
               if (options.on) {
                 const event = options.on.split(' ')[0]
                 el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
               } else {
                 self.eventOn(el, true)
               }
-              Xt.scrolltoHashforce = true
+              Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
             }
           }
         }
       }
-      Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
     }
     // return
     return { currents, arr }
@@ -1508,26 +1504,28 @@ class Toggle {
     const self = this
     const options = self.options
     // hash
-    if (self.hasHash && !self.initial) {
-      // fix no data-xt-group-same
-      const elMain = obj.elements.queueEls[0]
-      if (
-        (type === 'elements' && self.getElements(elMain).includes(el)) ||
-        (type === 'targets' && self.getTargets(elMain).includes(el))
-      ) {
-        const attr = el.getAttribute(options.hash)
-        if (attr) {
-          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-          Xt.scrolltoHashforce = false
-          // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-          cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-          Xt.dataStorage.set(
-            window,
-            `xtHashFrame`,
-            requestAnimationFrame(() => {
-              location.hash = `#${encodeURIComponent(attr)}`
-            })
-          )
+    if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
+      if (self.hasHash && !self.initial) {
+        // fix no data-xt-group-same
+        const elMain = obj.elements.queueEls[0]
+        if (
+          (type === 'elements' && self.getElements(elMain).includes(el)) ||
+          (type === 'targets' && self.getTargets(elMain).includes(el))
+        ) {
+          const attr = el.getAttribute(options.hash)
+          if (attr) {
+            // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
+            cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+            Xt.dataStorage.set(
+              window,
+              `xtHashFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+                history.pushState({}, '', `#${encodeURIComponent(attr)}`)
+                Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
+              })
+            )
+          }
         }
       }
     }
@@ -1585,27 +1583,28 @@ class Toggle {
     const self = this
     const options = self.options
     // hash
-    if (options.hash && self.hasHash && !self.initial) {
-      // fix no data-xt-group-same
-      const elMain = obj.elements.queueEls[0]
-      if (
-        (type === 'elements' && self.getElements(elMain).includes(el)) ||
-        (type === 'targets' && self.getTargets(elMain).includes(el))
-      ) {
-        const attr = el.getAttribute(options.hash)
-        if (attr && attr === location.hash.split('#')[1]) {
-          Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
-          Xt.scrolltoHashforce = false
-          // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-          cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-          Xt.dataStorage.set(
-            window,
-            `xtHashFrame`,
-            requestAnimationFrame(() => {
-              // pushState to prevent page scroll
-              history.pushState({}, '', '#')
-            })
-          )
+    if (!Xt.dataStorage.get(self.object, `${self.ns}HashSkip`)) {
+      if (options.hash && self.hasHash && !self.initial) {
+        // fix no data-xt-group-same
+        const elMain = obj.elements.queueEls[0]
+        if (
+          (type === 'elements' && self.getElements(elMain).includes(el)) ||
+          (type === 'targets' && self.getTargets(elMain).includes(el))
+        ) {
+          const attr = el.getAttribute(options.hash)
+          if (attr && attr === location.hash.split('#')[1]) {
+            // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
+            cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
+            Xt.dataStorage.set(
+              window,
+              `xtHashFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, true)
+                history.pushState({}, '', '#')
+                Xt.dataStorage.set(self.object, `${self.ns}HashSkip`, false)
+              })
+            )
+          }
         }
       }
     }

@@ -92,6 +92,8 @@ Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-gro
 
 Test page should not scroll on change hash.
 
+Test overlay should reopen on browser location.
+
 Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
 
 Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
