@@ -72,6 +72,14 @@ const highlightCode = (pre, element, language, isReact = false) => {
   } else {
     text = text.replace(/, \.demo--(.*?)-react/, '')
   }
+  // replace entities
+  text = text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x2F;/g, '/')
   // remove tabs
   const arr = text.split('\n')
   let search
@@ -113,6 +121,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
   // clipboard
   text = text.replace(/\/?\*\*\*\/?\n*\s*([\s\S\r]*?)\n*\s*\/?\*\*\*\/?/g, (_, str) => str) // remove highlight syntax
   Xt.dataStorage.set(pre, 'sourceCode', text)
+  console.log(text)
   // set language
   if (language === 'html') {
     language = 'language-html'
