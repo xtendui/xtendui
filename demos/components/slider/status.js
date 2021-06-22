@@ -68,7 +68,6 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const status = ref.querySelector('.slider-status')
   const current = slider.querySelector('.slider-status-current')
   const container = slider.querySelector('.slider-status-container')
 
@@ -99,12 +98,6 @@ const mountStatus = ({ ref }) => {
       const currentLeft = (left * containerWidth) / availableWidth
       current.style.width = `${currentWidth}px`
       current.style.left = `${currentLeft}px`
-      // disabled
-      if (self.disabled) {
-        status.classList.add('hidden')
-      } else {
-        status.classList.remove('hidden')
-      }
     }
   }
 

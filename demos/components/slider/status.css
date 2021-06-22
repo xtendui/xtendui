@@ -1,0 +1,5 @@
+.slider-status {
+  .xt-slider-disabled & {
+    display: none !important;
+  }
+}
