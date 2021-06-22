@@ -77,7 +77,6 @@ Use this code to create a **toggle that resets to current** automatically on dea
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
-| Option                  | `classHtml:String`                          | `false`        | Class to add to html element on activation            |
 | Option                  | `zIndex:Object|false`                 | `false`     | Set `z-index` on activation, e.g.: `{ targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 | Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 
