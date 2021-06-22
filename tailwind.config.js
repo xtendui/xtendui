@@ -5,20 +5,6 @@ module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
     content: ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
-    options: {
-      safelist: {
-        greedy: [
-          // popperjs
-          /^data-popper-/,
-          // code
-          /pre/,
-          /code/,
-          /token/,
-          // demos
-          /^iframe--/,
-        ],
-      },
-    },
   },
   theme: {
     colors: {

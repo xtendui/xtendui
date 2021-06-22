@@ -36,14 +36,6 @@ module.exports = {
   purge: {
     // put other purge content e.g.: './src/**/*.css', './src/**/*.js'
     content: ['./node_modules/xtendui/src/*[!.css].js'],
-    options: {
-      safelist: {
-        greedy: [
-          // popperjs
-          /^data-popper-/,
-       ],
-      },
-    },
   },
 }
 ```

@@ -85,6 +85,16 @@ addEventListener('resize', e => {
 })
 ```
 
+Then you need to **refresh scrolltriggers selectively** when you want **ScrollTriggers to stick at the bottom** on mobile when the status bar appear/disappear on scroll.
+
+```js
+const scrollTrigger = ScrollTrigger.create({})
+
+addEventListener('resize', () => {
+  scrollTrigger.refresh()
+})
+```
+
 - If you are initializing **sticky inside** [Xt.mount](/components/javascript/api#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
 
 Just need this code one time in the project.

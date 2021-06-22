@@ -7,7 +7,7 @@
 module.exports = {
   component: theme => ({
     '.xt-sticky:not(.xt-sticky-nozindex)': {
-      // needs zIndex because after ScrollTrigger end
+      // needs zIndex because after ScrollTrigger end animations
       position: 'relative',
       zIndex: theme('zIndex.sticky') - 1,
       '&[style*="position: fixed"]': {
