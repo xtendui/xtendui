@@ -121,7 +121,6 @@ const highlightCode = (pre, element, language, isReact = false) => {
   // clipboard
   text = text.replace(/\/?\*\*\*\/?\n*\s*([\s\S\r]*?)\n*\s*\/?\*\*\*\/?/g, (_, str) => str) // remove highlight syntax
   Xt.dataStorage.set(pre, 'sourceCode', text)
-  console.log(text)
   // set language
   if (language === 'html') {
     language = 'language-html'
