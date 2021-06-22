@@ -1,3 +1,22 @@
+# [1.0.0-beta.30](https://github.com/minimit/xtendui/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2021-06-22)
+
+
+### Bug Fixes
+
+* **slider:** fix no xt-content span and fix autoheight no inner child ([309e986](https://github.com/minimit/xtendui/commit/309e9866c61128a2d6460cd89002e840a3e4c910))
+* **sticky:** fix sticky Xt.mount ignore ([41b7975](https://github.com/minimit/xtendui/commit/41b7975b1408e9fa0d6805897e6215325548e6ae))
+
+
+### Code Refactoring
+
+* refactor defaults exclude now it's false ([8ca2a75](https://github.com/minimit/xtendui/commit/8ca2a75a1fa2842537466687a6160afa06d1762f))
+
+
+### BREAKING CHANGES
+
+* if you need to exclude .hidden add the option because now exclude default is false
+* **sticky:** add another requestAnimationFrame to ScrollTrigger refresh see code
+
 # [1.0.0-beta.29](https://github.com/minimit/xtendui/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2021-06-15)
 
 
