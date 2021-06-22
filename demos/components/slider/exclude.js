@@ -81,7 +81,9 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {})
+  const self = new Xt.Slider(slider, {
+    exclude: '.hidden',
+  })
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

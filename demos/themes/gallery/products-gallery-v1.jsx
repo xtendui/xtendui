@@ -37,7 +37,7 @@ export default function demo() {
                         title="Expand image 1">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
-                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
                       </a>
 
@@ -48,7 +48,7 @@ export default function demo() {
                         title="Expand image 2">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
-                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
                       </a>
 
@@ -59,7 +59,7 @@ export default function demo() {
                         title="Expand image 3">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
-                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
                       </a>
 
@@ -70,7 +70,7 @@ export default function demo() {
                         title="Expand image 4">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
-                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
                       </a>
 
@@ -81,7 +81,7 @@ export default function demo() {
                         title="Expand image 5">
                         <div className="xt-media-container bg-gray-600 overflow-hidden">
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
-                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"></div>
+                          <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
                       </a>
                     </div>
@@ -128,7 +128,7 @@ export default function demo() {
                     <div
                       className="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                       id="overlay--product-images">
-                      <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+                      <div className="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
                       <div className="xt-overlay-container p-0">
                         <button
                           type="button"

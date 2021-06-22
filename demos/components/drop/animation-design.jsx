@@ -15,7 +15,7 @@ export default function demo() {
 
           <div className="xt-drop p-4 group">
             <div className="xt-drop-inner">
-              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transform transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
+              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
               <div className="xt-card w-64 py-3.5 transition opacity-0 group-in:opacity-100">
                 <nav className="xt-list flex-col">
                   <a
@@ -48,7 +48,7 @@ export default function demo() {
 
           <div className="xt-drop p-4 group">
             <div className="xt-drop-inner">
-              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transform transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
+              <div className="*** xt-design *** rounded-md shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
               <div className="xt-card w-80 transition opacity-0 group-in:opacity-100">
                 <button
                   type="button"

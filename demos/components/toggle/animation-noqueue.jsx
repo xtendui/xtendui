@@ -21,11 +21,11 @@ export default function demo() {
         </button>
 
         <div className="relative w-full">
-          <div className="xt-card *** xt-toggle *** *** xt-toggle-absolute *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***">
+          <div className="xt-card *** xt-toggle *** *** xt-toggle-absolute *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***">
             Target 0
           </div>
 
-          <div className="xt-card *** xt-toggle *** *** xt-toggle-absolute *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transform transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***">
+          <div className="xt-card *** xt-toggle *** *** xt-toggle-absolute *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***">
             Target 1
           </div>
         </div>

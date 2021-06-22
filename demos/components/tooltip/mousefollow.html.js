@@ -15,7 +15,7 @@ const html = /* HTML */ `
 
       <div class="*** xt-mousefollow fixed *** xt-tooltip p-2 group">
         <div
-          class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transform transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
+          class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
         >
           Lorem ipsum dolor sit amet
         </div>

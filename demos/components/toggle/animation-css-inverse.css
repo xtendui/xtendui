@@ -7,7 +7,7 @@
 
   .xt-card.xt-toggle-inverse {
     /* initial */
-    @apply transform transition;
+    @apply transition;
     @apply opacity-100 translate-x-0;
     /* in */
     &.in {
@@ -33,7 +33,7 @@
 
   .xt-card.xt-toggle {
     /* initial */
-    @apply transform transition;
+    @apply transition;
     @apply opacity-0;
     &.dir-before {
       @apply translate-x-4;

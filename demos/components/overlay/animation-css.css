@@ -5,7 +5,7 @@
       @apply transition opacity-0;
     }
     .xt-overlay-inner {
-      @apply transform transition opacity-0;
+      @apply transition opacity-0;
     }
     &.dir-before {
       .xt-overlay-inner {

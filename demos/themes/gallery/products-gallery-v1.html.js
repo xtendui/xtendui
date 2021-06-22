@@ -26,7 +26,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
+                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -40,7 +40,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
+                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -54,7 +54,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
+                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -68,7 +68,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
+                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -82,7 +82,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-600 overflow-hidden">
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white transform -translate-y-full"
+                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -146,7 +146,9 @@ const html = /* HTML */ `
                     class="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                     id="overlay--product-images"
                   >
-                    <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+                    <div
+                      class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"
+                    ></div>
                     <div class="xt-overlay-container p-0">
                       <button
                         type="button"

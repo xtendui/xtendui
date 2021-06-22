@@ -2,7 +2,7 @@
   .xt-tooltip {
     /* initial */
     > * {
-      @apply transform transition duration-300;
+      @apply transition duration-300;
       @apply opacity-0;
     }
     &.dir-before {

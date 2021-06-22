@@ -1,11 +1,11 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const animDesign = () =>
-  '*** overflow-hidden transition-all transform -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
+  '*** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
 const animItem = () =>
-  '*** transform opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
+  '*** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
 const animItemWidth = () =>
-  '*** transform opacity-0 -translate-x-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-x-2 ***'
+  '*** opacity-0 -translate-x-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-x-2 ***'
 const animItemOpacity = () =>
   '*** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
 
@@ -178,7 +178,7 @@ const html = /* HTML */ `
           screen full
         </button>
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -206,7 +206,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner ${animDesign()}">
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()}">
@@ -253,7 +253,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
               <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">
@@ -381,7 +381,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group">
-          <div class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
               <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">

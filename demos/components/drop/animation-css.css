@@ -2,7 +2,7 @@
   .xt-drop {
     /* initial */
     > * {
-      @apply transform transition;
+      @apply transition;
       @apply opacity-0;
     }
     &.dir-before {
