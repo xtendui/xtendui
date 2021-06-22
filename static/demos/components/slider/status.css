@@ -1,0 +1,12 @@
+.slider-status {
+  display: none;
+  .xt-slider-init & {
+    display: block;
+  }
+}
+
+.xt-slider-disabled {
+  .slider-status {
+    display: none !important;
+  }
+}
