@@ -574,10 +574,6 @@ const makeFullscreen = container => {
       `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`
     )
   )
-  if (!firstMount) {
-    // ignore once for mount when moving
-    container.classList.add('xt-ignore', 'xt-ignore-once')
-  }
   content.append(container)
   // iframe
   for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
@@ -607,7 +603,6 @@ const demoEmpty = ({ reset = false } = {}) => {
     }
     // move back
     const moving = content.childNodes[0]
-    moving.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
     appendOrigin.before(moving)
     // triggering e.detail.container
     dispatchEvent(

@@ -2522,7 +2522,6 @@ class Toggle {
           if (!appendOrigin) {
             el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
           }
-          el.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
           appendToTarget.append(el)
         }
       } else if (actionCurrent === 'Out') {
@@ -2532,7 +2531,6 @@ class Toggle {
           if (options.appendTo) {
             const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
             if (appendOrigin) {
-              el.classList.add('xt-ignore', 'xt-ignore-once') // fix ignore once for mount when moving
               appendOrigin.before(el)
               appendOrigin.remove()
             }
