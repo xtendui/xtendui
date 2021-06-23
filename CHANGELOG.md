@@ -1,3 +1,10 @@
+# [1.0.0-beta.31](https://github.com/minimit/xtendui/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2021-06-23)
+
+
+### Bug Fixes
+
+* **scroll:** automatic fix Xt mount and unmount on ScrollTrigger pin with raf, no need to add .xt-ignore ([a67a2de](https://github.com/minimit/xtendui/commit/a67a2de2696031907fdcdf84bb274088e66012dd))
+
 # [1.0.0-beta.30](https://github.com/minimit/xtendui/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2021-06-22)
 
 
