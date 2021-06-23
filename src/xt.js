@@ -83,13 +83,27 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            Xt.mountCheck(added)
+            cancelAnimationFrame(Xt.dataStorage.get(added, 'xtObserverFrame'))
+            Xt.dataStorage.set(
+              added,
+              'xtObserverFrame',
+              requestAnimationFrame(() => {
+                Xt.mountCheck(added)
+              })
+            )
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            Xt.unmountCheck(removed)
+            cancelAnimationFrame(Xt.dataStorage.get(removed, 'xtObserverFrame'))
+            Xt.dataStorage.set(
+              removed,
+              'xtObserverFrame',
+              requestAnimationFrame(() => {
+                Xt.unmountCheck(removed)
+              })
+            )
           }
         }
       }
