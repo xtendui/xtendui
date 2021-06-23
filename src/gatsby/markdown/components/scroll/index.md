@@ -95,6 +95,28 @@ addEventListener('resize', () => {
 })
 ```
 
+- If you are initializing **sticky inside** [Xt.mount](/components/javascript/api#xt-mount) you need to **add and remove `.xt-ignore` on refresh** to prevent **child multiple mount and unmount** because pinned elements are moved by ScrollTrigger.
+
+Just need this code one time in the project.
+
+```js
+/* ScrollTrigger fix pin items with Xt.mount */
+
+ScrollTrigger.addEventListener('refresh', () => {
+  const stickys = document.querySelectorAll('.xt-sticky')
+  for (const sticky of stickys) {
+    sticky.classList.add('xt-ignore')
+  }
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      for (const sticky of stickys) {
+        sticky.classList.remove('xt-ignore')
+      }
+    })
+  })
+})
+```
+
 - If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
 
 Just need this code one time in the project.
