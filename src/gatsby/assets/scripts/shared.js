@@ -46,19 +46,3 @@ addEventListener('resize', e => {
     },
   })
 })
-
-/* ScrollTrigger fix pin items with Xt.mount */
-
-ScrollTrigger.addEventListener('refresh', () => {
-  const stickys = document.querySelectorAll('.xt-sticky')
-  for (const sticky of stickys) {
-    sticky.classList.add('xt-ignore')
-  }
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      for (const sticky of stickys) {
-        sticky.classList.remove('xt-ignore')
-      }
-    })
-  })
-})
