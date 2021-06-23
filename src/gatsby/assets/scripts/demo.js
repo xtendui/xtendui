@@ -15,8 +15,6 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
  * demoHash
  */
 
-let firstMount = true
-
 const demoHash = () => {
   const full = document.querySelector('#gatsby_open-full')
   if (full) {
