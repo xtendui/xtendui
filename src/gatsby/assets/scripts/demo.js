@@ -138,7 +138,6 @@ const highlightCode = (pre, element, language, isReact = false) => {
  */
 
 export const populateBlock = () => {
-  firstMount = false
   // prism
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
