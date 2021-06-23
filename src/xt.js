@@ -919,8 +919,12 @@ if (typeof window !== 'undefined') {
    */
   Xt.animTimeout = (el, func, suffix = '', duration = null, actionCurrent = null) => {
     clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-    duration = Xt.animTime(el, duration, actionCurrent)
-    Xt.dataStorage.set(el, `AnimTimeout${suffix}`, setTimeout(func, duration))
+    duration = Xt.animTime(el, duration, actionCurrent) ?? 0
+    if (!duration) {
+      func()
+    } else {
+      Xt.dataStorage.set(el, `AnimTimeout${suffix}`, setTimeout(func, duration))
+    }
   }
 
   /**
@@ -935,19 +939,19 @@ if (typeof window !== 'undefined') {
   /**
    * get transition or animation time
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {Number} timing Force duration in milliseconds
+   * @param {Number} duration Force duration in milliseconds
    * @param {String} actionCurrent Current action
    * @return {Number} Time in milliseconds
    */
-  Xt.animTime = (el, timing = null, actionCurrent = null) => {
+  Xt.animTime = (el, duration = null, actionCurrent = null) => {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
     if (custom) {
       return parseFloat(custom) / Xt.durationTimescale
-    } else if (typeof timing === 'function') {
-      return timing
-    } else if (timing || timing === 0) {
-      return timing / Xt.durationTimescale
+    } else if (typeof duration === 'function') {
+      return duration
+    } else if (duration || duration === 0) {
+      return duration / Xt.durationTimescale
     }
   }
 
