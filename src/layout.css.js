@@ -33,7 +33,7 @@ module.exports = {
   }),
   component: theme => ({
     '.xt-body:not(.xt-optout-scroll)': {
-      '@apply xt-overflow-main': '',
+      '@apply xt-overflow-main overflow-y-scroll': '',
     },
     html: {
       touchAction: 'manipulation', // disable double-tap
