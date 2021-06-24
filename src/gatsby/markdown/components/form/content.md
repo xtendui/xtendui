@@ -40,7 +40,7 @@ You can have custom design that contains the `input[type="checkbox"]` or `input[
 | For usability purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
 
 [[notePrimary]]
-| For usability purpose remember to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`.
+| For usability purpose you can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
 
 Use [button](/components/button) with `label` to create **checks with button**.
 

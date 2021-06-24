@@ -4,9 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <label
-          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+        <label class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -26,9 +24,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label
-          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+        <label class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -68,7 +64,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer *** focus-within:outline-browser ***"
+          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer  *** focus-within:outline-browser ***"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
@@ -87,9 +83,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label
-          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+        <label class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -108,9 +102,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <label
-          class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+        <label class="*** xt-card *** ${classes.cardRadius()} ${classes.cardDefaultInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
