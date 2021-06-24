@@ -1,3 +1,11 @@
+# [1.0.0-beta.33](https://github.com/minimit/xtendui/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2021-06-24)
+
+
+### Bug Fixes
+
+* **css:** added body overflow-y-scroll by default with xt-body ([fdc874f](https://github.com/minimit/xtendui/commit/fdc874ff3bdf180b4904bfbea48f52e9f8a29264))
+* **toggle:** fix focusTrap with multiple targets ([ff230a7](https://github.com/minimit/xtendui/commit/ff230a7204eac893ac5970a9a8307645f69f708e))
+
 # [1.0.0-beta.32](https://github.com/minimit/xtendui/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2021-06-24)
 
 
