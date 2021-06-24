@@ -1,3 +1,11 @@
+# [1.0.0-beta.32](https://github.com/minimit/xtendui/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2021-06-24)
+
+
+### Bug Fixes
+
+* **js:** fix Xt.on and Xt.off when no duration instant now ([65c72a6](https://github.com/minimit/xtendui/commit/65c72a65a2fbd570ba8be19e865e710315f43fdb))
+* **toggle:** fix focustrap with namespace on unique mode + fix focustrap nested ([2e5b9b9](https://github.com/minimit/xtendui/commit/2e5b9b9787059c6a4bbd378b4d5ab00b94a65bfa))
+
 # [1.0.0-beta.31](https://github.com/minimit/xtendui/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2021-06-23)
 
 
