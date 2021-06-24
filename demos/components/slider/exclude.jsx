@@ -170,8 +170,8 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  for (const element of self.elements) {
-    element.addEventListener('on.xt.toggle', change)
+  for (const el of self.elements) {
+    el.addEventListener('on.xt.toggle', change)
   }
 
   // unmount

@@ -117,9 +117,9 @@ const mountDrops = ({ ref }) => {
       // when sequential interaction
       if (self.direction) {
         // not current targets
-        for (const target of self.targets.filter(x => !self.hasCurrent(x))) {
+        for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
           // inner
-          const inner = target.querySelector('.xt-drop-inner')
+          const inner = tr.querySelector('.xt-drop-inner')
           gsap.killTweensOf(inner)
           gsap.set(inner, {
             height: innerHeightCache,

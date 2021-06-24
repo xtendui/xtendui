@@ -63,8 +63,8 @@ const mountToggle = ({ ref }) => {
     })
     // elements
     const elements = self.elements.filter(x => self.hasCurrent(x))
-    for (const element of elements) {
-      const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const el of elements) {
+      const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.set(filler, {
@@ -81,8 +81,8 @@ const mountToggle = ({ ref }) => {
     }
     // targets
     const targets = self.targets.filter(x => self.hasCurrent(x))
-    for (const target of targets) {
-      const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const tr of targets) {
+      const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.set(filler, {
@@ -106,8 +106,8 @@ const mountToggle = ({ ref }) => {
   const autostop = () => {
     // elements
     const elements = self.elements.filter(x => self.hasCurrent(x))
-    for (const element of elements) {
-      const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const el of elements) {
+      const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.to(filler, {
@@ -120,8 +120,8 @@ const mountToggle = ({ ref }) => {
     }
     // targets
     const targets = self.targets.filter(x => self.hasCurrent(x))
-    for (const target of targets) {
-      const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const tr of targets) {
+      const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.to(filler, {
@@ -150,8 +150,8 @@ const mountToggle = ({ ref }) => {
     })
     // elements
     const elements = self.elements.filter(x => self.hasCurrent(x))
-    for (const element of elements) {
-      const fillers = element.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const el of elements) {
+      const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.to(filler, {
@@ -164,8 +164,8 @@ const mountToggle = ({ ref }) => {
     }
     // targets
     const targets = self.targets.filter(x => self.hasCurrent(x))
-    for (const target of targets) {
-      const fillers = target.querySelectorAll('.xt-filler span:nth-child(2)')
+    for (const tr of targets) {
+      const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
         gsap.to(filler, {

@@ -5,13 +5,22 @@ import 'xtendui/src/overlay'
 export default function demo() {
   return (
     <div>
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          data-xt-overlay="{ targets: '#overlay--hash' }">
           Overlay
         </button>
-        <div className="xt-overlay *** on ***" data-xt-hash="demo--overlay-hash">
+
+        <button
+          type="button"
+          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          data-xt-overlay="{ targets: '#overlay--hash' }">
+          Overlay same
+        </button>
+
+        <div className="xt-overlay" id="overlay--hash" data-xt-hash="demo--overlay-hash">
           <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">

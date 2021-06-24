@@ -58,8 +58,8 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('on.xt.drop', on)
+  for (const tr of self.targets) {
+    tr.addEventListener('on.xt.drop', on)
   }
 
   // off
@@ -79,8 +79,8 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('off.xt.drop', off)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.drop', off)
   }
 
   // unmount
