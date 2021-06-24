@@ -9,6 +9,8 @@ title: "Animation"
 
 Test activations and animations.
 
+Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
+
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>

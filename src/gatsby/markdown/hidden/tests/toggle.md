@@ -94,6 +94,8 @@ Test page should not scroll on change hash.
 
 Test overlay should reopen on browser location.
 
+Test overlay opened with hash on page load, closing it should not block page interaction (bug with multiple elemens same target).
+
 Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
 
 Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
