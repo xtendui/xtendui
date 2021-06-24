@@ -20,6 +20,7 @@ if (typeof window !== 'undefined') {
   Xt.optionsGlobal = {}
   Xt.mountArr = []
   Xt.unmountArr = []
+  Xt.focusTrapArr = []
   Xt.scrollDelay = false
   Xt.resizeDelay = 75
   Xt.medialoadedDelay = false

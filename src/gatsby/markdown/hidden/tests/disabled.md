@@ -23,6 +23,8 @@ Test nested should disable only parent.
 
 Test nested close should close only child.
 
+Test nested FocusTrap.
+
 Test slider instant position and wrap.
 
 <demo>

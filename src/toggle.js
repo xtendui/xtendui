@@ -2385,11 +2385,17 @@ class Toggle {
       requestAnimationFrame(() => {
         // focusLimit
         if (options.focusLimit) {
-          const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
-          requestAnimationFrame(() => {
-            self.focusTrap = focusTrap.createFocusTrap(el)
-            self.focusTrap.activate()
-          })
+          let nsFocusTrap = Xt.dataStorage.get(self.ns, 'xtFocusTrap')
+          if (!nsFocusTrap) {
+            const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
+            nsFocusTrap = focusTrap.createFocusTrap(els)
+            Xt.dataStorage.set(self.ns, 'xtFocusTrap', nsFocusTrap)
+            nsFocusTrap.activate()
+            Xt.focusTrapArr.push(nsFocusTrap)
+          } else {
+            nsFocusTrap.unpause()
+            Xt.focusTrapArr.push(nsFocusTrap)
+          }
         }
         // remove class initial
         if (self.initial) {
@@ -2409,10 +2415,18 @@ class Toggle {
         self.inverse = null
       })
     } else if (actionCurrent === 'Out') {
-      // focusLimit
-      if (options.focusLimit) {
-        self.focusTrap.deactivate()
-      }
+      // keep the same level of raf for custom listener
+      requestAnimationFrame(() => {
+        // focusLimit
+        const nsFocusTrap = Xt.dataStorage.get(self.ns, 'xtFocusTrap')
+        if (nsFocusTrap) {
+          nsFocusTrap.pause()
+          Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
+          if (Xt.focusTrapArr.length) {
+            Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
+          }
+        }
+      })
     }
   }
 
