@@ -32,18 +32,8 @@ module.exports = {
     },
   }),
   component: theme => ({
-    // overflow
     '.xt-body:not(.xt-optout-scroll)': {
       '@apply xt-overflow-main': '',
-    },
-    // custom focus
-    '.xt-body:not(.xt-optout-focus)': {
-      // focus-visible
-      '&:not(.xt-focus-visible)': {
-        ':focus, :focus-within': {
-          outline: 'none',
-        },
-      },
     },
     html: {
       touchAction: 'manipulation', // disable double-tap

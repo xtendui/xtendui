@@ -39,6 +39,7 @@ Xtend UI is a powerfull library to create advanced UI with custom tailwind compo
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
+* Focus trap with [Focus Trap](https://github.com/focus-trap/focus-trap)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Release with [Semantic Release](https://github.com/semantic-release/semantic-release)
 * Polyfill with [Babel](https://babeljs.io/) and [Core Js](https://github.com/zloirock/core-js)

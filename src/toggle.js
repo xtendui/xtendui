@@ -6,6 +6,7 @@
 
 import { Xt } from './xt'
 import RJSON from 'relaxed-json'
+import * as focusTrap from 'focus-trap'
 
 /**
  * Toggle
@@ -428,13 +429,6 @@ class Toggle {
             const role = tr.getAttribute('role')
             if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
               tr.setAttribute('aria-expanded', 'false')
-            }
-          }
-          // tabindex
-          if (options.aria === true || options.aria.tabindex) {
-            const focusables = tr.querySelectorAll(Xt.focusables)
-            for (const focusable of focusables) {
-              focusable.setAttribute('tabindex', '-1')
             }
           }
           // describedby
@@ -2122,15 +2116,6 @@ class Toggle {
       } else {
         self.specialCollapse('Reset', el, type)
       }
-      if (options.focusLimit) {
-        if (obj.targets) {
-          if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-            Xt.focusLimit.on(obj.targets.queueEls[0])
-          }
-        } else if (type === 'elements') {
-          Xt.focusLimit.on(obj.elements.queueEls[0])
-        }
-      }
       // aria
       if (options.aria) {
         if (type === 'elements') {
@@ -2145,15 +2130,6 @@ class Toggle {
             const role = el.getAttribute('role')
             if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
               el.setAttribute('aria-expanded', 'true')
-            }
-          }
-        }
-        // tabindex
-        if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
-          if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-            const focusables = el.querySelectorAll(Xt.focusables)
-            for (const focusable of focusables) {
-              focusable.removeAttribute('tabindex')
             }
           }
         }
@@ -2194,10 +2170,6 @@ class Toggle {
       // special
       self.specialCollapse(actionCurrent, el, type)
       self.specialClose(actionCurrent, el, type, obj)
-      if (options.focusLimit) {
-        const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
-        Xt.focusLimit.off(el)
-      }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // keep the same level of raf for activation
@@ -2331,14 +2303,6 @@ class Toggle {
               el.setAttribute('aria-expanded', 'false')
             }
           }
-          // tabindex
-          if (options.aria === true || (typeof options.aria === 'object' && options.aria.tabindex)) {
-            const focusables = el.querySelectorAll(Xt.focusables)
-            for (const focusable of focusables) {
-              focusable.setAttribute('tabindex', '-1')
-              focusable.blur()
-            }
-          }
         }
       }
       // listener dispatch
@@ -2414,10 +2378,19 @@ class Toggle {
    */
   queueComplete(actionCurrent, obj) {
     const self = this
+    const options = self.options
     // logic
     if (actionCurrent === 'In') {
       // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
+        // focusLimit
+        if (options.focusLimit) {
+          const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
+          requestAnimationFrame(() => {
+            self.focusTrap = focusTrap.createFocusTrap(el)
+            self.focusTrap.activate()
+          })
+        }
         // remove class initial
         if (self.initial) {
           for (const type in obj) {
@@ -2435,6 +2408,11 @@ class Toggle {
         // reset
         self.inverse = null
       })
+    } else if (actionCurrent === 'Out') {
+      // focusLimit
+      if (options.focusLimit) {
+        self.focusTrap.deactivate()
+      }
     }
   }
 
@@ -3369,7 +3347,6 @@ Toggle.optionsDefaultSuper = {
   aria: {
     activation: false,
     role: false,
-    tabindex: false,
     controls: false,
     describedby: false,
     labelledby: false,

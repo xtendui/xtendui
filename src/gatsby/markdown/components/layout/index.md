@@ -16,8 +16,6 @@ Add to the `body` the class `xt-body` to have this features:
 
 * **Custom body scrollbar** [components styles](/components/layout#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
 
-* **Automatically disable `outline` on `:focus` and `:focus-within`** when not keyboard activation, sort of `:focus-visible`. You can disable this feature with `xt-optout-focus` and keep others `xt-body` features.
-
 ## Utilities Styles
 
 These are layout **utilities**.
