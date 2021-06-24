@@ -628,15 +628,15 @@ class Toggle {
     }
     // hash
     if (options.hash) {
-      for (const element of self.elements) {
-        if (element.getAttribute(options.hash)) {
+      for (const el of self.elements) {
+        if (el.getAttribute(options.hash)) {
           self.hasHash = true
           break
         }
       }
       if (!self.hasHash) {
-        for (const target of self.targets) {
-          if (target.getAttribute(options.hash)) {
+        for (const tr of self.targets) {
+          if (tr.getAttribute(options.hash)) {
             self.hasHash = true
             break
           }
@@ -1124,16 +1124,16 @@ class Toggle {
     const self = this
     // groups
     const groups = []
-    for (const element of self.elements) {
+    for (const el of self.elements) {
       // choose element by group
-      const group = element.getAttribute('data-xt-group')
+      const group = el.getAttribute('data-xt-group')
       if (group) {
         const alreadyFound = groups.filter(x => x.getAttribute('data-xt-group') === group)
         if (!alreadyFound.length) {
-          groups.push(element)
+          groups.push(el)
         }
       } else {
-        groups.push(element)
+        groups.push(el)
       }
     }
     return groups
@@ -2546,7 +2546,6 @@ class Toggle {
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
-          console.log(el, reset, type, self.initial)
           if (reset) {
             el.style.height = 'inherit'
             el.style.maxHeight = 'none'
@@ -3076,8 +3075,8 @@ class Toggle {
     if (!skipReinit) {
       // fix appendTo close or self.targets are lost
       if (options.appendTo) {
-        for (const element of self.elements.filter(x => self.hasCurrent(x))) {
-          self.eventOff(element)
+        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
+          self.eventOff(el)
         }
       }
       // reinit
@@ -3150,8 +3149,8 @@ class Toggle {
     if (!self.disabled) {
       // fix appendTo close or self.targets are lost
       if (options.appendTo) {
-        for (const element of self.elements.filter(x => self.hasCurrent(x))) {
-          self.eventOff(element)
+        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
+          self.eventOff(el)
         }
       }
       // stop auto
@@ -3257,18 +3256,18 @@ class Toggle {
   removeEvents() {
     const self = this
     // remove internal events on self.destroyElements
-    for (const element of self.destroyElements) {
-      const storages = Xt.dataStorage.getAll(element)
+    for (const el of self.destroyElements) {
+      const storages = Xt.dataStorage.getAll(el)
       if (storages) {
         for (const [key] of storages) {
           if (key) {
             if (key.endsWith(self.ns)) {
-              const handler = Xt.dataStorage.get(element, key)
+              const handler = Xt.dataStorage.get(el, key)
               if (typeof handler === 'function') {
                 const events = key.split('/')[0].split(' ')
                 for (const event of events) {
-                  element.removeEventListener(event, handler)
-                  element.removeEventListener(event, handler, true)
+                  el.removeEventListener(event, handler)
+                  el.removeEventListener(event, handler, true)
                 }
                 // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times
                 //Xt.dataStorage.remove(element, key)

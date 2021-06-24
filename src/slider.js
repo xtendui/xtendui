@@ -130,8 +130,8 @@ class Slider extends Xt.Toggle {
     // @PERF
     for (const group of self.groups) {
       let groupHeight = 0
-      for (const target of group.targets) {
-        const height = target.offsetHeight
+      for (const tr of group.targets) {
+        const height = tr.offsetHeight
         groupHeight = height > groupHeight ? height : groupHeight
       }
       Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
@@ -196,16 +196,16 @@ class Slider extends Xt.Toggle {
       let groupLeft = Infinity
       let groupWidth = 0
       // vars
-      for (const target of targets) {
+      for (const tr of targets) {
         // @PERF
-        const targetLeft = Xt.dataStorage.get(target, `${self.ns}SlideLeft`)
+        const targetLeft = Xt.dataStorage.get(tr, `${self.ns}SlideLeft`)
         // groupLeft is last on the left
         groupLeft = targetLeft < groupLeft ? slideLeft : groupLeft
         if (options.mode === 'absolute') {
           // when absolute mode make fake positions as if all items displaced inside dragger
           groupLeft += self.usedWidth
         }
-        groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+        groupWidth += Xt.dataStorage.get(tr, `${self.ns}SlideWidth`)
         self.usedWidth += groupWidth
       }
       // left with alignment
@@ -218,9 +218,9 @@ class Slider extends Xt.Toggle {
         left = self.detail.draggerWidth - groupLeft - groupWidth
       }
       // save position
-      for (const target of targets) {
-        Xt.dataStorage.set(target, `${self.ns}GroupLeft`, Math.floor(left))
-        Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
+      for (const tr of targets) {
+        Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.floor(left))
+        Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, groupWidth)
       }
     }
   }
@@ -256,15 +256,15 @@ class Slider extends Xt.Toggle {
             // put group in firstIndex group
             if (i > firstIndex) {
               const groupStr = self.groups[firstIndex].target.getAttribute('data-xt-group')
-              for (const target of group.targets) {
-                self.groups[firstIndex].targets.push(target) // put at end
-                target.setAttribute('data-xt-group', groupStr)
+              for (const tr of group.targets) {
+                self.groups[firstIndex].targets.push(tr) // put at end
+                tr.setAttribute('data-xt-group', groupStr)
               }
             }
             // group firstIndex contain new position on dragger limit
-            for (const target of self.groups[firstIndex].targets) {
-              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            for (const tr of self.groups[firstIndex].targets) {
+              Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
+              Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, width)
             }
             // splice reindex
             if (i > firstIndex) {
@@ -292,15 +292,15 @@ class Slider extends Xt.Toggle {
             // put group in lastIndex group
             if (i < lastIndex) {
               const groupStr = self.groups[lastIndex].target.getAttribute('data-xt-group')
-              for (const target of group.targets) {
-                self.groups[lastIndex].targets.unshift(target) // put at start
-                target.setAttribute('data-xt-group', groupStr)
+              for (const tr of group.targets) {
+                self.groups[lastIndex].targets.unshift(tr) // put at start
+                tr.setAttribute('data-xt-group', groupStr)
               }
             }
             // group lastIndex contain new position on dragger limit
-            for (const target of self.groups[lastIndex].targets) {
-              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+            for (const tr of self.groups[lastIndex].targets) {
+              Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
+              Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, width)
             }
             // splice reindex
             if (i < lastIndex) {
@@ -317,12 +317,12 @@ class Slider extends Xt.Toggle {
       for (const group of self.groups) {
         let groupWidth = 0
         let left = Xt.dataStorage.get(group.target, `${self.ns}GroupLeft`)
-        for (const target of group.targets) {
-          groupWidth += Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+        for (const tr of group.targets) {
+          groupWidth += Xt.dataStorage.get(tr, `${self.ns}SlideWidth`)
         }
-        for (const target of group.targets) {
-          Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-          Xt.dataStorage.set(target, `${self.ns}GroupWidth`, groupWidth)
+        for (const tr of group.targets) {
+          Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
+          Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, groupWidth)
         }
       }
       // wrap indexes
@@ -1002,8 +1002,8 @@ class Slider extends Xt.Toggle {
       self.detail.dragCurrentOther = e.touches[0].clientY
     }
     // disable interaction
-    for (const target of self.targets) {
-      target.classList.remove('pointer-events-none')
+    for (const tr of self.targets) {
+      tr.classList.remove('pointer-events-none')
     }
     // fix no drag change when click
     if (self.detail.dragStart === self.detail.dragCurrent) {
@@ -1076,8 +1076,8 @@ class Slider extends Xt.Toggle {
     self.detail.dragDistOther = self.detail.dragStartOther - self.detail.dragCurrentOther
     if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
       // disable interaction
-      for (const target of self.targets) {
-        target.classList.add('pointer-events-none')
+      for (const tr of self.targets) {
+        tr.classList.add('pointer-events-none')
       }
     }
     // check drag direction
@@ -1281,8 +1281,8 @@ class Slider extends Xt.Toggle {
   destroyIntraction() {
     const self = this
     // disable interaction
-    for (const target of self.targets) {
-      target.classList.remove('pointer-events-none')
+    for (const tr of self.targets) {
+      tr.classList.remove('pointer-events-none')
     }
   }
 

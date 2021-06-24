@@ -59,8 +59,8 @@ const mountOverlay = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('on.xt.overlay', on)
+  for (const tr of self.targets) {
+    tr.addEventListener('on.xt.overlay', on)
   }
 
   // off
@@ -81,8 +81,8 @@ const mountOverlay = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('off.xt.overlay', off)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.overlay', off)
   }
 
   // unmount
