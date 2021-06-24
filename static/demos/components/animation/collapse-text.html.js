@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div id="demo--collapse-text-target" class="mb-6 text-lg h-20 *** overflow-hidden transition-all ***">
+        <div id="demo--collapse-text-target" class="mb-6 text-lg max-h-20 *** overflow-hidden transition-all ***">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum
           sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam
           pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at, pretium
@@ -27,7 +27,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <div
           id="demo--collapse-text-on-target"
-          class="mb-6 text-lg h-20 *** overflow-hidden transition-all *** *** on ***"
+          class="mb-6 text-lg max-h-20 *** overflow-hidden transition-all *** *** on ***"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum
           sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam
@@ -42,6 +42,24 @@ const html = /* HTML */ `
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
           data-xt-toggle="{ targets: '#demo--collapse-text-on-target', collapseHeight: 'targets', duration: 500 }"
+        >
+          <span class="group-on:hidden"> Show more </span>
+          <span class="hidden group-on:block"> Show less </span>
+        </button>
+      </div>
+
+      <div class="w-full md:w-6/12">
+        <div
+          id="demo--collapse-text-max-h-unmet-target"
+          class="mb-6 text-lg max-h-20 *** overflow-hidden transition-all ***"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
+          data-xt-toggle="{ targets: '#demo--collapse-text-max-h-unmet-target', collapseHeight: 'targets', duration: 500 }"
         >
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>

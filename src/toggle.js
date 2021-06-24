@@ -2114,7 +2114,7 @@ class Toggle {
       if (!self.initial) {
         self.specialCollapse(actionCurrent, el, type)
       } else {
-        self.specialCollapse('Reset', el, type)
+        self.specialCollapse(actionCurrent, el, type, true)
       }
       // aria
       if (options.aria) {
@@ -2256,7 +2256,7 @@ class Toggle {
       // activation
       self.activateDone(el, type)
       // special
-      self.specialCollapse('Reset', el, type)
+      self.specialCollapse(actionCurrent, el, type, true)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // keep the same level of raf for activation
@@ -2287,6 +2287,7 @@ class Toggle {
       self.deactivateDone(el, type)
       // special
       self.specialAppendto(actionCurrent, el, type)
+      self.specialCollapse(actionCurrent, el, type, true)
       // aria
       if (options.aria) {
         // selected
@@ -2537,119 +2538,144 @@ class Toggle {
    * @param {String} actionCurrent Current action
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {String} type Type of element
+   * @param {Boolean} reset Reset
    */
-  specialCollapse(actionCurrent, el, type) {
+  specialCollapse(actionCurrent, el, type, reset = false) {
     const self = this
     const options = self.options
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
-          el.classList.remove('xt-collapse-reset')
-          el.style.height = 'auto'
-          const final = el.offsetHeight
-          el.style.height = ''
-          let initial = el.offsetHeight
-          initial = initial === final ? 0 : initial
-          el.style.height = `${initial}px`
-          // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}CollapseHeightFrame`,
-            requestAnimationFrame(() => {
-              Xt.dataStorage.set(
-                el,
-                `${self.ns}CollapseHeightFrame`,
-                requestAnimationFrame(() => {
-                  el.style.height = `${final}px`
-                })
-              )
-            })
-          )
+          console.log(el, reset, type, self.initial)
+          if (reset) {
+            el.style.height = 'inherit'
+            el.style.maxHeight = 'none'
+            el.classList.add('xt-collapse-reset')
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            el.style.height = 'auto'
+            el.style.maxHeight = 'none'
+            const final = el.offsetHeight
+            el.style.height = ''
+            el.style.maxHeight = ''
+            let initial = el.offsetHeight
+            initial = initial === final ? 0 : initial
+            el.style.height = `${initial}px`
+            el.style.maxHeight = 'none'
+            // keep the same level of raf for activation
+            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}CollapseHeightFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(
+                  el,
+                  `${self.ns}CollapseHeightFrame`,
+                  requestAnimationFrame(() => {
+                    el.style.height = `${final}px`
+                  })
+                )
+              })
+            )
+          }
         }
         if (options.collapseWidth === type) {
-          el.classList.remove('xt-collapse-reset')
-          el.style.width = 'auto'
-          const final = el.offsetWidth
-          el.style.width = ''
-          let initial = el.offsetWidth
-          initial = initial === final ? 0 : initial
-          el.style.width = `${initial}px`
-          // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}CollapseWidthFrame`,
-            requestAnimationFrame(() => {
-              Xt.dataStorage.set(
-                el,
-                `${self.ns}CollapseWidthFrame`,
-                requestAnimationFrame(() => {
-                  el.style.width = `${final}px`
-                })
-              )
-            })
-          )
+          if (reset) {
+            el.style.width = 'inherit'
+            el.style.maxWidth = 'none'
+            el.classList.add('xt-collapse-reset')
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            el.style.width = 'auto'
+            el.style.maxWidth = 'none'
+            const final = el.offsetWidth
+            el.style.width = ''
+            el.style.maxWidth = ''
+            let initial = el.offsetWidth
+            initial = initial === final ? 0 : initial
+            el.style.width = `${initial}px`
+            el.style.maxWidth = 'none'
+            // keep the same level of raf for activation
+            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}CollapseWidthFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(
+                  el,
+                  `${self.ns}CollapseWidthFrame`,
+                  requestAnimationFrame(() => {
+                    el.style.width = `${final}px`
+                  })
+                )
+              })
+            )
+          }
         }
       } else if (actionCurrent === 'Out') {
         if (options.collapseHeight === type) {
-          el.classList.remove('xt-collapse-reset')
-          const current = el.offsetHeight // fix keep current off initial
-          el.style.height = ''
-          let final = el.offsetHeight
-          el.style.height = 'auto'
-          const initial = el.offsetHeight
-          final = initial === final ? 0 : final
-          el.style.height = `${current}px`
-          // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}CollapseHeightFrame`,
-            requestAnimationFrame(() => {
-              Xt.dataStorage.set(
-                el,
-                `${self.ns}CollapseHeightFrame`,
-                requestAnimationFrame(() => {
-                  el.style.height = `${final}px`
-                })
-              )
-            })
-          )
+          if (reset) {
+            el.style.height = ''
+            el.style.maxHeight = ''
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            const current = el.offsetHeight // fix keep current off initial
+            el.style.height = ''
+            el.style.maxHeight = ''
+            let final = el.offsetHeight
+            el.style.height = 'auto'
+            el.style.maxHeight = 'none'
+            const initial = el.offsetHeight
+            final = initial === final ? 0 : final
+            el.style.height = `${current}px`
+            // keep the same level of raf for activation
+            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}CollapseHeightFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(
+                  el,
+                  `${self.ns}CollapseHeightFrame`,
+                  requestAnimationFrame(() => {
+                    el.style.height = `${final}px`
+                  })
+                )
+              })
+            )
+          }
         }
         if (options.collapseWidth === type) {
-          el.classList.remove('xt-collapse-reset')
-          const current = el.offsetWidth // fix keep current off initial
-          el.style.width = ''
-          let final = el.offsetWidth
-          el.style.width = 'auto'
-          const initial = el.offsetWidth
-          final = initial === final ? 0 : final
-          el.style.width = `${current}px`
-          // keep the same level of raf for activation
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}CollapseWidthFrame`,
-            requestAnimationFrame(() => {
-              Xt.dataStorage.set(
-                el,
-                `${self.ns}CollapseWidthFrame`,
-                requestAnimationFrame(() => {
-                  el.style.width = `${final}px`
-                })
-              )
-            })
-          )
-        }
-      } else if (actionCurrent === 'Reset') {
-        if (options.collapseHeight === type) {
-          el.style.height = 'inherit'
-          el.classList.add('xt-collapse-reset')
-        }
-        if (options.collapseWidth === type) {
-          el.style.width = 'inherit'
-          el.classList.add('xt-collapse-reset')
+          if (reset) {
+            el.style.width = ''
+            el.style.maxWidth = ''
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            const current = el.offsetWidth // fix keep current off initial
+            el.style.width = ''
+            el.style.maxWidth = ''
+            let final = el.offsetWidth
+            el.style.width = 'auto'
+            el.style.maxWidth = 'none'
+            const initial = el.offsetWidth
+            final = initial === final ? 0 : final
+            el.style.width = `${current}px`
+            // keep the same level of raf for activation
+            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
+            Xt.dataStorage.set(
+              el,
+              `${self.ns}CollapseWidthFrame`,
+              requestAnimationFrame(() => {
+                Xt.dataStorage.set(
+                  el,
+                  `${self.ns}CollapseWidthFrame`,
+                  requestAnimationFrame(() => {
+                    el.style.width = `${final}px`
+                  })
+                )
+              })
+            )
+          }
         }
       }
     }

@@ -43,7 +43,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 You can use also with **initial values** for height and width.
 
-Use **tailwind classes** to assign size (e.g. [height](https://tailwindcss.com/docs/height), [width](https://tailwindcss.com/docs/width)).
+Use **tailwind classes** to assign size (e.g. [max-height](https://tailwindcss.com/docs/max-height)).
 
 Just use the class `on` if you want to automatically open instantly.
 
