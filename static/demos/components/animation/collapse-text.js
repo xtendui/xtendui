@@ -17,27 +17,22 @@ Xt.mount({
 /* mountCollapse */
 
 const mountCollapse = ({ ref }) => {
-  // init
+  // vars
 
-  /***/
-  let self = new Xt.Toggle(ref, {
-    elements: '.button--collapse',
-    targets: '.target--collapse',
-    max: 'Infinity',
-    collapseHeight: 'targets',
-    duration: 500,
-  })
-  /***/
+  const buttons = ref.querySelectorAll('.button--collapse')
 
   // disable if not overflowing and not on
 
-  for (const tr of self.targets) {
-    if (tr.scrollHeight <= tr.clientHeight) {
-      const elements = self.getElements(tr).filter(x => !self.hasCurrent(x))
-      if (elements.length) {
-        tr.style.maxHeight = 'none'
-        for (const el of elements) {
-          el.classList.add('hidden')
+  for (const button of buttons) {
+    const self = Xt.get('xt-toggle', button)
+    for (const tr of self.targets) {
+      if (tr.scrollHeight <= tr.clientHeight) {
+        const elements = self.getElements(tr).filter(x => !self.hasCurrent(x))
+        if (elements.length) {
+          tr.style.maxHeight = 'none'
+          for (const el of elements) {
+            el.classList.add('hidden')
+          }
         }
       }
     }

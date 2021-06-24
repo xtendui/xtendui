@@ -88,7 +88,7 @@ Test direction and queue timing.
 
 ## Collapse
 
-Test height and maxHeight styles on activation and deactivation.
+Test height and width and maxHeight styles on activation and deactivation.
 
 <demo>
   <demoinline src="demos/components/animation/collapse-height">
