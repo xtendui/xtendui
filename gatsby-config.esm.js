@@ -14,15 +14,16 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://xtendui.com',
     title: 'Xtend UI',
+    version: version,
     description: description,
     keywords: keywords,
     author: 'Riccardo Caroli',
     image: '/social.png',
-    version: version,
     npm: 'https://www.npmjs.com/package/xtendui',
     github: 'https://github.com/minimit/xtendui',
     twitter: 'https://twitter.com/xtendui',
     download: 'https://github.com/minimit/xtendui/releases',
+    uuid: require('uuid/v1')(),
   },
   plugins: [
     'gatsby-plugin-react-helmet',

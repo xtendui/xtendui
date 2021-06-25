@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       <Helmet>
         <body
           className="xt-body xt-links-default xl:text-lg"
-          data-version={encodeURIComponent(site.siteMetadata.version)}
+          data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>
       {children}

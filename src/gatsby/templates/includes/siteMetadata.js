@@ -14,6 +14,7 @@ export const useSiteMetadata = () => {
           github
           twitter
           download
+          uuid
         }
       }
     }

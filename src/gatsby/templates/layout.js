@@ -26,7 +26,7 @@ export default function Layout({ children, page, seo }) {
       <Helmet>
         <body
           className="xt-body xt-links-default xl:text-lg xt-overflow-main"
-          data-version={encodeURIComponent(site.siteMetadata.version)}
+          data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>
       {seo && seo.title === 'Home' ? (
