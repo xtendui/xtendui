@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
@@ -12,7 +12,8 @@ import 'src/gatsby/assets/styles/app.css'
 
 export default function Layout({ children, page, seo }) {
   const { site } = useSiteMetadata()
-  useEffect(() => {
+  // no useEffect cause bugs demos hash
+  useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       require('src/gatsby/assets/scripts/shared')
       require('src/gatsby/assets/scripts/app')
