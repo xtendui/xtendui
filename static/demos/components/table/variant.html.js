@@ -32,7 +32,9 @@ const html = /* HTML */ `
             velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
             vitae magna eget, vehicula scelerisque elit.
           </td>
-          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">1200</td>
+          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
+            1200
+          </td>
         </tr>
         <tr>
           <th
@@ -43,7 +45,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
             Dolor sit amet
           </td>
-          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">200</td>
+          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
+            200
+          </td>
         </tr>
         <tr>
           <th
@@ -54,7 +58,9 @@ const html = /* HTML */ `
           <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
             Consectetur adipiscing elit
           </td>
-          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">2400</td>
+          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
+            2400
+          </td>
         </tr>
         <tr>
           <th
@@ -62,8 +68,12 @@ const html = /* HTML */ `
           >
             4
           </th>
-          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">Lorem ipsum</td>
-          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">400</td>
+          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
+            Lorem ipsum
+          </td>
+          <td class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b ***">
+            400
+          </td>
         </tr>
       </tbody>
     </table>
