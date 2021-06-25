@@ -22,21 +22,21 @@ To have **table border and border radius** use `.border-separate` and `border-sp
   </demoinline>
 </demo>
 
-## Interactive
-
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
-
-<demo>
-  <demoinline src="demos/components/table/interactive">
-  </demoinline>
-</demo>
-
 ## Size
 
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demoinline src="demos/components/table/size">
+  </demoinline>
+</demo>
+
+## Interactive
+
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+
+<demo>
+  <demoinline src="demos/components/table/interactive">
   </demoinline>
 </demo>
 
