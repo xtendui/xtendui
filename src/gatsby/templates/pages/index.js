@@ -58,8 +58,8 @@ export default function Page() {
                   </h3>
                   <h1 className="mt-5 mb-3 xt-my-auto font-normal leading-tight tracking-tight normal-case text-lg lg:text-2xl lg:leading-tight gatsby_home-main_scroll">
                     <span className="gatsby_home-main_head_description opacity-50">
-                      Xtend UI is a powerfull library to create advanced UI with custom tailwind components and
-                      advanced interactions and animations
+                      Xtend UI is a powerfull library to create advanced UI with custom tailwind components and advanced
+                      interactions and animations
                     </span>
                   </h1>
                   <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
@@ -157,8 +157,8 @@ export default function Page() {
                               <strong>Strong API</strong> with customizzable behaviour.
                             </li>
                             <li>
-                              A system to mount components with <strong>mutation observer queries</strong>, to
-                              structure your javascript code better.
+                              A system to mount components with <strong>mutation observer queries</strong>, to structure
+                              your javascript code better.
                             </li>
                           </ul>
                         </div>
@@ -172,8 +172,8 @@ export default function Page() {
                         <div className="w-full md:w-6/12 lg:w-7/12">
                           <ul>
                             <li>
-                              Complex interaction components you only need to specify{' '}
-                              <strong>custom animations</strong>.
+                              Complex interaction components you only need to specify <strong>custom animations</strong>
+                              .
                             </li>
                             <li>
                               <strong>Scroll and parallax animations</strong> with{' '}
