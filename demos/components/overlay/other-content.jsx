@@ -13,7 +13,7 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay">
-          <div className="xt-backdrop bg-black opacity-25"></div>
+          <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <button
               type="button"

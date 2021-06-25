@@ -175,8 +175,8 @@ const mountDrops = ({ ref }) => {
     /***/
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('off.xt.drop', off)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.drop', off)
   }
 
   // unmount

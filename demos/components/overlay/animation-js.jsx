@@ -34,7 +34,7 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay group" data-xt-group="group0">
-          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -105,7 +105,7 @@ export default function demo() {
         </div>
 
         <div className="xt-overlay group" data-xt-group="group1">
-          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -176,7 +176,7 @@ export default function demo() {
         </div>
 
         <div className="xt-overlay group" data-xt-group="group2">
-          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
@@ -306,8 +306,8 @@ const mountOverlay = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('on.xt.overlay', on)
+  for (const tr of self.targets) {
+    tr.addEventListener('on.xt.overlay', on)
   }
 
   // off
@@ -328,8 +328,8 @@ const mountOverlay = ({ ref }) => {
     }
   }
 
-  for (const target of self.targets) {
-    target.addEventListener('off.xt.overlay', off)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.overlay', off)
   }
 
   // unmount
