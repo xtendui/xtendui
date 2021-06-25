@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
 import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout'
 

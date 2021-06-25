@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout-demo'
 

@@ -1,26 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-
+import { Link } from 'gatsby'
+import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 import { markdownSlug } from 'src/gatsby/templates/snippets/markdown-slug'
 import { typeSort } from 'src/gatsby/templates/snippets/type-sort'
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 export default function Header({ page }) {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          npm
-          github
-          twitter
-          download
-        }
-      }
-    }
-  `)
+  const { site } = useSiteMetadata()
   return (
     <div className="gatsby_site-article_sidebar text-white xt-links-inverse xt-overflow-sub bg-primary-500 leading-none">
       <div className="gatsby_site-article_sidebar_inner">

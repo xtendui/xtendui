@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import RehypeReact from 'rehype-react'
 import { markdownSlug } from 'src/gatsby/templates/snippets/markdown-slug'
-
 import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout'
 import Demo from 'src/gatsby/templates/demo/demo'
