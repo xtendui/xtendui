@@ -131,7 +131,8 @@ class Slider extends Xt.Toggle {
     for (const group of self.groups) {
       let groupHeight = 0
       for (const tr of group.targets) {
-        const height = tr.offsetHeight
+        const content = tr.children.length ? tr.children[0] : tr
+        const height = content.offsetHeight
         groupHeight = height > groupHeight ? height : groupHeight
       }
       Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
