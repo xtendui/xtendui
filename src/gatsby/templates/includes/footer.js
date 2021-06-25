@@ -1,18 +1,8 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
 export default function Footer() {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          author
-          version
-        }
-      }
-    }
-  `)
+  const { site } = useSiteMetadata()
   return (
     <div className="text-2xs md:text-xs lg:text-sm">
       <div className="xt-row xt-row-1.5 text-black text-opacity-75 justify-between flex-auto">

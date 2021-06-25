@@ -1,22 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
 export default function SEO({ title, description, lang, meta }) {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          keywords
-          image
-          author
-        }
-      }
-    }
-  `)
+  const { site } = useSiteMetadata()
   let metaTitle = title === 'Home' ? site.siteMetadata.description : title || site.siteMetadata.description
   metaTitle = `${site.siteMetadata.title} - ${metaTitle}`
   const metaDescription = description || site.siteMetadata.description

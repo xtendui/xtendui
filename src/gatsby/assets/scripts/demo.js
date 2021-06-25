@@ -692,8 +692,9 @@ window.switchClean = (item, src) => {
 
 const source = async (item, el, isReact = false) => {
   const url = el.getAttribute('data-fetch')
+  const version = document.querySelector('body').getAttribute('data-version')
   if (url) {
-    const request = await fetch(url, {
+    const request = await fetch(`${url}?v=${version}`, {
       method: 'GET',
       headers: new Headers({ 'Content-Type': 'text/plain' }),
       mode: 'no-cors',
