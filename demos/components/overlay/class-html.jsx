@@ -14,9 +14,9 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay group">
-            <div className="xt-backdrop pointer-events-none bg-black  transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop bg-black  transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-              <div className="xt-overlay-inner transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
+              <div className="xt-overlay-inner transform transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
                 <div className="xt-card xt-min-h-screen shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
@@ -65,7 +65,7 @@ export default function demo() {
                       </button>
 
                       <div className="xt-overlay">
-                        <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+                        <div className="xt-backdrop bg-black opacity-25"></div>
                         <div className="xt-overlay-container max-w-3xl">
                           <div className="xt-overlay-inner">
                             <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">

@@ -13,7 +13,7 @@ export default function demo() {
             screen
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">
@@ -71,7 +71,7 @@ export default function demo() {
             screen full
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">
@@ -110,7 +110,7 @@ export default function demo() {
             screen group
           </button>
           <div className="xt-overlay">
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay text-black xt-links-default bg-white">

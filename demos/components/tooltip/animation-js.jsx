@@ -100,8 +100,8 @@ const mountTooltip = ({ ref }) => {
     }
   }
 
-  for (const tr of self.targets) {
-    tr.addEventListener('on.xt.tooltip', on)
+  for (const target of self.targets) {
+    target.addEventListener('on.xt.tooltip', on)
   }
 
   // off
@@ -121,8 +121,8 @@ const mountTooltip = ({ ref }) => {
     }
   }
 
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.tooltip', off)
+  for (const target of self.targets) {
+    target.addEventListener('off.xt.tooltip', off)
   }
 
   // unmount

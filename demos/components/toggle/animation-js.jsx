@@ -85,8 +85,8 @@ const mountToggle = ({ ref }) => {
     })
   }
 
-  for (const tr of self.targets) {
-    tr.addEventListener('on.xt.toggle', on)
+  for (const target of self.targets) {
+    target.addEventListener('on.xt.toggle', on)
   }
 
   // off
@@ -102,8 +102,8 @@ const mountToggle = ({ ref }) => {
     })
   }
 
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.toggle', off)
+  for (const target of self.targets) {
+    target.addEventListener('off.xt.toggle', off)
   }
 
   // unmount

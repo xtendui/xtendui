@@ -13,10 +13,10 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay group">
-          <div className="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
-              <div className="*** xt-design *** rounded-md shadow-overlay bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-1 ***2"></div>
+              <div className="*** xt-design *** rounded-md shadow-overlay bg-white *** transform transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-1 ***2"></div>
 
               <div className="xt-card *** transition opacity-0 group-in:opacity-100 ***">
                 <button

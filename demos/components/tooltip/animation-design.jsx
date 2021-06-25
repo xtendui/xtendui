@@ -14,7 +14,7 @@ export default function demo() {
 
         <div className="xt-tooltip p-2 group">
           <div className="xt-tooltip-inner">
-            <div className="*** xt-design *** rounded-sm shadow-tooltip bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
+            <div className="*** xt-design *** rounded-sm shadow-tooltip bg-black *** transform transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
             <div className="relative text-xs py-2 px-3.5 font-semibold text-white xt-links-inverse *** transition duration-300 opacity-0 group-in:opacity-100 ***">
               Lorem ipsum dolor sit amet
             </div>

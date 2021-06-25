@@ -170,8 +170,8 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  for (const el of self.elements) {
-    el.addEventListener('on.xt.toggle', change)
+  for (const element of self.elements) {
+    element.addEventListener('on.xt.toggle', change)
   }
 
   // unmount
@@ -192,9 +192,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
-    exclude: '.hidden',
-  })
+  const self = new Xt.Slider(slider, {})
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

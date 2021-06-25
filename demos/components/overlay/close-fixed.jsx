@@ -14,28 +14,28 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
+              <button
+                type="button"
+                className="xt-button xt-dismiss *** fixed *** z-last top-0 right-0 p-5 text-2xl"
+                aria-label="Close">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="xt-icon "
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
               <div className="xt-overlay-inner">
-                <button
-                  type="button"
-                  className="xt-button xt-dismiss *** fixed *** z-last top-0 right-0 p-5 text-2xl"
-                  aria-label="Close">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon "
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
                 <div className="xt-card items-center justify-center rounded-md shadow-overlay text-black xt-links-default bg-white">
                   <div className="text-base py-8 px-9">
                     <div className="xt-h4">Lorem ipsum</div>
@@ -122,28 +122,28 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay">
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop bg-black opacity-25"></div>
             <div className="xt-overlay-container p-0">
+              <button
+                type="button"
+                className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                aria-label="Close">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="xt-icon "
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
               <div className="xt-overlay-inner">
-                <button
-                  type="button"
-                  className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
-                  aria-label="Close">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="xt-icon "
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
                 <div className="xt-card xt-min-h-screen items-center justify-center shadow-overlay text-black xt-links-default bg-white">
                   <div className="max-w-3xl">
                     <div className="text-base py-8 px-9">

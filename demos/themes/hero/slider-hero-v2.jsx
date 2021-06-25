@@ -29,7 +29,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 transform translate-x-full"></div>
           </div>
 
           <div className="xt-slide w-full">
@@ -51,7 +51,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
           </div>
 
           <div className="xt-slide w-full">
@@ -69,7 +69,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 transform translate-x-full"></div>
           </div>
 
           <div className="xt-slide w-full">
@@ -94,7 +94,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
           </div>
 
           <div className="xt-slide w-full">
@@ -119,7 +119,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-gray-600 transform translate-x-full"></div>
           </div>
 
           <div className="xt-slide w-full">
@@ -144,7 +144,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+            <div className="hero-cover absolute inset-0 pointer-events-none bg-primary-500 transform translate-x-full"></div>
           </div>
         </div>
 
