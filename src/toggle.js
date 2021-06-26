@@ -1333,12 +1333,14 @@ class Toggle {
    * if element or target is in current (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    * @param {Boolean} running Running currents
+   * @param {Boolean} same Use also data-xt-group-same
    */
-  hasCurrent(element, running) {
+  hasCurrent(element, running, same = false) {
     const self = this
     const options = self.options
     // fix groupElements and targets
-    const elements = options.groupElements || self.targets.includes(element) ? self.getElements(element) : [element]
+    const elements =
+      options.groupElements || self.targets.includes(element) ? self.getElements(element, same) : [element]
     // hasCurrent
     const arr = running ? Xt.running : Xt.currents
     return arr[self.ns].filter(x => elements.includes(x)).length
@@ -1651,13 +1653,14 @@ class Toggle {
       // fix groupElements and targets
       const elements =
         options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
+      // targets
+      let targets = self.getTargets(element, true)
+      // fix data-xt-group-same filter out new activations
+      targets = targets.filter(x => !self.hasCurrent(x, false, true))
       // on
       self.addCurrent(elements[0])
       self.setIndex(elements[0])
       self.setDirection()
-      const targets = self.getTargets(element, true)
-      const elementsInner = Xt.queryAll(element, options.elementsInner)
-      const targetsInner = Xt.queryAll(targets, options.targetsInner)
       // if currents > max
       const currents = self.getCurrents()
       if (currents.length > options.max) {
@@ -1667,6 +1670,8 @@ class Toggle {
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
+      const elementsInner = Xt.queryAll(element, options.elementsInner)
+      const targetsInner = Xt.queryAll(targets, options.targetsInner)
       self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
       // queue run
       // eslint-disable-next-line guard-for-in
@@ -1704,9 +1709,10 @@ class Toggle {
         options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
       // off
       self.removeCurrent(elements[0])
-      const targets = self.getTargets(element, true)
-      const elementsInner = Xt.queryAll(element, options.elementsInner)
-      const targetsInner = Xt.queryAll(targets, options.targetsInner)
+      // targets
+      let targets = self.getTargets(element, true)
+      // fix data-xt-group-same filter out new activations
+      targets = targets.filter(x => !self.hasCurrent(x, false, true))
       // fix sometimes blur is undefined
       if (element.blur) {
         // fix :focus styles
@@ -1719,6 +1725,8 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
+      const elementsInner = Xt.queryAll(element, options.elementsInner)
+      const targetsInner = Xt.queryAll(targets, options.targetsInner)
       self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
       // remove queue not started if queue too big
       if (self.detail[`queue${actionCurrent}`].length > options.max) {

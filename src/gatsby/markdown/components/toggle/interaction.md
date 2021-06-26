@@ -64,6 +64,11 @@ You can **disable same group elements activation** with the option `groupElement
 <demo>
   <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
+</demo>
+
+It also work on **unique mode with the same targets**.
+
+<demo>
   <demoinline src="demos/components/toggle/unique-nogroupelements">
   </demoinline>
 </demo>
@@ -83,7 +88,7 @@ You can [style and animate](/components/toggle/animation#animation) **class name
 | Option                  | `classInitial:String`                          | `initial`        | Class name for **initialization**            |
 | Option                  | `classBefore:String`                          | `dir-before`        | Class name for **before** direction activation            |
 | Option                  | `classAfter:String`                          | `dir-after`        | Class name for **after** direction activation            |
-| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation e.g.: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
+| Option                  | `classSkip:Object`                          | `false`        | Skip class activation and deactivation, can be one or more booleans e.g.: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`            |
 
 </div>
 

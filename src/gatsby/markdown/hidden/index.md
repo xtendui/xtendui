@@ -4,11 +4,6 @@ title: "Hidden"
 description: "Hidden"
 ---
 
-<demo>
-  <demoinline src="demos/components/slider/wrap-center">
-  </demoinline>
-</demo>
-
 ## Classes not xt
 
 #### Components
