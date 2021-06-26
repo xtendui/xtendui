@@ -37,6 +37,7 @@ const mountToggle = ({ ref }) => {
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     gsap.killTweensOf(tr)
@@ -55,9 +56,11 @@ const mountToggle = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.toggle', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     gsap.killTweensOf(tr)
@@ -72,6 +75,7 @@ const mountToggle = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.toggle', off)
   }
+  /***/
 
   // unmount
 

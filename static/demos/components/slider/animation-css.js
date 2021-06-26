@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-align-left',
+  matches: '.demo--slider-animation-css',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -29,7 +29,7 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    align: 'left',
+    duration: 500,
   })
   /***/
 

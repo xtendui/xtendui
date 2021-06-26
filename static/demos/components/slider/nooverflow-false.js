@@ -28,7 +28,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     align: 'center',
     wrap: true,
     nooverflow: false,
@@ -61,5 +61,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

@@ -28,7 +28,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     wrap: true,
     matches: {
       '(max-width: 767px)': {
@@ -64,5 +64,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

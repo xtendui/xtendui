@@ -1,12 +1,12 @@
-.demo--toggle-animation, .demo--toggle-animation-react {
-  .xt-card {
+.demo--slider-animation-css, .demo--slider-animation-css-react {
+  .xt-slide {
     /* initial */
     @apply transition opacity-0;
     &.dir-before {
-      @apply translate-x-4;
+      @apply translate-x-12;
     }
     &.dir-after {
-      @apply -translate-x-4;
+      @apply -translate-x-12;
     }
     /* in */
     &.in {
@@ -14,12 +14,12 @@
     }
     /* out */
     &.out {
-      @apply opacity-0;
+      @apply opacity-0 translate-x-0;
       &.dir-before {
-        @apply -translate-x-4;
+        @apply translate-x-12;
       }
       &.dir-after {
-        @apply translate-x-4;
+        @apply -translate-x-12;
       }
     }
   }

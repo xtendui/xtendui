@@ -28,7 +28,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     drag: {
       factor: 2,
       overflow: ({ overflow }) => {
@@ -64,5 +64,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

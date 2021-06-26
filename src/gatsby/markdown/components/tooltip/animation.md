@@ -33,8 +33,6 @@ See [toggle duration and delay](/components/toggle/animation#duration-and-delay)
 
 You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
 
-You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -44,6 +42,8 @@ You can also **assign duration on single nodes** with `data-xt-duration="Millise
 | Option                  | `durationOut:Function|Number`                          | `false`        | Deactivation duration            |
 
 </div>
+
+You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 #### Delay
 
@@ -63,15 +63,17 @@ You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"
 
 ## Queue
 
-By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
+The queue option **controls sequential activations putting them in a queue**, or with `false` it executes activations instantly.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
+| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Queue activations e.g.: `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`          |
 
 </div>
+
+Skip class activation and deactivation e.g.: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`
 
 [[notePrimary]]
 | Queue needs [multiple mode](/components/tooltip#usage-multiple) to work.

@@ -65,7 +65,10 @@ const mountToggle = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }
 
 /* mountSlider */
@@ -81,7 +84,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     exclude: '.hidden',
   })
   /***/
@@ -112,5 +115,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

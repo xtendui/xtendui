@@ -105,7 +105,7 @@ It's different from the **automatic grouping of slides activations** because thi
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
 | Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (ex: `.xt-slides`)            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide (e.g.: `.xt-slides`)            |
 
 </div>
 

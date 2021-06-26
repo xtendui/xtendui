@@ -30,8 +30,6 @@ See [toggle duration and delay](/components/toggle/animation#duration-and-delay)
 
 You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
 
-You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -41,6 +39,8 @@ You can also **assign duration on single nodes** with `data-xt-duration="Millise
 | Option                  | `durationOut:Function|Number`                          | `false`        | Deactivation duration            |
 
 </div>
+
+You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
 #### Delay
 
@@ -60,23 +60,18 @@ You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"
 
 ## Queue
 
-By default **multiple mode** queues the activations by waiting the end of duration. Use `queue: false` to disable queue activation.
+The queue option **controls sequential activations putting them in a queue**, or with `false` it executes activations instantly.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|false`                 | `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`     | Set instant activation and deactivation          |
+| Option                  | `queue:Object|false`                 | `false`     | Queue activations e.g.: `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`          |
 
 </div>
 
-[[notePrimary]]
-| Queue needs [multiple mode](/components/drop#usage-multiple) to work.
-
 <demo>
-  <demoinline src="demos/components/drop/animation-queue">
-  </demoinline>
-  <demoinline src="demos/components/drop/animation-noqueue">
+  <demoinline src="demos/components/slider/animation-queue">
   </demoinline>
 </demo>
 
@@ -93,17 +88,14 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
-
 <demo>
-  <demoinline src="demos/components/drop/animation-css">
+  <demoinline src="demos/components/slider/animation-css">
   </demoinline>
 </demo>
 
 ## Js Animation
 
-You can use also **javascript animations**, just use [drop api](/components/drop/api).
+You can use also **javascript animations**, just use [drop api](/components/slider/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -113,23 +105,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
-
 <demo>
-  <demoinline src="demos/components/drop/animation-js">
+  <demoinline src="demos/components/slider/animation-js">
   </demoinline>
 </demo>
-
-## Design Animation
-
-Use `.xt-drop-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
-
-<demo>
-  <demoinline src="demos/components/drop/animation-design">
-  </demoinline>
-</demo>
-
-## Collapse
-
-Refer to [animation collapse](/components/animation/collapse).

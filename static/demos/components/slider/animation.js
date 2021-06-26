@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-usage-relative',
+  matches: '.demo--slider-animation',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -28,7 +28,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     duration: 500,
   })
   /***/
@@ -59,5 +59,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

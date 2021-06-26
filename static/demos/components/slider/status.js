@@ -30,7 +30,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {})
+  let self = new Xt.Slider(slider, {})
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -59,7 +59,10 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }
 
 /* mountStatus */
@@ -76,7 +79,7 @@ const mountStatus = ({ ref }) => {
   const change = e => {
     // check because of event propagation
     if (e.target === slider) {
-      const self = Xt.get('xt-slider', slider)
+      let self = Xt.get('xt-slider', slider)
       if (!self) return
       if (!self.targets.length) return
       // availableWidth

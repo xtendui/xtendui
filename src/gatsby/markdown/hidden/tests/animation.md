@@ -11,6 +11,8 @@ Test activations and animations.
 
 Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
 
+Test slider animation no flick on change slide data-xt-group-same (bug).
+
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
@@ -27,6 +29,10 @@ Test overlay multiple, opening another overlay inside the overlay FocusTrap shou
   <demoinline src="demos/components/tooltip/animation-queue">
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation-queue">
   </demoinline>
 </demo>
 
@@ -56,6 +62,8 @@ Test queue timing.
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
+  <demoinline src="demos/components/slider/animation-css">
+  </demoinline>
 </demo>
 
 ## Js
@@ -70,6 +78,8 @@ Test direction and queue timing.
   <demoinline src="demos/components/drop/animation-js">
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-js">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation-js">
   </demoinline>
 </demo>
 

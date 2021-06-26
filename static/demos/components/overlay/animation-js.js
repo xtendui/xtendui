@@ -39,6 +39,7 @@ const mountOverlay = ({ ref }) => {
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -62,9 +63,11 @@ const mountOverlay = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.overlay', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -84,6 +87,7 @@ const mountOverlay = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.overlay', off)
   }
+  /***/
 
   // unmount
 

@@ -40,6 +40,7 @@ const mountTooltip = ({ ref }) => {
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -62,9 +63,11 @@ const mountTooltip = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.tooltip', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -83,6 +86,7 @@ const mountTooltip = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.tooltip', off)
   }
+  /***/
 
   // unmount
 

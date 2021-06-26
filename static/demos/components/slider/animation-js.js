@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-align-left',
+  matches: '.demo--slider-animation-js',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -25,11 +25,16 @@ const mountSlider = ({ ref }) => {
   let dragDistance
   let dragDuration
 
+  const targetTimeOn = 0.5
+  const targetEaseOn = 'quint.out'
+  const targetTimeOff = 0.5
+  const targetEaseOff = 'quint.out'
+
   // init
 
   /***/
   let self = new Xt.Slider(slider, {
-    align: 'left',
+    duration: 500,
   })
   /***/
 
@@ -56,6 +61,60 @@ const mountSlider = ({ ref }) => {
   }
 
   self.dragger.addEventListener('dragposition.xt.slider', dragposition)
+
+  // setup
+
+  /***/
+  for (const tr of self.targets) {
+    gsap.set(tr, {
+      opacity: 0,
+    })
+  }
+  /***/
+
+  // on
+
+  /***/
+  const on = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
+        x: self.direction * 45,
+        opacity: 0,
+      })
+      gsap.to(tr, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
+    }
+  }
+
+  self.object.addEventListener('on.xt.slider', on, true)
+  /***/
+
+  // off
+
+  /***/
+  const off = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      gsap.killTweensOf(tr)
+      gsap.to(tr, {
+        x: -self.direction * 45,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
+    }
+  }
+
+  self.object.addEventListener('off.xt.slider', off, true)
+  /***/
 
   // unmount
 

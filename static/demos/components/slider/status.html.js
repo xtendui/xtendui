@@ -51,7 +51,7 @@ const html = /* HTML */ `
         <div class="slider-status mt-6 mx-auto px-6 max-w-4xl">
           <div class="relative">
             <div
-              class="slider-status-current absolute left-0 top-0 h-0 border-t border-b border-black bg-black transition-all ease-in-out duration-500"
+              class="slider-status-current absolute left-0 top-0 h-0 border-t border-b border-black bg-black transition-all ease-in-out"
             ></div>
             <div class="slider-status-container h-0 w-full border-t border-b border-black border-opacity-5"></div>
           </div>
