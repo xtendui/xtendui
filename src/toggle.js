@@ -1435,22 +1435,14 @@ class Toggle {
   }
 
   /**
-   * activate element
+   * activation requestAnimationFrame
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   * @param {String} type Type of element
+   * @param {Function} func Function to call after requestAnimationFrame
    */
-  activate(el, type) {
-    const self = this
-    const options = self.options
-    // activation
-    if (options.classSkip !== true && !options.classSkip[type]) {
-      el.classList.add(...self.classes)
-      el.classList.remove(...self.classesDone)
-      el.classList.remove(...self.classesOut)
-      // input
-      el.checked = true
-      // keep the same level of raf for activation
-      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+  activationRaf(el, func = null) {
+    // keep the same level of raf for activation
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+    if (func) {
       Xt.dataStorage.set(
         el,
         `${self.ns}ActivateFrame`,
@@ -1459,11 +1451,33 @@ class Toggle {
             el,
             `${self.ns}ActivateFrame`,
             requestAnimationFrame(() => {
-              el.classList.add(...self.classesIn)
+              func()
             })
           )
         })
       )
+    }
+  }
+
+  /**
+   * activate element
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {String} type Type of element
+   */
+  activate(el, type) {
+    const self = this
+    const options = self.options
+    // input
+    el.checked = true
+    // activation
+    if (options.classSkip !== true && !options.classSkip[type]) {
+      // activation
+      el.classList.add(...self.classes)
+      self.activationRaf(el, () => {
+        el.classList.add(...self.classesIn)
+        el.classList.remove(...self.classesOut)
+        el.classList.remove(...self.classesDone)
+      })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
@@ -1484,6 +1498,9 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
+      self.activationRaf(el)
+      el.classList.add(...self.classesIn)
+      el.classList.remove(...self.classesOut)
       el.classList.add(...self.classesDone)
     }
   }
@@ -1533,16 +1550,17 @@ class Toggle {
   deactivate(el, type) {
     const self = this
     const options = self.options
+    // input
+    el.checked = false
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
+      // activation
       el.classList.remove(...self.classes)
-      el.classList.remove(...self.classesIn)
-      el.classList.remove(...self.classesDone)
-      el.classList.add(...self.classesOut)
-      // input
-      el.checked = false
-      // keep the same level of raf for activation
-      cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+      self.activationRaf(el, () => {
+        el.classList.remove(...self.classesIn)
+        el.classList.add(...self.classesOut)
+        el.classList.remove(...self.classesDone)
+      })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
@@ -1563,7 +1581,10 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
+      self.activationRaf(el)
+      el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
+      el.classList.remove(...self.classesDone)
     }
   }
 
