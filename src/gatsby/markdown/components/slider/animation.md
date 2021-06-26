@@ -1,15 +1,12 @@
 ---
 type: "Components"
 category: "Interaction"
-parent: "Overlay"
+parent: "Slider"
 title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [overlay's themes](/themes/overlay) for **advanced animations**.
-
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+Check out [slider's themes](/themes/slider) for **advanced animations**.
 
 ## Animation
 
@@ -17,10 +14,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-You can also customize `xt-backdrop` animations.
-
 <demo>
-  <demoinline src="demos/components/overlay/animation">
+  <demoinline src="demos/components/slider/animation">
   </demoinline>
 </demo>
 
@@ -28,10 +23,10 @@ You can also customize `xt-backdrop` animations.
 
 See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
 
+#### Duration
+
 [[notePrimary]]
 | When you use animations you need to **specity the duration of the animation** for proper interactions.
-
-#### Duration
 
 You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
 
@@ -76,14 +71,15 @@ By default **multiple mode** queues the activations by waiting the end of durati
 </div>
 
 [[notePrimary]]
-| Queue needs [multiple mode](/components/overlay#usage-multiple) to work.
+| Queue needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-queue">
+  <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/overlay/animation-noqueue">
+  <demoinline src="demos/components/drop/animation-noqueue">
   </demoinline>
 </demo>
+
 
 ## Css Animation
 
@@ -98,10 +94,10 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 </div>
 
 [[notePrimary]]
-| Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-css">
+  <demoinline src="demos/components/drop/animation-css">
   </demoinline>
 </demo>
 
@@ -118,19 +114,19 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 </div>
 
 [[notePrimary]]
-| Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
+| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-js">
+  <demoinline src="demos/components/drop/animation-js">
   </demoinline>
 </demo>
 
 ## Design Animation
 
-Use `.xt-overlay-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
+Use `.xt-drop-inner` and assign design styles to `.xt-design` when you want to **animate the design independently from the content**, use `relative` on other elements on the same level of `.xt-design` for fixing z-index issues.
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-design">
+  <demoinline src="demos/components/drop/animation-design">
   </demoinline>
 </demo>
 

@@ -10,6 +10,7 @@ module.exports = {
   flags: {
     DEV_SSR: true,
     PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   siteMetadata: {
     siteUrl: 'https://xtendui.com',

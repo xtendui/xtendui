@@ -2,8 +2,8 @@
 type: "Components"
 category: "Interaction"
 parent: "Slider"
-title: "Position"
-date: "2009-10-10"
+title: "Content relative"
+date: "2030-10-10"
 ---
 
 ## Align

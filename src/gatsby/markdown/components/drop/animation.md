@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [drop's themes](/themes/by-component/drop) for **advanced animations**.
+Check out [drop's themes](/themes/drop) for **advanced animations**.
 
 ## Animation
 

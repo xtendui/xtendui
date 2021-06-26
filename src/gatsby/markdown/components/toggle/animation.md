@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [toggle's themes](/themes/by-component/toggl) for **advanced animations**.
+Check out [toggle's themes](/themes/toggl) for **advanced animations**.
 
 ## Animation
 

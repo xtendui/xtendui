@@ -18,12 +18,30 @@ Initialize manually **within javascript** with `new Xt.Slider(document.querySele
 
 ## Usage
 
-Use this code to create a **slider**.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `mode:String`                          | `'relative'`        | Slider mode `'relative'` or `'absolute'`           |
+
+</div>
+
+[[noteDefault]]
+| Sliders needs gsap animation on `'dragposition.xt.slider'` to **sync the current value of `self.detail.dragPosition` with the internal value of `self.detail.dragPosition`**.
 
 [[notePrimary]]
 | `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `.xt-slider-pagination` but you can hide it using the class `.xt-slider-pagination.hidden`.
 
+Use this code to create a **slider relative**.
+
 <demo>
-  <demoinline src="demos/components/slider/usage">
+  <demoinline src="demos/components/slider/usage-relative">
+  </demoinline>
+</demo>
+
+Use this code to create a **slider absolute**.
+
+<demo>
+  <demoinline src="demos/components/slider/usage-absolute">
   </demoinline>
 </demo>

@@ -1,0 +1,59 @@
+import { Xt } from 'xtendui'
+import 'xtendui/src/slider'
+import gsap from 'gsap'
+
+Xt.mount({
+  matches: '.demo--slider-usage-absolute',
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSlider()
+    }
+  },
+})
+
+/* mountSlider */
+
+const mountSlider = ({ ref }) => {
+  // vars
+
+  const slider = ref.querySelector('.xt-slider')
+  const dragEase = 'quart.out'
+  let dragDistance
+  let dragDuration
+
+  // slider
+
+  /***/
+  let self = new Xt.Slider(slider, {
+    mode: 'absolute',
+  })
+  /***/
+
+  // dragposition (set internal dragPosition to resume animation mid dragging)
+
+  const dragposition = () => {
+    // dragDuration depending on distance
+    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition tween with main duration and ease
+    gsap.killTweensOf(self.detail)
+    gsap.to(self.detail, {
+      dragPosition: self.detail.dragFinal,
+      duration: dragDuration,
+      ease: dragEase,
+    })
+  }
+
+  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
+
+  // unmount
+
+  return () => {
+    self.destroy()
+    self = null
+  }
+}
