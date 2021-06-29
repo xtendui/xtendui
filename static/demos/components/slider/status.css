@@ -1,5 +1,7 @@
-.slider-status {
-  .xt-slider-disabled & {
-    display: none !important;
+.demo--slider-status, .demo--slider-status-react {
+  .xt-slider-disabled {
+    .slider-status {
+      display: none;
+    }
   }
 }
