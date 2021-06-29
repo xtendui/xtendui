@@ -182,6 +182,6 @@ See [toggle jump](/components/toggle/interaction#jump) for more info.
 
 See [toggle auto](/components/toggle/interaction#auto) for more info.
 
-## Class html
+## Class Body
 
-See [overlay class html](/components/overlay/interaction#class-html) for more info.
+See [overlay class body](/components/overlay/interaction#class-body) for more info.

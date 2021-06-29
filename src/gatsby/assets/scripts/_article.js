@@ -16,7 +16,7 @@ Xt.mount({
       targets: '#gatsby_open-full',
       closeDeep: ':scope > .xt-dismiss',
       closeauto: true,
-      classHtml: 'xt-scrollbar-overlay demo-full-open',
+      classBody: 'xt-scrollbar-overlay demo-full-open',
     })
 
     // tooltip

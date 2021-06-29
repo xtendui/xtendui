@@ -353,39 +353,39 @@ if (typeof window !== 'undefined') {
   }
 
   //
-  // classHtml
-  // util to remember classHtml state
+  // classBody
+  // util to remember classBody state
   //
 
-  Xt.classHtml = {
+  Xt.classBody = {
     /**
      * properties
      */
     currents: [],
 
     /**
-     * add classHtml currents
+     * add classBody currents
      * @param {Object} obj Object
      */
     add: obj => {
-      Xt.classHtml.currents.push(obj)
+      Xt.classBody.currents.push(obj)
     },
 
     /**
-     * remove classHtml currents
+     * remove classBody currents
      * @param {Object} obj Object
      */
     remove: obj => {
-      Xt.classHtml.currents = Xt.classHtml.currents.filter(x => x.c !== obj.c || x.ns !== obj.ns)
+      Xt.classBody.currents = Xt.classBody.currents.filter(x => x.c !== obj.c || x.ns !== obj.ns)
     },
 
     /**
-     * get classHtml currents
+     * get classBody currents
      * @param {Object} obj Object
      * @return {Array} Currents
      */
     get: obj => {
-      return Xt.classHtml.currents.filter(x => x.c === obj.c)
+      return Xt.classBody.currents.filter(x => x.c === obj.c)
     },
   }
 

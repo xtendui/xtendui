@@ -2037,7 +2037,7 @@ class Toggle {
           obj[type].instantType = true
         }
         // special
-        self.specialClassHtml(actionCurrent)
+        self.specialClassBody(actionCurrent)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type)
       }
@@ -2494,31 +2494,31 @@ class Toggle {
    * add or remove html class
    * @param {String} actionCurrent Current action
    */
-  specialClassHtml(actionCurrent) {
+  specialClassBody(actionCurrent) {
     const self = this
     const options = self.options
-    if (options.classHtml) {
+    if (options.classBody) {
       if (actionCurrent === 'In') {
-        for (const c of options.classHtml.split(' ')) {
+        for (const c of options.classBody.split(' ')) {
           // checks
-          Xt.classHtml.add({
+          Xt.classBody.add({
             c: c,
             ns: self.ns,
           })
           // class on
-          const container = document.documentElement
+          const container = document.documentElement.querySelector('body')
           container.classList.add(c)
         }
       } else if (actionCurrent === 'Out') {
-        for (const c of options.classHtml.split(' ')) {
+        for (const c of options.classBody.split(' ')) {
           // checks
-          Xt.classHtml.remove({
+          Xt.classBody.remove({
             c: c,
             ns: self.ns,
           })
-          if (!Xt.classHtml.get({ c: c }).length) {
+          if (!Xt.classBody.get({ c: c }).length) {
             // class off
-            const container = document.documentElement
+            const container = document.documentElement.querySelector('body')
             container.classList.remove(c)
           }
         }
@@ -3404,7 +3404,7 @@ Toggle.optionsDefaultSuper = {
     selector: false,
   },
   appendTo: false,
-  classHtml: false,
+  classBody: false,
   closeauto: false,
   openauto: false,
   mediaLoaded: false,

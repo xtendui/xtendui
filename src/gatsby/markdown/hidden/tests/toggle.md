@@ -137,7 +137,7 @@ Test window blur and focus shouldn't start if no started and should pause and re
   </demoinline>
 </demo>
 
-## Class Html
+## Class Body
 
 Test classes nested should not remove additional class.
 

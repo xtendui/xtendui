@@ -164,15 +164,15 @@ See [toggle jump](/components/toggle/interaction#jump) for more info.
 
 See [toggle auto](/components/toggle/interaction#auto) for more info.
 
-## Class html
+## Class Body
 
-You can set **html classes on activation**, remember to keep default `classHtml` classes.
+You can set **body classes on activation**, remember to keep default `classBody` classes.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `classHtml:String`                          | `'xt-scrollbar-overlay'`        | Add class to `html` on activation            |
+| Option                  | `classBody:String`                          | `'xt-scrollbar-overlay'`        | Add class to `html` on activation            |
 
 </div>
 

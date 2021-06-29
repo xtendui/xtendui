@@ -4,13 +4,13 @@ const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', classHtml: 'xt-scrollbar-overlay classhtml-custom', duration: 500 }"
+        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
-          class html
+          class body
         </button>
 
         <div class="xt-overlay group">
