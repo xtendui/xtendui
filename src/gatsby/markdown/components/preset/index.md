@@ -19,6 +19,8 @@ module.exports = {
     extend: {
       colors: {
         // custom xtendui colors
+        success: '#48bb78',
+        error: '#f56565',
         primary: {
           50: '#F8F7FF',
           100: '#F1F0FE',

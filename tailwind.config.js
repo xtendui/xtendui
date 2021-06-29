@@ -7,25 +7,6 @@ module.exports = {
     content: ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
   },
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
-      code: '#2b2b2b',
-      gray: {
-        50: '#FCFDFF',
-        100: '#FAFCFF',
-        200: '#F2F6FF',
-        300: '#EAF1FF',
-        400: '#DBE7FF',
-        500: '#CBDCFF',
-        600: '#B7C6E6',
-        700: '#7A8499',
-        800: '#5B6373',
-        900: '#3D424D',
-      },
-    },
     extend: {
       container: {
         center: true,
@@ -37,6 +18,9 @@ module.exports = {
           lg: '3rem',
           xl: '4rem',
         },
+      },
+      colors: {
+        code: '#2b2b2b',
       },
       fontFamily: {
         sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
