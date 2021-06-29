@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonToggle()}"
         data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: false }"
       >
         Toggle
@@ -13,17 +13,17 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonToggle()}"
         data-xt-toggle="{ targets: '#toggle--unique-2, #toggle--unique-3', groupElements: false }"
       >
         Toggle same
       </button>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-2">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-2">
         Target 0
       </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-3">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" id="toggle--unique-3">
         Target 1
       </div>
     </div>

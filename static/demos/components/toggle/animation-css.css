@@ -1,5 +1,5 @@
 .demo--toggle-animation, .demo--toggle-animation-react {
-  .xt-card {
+  .target {
     /* initial */
     @apply transition opacity-0;
     &.dir-before {

@@ -63,47 +63,25 @@ const html = /* HTML */ `
 
     <div id="toggle--eventmethods">
       <div class="xt-list xt-list-3 items-center mb-4" id="toggle--eventmethods-elements">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-          data-xt-group="0"
-        >
-          Toggle Group 0
-        </button>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-          data-xt-group="0"
-        >
-          Toggle Group 0
-        </button>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-        >
-          Toggle 1
-        </button>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-        >
-          Toggle 2
-        </button>
+        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-group="0">Toggle Group 0</button>
+        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-group="0">Toggle Group 0</button>
+        <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 1</button>
+        <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 2</button>
       </div>
 
       <div class="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
-        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
           Target Group 0
         </div>
-        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-group="0">
           Target Group 0b
         </div>
-        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
-        <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()} mt-6">
+    <div class="${classes.cardRadius()} ${classes.cardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--toggle-api-log"

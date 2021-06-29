@@ -3,10 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--toggle-progress">
     <div class="xt-list xt-list-3 items-center" data-xt-mousefollow>
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-      >
+      <button type="button" class="xt-button ${classes.buttonToggle()}">
         Toggle 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500">
@@ -16,10 +13,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-      >
+      <button type="button" class="xt-button ${classes.buttonToggle()}">
         Toggle 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500">
@@ -29,10 +23,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-      >
+      <button type="button" class="xt-button ${classes.buttonToggle()}">
         Toggle 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500">
@@ -42,10 +33,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-      >
+      <button type="button" class="xt-button ${classes.buttonToggle()}">
         Toggle 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500">
@@ -55,7 +43,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
         Target 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -65,7 +53,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
         Target 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -75,7 +63,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
         Target 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -85,7 +73,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">
         Target 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">

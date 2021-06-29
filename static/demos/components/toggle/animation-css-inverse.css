@@ -5,7 +5,7 @@
     }
   }
 
-  .xt-card.xt-toggle-inverse {
+  .xt-toggle-inverse {
     /* initial */
     @apply transition opacity-100 translate-x-0;
     /* in */
@@ -30,7 +30,7 @@
     }
   }
 
-  .xt-card.xt-toggle {
+  .xt-toggle {
     /* initial */
     @apply transition opacity-0;
     &.dir-before {

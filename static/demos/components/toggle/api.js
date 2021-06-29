@@ -79,7 +79,7 @@ const mountEventmethods = ({ ref }) => {
       const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 on:bg-gray-400">Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
-      const strTr = `<div class="xt-card xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${index}</div>`
+      const strTr = `<div class="xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
@@ -176,8 +176,8 @@ const mountEventmethods = ({ ref }) => {
       selector = e.target.getAttribute('title')
     } else if (e.target.querySelector(':scope > .xt-button')) {
       selector = e.target.querySelector(':scope > .xt-button').textContent
-    } else if (e.target.querySelector('.xt-card > *')) {
-      selector = e.target.querySelector('.xt-card > *').textContent
+    } else if (e.target.querySelector('.> *')) {
+      selector = e.target.querySelector('.> *').textContent
     } else if (e.target.querySelector(':scope > *')) {
       selector = e.target.querySelector(':scope > *').textContent
     } else if (!e.target.querySelector('*')) {

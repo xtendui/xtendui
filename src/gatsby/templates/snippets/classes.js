@@ -1,24 +1,30 @@
 export const classes = {
+  // special
+  buttonToggle: () =>
+    'py-2.5 px-3.5 text-xs rounded-full text-black font-semibold bg-gray-300 transition hover:bg-gray-400 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+  cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
+  cardSlide: () =>
+    'p-8 text-base text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400',
   // size
-  badgeSm: () => 'text-3xs py-1.5 px-2.5',
-  badgeMd: () => 'text-xs py-2.5 px-3.5',
-  badgeLg: () => 'text-base py-3 px-4',
   badgeRadius: () => 'rounded-xs',
-  buttonSm: () => 'text-3xs py-1.5 px-2.5',
-  buttonMd: () => 'text-xs py-2.5 px-3.5',
-  buttonLg: () => 'text-base py-3 px-4',
-  buttonSmDrop: () => 'text-3xs py-1 px-5',
-  buttonMdDrop: () => 'text-2xs py-2 px-6',
-  buttonLgDrop: () => 'text-xs py-2.5 px-7',
+  badgeSm: () => 'py-1.5 px-2.5 text-3xs',
+  badgeMd: () => 'py-2.5 px-3.5 text-xs',
+  badgeLg: () => 'py-3 px-4 text-base',
+  buttonSm: () => 'py-1.5 px-2.5 text-3xs',
+  buttonMd: () => 'py-2.5 px-3.5 text-xs',
+  buttonLg: () => 'py-3 px-4 text-base',
   buttonRadius: () => 'rounded-md',
-  tooltipSm: () => 'text-3xs py-1 px-2',
-  tooltipMd: () => 'text-xs py-2 px-3.5',
-  tooltipLg: () => 'text-base py-2.5 px-4',
+  buttonSmDrop: () => 'py-1 px-5 text-3xs',
+  buttonMdDrop: () => 'py-2 px-6 text-2xs',
+  buttonLgDrop: () => 'py-2.5 px-7 text-xs',
   tooltipRadius: () => 'rounded-sm',
-  cardSm: () => 'text-sm py-6 px-7',
-  cardMd: () => 'text-base py-8 px-9',
-  cardLg: () => 'text-base py-8 px-9 md:text-lg md:py-9 md:px-10',
+  tooltipSm: () => 'py-1 px-2 text-3xs',
+  tooltipMd: () => 'py-2 px-3.5 text-xs',
+  tooltipLg: () => 'py-2.5 px-4 text-base',
   cardRadius: () => 'rounded-md',
+  cardSm: () => 'py-6 px-7 text-sm',
+  cardMd: () => 'py-8 px-9 text-base',
+  cardLg: () => 'py-8 px-9 md:text-lg md:py-9 md:px-10 text-base',
   // variant
   badgeDefaultInteractive: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-400 transition hover:bg-gray-500 active:bg-gray-600 on:bg-gray-600',
@@ -53,10 +59,7 @@ export const classes = {
   cardPrimaryFullInteractive: () =>
     'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 on:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
-  cardToggle: () => 'text-sm p-6 text-black xt-links-default bg-gray-200',
   cardWhite: () => 'text-black xt-links-default bg-white',
-  cardSlide: () =>
-    'text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400',
   // components
   slide: () => 'group',
   loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',

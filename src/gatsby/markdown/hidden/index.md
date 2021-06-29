@@ -8,6 +8,7 @@ description: "Hidden"
 
 #### Components
 
+.target
 .hero
 .listing
 .breadcrumbs
