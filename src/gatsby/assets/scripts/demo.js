@@ -220,7 +220,7 @@ export const populateDemo = container => {
   // multiple elements
   container.prepend(
     Xt.createElement(
-      '<div class="gatsby_demo_tabs bg-gray-200"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
+      '<div class="gatsby_demo_tabs bg-gray-100"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>'
     )
   )
   const showCodeUid = Xt.getuniqueId()

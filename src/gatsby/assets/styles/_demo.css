@@ -70,7 +70,7 @@ pre {
   pre {
     border-width: 0 !important;
   }
-  @apply border-3 border-gray-200;
+  @apply border-3 border-gray-100;
   #gatsby_open-full & {
     border: 0 !important;
     .gatsby_demo_item:not(.populated-iframe) {
@@ -96,7 +96,7 @@ pre {
   .xt-button {
     padding: .5em .75em;
     font-size: 12px;
-    @apply text-black text-opacity-50 font-semibold leading-tight tracking-normal capitalize rounded-md border-gray-200 bg-gray-200 transition;
+    @apply text-black text-opacity-50 font-semibold leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition;
     &:hover, &.in {
       @apply border-white bg-white text-opacity-100;
     }
@@ -296,9 +296,9 @@ pre {
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
-  border: 2px solid theme('colors.gray.200');
+  border: 2px solid theme('colors.gray.100');
   th, td {
-    border: 1px solid theme('colors.gray.200');
+    border: 1px solid theme('colors.gray.100');
   }
   th, td:first-child {
     @apply py-2 px-4 text-xs font-semibold leading-snug tracking-wider uppercase text-left;

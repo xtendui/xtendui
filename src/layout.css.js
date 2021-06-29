@@ -61,10 +61,10 @@ module.exports = {
         },
       },
       '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.gray.600'),
+        background: theme('colors.gray.300'),
       },
       scrollbarWidth: 'auto',
-      scrollbarColor: `${theme('colors.gray.600')} ${theme('colors.white')}`,
+      scrollbarColor: `${theme('colors.gray.300')} ${theme('colors.white')}`,
     },
     '.xt-overflow-sub': {
       // styles
@@ -75,10 +75,10 @@ module.exports = {
         background: 'transparent',
       },
       '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.gray.600'),
+        background: theme('colors.gray.300'),
       },
       scrollbarWidth: 'thin',
-      scrollbarColor: `${theme('colors.gray.600')} transparent`,
+      scrollbarColor: `${theme('colors.gray.300')} transparent`,
     },
     '[readonly], [disabled], .xt-disabled': {
       pointerEvents: 'none',

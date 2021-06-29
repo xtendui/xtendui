@@ -14,7 +14,7 @@ const cardPrimaryInteractive = () => classes.cardPrimaryInteractive()
 
 const html = /* HTML */ `
   <div class="demo--slide-animation-v1">
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Button</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonDefault()}">
@@ -35,7 +35,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">Link</button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Drop</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', duration: 500 }">
@@ -88,7 +88,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Tooltip</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div
@@ -140,13 +140,13 @@ const html = /* HTML */ `
                 </div>
               </form>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-400 z-below ${animItemOpacity()}"></div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-300 z-below ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Overlay</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
@@ -165,7 +165,7 @@ const html = /* HTML */ `
             </button>
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()} ${animDesign()}">
-                <div class="xt-media-container bg-gray-600 ${animItem()} xt-ratio-100">
+                <div class="xt-media-container bg-gray-500 ${animItem()} xt-ratio-100">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
@@ -196,7 +196,7 @@ const html = /* HTML */ `
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
                 </div>
-                <div class="xt-media-container bg-gray-600 h-48 ${animItem()}">
+                <div class="xt-media-container bg-gray-500 h-48 ${animItem()}">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
                 <div class="${classes.cardMd()} ${animItem()}">
@@ -207,7 +207,7 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                 </div>
-                <div class="${classes.cardSm()} bg-gray-300 mt-auto ${animItem()}">
+                <div class="${classes.cardSm()} bg-gray-200 mt-auto ${animItem()}">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
@@ -327,10 +327,10 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col ${animItem()}">
-                    <div class="xt-media-container bg-gray-600 h-48 md:xt-ratio-100">
+                    <div class="xt-media-container bg-gray-500 h-48 md:xt-ratio-100">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
-                    <div class="${classes.cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
+                    <div class="${classes.cardMd()} bg-gray-200 rounded-b-md md:rounded-bl-none flex-full">
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
@@ -366,7 +366,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group rounded-md ${animItem()}">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -453,7 +453,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b-md bg-gray-300 ${animItem()}">
+                <div class="${classes.cardSm()} rounded-b-md bg-gray-200 ${animItem()}">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
@@ -463,7 +463,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Card</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">

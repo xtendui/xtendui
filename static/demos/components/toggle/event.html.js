@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Mouseenter</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Mouseenter</div>
 
     <div
       class="xt-list xt-list-3 items-center"
@@ -25,7 +25,7 @@ const html = /* HTML */ `
       <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Focus</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Focus</div>
 
     <form class="text-sm">
       <div

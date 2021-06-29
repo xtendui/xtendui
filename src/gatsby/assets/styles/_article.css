@@ -8,12 +8,12 @@
 
 .gatsby_site-article_hero {
   background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
 }
 
 .gatsby_site-footer {
   background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.100') 33%, theme('colors.gray.200') 100%);
+  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
 }
 
 .gatsby_site-article--markdown {

@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -20,13 +20,13 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -49,7 +49,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -62,13 +62,13 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -96,7 +96,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -118,13 +118,13 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">

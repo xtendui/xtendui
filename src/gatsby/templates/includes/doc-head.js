@@ -7,7 +7,7 @@ export default class DocHead extends React.Component {
   render() {
     const { page } = this.props
     return (
-      <header className="gatsby_site-article_hero overflow-hidden py-10 md:py-16 border-b border-gray-200">
+      <header className="gatsby_site-article_hero overflow-hidden py-10 md:py-16 border-b border-gray-100">
         <div className="gatsby_site-article_hero-inner container">
           <div className="gatsby_site-article_hero-content">
             <div className="gatsby_site-article_hero-content-inner">
@@ -17,14 +17,14 @@ export default class DocHead extends React.Component {
                   .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
                   .join(' ')}{' '}
                 {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
-                  <span className="font-normal text-gray-500">
+                  <span className="font-normal text-primary-200">
                     <br className="md:hidden" />
                     {page.post.frontmatter.parent}
                   </span>
                 ) : null}
                 {page.post.frontmatter.category ? (
                   <div
-                    className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-gray-400 bg-gray-400 -mt-4 ml-2`}>
+                    className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-black font-semibold leading-snug tracking-wider uppercase border-primary-100 bg-primary-100 -mt-4 ml-2`}>
                     {page.post.frontmatter.category}
                   </div>
                 ) : null}
@@ -33,7 +33,7 @@ export default class DocHead extends React.Component {
                       return (
                         <div
                           key={z}
-                          className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-white font-semibold leading-snug tracking-wider uppercase border-primary-600 bg-primary-600 -mt-4 ml-2`}>
+                          className={`inline-block align-middle ${classes.badgeRadius()} ${classes.badgeSm()} text-white font-semibold leading-snug tracking-wider uppercase border-primary-500 bg-primary-500 -mt-4 ml-2`}>
                           {tag}
                         </div>
                       )

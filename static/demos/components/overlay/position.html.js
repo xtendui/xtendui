@@ -115,7 +115,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="${classes.cardMd()}">
@@ -126,7 +126,7 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                 </div>
-                <div class="${classes.cardSm()} bg-gray-300 mt-auto">
+                <div class="${classes.cardSm()} bg-gray-200 mt-auto">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.

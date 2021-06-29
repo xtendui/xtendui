@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-automaticscroll">
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Constant speed</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Constant speed</div>
 
     <div class="xt-slider slider--text my-12">
       <div class="p-4 md:p-6 lg:p-8">
@@ -56,39 +56,39 @@ const html = /* HTML */ `
         </nav>
       </div>
 
-      <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Images</div>
+      <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Images</div>
 
       <div class="xt-slider slider--img my-12">
         <div class="p-4 md:p-6 lg:p-8">
           <div class="xt-slides xt-row xt-row-px">
             <div class="xt-slide ${classes.slide()} xt-list xt-list-px flex-nowrap">
               <a href="#test-link-1" class="slide-asset" title="item 0">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </a>
               <a href="#test-link-2" class="slide-asset" title="item 1">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </a>
               <a href="#test-link-3" class="slide-asset" title="item 2">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </a>
               <a href="#test-link-4" class="slide-asset" title="item 3">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </a>
               <a href="#test-link-5" class="slide-asset" title="item 4">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </a>
               <a href="#test-link-6" class="slide-asset" title="item 5">
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
                 </div>
               </a>

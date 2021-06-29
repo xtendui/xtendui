@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-4 *** xt-row-stretch ***">
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="${classes.cardMd()}">
@@ -16,7 +16,7 @@ const html = /* HTML */ `
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div class="${classes.cardMd()} mt-auto rounded-b-md bg-gray-300">
+          <div class="${classes.cardMd()} mt-auto rounded-b-md bg-gray-200">
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
@@ -28,14 +28,14 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
-          <div class="${classes.cardMd()} mt-auto rounded-b-md bg-gray-300">
+          <div class="${classes.cardMd()} mt-auto rounded-b-md bg-gray-200">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>

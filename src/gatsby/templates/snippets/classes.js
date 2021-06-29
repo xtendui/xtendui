@@ -1,10 +1,12 @@
 export const classes = {
   // special
   buttonToggle: () =>
-    'py-2.5 px-3.5 text-xs rounded-full text-black font-semibold bg-gray-300 transition hover:bg-gray-400 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+    'rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
   cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
   cardSlide: () =>
-    'p-8 text-base text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400',
+    'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-200',
+  buttonSlider: () =>
+    'text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all',
   // size
   badgeRadius: () => 'rounded-xs',
   badgeSm: () => 'py-1.5 px-2.5 text-3xs',
@@ -26,38 +28,35 @@ export const classes = {
   cardMd: () => 'py-8 px-9 text-base',
   cardLg: () => 'py-8 px-9 md:text-lg md:py-9 md:px-10 text-base',
   // variant
-  badgeDefaultInteractive: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-400 transition hover:bg-gray-500 active:bg-gray-600 on:bg-gray-600',
-  badgePrimaryInteractive: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 transition hover:bg-primary-700 active:bg-primary-800 on:bg-primary-800',
-  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-400',
-  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600',
+  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100',
+  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefaultDrop: () =>
     'w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonDefaultGroup: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 group-hover:bg-gray-400',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 group-hover:bg-gray-200',
   buttonDefault: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500',
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   buttonPrimaryDrop: () =>
     'w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimaryGroup: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600',
   buttonPrimary: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700',
+    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   buttonText: () =>
     'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFull: () => 'text-black xt-links-default',
   cardDefaultInteractive: () =>
-    'text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400',
-  cardDefaultFullInteractive: () => 'text-black xt-links-default transform transition hover:bg-gray-200 on:bg-gray-40',
-  cardDefault: () => 'text-black xt-links-default bg-gray-200',
+    'text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
+  cardDefaultFullInteractive: () =>
+    'text-black xt-links-default transform transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200',
+  cardDefault: () => 'text-black xt-links-default bg-gray-100',
   cardPrimaryFull: () => 'text-primary-600',
   cardPrimaryInteractive: () =>
-    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 on:bg-primary-600',
+    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   cardPrimaryFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 on:bg-primary-600',
+    'text-black xt-links-default transform transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   cardWhite: () => 'text-black xt-links-default bg-white',
   // components
@@ -68,22 +67,22 @@ export const classes = {
   // form
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
-  checkDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  checkDefault: () => 'text-primary-500 bg-gray-200 transition-all',
   checkPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
   checkRadius: () => 'rounded-md',
-  radioDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  radioDefault: () => 'text-primary-500 bg-gray-200 transition-all',
   radioPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
   radioRadius: () => 'rounded-full',
-  switchDefault: () => 'text-primary-500 bg-gray-300 transition-all',
+  switchDefault: () => 'text-primary-500 bg-gray-200 transition-all',
   switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 transition-all',
   switchRadius: () => 'rounded-full',
   inputDefault: () =>
-    'py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none',
+    'py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
   inputPrimary: () =>
     'py-3 px-4 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
-    'py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-300 bg-transparent transition focus:border-gray-400 focus:outline-none',
-  labelDefault: () => 'font-semibold text-gray-900',
+    'py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
+  labelDefault: () => 'font-semibold text-gray-700',
   labelPrimary: () => 'font-semibold text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)
   input: () => 'block w-full',

@@ -44,7 +44,7 @@ export default class Template extends React.Component {
           <div className="xt-row xt-row-6">
             {data.categories.category.sort(typeSort).map((category, i) => (
               <div className="gatsby_listing-group" key={i}>
-                <h2 className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md bg-gray-200 text-center">
+                <h2 className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md bg-gray-100 text-center">
                   {category.title.split('-').pop()}
                 </h2>
                 <div className="gatsby_listing-items">

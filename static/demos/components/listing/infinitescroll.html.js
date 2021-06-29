@@ -39,7 +39,7 @@ const html = /* HTML */ `
         <div class="xt-row xt-row-6">
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -51,7 +51,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -63,7 +63,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -75,7 +75,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -87,7 +87,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -99,7 +99,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -111,7 +111,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
@@ -123,7 +123,7 @@ const html = /* HTML */ `
 
           <div class="w-6/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
-              <div class="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+              <div class="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">

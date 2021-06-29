@@ -49,7 +49,7 @@ class Template extends React.Component {
             <div className="gatsby_listing">
               <div className="xt-row xt-row-6">
                 {data.post.frontmatter.type === 'Components' ? (
-                  <h2 className={`${classes.hBlock()} text-black bg-gray-200 text-center`}>{'Sub Pages'}</h2>
+                  <h2 className={`${classes.hBlock()} text-black bg-gray-100 text-center`}>{'Sub Pages'}</h2>
                 ) : null}
                 <div className="gatsby_listing-group">
                   <div className="gatsby_listing-items">
@@ -73,7 +73,7 @@ class Template extends React.Component {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
                                         <div
-                                          className="xt-media-container bg-gray-200 mt-3 rounded-md border-3 border-primary-300 xt-ratio-56.2"
+                                          className="xt-media-container bg-gray-100 mt-3 rounded-md border-3 border-primary-300 xt-ratio-56.2"
                                           key={z}>
                                           <video
                                             className="xt-media object-cover object-center"

@@ -15,7 +15,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
   </demoinline>
 </demo>
 
-To have **table border and border radius** use `.border-separate` and `border-spacing: 0`.
+To have **table border and border radius** use `.border-separate`, `overflow-hidden` and `border-spacing: 0`.
 
 <demo>
   <demoinline src="demos/components/table/border">

@@ -38,7 +38,7 @@ export default function Layout({ children, page, seo }) {
                   <article className="gatsby_site-article_content flex-auto">
                     <div className="gatsby_site-article_content_inner">{children}</div>
                   </article>
-                  <footer className="gatsby_site-footer border-t border-gray-200">
+                  <footer className="gatsby_site-footer border-t border-gray-100">
                     <div className="gatsby_site-footer_inner container py-4 lg:py-8">
                       <Footer />
                     </div>
@@ -60,7 +60,7 @@ export default function Layout({ children, page, seo }) {
                   <article className="gatsby_site-article_content flex-auto container py-10 md:py-20">
                     <div className="gatsby_site-article_content_inner">{children}</div>
                   </article>
-                  <footer className="gatsby_site-footer border-t border-gray-200">
+                  <footer className="gatsby_site-footer border-t border-gray-100">
                     <div className="gatsby_site-footer_inner container py-4 lg:py-8">
                       {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
                         <DocFoot page={page} />

@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -25,7 +25,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -47,7 +47,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -65,7 +65,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -92,7 +92,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">
@@ -119,7 +119,7 @@ const html = /* HTML */ `
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="hero-content flex relative min-h-screen">

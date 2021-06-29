@@ -73,7 +73,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-600 xt-ratio-100">
+                <div class="xt-media-container bg-gray-500 xt-ratio-100">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -114,7 +114,7 @@ const html = /* HTML */ `
                       </p>
                     </div>
                     <div class="md:w-5/12">
-                      <div class="${classes.cardSm()} bg-gray-300">
+                      <div class="${classes.cardSm()} bg-gray-200">
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
                           volutpat turpis.
@@ -128,7 +128,7 @@ const html = /* HTML */ `
                       </div>
                     </div>
                   </div>
-                  <div class="xt-media-container bg-gray-600 xt-ratio-25">
+                  <div class="xt-media-container bg-gray-500 xt-ratio-25">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>

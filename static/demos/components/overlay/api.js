@@ -47,7 +47,7 @@ const mountEventmethods = ({ ref }) => {
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-500"/>'
+      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
     }, 1000)
   }
 

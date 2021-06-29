@@ -11,7 +11,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
-                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
@@ -66,7 +66,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
-                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
@@ -111,7 +111,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
-                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
@@ -166,7 +166,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
-                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">
@@ -211,7 +211,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** absolute inset-0 z-10 xt-card ${classes.cardRadius()} ${classes.cardDefault()}"
                 >
-                  <div class="xt-media-container bg-gray-600 w-full rounded-t-md h-40">
+                  <div class="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div class="${classes.cardSm()}">

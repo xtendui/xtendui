@@ -15,31 +15,31 @@ const html = /* HTML */ `
             <div class="relative pt-6 md:py-6">
               <div class="xt-list flex-col">
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-600">
+                  <div class="xt-media-container bg-gray-500">
                     <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-600">
+                  <div class="xt-media-container bg-gray-500">
                     <img class="xt-media relative" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-600">
+                  <div class="xt-media-container bg-gray-500">
                     <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-600">
+                  <div class="xt-media-container bg-gray-500">
                     <img class="xt-media relative" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
-                  <div class="xt-media-container bg-gray-600">
+                  <div class="xt-media-container bg-gray-500">
                     <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>

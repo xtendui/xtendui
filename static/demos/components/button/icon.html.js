@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Button small</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button small</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button
@@ -27,7 +27,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Button medium</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button medium</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button
@@ -52,7 +52,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Button large</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button large</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button

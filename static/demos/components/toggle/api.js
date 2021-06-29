@@ -38,7 +38,7 @@ const mountEventmethods = ({ ref }) => {
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-500"/>'
+      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
     }, 1000)
   }
 
@@ -76,10 +76,10 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>add</strong>')
       // elements
       const index = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 transition hover:bg-gray-300 on:bg-gray-400">Toggle ${index}</button>`
+      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 on:bg-gray-300">Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
-      const strTr = `<div class="xt-toggle rounded-md text-sm p-6 text-black bg-gray-200">Target ${index}</div>`
+      const strTr = `<div class="xt-toggle rounded-md text-sm p-6 text-black bg-gray-100">Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
