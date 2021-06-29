@@ -23,21 +23,25 @@ const mountToggle = ({ ref }) => {
   new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
     elements: ':scope > .xt-button',
     targets: ':scope > .xt-toggle',
-    durationIn: ({ current, total, el }) => {
+    durationIn: ({ current, total, el, self }) => {
+      if (self.elements.includes(el)) return
       const val = (total - current) * 300
       el.style.transitionDuration = `${val}ms`
       return val
     },
-    delayIn: ({ current }) => {
+    delayIn: ({ current, el, self }) => {
+      if (self.elements.includes(el)) return
       const val = current * 300
       return val
     },
-    durationOut: ({ current, el }) => {
+    durationOut: ({ current, el, self }) => {
+      if (self.elements.includes(el)) return
       const val = current * 150
       el.style.transitionDuration = `${val}ms`
       return val
     },
-    delayOut: ({ current, total }) => {
+    delayOut: ({ current, total, el, self }) => {
+      if (self.elements.includes(el)) return
       const val = (total - current) * 150
       return val
     },

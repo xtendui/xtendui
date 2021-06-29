@@ -24,7 +24,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="mt-2">This text is below targets.</div>
+      <div class="mt-2">Active targets are not absolute so content flow normally.</div>
     </div>
   </div>
 `

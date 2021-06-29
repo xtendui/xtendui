@@ -28,7 +28,7 @@ See [toggle duration and delay](/components/toggle/animation#duration-and-delay)
 [[notePrimary]]
 | When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
+You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el, self }`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -44,7 +44,7 @@ You can also **assign duration on single nodes** with `data-xt-duration="Millise
 
 #### Delay
 
-You can set activation delay with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el }`.
+You can set activation delay with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el, self }`.
 
 You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 

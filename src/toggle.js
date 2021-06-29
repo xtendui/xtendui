@@ -2088,7 +2088,7 @@ class Toggle {
         if (typeof delay === 'function') {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
           const tot = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Tot`) || els.length
-          delay = delay({ current: count, total: tot - 1, el })
+          delay = delay({ current: count, total: tot - 1, el, self })
         }
       }
       // fnc
@@ -2250,7 +2250,7 @@ class Toggle {
       if (typeof duration === 'function') {
         const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
         const tot = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Tot`) || els.length
-        duration = duration({ current: count, total: tot - 1, el })
+        duration = duration({ current: count, total: tot - 1, el, self })
       }
     }
     // fnc

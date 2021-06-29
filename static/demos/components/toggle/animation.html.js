@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonToggle()}"
-        data-xt-toggle="{ targets: '#toggle--animation-0' }"
+        data-xt-toggle="{ targets: '#toggle--animation-0', duration: 500 }"
       >
         Toggle 0
       </button>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonToggle()}"
-        data-xt-toggle="{ targets: '#toggle--animation-1' }"
+        data-xt-toggle="{ targets: '#toggle--animation-1', duration: 500 }"
       >
         Toggle 1
       </button>

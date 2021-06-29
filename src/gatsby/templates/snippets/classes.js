@@ -1,10 +1,10 @@
 export const classes = {
   // special
   buttonToggle: () =>
-    'rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+    'rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition',
   cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
   cardSlide: () =>
-    'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-200',
+    'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transitionc',
   buttonSlider: () =>
     'text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all',
   // size
