@@ -34,7 +34,9 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {})
+  const self = new Xt.Slider(slider, {
+    align: 'left',
+  })
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)

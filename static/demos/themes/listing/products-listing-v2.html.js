@@ -1,9 +1,12 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const html = /* HTML */ `
   <div class="demo--products-listing-v2">
     <div class="py-10">
       <div class="xt-slider *** slider--listing *** pb-10">
         <div class="container">
-          <div class="xt-h2 mb-8">Latest Products</div>
+          <div class="xt-h3 mb-8">Latest Products</div>
+
           <div class="xt-slides xt-row xt-row-4">
             <div class="xt-slide w-6/12 md:w-4/12">
               <a href="#" class="*** listing-item *** block group">
@@ -119,6 +122,28 @@ const html = /* HTML */ `
               </a>
             </div>
           </div>
+
+          <button
+            type="button"
+            class="xt-button absolute top-1/2 left-4 -mt-4 w-8 lg:w-12 h-8 lg:h-12 rounded-full ${classes.buttonPrimary()}"
+            data-xt-nav="-1"
+            aria-label="Previous slide"
+          >
+            ${classes.iconArrowLeft({
+              classes: 'xt-icon w-auto h-4',
+            })}
+          </button>
+
+          <button
+            type="button"
+            class="xt-button absolute top-1/2 right-4 -mt-4 w-8 lg:w-12 h-8 lg:h-12 rounded-full ${classes.buttonPrimary()}"
+            data-xt-nav="1"
+            aria-label="Next slide"
+          >
+            ${classes.iconArrowRight({
+              classes: 'xt-icon w-auto h-4',
+            })}
+          </button>
 
           <nav class="xt-slider-pagination hidden">
             <button type="button" class="xt-button hidden" data-xt-pag></button>

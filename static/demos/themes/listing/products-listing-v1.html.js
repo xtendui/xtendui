@@ -1,9 +1,38 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const html = /* HTML */ `
   <div class="demo--products-listing-v1">
     <div class="py-10">
       <div class="xt-slider *** slider--listing *** pb-10">
         <div class="container">
-          <div class="xt-h2 mb-8">Latest Products</div>
+          <div class="xt-h3 mb-8">
+            <div class="xt-list xt-list-2 items-center">
+              <div class="mr-auto">Latest Products</div>
+
+              <button
+                type="button"
+                class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+                data-xt-nav="-1"
+                aria-label="Previous slide"
+              >
+                ${classes.iconArrowLeft({
+                  classes: 'xt-icon w-auto h-4',
+                })}
+              </button>
+
+              <button
+                type="button"
+                class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+                data-xt-nav="1"
+                aria-label="Next slide"
+              >
+                ${classes.iconArrowRight({
+                  classes: 'xt-icon w-auto h-4',
+                })}
+              </button>
+            </div>
+          </div>
+
           <div class="xt-slides xt-row xt-row-4">
             <div class="xt-slide w-6/12 md:w-4/12">
               <a href="#" class="*** listing-item *** block">
