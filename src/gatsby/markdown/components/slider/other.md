@@ -105,3 +105,17 @@ When you need to reinit the component when the media is loaded and the **width**
   <demoinline src="demos/components/slider/media-loaded">
   </demoinline>
 </demo>
+
+## Zindex
+
+On sequential activation you can **automatically set zIndex of activated elements and targets**.
+
+It's better to keep the start value like [the css one](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js), but you can change the **factor on activation**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+
+</div>

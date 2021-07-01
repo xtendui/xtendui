@@ -86,14 +86,40 @@ Use this code to create a **close outside**.
   </demoinline>
 </demo>
 
-## Other
+## Append To
+
+You can **automatically move targets on activation inside the DOM**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `appendTo:Query`                          | `'body'`        | Append targets to Node on activation            |
-| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 500, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
-| Option                  | `focusLimit:Boolean`                          | `true`        | Limit focus on activation            |
+| Option                  | `appendTo:Query`                          | `'body'`        | Automatically append targets to Node on activation            |
+
+</div>
+
+## Focus Limit
+
+For usability purpose **on activation you can limit the focus inside the current activated targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `focusLimit:Boolean`                          | `true`        | Automatically limit focus on activation inside current targets            |
+
+</div>
+
+## Zindex
+
+On sequential activation you can **automatically set zIndex of activated elements and targets**.
+
+It's better to keep the start value like [the css one](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js), but you can change the **factor on activation**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 5000, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 
 </div>

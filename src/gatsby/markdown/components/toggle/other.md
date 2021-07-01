@@ -70,14 +70,40 @@ Use this code to create a **toggle that resets to current** automatically on dea
   </demoinline>
 </demo>
 
-## Other
+## Append To
+
+You can **automatically move targets on activation inside the DOM**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `appendTo:Query`                          | `false`        | Append targets to Node on activation            |
+| Option                  | `appendTo:Query`                          | `false`        | Automatically append targets to Node on activation            |
+
+</div>
+
+## Focus Limit
+
+For usability purpose **on activation you can limit the focus inside the current activated targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `focusLimit:Boolean`                          | `false`        | Automatically limit focus on activation inside current targets            |
+
+</div>
+
+## Zindex
+
+On sequential activation you can **automatically set zIndex of activated elements and targets**.
+
+It's better to keep the start value like [the css one](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js), but you can change the **factor on activation**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `zIndex:Object|false`                 | `false`     | Set `z-index` on activation, e.g.: `{ targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
-| Option                  | `focusLimit:Boolean`                          | `false`        | Limit focus on activation            |
 
 </div>
