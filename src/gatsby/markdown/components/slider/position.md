@@ -2,8 +2,8 @@
 type: "Components"
 category: "Interaction"
 parent: "Slider"
-title: "Content relative"
-date: "2030-10-10"
+title: "Position"
+date: "2009-10-10"
 ---
 
 ## Align
@@ -14,7 +14,7 @@ Slide alignment on activation.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `align:String`                          | `'center'`        | Alignment 'left' or 'center' or 'right'           |
+| Option                  | `align:String`                          | `'center'`        | Alignment `'left'` or `'center'` or `'right'`           |
 
 </div>
 

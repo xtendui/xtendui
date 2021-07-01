@@ -36,6 +36,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
 | Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
 | Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
+| Event                   | `dragposition.xt.slider`           | `dragger` | Drag position event             |
 | Event                   | `dragreset.xt.slider`           | `dragger` | Drag reset event             |
 | Event                   | `init.xt.slider`           | `object` | Init or reinit event             |
 | Event                   | `status.xt.slider`           | `object` | Status event (enabled or disabled)             |
@@ -93,16 +94,12 @@ const object = self.object
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 | Property                   | `dragger:Node`       | Dragger node             |
-| Property                   | `detail.dragging:Boolean`       | Returns true when slider is being dragged or just being dragged             |
-| Property                   | `detail.dragBlock:Boolean`       | Returns true when slider is blocked on dragging and other interactions are prevented             |
 | Property                   | `detail.draggerWidth:Number`       | Dragger width             |
-| Property                   | `detail.dragRatio:Number`       | Drag ratio from 0 to 1             |
-| Property                   | `detail.dragRatioInverse:Number`       | Drag ratio inverse from 1 to 0             |
-| Property                   | `detail.dragStart:Number`       | Drag starting position             |
-| Property                   | `detail.dragCurrent:Number`       | Drag current position             |
-| Property                   | `detail.dragPos:Number`       | Drag distance from dragStart to dragCurrent with computation             |
-| Property                   | `detail.dragPosOld:Number`       | Drag distance from dragStart to dragCurrent with computation on the previous frame             |
-| Property                   | `detail.dragDirection:Number`       | Drag direction `1` or `-1`             |
+| Property                   | `detail.dragPosition:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
+| Property                   | `detail.dragFinal:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
+| Property                   | `detail.dragRatio:Number`       | Current drag ratio from 0 to 1             |
+| Property                   | `detail.dragRatioInverse:Number`       | Current drag inverse from 1 to 0             |
+| Property                   | `detail.isDrag:Boolean`       | Is `true` if is dragging activation or setup activation             |
 
 </div>
 

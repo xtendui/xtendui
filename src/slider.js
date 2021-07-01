@@ -716,18 +716,18 @@ class Slider extends Xt.Toggle {
     const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
     const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
-    // fix instant false for dragposition but keep for on and off event
-    const instant = self.detail.instant
+    // fix isDrag false for dragposition but keep for on and off event
+    const isDrag = self.detail.isDrag
     // fix absolute loop
     if (options.mode === 'absolute' && options.loop && !self.initial) {
       if (slide === last && (self.detail.dragDirection < 0 || self.detail.dragPosition >= min)) {
         // val
-        self.detail.instant = true
+        self.detail.isDrag = true
         self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       } else if (slide === first && (self.detail.dragDirection > 0 || self.detail.dragPosition <= max)) {
-        self.detail.instant = true
+        self.detail.isDrag = true
         self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
@@ -756,20 +756,20 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // fix instant false for dragposition but keep for on and off event
-    self.detail.instant = false
+    // fix isDrag false for dragposition but keep for on and off event
+    self.detail.isDrag = false
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // fix instant false for dragposition but keep for on and off event
-    self.detail.instant = instant
+    // fix isDrag false for dragposition but keep for on and off event
+    self.detail.isDrag = isDrag
     // keep super after dragposition because it sets self.initial etc..
     super.eventOn(element, force, e)
     // wrap
     self.eventWrap(self.currentIndex)
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
-      // fix instant false for dragposition but keep for on and off event
-      self.detail.instant = false
+      // fix isDrag false for dragposition but keep for on and off event
+      self.detail.isDrag = false
     })
   }
 
@@ -971,7 +971,7 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // vars
-    self.detail.instant = true
+    self.detail.isDrag = true
     self.detail.dragIndex = self.currentIndex
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
@@ -1155,7 +1155,7 @@ class Slider extends Xt.Toggle {
     self.detail.dragRatio = self.detail.dragRatioInverse
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     // val
-    self.detail.instant = false
+    self.detail.isDrag = false
     self.detail.dragFinal = self.detail.dragInitial
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))

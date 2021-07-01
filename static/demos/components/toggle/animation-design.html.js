@@ -14,9 +14,7 @@ const html = /* HTML */ `
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
-        <div
-          class="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***"
-        >
+        <div class="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***">
           Target 0
         </div>
       </div>
@@ -27,9 +25,7 @@ const html = /* HTML */ `
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
-        <div
-          class="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***"
-        >
+        <div class="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***">
           Target 1
         </div>
       </div>

@@ -6,11 +6,11 @@ const html = /* HTML */ `
       <div class="xt-slides">
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center"
@@ -24,11 +24,11 @@ const html = /* HTML */ `
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
@@ -46,11 +46,11 @@ const html = /* HTML */ `
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
@@ -64,11 +64,11 @@ const html = /* HTML */ `
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
@@ -91,11 +91,11 @@ const html = /* HTML */ `
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
@@ -118,11 +118,11 @@ const html = /* HTML */ `
 
         <div class="xt-slide w-full">
           <div class="hero relative overflow-hidden bg-black">
-            <div class="hero-inner">
+            <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right"
                 >
