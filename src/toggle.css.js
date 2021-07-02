@@ -35,9 +35,5 @@ module.exports = {
     '.xt-toggle-inner': {
       position: 'relative',
     },
-    '.xt-toggle-item': {
-      display: 'inline-block',
-      lineHeight: 1,
-    },
   },
 }

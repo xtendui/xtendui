@@ -35,9 +35,5 @@ module.exports = {
     '.xt-drop-inner': {
       position: 'relative',
     },
-    '.xt-drop-item': {
-      display: 'inline-block',
-      lineHeight: 1,
-    },
   }),
 }

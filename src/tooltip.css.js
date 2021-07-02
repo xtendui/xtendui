@@ -37,9 +37,5 @@ module.exports = {
     '.xt-tooltip-inner': {
       position: 'relative',
     },
-    '.xt-tooltip-item': {
-      display: 'inline-block',
-      lineHeight: 1,
-    },
   }),
 }
