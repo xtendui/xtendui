@@ -677,32 +677,43 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * animation on classes
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {String} suffix Timeout suffix
+   * activation requestAnimationFrame
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {Function} func Function to call after requestAnimationFrame
    */
-  Xt.on = (el, suffix = '') => {
-    if (!el.classList.contains('on')) {
-      el.classList.add('on')
-      el.classList.remove('in')
-      el.classList.remove('out')
-      clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-      cancelAnimationFrame(Xt.dataStorage.get(el, `ActivateFrame${suffix}`))
-      // keep the same level of raf for activation
+  Xt.activationRaf = (el, func = null) => {
+    // keep the same level of raf for activation
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+    if (func) {
       Xt.dataStorage.set(
         el,
-        `ActivateFrame${suffix}`,
+        `${self.ns}ActivateFrame`,
         requestAnimationFrame(() => {
           Xt.dataStorage.set(
             el,
-            `ActivateFrame${suffix}`,
+            `${self.ns}ActivateFrame`,
             requestAnimationFrame(() => {
-              el.classList.add('in')
+              func()
             })
           )
         })
       )
     }
+  }
+
+  /**
+   * animation on classes
+   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
+   */
+  Xt.on = (el, suffix = '') => {
+    el.classList.add('on')
+    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+    // fix must be inside raf because because .on sets display
+    Xt.activationRaf(el, () => {
+      el.classList.add('in')
+      el.classList.remove('out')
+    })
   }
 
   /**
@@ -712,12 +723,12 @@ if (typeof window !== 'undefined') {
    * @param {Number} duration Optional force time
    */
   Xt.off = (el, suffix = '', duration = null) => {
-    if (el.classList.contains('on')) {
+    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+    // fix must be inside raf because sequential off/on must not flickr
+    Xt.activationRaf(el, () => {
       el.classList.remove('on')
       el.classList.remove('in')
       el.classList.add('out')
-      clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-      cancelAnimationFrame(Xt.dataStorage.get(el, `ActivateFrame${suffix}`))
       Xt.animTimeout(
         el,
         () => {
@@ -727,7 +738,7 @@ if (typeof window !== 'undefined') {
         duration,
         'Out'
       )
-    }
+    })
   }
 
   /**

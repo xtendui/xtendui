@@ -1437,31 +1437,6 @@ class Toggle {
   }
 
   /**
-   * activation requestAnimationFrame
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   * @param {Function} func Function to call after requestAnimationFrame
-   */
-  activationRaf(el, func = null) {
-    // keep the same level of raf for activation
-    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
-    if (func) {
-      Xt.dataStorage.set(
-        el,
-        `${self.ns}ActivateFrame`,
-        requestAnimationFrame(() => {
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}ActivateFrame`,
-            requestAnimationFrame(() => {
-              func()
-            })
-          )
-        })
-      )
-    }
-  }
-
-  /**
    * activate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
    * @param {String} type Type of element
@@ -1475,7 +1450,7 @@ class Toggle {
     if (options.classSkip !== true && !options.classSkip[type]) {
       // activation
       el.classList.add(...self.classes)
-      self.activationRaf(el, () => {
+      Xt.activationRaf(el, () => {
         el.classList.add(...self.classesIn)
         el.classList.remove(...self.classesOut)
         el.classList.remove(...self.classesDone)
@@ -1500,7 +1475,8 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
-      self.activationRaf(el)
+      Xt.activationRaf(el)
+      // fix need to repeat others inside activationRaf in case we cancel it
       el.classList.add(...self.classesIn)
       el.classList.remove(...self.classesOut)
       el.classList.add(...self.classesDone)
@@ -1557,8 +1533,8 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       // activation
-      el.classList.remove(...self.classes)
-      self.activationRaf(el, () => {
+      Xt.activationRaf(el, () => {
+        el.classList.remove(...self.classes)
         el.classList.remove(...self.classesIn)
         el.classList.add(...self.classesOut)
         el.classList.remove(...self.classesDone)
@@ -1583,7 +1559,9 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
-      self.activationRaf(el)
+      Xt.activationRaf(el)
+      // fix need to repeat others inside activationRaf in case we cancel it
+      el.classList.remove(...self.classes)
       el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
