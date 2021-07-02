@@ -2418,7 +2418,7 @@ class Toggle {
           const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
           let nsFocusTrap = Xt.dataStorage.get(els[0], 'xtFocusTrap')
           if (!nsFocusTrap) {
-            nsFocusTrap = focusTrap.createFocusTrap(els)
+            nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
             Xt.dataStorage.set(els[0], 'xtFocusTrap', nsFocusTrap)
             nsFocusTrap.activate()
             Xt.focusTrapArr.push(nsFocusTrap)
@@ -2448,13 +2448,15 @@ class Toggle {
       // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
         // focusLimit
-        const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
-        const nsFocusTrap = Xt.dataStorage.get(els[0], 'xtFocusTrap')
-        if (nsFocusTrap) {
-          nsFocusTrap.pause()
-          Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
-          if (Xt.focusTrapArr.length) {
-            Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
+        if (options.focusLimit) {
+          const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
+          const nsFocusTrap = Xt.dataStorage.get(els[0], 'xtFocusTrap')
+          if (nsFocusTrap) {
+            nsFocusTrap.pause()
+            Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
+            if (Xt.focusTrapArr.length) {
+              Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
+            }
           }
         }
       })
@@ -3411,6 +3413,9 @@ Toggle.optionsDefaultSuper = {
   mediaLoadedReinit: false,
   zIndex: false,
   focusLimit: false,
+  focusTrap: {
+    allowOutsideClick: true,
+  },
   collapseHeight: false,
   collapseWidth: false,
   aria: {
