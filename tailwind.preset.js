@@ -175,32 +175,110 @@ module.exports = {
       ),
     transitionProperty: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
     transitionTimingFunction: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
     transitionDuration: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
     transitionDelay: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
     zIndex: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
     display: ({ after }) =>
       after(
-        ['group-hover', 'hover', 'group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
+        [
+          'group-hover',
+          'hover',
+          'group-active',
+          'active',
+          'group-on',
+          'on',
+          'group-out',
+          'out',
+          'group-in',
+          'in',
+          'group-done',
+          'done',
+        ],
         'responsive'
       ),
   },

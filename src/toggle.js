@@ -2074,6 +2074,14 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
       if (!delay) {
         self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+      } else if (delay === 'raf') {
+        Xt.activationRaf(
+          el,
+          () => {
+            self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+          },
+          'queueDelayDone'
+        )
       } else {
         Xt.dataStorage.set(
           el,
@@ -2198,7 +2206,13 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      self.queueAnim(actionCurrent, actionOther, obj, el, type)
+      Xt.activationRaf(
+        el,
+        () => {
+          self.queueAnim(actionCurrent, actionOther, obj, el, type)
+        },
+        'queueAnim'
+      )
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
         const els = obj[type].queueEls
@@ -2235,6 +2249,14 @@ class Toggle {
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
     if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+    } else if (duration === 'raf') {
+      Xt.activationRaf(
+        el,
+        () => {
+          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+        },
+        'queueAnimDone'
+      )
     } else {
       Xt.dataStorage.set(
         el,

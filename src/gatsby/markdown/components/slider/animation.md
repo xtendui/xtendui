@@ -42,13 +42,15 @@ See [toggle duration and delay](/components/toggle/animation#duration-and-delay)
 
 You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el, self }`.
 
+You can also set duration to two `requestAnimationFrame` with the string `raf`.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `duration:Function|Number`                          | `false`        | Activation and Deactivation duration            |
-| Option                  | `durationIn:Function|Number`                          | `false`        | Activation duration            |
-| Option                  | `durationOut:Function|Number`                          | `false`        | Deactivation duration            |
+| Option                  | `duration:Function|Number|String`                          | `false`        | Activation and Deactivation duration            |
+| Option                  | `durationIn:Function|Number|String`                          | `false`        | Activation duration            |
+| Option                  | `durationOut:Function|Number|String`                          | `false`        | Deactivation duration            |
 
 </div>
 
@@ -58,17 +60,23 @@ You can also **assign duration on single nodes** with `data-xt-duration="Millise
 
 You can set activation delay with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el, self }`.
 
-You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
+You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Function|Number`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Function|Number`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Function|Number`                          | `false`        | Deactivation delay            |
+| Option                  | `delay:Function|Number|String`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Function|Number|String`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Function|Number|String`                          | `false`        | Deactivation delay            |
 
 </div>
+
+You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
+
+[[notePrimary]]
+| Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
+on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
 

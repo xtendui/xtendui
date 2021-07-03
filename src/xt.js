@@ -699,18 +699,19 @@ if (typeof window !== 'undefined') {
    * activation requestAnimationFrame
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
    * @param {Function} func Function to call after requestAnimationFrame
+   * @param {String} suffix Timeout suffix
    */
-  Xt.activationRaf = (el, func = null) => {
+  Xt.activationRaf = (el, func = null, suffix = '') => {
     // keep the same level of raf for activation
-    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame`))
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame${suffix}`))
     if (func) {
       Xt.dataStorage.set(
         el,
-        `${self.ns}ActivateFrame`,
+        `${self.ns}ActivateFrame${suffix}`,
         requestAnimationFrame(() => {
           Xt.dataStorage.set(
             el,
-            `${self.ns}ActivateFrame`,
+            `${self.ns}ActivateFrame${suffix}`,
             requestAnimationFrame(() => {
               func()
             })
@@ -811,7 +812,8 @@ if (typeof window !== 'undefined') {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
     if (custom) {
-      return parseFloat(custom) / Xt.durationTimescale
+      // if not number return the string
+      return isNaN(parseFloat(custom)) ? custom : parseFloat(custom) / Xt.durationTimescale
     } else if (typeof duration === 'function') {
       return duration
     } else if (duration || duration === 0) {
@@ -830,7 +832,8 @@ if (typeof window !== 'undefined') {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-delay-${actionCurrent}`)) || el.getAttribute('data-xt-delay')
     if (custom) {
-      return parseFloat(custom) / Xt.durationTimescale
+      // if not number return the string
+      return isNaN(parseFloat(custom)) ? custom : parseFloat(custom) / Xt.durationTimescale
     } else if (typeof timing === 'function') {
       return timing
     } else if (timing || timing === 0) {
