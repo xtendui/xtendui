@@ -708,11 +708,11 @@ if (typeof window !== 'undefined') {
    */
   Xt.on = (el, suffix = '') => {
     el.classList.add('on')
+    el.classList.remove('out')
     clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
     // fix must be inside raf because because .on sets display
     Xt.activationRaf(el, () => {
       el.classList.add('in')
-      el.classList.remove('out')
     })
   }
 
