@@ -111,7 +111,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 </div>
 
-Default functions as follow:
+Default functions as follow.
 
 ```js
 drag: {

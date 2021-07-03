@@ -66,7 +66,7 @@ Here are the main **javascript options**.
 
 </div>
 
-Default functions as follow:
+Default functions as follow.
 
 ```js
 position: ({ self }) => {

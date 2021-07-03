@@ -159,7 +159,7 @@ dispatchEvent(new CustomEvent('resize', { detail: { delay: 0 } }))
 
 With `resize`, `Xt.eventDelay` also calls the function **only if the height of the window changes**, to not trigger the resize event on mobile when the address bar hides, and to fix multiple calls on sume browsers when scrolling.
 
-To **force** `resize` event also on **window width change** use `e.detail.force`:
+To **force** `resize` event also on **window width change** use `e.detail.force`.
 
 ```js
 dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))

@@ -3,7 +3,7 @@
 
 We use [Angular commit guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) to describe each commit. If you are not sure if your pull request introduces breaking changes or feature, just ask.
 
-Messages must be matched by the following regex:
+Messages must be matched by the following regex.
 
 ``` js
 /^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types)(\(.+\))?: .{1,50}/
