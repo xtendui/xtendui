@@ -226,7 +226,7 @@ export const populateDemo = container => {
   const showCodeUid = Xt.getuniqueId()
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: '#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}', position: 'bottom-end', duration: 300 }">
+<div>
   <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
     ${classes.iconCode()}
   </button>
@@ -340,14 +340,13 @@ export const populateDemo = container => {
     targets: `#${demoId} .gatsby_demo_code`,
     queue: false,
   })
-  // tooltip swap toggle
-  const object = btnCode.closest('[data-xt-tooltip]')
-  requestAnimationFrame(() => {
-    swapToggle({
-      tooltip: object.querySelector('.xt-tooltip'),
-      self: Xt.get('xt-tooltip', object),
-      buttonSwap: btnCode,
-    })
+  new Xt.Tooltip(btnCode, {
+    targets: `#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}`,
+    position: 'bottom-end',
+    duration: 300,
+  })
+  swapToggle({
+    buttonSwap: btnCode,
   })
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'
@@ -372,19 +371,17 @@ export const populateItem = item => {
   <div class="gatsby_demo_code_tabs bg-code">
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
-      <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: '#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}', position: 'bottom-end', duration: 300 }">
-        <button type="button" class="xt-button xt-button-clipboard" aria-label="Copy to Clipboard">
-          ${classes.iconCopy()}
-        </button>
-        <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-          <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-            Copy to Clipboard
-          </div>
+      <button type="button" class="xt-button button--clipboard" aria-label="Copy to Clipboard">
+        ${classes.iconCopy()}
+      </button>
+      <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
+        <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+          Copy to Clipboard
         </div>
-        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
-          <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-            Copied!
-          </div>
+      </div>
+      <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
+        <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+          Copied!
         </div>
       </div>
     </div>
@@ -395,7 +392,7 @@ export const populateItem = item => {
     )
   )
   // https://github.com/zenorocha/clipboard.js/
-  const btnClipboard = item.querySelector('.xt-button-clipboard')
+  const btnClipboard = item.querySelector('.button--clipboard')
   if (!btnClipboard.dataset.clipboardDone) {
     btnClipboard.dataset.clipboardDone = 'true'
     const clipboard = new ClipboardJS(btnClipboard, {
@@ -410,12 +407,15 @@ export const populateItem = item => {
       if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
         Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
         e.clearSelection()
-        // tooltip swap-click
-        const object = btnClipboard.closest('[data-xt-tooltip]')
-        swapClick({ tooltip: object.querySelector('.xt-tooltip'), self: Xt.get('xt-tooltip', object) })
       }
     })
   }
+  new Xt.Tooltip(btnClipboard, {
+    targets: `#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}`,
+    position: 'bottom-end',
+    duration: 300,
+  })
+  swapClick({ buttonSwap: btnClipboard })
   // inject
   if (!item.getAttribute('data-iframe-fullscreen')) {
     if (!item.getAttribute('data-iframe')) {
@@ -447,42 +447,66 @@ export const populateItem = item => {
  * swapClick
  */
 
-const swapClick = ({ tooltip, self }) => {
+const swapClick = ({ buttonSwap }) => {
+  // vars
+
+  let self = Xt.get('xt-tooltip', buttonSwap)
+  const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
+
   // swap
 
   const swapBack = () => {
-    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
     // swap tooltip
     self.targets[0].classList.remove('hidden')
     self.targets[1].classList.add('hidden')
   }
 
   const swap = () => {
-    tooltip.removeEventListener('offdone.xt.tooltip', swap)
     // swap
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
   }
 
-  // swap
+  // resetTooltip: fix when swapping and moving away
 
-  tooltip.addEventListener('offdone.xt.tooltip', swap)
-  tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  const resetTooltip = () => {
+    // trigger our swap
+    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    // trigger tooltip deactivation
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  buttonSwap.addEventListener('mouseleave', resetTooltip)
+
+  // click
+
+  const click = () => {
+    // swap
+    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  buttonSwap.addEventListener('click', click)
 }
 
 /**
  * swapToggle
  */
 
-const swapToggle = ({ tooltip, self, buttonSwap }) => {
+const swapToggle = ({ buttonSwap }) => {
+  // vars
+
+  let self = Xt.get('xt-tooltip', buttonSwap)
+  const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
+  console.log(self, buttonSwap, tooltip)
+
   // swap
 
   const swapBack = () => {
-    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
     // swap tooltip
     self.targets[0].classList.remove('hidden')
     self.targets[1].classList.add('hidden')
@@ -491,7 +515,6 @@ const swapToggle = ({ tooltip, self, buttonSwap }) => {
   }
 
   const swap = () => {
-    tooltip.removeEventListener('offdone.xt.tooltip', swap)
     // swap
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
@@ -517,8 +540,8 @@ const swapToggle = ({ tooltip, self, buttonSwap }) => {
 
   const on = () => {
     // swap
+    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
     tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    tooltip.addEventListener('offdone.xt.tooltip', swap)
   }
 
   buttonSwap.addEventListener('on.xt.toggle', on)
@@ -527,8 +550,8 @@ const swapToggle = ({ tooltip, self, buttonSwap }) => {
 
   const off = () => {
     // swap back
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
     tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack)
   }
 
   buttonSwap.addEventListener('off.xt.toggle', off)

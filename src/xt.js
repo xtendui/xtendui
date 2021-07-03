@@ -58,7 +58,6 @@ if (typeof window !== 'undefined') {
     Xt.initial = true
     document.querySelector('body').classList.remove('xt-ready')
     Xt.ready(() => {
-      console.log(document.documentElement)
       document.querySelector('body').classList.add('xt-ready')
       Xt.setScrollbarWidth()
       Xt.innerHeightSet()

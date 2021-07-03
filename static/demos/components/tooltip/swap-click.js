@@ -30,21 +30,19 @@ const mountButtonsSwap = ({ ref }) => {
     // swap
 
     const swapBack = () => {
-      tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
       // swap tooltip
       self.targets[0].classList.remove('hidden')
       self.targets[1].classList.add('hidden')
     }
 
     const swap = () => {
-      tooltip.removeEventListener('offdone.xt.tooltip', swap)
       // swap
       self.targets[0].classList.add('hidden')
       self.targets[1].classList.remove('hidden')
       // open
       tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
       // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+      tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
     }
 
     // resetTooltip: fix when swapping and moving away
@@ -62,7 +60,7 @@ const mountButtonsSwap = ({ ref }) => {
 
     const click = () => {
       // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap)
+      tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 
