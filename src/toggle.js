@@ -2393,10 +2393,10 @@ class Toggle {
         // focusLimit
         if (options.focusLimit) {
           const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
-          let nsFocusTrap = Xt.dataStorage.get(els[0], 'xtFocusTrap')
+          let nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
           if (!nsFocusTrap) {
             nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
-            Xt.dataStorage.set(els[0], 'xtFocusTrap', nsFocusTrap)
+            Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
             nsFocusTrap.activate()
             Xt.focusTrapArr.push(nsFocusTrap)
           } else {
@@ -2426,8 +2426,7 @@ class Toggle {
       requestAnimationFrame(() => {
         // focusLimit
         if (options.focusLimit) {
-          const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
-          const nsFocusTrap = Xt.dataStorage.get(els[0], 'xtFocusTrap')
+          const nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
           if (nsFocusTrap) {
             nsFocusTrap.pause()
             Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
