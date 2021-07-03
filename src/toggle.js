@@ -520,15 +520,15 @@ class Toggle {
       )
       el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       if (options.off) {
-        // fix same event for on and off same namespace
-        if (options.on !== options.off) {
-          const offHandler = Xt.dataStorage.put(
-            el,
-            `${options.off}/off/${self.ns}`,
-            self.eventOffHandler.bind(self, { element: el })
-          )
-          const events = [...options.off.split(' ')]
-          for (const event of events) {
+        const offHandler = Xt.dataStorage.put(
+          el,
+          `${options.off}/off/${self.ns}`,
+          self.eventOffHandler.bind(self, { element: el })
+        )
+        const events = [...options.off.split(' ')]
+        for (const event of events) {
+          // fix same event for on and off same namespace
+          if (![...options.on.split(' ')].includes(event)) {
             el.addEventListener(event, offHandler)
           }
         }
@@ -1654,7 +1654,7 @@ class Toggle {
       }
       // activation
       return true
-    } else if (options.on === options.off && e?.type !== `on.trigger.${self.componentNs}`) {
+    } else if ([...options.on.split(' ')].includes(e?.type)) {
       // fix same event for on and off same namespace
       self.eventOff(element, false, e)
     }
