@@ -33,8 +33,10 @@ const demoHash = () => {
           if (item.closest('#gatsby_open-full-content')) {
             return
           }
-          // fullscreen
-          makeFullscreen(demo)
+          // raf because after Xt.init
+          requestAnimationFrame(() => {
+            makeFullscreen(demo)
+          })
         }
       }
     } else {
@@ -44,9 +46,7 @@ const demoHash = () => {
   }
 }
 
-Xt.ready(() => {
-  addEventListener('hashchange', demoHash)
-})
+addEventListener('hashchange', demoHash)
 
 /**
  * highlightCode
