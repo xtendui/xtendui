@@ -22,6 +22,37 @@ Add to the `body` the class `xt-body` to have this features:
 
 ## Javascript
 
+* Set gsap `force3D: false` for smoother pixels animations:
+
+```js
+/* animation */
+
+gsap.config({ force3D: false }) // smoother pixels animations
+```
+
+* **If you want custom easing** in gsap use this code with your custom easing:
+
+```js
+/* custom easing */
+
+import bezierEasing from 'bezier-easing'
+
+gsap.registerEase('in', progress => {
+  const easing = bezierEasing(1, 0, 1, 0.5)
+  return easing(progress)
+})
+
+gsap.registerEase('out', progress => {
+  const easing = bezierEasing(0, 1, 0.5, 1)
+  return easing(progress)
+})
+
+gsap.registerEase('inOut', progress => {
+  const easing = bezierEasing(1, 0, 0, 1)
+  return easing(progress)
+})
+```
+
 * **Prefers Reduced Motion**, **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script:
 
 ```js
@@ -64,12 +95,4 @@ const animationResponsive = () => {
 }
 addEventListener('resize', animationResponsive)
 animationResponsive()
-```
-
-Set gsap `force3D: false` for smoother pixels animations.
-
-```js
-/* animation */
-
-gsap.config({ force3D: false }) // smoother pixels animations
 ```

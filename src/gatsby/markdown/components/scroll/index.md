@@ -34,6 +34,46 @@ Use this code to create a **parallax**.
   <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
 
+## Setup
+
+- If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
+
+Just need this code one time in the project.
+
+```js
+/* ScrollToPlugin fix stop scroll animation on user interaction */
+
+const stopScrolling = () => {
+  gsap.killTweensOf(document.scrollingElement)
+}
+
+addEventListener('touchstart', stopScrolling)
+addEventListener('wheel', stopScrolling)
+```
+
+- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript/api#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
+
+Just need this code one time in the project.
+
+```js
+/* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
+
+ScrollTrigger.config({
+  // removed resize we trigger it manually
+  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+})
+
+addEventListener('resize', e => {
+  Xt.eventDelay({
+    event: e,
+    prefix: 'xtScrollTriggerRefresh',
+    func: () => {
+      ScrollTrigger.refresh()
+    },
+  })
+})
+```
+
 ## Fixes
 
 - If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.
@@ -62,29 +102,6 @@ gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.refresh()
 ```
 
-- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript/api#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
-
-Just need this code one time in the project.
-
-```js
-/* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
-
-ScrollTrigger.config({
-  // removed resize we trigger it manually
-  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-})
-
-addEventListener('resize', e => {
-  Xt.eventDelay({
-    event: e,
-    prefix: 'xtScrollTriggerRefresh',
-    func: () => {
-      ScrollTrigger.refresh()
-    },
-  })
-})
-```
-
 Then you need to **refresh scrolltriggers selectively** when you want **ScrollTriggers to stick at the bottom** on mobile when the status bar appear/disappear on scroll.
 
 ```js
@@ -93,19 +110,4 @@ const scrollTrigger = ScrollTrigger.create({})
 addEventListener('resize', () => {
   scrollTrigger.refresh()
 })
-```
-
-- If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
-
-Just need this code one time in the project.
-
-```js
-/* ScrollToPlugin fix stop scroll animation on user interaction */
-
-const stopScrolling = () => {
-  gsap.killTweensOf(document.scrollingElement)
-}
-
-addEventListener('touchstart', stopScrolling)
-addEventListener('wheel', stopScrolling)
 ```

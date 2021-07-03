@@ -100,64 +100,9 @@ Add to the `body` the class `xt-body` to setup [animations global styles](/compo
 
 Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](/components/link#global-styles).
 
-Add this javascript to setup [animations javascript](/components/animation#javascript).
+**If you use gsap** add [this javascript](/components/animation#javascript) to setup animations.
 
-```js
-import { Xt } from 'xtendui'
-import gsap from 'gsap'
-
-/* animation */
-
-gsap.config({ force3D: false }) // smoother pixels animations
-
-// accessibility
-
-if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
-  // instant animations
-  gsap.globalTimeline.timeScale(1000)
-  // instant interactions
-  Xt.durationTimescale = 1000
-  // double auto time
-  Xt.autoTimescale = 0.5
-}
-```
-
-Add this javascript to setup [scroll fixes](/components/scroll#fixes).
-
-```js
-import { Xt } from 'xtendui'
-import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-gsap.registerPlugin(ScrollToPlugin)
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-
-/* ScrollToPlugin fix stop scroll animation on user interaction */
-
-const stopScrolling = () => {
-  gsap.killTweensOf(document.scrollingElement)
-}
-
-addEventListener('touchstart', stopScrolling)
-addEventListener('wheel', stopScrolling)
-
-/* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
-
-ScrollTrigger.config({
-  // removed resize we trigger it manually
-  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-})
-
-addEventListener('resize', e => {
-  Xt.eventDelay({
-    event: e,
-    prefix: 'xtScrollTriggerRefresh',
-    func: () => {
-      ScrollTrigger.refresh()
-    },
-  })
-})
-```
+**If you use ScrollTrigger** add [this javascript](/components/scroll#setup) to setup scroll fixes.
 
 ## Unsupported browsers
 
