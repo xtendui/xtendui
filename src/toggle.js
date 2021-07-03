@@ -3391,6 +3391,8 @@ Toggle.optionsDefaultSuper = {
   zIndex: false,
   focusLimit: false,
   focusTrap: {
+    initialFocus: false,
+    preventScroll: true,
     allowOutsideClick: true,
   },
   collapseHeight: false,

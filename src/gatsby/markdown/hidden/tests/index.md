@@ -6,6 +6,8 @@ title: "Tests"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable.
+
 Test copy code from demos and clicking copy should be without highlight.
 
 Test demos with all: inline and iframe and react inline and react iframe.

@@ -107,7 +107,7 @@ For usability purpose **on activation you can limit the focus inside the current
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `focusLimit:Boolean`                          | `true`        | Automatically limit focus on activation inside current targets            |
-| Option                  | `focusTrap:Object`                          | `{ allowOutsideClick: true }`        | Options to pass to [Focus Trap](https://github.com/focus-trap/focus-trap)            |
+| Option                  | `focusTrap:Object`                          | `{ initialFocus: false, preventScroll: true, allowOutsideClick: true }`        | Options to pass to [Focus Trap](https://github.com/focus-trap/focus-trap)            |
 
 </div>
 

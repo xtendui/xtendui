@@ -90,6 +90,11 @@ Overlay.optionsDefault = {
   appendTo: 'body',
   classBody: 'xt-scrollbar-overlay',
   focusLimit: true,
+  focusTrap: {
+    initialFocus: false,
+    preventScroll: true,
+    allowOutsideClick: true,
+  },
   zIndex: {
     targets: {
       start: 5000, // same as options.zIndex.targets.start
