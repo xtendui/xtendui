@@ -1450,10 +1450,10 @@ class Toggle {
     if (options.classSkip !== true && !options.classSkip[type]) {
       // activation
       el.classList.add(...self.classes)
+      el.classList.remove(...self.classesOut)
+      el.classList.remove(...self.classesDone)
       Xt.activationRaf(el, () => {
         el.classList.add(...self.classesIn)
-        el.classList.remove(...self.classesOut)
-        el.classList.remove(...self.classesDone)
       })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -1475,10 +1475,9 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
+      // fix need to repeat inside activationRaf in case we cancel
       Xt.activationRaf(el)
-      // fix need to repeat others inside activationRaf in case we cancel it
       el.classList.add(...self.classesIn)
-      el.classList.remove(...self.classesOut)
       el.classList.add(...self.classesDone)
     }
   }
@@ -1559,8 +1558,8 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
+      // fix need to repeat inside activationRaf in case we cancel
       Xt.activationRaf(el)
-      // fix need to repeat others inside activationRaf in case we cancel it
       el.classList.remove(...self.classes)
       el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
