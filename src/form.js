@@ -57,7 +57,6 @@ Xt.mount({
 
     const items = ref.elements
     const scrollWindowFactor = 0.2
-    let raf
 
     // valid
 
@@ -87,11 +86,7 @@ Xt.mount({
       item.classList.add('xt-form-invalid')
       item.dataset.xtValidate = 'true'
       // scroll to views
-      addEventListener('scroll', scroll)
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        removeEventListener('scroll', scroll)
-      })
+      addEventListener('scroll', scroll, { once: true })
     }
 
     const submit = () => {

@@ -502,7 +502,6 @@ const swapToggle = ({ buttonSwap }) => {
 
   let self = Xt.get('xt-tooltip', buttonSwap)
   const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
-  console.log(self, buttonSwap, tooltip)
 
   // swap
 
