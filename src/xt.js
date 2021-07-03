@@ -55,20 +55,29 @@ if (typeof window !== 'undefined') {
   /**
    * init
    */
-  Xt.ready(() => {
-    document.querySelector('body').classList.add('xt-ready')
-    Xt.setScrollbarWidth()
-    Xt.innerHeightSet()
-    // fix first observe then mountCheck or overlay with on has xt-ignore xt-ignore-once
-    Xt.observer.disconnect()
-    Xt.observer.observe(document.documentElement, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true,
+  Xt.init = () => {
+    Xt.initial = true
+    document.querySelector('body').classList.remove('xt-ready')
+    Xt.ready(() => {
+      document.querySelector('body').classList.add('xt-ready')
+      Xt.setScrollbarWidth()
+      Xt.innerHeightSet()
+      Xt.observer.disconnect()
+      Xt.observer.observe(document.documentElement, {
+        characterData: false,
+        attributes: false,
+        childList: true,
+        subtree: true,
+      })
+      Xt.mountCheck(document.documentElement)
+      // fix no raf on initial to activate instantly (e.g. menu mobile lib already opened)
+      requestAnimationFrame(() => {
+        Xt.initial = false
+      })
     })
-    Xt.mountCheck(document.documentElement)
-  })
+  }
+
+  Xt.init()
 
   //
   // observer
@@ -83,27 +92,39 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            cancelAnimationFrame(Xt.dataStorage.get(added, 'xtObserverFrame'))
-            Xt.dataStorage.set(
-              added,
-              'xtObserverFrame',
-              requestAnimationFrame(() => {
-                Xt.mountCheck(added)
-              })
-            )
+            if (Xt.initial) {
+              // fix no raf on initial for instant activation (e.g. menu mobile lib already opened)
+              Xt.mountCheck(added)
+            } else {
+              // fix raf on sequential mounts when moving elements (e.g. mount inside sticky)
+              cancelAnimationFrame(Xt.dataStorage.get(added, 'xtObserverFrame'))
+              Xt.dataStorage.set(
+                added,
+                'xtObserverFrame',
+                requestAnimationFrame(() => {
+                  Xt.mountCheck(added)
+                })
+              )
+            }
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            cancelAnimationFrame(Xt.dataStorage.get(removed, 'xtObserverFrame'))
-            Xt.dataStorage.set(
-              removed,
-              'xtObserverFrame',
-              requestAnimationFrame(() => {
-                Xt.unmountCheck(removed)
-              })
-            )
+            // fix no raf on initial for instant activation (e.g. menu mobile lib already opened)
+            if (Xt.initial) {
+              Xt.unmountCheck(removed)
+            } else {
+              // fix raf on sequential mounts when moving elements (e.g. mount inside sticky)
+              cancelAnimationFrame(Xt.dataStorage.get(removed, 'xtObserverFrame'))
+              Xt.dataStorage.set(
+                removed,
+                'xtObserverFrame',
+                requestAnimationFrame(() => {
+                  Xt.unmountCheck(removed)
+                })
+              )
+            }
           }
         }
       }

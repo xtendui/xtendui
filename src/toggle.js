@@ -2014,7 +2014,7 @@ class Toggle {
           obj[type].instantType = true
         }
         // special
-        self.specialClassBody(actionCurrent)
+        self.specialClassBody(actionCurrent, type)
         // start queue
         self.queueDelay(actionCurrent, actionOther, obj, type)
       }
@@ -2472,34 +2472,44 @@ class Toggle {
   /**
    * add or remove html class
    * @param {String} actionCurrent Current action
+   * @param {String} type Type of element
    */
-  specialClassBody(actionCurrent) {
+  specialClassBody(actionCurrent, type) {
     const self = this
     const options = self.options
     if (options.classBody) {
-      if (actionCurrent === 'In') {
-        for (const c of options.classBody.split(' ')) {
-          // checks
-          Xt.classBody.add({
-            c: c,
-            ns: self.ns,
+      // fix when standalone !self.targets.length && type === 'elements'
+      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        if (actionCurrent === 'In') {
+          // fix route update
+          requestAnimationFrame(() => {
+            for (const c of options.classBody.split(' ')) {
+              // checks
+              Xt.classBody.add({
+                c: c,
+                ns: self.ns,
+              })
+              // class on
+              const container = document.documentElement.querySelector('body')
+              container.classList.add(c)
+            }
           })
-          // class on
-          const container = document.documentElement.querySelector('body')
-          container.classList.add(c)
-        }
-      } else if (actionCurrent === 'Out') {
-        for (const c of options.classBody.split(' ')) {
-          // checks
-          Xt.classBody.remove({
-            c: c,
-            ns: self.ns,
+        } else if (actionCurrent === 'Out') {
+          // fix route update
+          requestAnimationFrame(() => {
+            for (const c of options.classBody.split(' ')) {
+              // checks
+              Xt.classBody.remove({
+                c: c,
+                ns: self.ns,
+              })
+              if (!Xt.classBody.get({ c: c }).length) {
+                // class off
+                const container = document.documentElement.querySelector('body')
+                container.classList.remove(c)
+              }
+            }
           })
-          if (!Xt.classBody.get({ c: c }).length) {
-            // class off
-            const container = document.documentElement.querySelector('body')
-            container.classList.remove(c)
-          }
         }
       }
     }
@@ -2515,9 +2525,9 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.appendTo) {
-      if (actionCurrent === 'In') {
-        // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+      // fix when standalone !self.targets.length && type === 'elements'
+      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        if (actionCurrent === 'In') {
           // appendTo
           const appendToTarget = document.querySelector(options.appendTo)
           const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
@@ -2525,10 +2535,7 @@ class Toggle {
             el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
           }
           appendToTarget.append(el)
-        }
-      } else if (actionCurrent === 'Out') {
-        // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        } else if (actionCurrent === 'Out') {
           // appendTo
           if (options.appendTo) {
             const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)

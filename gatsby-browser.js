@@ -2,6 +2,7 @@ window.keepSidebarScroll = 0
 window.overlayOpen = false
 window.currentDemos = []
 
+import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -35,8 +36,6 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  // instant animations
-  document.querySelector('body').classList.remove('xt-ready')
   // keepSidebarScroll
   if (overlay && sidebar) {
     window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
@@ -66,22 +65,21 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_button--overlay')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+  // init
+  Xt.init()
   // only if changing page
   if (prevLocation) {
-    // only if new page
+    // if new page
     if (location.pathname !== prevLocation.pathname) {
       // scroll page to top
       document.scrollingElement.scrollTop = 0
       // close fullscreen and others
       dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     } else {
+      // not new page
       dispatchEvent(new CustomEvent('hashchange'))
     }
   }
-  // instant animations
-  requestAnimationFrame(() => {
-    document.querySelector('body').classList.add('xt-ready')
-  })
   // keepSidebarScroll
   if (overlay && sidebar) {
     // overlayOpen
