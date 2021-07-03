@@ -250,5 +250,17 @@ module.exports = plugin.withOptions(() => {
         return `.group.out .${e(`group-out${separator}${className}`)}`
       })
     })
+
+    addVariant('done', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`done${separator}${className}`)}.done`
+      })
+    })
+
+    addVariant('group-done', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.done .${e(`group-done${separator}${className}`)}`
+      })
+    })
   }
 })

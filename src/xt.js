@@ -724,14 +724,25 @@ if (typeof window !== 'undefined') {
    * animation on classes
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {String} suffix Timeout suffix
+   * @param {Number} duration Optional force time
    */
-  Xt.on = (el, suffix = '') => {
+  Xt.on = (el, suffix = '', duration = null) => {
     clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
     el.classList.add('on')
     el.classList.remove('out')
+    el.classList.remove('done')
     // must be inside raf because display
     Xt.activationRaf(el, () => {
       el.classList.add('in')
+      Xt.animTimeout(
+        el,
+        () => {
+          el.classList.add('done')
+        },
+        `AnimTimeout${suffix}`,
+        duration,
+        'In'
+      )
     })
   }
 
@@ -749,6 +760,7 @@ if (typeof window !== 'undefined') {
     Xt.activationRaf(el, () => {
       el.classList.remove('in')
       el.classList.add('out')
+      el.classList.remove('done')
       Xt.animTimeout(
         el,
         () => {

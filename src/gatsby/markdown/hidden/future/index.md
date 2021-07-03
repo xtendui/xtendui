@@ -6,6 +6,22 @@ title: "Future"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## Toggle inverse	
+
+Devo switchare la queue mettendo un data-xt-inverse su targets inverse e tenere classi uguali.
+
+Forse basta che metto nella queue inversa in eventOn ed eventOff.
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-inverse">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/toggle/animation">
+  </demoinline>
+</demo>
+
 ## Slider Absolute
 
 Make a slider with absolute positioning. Automatically has [no drag overflow](/components/slider/interaction#drag) and [no contain](/components/slider/position#contain) and [no wrap](/components/slider/position#wrap).
@@ -19,22 +35,6 @@ The class `.xt-slider-absolute` hides the element **with `display: none`** when 
 | Component                  | `.xt-slider-absolute`                     | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
 
 </div>
-
-## Toggle inverse	
-
-Devo switchare la queue mettendo un data-xt-inverse su targets inverse e tenere classi uguali.
-
-Forse basta che metto nella queue inversa in eventOn ed eventOff.
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-css-inverse">
-  </demoinline>
-</demo>
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-css">
-  </demoinline>
-</demo>
 
 ## Keyboard
 

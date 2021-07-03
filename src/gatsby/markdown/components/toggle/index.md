@@ -36,6 +36,12 @@ The class `.xt-toggle-visible` hides the element  **with `visibility: hidden`** 
 
 Use the class `.xt-toggle-absolute` to position node in **absolute mode** when not activated, should be used in conjunction with `.xt-toggle` (remember to use `relative` on a chosen parent element), see [animation noqueue](/components/toggle/animation#queue) for demo.
 
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-absolute">
+  </demoinline>
+</demo>
+
 ## Usage Self
 
 Use this code to create a **toggle** in **self mode**.
