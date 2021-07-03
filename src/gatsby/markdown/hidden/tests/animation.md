@@ -102,6 +102,8 @@ Test direction and queue timing.
 
 Test height and width and maxHeight styles on activation and deactivation.
 
+Test overlay height inherit on animation done.
+
 <demo>
   <demoinline src="demos/components/animation/collapse-height">
   </demoinline>
@@ -109,4 +111,15 @@ Test height and width and maxHeight styles on activation and deactivation.
   </demoinline>
   <demoinline src="demos/components/animation/collapse-text">
   </demoinline>
+</demo>
+
+## Themes
+
+Test move slightly over other and then target should not change with delay.
+
+Test direction and zIndex sequential activation and zIndex reset.
+
+<demo>
+  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/navigation/menu-navigation-v1">
+  </div>
 </demo>

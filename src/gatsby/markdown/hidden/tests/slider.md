@@ -5,6 +5,25 @@ parent: "Tests"
 title: "Slider"
 ---
 
+## Absolute
+
+Test direction and other drag values on initial, same index, reset, drag, nav.
+
+Test click should not change slide.
+
+Test activation drag reset.
+
+Test activation drag loop.
+
+Test drag left and right and repeat.
+
+<demo>
+  <demoinline src="demos/components/slider/animation-absolute-cover">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation-absolute-mask">
+  </demoinline>
+</demo>
+
 ## Align
 
 Test drag activation.
