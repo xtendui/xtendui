@@ -34,10 +34,10 @@ pre[class*="language-"] {
   font-size: 1rem;
   code {
     width: 100%;
-    /*background: transparent !important;*/
     @apply font-mono;
     font-size: .875em;
     line-height: 1.7142857;
+    white-space: pre-wrap;
   }
 }
 
@@ -133,13 +133,10 @@ pre {
 .gatsby_demo_code {
   order: 2;
   @media (max-width: calc(theme('screens.lg') - 1px)) {
-    /*@apply xt-toggle;*/
-    &:not(.on):not(.in):not(.out):not(.display) {
-      display: none;
-    }
+    display: none !important;
   }
   #gatsby_open-full & {
-    @apply xt-toggle !important;
+    @apply xt-toggle on:block out:block !important;
     z-index: theme('zIndex.above');
     order: -1;
     position: absolute;
