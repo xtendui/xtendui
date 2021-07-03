@@ -2,6 +2,7 @@ import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle.js'
+import 'xtendui/src/tooltip.js'
 import kebabCase from 'lodash.kebabcase'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
