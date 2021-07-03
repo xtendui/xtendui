@@ -1532,12 +1532,12 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       // activation
-      Xt.activationRaf(el, () => {
-        el.classList.remove(...self.classes)
-        el.classList.remove(...self.classesIn)
-        el.classList.add(...self.classesOut)
-        el.classList.remove(...self.classesDone)
-      })
+      Xt.activationRaf(el)
+      // outside raf or page jumps on noqueue
+      el.classList.remove(...self.classes)
+      el.classList.remove(...self.classesIn)
+      el.classList.add(...self.classesOut)
+      el.classList.remove(...self.classesDone)
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
       if (self.direction < 0) {
@@ -1560,10 +1560,7 @@ class Toggle {
     if (options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside activationRaf in case we cancel
       Xt.activationRaf(el)
-      el.classList.remove(...self.classes)
-      el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
-      el.classList.remove(...self.classesDone)
     }
   }
 
