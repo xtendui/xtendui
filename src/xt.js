@@ -45,9 +45,10 @@ if (typeof window !== 'undefined') {
       const complete = () => {
         if (document.readyState === 'complete') {
           fnc()
+          document.removeEventListener('readystatechange', complete)
         }
       }
-      document.addEventListener('readystatechange', complete, { once: true })
+      document.addEventListener('readystatechange', complete)
     }
   }
 
