@@ -2416,16 +2416,11 @@ class Toggle {
         // focusLimit
         if (options.focusLimit) {
           const els = obj.targets ? obj.targets.queueEls : obj.elements.queueEls
-          let nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
-          if (!nsFocusTrap) {
-            nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
-            Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
-            nsFocusTrap.activate()
-            Xt.focusTrapArr.push(nsFocusTrap)
-          } else {
-            nsFocusTrap.unpause()
-            Xt.focusTrapArr.push(nsFocusTrap)
-          }
+          const nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
+          Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
+          nsFocusTrap.activate()
+          Xt.focusTrapArr.push(nsFocusTrap)
+          console.log(Xt.focusTrapArr)
         }
         // remove class initial
         if (self.initial) {
@@ -2451,10 +2446,10 @@ class Toggle {
         if (options.focusLimit) {
           const nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
           if (nsFocusTrap) {
-            nsFocusTrap.pause()
+            nsFocusTrap.deactivate()
             Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
             if (Xt.focusTrapArr.length) {
-              Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
+              Xt.focusTrapArr[Xt.focusTrapArr.length - 1].activate()
             }
           }
         }
