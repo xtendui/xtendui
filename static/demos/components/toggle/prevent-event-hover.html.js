@@ -6,9 +6,9 @@ const html = /* HTML */ `
       class="xt-list xt-list-3 items-center"
       data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }"
     >
-      <a href="#toggle--prevent-event-1-hover" class="xt-button ${classes.buttonToggle()}"> Toggle 1 hover </a>
+      <a href="/" class="xt-button ${classes.buttonToggle()}"> Toggle 1 hover </a>
 
-      <a href="#toggle--prevent-event-2-hover" class="xt-button ${classes.buttonToggle()}"> Toggle 2 hover </a>
+      <a href="/" class="xt-button ${classes.buttonToggle()}"> Toggle 2 hover </a>
 
       <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1 hover</div>
 
