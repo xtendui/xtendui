@@ -2420,7 +2420,6 @@ class Toggle {
           Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
           nsFocusTrap.activate()
           Xt.focusTrapArr.push(nsFocusTrap)
-          console.log(Xt.focusTrapArr)
         }
         // remove class initial
         if (self.initial) {
