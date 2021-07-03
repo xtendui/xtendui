@@ -42,13 +42,12 @@ if (typeof window !== 'undefined') {
         fnc()
       })
     } else {
-      document.addEventListener('readystatechange', () => {
+      const complete = () => {
         if (document.readyState === 'complete') {
-          requestAnimationFrame(() => {
-            fnc()
-          })
+          fnc()
         }
-      })
+      }
+      document.addEventListener('readystatechange', complete, { once: true })
     }
   }
 
@@ -59,6 +58,7 @@ if (typeof window !== 'undefined') {
     Xt.initial = true
     document.querySelector('body').classList.remove('xt-ready')
     Xt.ready(() => {
+      console.log(document.documentElement)
       document.querySelector('body').classList.add('xt-ready')
       Xt.setScrollbarWidth()
       Xt.innerHeightSet()
