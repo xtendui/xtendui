@@ -102,16 +102,6 @@ module.exports = {
     },
   }),
   component: {
-    // instant animations on page load
-    '.xt-body:not(.xt-optout-fouc):not(.xt-ready)': {
-      '*': {
-        transitionDuration: 'initial !important',
-        transitionDelay: 'initial !important',
-        animationDuration: 'initial !important',
-        animationDelay: 'initial !important',
-        animationIterationCount: '1 !important',
-      },
-    },
     // instant animations on components init and reinit
     '.xt-body:not(.xt-optout-initial)': {
       '.initial': {

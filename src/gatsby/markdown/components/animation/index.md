@@ -14,11 +14,9 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Add to the `body` the class `xt-body` to have this features:
 
-* **Flash of Unstyled Content (FOUC)**, **automatically disables page load duration** for animation and transition until javascript is loaded. You can disable this feature with `xt-optout-fouc` and keep others `xt-body` features.
+* **Prefers Reduced Motion**, **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion". You can disable this feature with `xt-optout-prm` and keep others `xt-body` features.
 
 * **Initial component animations**, **automatically disables duration** for animation and transition on `initial` class used in components init and reinit. You can disable this feature with `xt-optout-initial` and keep others `xt-body` features.
-
-* **Prefers Reduced Motion**, **automatically disables duration** for css animation and transition when the the user has activated "Prefers Reduced Motion". You can disable this feature with `xt-optout-prm` and keep others `xt-body` features.
 
 ## Javascript
 

@@ -18,8 +18,6 @@ You can execute a function on DOM ready.
 
 </div>
 
-Or also have css respond to DOM ready with the selector `body.xt-ready`.
-
 ## Xt.mount
 
 You can add Javascript code as a **vanilla component** with `Xt.mount`.
