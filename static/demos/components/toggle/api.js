@@ -176,8 +176,8 @@ const mountEventmethods = ({ ref }) => {
       selector = e.target.getAttribute('title')
     } else if (e.target.querySelector(':scope > .xt-button')) {
       selector = e.target.querySelector(':scope > .xt-button').textContent
-    } else if (e.target.querySelector('.> *')) {
-      selector = e.target.querySelector('.> *').textContent
+    } else if (e.target.querySelector('.xt-card > *')) {
+      selector = e.target.querySelector('.xt-card > *').textContent
     } else if (e.target.querySelector(':scope > *')) {
       selector = e.target.querySelector(':scope > *').textContent
     } else if (!e.target.querySelector('*')) {
