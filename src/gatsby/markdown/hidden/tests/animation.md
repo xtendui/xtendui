@@ -38,6 +38,15 @@ Test slider animation no flick on change slide data-xt-group-same (bug).
   </demoinline>
 </demo>
 
+## Inverse
+
+Test inverse animation.
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-inverse">
+  </demoinline>
+</demo>
+
 ## Duration and Delay
 
 Test duration and delay.

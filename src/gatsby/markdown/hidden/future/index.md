@@ -6,22 +6,6 @@ title: "Future"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Toggle inverse	
-
-Devo switchare la queue mettendo un data-xt-inverse su targets inverse e tenere classi uguali.
-
-Forse basta che metto nella queue inversa in eventOn ed eventOff.
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-inverse">
-  </demoinline>
-</demo>
-
-<demo>
-  <demoinline src="demos/components/toggle/animation">
-  </demoinline>
-</demo>
-
 ## Slider Absolute
 
 Make a slider with absolute positioning. Automatically has [no drag overflow](/components/slider/interaction#drag) and [no contain](/components/slider/position#contain) and [no wrap](/components/slider/position#wrap).
