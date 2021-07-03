@@ -726,10 +726,10 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.on = (el, suffix = '') => {
+    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
     el.classList.add('on')
     el.classList.remove('out')
-    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-    // fix must be inside raf because because .on sets display
+    // must be inside raf because display
     Xt.activationRaf(el, () => {
       el.classList.add('in')
     })
@@ -743,9 +743,10 @@ if (typeof window !== 'undefined') {
    */
   Xt.off = (el, suffix = '', duration = null) => {
     clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-    // fix must be inside raf because sequential off/on must not flickr
+    // must be outside inside raf or page jumps (e.g. noqueue)
+    el.classList.remove('on')
+    // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
     Xt.activationRaf(el, () => {
-      el.classList.remove('on')
       el.classList.remove('in')
       el.classList.add('out')
       Xt.animTimeout(
