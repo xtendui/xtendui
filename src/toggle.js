@@ -2415,7 +2415,7 @@ class Toggle {
       requestAnimationFrame(() => {
         // focusLimit
         if (options.focusLimit) {
-          const els = self.targets ? self.targets : self.elements
+          const els = self.targets.length ? self.targets : self.elements
           let nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
           if (!nsFocusTrap) {
             nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
