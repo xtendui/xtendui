@@ -25,7 +25,15 @@
 }
 
 #gatsby_menu--overlay {
-  &[data-xt-overlay-disabled] {
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
+    .xt-design {
+      @apply bg-primary-500;
+    }
+    .xt-card {
+      @apply xt-min-h-screen;
+    }
+  }
+  @screen lg {
     display: flex !important;
     position: static;
     z-index: initial;
@@ -58,17 +66,6 @@
     }
     .xt-backdrop {
       display: none;
-    }
-  }
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
-    .xt-design {
-      @apply bg-primary-500;
-    }
-    .xt-card {
-      @apply xt-min-h-screen;
-    }
-    [data-xt-overlay-disabled]& {
-      display: none !important;
     }
   }
 }
