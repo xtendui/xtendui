@@ -3099,8 +3099,8 @@ class Toggle {
             // matches
             const mql = matchMedia(key)
             self.matches.push({ mql, value })
-            mql.addEventListener('change', self.eventMatch.bind(self).bind(self, value, mql))
-            self.eventMatch(value, mql, true)
+            self.eventMatch({ mql, value, skipReinit: true })
+            mql.addEventListener('change', self.eventMatch.bind(self, { mql, value }))
           }
         }
       }
@@ -3109,13 +3109,18 @@ class Toggle {
 
   /**
    * match
-   * @param {Object} mql Match media query list
-   * @param {Object} value Match media value
-   * @param {Boolean} skipReinit Skip reinit
+   * @param {Object} params
+   * @param {Object} params.mql Match media query list
+   * @param {Object} params.value Match media value
+   * @param {Boolean} params.skipReinit Skip reinit
    */
-  eventMatch(value, mql, skipReinit = false) {
+  eventMatch({ mql, value, skipReinit = false } = {}, e) {
     const self = this
     const options = self.options
+    // fix NEEDED for chrome not removing mql event listener
+    if (!self.object.closest('html')) {
+      return
+    }
     // replace options
     if (mql.matches) {
       // set options value
@@ -3343,7 +3348,7 @@ class Toggle {
         // matches
         const mql = obj.mql
         const value = obj.value
-        mql.removeEventListener('change', self.eventMatch.bind(self).bind(self, value, mql))
+        mql.removeEventListener('change', self.eventMatch.bind(self, { mql, value }))
       }
     }
   }
