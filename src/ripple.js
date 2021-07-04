@@ -46,12 +46,15 @@ class Ripple {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // container
     if (!self.container) {
       self.object.append(Xt.createElement('<div class="xt-ripple-container"></div>'))
@@ -65,6 +68,12 @@ class Ripple {
     requestAnimationFrame(() => {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -191,6 +200,7 @@ class Ripple {
 
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
+  debug: false,
   // ripple
   sizeInitial: 0.3,
   onlyInside: 'a, button, .xt-button',

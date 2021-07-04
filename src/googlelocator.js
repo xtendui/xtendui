@@ -182,6 +182,11 @@ class Googlelocator {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -599,6 +604,7 @@ class Googlelocator {
 
 Googlelocator.componentName = 'xt-googlelocator'
 Googlelocator.optionsDefault = {
+  debug: false,
   // setting
   initialLocate: false,
   initialSearch: false,

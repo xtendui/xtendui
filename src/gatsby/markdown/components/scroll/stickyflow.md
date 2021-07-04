@@ -39,6 +39,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `element:Query`                          | `false`        | Sticky element query            |
 | Option                    | `filler:Query`                          | `false`        | Filler element query            |
 

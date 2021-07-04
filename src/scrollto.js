@@ -102,6 +102,11 @@ class Scrollto {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -432,6 +437,7 @@ class Scrollto {
 
 Scrollto.componentName = 'xt-scrollto'
 Scrollto.optionsDefault = {
+  debug: false,
   // elements
   anchors: '[href*="{hash}"]',
   scrollers: '.xt-overlay:not([data-xt-overlay-disabled])',

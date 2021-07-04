@@ -71,6 +71,11 @@ class Stickyflow {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -175,6 +180,7 @@ class Stickyflow {
 
 Stickyflow.componentName = 'xt-stickyflow'
 Stickyflow.optionsDefault = {
+  debug: false,
   // elements
   element: false,
   filler: false,

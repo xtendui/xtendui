@@ -42,6 +42,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |

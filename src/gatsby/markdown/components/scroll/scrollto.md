@@ -53,6 +53,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
 | Option                    | `scrollers:Query`                          | `'.xt-overlay:not([data-xt-overlay-disabled])'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |

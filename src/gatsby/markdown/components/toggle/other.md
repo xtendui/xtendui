@@ -109,3 +109,13 @@ It's better to keep the start value like [the css one](https://github.com/minimi
 | Option                  | `zIndex:Object|false`                 | `false`     | Set `z-index` on activation, e.g.: `{ targets: { start: 600, factor: -1 } },` can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 
 </div>
+
+## Other
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
+
+</div>

@@ -49,6 +49,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `targets:Query`                          | `':scope > .xt-mousefollow'`        | Mouse follow targets            |
 | Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
 | Option                    | `friction:Function`                          | `<Function>`        | Function for friction             |

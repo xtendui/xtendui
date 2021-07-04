@@ -38,6 +38,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
 | Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
 

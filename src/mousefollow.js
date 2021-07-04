@@ -58,6 +58,8 @@ class Mousefollow {
     const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
     Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    // vars
+    self.initial = true
     // targets
     self.targets = self.object.querySelectorAll(options.targets)
     // events
@@ -71,6 +73,12 @@ class Mousefollow {
     requestAnimationFrame(() => {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -193,6 +201,7 @@ class Mousefollow {
 
 Mousefollow.componentName = 'xt-mousefollow'
 Mousefollow.optionsDefault = {
+  debug: false,
   // elements
   targets: '[data-xt-mousefollow-target]',
   // mousefollow

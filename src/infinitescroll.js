@@ -95,6 +95,11 @@ class Infinitescroll {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -463,6 +468,7 @@ class Infinitescroll {
 
 Infinitescroll.componentName = 'xt-infinitescroll'
 Infinitescroll.optionsDefault = {
+  debug: false,
   // infiniteScroll
   get: false,
   // quantity

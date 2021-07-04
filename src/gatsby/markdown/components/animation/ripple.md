@@ -47,6 +47,7 @@ Here are the main **javascript options**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `sizeInitial:Boolean`                          | `0.3`        | Initial size factor            |
 | Option                    | `onlyInside:Query`                          | `'a, button, .xt-button'`        | Only if selector else query closest             |
 

@@ -245,6 +245,11 @@ class Toggle {
         self.eventAutostart()
         // initial after autostart
         self.initial = false
+        // debug
+        if (options.debug) {
+          // eslint-disable-next-line no-console
+          console.log(`${self.componentName} init`, self)
+        }
       })
     }
   }
@@ -3393,6 +3398,7 @@ class Toggle {
 
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
+  debug: false,
   // element
   elements: false,
   targets: false,

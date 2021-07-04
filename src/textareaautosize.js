@@ -47,6 +47,7 @@ class Textareaautosize {
    */
   initLogic() {
     const self = this
+    const options = self.options
     // set self
     Xt.set(self.componentName, self.object, self)
     // namespace
@@ -70,6 +71,11 @@ class Textareaautosize {
       // listener dispatch
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
+      // debug
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.log(`${self.componentName} init`, self)
+      }
     })
     // initialized class
     self.object.setAttribute(`data-${self.componentName}-init`, '')
@@ -148,7 +154,9 @@ class Textareaautosize {
 //
 
 Textareaautosize.componentName = 'xt-textareaautosize'
-Textareaautosize.optionsDefault = {}
+Textareaautosize.optionsDefault = {
+  debug: false,
+}
 
 //
 // export

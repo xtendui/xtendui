@@ -38,6 +38,7 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `initialLocate:Boolean`                          | `false`        | Automatic locate on page load (**needs https**)            |
 | Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |

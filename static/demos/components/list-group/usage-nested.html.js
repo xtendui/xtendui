@@ -16,13 +16,13 @@ const html = /* HTML */ `
           <div class="*** xt-list-inner flex-col ***">
             <button
               type="button"
-              class="xt-button text-2xs py-0.5 px-2 rounded-tr-md border border-gray-400 ${classes.buttonDefault()}"
+              class="xt-button text-2xs py-1 px-2 rounded-tr-md border border-gray-400 ${classes.buttonDefault()}"
             >
               +
             </button>
             <button
               type="button"
-              class="xt-button text-2xs py-0.5 px-2 rounded-br-md border border-t-0 border-gray-400 ${classes.buttonDefault()}"
+              class="xt-button text-2xs py-1 px-2 rounded-br-md border border-t-0 border-gray-400 ${classes.buttonDefault()}"
             >
               -
             </button>
