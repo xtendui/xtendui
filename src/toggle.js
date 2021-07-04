@@ -56,6 +56,7 @@ class Toggle {
     self.detail = {}
     self.disabled = false
     self.hasHash = false
+    self.matches = []
     self.detail.queueIn = []
     self.detail.queueOut = []
     self.detail.autopaused = false
@@ -94,7 +95,7 @@ class Toggle {
     self.destroyElements = [document, window, self.object]
     // init
     self.initSetup()
-    self.initMatch()
+    self.initMatches()
     self.initScope()
     self.initAria()
     self.initEvents()
@@ -3082,20 +3083,24 @@ class Toggle {
   /**
    * init match
    */
-  initMatch() {
+  initMatches() {
     const self = this
     const options = self.options
-    // matches
+    // only on initialization not on reinit because the mql reinit
     if (self.initial === undefined) {
+      // remove matches
+      self.removeMatches()
+      self.matches = []
+      // matches
       if (options.matches) {
         const mqs = Object.entries(options.matches)
         if (mqs.length) {
           for (const [key, value] of mqs) {
             // matches
-            const mq = matchMedia(key)
-            self.eventMatch(value, mq, true)
-            mq.removeListener(self.eventMatch.bind(self).bind(self, value))
-            mq.addListener(self.eventMatch.bind(self).bind(self, value))
+            const mql = matchMedia(key)
+            self.matches.push({ mql, value })
+            mql.addEventListener('change', self.eventMatch.bind(self).bind(self, value, mql))
+            self.eventMatch(value, mql, true)
           }
         }
       }
@@ -3104,15 +3109,15 @@ class Toggle {
 
   /**
    * match
-   * @param {Object} mq Match media query
+   * @param {Object} mql Match media query list
    * @param {Object} value Match media value
    * @param {Boolean} skipReinit Skip reinit
    */
-  eventMatch(value, mq, skipReinit = false) {
+  eventMatch(value, mql, skipReinit = false) {
     const self = this
     const options = self.options
     // replace options
-    if (mq.matches) {
+    if (mql.matches) {
       // set options value
       self.options = Xt.merge([self.options, value])
     } else {
@@ -3328,6 +3333,22 @@ class Toggle {
   }
 
   /**
+   * removeMatches
+   */
+  removeMatches() {
+    const self = this
+    // remove matches
+    if (self.matches.length) {
+      for (const obj of self.matches) {
+        // matches
+        const mql = obj.mql
+        const value = obj.value
+        mql.removeEventListener('change', self.eventMatch.bind(self).bind(self, value, mql))
+      }
+    }
+  }
+
+  /**
    * destroy
    * @param {Boolean} weak Do not destroy component
    */
@@ -3335,6 +3356,8 @@ class Toggle {
     const self = this
     // disable
     self.disable()
+    // remove matches
+    self.removeMatches()
     // remove events
     self.removeEvents()
     // remove namespace
