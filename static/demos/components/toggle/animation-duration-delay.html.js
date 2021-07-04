@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="0"
       >
@@ -20,7 +20,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="0"
       >
@@ -28,7 +28,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="0"
       >
@@ -36,7 +36,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="0"
       >
@@ -44,7 +44,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="1"
       >
@@ -52,7 +52,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="1"
       >
@@ -60,7 +60,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="1"
       >
@@ -68,7 +68,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-toggle-tr
         data-xt-group="1"
       >

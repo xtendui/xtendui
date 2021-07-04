@@ -10,9 +10,9 @@ const html = /* HTML */ `
 
       <a href="/" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el> Toggle 1 </a>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
     </div>
   </div>
 `

@@ -75,21 +75,21 @@ const html = /* HTML */ `
 
       <div class="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
         <div
-          class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+          class="*** xt-toggle *** ${classes.cardToggle()}"
           data-xt-toggle-tr
           data-xt-group="0"
         >
           Target Group 0
         </div>
         <div
-          class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+          class="*** xt-toggle *** ${classes.cardToggle()}"
           data-xt-toggle-tr
           data-xt-group="0"
         >
           Target Group 0b
         </div>
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
+        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
+        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
       </div>
     </div>
 

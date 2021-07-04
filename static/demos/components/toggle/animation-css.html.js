@@ -10,11 +10,11 @@ const html = /* HTML */ `
 
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 1</button>
 
-      <div class="target *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>
         Target 0
       </div>
 
-      <div class="target *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>
         Target 1
       </div>
     </div>

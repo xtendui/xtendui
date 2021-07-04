@@ -43,7 +43,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <div class="*** xt-toggle *** relative ${classes.cardRadius()} ${classes.cardToggle()}">
+      <div class="*** xt-toggle *** relative ${classes.cardToggle()}">
         Target 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -53,7 +53,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-tr>
         Target 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -63,7 +63,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-tr>
         Target 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -73,7 +73,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-tr>
         Target 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">

@@ -26,10 +26,10 @@ const html = /* HTML */ `
         Toggle Group 0 and 1
       </button>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+        class="*** xt-toggle *** ${classes.cardToggle()}"
         data-xt-toggle-tr
         data-xt-group="group0"
       >
@@ -37,7 +37,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+        class="*** xt-toggle *** ${classes.cardToggle()}"
         data-xt-toggle-tr
         data-xt-group="group1"
       >
@@ -45,17 +45,17 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+        class="*** xt-toggle *** ${classes.cardToggle()}"
         data-xt-toggle-tr
         data-xt-group="group1"
       >
         Target Group 1b
       </div>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}"
+        class="*** xt-toggle *** ${classes.cardToggle()}"
         data-xt-toggle-tr
         data-xt-group="group0,group1"
       >

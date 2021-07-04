@@ -20,7 +20,7 @@ const html = /* HTML */ `
       </button>
 
       <div
-        class="*** done:hidden *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
+        class="*** done:hidden *** ${classes.cardToggle()} *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
         id="toggle--animation-inverse-0"
         data-xt-duration-out="raf"
       >
@@ -28,7 +28,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="*** done:hidden *** ${classes.cardRadius()} ${classes.cardToggle()} *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
+        class="*** done:hidden *** ${classes.cardToggle()} *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
         id="toggle--animation-inverse-1"
         data-xt-duration-out="raf"
       >
