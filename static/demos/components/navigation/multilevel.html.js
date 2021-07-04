@@ -59,7 +59,7 @@ const html = /* HTML */ `
           </button>
         </div>
 
-        <nav class="xt-list flex-col>
+        <nav class="xt-list flex-col">
           <button
             type="button"
             class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"

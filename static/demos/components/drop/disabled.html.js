@@ -22,7 +22,9 @@ const html = /* HTML */ `
               <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <div data-xt-drop="{ elements: '[data-xt-drop-element-nested]', targets: '[data-xt-drop-target-nested]' }">
+              <div
+                data-xt-drop="{ elements: '[data-xt-drop-element-nested]', targets: '[data-xt-drop-target-nested]' }"
+              >
                 <div data-xt-drop-element-nested>
                   <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                     nested

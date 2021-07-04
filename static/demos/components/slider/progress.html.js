@@ -90,7 +90,12 @@ const html = /* HTML */ `
         </div>
 
         <nav class="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
-          <button type="button" class="xt-button ${classes.buttonSlider()} hidden" data-xt-slider-element title="Slide xt-num">
+          <button
+            type="button"
+            class="xt-button ${classes.buttonSlider()} hidden"
+            data-xt-slider-element
+            title="Slide xt-num"
+          >
             <span class="${classes.loader()}">
               <span class="${classes.filler()} text-primary-500">
                 <span class="block absolute bg-current opacity-25 w-full h-full"></span>

@@ -30,7 +30,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', position: 'left-start' }">
+      <div
+        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', position: 'left-start' }"
+      >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -57,7 +59,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', position: 'left-end' }">
+      <div
+        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', position: 'left-end' }"
+      >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

@@ -60,7 +60,9 @@ const html = /* HTML */ `
     </div>
 
     <form class="text-sm mt-4">
-      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', on: 'focus', off: false }">
+      <div
+        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', on: 'focus', off: false }"
+      >
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"

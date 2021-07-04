@@ -118,7 +118,12 @@ const html = /* HTML */ `
           >
             ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
-          <button type="button" class="xt-button ${classes.buttonSlider()} hidden" data-xt-slider-element title="Slide xt-num">
+          <button
+            type="button"
+            class="xt-button ${classes.buttonSlider()} hidden"
+            data-xt-slider-element
+            title="Slide xt-num"
+          >
             xt-num
           </button>
           <button

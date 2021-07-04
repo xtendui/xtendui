@@ -22,7 +22,12 @@ const html = /* HTML */ `
         Toggle Group 1
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element data-xt-group="group0,group1">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonToggle()}"
+        data-xt-toggle-element
+        data-xt-group="group0,group1"
+      >
         Toggle Group 0 and 1
       </button>
 

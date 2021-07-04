@@ -7,7 +7,10 @@ const html = /* HTML */ `
     <div class="xt-slider slider--text my-12">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-10" data-xt-slider-dragger>
-          <div class="xt-slide ${classes.slide()} xt-list xt-list-10 flex-nowrap whitespace-nowrap" data-xt-slider-target>
+          <div
+            class="xt-slide ${classes.slide()} xt-list xt-list-10 flex-nowrap whitespace-nowrap"
+            data-xt-slider-target
+          >
             <a href="#test-link-1" class="slide-text" title="item 1">
               <div class="xt-h4">One</div>
             </a>
