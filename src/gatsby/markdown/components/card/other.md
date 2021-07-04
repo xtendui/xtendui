@@ -8,8 +8,6 @@ date: "2005-10-10"
 
 ## Disabled
 
-Disable and style disabled.
-
 <demo>
   <demoinline src="demos/components/card/disabled">
   </demoinline>

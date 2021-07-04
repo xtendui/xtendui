@@ -6,7 +6,7 @@ title: "Other"
 date: "2005-10-10"
 ---
 
-## Disabled
+## Disabled and Nested
 
 If you want to **disable the component** use the `options.disabled`.
 
@@ -18,9 +18,9 @@ If you want to **disable the component** use the `options.disabled`.
 
 </div>
 
-Example of **component disabled on desktop** with [match media](/components/drop/api#match-media).
+With nested selectors change the `elements` and `targets` query.
 
-Disable and style disabled.
+Example of **component disabled on desktop** with [match media](/components/drop/api#match-media).
 
 <demo>
   <demoinline src="demos/components/drop/disabled">
