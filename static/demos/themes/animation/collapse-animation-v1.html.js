@@ -153,7 +153,10 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-tooltip p-2 group" data-xt-tooltip-tr>
-            <div class="xt-tooltip-inner ${classes.tooltipRadius()} shadow-tooltip text-black bg-white ${animDesign()}" data-xt-tooltip-inner>
+            <div
+              class="xt-tooltip-inner ${classes.tooltipRadius()} shadow-tooltip text-black bg-white ${animDesign()}"
+              data-xt-tooltip-inner
+            >
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
                   <div class="xt-list-inner flex-auto">

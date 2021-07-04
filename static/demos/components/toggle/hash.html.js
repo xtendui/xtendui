@@ -66,39 +66,21 @@ const html = /* HTML */ `
 
       <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
 
-      <div
-        class="*** xt-toggle *** ${classes.cardToggle()}"
-        data-xt-toggle-tr
-        data-xt-group="group0"
-      >
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr data-xt-group="group0">
         Target Group 0
       </div>
 
-      <div
-        class="*** xt-toggle *** ${classes.cardToggle()}"
-        data-xt-toggle-tr
-        data-xt-group="group1"
-      >
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr data-xt-group="group1">
         Target Group 1a
       </div>
 
-      <div
-        class="*** xt-toggle *** ${classes.cardToggle()}"
-        data-xt-toggle-tr
-        data-xt-group="group1"
-      >
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr data-xt-group="group1">
         Target Group 1b
       </div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()} *** on ***" data-xt-toggle-tr>
-        Target 2
-      </div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()} *** on ***" data-xt-toggle-tr>Target 2</div>
 
-      <div
-        class="*** xt-toggle *** ${classes.cardToggle()}"
-        data-xt-toggle-tr
-        data-xt-group="group0,group1"
-      >
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr data-xt-group="group0,group1">
         Target Group 0 and 1
       </div>
     </div>

@@ -10,13 +10,9 @@ const html = /* HTML */ `
 
       <a href="/" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el> Toggle 2 hover </a>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>
-        Target 1 hover
-      </div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1 hover</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>
-        Target 2 hover
-      </div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 2 hover</div>
     </div>
   </div>
 `

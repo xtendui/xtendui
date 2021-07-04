@@ -19,13 +19,15 @@ const html = /* HTML */ `
                     />
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}" data-xt-googlelocator-locate-btn
+                      class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+                      data-xt-googlelocator-locate-btn
                     >
                       ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     </button>
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonDefault()}" data-xt-googlelocator-search-btn
+                      class="xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonDefault()}"
+                      data-xt-googlelocator-search-btn
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>
@@ -85,7 +87,10 @@ const html = /* HTML */ `
           </form>
         </div>
 
-        <div class="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll"   data-xt-googlelocator-results>
+        <div
+          class="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll"
+          data-xt-googlelocator-results
+        >
           <div class="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-100">
             Insert your position and find a place near you
           </div>

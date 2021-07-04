@@ -715,7 +715,7 @@ window.switchClean = (item, src) => {
  * populate
  */
 
-const source = async (item, el, isReact = false) => {
+const sourceAsync = async (item, el, isReact = false) => {
   const url = el.getAttribute('data-fetch')
   const version = document.querySelector('body').getAttribute('data-version')
   if (url) {
@@ -744,7 +744,7 @@ const populateInline = async item => {
   // fix only current demo
   for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
     try {
-      await source(item, el, isReact)
+      await sourceAsync(item, el, isReact)
     } catch (ex) {
       console.error(ex)
     }
@@ -798,7 +798,7 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   const els = item.querySelectorAll('[data-lang]')
   for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
     try {
-      await source(item, el, isReact)
+      await sourceAsync(item, el, isReact)
     } catch (ex) {
       console.error(ex)
     }

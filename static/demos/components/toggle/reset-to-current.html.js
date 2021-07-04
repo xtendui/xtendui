@@ -14,9 +14,7 @@ const html = /* HTML */ `
 
       <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()} on current" data-xt-toggle-tr>
-        Target 1
-      </div>
+      <div class="*** xt-toggle *** ${classes.cardToggle()} on current" data-xt-toggle-tr>Target 1</div>
 
       <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
     </div>
