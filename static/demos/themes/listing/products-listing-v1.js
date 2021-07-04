@@ -26,7 +26,7 @@ Xt.mount({
 const mountSlider = ({ ref }) => {
   // vars
 
-  const slider = ref.querySelector('.slider--listing')
+  const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
   let dragDistance
   let dragDuration

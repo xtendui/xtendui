@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--products-listing-v2">
     <div class="py-10">
-      <div class="xt-slider *** slider--listing *** pb-10">
+      <div class="xt-slider pb-10">
         <div class="container">
           <div class="xt-h3 mb-8">Latest Products</div>
 

@@ -23,10 +23,10 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-top'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-top]'),
     start: 'top top',
-    endTrigger: '.sticky--stack-topsecond',
-    end: () => `top ${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
+    endTrigger: '[data-xt-sticky-stack-topsecond]',
+    end: () => `top ${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
     pin: true,
     pinSpacing: false,
   })
@@ -34,7 +34,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-topsecond'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-topsecond]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -46,8 +46,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-topthird'),
-    start: () => `top top+=${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
+    trigger: ref.querySelector('[data-xt-sticky-stack-topthird]'),
+    start: () => `top top+=${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,
@@ -61,7 +61,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-bottom'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',
@@ -76,8 +76,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottomSecond = ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-bottomsecond'),
-    start: () => `bottom bottom-=${document.querySelector('.sticky--stack-bottom').offsetHeight}px`,
+    trigger: ref.querySelector('[data-xt-sticky-stack-bottomsecond]'),
+    start: () => `bottom bottom-=${document.querySelector('[data-xt-sticky-stack-bottom]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,
