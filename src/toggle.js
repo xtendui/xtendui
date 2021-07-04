@@ -2503,35 +2503,45 @@ class Toggle {
       // fix when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         if (actionCurrent === 'In') {
-          // fix route update
-          requestAnimationFrame(() => {
-            for (const c of options.classBody.split(' ')) {
-              // checks
-              Xt.classBody.add({
-                c: c,
-                ns: self.ns,
-              })
-              // class on
-              const container = document.documentElement.querySelector('body')
-              container.classList.add(c)
-            }
-          })
-        } else if (actionCurrent === 'Out') {
-          // fix route update
-          requestAnimationFrame(() => {
-            for (const c of options.classBody.split(' ')) {
-              // checks
-              Xt.classBody.remove({
-                c: c,
-                ns: self.ns,
-              })
-              if (!Xt.classBody.get({ c: c }).length) {
-                // class off
+          // raf because route update
+          cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}ClassBodyFrame`))
+          Xt.dataStorage.set(
+            self.object,
+            `${self.ns}ClassBodyFrame`,
+            requestAnimationFrame(() => {
+              for (const c of options.classBody.split(' ')) {
+                // checks
+                Xt.classBody.add({
+                  c: c,
+                  ns: self.ns,
+                })
+                // class on
                 const container = document.documentElement.querySelector('body')
-                container.classList.remove(c)
+                container.classList.add(c)
               }
-            }
-          })
+            })
+          )
+        } else if (actionCurrent === 'Out') {
+          // raf because route update
+          cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}ClassBodyFrame`))
+          Xt.dataStorage.set(
+            self.object,
+            `${self.ns}ClassBodyFrame`,
+            requestAnimationFrame(() => {
+              for (const c of options.classBody.split(' ')) {
+                // checks
+                Xt.classBody.remove({
+                  c: c,
+                  ns: self.ns,
+                })
+                if (!Xt.classBody.get({ c: c }).length) {
+                  // class off
+                  const container = document.documentElement.querySelector('body')
+                  container.classList.remove(c)
+                }
+              }
+            })
+          )
         }
       }
     }

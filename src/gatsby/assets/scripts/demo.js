@@ -434,7 +434,10 @@ export const populateItem = item => {
     } else {
       const text = item.querySelector('script[type="text/plain"]')
       if (text) {
-        sourceTo.innerHTML = text.innerHTML
+        // fix demos not visible on population (e.g. sliders)
+        requestAnimationFrame(() => {
+          sourceTo.innerHTML = text.innerHTML
+        })
       }
     }
   }
