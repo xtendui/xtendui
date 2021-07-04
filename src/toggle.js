@@ -3114,7 +3114,7 @@ class Toggle {
    * @param {Object} params.value Match media value
    * @param {Boolean} params.skipReinit Skip reinit
    */
-  eventMatch({ mql, value, skipReinit = false } = {}, e) {
+  eventMatch({ mql, value, skipReinit = false } = {}) {
     const self = this
     const options = self.options
     // fix NEEDED for chrome not removing mql event listener
@@ -3211,6 +3211,8 @@ class Toggle {
           self.eventOff(el)
         }
       }
+      // fix classBody reset
+      self.specialClassBody('Out', 'targets')
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // disable
