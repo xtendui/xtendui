@@ -86,7 +86,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', targetsInner: [data-xt-drop-inner], collapseHeight: 'targetsInner', duration: 500 }"
+        data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }"
       >
         <button
           type="button"
