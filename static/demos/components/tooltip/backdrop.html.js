@@ -3,8 +3,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', classSkip: false }">
-        <div data-xt-tooltip-el>
+      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', classSkip: false }">
+        <div data-xt-tooltip-element>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
@@ -12,7 +12,7 @@ const html = /* HTML */ `
             backdrop
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
             <div
               class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
@@ -25,17 +25,17 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', on: 'click', off: 'click', classSkip: false }"
+        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', on: 'click', off: 'click', classSkip: false }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
-          data-xt-tooltip-el
+          data-xt-tooltip-element
         >
           backdrop click
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet

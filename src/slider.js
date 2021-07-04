@@ -435,9 +435,9 @@ class Slider extends Xt.Toggle {
     self.pags = self.pags ? self.pags : []
     for (const [z, pag] of pags.entries()) {
       // vars
-      const cloned = pag.querySelector('[data-xt-pag].hidden')
+      const cloned = pag.querySelector('[data-xt-slider-element].hidden')
       if (!cloned) {
-        console.error('Error: Xt.Slider [data-xt-pag].hidden not found for', self.object)
+        console.error('Error: Xt.Slider [data-xt-slider-element].hidden not found inside', pag)
       }
       const container = cloned.parentNode
       // populate
@@ -457,9 +457,9 @@ class Slider extends Xt.Toggle {
             if (content) {
               replace += content.innerHTML
             }
-            const attr = slide.querySelector('[data-xt-pag-classes]')
+            const attr = slide.querySelector('[data-xt-slider-element-classes]')
             if (attr) {
-              classes.push(attr.getAttribute('data-xt-pag-classes'))
+              classes.push(attr.getAttribute('data-xt-slider-element-classes'))
             }
           }
           html = html.replace(regex, replace)
@@ -479,7 +479,7 @@ class Slider extends Xt.Toggle {
         item.children[0].setAttribute('data-xt-group', group.target.getAttribute('data-xt-group'))
         container.insertBefore(item.children[0], cloned)
         item.remove()
-        self.pags[z][i] = container.querySelectorAll('[data-xt-pag]:not(.hidden)')[i]
+        self.pags[z][i] = container.querySelectorAll('[data-xt-slider-element]:not(.hidden)')[i]
         // save group element for activation
         self.groups[i].element = self.pags[0][i]
       }
@@ -1377,8 +1377,8 @@ Slider.optionsDefault = {
     },
   },
   // element
-  elements: '[data-xt-pag]:not(.hidden)',
-  targets: '[data-xt-slider-slide]',
+  elements: '[data-xt-slider-element]:not(.hidden)',
+  targets: '[data-xt-slider-target]',
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   // quantity

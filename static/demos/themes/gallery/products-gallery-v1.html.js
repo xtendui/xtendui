@@ -23,7 +23,7 @@ const html = /* HTML */ `
                       id="product-image-1"
                       title="Expand image 1"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                       id="product-image-2"
                       title="Expand image 2"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -51,7 +51,7 @@ const html = /* HTML */ `
                       id="product-image-3"
                       title="Expand image 3"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -65,7 +65,7 @@ const html = /* HTML */ `
                       id="product-image-4"
                       title="Expand image 4"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -79,7 +79,7 @@ const html = /* HTML */ `
                       id="product-image-5"
                       title="Expand image 5"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"

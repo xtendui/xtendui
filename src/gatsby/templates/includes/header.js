@@ -29,54 +29,54 @@ export default function Header({ page }) {
                 </div>
                 <div className="gatsby_site-header_top_social_container">
                   <div className="gatsby_site-header_top_social">
-                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Twitter"
-                        data-xt-tooltip-el
+                        data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
                     </div>
-                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Npm"
-                        data-xt-tooltip-el
+                        data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end', duration: 300 }">
+                    <span data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_site-header_top_social_btn"
                         title="Github"
-                        data-xt-tooltip-el
+                        data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
@@ -127,14 +127,14 @@ export default function Header({ page }) {
                     <div className="gatsby_site-header_switcher xt-list xt-list-1 flex-nowrap">
                       <div
                         className="flex-full"
-                        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom', duration: 300 }">
-                        <div className="w-full" data-xt-tooltip-el>
+                        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', duration: 300 }">
+                        <div className="w-full" data-xt-tooltip-element>
                           <button
                             type="button"
                             className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                             Html
                           </button>
-                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                             <div
                               className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to Html
@@ -144,14 +144,14 @@ export default function Header({ page }) {
                       </div>
                       <div
                         className="flex-full"
-                        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom', duration: 300 }">
-                        <div className="w-full" data-xt-tooltip-el>
+                        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', duration: 300 }">
+                        <div className="w-full" data-xt-tooltip-element>
                           <button
                             type="button"
                             className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                             React
                           </button>
-                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                             <div
                               className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to React

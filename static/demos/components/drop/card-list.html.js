@@ -3,16 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-drop-el
+          data-xt-drop-element
         >
           list
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-tr>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-96 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="${classes.cardMd()}">
               <div class="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">

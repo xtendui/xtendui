@@ -112,7 +112,7 @@ const mountEventmethods = ({ ref }) => {
       const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-      <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-slide>
+      <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
         <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
           <div class="xt-h4">${indexTr}</div>
         </div>

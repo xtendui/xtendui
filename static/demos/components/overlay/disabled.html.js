@@ -3,17 +3,17 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--overlay-disable">
     <div
-      data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]', appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }"
+      data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }"
     >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-        data-xt-overlay-el
+        data-xt-overlay-element
       >
         Overlay
       </button>
 
-      <div class="xt-overlay" data-xt-overlay-tr>
+      <div class="xt-overlay" data-xt-overlay-target>
         <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -46,17 +46,17 @@ const html = /* HTML */ `
                 </p>
 
                 <div
-                  data-xt-overlay="{ elements: '[data-xt-overlay-el-nested]', targets: '[data-xt-overlay-tr-nested]' }"
+                  data-xt-overlay="{ elements: '[data-xt-overlay-element-nested]', targets: '[data-xt-overlay-target-nested]' }"
                 >
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-                    data-xt-overlay-el-nested
+                    data-xt-overlay-element-nested
                   >
                     Overlay
                   </button>
 
-                  <div class="xt-overlay" data-xt-overlay-tr-nested>
+                  <div class="xt-overlay" data-xt-overlay-target-nested>
                     <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
                     <div class="xt-overlay-container max-w-3xl">
                       <div class="xt-overlay-inner">

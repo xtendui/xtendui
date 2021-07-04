@@ -3,25 +3,25 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--tooltip-disable">
     <div
-      data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]' }"
+      data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]' }"
     >
       Lorem ipsum
 
-      <span data-xt-tooltip-el>
+      <span data-xt-tooltip-element>
         <a href="#">dolor</a>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum
 
             <div
               class="inline-block"
-              data-xt-tooltip="{ elements: '[data-xt-tooltip-el-nested]', targets: '[data-xt-tooltip-tr-nested]', matches: { '(min-width: 768px)': { disabled: true } } }"
+              data-xt-tooltip="{ elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }"
             >
-              <span data-xt-tooltip-el-nested>
+              <span data-xt-tooltip-element-nested>
                 <a href="#">dolor</a>
 
-                <div class="xt-tooltip p-2" data-xt-tooltip-tr-nested>
+                <div class="xt-tooltip p-2" data-xt-tooltip-target-nested>
                   <div
                     class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
                   >

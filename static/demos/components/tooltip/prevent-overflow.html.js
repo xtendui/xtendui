@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--tooltip-prevent-overflow">
     <div class="py-4 px-6 bg-primary-500">
       <div class="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip-el>
+        <div data-xt-tooltip-element>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -12,7 +12,7 @@ const html = /* HTML */ `
             tooltip
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
@@ -21,7 +21,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div data-xt-tooltip-el>
+        <div data-xt-tooltip-element>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -29,7 +29,7 @@ const html = /* HTML */ `
             tooltip
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >

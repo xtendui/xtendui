@@ -245,12 +245,12 @@ export const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-full-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end', duration: 300 }">
-  <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen" data-xt-tooltip-el>
+<div class="button--open-full-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
+  <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen" data-xt-tooltip-element>
     ${classes.iconMaximize()}
   </button>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
-  data-xt-tooltip-tr>
+  data-xt-tooltip-target>
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Fullscreen
     </div>
@@ -259,12 +259,12 @@ export const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-iframe-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end', duration: 300 }">
-  <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe" data-xt-tooltip-el>
+<div class="button--open-iframe-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
+  <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
-  data-xt-tooltip-tr>
+  data-xt-tooltip-target>
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Iframe
     </div>
@@ -892,7 +892,7 @@ export const makeDocument = () => {
         if (!activeTooltip) {
           activeText.append(
             Xt.createElement(`
-<div class="xt-tooltip px-5 group" data-xt-tooltip-tr>
+<div class="xt-tooltip px-5 group" data-xt-tooltip-target>
   <div class="relative py-2 ${classes.tooltipRadius()} shadow-tooltip bg-primary-600 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
     <nav class="xt-list flex-col">
     </nav>
@@ -901,7 +901,7 @@ export const makeDocument = () => {
           )
           activeText.setAttribute(
             'data-xt-tooltip',
-            `{ elements: false, targets: '[data-xt-tooltip-tr]', position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
+            `{ elements: false, targets: '[data-xt-tooltip-target]', position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
           )
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }

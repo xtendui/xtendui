@@ -16,8 +16,8 @@ You can specify `elements` that listens to event for activation, and `targets` t
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `'[data-xt-pag]:not(.hidden)'`        | Elements query            |
-| Option                  | `targets:Query`                          | `'[data-xt-slider-slide]'`        | Targets query            |
+| Option                  | `elements:Query`                          | `'[data-xt-slider-element]:not(.hidden)'`        | Elements query            |
+| Option                  | `targets:Query`                          | `'[data-xt-slider-target]'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
 | Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
@@ -131,12 +131,12 @@ drag: {
 
 ## Pagination	
 
-Inside `[data-xt-pag].hidden` you can use this strings that gets populated with variables:	
+Inside `[data-xt-slider-element].hidden` you can use this strings that gets populated with variables:	
 
 - `xt-num` replaced with pagination's number slide	
 - `xt-tot` replaced with pagination's total slides	
 - `xt-content` replaced with slide's `[data-xt-slider-content]` **innerHTML**.	
-- Classes added with slide's `[data-xt-pag-classes]` **value**.	
+- Classes added with slide's `[data-xt-slider-element-classes]` **value**.	
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -147,7 +147,7 @@ Inside `[data-xt-pag].hidden` you can use this strings that gets populated with 
 </div>
 
 [[notePrimary]]
-| `[data-xt-pag].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
+| `[data-xt-slider-element].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
 
 You can use pagination also inside targets as you can see in the demo.
 

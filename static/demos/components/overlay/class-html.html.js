@@ -4,17 +4,17 @@ const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
       <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]', classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }"
+        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-overlay-el
+          data-xt-overlay-element
         >
           class body
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-tr>
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black  transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div
@@ -48,16 +48,16 @@ const html = /* HTML */ `
                     justo.
                   </p>
 
-                  <div data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]' }">
+                  <div data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]' }">
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-                      data-xt-overlay-el
+                      data-xt-overlay-element
                     >
                       Overlay
                     </button>
 
-                    <div class="xt-overlay" data-xt-overlay-tr>
+                    <div class="xt-overlay" data-xt-overlay-target>
                       <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">

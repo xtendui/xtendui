@@ -4,15 +4,15 @@ const html = /* HTML */ `
   <div class="demo--toggle-animation">
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', duration: 500 }"
+      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', duration: 500 }"
     >
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 0</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 0</button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 1</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>
 
-      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
+      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 0</div>
 
-      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
+      <div class="target *** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
     </div>
   </div>
 `

@@ -26,8 +26,8 @@ const mountTooltip = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: '[data-xt-tooltip-el]',
-    targets: '[data-xt-tooltip-tr]',
+    elements: '[data-xt-tooltip-element]',
+    targets: '[data-xt-tooltip-target]',
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',

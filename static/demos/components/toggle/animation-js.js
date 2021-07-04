@@ -30,8 +30,8 @@ const mountToggle = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: '[data-xt-toggle-el]',
-    targets: '[data-xt-toggle-tr]',
+    elements: '[data-xt-toggle-element]',
+    targets: '[data-xt-toggle-target]',
     duration: 500,
   })
   /***/

@@ -4,17 +4,17 @@ const html = /* HTML */ `
   <div class="demo--tooltip-animation-fast">
     <div class="xt-list xt-list-3 items-center">
       <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom', duration: 500 }"
+        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', duration: 500 }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-el
+          data-xt-tooltip-element
         >
           tooltip
         </button>
 
-        <div class="xt-tooltip p-2 group" data-xt-tooltip-tr data-xt-duration="100">
+        <div class="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="100">
           <div
             class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***"
           >
@@ -23,16 +23,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom' }">
+      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-el
+          data-xt-tooltip-element
         >
           tooltip
         </button>
 
-        <div class="xt-tooltip p-2 group" data-xt-tooltip-tr data-xt-duration="500">
+        <div class="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="500">
           <div
             class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***"
           >
@@ -41,16 +41,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom' }">
+      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-el
+          data-xt-tooltip-element
         >
           tooltip
         </button>
 
-        <div class="xt-tooltip p-2 group" data-xt-tooltip-tr data-xt-duration="500">
+        <div class="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="500">
           <div
             class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***"
           >
@@ -62,9 +62,9 @@ const html = /* HTML */ `
       <div>
         <div
           class="xt-list xt-list-3 items-center"
-          data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom', delay: 50 }"
+          data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', delay: 50 }"
         >
-          <div data-xt-tooltip-el>
+          <div data-xt-tooltip-element>
             <button
               type="button"
               class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -72,7 +72,7 @@ const html = /* HTML */ `
               tooltip multiple
             </button>
 
-            <div class="xt-tooltip p-2 group" data-xt-tooltip-tr>
+            <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
               <div
                 class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***"
               >
@@ -81,7 +81,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div data-xt-tooltip-el>
+          <div data-xt-tooltip-element>
             <button
               type="button"
               class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -89,7 +89,7 @@ const html = /* HTML */ `
               tooltip multiple
             </button>
 
-            <div class="xt-tooltip p-2 group" data-xt-tooltip-tr>
+            <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
               <div
                 class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***"
               >

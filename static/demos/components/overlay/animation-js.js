@@ -31,8 +31,8 @@ const mountOverlay = ({ ref }) => {
 
   /***/
   let self = new Xt.Overlay(overlay, {
-    elements: '[data-xt-overlay-el]',
-    targets: '[data-xt-overlay-tr]',
+    elements: '[data-xt-overlay-element]',
+    targets: '[data-xt-overlay-target]',
     duration: 500,
   })
   /***/

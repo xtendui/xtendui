@@ -25,8 +25,8 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: '[data-xt-drop-el]',
-    targets: '[data-xt-drop-tr]',
+    elements: '[data-xt-drop-element]',
+    targets: '[data-xt-drop-target]',
     closeOutside: false,
   })
   /***/
@@ -107,7 +107,7 @@ const mountEventmethods = ({ ref }) => {
       const indexEl = elements.length + 1
       const strEl = `
         <button type="button" class="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
-          data-xt-drop-el>
+          data-xt-drop-element>
           Drop ${indexEl}
         </button>
       `
@@ -116,7 +116,7 @@ const mountEventmethods = ({ ref }) => {
       const indexTr = targets.length + 1
       const strTr = `
         <div class="xt-drop p-4" title="Target ${indexTr}"
-          data-xt-drop-tr>
+          data-xt-drop-target>
           <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
             <nav class="list flex-col">
               <a href="#" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">

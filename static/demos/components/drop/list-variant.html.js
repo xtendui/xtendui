@@ -3,16 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-drop-el
+          data-xt-drop-element
         >
           Text
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-tr>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()} ***">
@@ -29,16 +29,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-drop-el
+          data-xt-drop-element
         >
           Primary
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-tr>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()} ***">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} *** ${classes.buttonPrimaryDrop()} ***">

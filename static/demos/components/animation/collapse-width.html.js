@@ -3,13 +3,13 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div
-      data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', collapseWidth: 'targets', duration: 500 }"
+      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', collapseWidth: 'targets', duration: 500 }"
     >
       <div class="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
           class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-          data-xt-toggle-el
+          data-xt-toggle-element
         >
           Toggle 0
         </button>
@@ -17,7 +17,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
-          data-xt-toggle-el
+          data-xt-toggle-element
         >
           Toggle 1
         </button>
@@ -29,7 +29,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
               <div
                 class="absolute inset-0 rounded-inherit *** xt-toggle *** *** overflow-hidden transition-all ***"
-                data-xt-toggle-tr
+                data-xt-toggle-target
               >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
@@ -42,7 +42,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
               <div
                 class="absolute inset-0 rounded-inherit *** xt-toggle *** *** overflow-hidden transition-all ***"
-                data-xt-toggle-tr
+                data-xt-toggle-target
               >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>

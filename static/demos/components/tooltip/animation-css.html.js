@@ -4,9 +4,9 @@ const html = /* HTML */ `
   <div class="demo--tooltip-animation-css">
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', duration: 300, delay: 50 }"
+      data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', duration: 300, delay: 50 }"
     >
-      <div data-xt-tooltip-el>
+      <div data-xt-tooltip-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -14,14 +14,14 @@ const html = /* HTML */ `
           tooltip
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
         </div>
       </div>
 
-      <div data-xt-tooltip-el>
+      <div data-xt-tooltip-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -29,7 +29,7 @@ const html = /* HTML */ `
           tooltip
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Consectetur adipiscing elit
           </div>

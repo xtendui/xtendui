@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="/img.svg" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -16,7 +16,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -27,7 +27,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -38,7 +38,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -49,7 +49,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -60,7 +60,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -71,7 +71,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-slide>
+          <div class="xt-slide ${classes.slide()} ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-500">
               <img class="xt-media relative" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -87,7 +87,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
-            data-xt-pag
+            data-xt-slider-element
             title="Slide xt-num"
           ></button>
         </nav>

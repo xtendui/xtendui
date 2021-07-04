@@ -3,9 +3,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--drop-disable">
     <div
-      data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', matches: { '(min-width: 768px)': { disabled: true } } }"
+      data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', matches: { '(min-width: 768px)': { disabled: true } } }"
     >
-      <div data-xt-drop-el>
+      <div data-xt-drop-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           drop
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-tr>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
@@ -22,13 +22,13 @@ const html = /* HTML */ `
               <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                 Dolor sit
               </button>
-              <div data-xt-drop="{ elements: '[data-xt-drop-el-nested]', targets: '[data-xt-drop-tr-nested]' }">
-                <div data-xt-drop-el-nested>
+              <div data-xt-drop="{ elements: '[data-xt-drop-element-nested]', targets: '[data-xt-drop-target-nested]' }">
+                <div data-xt-drop-element-nested>
                   <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
                     nested
                   </button>
 
-                  <div class="xt-drop p-4" data-xt-drop-tr-nested>
+                  <div class="xt-drop p-4" data-xt-drop-target-nested>
                     <div class="xt-backdrop bg-black opacity-25"></div>
                     <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()}">
                       <nav class="xt-list flex-col">

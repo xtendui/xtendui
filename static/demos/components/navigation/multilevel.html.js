@@ -4,23 +4,23 @@ const html = /* HTML */ `
   <div class="demo--multilevel">
     <div
       class="relative"
-      data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', min: 1, duration: 500, queue: false }"
+      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', min: 1, duration: 500, queue: false }"
     >
       <nav
         class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
-        data-xt-toggle-tr
+        data-xt-toggle-target
         data-xt-group="initial"
       >
         <div class="xt-h5  flex items-center justify-between">
           <div>Menu</div>
-          <button type="button" data-xt-toggle-el data-xt-group="initial"></button>
+          <button type="button" data-xt-toggle-element data-xt-group="initial"></button>
         </div>
 
         <nav class="xt-list flex-col">
           <button
             type="button"
             class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-0"
           >
             Category 0
@@ -28,7 +28,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-1"
           >
             Category 1
@@ -44,7 +44,7 @@ const html = /* HTML */ `
 
       <nav
         class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
-        data-xt-toggle-tr
+        data-xt-toggle-target
         data-xt-group="cat-0"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -52,7 +52,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="initial"
           >
             Back
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-0a"
           >
             Category 0a
@@ -71,7 +71,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button w-full justify-start text-left ${classes.buttonMd()} ${classes.buttonDefault()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-0b"
           >
             Category 0b
@@ -91,7 +91,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-0"
           >
             Back
@@ -110,7 +110,7 @@ const html = /* HTML */ `
 
       <nav
         class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
-        data-xt-toggle-tr
+        data-xt-toggle-target
         data-xt-group="cat-0b"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -118,7 +118,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="cat-0"
           >
             Back
@@ -137,7 +137,7 @@ const html = /* HTML */ `
 
       <nav
         class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
-        data-xt-toggle-tr
+        data-xt-toggle-target
         data-xt-group="cat-1"
       >
         <div class="xt-h5  flex items-center justify-between">
@@ -145,7 +145,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonSm()} ${classes.buttonPrimary()}"
-            data-xt-toggle-el
+            data-xt-toggle-element
             data-xt-group="initial"
           >
             Back

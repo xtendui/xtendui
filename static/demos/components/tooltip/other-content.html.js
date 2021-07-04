@@ -2,8 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]' }">
-      <div data-xt-tooltip-el>
+    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]' }">
+      <div data-xt-tooltip-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -11,7 +11,7 @@ const html = /* HTML */ `
           list group
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="${classes.tooltipRadius()} shadow-tooltip text-black xt-links-default bg-white">
             <form class="text-sm">
               <div class="xt-list flex-nowrap max-w-sm">

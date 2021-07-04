@@ -26,8 +26,8 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: '[data-xt-drop-el]',
-    targets: '[data-xt-drop-tr]',
+    elements: '[data-xt-drop-element]',
+    targets: '[data-xt-drop-target]',
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',

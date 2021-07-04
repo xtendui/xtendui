@@ -19,7 +19,7 @@ const html = /* HTML */ `
 
       <div class="container">
         <div class="xt-list -mx-4">
-          <div data-xt-drop-el>
+          <div data-xt-drop-element>
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -27,7 +27,7 @@ const html = /* HTML */ `
               Menu #1
             </a>
 
-            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-tr>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** xt-drop-inner ***">
                 <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div data-xt-drop-el>
+          <div data-xt-drop-element>
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -73,7 +73,7 @@ const html = /* HTML */ `
               Menu #2
             </a>
 
-            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-tr>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** xt-drop-inner ***">
                 <div class="*** xt-design *** bg-gray-700 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">
@@ -106,7 +106,7 @@ const html = /* HTML */ `
             Link #3
           </a>
 
-          <div data-xt-drop-el>
+          <div data-xt-drop-element>
             <a
               href="/"
               class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
@@ -114,7 +114,7 @@ const html = /* HTML */ `
               Menu #4
             </a>
 
-            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-tr>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** xt-drop-inner ***">
                 <div class="*** xt-design *** bg-gray-100 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">

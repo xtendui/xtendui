@@ -3,16 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', duration: 500 }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-drop-el
+          data-xt-drop-element
         >
           list
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-tr>
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="xt-drop-inner">
             <div
               class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
@@ -34,16 +34,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', duration: 500 }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-drop-el
+          data-xt-drop-element
         >
           card
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-tr>
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="xt-drop-inner">
             <div
               class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"

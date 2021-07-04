@@ -25,8 +25,8 @@ const mountToggle = ({ ref }) => {
 
   /***/
   new Xt.Toggle(toggle, {
-    elements: '[data-xt-toggle-el]',
-    targets: '[data-xt-toggle-tr]',
+    elements: '[data-xt-toggle-element]',
+    targets: '[data-xt-toggle-target]',
     durationIn: ({ current, total, el, self }) => {
       if (self.elements.includes(el)) return
       const val = (total - current) * 300

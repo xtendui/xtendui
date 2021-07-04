@@ -194,7 +194,7 @@ class Mousefollow {
 Mousefollow.componentName = 'xt-mousefollow'
 Mousefollow.optionsDefault = {
   // elements
-  targets: '[data-xt-mousefollow-tr]',
+  targets: '[data-xt-mousefollow-target]',
   // mousefollow
   transform: true,
   friction: ({ delta }) => {
