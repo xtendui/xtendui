@@ -23,7 +23,7 @@ const html = /* HTML */ `
                       id="product-image-1"
                       title="Expand image 1"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden">
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                       id="product-image-2"
                       title="Expand image 2"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden">
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -51,7 +51,7 @@ const html = /* HTML */ `
                       id="product-image-3"
                       title="Expand image 3"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden">
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -65,7 +65,7 @@ const html = /* HTML */ `
                       id="product-image-4"
                       title="Expand image 4"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden">
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -79,7 +79,7 @@ const html = /* HTML */ `
                       id="product-image-5"
                       title="Expand image 5"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden">
+                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-el>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
                           class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
@@ -221,10 +221,10 @@ const html = /* HTML */ `
             <div
               class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12"
               id="product-arrow-target"
-              data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}"
+              data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }"
             >
-              <div class="*** stickyflow-filler pointer-events-none absolute md:relative ***"></div>
-              <div class="pb-12 md:py-12 *** md:sticky stickyflow ***">
+              <div class="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
+              <div class="pb-12 md:py-12 *** md:sticky ***" data-xt-stickyflow-el>
                 <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
 
                 <div class="xt-h5 mb-6">€&nbsp;229,00</div>

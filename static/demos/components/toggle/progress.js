@@ -21,7 +21,7 @@ Xt.mount({
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector(':scope > .xt-list')
+  const toggle = ref
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
@@ -31,8 +31,8 @@ const mountToggle = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
+    elements: '[data-xt-toggle-el]',
+    targets: '[data-xt-toggle-tr]',
     auto: {
       time: 4000,
       initial: false,

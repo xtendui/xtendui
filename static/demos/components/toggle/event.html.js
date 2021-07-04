@@ -6,23 +6,23 @@ const html = /* HTML */ `
 
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', on: 'mouseenter', off: false }"
+      data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', on: 'mouseenter', off: false }"
     >
-      <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 0</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 0</button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 1</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 1</button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 2</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 2</button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}">Toggle 3</button>
+      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-el>Toggle 3</button>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
 
-      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
+      <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 3</div>
     </div>
 
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Focus</div>
@@ -30,13 +30,14 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div
         class="xt-list xt-list-3 items-center"
-        data-xt-toggle="{ elements: ':scope > input', targets: ':scope > .xt-toggle', on: 'focus', off: false }"
+        data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', on: 'focus', off: false }"
       >
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
           aria-label="Toggle 0"
           placeholder="Toggle 0"
+          data-xt-toggle-el
         />
 
         <input
@@ -44,6 +45,7 @@ const html = /* HTML */ `
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
           aria-label="Toggle 1"
           placeholder="Toggle 1"
+          data-xt-toggle-el
         />
 
         <input
@@ -58,15 +60,16 @@ const html = /* HTML */ `
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
           aria-label="Toggle 3"
           placeholder="Toggle 3"
+          data-xt-toggle-el
         />
 
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 0</div>
 
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 1</div>
 
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 2</div>
 
-        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
+        <div class="*** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>Target 3</div>
       </div>
     </form>
   </div>

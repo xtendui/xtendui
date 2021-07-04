@@ -46,8 +46,8 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(megamenu, {
-    elements: '.xt-drop-item',
-    targets: '.xt-drop-item > .xt-drop',
+    elements: '[data-xt-drop-el]',
+    targets: '[data-xt-drop-tr]',
     queue: false,
     duration: 1000,
     preventEvent: true,
@@ -198,7 +198,7 @@ const mountLine = ({ ref }) => {
 
   const megamenu = ref.querySelector('.megamenu')
   const btns = ref.querySelectorAll('.button--line')
-  const drops = ref.querySelectorAll('.xt-drop-item')
+  const drops = ref.querySelectorAll('[data-xt-drop-el]')
   const line = ref.querySelector('.megamenu-line')
 
   const dropDelay = 150
@@ -216,7 +216,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'on.xt.drop') {
-      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      el = el.closest('[data-xt-drop-el]').querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
@@ -260,7 +260,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'off.xt.drop') {
-      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      el = el.closest('[data-xt-drop-el]').querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }

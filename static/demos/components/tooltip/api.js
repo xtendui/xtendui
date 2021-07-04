@@ -25,8 +25,8 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-tooltip',
+    elements: '[data-xt-tooltip-el]',
+    targets: '[data-xt-tooltip-tr]',
     closeOutside: false,
   })
   /***/
@@ -106,7 +106,8 @@ const mountEventmethods = ({ ref }) => {
       const elements = self.elements
       const indexEl = elements.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700">
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+          data-xt-tooltip-el>
           Tooltip ${indexEl}
         </button>
       `
@@ -114,7 +115,8 @@ const mountEventmethods = ({ ref }) => {
       const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-        <div class="xt-tooltip p-2" title="Target ${indexTr}">
+        <div class="xt-tooltip p-2" title="Target ${indexTr}"
+          data-xt-tooltip-tr>
           <div class="text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
             Lorem ipsum dolor sit amet
           </div>

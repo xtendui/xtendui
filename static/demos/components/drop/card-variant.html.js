@@ -3,15 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-el
         >
           White
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-tr>
           <div class="xt-card w-80 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
@@ -27,15 +28,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-el
         >
           Primary
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-tr>
           <div class="xt-card w-80 *** ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()} ***">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}

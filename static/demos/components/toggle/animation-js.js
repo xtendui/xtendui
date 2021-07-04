@@ -20,6 +20,7 @@ Xt.mount({
 const mountToggle = ({ ref }) => {
   // vars
 
+  const toggle = ref
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
   const targetTimeOff = 0.5
@@ -28,9 +29,9 @@ const mountToggle = ({ ref }) => {
   // init
 
   /***/
-  let self = new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
+  let self = new Xt.Toggle(toggle, {
+    elements: '[data-xt-toggle-el]',
+    targets: '[data-xt-toggle-tr]',
     duration: 500,
   })
   /***/

@@ -5,9 +5,9 @@ const html = /* HTML */ `
     <div class="relative py-4 px-6 bg-primary-500">
       <div
         class="xt-list items-center"
-        data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave' }"
+        data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', on: 'mouseenter', off: 'mouseleave' }"
       >
-        <div class="xt-drop-item">
+        <div data-xt-drop-el>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -15,7 +15,7 @@ const html = /* HTML */ `
             Drop
           </button>
 
-          <div class="xt-drop xt-drop-static">
+          <div class="xt-drop xt-drop-static" data-xt-drop-tr>
             <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
@@ -31,7 +31,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-drop-item">
+        <div data-xt-drop-el>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -39,7 +39,7 @@ const html = /* HTML */ `
             Drop
           </button>
 
-          <div class="xt-drop xt-drop-static on current">
+          <div class="xt-drop xt-drop-static on current" data-xt-drop-tr>
             <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-drop-item">
+        <div data-xt-drop-el>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -63,7 +63,7 @@ const html = /* HTML */ `
             Drop
           </button>
 
-          <div class="xt-drop xt-drop-static">
+          <div class="xt-drop xt-drop-static" data-xt-drop-tr>
             <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}

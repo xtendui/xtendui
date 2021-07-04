@@ -20,7 +20,7 @@ Xt.mount({
 const mountTooltip = ({ ref }) => {
   // vars
 
-  const tooltip = ref.querySelector(':scope > .xt-list')
+  const tooltip = ref
 
   const targetTimeOn = 0.3
   const targetEaseOn = 'quint.out'
@@ -31,8 +31,8 @@ const mountTooltip = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: ':scope > .xt-tooltip-item',
-    targets: ':scope > .xt-tooltip-item > .xt-tooltip',
+    elements: '[data-xt-tooltip-el]',
+    targets: '[data-xt-tooltip-tr]',
     duration: 300,
     delay: 50,
   })

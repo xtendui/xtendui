@@ -17,12 +17,16 @@ Xt.mount({
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
+  // vars
+
+  const toggle = ref
+
   // init
 
   /***/
-  new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
+  new Xt.Toggle(toggle, {
+    elements: '[data-xt-toggle-el]',
+    targets: '[data-xt-toggle-tr]',
     durationIn: ({ current, total, el, self }) => {
       if (self.elements.includes(el)) return
       const val = (total - current) * 300

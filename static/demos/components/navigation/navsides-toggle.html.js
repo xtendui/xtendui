@@ -4,11 +4,12 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', loop: true, navigation: '[data-xt-nav]' }"
+      data-xt-toggle="{ elements: '[data-xt-toggle-el]', targets: '[data-xt-toggle-tr]', loop: true, navigation: '[data-xt-nav]' }"
     >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        data-xt-toggle-el
       >
         Toggle 0
       </button>
@@ -16,6 +17,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        data-xt-toggle-el
       >
         Toggle 1
       </button>
@@ -23,6 +25,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        data-xt-toggle-el
       >
         Toggle 2
       </button>
@@ -30,6 +33,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        data-xt-toggle-el
       >
         Toggle 3
       </button>
@@ -41,7 +45,10 @@ const html = /* HTML */ `
         aria-label="Previous slide"
         data-xt-mousefollow
       >
-        <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+        <div
+          class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100"
+          data-xt-mousefollow-tr
+        >
           ${classes.iconArrowLeft({
             classes: '*** transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
           })}
@@ -55,20 +62,31 @@ const html = /* HTML */ `
         aria-label="Next slide"
         data-xt-mousefollow
       >
-        <div class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100">
+        <div
+          class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100"
+          data-xt-mousefollow-tr
+        >
           ${classes.iconArrowRight({
             classes: '*** transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
           })}
         </div>
       </button>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 0</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+        Target 0
+      </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 1</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+        Target 1
+      </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 2</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+        Target 2
+      </div>
 
-      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}">Target 3</div>
+      <div class="xt-card *** xt-toggle *** ${classes.cardRadius()} ${classes.cardToggle()}" data-xt-toggle-tr>
+        Target 3
+      </div>
     </div>
   </div>
 `

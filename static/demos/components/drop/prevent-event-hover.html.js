@@ -3,9 +3,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div
-      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave', preventEvent: true }"
+      data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', on: 'mouseenter', off: 'mouseleave', preventEvent: true }"
     >
-      <div class="xt-drop-item">
+      <div data-xt-drop-el>
         <a
           href="#drop-with-link-1"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -13,7 +13,7 @@ const html = /* HTML */ `
           drop
         </a>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-tr>
           <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">

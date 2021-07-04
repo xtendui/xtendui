@@ -22,15 +22,15 @@ Xt.mount({
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector('.demo--slider-exclude-toggle')
+  const toggle = ref
   const slider = ref.querySelector('.xt-slider')
 
   // init
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: '.xt-list > button',
-    targets: '.xt-toggle',
+    elements: '[data-xt-toggle-el]',
+    targets: '[data-xt-toggle-tr]',
     min: 1,
   })
   /***/

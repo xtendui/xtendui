@@ -6,6 +6,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-el
         data-xt-group="group0"
       >
         overlay 0
@@ -14,6 +15,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-el
         data-xt-group="group1"
       >
         overlay 1
@@ -22,12 +24,13 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-el
         data-xt-group="group2"
       >
         overlay 2
       </button>
 
-      <div class="xt-overlay group" data-xt-group="group0">
+      <div class="xt-overlay group" data-xt-overlay-tr data-xt-group="group0">
         <div class="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -62,6 +65,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group0"
                   >
                     overlay 0
@@ -70,6 +74,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group1"
                   >
                     overlay 1
@@ -78,6 +83,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group2"
                   >
                     overlay 2
@@ -89,7 +95,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-group="group1">
+      <div class="xt-overlay group" data-xt-overlay-tr data-xt-group="group1">
         <div class="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -124,6 +130,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group0"
                   >
                     overlay 0
@@ -132,6 +139,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group1"
                   >
                     overlay 1
@@ -140,6 +148,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group2"
                   >
                     overlay 2
@@ -151,7 +160,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-group="group2">
+      <div class="xt-overlay group" data-xt-overlay-tr data-xt-group="group2">
         <div class="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -186,6 +195,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group0"
                   >
                     overlay 0
@@ -194,6 +204,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group1"
                   >
                     overlay 1
@@ -202,6 +213,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    data-xt-overlay-el
                     data-xt-group="group2"
                   >
                     overlay 2

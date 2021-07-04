@@ -19,15 +19,15 @@ Xt.mount({
 const mountTooltip = ({ ref }) => {
   // vars
 
-  const tooltip = ref.querySelector(':scope > * > .xt-list')
+  const tooltip = ref
   const boundary = ref.querySelector(':scope > *')
 
   // init
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: ':scope > .xt-tooltip-item',
-    targets: ':scope > .xt-tooltip-item > .xt-tooltip',
+    elements: '[data-xt-tooltip-el]',
+    targets: '[data-xt-tooltip-tr]',
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',

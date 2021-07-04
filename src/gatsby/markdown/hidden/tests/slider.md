@@ -121,15 +121,6 @@ Test autoheight.
   </demoinline>
 </demo>
 
-Test factor.
-
-Test overflow.
-
-<demo>
-  <demoinline src="demos/components/slider/drag">
-  </demoinline>
-</demo>
-
 ## Other
 
 Test position.

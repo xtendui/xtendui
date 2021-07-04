@@ -4,9 +4,9 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip' }"
+      data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]' }"
     >
-      <div class="xt-tooltip-item">
+      <div data-xt-tooltip-el>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -14,7 +14,7 @@ const html = /* HTML */ `
           asset
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
           <div class="*** xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button
               type="button"
@@ -30,7 +30,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-tooltip-item">
+      <div data-xt-tooltip-el>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           asset and text
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"

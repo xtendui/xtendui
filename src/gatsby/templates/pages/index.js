@@ -63,51 +63,54 @@ export default function Page() {
                     </span>
                   </h1>
                   <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
-                    <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_home-main_social_btn px-3"
                         title="Twitter"
+                        data-xt-tooltip-el
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
                     </div>
-                    <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
+                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_home-main_social_btn px-3"
                         title="Npm"
+                        data-xt-tooltip-el
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'top', duration: 300 }">
+                    <span data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="xt-button gatsby_home-main_social_btn px-3"
                         title="Github"
+                        data-xt-tooltip-el
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),
                         }}></a>
-                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group">
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-tr>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github

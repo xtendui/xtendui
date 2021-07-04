@@ -3,15 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-drop"
+          data-xt-drop-el
         >
           backdrop
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-tr>
           <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
           <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
@@ -31,9 +32,9 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave' }"
+        data-xt-drop="{ elements: '[data-xt-drop-el]', targets: '[data-xt-drop-tr]', on: 'mouseenter', off: 'mouseleave' }"
       >
-        <div class="xt-drop-item">
+        <div data-xt-drop-el>
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-drop"
@@ -41,7 +42,7 @@ const html = /* HTML */ `
             backdrop mouse
           </button>
 
-          <div class="xt-drop p-4">
+          <div class="xt-drop p-4" data-xt-drop-tr>
             <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
             <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
               <nav class="xt-list flex-col">

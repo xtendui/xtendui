@@ -36,7 +36,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-row xt-row-6">
+        <div class="xt-row xt-row-6" data-xt-infinitescroll-items-container>
           <div class="w-6/12 md:w-4/12">
             <a href="https://github.com/minimit/xtendui" class="listing-item block text-black">
               <div class="xt-media-container bg-gray-500 xt-ratio-75">

@@ -20,7 +20,7 @@ Xt.mount({
 const mountOverlay = ({ ref }) => {
   // vars
 
-  const overlay = ref.querySelector(':scope > .xt-list')
+  const overlay = ref
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
@@ -31,8 +31,8 @@ const mountOverlay = ({ ref }) => {
 
   /***/
   let self = new Xt.Overlay(overlay, {
-    elements: ':scope > .xt-button, .xt-list > .xt-button',
-    targets: ':scope > .xt-overlay',
+    elements: '[data-xt-overlay-el]',
+    targets: '[data-xt-overlay-tr]',
     duration: 500,
   })
   /***/

@@ -49,10 +49,10 @@ const html = /* HTML */ `
 
           <div
             class="w-full md:w-6/12 lg:w-5/12"
-            data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}"
+            data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }"
           >
-            <div class="*** stickyflow-filler pointer-events-none absolute md:relative ***"></div>
-            <div class="md:py-12 *** md:sticky stickyflow ***">
+            <div class="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
+            <div class="md:py-12 *** md:sticky ***" data-xt-stickyflow-el>
               <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
 
               <div class="xt-h5 mb-6">€&nbsp;229,00</div>

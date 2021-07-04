@@ -79,11 +79,12 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-tooltip-el
       >
         Tooltip 0
       </button>
 
-      <div class="xt-tooltip p-2" title="Target 0">
+      <div class="xt-tooltip p-2" title="Target 0" data-xt-tooltip-tr>
         <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>
@@ -92,11 +93,12 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-tooltip-el
       >
         Tooltip 1
       </button>
 
-      <div class="xt-tooltip p-2" title="Target 1">
+      <div class="xt-tooltip p-2" title="Target 1" data-xt-tooltip-tr>
         <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>

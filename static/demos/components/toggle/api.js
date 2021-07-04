@@ -21,8 +21,8 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(ref.querySelector('#toggle--eventmethods'), {
-    elements: 'a, button',
-    targets: '.xt-toggle',
+    elements: '[data-xt-toggle-el]',
+    targets: '[data-xt-toggle-tr]',
     min: 1,
   })
   /***/
@@ -76,10 +76,10 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>add</strong>')
       // elements
       const index = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 on:bg-gray-300">Toggle ${index}</button>`
+      const strEl = `<button type="button" class="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500" data-xt-toggle-el>Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
-      const strTr = `<div class="xt-toggle rounded-md text-sm p-6 text-black bg-gray-100">Target ${index}</div>`
+      const strTr = `<div class="xt-toggle rounded-full text-xs py-2.5 px-3.5 font-semibold shadow" data-xt-toggle-tr>Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')

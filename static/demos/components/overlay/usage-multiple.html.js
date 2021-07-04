@@ -4,16 +4,17 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }"
+      data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]' }"
     >
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-el
       >
         overlay 0
       </button>
 
-      <div class="*** xt-overlay ***">
+      <div class="*** xt-overlay ***" data-xt-overlay-tr>
         <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">

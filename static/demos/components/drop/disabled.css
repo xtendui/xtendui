@@ -1,5 +1,5 @@
 .demo--drop-disable, .demo--drop-disable-react {
-  .xt-drop-item.xt-drop-disabled {
+  [data-xt-drop-el].xt-drop-disabled {
     > a, > button {
       display: none;
     }
@@ -26,7 +26,7 @@
       }
     }
     > .xt-card > .xt-list {
-      > .xt-button, .xt-drop-item > .xt-button {
+      > .xt-button, [data-xt-drop-el-nested] > .xt-button {
         @apply px-0;
       }
     }

@@ -3,15 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom' }">
+      <div data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-tooltip-el
         >
           bottom
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
@@ -20,16 +21,17 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom-start' }"
+        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-start' }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-tooltip-el
         >
           bottom start
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
@@ -38,16 +40,17 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom-end' }"
+        data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', position: 'bottom-end' }"
       >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-tooltip-el
         >
           bottom end
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-tr>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>

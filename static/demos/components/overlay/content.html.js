@@ -3,15 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-el
         >
           asset
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-tr>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
@@ -32,15 +33,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-el
         >
           asset and text
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-tr>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
@@ -81,15 +83,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay="{ elements: '[data-xt-overlay-el]', targets: '[data-xt-overlay-tr]' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-el
         >
           text
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-tr>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">

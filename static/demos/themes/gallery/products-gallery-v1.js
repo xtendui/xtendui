@@ -75,7 +75,7 @@ const mountImages = ({ ref }) => {
 
   /***/
   new Xt.Overlay(container, {
-    elements: '.product-image .xt-media-container',
+    elements: '[data-xt-overlay-el]',
     targets: '#overlay--product-images',
   })
   /***/

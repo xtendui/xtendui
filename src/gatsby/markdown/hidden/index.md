@@ -11,10 +11,7 @@ description: "Hidden"
 .target
 .hero
 .listing
-.breadcrumbs
 .googlelocator
-.multilevel
-.stickyflow
 .slider
 
 #### Themes
