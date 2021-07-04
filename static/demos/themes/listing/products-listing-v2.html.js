@@ -7,8 +7,8 @@ const html = /* HTML */ `
         <div class="container">
           <div class="xt-h3 mb-8">Latest Products</div>
 
-          <div class="xt-slides xt-row xt-row-4">
-            <div class="xt-slide w-6/12 md:w-4/12">
+          <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -26,7 +26,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -44,7 +44,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -57,7 +57,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -70,7 +70,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -83,7 +83,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -96,7 +96,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -109,7 +109,7 @@ const html = /* HTML */ `
               </a>
             </div>
 
-            <div class="xt-slide w-6/12 md:w-4/12">
+            <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-slide>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -145,7 +145,7 @@ const html = /* HTML */ `
             })}
           </button>
 
-          <nav class="xt-slider-pagination hidden">
+          <nav class="hidden" data-xt-slider-pagination>
             <button type="button" class="xt-button hidden" data-xt-pag></button>
           </nav>
         </div>

@@ -52,7 +52,7 @@ module.exports = {
         transform: 'none !important',
         justifyContent: 'center !important',
       },
-      '.xt-slider-pagination': {
+      '[data-xt-slider-pagination]': {
         display: 'none !important',
       },
     },

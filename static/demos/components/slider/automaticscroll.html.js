@@ -6,8 +6,8 @@ const html = /* HTML */ `
 
     <div class="xt-slider slider--text my-12">
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-slides xt-row xt-row-10">
-          <div class="xt-slide ${classes.slide()} xt-list xt-list-10 flex-nowrap whitespace-nowrap">
+        <div class="xt-slides xt-row xt-row-10" data-xt-slider-dragger>
+          <div class="xt-slide ${classes.slide()} xt-list xt-list-10 flex-nowrap whitespace-nowrap" data-xt-slider-slide>
             <a href="#test-link-1" class="slide-text" title="item 1">
               <div class="xt-h4">One</div>
             </a>
@@ -51,7 +51,7 @@ const html = /* HTML */ `
 
         <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
-        <nav class="xt-slider-pagination hidden">
+        <nav class="hidden" data-xt-slider-pagination>
           <button type="button" class="xt-button hidden" data-xt-pag></button>
         </nav>
       </div>
@@ -60,8 +60,8 @@ const html = /* HTML */ `
 
       <div class="xt-slider slider--img my-12">
         <div class="p-4 md:p-6 lg:p-8">
-          <div class="xt-slides xt-row xt-row-px">
-            <div class="xt-slide ${classes.slide()} xt-list xt-list-px flex-nowrap">
+          <div class="xt-slides xt-row xt-row-px" data-xt-slider-dragger>
+            <div class="xt-slide ${classes.slide()} xt-list xt-list-px flex-nowrap" data-xt-slider-slide>
               <a href="#test-link-1" class="slide-asset" title="item 0">
                 <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -99,7 +99,7 @@ const html = /* HTML */ `
 
           <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
-          <nav class="xt-slider-pagination hidden">
+          <nav class="hidden" data-xt-slider-pagination>
             <button type="button" class="xt-button hidden" data-xt-pag></button>
           </nav>
         </div>

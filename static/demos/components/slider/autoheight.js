@@ -29,7 +29,7 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    autoHeight: '.xt-slides-autoheight',
+    autoHeight: '[data-xt-slider-autoheight]',
   })
   /***/
 

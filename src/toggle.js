@@ -3200,8 +3200,10 @@ class Toggle {
 
   /**
    * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
    */
-  disable() {
+  disable({ skipEvent = false } = {}) {
     const self = this
     const options = self.options
     if (!self.disabled) {
@@ -3239,7 +3241,9 @@ class Toggle {
         }
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      if (!skipEvent) {
+        self.object.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
     }
   }
 
@@ -3358,7 +3362,7 @@ class Toggle {
   destroy(weak = false) {
     const self = this
     // disable
-    self.disable()
+    self.disable({ skipEvent: true })
     // remove matches
     self.removeMatches()
     // remove events

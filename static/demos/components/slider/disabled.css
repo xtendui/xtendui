@@ -1,6 +1,6 @@
 .demo--slider-disabled, .demo--slider-disabled-react {
   .xt-slider-disabled {
-    .xt-slider-pagination {
+    [data-xt-slider-pagination] {
       display: none;
     }
   }

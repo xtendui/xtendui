@@ -453,7 +453,7 @@ class Slider extends Xt.Toggle {
         if (html.search(regex) !== -1) {
           let replace = ''
           for (const slide of group.targets) {
-            const content = slide.querySelector('.xt-slide-content')
+            const content = slide.querySelector('[data-xt-slider-content]')
             if (content) {
               replace += content.innerHTML
             }
@@ -1232,8 +1232,10 @@ class Slider extends Xt.Toggle {
 
   /**
    * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
    */
-  disable() {
+  disable({ skipEvent = false } = {}) {
     const self = this
     // disable
     if (!self.disabled) {
@@ -1242,7 +1244,7 @@ class Slider extends Xt.Toggle {
       self.destroyIntraction()
     }
     // super
-    super.disable()
+    super.disable({ skipEvent })
   }
 
   //
@@ -1364,9 +1366,9 @@ Slider.optionsDefault = {
   nooverflow: true,
   autoHeight: false,
   keepHeight: false,
-  pagination: '.xt-slider-pagination',
+  pagination: '[data-xt-slider-pagination]',
   drag: {
-    dragger: '.xt-slides',
+    dragger: '[data-xt-slider-dragger]',
     manual: false,
     threshold: 15,
     factor: 1,
@@ -1376,7 +1378,7 @@ Slider.optionsDefault = {
   },
   // element
   elements: '[data-xt-pag]:not(.hidden)',
-  targets: '.xt-slide',
+  targets: '[data-xt-slider-slide]',
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   // quantity
@@ -1391,7 +1393,7 @@ Slider.optionsDefault = {
   jump: false,
   navigation: '[data-xt-nav]',
   keyboard: {
-    selector: '.xt-slides',
+    selector: '[data-xt-slider-dragger]',
   },
   zIndex: {
     targets: {

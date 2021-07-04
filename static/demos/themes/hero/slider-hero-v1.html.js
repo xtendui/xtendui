@@ -3,8 +3,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--slider-hero-v1">
     <div class="xt-slider xt-slider-absolute bg-primary-500">
-      <div class="xt-slides">
-        <div class="xt-slide w-full">
+      <div class="xt-slides" data-xt-slider-dragger>
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -22,7 +22,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -62,7 +62,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -89,7 +89,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -116,7 +116,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -178,7 +178,7 @@ const html = /* HTML */ `
         </div>
       </button>
 
-      <nav class="xt-slider-pagination hidden">
+      <nav class="hidden" data-xt-slider-pagination>
         <button type="button" class="xt-button hidden" data-xt-pag></button>
       </nav>
     </div>

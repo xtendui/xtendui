@@ -3,8 +3,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--slider-usage-absolute">
     <div class="*** xt-slider xt-slider-absolute *** bg-primary-500">
-      <div class="*** xt-slides ***">
-        <div class="*** xt-slide *** w-full">
+      <div class="*** xt-slides ***" data-xt-slider-dragger>
+        <div class="*** xt-slide *** w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="*** xt-slide *** w-full">
+        <div class="*** xt-slide *** w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="*** xt-slide *** w-full">
+        <div class="*** xt-slide *** w-full" data-xt-slider-slide>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -56,7 +56,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="*** xt-slide *** w-full">
+      <div class="*** xt-slide *** w-full" data-xt-slider-slide>
         <div class="hero relative overflow-hidden bg-black">
           <div class="hero-inner">
             <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -74,7 +74,7 @@ const html = /* HTML */ `
       </div>
 
       <nav
-        class="*** xt-slider-pagination *** w-full xt-list xt-list-3 pt-4 items-center justify-center absolute z-slide bottom-6"
+        class="w-full xt-list xt-list-3 pt-4 items-center justify-center absolute z-slide bottom-6" data-xt-slider-pagination
       >
         <button
           type="button"
