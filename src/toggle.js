@@ -3205,14 +3205,10 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // fix appendTo close or self.targets are lost
-      if (options.appendTo) {
-        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
-          self.eventOff(el)
-        }
+      // off all active elements especially for appendTo and classBody
+      for (const el of self.elements.filter(x => self.hasCurrent(x))) {
+        self.eventOff(el, true)
       }
-      // fix classBody reset
-      self.specialClassBody('Out', 'targets')
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // disable

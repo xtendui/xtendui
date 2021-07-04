@@ -8,7 +8,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable.
 
-Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable and open.
+Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
 
 Test copy code from demos and clicking copy should be without highlight.
 
