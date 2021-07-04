@@ -54,7 +54,7 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
-| Option                    | `scrollers:Query`                          | `'.xt-overlay:not(.xt-overlay-disabled)'`        | Query for scroll nodes besides document (ordered parent > child)             |
+| Option                    | `scrollers:Query`                          | `'.xt-overlay:not([data-xt-overlay-disabled])'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |
 | Option                    | `events:String|false`                          | `'scroll off.xt.overlay'`        | Events of `self.scrollers` that triggers activation              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |

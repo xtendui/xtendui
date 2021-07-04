@@ -1,8 +1,8 @@
 .demo--overlay-disable, .demo--overlay-disable-react {
-  a.xt-overlay-disabled, button.xt-overlay-disabled {
+  a[data-xt-overlay-disabled], button[data-xt-overlay-disabled] {
     display: none;
   }
-  .xt-overlay.xt-overlay-disabled {
+  .xt-overlay[data-xt-overlay-disabled] {
     display: flex !important;
     position: static;
     z-index: initial;

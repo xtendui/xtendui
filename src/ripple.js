@@ -67,7 +67,7 @@ class Ripple {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   //
@@ -175,7 +175,7 @@ class Ripple {
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

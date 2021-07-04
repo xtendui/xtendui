@@ -73,7 +73,7 @@ class Stickyflow {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -159,7 +159,7 @@ class Stickyflow {
     removeEventListener('scroll', changeHandler)
     removeEventListener('resize', changeHandler)
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

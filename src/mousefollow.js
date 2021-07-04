@@ -73,7 +73,7 @@ class Mousefollow {
       self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   //
@@ -177,7 +177,7 @@ class Mousefollow {
     const leaveHandler = Xt.dataStorage.get(self.object, `mouseleave/${self.ns}`)
     self.object.removeEventListener('mouseleave', leaveHandler)
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

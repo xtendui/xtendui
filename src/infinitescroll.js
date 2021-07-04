@@ -97,7 +97,7 @@ class Infinitescroll {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -447,7 +447,7 @@ class Infinitescroll {
       trigger.removeEventListener(options.events.trigger, triggerHandler)
     }
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

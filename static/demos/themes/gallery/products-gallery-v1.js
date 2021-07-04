@@ -30,7 +30,7 @@ const mountScrollto = () => {
 
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
-    scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
+    scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
     duration: ({ self }) => {
       const overlay = self.target.closest('.xt-overlay')
       if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0

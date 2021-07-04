@@ -72,7 +72,7 @@ class Textareaautosize {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -130,7 +130,7 @@ class Textareaautosize {
       self.form.removeEventListener('reset', changeHandler)
     }
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // keep the same level of raf for custom listener

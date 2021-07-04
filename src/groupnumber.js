@@ -79,7 +79,7 @@ class Groupnumber {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -175,7 +175,7 @@ class Groupnumber {
       input.removeEventListener('change', inputHandler)
     }
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

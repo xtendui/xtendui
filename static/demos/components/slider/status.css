@@ -1,5 +1,5 @@
 .demo--slider-status, .demo--slider-status-react {
-  .xt-slider-disabled {
+  [data-xt-slider-disabled] {
     .slider-status {
       display: none;
     }

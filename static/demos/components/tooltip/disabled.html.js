@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--tooltip-disable">
     <div
-      data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]', matches: { '(min-width: 768px)': { disabled: true } } }"
+      data-xt-tooltip="{ elements: '[data-xt-tooltip-el]', targets: '[data-xt-tooltip-tr]' }"
     >
       Lorem ipsum
 
@@ -16,7 +16,7 @@ const html = /* HTML */ `
 
             <div
               class="inline-block"
-              data-xt-tooltip="{ elements: '[data-xt-tooltip-el-nested]', targets: '[data-xt-tooltip-tr-nested]' }"
+              data-xt-tooltip="{ elements: '[data-xt-tooltip-el-nested]', targets: '[data-xt-tooltip-tr-nested]', matches: { '(min-width: 768px)': { disabled: true } } }"
             >
               <span data-xt-tooltip-el-nested>
                 <a href="#">dolor</a>

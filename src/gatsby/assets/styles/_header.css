@@ -25,7 +25,7 @@
 }
 
 #gatsby_menu--overlay {
-  &.xt-overlay-disabled {
+  &[data-xt-overlay-disabled] {
     display: flex !important;
     position: static;
     z-index: initial;
@@ -67,7 +67,7 @@
     .xt-card {
       @apply xt-min-h-screen;
     }
-    .xt-overlay-disabled& {
+    [data-xt-overlay-disabled]& {
       display: none !important;
     }
   }

@@ -55,7 +55,7 @@ You can set initial activation by adding `on` to the **elements** or **targets**
 
 </div>
 
-Additionally on component initialization the class `.xt-slider-init` gets added to the **object**.
+Additionally on component initialization the attribute `[data-xt-slider-init]` gets added to the **object**.
 
 ## Quantity
 

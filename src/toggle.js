@@ -134,7 +134,7 @@ class Toggle {
     // initialized class
     if (!options.classSkip) {
       // fix before initScope or slider absolute has multiple active and bugs initial calculations
-      self.object.classList.add(`${self.componentName}-init`)
+      self.object.setAttribute(`data-${self.componentName}-init`, '')
     }
   }
 
@@ -3175,16 +3175,16 @@ class Toggle {
       // enable
       self.disabled = false
       if (!options.classSkip) {
-        self.object.classList.remove(`${self.componentName}-disabled`)
+        self.object.removeAttribute(`data-${self.componentName}-disabled`)
       }
       if (options.classSkip !== true && !options.classSkip['elements']) {
         for (const el of self.elements) {
-          el.classList.remove(`${self.componentName}-disabled`)
+          el.removeAttribute(`data-${self.componentName}-disabled`)
         }
       }
       if (options.classSkip !== true && !options.classSkip['targets']) {
         for (const tr of self.targets) {
-          tr.classList.remove(`${self.componentName}-disabled`)
+          tr.removeAttribute(`data-${self.componentName}-disabled`)
         }
       }
       // aria
@@ -3208,24 +3208,26 @@ class Toggle {
     const options = self.options
     if (!self.disabled) {
       // off all active elements especially for appendTo and classBody
-      for (const el of self.elements.filter(x => self.hasCurrent(x))) {
-        self.eventOff(el, true)
+      if (options.disableDeactivate) {
+        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
+          self.eventOff(el, true)
+        }
       }
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.object, `${self.ns}AutoTimeout`))
       // disable
       self.disabled = true
       if (!options.classSkip) {
-        self.object.classList.add(`${self.componentName}-disabled`)
+        self.object.setAttribute(`data-${self.componentName}-disabled`, '')
       }
       if (options.classSkip !== true && !options.classSkip['elements']) {
         for (const el of self.elements) {
-          el.classList.add(`${self.componentName}-disabled`)
+          el.setAttribute(`data-${self.componentName}-disabled`, '')
         }
       }
       if (options.classSkip !== true && !options.classSkip['targets']) {
         for (const tr of self.targets) {
-          tr.classList.add(`${self.componentName}-disabled`)
+          tr.setAttribute(`data-${self.componentName}-disabled`, '')
         }
       }
       // aria
@@ -3372,7 +3374,7 @@ class Toggle {
     // weak
     if (!weak) {
       // initialized class
-      self.object.classList.remove(`${self.componentName}-init`)
+      self.object.removeAttribute(`data-${self.componentName}-init`)
       // set self
       Xt.remove(self.componentName, self.object)
       // listener dispatch
@@ -3445,6 +3447,7 @@ Toggle.optionsDefaultSuper = {
   // other
   matches: false,
   disabled: false,
+  disableDeactivate: false,
   loop: false,
   jump: false,
   navigation: false,

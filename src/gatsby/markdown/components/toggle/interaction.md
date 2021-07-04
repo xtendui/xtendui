@@ -104,7 +104,7 @@ You can set initial activation by adding `on` to the **elements** or **targets**
   </demoinline>
 </demo>
 
-Additionally on component initialization the class `.xt-toggle-init` gets added to the **object**.
+Additionally on component initialization the attribute `[data-xt-toggle-init]` gets added to the **object**.
 
 ## Quantity
 

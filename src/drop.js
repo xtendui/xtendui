@@ -152,6 +152,7 @@ Drop.optionsDefault = {
     targetsInner: true,
   },
   // other
+  disableDeactivate: true,
   position: 'bottom-start',
   positionInner: false,
   strategy: 'absolute',

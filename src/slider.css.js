@@ -38,7 +38,7 @@ module.exports = {
         },
       },
       // fix page load height without .on slides
-      '&:not(.xt-slider-init)': {
+      '&:not([data-xt-slider-init])': {
         '.xt-slide': {
           '&:first-child': {
             display: 'block',

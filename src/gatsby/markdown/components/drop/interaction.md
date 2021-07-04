@@ -84,7 +84,7 @@ You can [style and animate](/components/drop/animation#animation) **class names*
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
-Additionally on component initialization the class `.xt-drop-init` gets added to the **object**.
+Additionally on component initialization the attribute `[data-xt-drop-init]` gets added to the **object**.
 
 ## Quantity
 

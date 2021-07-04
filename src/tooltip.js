@@ -157,6 +157,7 @@ Tooltip.optionsDefault = {
     targetsInner: true,
   },
   // other
+  disableDeactivate: true,
   position: 'top',
   positionInner: false,
   strategy: 'absolute',

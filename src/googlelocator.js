@@ -184,7 +184,7 @@ class Googlelocator {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -585,7 +585,7 @@ class Googlelocator {
       remove.remove()
     }
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch

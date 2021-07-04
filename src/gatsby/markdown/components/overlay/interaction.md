@@ -84,7 +84,7 @@ You can [style and animate](/components/overlay/animation#animation) **class nam
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
-Additionally on component initialization the class `.xt-overlay-init` gets added to the **object**.
+Additionally on component initialization the attribute `[data-xt-overlay-init]` gets added to the **object**.
 
 ## Quantity
 

@@ -6,7 +6,7 @@
 
 module.exports = {
   component: {
-    '.xt-groupnumber-init': {
+    '[data-xt-groupnumber-init]': {
       'input[type="number"]': {
         '-moz-appearance': 'textfield',
         '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {

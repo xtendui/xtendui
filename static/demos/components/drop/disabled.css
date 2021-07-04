@@ -1,10 +1,10 @@
 .demo--drop-disable, .demo--drop-disable-react {
-  [data-xt-drop-el].xt-drop-disabled {
+  [data-xt-drop-el][data-xt-drop-disabled] {
     > a, > button {
       display: none;
     }
   }
-  .xt-drop.xt-drop-disabled {
+  .xt-drop[data-xt-drop-disabled] {
     display: inline-block !important;
     position: relative;
     top: auto;

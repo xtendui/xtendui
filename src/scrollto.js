@@ -104,7 +104,7 @@ class Scrollto {
       self.initial = false
     })
     // initialized class
-    self.object.classList.add(`${self.componentName}-init`)
+    self.object.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -416,7 +416,7 @@ class Scrollto {
       }
     }
     // initialized class
-    self.object.classList.remove(`${self.componentName}-init`)
+    self.object.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove(self.componentName, self.object)
     // listener dispatch
@@ -434,7 +434,7 @@ Scrollto.componentName = 'xt-scrollto'
 Scrollto.optionsDefault = {
   // elements
   anchors: '[href*="{hash}"]',
-  scrollers: '.xt-overlay:not(.xt-overlay-disabled)',
+  scrollers: '.xt-overlay:not([data-xt-overlay-disabled])',
   // class
   class: 'on',
   // event

@@ -1390,6 +1390,7 @@ Slider.optionsDefault = {
   // timing
   queue: false,
   // other
+  disableDeactivate: true,
   jump: false,
   navigation: '[data-xt-nav]',
   keyboard: {
