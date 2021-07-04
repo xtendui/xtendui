@@ -2417,22 +2417,22 @@ class Toggle {
     const options = self.options
     // logic
     if (actionCurrent === 'In') {
+      // focusLimit
+      if (options.focusLimit) {
+        const els = self.targets.length ? self.targets : self.elements
+        let nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
+        if (!nsFocusTrap) {
+          nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
+          Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
+          nsFocusTrap.activate()
+          Xt.focusTrapArr.push(nsFocusTrap)
+        } else {
+          nsFocusTrap.unpause()
+          Xt.focusTrapArr.push(nsFocusTrap)
+        }
+      }
       // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
-        // focusLimit
-        if (options.focusLimit) {
-          const els = self.targets.length ? self.targets : self.elements
-          let nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
-          if (!nsFocusTrap) {
-            nsFocusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
-            Xt.dataStorage.set(self.object, 'xtFocusTrap', nsFocusTrap)
-            nsFocusTrap.activate()
-            Xt.focusTrapArr.push(nsFocusTrap)
-          } else {
-            nsFocusTrap.unpause()
-            Xt.focusTrapArr.push(nsFocusTrap)
-          }
-        }
         // remove class initial
         if (self.initial) {
           for (const type in obj) {
@@ -2451,20 +2451,17 @@ class Toggle {
         self.inverse = null
       })
     } else if (actionCurrent === 'Out') {
-      // keep the same level of raf for custom listener
-      requestAnimationFrame(() => {
-        // focusLimit
-        if (options.focusLimit) {
-          const nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
-          if (nsFocusTrap) {
-            nsFocusTrap.pause()
-            Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
-            if (Xt.focusTrapArr.length) {
-              Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
-            }
+      // focusLimit
+      if (options.focusLimit) {
+        const nsFocusTrap = Xt.dataStorage.get(self.object, 'xtFocusTrap')
+        if (nsFocusTrap) {
+          nsFocusTrap.pause()
+          Xt.focusTrapArr = Xt.focusTrapArr.filter(x => x !== nsFocusTrap)
+          if (Xt.focusTrapArr.length) {
+            Xt.focusTrapArr[Xt.focusTrapArr.length - 1].unpause()
           }
         }
-      })
+      }
     }
   }
 
