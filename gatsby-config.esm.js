@@ -8,6 +8,7 @@ require('dotenv').config()
 
 module.exports = {
   flags: {
+    DEV_SSR: true,
     FAST_REFRESH: true,
   },
   siteMetadata: {
