@@ -12,7 +12,7 @@ const html = /* HTML */ `
           asset
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
@@ -33,7 +33,7 @@ const html = /* HTML */ `
           asset and text
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
@@ -61,7 +61,7 @@ const html = /* HTML */ `
           text
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="*** ${classes.cardMd()} rounded-t-md ${classes.cardDefault()} ***">
               <div class="xt-h4">Lorem ipsum</div>

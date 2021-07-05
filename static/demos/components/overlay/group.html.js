@@ -12,7 +12,7 @@ const html = /* HTML */ `
           group
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
@@ -58,7 +58,7 @@ const html = /* HTML */ `
           group complex
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">

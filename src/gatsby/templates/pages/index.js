@@ -74,7 +74,7 @@ export default function Page() {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
@@ -92,7 +92,7 @@ export default function Page() {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
@@ -110,7 +110,7 @@ export default function Page() {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github

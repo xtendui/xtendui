@@ -9,14 +9,14 @@ const html = /* HTML */ `
 
       <div class="relative w-full">
         <div
-          class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-toggle-target
         >
           Target 0
         </div>
 
         <div
-          class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-toggle-target
         >
           Target 1

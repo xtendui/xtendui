@@ -12,7 +12,7 @@ const html = /* HTML */ `
           group
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-screen max-w-2xl ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="*** md:xt-card-group ***">
               <div class="${classes.cardMd()} *** md:w-7/12 ***">
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           group complex
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-screen max-w-2xl ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="*** md:xt-card-group ***">
               <div class="${classes.cardMd()} *** md:w-7/12 *** bg-gray-200 md:rounded-tl-md">

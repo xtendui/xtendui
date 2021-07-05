@@ -64,7 +64,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-overlay off:hidden out:pointer-events-none" id="overlay--nested">
+    <div class="xt-overlay" id="overlay--nested">
       <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">

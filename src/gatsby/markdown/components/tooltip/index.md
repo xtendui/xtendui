@@ -18,18 +18,6 @@ Initialize automatically **within markup** with `[data-xt-tooltip="{ <options> }
 
 Initialize manually **within javascript** with `new Xt.Tooltip(document.querySelector('.my-object'), {/* options */})`.
 
-## Tooltip
-
-The class `.xt-tooltip` hides the element **with `display: none`** when **not activated by the component**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|               | Syntax                          | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.xt-tooltip`                     | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
-
-</div>
-
 ## Usage Self
 
 Use this code to create a **tooltip** in **self mode**.

@@ -10,6 +10,9 @@ description: "Use overlay when you need to display any content over the main pag
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [preset customization](/components/preset#customization). Check [xtendui/src/overlay.css.js](https://github.com/minimit/xtendui/blob/beta/src/overlay.css.js) for default styles.
 
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/overlay'`.
@@ -17,18 +20,6 @@ Import the **javascript** file with `import 'xtendui/src/overlay'`.
 Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }"]`.
 
 Initialize manually **within javascript** with `new Xt.Overlay(document.querySelector('.my-object'), {/* options */})`.
-
-## Overlay
-
-The class `.xt-overlay` hides the element **with `display: none`** when **not activated by the component**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|               | Syntax                          | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Component                  | `.xt-overlay`                     | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
-
-</div>
 
 ## Usage Self
 

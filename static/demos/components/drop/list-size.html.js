@@ -12,7 +12,7 @@ const html = /* HTML */ `
           small
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card *** w-64 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button *** ${classes.buttonSmDrop()} *** ${classes.buttonDefaultDrop()}">
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           medium
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card *** w-80 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button *** ${classes.buttonMdDrop()} *** ${classes.buttonDefaultDrop()}">
@@ -64,7 +64,7 @@ const html = /* HTML */ `
           large
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card *** w-96 py-3.5 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button *** ${classes.buttonLgDrop()} *** ${classes.buttonDefaultDrop()}">

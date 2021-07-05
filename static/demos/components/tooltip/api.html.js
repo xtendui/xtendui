@@ -84,7 +84,7 @@ const html = /* HTML */ `
         Tooltip 0
       </button>
 
-      <div class="xt-tooltip off:hidden out:pointer-events-none p-2" title="Target 0" data-xt-tooltip-target>
+      <div class="xt-tooltip p-2" title="Target 0" data-xt-tooltip-target>
         <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>
@@ -98,7 +98,7 @@ const html = /* HTML */ `
         Tooltip 1
       </button>
 
-      <div class="xt-tooltip off:hidden out:pointer-events-none p-2" title="Target 1" data-xt-tooltip-target>
+      <div class="xt-tooltip p-2" title="Target 1" data-xt-tooltip-target>
         <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
           Lorem ipsum dolor sit amet
         </div>

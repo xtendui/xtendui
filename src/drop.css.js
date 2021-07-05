@@ -20,6 +20,12 @@ module.exports = {
     '.xt-drop': {
       position: 'absolute',
       zIndex: theme('zIndex.drop'),
+      '&:not(.on):not(.in):not(.out)': {
+        display: 'none',
+      },
+      '&.out': {
+        pointerEvents: 'none',
+      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',

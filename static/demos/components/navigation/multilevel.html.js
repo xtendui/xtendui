@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--multilevel">
     <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
       <nav
-        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="initial"
       >
@@ -40,7 +40,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-0"
       >
@@ -83,7 +83,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-0a"
       >
@@ -110,7 +110,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-0b"
       >
@@ -137,7 +137,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-1"
       >

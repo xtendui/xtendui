@@ -231,12 +231,12 @@ export const populateDemo = container => {
   <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
     ${classes.iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group">
+  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group hidden">
+  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Hide Code
     </div>
@@ -249,7 +249,7 @@ export const populateDemo = container => {
   <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen" data-xt-tooltip-element>
     ${classes.iconMaximize()}
   </button>
-  <div class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group"
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
   data-xt-tooltip-target>
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Fullscreen
@@ -263,7 +263,7 @@ export const populateDemo = container => {
   <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
-  <div class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group"
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
   data-xt-tooltip-target>
     <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Iframe
@@ -377,12 +377,12 @@ export const populateItem = item => {
       <button type="button" class="xt-button button--clipboard" aria-label="Copy to Clipboard">
         ${classes.iconCopy()}
       </button>
-      <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group">
+      <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
         <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Copy to Clipboard
         </div>
       </div>
-      <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group hidden">
+      <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
         <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
           Copied!
         </div>
@@ -892,7 +892,7 @@ export const makeDocument = () => {
         if (!activeTooltip) {
           activeText.append(
             Xt.createElement(`
-<div class="xt-tooltip off:hidden out:pointer-events-none px-5 group" data-xt-tooltip-target>
+<div class="xt-tooltip px-5 group" data-xt-tooltip-target>
   <div class="relative py-2 ${classes.tooltipRadius()} shadow-tooltip bg-primary-600 transform transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
     <nav class="xt-list flex-col">
     </nav>

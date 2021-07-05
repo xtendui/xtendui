@@ -10,7 +10,7 @@ const html = /* HTML */ `
       Swap click
     </button>
 
-    <div class="xt-tooltip off:hidden out:pointer-events-none p-2 group" id="tooltip--swap-click">
+    <div class="xt-tooltip p-2 group" id="tooltip--swap-click">
       <div
         class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >
@@ -18,7 +18,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-tooltip off:hidden out:pointer-events-none p-2 group *** hidden ***" id="tooltip--swap-click-swap">
+    <div class="xt-tooltip p-2 group *** hidden ***" id="tooltip--swap-click-swap">
       <div
         class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
       >

@@ -34,6 +34,18 @@ module.exports = {
       position: 'relative',
       zIndex: theme('zIndex.slide'),
     },
+    '.xt-slide-absolute': {
+      position: 'relative',
+      '&:not(.on):not(.in):not(.out):not(.display)': {
+        display: 'none',
+      },
+      '&:not(.on)': {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+      },
+    },
     '.xt-slider-nooverflow': {
       '.xt-slides': {
         transform: 'none !important',

@@ -12,7 +12,7 @@ const html = /* HTML */ `
             backdrop
           </button>
 
-          <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
             <div
               class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
@@ -33,7 +33,7 @@ const html = /* HTML */ `
           backdrop click
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet

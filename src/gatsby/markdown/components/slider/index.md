@@ -18,6 +18,8 @@ Initialize manually **within javascript** with `new Xt.Slider(document.querySele
 
 ## Usage
 
+You can have sliders on two different modes: `'relative'` or `'absolute'`.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -25,12 +27,6 @@ Initialize manually **within javascript** with `new Xt.Slider(document.querySele
 | Option                    | `mode:String`                          | `'relative'`        | Slider mode `'relative'` or `'absolute'`           |
 
 </div>
-
-[[noteDefault]]
-| Sliders needs gsap animation on `'dragposition.xt.slider'` to **sync the current value of `self.detail.dragPosition` with the internal value of `self.detail.dragPosition`**.
-
-[[notePrimary]]
-| `[data-xt-slider-element].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
 
 #### Relative
 
@@ -43,9 +39,15 @@ Use this code to create a **slider relative**.
 
 #### Absolute
 
-Use `absolute top-0 left-0 on:relative` to position the node in **absolute mode** when not activated.
+Use `.xt-slide-absolute` to position the node in **absolute mode** when not activated.
 
-This makes it possible to have advanced positioning animations on the activation of the slides.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-slide-absolute`                     | `xt-slide-absolute`                | Slide in absolute mode            |
+
+</div>
 
 In **absolute mode** all options of [slider position](/components/slider/position) are not taken in consideration because not applicable.
 

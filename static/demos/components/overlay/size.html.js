@@ -12,7 +12,7 @@ const html = /* HTML */ `
           small max-w-xl
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-xl ***">
             <div class="xt-overlay-inner">
@@ -59,7 +59,7 @@ const html = /* HTML */ `
           medium max-w-3xl
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-3xl ***">
             <div class="xt-overlay-inner">
@@ -106,7 +106,7 @@ const html = /* HTML */ `
           large max-w-5xl
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-5xl ***">
             <div class="xt-overlay-inner">
@@ -153,7 +153,7 @@ const html = /* HTML */ `
           large full
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container">
             <div class="xt-overlay-inner">

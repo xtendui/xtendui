@@ -25,7 +25,7 @@ Xt.mount({
     const closeUid = Xt.getuniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.createElement(`
-<div id="tooltip--close-${closeUid}" class="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group">
+<div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
   <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
     Close Fullscreen
   </div>

@@ -41,7 +41,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
@@ -59,7 +59,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
@@ -77,7 +77,7 @@ export default function Header({ page }) {
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),
                         }}></a>
-                      <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                      <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
                           className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
@@ -113,7 +113,7 @@ export default function Header({ page }) {
           </div>
         </header>
 
-        <div className="xt-overlay off:hidden out:pointer-events-none text-white xt-links-inverse group on" id="gatsby_menu--overlay">
+        <div className="xt-overlay text-white xt-links-inverse group on" id="gatsby_menu--overlay">
           <div className="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
             <div className="xt-overlay-inner">
@@ -133,7 +133,7 @@ export default function Header({ page }) {
                             className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                             Html
                           </button>
-                          <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                             <div
                               className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to Html
@@ -148,7 +148,7 @@ export default function Header({ page }) {
                             className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                             React
                           </button>
-                          <div className="xt-tooltip off:hidden out:pointer-events-none xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
+                          <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                             <div
                               className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                               Switch to React

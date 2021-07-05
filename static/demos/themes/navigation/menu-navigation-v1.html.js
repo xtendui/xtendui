@@ -27,7 +27,7 @@ const html = /* HTML */ `
               Menu #1
             </a>
 
-            <div class="*** xt-drop off:hidden out:pointer-events-none *** xt-drop-static" data-xt-drop-target>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** relative ***" data-xt-drop-inner>
                 <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">
@@ -73,7 +73,7 @@ const html = /* HTML */ `
               Menu #2
             </a>
 
-            <div class="*** xt-drop off:hidden out:pointer-events-none *** xt-drop-static" data-xt-drop-target>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** relative ***" data-xt-drop-inner>
                 <div class="*** xt-design *** bg-gray-700 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">
@@ -114,7 +114,7 @@ const html = /* HTML */ `
               Menu #4
             </a>
 
-            <div class="*** xt-drop off:hidden out:pointer-events-none *** xt-drop-static" data-xt-drop-target>
+            <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
               <div class="*** relative ***" data-xt-drop-inner>
                 <div class="*** xt-design *** bg-gray-100 border-b-4 border-gray-400"></div>
                 <div class="*** xt-drop-content ***">

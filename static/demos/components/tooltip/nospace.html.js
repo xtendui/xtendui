@@ -12,7 +12,7 @@ const html = /* HTML */ `
           bottom
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none off:hidden out:pointer-events-none" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
@@ -29,7 +29,7 @@ const html = /* HTML */ `
           bottom start
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none off:hidden out:pointer-events-none" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
           right end<br />...
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none off:hidden out:pointer-events-none" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>

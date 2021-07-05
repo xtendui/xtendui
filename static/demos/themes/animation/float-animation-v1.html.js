@@ -57,7 +57,7 @@ const html = /* HTML */ `
           list
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4 group" data-xt-drop-target>
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="relative">
             <div class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
             <div class="xt-card w-64 py-3.5 ${animItem()}">
@@ -87,7 +87,7 @@ const html = /* HTML */ `
           card
         </button>
 
-        <div class="xt-drop off:hidden out:pointer-events-none p-4 group" data-xt-drop-target>
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="relative">
             <div class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white ${animDesign()}"></div>
             <div class="xt-card w-64 ${animItem()}">
@@ -121,7 +121,7 @@ const html = /* HTML */ `
             tooltip
           </button>
 
-          <div class="xt-tooltip off:hidden out:pointer-events-none p-2 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
             <div class="relative">
               <div class="*** xt-design *** ${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"></div>
               <div class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse ${animItem()}">
@@ -139,7 +139,7 @@ const html = /* HTML */ `
             list group
           </button>
 
-          <div class="xt-tooltip off:hidden out:pointer-events-none p-2 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
             <div class="relative">
               <div class="*** xt-design *** ${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"></div>
               <div class="font-semibold text-black xt-links-default ${animItem()}">
@@ -182,7 +182,7 @@ const html = /* HTML */ `
           screen full
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none group" data-xt-overlay-target>
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -214,7 +214,7 @@ const html = /* HTML */ `
           Menu
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none group" data-xt-overlay-target>
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
@@ -280,7 +280,7 @@ const html = /* HTML */ `
           contact
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none group" data-xt-overlay-target>
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -414,7 +414,7 @@ const html = /* HTML */ `
           newsletter
         </button>
 
-        <div class="xt-overlay off:hidden out:pointer-events-none group" data-xt-overlay-target>
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">

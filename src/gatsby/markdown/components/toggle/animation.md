@@ -6,8 +6,6 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [toggle's themes](/themes/toggl) for **advanced animations**.
-
 ## Display
 
 To show and hide the component we use **custom tailwind variants** attached to classes used by the component.
@@ -16,9 +14,7 @@ Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node 
 
 Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
 
-Use `absolute top-0 left-0 on:relative` to position the node in absolute mode when **not activated**.
-
-You can use the class `.display` to enable manually the display mode, it behaves like the class `.on` but it doesn't interfere with the component.
+Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
 ## Animation
 
@@ -37,6 +33,8 @@ For **inverse animation** you can use also **tailwind variants** `done:`, `group
   <demoinline src="demos/components/toggle/animation-inverse">
   </demoinline>
 </demo>
+
+Check out [toggle's themes](/themes/toggl) for **advanced animations**.
 
 ## Duration and Delay
 

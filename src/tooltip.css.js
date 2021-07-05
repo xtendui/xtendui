@@ -22,6 +22,12 @@ module.exports = {
       position: 'absolute',
       zIndex: theme('zIndex.tooltip'),
       margin: '0 !important',
+      '&:not(.on):not(.in):not(.out)': {
+        display: 'none',
+      },
+      '&.out': {
+        pointerEvents: 'none',
+      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',

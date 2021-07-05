@@ -11,7 +11,7 @@ const html = /* HTML */ `
           asset
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="*** xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button
               type="button"
@@ -35,7 +35,7 @@ const html = /* HTML */ `
           asset and text
         </button>
 
-        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
