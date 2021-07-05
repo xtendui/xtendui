@@ -32,6 +32,8 @@ Initialize manually **within javascript** with `new Xt.Slider(document.querySele
 [[notePrimary]]
 | `[data-xt-slider-element].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
 
+#### Relative
+
 Use this code to create a **slider relative**.
 
 <demo>
@@ -39,17 +41,9 @@ Use this code to create a **slider relative**.
   </demoinline>
 </demo>
 
-## Mode
+#### Absolute
 
-You can have a slider with **absolute mode**, so that each slide **not currently activated** is positioned with `position: absolute`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `mode:String`                          | `'relative'`        | Positioning mode `'relative'` or `'absolute'`           |
-
-</div>
+Use `absolute top-0 left-0 on:relative` to position the node in **absolute mode** when not activated.
 
 This makes it possible to have advanced positioning animations on the activation of the slides.
 

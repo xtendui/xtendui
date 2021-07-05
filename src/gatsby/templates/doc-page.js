@@ -95,7 +95,7 @@ class Template extends React.Component {
                                   {adiacent.frontmatter.demos.map((demo, i) => {
                                     return (
                                       <div
-                                        className="gatsby_demo_item xt-toggle"
+                                        className="gatsby_demo_item"
                                         data-iframe-fullscreen={`demos/${demo}`}
                                         key={i}></div>
                                     )

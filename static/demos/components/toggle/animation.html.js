@@ -20,14 +20,14 @@ const html = /* HTML */ `
       </button>
 
       <div
-        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         id="toggle--animation-0"
       >
         Target 0
       </div>
 
       <div
-        class="*** xt-toggle *** ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         id="toggle--animation-1"
       >
         Target 1

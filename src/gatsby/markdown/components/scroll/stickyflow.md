@@ -27,7 +27,7 @@ Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
 | This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/stickyflow">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/stickyflow">
   </div>
 </demo>
 

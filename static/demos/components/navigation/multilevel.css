@@ -1,5 +1,5 @@
 .demo--multilevel, .demo--multilevel-react {
-  .xt-toggle {
+  [data-xt-toggle-target] {
     /* initial */
     @apply transition opacity-0;
     &.dir-before {

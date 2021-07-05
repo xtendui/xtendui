@@ -6,10 +6,6 @@ title: "Toggle"
 description: "Create advanced interactions with ease, has a comprehensive javascript api."
 ---
 
-## Styles
-
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.toggle` see [preset customization](/components/preset#customization). Check [xtendui/src/toggle.css.js](https://github.com/minimit/xtendui/blob/beta/src/toggle.css.js) for default styles.
-
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/toggle'`.
@@ -17,30 +13,6 @@ Import the **javascript** file with `import 'xtendui/src/toggle'`.
 Initialize automatically **within markup** with `[data-xt-toggle="{ <options> }"]`.
 
 Initialize manually **within javascript** with `new Xt.Toggle(document.querySelector('.my-object'), {/* options */})`.
-
-## Toggle
-
-The class `.xt-toggle` hides the element **with `display: none`** when **not activated by the component**.
-
-The class `.xt-toggle-visible` hides the element  **with `visibility: hidden`** when not activated or animating, useful when you need **display for calculations**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
-| Utility                  | `.xt-toggle`                     | `xt-toggle`                | `responsive`                | Apply `display: none` when not `.on` or `.in` or `.out` or `.display`            |
-| Utility                  | `.xt-toggle-visible`                     | `xt-toggle-visible`                | `responsive`                | Apply `visibility: hidden` and `pointer-events: none` when not `.on` or `.in` or `.out` or `.display`            |
-| Utility                  | `.xt-toggle-absolute`                     | `xt-toggle-absolute`                | `responsive`                | Apply `position: absolute` when not `.on`             |
-
-</div>
-
-Use the class `.xt-toggle-absolute` to position node in **absolute mode** when not activated, should be used in conjunction with `.xt-toggle` (remember to use `relative` on a chosen parent element), see [animation noqueue](/components/toggle/animation#queue) for demo.
-
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-absolute">
-  </demoinline>
-</demo>
 
 ## Usage Self
 

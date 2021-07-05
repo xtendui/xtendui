@@ -19,19 +19,19 @@ This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/S
 Use this code to create a **fade**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade"></div>
 </demo>
 
 Use this code to create a **sticky**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky"></div>
 </demo>
 
 Use this code to create a **parallax**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
 
 ## Setup

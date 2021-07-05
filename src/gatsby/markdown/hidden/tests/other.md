@@ -31,7 +31,7 @@ Test mobile initial activation.
 Test mobile scrollto activation.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/gallery/products-gallery-v1">
+  <div class="gatsby_demo_item" data-iframe="demos/themes/gallery/products-gallery-v1">
   </div>
 </demo>
 

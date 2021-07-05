@@ -59,7 +59,7 @@ const mountDrops = ({ ref }) => {
   // setup
 
   for (const tr of self.targets) {
-    const inner = tr.querySelector('.xt-drop-inner')
+    const inner = tr.querySelector('[data-xt-drop-inner]')
     gsap.set(inner, {
       height: 0,
     })
@@ -92,7 +92,7 @@ const mountDrops = ({ ref }) => {
         opacity: 1,
       })
       // inner
-      const inner = tr.querySelector('.xt-drop-inner')
+      const inner = tr.querySelector('[data-xt-drop-inner]')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
         height: '',
@@ -117,7 +117,7 @@ const mountDrops = ({ ref }) => {
         // not current targets
         for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
           // inner
-          const inner = tr.querySelector('.xt-drop-inner')
+          const inner = tr.querySelector('[data-xt-drop-inner]')
           gsap.killTweensOf(inner)
           gsap.set(inner, {
             height: innerHeightCache,
@@ -163,7 +163,7 @@ const mountDrops = ({ ref }) => {
       // when not sequential interaction
       if (!self.direction) {
         // inner
-        const inner = tr.querySelector('.xt-drop-inner')
+        const inner = tr.querySelector('[data-xt-drop-inner]')
         gsap.killTweensOf(inner)
         gsap
           .to(inner, {

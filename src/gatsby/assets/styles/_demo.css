@@ -136,7 +136,7 @@ pre {
     display: none !important;
   }
   #gatsby_open-full & {
-    @apply xt-toggle on:block out:block !important;
+    @apply off:hidden out:pointer-events-none on:block in:block out:block !important;
     z-index: theme('zIndex.above');
     order: -1;
     position: absolute;
@@ -163,7 +163,7 @@ pre {
     }
   }
   .gatsby_demo_code_body_item {
-    @apply xt-toggle;
+    @apply off:hidden out:pointer-events-none;
     display: flex;
     align-items: stretch;
     max-height: 21rem;
@@ -175,6 +175,7 @@ pre {
 }
 
 .gatsby_demo_item {
+  @apply off:hidden out:pointer-events-none;
   position: relative;
   height: 100%;
   .gatsby_demo_item_switch {

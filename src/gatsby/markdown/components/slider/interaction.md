@@ -93,7 +93,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/slider/hash">
+  <div class="gatsby_demo_item" data-iframe="demos/components/slider/hash">
   </div>
 </demo>
 

@@ -23,7 +23,7 @@ Remember to set a `options.get` variable for a **get request on current url** to
 Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2).
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/listing/infinitescroll">
+  <div class="gatsby_demo_item" data-iframe="demos/components/listing/infinitescroll">
   </div>
 </demo>
 

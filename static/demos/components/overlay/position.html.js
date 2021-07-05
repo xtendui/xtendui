@@ -12,7 +12,7 @@ const html = /* HTML */ `
           left
         </button>
 
-        <div class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -59,7 +59,7 @@ const html = /* HTML */ `
           right
         </button>
 
-        <div class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
             <div class="xt-overlay-inner">
@@ -106,7 +106,7 @@ const html = /* HTML */ `
           left blocks
         </button>
 
-        <div class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay off:hidden out:pointer-events-none" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">

@@ -34,7 +34,7 @@ Use the **component classes** to create a **sticky**.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -78,7 +78,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 Here's an example of **complex sticky stacking**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-stack"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky-stack"></div>
 </demo>
 
 ## Event
@@ -91,5 +91,5 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Here's an example of **complex sticky hide** when scrolling down but only after the first card.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-hide"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky-hide"></div>
 </demo>

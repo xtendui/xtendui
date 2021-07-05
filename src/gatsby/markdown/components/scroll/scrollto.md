@@ -28,7 +28,7 @@ Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 | Do not assign **other components** to `anchors` or the components activations conflict.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/scrollto">
   </div>
 </demo>
 
@@ -37,7 +37,7 @@ It works also inside [overlay](/components/overlay) and it automatically open **
 Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/scrollto-overlay">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/scrollto-overlay">
   </div>
 </demo>
 

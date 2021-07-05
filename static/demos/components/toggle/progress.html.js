@@ -43,7 +43,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <div class="*** xt-toggle *** relative ${classes.cardToggle()}">
+      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}">
         Target 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -53,7 +53,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-target>
+      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}" data-xt-toggle-target>
         Target 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -63,7 +63,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-target>
+      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}" data-xt-toggle-target>
         Target 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -73,7 +73,7 @@ const html = /* HTML */ `
         </span>
       </div>
 
-      <div class="*** xt-toggle *** relative ${classes.cardToggle()}" data-xt-toggle-target>
+      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}" data-xt-toggle-target>
         Target 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">

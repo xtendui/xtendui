@@ -141,6 +141,6 @@ Index methods, they all consider `options.loop`.
 ## API Demo
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/tooltip/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/tooltip/api">
   </div>
 </demo>

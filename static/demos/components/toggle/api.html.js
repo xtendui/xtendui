@@ -74,14 +74,14 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
-        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="0">
+        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="0">
           Target Group 0
         </div>
-        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="0">
+        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="0">
           Target Group 0b
         </div>
-        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
-        <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
+        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
+        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
       </div>
     </div>
 

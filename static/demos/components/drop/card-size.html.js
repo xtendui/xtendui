@@ -12,7 +12,7 @@ const html = /* HTML */ `
           small
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
           <div class="xt-card *** w-64 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-lg" aria-label="Close">
               ${classes.iconX()}
@@ -37,7 +37,7 @@ const html = /* HTML */ `
           medium
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
           <div class="xt-card *** w-80 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
@@ -62,7 +62,7 @@ const html = /* HTML */ `
           large
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
           <div class="xt-card *** w-96 *** ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-2xl" aria-label="Close">
               ${classes.iconX()}

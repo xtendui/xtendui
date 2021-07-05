@@ -78,11 +78,11 @@ const mountSlider = ({ ref }) => {
     /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
-      incoming.classList.remove('incoming', 'display')
+      incoming.classList.remove('incoming', '!block')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
-      incoming.classList.add('incoming', 'display')
+      incoming.classList.add('incoming', '!block')
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -182,7 +182,7 @@ const mountSlider = ({ ref }) => {
             ease: dragEase,
           })
           .eventCallback('onComplete', () => {
-            incoming.classList.remove('display')
+            incoming.classList.remove('!block')
           })
         const maskInner = mask.querySelector('.hero-inner')
         gsap.killTweensOf(maskInner)

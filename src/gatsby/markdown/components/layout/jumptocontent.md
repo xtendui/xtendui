@@ -13,6 +13,6 @@ Use this code to create a **jump to content**.
 Use the tab key to reveal the **jump to content** button.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/layout/jumptocontent">
+  <div class="gatsby_demo_item" data-iframe="demos/components/layout/jumptocontent">
   </div>
 </demo>

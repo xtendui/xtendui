@@ -6,8 +6,8 @@ const html = /* HTML */ `
 
     <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>
 
-    <div class="*** xt-toggle *** group" data-xt-toggle-target>
-      <div class="xt-toggle-inner">
+    <div class="off:hidden out:pointer-events-none group" data-xt-toggle-target>
+      <div class="relative">
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
@@ -17,8 +17,8 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="*** xt-toggle *** group" data-xt-toggle-target>
-      <div class="xt-toggle-inner">
+    <div class="off:hidden out:pointer-events-none group" data-xt-toggle-target>
+      <div class="relative">
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>

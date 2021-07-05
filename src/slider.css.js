@@ -9,6 +9,15 @@ module.exports = {
     '.xt-slider': {
       position: 'relative',
       overflow: 'hidden',
+      // fix page load height without .on slides
+      '&:not([data-xt-slider-init])': {
+        '.xt-slide': {
+          '&:first-child': {
+            display: 'block',
+            position: 'relative',
+          },
+        },
+      },
     },
     '.xt-slides': {
       position: 'relative',
@@ -24,28 +33,6 @@ module.exports = {
     '.xt-slide': {
       position: 'relative',
       zIndex: theme('zIndex.slide'),
-    },
-    '.xt-slider-absolute': {
-      '.xt-slide': {
-        position: 'relative',
-        '&:not(.on):not(.in):not(.out):not(.display)': {
-          display: 'none',
-        },
-        '&:not(.on)': {
-          position: 'absolute',
-          top: '0',
-          left: '0',
-        },
-      },
-      // fix page load height without .on slides
-      '&:not([data-xt-slider-init])': {
-        '.xt-slide': {
-          '&:first-child': {
-            display: 'block',
-            position: 'relative',
-          },
-        },
-      },
     },
     '.xt-slider-nooverflow': {
       '.xt-slides': {

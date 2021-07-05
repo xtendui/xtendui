@@ -18,7 +18,6 @@ module.exports = {
   separator: require('./src/separator.css.js'),
   scroll: require('./src/scroll.css.js'),
   slider: require('./src/slider.css.js'),
-  toggle: require('./src/toggle.css.js'),
   tooltip: require('./src/tooltip.css.js'),
   typography: require('./src/typography.css.js'),
 }

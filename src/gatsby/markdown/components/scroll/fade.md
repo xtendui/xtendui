@@ -13,7 +13,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/components/scroll/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -57,7 +57,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 Here's an example of **distance fade** with **animation depending on direction**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-distance"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-distance"></div>
 </demo>
 
 ## Event
@@ -67,10 +67,10 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-infinite"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-inside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-outside-infinite"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-infinite"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-inside"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-outside"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-outside-infinite"></div>
 </demo>
 
 ## Dynamic Content

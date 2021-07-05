@@ -26,7 +26,7 @@ const html = /* HTML */ `
           <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
               <div
-                class="absolute inset-0 rounded-inherit *** xt-toggle *** *** overflow-hidden transition-all ***"
+                class="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"
                 data-xt-toggle-target
               >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -39,7 +39,7 @@ const html = /* HTML */ `
           <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
             <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
               <div
-                class="absolute inset-0 rounded-inherit *** xt-toggle *** *** overflow-hidden transition-all ***"
+                class="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"
                 data-xt-toggle-target
               >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

@@ -28,23 +28,23 @@ const html = /* HTML */ `
         Toggle Group 0 and 1
       </button>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group0">
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group0">
         Target Group 0
       </div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group1">
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group1">
         Target Group 1a
       </div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group1">
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group1">
         Target Group 1b
       </div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()} *** on ***" data-xt-toggle-target>Target 2</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} *** on ***" data-xt-toggle-target>Target 2</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group0,group1">
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="group0,group1">
         Target Group 0 and 1
       </div>
     </div>

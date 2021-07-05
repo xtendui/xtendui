@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--multilevel">
     <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
       <nav
-        class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="initial"
       >
@@ -40,7 +40,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-0"
       >
@@ -82,7 +82,11 @@ const html = /* HTML */ `
         </nav>
       </nav>
 
-      <nav class="*** xt-toggle *** xt-toggle-absolute" data-xt-group="cat-0a">
+      <nav
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        data-xt-toggle-target
+        data-xt-group="cat-0a"
+      >
         <div class="xt-h5  flex items-center justify-between">
           <div>Category 0a</div>
           <button
@@ -106,7 +110,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-0b"
       >
@@ -133,7 +137,7 @@ const html = /* HTML */ `
       </nav>
 
       <nav
-        class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        class="*** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
         data-xt-group="cat-1"
       >

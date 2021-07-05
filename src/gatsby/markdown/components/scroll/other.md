@@ -17,8 +17,8 @@ Use [Gsap matchMedia](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static
 Example of **sticky only on mobile**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/fade-matchmedia"></div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/sticky-matchmedia"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/fade-matchmedia"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky-matchmedia"></div>
 </demo>
 
 ## Markers

@@ -12,7 +12,7 @@ const html = /* HTML */ `
           small
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
           <div
             class="relative *** ${classes.tooltipSm()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
           >
@@ -30,7 +30,7 @@ const html = /* HTML */ `
           medium
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
           <div
             class="relative *** ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
           >
@@ -48,7 +48,7 @@ const html = /* HTML */ `
           large
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
           <div
             class="relative *** ${classes.tooltipLg()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
           >
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           max-width
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
           <div
             class="relative *** ${classes.tooltipMd()} max-w-lg ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
           >

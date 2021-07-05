@@ -143,7 +143,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div
-                    class="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
+                    class="xt-overlay off:hidden out:pointer-events-none ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                     id="overlay--product-images"
                   >
                     <div

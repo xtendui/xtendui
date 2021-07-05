@@ -20,6 +20,45 @@ Each slider demo listens to the event `dragposition.xt.slider` and:
 
 This is done in order to keep the **internal slider values updated** with your **custom slider animations**.
 
+## Display
+
+To show and hide the component we use **custom tailwind variants** attached to classes used by the component.
+
+Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
+
+Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+
+Use `absolute top-0 left-0 on:relative` to position the node in absolute mode when **not activated**.
+
+You can use the class `.display` to enable manually the display mode, it behaves like the class `.on` but it doesn't interfere with the component.
+
+## Absolute
+
+With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
+
+You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.isDrag` and `self.direction` values.
+
+[[notePrimary]]
+| On `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.isDrag` is `false`.
+
+#### Cover
+
+Here's an example of absolute animation with **cover and mask**, also on `on.xt.slider` we instantly change slide by setting `self.detail.dragPosition` to `self.detail.dragFinal`.
+
+<demo>
+  <demoinline src="demos/components/slider/animation-absolute-cover">
+  </demoinline>
+</demo>
+
+#### Mask
+
+Here's an example of absolute animation with **mask and incoming slide**, on `drag.xt.slider` we get and animate **incoming slide** depending on drag direction, also on `off.xt.slider` it animates the **old incoming slide** .
+
+<demo>
+  <demoinline src="demos/components/slider/animation-absolute-mask">
+  </demoinline>
+</demo>
+
 ## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
@@ -127,32 +166,5 @@ You can use also **javascript animations**, just use [drop api](/components/slid
 
 <demo>
   <demoinline src="demos/components/slider/animation-js">
-  </demoinline>
-</demo>
-
-## Absolute
-
-With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
-
-You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.isDrag` and `self.direction` values.
-
-[[notePrimary]]
-| On `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.isDrag` is `false`.
-
-#### Cover
-
-Here's an example of absolute animation with **cover and mask**, also on `on.xt.slider` we instantly change slide by setting `self.detail.dragPosition` to `self.detail.dragFinal`.
-
-<demo>
-  <demoinline src="demos/components/slider/animation-absolute-cover">
-  </demoinline>
-</demo>
-
-#### Mask
-
-Here's an example of absolute animation with **mask and incoming slide**, on `drag.xt.slider` we get and animate **incoming slide** depending on drag direction, also on `off.xt.slider` it animates the **old incoming slide** .
-
-<demo>
-  <demoinline src="demos/components/slider/animation-absolute-mask">
   </demoinline>
 </demo>

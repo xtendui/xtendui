@@ -16,15 +16,15 @@ const html = /* HTML */ `
 
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 4</button>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 0</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 0</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 3</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 3</div>
 
-      <div class="*** xt-toggle *** ${classes.cardToggle()}" data-xt-toggle-target>Target 4</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 4</div>
     </div>
   </div>
 `

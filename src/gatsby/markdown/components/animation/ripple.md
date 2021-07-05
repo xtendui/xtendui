@@ -35,7 +35,7 @@ Style ripple effect **with css**.
 Check out [animation themes](/themes/animation) for **advanced animations**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/animation/ripple-animation-v1">
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/ripple-animation-v1">
   </div>
 </demo>
 

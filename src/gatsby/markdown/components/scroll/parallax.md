@@ -23,7 +23,7 @@ You can use `scrub: true` to animate only when scrolling, or `scrub: <Number>` f
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -59,7 +59,7 @@ Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-actions"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-actions"></div>
 </demo>
 
 ## Distance
@@ -92,13 +92,13 @@ Use `pin: true` to **pin the trigger** when scrolling.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-pin"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-pin"></div>
 </demo>
 
 If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-range"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-range"></div>
 </demo>
 
 ## Multiple
@@ -109,5 +109,5 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 | When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/scroll/parallax-multiple"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-multiple"></div>
 </demo>

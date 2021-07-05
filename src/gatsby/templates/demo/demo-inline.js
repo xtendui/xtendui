@@ -47,7 +47,7 @@ export default class DemoInline extends React.Component {
     const Demo = require(`static/${src}.jsx`).default
     // render all
     return (
-      <div ref={this.ref} className={'gatsby_demo_item xt-toggle'} data-name={name} data-id={id} data-inline={src}>
+      <div ref={this.ref} className={'gatsby_demo_item'} data-name={name} data-id={id} data-inline={src}>
         {this.state.mode === 'react' ? (
           <div
             className={`gatsby_demo_item_switch ${

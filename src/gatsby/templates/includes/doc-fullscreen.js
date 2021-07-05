@@ -7,7 +7,7 @@ export default class DocFullscreen extends React.Component {
     return (
       <>
         <div id="gatsby_open-full-trigger"></div>
-        <div id="gatsby_open-full" className="xt-toggle">
+        <div id="gatsby_open-full" className="off:hidden out:pointer-events-none">
           <div
             className="xt-button xt-dismiss absolute z-last top-0 right-0"
             aria-label="Close"

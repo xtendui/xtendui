@@ -2,9 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-usage-absolute">
-    <div class="*** xt-slider xt-slider-absolute *** bg-primary-500">
+    <div class="*** xt-slider *** bg-primary-500">
       <div class="*** xt-slides ***" data-xt-slider-dragger>
-        <div class="*** xt-slide *** w-full" data-xt-slider-target>
+        <div class="*** xt-slide *** *** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="*** xt-slide *** w-full" data-xt-slider-target>
+        <div class="*** xt-slide *** *** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="*** xt-slide *** w-full" data-xt-slider-target>
+        <div class="*** xt-slide *** *** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="hero-inner">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -56,7 +56,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="*** xt-slide *** w-full" data-xt-slider-target>
+      <div class="*** xt-slide *** *** off:hidden out:pointer-events-none absolute top-0 left-0 on:relative *** w-full" data-xt-slider-target>
         <div class="hero relative overflow-hidden bg-black">
           <div class="hero-inner">
             <div class="xt-media-container bg-gray-500 w-full h-full absolute">

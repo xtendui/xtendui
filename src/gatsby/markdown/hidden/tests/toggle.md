@@ -16,7 +16,7 @@ Test overlay no close clicking inside with eventLimit.
 <demo>
   <demoinline src="demos/components/toggle/usage-self">
   </demoinline>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/usage-self">
+  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/usage-self">
   </div>
   <demoinline src="demos/components/drop/usage-self">
   </demoinline>

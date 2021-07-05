@@ -215,6 +215,18 @@ module.exports = plugin.withOptions(() => {
       })
     })
 
+    addVariant('off', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`off${separator}${className}`)}:not(.on):not(.in):not(.out)`
+      })
+    })
+
+    addVariant('group-off', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group:not(.on):not(.in):not(.out) .${e(`group-off${separator}${className}`)}`
+      })
+    })
+
     addVariant('on', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`on${separator}${className}`)}.on`

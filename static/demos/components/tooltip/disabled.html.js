@@ -8,7 +8,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element>
         <a href="#">dolor</a>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target>
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum
 
@@ -19,7 +19,7 @@ const html = /* HTML */ `
               <span data-xt-tooltip-element-nested>
                 <a href="#">dolor</a>
 
-                <div class="xt-tooltip p-2" data-xt-tooltip-target-nested>
+                <div class="xt-tooltip off:hidden out:pointer-events-none p-2" data-xt-tooltip-target-nested>
                   <div
                     class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
                   >

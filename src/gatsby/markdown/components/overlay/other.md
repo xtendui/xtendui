@@ -50,7 +50,7 @@ You can add **additional options** that gets added on **match media query**. You
 You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/unclosable">
+  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/unclosable">
   </div>
 </demo>
 

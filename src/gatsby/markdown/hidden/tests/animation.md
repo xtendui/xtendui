@@ -129,6 +129,6 @@ Test move slightly over other and then target should not change with delay.
 Test direction and zIndex sequential activation and zIndex reset.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/themes/navigation/menu-navigation-v1">
+  <div class="gatsby_demo_item" data-iframe="demos/themes/navigation/menu-navigation-v1">
   </div>
 </demo>

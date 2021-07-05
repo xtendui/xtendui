@@ -22,20 +22,11 @@ module.exports = {
       position: 'absolute',
       zIndex: theme('zIndex.tooltip'),
       margin: '0 !important',
-      '&:not(.on):not(.in):not(.out):not(.display)': {
-        display: 'none',
-      },
-      '&.out': {
-        pointerEvents: 'none',
-      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',
         transform: 'rotate(45deg)',
       },
-    },
-    '.xt-tooltip-inner': {
-      position: 'relative',
     },
   }),
 }

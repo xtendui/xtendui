@@ -20,20 +20,11 @@ module.exports = {
     '.xt-drop': {
       position: 'absolute',
       zIndex: theme('zIndex.drop'),
-      '&:not(.on):not(.in):not(.out):not(.display)': {
-        display: 'none',
-      },
-      '&.out': {
-        pointerEvents: 'none',
-      },
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',
         transform: 'rotate(45deg)',
       },
-    },
-    '.xt-drop-inner': {
-      position: 'relative',
     },
   }),
 }

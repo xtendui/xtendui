@@ -56,7 +56,7 @@ const html = /* HTML */ `
       </form>
     </div>
 
-    <div class="xt-overlay" id="overlay--scrollto">
+    <div class="xt-overlay off:hidden out:pointer-events-none" id="overlay--scrollto">
       <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
       <div class="xt-overlay-container py-0">
         <div class="xt-overlay-inner">

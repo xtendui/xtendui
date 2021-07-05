@@ -16,7 +16,7 @@ Assing the desired `min-height` instead of `min-h-screen`, assing the desired `m
 | This component uses [media](/components/media) see documentation to **customize**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/hero/usage">
+  <div class="gatsby_demo_item" data-iframe="demos/components/hero/usage">
   </div>
 </demo>
 
@@ -25,7 +25,7 @@ Assing the desired `min-height` instead of `min-h-screen`, assing the desired `m
 Use **tailwind classes** to customize **content direction**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/hero/direction">
+  <div class="gatsby_demo_item" data-iframe="demos/components/hero/direction">
   </div>
 </demo>
 
@@ -34,7 +34,7 @@ Use **tailwind classes** to customize **content direction**.
 Use **tailwind classes** to **add shadow**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/hero/shadow">
+  <div class="gatsby_demo_item" data-iframe="demos/components/hero/shadow">
   </div>
 </demo>
 
@@ -43,6 +43,6 @@ Use **tailwind classes** to **add shadow**.
 Use **tailwind classes** to **position content outside**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/hero/outside">
+  <div class="gatsby_demo_item" data-iframe="demos/components/hero/outside">
   </div>
 </demo>

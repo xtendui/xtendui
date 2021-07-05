@@ -12,8 +12,8 @@ const html = /* HTML */ `
           list
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-target>
-          <div class="xt-drop-inner">
+        <div class="xt-drop off:hidden out:pointer-events-none p-4 group" data-xt-drop-target>
+          <div class="relative">
             <div
               class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
             ></div>
@@ -43,8 +43,8 @@ const html = /* HTML */ `
           card
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-target>
-          <div class="xt-drop-inner">
+        <div class="xt-drop off:hidden out:pointer-events-none p-4 group" data-xt-drop-target>
+          <div class="relative">
             <div
               class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
             ></div>

@@ -116,7 +116,7 @@ class Googlelocator {
       new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
         if (results && results.length) {
           const placesPreview = document.createElement('div')
-          placesPreview.classList.add('display--none')
+          placesPreview.classList.add('hidden')
           new google.maps.places.PlacesService(placesPreview).getDetails(
             { reference: results[0].reference },
             results => {

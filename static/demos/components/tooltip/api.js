@@ -113,7 +113,7 @@ const mountEventmethods = ({ ref }) => {
       const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-        <div class="xt-tooltip p-2" title="Target ${indexTr}"
+        <div class="xt-tooltip off:hidden out:pointer-events-none p-2" title="Target ${indexTr}"
           data-xt-tooltip-target>
           <div class="text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
             Lorem ipsum dolor sit amet

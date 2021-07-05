@@ -77,7 +77,7 @@ const mountEventmethods = ({ ref }) => {
       const strEl = `<button type="button" class="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500" data-xt-toggle-element>Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
       // targets
-      const strTr = `<div class="xt-toggle rounded-full text-xs py-2.5 px-3.5 font-semibold shadow" data-xt-toggle-target>Target ${index}</div>`
+      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow" data-xt-toggle-target>Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')

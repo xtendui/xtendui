@@ -12,7 +12,7 @@ const html = /* HTML */ `
           list
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop off:hidden out:pointer-events-none p-4" data-xt-drop-target>
           <div class="xt-card w-96 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <div class="${classes.cardMd()}">
               <div class="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">

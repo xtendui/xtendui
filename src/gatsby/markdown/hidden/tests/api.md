@@ -22,14 +22,14 @@ Test one destroy and reinit and trigger 1st should execute event only one time o
 Test reinit multiple times, interaction should trigger events still one time per interaction (especially overlay in self mode).
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/toggle/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/toggle/api">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/overlay/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/api">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/drop/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/drop/api">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/tooltip/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/tooltip/api">
   </div>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/slider/api">
+  <div class="gatsby_demo_item" data-iframe="demos/components/slider/api">
   </div>
 </demo>

@@ -24,7 +24,7 @@ Use this code to create a **google locator**. Search for "New York" to see it in
 | Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="gatsby_demo_item xt-toggle" data-iframe="demos/components/layout/googlelocator">
+  <div class="gatsby_demo_item" data-iframe="demos/components/layout/googlelocator">
   </div>
 </demo>
 
