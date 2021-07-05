@@ -25,7 +25,7 @@ With **absolute mode** all animation of the slides are given by yout **custom gs
 You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.isDrag` and `self.direction` values.
 
 [[notePrimary]]
-| On `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.isDrag` is `false`.
+| On absolute mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.isDrag` is `false`.
 
 #### Cover
 
@@ -153,6 +153,9 @@ You can use also **javascript animations**, just use [drop api](/components/slid
 | Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
 </div>
+
+[[notePrimary]]
+| On relative mode in `on.xt.slider` and `off.xt.slider` do not **set starting and end animation values** with `gsap.set`, do it in the `init.xt.slider` instead.
 
 <demo>
   <demoinline src="demos/components/slider/animation-js">

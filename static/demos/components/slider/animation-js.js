@@ -27,8 +27,10 @@ const mountSlider = ({ ref }) => {
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetXOn = 192
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetXOff = 192
 
   // init
 
@@ -65,11 +67,25 @@ const mountSlider = ({ ref }) => {
   // setup
 
   /***/
-  for (const tr of self.targets) {
-    gsap.set(tr, {
-      opacity: 0,
-    })
+  const init = () => {
+    const targets = self.targets.filter(x => !self.hasCurrent(x, false, true))
+    for (const tr of targets) {
+      const index = self.getIndex(tr)
+      if (index < self.currentIndex) {
+        gsap.set(tr, {
+          x: -1 * targetXOn,
+          opacity: 0,
+        })
+      } else if (index >= self.currentIndex) {
+        gsap.set(tr, {
+          x: 1 * targetXOn,
+          opacity: 0,
+        })
+      }
+    }
   }
+
+  self.object.addEventListener('init.xt.slider', init, true)
   /***/
 
   // on
@@ -80,10 +96,6 @@ const mountSlider = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       gsap.killTweensOf(tr)
-      gsap.set(tr, {
-        x: self.direction * 45,
-        opacity: 0,
-      })
       gsap.to(tr, {
         x: 0,
         opacity: 1,
@@ -105,7 +117,7 @@ const mountSlider = ({ ref }) => {
     if (self.targets.includes(tr)) {
       gsap.killTweensOf(tr)
       gsap.to(tr, {
-        x: -self.direction * 45,
+        x: -self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

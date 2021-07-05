@@ -24,8 +24,10 @@ const mountOverlay = ({ ref }) => {
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetYOn = 16
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetYOff = 16
 
   // init
 
@@ -46,7 +48,7 @@ const mountOverlay = ({ ref }) => {
       const inner = tr.querySelector('.xt-overlay-inner')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
-        y: -self.direction * 15,
+        y: -self.direction * targetYOn,
         opacity: 0,
       })
       gsap.to(inner, {
@@ -74,7 +76,7 @@ const mountOverlay = ({ ref }) => {
       const inner = tr.querySelector('.xt-overlay-inner')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
-        y: self.direction * 15,
+        y: self.direction * targetYOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,

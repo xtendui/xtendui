@@ -110,6 +110,7 @@ self = null
 | Method                  | `self.getTargets(el:Node)`                          | Get all targets from element or target, returns `Array`             |
 | Method                  | `self.getElementsGroups()`                          | Get elements (one per group), returns `Array`             |
 | Method                  | `self.hasCurrent(el:Node)`                          | Check if element or target is activated, returns `Boolean`             |
+| Method                  | `self.getIndex(el:Node)`                          | Get activation index of from element or target, returns `Number`             |
 | Method                  | `self.reinit(saveCurrents:Boolean)`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.disable()`                          | Disable component             |

@@ -23,8 +23,10 @@ const mountToggle = ({ ref }) => {
   const toggle = ref
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetXOn = 16
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetXOff = 16
 
   // init
 
@@ -41,7 +43,7 @@ const mountToggle = ({ ref }) => {
     const tr = e.target
     gsap.killTweensOf(tr)
     gsap.set(tr, {
-      x: -self.direction * 15,
+      x: -self.direction * targetXOn,
       opacity: 0,
     })
     gsap.to(tr, {
@@ -64,7 +66,7 @@ const mountToggle = ({ ref }) => {
     const tr = e.target
     gsap.killTweensOf(tr)
     gsap.to(tr, {
-      x: self.direction * 15,
+      x: self.direction * targetXOff,
       opacity: 0,
       duration: targetTimeOff,
       ease: targetEaseOff,

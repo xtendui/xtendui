@@ -1411,18 +1411,29 @@ class Toggle {
    */
   setIndex(element) {
     const self = this
+    // set index
+    const index = self.getIndex(element)
+    self.oldIndex = self.currentIndex ?? index
+    self.currentIndex = index
+  }
+
+  /**
+   * get index
+   * @param {Node|HTMLElement|EventTarget|Window} element Current group element
+   */
+  getIndex(element) {
+    const self = this
     // fix groupElements and targets
     element = self.getElements(element)[0]
     // set index
-    let index = 0
+    let index = null
     for (const [i, el] of self.getElementsGroups().entries()) {
       if (el === element) {
         index = i
         break
       }
     }
-    self.oldIndex = self.currentIndex ?? index
-    self.currentIndex = index
+    return index
   }
 
   /**
