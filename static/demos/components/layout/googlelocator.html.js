@@ -42,6 +42,7 @@ const html = /* HTML */ `
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value=""
+                    data-xt-googlelocator-filter
                     checked
                   />
                   <span class="${classes.checkContent()}">All types</span>
@@ -55,6 +56,7 @@ const html = /* HTML */ `
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value="restaurant"
+                    data-xt-googlelocator-filter
                   />
                   <span class="${classes.checkContent()}">Restaurant</span>
                 </label>
@@ -67,6 +69,7 @@ const html = /* HTML */ `
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-options"
                     value="school"
+                    data-xt-googlelocator-filter
                   />
                   <span class="${classes.checkContent()}">School</span>
                 </label>
@@ -79,6 +82,7 @@ const html = /* HTML */ `
                     class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
                     name="type-fav"
                     value="fav"
+                    data-xt-googlelocator-filter
                   />
                   <span class="${classes.checkContent()}">Favourite</span>
                 </label>

@@ -42,22 +42,50 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `initialLocate:Boolean`                          | `false`        | Automatic locate on page load (**needs https**)            |
 | Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
-| Option                    | `locateRadius:Number`                          | `false`        | Radius for locate            |
-| Option                    | `locateText:String`                          | `false`        | Locate text for input            |
-| Option                    | `elements.loader:Query`                          | `false`        | Object query for loader             |
-| Option                    | `elements.searchInput:Query`                          | `false`        | Object query for searh input             |
-| Option                    | `elements.searchBtn:Query`                          | `false`        | Object query for search button             |
-| Option                    | `elements.map:Query`                          | `false`        | Object query for google map             |
-| Option                    | `elements.itemsTemplate:Query`                          | `false`        | Object query for template cloned for maps items             |
-| Option                    | `elements.itemsContainer:Query`                          | `false`        | Object query for items container to append items to             |
-| Option                    | `elements.results:Query`                          | `false`        | Object query for results messages             |
-| Option                    | `elements.resultsFounds:Query`                          | `false`        | Object query for results found             |
-| Option                    | `elements.locateBtn:Query`                          | `false`        | Object query for locate button             |
-| Option                    | `elements.repeatBtn:Query`                          | `false`        | Object query for repeat search button             |
+| Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
+| Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
+| Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Object query for loader             |
+| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Object query for searh input             |
+| Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Object query for search button             |
+| Option                    | `elements.map:Query`                          | `'[data-xt-googlelocator-map]'`        | Object query for google map             |
+| Option                    | `elements.itemsTemplate:Query`                          | `'[data-xt-googlelocator-items-template]'`        | Object query for template cloned for maps items             |
+| Option                    | `elements.itemsContainer:Query`                          | `'[data-xt-googlelocator-items-container]'`        | Object query for items container to append items to             |
+| Option                    | `elements.results:Query`                          | `'[data-xt-googlelocator-results]'`        | Object query for results messages             |
+| Option                    | `elements.resultsFounds:Query`                          | `'[data-xt-googlelocator-results-found]'`        | Object query for results found             |
+| Option                    | `elements.locateBtn:Query`                          | `'[data-xt-googlelocator-locate-btn]'`        | Object query for locate button             |
+| Option                    | `elements.repeatBtn:Query`                          | `'[data-xt-googlelocator-repeat-btn]'`        | Object query for repeat search button             |
+| Option                    | `elements.filter:Query`                          | `'[data-xt-googlelocator-filter]'`        | Object query for filter checkbox and radio             |
 | Option                    | `elements.formatData:Object`                          | `<Object>`        | Object for format data and filter functions             |
 
-
 </div>
+
+Default google maps options as follow.
+
+```js
+// event
+events: {
+  animateMarkerClick: false,
+  animateMarkerResultClick: false,
+  infoWindowMarkerClick: true,
+  infoWindowMarkerResultClick: false,
+},
+// map
+map: {
+  center: false,
+  zoom: false,
+  zoomMin: false,
+  scrollwheel: false,
+  zoomControl: true,
+  mapTypeControl: false,
+  scaleControl: true,
+  streetViewControl: false,
+  rotateControl: false,
+  fullscreenControl: false,
+  cluster: false,
+},
+// infoWindow
+infoWindow: {},
+```
 
 ## Listen
 
