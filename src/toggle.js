@@ -1639,8 +1639,6 @@ class Toggle {
         options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
       // targets
       let targets = self.getTargets(element, true)
-      // fix data-xt-group-same filter out new activations
-      targets = targets.filter(x => !self.hasCurrent(x, false, true))
       // on
       self.addCurrent(elements[0])
       self.setIndex(elements[0])
@@ -1695,8 +1693,6 @@ class Toggle {
       self.removeCurrent(elements[0])
       // targets
       let targets = self.getTargets(element, true)
-      // fix data-xt-group-same filter out new activations
-      targets = targets.filter(x => !self.hasCurrent(x, false, true))
       // fix sometimes blur is undefined
       if (element.blur) {
         // fix :focus styles

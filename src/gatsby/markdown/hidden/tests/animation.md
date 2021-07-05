@@ -13,7 +13,7 @@ Test toggle noqueue should not jump page.
 
 Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
 
-Test slider animation no flick on change slide data-xt-group-same (bug).
+Test slider animation no flick on change slide data-xt-group-same (bug with classes activation).
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
