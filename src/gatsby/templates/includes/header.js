@@ -13,6 +13,7 @@ export default function Header({ page }) {
     <div className="gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 text-white xt-links-inverse leading-none">
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky">
+          <div className="xt-backdrop pointer-events-none bg-black transition opacity-25"></div>
           <div className="gatsby_site-header_inner container bg-primary-500 bg-opacity-80 backdrop-filter backdrop-blur backdrop-saturate-150">
             <div>
               <div className="gatsby_site-header_content">
