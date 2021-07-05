@@ -3397,8 +3397,8 @@ Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   debug: false,
   // element
-  elements: false,
-  targets: false,
+  elements: '[data-xt-toggle-element]',
+  targets: '[data-xt-toggle-target]',
   elementsInner: ':scope > a, :scope > button',
   targetsInner: false,
   exclude: false,

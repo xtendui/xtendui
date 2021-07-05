@@ -46,8 +46,6 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(megamenu, {
-    elements: '[data-xt-drop-element]',
-    targets: '[data-xt-drop-target]',
     queue: false,
     duration: 1000,
     preventEvent: true,

@@ -17,10 +17,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">List Group</div>
 
     <form class="text-xs">
-      <div
-        class="xt-list xt-list-3 items-center"
-        data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', collapseWidth: 'targets', duration: 500 }"
-      >
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -54,9 +51,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -85,9 +80,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -123,9 +116,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             tooltip
@@ -144,9 +135,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             list group
@@ -186,9 +175,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -218,9 +205,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -269,9 +254,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -401,9 +384,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }"
-      >
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"

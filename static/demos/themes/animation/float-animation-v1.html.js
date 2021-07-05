@@ -48,7 +48,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', duration: 500 }">
+      <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -78,7 +78,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]', duration: 500 }">
+      <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -115,9 +115,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', duration: 500 }"
-      >
+      <div data-xt-tooltip="{ duration: 500 }">
         <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             tooltip
@@ -135,9 +133,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', duration: 500 }"
-      >
+      <div data-xt-tooltip="{ duration: 500 }">
         <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             list group
@@ -177,9 +173,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', duration: 500 }"
-      >
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -211,9 +205,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', duration: 500 }"
-      >
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -279,9 +271,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', duration: 500 }"
-      >
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
@@ -415,9 +405,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', duration: 500 }"
-      >
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"

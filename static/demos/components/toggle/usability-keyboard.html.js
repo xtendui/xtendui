@@ -2,10 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div
-      class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', keyboard: { selector: 'object' } }"
-    >
+    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ keyboard: { selector: 'object' } }">
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 0</button>
 
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>

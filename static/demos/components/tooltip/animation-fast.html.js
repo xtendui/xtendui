@@ -3,9 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--tooltip-animation-fast">
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', duration: 500 }"
-      >
+      <div data-xt-tooltip="{ position: 'bottom', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -23,9 +21,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom' }"
-      >
+      <div data-xt-tooltip="{ position: 'bottom' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -43,9 +39,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom' }"
-      >
+      <div data-xt-tooltip="{ position: 'bottom' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -64,10 +58,7 @@ const html = /* HTML */ `
       </div>
 
       <div>
-        <div
-          class="xt-list xt-list-3 items-center"
-          data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom', delay: 50 }"
-        >
+        <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'bottom', delay: 50 }">
           <div data-xt-tooltip-element>
             <button
               type="button"

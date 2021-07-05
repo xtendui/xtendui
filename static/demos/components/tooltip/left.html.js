@@ -3,9 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'left' }"
-      >
+      <div data-xt-tooltip="{ position: 'left' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -22,9 +20,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'left-start' }"
-      >
+      <div data-xt-tooltip="{ position: 'left-start' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -41,9 +37,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'left-end' }"
-      >
+      <div data-xt-tooltip="{ position: 'left-end' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

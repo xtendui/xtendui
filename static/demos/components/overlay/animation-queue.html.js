@@ -2,10 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div
-      class="xt-list xt-list-3 items-center"
-      data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', duration: 500 }"
-    >
+    <div class="xt-list xt-list-3 items-center" data-xt-overlay="{ duration: 500 }">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

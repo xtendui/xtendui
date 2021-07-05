@@ -63,7 +63,7 @@ export default function Page() {
                     </span>
                   </h1>
                   <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
-                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'top', duration: 300 }">
+                    <div data-xt-tooltip="{ position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.twitter}
                         target="_blank"
@@ -81,7 +81,7 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <div data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'top', duration: 300 }">
+                    <div data-xt-tooltip="{ position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.npm}
                         target="_blank"
@@ -99,7 +99,7 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <span data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'top', duration: 300 }">
+                    <span data-xt-tooltip="{ position: 'top', duration: 300 }">
                       <a
                         href={site.siteMetadata.github}
                         target="_blank"

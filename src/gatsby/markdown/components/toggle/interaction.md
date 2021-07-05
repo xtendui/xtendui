@@ -16,8 +16,8 @@ The query is inside `object`, only when specifying **elements and targets with `
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `false`        | Elements query            |
-| Option                  | `targets:Query`                          | `false`        | Targets query            |
+| Option                  | `elements:Query`                          | `'[data-xt-toggle-element]'`        | Elements query            |
+| Option                  | `targets:Query`                          | `'[data-xt-toggle-target]'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
 | Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |

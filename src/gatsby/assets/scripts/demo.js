@@ -245,7 +245,7 @@ export const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-full-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
+<div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
   <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen" data-xt-tooltip-element>
     ${classes.iconMaximize()}
   </button>
@@ -259,7 +259,7 @@ export const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.createElement(`
-<div class="button--open-iframe-container" data-xt-tooltip="{ elements: '[data-xt-tooltip-element]', targets: '[data-xt-tooltip-target]', position: 'bottom-end', duration: 300 }">
+<div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
   <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
@@ -901,7 +901,7 @@ export const makeDocument = () => {
           )
           activeText.setAttribute(
             'data-xt-tooltip',
-            `{ elements: false, targets: '[data-xt-tooltip-target]', position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
+            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
           )
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }

@@ -25,8 +25,6 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: '[data-xt-tooltip-element]',
-    targets: '[data-xt-tooltip-target]',
     closeOutside: false,
   })
   /***/

@@ -3,9 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div
-        data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]', classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }"
-      >
+      <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -48,7 +46,7 @@ const html = /* HTML */ `
                     justo.
                   </p>
 
-                  <div data-xt-overlay="{ elements: '[data-xt-overlay-element]', targets: '[data-xt-overlay-target]' }">
+                  <div data-xt-overlay>
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"

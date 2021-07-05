@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', matches: { '(min-width: 768px)': { disabled: true } } }"
+      data-xt-toggle="{ matches: { '(min-width: 768px)': { disabled: true } } }"
     >
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 0</button>
 

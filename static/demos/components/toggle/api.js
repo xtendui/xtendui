@@ -21,8 +21,6 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(ref.querySelector('#toggle--eventmethods'), {
-    elements: '[data-xt-toggle-element]',
-    targets: '[data-xt-toggle-target]',
     min: 1,
   })
   /***/

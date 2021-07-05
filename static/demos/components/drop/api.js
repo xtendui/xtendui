@@ -25,8 +25,6 @@ const mountEventmethods = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: '[data-xt-drop-element]',
-    targets: '[data-xt-drop-target]',
     closeOutside: false,
   })
   /***/

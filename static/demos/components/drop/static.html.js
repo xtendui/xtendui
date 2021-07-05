@@ -3,10 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="relative py-4 px-6 bg-primary-500">
-      <div
-        class="xt-list xt-list-3 items-center"
-        data-xt-drop="{ elements: '[data-xt-drop-element]', targets: '[data-xt-drop-target]' }"
-      >
+      <div class="xt-list xt-list-3 items-center" data-xt-drop>
         <div data-xt-drop-element>
           <button
             type="button"

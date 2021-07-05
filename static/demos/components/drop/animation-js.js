@@ -31,8 +31,6 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: '[data-xt-drop-element]',
-    targets: '[data-xt-drop-target]',
     duration: 500,
   })
   /***/

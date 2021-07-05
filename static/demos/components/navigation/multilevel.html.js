@@ -2,10 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--multilevel">
-    <div
-      class="relative"
-      data-xt-toggle="{ elements: '[data-xt-toggle-element]', targets: '[data-xt-toggle-target]', min: 1, duration: 500, queue: false }"
-    >
+    <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
       <nav
         class="*** xt-toggle *** *** xt-toggle-absolute *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
         data-xt-toggle-target
