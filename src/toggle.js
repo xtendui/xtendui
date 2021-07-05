@@ -2429,20 +2429,20 @@ class Toggle {
       }
       // keep the same level of raf for custom listener
       requestAnimationFrame(() => {
-        // remove class initial
         if (self.initial) {
+          // remove class initial
           for (const type in obj) {
             for (const el of obj[type].queueEls) {
               el.classList.remove(...self.classesInitial)
             }
           }
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+          // initial after autostart
+          self.initial = false
         }
-        // listener dispatch
-        self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
-        // initial after autostart
-        self.initial = false
         // reset
         self.inverse = null
       })
