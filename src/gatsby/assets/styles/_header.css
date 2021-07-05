@@ -25,14 +25,6 @@
 }
 
 #gatsby_menu--overlay {
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
-    .xt-design {
-      @apply bg-primary-500;
-    }
-    .xt-card {
-      @apply xt-min-h-screen;
-    }
-  }
   @screen lg {
     display: flex !important;
     position: static;
@@ -109,7 +101,6 @@
 }
 
 .gatsby_site-header_inner {
-  @apply text-white bg-primary-500 xt-links-inverse container;
   max-width: 1280px;
   padding-top: 1rem;
   padding-bottom: 1rem;
