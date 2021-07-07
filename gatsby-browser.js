@@ -44,8 +44,6 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
-      // close fullscreen and others
-      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
       // currentDemos
       window.currentDemos = []
       // close demo full
@@ -59,12 +57,13 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
       if (btn) {
         window.overlayOpen = btn.classList.contains('on')
       }
+      // close fullscreen and others
+      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     }
   }
 }
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-  const btn = document.querySelector('.gatsby_menu--button')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // if changing page
@@ -82,10 +81,6 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   }
   // keepSidebarScroll
   if (overlay && sidebar) {
-    // overlayOpen
-    if (btn && !window.overlayOpen) {
-      overlay.classList.remove('on')
-    }
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {
       document.querySelector('.gatsby_site-header').classList.remove('xt-sticky-disabled')
