@@ -33,17 +33,19 @@ const gatsbySidebarContain = () => {
 }
 
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
-  const btn = document.querySelector('.gatsby_button--overlay')
+  const btn = document.querySelector('.gatsby_menu--button')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // keepSidebarScroll
   if (overlay && sidebar) {
     window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
   }
-  // only if changing page
+  // if changing page
   if (prevLocation) {
-    // only if new page
+    // if new page
     if (location.pathname !== prevLocation.pathname) {
+      // close fullscreen and others
+      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
       // currentDemos
       window.currentDemos = []
       // close demo full
@@ -62,10 +64,10 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-  const btn = document.querySelector('.gatsby_button--overlay')
+  const btn = document.querySelector('.gatsby_menu--button')
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  // only if changing page
+  // if changing page
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
@@ -73,8 +75,6 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
       Xt.init()
       // scroll page to top
       document.scrollingElement.scrollTop = 0
-      // close fullscreen and others
-      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     } else {
       // not new page
       dispatchEvent(new CustomEvent('hashchange'))
@@ -88,7 +88,6 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
     }
     // instant enable
     if (matchMedia('(max-width: 1023px)').matches) {
-      overlay.classList.remove('xt-overlay-disabled')
       document.querySelector('.gatsby_site-header').classList.remove('xt-sticky-disabled')
     }
     // scroll

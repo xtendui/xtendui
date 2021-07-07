@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 /* overlay mobile */
 
 Xt.mount({
-  matches: '.gatsby_button--overlay',
+  matches: '.gatsby_menu--button',
   mount: ({ ref }) => {
     // overlay
 

@@ -89,7 +89,7 @@ export default function Header({ page }) {
                 <div className="gatsby_site-header_menu_link">
                   <button
                     type="button"
-                    className={`xt-button ${classes.buttonMd()} ${classes.buttonRadius()} gatsby_button--overlay`}
+                    className={`xt-button ${classes.buttonMd()} ${classes.buttonRadius()} gatsby_menu--button`}
                     aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

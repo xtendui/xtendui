@@ -1554,7 +1554,10 @@ class Toggle {
       // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.activationRaf(el, () => {
         el.classList.remove(...self.classesIn)
-        el.classList.add(...self.classesOut)
+        // off but without classes
+        if (!self.disabled) {
+          el.classList.add(...self.classesOut)
+        }
         el.classList.remove(...self.classesDone)
       })
       // direction
@@ -2513,7 +2516,7 @@ class Toggle {
       // fix when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         if (actionCurrent === 'In') {
-          // raf because route update
+          // raf because only one time on route update
           cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}ClassBodyFrame`))
           Xt.dataStorage.set(
             self.object,
@@ -2532,7 +2535,7 @@ class Toggle {
             })
           )
         } else if (actionCurrent === 'Out') {
-          // raf because route update
+          // raf because only one time on route update
           cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}ClassBodyFrame`))
           Xt.dataStorage.set(
             self.object,
@@ -3216,7 +3219,7 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // off all active elements especially for appendTo and classBody
+      // off but without classes
       if (options.disableDeactivate) {
         for (const el of self.elements.filter(x => self.hasCurrent(x))) {
           self.eventOff(el, true)
@@ -3340,8 +3343,7 @@ class Toggle {
                   el.removeEventListener(event, handler)
                   el.removeEventListener(event, handler, true)
                 }
-                // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times
-                //Xt.dataStorage.remove(element, key)
+                // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times Xt.dataStorage.remove(element, key)
               }
             }
           }
