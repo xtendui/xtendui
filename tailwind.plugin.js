@@ -209,6 +209,36 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
+    addVariant('group-off', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group:not(.on):not(.in):not(.out) .${e(`group-off${separator}${className}`)}`
+      })
+    })
+
+    addVariant('group-on', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.on .${e(`group-on${separator}${className}`)}`
+      })
+    })
+
+    addVariant('group-in', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.in .${e(`group-in${separator}${className}`)}`
+      })
+    })
+
+    addVariant('group-out', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.out .${e(`group-out${separator}${className}`)}`
+      })
+    })
+
+    addVariant('group-done', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.done .${e(`group-done${separator}${className}`)}`
+      })
+    })
+
     addVariant('group-active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.group:active .${e(`group-active${separator}${className}`)}`
@@ -221,21 +251,9 @@ module.exports = plugin.withOptions(() => {
       })
     })
 
-    addVariant('group-off', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group:not(.on):not(.in):not(.out) .${e(`group-off${separator}${className}`)}`
-      })
-    })
-
     addVariant('on', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`on${separator}${className}`)}.on`
-      })
-    })
-
-    addVariant('group-on', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.on .${e(`group-on${separator}${className}`)}`
       })
     })
 
@@ -245,33 +263,15 @@ module.exports = plugin.withOptions(() => {
       })
     })
 
-    addVariant('group-in', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.in .${e(`group-in${separator}${className}`)}`
-      })
-    })
-
     addVariant('out', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`out${separator}${className}`)}.out`
       })
     })
 
-    addVariant('group-out', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.out .${e(`group-out${separator}${className}`)}`
-      })
-    })
-
     addVariant('done', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`done${separator}${className}`)}.done`
-      })
-    })
-
-    addVariant('group-done', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.done .${e(`group-done${separator}${className}`)}`
       })
     })
   }

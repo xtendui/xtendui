@@ -76,208 +76,473 @@ module.exports = {
       }),
     },
   },
+  variantOrder: [
+    'first',
+    'last',
+    'odd',
+    'even',
+    'visited',
+    'checked',
+    'empty',
+    'read-only',
+    'group-off', // custom
+    'group-on', // custom
+    'group-in', // custom
+    'group-out', // custom
+    'group-done', // custom
+    'group-hover',
+    'group-focus',
+    'focus-within',
+    'group-active', // custom
+    'off', // custom
+    'on', // custom
+    'in', // custom
+    'out', // custom
+    'done', // custom
+    'hover',
+    'focus',
+    'focus-visible',
+    'active',
+    'disabled',
+  ],
   variants: {
-    backgroundColor: ({ after, before }) =>
+    backgroundColor: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    backgroundOpacity: ({ after, before }) =>
+    backgroundOpacity: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    borderColor: ({ after, before }) =>
+    borderColor: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    borderOpacity: ({ after, before }) =>
+    borderOpacity: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    boxShadow: ({ after, before }) =>
+    boxShadow: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    gradientColorStops: ({ after, before }) =>
+    gradientColorStops: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    margin: ({ after, before }) =>
+    margin: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    opacity: ({ after, before }) =>
+    opacity: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    padding: ({ after, before }) =>
+    padding: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    scale: ({ after, before }) =>
+    scale: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    rotate: ({ after, before }) =>
+    rotate: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    skew: ({ after, before }) =>
+    skew: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    textColor: ({ after, before }) =>
+    textColor: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    textDecoration: ({ after, before }) =>
+    textDecoration: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    textOpacity: ({ after, before }) =>
+    textOpacity: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
-    translate: ({ after, before }) =>
+    translate: ({ after }) =>
       after(
-        ['group-active', 'active', 'group-on', 'on', 'group-out', 'out', 'group-in', 'in', 'group-done', 'done'],
-        'hover',
-        before(['group-hover'], 'hover')
+        [
+          'group-off',
+          'group-on',
+          'group-in',
+          'group-out',
+          'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
+          'done',
+          'hover',
+          'active',
+        ],
+        'responsive'
       ),
     transitionProperty: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
     transitionTimingFunction: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
     transitionDuration: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
     transitionDelay: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
     zIndex: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
     display: ({ after }) =>
       after(
         [
-          'group-hover',
-          'hover',
-          'group-active',
-          'active',
+          'group-off',
           'group-on',
-          'on',
-          'group-out',
-          'out',
           'group-in',
-          'in',
+          'group-out',
           'group-done',
+          'group-hover',
+          'group-active',
+          'off',
+          'on',
+          'in',
+          'out',
           'done',
+          'hover',
+          'active',
         ],
         'responsive'
       ),
