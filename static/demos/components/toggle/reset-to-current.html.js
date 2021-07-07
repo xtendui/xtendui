@@ -11,7 +11,9 @@ const html = /* HTML */ `
 
       <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 0</div>
 
-      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} on current" data-xt-toggle-target>Target 1</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} on current" data-xt-toggle-target>
+        Target 1
+      </div>
 
       <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
     </div>

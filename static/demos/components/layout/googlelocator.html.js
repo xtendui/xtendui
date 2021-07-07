@@ -150,7 +150,10 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="${classes.loader()} bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10" data-xt-googlelocator-loader>
+      <div
+        class="${classes.loader()} bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10"
+        data-xt-googlelocator-loader
+      >
         <span class="${classes.spinner()} w-6 h-6 text-primary-500">
           ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
         </span>

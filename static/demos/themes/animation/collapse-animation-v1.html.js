@@ -26,7 +26,10 @@ const html = /* HTML */ `
           List group
         </button>
 
-        <div class="*** off:hidden out:pointer-events-none ** max-w-sm overflow-hidden transition-all group" data-xt-toggle-target>
+        <div
+          class="*** off:hidden out:pointer-events-none ** max-w-sm overflow-hidden transition-all group"
+          data-xt-toggle-target
+        >
           <div class="xt-list flex-nowrap ${animItemWidth()}">
             <div class="xt-list-inner flex-auto">
               <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">

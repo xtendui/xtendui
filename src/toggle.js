@@ -1564,7 +1564,7 @@ class Toggle {
             el.classList.add(...self.classesOut)
           }
           el.classList.remove(...self.classesDone)
-        }
+        },
       })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -2229,7 +2229,7 @@ class Toggle {
         func: () => {
           self.queueAnim(actionCurrent, actionOther, obj, el, type)
         },
-        ns: 'queueAnim'
+        ns: 'queueAnim',
       })
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
