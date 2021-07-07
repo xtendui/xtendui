@@ -3128,7 +3128,6 @@ class Toggle {
    */
   eventMatch({ mql, value, skipReinit = false } = {}) {
     const self = this
-    const options = self.options
     // fix NEEDED for chrome not removing mql event listener
     if (!self.object.closest('html')) {
       return
@@ -3143,12 +3142,6 @@ class Toggle {
     }
     // reinit one time only with raf
     if (!skipReinit) {
-      // fix appendTo close or self.targets are lost
-      if (options.appendTo) {
-        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
-          self.eventOff(el)
-        }
-      }
       // reinit
       cancelAnimationFrame(Xt.dataStorage.get(self.object, `${self.ns}MatchFrame`))
       Xt.dataStorage.set(self.object, `${self.ns}MatchFrame`, requestAnimationFrame(self.eventReinitHandler.bind(self)))
