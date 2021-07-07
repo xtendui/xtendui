@@ -1470,8 +1470,11 @@ class Toggle {
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
       // must be inside raf because display
-      Xt.activationRaf(el, () => {
-        el.classList.add(...self.classesIn)
+      Xt.activationRaf({
+        el,
+        func: () => {
+          el.classList.add(...self.classesIn)
+        },
       })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -1494,7 +1497,7 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside activationRaf in case we cancel
-      Xt.activationRaf(el)
+      Xt.activationRaf({ el })
       el.classList.add(...self.classesIn)
       el.classList.add(...self.classesDone)
     }
@@ -1552,13 +1555,16 @@ class Toggle {
       // must be outside inside raf or page jumps (e.g. noqueue)
       el.classList.remove(...self.classes)
       // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
-      Xt.activationRaf(el, () => {
-        el.classList.remove(...self.classesIn)
-        // off but without classes
-        if (!self.disabled) {
-          el.classList.add(...self.classesOut)
+      Xt.activationRaf({
+        el,
+        func: () => {
+          el.classList.remove(...self.classesIn)
+          // off but without classes
+          if (!self.disabled) {
+            el.classList.add(...self.classesOut)
+          }
+          el.classList.remove(...self.classesDone)
         }
-        el.classList.remove(...self.classesDone)
       })
       // direction
       el.classList.remove(...self.classesBefore, ...self.classesAfter)
@@ -1581,7 +1587,7 @@ class Toggle {
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside activationRaf in case we cancel
-      Xt.activationRaf(el)
+      Xt.activationRaf({ el })
       el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
@@ -2077,7 +2083,7 @@ class Toggle {
     const els = obj[type].queueEls
     for (const el of els) {
       // delay
-      let delay = Xt.delayTime(el, options.delay || options[`delay${actionCurrent}`], actionCurrent)
+      let delay = Xt.delayTime({ el, duration: options.delay || options[`delay${actionCurrent}`], actionCurrent })
       if (delay) {
         if (typeof delay === 'function') {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2091,13 +2097,13 @@ class Toggle {
       if (!delay) {
         self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
       } else if (delay === 'raf') {
-        Xt.activationRaf(
+        Xt.activationRaf({
           el,
-          () => {
+          func: () => {
             self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
           },
-          'queueDelayDone'
-        )
+          ns: 'queueDelayDone',
+        })
       } else {
         Xt.dataStorage.set(
           el,
@@ -2167,19 +2173,17 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for activation
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}DelayDoneFrame`))
-        Xt.dataStorage.set(
+        Xt.activationRaf({
           el,
-          `${self.ns}${actionCurrent}DelayDoneFrame`,
-          requestAnimationFrame(() => {
+          func: () => {
             el.dispatchEvent(
               new CustomEvent(`on.${self.componentNs}`, {
                 detail: obj.elements.e ? obj.elements.e.detail : null,
               })
             )
-          })
-        )
+          },
+          ns: `${self.ns}${actionCurrent}DelayDone`,
+        })
       }
     } else if (
       actionCurrent === 'Out' &&
@@ -2203,12 +2207,9 @@ class Toggle {
       self.specialClose(actionCurrent, el, type, obj)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for activation
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}DelayDoneFrame`))
-        Xt.dataStorage.set(
+        Xt.activationRaf({
           el,
-          `${self.ns}${actionCurrent}DelayDoneFrame`,
-          requestAnimationFrame(() => {
+          func: () => {
             if (!self.disabled) {
               el.dispatchEvent(
                 new CustomEvent(`off.${self.componentNs}`, {
@@ -2216,19 +2217,20 @@ class Toggle {
                 })
               )
             }
-          })
-        )
+          },
+          ns: `${self.ns}${actionCurrent}DelayDone`,
+        })
       }
     }
     // queue
     if (!skipQueue) {
-      Xt.activationRaf(
+      Xt.activationRaf({
         el,
-        () => {
+        func: () => {
           self.queueAnim(actionCurrent, actionOther, obj, el, type)
         },
-        'queueAnim'
-      )
+        ns: 'queueAnim'
+      })
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
         const els = obj[type].queueEls
@@ -2253,7 +2255,7 @@ class Toggle {
     const options = self.options
     // duration
     const els = obj[type].queueEls
-    let duration = Xt.animTime(el, options.duration || options[`duration${actionCurrent}`], actionCurrent)
+    let duration = Xt.animTime({ el, duration: options.duration || options[`duration${actionCurrent}`], actionCurrent })
     if (duration) {
       if (typeof duration === 'function') {
         const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2266,13 +2268,13 @@ class Toggle {
     if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else if (duration === 'raf') {
-      Xt.activationRaf(
+      Xt.activationRaf({
         el,
-        () => {
+        func: () => {
           self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
         },
-        'queueAnimDone'
-      )
+        ns: 'queueAnimDone',
+      })
     } else {
       Xt.dataStorage.set(
         el,
@@ -2304,19 +2306,17 @@ class Toggle {
       self.specialCollapse(actionCurrent, el, type, true)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for activation
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}AnimDoneFrame`))
-        Xt.dataStorage.set(
+        Xt.activationRaf({
           el,
-          `${self.ns}${actionCurrent}AnimDoneFrame`,
-          requestAnimationFrame(() => {
+          func: () => {
             el.dispatchEvent(
               new CustomEvent(`ondone.${self.componentNs}`, {
                 detail: obj.elements.e ? obj.elements.e.detail : null,
               })
             )
-          })
-        )
+          },
+          ns: `${self.ns}${actionCurrent}AnimDone`,
+        })
       }
     } else if (actionCurrent === 'Out') {
       // only one time and if last element
@@ -2353,12 +2353,9 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        // keep the same level of raf for activation
-        cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}${actionCurrent}AnimDoneFrame`))
-        Xt.dataStorage.set(
+        Xt.activationRaf({
           el,
-          `${self.ns}${actionCurrent}AnimDoneFrame`,
-          requestAnimationFrame(() => {
+          func: () => {
             if (!self.disabled) {
               el.dispatchEvent(
                 new CustomEvent(`offdone.${self.componentNs}`, {
@@ -2366,8 +2363,9 @@ class Toggle {
                 })
               )
             }
-          })
-        )
+          },
+          ns: `${self.ns}${actionCurrent}AnimDone`,
+        })
       }
     }
     // queue

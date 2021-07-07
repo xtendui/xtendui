@@ -391,9 +391,9 @@ class Googlelocator {
     // populate clone
     const els = cloned.querySelectorAll('[data-xt-populate]')
     for (const el of els) {
-      const fnc = options.formatData[el.getAttribute('data-xt-populate')]
-      if (fnc) {
-        fnc(self, loc, el)
+      const func = options.formatData[el.getAttribute('data-xt-populate')]
+      if (func) {
+        func(self, loc, el)
       }
     }
     // info
@@ -430,12 +430,12 @@ class Googlelocator {
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
     const old = self.itemsContainer.querySelector('[data-xt-index].on')
     if (old) {
-      Xt.off(old)
+      Xt.off({ el: old })
     }
     if (type === 'marker') {
       if (item) {
         item.focus()
-        Xt.on(item)
+        Xt.on({ el: item })
       }
     }
     // infowindow
@@ -537,7 +537,7 @@ class Googlelocator {
    */
   loaderShow() {
     const self = this
-    Xt.on(self.loaderElement)
+    Xt.on({ el: self.loaderElement })
   }
 
   /**
@@ -545,7 +545,7 @@ class Googlelocator {
    */
   loaderHide() {
     const self = this
-    Xt.off(self.loaderElement)
+    Xt.off({ el: self.loaderElement })
   }
 
   //

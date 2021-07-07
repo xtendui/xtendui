@@ -34,16 +34,16 @@ if (typeof window !== 'undefined') {
 
   /**
    * ready
-   * @param {Function} fnc Function to execute on dom ready
+   * @param {Function} func Function to execute on dom ready
    */
-  Xt.ready = fnc => {
+  Xt.ready = func => {
     // no raf or ScrollTrigger bugs initialization
     if (document.readyState === 'complete') {
-      fnc()
+      func()
     } else {
       const complete = () => {
         if (document.readyState === 'complete') {
-          fnc()
+          func()
           document.removeEventListener('readystatechange', complete)
         }
       }
@@ -56,8 +56,6 @@ if (typeof window !== 'undefined') {
    */
   Xt.init = () => {
     Xt.ready(() => {
-      Xt.setScrollbarWidth()
-      Xt.innerHeightSet()
       Xt.observer.disconnect()
       Xt.observer.observe(document.documentElement, {
         characterData: false,
@@ -634,6 +632,8 @@ if (typeof window !== 'undefined') {
     outer.remove()
   }
 
+  Xt.setScrollbarWidth()
+
   /**
    * if full width return '' else return value in px
    * @param {Number|String} width
@@ -681,25 +681,19 @@ if (typeof window !== 'undefined') {
 
   /**
    * activation requestAnimationFrame
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   * @param {Function} func Function to call after requestAnimationFrame
-   * @param {String} suffix Timeout suffix
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Function} params.func Function to execute after transition or animation
+   * @param {String} params.ns Namespace
    */
-  Xt.activationRaf = (el, func = null, suffix = '') => {
-    // keep the same level of raf for activation
-    cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}ActivateFrame${suffix}`))
+  Xt.activationRaf = ({ el, func = null, ns = '' } = {}) => {
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}ActivateFrame`))
     if (func) {
       Xt.dataStorage.set(
         el,
-        `${self.ns}ActivateFrame${suffix}`,
+        `${ns}ActivateFrame`,
         requestAnimationFrame(() => {
-          Xt.dataStorage.set(
-            el,
-            `${self.ns}ActivateFrame${suffix}`,
-            requestAnimationFrame(() => {
-              func()
-            })
-          )
+          func()
         })
       )
     }
@@ -707,92 +701,94 @@ if (typeof window !== 'undefined') {
 
   /**
    * animation on classes
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {String} suffix Timeout suffix
-   * @param {Number} duration Optional force time
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {String} params.ns Namespace
+   * @param {Number} params.duration Duration
    */
-  Xt.on = (el, suffix = '', duration = null) => {
-    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+  Xt.on = ({ el, ns = '', duration = null } = {}) => {
+    Xt.animTimeout({ el, ns: `${ns}OnOff` })
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
     // must be inside raf because display
-    Xt.activationRaf(el, () => {
-      el.classList.add('in')
-      Xt.animTimeout(
-        el,
-        () => {
-          el.classList.add('done')
-        },
-        `AnimTimeout${suffix}`,
-        duration,
-        'In'
-      )
+    Xt.activationRaf({
+      el,
+      func: () => {
+        el.classList.add('in')
+        Xt.animTimeout({
+          el,
+          func: () => {
+            el.classList.add('done')
+          },
+          ns: `${ns}OnOff`,
+          duration,
+          actionCurrent: 'In',
+        })
+      },
     })
   }
 
   /**
    * animation off classes
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {String} suffix Timeout suffix
-   * @param {Number} duration Optional force time
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {String} params.ns Namespace
+   * @param {Number} params.duration Duration
    */
-  Xt.off = (el, suffix = '', duration = null) => {
-    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
+  Xt.off = ({ el, ns = '', duration = null } = {}) => {
+    Xt.animTimeout({ el, ns: `${ns}OnOff` })
     // must be outside inside raf or page jumps (e.g. noqueue)
-    el.classList.remove('on')
+    el.classList.remove('on', false)
     // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
-    Xt.activationRaf(el, () => {
-      el.classList.remove('in')
-      el.classList.add('out')
-      el.classList.remove('done')
-      Xt.animTimeout(
-        el,
-        () => {
-          el.classList.remove('out')
-        },
-        `AnimTimeout${suffix}`,
-        duration,
-        'Out'
-      )
+    Xt.activationRaf({
+      el,
+      func: () => {
+        el.classList.remove('in')
+        el.classList.add('out')
+        el.classList.remove('done')
+        Xt.animTimeout({
+          el,
+          func: () => {
+            el.classList.remove('out')
+          },
+          ns: `${ns}OnOff`,
+          duration,
+          actionCurrent: 'Out',
+        })
+      },
     })
   }
 
   /**
    * execute function after transition or animation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {Function} func Function to execute after transition or animation
-   * @param {String} suffix Timeout suffix
-   * @param {Number} duration Optional force time
-   * @param {String} actionCurrent Current action
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Function} params.func Function to execute after transition or animation
+   * @param {String} params.ns Namespace
+   * @param {Number} params.duration Duration
+   * @param {String} params.actionCurrent Current action
    */
-  Xt.animTimeout = (el, func, suffix = '', duration = null, actionCurrent = null) => {
-    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-    duration = Xt.animTime(el, duration, actionCurrent) ?? 0
-    if (!duration) {
-      func()
-    } else {
-      Xt.dataStorage.set(el, `AnimTimeout${suffix}`, setTimeout(func, duration))
+  Xt.animTimeout = ({ el, func = null, ns = '', duration = null, actionCurrent = null } = {}) => {
+    clearTimeout(Xt.dataStorage.get(el, `${ns}AnimTimeout`))
+    if (func) {
+      duration = Xt.animTime({ el, duration, actionCurrent }) ?? 0
+      if (!duration) {
+        func()
+      } else {
+        Xt.dataStorage.set(el, `${ns}AnimTimeout`, setTimeout(func, duration))
+      }
     }
   }
 
   /**
-   * clear animTimeout
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {String} suffix Timeout suffix
-   */
-  Xt.animTimeoutClear = (el, suffix = '') => {
-    clearTimeout(Xt.dataStorage.get(el, `AnimTimeout${suffix}`))
-  }
-
-  /**
    * get transition or animation time
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {Number} duration Force duration in milliseconds
-   * @param {String} actionCurrent Current action
-   * @return {Number} Time in milliseconds
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Number} params.duration Duration
+   * @param {String} params.actionCurrent Current action
    */
-  Xt.animTime = (el, duration = null, actionCurrent = null) => {
+  Xt.animTime = ({ el, duration = null, actionCurrent = null } = {}) => {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
     if (custom) {
@@ -807,21 +803,21 @@ if (typeof window !== 'undefined') {
 
   /**
    * get delay time
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
-   * @param {Number} timing Force duration in milliseconds
-   * @param {String} actionCurrent Current action
-   * @return {Number} Time in milliseconds
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Number} params.duration Duration
+   * @param {String} params.actionCurrent Current action
    */
-  Xt.delayTime = (el, timing = null, actionCurrent = null) => {
+  Xt.delayTime = ({ el, duration = null, actionCurrent = null } = {}) => {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-delay-${actionCurrent}`)) || el.getAttribute('data-xt-delay')
     if (custom) {
       // if not number return the string
       return isNaN(parseFloat(custom)) ? custom : parseFloat(custom) / Xt.durationTimescale
-    } else if (typeof timing === 'function') {
-      return timing
-    } else if (timing || timing === 0) {
-      return timing / Xt.durationTimescale
+    } else if (typeof duration === 'function') {
+      return duration
+    } else if (duration || duration === 0) {
+      return duration / Xt.durationTimescale
     }
   }
 
@@ -874,57 +870,60 @@ if (typeof window !== 'undefined') {
 
   /**
    * Fix resize event multiple calls and adds delay on resize and scroll events
-   * @param {Event|Object} e Event
-   * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
-   * @param {Function} func Function to execute
-   * @param {String} prefix Timeout prefix
-   * @param {Boolean} instant If instant
+   * @param {Object} params
+   * @param {Event|Object} params.e Event
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Function} params.func Function to execute after transition or animation
+   * @param {String} params.ns Namespace
+   * @param {Number} params.duration Duration
    */
-  Xt.eventDelay = ({ event, element, func, prefix = '', instant = false }) => {
-    const container = document.documentElement
-    cancelAnimationFrame(Xt.dataStorage.get(element, `${prefix}Frame`))
-    clearTimeout(Xt.dataStorage.get(element, `${prefix}Timeout`))
-    if (event) {
-      let delay = event?.detail?.delay
-      delay = delay ? delay : instant ? 0 : Xt[`${event.type}Delay`]
-      if (event.type === 'resize') {
-        const w = window.innerWidth
-        const h = window.innerHeight
-        // multiple calls check
-        if (
-          !event?.detail?.force && // not when setting delay on event
-          Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
-          (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
-        ) {
-          // only width no height because it changes on scroll on mobile
-          return
+  Xt.eventDelay = ({ event, element, func = null, ns = '', duration = null } = {}) => {
+    cancelAnimationFrame(Xt.dataStorage.get(element, `${ns}eventDelayFrame`))
+    clearTimeout(Xt.dataStorage.get(element, `${ns}eventDelayTimeout`))
+    if (func) {
+      if (event) {
+        const container = document.documentElement
+        let delay = event?.detail?.delay
+        delay = duration ?? delay ? delay : Xt[`${event.type}Delay`]
+        if (event.type === 'resize') {
+          const w = window.innerWidth
+          const h = window.innerHeight
+          // multiple calls check
+          if (
+            !event?.detail?.force && // not when setting delay on event
+            Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
+            (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
+          ) {
+            // only width no height because it changes on scroll on mobile
+            return
+          }
+          // save after a frame to execute all eventDelay
+          cancelAnimationFrame(Xt.dataStorage.get(container, `${ns}eventDelayFrame`))
+          Xt.dataStorage.set(
+            container,
+            `${ns}eventDelayFrame`,
+            requestAnimationFrame(() => {
+              Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
+              Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
+            })
+          )
         }
-        // save after a frame to execute all eventDelay
-        cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'))
-        Xt.dataStorage.set(
-          container,
-          'xtEventDelayFrame',
-          requestAnimationFrame(() => {
-            Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
-            Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
-          })
-        )
-      }
-      // delay
-      if (!delay) {
-        Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(event)))
+        // delay
+        if (!delay) {
+          Xt.dataStorage.set(element, `${ns}eventDelayFrame`, requestAnimationFrame(func.bind(event)))
+        } else {
+          Xt.dataStorage.set(
+            element,
+            `${ns}eventDelayTimeout`,
+            setTimeout(() => {
+              // func
+              func(event)
+            }, delay)
+          )
+        }
       } else {
-        Xt.dataStorage.set(
-          element,
-          `${prefix}Timeout`,
-          setTimeout(() => {
-            // func
-            func(event)
-          }, delay)
-        )
+        Xt.dataStorage.set(element, `${ns}eventDelayFrame`, requestAnimationFrame(func.bind(event)))
       }
-    } else {
-      Xt.dataStorage.set(element, `${prefix}Frame`, requestAnimationFrame(func.bind(event)))
     }
   }
 
@@ -946,12 +945,13 @@ if (typeof window !== 'undefined') {
       event: e,
       element: document.documentElement,
       prefix: 'xtWindowHeightResize',
-      instant: true,
+      duration: 0,
       func: () => {
         Xt.innerHeightSet()
       },
     })
   })
+
   Xt.innerHeightSet()
 
   //

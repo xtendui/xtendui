@@ -30,7 +30,7 @@ const mountLoader = ({ ref }) => {
       if (loader.dataset.loaderTimeout) {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
-        Xt.on(loader)
+        Xt.on({ el: loader })
         gsap.set(spinner, {
           strokeDashoffset: 628,
         })
@@ -43,7 +43,7 @@ const mountLoader = ({ ref }) => {
           })
           .eventCallback('onComplete', loaderTimeout)
       } else {
-        Xt.off(loader)
+        Xt.off({ el: loader })
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }

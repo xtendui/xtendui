@@ -88,10 +88,10 @@ Xt.mount({
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
-        Xt.on(el)
+        Xt.on({ el })
       }
       for (const el of document.querySelectorAll('.button--switch-react')) {
-        Xt.off(el)
+        Xt.off({ el })
       }
     }
 
@@ -100,7 +100,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on(ref)
+      Xt.on({ el: ref })
     }
   },
 })
@@ -124,10 +124,10 @@ Xt.mount({
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
-        Xt.off(el)
+        Xt.off({ el })
       }
       for (const el of document.querySelectorAll('.button--switch-react')) {
-        Xt.on(el)
+        Xt.on({ el })
       }
     }
 
@@ -136,7 +136,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on(ref)
+      Xt.on({ el: ref })
     }
   },
 })

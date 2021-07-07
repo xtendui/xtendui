@@ -130,14 +130,6 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 </div>
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
-
-</div>
-
 Use **component utility** `.xt-row-<space>` to space content.
 
 For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).

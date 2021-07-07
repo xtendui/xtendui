@@ -12,9 +12,9 @@ You can execute a function on DOM ready.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.ready:Function`              | Execute a function on DOM ready              |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Function                  | `Xt.ready:Function`              | `func:Function`       | Execute a function on DOM ready                  |
 
 </div>
 
@@ -76,8 +76,8 @@ You can **toggle manually** activations.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on(el:Node, suffix:String = '')`                          | Activate node with adding `.on` and `.in` classes after a frame             |
-| Method                  | `Xt.off(el:Node, suffix:String = '', timing:Number = null)`                          | Dectivate node with `.out` classes removing `.in` and `.on`             |
+| Method                  | `Xt.on({ el, ns = '', duration = null })`                          | Activate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.off({ el, ns = '', duration = null })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
 
 </div>
 
@@ -140,7 +140,7 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `event:Event, element:Node, function:Function, prefix:String = '', instant:Boolean = false`       | event delay wrapper                  |
+| Function                  | `Xt.eventDelay:Function`              | `{ event, element, func = null, ns = '', duration = null }`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 | Variable                  | `Xt.resizeDelay:Number|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
