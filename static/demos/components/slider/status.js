@@ -71,6 +71,8 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
+  const self = Xt.get('xt-slider', slider)
+  if (!self) return () => {}
   const current = slider.querySelector('.slider-status-current')
   const container = slider.querySelector('.slider-status-container')
 
@@ -78,22 +80,19 @@ const mountStatus = ({ ref }) => {
 
   const change = e => {
     // check because of event propagation
-    if (e.target === slider) {
-      let self = Xt.get('xt-slider', slider)
-      if (!self) return
-      if (!self.targets.length) return
+    if (e.target === slider || self.targets.includes(e.target)) {
       // availableWidth
       let availableWidth = 0
       for (const tr of self.targets) {
         availableWidth += tr.offsetWidth
       }
       // width
-      const el = self.elements.filter(x => self.hasCurrent(x))
-      const slides = self.getTargets(el[0], true)
+      const trs = self.targets.filter(x => self.hasCurrent(x))
+      if (!trs.length) return
       let width = 0
-      let left = slides[0].offsetLeft
-      for (const slide of slides) {
-        width += slide.offsetWidth
+      let left = trs[0].offsetLeft
+      for (const tr of trs) {
+        width += tr.offsetWidth
       }
       // set
       const containerWidth = container.offsetWidth
@@ -104,7 +103,7 @@ const mountStatus = ({ ref }) => {
     }
   }
 
-  slider.addEventListener('on.xt.slider', change)
+  slider.addEventListener('on.xt.slider', change, true)
   slider.addEventListener('init.xt.slider', change)
   slider.addEventListener('status.xt.slider', change)
   addEventListener('resize', change)
