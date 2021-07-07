@@ -8,9 +8,9 @@ module.exports = {
   variants: ['responsive'],
   utility: theme => ({
     '.xt-container-reset': {
-      padding: 0,
-      width: 'auto',
-      maxWidth: 'none',
+      padding: '0 !important',
+      width: 'auto !important',
+      maxWidth: 'none !important',
     },
     '.xt-container-y': {
       ...theme('container.padding'),
