@@ -8,6 +8,10 @@ import { typeSort } from 'src/gatsby/templates/snippets/type-sort'
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 export default function Header({ page }) {
+  let overlayOpen = false
+  if (typeof window !== 'undefined') {
+    overlayOpen = window.overlayOpen
+  }
   const { site } = useSiteMetadata()
   return (
     <div className="gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 text-white xt-links-inverse leading-none">
@@ -114,7 +118,7 @@ export default function Header({ page }) {
         </header>
 
         <div
-          className={`xt-overlay text-white xt-links-inverse group ${window.overlayOpen ? 'on' : ''}`}
+          className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on' : ''}`}
           id="gatsby_menu--overlay">
           <div className="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
