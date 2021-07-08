@@ -7,9 +7,13 @@ const html = /* HTML */ `
 
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>
 
-      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} w-full" data-xt-toggle-target>Target 0</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} w-full" data-xt-toggle-target>
+        Target 0
+      </div>
 
-      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} w-full" data-xt-toggle-target>Target 1</div>
+      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} w-full" data-xt-toggle-target>
+        Target 1
+      </div>
     </div>
   </div>
 `
