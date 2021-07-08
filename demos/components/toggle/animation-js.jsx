@@ -27,13 +27,13 @@ export default function demo() {
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow w-full"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow w-full"
           data-xt-toggle-target>
           Target 1
         </div>

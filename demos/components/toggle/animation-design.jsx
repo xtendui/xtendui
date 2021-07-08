@@ -19,7 +19,7 @@ export default function demo() {
         Toggle 1
       </button>
 
-      <div className="off:hidden out:pointer-events-none group" data-xt-toggle-target>
+      <div className="off:hidden out:pointer-events-none w-full group" data-xt-toggle-target>
         <div className="relative">
           <div className="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
           <div className="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***">
@@ -28,7 +28,7 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="off:hidden out:pointer-events-none group" data-xt-toggle-target>
+      <div className="off:hidden out:pointer-events-none w-full group" data-xt-toggle-target>
         <div className="relative">
           <div className="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
           <div className="py-2.5 px-3.5 text-xs font-semibold *** transition duration-300 opacity-0 group-in:opacity-100 ***">
