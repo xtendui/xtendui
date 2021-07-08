@@ -2214,19 +2214,20 @@ class Toggle {
       self.specialClose(actionCurrent, el, type, obj)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.frame({
-          el,
-          func: () => {
-            if (!self.disabled) {
+        // off but without classes
+        if (!self.disabled) {
+          Xt.frame({
+            el,
+            func: () => {
               el.dispatchEvent(
                 new CustomEvent(`off.${self.componentNs}`, {
                   detail: obj.elements.e ? obj.elements.e.detail : null,
                 })
               )
-            }
-          },
-          ns: `${self.ns}${actionCurrent}DelayDone`,
-        })
+            },
+            ns: `${self.ns}${actionCurrent}DelayDone`,
+          })
+        }
       }
     }
     // queue
@@ -2361,19 +2362,20 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.frame({
-          el,
-          func: () => {
-            if (!self.disabled) {
+        // off but without classes
+        if (!self.disabled) {
+          Xt.frame({
+            el,
+            func: () => {
               el.dispatchEvent(
                 new CustomEvent(`offdone.${self.componentNs}`, {
                   detail: obj.elements.e ? obj.elements.e.detail : null,
                 })
               )
-            }
-          },
-          ns: `${self.ns}${actionCurrent}AnimDone`,
-        })
+            },
+            ns: `${self.ns}${actionCurrent}AnimDone`,
+          })
+        }
       }
     }
     // queue
