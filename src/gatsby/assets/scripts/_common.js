@@ -68,6 +68,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
+    const button = ref
     const mode = 'html'
 
     // default
@@ -95,12 +96,16 @@ Xt.mount({
       }
     }
 
-    ref.addEventListener('click', click)
+    button.addEventListener('click', click)
 
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on({ el: ref })
+      button.classList.add('transition-none')
+      Xt.on({ el: button, raf: false })
+      requestAnimationFrame(() => {
+        button.classList.remove('transition-none')
+      })
     }
   },
 })
@@ -110,6 +115,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
+    const button = ref
     const mode = 'react'
 
     // click
@@ -131,12 +137,16 @@ Xt.mount({
       }
     }
 
-    ref.addEventListener('click', click)
+    button.addEventListener('click', click)
 
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on({ el: ref })
+      button.classList.add('transition-none')
+      Xt.on({ el: button, raf: false })
+      requestAnimationFrame(() => {
+        button.classList.remove('transition-none')
+      })
     }
   },
 })

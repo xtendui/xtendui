@@ -752,12 +752,12 @@ if (typeof window !== 'undefined') {
         actionCurrent: 'In',
       })
     }
-    // fix need to repeat inside frameDouble in case we cancel
-    Xt.frameDouble({ el })
     if (raf) {
       // needs TWO raf or sequential off/on flickr (e.g. display)
       Xt.frameDouble({ el, func })
     } else {
+      // fix need to repeat inside frameDouble in case we cancel
+      Xt.frameDouble({ el })
       func()
     }
   }
@@ -788,12 +788,12 @@ if (typeof window !== 'undefined') {
         actionCurrent: 'Out',
       })
     }
-    // fix need to repeat inside frameDouble in case we cancel
-    Xt.frameDouble({ el })
     if (raf) {
       // needs TWO raf or sequential off/on flickr (e.g. display)
       Xt.frameDouble({ el, func })
     } else {
+      // fix need to repeat inside frameDouble in case we cancel
+      Xt.frameDouble({ el })
       func()
     }
   }
