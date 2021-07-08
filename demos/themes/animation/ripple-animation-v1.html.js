@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--ripple-animation-v1">
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Button</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
 
     <div class="xt-list xt-list-2 items-center">
       <button
@@ -29,7 +29,7 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">Link</button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Card</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">

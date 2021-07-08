@@ -37,7 +37,7 @@ export default function demo() {
       <blockquote className="mb-4 xt-mb-auto pt-4 text-center">
         <p className="xt-h4">&quot;This line rendered as blockquote title.&ldquo;</p>
         <p>This line rendered as blockquote text.</p>
-        <footer className="text-sm text-gray-700">
+        <footer className="text-sm text-gray-600">
           —This line rendered as, <cite>blockquote footer</cite>
         </footer>
       </blockquote>

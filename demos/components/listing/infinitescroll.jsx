@@ -19,7 +19,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
                 defaultChecked
               />
               <span className="ml-4">Activate on scroll</span>
@@ -30,7 +30,7 @@ export default function demo() {
             <div className="xt-list xt-list-2 flex-col items-center">
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
@@ -68,10 +68,10 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-row xt-row-6">
+          <div className="xt-row xt-row-6" data-xt-infinitescroll-items-container>
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -83,7 +83,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -95,7 +95,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -107,7 +107,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -119,7 +119,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -131,7 +131,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -143,7 +143,7 @@ export default function demo() {
 
             <div className="w-6/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -155,7 +155,7 @@ export default function demo() {
 
             <div className="w-6/12">
               <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-600 xt-ratio-75 md:xt-ratio-50">
+                <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -171,7 +171,7 @@ export default function demo() {
           <div className="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
@@ -245,7 +245,7 @@ const mountInfinitescroll = ({ ref }) => {
     get: false,
     max: 4,
     elements: {
-      itemsContainer: '.xt-row',
+      itemsContainer: '[data-xt-infinitescroll-items-container]',
       item: ':scope > *',
       scrollUp: '[data-xt-infinitescroll-up]',
       scrollDown: '[data-xt-infinitescroll-down]',

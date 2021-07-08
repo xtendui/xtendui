@@ -1,7 +1,7 @@
 .demo--slider-media-loaded, .demo--slider-media-loaded-react {
   .xt-slide {
     .xt-media-container {
-      @apply bg-gray-400;
+      @apply bg-gray-300;
     }
     /* fixed height */
     img {

@@ -4,11 +4,11 @@ export default function demo() {
     <div>
       <form className="text-sm">
         <button type="button" className="xt-list *** flex-col group ***">
-          <div className="xt-button text-xs py-2.5 px-3.5 rounded-t-md *** text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600 ***">
+          <div className="xt-button py-2.5 px-3.5 text-xs rounded-t-md *** text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 group-hover:bg-primary-600 ***">
             Search
           </div>
 
-          <div className="xt-button text-xs py-2.5 px-3.5 rounded-b-md *** text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 group-hover:bg-gray-400 ***">
+          <div className="xt-button py-2.5 px-3.5 text-xs rounded-b-md *** text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 group-hover:bg-gray-200 ***">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon text-xl -my-1"

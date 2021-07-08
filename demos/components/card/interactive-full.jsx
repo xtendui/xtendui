@@ -6,8 +6,8 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md *** text-black xt-links-default transform transition hover:bg-gray-200 on:bg-gray-40 ***">
-            <div className="text-base py-8 px-9">
+            className="xt-card rounded-md *** text-black xt-links-default transform transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200 ***">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
@@ -21,8 +21,8 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md *** text-black xt-links-default transform transition hover:text-white hover:bg-primary-500 on:bg-primary-600 ***">
-            <div className="text-base py-8 px-9">
+            className="xt-card rounded-md *** text-black xt-links-default transform transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600 ***">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Primary</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu

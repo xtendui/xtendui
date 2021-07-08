@@ -5,20 +5,20 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Input </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Input </label>
             <input
               type="text"
-              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
             />
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Disabled </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Disabled </label>
             <input
               type="text"
-              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Input"
               placeholder="Input"
               disabled
@@ -26,26 +26,26 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> File </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> File </label>
             <input
               type="file"
-              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="*** block w-full *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="File"
             />
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Textarea </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Textarea </label>
             <textarea
-              className="*** block w-full *** h-20 max-h-48 rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none h-24 resize-vertical"
+              className="*** block w-full *** h-20 max-h-48 rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none h-24 resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"></textarea>
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Select </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Select </label>
             <select
-              className="*** block w-full *** *** xt-select *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="*** block w-full *** *** xt-select *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Select">
               <option defaultValue="">Select an option</option>
               <option>Test</option>
@@ -55,9 +55,9 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Select multiple </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Select multiple </label>
             <select
-              className="*** block w-full *** *** xt-select *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+              className="*** block w-full *** *** xt-select *** rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               multiple
               aria-label="Select multiple">
               <option>Option 1</option>
@@ -67,14 +67,14 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Checkbox </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="checkbox"
-                    className="*** xt-check xt-checkbox *** rounded-md text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-checkbox *** rounded-md text-primary-500 bg-gray-200 transition-all"
                     defaultChecked
                     disabled
                   />
@@ -90,7 +90,7 @@ export default function demo() {
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="checkbox"
-                    className="*** xt-check xt-checkbox *** rounded-md text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-checkbox *** rounded-md text-primary-500 bg-gray-200 transition-all"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -103,14 +103,14 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Radio </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="radio"
-                    className="*** xt-check xt-radio *** rounded-full text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-radio *** rounded-full text-primary-500 bg-gray-200 transition-all"
                     name="radio-usage"
                     defaultChecked
                   />
@@ -126,7 +126,7 @@ export default function demo() {
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="radio"
-                    className="*** xt-check xt-radio *** rounded-full text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-radio *** rounded-full text-primary-500 bg-gray-200 transition-all"
                     name="radio-usage"
                   />
                   <span className="ml-4">
@@ -140,14 +140,14 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="*** block mb-3 *** font-semibold text-gray-900"> Switch </label>
+            <label className="*** block mb-3 *** font-semibold text-gray-700"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="checkbox"
-                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-200 transition-all"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -161,7 +161,7 @@ export default function demo() {
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="radio"
-                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-200 transition-all"
                     name="switch-usage"
                     defaultChecked
                   />
@@ -177,7 +177,7 @@ export default function demo() {
                 <label className="*** cursor-pointer inline-flex items-baseline ***">
                   <input
                     type="radio"
-                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-300 transition-all"
+                    className="*** xt-check xt-switch *** rounded-full text-primary-500 bg-gray-200 transition-all"
                     name="switch-usage"
                   />
                   <span className="ml-4">
@@ -193,7 +193,7 @@ export default function demo() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               submit
             </button>
           </div>

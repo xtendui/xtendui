@@ -18,36 +18,36 @@ export default function demo() {
     <div className="demo--scrollto-overlay-react" ref={ref}>
       {/* sticky for demo purpose remove this */}
       <div className="xt-sticky">
-        <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-list xt-list-3">
             <a
               href="#anchor-0"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
               #0
             </a>
             <a
               href="#anchor-1"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
               #1
             </a>
             <button
               type="button"
-              className="xt-button button--custom text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button button--custom py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
               custom
             </button>
             <a
               href="#anchor-2"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
               data-xt-scrollto-hash="true">
               #2
             </a>
             <a
               href="#anchor-2"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
               data-xt-scrollto-hash="true">
               #2 only anchor
             </a>
@@ -61,7 +61,7 @@ export default function demo() {
           <label className="cursor-pointer inline-flex items-baseline">
             <input
               type="checkbox"
-              className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
+              className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
             />
             <span className="ml-4">Deactivate classes</span>
           </label>
@@ -93,33 +93,33 @@ export default function demo() {
             </button>
 
             <div className="xt-sticky">
-              <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+              <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
                 <div className="xt-list xt-list-3">
                   <a
                     href="#anchor-0"
-                    className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                     #0
                   </a>
                   <a
                     href="#anchor-1"
-                    className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                     #1
                   </a>
                   <button
                     type="button"
-                    className="xt-button button--custom text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button button--custom py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                     custom
                   </button>
                   <a
                     href="#anchor-2"
-                    className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                     #2
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200" id="anchor-0">
+            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="anchor-0">
               <div className="xt-h4">Lorem ipsum dolor sit amet</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
@@ -132,22 +132,22 @@ export default function demo() {
               <div className="xt-list xt-list-3">
                 <a
                   href="#anchor-0"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #0
                 </a>
                 <a
                   href="#anchor-1"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #1
                 </a>
                 <button
                   type="button"
-                  className="xt-button button--custom text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button button--custom py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   custom
                 </button>
                 <a
                   href="#anchor-2"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #2
                 </a>
               </div>
@@ -175,7 +175,7 @@ export default function demo() {
             <br />
             <br />
 
-            <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200" id="anchor-1">
+            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="anchor-1">
               <div className="xt-h4">Lorem ipsum dolor sit amet</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
@@ -188,22 +188,22 @@ export default function demo() {
               <div className="xt-list xt-list-3">
                 <a
                   href="#anchor-0"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #0
                 </a>
                 <a
                   href="#anchor-1"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #1
                 </a>
                 <button
                   type="button"
-                  className="xt-button button--custom text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button button--custom py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   custom
                 </button>
                 <a
                   href="#anchor-2"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #2
                 </a>
               </div>
@@ -231,7 +231,7 @@ export default function demo() {
             <br />
             <br />
 
-            <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200" id="custom">
+            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="custom">
               <div className="xt-h4">Lorem ipsum dolor sit amet</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
@@ -265,7 +265,7 @@ export default function demo() {
             <br />
             <br />
 
-            <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200" id="anchor-2">
+            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="anchor-2">
               <div className="xt-h4">Lorem ipsum dolor sit amet</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
@@ -278,22 +278,22 @@ export default function demo() {
               <div className="xt-list xt-list-3">
                 <a
                   href="#anchor-0"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #0
                 </a>
                 <a
                   href="#anchor-1"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #1
                 </a>
                 <button
                   type="button"
-                  className="xt-button button--custom text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button button--custom py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   custom
                 </button>
                 <a
                   href="#anchor-2"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   #2
                 </a>
               </div>
@@ -390,12 +390,12 @@ const mountScrollto = () => {
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // custom
 
-  const buttons = self.object.querySelectorAll('.button--custom')
-  const custom = self.object.querySelector('#custom')
+  const buttons = self.container.querySelectorAll('.button--custom')
+  const custom = self.container.querySelector('#custom')
 
   const click = () => {
     custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
@@ -408,7 +408,7 @@ const mountScrollto = () => {
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
+    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }

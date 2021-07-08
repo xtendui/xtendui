@@ -20,25 +20,26 @@ Xt.mount({
 const mountOverlay = ({ ref }) => {
   // vars
 
-  const overlay = ref.querySelector(':scope > .xt-list')
+  const overlay = ref
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetYOn = 16
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetYOff = 16
 
   // init
 
   /***/
   let self = new Xt.Overlay(overlay, {
-    elements: ':scope > .xt-button, .xt-list > .xt-button',
-    targets: ':scope > .xt-overlay',
     duration: 500,
   })
   /***/
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -47,7 +48,7 @@ const mountOverlay = ({ ref }) => {
       const inner = tr.querySelector('.xt-overlay-inner')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
-        y: -self.direction * 15,
+        y: -self.direction * targetYOn,
         opacity: 0,
       })
       gsap.to(inner, {
@@ -62,9 +63,11 @@ const mountOverlay = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.overlay', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -73,7 +76,7 @@ const mountOverlay = ({ ref }) => {
       const inner = tr.querySelector('.xt-overlay-inner')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
-        y: self.direction * 15,
+        y: self.direction * targetYOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,
@@ -84,6 +87,7 @@ const mountOverlay = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.overlay', off)
   }
+  /***/
 
   // unmount
 

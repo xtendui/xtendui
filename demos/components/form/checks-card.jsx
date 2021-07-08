@@ -1,11 +1,14 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/form'
+
 export default function demo() {
   return (
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -14,7 +17,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
                 name="checkbox-card-0"
                 defaultChecked
                 disabled
@@ -24,8 +27,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -34,7 +37,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
                 name="checkbox-card-1"
               />
             </div>
@@ -42,8 +45,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer *** focus-within:outline-browser ***">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer *** focus-within:outline-browser ***">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -52,7 +55,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
                 name="radio-card"
                 defaultChecked
               />
@@ -61,8 +64,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer  *** focus-within:outline-browser ***">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer  *** focus-within:outline-browser ***">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -71,7 +74,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
                 name="radio-card"
               />
             </div>
@@ -79,8 +82,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -89,7 +92,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
                 name="switch-card"
                 defaultChecked
               />
@@ -98,8 +101,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400 cursor-pointer">
-            <div className="text-base py-8 px-9">
+          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -108,7 +111,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
                 name="switch-card"
               />
             </div>

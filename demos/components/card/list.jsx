@@ -2,8 +2,8 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
-        <div className="text-base py-8 px-9">
+      <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
+        <div className="py-8 px-9 text-base">
           <div className="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">
             <div>
               <svg

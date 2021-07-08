@@ -27,7 +27,7 @@ export default function demo() {
 
           <button
             type="button"
-            className="xt-button *** button--collapse *** text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 group"
+            className="xt-button *** button--collapse *** py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 group"
             data-xt-toggle="{ targets: '#demo--collapse-text-target-0', collapseHeight: 'targets', duration: 500 }">
             <span className="group-on:hidden"> Show more </span>
             <span className="hidden group-on:block"> Show less </span>
@@ -50,7 +50,7 @@ export default function demo() {
 
           <button
             type="button"
-            className="xt-button *** button--collapse *** text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 group"
+            className="xt-button *** button--collapse *** py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 group"
             data-xt-toggle="{ targets: '#demo--collapse-text-target-1', collapseHeight: 'targets', duration: 500 }">
             <span className="group-on:hidden"> Show more </span>
             <span className="hidden group-on:block"> Show less </span>
@@ -66,7 +66,7 @@ export default function demo() {
 
           <button
             type="button"
-            className="xt-button *** button--collapse *** text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 group"
+            className="xt-button *** button--collapse *** py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 group"
             data-xt-toggle="{ targets: '#demo--collapse-text-target-2', collapseHeight: 'targets', duration: 500 }">
             <span className="group-on:hidden"> Show more </span>
             <span className="hidden group-on:block"> Show less </span>
@@ -80,37 +80,58 @@ export default function demo() {
 /* mount */
 
 const mount = ({ ref }) => {
-  const unmountCollapse = mountCollapse({ ref })
+  const unmountCollapses = mountCollapses({ ref })
 
   // unmount
 
   return () => {
-    unmountCollapse()
+    unmountCollapses()
   }
 }
 
 /* mountCollapse */
 
-const mountCollapse = ({ ref }) => {
+const mountCollapse = ({ button }) => {
+  // disable if not overflowing and not on
+
+  const self = Xt.get('xt-toggle', button)
+  for (const tr of self.targets) {
+    if (tr.scrollHeight <= tr.clientHeight) {
+      const elements = self.getElements(tr).filter(x => !self.hasCurrent(x))
+      if (elements.length) {
+        tr.style.maxHeight = 'none'
+        for (const el of elements) {
+          el.classList.add('hidden')
+        }
+      }
+    }
+  }
+}
+
+/* mountCollapses */
+
+const mountCollapses = ({ ref }) => {
   // vars
 
   const buttons = ref.querySelectorAll('.button--collapse')
 
-  // disable if not overflowing and not on
-
+  // intersection observer
   for (const button of buttons) {
-    const self = Xt.get('xt-toggle', button)
-    for (const tr of self.targets) {
-      if (tr.scrollHeight <= tr.clientHeight) {
-        const elements = self.getElements(tr).filter(x => !self.hasCurrent(x))
-        if (elements.length) {
-          tr.style.maxHeight = 'none'
-          for (const el of elements) {
-            el.classList.add('hidden')
+    // when button is visible
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        for (const entry of entries) {
+          if (entry.intersectionRatio > 0) {
+            // disconnect observer
+            observer.disconnect()
+            // mount
+            mountCollapse({ button })
           }
         }
-      }
-    }
+      },
+      { root: null }
+    )
+    observer.observe(button)
   }
 
   // unmount

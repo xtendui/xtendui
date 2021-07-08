@@ -13,7 +13,7 @@ export default function demo() {
     <div className="demo--fade-react" ref={ref}>
       <div className="xt-row xt-row-6">
         <div className="w-full">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -24,7 +24,7 @@ export default function demo() {
         </div>
 
         <div className="w-full">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -35,7 +35,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -46,7 +46,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -57,7 +57,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -68,7 +68,7 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -79,7 +79,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -90,7 +90,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -101,7 +101,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -112,7 +112,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -123,7 +123,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -134,7 +134,7 @@ export default function demo() {
         </div>
 
         <div className="w-6/12 sm:w-4/12">
-          <div className="*** xt-card *** rounded-md text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="*** xt-card *** rounded-md py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

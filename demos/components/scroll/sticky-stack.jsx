@@ -11,13 +11,13 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-stack-react" ref={ref}>
-      <div className="*** xt-sticky *** *** sticky--stack-top ***">
-        <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+      <div className="*** xt-sticky ***" data-xt-sticky-stack-top>
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200 sticky--hide-content">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -32,13 +32,13 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky *** *** sticky--stack-topsecond *** group">
-        <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="*** xt-sticky *** group" data-xt-sticky-stack-topsecond>
+        <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h4 transition-all group-on:xt-h6">Top Second</div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200 sticky--hide-content">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -53,8 +53,8 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky *** *** sticky--stack-topthird ***">
-        <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="*** xt-sticky ***" data-xt-sticky-stack-topthird>
+        <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h6">Top Third</div>
         </div>
       </div>
@@ -74,13 +74,13 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="*** xt-sticky *** *** sticky--stack-bottom ***">
-        <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+      <div className="*** xt-sticky ***" data-xt-sticky-stack-bottom>
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Bottom</div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200 sticky--hide-content">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -95,8 +95,8 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky *** *** sticky--stack-bottomsecond ***">
-        <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="*** xt-sticky ***" data-xt-sticky-stack-bottomsecond>
+        <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h6">Bottom Second</div>
         </div>
       </div>
@@ -138,10 +138,10 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-top'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-top]'),
     start: 'top top',
-    endTrigger: '.sticky--stack-topsecond',
-    end: () => `top ${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
+    endTrigger: '[data-xt-sticky-stack-topsecond]',
+    end: () => `top ${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
     pin: true,
     pinSpacing: false,
   })
@@ -149,7 +149,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-topsecond'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-topsecond]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -161,8 +161,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-topthird'),
-    start: () => `top top+=${document.querySelector('.sticky--stack-topsecond').offsetHeight}px`,
+    trigger: ref.querySelector('[data-xt-sticky-stack-topthird]'),
+    start: () => `top top+=${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,
@@ -176,7 +176,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-bottom'),
+    trigger: ref.querySelector('[data-xt-sticky-stack-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',
@@ -191,8 +191,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottomSecond = ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--stack-bottomsecond'),
-    start: () => `bottom bottom-=${document.querySelector('.sticky--stack-bottom').offsetHeight}px`,
+    trigger: ref.querySelector('[data-xt-sticky-stack-bottomsecond]'),
+    start: () => `bottom bottom-=${document.querySelector('[data-xt-sticky-stack-bottom]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,

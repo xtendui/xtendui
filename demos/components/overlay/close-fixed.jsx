@@ -6,14 +6,15 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             closed fixed
           </button>
 
-          <div className="xt-overlay">
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
@@ -37,7 +38,7 @@ export default function demo() {
                   </svg>
                 </button>
                 <div className="xt-card items-center justify-center rounded-md shadow-overlay text-black xt-links-default bg-white">
-                  <div className="text-base py-8 px-9">
+                  <div className="py-8 px-9 text-base">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -114,14 +115,15 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             screen closed fixed
           </button>
 
-          <div className="xt-overlay">
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container p-0">
               <div className="xt-overlay-inner">
@@ -146,7 +148,7 @@ export default function demo() {
                 </button>
                 <div className="xt-card xt-min-h-screen items-center justify-center shadow-overlay text-black xt-links-default bg-white">
                   <div className="max-w-3xl">
-                    <div className="text-base py-8 px-9">
+                    <div className="py-8 px-9 text-base">
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

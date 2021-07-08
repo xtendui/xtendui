@@ -14,18 +14,22 @@ const buttonPrimary = () => classes.buttonPrimary()
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">List Group</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">List Group</div>
 
     <form class="text-xs">
-      <div
-        class="xt-list xt-list-3 items-center"
-        data-xt-toggle="{ elements: ':scope > .xt-button', targets: ':scope > .xt-toggle', collapseWidth: 'targets', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-toggle-element
+        >
           List group
         </button>
 
-        <div class="xt-toggle max-w-sm overflow-hidden transition-all group">
+        <div
+          class="*** off:hidden out:pointer-events-none ** max-w-sm overflow-hidden transition-all group"
+          data-xt-toggle-target
+        >
           <div class="xt-list flex-nowrap ${animItemWidth()}">
             <div class="xt-list-inner flex-auto">
               <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
@@ -47,18 +51,20 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Drop</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-drop-element
+        >
           list
         </button>
 
-        <div class="xt-drop p-4 group">
-          <div class="xt-drop-inner ${classes.cardRadius()} shadow-drop ${animDesign()}">
+        <div class="xt-drop p-4 group" data-xt-drop-target>
+          <div class="relative ${classes.cardRadius()} shadow-drop ${animDesign()}" data-xt-drop-inner>
             <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} ${classes.cardWhite()}">
               <nav class="xt-list flex-col rounded-md ${animItem()}">
                 <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
@@ -77,15 +83,17 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop', targetsInner: '.xt-drop-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-drop-element
+        >
           card
         </button>
 
-        <div class="xt-drop p-4 group">
-          <div class="xt-drop-inner ${classes.cardRadius()} shadow-drop ${animDesign()}">
+        <div class="xt-drop p-4 group" data-xt-drop-target>
+          <div class="relative ${classes.cardRadius()} shadow-drop ${animDesign()}" data-xt-drop-inner>
             <div class="xt-card w-64 ${classes.cardRadius()} ${classes.cardWhite()}">
               <button
                 type="button"
@@ -108,19 +116,17 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Tooltip</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <div class="xt-tooltip-item">
+      <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             tooltip
           </button>
 
-          <div class="xt-tooltip p-2 group">
-            <div class="xt-tooltip-inner ${animDesign()}">
+          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
+            <div class="relative ${animDesign()}" data-xt-tooltip-inner>
               <div
                 class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
               >
@@ -132,16 +138,17 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', targetsInner: '.xt-tooltip-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <div class="xt-tooltip-item">
+      <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
             list group
           </button>
 
-          <div class="xt-tooltip p-2 group">
-            <div class="xt-tooltip-inner ${classes.tooltipRadius()} shadow-tooltip text-black bg-white ${animDesign()}">
+          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipRadius()} shadow-tooltip text-black bg-white ${animDesign()}"
+              data-xt-tooltip-inner
+            >
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
                   <div class="xt-list-inner flex-auto">
@@ -162,22 +169,25 @@ const html = /* HTML */ `
                 </div>
               </form>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-400 z-below ${animItemOpacity()}"></div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-300 z-below ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Overlay</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
           screen full
         </button>
-        <div class="xt-overlay group">
+
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
@@ -187,9 +197,9 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-overlay-inner ${animDesign()}">
+            <div class="xt-overlay-inner ${animDesign()}" data-xt-overlay-inner>
               <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()}">
-                <div class="xt-media-container bg-gray-600 xt-ratio-100 ${animItem()}">
+                <div class="xt-media-container bg-gray-500 xt-ratio-100 ${animItem()}">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
@@ -198,17 +208,19 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
           Menu
         </button>
 
-        <div class="xt-overlay group">
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div class="xt-overlay-inner ${animDesign()}">
+            <div class="xt-overlay-inner ${animDesign()}" data-xt-overlay-inner>
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()}">
                 <button
                   type="button"
@@ -222,7 +234,7 @@ const html = /* HTML */ `
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
                   <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
                 </div>
-                <div class="xt-media-container bg-gray-600 h-48 ${animItem()}">
+                <div class="xt-media-container bg-gray-500 h-48 ${animItem()}">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
                 <div class="${classes.cardMd()} ${animItem()}">
@@ -233,7 +245,7 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                 </div>
-                <div class="${classes.cardSm()} bg-gray-300 mt-auto ${animItem()}">
+                <div class="${classes.cardSm()} bg-gray-200 mt-auto ${animItem()}">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
@@ -245,17 +257,19 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
           contact
         </button>
 
-        <div class="xt-overlay group">
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
+            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}" data-xt-overlay-inner>
               <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
@@ -355,10 +369,10 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col ${animItem()}">
-                    <div class="xt-media-container bg-gray-600 md:rounded-tr-md h-48 md:xt-ratio-100">
+                    <div class="xt-media-container bg-gray-500 md:rounded-tr-md h-48 md:xt-ratio-100">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
-                    <div class="${classes.cardMd()} bg-gray-300 rounded-b-md md:rounded-bl-none flex-full">
+                    <div class="${classes.cardMd()} bg-gray-200 rounded-b-md md:rounded-bl-none flex-full">
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
@@ -373,17 +387,19 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', targetsInner: '.xt-overlay-inner', collapseHeight: 'targetsInner', duration: 500 }"
-      >
-        <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
           newsletter
         </button>
 
-        <div class="xt-overlay group">
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}">
+            <div class="xt-overlay-inner ${classes.cardRadius()} shadow-overlay ${animDesign()}" data-xt-overlay-inner>
               <div class="xt-card ${classes.cardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
@@ -396,7 +412,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group rounded-md ${animItem()}">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-600 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -483,7 +499,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b-md bg-gray-300 ${animItem()}">
+                <div class="${classes.cardSm()} rounded-b-md bg-gray-200 ${animItem()}">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>

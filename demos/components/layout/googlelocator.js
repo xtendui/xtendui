@@ -26,27 +26,8 @@ const initGooglelocator = ({ ref }) => {
 
   /***/
   const self = new Xt.Googlelocator(googlelocator, {
-    initialLocate: false,
-    initialSearch: false,
-    seachMapBounds: false,
-    locateRadius: 25000,
-    locateText: 'Locate',
-    elements: {
-      loader: '.xt-loader',
-      searchInput: 'input[type="text"]',
-      searchBtn: '.button--search',
-      map: '.googlelocator-main-map',
-      itemsTemplate: 'script[type="text/x-template"]',
-      itemsContainer: '.googlelocator-items',
-      results: '.googlelocator-aside-body',
-      resultsFound: '.googlelocator-result--found',
-      locateBtn: '.button--locate',
-      repeatBtn: '.button--repeat',
-      filter: 'input[type="checkbox"], input[type="radio"]',
-    },
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
-      infoWindowMarkerClick: true,
     },
     map: {
       center: { lat: 40, lng: -74 },
@@ -221,12 +202,18 @@ const initGooglelocator = ({ ref }) => {
     //console.debug(self.locations)
   }
 
-  self.object.addEventListener('change.xt.googlelocator', change)
+  self.container.addEventListener('change.xt.googlelocator', change)
 }
 
 /* mountGooglelocator */
 
 const mountGooglelocator = ({ ref }) => {
+  // init
+
+  window.demoGooglelocator = () => {
+    initGooglelocator({ ref })
+  }
+
   // add yout api key here
 
   const lang = document.documentElement.getAttribute('lang')
@@ -235,12 +222,6 @@ const mountGooglelocator = ({ ref }) => {
   )
 
   Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
-
-  // init
-
-  window.demoGooglelocator = () => {
-    initGooglelocator({ ref })
-  }
 
   // unmount
 

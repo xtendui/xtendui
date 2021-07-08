@@ -30,7 +30,7 @@ const mountListing = ({ ref }) => {
 
     const click = e => {
       e.stopPropagation()
-      Xt.on(item)
+      Xt.on({ el: item })
     }
 
     actionBtn.addEventListener('click', click)
@@ -39,7 +39,7 @@ const mountListing = ({ ref }) => {
 
     const close = e => {
       e.stopPropagation()
-      Xt.off(item)
+      Xt.off({ el: item })
     }
 
     closeBtn.addEventListener('click', close)

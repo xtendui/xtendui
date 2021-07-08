@@ -24,15 +24,15 @@ const mountTooltip = ({ ref }) => {
   for (const tooltip of tooltips) {
     // vars
 
-    const object = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get('xt-tooltip', object)
+    const container = tooltip.closest('[data-xt-tooltip]')
+    const self = Xt.get('xt-tooltip', container)
     const delayReset = 1000
     const durationFast = 100
 
     // fix only once when tooltip has multiple targets
 
-    if (object.dataset.onlyOnceDone) return () => {}
-    object.dataset.onlyOnceDone = 'true'
+    if (container.dataset.onlyOnceDone) return () => {}
+    container.dataset.onlyOnceDone = 'true'
 
     // on
 

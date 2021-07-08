@@ -6,13 +6,15 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             screen
           </button>
-          <div className="xt-overlay">
+
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
@@ -37,7 +39,7 @@ export default function demo() {
                     </svg>
                   </button>
                   <div className="max-w-3xl">
-                    <div className="text-base py-8 px-9">
+                    <div className="py-8 px-9 text-base">
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
                         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -64,13 +66,15 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             screen full
           </button>
-          <div className="xt-overlay">
+
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
@@ -94,7 +98,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-media-container bg-gray-600 xt-ratio-100">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-100">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
@@ -103,13 +107,15 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             screen group
           </button>
-          <div className="xt-overlay">
+
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 ***">
               <div className="xt-overlay-inner">
@@ -135,7 +141,7 @@ export default function demo() {
                   </button>
                   <div className="max-w-3xl">
                     <div className="md:xt-card-group">
-                      <div className="text-base py-8 px-9 md:w-7/12">
+                      <div className="py-8 px-9 text-base md:w-7/12">
                         <div className="xt-h4">Lorem ipsum</div>
                         <p>
                           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
@@ -144,13 +150,13 @@ export default function demo() {
                         </p>
                       </div>
                       <div className="md:w-5/12">
-                        <div className="text-sm py-6 px-7 bg-gray-300">
+                        <div className="py-6 px-7 text-sm bg-gray-200">
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
                             volutpat turpis.
                           </p>
                         </div>
-                        <div className="text-base py-8 px-9">
+                        <div className="py-8 px-9 text-base">
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec
                             volutpat turpis.
@@ -158,7 +164,7 @@ export default function demo() {
                         </div>
                       </div>
                     </div>
-                    <div className="xt-media-container bg-gray-600 xt-ratio-25">
+                    <div className="xt-media-container bg-gray-500 xt-ratio-25">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>

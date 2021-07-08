@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
-      <div class="xt-media-container bg-gray-600 w-full h-96">
+      <div class="xt-media-container bg-gray-500 w-full h-96">
         <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
       </div>
       <div class="flex relative">

@@ -2,11 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div
-      class="xt-list xt-list-3 items-center"
-      data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip' }"
-    >
-      <div class="xt-tooltip-item">
+    <div class="xt-list xt-list-3 items-center" data-xt-tooltip>
+      <div data-xt-tooltip-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -14,7 +11,7 @@ const html = /* HTML */ `
           asset
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="*** xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button
               type="button"
@@ -23,14 +20,14 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
           </div>
         </div>
       </div>
 
-      <div class="xt-tooltip-item">
+      <div data-xt-tooltip-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -38,7 +35,7 @@ const html = /* HTML */ `
           asset and text
         </button>
 
-        <div class="xt-tooltip p-2">
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
@@ -47,7 +44,7 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div class="${classes.cardMd()}">

@@ -42,15 +42,15 @@ const mountEventmethods = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main time and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
       duration: dragDuration,
       ease: dragEase,
     })
-    // dragger tween with main time and ease
+    // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,
@@ -72,7 +72,7 @@ const mountEventmethods = ({ ref }) => {
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-500"/>'
+      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
     }, 1000)
   }
 
@@ -112,8 +112,8 @@ const mountEventmethods = ({ ref }) => {
       const targets = self.targets
       const indexTr = targets.length + 1
       const strTr = `
-      <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-        <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
+      <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+        <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
           <div class="xt-h4">${indexTr}</div>
         </div>
       </div>

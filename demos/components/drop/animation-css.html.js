@@ -2,11 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-animation-css">
-    <div
-      class="xt-list xt-list-3 items-center"
-      data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', duration: 500 }"
-    >
-      <div class="xt-drop-item">
+    <div class="xt-list xt-list-3 items-center" data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -14,7 +11,7 @@ const html = /* HTML */ `
           list
         </button>
 
-        <div class="xt-drop p-4 group">
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <nav class="xt-list flex-col">
               <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
@@ -31,7 +28,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-drop-item">
+      <div data-xt-drop-element>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -39,7 +36,7 @@ const html = /* HTML */ `
           card
         </button>
 
-        <div class="xt-drop p-4 group">
+        <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}

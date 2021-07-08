@@ -2,15 +2,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+    <div data-xt-drop>
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-drop-element
       >
         list group
       </button>
 
-      <div class="xt-drop p-4">
+      <div class="xt-drop p-4" data-xt-drop-target>
         <form class="${classes.cardRadius()} shadow-drop text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
             <div class="xt-list-inner flex-auto">

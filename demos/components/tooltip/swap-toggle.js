@@ -30,7 +30,6 @@ const mountButtonsSwap = ({ ref }) => {
     // swap
 
     const swapBack = () => {
-      tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
       // swap tooltip
       self.targets[0].classList.remove('hidden')
       self.targets[1].classList.add('hidden')
@@ -39,7 +38,6 @@ const mountButtonsSwap = ({ ref }) => {
     }
 
     const swap = () => {
-      tooltip.removeEventListener('offdone.xt.tooltip', swap)
       // swap
       self.targets[0].classList.add('hidden')
       self.targets[1].classList.remove('hidden')
@@ -65,7 +63,7 @@ const mountButtonsSwap = ({ ref }) => {
 
     const on = () => {
       // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap)
+      tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 
@@ -75,7 +73,7 @@ const mountButtonsSwap = ({ ref }) => {
 
     const off = () => {
       // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack)
+      tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
       tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     }
 

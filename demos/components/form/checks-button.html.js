@@ -8,6 +8,7 @@ const html = /* HTML */ `
         <input
           type="checkbox"
           class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkDefault()}"
+          name="checkbox-button-0"
           checked
           disabled
         />
@@ -18,6 +19,7 @@ const html = /* HTML */ `
         <input
           type="checkbox"
           class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkDefault()}"
+          name="checkbox-button-1"
         />
       </label>
 

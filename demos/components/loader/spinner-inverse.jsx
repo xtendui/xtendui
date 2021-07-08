@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-list xt-list-3 items-center justify-center">
         <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
-          <div className="text-sm py-6 px-7">
+          <div className="py-6 px-7 text-sm">
             <div className="xt-h5">Small</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -46,7 +46,7 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
           Lorem ipsum
           <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
             <span className="*** xt-spinner absolute inset-0 m-auto w-6 h-6 text-white ***">

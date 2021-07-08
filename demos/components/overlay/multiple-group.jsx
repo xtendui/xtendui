@@ -5,31 +5,32 @@ import 'xtendui/src/overlay'
 export default function demo() {
   return (
     <div>
-      <div
-        className="xt-list xt-list-3 items-center"
-        data-xt-overlay="{ elements: ':scope > .xt-button, .xt-list > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div className="xt-list xt-list-3 items-center" data-xt-overlay>
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          data-xt-overlay-element
           data-xt-group="group0">
           overlay 0
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          data-xt-overlay-element
           data-xt-group="group1">
           overlay 1
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          data-xt-overlay-element
           data-xt-group="group2">
           overlay 2
         </button>
 
-        <div className="xt-overlay" data-xt-group="group0">
+        <div className="xt-overlay" data-xt-overlay-target data-xt-group="group0">
           <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -53,7 +54,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Overlay 0</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -75,21 +76,24 @@ export default function demo() {
                   <div className="xt-list xt-list-3 items-center">
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group0">
                       overlay 0
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group1">
                       overlay 1
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group2">
                       overlay 2
                     </button>
@@ -100,7 +104,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay" data-xt-group="group1">
+        <div className="xt-overlay" data-xt-overlay-target data-xt-group="group1">
           <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -124,7 +128,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Overlay 1</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -146,21 +150,24 @@ export default function demo() {
                   <div className="xt-list xt-list-3 items-center">
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group0">
                       overlay 0
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group1">
                       overlay 1
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group2">
                       overlay 2
                     </button>
@@ -171,7 +178,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay" data-xt-group="group2">
+        <div className="xt-overlay" data-xt-overlay-target data-xt-group="group2">
           <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -195,7 +202,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Overlay 2</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -217,21 +224,24 @@ export default function demo() {
                   <div className="xt-list xt-list-3 items-center">
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group0">
                       overlay 0
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group1">
                       overlay 1
                     </button>
 
                     <button
                       type="button"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                      data-xt-overlay-element
                       data-xt-group="group2">
                       overlay 2
                     </button>

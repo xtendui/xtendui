@@ -3,17 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', classHtml: 'xt-scrollbar-overlay classhtml-custom', duration: 500 }"
-      >
+      <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
-          class html
+          class body
         </button>
 
-        <div class="xt-overlay group">
+        <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black  transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div
@@ -47,15 +46,16 @@ const html = /* HTML */ `
                     justo.
                   </p>
 
-                  <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+                  <div data-xt-overlay>
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                      data-xt-overlay-element
                     >
                       Overlay
                     </button>
 
-                    <div class="xt-overlay">
+                    <div class="xt-overlay" data-xt-overlay-target>
                       <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">

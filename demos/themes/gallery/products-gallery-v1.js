@@ -30,7 +30,7 @@ const mountScrollto = () => {
 
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
-    scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
+    scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
     duration: ({ self }) => {
       const overlay = self.target.closest('.xt-overlay')
       if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
@@ -52,12 +52,12 @@ const mountScrollto = () => {
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
+    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }
@@ -75,7 +75,6 @@ const mountImages = ({ ref }) => {
 
   /***/
   new Xt.Overlay(container, {
-    elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
   /***/

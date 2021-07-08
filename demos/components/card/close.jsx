@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
+          <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
             <button
               type="button"
               className="*** xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl ***"
@@ -24,7 +24,7 @@ export default function demo() {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <div className="text-base py-8 px-9">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -56,7 +56,7 @@ export default function demo() {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <div className="text-base py-8 px-9">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Primary</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

@@ -11,17 +11,15 @@ export default function demo() {
   return (
     <div className="demo--drop-reset-to-current-react" ref={ref}>
       <div className="relative py-4 px-6 bg-primary-500">
-        <div
-          className="xt-list items-center"
-          data-xt-drop="{ elements: ':scope > .xt-drop-item', targets: ':scope > .xt-drop-item > .xt-drop', on: 'mouseenter', off: 'mouseleave' }">
-          <div className="xt-drop-item">
+        <div className="xt-list items-center" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
+          <div data-xt-drop-element>
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Drop
             </button>
 
-            <div className="xt-drop xt-drop-static">
+            <div className="xt-drop xt-drop-static" data-xt-drop-target>
               <div className="xt-card w-full shadow-drop text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -42,7 +40,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Drop static 0</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -53,14 +51,14 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-drop-item">
+          <div data-xt-drop-element>
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Drop
             </button>
 
-            <div className="xt-drop xt-drop-static on current">
+            <div className="xt-drop xt-drop-static on current" data-xt-drop-target>
               <div className="xt-card w-full shadow-drop text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -81,7 +79,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Drop static 1</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -92,14 +90,14 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-drop-item">
+          <div data-xt-drop-element>
             <button
               type="button"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Drop
             </button>
 
-            <div className="xt-drop xt-drop-static">
+            <div className="xt-drop xt-drop-static" data-xt-drop-target>
               <div className="xt-card w-full shadow-drop text-black xt-links-default bg-white">
                 <button
                   type="button"
@@ -120,7 +118,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Drop static 2</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

@@ -10,11 +10,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
                   </div>
@@ -31,7 +31,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -57,11 +57,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -78,7 +78,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -94,11 +94,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -115,7 +115,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -141,11 +141,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -162,7 +162,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -178,11 +178,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -199,7 +199,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -225,11 +225,11 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-600 h-40">
+                <div class="xt-media-container bg-gray-500 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                   </div>
@@ -246,7 +246,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                   <div class="xt-h5">Contacts</div>
                   <div class="xt-p font-sm">
                     <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />

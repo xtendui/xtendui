@@ -30,7 +30,7 @@ const mountInfinitescroll = ({ ref }) => {
     get: false,
     max: 4,
     elements: {
-      itemsContainer: '.xt-row',
+      itemsContainer: '[data-xt-infinitescroll-items-container]',
       item: ':scope > *',
       scrollUp: '[data-xt-infinitescroll-up]',
       scrollDown: '[data-xt-infinitescroll-down]',

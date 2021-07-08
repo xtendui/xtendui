@@ -13,9 +13,9 @@ export default function demo() {
     <div className="demo--slider-media-loaded-react" ref={ref}>
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8">
-          <div className="xt-slides xt-row xt-row-4">
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+          <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img className="xt-media relative" src="/img.svg" loading="lazy" alt="" />
                 <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
@@ -50,8 +50,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img className="xt-media relative" src="/img-ratio.svg" loading="lazy" alt="" />
                 <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
@@ -86,8 +86,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img
                   className="xt-media relative"
                   src="https://source.unsplash.com/ruJm3dBXCqw"
@@ -127,8 +127,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img
                   className="xt-media relative"
                   src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -168,8 +168,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img
                   className="xt-media relative"
                   src="https://source.unsplash.com/OlTjeydUpQw"
@@ -209,8 +209,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img
                   className="xt-media relative"
                   src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -250,8 +250,8 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide group group">
-              <div className="xt-media-container bg-gray-600">
+            <div className="xt-slide group group" data-xt-slider-target>
+              <div className="xt-media-container bg-gray-500">
                 <img
                   className="xt-media relative"
                   src="https://source.unsplash.com/Tyg0rVhOTrE"
@@ -292,11 +292,11 @@ export default function demo() {
             </div>
           </div>
 
-          <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
+          <nav className="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
-              data-xt-pag
+              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              data-xt-slider-element
               title="Slide xt-num"></button>
           </nav>
         </div>
@@ -330,7 +330,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     mediaLoaded: true,
     mediaLoadedReinit: true,
   })
@@ -341,15 +341,15 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main time and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
       duration: dragDuration,
       ease: dragEase,
     })
-    // dragger tween with main time and ease
+    // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,
@@ -362,5 +362,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

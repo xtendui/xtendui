@@ -21,7 +21,7 @@ Xt.mount({
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector(':scope > .xt-list')
+  const toggle = ref
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
@@ -31,8 +31,6 @@ const mountToggle = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
     auto: {
       time: 4000,
       initial: false,
@@ -44,7 +42,7 @@ const mountToggle = ({ ref }) => {
 
   const autostart = () => {
     // toggle
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     const timeline = gsap.timeline({
       overwrite: false,
     })
@@ -99,7 +97,7 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostart.xt.toggle', autostart)
+  self.container.addEventListener('autostart.xt.toggle', autostart)
 
   // autostop
 
@@ -134,13 +132,13 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostop.xt.toggle', autostop)
+  self.container.addEventListener('autostop.xt.toggle', autostop)
 
   // autopause
 
   const autopause = () => {
     // toggle
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
     gsap.to(spinner, {
       strokeDashoffset: 628,
@@ -178,7 +176,7 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autopause.xt.toggle', autopause)
+  self.container.addEventListener('autopause.xt.toggle', autopause)
 
   // unmount
 

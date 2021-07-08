@@ -7,8 +7,8 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200" data-xt-mousefollow>
-            <div className="text-base py-8 px-9">
+          <div className="xt-card rounded-md text-black xt-links-default bg-gray-100" data-xt-mousefollow>
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -16,7 +16,7 @@ export default function demo() {
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <span className="*** xt-mousefollow fixed *** xt-loader group">
+            <span className="*** xt-mousefollow fixed *** xt-loader group" data-xt-mousefollow-target>
               <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
                 <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                   <circle
@@ -51,9 +51,9 @@ export default function demo() {
 
         <div className="w-full md:w-6/12">
           <div
-            className="xt-card rounded-md text-black xt-links-default bg-gray-200"
+            className="xt-card rounded-md text-black xt-links-default bg-gray-100"
             data-xt-mousefollow="{ friction: false }">
-            <div className="text-base py-8 px-9">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -61,7 +61,7 @@ export default function demo() {
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <span className="*** xt-mousefollow fixed *** xt-loader group">
+            <span className="*** xt-mousefollow fixed *** xt-loader group" data-xt-mousefollow-target>
               <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 -mt-1 ml-4 transition opacity-0 group-in:opacity-100">
                 <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                   <circle

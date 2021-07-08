@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Custom constrain </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()} input--constrains"
+            class="${classes.input()} ${classes.inputUnderline()} input--constrains"
             aria-label="Custom constrain"
             placeholder="Custom constrain"
             required
@@ -19,7 +19,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Email </label>
           <input
             type="email"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputUnderline()}"
             aria-label="Email"
             placeholder="Email"
             required
@@ -30,7 +30,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Number </label>
           <input
             type="number"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputUnderline()}"
             aria-label="Number"
             placeholder="Number"
             required
@@ -43,7 +43,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Letters </label>
           <input
             type="text"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputUnderline()}"
             aria-label="Letters"
             placeholder="Letters"
             required
@@ -53,18 +53,13 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> File </label>
-          <input
-            type="file"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
-            aria-label="File"
-            required
-          />
+          <input type="file" class="${classes.input()} ${classes.inputUnderline()}" aria-label="File" required />
         </div>
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} ${classes.inputUnderline()} h-24 resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
             required
@@ -73,11 +68,7 @@ const html = /* HTML */ `
 
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select </label>
-          <select
-            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
-            aria-label="Select"
-            required
-          >
+          <select class="${classes.input()} xt-select ${classes.inputUnderline()}" aria-label="Select" required>
             <option selected value="">Select an option</option>
             <option>Test</option>
             <option>Test</option>
@@ -88,7 +79,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select multiple </label>
           <select
-            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} xt-select ${classes.inputUnderline()}"
             aria-label="Select multiple"
             multiple
             required

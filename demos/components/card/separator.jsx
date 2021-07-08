@@ -4,9 +4,9 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
+          <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
             <div className="md:xt-card-group">
-              <div className="text-base py-8 px-9 md:w-7/12">
+              <div className="py-8 px-9 text-base md:w-7/12">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -14,14 +14,14 @@ export default function demo() {
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
               </div>
-              <div className="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-500 ***">
-                <div className="text-sm py-6 px-7">
+              <div className="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-400 ***">
+                <div className="py-6 px-7 text-sm">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.
                   </p>
                 </div>
-                <div className="text-base py-8 px-9 *** border-t border-solid border-gray-500 ***">
+                <div className="py-8 px-9 text-base *** border-t border-solid border-gray-400 ***">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.

@@ -6,14 +6,15 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             asset
           </button>
 
-          <div className="xt-overlay">
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
@@ -37,7 +38,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
@@ -46,14 +47,15 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             asset and text
           </button>
 
-          <div className="xt-overlay">
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
@@ -77,10 +79,10 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
-                  <div className="*** text-base py-8 px-9 ***">
+                  <div className="*** py-8 px-9 text-base ***">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -106,29 +108,30 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+        <div data-xt-overlay>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
             text
           </button>
 
-          <div className="xt-overlay">
+          <div className="xt-overlay" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
                 <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
-                  <div className="*** text-base py-8 px-9 rounded-t-md text-black xt-links-default bg-gray-200 ***">
+                  <div className="*** py-8 px-9 text-base rounded-t-md text-black xt-links-default bg-gray-100 ***">
                     <div className="xt-h4">Lorem ipsum</div>
                   </div>
-                  <div className="*** text-base py-8 px-9 bg-gray-300 ***">
+                  <div className="*** py-8 px-9 text-base bg-gray-200 ***">
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
                   </div>
-                  <div className="*** text-sm py-6 px-7 rounded-b-md text-white xt-links-inverse bg-primary-500 ***">
+                  <div className="*** py-6 px-7 text-sm rounded-b-md text-white xt-links-inverse bg-primary-500 ***">
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed

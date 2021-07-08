@@ -11,35 +11,35 @@ export default function demo() {
 
   return (
     <div className="demo--ripple-animation-v1-react" ref={ref}>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
         Button
       </div>
 
       <div className="xt-list xt-list-2 items-center">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Gray
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
           Primary
         </button>
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
           Text
         </button>
 
-        <button type="button" className="xt-button text-xs py-2.5 px-3.5 rounded-md xt-link">
+        <button type="button" className="xt-button py-2.5 px-3.5 text-xs rounded-md xt-link">
           Link
         </button>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
         Card
       </div>
 
@@ -47,8 +47,8 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-200 hover:bg-gray-300 on:bg-gray-400">
-            <div className="text-base py-8 px-9">
+            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
@@ -62,8 +62,8 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 on:bg-primary-600">
-            <div className="text-base py-8 px-9">
+            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Primary</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
@@ -75,8 +75,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
-            <div className="text-base py-8 px-9">
+          <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -85,7 +85,7 @@ export default function demo() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                 Gray
               </button>
             </div>
@@ -94,7 +94,7 @@ export default function demo() {
 
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
-            <div className="text-base py-8 px-9">
+            <div className="py-8 px-9 text-base">
               <div className="xt-h4">Primary</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -103,7 +103,7 @@ export default function demo() {
               </p>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                 Primary
               </button>
             </div>

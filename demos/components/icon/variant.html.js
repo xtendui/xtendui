@@ -2,11 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Text</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Text</div>
 
     ${classes.iconSearch()}
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Primary</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Primary</div>
 
     ${classes.iconSearch({ classes: '*** text-primary-50 ***' })}
     ${classes.iconSearch({ classes: '*** text-primary-100 ***' })}
@@ -19,7 +19,7 @@ const html = /* HTML */ `
     ${classes.iconSearch({ classes: '*** text-primary-800 ***' })}
     ${classes.iconSearch({ classes: '*** text-primary-900 ***' })}
 
-    <div class="${classes.hBlock()} text-black bg-gray-200 text-center">Black opacity</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Black opacity</div>
 
     ${classes.iconSearch({ classes: '*** text-black text-opacity-0 ***' })}
     ${classes.iconSearch({ classes: '*** text-black text-opacity-25 ***' })}

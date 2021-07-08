@@ -3,15 +3,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           left
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -49,15 +50,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           right
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
             <div class="xt-overlay-inner">
@@ -95,15 +97,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           left blocks
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -115,7 +118,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-600 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="${classes.cardMd()}">
@@ -126,7 +129,7 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                 </div>
-                <div class="${classes.cardSm()} bg-gray-300 mt-auto">
+                <div class="${classes.cardSm()} bg-gray-200 mt-auto">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                     turpis.

@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-500 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
@@ -14,7 +14,7 @@ export default function demo() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Lorem ipsum
             </a>
           </div>
@@ -22,7 +22,7 @@ export default function demo() {
       </div>
 
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-500 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
@@ -33,7 +33,7 @@ export default function demo() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Lorem ipsum
             </a>
           </div>
@@ -41,7 +41,7 @@ export default function demo() {
       </div>
 
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-500 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative min-h-screen">
@@ -52,7 +52,7 @@ export default function demo() {
             </h3>
             <a
               href="#"
-              className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
               Lorem ipsum
             </a>
           </div>

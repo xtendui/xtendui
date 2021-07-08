@@ -22,8 +22,8 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const sticky = ref.querySelector('.xt-sticky')
-  const content = sticky.querySelector('.sticky--hide-content')
-  const inner = sticky.querySelector('.sticky--hide-sub')
+  const content = sticky.querySelector('[data-xt-sticky-hide-content]')
+  const inner = sticky.querySelector('[data-xt-sticky-hide-sub]')
 
   // hide depending on inner (always before pin or bugs)
 

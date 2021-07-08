@@ -9,17 +9,17 @@ export default function demo() {
 
   return (
     <div className="demo--jumptocontent-react" ref={ref}>
-      <div className="*** jumptocontent *** *** xt-toggle *** fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
+      <div className="*** jumptocontent *** off:hidden out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
         <a
           href="#jumptocontent"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
           Jump to content
         </a>
       </div>
 
       <div className="xt-row xt-row-6">
         <div className="w-full">
-          <div className="xt-card rounded-md p-6 text-black xt-links-default bg-gray-200">
+          <div className="xt-card rounded-md p-6 text-black xt-links-default bg-gray-100">
             <div className="xt-h4">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -30,7 +30,7 @@ export default function demo() {
         </div>
 
         <div className="w-full">
-          <div className="xt-card rounded-md p-6 text-black xt-links-default bg-gray-200">
+          <div className="xt-card rounded-md p-6 text-black xt-links-default bg-gray-100">
             <div className="xt-h4">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -147,9 +147,9 @@ const mountJumptocontents = ({ ref }) => {
     const focusIn = e => {
       const active = jumptocontent.contains(e.target)
       if (active) {
-        Xt.on(jumptocontent)
+        Xt.on({ el: jumptocontent })
       } else {
-        Xt.off(jumptocontent)
+        Xt.off({ el: jumptocontent })
       }
     }
 

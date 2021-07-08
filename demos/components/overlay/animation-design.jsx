@@ -5,14 +5,15 @@ import 'xtendui/src/overlay'
 export default function demo() {
   return (
     <div>
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
+      <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          data-xt-overlay-element>
           overlay
         </button>
 
-        <div className="xt-overlay group">
+        <div className="xt-overlay group" data-xt-overlay-target>
           <div className="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -38,10 +39,10 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+                <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div className="text-base py-8 px-9">
+                <div className="py-8 px-9 text-base">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

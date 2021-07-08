@@ -12,15 +12,15 @@ export default function demo() {
 
   return (
     <div className="demo--slider-hero-v1-react" ref={ref}>
-      <div className="xt-slider xt-slider-absolute bg-primary-500">
-        <div className="xt-slides">
-          <div className="xt-slide w-full">
+      <div className="xt-slider bg-primary-500">
+        <div className="xt-slides" data-xt-slider-dragger>
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
                     className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -31,13 +31,13 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-slide w-full">
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
                     className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
@@ -52,13 +52,13 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-slide w-full">
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
                     className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
@@ -69,13 +69,13 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-slide w-full">
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1">4. Lorem ipsum dolor sit amet</h2>
                     <p>
@@ -84,7 +84,7 @@ export default function demo() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                       Lorem ipsum
                     </a>
                   </div>
@@ -93,13 +93,13 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-slide w-full">
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1">5. Lorem ipsum dolor sit amet</h2>
                     <p>
@@ -108,7 +108,7 @@ export default function demo() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                       Lorem ipsum
                     </a>
                   </div>
@@ -117,13 +117,13 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-slide w-full">
+          <div className="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
-              <div className="hero-inner">
-                <div className="xt-media-container bg-gray-600 w-full h-full absolute">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div className="hero-content flex relative min-h-screen">
+                <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
                     <h2 className="xt-h1">6. Lorem ipsum dolor sit amet</h2>
                     <p>
@@ -132,7 +132,7 @@ export default function demo() {
                     </p>
                     <a
                       href="/"
-                      className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                      className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                       Lorem ipsum
                     </a>
                   </div>
@@ -148,7 +148,9 @@ export default function demo() {
           data-xt-nav="-1"
           aria-label="Previous slide"
           data-xt-mousefollow>
-          <div className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div
+            className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
+            data-xt-mousefollow-target>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -172,7 +174,9 @@ export default function demo() {
           data-xt-nav="1"
           aria-label="Next slide"
           data-xt-mousefollow>
-          <div className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+          <div
+            className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
+            data-xt-mousefollow-target>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
@@ -190,8 +194,8 @@ export default function demo() {
           </div>
         </button>
 
-        <nav className="xt-slider-pagination hidden">
-          <button type="button" className="xt-button hidden" data-xt-pag></button>
+        <nav className="hidden" data-xt-slider-pagination>
+          <button type="button" className="xt-button hidden" data-xt-slider-element></button>
         </nav>
       </div>
     </div>
@@ -241,8 +245,8 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main duration and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
@@ -272,11 +276,11 @@ const mountSlider = ({ ref }) => {
     /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
-      incoming.classList.remove('incoming', 'display')
+      incoming.classList.remove('incoming', '!block')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
-      incoming.classList.add('incoming', 'display')
+      incoming.classList.add('incoming', '!block')
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -337,7 +341,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('on.xt.slider', on, true)
+  self.container.addEventListener('on.xt.slider', on, true)
 
   // off
 
@@ -376,7 +380,7 @@ const mountSlider = ({ ref }) => {
             ease: dragEase,
           })
           .eventCallback('onComplete', () => {
-            incoming.classList.remove('display')
+            incoming.classList.remove('!block')
           })
         const maskInner = mask.querySelector('.hero-inner')
         gsap.killTweensOf(maskInner)
@@ -391,7 +395,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('off.xt.slider', off, true)
+  self.container.addEventListener('off.xt.slider', off, true)
 
   // unmount
 

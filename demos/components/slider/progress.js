@@ -50,15 +50,15 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main time and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
       duration: dragDuration,
       ease: dragEase,
     })
-    // dragger tween with main time and ease
+    // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,
@@ -73,7 +73,7 @@ const mountSlider = ({ ref }) => {
 
   const autostart = () => {
     // slider
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     const timeline = gsap.timeline({
       overwrite: false,
     })
@@ -128,7 +128,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostart.xt.slider', autostart)
+  self.container.addEventListener('autostart.xt.slider', autostart)
 
   // autostop
 
@@ -163,13 +163,13 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostop.xt.slider', autostop)
+  self.container.addEventListener('autostop.xt.slider', autostop)
 
   // autopause
 
   const autopause = () => {
     // slider
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
     gsap.to(spinner, {
       strokeDashoffset: 628,
@@ -207,7 +207,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autopause.xt.slider', autopause)
+  self.container.addEventListener('autopause.xt.slider', autopause)
 
   // unmount
 

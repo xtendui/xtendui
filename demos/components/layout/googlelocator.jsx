@@ -13,7 +13,7 @@ export default function demo() {
     <div className="demo--googlelocator-react" ref={ref}>
       <div className="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
         <div className="*** googlelocator-aside *** flex flex-col w-full relative z-10">
-          <div className="relative p-6 border-b border-gray-200">
+          <div className="relative p-6 border-b border-gray-100">
             <form className="text-sm">
               <div className="xt-row xt-row-x-6 xt-row-y-4">
                 <div className="w-full">
@@ -21,13 +21,15 @@ export default function demo() {
                     <div className="xt-list-inner flex-auto">
                       <input
                         type="text"
-                        className="block w-full rounded-l-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                        className="block w-full rounded-l-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
                         aria-label="Search"
                         placeholder="Search"
+                        data-xt-googlelocator-search-input
                       />
                       <button
                         type="button"
-                        className="button--locate xt-button text-xs py-2.5 px-3.5 text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                        className="xt-button py-2.5 px-3.5 text-xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+                        data-xt-googlelocator-locate-btn>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -45,7 +47,8 @@ export default function demo() {
                       </button>
                       <button
                         type="button"
-                        className="button--search xt-button text-xs py-2.5 px-3.5 rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                        className="xt-button py-2.5 px-3.5 text-xs rounded-r-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+                        data-xt-googlelocator-search-btn>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="xt-icon text-xl -my-1"
@@ -69,9 +72,10 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
                       name="type-options"
                       defaultValue=""
+                      data-xt-googlelocator-filter
                       defaultChecked
                     />
                     <span className="ml-4">All types</span>
@@ -82,9 +86,10 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
                       name="type-options"
                       defaultValue="restaurant"
+                      data-xt-googlelocator-filter
                     />
                     <span className="ml-4">Restaurant</span>
                   </label>
@@ -94,9 +99,10 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-300 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
                       name="type-options"
                       defaultValue="school"
+                      data-xt-googlelocator-filter
                     />
                     <span className="ml-4">School</span>
                   </label>
@@ -106,9 +112,10 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
-                      className="xt-check xt-switch rounded-full text-primary-500 bg-gray-300 transition-all"
+                      className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
                       name="type-fav"
                       defaultValue="fav"
+                      data-xt-googlelocator-filter
                     />
                     <span className="ml-4">Favourite</span>
                   </label>
@@ -117,32 +124,34 @@ export default function demo() {
             </form>
           </div>
 
-          <div className="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll">
-            <div className="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-200">
+          <div
+            className="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll"
+            data-xt-googlelocator-results>
+            <div className="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-100">
               Insert your position and find a place near you
             </div>
 
-            <div className="*** googlelocator-result googlelocator-result--error *** text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--error *** text-xs pb-4 border-b border-gray-100">
               Request timed out, retry
             </div>
 
-            <div className="*** googlelocator-result googlelocator-result--noplace *** text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--noplace *** text-xs pb-4 border-b border-gray-100">
               Not a valid place
             </div>
 
-            <div className="*** googlelocator-result googlelocator-result--empty *** text-xs pb-4 border-b border-gray-200">
+            <div className="*** googlelocator-result googlelocator-result--empty *** text-xs pb-4 border-b border-gray-100">
               No place found
             </div>
 
-            <div className="*** googlelocator-result googlelocator-result--founds *** text-xs pb-4 border-b border-gray-200">
-              <span className="*** googlelocator-result--found ***"></span>
+            <div className="*** googlelocator-result googlelocator-result--founds *** text-xs pb-4 border-b border-gray-100">
+              <span data-xt-googlelocator-results-found></span>
               places found
             </div>
 
-            <div className="*** googlelocator-items ***">
-              <script type="text/x-template">
+            <div data-xt-googlelocator-items-container>
+              <script type="text/x-template" data-xt-googlelocator-items-template>
                 <div
-                  className="*** googlelocator-item *** py-4 cursor-pointer border-b border-gray-200 transition in:border-gray-600"
+                  className="py-4 cursor-pointer border-b border-gray-100 transition in:border-gray-500"
                   tabIndex="-1">
                   <div className="xt-list xt-list-2 flex-nowrap items-center justify-between">
                     <div className="*** googlelocator-item-content *** text-xs leading-relaxed">
@@ -184,17 +193,20 @@ export default function demo() {
 
         <div className="*** googlelocator-main *** relative flex-auto min-h-full md:absolute md:inset-0">
           <div className="relative w-full h-full">
-            <div className="*** googlelocator-main-map *** w-full h-full"></div>
+            <div className="w-full h-full" data-xt-googlelocator-map></div>
 
             <button
               type="button"
-              className="button--repeat absolute z-10 top-4 left-4 xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+              className="absolute z-10 top-4 left-4 xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+              data-xt-googlelocator-repeat-btn>
               Search in this area
             </button>
           </div>
         </div>
 
-        <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 *** xt-toggle *** z-10">
+        <div
+          className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10"
+          data-xt-googlelocator-loader>
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -252,27 +264,8 @@ const initGooglelocator = ({ ref }) => {
 
   /***/
   const self = new Xt.Googlelocator(googlelocator, {
-    initialLocate: false,
-    initialSearch: false,
-    seachMapBounds: false,
-    locateRadius: 25000,
-    locateText: 'Locate',
-    elements: {
-      loader: '.xt-loader',
-      searchInput: 'input[type="text"]',
-      searchBtn: '.button--search',
-      map: '.googlelocator-main-map',
-      itemsTemplate: 'script[type="text/x-template"]',
-      itemsContainer: '.googlelocator-items',
-      results: '.googlelocator-aside-body',
-      resultsFound: '.googlelocator-result--found',
-      locateBtn: '.button--locate',
-      repeatBtn: '.button--repeat',
-      filter: 'input[type="checkbox"], input[type="radio"]',
-    },
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
-      infoWindowMarkerClick: true,
     },
     map: {
       center: { lat: 40, lng: -74 },
@@ -447,12 +440,18 @@ const initGooglelocator = ({ ref }) => {
     //console.debug(self.locations)
   }
 
-  self.object.addEventListener('change.xt.googlelocator', change)
+  self.container.addEventListener('change.xt.googlelocator', change)
 }
 
 /* mountGooglelocator */
 
 const mountGooglelocator = ({ ref }) => {
+  // init
+
+  window.demoGooglelocator = () => {
+    initGooglelocator({ ref })
+  }
+
   // add yout api key here
 
   const lang = document.documentElement.getAttribute('lang')
@@ -461,12 +460,6 @@ const mountGooglelocator = ({ ref }) => {
   )
 
   Xt.addScript('https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js')
-
-  // init
-
-  window.demoGooglelocator = () => {
-    initGooglelocator({ ref })
-  }
 
   // unmount
 

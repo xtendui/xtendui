@@ -3,19 +3,20 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-element
         >
           group
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div
             class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96"
           >
-            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div class="${classes.cardMd()}">
@@ -40,17 +41,18 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-element
         >
           group
         </button>
 
-        <div class="xt-drop p-4">
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
-            <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div class="${classes.cardMd()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">

@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-react" ref={ref}>
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -26,13 +26,13 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky *** *** sticky--top ***">
-        <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+      <div className="*** xt-sticky ***" data-xt-sticky-top>
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -62,7 +62,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -79,15 +79,15 @@ export default function demo() {
 
       <div className="*** relative ***">
         <div className="*** absolute w-full ***">
-          <div className="*** xt-sticky *** *** sticky--bottom ***">
-            <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+          <div className="*** xt-sticky ***" data-xt-sticky-bottom>
+            <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
               <div className="xt-h4">Bottom</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -124,7 +124,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--top'),
+    trigger: ref.querySelector('[data-xt-sticky-top]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -135,7 +135,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('.sticky--bottom'),
+    trigger: ref.querySelector('[data-xt-sticky-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',

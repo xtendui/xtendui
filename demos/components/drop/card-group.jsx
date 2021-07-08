@@ -6,24 +6,25 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+        <div data-xt-drop>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-drop-element>
             group
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-screen max-w-2xl rounded-md shadow-drop text-black xt-links-default bg-white">
               <div className="*** md:xt-card-group ***">
-                <div className="text-base py-8 px-9 *** md:w-7/12 ***">
+                <div className="py-8 px-9 text-base *** md:w-7/12 ***">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>
-                <div className="text-sm py-6 px-7 *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-300">
+                <div className="py-6 px-7 text-sm *** md:w-5/12 *** rounded-b-md md:rounded-b-none md:rounded-r-md bg-gray-200">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
@@ -34,17 +35,18 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+        <div data-xt-drop>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-drop-element>
             group complex
           </button>
 
-          <div className="xt-drop p-4">
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-screen max-w-2xl rounded-md shadow-drop text-black xt-links-default bg-white">
               <div className="*** md:xt-card-group ***">
-                <div className="text-base py-8 px-9 *** md:w-7/12 *** bg-gray-300 md:rounded-tl-md">
+                <div className="py-8 px-9 text-base *** md:w-7/12 *** bg-gray-200 md:rounded-tl-md">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -52,13 +54,13 @@ export default function demo() {
                   </p>
                 </div>
                 <div className="*** md:w-5/12 ***">
-                  <div className="text-sm py-6 px-7 bg-gray-300 md:rounded-tr-md">
+                  <div className="py-6 px-7 text-sm bg-gray-200 md:rounded-tr-md">
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                       turpis.
                     </p>
                   </div>
-                  <div className="text-base py-8 px-9">
+                  <div className="py-8 px-9 text-base">
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                       turpis.
@@ -66,7 +68,7 @@ export default function demo() {
                   </div>
                 </div>
               </div>
-              <div className="xt-media-container bg-gray-600 rounded-b-md h-40">
+              <div className="xt-media-container bg-gray-500 rounded-b-md h-40">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
             </div>

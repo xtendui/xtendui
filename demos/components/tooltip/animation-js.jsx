@@ -12,29 +12,29 @@ export default function demo() {
   return (
     <div className="demo--tooltip-animation-js-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
-        <div className="xt-tooltip-item">
+        <div data-xt-tooltip-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div className="xt-tooltip p-2" data-xt-tooltip-target>
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Consectetur adipiscing elit
             </div>
           </div>
         </div>
 
-        <div className="xt-tooltip-item">
+        <div data-xt-tooltip-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div className="xt-tooltip p-2" data-xt-tooltip-target>
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Consectetur adipiscing elit
             </div>
           </div>
@@ -61,19 +61,19 @@ const mount = ({ ref }) => {
 const mountTooltip = ({ ref }) => {
   // vars
 
-  const tooltip = ref.querySelector(':scope > .xt-list')
+  const tooltip = ref
 
   const targetTimeOn = 0.3
   const targetEaseOn = 'quint.out'
+  const targetXOn = 16
   const targetTimeOff = 0.3
   const targetEaseOff = 'quint.out'
+  const targetXOff = 16
 
   // init
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
-    elements: ':scope > .xt-tooltip-item',
-    targets: ':scope > .xt-tooltip-item > .xt-tooltip',
     duration: 300,
     delay: 50,
   })
@@ -81,6 +81,7 @@ const mountTooltip = ({ ref }) => {
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -88,7 +89,7 @@ const mountTooltip = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
-        x: -self.direction * 15,
+        x: -self.direction * targetXOn,
         opacity: 0,
       })
       gsap.to(inner, {
@@ -103,9 +104,11 @@ const mountTooltip = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.tooltip', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -113,7 +116,7 @@ const mountTooltip = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
-        x: self.direction * 15,
+        x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,
@@ -124,6 +127,7 @@ const mountTooltip = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.tooltip', off)
   }
+  /***/
 
   // unmount
 

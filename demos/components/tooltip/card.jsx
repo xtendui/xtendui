@@ -5,17 +5,15 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div>
-      <div
-        className="xt-list xt-list-3 items-center"
-        data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip' }">
-        <div className="xt-tooltip-item">
+      <div className="xt-list xt-list-3 items-center" data-xt-tooltip>
+        <div data-xt-tooltip-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             asset
           </button>
 
-          <div className="xt-tooltip p-2">
+          <div className="xt-tooltip p-2" data-xt-tooltip-target>
             <div className="*** xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white ***">
               <button
                 type="button"
@@ -36,21 +34,21 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="xt-media-container bg-gray-600 rounded-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="xt-tooltip-item">
+        <div data-xt-tooltip-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             asset and text
           </button>
 
-          <div className="xt-tooltip p-2">
+          <div className="xt-tooltip p-2" data-xt-tooltip-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
@@ -71,10 +69,10 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div className="text-base py-8 px-9">
+              <div className="py-8 px-9 text-base">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

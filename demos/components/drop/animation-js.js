@@ -24,21 +24,22 @@ const mountDrops = ({ ref }) => {
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetXOn = 16
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetXOff = 16
 
   // init
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: ':scope > .xt-drop-item',
-    targets: ':scope > .xt-drop-item > .xt-drop',
     duration: 500,
   })
   /***/
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -46,7 +47,7 @@ const mountDrops = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
-        x: -self.direction * 15,
+        x: -self.direction * targetXOn,
         opacity: 0,
       })
       gsap.to(inner, {
@@ -61,9 +62,11 @@ const mountDrops = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.drop', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -71,7 +74,7 @@ const mountDrops = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
-        x: self.direction * 15,
+        x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,
@@ -82,6 +85,7 @@ const mountDrops = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.drop', off)
   }
+  /***/
 
   // unmount
 

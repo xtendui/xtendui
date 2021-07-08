@@ -5,9 +5,7 @@ import 'xtendui/src/overlay'
 export default function demo() {
   return (
     <div>
-      <div
-        className="*** xt-overlay *** *** on ***"
-        data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div className="*** xt-overlay *** *** on ***" data-xt-overlay>
         <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
         <div className="*** xt-overlay-container *** max-w-3xl">
           <div className="*** xt-overlay-inner ***">
@@ -31,7 +29,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="text-base py-8 px-9">
+              <div className="py-8 px-9 text-base">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

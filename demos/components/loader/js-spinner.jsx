@@ -11,8 +11,8 @@ export default function demo() {
   return (
     <div className="demo--loader-js-spinner-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center justify-center">
-        <div className="xt-card rounded-md text-black xt-links-default bg-gray-200">
-          <div className="text-sm py-6 px-7">
+        <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
+          <div className="py-6 px-7 text-sm">
             <div className="xt-h5">Small</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -21,7 +21,7 @@ export default function demo() {
             </p>
           </div>
           <div
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** xt-toggle *** opacity-0 transition in:opacity-100"
+            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 off:hidden out:pointer-events-none opacity-0 transition in:opacity-100"
             data-xt-duration="500">
             <div className="*** xt-spinner absolute inset-0 m-auto *** w-6 h-6 text-primary-500">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
@@ -56,10 +56,10 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Lorem ipsum
           <span
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** xt-toggle *** opacity-0 transition in:opacity-100"
+            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 off:hidden out:pointer-events-none opacity-0 transition in:opacity-100"
             data-xt-duration="500">
             <span className="*** xt-spinner absolute inset-0 m-auto *** w-6 h-6 text-primary-500">
               {' '}
@@ -125,7 +125,7 @@ const mountLoader = ({ ref }) => {
       if (loader.dataset.loaderTimeout) {
         clearTimeout(loader.dataset.loaderTimeout)
         delete loader.dataset.loaderTimeout
-        Xt.on(loader)
+        Xt.on({ el: loader })
         gsap.set(spinner, {
           strokeDashoffset: 628,
         })
@@ -138,7 +138,7 @@ const mountLoader = ({ ref }) => {
           })
           .eventCallback('onComplete', loaderTimeout)
       } else {
-        Xt.off(loader)
+        Xt.off({ el: loader })
         loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
       }
     }

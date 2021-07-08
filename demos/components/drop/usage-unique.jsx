@@ -7,7 +7,7 @@ export default function demo() {
     <div>
       <button
         type="button"
-        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700"
+        className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
         data-xt-drop="{ targets: '#drop--unique-1, #drop--unique-2' }">
         drop
       </button>
@@ -17,17 +17,17 @@ export default function demo() {
           <nav className="xt-list flex-col">
             <a
               href="#"
-              className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
               Dolor sit
             </button>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
               Amet
             </button>
           </nav>
@@ -52,7 +52,7 @@ export default function demo() {
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <div className="text-sm py-6 px-7">
+          <div className="py-6 px-7 text-sm">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

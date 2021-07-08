@@ -16,11 +16,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
                     </div>
@@ -47,7 +47,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -79,11 +79,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
@@ -110,7 +110,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -126,11 +126,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
@@ -157,7 +157,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -189,11 +189,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
@@ -220,7 +220,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -236,11 +236,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
@@ -267,7 +267,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -299,11 +299,11 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full">
                 <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-600 h-40">
+                  <div className="xt-media-container bg-gray-500 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
-                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                    <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
@@ -330,7 +330,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-300">
+                  <div className="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div className="xt-h5">Contacts</div>
                     <div className="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -373,7 +373,7 @@ const mountListing = ({ ref }) => {
   const on = tr => {
     if (!tr.classList.contains('on')) {
       // class
-      Xt.on(tr)
+      Xt.on({ el: tr })
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.to(front, {
@@ -401,7 +401,7 @@ const mountListing = ({ ref }) => {
   const off = tr => {
     if (tr.classList.contains('on')) {
       // class
-      Xt.off(tr)
+      Xt.off({ el: tr })
       // front
       const front = tr.querySelector('.listing-item-front')
       gsap.set(front, {

@@ -11,103 +11,91 @@ export default function demo() {
 
   return (
     <div className="demo--slider-exclude-react" ref={ref}>
-      <div className="demo--slider-exclude-toggle-react" ref={ref}>
-        <div className="*** xt-list *** xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
-          <button
-            type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500"
-            data-xt-group="group0">
-            Group0
-          </button>
+      <div className="*** xt-list *** xt-list-3 items-center p-4 pb-0 md:p-6 md:pb-0 lg:p-8 lg:pb-0">
+        <button
+          type="button"
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+          data-xt-toggle-element
+          data-xt-group="group0">
+          Group0
+        </button>
 
-          <button
-            type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500 *** on ***"
-            data-xt-group="group1">
-            Group1
-          </button>
+        <button
+          type="button"
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** on ***"
+          data-xt-toggle-element
+          data-xt-group="group1">
+          Group1
+        </button>
+      </div>
 
-          <div
-            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            id="toggle--unique-0">
-            Target 0
-          </div>
-
-          <div
-            className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200"
-            id="toggle--unique-1">
-            Target 1
-          </div>
-        </div>
-
-        <div className="xt-slider">
-          <div className="p-4 md:p-6 lg:p-8">
-            <div className="xt-slides xt-row xt-row-4">
-              <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group1">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">1</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group0,group1">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">2</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group0">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">3</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-full group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group1">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">4</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group0">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">5</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group0,group1">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">6</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group">
-                <div className="*** xt-toggle *** ***" data-xt-group="group1">
-                  <div className="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-200 border-2 border-transparent transition group-in:border-gray-400">
-                    <div className="xt-h4">7</div>
-                  </div>
+      <div className="xt-slider">
+        <div className="p-4 md:p-6 lg:p-8">
+          <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">1</div>
                 </div>
               </div>
             </div>
 
-            <nav className="xt-slider-pagination w-full xt-list xt-list-3 pt-4 items-center justify-center">
-              <button
-                type="button"
-                className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-200 hover:bg-gray-300 on:px-5 on:bg-gray-400 transition-all hidden"
-                data-xt-pag
-                title="Slide xt-num"></button>
-            </nav>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0,group1">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">2</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">3</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xt-slide w-full group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">4</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">5</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0,group1">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">6</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+              <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
+                <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">7</div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <nav className="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
+            <button
+              type="button"
+              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              data-xt-slider-element
+              title="Slide xt-num"></button>
+          </nav>
         </div>
       </div>
     </div>
@@ -133,15 +121,13 @@ const mount = ({ ref }) => {
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector('.demo--slider-exclude-toggle')
+  const toggle = ref
   const slider = ref.querySelector('.xt-slider')
 
   // init
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: '.xt-list > button',
-    targets: '.xt-toggle',
     min: 1,
   })
   /***/
@@ -176,7 +162,10 @@ const mountToggle = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }
 
 /* mountSlider */
@@ -192,7 +181,7 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {
+  let self = new Xt.Slider(slider, {
     exclude: '.hidden',
   })
   /***/
@@ -202,15 +191,15 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main time and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
       duration: dragDuration,
       ease: dragEase,
     })
-    // dragger tween with main time and ease
+    // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,
@@ -223,5 +212,8 @@ const mountSlider = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    self.destroy()
+    self = null
+  }
 }

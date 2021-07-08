@@ -12,29 +12,29 @@ export default function demo() {
   return (
     <div className="demo--drop-animation-js-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
-        <div className="xt-drop-item">
+        <div data-xt-drop-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             list
           </button>
 
-          <div className="xt-drop p-4 group">
+          <div className="xt-drop p-4 group" data-xt-drop-target>
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
                   href="#"
-                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  className="xt-button text-2xs py-2 px-6 w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
                   Amet
                 </button>
               </nav>
@@ -42,14 +42,14 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-drop-item">
+        <div data-xt-drop-element>
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             card
           </button>
 
-          <div className="xt-drop p-4 group">
+          <div className="xt-drop p-4 group" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
@@ -70,7 +70,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="text-base py-8 px-9">
+              <div className="py-8 px-9 text-base">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -107,21 +107,22 @@ const mountDrops = ({ ref }) => {
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
+  const targetXOn = 16
   const targetTimeOff = 0.5
   const targetEaseOff = 'quint.out'
+  const targetXOff = 16
 
   // init
 
   /***/
   let self = new Xt.Drop(drop, {
-    elements: ':scope > .xt-drop-item',
-    targets: ':scope > .xt-drop-item > .xt-drop',
     duration: 500,
   })
   /***/
 
   // on
 
+  /***/
   const on = e => {
     const tr = e.target
     // check because of event propagation
@@ -129,7 +130,7 @@ const mountDrops = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
-        x: -self.direction * 15,
+        x: -self.direction * targetXOn,
         opacity: 0,
       })
       gsap.to(inner, {
@@ -144,9 +145,11 @@ const mountDrops = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('on.xt.drop', on)
   }
+  /***/
 
   // off
 
+  /***/
   const off = e => {
     const tr = e.target
     // check because of event propagation
@@ -154,7 +157,7 @@ const mountDrops = ({ ref }) => {
       const inner = tr.querySelector(':scope > *')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
-        x: self.direction * 15,
+        x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
         ease: targetEaseOff,
@@ -165,6 +168,7 @@ const mountDrops = ({ ref }) => {
   for (const tr of self.targets) {
     tr.addEventListener('off.xt.drop', off)
   }
+  /***/
 
   // unmount
 

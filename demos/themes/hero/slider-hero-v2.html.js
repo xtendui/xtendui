@@ -2,15 +2,15 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-hero-v2">
-    <div class="xt-slider xt-slider-absolute bg-primary-500">
-      <div class="xt-slides">
-        <div class="xt-slide w-full">
+    <div class="xt-slider bg-primary-500">
+      <div class="xt-slides" data-xt-slider-dragger>
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center"
@@ -20,16 +20,16 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
@@ -43,16 +43,16 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
@@ -62,16 +62,16 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
@@ -90,16 +90,16 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
@@ -118,16 +118,16 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-gray-600 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
         </div>
 
-        <div class="xt-slide w-full">
+        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
-            <div class="hero-inner">
-              <div class="xt-media-container bg-gray-600 w-full h-full absolute">
+            <div class="*** hero-inner ***">
+              <div class="xt-media-container bg-gray-500 w-full h-full absolute">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
-              <div class="hero-content flex relative min-h-screen">
+              <div class="*** hero-content *** flex relative min-h-screen">
                 <div
                   class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right"
                 >
@@ -146,7 +146,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="hero-cover absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
         </div>
       </div>
 
@@ -157,7 +157,10 @@ const html = /* HTML */ `
         aria-label="Previous slide"
         data-xt-mousefollow
       >
-        <div class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+        <div
+          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
+          data-xt-mousefollow-target
+        >
           ${classes.iconArrowLeft({
             classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
           })}
@@ -171,15 +174,18 @@ const html = /* HTML */ `
         aria-label="Next slide"
         data-xt-mousefollow
       >
-        <div class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100">
+        <div
+          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
+          data-xt-mousefollow-target
+        >
           ${classes.iconArrowRight({
             classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
           })}
         </div>
       </button>
 
-      <nav class="xt-slider-pagination hidden">
-        <button type="button" class="xt-button hidden" data-xt-pag></button>
+      <nav class="hidden" data-xt-slider-pagination>
+        <button type="button" class="xt-button hidden" data-xt-slider-element></button>
       </nav>
     </div>
   </div>

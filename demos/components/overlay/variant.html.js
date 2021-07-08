@@ -3,16 +3,17 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           White
         </button>
 
-        <div class="xt-overlay">
-          <div class="xt-backdrop pointer-events-none *** bg-black pointer-events-none opacity-25 ***"></div>
+        <div class="xt-overlay" data-xt-overlay-target>
+          <div class="*** xt-backdrop pointer-events-none bg-black opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardWhite()} ***">
@@ -49,16 +50,17 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           Primary
         </button>
 
-        <div class="xt-overlay">
-          <div class="xt-backdrop pointer-events-none *** bg-primary-700 bg-opacity-25 ***"></div>
+        <div class="xt-overlay" data-xt-overlay-target>
+          <div class="*** xt-backdrop pointer-events-none bg-primary-700 bg-opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardPrimary()} ***">
@@ -95,15 +97,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+      <div data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-overlay-element
         >
           No backdrop
         </button>
 
-        <div class="xt-overlay">
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardWhite()} ***">

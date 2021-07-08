@@ -2,15 +2,16 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', duration: 500 }">
+    <div data-xt-overlay="{ duration: 500 }">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-element
       >
         overlay
       </button>
 
-      <div class="xt-overlay group">
+      <div class="xt-overlay group" data-xt-overlay-target>
         <div class="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -26,7 +27,7 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-media-container bg-gray-600 rounded-t-md xt-ratio-37.5">
+              <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">

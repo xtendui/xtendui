@@ -5,20 +5,21 @@ import 'xtendui/src/drop'
 export default function demo() {
   return (
     <div>
-      <div data-xt-drop="{ elements: ':scope > .xt-button', targets: ':scope > .xt-drop' }">
+      <div data-xt-drop>
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          data-xt-drop-element>
           list group
         </button>
 
-        <div className="xt-drop p-4">
+        <div className="xt-drop p-4" data-xt-drop-target>
           <form className="rounded-md shadow-drop text-sm">
             <div className="xt-list flex-nowrap max-w-sm">
               <div className="xt-list-inner flex-auto">
                 <button
                   type="button"
-                  className="xt-button text-xs py-2.5 px-3.5 rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+                  className="xt-button py-2.5 px-3.5 text-xs rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-xl -my-1"
@@ -36,7 +37,7 @@ export default function demo() {
                 </button>
                 <input
                   type="text"
-                  className="block w-full py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-300 transition focus:bg-gray-500 focus:outline-none"
+                  className="block w-full py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
                   aria-label="Search"
                   placeholder="Seach Catalog"
                 />
@@ -44,7 +45,7 @@ export default function demo() {
 
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button py-2.5 px-3.5 text-xs rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                 Search
               </button>
             </div>

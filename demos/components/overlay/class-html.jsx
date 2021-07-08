@@ -6,14 +6,15 @@ export default function demo() {
   return (
     <div className="demo--overlay-class-html-react">
       <div className="xt-list xt-list-3 items-center justify-center">
-        <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay', classHtml: 'xt-scrollbar-overlay classhtml-custom', duration: 500 }">
+        <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
-            class html
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
+            class body
           </button>
 
-          <div className="xt-overlay group">
+          <div className="xt-overlay group" data-xt-overlay-target>
             <div className="xt-backdrop pointer-events-none bg-black  transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0">
@@ -37,7 +38,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="text-base py-8 px-9">
+                  <div className="py-8 px-9 text-base">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -57,14 +58,15 @@ export default function demo() {
                       justo.
                     </p>
 
-                    <div data-xt-overlay="{ elements: ':scope > .xt-button', targets: ':scope > .xt-overlay' }">
+                    <div data-xt-overlay>
                       <button
                         type="button"
-                        className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                        className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                        data-xt-overlay-element>
                         Overlay
                       </button>
 
-                      <div className="xt-overlay">
+                      <div className="xt-overlay" data-xt-overlay-target>
                         <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
                         <div className="xt-overlay-container max-w-3xl">
                           <div className="xt-overlay-inner">
@@ -88,7 +90,7 @@ export default function demo() {
                                   <line x1="6" y1="6" x2="18" y2="18"></line>
                                 </svg>
                               </button>
-                              <div className="text-base py-8 px-9">
+                              <div className="py-8 px-9 text-base">
                                 <div className="xt-h4">Lorem ipsum</div>
                                 <p>
                                   <strong>Lorem ipsum</strong> dolor sit amet,

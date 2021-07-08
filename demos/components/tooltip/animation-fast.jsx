@@ -11,75 +11,76 @@ export default function demo() {
   return (
     <div className="demo--tooltip-animation-fast-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom', duration: 500 }">
+        <div data-xt-tooltip="{ position: 'bottom', duration: 500 }">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-tooltip-element>
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2 group" data-xt-duration="100">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
+          <div className="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="100">
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
               Lorem ipsum dolor sit amet
             </div>
           </div>
         </div>
 
-        <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom' }">
+        <div data-xt-tooltip="{ position: 'bottom' }">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-tooltip-element>
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2 group" data-xt-duration="500">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
+          <div className="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="500">
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
               Lorem ipsum dolor sit amet
             </div>
           </div>
         </div>
 
-        <div data-xt-tooltip="{ elements: ':scope > .xt-button', targets: ':scope > .xt-tooltip', position: 'bottom' }">
+        <div data-xt-tooltip="{ position: 'bottom' }">
           <button
             type="button"
-            className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-tooltip-element>
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2 group" data-xt-duration="500">
-            <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-500 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
+          <div className="xt-tooltip p-2 group" data-xt-tooltip-target data-xt-duration="500">
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
               Lorem ipsum dolor sit amet
             </div>
           </div>
         </div>
 
         <div>
-          <div
-            className="xt-list xt-list-3 items-center"
-            data-xt-tooltip="{ elements: ':scope > .xt-tooltip-item', targets: ':scope > .xt-tooltip-item > .xt-tooltip', position: 'bottom', delay: 50 }">
-            <div className="xt-tooltip-item">
+          <div className="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'bottom', delay: 50 }">
+            <div data-xt-tooltip-element>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                 tooltip multiple
               </button>
 
-              <div className="xt-tooltip p-2 group">
-                <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
+              <div className="xt-tooltip p-2 group" data-xt-tooltip-target>
+                <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
                   Lorem ipsum dolor sit amet
                 </div>
               </div>
             </div>
 
-            <div className="xt-tooltip-item">
+            <div data-xt-tooltip-element>
               <button
                 type="button"
-                className="xt-button text-xs py-2.5 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                 tooltip multiple
               </button>
 
-              <div className="xt-tooltip p-2 group">
-                <div className="relative text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
+              <div className="xt-tooltip p-2 group" data-xt-tooltip-target>
+                <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0 ***">
                   Consectetur adipiscing elit
                 </div>
               </div>
@@ -113,15 +114,15 @@ const mountTooltip = ({ ref }) => {
   for (const tooltip of tooltips) {
     // vars
 
-    const object = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get('xt-tooltip', object)
+    const container = tooltip.closest('[data-xt-tooltip]')
+    const self = Xt.get('xt-tooltip', container)
     const delayReset = 1000
     const durationFast = 100
 
     // fix only once when tooltip has multiple targets
 
-    if (object.dataset.onlyOnceDone) return () => {}
-    object.dataset.onlyOnceDone = 'true'
+    if (container.dataset.onlyOnceDone) return () => {}
+    container.dataset.onlyOnceDone = 'true'
 
     // on
 

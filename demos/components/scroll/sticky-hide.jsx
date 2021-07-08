@@ -12,17 +12,17 @@ export default function demo() {
   return (
     <div className="demo--sticky-hide-react" ref={ref}>
       <div className="*** xt-sticky ***">
-        <div className="*** sticky--hide-content ***">
-          <div className="xt-card p-4 text-black xt-links-default bg-gray-200 *** sticky--hide-sub ***">
+        <div data-xt-sticky-hide-content>
+          <div className="xt-card p-4 text-black xt-links-default bg-gray-100" data-xt-sticky-hide-sub>
             <div className="xt-h6">Sub</div>
           </div>
-          <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+          <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
             <div className="xt-h4">Main</div>
           </div>
         </div>
       </div>
 
-      <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -115,8 +115,8 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const sticky = ref.querySelector('.xt-sticky')
-  const content = sticky.querySelector('.sticky--hide-content')
-  const inner = sticky.querySelector('.sticky--hide-sub')
+  const content = sticky.querySelector('[data-xt-sticky-hide-content]')
+  const inner = sticky.querySelector('[data-xt-sticky-hide-sub]')
 
   // hide depending on inner (always before pin or bugs)
 

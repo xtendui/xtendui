@@ -18,7 +18,7 @@ export default function demo() {
       {/* For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product */}
       <div className="site-wrapper">
         <header className="site-header">
-          <div className="xt-card text-sm py-6 px-7 text-white xt-links-inverse bg-primary-500">
+          <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
             <div className="xt-h4">Header</div>
           </div>
         </header>
@@ -35,7 +35,7 @@ export default function demo() {
                         className="product-image w-full"
                         id="product-image-1"
                         title="Expand image 1">
-                        <div className="xt-media-container bg-gray-600 overflow-hidden">
+                        <div className="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -46,7 +46,7 @@ export default function demo() {
                         className="product-image w-full"
                         id="product-image-2"
                         title="Expand image 2">
-                        <div className="xt-media-container bg-gray-600 overflow-hidden">
+                        <div className="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -57,7 +57,7 @@ export default function demo() {
                         className="product-image w-full"
                         id="product-image-3"
                         title="Expand image 3">
-                        <div className="xt-media-container bg-gray-600 overflow-hidden">
+                        <div className="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -68,7 +68,7 @@ export default function demo() {
                         className="product-image w-full"
                         id="product-image-4"
                         title="Expand image 4">
-                        <div className="xt-media-container bg-gray-600 overflow-hidden">
+                        <div className="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -79,7 +79,7 @@ export default function demo() {
                         className="product-image w-full"
                         id="product-image-5"
                         title="Expand image 5">
-                        <div className="xt-media-container bg-gray-600 overflow-hidden">
+                        <div className="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -152,7 +152,7 @@ export default function demo() {
                         <div className="xt-overlay-inner">
                           <div className="xt-card items-center justify-center shadow-overlay text-black xt-links-default bg-white">
                             <div className="w-full">
-                              <div className="xt-media-container bg-gray-600 overflow-hidden">
+                              <div className="xt-media-container bg-gray-500 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-1"
@@ -162,7 +162,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-600 overflow-hidden">
+                              <div className="xt-media-container bg-gray-500 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-2"
@@ -172,7 +172,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-600 overflow-hidden">
+                              <div className="xt-media-container bg-gray-500 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-3"
@@ -182,7 +182,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-600 overflow-hidden">
+                              <div className="xt-media-container bg-gray-500 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-4"
@@ -192,7 +192,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-600 overflow-hidden">
+                              <div className="xt-media-container bg-gray-500 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-5"
@@ -213,16 +213,16 @@ export default function demo() {
               <div
                 className="w-full md:w-7/12 lg:w-6/12 xl:w-5/12"
                 id="product-arrow-target"
-                data-xt-stickyflow="{ element: '.stickyflow', filler: '.stickyflow-filler'}">
-                <div className="*** stickyflow-filler pointer-events-none absolute md:relative ***"></div>
-                <div className="pb-12 md:py-12 *** md:sticky stickyflow ***">
+                data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }">
+                <div className="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
+                <div className="pb-12 md:py-12 *** md:sticky ***" data-xt-stickyflow-el>
                   <h1 className="xt-h2">Lorem ipsum dolor sit amet</h1>
 
                   <div className="xt-h5 mb-6">€&nbsp;229,00</div>
 
                   <a
                     href="#"
-                    className="xt-button text-base py-3 px-4 rounded-md mb-6 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-700">
+                    className="xt-button py-3 px-4 text-base rounded-md mb-6 text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
                     Add to cart
                   </a>
 
@@ -281,7 +281,7 @@ export default function demo() {
         </main>
 
         <footer className="site-footer">
-          <div className="xt-card text-sm py-6 px-7 text-black xt-links-default bg-gray-200">
+          <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
             <div className="xt-h4">Footer</div>
           </div>
         </footer>
@@ -313,7 +313,7 @@ const mountScrollto = () => {
 
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
-    scrollers: '.xt-overlay:not(.xt-overlay-disabled), .product-gallery',
+    scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
     duration: ({ self }) => {
       const overlay = self.target.closest('.xt-overlay')
       if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
@@ -335,12 +335,12 @@ const mountScrollto = () => {
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
+    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }
@@ -358,7 +358,6 @@ const mountImages = ({ ref }) => {
 
   /***/
   new Xt.Overlay(container, {
-    elements: '.product-image .xt-media-container',
     targets: '#overlay--product-images',
   })
   /***/

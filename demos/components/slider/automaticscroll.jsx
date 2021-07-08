@@ -11,14 +11,14 @@ export default function demo() {
 
   return (
     <div className="demo--slider-automaticscroll-react" ref={ref}>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
         Constant speed
       </div>
 
       <div className="xt-slider slider--text my-12">
         <div className="p-4 md:p-6 lg:p-8">
-          <div className="xt-slides xt-row xt-row-10">
-            <div className="xt-slide group xt-list xt-list-10 flex-nowrap whitespace-nowrap">
+          <div className="xt-slides xt-row xt-row-10" data-xt-slider-dragger>
+            <div className="xt-slide group xt-list xt-list-10 flex-nowrap whitespace-nowrap" data-xt-slider-target>
               <a href="#test-link-1" className="slide-text" title="item 1">
                 <div className="xt-h4">One</div>
               </a>
@@ -62,46 +62,46 @@ export default function demo() {
 
           <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
-          <nav className="xt-slider-pagination hidden">
-            <button type="button" className="xt-button hidden" data-xt-pag></button>
+          <nav className="hidden" data-xt-slider-pagination>
+            <button type="button" className="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>
 
-        <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-200 text-center">
+        <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
           Images
         </div>
 
         <div className="xt-slider slider--img my-12">
           <div className="p-4 md:p-6 lg:p-8">
-            <div className="xt-slides xt-row xt-row-px">
-              <div className="xt-slide group xt-list xt-list-px flex-nowrap">
+            <div className="xt-slides xt-row xt-row-px" data-xt-slider-dragger>
+              <div className="xt-slide group xt-list xt-list-px flex-nowrap" data-xt-slider-target>
                 <a href="#test-link-1" className="slide-asset" title="item 0">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-2" className="slide-asset" title="item 1">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-3" className="slide-asset" title="item 2">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-4" className="slide-asset" title="item 3">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-5" className="slide-asset" title="item 4">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-6" className="slide-asset" title="item 5">
-                  <div className="xt-media-container bg-gray-600 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
                   </div>
                 </a>
@@ -112,8 +112,8 @@ export default function demo() {
 
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white"></div>
 
-            <nav className="xt-slider-pagination hidden">
-              <button type="button" className="xt-button hidden" data-xt-pag></button>
+            <nav className="hidden" data-xt-slider-pagination>
+              <button type="button" className="xt-button hidden" data-xt-slider-element></button>
             </nav>
           </div>
         </div>
@@ -202,7 +202,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('on.xt.slider', on, true)
+    self.container.addEventListener('on.xt.slider', on, true)
 
     // pause
 
@@ -218,7 +218,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('mouseenter', pause, true)
+    self.container.addEventListener('mouseenter', pause, true)
     addEventListener('blur', pause)
 
     // resume
@@ -235,7 +235,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('mouseleave', resume, true)
+    self.container.addEventListener('mouseleave', resume, true)
     addEventListener('focus', resume)
 
     // unmount

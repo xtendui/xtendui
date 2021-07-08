@@ -15,7 +15,8 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center" data-xt-mousefollow>
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          data-xt-toggle-element>
           Toggle 0
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -27,7 +28,8 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          data-xt-toggle-element>
           Toggle 1
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -39,7 +41,8 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          data-xt-toggle-element>
           Toggle 2
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -51,7 +54,8 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button text-xs py-2.5 px-3.5 rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-300 transition hover:bg-gray-400 active:bg-gray-500 on:bg-gray-500">
+          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          data-xt-toggle-element>
           Toggle 3
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500">
@@ -61,7 +65,7 @@ export default function demo() {
           </span>
         </button>
 
-        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow">
           Target 0
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -71,7 +75,9 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div
+          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          data-xt-toggle-target>
           Target 1
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -81,7 +87,9 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div
+          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          data-xt-toggle-target>
           Target 2
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -91,7 +99,9 @@ export default function demo() {
           </span>
         </div>
 
-        <div className="xt-card *** xt-toggle *** rounded-md text-sm p-6 text-black xt-links-default bg-gray-200">
+        <div
+          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          data-xt-toggle-target>
           Target 3
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -101,7 +111,7 @@ export default function demo() {
           </span>
         </div>
 
-        <span className="*** xt-mousefollow fixed *** xt-loader group hover-none:hidden">
+        <span className="*** xt-mousefollow fixed *** xt-loader group hover-none:hidden" data-xt-mousefollow-target>
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
@@ -153,7 +163,7 @@ const mount = ({ ref }) => {
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector(':scope > .xt-list')
+  const toggle = ref
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
@@ -163,8 +173,6 @@ const mountToggle = ({ ref }) => {
 
   /***/
   let self = new Xt.Toggle(toggle, {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
     auto: {
       time: 4000,
       initial: false,
@@ -176,7 +184,7 @@ const mountToggle = ({ ref }) => {
 
   const autostart = () => {
     // toggle
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     const timeline = gsap.timeline({
       overwrite: false,
     })
@@ -231,7 +239,7 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostart.xt.toggle', autostart)
+  self.container.addEventListener('autostart.xt.toggle', autostart)
 
   // autostop
 
@@ -266,13 +274,13 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autostop.xt.toggle', autostop)
+  self.container.addEventListener('autostop.xt.toggle', autostop)
 
   // autopause
 
   const autopause = () => {
     // toggle
-    const spinner = self.object.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
     gsap.to(spinner, {
       strokeDashoffset: 628,
@@ -310,7 +318,7 @@ const mountToggle = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('autopause.xt.toggle', autopause)
+  self.container.addEventListener('autopause.xt.toggle', autopause)
 
   // unmount
 

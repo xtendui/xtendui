@@ -17,7 +17,7 @@ export default function demo() {
           <label className="cursor-pointer inline-flex items-baseline">
             <input
               type="checkbox"
-              className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-300 transition-all"
+              className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
               defaultChecked
             />
             <span className="ml-4">Use mouse events</span>
@@ -28,16 +28,16 @@ export default function demo() {
 
         <div className="container">
           <div className="xt-list -mx-4">
-            <div className="*** xt-drop-item ***">
+            <div data-xt-drop-element>
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
-              <div className="*** xt-drop *** xt-drop-static">
-                <div className="*** xt-drop-inner ***">
-                  <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-500"></div>
+              <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
+                <div className="*** relative ***" data-xt-drop-inner>
+                  <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-400"></div>
                   <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
@@ -72,16 +72,16 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="*** xt-drop-item ***">
+            <div data-xt-drop-element>
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
-              <div className="*** xt-drop *** xt-drop-static">
-                <div className="*** xt-drop-inner ***">
-                  <div className="*** xt-design *** bg-gray-900 border-b-4 border-gray-500"></div>
+              <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
+                <div className="*** relative ***" data-xt-drop-inner>
+                  <div className="*** xt-design *** bg-gray-700 border-b-4 border-gray-400"></div>
                   <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-white xt-links-inverse">
                       <div className="container">
@@ -112,16 +112,16 @@ export default function demo() {
               Link #3
             </a>
 
-            <div className="*** xt-drop-item ***">
+            <div data-xt-drop-element>
               <a
                 href="/"
                 className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #4
               </a>
 
-              <div className="*** xt-drop *** xt-drop-static">
-                <div className="*** xt-drop-inner ***">
-                  <div className="*** xt-design *** bg-gray-200 border-b-4 border-gray-500"></div>
+              <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
+                <div className="*** relative ***" data-xt-drop-inner>
+                  <div className="*** xt-design *** bg-gray-100 border-b-4 border-gray-400"></div>
                   <div className="*** xt-drop-content ***">
                     <div className="pt-16 pb-24 text-black xt-links-default">
                       <div className="container">
@@ -309,8 +309,6 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(megamenu, {
-    elements: '.xt-drop-item',
-    targets: '.xt-drop-item > .xt-drop',
     queue: false,
     duration: 1000,
     preventEvent: true,
@@ -324,7 +322,7 @@ const mountDrops = ({ ref }) => {
   // setup
 
   for (const tr of self.targets) {
-    const inner = tr.querySelector('.xt-drop-inner')
+    const inner = tr.querySelector('[data-xt-drop-inner]')
     gsap.set(inner, {
       height: 0,
     })
@@ -357,7 +355,7 @@ const mountDrops = ({ ref }) => {
         opacity: 1,
       })
       // inner
-      const inner = tr.querySelector('.xt-drop-inner')
+      const inner = tr.querySelector('[data-xt-drop-inner]')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
         height: '',
@@ -382,7 +380,7 @@ const mountDrops = ({ ref }) => {
         // not current targets
         for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
           // inner
-          const inner = tr.querySelector('.xt-drop-inner')
+          const inner = tr.querySelector('[data-xt-drop-inner]')
           gsap.killTweensOf(inner)
           gsap.set(inner, {
             height: innerHeightCache,
@@ -398,7 +396,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('on.xt.drop', on, true)
+  self.container.addEventListener('on.xt.drop', on, true)
 
   // off
 
@@ -428,7 +426,7 @@ const mountDrops = ({ ref }) => {
       // when not sequential interaction
       if (!self.direction) {
         // inner
-        const inner = tr.querySelector('.xt-drop-inner')
+        const inner = tr.querySelector('[data-xt-drop-inner]')
         gsap.killTweensOf(inner)
         gsap
           .to(inner, {
@@ -444,7 +442,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('off.xt.drop', off, true)
+  self.container.addEventListener('off.xt.drop', off, true)
 
   // unmount
 
@@ -461,7 +459,7 @@ const mountLine = ({ ref }) => {
 
   const megamenu = ref.querySelector('.megamenu')
   const btns = ref.querySelectorAll('.button--line')
-  const drops = ref.querySelectorAll('.xt-drop-item')
+  const drops = ref.querySelectorAll('[data-xt-drop-element]')
   const line = ref.querySelector('.megamenu-line')
 
   const dropDelay = 150
@@ -479,7 +477,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'on.xt.drop') {
-      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
@@ -523,7 +521,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'off.xt.drop') {
-      el = el.closest('.xt-drop-item').querySelector(':scope > .button--line')
+      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }

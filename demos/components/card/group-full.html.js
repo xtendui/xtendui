@@ -14,7 +14,7 @@ const html = /* HTML */ `
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <div class="${classes.cardSm()} md:w-5/12 rounded-md bg-gray-300">
+            <div class="${classes.cardSm()} md:w-5/12 rounded-md bg-gray-200">
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -37,7 +37,7 @@ const html = /* HTML */ `
               </p>
             </div>
             <div class="*** md:w-5/12 ***">
-              <div class="${classes.cardSm()} rounded-md bg-gray-300">
+              <div class="${classes.cardSm()} rounded-md bg-gray-200">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                   turpis.
@@ -51,7 +51,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-media-container bg-gray-600 rounded-md h-40">
+          <div class="xt-media-container bg-gray-500 rounded-md h-40">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
         </div>

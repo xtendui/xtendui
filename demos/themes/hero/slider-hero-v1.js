@@ -47,8 +47,8 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main duration and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
@@ -78,11 +78,11 @@ const mountSlider = ({ ref }) => {
     /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
-      incoming.classList.remove('incoming', 'display')
+      incoming.classList.remove('incoming', '!block')
     }
     const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
     for (const incoming of incomings) {
-      incoming.classList.add('incoming', 'display')
+      incoming.classList.add('incoming', '!block')
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -143,7 +143,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('on.xt.slider', on, true)
+  self.container.addEventListener('on.xt.slider', on, true)
 
   // off
 
@@ -182,7 +182,7 @@ const mountSlider = ({ ref }) => {
             ease: dragEase,
           })
           .eventCallback('onComplete', () => {
-            incoming.classList.remove('display')
+            incoming.classList.remove('!block')
           })
         const maskInner = mask.querySelector('.hero-inner')
         gsap.killTweensOf(maskInner)
@@ -197,7 +197,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('off.xt.slider', off, true)
+  self.container.addEventListener('off.xt.slider', off, true)
 
   // unmount
 

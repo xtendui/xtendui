@@ -14,13 +14,14 @@ export default function demo() {
   return (
     <div className="demo--products-listing-v2-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider *** slider--listing *** pb-10">
+        <div className="xt-slider pb-10">
           <div className="container">
-            <div className="xt-h2 mb-8">Latest Products</div>
-            <div className="xt-slides xt-row xt-row-4">
-              <div className="xt-slide w-6/12 md:w-4/12">
+            <div className="xt-h3 mb-8">Latest Products</div>
+
+            <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
@@ -36,9 +37,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -59,9 +60,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -72,9 +73,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -90,9 +91,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -103,9 +104,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -121,9 +122,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -134,9 +135,9 @@ export default function demo() {
                 </a>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12">
+              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -153,8 +154,50 @@ export default function demo() {
               </div>
             </div>
 
-            <nav className="xt-slider-pagination hidden">
-              <button type="button" className="xt-button hidden" data-xt-pag></button>
+            <button
+              type="button"
+              className="xt-button absolute top-1/2 left-4 -mt-4 w-8 lg:w-12 h-8 lg:h-12 rounded-full text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+              data-xt-nav="-1"
+              aria-label="Previous slide">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="xt-icon w-auto h-4"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              className="xt-button absolute top-1/2 right-4 -mt-4 w-8 lg:w-12 h-8 lg:h-12 rounded-full text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+              data-xt-nav="1"
+              aria-label="Next slide">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="xt-icon w-auto h-4"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <nav className="hidden" data-xt-slider-pagination>
+              <button type="button" className="xt-button hidden" data-xt-slider-element></button>
             </nav>
           </div>
         </div>
@@ -166,7 +209,7 @@ export default function demo() {
             <div className="xt-row xt-row-6">
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div className="absolute top-0 left-0 m-4 py-2 px-4 bg-white bg-opacity-90">
@@ -184,7 +227,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -207,7 +250,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -220,7 +263,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -238,7 +281,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -251,7 +294,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -269,7 +312,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   </div>
@@ -282,7 +325,7 @@ export default function demo() {
 
               <div className="w-6/12 md:w-4/12">
                 <a href="#" className="*** listing-item *** block group">
-                  <div className="*** xt-media-container *** bg-gray-600 xt-ratio-125 overflow-hidden">
+                  <div className="*** xt-media-container *** bg-gray-500 xt-ratio-125 overflow-hidden">
                     <img
                       className="*** xt-media *** object-cover object-center"
                       src="/img-alt.svg"
@@ -326,7 +369,7 @@ const mount = ({ ref }) => {
 const mountSlider = ({ ref }) => {
   // vars
 
-  const slider = ref.querySelector('.slider--listing')
+  const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
   let dragDistance
   let dragDuration
@@ -334,7 +377,9 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Slider(slider, {})
+  const self = new Xt.Slider(slider, {
+    align: 'left',
+  })
   /***/
 
   // dragposition (set internal dragPosition to resume animation mid dragging)
@@ -342,15 +387,15 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition tween with main time and ease
+    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {
       dragPosition: self.detail.dragFinal,
       duration: dragDuration,
       ease: dragEase,
     })
-    // dragger tween with main time and ease
+    // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.detail.dragFinal,

@@ -17,23 +17,35 @@ Xt.mount({
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
+  // vars
+
+  const toggle = ref
+
   // init
 
   /***/
-  new Xt.Toggle(ref.querySelector(':scope > .xt-list'), {
-    elements: ':scope > .xt-button',
-    targets: ':scope > .xt-toggle',
-    durationIn: ({ current, total }) => {
-      return Math.min((total - current) * 500, 1000)
+  new Xt.Toggle(toggle, {
+    durationIn: ({ current, total, el, self }) => {
+      if (self.elements.includes(el)) return
+      const val = (total - current) * 300
+      el.style.transitionDuration = `${val}ms`
+      return val
     },
-    durationOut: ({ current }) => {
-      return Math.min(current * 500, 1000)
+    delayIn: ({ current, el, self }) => {
+      if (self.elements.includes(el)) return
+      const val = current * 300
+      return val
     },
-    delayIn: ({ current }) => {
-      return Math.min(current * 250, 500)
+    durationOut: ({ current, el, self }) => {
+      if (self.elements.includes(el)) return
+      const val = current * 150
+      el.style.transitionDuration = `${val}ms`
+      return val
     },
-    delayOut: ({ current, total }) => {
-      return Math.min((total - current) * 250, 500)
+    delayOut: ({ current, total, el, self }) => {
+      if (self.elements.includes(el)) return
+      const val = (total - current) * 150
+      return val
     },
   })
   /***/
