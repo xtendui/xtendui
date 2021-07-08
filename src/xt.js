@@ -680,20 +680,48 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * activation requestAnimationFrame
+   * requestAnimationFrame
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
    * @param {Function} params.func Function to execute after transition or animation
    * @param {String} params.ns Namespace
    */
-  Xt.activationRaf = ({ el, func = null, ns = '' } = {}) => {
-    cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}ActivateFrame`))
+  Xt.frame = ({ el, func = null, ns = '' } = {}) => {
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}Frame`))
     if (func) {
+      // needs one raf
       Xt.dataStorage.set(
         el,
-        `${ns}ActivateFrame`,
+        `${ns}Frame`,
         requestAnimationFrame(() => {
           func()
+        })
+      )
+    }
+  }
+
+  /**
+   * double requestAnimationFrame
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Function} params.func Function to execute after transition or animation
+   * @param {String} params.ns Namespace
+   */
+  Xt.frameDouble = ({ el, func = null, ns = '' } = {}) => {
+    cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}FrameDouble`))
+    if (func) {
+      // needs two raf or sometimes classes doesn't animate properly
+      Xt.dataStorage.set(
+        el,
+        `${ns}FrameDouble`,
+        requestAnimationFrame(() => {
+          Xt.dataStorage.set(
+            el,
+            `${ns}FrameDouble`,
+            requestAnimationFrame(() => {
+              func()
+            })
+          )
         })
       )
     }
@@ -711,8 +739,8 @@ if (typeof window !== 'undefined') {
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
-    // must be inside raf because display
-    Xt.activationRaf({
+    // needs TWO raf or sequential off/on flickr (e.g. display)
+    Xt.frameDouble({
       el,
       func: () => {
         el.classList.add('in')
@@ -740,8 +768,8 @@ if (typeof window !== 'undefined') {
     Xt.animTimeout({ el, ns: `${ns}OnOff` })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', false)
-    // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
-    Xt.activationRaf({
+    // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
+    Xt.frameDouble({
       el,
       func: () => {
         el.classList.remove('in')

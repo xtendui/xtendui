@@ -1477,8 +1477,8 @@ class Toggle {
       el.classList.add(...self.classes)
       el.classList.remove(...self.classesOut)
       el.classList.remove(...self.classesDone)
-      // must be inside raf because display
-      Xt.activationRaf({
+      // needs TWO raf or sequential off/on flickr (e.g. display)
+      Xt.frameDouble({
         el,
         func: () => {
           el.classList.add(...self.classesIn)
@@ -1504,8 +1504,8 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
-      // fix need to repeat inside activationRaf in case we cancel
-      Xt.activationRaf({ el })
+      // fix need to repeat inside frameDouble in case we cancel
+      Xt.frameDouble({ el })
       el.classList.add(...self.classesIn)
       el.classList.add(...self.classesDone)
     }
@@ -1560,10 +1560,11 @@ class Toggle {
     el.checked = false
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
-      // must be outside inside raf or page jumps (e.g. noqueue)
+      // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
       el.classList.remove(...self.classes)
-      // must be inside raf or sequential off/on flickr (e.g. backdrop megamenu)
-      Xt.activationRaf({
+      el.classList.remove(...self.classesDone)
+      // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
+      Xt.frameDouble({
         el,
         func: () => {
           el.classList.remove(...self.classesIn)
@@ -1571,7 +1572,6 @@ class Toggle {
           if (!self.disabled) {
             el.classList.add(...self.classesOut)
           }
-          el.classList.remove(...self.classesDone)
         },
       })
       // direction
@@ -1594,11 +1594,10 @@ class Toggle {
     const options = self.options
     // activation
     if (options.classSkip !== true && !options.classSkip[type]) {
-      // fix need to repeat inside activationRaf in case we cancel
-      Xt.activationRaf({ el })
+      // fix need to repeat inside frameDouble in case we cancel
+      Xt.frameDouble({ el })
       el.classList.remove(...self.classesIn)
       el.classList.remove(...self.classesOut)
-      el.classList.remove(...self.classesDone)
     }
   }
 
@@ -2105,7 +2104,7 @@ class Toggle {
       if (!delay) {
         self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
       } else if (delay === 'raf') {
-        Xt.activationRaf({
+        Xt.frameDouble({
           el,
           func: () => {
             self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
@@ -2181,7 +2180,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.activationRaf({
+        Xt.frame({
           el,
           func: () => {
             el.dispatchEvent(
@@ -2215,7 +2214,7 @@ class Toggle {
       self.specialClose(actionCurrent, el, type, obj)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.activationRaf({
+        Xt.frame({
           el,
           func: () => {
             if (!self.disabled) {
@@ -2232,7 +2231,8 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      Xt.activationRaf({
+      // needs ONE raf or sequential off/on flickr (e.g. toggle inverse)
+      Xt.frame({
         el,
         func: () => {
           self.queueAnim(actionCurrent, actionOther, obj, el, type)
@@ -2276,7 +2276,7 @@ class Toggle {
     if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else if (duration === 'raf') {
-      Xt.activationRaf({
+      Xt.frameDouble({
         el,
         func: () => {
           self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
@@ -2314,7 +2314,7 @@ class Toggle {
       self.specialCollapse(actionCurrent, el, type, true)
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.activationRaf({
+        Xt.frame({
           el,
           func: () => {
             el.dispatchEvent(
@@ -2361,7 +2361,7 @@ class Toggle {
       }
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.activationRaf({
+        Xt.frame({
           el,
           func: () => {
             if (!self.disabled) {

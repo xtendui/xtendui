@@ -9,7 +9,7 @@ title: "Animation"
 
 Test activations and animations.
 
-Test toggle noqueue should not jump page.
+Test toggle noqueue and toggle inverse should not jump page.
 
 Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
 
