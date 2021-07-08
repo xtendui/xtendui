@@ -8,7 +8,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element data-xt-group="my-group">
         <a href="#">dolor</a>
 
-        <div class="xt-tooltip p-2" data-xt-group="my-group" data-xt-tooltip-target>
+        <div class="xt-tooltip p-2" data-xt-tooltip-target data-xt-group="my-group">
           <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
