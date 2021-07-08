@@ -1,4 +1,5 @@
 import { Xt } from 'xtendui'
+import 'xtendui/src/form'
 
 Xt.mount({
   matches: '.demo--form-validation',

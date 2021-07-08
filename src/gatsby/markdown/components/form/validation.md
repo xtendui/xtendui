@@ -12,7 +12,9 @@ Html5 form validation and Constraint Validation API. You can disable form valida
 
 It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
 
-Use **component classes** to style `.xt-label-required`, `.xt-form-valid`, `.xt-form-invalid`. Check [xtendui/src/form.css.js](https://github.com/minimit/xtendui/blob/beta/src/form.css.js) for default styles.
+Use **component classes** `.xt-label-required` to add required fields visual.
+
+Form validation automatically adds to form elements `.xt-form-valid`, `.xt-form-invalid` with **border color**, just use border on form elements or customize `.xt-form-valid`, `.xt-form-invalid` styles. Check [xtendui/src/form.css.js](https://github.com/minimit/xtendui/blob/beta/src/form.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
