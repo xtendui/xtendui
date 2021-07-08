@@ -1099,7 +1099,7 @@ class Toggle {
       Xt.eventDelay({
         event: { detail: { delay: Xt.medialoadedDelay } },
         element: self.object,
-        prefix: `${self.ns}MedialoadedReinit`,
+        ns: `${self.ns}MedialoadedReinit`,
         func: () => {
           // mediaLoaded
           self.eventMediaLoadedReinit()
@@ -3272,7 +3272,7 @@ class Toggle {
       Xt.eventDelay({
         event: e,
         element: self.object,
-        prefix: `${self.ns}Reinit`,
+        ns: `${self.ns}Reinit`,
         func: () => {
           // handler
           self.reinit()

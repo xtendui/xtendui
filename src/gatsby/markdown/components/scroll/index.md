@@ -66,7 +66,7 @@ ScrollTrigger.config({
 addEventListener('resize', e => {
   Xt.eventDelay({
     event: e,
-    prefix: 'xtScrollTriggerRefresh',
+    ns: 'xtScrollTriggerRefresh',
     func: () => {
       ScrollTrigger.refresh()
     },
