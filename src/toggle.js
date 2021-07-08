@@ -590,11 +590,19 @@ class Toggle {
       const blurHandler = Xt.dataStorage.put(window, `blur/auto/${self.ns}`, self.eventAutopause.bind(self))
       addEventListener('blur', blurHandler)
       // event
-      const autostartHandler = Xt.dataStorage.put(self.container, `autostart/${self.ns}`, self.eventAutostart.bind(self))
+      const autostartHandler = Xt.dataStorage.put(
+        self.container,
+        `autostart/${self.ns}`,
+        self.eventAutostart.bind(self)
+      )
       self.container.addEventListener(`autostart.trigger.${self.componentNs}`, autostartHandler)
       const autostopHandler = Xt.dataStorage.put(self.container, `autostop/${self.ns}`, self.eventAutostop.bind(self))
       self.container.addEventListener(`autostop.trigger.${self.componentNs}`, autostopHandler)
-      const autopauseHandler = Xt.dataStorage.put(self.container, `autopause/${self.ns}`, self.eventAutopause.bind(self))
+      const autopauseHandler = Xt.dataStorage.put(
+        self.container,
+        `autopause/${self.ns}`,
+        self.eventAutopause.bind(self)
+      )
       self.container.addEventListener(`autopause.trigger.${self.componentNs}`, autopauseHandler)
       const autoresumeHandler = Xt.dataStorage.put(
         self.container,
@@ -3142,7 +3150,11 @@ class Toggle {
     if (!skipReinit) {
       // reinit
       cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}MatchFrame`))
-      Xt.dataStorage.set(self.container, `${self.ns}MatchFrame`, requestAnimationFrame(self.eventReinitHandler.bind(self)))
+      Xt.dataStorage.set(
+        self.container,
+        `${self.ns}MatchFrame`,
+        requestAnimationFrame(self.eventReinitHandler.bind(self))
+      )
     }
   }
 
