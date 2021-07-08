@@ -1,3 +1,69 @@
+# [1.0.0-beta.34](https://github.com/minimit/xtendui/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2021-07-08)
+
+
+### Bug Fixes
+
+* eventmatch no need to off now with disabled that does off ([450f3ca](https://github.com/minimit/xtendui/commit/450f3ca693a46f1af934ebc5524254c0a40ab870))
+* **js:** Xt.ready no raf always and Xt.mount always raf ([c7a6e48](https://github.com/minimit/xtendui/commit/c7a6e48dda79a47ca52beb0fd1774d2995387da4))
+* **toggle:** disableDeactivate now doesn't add out classes on deactivation ([53cb0b5](https://github.com/minimit/xtendui/commit/53cb0b5a1d93407296852d76b597b10195ebe086))
+* xt-container-reset with styles ([9dd04e4](https://github.com/minimit/xtendui/commit/9dd04e4ebaffa445be146f740fa3904dc731ba8c))
+* **toggle:** fix focustrap error ([e5e9379](https://github.com/minimit/xtendui/commit/e5e937969d6af7c5123b0458fe1f489c74dfbf3c))
+* **toggle:** fix focusTrap with multiple targets ([dbe6390](https://github.com/minimit/xtendui/commit/dbe639079b7020dd8a359fe473046260b772f2dc))
+* **toggle:** fix focusTrap with multiple targets ([99d81c5](https://github.com/minimit/xtendui/commit/99d81c56698ffeac52c873cbc4a92b038b156a48))
+* **toggle:** fix init.xt. class on activation ([ff461b6](https://github.com/minimit/xtendui/commit/ff461b6eecf01ea7114fc1e4043e45cab17aea55))
+* fix disabled no activation also on initial ([954ece5](https://github.com/minimit/xtendui/commit/954ece53a27fe91d90ada5e6f820f0cf80a7d359))
+* **toggle:** fix matches destroy ([49d115a](https://github.com/minimit/xtendui/commit/49d115a20c57b15f851ecddaf58163fa8cf6ccaa))
+* **toggle:** fix matches destroy ([31c30cc](https://github.com/minimit/xtendui/commit/31c30cc3ffcaa034c92a2a576a4f46a5bc7f259d))
+* **toggle:** on disable remove classBody ([a9eff26](https://github.com/minimit/xtendui/commit/a9eff268a2a61061abd981b737295c679c3f18b1))
+* **xt:** fix Xt.ready not working properly on ready state change ([bb9fac1](https://github.com/minimit/xtendui/commit/bb9fac1b0d47c128c8da068957ab4f289ccb4793))
+* **xt:** refactor Xt.ready ([b02e541](https://github.com/minimit/xtendui/commit/b02e5412ef0d8741a173cf03c6b877615cb92131))
+* focusTrap default no initial focus ([b134a19](https://github.com/minimit/xtendui/commit/b134a19fa5d432c99a78786fd767b7e88443a299))
+
+
+### Code Refactoring
+
+* **js:** refactor one raf on activations and refactor Xt utils with object destructuring ([a54039b](https://github.com/minimit/xtendui/commit/a54039b8c41d5b5831953f76361d2c33769e39af))
+* **js:** self.object to self.container ([b46c429](https://github.com/minimit/xtendui/commit/b46c42996890f90c958c4092d4af99dd80bc249e))
+* refactor demos elements and targets ([f84ede4](https://github.com/minimit/xtendui/commit/f84ede441850e0c5e782f77df2217115d98db8f1))
+* refactor init and disabled data- attribute instead of classes and added option disableDeactivate ([cfbf0d4](https://github.com/minimit/xtendui/commit/cfbf0d49c5ea9c3aba1306a89809469387526d4d))
+* refactor interaction display with tailwind classes ([38a2f50](https://github.com/minimit/xtendui/commit/38a2f505afa72361104349e77426c1b718e60681))
+* self.detail.instant to self.detail.isDrag and absolute demos ([91bb380](https://github.com/minimit/xtendui/commit/91bb380de15b808d8ad062b129751b709847c6bf))
+* xt-drop and xt-overlay and xt-toggle and xt-slide-absolute now have cssinjs activation classes ([cae1373](https://github.com/minimit/xtendui/commit/cae13730fe616d1a9080215d3bb6befceb15d569))
+* **slider:** refactor slider selectors with data-xt- ([554f5f7](https://github.com/minimit/xtendui/commit/554f5f74cd43b007e253739d609536312eaa9748))
+* **toggle:** classHtml to classBody ([88894fc](https://github.com/minimit/xtendui/commit/88894fc92e468c70e1427c2705bc53aef526bc24))
+
+
+### Features
+
+* added getIndex method and refactor slider animations ([7990cfc](https://github.com/minimit/xtendui/commit/7990cfca25288ef7b90a8825c46d43460e105a42))
+* options.debug on all components to debug single components ([07f2554](https://github.com/minimit/xtendui/commit/07f2554d3b5e84f97037a1718f6d1da9b69eb533))
+* **toggle:** added delay and duration raf and revision added raf after animation to match activation raf ([8deaa76](https://github.com/minimit/xtendui/commit/8deaa76564c0b1a4417d60d63447ca81e2d2c7d4))
+* WIP demo toggle inverse and added done tailwind variant ([2737d22](https://github.com/minimit/xtendui/commit/2737d2229942c63ef18547cdad9d20e7acbb3565))
+* **toggle:** focustrap options and fix overlay when close is outside targets ([9921210](https://github.com/minimit/xtendui/commit/99212105bbd02a2e5e3345846a3366385885dbf5))
+
+
+### BREAKING CHANGES
+
+* **js:** use self.container instead of self.object
+* **js:** Xt.on and Xt.off use object destructuring on arguments { el, ns = '', duration = null }
+Xt.eventDelay renamed argument `prefix` to `ns` and instead of `instant:Bool` use `duration:Number`
+* use xt-slide-absolute on slider absolute
+reverted partialli a previous breaking change: no more need of off: variants activation classes on xt-slide xt-drop xt-overlay and xt-tooltip
+* instead of `xt-toggle` use `off:hidden
+out:pointer-events-none`
+add `off:hidden out:pointer-events-none` to `xt-drop` and `xt-overlay`
+and `xt-tooltip`
+instead of `xt-toggle-absolute` use `absolute top-0 left-0 on:relative`
+instead of `xt-toggle-visible` use `off:visibility-hidden
+off:pointer-events-none out:pointer-events-none`
+instead of `xt-slider-absolute` use in the slides `off:hidden
+out:pointer-events-none absolute top-0 left-0 on:relative`
+* instead of .xt-<component>-init and .xt-<compontent>-disabled now use the attribute [data-xt-<component>-init] and [data-xt-<component>-disabled]
+* **slider:** add to all the sliders the required data-xt-slider- selectors
+* mousefollow target selector changed to data- attribute
+* self.detail.instant to self.detail.isDrag
+* **toggle:** now use options.classBody instead of options.classHtml and the class gets added to body instead of html element
+
 # [1.0.0-beta.33](https://github.com/minimit/xtendui/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2021-06-24)
 
 
