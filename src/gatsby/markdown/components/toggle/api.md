@@ -12,7 +12,7 @@ date: "1980-05-05"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Object                   | `let self = Xt.get('xt-toggle', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get('xt-toggle', {DOM element})`       | `container` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
@@ -29,13 +29,13 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `ondone.xt.toggle`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.toggle`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.toggle`           | `elements` `targets` | Images loaded event            |
-| Event                   | `autostart.xt.toggle`           | `object` | Auto start event             |
-| Event                   | `autostop.xt.toggle`           | `object` | Auto stop event             |
-| Event                   | `autopause.xt.toggle`           | `object` | Auto pause event             |
-| Event                   | `init.xt.toggle`           | `object` | Init or reinit event             |
-| Event                   | `status.xt.toggle`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt.toggle`           | `object` | Restart event             |
-| Event                   | `destroy.xt.toggle`           | `object` | Destroy event             |
+| Event                   | `autostart.xt.toggle`           | `container` | Auto start event             |
+| Event                   | `autostop.xt.toggle`           | `container` | Auto stop event             |
+| Event                   | `autopause.xt.toggle`           | `container` | Auto pause event             |
+| Event                   | `init.xt.toggle`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.toggle`           | `container` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.toggle`           | `container` | Restart event             |
+| Event                   | `destroy.xt.toggle`           | `container` | Destroy event             |
 
 </div>
 
@@ -55,8 +55,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | Event                   | `off.trigger.xt.toggle`      | `elements` `targets` | Deactivation event            |
 | Event                   | `openauto.trigger.xt`           | `Node` | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openauto: true`             |
 | Event                   | `closeauto.trigger.xt`           | `window` | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeauto: true`             |
-| Event                   | `autostart.trigger.xt.toggle`           | `object` | Auto start event             |
-| Event                   | `autostop.trigger.xt.toggle`           | `object` | Auto stop event             |
+| Event                   | `autostart.trigger.xt.toggle`           | `container` | Auto start event             |
+| Event                   | `autostop.trigger.xt.toggle`           | `container` | Auto stop event             |
 
 </div>
 
@@ -73,8 +73,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-toggle', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-toggle', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -82,7 +82,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `initial:Boolean`       | If initial or reset activation            |
@@ -97,7 +97,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-toggle', document.querySelector('.my-object'))
+let self = Xt.get('xt-toggle', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

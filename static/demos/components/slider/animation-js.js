@@ -85,7 +85,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('init.xt.slider', init, true)
+  self.container.addEventListener('init.xt.slider', init, true)
   /***/
 
   // on
@@ -105,7 +105,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('on.xt.slider', on, true)
+  self.container.addEventListener('on.xt.slider', on, true)
   /***/
 
   // off
@@ -125,7 +125,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('off.xt.slider', off, true)
+  self.container.addEventListener('off.xt.slider', off, true)
   /***/
 
   // unmount

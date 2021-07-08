@@ -10,7 +10,7 @@ description: "Plug and play a google maps locator, with all the basic functional
 
 Import the **javascript** file with `import 'xtendui/src/googlelocator'`.
 
-Initialize manually **within javascript** with `new Xt.Googlelocator(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Googlelocator(document.querySelector('.my-container'), {/* options */})`.
 
 
 ## Usage
@@ -95,9 +95,9 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.googlelocator`           | `object` | Change event             |
-| Event                   | `init.xt.googlelocator`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.googlelocator`           | `object` | Destroy event             |
+| Event                   | `change.xt.googlelocator`           | `container` | Change event             |
+| Event                   | `init.xt.googlelocator`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.googlelocator`           | `container` | Destroy event             |
 
 </div>
 
@@ -110,7 +110,7 @@ Access properties by getting component object.
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `locations:Array`       | Current found locations             |
 | Property                   | `locateCache:Object`       | Locate cache object             |

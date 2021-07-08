@@ -6,7 +6,7 @@
 
 module.exports = {
   component: {
-    '.xt-ripple-container': {
+    '.xt-ripple-outer': {
       overflow: 'hidden',
       pointerEvents: 'none',
       borderRadius: 'inherit',

@@ -17,11 +17,11 @@ Import the **javascript** file with `import 'xtendui/src/mousefollow'`.
 
 Initialize automatically **within markup** with `[data-xt-mousefollow="{ <options> }"]`.
 
-Initialize manually **within javascript** with `new Xt.Mousefollow(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Mousefollow(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
-Initialize mousefollow `object` to the **element that bounds the mosefollow**, for the targets to actually mousefollow use `options.targets`.
+Initialize mousefollow `container` to the **element that bounds the mosefollow**, for the targets to actually mousefollow use `options.targets`.
 
 Use **component classes** to create a **mouse follow** and add `fixed` position.
 
@@ -73,11 +73,11 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.mousefollow`       | `object` | Activation event             |
-| Event                   | `off.xt.mousefollow`      | `object` | Deactivation event            |
-| Event                   | `change.xt.mousefollow`       | `object` | Change event             |
-| Event                   | `init.xt.mousefollow`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.mousefollow`           | `object` | Destroy event             |
+| Event                   | `on.xt.mousefollow`       | `container` | Activation event             |
+| Event                   | `off.xt.mousefollow`      | `container` | Deactivation event            |
+| Event                   | `change.xt.mousefollow`       | `container` | Change event             |
+| Event                   | `init.xt.mousefollow`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.mousefollow`           | `container` | Destroy event             |
 
 </div>
 
@@ -86,8 +86,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-mousefollow', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-mousefollow', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -95,7 +95,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>
@@ -105,7 +105,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-mousefollow', document.querySelector('.my-object'))
+let self = Xt.get('xt-mousefollow', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

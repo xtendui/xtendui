@@ -202,7 +202,7 @@ const initGooglelocator = ({ ref }) => {
     //console.debug(self.locations)
   }
 
-  self.object.addEventListener('change.xt.googlelocator', change)
+  self.container.addEventListener('change.xt.googlelocator', change)
 }
 
 /* mountGooglelocator */

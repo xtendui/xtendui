@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can specify `elements` that listens to event for activation, and `targets` that gets activated.
 
-The query is inside `object`, only when specifying **elements and targets with `id`** the query is on all the `document`.
+The query is inside `container`, only when specifying **elements and targets with `id`** the query is on all the `document`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -255,7 +255,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 | Option                  | `auto.initial:Boolean`                          | `true`        | Automatic activation on initial            |
 | Option                  | `auto.step:Number`                          | `1`        | Automatic activation steps            |
 | Option                  | `auto.inverse:Boolean`                          | `false`        | Automatic activation inverse order            |
-| Option                  | `auto.pause:Query`                          | `'a, button'`        | Query inside `object` that pause automatic on mouseenter            |
+| Option                  | `auto.pause:Query`                          | `'a, button'`        | Query inside `container` that pause automatic on mouseenter            |
 | Option                  | `auto.loop:Boolean`                          | `true`        | Loop activation beyond start and end            |
 
 </div>

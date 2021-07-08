@@ -57,9 +57,9 @@ for (const node of document.querySelectorAll('.my-node')) {
 Listen to events delegation with **useCapture**. You listen to the event **propagating with useCapture**.
 
 ```js
-const object = document.querySelector('.my-object')
+const container = document.querySelector('.my-container')
 
-let self = Xt.get('xt-componentname', object)
+let self = Xt.get('xt-componentname', container)
 
 const on = e => {
   const tr = e.target
@@ -69,5 +69,5 @@ const on = e => {
   }
 }
 
-object.addEventListener('on.xt.componentname', on, true)
+container.addEventListener('on.xt.componentname', on, true)
 ```

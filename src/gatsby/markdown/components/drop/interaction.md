@@ -10,7 +10,7 @@ date: "2010-10-10"
 
 You can specify `elements` that listens to event for activation, and `targets` that gets activated.
 
-The query is inside `object`, only when specifying **elements and targets with `id`** the query is on all the `document`.
+The query is inside `container`, only when specifying **elements and targets with `id`** the query is on all the `document`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

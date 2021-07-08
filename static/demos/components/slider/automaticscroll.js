@@ -83,7 +83,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('on.xt.slider', on, true)
+    self.container.addEventListener('on.xt.slider', on, true)
 
     // pause
 
@@ -99,7 +99,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('mouseenter', pause, true)
+    self.container.addEventListener('mouseenter', pause, true)
     addEventListener('blur', pause)
 
     // resume
@@ -116,7 +116,7 @@ const mountSliders = ({ ref }) => {
       }
     }
 
-    self.object.addEventListener('mouseleave', resume, true)
+    self.container.addEventListener('mouseleave', resume, true)
     addEventListener('focus', resume)
 
     // unmount

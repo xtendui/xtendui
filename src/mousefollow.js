@@ -20,13 +20,13 @@ class Mousefollow {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
     // init
     self.initVars()
-    // raf after automatic scroll on hash (fixes when you have mouse over self.object on page load and page automatically scrolls)
+    // raf after automatic scroll on hash (fixes when you have mouse over self.container on page load and page automatically scrolls)
     requestAnimationFrame(() => {
       self.initLogic()
     })
@@ -53,26 +53,26 @@ class Mousefollow {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
+    Xt.set(self.componentName, self.container, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     // targets
-    self.targets = self.object.querySelectorAll(options.targets)
+    self.targets = self.container.querySelectorAll(options.targets)
     // events
-    const moveHandler = Xt.dataStorage.put(self.object, `mousemove/${self.ns}`, self.mousemove.bind(self))
-    self.object.addEventListener('mousemove', moveHandler)
-    const enterHandler = Xt.dataStorage.put(self.object, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
-    self.object.addEventListener('mouseenter', enterHandler)
-    const leaveHandler = Xt.dataStorage.put(self.object, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
-    self.object.addEventListener('mouseleave', leaveHandler)
+    const moveHandler = Xt.dataStorage.put(self.container, `mousemove/${self.ns}`, self.mousemove.bind(self))
+    self.container.addEventListener('mousemove', moveHandler)
+    const enterHandler = Xt.dataStorage.put(self.container, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
+    self.container.addEventListener('mouseenter', enterHandler)
+    const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
+    self.container.addEventListener('mouseleave', leaveHandler)
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -81,7 +81,7 @@ class Mousefollow {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   //
@@ -111,7 +111,7 @@ class Mousefollow {
       )
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
   }
 
   /**
@@ -139,7 +139,7 @@ class Mousefollow {
         }
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
     }
   }
 
@@ -155,7 +155,7 @@ class Mousefollow {
         Xt.off({ el: tr })
       }
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
     }
   }
 
@@ -178,18 +178,18 @@ class Mousefollow {
   destroy() {
     const self = this
     // remove events
-    const moveHandler = Xt.dataStorage.get(self.object, `mousemove/${self.ns}`)
-    self.object.removeEventListener('mousemove', moveHandler)
-    const enterHandler = Xt.dataStorage.get(self.object, `mouseenter/${self.ns}`)
-    self.object.removeEventListener('mouseenter', enterHandler)
-    const leaveHandler = Xt.dataStorage.get(self.object, `mouseleave/${self.ns}`)
-    self.object.removeEventListener('mouseleave', leaveHandler)
+    const moveHandler = Xt.dataStorage.get(self.container, `mousemove/${self.ns}`)
+    self.container.removeEventListener('mousemove', moveHandler)
+    const enterHandler = Xt.dataStorage.get(self.container, `mouseenter/${self.ns}`)
+    self.container.removeEventListener('mouseenter', enterHandler)
+    const leaveHandler = Xt.dataStorage.get(self.container, `mouseleave/${self.ns}`)
+    self.container.removeEventListener('mouseleave', leaveHandler)
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

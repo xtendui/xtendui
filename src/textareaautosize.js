@@ -19,7 +19,7 @@ class Textareaautosize {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
@@ -49,18 +49,18 @@ class Textareaautosize {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
+    Xt.set(self.componentName, self.container, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     // key
-    const changeHandler = Xt.dataStorage.put(self.object, `keydown keyup reset/${self.ns}`, self.keychange.bind(self))
-    self.object.addEventListener('keydown', changeHandler)
-    self.object.addEventListener('keyup', changeHandler)
-    self.form = self.object.closest('form')
+    const changeHandler = Xt.dataStorage.put(self.container, `keydown keyup reset/${self.ns}`, self.keychange.bind(self))
+    self.container.addEventListener('keydown', changeHandler)
+    self.container.addEventListener('keyup', changeHandler)
+    self.form = self.container.closest('form')
     if (self.form) {
       self.form.addEventListener('reset', changeHandler)
     }
@@ -69,7 +69,7 @@ class Textareaautosize {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -78,7 +78,7 @@ class Textareaautosize {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -100,11 +100,11 @@ class Textareaautosize {
    */
   keychange() {
     const self = this
-    self.object.style.height = '5px'
-    self.object.style.height = `${self.object.scrollHeight}px` // fixes both safari RAF and form reset
+    self.container.style.height = '5px'
+    self.container.style.height = `${self.container.scrollHeight}px` // fixes both safari RAF and form reset
     requestAnimationFrame(() => {
-      self.object.style.height = '5px' // fixes both safari RAF and form reset
-      self.object.style.height = `${self.object.scrollHeight}px`
+      self.container.style.height = '5px' // fixes both safari RAF and form reset
+      self.container.style.height = `${self.container.scrollHeight}px`
     })
   }
 
@@ -127,22 +127,22 @@ class Textareaautosize {
   destroy() {
     const self = this
     // reset
-    self.object.style.height = ''
+    self.container.style.height = ''
     // remove events
-    const changeHandler = Xt.dataStorage.get(self.object, `keydown keyup reset/${self.ns}`)
-    self.object.removeEventListener('keydown', changeHandler)
-    self.object.removeEventListener('keyup', changeHandler)
+    const changeHandler = Xt.dataStorage.get(self.container, `keydown keyup reset/${self.ns}`)
+    self.container.removeEventListener('keydown', changeHandler)
+    self.container.removeEventListener('keyup', changeHandler)
     if (self.form) {
       self.form.removeEventListener('reset', changeHandler)
     }
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
     })
   }
 

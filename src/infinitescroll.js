@@ -19,7 +19,7 @@ class Infinitescroll {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
@@ -45,7 +45,7 @@ class Infinitescroll {
     self.current = options.min
     // fake
     if (!options.get) {
-      self.itemsFake = self.object.querySelector(options.elements.itemsContainer).cloneNode(true)
+      self.itemsFake = self.container.querySelector(options.elements.itemsContainer).cloneNode(true)
     }
   }
 
@@ -56,19 +56,19 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
+    Xt.set(self.componentName, self.container, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     // elements
-    self.elementsUp = self.object.querySelectorAll(options.elements.scrollUp)
-    self.elementsDown = self.object.querySelectorAll(options.elements.scrollDown)
-    self.itemsContainer = self.object.querySelector(options.elements.itemsContainer)
-    self.spaceAdditionals = self.object.querySelectorAll(options.elements.spaceAdditional)
-    self.paginations = self.object.querySelectorAll(options.elements.pagination)
+    self.elementsUp = self.container.querySelectorAll(options.elements.scrollUp)
+    self.elementsDown = self.container.querySelectorAll(options.elements.scrollDown)
+    self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
+    self.spaceAdditionals = self.container.querySelectorAll(options.elements.spaceAdditional)
+    self.paginations = self.container.querySelectorAll(options.elements.pagination)
     // events
     const unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self.eventUnload.bind(self))
     addEventListener('unload', unloadHandler)
@@ -93,7 +93,7 @@ class Infinitescroll {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -102,7 +102,7 @@ class Infinitescroll {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -249,9 +249,9 @@ class Infinitescroll {
   request() {
     const self = this
     // not if requesting
-    if (!self.object.classList.contains('xt-infinitescroll-loading')) {
+    if (!self.container.classList.contains('xt-infinitescroll-loading')) {
       // class
-      self.object.classList.add('xt-infinitescroll-loading')
+      self.container.classList.add('xt-infinitescroll-loading')
       // request
       const request = new XMLHttpRequest()
       request.open('GET', self.url.href, true)
@@ -311,7 +311,7 @@ class Infinitescroll {
   error() {
     const self = this
     // class
-    self.object.classList.remove('xt-infinitescroll-loading')
+    self.container.classList.remove('xt-infinitescroll-loading')
   }
 
   /**
@@ -338,7 +338,7 @@ class Infinitescroll {
       }
     }
     // class
-    self.object.classList.remove('xt-infinitescroll-loading')
+    self.container.classList.remove('xt-infinitescroll-loading')
     // update
     self.update()
     self.paginate()
@@ -346,7 +346,7 @@ class Infinitescroll {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
     })
   }
 
@@ -380,10 +380,10 @@ class Infinitescroll {
     const options = self.options
     // class
     if (self.current <= options.min) {
-      self.object.classList.add('xt-infinitescroll-first')
+      self.container.classList.add('xt-infinitescroll-first')
     }
     if (self.current >= options.max) {
-      self.object.classList.add('xt-infinitescroll-last')
+      self.container.classList.add('xt-infinitescroll-last')
     }
   }
 
@@ -452,11 +452,11 @@ class Infinitescroll {
       trigger.removeEventListener(options.events.trigger, triggerHandler)
     }
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

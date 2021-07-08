@@ -18,7 +18,7 @@ class Scrollto {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
@@ -48,22 +48,22 @@ class Scrollto {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
+    Xt.set(self.componentName, self.container, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
     // click
     const changeHandler = Xt.dataStorage.put(
-      self.object,
+      self.container,
       `click/${self.ns}`,
       self.eventChange.bind(self).bind(self, false, null)
     )
-    self.object.addEventListener('click', changeHandler)
+    self.container.addEventListener('click', changeHandler)
     // scrollto
     const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
     addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
@@ -100,7 +100,7 @@ class Scrollto {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -109,7 +109,7 @@ class Scrollto {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -144,7 +144,7 @@ class Scrollto {
     // hash trigger
     const hash = location.hash
     if (hash) {
-      const el = self.object.querySelector(options.anchors.replace('{hash}', hash))
+      const el = self.container.querySelector(options.anchors.replace('{hash}', hash))
       if (el) {
         self.eventChange(false, el)
       }
@@ -217,7 +217,7 @@ class Scrollto {
       self.scroller.dispatchEvent(new CustomEvent('scroll'))
     }
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
   }
 
   /**
@@ -234,7 +234,7 @@ class Scrollto {
     if (hashchange) {
       self.hashchange = true
       const hash = location.hash
-      const elCheck = self.object.querySelector(options.anchors.replace('{hash}', hash))
+      const elCheck = self.container.querySelector(options.anchors.replace('{hash}', hash))
       // do not listen to hash change when no hash on element
       if (elCheck) {
         if (options.hash || elCheck.getAttribute('data-xt-scrollto-hash')) {
@@ -253,7 +253,7 @@ class Scrollto {
         if (loc.hash && loc.pathname === location.pathname) {
           if (!hashchange || location.hash === el.hash) {
             const hash = hashchange ? loc.hash : el.hash.toString()
-            const tr = self.object.querySelector(hash)
+            const tr = self.container.querySelector(hash)
             if (tr) {
               // prevent page hash on click anchors
               if (e) {
@@ -277,7 +277,7 @@ class Scrollto {
                 history.pushState({}, '', loc.hash)
               }
               // els
-              let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
+              let els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -331,7 +331,7 @@ class Scrollto {
       scrollTop = scrollMax
     }
     // anchors
-    let els = Array.from(self.object.querySelectorAll(options.anchors.replace('{hash}', '#')))
+    let els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
     // loop
     for (const el of els) {
       // fix don't activate if elements is inside a inner scroller
@@ -401,8 +401,8 @@ class Scrollto {
     const self = this
     const options = self.options
     // remove events
-    const changeHandler = Xt.dataStorage.get(self.object, `click/${self.ns}`)
-    self.object.removeEventListener('click', changeHandler)
+    const changeHandler = Xt.dataStorage.get(self.container, `click/${self.ns}`)
+    self.container.removeEventListener('click', changeHandler)
     const hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
     for (const scroller of self.scrollers) {
@@ -421,11 +421,11 @@ class Scrollto {
       }
     }
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

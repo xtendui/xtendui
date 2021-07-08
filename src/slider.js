@@ -32,12 +32,12 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // dragger
-    self.dragger = self.object.querySelector(options.drag.dragger)
+    self.dragger = self.container.querySelector(options.drag.dragger)
     self.destroyElements.push(self.dragger)
     // @PERF
     self.detail.moveDir = 0
     self.detail.moveIndex = null
-    self.detail.objectWidth = self.object.offsetWidth
+    self.detail.objectWidth = self.container.offsetWidth
     self.detail.draggerWidth = self.dragger.offsetWidth
     self.detail.draggerLeft = self.dragger.offsetLeft
     // fix when dragger not :visible (offsetWidth === 0) do not initialize
@@ -50,10 +50,10 @@ class Slider extends Xt.Toggle {
     }
     // autoHeight and keepHeight
     if (options.autoHeight) {
-      self.autoHeight = self.object.querySelector(options.autoHeight)
+      self.autoHeight = self.container.querySelector(options.autoHeight)
     }
     if (options.keepHeight) {
-      self.keepHeight = self.object.querySelector(options.keepHeight)
+      self.keepHeight = self.container.querySelector(options.keepHeight)
     }
     // val
     self.detail.dragPosition = self.detail.dragFinal = self.detail.dragInitial = 0
@@ -96,11 +96,11 @@ class Slider extends Xt.Toggle {
     // disable slider if not overflowing
     if (options.nooverflow) {
       if (self.detail.availableSpace <= 0) {
-        self.object.classList.add('xt-slider-nooverflow')
+        self.container.classList.add('xt-slider-nooverflow')
         // needed for activation all slides
         self.initGroupsInitial({ group: 1 })
       } else {
-        self.object.classList.remove('xt-slider-nooverflow')
+        self.container.classList.remove('xt-slider-nooverflow')
       }
     }
     // initGroupsPosition
@@ -427,9 +427,9 @@ class Slider extends Xt.Toggle {
       return false
     }
     // generate elements
-    const pags = self.object.querySelectorAll(options.pagination)
+    const pags = self.container.querySelectorAll(options.pagination)
     if (!pags.length) {
-      console.error('Error: Xt.Slider pagination not found for', self.object)
+      console.error('Error: Xt.Slider pagination not found for', self.container)
     }
     // pags
     self.pags = self.pags ? self.pags : []
@@ -500,7 +500,7 @@ class Slider extends Xt.Toggle {
           tr.setAttribute('role', 'group')
           tr.setAttribute('aria-roledescription', 'slide')
         }
-        self.object.setAttribute('aria-roledescription', 'carousel')
+        self.container.setAttribute('aria-roledescription', 'carousel')
       }
     }
   }
@@ -1307,7 +1307,7 @@ class Slider extends Xt.Toggle {
   destroyNooverflow() {
     const self = this
     // nooverflow
-    self.object.classList.remove('xt-slider-nooverflow')
+    self.container.classList.remove('xt-slider-nooverflow')
   }
 
   /**

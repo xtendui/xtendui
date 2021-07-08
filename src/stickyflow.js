@@ -19,7 +19,7 @@ class Stickyflow {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
@@ -49,15 +49,15 @@ class Stickyflow {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    Xt.set(self.componentName, self.container, self)
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     // elements
-    self.element = self.object.querySelector(options.element)
-    self.filler = self.object.querySelector(options.filler)
+    self.element = self.container.querySelector(options.element)
+    self.filler = self.container.querySelector(options.filler)
     // vars
     self.scrollTopOld = 0
     // events
@@ -69,7 +69,7 @@ class Stickyflow {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -78,7 +78,7 @@ class Stickyflow {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -136,7 +136,7 @@ class Stickyflow {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
     })
     self.scrollTopOld = scrollTop
   }
@@ -164,11 +164,11 @@ class Stickyflow {
     removeEventListener('scroll', changeHandler)
     removeEventListener('resize', changeHandler)
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 
   //

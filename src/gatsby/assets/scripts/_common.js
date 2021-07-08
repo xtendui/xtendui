@@ -49,12 +49,12 @@ Xt.mount({
       })
     }
 
-    self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+    self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
     // unmount
 
     return () => {
-      self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
+      self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
       self.destroy()
       self = null
     }
@@ -150,15 +150,15 @@ Xt.mount({
 
     // vars
 
-    const object = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get('xt-tooltip', object)
+    const container = tooltip.closest('[data-xt-tooltip]')
+    const self = Xt.get('xt-tooltip', container)
     const delayReset = 1000
     const durationFast = 100
 
     // fix only once when tooltip has multiple targets
 
-    if (!object || object.dataset.onlyOnceDone) return () => {}
-    object.dataset.onlyOnceDone = 'true'
+    if (!container || container.dataset.onlyOnceDone) return () => {}
+    container.dataset.onlyOnceDone = 'true'
 
     // on
 

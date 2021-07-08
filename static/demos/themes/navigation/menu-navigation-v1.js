@@ -133,7 +133,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('on.xt.drop', on, true)
+  self.container.addEventListener('on.xt.drop', on, true)
 
   // off
 
@@ -179,7 +179,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.object.addEventListener('off.xt.drop', off, true)
+  self.container.addEventListener('off.xt.drop', off, true)
 
   // unmount
 

@@ -12,7 +12,7 @@ date: "1980-05-05"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Object                   | `let self = Xt.get('xt-overlay', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get('xt-overlay', {DOM element})`       | `container` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
@@ -29,10 +29,10 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `ondone.xt.overlay`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.overlay`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.overlay`           | `elements` `targets` | Images loaded event            |
-| Event                   | `init.xt.overlay`           | `object` | Init or reinit event             |
-| Event                   | `status.xt.overlay`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt.overlay`           | `object` | Restart event             |
-| Event                   | `destroy.xt.overlay`           | `object` | Destroy event             |
+| Event                   | `init.xt.overlay`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.overlay`           | `container` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.overlay`           | `container` | Restart event             |
+| Event                   | `destroy.xt.overlay`           | `container` | Destroy event             |
 
 </div>
 
@@ -68,8 +68,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-overlay', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-overlay', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -77,7 +77,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `initial:Boolean`       | If initial or reset activation            |
@@ -92,7 +92,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-overlay', document.querySelector('.my-object'))
+let self = Xt.get('xt-overlay', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

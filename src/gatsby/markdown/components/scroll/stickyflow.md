@@ -11,7 +11,7 @@ date: "1900-10-10"
 
 Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
 
-Initialize manually **within javascript** with `new Xt.Stickyflow(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Stickyflow(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
@@ -54,8 +54,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt.stickyflow`                        | `input` | Position change event             |
-| Event                   | `init.xt.stickyflow`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.stickyflow`           | `object` | Destroy event             |
+| Event                   | `init.xt.stickyflow`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.stickyflow`           | `container` | Destroy event             |
 
 </div>
 
@@ -64,8 +64,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-stickyflow', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-stickyflow', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -73,7 +73,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `element:Node`       | Sticky element             |
 | Property                   | `filler:Nodes`       | Filler element             |
@@ -85,7 +85,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-stickyflow', document.querySelector('.my-object'))
+let self = Xt.get('xt-stickyflow', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

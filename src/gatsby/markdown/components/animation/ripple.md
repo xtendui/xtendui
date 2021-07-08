@@ -15,7 +15,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Import the **javascript** file with `import 'xtendui/src/ripple'`.
 
-Initialize manually **within javascript** with `new Xt.Ripple(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Ripple(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
@@ -61,10 +61,10 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.ripple`       | `object` | Activation event             |
-| Event                   | `off.xt.ripple`      | `object` | Deactivation event            |
-| Event                   | `init.xt.ripple`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.ripple`           | `object` | Destroy event             |
+| Event                   | `on.xt.ripple`       | `container` | Activation event             |
+| Event                   | `off.xt.ripple`      | `container` | Deactivation event            |
+| Event                   | `init.xt.ripple`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.ripple`           | `container` | Destroy event             |
 
 </div>
 
@@ -73,8 +73,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-ripple', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-ripple', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -82,7 +82,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
@@ -93,7 +93,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-ripple', document.querySelector('.my-object'))
+let self = Xt.get('xt-ripple', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

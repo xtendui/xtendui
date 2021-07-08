@@ -11,7 +11,7 @@ date: "1900-10-10"
 
 Import the **javascript** file with `import 'xtendui/src/scrollto'`.
 
-Initialize manually **within javascript** with `new Xt.Scrollto(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Scrollto(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
@@ -43,7 +43,7 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
 
 ## Dynamic Content
 
-If you need to add **scrollto on content added dynamically**, just initialize `object` it on **a div container that changes on route update**.
+If you need to add **scrollto on content added dynamically**, just initialize `container` it on **a div container that changes on route update**.
 
 ## Options
  
@@ -95,9 +95,9 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scrollto.xt.scrollto`      | `object` | Scrolto event           |
-| Event                   | `init.xt.scrollto`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.scrollto`           | `object` | Destroy event             |
+| Event                   | `scrollto.xt.scrollto`      | `container` | Scrolto event           |
+| Event                   | `init.xt.scrollto`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.scrollto`           | `container` | Destroy event             |
 
 </div>
 
@@ -118,8 +118,8 @@ Trigger events on **DOM elements**.
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-scrollto', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-scrollto', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 [[notePrimary]]
@@ -130,7 +130,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `hashchange:Boolean`       | If browser hash change activation             |
 | Property                   | `position:Number`       | Current scroll position to scroll to             |
@@ -148,7 +148,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-scrollto', document.querySelector('.my-object'))
+let self = Xt.get('xt-scrollto', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

@@ -52,12 +52,12 @@ const mountScrollto = () => {
     })
   }
 
-  self.object.addEventListener('scrollto.xt.scrollto', scrollto)
+  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
   // unmount
 
   return () => {
-    self.object.removeEventListener('scrollto.xt.scrollto', scrollto)
+    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
   }

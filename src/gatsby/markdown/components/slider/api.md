@@ -12,7 +12,7 @@ date: "1980-05-05"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Object                   | `let self = Xt.get('xt-slider', {DOM element})`       | `object` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get('xt-slider', {DOM element})`       | `container` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
@@ -29,19 +29,19 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `ondone.xt.slider`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.slider`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.slider`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
-| Event                   | `autostart.xt.slider`           | `object` | Auto start event             |
-| Event                   | `autostop.xt.slider`           | `object` | Auto stop event             |
-| Event                   | `autopause.xt.slider`           | `object` | Auto pause event             |
+| Event                   | `autostart.xt.slider`           | `container` | Auto start event             |
+| Event                   | `autostop.xt.slider`           | `container` | Auto stop event             |
+| Event                   | `autopause.xt.slider`           | `container` | Auto pause event             |
 | Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
 | Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
 | Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
 | Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
 | Event                   | `dragposition.xt.slider`           | `dragger` | Drag position event             |
 | Event                   | `dragreset.xt.slider`           | `dragger` | Drag reset event             |
-| Event                   | `init.xt.slider`           | `object` | Init or reinit event             |
-| Event                   | `status.xt.slider`           | `object` | Status event (enabled or disabled)             |
-| Event                   | `restart.xt.slider`           | `object` | Restart event             |
-| Event                   | `destroy.xt.slider`           | `object` | Destroy event             |
+| Event                   | `init.xt.slider`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.slider`           | `container` | Status event (enabled or disabled)             |
+| Event                   | `restart.xt.slider`           | `container` | Restart event             |
+| Event                   | `destroy.xt.slider`           | `container` | Destroy event             |
 
 </div>
 
@@ -59,8 +59,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.trigger.xt.slider`       | `elements` `targets` | Activation event             |
 | Event                   | `off.trigger.xt.slider`      | `elements` `targets` | Deactivation event            |
-| Event                   | `autostart.trigger.xt.slider`           | `object` | Auto start event             |
-| Event                   | `autostop.trigger.xt.slider`           | `object` | Auto stop event             |
+| Event                   | `autostart.trigger.xt.slider`           | `container` | Auto start event             |
+| Event                   | `autostop.trigger.xt.slider`           | `container` | Auto stop event             |
 
 </div>
 
@@ -77,8 +77,8 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-slider', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-slider', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -86,7 +86,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `initial:Boolean`       | If initial or reset activation            |
@@ -108,7 +108,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-const self = Xt.get('xt-slider', document.querySelector('.my-object'))
+const self = Xt.get('xt-slider', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```

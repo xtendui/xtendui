@@ -16,7 +16,7 @@ Import the **javascript** file with `import 'xtendui/src/drop'`.
 
 Initialize automatically **within markup** with `[data-xt-drop="{ <options> }"]`.
 
-Initialize manually **within javascript** with `new Xt.Drop(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Drop(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage Self
 

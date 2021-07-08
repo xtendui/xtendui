@@ -19,7 +19,7 @@ class Googlelocator {
    */
   constructor(object, optionsCustom = {}) {
     const self = this
-    self.object = object
+    self.container = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
@@ -49,27 +49,27 @@ class Googlelocator {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.object, self)
+    Xt.set(self.componentName, self.container, self)
     // namespace
-    const uniqueId = Xt.dataStorage.get(self.object, 'xtUniqueId')
-    Xt.dataStorage.set(self.object, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.object, 'xtUniqueId')}`
+    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
+    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
+    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
     self.locateCache = null
-    self.loaderElement = self.object.querySelector(options.elements.loader)
-    self.itemsTemplate = self.object.querySelector(options.elements.itemsTemplate)
-    self.itemsContainer = self.object.querySelector(options.elements.itemsContainer)
-    self.foundElement = self.object.querySelector(options.elements.resultsFound)
+    self.loaderElement = self.container.querySelector(options.elements.loader)
+    self.itemsTemplate = self.container.querySelector(options.elements.itemsTemplate)
+    self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
+    self.foundElement = self.container.querySelector(options.elements.resultsFound)
     // init
-    self.mapElement = self.object.querySelector(options.elements.map)
+    self.mapElement = self.container.querySelector(options.elements.map)
     self.map = new google.maps.Map(self.mapElement, options.map)
-    self.searchInput = self.object.querySelector(options.elements.searchInput)
+    self.searchInput = self.container.querySelector(options.elements.searchInput)
     self.search = new google.maps.places.Autocomplete(self.searchInput)
     const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
-    self.searchBtn = self.object.querySelector(options.elements.searchBtn)
+    self.searchBtn = self.container.querySelector(options.elements.searchBtn)
     const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.searchClick.bind(self))
     self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
@@ -137,16 +137,16 @@ class Googlelocator {
         } else {
           self.locations = []
           self.populateItems()
-          self.object.classList.add('noplace')
-          self.object.classList.remove('empty')
-          self.object.classList.remove('found')
-          self.object.classList.remove('error')
+          self.container.classList.add('noplace')
+          self.container.classList.remove('empty')
+          self.container.classList.remove('found')
+          self.container.classList.remove('error')
         }
       })
     })
     // submitCurrent
     if (options.elements.repeatBtn) {
-      self.repeatElement = self.object.querySelector(options.elements.repeatBtn)
+      self.repeatElement = self.container.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
         const repeatHandler = Xt.dataStorage.put(
           self.repeatElement,
@@ -158,7 +158,7 @@ class Googlelocator {
     }
     // locate
     if (options.elements.locateBtn) {
-      self.locateElement = self.object.querySelector(options.elements.locateBtn)
+      self.locateElement = self.container.querySelector(options.elements.locateBtn)
       if (self.locateElement) {
         if (location.protocol === 'https:') {
           if (navigator.geolocation) {
@@ -180,7 +180,7 @@ class Googlelocator {
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
       self.initial = false
       // debug
       if (options.debug) {
@@ -189,7 +189,7 @@ class Googlelocator {
       }
     })
     // initialized class
-    self.object.setAttribute(`data-${self.componentName}-init`, '')
+    self.container.setAttribute(`data-${self.componentName}-init`, '')
   }
 
   /**
@@ -267,7 +267,7 @@ class Googlelocator {
       return false
     }
     // filter
-    self.filters = self.object.querySelectorAll(options.elements.filter)
+    self.filters = self.container.querySelectorAll(options.elements.filter)
     // markers
     self.locations = []
     let index = 0
@@ -321,10 +321,10 @@ class Googlelocator {
     }
     // populate
     if (self.locations.length) {
-      self.object.classList.remove('noplace')
-      self.object.classList.remove('empty')
-      self.object.classList.add('found')
-      self.object.classList.remove('error')
+      self.container.classList.remove('noplace')
+      self.container.classList.remove('empty')
+      self.container.classList.add('found')
+      self.container.classList.remove('error')
       if (self.foundElement) {
         self.foundElement.innerHTML = self.locations.length
       }
@@ -332,17 +332,17 @@ class Googlelocator {
       self.map.fitBounds(bounds)
       self.map.panToBounds(bounds)
     } else {
-      self.object.classList.remove('noplace')
-      self.object.classList.add('empty')
-      self.object.classList.remove('found')
-      self.object.classList.remove('error')
+      self.container.classList.remove('noplace')
+      self.container.classList.add('empty')
+      self.container.classList.remove('found')
+      self.container.classList.remove('error')
     }
     // eslint-disable-next-line no-console
     console.debug('xt-googlelocator locations', self.locations)
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // listener dispatch
-      self.object.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
     })
   }
 
@@ -352,7 +352,7 @@ class Googlelocator {
   populateItems() {
     const self = this
     // remove old
-    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
+    const removes = self.container.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
       remove.remove()
     }
@@ -580,21 +580,21 @@ class Googlelocator {
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
     // populate
-    self.object.classList.remove('noplace')
-    self.object.classList.remove('empty')
-    self.object.classList.remove('found')
-    self.object.classList.remove('error')
+    self.container.classList.remove('noplace')
+    self.container.classList.remove('empty')
+    self.container.classList.remove('found')
+    self.container.classList.remove('error')
     // clone
-    const removes = self.object.querySelectorAll('.xt-googlelocator-clone')
+    const removes = self.container.querySelectorAll('.xt-googlelocator-clone')
     for (const remove of removes) {
       remove.remove()
     }
     // initialized class
-    self.object.removeAttribute(`data-${self.componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.object)
+    Xt.remove(self.componentName, self.container)
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }
 }
 

@@ -12,7 +12,7 @@ Import the **javascript** file with `import 'xtendui/src/infinitescroll'`.
 
 Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <options> }"]`.
 
-Initialize manually **within javascript** with `new Xt.Infinitescroll(document.querySelector('.my-object'), {/* options */})`.
+Initialize manually **within javascript** with `new Xt.Infinitescroll(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
@@ -67,9 +67,9 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `populate.xt.infinitescroll`           | `object` | Replace event             |
-| Event                   | `init.xt.infinitescroll`           | `object` | Init or reinit event             |
-| Event                   | `destroy.xt.infinitescroll`           | `object` | Destroy event             |
+| Event                   | `populate.xt.infinitescroll`           | `container` | Replace event             |
+| Event                   | `init.xt.infinitescroll`           | `container` | Init or reinit event             |
+| Event                   | `destroy.xt.infinitescroll`           | `container` | Destroy event             |
 
 </div>
 
@@ -78,8 +78,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-infinitescroll', document.querySelector('.my-object'))
-const object = self.object
+let self = Xt.get('xt-infinitescroll', document.querySelector('.my-container'))
+const container = self.container
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -87,7 +87,7 @@ const object = self.object
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `object:Node`       | Object node             |
+| Property                   | `container:Node`       | Object node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `current:Number`       | Current page             |
 | Property                   | `elementsUp:Nodes`       | Trigger elements when scrolling up             |
@@ -103,7 +103,7 @@ const object = self.object
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-infinitescroll', document.querySelector('.my-object'))
+let self = Xt.get('xt-infinitescroll', document.querySelector('.my-container'))
 self.destroy()
 self = null
 ```
@@ -119,4 +119,4 @@ self = null
 
 ## Other
 
-Style on `self.object` the classes `.xt-infinitescroll-first` and `.xt-infinitescroll-last` for when the infinitescroll is on first or on last page.
+Style on `self.container` the classes `.xt-infinitescroll-first` and `.xt-infinitescroll-last` for when the infinitescroll is on first or on last page.
