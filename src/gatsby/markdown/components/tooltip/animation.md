@@ -13,6 +13,9 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 [[notePrimary]]
+| When you use animations you need to **specity the duration of the animation** for proper interactions.
+
+[[notePrimary]]
 | Do not transition or transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
 
 <demo>
@@ -25,9 +28,6 @@ Check out [tooltip's themes](/themes/tooltip) for **advanced animations**.
 ## Duration and Delay
 
 See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
-
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 #### Duration
 

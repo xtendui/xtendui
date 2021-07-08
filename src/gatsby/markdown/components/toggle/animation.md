@@ -22,6 +22,9 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
+[[notePrimary]]
+| When you use animations you need to **specity the duration of the animation** for proper interactions.
+
 <demo>
   <demoinline src="demos/components/toggle/animation">
   </demoinline>
@@ -37,9 +40,6 @@ For **inverse animation** you can use also **tailwind variants** `done:`, `group
 Check out [toggle's themes](/themes/toggl) for **advanced animations**.
 
 ## Duration and Delay
-
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 #### Duration
 

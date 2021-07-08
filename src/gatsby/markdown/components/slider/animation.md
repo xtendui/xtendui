@@ -53,6 +53,9 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
+[[notePrimary]]
+| When you use animations you need to **specity the duration of the animation** for proper interactions.
+
 <demo>
   <demoinline src="demos/components/slider/animation">
   </demoinline>
@@ -65,9 +68,6 @@ Check out [slider's themes](/themes/slider) for **advanced animations**.
 See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
 
 #### Duration
-
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 You can set activation duration with **a number of milliseconds** or a **function executed each time** with arguments `{ current, total, el, self }`.
 
