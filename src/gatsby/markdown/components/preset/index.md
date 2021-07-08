@@ -86,7 +86,7 @@ Xtend UI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](http
 
 For [all tailwind variants with hover already](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js) and for `transitionProperty`, `transitionTimingFunction`, `transitionDuration`, `transitionDelay`, `display`, `zIndex` we add the followind variants:
 
-- added variants to style activation classes: `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`
+- added variants to style activation classes: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`
 
 - activated `active:` variant and added `group-active:` variant.
 

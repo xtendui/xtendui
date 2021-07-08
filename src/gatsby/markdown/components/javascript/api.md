@@ -70,24 +70,32 @@ Xt.mount({
 
 ## Xt.on and Xt.off
 
-You can **toggle manually** activations.
+You can **toggle activations with javascript**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el, ns = '', duration = null })`                          | Activate node with `.on` `.in` `.out` `.done`             |
-| Method                  | `Xt.off({ el, ns = '', duration = null })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.on({ el, ns = '', duration = null, raf: true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.off({ el, ns = '', duration = null, raf: true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
 
 </div>
 
 You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
-Use **tailwind variants** `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`.
+You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
 
-To **toggle visibility** you can use the [toggle classes](/components/toggle/interaction#toggle).
+#### Display
+
+To show and hide the component we use **custom tailwind variants** attached to classes used by the component.
+
+Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
+
+Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+
+Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
 ## Xt.innerHeight
 

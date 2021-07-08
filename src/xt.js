@@ -733,28 +733,33 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
+   * @param {Boolean} params.raf Use requestAnimationFrame
    */
-  Xt.on = ({ el, ns = '', duration = null } = {}) => {
+  Xt.on = ({ el, ns = '', duration = null, raf = true } = {}) => {
     Xt.animTimeout({ el, ns: `${ns}OnOff` })
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
-    // needs TWO raf or sequential off/on flickr (e.g. display)
-    Xt.frameDouble({
-      el,
-      func: () => {
-        el.classList.add('in')
-        Xt.animTimeout({
-          el,
-          func: () => {
-            el.classList.add('done')
-          },
-          ns: `${ns}OnOff`,
-          duration,
-          actionCurrent: 'In',
-        })
-      },
-    })
+    const func = () => {
+      el.classList.add('in')
+      Xt.animTimeout({
+        el,
+        func: () => {
+          el.classList.add('done')
+        },
+        ns: `${ns}OnOff`,
+        duration,
+        actionCurrent: 'In',
+      })
+    }
+    // fix need to repeat inside frameDouble in case we cancel
+    Xt.frameDouble({ el })
+    if (raf) {
+      // needs TWO raf or sequential off/on flickr (e.g. display)
+      Xt.frameDouble({ el, func })
+    } else {
+      func()
+    }
   }
 
   /**
@@ -763,29 +768,34 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
+   * @param {Boolean} params.raf Use requestAnimationFrame
    */
-  Xt.off = ({ el, ns = '', duration = null } = {}) => {
+  Xt.off = ({ el, ns = '', duration = null, raf = true } = {}) => {
     Xt.animTimeout({ el, ns: `${ns}OnOff` })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', false)
-    // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
-    Xt.frameDouble({
-      el,
-      func: () => {
-        el.classList.remove('in')
-        el.classList.add('out')
-        el.classList.remove('done')
-        Xt.animTimeout({
-          el,
-          func: () => {
-            el.classList.remove('out')
-          },
-          ns: `${ns}OnOff`,
-          duration,
-          actionCurrent: 'Out',
-        })
-      },
-    })
+    const func = () => {
+      el.classList.remove('in')
+      el.classList.add('out')
+      el.classList.remove('done')
+      Xt.animTimeout({
+        el,
+        func: () => {
+          el.classList.remove('out')
+        },
+        ns: `${ns}OnOff`,
+        duration,
+        actionCurrent: 'Out',
+      })
+    }
+    // fix need to repeat inside frameDouble in case we cancel
+    Xt.frameDouble({ el })
+    if (raf) {
+      // needs TWO raf or sequential off/on flickr (e.g. display)
+      Xt.frameDouble({ el, func })
+    } else {
+      func()
+    }
   }
 
   /**
