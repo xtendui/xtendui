@@ -66,30 +66,21 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
 export const onRouteUpdate = ({ location, prevLocation }) => {
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+  // init
+  Xt.init()
+  // keepSidebarScroll
+  if (overlay && sidebar) {
+    overlay.scrollTop = window.keepSidebarScroll
+    gatsbySidebarContain()
+  }
   // if changing page
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
-      // init
-      Xt.init()
       // scroll page to top
       document.scrollingElement.scrollTop = 0
-    } else {
-      // not new page
-      dispatchEvent(new CustomEvent('hashchange'))
+      /* ScrollToPlugin refresh on route update */
+      ScrollTrigger.refresh()
     }
   }
-  // keepSidebarScroll
-  if (overlay && sidebar) {
-    // instant enable
-    if (matchMedia('(max-width: 1023px)').matches) {
-      document.querySelector('.gatsby_site-header').classList.remove('xt-sticky-disabled')
-    }
-    // scroll
-    overlay.scrollTop = window.keepSidebarScroll
-    // contain
-    gatsbySidebarContain()
-  }
-  /* ScrollToPlugin refresh on route update */
-  ScrollTrigger.refresh()
 }
