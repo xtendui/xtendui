@@ -161,7 +161,7 @@ class Toggle {
       if (options.elements.indexOf('#') !== -1) {
         self.containerElements = document.documentElement
       }
-      let arr = Array.from(Xt.arrSingle(self.containerElements.querySelectorAll(options.elements)))
+      let arr = Array.from(self.containerElements.querySelectorAll(options.elements))
       if (options.exclude) {
         arr = arr.filter(x => !x.matches(options.exclude))
       }
@@ -170,7 +170,7 @@ class Toggle {
     }
     // object if no elements
     if (!self.elements.length) {
-      self.elements = Xt.arrSingle(self.container)
+      self.elements = [self.container]
     }
   }
 
@@ -696,7 +696,7 @@ class Toggle {
     if (options.keyboard && options.keyboard.selector) {
       const keyboards =
         options.keyboard.selector === 'object'
-          ? Xt.arrSingle(self.container)
+          ? [self.container]
           : self.container.querySelectorAll(options.keyboard.selector)
       self.destroyElements.push(...keyboards)
       for (const keyboard of keyboards) {
@@ -1200,8 +1200,8 @@ class Toggle {
       }
       // if some in attr
       if (some) {
-        const groups = attr?.split(options.groupSeparator).filter(x => x)
-        const currentGroups = currentAttr?.split(options.groupSeparator).filter(x => x)
+        const groups = attr?.split(options.groupSeparator).filter(x => x) // filter out nullish
+        const currentGroups = currentAttr?.split(options.groupSeparator).filter(x => x) // filter out nullish
         if (currentGroups && groups && currentGroups.some(x => groups.includes(x))) {
           found.push(el)
         }
@@ -1252,15 +1252,15 @@ class Toggle {
       const groupTargets = self.groupFilter(self.targets, attr, some, same)
       if (attr) {
         // if group all group targets
-        final = Xt.arrSingle(groupElements)
+        final = groupElements
       } else {
         // not group targets by index
         if (Array.from(self.elements).includes(el)) {
-          final = Xt.arrSingle(el)
+          final = [el].filter(x => x) // filter out nullish
         } else {
           // groupElements and groupTargets are elements and targets without data-xt-group here
           const index = groupTargets.findIndex(x => x === el)
-          final = Xt.arrSingle(groupElements[index])
+          final = [groupElements[index]].filter(x => x) // filter out nullish
         }
       }
       return final
@@ -1301,15 +1301,15 @@ class Toggle {
       const groupTargets = self.groupFilter(self.targets, attr, some, same)
       if (attr) {
         // if group all group targets
-        final = Xt.arrSingle(groupTargets)
+        final = groupTargets
       } else {
         // not group targets by index
         if (Array.from(self.targets).includes(el)) {
-          final = Xt.arrSingle(el)
+          final = [el].filter(x => x) // filter out nullish
         } else {
           // groupElements and groupTargets are elements and targets without data-xt-group here
           const index = groupElements.findIndex(x => x === el)
-          final = Xt.arrSingle(groupTargets[index])
+          final = [groupTargets[index]].filter(x => x) // filter out nullish
         }
       }
       return final

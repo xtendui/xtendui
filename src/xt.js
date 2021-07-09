@@ -572,24 +572,6 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Make an array when element is only one
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} el
-   * @return {NodeList|Array}
-   */
-  Xt.arrSingle = el => {
-    if (!el) {
-      return []
-    }
-    if (el.length === undefined || el.tagName === 'FORM') {
-      const arr = new Array(1)
-      arr[0] = el
-      return arr
-    } else {
-      return el
-    }
-  }
-
-  /**
    * Create HTML elements from html string
    * @param {String} str Html string (only 1 root html tag)
    * @return {Node} HTML elements
@@ -886,7 +868,7 @@ if (typeof window !== 'undefined') {
     }
     if (!elements.length) {
       // search element
-      return Xt.arrSingle(elements.querySelectorAll(query))
+      return elements.querySelectorAll(query)
     } else {
       // search array
       const arr = []
