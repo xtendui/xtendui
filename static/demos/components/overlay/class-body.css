@@ -1,7 +1,7 @@
 .demo--overlay-class-html, .demo--overlay-class-html-react {
   /* DO NOT APPLY to selector with descendants with position: fixed; or transforms bugs position: fixed; */
   @apply transition;
-  .classbody-custom & {
+  .classbody & {
     @apply translate-x-4;
   }
 }

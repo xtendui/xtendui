@@ -177,6 +177,6 @@ You can set **body classes on activation**, remember to keep default `classBody`
 </div>
 
 <demo>
-  <demoinline src="demos/components/overlay/class-html">
+  <demoinline src="demos/components/overlay/class-body">
   </demoinline>
 </demo>

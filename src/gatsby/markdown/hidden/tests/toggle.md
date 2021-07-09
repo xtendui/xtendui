@@ -144,7 +144,7 @@ Test classes nested should not remove additional class.
 Test close all should remove all class.
 
 <demo>
-  <demoinline src="demos/components/overlay/class-html">
+  <demoinline src="demos/components/overlay/class-body">
   </demoinline>
 </demo>
 

@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--overlay-class-html">
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody-custom', duration: 500 }">
+      <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
@@ -12,12 +12,10 @@ const html = /* HTML */ `
           class body
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black  transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay" data-xt-overlay-target>
+          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div
-              class="xt-overlay-inner transition opacity-0 translate-y-4 group-in:opacity-100 group-in:translate-y-0"
-            >
+            <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
@@ -46,16 +44,18 @@ const html = /* HTML */ `
                     justo.
                   </p>
 
-                  <div data-xt-overlay>
+                  <div
+                    data-xt-overlay="{ elements: '[data-xt-overlay-element-nested]', targets: '[data-xt-overlay-target-nested]' }"
+                  >
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-                      data-xt-overlay-element
+                      data-xt-overlay-element-nested
                     >
                       Overlay
                     </button>
 
-                    <div class="xt-overlay" data-xt-overlay-target>
+                    <div class="xt-overlay" data-xt-overlay-target-nested>
                       <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">
