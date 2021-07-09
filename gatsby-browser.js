@@ -7,9 +7,16 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-export const shouldUpdateScroll = () => {
-  // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
-  document.scrollingElement.scrollTop = 0
+export const shouldUpdateScroll = ({ routerProps: { location }, prevRouterProps }) => {
+  const { location: prevLocation } = prevRouterProps ?? {}
+  // if changing page
+  if (prevLocation) {
+    // if new page
+    if (location.pathname !== prevLocation.pathname) {
+      // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
+      document.scrollingElement.scrollTop = 0
+    }
+  }
   return false
 }
 

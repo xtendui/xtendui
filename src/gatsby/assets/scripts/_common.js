@@ -162,7 +162,7 @@ Xt.mount({
 
     const container = tooltip.closest('[data-xt-tooltip]')
     const self = Xt.get('xt-tooltip', container)
-    const delayReset = 1000
+    const delayReset = 500
     const durationFast = 100
 
     // fix only once when tooltip has multiple targets
