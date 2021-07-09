@@ -95,5 +95,6 @@ It's better to keep the start value like [the css one](https://github.com/minimi
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
+| Option                    | `visibleReinit:Boolean`                          | `false`        | Reinit when `self.container` becomes visible (not `display: none`) only one time and only if not already visible            |
 
 </div>

@@ -766,6 +766,25 @@ class Toggle {
         }
       }
     }
+    // visibleReinit
+    if (options.visibleReinit) {
+      if (!Xt.visible(self.container)) {
+        // intersection observer
+        const observer = new IntersectionObserver(
+          function (entries, observer) {
+            for (const entry of entries) {
+              if (entry.intersectionRatio > 0) {
+                self.eventVisibleReinit()
+                // disconnect observer
+                observer.disconnect()
+              }
+            }
+          },
+          { root: null }
+        )
+        observer.observe(self.container)
+      }
+    }
   }
 
   //
@@ -1999,9 +2018,19 @@ class Toggle {
   /**
    * medialoadedReinit
    */
-  eventMedialoadedReinit() {
+  eventMediaLoadedReinit() {
     const self = this
     //console.debug('mediaLoadedReinit', self.container)
+    // reinit
+    self.reinit()
+  }
+
+  /**
+   * eventVisibleReinit
+   */
+  eventVisibleReinit() {
+    const self = this
+    //console.debug('visibleReinit', self.container)
     // reinit
     self.reinit()
   }
@@ -3464,6 +3493,7 @@ Toggle.optionsDefaultSuper = {
   // other
   matches: false,
   disabled: false,
+  visibleReinit: false,
   disableDeactivate: false,
   loop: false,
   jump: false,
