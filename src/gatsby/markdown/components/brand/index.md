@@ -14,24 +14,24 @@ Here are assets for sharing informations like in articles or other internet medi
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo-icon.svg" loading="eager" alt="Xtend UI" width="50">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo-icon.svg" loading="eager" alt="Xtend UI" width="50">
 </p>
 
-[download svg icon](https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo-icon.svg)
+[download svg icon](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo-icon.svg)
 
-[download svg icon white](https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo-icon-white.svg)
+[download svg icon white](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo-icon-white.svg)
 
 ## Logo
 
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo.svg" loading="eager" alt="Xtend UI" width="100">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo.svg" loading="eager" alt="Xtend UI" width="100">
 </p>
 
-[download svg logo](https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo.svg)
+[download svg logo](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo.svg)
 
-[download svg logo white](https://raw.githubusercontent.com/minimit/xtendui/beta/static/logo-white.svg)
+[download svg logo white](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo-white.svg)
 
 ## Background
 
@@ -42,15 +42,15 @@ Here are assets for sharing informations like in articles or other internet medi
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/beta/static/apple-touch-icon.png" loading="eager" alt="Xtend UI" width="100">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/apple-touch-icon.png" loading="eager" alt="Xtend UI" width="100">
 </p>
 
-[download png icon background](https://raw.githubusercontent.com/minimit/xtendui/beta/static/apple-touch-icon.png)
+[download png icon background](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/apple-touch-icon.png)
 
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/minimit/xtendui/beta/static/social.png" loading="eager" alt="Xtend UI" width="200">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/social.png" loading="eager" alt="Xtend UI" width="200">
 </p>
 
-[download png logo background](https://raw.githubusercontent.com/minimit/xtendui/beta/static/social.png)
+[download png logo background](https://raw.githubusercontent.com/xtendui/xtendui/beta/static/social.png)

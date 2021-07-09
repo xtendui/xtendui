@@ -78,7 +78,7 @@ Use this code to create a **drop that resets to current** automatically on deact
 
 On sequential activation you can **automatically set zIndex of activated elements and targets**.
 
-It's better to keep the start value like [the css one](https://github.com/minimit/xtendui/blob/beta/tailwind.preset.js), but you can change the **factor on activation**.
+It's better to keep the start value like [the css one](https://github.com/xtendui/xtendui/blob/beta/tailwind.preset.js), but you can change the **factor on activation**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

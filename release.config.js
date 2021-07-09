@@ -1,6 +1,6 @@
 module.exports = {
   debug: true,
-  repositoryUrl: 'https://github.com/minimit/xtendui',
+  repositoryUrl: 'https://github.com/xtendui/xtendui',
   branches: ['master', { name: 'beta', prerelease: true }, { name: '1.0-stable', prerelease: false, range: '1.x.x' }],
   plugins: [
     ['@semantic-release/commit-analyzer'],

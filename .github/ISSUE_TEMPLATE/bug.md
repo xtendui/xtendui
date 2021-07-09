@@ -4,7 +4,7 @@ about: Bug report
 labels: "type: bug"
 ---
 
-<!-- Before opening a new bug issue, please search existing issues: https://github.com/minimit/xtendui/issues -->
+<!-- Before opening a new bug issue, please search existing issues: https://github.com/xtendui/xtendui/issues -->
 
 ## Versions
 

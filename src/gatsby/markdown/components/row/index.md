@@ -8,7 +8,7 @@ description: "Flex component to space columns with paddings, also spaces vertica
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [preset customization](/components/preset#customization). Check [xtendui/src/row.css.js](https://github.com/minimit/xtendui/blob/beta/src/row.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [preset customization](/components/preset#customization). Check [xtendui/src/row.css.js](https://github.com/xtendui/xtendui/blob/beta/src/row.css.js) for default styles.
 
 ## Usage
 

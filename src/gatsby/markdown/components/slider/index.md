@@ -8,7 +8,7 @@ description: "Create visually stunning sliders, has a comprehensive javascript a
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider` see [preset customization](/components/preset#customization). Check [xtendui/src/slider.css.js](https://github.com/minimit/xtendui/blob/beta/src/slider.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.slider` see [preset customization](/components/preset#customization). Check [xtendui/src/slider.css.js](https://github.com/xtendui/xtendui/blob/beta/src/slider.css.js) for default styles.
 
 ## Javascript
 

@@ -20,9 +20,9 @@ module.exports = {
     author: 'Riccardo Caroli',
     image: '/social.png',
     npm: 'https://www.npmjs.com/package/xtendui',
-    github: 'https://github.com/minimit/xtendui',
+    github: 'https://github.com/xtendui/xtendui',
     twitter: 'https://twitter.com/xtendui',
-    download: 'https://github.com/minimit/xtendui/releases',
+    download: 'https://github.com/xtendui/xtendui/releases',
     uuid: require('uuid/v1')(),
   },
   plugins: [

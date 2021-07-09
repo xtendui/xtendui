@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version}{' '}
           <a
-            href="https://github.com/minimit/xtendui/blob/beta/LICENSE"
+            href="https://github.com/xtendui/xtendui/blob/beta/LICENSE"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-black no-underline hover:underline">

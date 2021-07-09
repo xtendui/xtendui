@@ -7,7 +7,7 @@ description: "Installation instructions to get Xtend UI up and running."
 date: "2050-09-10"
 ---
 
-If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/minimit/xtendui-boilerplate).
+If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
 ## Installation
 
@@ -92,7 +92,7 @@ You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@
 npm install @babel/core @babel/preset-env --save-dev
 ```
 
-Then in the root of your project set up polyfills with [babel.config.js](https://github.com/minimit/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
+Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
 
 #### Route Update
 
@@ -115,7 +115,7 @@ Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [li
 
 ## Unsupported browsers
 
-If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/minimit/xtendui/blob/beta/.browserslistrc).
+If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
 
 ```html
   <script>

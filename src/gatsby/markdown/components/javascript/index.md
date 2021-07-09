@@ -8,7 +8,7 @@ description: "Javascript utilities and animations usability improvements."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [preset customization](/components/preset#customization). Check [xtendui/src/javascript.css.js](https://github.com/minimit/xtendui/blob/beta/src/javascript.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [preset customization](/components/preset#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
 
 ## Javascript
 

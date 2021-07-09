@@ -8,7 +8,7 @@ description: "Wrapper to have media with aspect ratio, also on page load, useful
 
 ## Installation
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.media`, check [xtendui/src/media.css.js](https://github.com/minimit/xtendui/blob/beta/src/media.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.media`, check [xtendui/src/media.css.js](https://github.com/xtendui/xtendui/blob/beta/src/media.css.js) for default styles.
 
 ## Usage
 
