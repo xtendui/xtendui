@@ -148,11 +148,7 @@ class Googlelocator {
     if (options.elements.repeatBtn) {
       self.repeatElement = self.container.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
-        const repeatHandler = Xt.dataStorage.put(
-          self.repeatElement,
-          `click/${self.ns}`,
-          self.submitCurrent.bind(self).bind(self, false)
-        )
+        const repeatHandler = Xt.dataStorage.put(self.repeatElement, `click/${self.ns}`, self.submitCurrent.bind(self))
         self.repeatElement.addEventListener('click', repeatHandler)
       }
     }
@@ -163,7 +159,7 @@ class Googlelocator {
         if (location.protocol === 'https:') {
           if (navigator.geolocation) {
             if (options.initialLocate) {
-              self.locate(true)
+              self.locate({ initial: true })
             }
             const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.locate.bind(self))
             self.locateElement.addEventListener('click', locateHandler)
@@ -203,7 +199,7 @@ class Googlelocator {
       google.maps.event.addListenerOnce(self.map, 'idle', () => {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.submitCurrent(true)
+        self.submitCurrent({ empty: true })
       })
     }
   }
@@ -227,7 +223,7 @@ class Googlelocator {
       if (self.searchInput.value === '') {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.submitCurrent(true)
+        self.submitCurrent({ empty: true })
       }
     }
   }
@@ -245,7 +241,7 @@ class Googlelocator {
     if (self.searchInput.value === '') {
       self.map.setCenter(options.map.center)
       self.map.setZoom(options.map.zoom)
-      self.submitCurrent(true)
+      self.submitCurrent({ empty: true })
     } else {
       // submit triggers places autocomplete
       google.maps.event.trigger(self.search, 'place_changed')
@@ -277,7 +273,7 @@ class Googlelocator {
     }
     //console.debug('xt-googlelocator viewport and radius', self.viewport, self.radius)
     for (const marker of markers) {
-      if (!self.filters.length || self.filterMarker(marker)) {
+      if (!self.filters.length || self.filterMarker({ marker })) {
         const latLng = new google.maps.LatLng(
           options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
           options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
@@ -297,7 +293,7 @@ class Googlelocator {
           bounds.extend(latLng)
           self.locations.push(loc)
           loc.addListener('click', () => {
-            self.populateInfo(loc, 'marker')
+            self.populateInfo({ loc, type: 'marker' })
           })
           index++
         }
@@ -357,15 +353,16 @@ class Googlelocator {
     }
     // populateItem
     for (const loc of self.locations) {
-      self.populateItem(loc)
+      self.populateItem({ loc })
     }
   }
 
   /**
    * filterMarker
-   * @param {Object} marker
+   * @param {Object} params
+   * @param {Object} params.marker
    */
-  filterMarker(marker) {
+  filterMarker({ marker } = {}) {
     const self = this
     const options = self.options
     // filter
@@ -374,9 +371,10 @@ class Googlelocator {
 
   /**
    * populateItem
-   * @param {Object} loc
+   * @param {Object} params
+   * @param {Object} params.loc
    */
-  populateItem(loc) {
+  populateItem({ loc } = {}) {
     const self = this
     const options = self.options
     // clone
@@ -397,16 +395,17 @@ class Googlelocator {
     }
     // info
     cloned.addEventListener('click', () => {
-      self.populateInfo(loc, 'result')
+      self.populateInfo({ loc, type: 'result' })
     })
   }
 
   /**
    * populateInfo
-   * @param {Object} loc
-   * @param {String} type
+   * @param {Object} params
+   * @param {Object} params.loc
+   * @param {String} params.type
    */
-  populateInfo(loc, type) {
+  populateInfo({ loc, type } = {}) {
     const self = this
     const options = self.options
     // stop animation
@@ -461,9 +460,10 @@ class Googlelocator {
 
   /**
    * submitCurrent
-   * @param {Boolean} empty
+   * @param {Object} params
+   * @param {Boolean} params.empty
    */
-  submitCurrent(empty = false) {
+  submitCurrent({ empty = false } = {}) {
     const self = this
     const options = self.options
     // position
@@ -482,9 +482,10 @@ class Googlelocator {
 
   /**
    * locate
-   * @param {Boolean} initial
+   * @param {Object} params
+   * @param {Boolean} params.initial
    */
-  locate(initial = false) {
+  locate({ initial = false } = {}) {
     const self = this
     // loader
     if (!initial) {

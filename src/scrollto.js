@@ -58,11 +58,7 @@ class Scrollto {
     // class
     self.classes = options.class ? [...options.class.split(' ')] : []
     // click
-    const changeHandler = Xt.dataStorage.put(
-      self.container,
-      `click/${self.ns}`,
-      self.eventChange.bind(self).bind(self, false, null)
-    )
+    const changeHandler = Xt.dataStorage.put(self.container, `click/${self.ns}`, self.eventChange.bind(self, {}))
     self.container.addEventListener('click', changeHandler)
     // scrollto
     const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
@@ -71,7 +67,7 @@ class Scrollto {
     const hashHandler = Xt.dataStorage.put(
       window,
       `hashchange/${self.ns}`,
-      self.eventChange.bind(self).bind(self, true, null)
+      self.eventChange.bind(self).bind(self, { hashchange: true })
     )
     addEventListener('hashchange', hashHandler)
     // scroll
@@ -81,7 +77,7 @@ class Scrollto {
         const scrollHandler = Xt.dataStorage.put(
           scroller,
           `scroll/${self.ns}`,
-          self.eventActivationHandler.bind(self).bind(self, scroller)
+          self.eventActivationHandler.bind(self).bind(self, { scroller })
         )
         const events = options.events ? [...options.events.split(' ')] : []
         if (scroller === document.scrollingElement) {
@@ -124,7 +120,7 @@ class Scrollto {
       // initial activation
       for (const scroller of self.scrollers) {
         if (scroller) {
-          self.eventActivationHandler(scroller)
+          self.eventActivationHandler({ scroller })
         }
       }
     })
@@ -145,7 +141,7 @@ class Scrollto {
     if (hash) {
       const el = self.container.querySelector(options.anchors.replace('{hash}', hash))
       if (el) {
-        self.eventChange(false, el)
+        self.eventChange({ el })
       }
     }
   }
@@ -221,11 +217,12 @@ class Scrollto {
 
   /**
    * change
-   * @param {Boolean} hashchange
-   * @param {Node|HTMLElement|EventTarget|Window} el Change element
+   * @param {Object} params
+   * @param {Boolean} params.hashchange
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Change element
    * @param {Event} e
    */
-  eventChange(hashchange = false, el = null, e = null) {
+  eventChange({ hashchange = false, el = null }, e = null) {
     const self = this
     const options = self.options
     // hashchange
@@ -293,9 +290,10 @@ class Scrollto {
 
   /**
    * scroll activation handler
-   * @param {Node|HTMLElement|EventTarget|Window} scroller Scroller element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.scroller Scroller element
    */
-  eventActivationHandler(scroller) {
+  eventActivationHandler({ scroller } = {}) {
     const self = this
     const options = self.options
     // logic
@@ -306,7 +304,7 @@ class Scrollto {
         `${self.ns}ScrollTimeout`,
         setTimeout(() => {
           // handler
-          self.eventActivation(scroller)
+          self.eventActivation({ scroller })
         }, options.scrollDelay)
       )
     }
@@ -314,9 +312,10 @@ class Scrollto {
 
   /**
    * scroll activation
-   * @param {Node|HTMLElement|EventTarget|Window} scroller Scroller element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.scroller Scroller element
    */
-  eventActivation(scroller) {
+  eventActivation({ scroller } = {}) {
     const self = this
     const options = self.options
     // scroll

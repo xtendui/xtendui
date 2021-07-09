@@ -81,7 +81,7 @@ class Infinitescroll {
       const triggerHandler = Xt.dataStorage.put(
         trigger,
         `${options.events.trigger}}/${self.ns}`,
-        self.eventTrigger.bind(self, trigger)
+        self.eventTrigger.bind(self, { trigger })
       )
       const events = [...options.events.on.split(' ')]
       for (const event of events) {
@@ -137,8 +137,10 @@ class Infinitescroll {
 
   /**
    * trigger
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.trigger
    */
-  eventTrigger(trigger) {
+  eventTrigger({ trigger } = {}) {
     const self = this
     const options = self.options
     // request
@@ -146,7 +148,7 @@ class Infinitescroll {
     const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
     const amount = up || down
     if (!amount) {
-      self.setCurrent(options.min)
+      self.setCurrent({ page: options.min })
       location = self.url.href
     } else {
       let current = self.current + amount
@@ -154,7 +156,7 @@ class Infinitescroll {
       current = current > options.max ? options.max : current
       const items = self.itemsContainer.querySelectorAll(`[data-item-first="${current}"]`)
       if (current !== self.current && !items.length) {
-        self.setCurrent(current)
+        self.setCurrent({ page: current })
         self.inverse = !!up
         self.request()
       }
@@ -203,7 +205,7 @@ class Infinitescroll {
         found = item
       }
     }
-    self.setCurrent(parseFloat(found.getAttribute('data-item-first')))
+    self.setCurrent({ page: parseFloat(found.getAttribute('data-item-first')) })
     self.paginate()
     // save scroll position
     const add = self.additionalSpace()
@@ -257,12 +259,12 @@ class Infinitescroll {
       request.onload = () => {
         //console.debug('xt-infinitescroll request success', request, self.url)
         // response
-        self.response(request)
+        self.response({ request })
       }
       request.onerror = () => {
         //console.debug('xt-infinitescroll request failed', request)
         // response
-        self.response(request)
+        self.response({ request })
       }
       request.send()
     }
@@ -270,23 +272,25 @@ class Infinitescroll {
 
   /**
    * response
-   * @param {XMLHttpRequest|Object} request Html response
+   * @param {Object} params
+   * @param {XMLHttpRequest|Object} params.request Html response
    */
-  response(request) {
+  response({ request } = {}) {
     const self = this
     // request
     if (request.status >= 200 && request.status <= 300) {
-      self.success(request)
+      self.success({ request })
     } else {
-      self.error(request)
+      self.error()
     }
   }
 
   /**
    * success
-   * @param {XMLHttpRequest|Object} request Html response
+   * @param {Object} params
+   * @param {XMLHttpRequest|Object} params.request Html response
    */
-  success(request) {
+  success({ request } = {}) {
     const self = this
     const options = self.options
     // set substitute
@@ -294,12 +298,12 @@ class Infinitescroll {
     html.innerHTML = request.responseText.trim()
     const itemsContainer = html.querySelector(options.elements.itemsContainer)
     if (options.get && itemsContainer) {
-      self.populate(itemsContainer)
+      self.populate({ itemsContainer })
     } else {
       //console.debug('xt-infinitescroll fake populate because no items found')
       // fake
       setTimeout(() => {
-        self.populate(self.itemsFake.cloneNode(true))
+        self.populate({ itemsContainer: self.itemsFake.cloneNode(true) })
       }, 1000)
     }
   }
@@ -315,9 +319,10 @@ class Infinitescroll {
 
   /**
    * populate
-   * @param {Node|HTMLElement|EventTarget|Window} itemsContainer Items element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.itemsContainer Items element
    */
-  populate(itemsContainer) {
+  populate({ itemsContainer } = {}) {
     const self = this
     const options = self.options
     // vars
@@ -406,9 +411,10 @@ class Infinitescroll {
 
   /**
    * setCurrent
-   * @param {Number} page Page number to set
+   * @param {Object} params
+   * @param {Number} params.page Page number to set
    */
-  setCurrent(page = null) {
+  setCurrent({ page = null } = {}) {
     const self = this
     const options = self.options
     // check url
