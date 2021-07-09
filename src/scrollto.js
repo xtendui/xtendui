@@ -277,7 +277,7 @@ class Scrollto {
                 history.pushState({}, '', loc.hash)
               }
               // els
-              let els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
+              const els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
               for (const other of els) {
                 other.classList.remove(...self.classes)
@@ -331,7 +331,7 @@ class Scrollto {
       scrollTop = scrollMax
     }
     // anchors
-    let els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
+    const els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
     // loop
     for (const el of els) {
       // fix don't activate if elements is inside a inner scroller

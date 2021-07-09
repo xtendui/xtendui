@@ -210,8 +210,8 @@ class Toggle {
     // check initial activation
     currents = self.initActivate(saveCurrents)
     // if currents < min
-    let todo = options.min - currents
-    let start = 0
+    const todo = options.min - currents
+    const start = 0
     if (todo > 0) {
       // initial
       currents += todo
@@ -272,7 +272,7 @@ class Toggle {
       return false
     }
     // check hash
-    let obj = self.hashChange(saveCurrents)
+    const obj = self.hashChange(saveCurrents)
     let currents = obj.currents ?? 0
     // check class
     for (const el of self.getElementsGroups()) {
@@ -1684,7 +1684,7 @@ class Toggle {
       const elements =
         options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
       // targets
-      let targets = self.getTargets(element, true)
+      const targets = self.getTargets(element, true)
       // on
       self.addCurrent(elements[0])
       self.setIndex(elements[0])
@@ -1738,7 +1738,7 @@ class Toggle {
       // off
       self.removeCurrent(elements[0])
       // targets
-      let targets = self.getTargets(element, true)
+      const targets = self.getTargets(element, true)
       // fix sometimes blur is undefined
       if (element.blur) {
         // fix :focus styles

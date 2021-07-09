@@ -322,7 +322,7 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // vars
-    let items = itemsContainer.querySelectorAll(options.elements.item)
+    const items = itemsContainer.querySelectorAll(options.elements.item)
     // current page
     items[0].setAttribute('data-item-first', self.current)
     // populate dom

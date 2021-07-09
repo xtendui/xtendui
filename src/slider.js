@@ -151,11 +151,11 @@ class Slider extends Xt.Toggle {
     self.groups = []
     let currentGroup = 0
     group = group ?? options.group
-    let draggerWidthAvailable = group ? self.detail.draggerWidth * group : 0
+    const draggerWidthAvailable = group ? self.detail.draggerWidth * group : 0
     let currentCount = draggerWidthAvailable
     self.detail.availableSpace = -self.detail.draggerWidth
     for (const [i, target] of self.targets.entries()) {
-      let targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
+      const targetWidth = Xt.dataStorage.get(target, `${self.ns}SlideWidth`)
       currentCount -= targetWidth
       self.detail.availableSpace += targetWidth
       if (currentCount >= 0) {
@@ -287,7 +287,7 @@ class Slider extends Xt.Toggle {
           if (left <= max) {
             left = max
             // last group
-            let lastIndex = self.groups.length - 1
+            const lastIndex = self.groups.length - 1
             let width = Xt.dataStorage.get(self.groups[lastIndex].target, `${self.ns}GroupWidth`)
             width += Xt.dataStorage.get(group.target, `${self.ns}GroupWidth`)
             // put group in lastIndex group
@@ -317,7 +317,7 @@ class Slider extends Xt.Toggle {
       // save position
       for (const group of self.groups) {
         let groupWidth = 0
-        let left = Xt.dataStorage.get(group.target, `${self.ns}GroupLeft`)
+        const left = Xt.dataStorage.get(group.target, `${self.ns}GroupLeft`)
         for (const tr of group.targets) {
           groupWidth += Xt.dataStorage.get(tr, `${self.ns}SlideWidth`)
         }
@@ -1172,7 +1172,7 @@ class Slider extends Xt.Toggle {
   logicDragfind() {
     const self = this
     // array of orders based on current display order
-    let arr = []
+    const arr = []
     for (let i = self.detail.moveFirst; i < self.groups.length; i++) {
       arr.push(i)
     }

@@ -23,7 +23,7 @@ const mountToggle = ({ ref }) => {
 
   // init
 
-  let self = Xt.get('xt-toggle', toggle)
+  const self = Xt.get('xt-toggle', toggle)
 
   // off
 

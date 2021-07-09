@@ -4,7 +4,7 @@ const path = require('path')
 const glob = require('glob')
 const writeFile = require('write')
 const indentString = require('indent-string')
-let test = false
+const test = false
 /*
 test = true
 console.log(test)
@@ -106,7 +106,7 @@ console.log(test)
         html = html.replace(/autoplay/g, 'autoPlay')
         html = html.replace(/frameborder/g, 'frameBorder')
         // str
-        let str = `import React${
+        const str = `import React${
           strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function demo() {${

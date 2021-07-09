@@ -44,9 +44,9 @@ module.exports = plugin.withOptions(() => {
           if (componentsCustom[utility] !== false) {
             if (component === 'list' && utility === 'space') {
               // list space
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 css[`.${e(`xt-list-${name}`)}`] = {
                   marginTop: `-${value}`,
                   marginLeft: `-${value}`,
@@ -74,9 +74,9 @@ module.exports = plugin.withOptions(() => {
               })
             } else if (component === 'row' && utility === 'space') {
               // row space
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 css[`.${e(`xt-row-${name}`)}`] = {
                   marginTop: `-${value}`,
                   marginLeft: `-${value}`,
@@ -103,9 +103,9 @@ module.exports = plugin.withOptions(() => {
                 respectPrefix: false,
               })
             } else if (component === 'overlay' && utility === '.xt-overlay-container') {
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     padding: value,
@@ -123,9 +123,9 @@ module.exports = plugin.withOptions(() => {
                 respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-y') {
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     paddingTop: value,
@@ -146,9 +146,9 @@ module.exports = plugin.withOptions(() => {
                 respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-remove') {
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     marginLeft: `-${value}`,
@@ -169,9 +169,9 @@ module.exports = plugin.withOptions(() => {
                 respectPrefix: false,
               })
             } else if (component === 'layout' && utility === '.xt-container-y-remove') {
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     marginTop: `-${value}`,
@@ -193,7 +193,7 @@ module.exports = plugin.withOptions(() => {
               })
             } else {
               // all others
-              let css = {}
+              const css = {}
               css[utility] = options[utility]
               addComponents(css, {
                 variants: variants,

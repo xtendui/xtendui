@@ -23,7 +23,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
-  let self = Xt.get('xt-drop', drop)
+  const self = Xt.get('xt-drop', drop)
 
   // off
 

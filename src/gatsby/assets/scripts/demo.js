@@ -456,7 +456,7 @@ export const populateItem = item => {
 const swapClick = ({ buttonSwap }) => {
   // vars
 
-  let self = Xt.get('xt-tooltip', buttonSwap)
+  const self = Xt.get('xt-tooltip', buttonSwap)
   const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
   // swap
@@ -506,7 +506,7 @@ const swapClick = ({ buttonSwap }) => {
 const swapToggle = ({ buttonSwap }) => {
   // vars
 
-  let self = Xt.get('xt-tooltip', buttonSwap)
+  const self = Xt.get('xt-tooltip', buttonSwap)
   const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
   // swap

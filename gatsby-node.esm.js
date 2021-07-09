@@ -53,7 +53,7 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      let slug = markdownSlug(node)
+      const slug = markdownSlug(node)
       createPage({
         path: slug,
         component: node.frontmatter.parent ? docPageTemplate : docCategoryTemplate,

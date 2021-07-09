@@ -22,7 +22,8 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],
-    'prefer-template': 2,
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'prefer-template': 2,
+    'prefer-const': 2,
   },
 }
