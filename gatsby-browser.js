@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const shouldUpdateScroll = () => {
   // prevent scroll retention (e.g.: tooltip sidebar navigation) on href="#" or role="button"
+  document.scrollingElement.scrollTop = 0
   return false
 }
 
@@ -77,12 +78,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
-      requestAnimationFrame(() => {
-        // scroll page to top
-        document.scrollingElement.scrollTop = 0
-        /* ScrollToPlugin refresh on route update */
-        ScrollTrigger.refresh()
-      })
+      /* ScrollToPlugin refresh on route update */
+      ScrollTrigger.refresh()
     }
   }
 }
