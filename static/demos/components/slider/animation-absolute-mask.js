@@ -77,7 +77,8 @@ const mountSlider = ({ ref }) => {
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', '!block')
     }
-    const incomings = self.direction < 0 ? self.getTargets(self.getPrev()) : self.getTargets(self.getNext())
+    const incomings =
+      self.direction < 0 ? self.getTargets({ el: self.getPrev() }) : self.getTargets({ el: self.getNext() })
     for (const incoming of incomings) {
       incoming.classList.add('incoming', '!block')
       // mask

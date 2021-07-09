@@ -322,7 +322,7 @@ class Toggle {
         }
       }
       // check targets
-      const targets = self.getTargets(el)
+      const targets = self.getTargets({ el })
       for (const tr of targets) {
         // check if activated
         if (saveCurrents && !activated) {
@@ -419,7 +419,7 @@ class Toggle {
           }
           // controls
           if (options.aria === true || options.aria.controls) {
-            const trs = self.getTargets(el)
+            const trs = self.getTargets({ el })
             let str = ' '
             str += ''
             for (const tr of trs) {
@@ -439,7 +439,7 @@ class Toggle {
           }
           // describedby
           if (options.aria === true || options.aria.describedby) {
-            const els = self.getElements(tr)
+            const els = self.getElements({ el: tr })
             let str = ' '
             str += ''
             for (const el of els) {
@@ -449,7 +449,7 @@ class Toggle {
           }
           // labelledby
           if (options.aria === true || options.aria.labelledby) {
-            const els = self.getElements(tr)
+            const els = self.getElements({ el: tr })
             let str = ' '
             str += ''
             for (const el of els) {
@@ -802,7 +802,7 @@ class Toggle {
     const options = self.options
     force = force ? force : e?.detail?.force
     // fix groupElements and targets
-    const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
+    const el = options.groupElements || self.targets.includes(element) ? self.getElements({ el: element })[0] : element
     // handler
     if (!force && options.eventLimit) {
       const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
@@ -828,7 +828,7 @@ class Toggle {
     const options = self.options
     force = force ? force : e?.detail?.force
     // fix groupElements and targets
-    const el = options.groupElements || self.targets.includes(element) ? self.getElements(element)[0] : element
+    const el = options.groupElements || self.targets.includes(element) ? self.getElements({ el: element })[0] : element
     // handler
     if (!force && options.eventLimit) {
       const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
@@ -948,7 +948,7 @@ class Toggle {
               activated = checkHash(el, hash)
             }
             // check targets
-            const targets = self.getTargets(el)
+            const targets = self.getTargets({ el })
             for (const tr of targets) {
               // check if activated
               if (saveCurrents && !activated) {
@@ -1212,11 +1212,12 @@ class Toggle {
 
   /**
    * get elements from element or target
-   * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @param {Boolean} same Use also data-xt-group-same
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Boolean} params.same Use also data-xt-group-same
    * @return {Array} The first element is the one on getElementsGroups()
    */
-  getElements(el = null, same = false) {
+  getElements({ el = null, same = false } = {}) {
     const self = this
     const options = self.options
     // getElements
@@ -1269,11 +1270,12 @@ class Toggle {
 
   /**
    * get targets from element or target
-   * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @param {Boolean} same Use also data-xt-group-same
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Boolean} params.same Use also data-xt-group-same
    * @return {Array}
    */
-  getTargets(el = null, same = false) {
+  getTargets({ el = null, same = false } = {}) {
     const self = this
     const options = self.options
     // getTargets
@@ -1373,7 +1375,7 @@ class Toggle {
     const options = self.options
     // fix groupElements and targets
     const elements =
-      options.groupElements || self.targets.includes(element) ? self.getElements(element, same) : [element]
+      options.groupElements || self.targets.includes(element) ? self.getElements({ el: element, same }) : [element]
     // hasCurrent
     const arr = running ? Xt.running : Xt.currents
     return arr[self.ns].filter(x => elements.includes(x)).length
@@ -1451,7 +1453,7 @@ class Toggle {
   getIndex(element) {
     const self = this
     // fix groupElements and targets
-    element = self.getElements(element)[0]
+    element = self.getElements({ el: element })[0]
     // set index
     let index = null
     for (const [i, el] of self.getElementsGroups().entries()) {
@@ -1545,8 +1547,8 @@ class Toggle {
         // fix no data-xt-group-same
         const elMain = obj.elements.queueEls[0]
         if (
-          (type === 'elements' && self.getElements(elMain).includes(el)) ||
-          (type === 'targets' && self.getTargets(elMain).includes(el))
+          (type === 'elements' && self.getElements({ el: elMain }).includes(el)) ||
+          (type === 'targets' && self.getTargets({ el: elMain }).includes(el))
         ) {
           const attr = el.getAttribute(options.hash)
           if (attr) {
@@ -1635,8 +1637,8 @@ class Toggle {
         // fix no data-xt-group-same
         const elMain = obj.elements.queueEls[0]
         if (
-          (type === 'elements' && self.getElements(elMain).includes(el)) ||
-          (type === 'targets' && self.getTargets(elMain).includes(el))
+          (type === 'elements' && self.getElements({ el: elMain }).includes(el)) ||
+          (type === 'targets' && self.getTargets({ el: elMain }).includes(el))
         ) {
           const attr = el.getAttribute(options.hash)
           if (attr && attr === location.hash.split('#')[1]) {
@@ -1682,9 +1684,11 @@ class Toggle {
       self.eventAutostop()
       // fix groupElements and targets
       const elements =
-        options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
+        options.groupElements || self.targets.includes(element)
+          ? self.getElements({ el: element, same: true })
+          : [element]
       // targets
-      const targets = self.getTargets(element, true)
+      const targets = self.getTargets({ el: element, same: true })
       // on
       self.addCurrent(elements[0])
       self.setIndex(elements[0])
@@ -1734,11 +1738,13 @@ class Toggle {
     if (force || self.checkOff(element)) {
       // fix groupElements and targets
       const elements =
-        options.groupElements || self.targets.includes(element) ? self.getElements(element, true) : [element]
+        options.groupElements || self.targets.includes(element)
+          ? self.getElements({ el: element, same: true })
+          : [element]
       // off
       self.removeCurrent(elements[0])
       // targets
-      const targets = self.getTargets(element, true)
+      const targets = self.getTargets({ el: element, same: true })
       // fix sometimes blur is undefined
       if (element.blur) {
         // fix :focus styles

@@ -101,8 +101,8 @@ self = null
 
 |                         | Syntax                                    | Description                   | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getElements(el:Node)`                          | Get all elements from element or target, returns `Array`             |
-| Method                  | `self.getTargets(el:Node)`                          | Get all targets from element or target, returns `Array`             |
+| Method                  | `self.getElements({ el = null, same = false })`                          | Get all elements from element or target, returns `Array`             |
+| Method                  | `self.getTargets({ el = null, same = false })`                          | Get all targets from element or target, returns `Array`             |
 | Method                  | `self.getElementsGroups()`                          | Get elements (one per group), returns `Array`             |
 | Method                  | `self.hasCurrent(el:Node)`                          | Check if element or target is activated, returns `Boolean`             |
 | Method                  | `self.getIndex(el:Node)`                          | Get activation index of from element or target, returns `Number`             |

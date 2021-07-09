@@ -70,7 +70,7 @@ class Drop extends Xt.Toggle {
           el.style.transition = ''
         })
         // popperjs
-        const element = self.getElements(el)[0]
+        const element = self.getElements({ el })[0]
         const arrow = el.querySelector(':scope > .xt-arrow')
         const popperEl = options.positionInner ? element.querySelector(options.positionInner) : element
         const popperOptionsDefault = {

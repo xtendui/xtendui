@@ -193,7 +193,7 @@ class Slider extends Xt.Toggle {
       const slide = group.target
       // vars
       const slideLeft = Xt.dataStorage.get(slide, `${self.ns}SlideLeft`)
-      const targets = self.getTargets(slide)
+      const targets = self.getTargets({ el: slide })
       let groupLeft = Infinity
       let groupWidth = 0
       // vars
