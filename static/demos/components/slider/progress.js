@@ -91,7 +91,7 @@ const mountSlider = ({ ref }) => {
       autoRound: false,
     })
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent(x))
+    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
     for (const el of elements) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
@@ -109,7 +109,7 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent(x))
+    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
     for (const tr of targets) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
@@ -134,7 +134,7 @@ const mountSlider = ({ ref }) => {
 
   const autostop = () => {
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent(x))
+    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
     for (const el of elements) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
@@ -148,7 +148,7 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent(x))
+    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
     for (const tr of targets) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
@@ -178,7 +178,7 @@ const mountSlider = ({ ref }) => {
       autoRound: false,
     })
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent(x))
+    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
     for (const el of elements) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
@@ -192,7 +192,7 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent(x))
+    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
     for (const tr of targets) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {

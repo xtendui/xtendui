@@ -62,7 +62,7 @@ const mountSlider = ({ ref }) => {
   // drag (set drag frame on drag and initial position on activation)
 
   const drag = () => {
-    const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+    const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
     // mask
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)
@@ -105,7 +105,7 @@ const mountSlider = ({ ref }) => {
   // dragreset (set animation on drag reset, when dragging opposite position from initial dragging)
 
   const dragreset = () => {
-    const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+    const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
     off({ target: tr })
     on({ target: tr })
   }

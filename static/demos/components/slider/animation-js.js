@@ -70,7 +70,7 @@ const mountSlider = ({ ref }) => {
   const init = () => {
     const targets = self.targets.filter(x => !self.hasCurrent(x, false, true))
     for (const tr of targets) {
-      const index = self.getIndex(tr)
+      const index = self.getIndex({ el: tr })
       if (index < self.currentIndex) {
         gsap.set(tr, {
           x: -1 * targetXOn,

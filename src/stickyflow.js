@@ -83,7 +83,6 @@ class Stickyflow {
 
   /**
    * init start
-   * @param {Boolean} saveCurrents
    */
   initStart() {
     const self = this

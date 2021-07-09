@@ -535,9 +535,10 @@ class Slider extends Xt.Toggle {
 
   /**
    * init start
-   * @param {Boolean} saveCurrents
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    */
-  initStart(saveCurrents = false) {
+  initStart({ save = true } = {}) {
     const self = this
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
@@ -545,7 +546,7 @@ class Slider extends Xt.Toggle {
       self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     })
     // super after because it sets self.initial = false
-    super.initStart(saveCurrents)
+    super.initStart({ save })
   }
 
   //
@@ -687,12 +688,13 @@ class Slider extends Xt.Toggle {
 
   /**
    * element on
-   * @param {Node|HTMLElement|EventTarget|Window} element To be activated
-   * @param {Boolean} force
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be activated
+   * @param {Boolean} params.force
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  eventOn(element, force = false, e = null) {
+  eventOn({ el, force = false }, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -703,12 +705,12 @@ class Slider extends Xt.Toggle {
     let found
     for (const group of self.groups) {
       // targetsInitial because multiple pagination
-      if (group.element === element || group.targetsInitial.includes(element)) {
+      if (group.element === el || group.targetsInitial.includes(el)) {
         found = group
       }
     }
     if (!found) return
-    element = found.element
+    el = found.element
     const slide = found.target
     // vars
     const first = self.groups[self.detail.moveFirst].target
@@ -763,9 +765,9 @@ class Slider extends Xt.Toggle {
     // fix isDrag false for dragposition but keep for on and off event
     self.detail.isDrag = isDrag
     // keep super after dragposition because it sets self.initial etc..
-    super.eventOn(element, force, e)
+    super.eventOn({ el, force }, e)
     // wrap
-    self.eventWrap(self.currentIndex)
+    self.eventWrap({ index: self.currentIndex })
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // fix isDrag false for dragposition but keep for on and off event
@@ -796,8 +798,10 @@ class Slider extends Xt.Toggle {
 
   /**
    * wrap
+   * @param {Object} params
+   * @param {Boolean} params.index
    */
-  eventWrap(index) {
+  eventWrap({ index } = {}) {
     const self = this
     // logic
     if (self.wrap) {
@@ -834,7 +838,7 @@ class Slider extends Xt.Toggle {
     // index
     const tot = self.groups.length
     if (dir < 0) {
-      index = self.getPrevIndex(index)
+      index = self.getPrevIndex({ index })
       // keep index of moved slides
       self.detail.moveFirst = index
       self.detail.moveFirst = self.detail.moveFirst < tot ? self.detail.moveFirst : self.detail.moveFirst - tot
@@ -844,7 +848,7 @@ class Slider extends Xt.Toggle {
       self.detail.moveLast = self.detail.moveLast < tot ? self.detail.moveLast : self.detail.moveLast - tot
       self.detail.moveLast = self.detail.moveLast >= 0 ? self.detail.moveLast : tot + self.detail.moveLast
     } else if (dir > 0) {
-      index = self.getNextIndex(index)
+      index = self.getNextIndex({ index })
       // keep index of moved slides
       self.detail.moveLast = index
       self.detail.moveLast = self.detail.moveLast < tot ? self.detail.moveLast : self.detail.moveLast - tot
@@ -1020,7 +1024,7 @@ class Slider extends Xt.Toggle {
         // if on the same slide as we started dragging
         if (index !== self.detail.dragIndex || Math.abs(self.detail.dragDist) >= self.detail.draggerWidth) {
           // goToNum
-          self.goToNum(index)
+          self.goToNum({ index })
         } else {
           // depending on direction and if direction is not going back
           if (
@@ -1028,13 +1032,13 @@ class Slider extends Xt.Toggle {
             self.detail.dragDirection > 0 &&
             (options.loop || self.wrap || index !== self.getElementsGroups().length - 1)
           ) {
-            self.goToNext(1)
+            self.goToNext({ amount: 1 })
           } else if (
             Math.sign(self.detail.dragDist) < 0 &&
             self.detail.dragDirection < 0 &&
             (options.loop || self.wrap || index !== 0)
           ) {
-            self.goToPrev(1)
+            self.goToPrev({ amount: 1 })
           } else {
             self.logicDragreset()
           }
@@ -1133,8 +1137,8 @@ class Slider extends Xt.Toggle {
       const found = self.logicDragfind()
       // get nearest
       if (found !== self.currentIndex) {
-        super.eventOn(self.groups[found].element, true)
-        self.eventWrap(found)
+        super.eventOn({ el: self.groups[found].element, force: true })
+        self.eventWrap({ index: found })
       }
     }
     // listener dispatch
@@ -1253,9 +1257,10 @@ class Slider extends Xt.Toggle {
 
   /**
    * destroy
-   * @param {Boolean} weak Do not destroy component
+   * @param {Object} params
+   * @param {Boolean} params.weak Do not destroy component
    */
-  destroy(weak = false) {
+  destroy({ weak = false } = {}) {
     const self = this
     // clean
     self.destroyGrab()
@@ -1266,7 +1271,7 @@ class Slider extends Xt.Toggle {
     self.destroyPagination()
     self.destroyWrap()
     // super
-    super.destroy(weak)
+    super.destroy({ weak })
   }
 
   /**

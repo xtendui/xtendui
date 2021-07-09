@@ -87,7 +87,6 @@ class Textareaautosize {
 
   /**
    * init start
-   * @param {Boolean} saveCurrents
    */
   initStart() {
     const self = this

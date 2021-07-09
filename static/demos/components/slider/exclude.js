@@ -37,14 +37,14 @@ const mountToggle = ({ ref }) => {
 
   const change = () => {
     // deactivate slides
-    for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
+    for (const tr of self.targets.filter(x => !self.hasCurrent({ el: x }))) {
       const slide = tr.closest('.xt-slide')
       if (slide) {
         slide.classList.add('hidden')
       }
     }
     // activate slides
-    for (const tr of self.targets.filter(x => self.hasCurrent(x))) {
+    for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
       const slide = tr.closest('.xt-slide')
       if (slide) {
         slide.classList.remove('hidden')

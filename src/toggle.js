@@ -87,9 +87,10 @@ class Toggle {
 
   /**
    * init logic
-   * @param {Boolean} saveCurrents
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    */
-  initLogic(saveCurrents = true) {
+  initLogic({ save = true } = {}) {
     const self = this
     // vars
     self.destroyElements = [document, window, self.container]
@@ -99,7 +100,7 @@ class Toggle {
     self.initScope()
     self.initAria()
     self.initEvents()
-    self.initStart(saveCurrents)
+    self.initStart({ save })
     self.initStatus()
   }
 
@@ -193,9 +194,10 @@ class Toggle {
 
   /**
    * init start
-   * @param {Boolean} saveCurrents
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    */
-  initStart(saveCurrents = false) {
+  initStart({ save = false } = {}) {
     const self = this
     const options = self.options
     // currents
@@ -208,7 +210,7 @@ class Toggle {
     Xt.running[self.ns] = []
     // INSTANT ACTIVATION because we need activation classes right away (e.g.: slider inside demos toggle must be visible to get values)
     // check initial activation
-    currents = self.initActivate(saveCurrents)
+    currents = self.initActivate({ save })
     // if currents < min
     const todo = options.min - currents
     const start = 0
@@ -226,13 +228,13 @@ class Toggle {
             const event = options.on.split(' ')[0]
             el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
           } else {
-            self.eventOn(el, true)
+            self.eventOn({ el, force: true })
           }
         }
       }
     }
     // currents
-    if (saveCurrents) {
+    if (save) {
       self.initialCurrents = self.getCurrents().slice(0)
     }
     // no currents
@@ -256,10 +258,11 @@ class Toggle {
 
   /**
    * init activate
-   * @param {Boolean} saveCurrents
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    * @return {Number} currents count
    */
-  initActivate(saveCurrents = false) {
+  initActivate({ save = false } = {}) {
     const self = this
     const options = self.options
     // check
@@ -272,13 +275,13 @@ class Toggle {
       return false
     }
     // check hash
-    const obj = self.hashChange(saveCurrents)
+    const obj = self.hashChange({ save })
     let currents = obj.currents ?? 0
     // check class
     for (const el of self.getElementsGroups()) {
       let activated = false
       // check if activated
-      if (saveCurrents) {
+      if (save) {
         if (options.classSkip !== true && !options.classSkip.elements) {
           activated = checkClass(el)
         }
@@ -325,7 +328,7 @@ class Toggle {
       const targets = self.getTargets({ el })
       for (const tr of targets) {
         // check if activated
-        if (saveCurrents && !activated) {
+        if (save && !activated) {
           if (options.classSkip !== true && !options.classSkip.targets) {
             activated = checkClass(tr)
           }
@@ -375,7 +378,7 @@ class Toggle {
           const event = options.on.split(' ')[0]
           el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
         } else {
-          self.eventOn(el, true)
+          self.eventOn({ el, force: true })
         }
       }
     }
@@ -504,15 +507,11 @@ class Toggle {
       const onHandlerCustom = Xt.dataStorage.put(
         el,
         `${options.on}/oncustom/${self.ns}`,
-        self.eventOnHandler.bind(self, { element: el, force: true })
+        self.eventOnHandler.bind(self, { el, force: true })
       )
       el.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(
-          el,
-          `${options.on}/on/${self.ns}`,
-          self.eventOnHandler.bind(self, { element: el })
-        )
+        const onHandler = Xt.dataStorage.put(el, `${options.on}/on/${self.ns}`, self.eventOnHandler.bind(self, { el }))
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
@@ -522,14 +521,14 @@ class Toggle {
       const offHandlerCustom = Xt.dataStorage.put(
         el,
         `${options.off}/offcustom/${self.ns}`,
-        self.eventOffHandler.bind(self, { element: el })
+        self.eventOffHandler.bind(self, { el })
       )
       el.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
       if (options.off) {
         const offHandler = Xt.dataStorage.put(
           el,
           `${options.off}/off/${self.ns}`,
-          self.eventOffHandler.bind(self, { element: el })
+          self.eventOffHandler.bind(self, { el })
         )
         const events = [...options.off.split(' ')]
         for (const event of events) {
@@ -548,7 +547,7 @@ class Toggle {
             const preventeventStartTouchHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self, { element: el })
+              self.eventPreventeventStartHandler.bind(self, { el })
             )
             el.addEventListener('touchend', preventeventStartTouchHandler)
           }
@@ -556,12 +555,12 @@ class Toggle {
             const preventeventStartMouseHandler = Xt.dataStorage.put(
               el,
               `mouseup/preventevent/${self.ns}`,
-              self.eventPreventeventStartHandler.bind(self, { element: el })
+              self.eventPreventeventStartHandler.bind(self, { el })
             )
             el.addEventListener('mouseup', preventeventStartMouseHandler)
           }
         }
-        Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent(el))
+        Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
       }
     }
     // targets
@@ -570,14 +569,14 @@ class Toggle {
       const onHandlerCustom = Xt.dataStorage.put(
         tr,
         `${options.on}/oncustom/${self.ns}`,
-        self.eventOnHandler.bind(self, { element: tr, force: true })
+        self.eventOnHandler.bind(self, { el: tr, force: true })
       )
       tr.addEventListener(`on.trigger.${self.componentNs}`, onHandlerCustom)
       // event off
       const offHandlerCustom = Xt.dataStorage.put(
         tr,
         `${options.off}/offcustom/${self.ns}`,
-        self.eventOffHandler.bind(self, { element: tr, force: true })
+        self.eventOffHandler.bind(self, { el: tr, force: true })
       )
       tr.addEventListener(`off.trigger.${self.componentNs}`, offHandlerCustom)
     }
@@ -659,21 +658,25 @@ class Toggle {
     }
     if (self.hasHash) {
       // hash
-      const hashHandler = Xt.dataStorage.put(window, `popstate/${self.ns}`, self.hashChange.bind(self).bind(self, true))
+      const hashHandler = Xt.dataStorage.put(
+        window,
+        `popstate/${self.ns}`,
+        self.hashChange.bind(self).bind(self, { save: true })
+      )
       addEventListener('popstate', hashHandler)
     }
     // jump
     if (options.jump) {
-      for (const tr of self.targets) {
+      for (const el of self.targets) {
         const jumpHandler = Xt.dataStorage.put(
-          tr,
+          el,
           `click/jump/${self.ns}`,
-          self.eventJumpHandler.bind(self).bind(self, tr)
+          self.eventJumpHandler.bind(self).bind(self, { el })
         )
-        tr.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
+        el.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
         // jump
         if (!self.disabled) {
-          tr.classList.add('xt-jump')
+          el.classList.add('xt-jump')
         }
       }
     }
@@ -682,13 +685,13 @@ class Toggle {
       self.navs = self.container.querySelectorAll(options.navigation)
       if (self.navs.length) {
         self.destroyElements.push(...self.navs)
-        for (const nav of self.navs) {
+        for (const el of self.navs) {
           const navHandler = Xt.dataStorage.put(
-            nav,
+            el,
             `click/nav/${self.ns}`,
-            self.eventNavHandler.bind(self).bind(self, nav)
+            self.eventNavHandler.bind(self).bind(self, { el })
           )
-          nav.addEventListener('click', navHandler)
+          el.addEventListener('click', navHandler)
         }
       }
     }
@@ -738,11 +741,11 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self.eventMedialoadedHandler.bind(self).bind(self, img, el, true)
+                self.eventMedialoadedHandler.bind(self).bind(self, { img, el, deferred: true })
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
-              self.eventMedialoadedHandler(img, el)
+              self.eventMedialoadedHandler({ img, el })
             }
           }
         }
@@ -756,11 +759,11 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self.eventMedialoadedHandler.bind(self).bind(self, img, tr, true)
+                self.eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true })
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
-              self.eventMedialoadedHandler(img, tr)
+              self.eventMedialoadedHandler({ img, el: tr })
             }
           }
         }
@@ -793,16 +796,17 @@ class Toggle {
 
   /**
    * element on handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
-   * @param {Boolean} force
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Boolean} params.force
    * @param {Event} e
    */
-  eventOnHandler({ element, force = false }, e) {
+  eventOnHandler({ el, force = false }, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
     // fix groupElements and targets
-    const el = options.groupElements || self.targets.includes(element) ? self.getElements({ el: element })[0] : element
+    el = options.groupElements || self.targets.includes(el) ? self.getElements({ el: el })[0] : el
     // handler
     if (!force && options.eventLimit) {
       const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
@@ -814,21 +818,22 @@ class Toggle {
         }
       }
     }
-    self.eventOn(el, force, e)
+    self.eventOn({ el, force }, e)
   }
 
   /**
    * element off handler
-   * @param {Node|HTMLElement|EventTarget|Window} elementelement
-   * @param {Boolean} force
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Boolean} params.force
    * @param {Event} e
    */
-  eventOffHandler({ element, force = false }, e) {
+  eventOffHandler({ el, force = false }, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
     // fix groupElements and targets
-    const el = options.groupElements || self.targets.includes(element) ? self.getElements({ el: element })[0] : element
+    el = options.groupElements || self.targets.includes(el) ? self.getElements({ el })[0] : el
     // handler
     if (!force && options.eventLimit) {
       const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
@@ -840,85 +845,90 @@ class Toggle {
         }
       }
     }
-    self.eventOff(el, force, e)
+    self.eventOff({ el, force }, e)
   }
 
   /**
    * init prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  eventPreventeventStartHandler({ element }) {
+  eventPreventeventStartHandler({ el } = {}) {
     const self = this
     // active
-    Xt.dataStorage.put(element, `active/preventevent/${self.ns}`, self.hasCurrent(element))
+    Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
     // event link
     const preventeventHandler = Xt.dataStorage.put(
-      element,
+      el,
       `click/preventevent/${self.ns}`,
-      self.eventPreventeventHandler.bind(self, { element })
+      self.eventPreventeventHandler.bind(self, { el })
     )
-    element.addEventListener('click', preventeventHandler)
+    el.addEventListener('click', preventeventHandler)
     // event reset
     const preventeventResetHandler = Xt.dataStorage.put(
-      element,
+      el,
       `off/preventevent/${self.ns}`,
-      self.eventPreventeventResetHandler.bind(self, { element })
+      self.eventPreventeventResetHandler.bind(self, { el })
     )
-    element.addEventListener(`off.${self.componentNs}`, preventeventResetHandler)
+    el.addEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
    * remove prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  eventPreventeventEndHandler({ element }) {
+  eventPreventeventEndHandler({ el } = {}) {
     const self = this
     // event link
-    const preventeventHandler = Xt.dataStorage.get(element, `click/preventevent/${self.ns}`)
-    element.removeEventListener('click', preventeventHandler)
+    const preventeventHandler = Xt.dataStorage.get(el, `click/preventevent/${self.ns}`)
+    el.removeEventListener('click', preventeventHandler)
     // event reset
-    const preventeventResetHandler = Xt.dataStorage.get(element, `off/preventevent/${self.ns}`)
-    element.removeEventListener(`off.${self.componentNs}`, preventeventResetHandler)
+    const preventeventResetHandler = Xt.dataStorage.get(el, `off/preventevent/${self.ns}`)
+    el.removeEventListener(`off.${self.componentNs}`, preventeventResetHandler)
   }
 
   /**
    * prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  eventPreventeventHandler({ element }, e) {
+  eventPreventeventHandler({ el }, e) {
     const self = this
-    const active = Xt.dataStorage.get(element, `active/preventevent/${self.ns}`)
-    if (!active && !Xt.dataStorage.get(element, `${self.ns}PreventeventDone`)) {
-      Xt.dataStorage.set(element, `${self.ns}PreventeventDone`, true)
+    const active = Xt.dataStorage.get(el, `active/preventevent/${self.ns}`)
+    if (!active && !Xt.dataStorage.get(el, `${self.ns}PreventeventDone`)) {
+      Xt.dataStorage.set(el, `${self.ns}PreventeventDone`, true)
       // prevent default
       e.preventDefault()
     } else {
-      self.eventPreventeventEndHandler({ element })
-      Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
-      Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
+      self.eventPreventeventEndHandler({ el })
+      Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
+      Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
     }
   }
 
   /**
    * reset prevents click on touch until clicked two times
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  eventPreventeventResetHandler({ element }) {
+  eventPreventeventResetHandler({ el } = {}) {
     const self = this
-    self.eventPreventeventEndHandler({ element })
-    Xt.dataStorage.remove(element, `${self.ns}PreventeventDone`)
-    Xt.dataStorage.remove(element, `active/preventevent/${self.ns}`)
+    self.eventPreventeventEndHandler({ el })
+    Xt.dataStorage.remove(el, `${self.ns}PreventeventDone`)
+    Xt.dataStorage.remove(el, `active/preventevent/${self.ns}`)
   }
 
   /**
    * hash change
-   * @param {Boolean} saveCurrents
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    * @return {Object} return
    * @return {Number} return.currents
    * @return {Array} return.arr
    */
-  hashChange(saveCurrents) {
+  hashChange({ save = false } = {}) {
     const self = this
     const options = self.options
     // vars
@@ -944,14 +954,14 @@ class Toggle {
           for (const el of self.elements) {
             let activated = false
             // check if activated
-            if (saveCurrents) {
+            if (save) {
               activated = checkHash(el, hash)
             }
             // check targets
             const targets = self.getTargets({ el })
             for (const tr of targets) {
               // check if activated
-              if (saveCurrents && !activated) {
+              if (save && !activated) {
                 activated = checkHash(tr, hash)
               }
             }
@@ -966,7 +976,7 @@ class Toggle {
                 const event = options.on.split(' ')[0]
                 el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
               } else {
-                self.eventOn(el, true)
+                self.eventOn({ el, force: true })
               }
               Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, false)
             }
@@ -980,31 +990,33 @@ class Toggle {
 
   /**
    * jump handler
-   * @param {Node|HTMLElement|EventTarget|Window} tr
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  eventJumpHandler(tr, e) {
+  eventJumpHandler({ el }, e) {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // check because of event propagation
-    if (self.targets.includes(tr)) {
+    if (self.targets.includes(el)) {
       // handler
-      self.eventJump(tr, e)
+      self.eventJump({ el }, e)
     }
   }
 
   /**
    * nav handler
-   * @param {Node|HTMLElement|EventTarget|Window} nav
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  eventNavHandler(nav, e) {
+  eventNavHandler({ el }, e) {
     const self = this
     // handler
-    self.eventNav(nav, e)
+    self.eventNav({ el }, e)
   }
 
   /**
@@ -1060,9 +1072,9 @@ class Toggle {
       }
     }
     if (code === prev) {
-      self.goToPrev(1)
+      self.goToPrev({ amount: 1 })
     } else if (code === next) {
-      self.goToNext(1)
+      self.goToNext({ amount: 1 })
     }
   }
 
@@ -1082,7 +1094,7 @@ class Toggle {
       // handler
       const currents = self.getCurrents()
       for (const current of currents) {
-        self.eventOff(current, true, e)
+        self.eventOff({ el: current, force: true }, e)
       }
     }
   }
@@ -1106,17 +1118,18 @@ class Toggle {
       }
     }
     if (found) {
-      self.eventOn(found, true, e)
+      self.eventOn({ el: found, force: true }, e)
     }
   }
 
   /**
    * medialoaded
-   * @param {Node|HTMLElement|EventTarget|Window} img
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Boolean} deferred
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.img
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Boolean} params.deferred
    */
-  eventMedialoadedHandler(img, el, deferred = false) {
+  eventMedialoadedHandler({ img, el, deferred = false } = {}) {
     const self = this
     const options = self.options
     // fix multiple calls
@@ -1150,7 +1163,7 @@ class Toggle {
   //
 
   /**
-   * get elements groups (one element per group)
+   * Get all elements from element or target
    * @return {Array} array of elements
    */
   getElementsGroups() {
@@ -1174,18 +1187,19 @@ class Toggle {
 
   /**
    * filter elements or targets array with groups array
-   * @param {Array} arr Elements or Targets
-   * @param {String} attr Groups attribute
-   * @param {Boolean} some Filter also if some in Groups attribute
-   * @param {Boolean} same Use also data-xt-group-same
+   * @param {Object} params
+   * @param {Array} params.els Elements or Targets
+   * @param {String} params.attr Groups attribute
+   * @param {Boolean} params.some Filter also if some in Groups attribute
+   * @param {Boolean} params.same Use also data-xt-group-same
    * @return {Array} Filtered array
    */
-  groupFilter(elements, attr, some = false, same = false) {
+  groupFilter({ els, attr, some = false, same = false } = {}) {
     const self = this
     const options = self.options
     // logic
     const found = []
-    for (const el of elements) {
+    for (const el of els) {
       let currentAttr = el.getAttribute('data-xt-group')
       if (same) {
         const currentAttrSame = el.getAttribute('data-xt-group-same')
@@ -1217,7 +1231,7 @@ class Toggle {
    * @param {Boolean} params.same Use also data-xt-group-same
    * @return {Array} The first element is the one on getElementsGroups()
    */
-  getElements({ el = null, same = false } = {}) {
+  getElements({ el, same = false } = {}) {
     const self = this
     const options = self.options
     // getElements
@@ -1249,8 +1263,8 @@ class Toggle {
         }
       }
       const some = self.elements.includes(el) ? false : true // data-xt-group some only if finding elements from targets
-      const groupElements = self.groupFilter(self.elements, attr, some, same)
-      const groupTargets = self.groupFilter(self.targets, attr, some, same)
+      const groupElements = self.groupFilter({ els: self.elements, attr, some, same })
+      const groupTargets = self.groupFilter({ els: self.targets, attr, some, same })
       if (attr) {
         // if group all group targets
         final = groupElements
@@ -1269,13 +1283,13 @@ class Toggle {
   }
 
   /**
-   * get targets from element or target
+   * Get all targets from element or target
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
    * @param {Boolean} params.same Use also data-xt-group-same
    * @return {Array}
    */
-  getTargets({ el = null, same = false } = {}) {
+  getTargets({ el, same = false } = {}) {
     const self = this
     const options = self.options
     // getTargets
@@ -1299,8 +1313,8 @@ class Toggle {
         }
       }
       const some = self.targets.includes(el) ? false : true // data-xt-group some only if finding targets from elements
-      const groupElements = self.groupFilter(self.elements, attr, some, same)
-      const groupTargets = self.groupFilter(self.targets, attr, some, same)
+      const groupElements = self.groupFilter({ els: self.elements, attr, some, same })
+      const groupTargets = self.groupFilter({ els: self.targets, attr, some, same })
       if (attr) {
         // if group all group targets
         final = groupTargets
@@ -1340,42 +1354,44 @@ class Toggle {
 
   /**
    * add current based on namespace (so shared between Xt objects)
-   * @param {Node|HTMLElement|EventTarget|Window} element To be added
-   * @param {Boolean} running Running currents
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Boolean} params.running Running currents
    */
-  addCurrent(element, running) {
+  addCurrent({ el, running = false } = {}) {
     const self = this
     // addCurrent
-    if (!self.hasCurrent(element, running)) {
+    if (!self.hasCurrent({ el, running })) {
       const arr = running ? Xt.running : Xt.currents
-      arr[self.ns].push(element)
+      arr[self.ns].push(el)
     }
   }
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
-   * @param {Node|HTMLElement|EventTarget|Window} element To be removed
-   * @param {Boolean} running Running currents
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be removed
+   * @param {Boolean} params.running Running currents
    */
-  removeCurrent(element, running) {
+  removeCurrent({ el, running = false } = {}) {
     const self = this
     // removeCurrent
     const arr = running ? Xt.running : Xt.currents
-    arr[self.ns] = arr[self.ns].filter(x => x !== element)
+    arr[self.ns] = arr[self.ns].filter(x => x !== el)
   }
 
   /**
-   * if element or target is in current (so shared between Xt objects)
-   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
-   * @param {Boolean} running Running currents
-   * @param {Boolean} same Use also data-xt-group-same
+   * Check if element or target is activated
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
+   * @param {Boolean} params.same Use also data-xt-group-same
+   * @param {Boolean} params.running Running currents
    */
-  hasCurrent(element, running, same = false) {
+  hasCurrent({ el, same = false, running = false } = {}) {
     const self = this
     const options = self.options
     // fix groupElements and targets
-    const elements =
-      options.groupElements || self.targets.includes(element) ? self.getElements({ el: element, same }) : [element]
+    const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same }) : [el]
     // hasCurrent
     const arr = running ? Xt.running : Xt.currents
     return arr[self.ns].filter(x => elements.includes(x)).length
@@ -1383,21 +1399,23 @@ class Toggle {
 
   /**
    * check element on
-   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be checked
    * @return {Boolean} If elements can activate
    */
-  checkOn(element) {
+  checkOn({ el } = {}) {
     const self = this
     // check
-    return !self.hasCurrent(element)
+    return !self.hasCurrent({ el })
   }
 
   /**
    * check element off
-   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be checked
    * @return {Boolean} If elements can deactivate
    */
-  checkOff(element) {
+  checkOff({ el } = {}) {
     const self = this
     const options = self.options
     // skip if min >= currents
@@ -1405,58 +1423,62 @@ class Toggle {
       return false
     }
     // check
-    return self.hasCurrent(element)
+    return self.hasCurrent({ el })
   }
 
   /**
    * check element on
-   * @param {Object} obj Queue object to end
+   * @param {Object} params
+   * @param {Object} params.obj Queue object to end
    * @return {Boolean} If elements can activate
    */
-  checkOnRunning(obj) {
+  checkOnRunning({ obj } = {}) {
     const self = this
     // running check to stop multiple activation/deactivation with delay
-    const check = obj.elements.runningOn || !self.hasCurrent(obj.elements.queueEls[0], true)
+    const check = obj.elements.runningOn || !self.hasCurrent({ el: obj.elements.queueEls[0], running: true })
     obj.elements.runningOn = check
     return check
   }
 
   /**
    * check element off running
-   * @param {Object} obj Queue object to end
+   * @param {Object} params
+   * @param {Object} params.obj Queue object to end
    * @return {Boolean} If elements can activate
    */
-  checkOffRunning(obj) {
+  checkOffRunning({ obj } = {}) {
     const self = this
     // running check to stop multiple activation/deactivation with delay
-    const check = obj.elements.runningOff || self.hasCurrent(obj.elements.queueEls[0], true)
+    const check = obj.elements.runningOff || self.hasCurrent({ el: obj.elements.queueEls[0], running: true })
     obj.elements.runningOff = check
     return check
   }
 
   /**
    * set index
-   * @param {Node|HTMLElement|EventTarget|Window} element Current group element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  setIndex(element) {
+  setIndex({ el } = {}) {
     const self = this
     // set index
-    const index = self.getIndex(element)
+    const index = self.getIndex({ el })
     self.oldIndex = self.currentIndex ?? index
     self.currentIndex = index
   }
 
   /**
    * get index
-   * @param {Node|HTMLElement|EventTarget|Window} element Current group element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  getIndex(element) {
+  getIndex({ el } = {}) {
     const self = this
     // fix groupElements and targets
-    element = self.getElements({ el: element })[0]
+    el = self.getElements({ el })[0]
     // set index
     let index = null
-    for (const [i, el] of self.getElementsGroups().entries()) {
+    for (const [i, element] of self.getElementsGroups().entries()) {
       if (el === element) {
         index = i
         break
@@ -1484,10 +1506,11 @@ class Toggle {
 
   /**
    * activate element
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be activated
+   * @param {String} params.type Type of element
    */
-  activate(el, type) {
+  activate({ el, type } = {}) {
     const self = this
     const options = self.options
     // input
@@ -1517,10 +1540,11 @@ class Toggle {
 
   /**
    * activate element done
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
+   * @param {String} params.type Type of element
    */
-  activateDone(el, type) {
+  activateDone({ el, type } = {}) {
     const self = this
     const options = self.options
     // activation
@@ -1534,11 +1558,12 @@ class Toggle {
 
   /**
    * activate hash
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   * @param {Object} params
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be activated
    * @param {String} type Type of element
    */
-  activateHash(obj, el, type) {
+  activateHash({ obj, el, type } = {}) {
     const self = this
     const options = self.options
     // hash
@@ -1571,10 +1596,11 @@ class Toggle {
 
   /**
    * deactivate element
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
+   * @param {String} params.type Type of element
    */
-  deactivate(el, type) {
+  deactivate({ el, type } = {}) {
     const self = this
     const options = self.options
     // input
@@ -1607,10 +1633,11 @@ class Toggle {
 
   /**
    * deactivate element done
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
+   * @param {String} params.type Type of element
    */
-  deactivateDone(el, type) {
+  deactivateDone({ el, type } = {}) {
     const self = this
     const options = self.options
     // activation
@@ -1624,11 +1651,12 @@ class Toggle {
 
   /**
    * deactivate hash
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
+   * @param {String} params.type Type of element
    */
-  deactivateHash(obj, el, type) {
+  deactivateHash({ obj, el, type } = {}) {
     const self = this
     const options = self.options
     // hash
@@ -1665,12 +1693,13 @@ class Toggle {
 
   /**
    * element on
-   * @param {Node|HTMLElement|EventTarget|Window} element To be activated
-   * @param {Boolean} force
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be activated
+   * @param {Boolean} params.force
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  eventOn(element, force = false, e = null) {
+  eventOn({ el, force = false }, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1678,43 +1707,40 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
+    if (force || (self.checkOn({ el }) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
       // fix same event for on and off same namespace
       // auto
       self.eventAutostop()
       // fix groupElements and targets
-      const elements =
-        options.groupElements || self.targets.includes(element)
-          ? self.getElements({ el: element, same: true })
-          : [element]
+      const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
       // targets
-      const targets = self.getTargets({ el: element, same: true })
+      const targets = self.getTargets({ el, same: true })
       // on
-      self.addCurrent(elements[0])
-      self.setIndex(elements[0])
+      self.addCurrent({ el: elements[0] })
+      self.setIndex({ el: elements[0] })
       self.setDirection()
       // if currents > max
       const currents = self.getCurrents()
       if (currents.length > options.max) {
         // deactivate old
-        self.eventOff(currents[0])
+        self.eventOff({ el: currents[0] })
       }
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
-      const elementsInner = Xt.queryAll(element, options.elementsInner)
+      const elementsInner = Xt.queryAll(el, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
-      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
+      self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // queue run
       // eslint-disable-next-line guard-for-in
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
-        self.queueStart(actionCurrent, actionOther, type, 0)
+        self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
       // activation
       return true
     } else if ([...options.on.split(' ')].includes(e?.type)) {
       // fix same event for on and off same namespace
-      self.eventOff(element, false, e)
+      self.eventOff({ el }, e)
     }
     // activation
     return false
@@ -1722,12 +1748,13 @@ class Toggle {
 
   /**
    * element off
-   * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
-   * @param {Boolean} force
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el To be deactivated
+   * @param {Boolean} params.force
    * @param {Event} e
    * @return {Boolean} If deactivated
    */
-  eventOff(element, force = false, e = null) {
+  eventOff({ el, force = false } = {}, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1735,20 +1762,18 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || self.checkOff(element)) {
+    if (force || self.checkOff({ el })) {
       // fix groupElements and targets
       const elements =
-        options.groupElements || self.targets.includes(element)
-          ? self.getElements({ el: element, same: true })
-          : [element]
+        options.groupElements || self.targets.includes(el) ? self.getElements({ el: el, same: true }) : [el]
       // off
-      self.removeCurrent(elements[0])
+      self.removeCurrent({ el: elements[0] })
       // targets
-      const targets = self.getTargets({ el: element, same: true })
+      const targets = self.getTargets({ el: el, same: true })
       // fix sometimes blur is undefined
-      if (element.blur) {
+      if (el.blur) {
         // fix :focus styles
-        element.blur()
+        el.blur()
       }
       // auto
       if (!self.getCurrents().length) {
@@ -1757,22 +1782,22 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
-      const elementsInner = Xt.queryAll(element, options.elementsInner)
+      const elementsInner = Xt.queryAll(el, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
-      self.eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e)
+      self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // remove queue not started if queue too big
       if (self.detail[`queue${actionCurrent}`].length > options.max) {
         // remove queue and stop
         const removedOn = self.detail[`queue${actionOther}`].shift()
-        self.queueStop(actionOther, actionCurrent, removedOn)
+        self.queueStop({ actionCurrent: actionOther, actionOther: actionCurrent, obj: removedOn })
         // remove queue and stop
         const removedOff = self.detail[`queue${actionCurrent}`].shift()
-        self.queueStop(actionCurrent, actionOther, removedOff)
+        self.queueStop({ actionCurrent, actionOther, obj: removedOff })
       }
       // queue run
       // eslint-disable-next-line guard-for-in
       for (const type in self.detail[`queue${actionCurrent}`][0]) {
-        self.queueStart(actionCurrent, actionOther, type, 0)
+        self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
       // deactivated
       return true
@@ -1783,15 +1808,16 @@ class Toggle {
 
   /**
    * element on
-   * @param {String} actionCurrent
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elements
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targets
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
-   * @param {Boolean} force
-   * @param {Event} e
+   * @param {Object} params
+   * @param {String} params.actionCurrent
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.elements
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.targets
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.elementsInner
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.targetsInner
+   * @param {Boolean} params.force
+   * @param {Event} params.e
    */
-  eventQueue(actionCurrent, elements, targets, elementsInner, targetsInner, force, e) {
+  eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e } = {}) {
     const self = this
     const options = self.options
     // populate
@@ -1839,9 +1865,9 @@ class Toggle {
       if (Xt.visible(self.container)) {
         // not when disabled
         if (options.auto.inverse) {
-          self.goToPrev(options.auto.step, false, options.auto.loop)
+          self.goToPrev({ amount: options.auto.step, loop: options.auto.loop })
         } else {
-          self.goToNext(options.auto.step, false, options.auto.loop)
+          self.goToNext({ amount: options.auto.step, loop: options.auto.loop })
         }
       }
     }
@@ -1982,42 +2008,44 @@ class Toggle {
 
   /**
    * jump
-   * @param {Node|HTMLElement|EventTarget|Window} tr
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Event} e
    */
-  eventJump(tr, e) {
+  eventJump({ el }, e) {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // check disabled
-    if (tr.classList.contains(...self.classes) || !tr.classList.contains('xt-jump')) {
+    if (el.classList.contains(...self.classes) || !el.classList.contains('xt-jump')) {
       return
     }
     // prevent default
     e.preventDefault()
     // jump
-    if (self.checkOn(tr)) {
-      self.eventOn(tr)
+    if (self.checkOn({ el })) {
+      self.eventOn({ el })
     }
   }
 
   /**
    * nav
-   * @param {Node|HTMLElement|EventTarget|Window} nav
+   * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventNav(nav) {
+  eventNav({ el } = {}) {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // nav
-    const step = parseFloat(nav.getAttribute('data-xt-nav'))
+    const step = parseFloat(el.getAttribute('data-xt-nav'))
     if (step < 0) {
-      self.goToPrev(-step)
+      self.goToPrev({ amount: -step })
     } else {
-      self.goToNext(step)
+      self.goToNext({ amount: step })
     }
   }
 
@@ -2047,12 +2075,13 @@ class Toggle {
 
   /**
    * queue start
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {String} params.type Type of element
+   * @param {Number} params.index Queue index
    */
-  queueStart(actionCurrent, actionOther, type, index) {
+  queueStart({ actionCurrent, actionOther, type, index } = {}) {
     const self = this
     const options = self.options
     // queue start
@@ -2079,20 +2108,21 @@ class Toggle {
           obj[type].instantType = true
         }
         // special
-        self.specialClassBody(actionCurrent, type)
+        self.specialClassBody({ actionCurrent, type })
         // start queue
-        self.queueDelay(actionCurrent, actionOther, obj, type)
+        self.queueDelay({ actionCurrent, actionOther, obj, type })
       }
     }
   }
 
   /**
    * queue stop
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object to end
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object to end
    */
-  queueStop(actionCurrent, actionOther, obj) {
+  queueStop({ actionCurrent, actionOther, obj } = {}) {
     const self = this
     // stop type if done
     for (const type in obj) {
@@ -2104,8 +2134,15 @@ class Toggle {
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
           // done other queue
-          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true)
-          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true)
+          self.queueDelayDone({
+            actionCurrent: actionOther,
+            actionOther: actionCurrent,
+            obj,
+            el,
+            type,
+            skipQueue: true,
+          })
+          self.queueAnimDone({ actionCurrent: actionOther, actionOther: actionCurrent, obj, el, type, skipQueue: true })
         }
       }
     }
@@ -2113,12 +2150,13 @@ class Toggle {
 
   /**
    * queue delay
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object
-   * @param {String} type Type of elements
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object
+   * @param {String} params.type Type of elements
    */
-  queueDelay(actionCurrent, actionOther, obj, type) {
+  queueDelay({ actionCurrent, actionOther, obj, type } = {}) {
     const self = this
     const options = self.options
     // delay
@@ -2137,12 +2175,12 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
       if (!delay) {
-        self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+        self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
       } else if (delay === 'raf') {
         Xt.frameDouble({
           el,
           func: () => {
-            self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
           },
           ns: 'queueDelayDone',
         })
@@ -2151,7 +2189,7 @@ class Toggle {
           el,
           `${self.ns + type}DelayTimeout`,
           setTimeout(() => {
-            self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
           }, delay)
         )
       }
@@ -2159,7 +2197,7 @@ class Toggle {
       if (obj[type].instant) {
         if (el === els[els.length - 1]) {
           // only if last element
-          self.queueDone(actionCurrent, actionOther, obj, type)
+          self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
     }
@@ -2167,33 +2205,37 @@ class Toggle {
 
   /**
    * queue delay done
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of elements
-   * @param {Boolean} skipQueue If skip queue
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
+   * @param {String} params.type Type of elements
+   * @param {Boolean} params.skipQueue If skip queue
    */
-  queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
+  queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipQueue = false } = {}) {
     const self = this
     const options = self.options
     // check if not already running or if force
-    if (actionCurrent === 'In' && (self.checkOnRunning(obj) || obj.elements.force || obj.elements.e?.detail?.force)) {
+    if (
+      actionCurrent === 'In' &&
+      (self.checkOnRunning({ obj }) || obj.elements.force || obj.elements.e?.detail?.force)
+    ) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
-        self.addCurrent(el, true)
+        self.addCurrent({ el, running: true })
       }
       // activation
-      self.activate(el, type)
-      self.activateHash(obj, el, type)
+      self.activate({ el, type })
+      self.activateHash({ obj, el, type })
       // special
-      self.specialZindex(actionCurrent, el, type)
-      self.specialAppendto(actionCurrent, el, type)
-      self.specialClose(actionCurrent, el, type, obj)
+      self.specialZindex({ actionCurrent, el, type })
+      self.specialAppendto({ actionCurrent, el, type })
+      self.specialClose({ actionCurrent, el, type, obj })
       if (!self.initial) {
-        self.specialCollapse(actionCurrent, el, type)
+        self.specialCollapse({ actionCurrent, el, type })
       } else {
-        self.specialCollapse(actionCurrent, el, type, true)
+        self.specialCollapse({ actionCurrent, el, type, reset: true })
       }
       // aria
       if (options.aria) {
@@ -2229,11 +2271,11 @@ class Toggle {
       }
     } else if (
       actionCurrent === 'Out' &&
-      (self.checkOffRunning(obj) || obj.elements.force || obj.elements.e?.detail?.force)
+      (self.checkOffRunning({ obj }) || obj.elements.force || obj.elements.e?.detail?.force)
     ) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
-        self.removeCurrent(el, true)
+        self.removeCurrent({ el, running: true })
         // only if no currents
         if (!self.getCurrents().length) {
           // reset currentIndex and direction
@@ -2242,11 +2284,11 @@ class Toggle {
         }
       }
       // activation
-      self.deactivate(el, type)
-      self.deactivateHash(obj, el, type)
+      self.deactivate({ el, type })
+      self.deactivateHash({ obj, el, type })
       // special
-      self.specialCollapse(actionCurrent, el, type)
-      self.specialClose(actionCurrent, el, type, obj)
+      self.specialCollapse({ actionCurrent, el, type })
+      self.specialClose({ actionCurrent, el, type, obj })
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // off but without classes
@@ -2271,7 +2313,7 @@ class Toggle {
       Xt.frame({
         el,
         func: () => {
-          self.queueAnim(actionCurrent, actionOther, obj, el, type)
+          self.queueAnim({ actionCurrent, actionOther, obj, el, type })
         },
         ns: 'queueAnim',
       })
@@ -2280,7 +2322,7 @@ class Toggle {
         const els = obj[type].queueEls
         if (el === els[els.length - 1]) {
           // only if last element
-          self.queueDone(actionCurrent, actionOther, obj, type)
+          self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
     }
@@ -2288,13 +2330,14 @@ class Toggle {
 
   /**
    * queue anim
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
    */
-  queueAnim(actionCurrent, actionOther, obj, el, type) {
+  queueAnim({ actionCurrent, actionOther, obj, el, type } = {}) {
     const self = this
     const options = self.options
     // duration
@@ -2310,12 +2353,12 @@ class Toggle {
     // fnc
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
     if (!duration) {
-      self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+      self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
     } else if (duration === 'raf') {
       Xt.frameDouble({
         el,
         func: () => {
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
         },
         ns: 'queueAnimDone',
       })
@@ -2324,7 +2367,7 @@ class Toggle {
         el,
         `${self.ns + type}AnimTimeout`,
         setTimeout(() => {
-          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
         }, duration)
       )
     }
@@ -2332,22 +2375,23 @@ class Toggle {
 
   /**
    * queue anim done
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
-   * @param {Boolean} skipQueue If skip queue
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
+   * @param {Boolean} params.skipQueue If skip queue
    */
-  queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
+  queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipQueue = false } = {}) {
     const self = this
     const options = self.options
     // special
     if (actionCurrent === 'In') {
       // activation
-      self.activateDone(el, type)
+      self.activateDone({ el, type })
       // special
-      self.specialCollapse(actionCurrent, el, type, true)
+      self.specialCollapse({ actionCurrent, el, type, reset: true })
       // listener dispatch
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
@@ -2368,15 +2412,15 @@ class Toggle {
         // only if no currents
         if (!self.getCurrents().length) {
           for (const type in obj) {
-            self.specialZindex(actionCurrent, false, type)
+            self.specialZindex({ actionCurrent, type })
           }
         }
       }
       // activation
-      self.deactivateDone(el, type)
+      self.deactivateDone({ el, type })
       // special
-      self.specialAppendto(actionCurrent, el, type)
-      self.specialCollapse(actionCurrent, el, type, true)
+      self.specialAppendto({ actionCurrent, el, type })
+      self.specialCollapse({ actionCurrent, el, type, reset: true })
       // aria
       if (options.aria) {
         // selected
@@ -2420,7 +2464,7 @@ class Toggle {
         const els = obj[type].queueEls
         if (el === els[els.length - 1]) {
           // only if last element
-          self.queueDone(actionCurrent, actionOther, obj, type)
+          self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
     }
@@ -2428,12 +2472,13 @@ class Toggle {
 
   /**
    * queue done
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.actionOther Other action
+   * @param {Object} params.obj Queue object
+   * @param {String} params.type Type of element
    */
-  queueDone(actionCurrent, actionOther, obj, type) {
+  queueDone({ actionCurrent, actionOther, obj, type } = {}) {
     const self = this
     // check
     if (obj[type]) {
@@ -2450,22 +2495,28 @@ class Toggle {
       if (done === Object.entries(obj).length) {
         // queue other when all done
         for (const type in obj) {
-          self.queueStart(actionOther, actionCurrent, type, self.detail[`queue${actionOther}`].length - 1)
+          self.queueStart({
+            actionCurrent: actionOther,
+            actionOther: actionCurrent,
+            type,
+            index: self.detail[`queue${actionOther}`].length - 1,
+          })
         }
         // remove queue
         self.detail[`queue${actionCurrent}`].pop()
         // queue complete
-        self.queueComplete(actionCurrent, obj)
+        self.queueComplete({ actionCurrent, obj })
       }
     }
   }
 
   /**
    * logic to execute on queue complete
-   * @param {String} actionCurrent Current action
-   * @param {Object} obj Queue object
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {Object} params.obj Queue object
    */
-  queueComplete(actionCurrent, obj) {
+  queueComplete({ actionCurrent, obj } = {}) {
     const self = this
     const options = self.options
     // logic
@@ -2524,11 +2575,12 @@ class Toggle {
 
   /**
    * zindex on activation
-   * @param {String} actionCurrent Current action
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
    */
-  specialZindex(actionCurrent, el, type) {
+  specialZindex({ actionCurrent, el, type } = {}) {
     const self = this
     const options = self.options
     // fix when standalone !self.targets.length && type === 'elements'
@@ -2549,10 +2601,11 @@ class Toggle {
 
   /**
    * add or remove html class
-   * @param {String} actionCurrent Current action
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {String} params.type Type of element
    */
-  specialClassBody(actionCurrent, type) {
+  specialClassBody({ actionCurrent, type } = {}) {
     const self = this
     const options = self.options
     if (options.classBody) {
@@ -2605,11 +2658,12 @@ class Toggle {
 
   /**
    * appendTo
-   * @param {String} actionCurrent Current action
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
    */
-  specialAppendto(actionCurrent, el, type) {
+  specialAppendto({ actionCurrent, el, type } = {}) {
     const self = this
     const options = self.options
     if (options.appendTo) {
@@ -2639,12 +2693,13 @@ class Toggle {
 
   /**
    * open or close or reset collapse
-   * @param {String} actionCurrent Current action
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
    * @param {Boolean} reset Reset
    */
-  specialCollapse(actionCurrent, el, type, reset = false) {
+  specialCollapse({ actionCurrent, el, type, reset = false } = {}) {
     const self = this
     const options = self.options
     if (el instanceof HTMLElement) {
@@ -2786,12 +2841,13 @@ class Toggle {
 
   /**
    * add or remove close events on element
-   * @param {String} actionCurrent Current action
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} type Type of element
+   * @param {Object} params
+   * @param {String} params.actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
    * @param {Object} obj Queue object
    */
-  specialClose(actionCurrent, el, type, obj) {
+  specialClose({ actionCurrent, el, type, obj } = {}) {
     const self = this
     const options = self.options
     if (actionCurrent === 'In') {
@@ -2853,7 +2909,7 @@ class Toggle {
             const specialclosedeepKeydownHandler = Xt.dataStorage.put(
               closeElement,
               `keydown/close/${self.ns}`,
-              self.eventSpecialclosedeepKeydownHandler.bind(self).bind(self, closeElement)
+              self.eventSpecialclosedeepKeydownHandler.bind(self).bind(self, { closeElement })
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
@@ -2914,7 +2970,7 @@ class Toggle {
     if (e.target.matches(options.closeInside)) {
       const currents = self.getCurrents()
       for (const current of currents) {
-        self.eventOff(current, true)
+        self.eventOff({ el: current, force: true })
       }
     }
   }
@@ -2929,7 +2985,7 @@ class Toggle {
     if (!Xt.contains([...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       for (const current of currents) {
-        self.eventOff(current, true)
+        self.eventOff({ el: current, force: true })
       }
     }
   }
@@ -2944,17 +3000,18 @@ class Toggle {
     if (Xt.contains([...self.elements, ...self.targets], e.target)) {
       const currents = self.getCurrents()
       for (const current of currents) {
-        self.eventOff(current, true)
+        self.eventOff({ el: current, force: true })
       }
     }
   }
 
   /**
    * specialClosedeep keydown handler
-   * @param {Node|HTMLElement|EventTarget|Window} closeElement
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.closeElement
    * @param {Event} e
    */
-  eventSpecialclosedeepKeydownHandler(closeElement, e) {
+  eventSpecialclosedeepKeydownHandler({ closeElement }, e) {
     const code = e.keyCode ? e.keyCode : e.which
     // key enter or space
     if (code === 13 || code === 32) {
@@ -2968,13 +3025,14 @@ class Toggle {
   //
 
   /**
-   * get next index
-   * @param {Number} index
-   * @param {Number} amount
-   * @param {Boolean} loop
+   * Get next activation index
+   * @param {Object} params
+   * @param {Number} params.index
+   * @param {Number} params.amount
+   * @param {Boolean} params.loop
    * @return {Number} index
    */
-  getNextIndex(index = false, amount = 1, loop = null) {
+  getNextIndex({ index = false, amount = 1, loop = null } = {}) {
     const self = this
     // logic
     if (index !== false) {
@@ -2984,46 +3042,49 @@ class Toggle {
     } else {
       index = 0
     }
-    return self.getNumIndex(index, loop)
+    return self.getNumIndex({ index, loop })
   }
 
   /**
-   * get next element
-   * @param {Number} amount
-   * @param {Boolean} loop
+   * Get next element
+   * @param {Object} params
+   * @param {Number} params.amount
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  getNext(amount = 1, loop = null) {
+  getNext({ amount = 1, loop = null } = {}) {
     const self = this
     // logic
-    const i = self.getNextIndex(false, amount, loop)
+    const i = self.getNextIndex({ amount, loop })
     return self.getElementsGroups()[i]
   }
 
   /**
-   * activate next element
-   * @param {Number} amount
-   * @param {Boolean} force
-   * @param {Boolean} loop
+   * Activate next element
+   * @param {Object} params
+   * @param {Number} params.amount
+   * @param {Boolean} params.force
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  goToNext(amount = 1, force = false, loop = null) {
+  goToNext({ amount = 1, force = false, loop = null } = {}) {
     const self = this
     // goToNum
     self.inverse = false
-    const index = self.getNextIndex(false, amount, loop)
-    const el = self.goToNum(index, force, loop)
+    const index = self.getNextIndex({ amount, loop })
+    const el = self.goToNum({ index, force, loop })
     return el
   }
 
   /**
-   * get prev index
-   * @param {Number} index
-   * @param {Number} amount
-   * @param {Boolean} loop
+   * Get prev activation index
+   * @param {Object} params
+   * @param {Number} params.index
+   * @param {Number} params.amount
+   * @param {Boolean} params.loop
    * @return {Number} index
    */
-  getPrevIndex(index = false, amount = 1, loop = null) {
+  getPrevIndex({ index = false, amount = 1, loop = null } = {}) {
     const self = this
     // logic
     if (index !== false) {
@@ -3033,45 +3094,48 @@ class Toggle {
     } else {
       index = self.getElementsGroups().length - 1
     }
-    return self.getNumIndex(index, loop)
+    return self.getNumIndex({ index, loop })
   }
 
   /**
-   * get prev element
-   * @param {Number} amount
-   * @param {Boolean} loop
+   * Get previous element
+   * @param {Object} params
+   * @param {Number} params.amount
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  getPrev(amount = 1, loop = null) {
+  getPrev({ amount = 1, loop = null } = {}) {
     const self = this
     // logic
-    const i = self.getPrevIndex(false, amount, loop)
+    const i = self.getPrevIndex({ amount, loop })
     return self.getElementsGroups()[i]
   }
 
   /**
-   * activate prev element
-   * @param {Number} amount
-   * @param {Boolean} force
-   * @param {Boolean} loop
+   * Activate previous element
+   * @param {Object} params
+   * @param {Number} params.amount
+   * @param {Boolean} params.force
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  goToPrev(amount = 1, force = false, loop = null) {
+  goToPrev({ amount = 1, force = false, loop = null } = {}) {
     const self = this
     // goToNum
     self.inverse = true
-    const index = self.getPrevIndex(false, amount, loop)
-    const el = self.goToNum(index, force, loop)
+    const index = self.getPrevIndex({ amount, loop })
+    const el = self.goToNum({ index, force, loop })
     return el
   }
 
   /**
-   * get number index
-   * @param {Number} index
-   * @param {Boolean} loop
+   * Get index from number
+   * @param {Object} params
+   * @param {Number} params.index
+   * @param {Boolean} params.loop
    * @return {Number} index
    */
-  getNumIndex(index, loop = null) {
+  getNumIndex({ index, loop = null } = {}) {
     const self = this
     const options = self.options
     // check
@@ -3102,31 +3166,33 @@ class Toggle {
   }
 
   /**
-   * get number element
-   * @param {Number} index
-   * @param {Boolean} loop
+   * Get element from index
+   * @param {Object} params
+   * @param {Number} params.index
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  getNum(index = 1, loop = null) {
+  getNum({ index = 1, loop = null } = {}) {
     const self = this
     // logic
-    const i = self.getNumIndex(index, loop)
+    const i = self.getNumIndex({ index, loop })
     return self.getElementsGroups()[i]
   }
 
   /**
    * activate number element
-   * @param {Number} index
-   * @param {Boolean} force
-   * @param {Boolean} loop
+   * @param {Object} params
+   * @param {Number} params.index
+   * @param {Boolean} params.force
+   * @param {Boolean} params.loop
    * @return {Node|HTMLElement|EventTarget|Window} Element
    */
-  goToNum(index, force = false, loop = null) {
+  goToNum({ index, force = false, loop = null } = {}) {
     const self = this
     // go
-    const el = self.getNum(index, loop)
+    const el = self.getNum({ index, loop })
     if (el) {
-      self.eventOn(el, force)
+      self.eventOn({ el, force })
     }
     return el
   }
@@ -3261,8 +3327,8 @@ class Toggle {
     if (!self.disabled) {
       // off but without classes
       if (options.disableDeactivate) {
-        for (const el of self.elements.filter(x => self.hasCurrent(x))) {
-          self.eventOff(el, true)
+        for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
+          self.eventOff({ el, force: true })
         }
       }
       // stop auto
@@ -3331,13 +3397,14 @@ class Toggle {
   }
 
   /**
-   * reinit
-   * @param {Boolean} saveCurrents
+   * Reinit component and save currents as initial
+   * @param {Object} params
+   * @param {Boolean} params.save Save currents
    */
-  reinit(saveCurrents = true) {
+  reinit({ save = true } = {}) {
     const self = this
     // reinit
-    self.initLogic(saveCurrents)
+    self.initLogic({ save })
   }
 
   /**
@@ -3410,9 +3477,10 @@ class Toggle {
 
   /**
    * destroy
-   * @param {Boolean} weak Do not destroy component
+   * @param {Object} params
+   * @param {Boolean} params.weak Do not destroy component
    */
-  destroy(weak = false) {
+  destroy({ weak = false } = {}) {
     const self = this
     // disable
     self.disable({ skipEvent: true })

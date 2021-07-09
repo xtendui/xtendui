@@ -87,7 +87,7 @@ const mountStatus = ({ ref }) => {
         availableWidth += tr.offsetWidth
       }
       // width
-      const trs = self.targets.filter(x => self.hasCurrent(x))
+      const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
       if (!trs.length) return
       let width = 0
       const left = trs[0].offsetLeft

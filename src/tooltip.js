@@ -53,14 +53,15 @@ class Tooltip extends Xt.Toggle {
 
   /**
    * activate element
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
-   * @param {String} type Type of elements
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be activated
+   * @param {String} params.type Type of element
    */
-  activate(el, type) {
+  activate({ el, type } = {}) {
     const self = this
     const options = self.options
     // super
-    super.activate(el, type)
+    super.activate({ el, type })
     // popperjs
     if (options.popperjs) {
       if (type === 'targets') {
