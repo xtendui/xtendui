@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle>
+    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
       <button
         type="button"
         class="xt-button ${classes.buttonToggle()}"
@@ -61,10 +61,15 @@ const html = /* HTML */ `
         Toggle Group 0 and 1
       </button>
 
-      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
+      <div
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
+        data-xt-toggle-target
+      >
+        Target 1
+      </div>
 
       <div
-        class="off:hidden out:pointer-events-none ${classes.cardToggle()}"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-toggle-target
         data-xt-group="group0"
       >
@@ -72,7 +77,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="off:hidden out:pointer-events-none ${classes.cardToggle()}"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-toggle-target
         data-xt-group="group1"
       >
@@ -80,19 +85,22 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="off:hidden out:pointer-events-none ${classes.cardToggle()}"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-toggle-target
         data-xt-group="group1"
       >
         Target Group 1b
       </div>
 
-      <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} *** on ***" data-xt-toggle-target>
+      <div
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 *** on ***"
+        data-xt-toggle-target
+      >
         Target 2
       </div>
 
       <div
-        class="off:hidden out:pointer-events-none ${classes.cardToggle()}"
+        class="off:hidden out:pointer-events-none ${classes.cardToggle()} transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4"
         data-xt-toggle-target
         data-xt-group="group0,group1"
       >
