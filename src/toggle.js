@@ -279,7 +279,7 @@ class Toggle {
       let activated = false
       // check if activated
       if (saveCurrents) {
-        if (options.classSkip !== true && !options.classSkip['elements']) {
+        if (options.classSkip !== true && !options.classSkip.elements) {
           activated = checkClass(el)
         }
       } else if (self.initialCurrents.includes(el)) {
@@ -295,7 +295,7 @@ class Toggle {
         el.classList.add(...self.classesInitial)
       } else {
         // reset classes
-        if (options.classSkip !== true && !options.classSkip['elements']) {
+        if (options.classSkip !== true && !options.classSkip.elements) {
           el.classList.remove(
             ...self.classes,
             ...self.classesIn,
@@ -306,7 +306,7 @@ class Toggle {
             ...self.classesAfter
           )
         }
-        if (options.classSkip !== true && !options.classSkip['elementsInner']) {
+        if (options.classSkip !== true && !options.classSkip.elementsInner) {
           const elsInner = Xt.queryAll(el, options.elementsInner)
           for (const elInner of elsInner) {
             elInner.classList.remove(
@@ -326,7 +326,7 @@ class Toggle {
       for (const tr of targets) {
         // check if activated
         if (saveCurrents && !activated) {
-          if (options.classSkip !== true && !options.classSkip['targets']) {
+          if (options.classSkip !== true && !options.classSkip.targets) {
             activated = checkClass(tr)
           }
         }
@@ -339,7 +339,7 @@ class Toggle {
           tr.classList.add(...self.classesInitial)
         } else {
           // reset classes
-          if (options.classSkip !== true && !options.classSkip['targets']) {
+          if (options.classSkip !== true && !options.classSkip.targets) {
             tr.classList.remove(
               ...self.classes,
               ...self.classesIn,
@@ -350,7 +350,7 @@ class Toggle {
               ...self.classesAfter
             )
           }
-          if (options.classSkip !== true && !options.classSkip['targetsInner']) {
+          if (options.classSkip !== true && !options.classSkip.targetsInner) {
             const trsInner = Xt.queryAll(tr, options.targetsInner)
             for (const trInner of trsInner) {
               trInner.classList.remove(
@@ -3223,12 +3223,12 @@ class Toggle {
       if (!options.classSkip) {
         self.container.removeAttribute(`data-${self.componentName}-disabled`)
       }
-      if (options.classSkip !== true && !options.classSkip['elements']) {
+      if (options.classSkip !== true && !options.classSkip.elements) {
         for (const el of self.elements) {
           el.removeAttribute(`data-${self.componentName}-disabled`)
         }
       }
-      if (options.classSkip !== true && !options.classSkip['targets']) {
+      if (options.classSkip !== true && !options.classSkip.targets) {
         for (const tr of self.targets) {
           tr.removeAttribute(`data-${self.componentName}-disabled`)
         }
@@ -3266,12 +3266,12 @@ class Toggle {
       if (!options.classSkip) {
         self.container.setAttribute(`data-${self.componentName}-disabled`, '')
       }
-      if (options.classSkip !== true && !options.classSkip['elements']) {
+      if (options.classSkip !== true && !options.classSkip.elements) {
         for (const el of self.elements) {
           el.setAttribute(`data-${self.componentName}-disabled`, '')
         }
       }
-      if (options.classSkip !== true && !options.classSkip['targets']) {
+      if (options.classSkip !== true && !options.classSkip.targets) {
         for (const tr of self.targets) {
           tr.setAttribute(`data-${self.componentName}-disabled`, '')
         }
