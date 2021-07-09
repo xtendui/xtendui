@@ -215,7 +215,7 @@ export const populateDemo = container => {
   if (container.dataset.gatsbyDemoBuilt) return
   const items = container.querySelectorAll('.gatsby_demo_item')
   // fix demo index when changing page
-  let i = parseFloat(document.documentElement.getAttribute('data-demo-index') || 0)
+  let i = parseFloat(document.documentElement.getAttribute('data-demo-index') ?? 0)
   i++
   document.documentElement.setAttribute('data-demo-index', i.toString())
   // multiple elements
