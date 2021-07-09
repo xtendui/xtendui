@@ -77,10 +77,12 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
-      // scroll page to top
-      document.scrollingElement.scrollTop = 0
-      /* ScrollToPlugin refresh on route update */
-      ScrollTrigger.refresh()
+      requestAnimationFrame(() => {
+        // scroll page to top
+        document.scrollingElement.scrollTop = 0
+        /* ScrollToPlugin refresh on route update */
+        ScrollTrigger.refresh()
+      })
     }
   }
 }
