@@ -27,7 +27,6 @@ const mountSlider = ({ ref }) => {
 
   const maskPercent = 100
   const maskInnerPercent = 100
-  const maskInnerOpacity = 0.65
 
   // slider
 
@@ -70,7 +69,6 @@ const mountSlider = ({ ref }) => {
     gsap.killTweensOf(maskInner)
     gsap.set(maskInner, {
       x: `${maskInnerPercent * self.detail.dragRatio * self.direction}%`,
-      opacity: 1 - maskInnerOpacity * self.detail.dragRatio,
     })
     /***/
     // incomings
@@ -91,7 +89,6 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
         x: `${-maskInnerPercent * self.detail.dragRatioInverse * self.direction}%`,
-        opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
       })
     }
     /***/
@@ -130,11 +127,9 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
         x: `${-maskInnerPercent * self.detail.dragRatioInverse * self.direction}%`,
-        opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
       })
       gsap.to(maskInner, {
         x: '0%',
-        opacity: 1,
         duration: dragDuration,
         ease: dragEase,
       })
@@ -161,7 +156,6 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(maskInner)
       gsap.to(maskInner, {
         x: `${maskInnerPercent * self.direction}%`,
-        opacity: 1 - maskInnerOpacity,
         duration: dragDuration,
         ease: dragEase,
       })
@@ -186,7 +180,6 @@ const mountSlider = ({ ref }) => {
         gsap.killTweensOf(maskInner)
         gsap.to(maskInner, {
           x: `${maskInnerPercent * self.direction}%`,
-          opacity: 1 - maskInnerOpacity,
           duration: dragDuration,
           ease: dragEase,
         })

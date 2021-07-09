@@ -55,7 +55,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
         </div>
       </div>
 
