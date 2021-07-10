@@ -33,7 +33,10 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${classes.cardDefaultInteractive()}">
+        <button
+          type="button"
+          class="xt-card justify-start text-left ${classes.cardRadius()} ${classes.cardDefaultInteractive()}"
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -46,7 +49,10 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${classes.cardPrimaryInteractive()}">
+        <button
+          type="button"
+          class="xt-card justify-start text-left ${classes.cardRadius()} ${classes.cardPrimaryInteractive()}"
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

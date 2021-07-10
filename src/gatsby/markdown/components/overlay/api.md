@@ -77,7 +77,7 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `initial:Boolean`       | If initial or reset activation            |

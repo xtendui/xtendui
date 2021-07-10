@@ -44,17 +44,17 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
 | Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
 | Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
-| Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Object query for loader             |
-| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Object query for searh input             |
-| Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Object query for search button             |
-| Option                    | `elements.map:Query`                          | `'[data-xt-googlelocator-map]'`        | Object query for google map             |
-| Option                    | `elements.itemsTemplate:Query`                          | `'[data-xt-googlelocator-items-template]'`        | Object query for template cloned for maps items             |
-| Option                    | `elements.itemsContainer:Query`                          | `'[data-xt-googlelocator-items-container]'`        | Object query for items container to append items to             |
-| Option                    | `elements.results:Query`                          | `'[data-xt-googlelocator-results]'`        | Object query for results messages             |
-| Option                    | `elements.resultsFounds:Query`                          | `'[data-xt-googlelocator-results-found]'`        | Object query for results found             |
-| Option                    | `elements.locateBtn:Query`                          | `'[data-xt-googlelocator-locate-btn]'`        | Object query for locate button             |
-| Option                    | `elements.repeatBtn:Query`                          | `'[data-xt-googlelocator-repeat-btn]'`        | Object query for repeat search button             |
-| Option                    | `elements.filter:Query`                          | `'[data-xt-googlelocator-filter]'`        | Object query for filter checkbox and radio             |
+| Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Container query for loader             |
+| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for searh input             |
+| Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Container query for search button             |
+| Option                    | `elements.map:Query`                          | `'[data-xt-googlelocator-map]'`        | Container query for google map             |
+| Option                    | `elements.itemsTemplate:Query`                          | `'[data-xt-googlelocator-items-template]'`        | Container query for template cloned for maps items             |
+| Option                    | `elements.itemsContainer:Query`                          | `'[data-xt-googlelocator-items-container]'`        | Container query for items container to append items to             |
+| Option                    | `elements.results:Query`                          | `'[data-xt-googlelocator-results]'`        | Container query for results messages             |
+| Option                    | `elements.resultsFounds:Query`                          | `'[data-xt-googlelocator-results-found]'`        | Container query for results found             |
+| Option                    | `elements.locateBtn:Query`                          | `'[data-xt-googlelocator-locate-btn]'`        | Container query for locate button             |
+| Option                    | `elements.repeatBtn:Query`                          | `'[data-xt-googlelocator-repeat-btn]'`        | Container query for repeat search button             |
+| Option                    | `elements.filter:Query`                          | `'[data-xt-googlelocator-filter]'`        | Container query for filter checkbox and radio             |
 | Option                    | `elements.formatData:Object`                          | `<Object>`        | Object for format data and filter functions             |
 
 </div>
@@ -110,7 +110,7 @@ Access properties by getting component object.
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `locations:Array`       | Current found locations             |
 | Property                   | `locateCache:Object`       | Locate cache object             |

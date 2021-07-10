@@ -50,12 +50,12 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `events.scrollDown:Boolean`                          | `false`        | Automatically activate on scroll down            |
 | Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
 | Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
-| Option                    | `elements.itemsContainer:Query`                          | `false`        | Object query for items container            |
+| Option                    | `elements.itemsContainer:Query`                          | `false`        | Container query for items container            |
 | Option                    | `elements.item:Query`                          | `false`        | Items container query for items            |
-| Option                    | `elements.scrollUp:Query`                          | `false`        | Object query for trigger elements when scrolling up            |
-| Option                    | `elements.scrollDown:Query`                          | `false`        | Object query for trigger elements when scrolling down            |
-| Option                    | `elements.spaceAdditional:Query`                          | `false`        | Object query for additional space when resuming pages            |
-| Option                    | `elements.pagination:Query`                          | `false`        | Object query for pagination            |
+| Option                    | `elements.scrollUp:Query`                          | `false`        | Container query for trigger elements when scrolling up            |
+| Option                    | `elements.scrollDown:Query`                          | `false`        | Container query for trigger elements when scrolling down            |
+| Option                    | `elements.spaceAdditional:Query`                          | `false`        | Container query for additional space when resuming pages            |
+| Option                    | `elements.pagination:Query`                          | `false`        | Container query for pagination            |
 
 </div>
 
@@ -87,7 +87,7 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `current:Number`       | Current page             |
 | Property                   | `elementsUp:Nodes`       | Trigger elements when scrolling up             |

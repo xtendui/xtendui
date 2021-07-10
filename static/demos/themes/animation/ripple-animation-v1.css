@@ -1,5 +1,5 @@
 .demo--ripple-animation-v1, .demo--ripple-animation-v1-react {
-  .xt-ripple-container {
+  .xt-ripple-inner {
     opacity: .075;
   }
   .xt-ripple {
@@ -7,7 +7,7 @@
   }
   /* custom */
   .bg-primary-500 {
-    .xt-ripple-container {
+    .xt-ripple-inner {
       opacity: .15;
     }
     /* custom background */

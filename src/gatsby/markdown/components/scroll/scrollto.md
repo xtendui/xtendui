@@ -130,7 +130,7 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `hashchange:Boolean`       | If browser hash change activation             |
 | Property                   | `position:Number`       | Current scroll position to scroll to             |

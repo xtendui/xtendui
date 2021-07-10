@@ -36,7 +36,7 @@ const mountRipple = ({ ref }) => {
 
     const on = () => {
       /***/
-      const ripple = self.container.querySelector('.xt-ripple:last-child')
+      const ripple = self.inner.querySelector('.xt-ripple:last-child')
       /***/
       // animate
       if (ripple) {
@@ -67,7 +67,7 @@ const mountRipple = ({ ref }) => {
 
     const off = () => {
       /***/
-      const ripple = self.container.querySelector('.xt-ripple:last-child')
+      const ripple = self.inner.querySelector('.xt-ripple:last-child')
       /***/
       // animate
       if (ripple) {

@@ -26,15 +26,6 @@ Initialize with javascript **on the selectors you want the ripple effect on**, `
 Style ripple effect **with css**.
 
 <demo>
-  <demoinline src="demos/components/animation/ripple">
-  </demoinline>
-</demo>
-
-## Themes
-
-Check out [animation themes](/themes/animation) for **advanced animations**.
-
-<demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/animation/ripple-animation-v1">
   </div>
 </demo>
@@ -82,8 +73,8 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
 | Property                   | `container:Node`       | Container node             |
+| Property                   | `inner:Node`       | Inner node that contains the ripples             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>

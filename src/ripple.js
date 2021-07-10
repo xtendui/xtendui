@@ -55,10 +55,10 @@ class Ripple {
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
     self.initial = true
-    // outer
-    if (!self.outer) {
-      self.container.append(Xt.createElement('<div class="xt-ripple-outer"></div>'))
-      self.outer = self.container.querySelector(':scope > .xt-ripple-outer')
+    // inner
+    if (!self.inner) {
+      self.container.append(Xt.createElement('<div class="xt-ripple-inner"></div>'))
+      self.inner = self.container.querySelector(':scope > .xt-ripple-inner')
     }
     // on
     const onHandler = Xt.dataStorage.put(self.container, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
@@ -91,7 +91,7 @@ class Ripple {
     const options = self.options
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      self.outer.append(Xt.createElement('<div class="xt-ripple"></div>'))
+      self.inner.append(Xt.createElement('<div class="xt-ripple"></div>'))
       // fix prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()
@@ -171,9 +171,9 @@ class Ripple {
    */
   destroy() {
     const self = this
-    // outer
-    self.outer.remove()
-    self.outer = null
+    // inner
+    self.inner.remove()
+    self.inner = null
     // remove events
     // on
     const onHandler = Xt.dataStorage.get(self.container, `mousedown touchstart/${self.ns}`)

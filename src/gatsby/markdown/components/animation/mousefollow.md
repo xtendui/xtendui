@@ -95,7 +95,7 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
 </div>

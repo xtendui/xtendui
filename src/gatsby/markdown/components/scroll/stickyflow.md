@@ -73,7 +73,7 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Object node             |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `element:Node`       | Sticky element             |
 | Property                   | `filler:Nodes`       | Filler element             |
