@@ -80,7 +80,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // elements
-    self.elements = self.elements.filter(x => !x.classList.contains(...options.templateClass.split(' ')))
+    self.elements = self.elements.filter(x => !x.classList.contains(...options.elementsTemplate.split(' ')))
   }
 
   /**
@@ -446,8 +446,8 @@ class Slider extends Xt.Toggle {
     }
     // pags
     self.pags = self.pags ? self.pags : []
-    const template = `${options.elements}.${options.templateClass.split(' ').join('.')}`
-    const templateInverse = `${options.elements}:not(.${options.templateClass.split(' ').join('.')})`
+    const template = `${options.elements}.${options.elementsTemplate.split(' ').join('.')}`
+    const templateInverse = `${options.elements}:not(.${options.elementsTemplate.split(' ').join('.')})`
     for (const [z, pag] of pags.entries()) {
       // vars
       const cloned = pag.querySelector(template)
@@ -460,7 +460,7 @@ class Slider extends Xt.Toggle {
       for (const [i, group] of self.groups.entries()) {
         const item = document.createElement('div') // needed to set innerHTML instead of outerHTML to do html.search also attributes
         const clone = cloned.cloneNode(true)
-        clone.classList.remove(...options.templateClass.split(' '))
+        clone.classList.remove(...options.elementsTemplate.split(' '))
         item.append(clone)
         let html = item.innerHTML
         const classes = []
@@ -1417,7 +1417,7 @@ Slider.optionsDefault = {
     },
   },
   // element
-  templateClass: 'hidden',
+  elementsTemplate: 'hidden',
   elements: '[data-xt-slider-element]',
   targets: '[data-xt-slider-target]',
   elementsInner: ':scope > a, :scope > button',
