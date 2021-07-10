@@ -13,7 +13,15 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-black no-underline hover:underline">
-            Apache-2.0
+            MIT
+          </a>{' '}
+          Docs{' '}
+          <a
+            href="https://github.com/xtendui/xtendui/blob/beta/LICENSE-DOCS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-black no-underline hover:underline">
+            CC-BY-4.0
           </a>{' '}
         </div>
         <div>

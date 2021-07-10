@@ -64,4 +64,8 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/beta/.githu
 
 ## Copyright
 
-Code and documentation copyright 2017 - 2021 Riccardo Caroli. Code licensed [Apache-2.0](https://github.com/xtendui/xtendui/blob/beta/LICENSE).
+Copyright 2017 - 2021 Riccardo Caroli.
+
+Code licensed [MIT](https://github.com/xtendui/xtendui/blob/beta/LICENSE).
+
+Docs licensed [CC-BY-4.0](https://github.com/xtendui/xtendui/blob/beta/LICENSE-DOCS)
