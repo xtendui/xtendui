@@ -16,7 +16,8 @@ You can specify `elements` that listens to event for activation, and `targets` t
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `elements:Query`                          | `'[data-xt-slider-element]:not(.hidden)'`        | Elements query            |
+| Option                  | `templateClass:String`                          | `'hidden'`        | Elements template class            |
+| Option                  | `elements:Query`                          | `'[data-xt-slider-element]'`        | Elements query            |
 | Option                  | `targets:Query`                          | `'[data-xt-slider-target]'`        | Targets query            |
 | Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
 | Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)     |
