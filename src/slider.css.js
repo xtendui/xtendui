@@ -51,9 +51,6 @@ module.exports = {
         transform: 'none !important',
         justifyContent: 'center !important',
       },
-      '[data-xt-slider-pagination]': {
-        display: 'none !important',
-      },
     },
   }),
 }

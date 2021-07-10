@@ -73,8 +73,8 @@ const mountStatus = ({ ref }) => {
   const slider = ref.querySelector('.xt-slider')
   const self = Xt.get({ name: 'xt-slider', el: slider })
   if (!self) return () => {}
-  const current = slider.querySelector('.slider-status-current')
-  const container = slider.querySelector('.slider-status-container')
+  const current = slider.querySelector('[data-xt-slider-status-current]')
+  const total = slider.querySelector('[data-xt-slider-status-total]')
 
   // change
 
@@ -95,9 +95,9 @@ const mountStatus = ({ ref }) => {
         width += tr.offsetWidth
       }
       // set
-      const containerWidth = container.offsetWidth
-      const currentWidth = (width * containerWidth) / availableWidth
-      const currentLeft = (left * containerWidth) / availableWidth
+      const totalWidth = total.offsetWidth
+      const currentWidth = (width * totalWidth) / availableWidth
+      const currentLeft = (left * totalWidth) / availableWidth
       current.style.width = `${currentWidth}px`
       current.style.left = `${currentLeft}px`
     }

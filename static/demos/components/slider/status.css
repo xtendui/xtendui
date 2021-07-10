@@ -1,7 +1,0 @@
-.demo--slider-status, .demo--slider-status-react {
-  [data-xt-slider-disabled] {
-    .slider-status {
-      display: none;
-    }
-  }
-}

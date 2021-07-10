@@ -10,12 +10,16 @@ date: "2005-10-10"
 
 If you want to **disable the component** use the `options.disabled`.
 
+On slider disable/enable the component **automatically add/remove the class `hidden`** to all elements selected with `hideDisable:Query`.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
 | Option                  | `disableDeactivate:Boolean`                              | `true`                     | Deactivate automatically on disable           |
+| Option                  | `hideDisable:Query`                          | `'[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]'`        | Container query for items to hide on disable              |
+
 
 </div>
 

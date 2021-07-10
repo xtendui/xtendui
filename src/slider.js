@@ -1238,9 +1238,16 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // enable
     if (self.disabled) {
+      // grab
       if (!options.drag.manual) {
-        // grab
         self.dragger.classList.add('xt-grab')
+      }
+      // hideDisable
+      if (options.hideDisable) {
+        const els = self.container.querySelectorAll(options.hideDisable)
+        for (const el of els) {
+          el.classList.remove('hidden')
+        }
       }
     }
     // super
@@ -1254,11 +1261,19 @@ class Slider extends Xt.Toggle {
    */
   disable({ skipEvent = false } = {}) {
     const self = this
+    const options = self.options
     // disable
     if (!self.disabled) {
       // clean
       self.destroyGrab()
       self.destroyIntraction()
+      // hideDisable
+      if (options.hideDisable) {
+        const els = self.container.querySelectorAll(options.hideDisable)
+        for (const el of els) {
+          el.classList.add('hidden')
+        }
+      }
     }
     // super
     super.disable({ skipEvent })
@@ -1385,6 +1400,7 @@ Slider.optionsDefault = {
   autoHeight: false,
   keepHeight: false,
   pagination: '[data-xt-slider-pagination]',
+  hideDisable: '[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]',
   drag: {
     dragger: '[data-xt-slider-dragger]',
     manual: false,
