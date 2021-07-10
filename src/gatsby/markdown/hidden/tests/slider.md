@@ -127,9 +127,7 @@ Test position.
 
 Test deactivation on resize.
 
-Test on deactivation should not have xt-grab and xt-jump.
-
-Test in `self.wrap` on responsive.
+Test on resize should keep dragger position and activate/deactivate targets and wrap.
 
 Test resize grouping.
 

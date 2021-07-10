@@ -80,7 +80,7 @@ const html = /* HTML */ `
         <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target data-xt-group="0">
           Target Group 0b
         </div>
-        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 1</div>
+        <div class="off:hidden out:pointer-events-none ${classes.cardToggle()} *** on ***" data-xt-toggle-target>Target 1</div>
         <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 2</div>
       </div>
     </div>

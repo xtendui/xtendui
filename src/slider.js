@@ -108,14 +108,12 @@ class Slider extends Xt.Toggle {
     if (options.nooverflow) {
       if (self.detail.availableSpace <= 0) {
         self.dragger.classList.add(...options.nooverflow.split(' '))
-        // disabledManually
-        self.disabledManually = true
+        // disabledManual
+        self.disabledManual = true
         // needed for activation all slides
         self.initGroupsInitial({ group: 1 })
       } else {
-        self.dragger.classList.remove(...options.nooverflow.split(' '))
-        // disabledManually
-        self.disabledManually = false
+        self.destroyNooverflow()
       }
     }
     // initGroupsPosition
@@ -555,7 +553,7 @@ class Slider extends Xt.Toggle {
    * @param {Object} params
    * @param {Boolean} params.save Save currents
    */
-  initStart({ save = true } = {}) {
+  initStart({ save = false } = {}) {
     const self = this
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
@@ -1312,7 +1310,9 @@ class Slider extends Xt.Toggle {
   destroyGrab() {
     const self = this
     // grab
-    self.dragger.classList.remove('xt-grab')
+    if (self.dragger) {
+      self.dragger.classList.remove('xt-grab')
+    }
   }
 
   /**
@@ -1343,8 +1343,10 @@ class Slider extends Xt.Toggle {
    */
   destroyNooverflow() {
     const self = this
-    // disabledManually
-    self.disabledManually = false
+    const options = self.options
+    // reset nooverflow
+    self.dragger.classList.remove(...options.nooverflow.split(' '))
+    self.disabledManual = false
   }
 
   /**

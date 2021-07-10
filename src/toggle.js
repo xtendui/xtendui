@@ -55,7 +55,7 @@ class Toggle {
     self.initialCurrents = []
     self.detail = {}
     self.disabled = false
-    self.disabledManually = false
+    self.disabledManual = false
     self.hasHash = false
     self.matches = []
     self.detail.queueIn = []
@@ -95,6 +95,8 @@ class Toggle {
     const self = this
     // vars
     self.destroyElements = [document, window, self.container]
+    // enable first for proper initial activation
+    self.enable()
     // init
     self.initSetup()
     self.initMatches()
@@ -102,7 +104,10 @@ class Toggle {
     self.initAria()
     self.initEvents()
     self.initStart({ save })
-    self.initStatus()
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -236,7 +241,7 @@ class Toggle {
     }
     // currents
     if (save) {
-      self.initialCurrents = self.getCurrents().slice(0)
+      self.initialCurrents = self.getCurrents().slice(0) // copy array with slice(0)
     }
     // no currents
     if (currents === 0) {
@@ -3266,28 +3271,6 @@ class Toggle {
   }
 
   /**
-   * init status
-   */
-  initStatus() {
-    const self = this
-    const options = self.options
-    // keep the same level of raf for custom listener
-    cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}StatusFrame`))
-    Xt.dataStorage.set(
-      self.container,
-      `${self.ns}StatusFrame`,
-      requestAnimationFrame(() => {
-        // check
-        if (options.disabled || self.disabledManually) {
-          self.disable()
-        } else {
-          self.enable()
-        }
-      })
-    )
-  }
-
-  /**
    * enable
    */
   enable() {
@@ -3335,8 +3318,6 @@ class Toggle {
           self.eventOff({ el, force: true })
         }
       }
-      // stop auto
-      clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
       // disable
       self.disabled = true
       if (!options.classSkip) {
@@ -3364,6 +3345,8 @@ class Toggle {
           jump.classList.remove('xt-jump')
         }
       }
+      // stop auto
+      clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
       // listener dispatch
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
