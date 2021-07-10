@@ -107,11 +107,15 @@ class Slider extends Xt.Toggle {
     // disable slider if not overflowing
     if (options.nooverflow) {
       if (self.detail.availableSpace <= 0) {
-        self.container.classList.add('xt-slider-nooverflow')
+        self.dragger.classList.add(...options.nooverflow.split(' '))
+        // disabledManually
+        self.disabledManually = true
         // needed for activation all slides
         self.initGroupsInitial({ group: 1 })
       } else {
-        self.container.classList.remove('xt-slider-nooverflow')
+        self.dragger.classList.remove(...options.nooverflow.split(' '))
+        // disabledManually
+        self.disabledManually = false
       }
     }
     // initGroupsPosition
@@ -1339,8 +1343,8 @@ class Slider extends Xt.Toggle {
    */
   destroyNooverflow() {
     const self = this
-    // nooverflow
-    self.container.classList.remove('xt-slider-nooverflow')
+    // disabledManually
+    self.disabledManually = false
   }
 
   /**
@@ -1396,7 +1400,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: true,
   wrap: false,
-  nooverflow: true,
+  nooverflow: '!transform-none justify-center',
   autoHeight: false,
   keepHeight: false,
   pagination: '[data-xt-slider-pagination]',

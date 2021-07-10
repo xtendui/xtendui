@@ -51,17 +51,15 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Nooverflow
 
-Slider with `nooverflow: true` automatically disable when not overflowing.
+The component automatically disable and apply classes to `drag.dragger` when the slides do not overflow the dragger. Use `nooverflow: false` to disable this behaviour.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `nooverflow:Boolean`                          | `true`        | When not overflowing disable slider           |
+| Option                  | `nooverflow:String|false`                          | `'transform-none justify-center'`        | Classes applied to `drag.dragger` when the slides do not overflow the dragger           |
 
 </div>
-
-Style the class `.xt-slider-nooverflow`, by default it has `justify-content: center`.
 
 <demo>
   <demoinline src="demos/components/slider/nooverflow">

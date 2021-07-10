@@ -46,11 +46,5 @@ module.exports = {
         right: '0',
       },
     },
-    '.xt-slider-nooverflow': {
-      '.xt-slides': {
-        transform: 'none !important',
-        justifyContent: 'center !important',
-      },
-    },
   }),
 }

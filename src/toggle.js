@@ -55,6 +55,7 @@ class Toggle {
     self.initialCurrents = []
     self.detail = {}
     self.disabled = false
+    self.disabledManually = false
     self.hasHash = false
     self.matches = []
     self.detail.queueIn = []
@@ -3274,7 +3275,7 @@ class Toggle {
       `${self.ns}StatusFrame`,
       requestAnimationFrame(() => {
         // check
-        if (options.disabled || self.container.classList.contains('xt-slider-nooverflow')) {
+        if (options.disabled || self.disabledManually) {
           self.disable()
         } else {
           self.enable()
