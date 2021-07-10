@@ -91,8 +91,8 @@ const mountSlider = ({ ref }) => {
       autoRound: false,
     })
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
-    for (const el of elements) {
+    const els = self.elements.filter(x => self.hasCurrent({ el: x }))
+    for (const el of els) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
@@ -109,8 +109,8 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of targets) {
+    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+    for (const tr of trs) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
@@ -134,8 +134,8 @@ const mountSlider = ({ ref }) => {
 
   const autostop = () => {
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
-    for (const el of elements) {
+    const els = self.elements.filter(x => self.hasCurrent({ el: x }))
+    for (const el of els) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
@@ -148,8 +148,8 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of targets) {
+    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+    for (const tr of trs) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
@@ -178,8 +178,8 @@ const mountSlider = ({ ref }) => {
       autoRound: false,
     })
     // elements
-    const elements = self.elements.filter(x => self.hasCurrent({ el: x }))
-    for (const el of elements) {
+    const els = self.elements.filter(x => self.hasCurrent({ el: x }))
+    for (const el of els) {
       const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)
@@ -192,8 +192,8 @@ const mountSlider = ({ ref }) => {
       }
     }
     // targets
-    const targets = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of targets) {
+    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+    for (const tr of trs) {
       const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
       for (const filler of fillers) {
         gsap.killTweensOf(filler)

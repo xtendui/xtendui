@@ -57,8 +57,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -69,8 +69,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)

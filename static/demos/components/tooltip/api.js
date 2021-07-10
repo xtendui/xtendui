@@ -50,8 +50,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -62,8 +62,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -74,8 +74,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElOffFnc = () => {
     logAdd('<strong>off 1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   firstElOff.addEventListener('click', firstElOffFnc)
@@ -86,8 +86,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrOffFnc = () => {
     logAdd('<strong>off 1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   firstTrOff.addEventListener('click', firstTrOffFnc)
@@ -101,8 +101,8 @@ const mountEventmethods = ({ ref }) => {
     tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
-      const elements = self.elements
-      const indexEl = elements.length + 1
+      const els = self.elements
+      const indexEl = els.length + 1
       const strEl = `
         <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
@@ -110,8 +110,8 @@ const mountEventmethods = ({ ref }) => {
         </button>
       `
       tooltip.append(Xt.createElement(strEl))
-      const targets = self.targets
-      const indexTr = targets.length + 1
+      const trs = self.targets
+      const indexTr = trs.length + 1
       const strTr = `
         <div class="xt-tooltip p-2" title="Target ${indexTr}"
           data-xt-tooltip-target>
@@ -139,8 +139,8 @@ const mountEventmethods = ({ ref }) => {
     tooltip.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.restart()

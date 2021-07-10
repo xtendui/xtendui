@@ -46,8 +46,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -58,8 +58,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -96,11 +96,11 @@ const mountEventmethods = ({ ref }) => {
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // element
-      const targets = self.targets
-      targets[targets.length - 1].remove()
+      const trs = self.targets
+      trs[trs.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

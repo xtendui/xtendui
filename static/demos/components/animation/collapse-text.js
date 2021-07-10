@@ -22,10 +22,10 @@ const mountCollapse = ({ button }) => {
   const self = Xt.get({ name: 'xt-toggle', el: button })
   for (const tr of self.targets) {
     if (tr.scrollHeight <= tr.clientHeight) {
-      const elements = self.getElements({ el: tr }).filter(x => !self.hasCurrent({ el: x }))
-      if (elements.length) {
+      const els = self.getElements({ el: tr }).filter(x => !self.hasCurrent({ el: x }))
+      if (els.length) {
         tr.style.maxHeight = 'none'
-        for (const el of elements) {
+        for (const el of els) {
           el.classList.add('hidden')
         }
       }
