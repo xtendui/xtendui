@@ -249,10 +249,10 @@ class Toggle {
       requestAnimationFrame(() => {
         // listener dispatch
         self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.eventAutostart()
         // initial after autostart
         self.initial = false
+        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+        self.eventAutostart()
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
@@ -2557,6 +2557,11 @@ class Toggle {
           self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
           // initial after autostart
           self.initial = false
+          // debug
+          if (options.debug) {
+            // eslint-disable-next-line no-console
+            console.log(`${self.componentName} init`, self)
+          }
         }
         // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
         self.eventAutostart()
