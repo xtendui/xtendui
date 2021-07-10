@@ -178,8 +178,16 @@ const html = /* HTML */ `
         </div>
       </button>
 
-      <nav class="hidden" data-xt-slider-pagination>
-        <button type="button" class="xt-button hidden" data-xt-slider-element></button>
+      <nav
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+        data-xt-slider-pagination
+      >
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSlider()} hidden"
+          data-xt-slider-element
+          title="Slide xt-num"
+        ></button>
       </nav>
     </div>
   </div>

@@ -74,7 +74,7 @@ const html = /* HTML */ `
       </div>
 
       <nav
-        class="w-full xt-list xt-list-3 pt-4 items-center justify-center absolute z-slide bottom-6"
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
         data-xt-slider-pagination
       >
         <button

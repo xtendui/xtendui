@@ -11,7 +11,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -27,7 +27,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -43,7 +43,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -59,7 +59,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -75,7 +75,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -91,7 +91,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -107,7 +107,7 @@ const html = /* HTML */ `
               <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
                 <button
                   type="button"
-                  class="xt-button text-2xs py-2 px-3.5 in:px-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+                  class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
                   title="Slide xt-num"
                 >
@@ -118,10 +118,10 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-3.5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+            class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
             title="Slide xt-num"
           >
