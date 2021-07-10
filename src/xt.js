@@ -17,7 +17,7 @@ if (typeof window !== 'undefined') {
 
   Xt.running = {}
   Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
-  Xt.optionsGlobal = {}
+  Xt.optionsDefault = {}
   Xt.mountArr = []
   Xt.unmountArr = []
   Xt.focusTrapArr = []

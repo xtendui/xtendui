@@ -42,7 +42,7 @@ class Mousefollow {
   initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsGlobal[self.componentName]])
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsDefault[self.componentName]])
     self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
   }
 
