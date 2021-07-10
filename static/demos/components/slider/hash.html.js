@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </div>
 
           <div
-            class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()} *** on ***"
+            class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}"
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-5"
           >
@@ -48,7 +48,7 @@ const html = /* HTML */ `
           </div>
 
           <div
-            class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}"
+            class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** on ***"
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-6"
           >
