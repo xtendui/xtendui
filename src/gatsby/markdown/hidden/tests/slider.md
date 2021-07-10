@@ -127,7 +127,7 @@ Test position.
 
 Test deactivation on resize.
 
-Test on resize should keep dragger position and activate/deactivate targets and wrap.
+Test on resize should keep dragger position and activate/deactivate targets and wrap (NOT POSSIBLE TO RETAIN ACTIVATION from disabled to enabled and different elements and disableDeactivate on targets).
 
 Test resize grouping.
 

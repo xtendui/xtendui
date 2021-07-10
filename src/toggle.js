@@ -48,7 +48,7 @@ class Toggle {
     self.classesAfter = []
     self.elements = []
     self.targets = []
-    self.currentIndex = null
+    self.index = null
     self.oldIndex = null
     self.direction = null
     self.inverse = null
@@ -211,7 +211,7 @@ class Toggle {
     // vars
     let currents = 0
     self.initial = true
-    self.currentIndex = null
+    self.index = null
     self.oldIndex = null
     Xt.running[self.ns] = []
     // INSTANT ACTIVATION because we need activation classes right away (e.g.: slider inside demos toggle must be visible to get values)
@@ -1472,8 +1472,8 @@ class Toggle {
     const self = this
     // set index
     const index = self.getIndex({ el })
-    self.oldIndex = self.currentIndex ?? index
-    self.currentIndex = index
+    self.oldIndex = self.index ?? index
+    self.index = index
   }
 
   /**
@@ -1502,14 +1502,14 @@ class Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+    if (self.index === null || self.index === self.oldIndex) {
       // initial direction and same index direction
       self.direction = 0
     } else if (self.inverse !== null) {
       // forced value
       self.direction = self.inverse ? -1 : 1
     } else {
-      self.direction = self.currentIndex < self.oldIndex ? -1 : 1
+      self.direction = self.index < self.oldIndex ? -1 : 1
     }
   }
 
@@ -1896,7 +1896,7 @@ class Toggle {
     // start
     if (options.auto && options.auto.time && Xt.autoTimescale) {
       // not when nothing activated
-      if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
+      if (self.index !== null && (!self.initial || options.auto.initial)) {
         // clear
         clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
         // auto
@@ -1999,7 +1999,7 @@ class Toggle {
     if (options.auto && options.auto.time) {
       if (self.detail.autopaused) {
         // not when nothing activated
-        if (self.currentIndex !== null && (!self.initial || options.auto.initial)) {
+        if (self.index !== null && (!self.initial || options.auto.initial)) {
           // paused
           self.detail.autopaused = false
           // resume
@@ -2287,8 +2287,8 @@ class Toggle {
         self.removeCurrent({ el, running: true })
         // only if no currents
         if (!self.getCurrents().length) {
-          // reset currentIndex and direction
-          self.currentIndex = null
+          // reset index and direction
+          self.index = null
           self.setDirection()
         }
       }
@@ -3046,8 +3046,8 @@ class Toggle {
     // logic
     if (index !== false) {
       index = index + amount
-    } else if (self.currentIndex !== null) {
-      index = self.currentIndex + amount
+    } else if (self.index !== null) {
+      index = self.index + amount
     } else {
       index = 0
     }
@@ -3098,8 +3098,8 @@ class Toggle {
     // logic
     if (index !== false) {
       index = index - amount
-    } else if (self.currentIndex !== null) {
-      index = self.currentIndex - amount
+    } else if (self.index !== null) {
+      index = self.index - amount
     } else {
       index = self.getElementsGroups().length - 1
     }

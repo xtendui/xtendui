@@ -32,7 +32,7 @@ const mountToggle = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // reset to current when no activation
-      if (self.currentIndex === null) {
+      if (self.index === null) {
         const current = self.targets.filter(x => x.classList.contains('current'))[0]
         current.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
       }

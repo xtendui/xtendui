@@ -782,7 +782,7 @@ class Slider extends Xt.Toggle {
     // keep super after dragposition because it sets self.initial etc..
     super.eventOn({ el, force }, e)
     // wrap
-    self.eventWrap({ index: self.currentIndex })
+    self.eventWrap({ index: self.index })
     // keep the same level of raf for custom listener
     requestAnimationFrame(() => {
       // fix isDrag false for dragposition but keep for on and off event
@@ -796,7 +796,7 @@ class Slider extends Xt.Toggle {
   setDirection() {
     const self = this
     // set direction
-    if (self.currentIndex === null || self.currentIndex === self.oldIndex) {
+    if (self.index === null || self.index === self.oldIndex) {
       // initial direction and same index direction
       self.direction = 0
     } else if (self.inverse !== null) {
@@ -804,7 +804,7 @@ class Slider extends Xt.Toggle {
       self.direction = self.inverse ? -1 : 1
     } else {
       // direction from activation position (also when wrap there's no other way)
-      const left = Xt.dataStorage.get(self.groups[self.currentIndex].target, `${self.ns}GroupLeft`)
+      const left = Xt.dataStorage.get(self.groups[self.index].target, `${self.ns}GroupLeft`)
       const leftOld = Xt.dataStorage.get(self.groups[self.oldIndex].target, `${self.ns}GroupLeft`)
       self.direction = left > leftOld ? -1 : 1
     }
@@ -991,7 +991,7 @@ class Slider extends Xt.Toggle {
     self.eventAutopause()
     // vars
     self.detail.isDrag = true
-    self.detail.dragIndex = self.currentIndex
+    self.detail.dragIndex = self.index
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
     // listener dispatch
@@ -1035,7 +1035,7 @@ class Slider extends Xt.Toggle {
     requestAnimationFrame(() => {
       // only if dragging enough
       if (Math.abs(self.detail.dragDist) > options.drag.threshold) {
-        const index = self.currentIndex
+        const index = self.index
         // if on the same slide as we started dragging
         if (index !== self.detail.dragIndex || Math.abs(self.detail.dragDist) >= self.detail.draggerWidth) {
           // goToNum
@@ -1151,7 +1151,7 @@ class Slider extends Xt.Toggle {
       // get nearest
       const found = self.logicDragfind()
       // get nearest
-      if (found !== self.currentIndex) {
+      if (found !== self.index) {
         super.eventOn({ el: self.groups[found].element, force: true })
         self.eventWrap({ index: found })
       }

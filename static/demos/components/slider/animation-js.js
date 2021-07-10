@@ -71,12 +71,12 @@ const mountSlider = ({ ref }) => {
     const trs = self.targets.filter(x => !self.hasCurrent(x, false, true))
     for (const tr of trs) {
       const index = self.getIndex({ el: tr })
-      if (index < self.currentIndex) {
+      if (index < self.index) {
         gsap.set(tr, {
           x: -1 * targetXOn,
           opacity: 0,
         })
-      } else if (index >= self.currentIndex) {
+      } else if (index >= self.index) {
         gsap.set(tr, {
           x: 1 * targetXOn,
           opacity: 0,
