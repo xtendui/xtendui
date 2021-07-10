@@ -1773,8 +1773,7 @@ class Toggle {
     // toggle
     if (force || self.checkOff({ el })) {
       // fix groupElements and targets
-      const elements =
-        options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
+      const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
       // off
       self.removeCurrent({ el: elements[0] })
       // targets
