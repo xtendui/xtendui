@@ -300,15 +300,18 @@ class Toggle {
       } else {
         // reset classes
         if (options.classSkip !== true && !options.classSkip.elements) {
-          el.classList.remove(
-            ...self.classes,
-            ...self.classesIn,
-            ...self.classesOut,
-            ...self.classesDone,
-            ...self.classesInitial,
-            ...self.classesBefore,
-            ...self.classesAfter
-          )
+          const elsSame = self.getElements({ el })
+          for (const elSame of elsSame) {
+            elSame.classList.remove(
+              ...self.classes,
+              ...self.classesIn,
+              ...self.classesOut,
+              ...self.classesDone,
+              ...self.classesInitial,
+              ...self.classesBefore,
+              ...self.classesAfter
+            )
+          }
         }
         if (options.classSkip !== true && !options.classSkip.elementsInner) {
           const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
@@ -807,7 +810,7 @@ class Toggle {
     const options = self.options
     force = force ? force : e?.detail?.force
     // fix groupElements and targets
-    el = options.groupElements || self.targets.includes(el) ? self.getElements({ el: el })[0] : el
+    el = options.groupElements || self.targets.includes(el) ? self.getElements({ el })[0] : el
     // handler
     if (!force && options.eventLimit) {
       const eventLimit = self.containerElements.querySelectorAll(options.eventLimit)
@@ -1766,11 +1769,11 @@ class Toggle {
     if (force || self.checkOff({ el })) {
       // fix groupElements and targets
       const elements =
-        options.groupElements || self.targets.includes(el) ? self.getElements({ el: el, same: true }) : [el]
+        options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
       // off
       self.removeCurrent({ el: elements[0] })
       // targets
-      const targets = self.getTargets({ el: el, same: true })
+      const targets = self.getTargets({ el, same: true })
       // fix sometimes blur is undefined
       if (el.blur) {
         // fix :focus styles
