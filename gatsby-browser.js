@@ -42,9 +42,9 @@ const gatsbySidebarContain = () => {
 
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_menu--button')
+  // keepSidebarScroll
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  // keepSidebarScroll
   if (overlay && sidebar) {
     window.keepSidebarScroll = overlay.scrollTop || sidebar.scrollTop
   }
@@ -72,11 +72,11 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 export const onRouteUpdate = ({ location, prevLocation }) => {
-  const overlay = document.querySelector('#gatsby_menu--overlay')
-  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   // init
   Xt.init()
   // keepSidebarScroll
+  const overlay = document.querySelector('#gatsby_menu--overlay')
+  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
   if (overlay && sidebar) {
     overlay.scrollTop = window.keepSidebarScroll
     gatsbySidebarContain()

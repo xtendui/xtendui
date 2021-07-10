@@ -12,9 +12,10 @@ Xt.mount({
 
     new Xt.Overlay(ref, {
       targets: '#gatsby_menu--overlay',
-      appendTo: false,
+      appendTo: '.gatsby_site-wrapper',
       disabled: true,
       duration: 500,
+      closeauto: false,
       matches: {
         '(max-width: 1023px)': {
           disabled: false,

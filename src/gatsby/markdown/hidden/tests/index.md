@@ -6,7 +6,9 @@ title: "Tests"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable.
+Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable.
+
+Test on change page with any overlay open should close overlay because of closeauto.
 
 Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
 
