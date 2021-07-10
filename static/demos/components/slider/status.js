@@ -71,7 +71,7 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const self = Xt.get('xt-slider', slider)
+  const self = Xt.get({ name: 'xt-slider', el: slider })
   if (!self) return () => {}
   const current = slider.querySelector('.slider-status-current')
   const container = slider.querySelector('.slider-status-container')

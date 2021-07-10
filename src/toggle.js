@@ -25,7 +25,7 @@ class Toggle {
     self.componentName = self.constructor.componentName
     self.componentNs = self.componentName.replace('-', '.')
     // set self
-    Xt.set(self.componentName, self.container, self)
+    Xt.set({ name: self.componentName, el: self.container, self })
     // init
     self.init()
   }
@@ -310,7 +310,7 @@ class Toggle {
           )
         }
         if (options.classSkip !== true && !options.classSkip.elementsInner) {
-          const elsInner = Xt.queryAll(el, options.elementsInner)
+          const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
           for (const elInner of elsInner) {
             elInner.classList.remove(
               ...self.classes,
@@ -354,7 +354,7 @@ class Toggle {
             )
           }
           if (options.classSkip !== true && !options.classSkip.targetsInner) {
-            const trsInner = Xt.queryAll(tr, options.targetsInner)
+            const trsInner = Xt.queryAll({ els: tr, query: options.targetsInner })
             for (const trInner of trsInner) {
               trInner.classList.remove(
                 ...self.classes,
@@ -771,7 +771,7 @@ class Toggle {
     }
     // visibleReinit
     if (options.visibleReinit) {
-      if (!Xt.visible(self.container)) {
+      if (!Xt.visible({ el: self.container })) {
         // intersection observer
         const observer = new IntersectionObserver(
           function (entries, observer) {
@@ -813,7 +813,7 @@ class Toggle {
       if (self.containerElements.matches(options.eventLimit)) {
         return
       } else if (eventLimit.length) {
-        if (Xt.contains(eventLimit, e.target)) {
+        if (Xt.contains({ els: eventLimit, tr: e.target })) {
           return
         }
       }
@@ -840,7 +840,7 @@ class Toggle {
       if (self.containerElements.matches(options.eventLimit)) {
         return
       } else if (eventLimit.length) {
-        if (Xt.contains(eventLimit, e.target)) {
+        if (Xt.contains({ els: eventLimit, tr: e.target })) {
           return
         }
       }
@@ -1728,8 +1728,8 @@ class Toggle {
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
-      const elementsInner = Xt.queryAll(el, options.elementsInner)
-      const targetsInner = Xt.queryAll(targets, options.targetsInner)
+      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
+      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // queue run
       // eslint-disable-next-line guard-for-in
@@ -1782,8 +1782,8 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
-      const elementsInner = Xt.queryAll(el, options.elementsInner)
-      const targetsInner = Xt.queryAll(targets, options.targetsInner)
+      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
+      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // remove queue not started if queue too big
       if (self.detail[`queue${actionCurrent}`].length > options.max) {
@@ -1862,7 +1862,7 @@ class Toggle {
     }
     // auto
     if (!self.detail.autopaused) {
-      if (Xt.visible(self.container)) {
+      if (Xt.visible({ el: self.container })) {
         // not when disabled
         if (options.auto.inverse) {
           self.goToPrev({ amount: options.auto.step, loop: options.auto.loop })
@@ -2982,7 +2982,7 @@ class Toggle {
   eventSpecialcloseoutsideHandler(e) {
     const self = this
     // handler
-    if (!Xt.contains([...self.elements, ...self.targets], e.target)) {
+    if (!Xt.contains({ els: [...self.elements, ...self.targets], tr: e.target })) {
       const currents = self.getCurrents()
       for (const current of currents) {
         self.eventOff({ el: current, force: true })
@@ -2997,7 +2997,7 @@ class Toggle {
   eventSpecialclosedeepHandler(e) {
     const self = this
     // handler
-    if (Xt.contains([...self.elements, ...self.targets], e.target)) {
+    if (Xt.contains({ els: [...self.elements, ...self.targets], tr: e.target })) {
       const currents = self.getCurrents()
       for (const current of currents) {
         self.eventOff({ el: current, force: true })
@@ -3247,7 +3247,7 @@ class Toggle {
       self.options = Xt.merge([self.options, value])
     } else {
       // set options value from initial
-      self.options = Xt.mergeReset(self.options, self.optionsInitial, value)
+      self.options = Xt.mergeReset({ start: self.options, reset: self.optionsInitial, check: value })
     }
     // reinit one time only with raf
     if (!skipReinit) {
@@ -3495,7 +3495,7 @@ class Toggle {
       // initialized class
       self.container.removeAttribute(`data-${self.componentName}-init`)
       // set self
-      Xt.remove(self.componentName, self.container)
+      Xt.remove({ name: self.componentName, el: self.container })
       // listener dispatch
       self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
       // delete

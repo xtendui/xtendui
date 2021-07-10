@@ -118,7 +118,7 @@ Trigger events on **DOM elements**.
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-scrollto', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
 const container = self.container
 ```
 
@@ -148,7 +148,7 @@ const container = self.container
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-scrollto', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
 self.destroy()
 self = null
 ```

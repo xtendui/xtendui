@@ -56,7 +56,7 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // set self
-    Xt.set(self.componentName, self.container, self)
+    Xt.set({ name: self.componentName, el: self.container, self })
     // namespace
     const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
@@ -459,7 +459,7 @@ class Infinitescroll {
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove(self.componentName, self.container)
+    Xt.remove({ name: self.componentName, el: self.container })
     // listener dispatch
     self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
   }

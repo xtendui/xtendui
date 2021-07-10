@@ -12,7 +12,7 @@ date: "1980-05-05"
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Object                   | `let self = Xt.get('xt-toggle', {DOM element})`       | `container` `elements` `targets` | Get object self for this component class             |
+| Object                   | `let self = Xt.get({ name: 'xt-toggle', el })`       | `container` `elements` `targets` | Get object self for this component class             |
 
 </div>
 
@@ -73,7 +73,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-toggle', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-toggle', el: document.querySelector('.my-container') })
 const container = self.container
 ```
 
@@ -97,7 +97,7 @@ const container = self.container
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-toggle', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-toggle', el: document.querySelector('.my-container') })
 self.destroy()
 self = null
 ```

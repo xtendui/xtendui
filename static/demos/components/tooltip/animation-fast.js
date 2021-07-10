@@ -25,7 +25,7 @@ const mountTooltip = ({ ref }) => {
     // vars
 
     const container = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get('xt-tooltip', container)
+    const self = Xt.get({ name: 'xt-tooltip', el: container })
     const delayReset = 500
     const durationFast = 100
 

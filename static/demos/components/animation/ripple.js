@@ -123,7 +123,7 @@ const mountSwitcher = ({ ref }) => {
 
   const change = () => {
     for (const item of items) {
-      const self = Xt.get('xt-ripple', item)
+      const self = Xt.get({ name: 'xt-ripple', el: item })
       if (self) {
         if (switcher.checked) {
           self.options.sizeInitial = 0

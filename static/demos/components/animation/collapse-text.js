@@ -19,7 +19,7 @@ Xt.mount({
 const mountCollapse = ({ button }) => {
   // disable if not overflowing and not on
 
-  const self = Xt.get('xt-toggle', button)
+  const self = Xt.get({ name: 'xt-toggle', el: button })
   for (const tr of self.targets) {
     if (tr.scrollHeight <= tr.clientHeight) {
       const elements = self.getElements({ el: tr }).filter(x => !self.hasCurrent({ el: x }))

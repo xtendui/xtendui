@@ -274,7 +274,7 @@ const mountLine = ({ ref }) => {
       }
       /***/
       // check open drops
-      const self = Xt.get('xt-drop', megamenu)
+      const self = Xt.get({ name: 'xt-drop', el: megamenu })
       const dropBtnActive = self.elements.filter(x => self.hasCurrent({ el: x }))[0]
       if (dropBtnActive) {
         /***/
@@ -335,7 +335,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get('xt-drop', megamenu)
+    const self = Xt.get({ name: 'xt-drop', el: megamenu })
     if (self) {
       if (switcher.checked) {
         self.options.on = 'mouseenter'

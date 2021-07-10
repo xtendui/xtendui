@@ -59,7 +59,7 @@ Listen to events delegation with **useCapture**. You listen to the event **propa
 ```js
 const container = document.querySelector('.my-container')
 
-let self = Xt.get('xt-componentname', container)
+let self = Xt.get({ name: 'xt-componentname', el: container })
 
 const on = e => {
   const tr = e.target

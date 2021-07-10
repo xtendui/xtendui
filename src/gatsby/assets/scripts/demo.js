@@ -443,7 +443,7 @@ export const populateItem = item => {
   }
   // .button--show-code reinit
   const btnCode = container.querySelector('.button--show-code')
-  const self = Xt.get('xt-toggle', btnCode)
+  const self = Xt.get({ name: 'xt-toggle', el: btnCode })
   if (self) {
     self.reinit()
   }
@@ -456,7 +456,7 @@ export const populateItem = item => {
 const swapClick = ({ buttonSwap }) => {
   // vars
 
-  const self = Xt.get('xt-tooltip', buttonSwap)
+  const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
   const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
   // swap
@@ -506,7 +506,7 @@ const swapClick = ({ buttonSwap }) => {
 const swapToggle = ({ buttonSwap }) => {
   // vars
 
-  const self = Xt.get('xt-tooltip', buttonSwap)
+  const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
   const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
   // swap

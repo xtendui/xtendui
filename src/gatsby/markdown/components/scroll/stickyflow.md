@@ -64,7 +64,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 Access properties by getting component object.
 
 ```js
-let self = Xt.get('xt-stickyflow', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') })
 const container = self.container
 ```
 
@@ -85,7 +85,7 @@ const container = self.container
 Call methods by getting component object.
 
 ```js
-let self = Xt.get('xt-stickyflow', document.querySelector('.my-container'))
+let self = Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') })
 self.destroy()
 self = null
 ```

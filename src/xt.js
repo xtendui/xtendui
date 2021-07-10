@@ -63,7 +63,7 @@ if (typeof window !== 'undefined') {
         childList: true,
         subtree: true,
       })
-      Xt.mountCheck(document.documentElement)
+      Xt.mountCheck()
     })
   }
 
@@ -88,7 +88,7 @@ if (typeof window !== 'undefined') {
               added,
               'xtObserverFrame',
               requestAnimationFrame(() => {
-                Xt.mountCheck(added)
+                Xt.mountCheck({ added })
               })
             )
           }
@@ -102,7 +102,7 @@ if (typeof window !== 'undefined') {
               removed,
               'xtObserverFrame',
               requestAnimationFrame(() => {
-                Xt.unmountCheck(removed)
+                Xt.unmountCheck({ removed })
               })
             )
           }
@@ -129,16 +129,17 @@ if (typeof window !== 'undefined') {
 
   /**
    * mountCheck
-   * @param {Node|HTMLElement|EventTarget|Window} added
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.added
    */
-  Xt.mountCheck = (added = document.documentElement) => {
+  Xt.mountCheck = ({ added = document.documentElement } = {}) => {
     for (const obj of Xt.mountArr) {
       // ignore
       const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
       if (ignoreStr) {
         const ignore = added.closest(ignoreStr)
         if (ignore) {
-          Xt.ignoreOnce(ignore) // fix ignore once for mount when moving
+          Xt.ignoreOnce({ el: ignore }) // fix ignore once for mount when moving
           continue
         }
       }
@@ -184,9 +185,10 @@ if (typeof window !== 'undefined') {
 
   /**
    * unmountCheck
-   * @param {Node|HTMLElement|EventTarget|Window} removed
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.removed
    */
-  Xt.unmountCheck = (removed = document.documentElement) => {
+  Xt.unmountCheck = ({ removed = document.documentElement } = {}) => {
     for (const obj of Xt.unmountArr) {
       // check
       if (removed === obj.ref || removed.contains(obj.ref)) {
@@ -206,32 +208,35 @@ if (typeof window !== 'undefined') {
 
   /**
    * set component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
-   * @param {Object} self Component' self
+   * @param {Object} params
+   * @param {String} params.name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
+   * @param {Object} params.self Component' self
    */
-  Xt.set = (name, element, self) => {
-    Xt.dataStorage.set(element, name, self)
+  Xt.set = ({ name, el, self } = {}) => {
+    Xt.dataStorage.set(el, name, self)
   }
 
   /**
    * get component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   * @param {Object} params
+   * @param {String} params.name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
    * @return {Object}
    */
-  Xt.get = (name, element) => {
-    return Xt.dataStorage.get(element, name)
+  Xt.get = ({ name, el } = {}) => {
+    return Xt.dataStorage.get(el, name)
   }
 
   /**
    * remove component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   * @param {Object} params
+   * @param {String} params.name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
    * @return {Object}
    */
-  Xt.remove = (name, element) => {
-    return Xt.dataStorage.remove(element, name)
+  Xt.remove = ({ name, el } = {}) => {
+    return Xt.dataStorage.remove(el, name)
   }
 
   //
@@ -396,11 +401,12 @@ if (typeof window !== 'undefined') {
 
   /**
    * friction
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {Object} obj Object with x and y values
-   * @param {Boolean} transform Use transforms instead of position
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element
+   * @param {Object} params.obj Object with x and y values
+   * @param {Boolean} params.transform Use transforms instead of position
    */
-  Xt.friction = (el, obj, transform = true) => {
+  Xt.friction = ({ el, obj, transform = true } = {}) => {
     cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
     cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionInitFrame'))
     Xt.dataStorage.set(
@@ -410,7 +416,7 @@ if (typeof window !== 'undefined') {
         let xCurrent
         let yCurrent
         if (transform) {
-          const translate = Xt.getTranslate(el)
+          const translate = Xt.getTranslate({ el })
           xCurrent = translate[0]
           yCurrent = translate[1]
         } else {
@@ -460,7 +466,7 @@ if (typeof window !== 'undefined') {
             requestAnimationFrame(() => {
               if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
                 // continue friction
-                Xt.friction(el, obj, transform)
+                Xt.friction({ el, obj, transform })
               } else {
                 // next interaction instant
                 Xt.dataStorage.remove(el, 'xtFrictionX')
@@ -475,12 +481,13 @@ if (typeof window !== 'undefined') {
 
   /**
    * Return translate values https://gist.github.com/aderaaij/a6b666bf756b2db1596b366da921755d
-   * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to check target
    * @return {Array} Values [x, y]
    */
-  Xt.getTranslate = element => {
+  Xt.getTranslate = ({ el } = {}) => {
     const transArr = []
-    const style = getComputedStyle(element)
+    const style = getComputedStyle(el)
     const transform = style.transform
     let mat = transform.match(/^matrix3d\((.+)\)$/)
     if (mat) {
@@ -495,13 +502,14 @@ if (typeof window !== 'undefined') {
 
   /**
    * Contains for multiple elements
-   * @param {NodeList|Array} elements Elements to check if contains
-   * @param {Node|HTMLElement|EventTarget|Window} target Element to check if contained
+   * @param {Object} params
+   * @param {NodeList|Array} params.els Elements to check if contains
+   * @param {Node|HTMLElement|EventTarget|Window} params.tr Element to check if contained
    * @return {Boolean}
    */
-  Xt.contains = (elements, target) => {
-    for (const el of elements) {
-      if (el.contains(target)) {
+  Xt.contains = ({ els, tr } = {}) => {
+    for (const el of els) {
+      if (el.contains(tr)) {
         return true
       }
     }
@@ -546,12 +554,13 @@ if (typeof window !== 'undefined') {
 
   /**
    * Merge deep reset object only when equals to check
-   * @param {Object} start object Start object
-   * @param {Object} reset object Reset object
-   * @param {Object} check object Check with start object to reset with reset object
+   * @param {Object} params
+   * @param {Object} params.start object Start object
+   * @param {Object} params.reset object Reset object
+   * @param {Object} params.check object Check with start object to reset with reset object
    * @return {Object} Merged object
    */
-  Xt.mergeReset = (start, reset, check) => {
+  Xt.mergeReset = ({ start, reset, check } = {}) => {
     const final = start
     for (const [key, value] of Object.entries(check)) {
       if (
@@ -561,7 +570,7 @@ if (typeof window !== 'undefined') {
         !value.nodeName && // not HTML element
         value !== window // not window
       ) {
-        final[key] = Xt.mergeReset(start[key], reset[key], check[key])
+        final[key] = Xt.mergeReset({ start: start[key], reset: reset[key], check: check[key] })
       } else {
         if (start[key] === check[key]) {
           final[key] = reset[key]
@@ -617,26 +626,12 @@ if (typeof window !== 'undefined') {
   Xt.setScrollbarWidth()
 
   /**
-   * if full width return '' else return value in px
-   * @param {Number|String} width
-   * @return {String} Value in px
-   */
-  Xt.normalizeWidth = width => {
-    width = parseFloat(width)
-    if (!width || width + Xt.scrollbarWidth >= window.innerWidth) {
-      width = ''
-    } else {
-      width += 'px'
-    }
-    return width
-  }
-
-  /**
    * addScript
-   * @param {String} url
-   * @param {Function} callback
+   * @param {Object} params
+   * @param {String} params.url
+   * @param {Function} params.callback
    */
-  Xt.addScript = (url, callback = null) => {
+  Xt.addScript = ({ url, callback = null } = {}) => {
     if (!document.querySelector(`script[src="${url}"]`)) {
       const script = document.createElement('script')
       if (callback) {
@@ -650,9 +645,10 @@ if (typeof window !== 'undefined') {
 
   /**
    * ignoreOnce
-   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  Xt.ignoreOnce = el => {
+  Xt.ignoreOnce = ({ el } = {}) => {
     if (el.classList.contains('xt-ignore-once')) {
       // fix react when componentDidMount
       requestAnimationFrame(() => {
@@ -842,37 +838,24 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * return window percent if percent string
-   * @param {Number|String} num Number to check
-   * @return {Number}
-   */
-  Xt.windowPercent = num => {
-    if (typeof num === 'string' || num instanceof String) {
-      if (num.indexOf('%') !== -1) {
-        num = (Xt.innerHeight * parseFloat(num)) / 100
-      }
-    }
-    return num
-  }
-
-  /**
    * query array of elements or element
-   * @param {Node|HTMLElement|NodeList|Array} element Element to search from
-   * @param {String} query Query for querySelectorAll
+   * @param {Object} params
+   * @param {Node|HTMLElement|NodeList|Array} params.els Element to search from
+   * @param {String} params.query Query for querySelectorAll
    * @return {Array}
    */
-  Xt.queryAll = (elements, query) => {
+  Xt.queryAll = ({ els, query } = {}) => {
     // not when no query or empty array
-    if (!query || elements.length === 0) {
+    if (!query || els.length === 0) {
       return []
     }
-    if (!elements.length) {
+    if (!els.length) {
       // search element
-      return elements.querySelectorAll(query)
+      return els.querySelectorAll(query)
     } else {
       // search array
       const arr = []
-      for (const el of elements) {
+      for (const el of els) {
         arr.push(...el.querySelectorAll(query))
       }
       return arr
@@ -881,10 +864,11 @@ if (typeof window !== 'undefined') {
 
   /**
    * check element visibility
-   * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
    * @return {Boolean}
    */
-  Xt.visible = el => {
+  Xt.visible = ({ el } = {}) => {
     return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
   }
 
