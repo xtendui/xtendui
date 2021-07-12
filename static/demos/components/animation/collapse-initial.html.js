@@ -16,7 +16,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
           data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
@@ -37,7 +37,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
           data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
@@ -52,7 +52,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
           data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
