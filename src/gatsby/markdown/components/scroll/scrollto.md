@@ -41,6 +41,16 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
   </div>
 </demo>
 
+You can also **associate scrollto with [toggle hash](/components/toggle/interaction#hash)**. Remember to use [toggle group](/components/toggle/interaction#group) to **associate elements and targets**.
+
+[[notePrimary]]
+| Scrollto and Toggle together works only with Scrollto `hash: false` and Toggle `queue: false`
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/scrollto-toggle">
+  </div>
+</demo>
+
 ## Dynamic Content
 
 If you need to add **scrollto on content added dynamically**, just initialize `container` it on **a div container that changes on route update**.
@@ -60,7 +70,7 @@ Here are the main **javascript options**.
 | Option                    | `events:String|false`                          | `'scroll off.xt.overlay'`        | Events of `self.scrollers` that triggers activation              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
-| Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` on links to activate hash for only that link             |
+| Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` or `[data-xt-scrollto-hash="false"]` on **each link**             |
 | Option                    | `position({ self }):Function`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
 | Option                    | `space({ self }):Function`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |
 | Option                    | `duration({ self }):Function`                          | `<Function>`        | Scroll duration depending on `self.scroll.scrollTop` and `self.position` that sets `self.duration`, return `Number`            |
@@ -95,7 +105,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `scrollto.xt.scrollto`      | `container` | Scrolto event           |
+| Event                   | `scrollto.xt.scrollto`      | `container` | Scrollto event           |
 | Event                   | `init.xt.scrollto`           | `container` | Init or reinit event             |
 | Event                   | `destroy.xt.scrollto`           | `container` | Destroy event             |
 

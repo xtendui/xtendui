@@ -267,7 +267,8 @@ class Scrollto {
               // prevent page hash with automatic scroll
               if (
                 !hashchange &&
-                (options.hash || el.getAttribute('data-xt-scrollto-hash')) &&
+                (options.hash || el.getAttribute('data-xt-scrollto-hash') === 'true') &&
+                el.getAttribute('data-xt-scrollto-hash') !== 'false' &&
                 location.hash !== el.hash
               ) {
                 history.pushState({}, '', loc.hash)

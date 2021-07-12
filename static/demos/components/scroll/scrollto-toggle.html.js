@@ -1,0 +1,247 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
+const html = /* HTML */ `
+  <div class="demo--scrollto-toggle">
+    <div data-xt-toggle="{ queue: false }">
+      <!-- sticky for demo purpose remove this -->
+      <div class="xt-sticky">
+        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+          <div class="xt-list xt-list-3">
+            <a
+              href="#anchor-0"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-0"
+              data-xt-scrollto-hash="false"
+            >
+              #0
+            </a>
+            <a
+              href="#anchor-1"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-1"
+              data-xt-scrollto-hash="false"
+            >
+              #1
+            </a>
+            <button
+              type="button"
+              class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-custom"
+            >
+              custom
+            </button>
+            <a
+              href="#anchor-2"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-2"
+              data-xt-scrollto-hash="false"
+            >
+              #2
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div
+          class="xt-card ${classes.cardSm()} ${classes.cardActivation()}"
+          id="anchor-0"
+          data-xt-toggle-target
+          data-xt-hash="anchor-0"
+          data-xt-group="#anchor-0"
+        >
+          <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+            egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
+            feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
+          </p>
+          <div class="xt-list xt-list-3">
+            <a
+              href="#anchor-0"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-0"
+              data-xt-scrollto-hash="false"
+            >
+              #0
+            </a>
+            <a
+              href="#anchor-1"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-1"
+              data-xt-scrollto-hash="false"
+            >
+              #1
+            </a>
+            <button
+              type="button"
+              class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-custom"
+            >
+              custom
+            </button>
+            <a
+              href="#anchor-2"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-2"
+              data-xt-scrollto-hash="false"
+            >
+              #2
+            </a>
+          </div>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+
+        <div
+          class="xt-card ${classes.cardSm()} ${classes.cardActivation()}"
+          id="anchor-1"
+          data-xt-toggle-target
+          data-xt-hash="anchor-1"
+          data-xt-group="#anchor-1"
+        >
+          <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+            egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
+            feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
+          </p>
+          <div class="xt-list xt-list-3">
+            <a
+              href="#anchor-0"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-0"
+              data-xt-scrollto-hash="false"
+            >
+              #0
+            </a>
+            <a
+              href="#anchor-1"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-1"
+              data-xt-scrollto-hash="false"
+            >
+              #1
+            </a>
+            <button
+              type="button"
+              class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-custom"
+            >
+              custom
+            </button>
+            <a
+              href="#anchor-2"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-2"
+              data-xt-scrollto-hash="false"
+            >
+              #2
+            </a>
+          </div>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+
+        <div
+          class="xt-card ${classes.cardSm()} ${classes.cardActivation()}"
+          id="anchor-custom"
+          data-xt-toggle-target
+          data-xt-hash="anchor-custom"
+          data-xt-group="#anchor-custom"
+        >
+          <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+            egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
+            feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
+          </p>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br />
+
+        <div
+          class="xt-card ${classes.cardSm()} ${classes.cardActivation()}"
+          id="anchor-2"
+          data-xt-toggle-target
+          data-xt-hash="anchor-2"
+          data-xt-group="#anchor-2"
+        >
+          <div class="xt-h4">Lorem ipsum dolor sit amet</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+            egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean
+            feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.
+          </p>
+          <div class="xt-list xt-list-3">
+            <a
+              href="#anchor-0"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-0"
+              data-xt-scrollto-hash="false"
+            >
+              #0
+            </a>
+            <a
+              href="#anchor-1"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-1"
+              data-xt-scrollto-hash="false"
+            >
+              #1
+            </a>
+            <button
+              type="button"
+              class="xt-button button--custom ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-custom"
+            >
+              custom
+            </button>
+            <a
+              href="#anchor-2"
+              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+              data-xt-toggle-element
+              data-xt-group="#anchor-2"
+              data-xt-scrollto-hash="false"
+            >
+              #2
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+`
+
+export const object = {
+  html: html,
+}

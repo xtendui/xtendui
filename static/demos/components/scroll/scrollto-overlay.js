@@ -98,7 +98,7 @@ const mountScrollto = () => {
   // custom
 
   const buttons = self.container.querySelectorAll('.button--custom')
-  const custom = self.container.querySelector('#custom')
+  const custom = self.container.querySelector('#anchor-custom')
 
   const click = () => {
     custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))

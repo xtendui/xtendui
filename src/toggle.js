@@ -1587,16 +1587,15 @@ class Toggle {
           const attr = el.getAttribute(options.hash)
           if (attr) {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-            cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-            Xt.dataStorage.set(
+            Xt.frame({
               window,
-              `xtHashFrame`,
-              requestAnimationFrame(() => {
+              func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', `#${encodeURIComponent(attr)}`)
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, false)
-              })
-            )
+              },
+              ns: `${self.ns}Hash`,
+            })
           }
         }
       }
@@ -1680,16 +1679,15 @@ class Toggle {
           const attr = el.getAttribute(options.hash)
           if (attr && attr === location.hash.split('#')[1]) {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
-            cancelAnimationFrame(Xt.dataStorage.get(window, `xtHashFrame`))
-            Xt.dataStorage.set(
+            Xt.frame({
               window,
-              `xtHashFrame`,
-              requestAnimationFrame(() => {
+              func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', '#')
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, false)
-              })
-            )
+              },
+              ns: `${self.ns}Hash`,
+            })
           }
         }
       }

@@ -1,5 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/scrollto'
+import 'xtendui/src/toggle'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
@@ -7,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--scrollto',
+  matches: '.demo--scrollto-toggle',
   mount: ({ ref }) => {
     const unmountSticky = mountSticky({ ref })
     const unmountScrollto = mountScrollto()

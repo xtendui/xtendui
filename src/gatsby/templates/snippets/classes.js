@@ -5,6 +5,8 @@ export const classes = {
   cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
   cardSlide: () =>
     'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
+  cardActivation: () =>
+    'text-black xt-links-default bg-gray-100 border-2 border-transparent in:border-gray-200 transition',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   // size
