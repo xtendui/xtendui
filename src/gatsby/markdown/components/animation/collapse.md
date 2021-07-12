@@ -39,7 +39,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
   </demoinline>
 </demo>
 
-## Text
+## Initial Values
 
 You can use also with **initial values** for height and width.
 
@@ -48,7 +48,7 @@ Use **tailwind classes** to assign size (e.g. [max-height](https://tailwindcss.c
 Just use the class `on` if you want to automatically open instantly.
 
 <demo>
-  <demoinline src="demos/components/animation/collapse-text">
+  <demoinline src="demos/components/animation/collapse-initial">
   </demoinline>
 </demo>
 

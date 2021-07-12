@@ -2,7 +2,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
 Xt.mount({
-  matches: '.demo--collapse-text',
+  matches: '.demo--collapse-initial',
   mount: ({ ref }) => {
     const unmountCollapses = mountCollapses({ ref })
 
@@ -16,10 +16,10 @@ Xt.mount({
 
 /* mountCollapse */
 
-const mountCollapse = ({ button }) => {
+const mountCollapse = ({ collapse }) => {
   // disable if not overflowing and not on
 
-  const self = Xt.get({ name: 'xt-toggle', el: button })
+  const self = Xt.get({ name: 'xt-toggle', el: collapse })
   for (const tr of self.targets) {
     if (tr.scrollHeight <= tr.clientHeight) {
       const els = self.getElements({ el: tr }).filter(x => !self.hasCurrent({ el: x }))
@@ -38,10 +38,10 @@ const mountCollapse = ({ button }) => {
 const mountCollapses = ({ ref }) => {
   // vars
 
-  const buttons = ref.querySelectorAll('.button--collapse')
+  const collapses = ref.querySelectorAll('[data-xt-toggle]')
 
   // intersection observer
-  for (const button of buttons) {
+  for (const collapse of collapses) {
     // when button is visible
     const observer = new IntersectionObserver(
       function (entries, observer) {
@@ -50,13 +50,13 @@ const mountCollapses = ({ ref }) => {
             // disconnect observer
             observer.disconnect()
             // mount
-            mountCollapse({ button })
+            mountCollapse({ collapse })
           }
         }
       },
       { root: null }
     )
-    observer.observe(button)
+    observer.observe(collapse)
   }
 
   // unmount

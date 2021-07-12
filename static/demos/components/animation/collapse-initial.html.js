@@ -1,10 +1,10 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--collapse-text">
+  <div class="demo--collapse-initial">
     <div class="xt-row xt-row-6">
-      <div class="w-full md:w-6/12">
-        <div class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all ***" id="demo--collapse-text-target-0">
+      <div class="w-full md:w-6/12" data-xt-toggle="{ collapseHeight: 'targets', duration: 500 }">
+        <div class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all ***" data-xt-toggle-target>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum
           sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam
           pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at, pretium
@@ -17,18 +17,15 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
-          data-xt-toggle="{ targets: '#demo--collapse-text-target-0', collapseHeight: 'targets', duration: 500 }"
+          data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
         </button>
       </div>
 
-      <div class="w-full md:w-6/12">
-        <div
-          class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all *** *** on ***"
-          id="demo--collapse-text-target-1"
-        >
+      <div class="w-full md:w-6/12" data-xt-toggle="{ collapseHeight: 'targets', duration: 500 }">
+        <div class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all *** *** on ***" data-xt-toggle-target>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis vestibulum
           sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at magna aliquam
           pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula, lacinia orci at, pretium
@@ -41,22 +38,22 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
-          data-xt-toggle="{ targets: '#demo--collapse-text-target-1', collapseHeight: 'targets', duration: 500 }"
+          data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
         </button>
       </div>
 
-      <div class="w-full md:w-6/12">
-        <div class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all ***" id="demo--collapse-text-target-2">
+      <div class="w-full md:w-6/12" data-xt-toggle="{ collapseHeight: 'targets', duration: 500 }">
+        <div class="mb-6 text-lg *** max-h-20 overflow-hidden transition-all ***" data-xt-toggle-target>
           This target is not overflowing so the custom javascript hides the element.
         </div>
 
         <button
           type="button"
           class="xt-button *** button--collapse *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()} group"
-          data-xt-toggle="{ targets: '#demo--collapse-text-target-2', collapseHeight: 'targets', duration: 500 }"
+          data-xt-toggle-element
         >
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
