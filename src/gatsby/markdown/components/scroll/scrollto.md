@@ -2,7 +2,7 @@
 type: "Components"
 category: "Interaction"
 parent: "Scroll"
-title: "Scroll to"
+title: "ScrollTo"
 description: "Automatically scroll to elements or anchors with automatic activation on scroll."
 date: "1900-10-10"
 ---
@@ -19,7 +19,7 @@ Use this code to create a **scroll to anchor**.
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
-Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
+Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2) to preview location hash changes.
 
 [[noteDefault]]
 | This demo uses [scroll sticky](/components/scroll/sticky) see documentation for more info.
@@ -34,26 +34,34 @@ Try the demo [on a new page](/demos/components/scroll/scrollto#anchor-2).
 
 It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openauto: true`.
 
-Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2).
+Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll/scrollto-overlay">
   </div>
 </demo>
 
-You can also **associate scrollto with [toggle hash](/components/toggle/interaction#hash)**. Remember to use [toggle group](/components/toggle/interaction#group) to **associate elements and targets**.
+## Interaction
+
+You can also **trigger ScrollTo activation with [toggle hash](/components/toggle/interaction#hash)** or also other interactions components with hash options (e.g. overlay, drop, tooltip, slider).
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `scrollto:Boolean|Query`                          | `false`        | On activation trigger [scrollto](/components/scroll/scroll-to) to `self.container` or to a document query            |
+
+</div>
 
 [[notePrimary]]
-| Scrollto and Toggle together works only with Scrollto `hash: false` and Toggle `queue: false`
+| Use `queue: false` for proper browser back button.
+
+Try the demo [on a new page](/demos/components/scroll/scrollto-toggle#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll/scrollto-toggle">
   </div>
 </demo>
-
-## Dynamic Content
-
-If you need to add **scrollto on content added dynamically**, just initialize `container` it on **a div container that changes on route update**.
 
 ## Options
  

@@ -4,43 +4,19 @@ import 'xtendui/src/toggle'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
   matches: '.demo--scrollto-toggle',
   mount: ({ ref }) => {
-    const unmountSticky = mountSticky({ ref })
-    const unmountScrollto = mountScrollto()
+    const unmountScrollto = mountScrollto({ ref })
 
     // unmount
 
     return () => {
-      unmountSticky()
       unmountScrollto()
     }
   },
 })
-
-/* mountSticky */
-
-const mountSticky = ({ ref }) => {
-  /* sticky for demo purpose remove this */
-  // sticky
-
-  ScrollTrigger.create({
-    trigger: ref.querySelector('.xt-sticky'),
-    start: 'top top',
-    endTrigger: 'html',
-    end: 'bottom top',
-    pin: true,
-    pinSpacing: false,
-  })
-
-  // unmount
-
-  return () => {}
-}
 
 /* mountScrollto */
 
@@ -79,19 +55,6 @@ const mountScrollto = () => {
   }
 
   self.container.addEventListener('scrollto.xt.scrollto', scrollto)
-
-  // custom
-
-  const buttons = self.container.querySelectorAll('.button--custom')
-  const custom = self.container.querySelector('#anchor-custom')
-
-  const click = () => {
-    custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-  }
-
-  for (const button of buttons) {
-    button.addEventListener('click', click)
-  }
 
   // unmount
 

@@ -91,7 +91,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2).
+Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/slider/hash">

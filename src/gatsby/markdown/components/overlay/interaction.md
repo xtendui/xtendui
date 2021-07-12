@@ -145,7 +145,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/overlay/hash">
@@ -180,3 +180,7 @@ You can set **body classes on activation**, remember to keep default `classBody`
   <demoinline src="demos/components/overlay/class-body">
   </demoinline>
 </demo>
+
+## ScrollTo
+
+See [scrollTo toggle](/components/scroll/scroll-to#interaction) for more info.

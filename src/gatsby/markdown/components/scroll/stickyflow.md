@@ -2,7 +2,7 @@
 type: "Components"
 category: "Interaction"
 parent: "Scroll"
-title: "Sticky Flow"
+title: "StickyFlow"
 description: "Advanced animation for postion sticky to show content on scroll for better usability."
 date: "1900-10-10"
 ---

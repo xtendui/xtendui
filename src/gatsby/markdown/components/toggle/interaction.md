@@ -194,7 +194,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/toggle/hash">
@@ -278,3 +278,7 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 ## Class Body
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.
+
+## ScrollTo
+
+See [scrollTo toggle](/components/scroll/scroll-to#interaction) for more info.

@@ -57,4 +57,6 @@ Try the demo [on a new page](/demos/components/scroll/scrollto-overlay#anchor-2)
 
 Test browser location prev e next.
 
+Test initial scroll on page load.
+
 Try the demo [on a new page](/demos/components/scroll/scrollto-toggle#anchor-2).

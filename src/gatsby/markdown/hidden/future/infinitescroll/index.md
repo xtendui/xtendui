@@ -20,7 +20,7 @@ Use this code to create a **infinite scroll**.
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 
-Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2).
+Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/listing/infinitescroll">

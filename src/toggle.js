@@ -2238,6 +2238,7 @@ class Toggle {
       self.specialZindex({ actionCurrent, el, type })
       self.specialAppendto({ actionCurrent, el, type })
       self.specialClose({ actionCurrent, el, type, obj })
+      self.specialScrollto({ actionCurrent, el, type, obj })
       if (!self.initial) {
         self.specialCollapse({ actionCurrent, el, type })
       } else {
@@ -2697,6 +2698,43 @@ class Toggle {
               appendOrigin.remove()
             }
           }
+        }
+      }
+    }
+  }
+
+  /**
+   * scrollto
+   * @param {Object} params
+   * @param {Object} params.obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
+   * @param {String} params.type Type of element
+   * @param {String} params.actionCurrent Current action
+   */
+  specialScrollto({ actionCurrent, obj, el, type } = {}) {
+    const self = this
+    const options = self.options
+    if (options.scrollto) {
+      if (actionCurrent === 'In') {
+        if (type === 'elements' && el === obj.elements.queueEls[0]) {
+          // raf for scrolling on page load
+          Xt.frame({
+            window,
+            func: () => {
+              if (self.initial) {
+                Xt.scrolltoHashforce = true
+              }
+              if (typeof options.scrollto === 'string') {
+                const scrolltoElement = document.querySelector(options.scrollto)
+                if (scrolltoElement) {
+                  scrolltoElement.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+                }
+              } else {
+                self.container.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+              }
+            },
+            ns: `${self.ns}Scrollto`,
+          })
         }
       }
     }
@@ -3554,6 +3592,7 @@ Toggle.optionsDefaultSuper = {
     loop: true,
   },
   // other
+  scrollto: false,
   matches: false,
   disabled: false,
   visibleReinit: false,
