@@ -25,8 +25,8 @@ const mountSlider = ({ ref }) => {
 
   const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
-  let dragDistance
-  let dragDuration
+  let distance
+  let duration
 
   const mediaZoom = 0.5
   const mediaTime = 1.5
@@ -39,23 +39,23 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    duration: () => dragDuration * 1000,
+    duration: () => duration * 1000,
     mode: 'absolute',
     loop: true,
   })
   /***/
 
-  // dragposition (set internal dragPosition to resume animation mid dragging)
+  // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // dragDuration depending on distance
-    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition animation to keep updated with animation
-    gsap.killTweensOf(self.detail)
-    gsap.to(self.detail, {
-      dragPosition: self.detail.dragFinal,
-      duration: dragDuration,
+    // duration depending on distance
+    distance = Math.abs(self.drag.position - self.drag.final)
+    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // position animation to keep updated with animation
+    gsap.killTweensOf(self.drag)
+    gsap.to(self.drag, {
+      position: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -68,18 +68,18 @@ const mountSlider = ({ ref }) => {
     const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
     // cover
     const cover = tr.querySelector('.hero-cover')
-    const skew = self.detail.dragRatio < 0.5 ? 10 * self.detail.dragRatio : 10 * self.detail.dragRatioInverse
+    const skew = self.drag.ratio < 0.5 ? 10 * self.drag.ratio : 10 * self.drag.ratioInverse
     gsap.killTweensOf(cover)
     gsap.set(cover, {
-      x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
+      x: `${100 * self.drag.ratioInverse * self.direction}%`,
       skewX: skew * self.direction,
     })
     // content
     const content = tr.querySelector('.hero-content')
     gsap.killTweensOf(content)
     gsap.set(content, {
-      x: -contentX * self.detail.dragRatio * self.direction,
-      opacity: 1 * self.detail.dragRatioInverse,
+      x: -contentX * self.drag.ratio * self.direction,
+      opacity: 1 * self.drag.ratioInverse,
     })
   }
 
@@ -95,7 +95,7 @@ const mountSlider = ({ ref }) => {
     gsap.to(cover, {
       x: `${-100 * self.direction}%`,
       skewX: 0,
-      duration: dragDuration,
+      duration: duration,
       ease: dragEase,
     })
     // content
@@ -104,7 +104,7 @@ const mountSlider = ({ ref }) => {
     gsap.to(content, {
       x: 0,
       opacity: 1,
-      duration: dragDuration,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -121,21 +121,21 @@ const mountSlider = ({ ref }) => {
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
+        x: `${100 * self.drag.ratioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-100 * self.detail.dragRatioInverse * self.direction}%`,
+        x: `${-100 * self.drag.ratioInverse * self.direction}%`,
       })
       gsap.to(maskInner, {
         x: 0,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       // media
@@ -159,14 +159,14 @@ const mountSlider = ({ ref }) => {
       gsap.to(content, {
         x: 0,
         opacity: 1,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       /***/
-      // dragposition (set internal dragPosition to instant position after on)
-      gsap.killTweensOf(self.detail)
-      gsap.set(self.detail, {
-        dragPosition: self.detail.dragFinal,
+      // dragposition (set internal position to instant position after on)
+      gsap.killTweensOf(self.drag)
+      gsap.set(self.drag, {
+        position: self.drag.final,
       })
       /***/
     }
@@ -183,7 +183,7 @@ const mountSlider = ({ ref }) => {
       // cover
       const cover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(cover)
-      if (!self.detail.instant) {
+      if (!self.drag.instant) {
         gsap.set(cover, {
           x: `${100 * self.direction}%`,
           skewX: 0,
@@ -191,19 +191,19 @@ const mountSlider = ({ ref }) => {
       }
       gsap.to(cover, {
         x: `${-100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       gsap
         .to(cover, {
           skewX: 10 * self.direction,
-          duration: dragDuration / 2,
+          duration: duration / 2,
           ease: dragEase,
         })
         .eventCallback('onComplete', () => {
           gsap.to(cover, {
             skewX: 0,
-            duration: dragDuration / 2,
+            duration: duration / 2,
             ease: dragEase,
           })
         })
@@ -212,14 +212,14 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(mask)
       gsap.to(mask, {
         x: `${-100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.to(maskInner, {
         x: `${100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       // content
@@ -228,7 +228,7 @@ const mountSlider = ({ ref }) => {
       gsap.to(content, {
         x: -contentX * self.direction,
         opacity: 0,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
     }

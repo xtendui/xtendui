@@ -94,12 +94,12 @@ const container = self.container
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 | Property                   | `dragger:Node`       | Dragger node             |
-| Property                   | `detail.draggerWidth:Number`       | Dragger width             |
-| Property                   | `detail.dragPosition:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
-| Property                   | `detail.dragFinal:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
-| Property                   | `detail.dragRatio:Number`       | Current drag ratio from 0 to 1             |
-| Property                   | `detail.dragRatioInverse:Number`       | Current drag inverse from 1 to 0             |
-| Property                   | `detail.instant:Boolean`       | Is `true` if is dragging activation or setup activation             |
+| Property                   | `drag.size:Number`       | Dragger size             |
+| Property                   | `drag.position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
+| Property                   | `drag.final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
+| Property                   | `drag.ratio:Number`       | Current drag ratio from 0 to 1             |
+| Property                   | `drag.ratioInverse:Number`       | Current drag inverse from 1 to 0             |
+| Property                   | `drag.instant:Boolean`       | Is `true` if is dragging activation or setup activation             |
 
 </div>
 

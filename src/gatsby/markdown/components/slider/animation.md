@@ -10,11 +10,11 @@ date: "2010-10-09"
 
 Each slider demo listens to the event `dragposition.xt.slider` and:
 
-- it calculates the `dragDistance` and `dragDuration` depending on the distance of the **final position value** `self.detail.dragFinal` in respect to the position of the **current position value** `self.detail.dragPosition`.
+- it calculates the `distance` and `duration` depending on the distance of the **final position value** `self.drag.final` in respect to the position of the **current position value** `self.drag.position`.
 
-- it updates the value of `self.detail.dragPosition` animating it with **that duration and your custom easing**.
+- it updates the value of `self.drag.position` animating it with **that duration and your custom easing**.
 
-- on **relative mode** animates `self.dragger` to the final position value `self.detail.dragFinal` with yout custom easing.
+- on **relative mode** animates `self.dragger` to the final position value `self.drag.final` with yout custom easing.
 
 This is done in order to keep the **internal slider values updated** with your **custom slider animations**.
 
@@ -22,14 +22,14 @@ This is done in order to keep the **internal slider values updated** with your *
 
 With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
 
-You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.instant` and `self.direction` values.
+You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.drag.ratio`, `self.drag.ratioInverse`, `self.drag.instant` and `self.direction` values.
 
 [[notePrimary]]
-| On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.detail.instant` or if using `self.detail.dragRatio` or `self.detail.dragRatioInverse`.
+| On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.drag.instant` or if using `self.drag.ratio` or `self.drag.ratioInverse`.
 
 #### Cover
 
-Here's an example of absolute animation with **cover and mask**, also on `on.xt.slider` we instantly change slide by setting `self.detail.dragPosition` to `self.detail.dragFinal`.
+Here's an example of absolute animation with **cover and mask**, also on `on.xt.slider` we instantly change slide by setting `self.drag.position` to `self.drag.final`.
 
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-cover">
