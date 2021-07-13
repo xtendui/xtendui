@@ -2201,8 +2201,8 @@ class Toggle {
       }
       // queue done
       if (obj[type].instant) {
+        // only if last element
         if (el === els[els.length - 1]) {
-          // only if last element
           self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
@@ -2235,7 +2235,7 @@ class Toggle {
       self.activate({ el, type })
       self.activateHash({ obj, el, type })
       // special
-      self.specialZindex({ actionCurrent, el, type })
+      self.specialZindex({ actionCurrent, obj, el, type })
       self.specialAppendto({ actionCurrent, el, type })
       self.specialClose({ actionCurrent, el, type, obj })
       if (!self.initial) {
@@ -2282,7 +2282,7 @@ class Toggle {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.removeCurrent({ el, running: true })
-        // only if no currents
+        // if no currents
         if (!self.getCurrents().length) {
           // reset index and direction
           self.index = null
@@ -2326,8 +2326,8 @@ class Toggle {
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
         const els = obj[type].queueEls
+        // only if last element
         if (el === els[els.length - 1]) {
-          // only if last element
           self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
@@ -2394,6 +2394,16 @@ class Toggle {
     const options = self.options
     // special
     if (actionCurrent === 'In') {
+      // only one time and if last element
+      if (type === 'elements' && el === obj.elements.queueEls[0]) {
+        // if no queueOut
+        if (!self.detail[`queue${actionOther}`].length) {
+          // reset all zIndex
+          for (const type in obj) {
+            self.specialZindex({ actionCurrent: actionOther, obj, type })
+          }
+        }
+      }
       // activation
       self.activateDone({ el, type })
       // special
@@ -2416,10 +2426,11 @@ class Toggle {
     } else if (actionCurrent === 'Out') {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
-        // only if no currents
+        // if no currents
         if (!self.getCurrents().length) {
+          // reset all zIndex
           for (const type in obj) {
-            self.specialZindex({ actionCurrent, type })
+            self.specialZindex({ actionCurrent, obj, type })
           }
         }
       }
@@ -2469,8 +2480,8 @@ class Toggle {
       // queue done
       if (!obj[type].instant && !obj[type].instantType) {
         const els = obj[type].queueEls
+        // only if last element
         if (el === els[els.length - 1]) {
-          // only if last element
           self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
@@ -2589,10 +2600,11 @@ class Toggle {
    * zindex on activation
    * @param {Object} params
    * @param {String} params.actionCurrent Current action
+   * @param {Object} params.obj Queue object
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
    * @param {String} params.type Type of element
    */
-  specialZindex({ actionCurrent, el, type } = {}) {
+  specialZindex({ actionCurrent, obj, el, type } = {}) {
     const self = this
     const options = self.options
     // fix when standalone !self.targets.length && type === 'elements'
@@ -2607,6 +2619,9 @@ class Toggle {
         el.style.zIndex = self.detail.zIndex
       } else if (actionCurrent === 'Out') {
         self.detail.zIndex = options.zIndex[type].start
+        for (const el of obj[type].queueEls) {
+          el.style.zIndex = self.detail.zIndex
+        }
       }
     }
   }
