@@ -727,37 +727,58 @@ class Slider extends Xt.Toggle {
     if (!found) return
     el = found.element
     const tr = found.target
+    // activation
+    self.detail.isDrag = false
+    super.eventOn({ el, force }, e)
+    // wrap
+    self.eventWrap({ index: self.index })
     // vars
     const first = self.groups[self.detail.moveFirst].target
     const last = self.groups[self.detail.moveLast].target
     const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
     const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
     const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
-    // fix isDrag false for dragposition but keep for on and off event
-    const isDrag = self.detail.isDrag
+    // val
+    self.detail.dragInitial = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
     // fix absolute loop
     if (options.mode === 'absolute' && options.loop && !self.initial) {
       if (tr === last && (self.detail.dragDirection < 0 || self.detail.dragPosition >= min)) {
         // val
-        self.detail.isDrag = true
         self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
+        self.detail.isDrag = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       } else if (tr === first && (self.detail.dragDirection > 0 || self.detail.dragPosition <= max)) {
-        self.detail.isDrag = true
         self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
+        self.detail.isDrag = true
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+      }
+    }
+    // fix absolute multi step activation (only if not already applied fix)
+    if (options.mode === 'absolute' && !self.detail.isDrag && self.direction) {
+      const diff = self.detail.dragInitial - self.detail.dragPosition
+      //console.log(diff, self.detail.dragInitial, self.detail.dragPosition)
+      if (Math.abs(diff) > maxCheck) {
+        // remainder add or remove maxCheck depending on direction
+        let remainder = diff % maxCheck
+        remainder += maxCheck * self.direction
+        // val
+        self.detail.dragFinal = self.detail.dragInitial - remainder
+        //console.log(diff, remainder, self.detail.dragPosition, self.detail.dragFinal, self.detail.dragInitial)
+        // listener dispatch
+        self.detail.isDrag = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
     }
     // val
-    self.detail.dragFinal = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
-    self.detail.dragInitial = self.detail.dragFinal
+    self.detail.dragFinal = self.detail.dragInitial
     // ratio
     self.detail.dragRatioInverse = Math.abs(self.detail.dragPosition - self.detail.dragFinal) / Math.abs(maxCheck - min)
-    self.detail.dragRatioInverse = self.detail.dragRatioInverse > 1 ? 1 : self.detail.dragRatioInverse
-    self.detail.dragRatioInverse = self.detail.dragRatioInverse < -1 ? -1 : self.detail.dragRatioInverse
     self.detail.dragRatio = 1 - self.detail.dragRatioInverse
+    // listener dispatch
+    self.detail.isDrag = false
+    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let groupHeight = Xt.dataStorage.get(tr, `${self.ns}GroupHeight`)
@@ -773,21 +794,6 @@ class Slider extends Xt.Toggle {
         }
       }
     }
-    // fix isDrag false for dragposition but keep for on and off event
-    self.detail.isDrag = false
-    // listener dispatch
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // fix isDrag false for dragposition but keep for on and off event
-    self.detail.isDrag = isDrag
-    // keep super after dragposition because it sets self.initial etc..
-    super.eventOn({ el, force }, e)
-    // wrap
-    self.eventWrap({ index: self.index })
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // fix isDrag false for dragposition but keep for on and off event
-      self.detail.isDrag = false
-    })
   }
 
   /**
