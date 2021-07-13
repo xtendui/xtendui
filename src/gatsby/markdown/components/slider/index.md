@@ -39,7 +39,9 @@ Use this code to create a **slider relative**.
 
 #### Absolute
 
-Use `.xt-slide-absolute` to position the node in **absolute mode** when not activated.
+Use `off:hidden` to hide with `display: none;` the node when **not activated or animating**.
+
+Use `xt-slide-absolute` to position the node in **absolute mode** when **animating out**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

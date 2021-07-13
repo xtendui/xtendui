@@ -13,8 +13,8 @@ module.exports = {
       '&:not([data-xt-slider-init])': {
         '.xt-slide': {
           '&:first-child': {
-            display: 'block',
-            position: 'relative',
+            display: 'block !important',
+            position: 'relative !important',
           },
         },
       },
@@ -36,9 +36,6 @@ module.exports = {
     },
     '.xt-slide-absolute': {
       position: 'relative',
-      '&:not(.on):not(.in):not(.out):not(.display)': {
-        display: 'none',
-      },
       '&:not(.on)': {
         position: 'absolute',
         top: '0',

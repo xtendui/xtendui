@@ -89,7 +89,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 #### Display
 
-To show and hide the component we use **custom tailwind variants** attached to classes used by the component.
+To show and hide nodes we use **custom tailwind variants** attached to classes used by the component.
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
