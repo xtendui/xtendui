@@ -53,14 +53,13 @@ class Toggle {
     self.direction = null
     self.inverse = null
     self.initialCurrents = []
-    self.detail = {}
     self.disabled = false
     self.disabledManual = false
     self.hasHash = false
     self.matches = []
-    self.detail.queueIn = []
-    self.detail.queueOut = []
-    self.detail.autopaused = false
+    self.queueIn = []
+    self.queueOut = []
+    self.autopaused = false
     // init
     self.initVars()
     self.initLogic()
@@ -1740,7 +1739,7 @@ class Toggle {
       self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // queue run
       // eslint-disable-next-line guard-for-in
-      for (const type in self.detail[`queue${actionCurrent}`][0]) {
+      for (const type in self[`queue${actionCurrent}`][0]) {
         self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
       // activation
@@ -1792,17 +1791,17 @@ class Toggle {
       const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
       // remove queue not started if queue too big
-      if (self.detail[`queue${actionCurrent}`].length > options.max) {
+      if (self[`queue${actionCurrent}`].length > options.max) {
         // remove queue and stop
-        const removedOn = self.detail[`queue${actionOther}`].shift()
+        const removedOn = self[`queue${actionOther}`].shift()
         self.queueStop({ actionCurrent: actionOther, actionOther: actionCurrent, obj: removedOn })
         // remove queue and stop
-        const removedOff = self.detail[`queue${actionCurrent}`].shift()
+        const removedOff = self[`queue${actionCurrent}`].shift()
         self.queueStop({ actionCurrent, actionOther, obj: removedOff })
       }
       // queue run
       // eslint-disable-next-line guard-for-in
-      for (const type in self.detail[`queue${actionCurrent}`][0]) {
+      for (const type in self[`queue${actionCurrent}`][0]) {
         self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
       // deactivated
@@ -1850,9 +1849,9 @@ class Toggle {
     }
     // put in queue
     if (!options.queue) {
-      self.detail[`queue${actionCurrent}`] = [obj]
+      self[`queue${actionCurrent}`] = [obj]
     } else {
-      self.detail[`queue${actionCurrent}`].unshift(obj)
+      self[`queue${actionCurrent}`].unshift(obj)
     }
   }
 
@@ -1867,7 +1866,7 @@ class Toggle {
       return
     }
     // auto
-    if (!self.detail.autopaused) {
+    if (!self.autopaused) {
       if (Xt.visible({ el: self.container })) {
         // not when disabled
         if (options.auto.inverse) {
@@ -1962,9 +1961,9 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time) {
-      if (!self.detail.autopaused) {
+      if (!self.autopaused) {
         // paused
-        self.detail.autopaused = true
+        self.autopaused = true
         // clear
         clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
         // aria
@@ -1994,11 +1993,11 @@ class Toggle {
     }
     // pause
     if (options.auto && options.auto.time) {
-      if (self.detail.autopaused) {
+      if (self.autopaused) {
         // not when nothing activated
         if (self.index !== null && (!self.initial || options.auto.initial)) {
           // paused
-          self.detail.autopaused = false
+          self.autopaused = false
           // resume
           self.eventAutostart()
           // listener dispatch
@@ -2091,9 +2090,9 @@ class Toggle {
     const self = this
     const options = self.options
     // queue start
-    const obj = self.detail[`queue${actionCurrent}`][index]
+    const obj = self[`queue${actionCurrent}`][index]
     if (obj && obj[type] && !obj[type].done) {
-      const queueOther = self.detail[`queue${actionOther}`]
+      const queueOther = self[`queue${actionOther}`]
       const objOther = queueOther[queueOther.length - 1]
       /* @TEST
       if (objOther) {
@@ -2397,7 +2396,7 @@ class Toggle {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         // if no queueOut
-        if (!self.detail[`queue${actionOther}`].length) {
+        if (!self[`queue${actionOther}`].length) {
           // reset all zIndex
           for (const type in obj) {
             self.specialZindex({ actionCurrent: actionOther, obj, type })
@@ -2517,11 +2516,11 @@ class Toggle {
             actionCurrent: actionOther,
             actionOther: actionCurrent,
             type,
-            index: self.detail[`queue${actionOther}`].length - 1,
+            index: self[`queue${actionOther}`].length - 1,
           })
         }
         // remove queue
-        self.detail[`queue${actionCurrent}`].pop()
+        self[`queue${actionCurrent}`].pop()
         // queue complete
         self.queueComplete({ actionCurrent, obj })
       }
@@ -2614,13 +2613,13 @@ class Toggle {
     // set zIndex
     if (options.zIndex && options.zIndex[type]) {
       if (actionCurrent === 'In') {
-        self.detail.zIndex = self.detail.zIndex ? self.detail.zIndex : options.zIndex[type].start
-        self.detail.zIndex = self.detail.zIndex + options.zIndex[type].factor
-        el.style.zIndex = self.detail.zIndex
+        self.zIndex = self.zIndex ? self.zIndex : options.zIndex[type].start
+        self.zIndex = self.zIndex + options.zIndex[type].factor
+        el.style.zIndex = self.zIndex
       } else if (actionCurrent === 'Out') {
-        self.detail.zIndex = options.zIndex[type].start
+        self.zIndex = options.zIndex[type].start
         for (const el of obj[type].queueEls) {
-          el.style.zIndex = self.detail.zIndex
+          el.style.zIndex = self.zIndex
         }
       }
     }
