@@ -727,8 +727,9 @@ class Slider extends Xt.Toggle {
     if (!found) return
     el = found.element
     const tr = found.target
+    // fix keep self.detail.isDrag
+    const isDrag = self.detail.isDrag
     // activation
-    self.detail.isDrag = false
     super.eventOn({ el, force }, e)
     // wrap
     self.eventWrap({ index: self.index })
@@ -779,6 +780,15 @@ class Slider extends Xt.Toggle {
     // listener dispatch
     self.detail.isDrag = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    // fix keep self.detail.isDrag
+    self.detail.isDrag = isDrag
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        self.detail.isDrag = false
+      },
+      ns: `${self.ns}isDrag`,
+    })
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let groupHeight = Xt.dataStorage.get(tr, `${self.ns}GroupHeight`)
@@ -1180,9 +1190,9 @@ class Slider extends Xt.Toggle {
     self.detail.dragRatio = self.detail.dragRatioInverse
     self.detail.dragRatioInverse = 1 - self.detail.dragRatio
     // val
-    self.detail.isDrag = false
     self.detail.dragFinal = self.detail.dragInitial
     // listener dispatch
+    self.detail.isDrag = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
