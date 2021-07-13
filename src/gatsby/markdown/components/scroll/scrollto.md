@@ -49,7 +49,7 @@ You can also **trigger ScrollTo activation with [toggle hash](/components/toggle
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `scrollto:Boolean|Query`                          | `false`        | On activation trigger [scrollto](/components/scroll/scroll-to) to `self.container` or to a document query            |
+| Option                  | `scrollto:Boolean|Query|String`                          | `false`        | On activation trigger [scrollto](/components/scroll/scroll-to) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
 
 </div>
 
