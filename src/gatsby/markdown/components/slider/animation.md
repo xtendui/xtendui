@@ -25,7 +25,7 @@ With **absolute mode** all animation of the slides are given by yout **custom gs
 You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.instant` and `self.direction` values.
 
 [[notePrimary]]
-| On absolute mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.instant` is `false`.
+| On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.detail.instant` or if using `self.detail.dragRatio` or `self.detail.dragRatioInverse`.
 
 #### Cover
 
@@ -55,6 +55,9 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 [[notePrimary]]
 | When you use animations you need to **specity the duration of the animation** for proper interactions.
+
+[[notePrimary]]
+| Do not transition or transform on `xt-slide` because of transform positioning, **transform and transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/slider/animation">

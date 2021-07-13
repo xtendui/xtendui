@@ -121,7 +121,7 @@ const mountSlider = ({ ref }) => {
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${100 * self.direction}%`,
+        x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
@@ -131,7 +131,7 @@ const mountSlider = ({ ref }) => {
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-100 * self.direction}%`,
+        x: `${-100 * self.detail.dragRatioInverse * self.direction}%`,
       })
       gsap.to(maskInner, {
         x: 0,

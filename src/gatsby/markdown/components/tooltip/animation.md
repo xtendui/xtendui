@@ -16,7 +16,7 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 | When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 [[notePrimary]]
-| Do not transition or transform on `xt-tooltip` because of transform positioning, **transition the content instead**.
+| Do not transition or transform on `xt-tooltip` because of transform positioning, **transform and transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation">
