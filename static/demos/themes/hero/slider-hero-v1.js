@@ -125,7 +125,7 @@ const mountSlider = ({ ref }) => {
         x: `${maskPercent * self.detail.dragRatioInverse * self.direction}%`,
       })
       gsap.to(mask, {
-        x: '0%',
+        x: 0,
         duration: dragDuration,
         ease: dragEase,
       })
@@ -136,7 +136,7 @@ const mountSlider = ({ ref }) => {
         opacity: 1 - maskInnerOpacity * self.detail.dragRatioInverse,
       })
       gsap.to(maskInner, {
-        x: '0%',
+        x: 0,
         opacity: 1,
         duration: dragDuration,
         ease: dragEase,
