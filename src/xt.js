@@ -585,10 +585,21 @@ if (typeof window !== 'undefined') {
    * @param {String} str Html string (only 1 root html tag)
    * @return {Node} HTML elements
    */
-  Xt.createElement = str => {
+  Xt.node = str => {
     const template = document.createElement('template')
     template.innerHTML = str.trim()
     return template.content.firstChild
+  }
+
+  /**
+   * Create HTML elements from html string
+   * @param {String} str Html string (only 1 root html tag)
+   * @return {Node} HTML elements
+   */
+  Xt.nodes = str => {
+    const template = document.createElement('template')
+    template.innerHTML = str.trim()
+    return template.content.childNodes
   }
 
   /**

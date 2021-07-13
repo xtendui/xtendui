@@ -109,7 +109,7 @@ const mountEventmethods = ({ ref }) => {
           Tooltip ${indexEl}
         </button>
       `
-      tooltip.append(Xt.createElement(strEl))
+      tooltip.append(Xt.node(strEl))
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
@@ -120,7 +120,7 @@ const mountEventmethods = ({ ref }) => {
           </div>
         </div>
       `
-      tooltip.append(Xt.createElement(strTr))
+      tooltip.append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.restart()

@@ -118,7 +118,7 @@ const mountEventmethods = ({ ref }) => {
         </div>
       </div>
       `
-      document.querySelector('#slider--eventmethods-targets').append(Xt.createElement(strTr))
+      document.querySelector('#slider--eventmethods-targets').append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

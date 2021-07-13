@@ -2700,7 +2700,7 @@ class Toggle {
           const appendToTarget = document.querySelector(options.appendTo)
           const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
           if (!appendOrigin) {
-            el.before(Xt.createElement(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
+            el.before(Xt.node(`<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>`))
           }
           appendToTarget.append(el)
         } else if (actionCurrent === 'Out') {
