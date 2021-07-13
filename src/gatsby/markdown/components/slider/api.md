@@ -99,7 +99,7 @@ const container = self.container
 | Property                   | `detail.dragFinal:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
 | Property                   | `detail.dragRatio:Number`       | Current drag ratio from 0 to 1             |
 | Property                   | `detail.dragRatioInverse:Number`       | Current drag inverse from 1 to 0             |
-| Property                   | `detail.isDrag:Boolean`       | Is `true` if is dragging activation or setup activation             |
+| Property                   | `detail.instant:Boolean`       | Is `true` if is dragging activation or setup activation             |
 
 </div>
 

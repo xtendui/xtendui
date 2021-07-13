@@ -47,7 +47,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // dragDuration depending on distance
     dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
+    dragDuration = self.initial || self.detail.instant ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
     // dragPosition animation to keep updated with animation
     gsap.killTweensOf(self.detail)
     gsap.to(self.detail, {

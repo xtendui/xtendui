@@ -727,8 +727,8 @@ class Slider extends Xt.Toggle {
     if (!found) return
     el = found.element
     const tr = found.target
-    // fix keep self.detail.isDrag
-    const isDrag = self.detail.isDrag
+    // fix keep self.detail.instant
+    const isDrag = self.detail.instant
     // activation
     super.eventOn({ el, force }, e)
     // wrap
@@ -747,17 +747,17 @@ class Slider extends Xt.Toggle {
         // val
         self.detail.dragFinal = max - min + self.detail.dragPosition - maxCheck
         // listener dispatch
-        self.detail.isDrag = true
+        self.detail.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       } else if (tr === first && (self.detail.dragDirection > 0 || self.detail.dragPosition <= max)) {
         self.detail.dragFinal = min - max + self.detail.dragPosition + maxCheck
         // listener dispatch
-        self.detail.isDrag = true
+        self.detail.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
     }
     // fix absolute multi step activation (only if not already applied fix)
-    if (options.mode === 'absolute' && !self.detail.isDrag && self.direction) {
+    if (options.mode === 'absolute' && !self.detail.instant && self.direction) {
       const diff = self.detail.dragInitial - self.detail.dragPosition
       //console.log(diff, self.detail.dragInitial, self.detail.dragPosition)
       if (Math.abs(diff) > maxCheck) {
@@ -768,7 +768,7 @@ class Slider extends Xt.Toggle {
         self.detail.dragFinal = self.detail.dragInitial - remainder
         //console.log(diff, remainder, self.detail.dragPosition, self.detail.dragFinal, self.detail.dragInitial)
         // listener dispatch
-        self.detail.isDrag = true
+        self.detail.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
     }
@@ -778,14 +778,14 @@ class Slider extends Xt.Toggle {
     self.detail.dragRatioInverse = Math.abs(self.detail.dragFinal - self.detail.dragPosition) / Math.abs(maxCheck - min)
     self.detail.dragRatio = 1 - self.detail.dragRatioInverse
     // listener dispatch
-    self.detail.isDrag = false
+    self.detail.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // fix keep self.detail.isDrag
-    self.detail.isDrag = isDrag
+    // fix keep self.detail.instant
+    self.detail.instant = isDrag
     Xt.frame({
       el: self.container,
       func: () => {
-        self.detail.isDrag = false
+        self.detail.instant = false
       },
       ns: `${self.ns}isDrag`,
     })
@@ -1006,7 +1006,7 @@ class Slider extends Xt.Toggle {
     // auto
     self.eventAutopause()
     // vars
-    self.detail.isDrag = true
+    self.detail.instant = true
     self.detail.dragIndex = self.index
     self.detail.dragOld = self.detail.dragStart
     self.detail.dragOverflow = null
@@ -1192,7 +1192,7 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragFinal = self.detail.dragInitial
     // listener dispatch
-    self.detail.isDrag = false
+    self.detail.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // listener dispatch
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))

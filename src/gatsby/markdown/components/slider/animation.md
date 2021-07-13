@@ -22,10 +22,10 @@ This is done in order to keep the **internal slider values updated** with your *
 
 With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
 
-You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.isDrag` and `self.direction` values.
+You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.detail.dragRatio`, `self.detail.dragRatioInverse`, `self.detail.instant` and `self.direction` values.
 
 [[notePrimary]]
-| On absolute mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.isDrag` is `false`.
+| On absolute mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** with `gsap.set` only if `self.detail.instant` is `false`.
 
 #### Cover
 
