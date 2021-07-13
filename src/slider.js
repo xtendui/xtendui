@@ -775,7 +775,7 @@ class Slider extends Xt.Toggle {
     // val
     self.detail.dragFinal = self.detail.dragInitial
     // ratio
-    self.detail.dragRatioInverse = Math.abs(self.detail.dragPosition - self.detail.dragFinal) / Math.abs(maxCheck - min)
+    self.detail.dragRatioInverse = Math.abs(self.detail.dragFinal - self.detail.dragPosition) / Math.abs(maxCheck - min)
     self.detail.dragRatio = 1 - self.detail.dragRatioInverse
     // listener dispatch
     self.detail.isDrag = false
