@@ -1588,7 +1588,7 @@ class Toggle {
           if (attr) {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
             Xt.frame({
-              window,
+              el: window,
               func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', `#${encodeURIComponent(attr)}`)
@@ -1680,7 +1680,7 @@ class Toggle {
           if (attr && attr === location.hash.split('#')[1]) {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
             Xt.frame({
-              window,
+              el: window,
               func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', '#')
@@ -2719,7 +2719,7 @@ class Toggle {
         const scrollto = ({ el }) => {
           // raf for scrolling on page load
           Xt.frame({
-            window,
+            el: window,
             func: () => {
               if (self.initial) {
                 Xt.scrolltoHashforce = true
