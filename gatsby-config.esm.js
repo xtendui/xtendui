@@ -105,7 +105,7 @@ module.exports = {
                 },
                 notePrimary: {
                   classes:
-                    'xt-card text-base leading-snug px-6 py-5 my-5 xt-my-auto font-normal text-white xt-links-inverse rounded-md bg-primary-500 gatsby_note',
+                    'xt-card text-base leading-snug px-6 py-5 my-5 xt-my-auto font-normal text-black xt-links-default rounded-md bg-gray-100 gatsby_note',
                 },
               },
             },
