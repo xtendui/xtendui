@@ -11,6 +11,8 @@ tags: ['wip']
 
 Use **tailwind classes** to create a **breadcrumbs**.
 
+The `truncate` class gives ellipses if the breadcrumbs are too long, but it needs `inline` on the items (**use narrow screen to see it in action**).
+
 [[noteDefault]]
 | This component uses [separator](/components/typography/separator) see documentation for more info.
 
