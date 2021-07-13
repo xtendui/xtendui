@@ -7,12 +7,11 @@
   }
   /* custom */
   .bg-primary-500 {
-    .xt-ripple-inner {
+    > .xt-ripple-inner {
       opacity: .15;
-    }
-    /* custom background */
-    .xt-ripple {
-      background: theme('colors.white');
+      > .xt-ripple {
+        background: theme('colors.white');
+      }
     }
   }
 }
