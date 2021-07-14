@@ -98,7 +98,7 @@ const mountScrollto = () => {
   // custom
 
   const buttons = self.container.querySelectorAll('.button--custom')
-  const custom = self.container.querySelector('#custom')
+  const custom = self.container.querySelector('#anchor-custom')
 
   const click = () => {
     custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
@@ -130,7 +130,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get('xt-scrollto', scrollto)
+    const self = Xt.get({ name: 'xt-scrollto', el: scrollto })
     if (self) {
       if (switcher.checked) {
         self.options.class = false

@@ -47,7 +47,7 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
+            className="xt-card justify-start text-left rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
             <div className="py-8 px-9 text-base">
               <div className="xt-h4">Default</div>
               <p>
@@ -62,7 +62,7 @@ export default function demo() {
         <div className="w-full md:w-6/12">
           <button
             type="button"
-            className="xt-card rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+            className="xt-card justify-start text-left rounded-md text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
             <div className="py-8 px-9 text-base">
               <div className="xt-h4">Primary</div>
               <p>
@@ -147,7 +147,7 @@ const mountRipple = ({ ref }) => {
 
     const on = () => {
       /***/
-      const ripple = self.container.querySelector('.xt-ripple:last-child')
+      const ripple = self.inner.querySelector('.xt-ripple:last-child')
       /***/
       // animate
       if (ripple) {
@@ -178,7 +178,7 @@ const mountRipple = ({ ref }) => {
 
     const off = () => {
       /***/
-      const ripple = self.container.querySelector('.xt-ripple:last-child')
+      const ripple = self.inner.querySelector('.xt-ripple:last-child')
       /***/
       // animate
       if (ripple) {

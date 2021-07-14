@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--slider-animation-absolute-mask">
     <div class="xt-slider bg-primary-500">
       <div class="xt-slides" data-xt-slider-dragger>
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -74,7 +74,7 @@ const html = /* HTML */ `
       </div>
 
       <nav
-        class="w-full xt-list xt-list-3 pt-4 items-center justify-center absolute z-slide bottom-6"
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
         data-xt-slider-pagination
       >
         <button

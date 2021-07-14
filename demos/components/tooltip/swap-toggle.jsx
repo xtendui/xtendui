@@ -55,7 +55,7 @@ const mountButtonsSwap = ({ ref }) => {
   for (const buttonSwap of buttonsSwap) {
     // vars
 
-    let self = Xt.get('xt-tooltip', buttonSwap)
+    const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
     const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
 
     // swap

@@ -1,7 +1,0 @@
-.demo--slider-api, .demo--slider-api-react {
-  [data-xt-slider-disabled] {
-    [data-xt-slider-pagination] {
-      display: none;
-    }
-  }
-}

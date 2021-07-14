@@ -190,8 +190,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -202,8 +202,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -214,8 +214,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElOffFnc = () => {
     logAdd('<strong>off 1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
   }
 
   firstElOff.addEventListener('click', firstElOffFnc)
@@ -226,8 +226,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrOffFnc = () => {
     logAdd('<strong>off 1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
   }
 
   firstTrOff.addEventListener('click', firstTrOffFnc)
@@ -241,17 +241,17 @@ const mountEventmethods = ({ ref }) => {
     drop.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // elements
-      const elements = self.elements
-      const indexEl = elements.length + 1
+      const els = self.elements
+      const indexEl = els.length + 1
       const strEl = `
         <button type="button" class="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
           data-xt-drop-element>
           Drop ${indexEl}
         </button>
       `
-      drop.append(Xt.createElement(strEl))
-      const targets = self.targets
-      const indexTr = targets.length + 1
+      drop.append(Xt.node(strEl))
+      const trs = self.targets
+      const indexTr = trs.length + 1
       const strTr = `
         <div class="xt-drop p-4" title="Target ${indexTr}"
           data-xt-drop-target>
@@ -270,7 +270,7 @@ const mountEventmethods = ({ ref }) => {
           </div>
         </div>
       `
-      drop.append(Xt.createElement(strTr))
+      drop.append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
@@ -288,8 +288,8 @@ const mountEventmethods = ({ ref }) => {
     drop.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

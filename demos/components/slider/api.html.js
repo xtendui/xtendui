@@ -96,7 +96,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** on ***" data-xt-slider-target>
             <div class="xt-card ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
             </div>
@@ -109,7 +109,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
           <button
             type="button"
             class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"

@@ -115,7 +115,7 @@ const mountDrops = ({ ref }) => {
       // when sequential interaction
       if (self.direction) {
         // not current targets
-        for (const tr of self.targets.filter(x => !self.hasCurrent(x))) {
+        for (const tr of self.targets.filter(x => !self.hasCurrent({ el: x }))) {
           // inner
           const inner = tr.querySelector('[data-xt-drop-inner]')
           gsap.killTweensOf(inner)
@@ -274,8 +274,8 @@ const mountLine = ({ ref }) => {
       }
       /***/
       // check open drops
-      const self = Xt.get('xt-drop', megamenu)
-      const dropBtnActive = self.elements.filter(x => self.hasCurrent(x))[0]
+      const self = Xt.get({ name: 'xt-drop', el: megamenu })
+      const dropBtnActive = self.elements.filter(x => self.hasCurrent({ el: x }))[0]
       if (dropBtnActive) {
         /***/
         // when one drop still open
@@ -335,7 +335,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get('xt-drop', megamenu)
+    const self = Xt.get({ name: 'xt-drop', el: megamenu })
     if (self) {
       if (switcher.checked) {
         self.options.on = 'mouseenter'
@@ -346,7 +346,7 @@ const mountSwitcher = ({ ref }) => {
         self.options.off = 'click'
         self.options.delay = false
       }
-      self.destroy(true)
+      self.destroy({ weak: true })
       self.reinit()
     }
   }

@@ -24,8 +24,8 @@ const mountSlider = ({ ref }) => {
 
   const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
-  let dragDistance
-  let dragDuration
+  let distance
+  let duration
 
   // init
 
@@ -33,24 +33,24 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {})
   /***/
 
-  // dragposition (set internal dragPosition to resume animation mid dragging)
+  // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // dragDuration depending on distance
-    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition animation to keep updated with animation
-    gsap.killTweensOf(self.detail)
-    gsap.to(self.detail, {
-      dragPosition: self.detail.dragFinal,
-      duration: dragDuration,
+    // duration depending on distance
+    distance = Math.abs(self.drag.position - self.drag.final)
+    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // position animation to keep updated with animation
+    gsap.killTweensOf(self.drag)
+    gsap.to(self.drag, {
+      position: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
     // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
-      x: self.detail.dragFinal,
-      duration: dragDuration,
+      x: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -71,10 +71,10 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const self = Xt.get('xt-slider', slider)
+  const self = Xt.get({ name: 'xt-slider', el: slider })
   if (!self) return () => {}
-  const current = slider.querySelector('.slider-status-current')
-  const container = slider.querySelector('.slider-status-container')
+  const current = slider.querySelector('[data-xt-slider-status-current]')
+  const total = slider.querySelector('[data-xt-slider-status-total]')
 
   // change
 
@@ -87,17 +87,17 @@ const mountStatus = ({ ref }) => {
         availableWidth += tr.offsetWidth
       }
       // width
-      const trs = self.targets.filter(x => self.hasCurrent(x))
+      const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
       if (!trs.length) return
       let width = 0
-      let left = trs[0].offsetLeft
+      const left = trs[0].offsetLeft
       for (const tr of trs) {
         width += tr.offsetWidth
       }
       // set
-      const containerWidth = container.offsetWidth
-      const currentWidth = (width * containerWidth) / availableWidth
-      const currentLeft = (left * containerWidth) / availableWidth
+      const totalWidth = total.offsetWidth
+      const currentWidth = (width * totalWidth) / availableWidth
+      const currentLeft = (left * totalWidth) / availableWidth
       current.style.width = `${currentWidth}px`
       current.style.left = `${currentLeft}px`
     }

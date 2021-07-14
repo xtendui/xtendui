@@ -46,8 +46,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -58,8 +58,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -75,10 +75,10 @@ const mountEventmethods = ({ ref }) => {
       // elements
       const index = self.getElementsGroups().length
       const strEl = `<button type="button" class="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500" data-xt-toggle-element>Toggle ${index}</button>`
-      document.querySelector('#toggle--eventmethods-elements').append(Xt.createElement(strEl))
+      document.querySelector('#toggle--eventmethods-elements').append(Xt.node(strEl))
       // targets
       const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow" data-xt-toggle-target>Target ${index}</div>`
-      document.querySelector('#toggle--eventmethods-targets').append(Xt.createElement(strTr))
+      document.querySelector('#toggle--eventmethods-targets').append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
@@ -96,11 +96,11 @@ const mountEventmethods = ({ ref }) => {
     ref.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // element
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // element
-      const targets = self.targets
-      targets[targets.length - 1].remove()
+      const trs = self.targets
+      trs[trs.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

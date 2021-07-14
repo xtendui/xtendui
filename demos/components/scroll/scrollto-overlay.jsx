@@ -231,7 +231,7 @@ export default function demo() {
             <br />
             <br />
 
-            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="custom">
+            <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100" id="anchor-custom">
               <div className="xt-h4">Lorem ipsum dolor sit amet</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
@@ -395,7 +395,7 @@ const mountScrollto = () => {
   // custom
 
   const buttons = self.container.querySelectorAll('.button--custom')
-  const custom = self.container.querySelector('#custom')
+  const custom = self.container.querySelector('#anchor-custom')
 
   const click = () => {
     custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
@@ -427,7 +427,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get('xt-scrollto', scrollto)
+    const self = Xt.get({ name: 'xt-scrollto', el: scrollto })
     if (self) {
       if (switcher.checked) {
         self.options.class = false

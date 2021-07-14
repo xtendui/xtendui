@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--slider-hero-v1">
     <div class="xt-slider bg-primary-500">
       <div class="xt-slides" data-xt-slider-dragger>
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -22,7 +22,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -62,7 +62,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -89,7 +89,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -116,7 +116,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-slide *** xt-slide-absolute *** w-full" data-xt-slider-target>
+        <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-500 w-full h-full absolute">
@@ -178,8 +178,16 @@ const html = /* HTML */ `
         </div>
       </button>
 
-      <nav class="hidden" data-xt-slider-pagination>
-        <button type="button" class="xt-button hidden" data-xt-slider-element></button>
+      <nav
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+        data-xt-slider-pagination
+      >
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSlider()} hidden"
+          data-xt-slider-element
+          title="Slide xt-num"
+        ></button>
       </nav>
     </div>
   </div>

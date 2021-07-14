@@ -177,7 +177,7 @@ const html = /* HTML */ `
           <br /><br /><br /><br /><br /><br /><br />
           <br /><br /><br /><br /><br /><br /><br />
 
-          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="custom">
+          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="anchor-custom">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut

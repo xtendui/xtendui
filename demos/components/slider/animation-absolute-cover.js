@@ -22,30 +22,30 @@ const mountSlider = ({ ref }) => {
 
   const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
-  let dragDistance
-  let dragDuration
+  let distance
+  let duration
 
   // slider
 
   /***/
   let self = new Xt.Slider(slider, {
-    duration: () => dragDuration * 1000,
+    duration: () => duration * 1000,
     mode: 'absolute',
     loop: true,
   })
   /***/
 
-  // dragposition (set internal dragPosition to resume animation mid dragging)
+  // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // dragDuration depending on distance
-    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition animation to keep updated with animation
-    gsap.killTweensOf(self.detail)
-    gsap.to(self.detail, {
-      dragPosition: self.detail.dragFinal,
-      duration: dragDuration,
+    // duration depending on distance
+    distance = Math.abs(self.drag.position - self.drag.final)
+    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // position animation to keep updated with animation
+    gsap.killTweensOf(self.drag)
+    gsap.to(self.drag, {
+      position: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -55,12 +55,12 @@ const mountSlider = ({ ref }) => {
   // drag (set drag frame on drag and initial position on activation)
 
   const drag = () => {
-    const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+    const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
     // cover
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
     gsap.set(cover, {
-      x: `${100 * self.detail.dragRatioInverse * self.direction}%`,
+      x: `${100 * self.drag.ratioInverse * self.direction}%`,
     })
   }
 
@@ -69,13 +69,13 @@ const mountSlider = ({ ref }) => {
   // dragreset (set animation on drag reset, when dragging opposite position from initial dragging)
 
   const dragreset = () => {
-    const tr = self.targets.filter(x => self.hasCurrent(x))[0]
+    const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
     // cover
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
     gsap.to(cover, {
       x: `${-100 * self.direction}%`,
-      duration: dragDuration,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -92,28 +92,28 @@ const mountSlider = ({ ref }) => {
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${100 * self.direction}%`,
+        x: `${100 * self.drag.ratioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
-      const maskInner = mask.querySelector('.hero-inner')
+      const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-100 * self.direction}%`,
+        x: `${-100 * self.drag.ratioInverse * self.direction}%`,
       })
       gsap.to(maskInner, {
         x: 0,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
       /***/
-      // dragposition (set internal dragPosition to instant position after on)
-      gsap.killTweensOf(self.detail)
-      gsap.set(self.detail, {
-        dragPosition: self.detail.dragFinal,
+      // dragposition (set internal position to instant position after on)
+      gsap.killTweensOf(self.drag)
+      gsap.set(self.drag, {
+        position: self.drag.final,
       })
       /***/
     }
@@ -130,40 +130,29 @@ const mountSlider = ({ ref }) => {
       // cover
       const cover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(cover)
-      if (!self.detail.isDrag) {
+      if (!self.drag.instant) {
         gsap.set(cover, {
           x: `${100 * self.direction}%`,
         })
       }
       gsap.to(cover, {
         x: `${-100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
-      gsap
-        .to(cover, {
-          duration: dragDuration / 2,
-          ease: dragEase,
-        })
-        .eventCallback('onComplete', () => {
-          gsap.to(cover, {
-            duration: dragDuration / 2,
-            ease: dragEase,
-          })
-        })
       // mask
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.to(mask, {
         x: `${-100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
-      const maskInner = mask.querySelector('.hero-inner')
+      const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.to(maskInner, {
         x: `${100 * self.direction}%`,
-        duration: dragDuration,
+        duration: duration,
         ease: dragEase,
       })
     }

@@ -25,8 +25,8 @@ const mountEventmethods = ({ ref }) => {
   // vars
 
   const dragEase = 'quart.out'
-  let dragDistance
-  let dragDuration
+  let distance
+  let duration
 
   // init
 
@@ -37,24 +37,24 @@ const mountEventmethods = ({ ref }) => {
   })
   /***/
 
-  // dragposition (set internal dragPosition to resume animation mid dragging)
+  // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // dragDuration depending on distance
-    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition animation to keep updated with animation
-    gsap.killTweensOf(self.detail)
-    gsap.to(self.detail, {
-      dragPosition: self.detail.dragFinal,
-      duration: dragDuration,
+    // duration depending on distance
+    distance = Math.abs(self.drag.position - self.drag.final)
+    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // position animation to keep updated with animation
+    gsap.killTweensOf(self.drag)
+    gsap.to(self.drag, {
+      position: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
     // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
-      x: self.detail.dragFinal,
-      duration: dragDuration,
+      x: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -82,8 +82,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -94,8 +94,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -109,8 +109,8 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // targets
-      const targets = self.targets
-      const indexTr = targets.length + 1
+      const trs = self.targets
+      const indexTr = trs.length + 1
       const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
         <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
@@ -118,7 +118,7 @@ const mountEventmethods = ({ ref }) => {
         </div>
       </div>
       `
-      document.querySelector('#slider--eventmethods-targets').append(Xt.createElement(strTr))
+      document.querySelector('#slider--eventmethods-targets').append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
@@ -136,11 +136,11 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // elements
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // targets
-      const targets = self.targets
-      targets[targets.length - 1].remove()
+      const trs = self.targets
+      trs[trs.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

@@ -97,7 +97,7 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** on ***" data-xt-slider-target>
               <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">6</div>
               </div>
@@ -110,7 +110,7 @@ export default function demo() {
             </div>
           </div>
 
-          <nav className="w-full xt-list xt-list-3 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
             <button
               type="button"
               className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
@@ -132,7 +132,7 @@ export default function demo() {
             </button>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-3.5 w-5 h-6 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-5 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
               data-xt-slider-element
               title="Slide xt-num">
               xt-num
@@ -193,8 +193,8 @@ const mountEventmethods = ({ ref }) => {
   // vars
 
   const dragEase = 'quart.out'
-  let dragDistance
-  let dragDuration
+  let distance
+  let duration
 
   // init
 
@@ -205,24 +205,24 @@ const mountEventmethods = ({ ref }) => {
   })
   /***/
 
-  // dragposition (set internal dragPosition to resume animation mid dragging)
+  // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // dragDuration depending on distance
-    dragDistance = Math.abs(self.detail.dragPosition - self.detail.dragFinal)
-    dragDuration = self.initial || self.detail.isDrag ? 0 : Math.min(Math.log(1 + dragDistance / 125), 1.5)
-    // dragPosition animation to keep updated with animation
-    gsap.killTweensOf(self.detail)
-    gsap.to(self.detail, {
-      dragPosition: self.detail.dragFinal,
-      duration: dragDuration,
+    // duration depending on distance
+    distance = Math.abs(self.drag.position - self.drag.final)
+    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // position animation to keep updated with animation
+    gsap.killTweensOf(self.drag)
+    gsap.to(self.drag, {
+      position: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
     // dragger animation
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
-      x: self.detail.dragFinal,
-      duration: dragDuration,
+      x: self.drag.final,
+      duration: duration,
       ease: dragEase,
     })
   }
@@ -250,8 +250,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstElFnc = () => {
     logAdd('<strong>1st element</strong>')
-    const elements = self.elements
-    elements[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    const els = self.elements
+    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
   firstEl.addEventListener('click', firstElFnc)
@@ -262,8 +262,8 @@ const mountEventmethods = ({ ref }) => {
 
   const firstTrFnc = () => {
     logAdd('<strong>1st target</strong>')
-    const targets = self.targets
-    targets[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    const trs = self.targets
+    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
   }
 
   firstTr.addEventListener('click', firstTrFnc)
@@ -277,8 +277,8 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>add</strong>')
       // targets
-      const targets = self.targets
-      const indexTr = targets.length + 1
+      const trs = self.targets
+      const indexTr = trs.length + 1
       const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
         <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
@@ -286,7 +286,7 @@ const mountEventmethods = ({ ref }) => {
         </div>
       </div>
       `
-      document.querySelector('#slider--eventmethods-targets').append(Xt.createElement(strTr))
+      document.querySelector('#slider--eventmethods-targets').append(Xt.node(strTr))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
@@ -304,11 +304,11 @@ const mountEventmethods = ({ ref }) => {
     slider.dataset.reinitTimeout = setTimeout(() => {
       logAdd('<strong>remove</strong>')
       // elements
-      const elements = self.elements
-      elements[elements.length - 1].remove()
+      const els = self.elements
+      els[els.length - 1].remove()
       // targets
-      const targets = self.targets
-      targets[targets.length - 1].remove()
+      const trs = self.targets
+      trs[trs.length - 1].remove()
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

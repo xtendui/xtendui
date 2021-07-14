@@ -531,7 +531,7 @@ const mountArrow = ({ ref }) => {
       })
   }
 
-  let interval = setInterval(move, 2000)
+  const interval = setInterval(move, 2000)
 
   // scroll
 

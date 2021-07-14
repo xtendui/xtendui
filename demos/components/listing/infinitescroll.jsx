@@ -70,7 +70,7 @@ export default function demo() {
 
           <div className="xt-row xt-row-6" data-xt-infinitescroll-items-container>
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -82,7 +82,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -94,7 +94,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -106,7 +106,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -118,7 +118,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -130,7 +130,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -142,7 +142,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -154,7 +154,7 @@ export default function demo() {
             </div>
 
             <div className="w-6/12">
-              <a href="https://github.com/minimit/xtendui" className="listing-item block text-black">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
                 <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -279,7 +279,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get('xt-infinitescroll', infinitescroll)
+    const self = Xt.get({ name: 'xt-infinitescroll', el: infinitescroll })
     if (self) {
       if (switcher.checked) {
         self.options.events.scrollUp = true

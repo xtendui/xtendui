@@ -54,7 +54,7 @@ const mountSliders = ({ ref }) => {
           // reset dragging position
           gsap.killTweensOf(self.dragger)
           gsap.set(self.dragger, {
-            x: self.detail.dragPos,
+            x: self.drag.dragPos,
           })
           if (self.intial) {
             self.goToNext()
@@ -62,12 +62,12 @@ const mountSliders = ({ ref }) => {
         } else {
           // time depending on target and dragger width
           const slideWidth = tr.offsetWidth
-          let time = (slideWidth * 15) / 1000 // constant speed
+          const time = (slideWidth * 15) / 1000 // constant speed
           // end dragging position
           gsap.killTweensOf(self.dragger)
           gsap
             .to(self.dragger, {
-              x: self.detail.dragPos,
+              x: self.drag.dragPos,
               duration: time,
               ease: 'linear',
             })
