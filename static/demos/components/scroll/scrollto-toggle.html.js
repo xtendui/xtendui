@@ -112,7 +112,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto" id="demo--scrollto-toggle-query">
-      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: 'Query'</code></div>
+      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: Query</code></div>
       <div
         data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: '#demo--scrollto-toggle-query' }"
       >
@@ -220,7 +220,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto">
-      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: 'Type'</code></div>
+      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: Type</code></div>
       <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: 'elements' }">
         <div class="xt-list xt-list-3 justify-center">
           <a
