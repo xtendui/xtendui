@@ -2751,7 +2751,8 @@ class Toggle {
           if (type === options.scrollto) {
             scrollto({ el })
           } else if (type === 'elements' && el === obj.elements.queueEls[0]) {
-            const scrolltoElement = document.querySelector(options.scrollto)
+            let scrolltoElement = self.container.querySelector(options.scrollto)
+            scrolltoElement = scrolltoElement ?? document.querySelector(options.scrollto)
             if (scrolltoElement) {
               scrollto({ el: scrolltoElement })
             }
