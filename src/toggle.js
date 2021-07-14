@@ -2618,8 +2618,11 @@ class Toggle {
         el.style.zIndex = self.zIndex
       } else if (actionCurrent === 'Out') {
         self.zIndex = options.zIndex[type].start
-        for (const el of obj[type].queueEls) {
-          el.style.zIndex = self.zIndex
+        // check actionOther
+        if (obj[type]) {
+          for (const el of obj[type].queueEls) {
+            el.style.zIndex = self.zIndex
+          }
         }
       }
     }
