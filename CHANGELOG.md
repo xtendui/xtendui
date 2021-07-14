@@ -1,3 +1,50 @@
+# [1.0.0-beta.35](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2021-07-14)
+
+
+### Bug Fixes
+
+* **js:** fix options.zIndex reset when activation stops ([a1e75a1](https://github.com/xtendui/xtendui/commit/a1e75a18d6cdbd62b8d35f0b8249b13c680a89c1))
+* **slider:** fix absolute mode slider when changing more than 1 slide at time ([fd6fdbf](https://github.com/xtendui/xtendui/commit/fd6fdbf8fe9078aeb582c95bddb1184d973b2ae8))
+* **slider:** fix absolute mode slider when changing more than 1 slide at time ([6a10604](https://github.com/xtendui/xtendui/commit/6a10604db1ea3f0c03da807d20966e214a095ae9))
+* **toggle:** toggle initial and restart remove classes from also groups ([b4fcd9e](https://github.com/xtendui/xtendui/commit/b4fcd9e8c390325db7d8517a30f6a3c21f226a4b))
+
+
+### Code Refactoring
+
+* **js:** getElements and getTargets arguments with object destructuring ([9029f89](https://github.com/xtendui/xtendui/commit/9029f89b6b492b82efadfa1ec3485fdbeb6ae92c))
+* **js:** self.currentIndex to self.index ([de6388d](https://github.com/xtendui/xtendui/commit/de6388d1ffad12c3fe6369b89061fc0e931cc14b))
+* **js:** Xt methods with object destructuring ([a685dca](https://github.com/xtendui/xtendui/commit/a685dca4e2abd902ccf2b0fd7c2836987ebddcc2))
+* **js:** Xt.createElement to Xt.node and added Xt.nodes ([e303db0](https://github.com/xtendui/xtendui/commit/e303db05a294df9386ead4fb09aa4ba522f445c3))
+* **slider:** refactor self.detail to self.drag and names revision ([1f0bda4](https://github.com/xtendui/xtendui/commit/1f0bda4209238e6f19e5c24b24dd466787ff18bb))
+* **slider:** xt-slide-absolute with off:hidden ([d855024](https://github.com/xtendui/xtendui/commit/d855024d77df0ffd0f72dd44cc22ee5d96e8ddd1))
+
+
+### Features
+
+* **js:** interactive elements scrollto can be also by type now ([d1180de](https://github.com/xtendui/xtendui/commit/d1180deaffa03a4b19fe44d721b1d9b5dfac9e9e))
+* interaction components with options.scrollto ([1d09533](https://github.com/xtendui/xtendui/commit/1d095331a2b08d0a356bb0f0d6ec440b0f62f852))
+* **slider:** options.hideDisable ([c5a4312](https://github.com/xtendui/xtendui/commit/c5a4312ded84ba23a5f11fef72c4bec9a74750b8))
+* **slider:** slider.nooverflow with js options instead of css ([8cbfc0b](https://github.com/xtendui/xtendui/commit/8cbfc0b04983e578a15f6d8d511d7acefadd1c14))
+* options.visibleReinit ([3a7622d](https://github.com/xtendui/xtendui/commit/3a7622def484181ab8301dc10eac07855e73606f))
+
+
+### BREAKING CHANGES
+
+* **js:** Xt.createElement to Xt.node
+* **slider:** `dragPosition: self.detail.dragFinal` to `position: self.drag.final`
+detail.draggerWidth to drag.size
+detail.dragPosition to drag.position
+detail.dragFinal to drag.final
+detail.dragRatio to drag.ratio
+detail.dragRatioInverse to drag.ratioInverse
+detail.instant to drag.instant
+all sliders detail. to drag. and no drag.drag
+* **slider:** use off:hidden with xt-slide-absolute
+* **js:** use self.index instead of self.currentIndex
+* **slider:** remove .xt-slider-nooverflow and use options.nooverflow to assign classes to drag.dragger
+* **js:** use object on arguments in Xt.get({ name, el })
+* **js:** use `self.getElements({ el = null, same = false })` and  `self.getTargets({ el = null, same = false })`
+
 # [1.0.0-beta.34](https://github.com/minimit/xtendui/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2021-07-08)
 
 
