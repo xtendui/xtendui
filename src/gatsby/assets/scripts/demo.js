@@ -656,9 +656,7 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node(
-        DOMPurify.sanitize(
-          `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`
-        )
+        `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`
       )
     )
     item.querySelector('.gatsby_demo_item_switch').append(
