@@ -59,7 +59,7 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/beta/.githu
 </a>
 &nbsp;&nbsp;
 
-## Copyright
+## Copyright and License
 
 Copyright 2017 - 2021 Riccardo Caroli.
 

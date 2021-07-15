@@ -65,7 +65,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can [customize preset or theme](/components/preset#customization).
+You can [customize preset or theme](https://xtendui.com/components/preset#customization).
 
 ## Javascript
 
@@ -105,13 +105,13 @@ Xt.init()
 
 ## Boilerplate
 
-Add to the `body` the class `xt-body` to setup [animations global styles](/components/animation#global-styles) and [layout global styles](/components/layout#global-styles).
+Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles) and [layout global styles](https://xtendui.com/components/layout#global-styles).
 
-Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](/components/link#global-styles).
+Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
 
-**If you use gsap** add [this javascript](/components/animation#javascript) to setup animations.
+**If you use gsap** add [this javascript](https://xtendui.com/components/animation#javascript) to setup animations.
 
-**If you use ScrollTrigger** add [this javascript](/components/scroll#setup) to setup scroll fixes.
+**If you use ScrollTrigger** add [this javascript](https://xtendui.com/components/scroll#setup) to setup scroll fixes.
 
 ## Unsupported browsers
 

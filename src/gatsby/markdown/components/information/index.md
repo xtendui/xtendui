@@ -10,13 +10,13 @@ date: "2050-09-10"
 <p></p>
 
 <p align="center">
-  <a href="/" title="Xtend UI" style="display: inline-block;">
+  <a href="https://xtendui.com/" title="Xtend UI" style="display: inline-block;">
     <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo.svg" loading="eager" alt="Xtend UI" width="200">
   </a>
 </p>
 
 <p align="center">
-  <a href="/components/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/themes">Themes</a>
+  <a href="https://xtendui.com/components/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/xtendui/xtendui/blob/beta/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
@@ -47,7 +47,7 @@ Xtend UI is a powerfull library to create advanced UI with custom tailwind compo
 
 ## Setup
 
-For a complete css and js setup guide visit [online setup page](/components/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/beta/SETUP.md).
+For a complete css and js setup guide visit [online setup page](https://xtendui.com/components/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/beta/SETUP.md).
 
 ## Contributing
 
