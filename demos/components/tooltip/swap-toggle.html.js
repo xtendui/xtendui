@@ -11,18 +11,20 @@ const html = /* HTML */ `
       Swap toggle
     </button>
 
-    <div class="xt-tooltip p-2 group" id="tooltip--swap-toggle">
-      <div
-        class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
-      >
+    <div
+      class="xt-tooltip p-2 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0"
+      id="tooltip--swap-toggle"
+    >
+      <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
         Lorem ipsum dolor sit amet
       </div>
     </div>
 
-    <div class="xt-tooltip p-2 group *** hidden ***" id="tooltip--swap-toggle-swap">
-      <div
-        class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0"
-      >
+    <div
+      class="xt-tooltip p-2 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0 *** hidden ***"
+      id="tooltip--swap-toggle-swap"
+    >
+      <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
         Toggled!
       </div>
     </div>

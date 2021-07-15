@@ -19,7 +19,7 @@ export default function demo() {
             list
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
@@ -49,7 +49,7 @@ export default function demo() {
             card
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
@@ -127,13 +127,12 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      const inner = tr.querySelector(':scope > *')
-      gsap.killTweensOf(inner)
-      gsap.set(inner, {
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
         x: -self.direction * targetXOn,
         opacity: 0,
       })
-      gsap.to(inner, {
+      gsap.to(tr, {
         x: 0,
         opacity: 1,
         duration: targetTimeOn,
@@ -154,9 +153,8 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      const inner = tr.querySelector(':scope > *')
-      gsap.killTweensOf(inner)
-      gsap.to(inner, {
+      gsap.killTweensOf(tr)
+      gsap.to(tr, {
         x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,

@@ -13,7 +13,7 @@ export default function demo() {
             list
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
@@ -43,7 +43,7 @@ export default function demo() {
             card
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
+          <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"

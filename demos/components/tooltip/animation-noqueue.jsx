@@ -13,8 +13,10 @@ export default function demo() {
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2 group" data-xt-tooltip-target>
-            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
+          <div
+            className="xt-tooltip p-2 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            data-xt-tooltip-target>
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
               Lorem ipsum dolor sit amet
             </div>
           </div>
@@ -27,8 +29,10 @@ export default function demo() {
             tooltip
           </button>
 
-          <div className="xt-tooltip p-2 group" data-xt-tooltip-target>
-            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
+          <div
+            className="xt-tooltip p-2 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            data-xt-tooltip-target>
+            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black ">
               Consectetur adipiscing elit
             </div>
           </div>

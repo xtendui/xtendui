@@ -13,8 +13,10 @@ export default function demo() {
             list
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
-            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
+          <div
+            className="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            data-xt-drop-target>
+            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
                   href="#"
@@ -43,8 +45,10 @@ export default function demo() {
             card
           </button>
 
-          <div className="xt-drop p-4 group" data-xt-drop-target>
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
+          <div
+            className="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            data-xt-drop-target>
+            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"

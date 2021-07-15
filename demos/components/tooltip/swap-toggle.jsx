@@ -18,14 +18,18 @@ export default function demo() {
         Swap toggle
       </button>
 
-      <div className="xt-tooltip p-2 group" id="tooltip--swap-toggle">
-        <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      <div
+        className="xt-tooltip p-2 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0"
+        id="tooltip--swap-toggle">
+        <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
           Lorem ipsum dolor sit amet
         </div>
       </div>
 
-      <div className="xt-tooltip p-2 group *** hidden ***" id="tooltip--swap-toggle-swap">
-        <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+      <div
+        className="xt-tooltip p-2 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0 *** hidden ***"
+        id="tooltip--swap-toggle-swap">
+        <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
           Toggled!
         </div>
       </div>
