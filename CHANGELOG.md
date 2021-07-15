@@ -1,3 +1,21 @@
+# [1.0.0-beta.36](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2021-07-15)
+
+
+### Bug Fixes
+
+* **xt:** fix xt contains ([d2ae4d3](https://github.com/xtendui/xtendui/commit/d2ae4d341f7cfc4b62111b2342ec759a07f42716))
+* **xt:** fix Xt.contains and allow import of js outside body ([03a7af6](https://github.com/xtendui/xtendui/commit/03a7af6a741b80c7fa93ea934954e3ad12a30c07))
+
+
+### Code Refactoring
+
+* **js:** Xt.node and Xt.nodes with object destructuring ([78900fb](https://github.com/xtendui/xtendui/commit/78900fbc5ea1e5f1c658a07e827d496a0e025f5c))
+
+
+### BREAKING CHANGES
+
+* **js:** use Xt.node({ str }) and Xt.nodes({ str })
+
 # [1.0.0-beta.35](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2021-07-14)
 
 
