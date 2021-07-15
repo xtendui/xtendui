@@ -30,17 +30,18 @@ addEventListener('wheel', stopScrolling)
 
 /* ScrollTrigger fix Xt.mount inside pin items and no refresh on vertical resize */
 
-ScrollTrigger.config({
-  // removed resize we trigger it manually
-  autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-})
-
-addEventListener('resize', e => {
-  Xt.eventDelay({
-    event: e,
-    ns: 'xtScrollTriggerRefresh',
-    func: () => {
-      ScrollTrigger.refresh()
-    },
+Xt.ready(() => {
+  ScrollTrigger.config({
+    // removed resize we trigger it manually
+    autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+  })
+  addEventListener('resize', e => {
+    Xt.eventDelay({
+      event: e,
+      ns: 'xtScrollTriggerRefresh',
+      func: () => {
+        ScrollTrigger.refresh()
+      },
+    })
   })
 })
