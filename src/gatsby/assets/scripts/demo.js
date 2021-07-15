@@ -73,12 +73,12 @@ const highlightCode = (pre, element, language, isReact = false) => {
   }
   // replace entities
   text = text
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&#x2F;/g, '/')
+    .replace(/&amp;/g, '&')
   // remove tabs
   const arr = text.split('\n')
   let search
