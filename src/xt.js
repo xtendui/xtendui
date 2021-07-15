@@ -503,15 +503,16 @@ if (typeof window !== 'undefined') {
   /**
    * Contains for multiple elements
    * @param {Object} params
-   * @param {NodeList|Array} params.els Elements to check if contains
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.els Elements to check if contains
    * @param {Node|HTMLElement|EventTarget|Window} params.tr Element to check if contained
    * @return {Boolean}
    */
   Xt.contains = ({ els, tr } = {}) => {
+    if (!els.length) {
+      return els.contains(tr)
+    }
     for (const el of els) {
-      if (el.contains(tr)) {
-        return true
-      }
+      return el.contains(tr)
     }
     return false
   }
@@ -581,11 +582,12 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Create HTML elements from html string
-   * @param {String} str Html string (only 1 root html tag)
+   * Create HTML element from html string
+   * @param {Object} params
+   * @param {String} params.str String (only 1 root html tag)
    * @return {Node} HTML elements
    */
-  Xt.node = str => {
+  Xt.node = ({ str }) => {
     const template = document.createElement('template')
     template.innerHTML = str.trim()
     return template.content.firstChild
@@ -593,10 +595,10 @@ if (typeof window !== 'undefined') {
 
   /**
    * Create HTML elements from html string
-   * @param {String} str Html string (only 1 root html tag)
+   * @param {String} str Html String
    * @return {Node} HTML elements
    */
-  Xt.nodes = str => {
+  Xt.nodes = ({ str }) => {
     const template = document.createElement('template')
     template.innerHTML = str.trim()
     return template.content.childNodes
@@ -851,7 +853,7 @@ if (typeof window !== 'undefined') {
   /**
    * query array of elements or element
    * @param {Object} params
-   * @param {Node|HTMLElement|NodeList|Array} params.els Element to search from
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.els Element to search from
    * @param {String} params.query Query for querySelectorAll
    * @return {Array}
    */

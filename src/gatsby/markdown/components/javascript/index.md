@@ -142,8 +142,8 @@ You can **toggle activations with javascript**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el, ns = '', duration = null, raf: true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
-| Method                  | `Xt.off({ el, ns = '', duration = null, raf: true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean =true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
 
 </div>
 
@@ -165,13 +165,13 @@ Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute
 
 ## Xt.get
 
-You can get **self object from DOM element** on Xtend UI components.
+You can get **self object from DOM node** on Xtend UI components.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.get({ name, el })`                          | Get **self object** on DOM element for that component name (e.g. `'xt-toggle'`)             |
+| Method                  | `Xt.get({ name:String, el:Node })`                          | Get **self object** on DOM node for that component name (e.g. `'xt-toggle'`)             |
 
 </div>
 
@@ -201,6 +201,67 @@ Xt.options['xt-drop'] = {
   duration: 500
 }
 ```
+
+## Xt.getTranslate
+
+You can get **translate values** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
+
+</div>
+
+## Xt.node
+
+You can create **DOM node from string** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.node({ str:String })`                          | Create DOM node from string, returns `Node`             |
+| Method                  | `Xt.nodes({ str:String })`                          | Create DOM nodes from string, returns `NodeList`             |
+
+</div>
+
+## Xt.addScript
+
+You can **add a script to body** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.addScript({ url:String, callback:Function = null })`                          | Add script to body             |
+
+</div>
+
+## Xt.queryAll
+
+You can **query multiple nodes at once** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.queryAll({ els:NodeList|Array, query:String })`                          | Query multiple nodes at once, returns `NodeList`             |
+
+</div>
+
+## Xt.visible
+
+You can **check if node is visible with `display`** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.visible({ el:Node })`                          | Check if node is visible with `display`, returns `Boolean`             |
+
+</div>
 
 ## Xt.innerHeight
 

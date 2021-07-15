@@ -31,7 +31,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Trigger
 
-Trigger events on **DOM elements**.
+Trigger events on **DOM node**.
 
 ```js
 document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
@@ -96,16 +96,16 @@ self = null
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getElements({ el, same = false })`                          | Get all elements from element or target, returns `Array`             |
-| Method                  | `self.getTargets({ el, same = false })`                          | Get all targets from element or target, returns `Array`             |
+| Method                  | `self.getElements({ el:Node, same:Boolean = false })`                          | Get all elements from element or target, returns `Array`             |
+| Method                  | `self.getTargets({ el:Node, same:Boolean = false })`                          | Get all targets from element or target, returns `Array`             |
 | Method                  | `self.getElementsGroups()`                          | Get elements (one per group), returns `Array`             |
-| Method                  | `self.hasCurrent({ el, same = false })`                          | Check if element or target is activated, returns `Boolean`             |
-| Method                  | `self.getIndex({ el })`                          | Get activation index of from element or target, returns `Number`             |
-| Method                  | `self.reinit({ save = true })`       | Reinit component and save currents as initial             |
+| Method                  | `self.hasCurrent({ el:Node, same:Boolean = false })`                          | Check if element or target is activated, returns `Boolean`             |
+| Method                  | `self.getIndex({ el:Node })`                          | Get activation index of from element or target, returns `Number`             |
+| Method                  | `self.reinit({ save:Boolean = true })`       | Reinit component and save currents as initial             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.disable()`                          | Disable component             |
 | Method                  | `self.enable()`                          | Enable component             |
-| Method                  | `self.destroy({ weak = false })`              | Destroy component            |
+| Method                  | `self.destroy({ weak:Boolean = false })`              | Destroy component            |
 
 </div>
 
@@ -122,15 +122,15 @@ Index methods, they all consider `options.loop`.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.getNextIndex({ index = false, amount = 1, loop = null })`                          | Get next activation index, returns `Number|null`             |
-| Method                  | `self.getNext({ amount = 1, loop = null })`                          | Get next element, returns `Node|null`             |
-| Method                  | `self.goToNext({ amount = 1, force = false, loop = null })`                          | Activate next element, returns `Node|null`             |
-| Method                  | `self.getPrevIndex({ index = false, amount = 1, loop = null })`                          | Get prev activation index, returns `Number|null`             |
-| Method                  | `self.getPrev({ amount = 1, loop = null })`                          | Get previous element, returns `Node|null`             |
-| Method                  | `self.goToPrev({ amount = 1, force = false, loop = null })`                          | Activate previous element, returns `Node|null`             |
-| Method                  | `self.getNumIndex({ index, loop = null }`                          | Get index from number, return `Number|null`             |
-| Method                  | `self.getNum({ index = 1, loop = null })`                          | Get element from index, returns `Node|null`             |
-| Method                  | `self.goToNum({ index, force = false, loop = null })`                          | Activate index, returns `Node|null`             |
+| Method                  | `self.getNextIndex({ index:Number|false = false, amount:Number = 1, loop:Boolean|null = null })`                          | Get next activation index, returns `Number|null`             |
+| Method                  | `self.getNext({ amount:Number = 1, loop:Boolean|null = null })`                          | Get next element, returns `Node|null`             |
+| Method                  | `self.goToNext({ amount:Number = 1, force:Boolean = false, loop:Boolean|null = null })`                          | Activate next element, returns `Node|null`             |
+| Method                  | `self.getPrevIndex({ index:Number|false = false, amount:Number = 1, loop:Boolean|null = null })`                          | Get prev activation index, returns `Number|null`             |
+| Method                  | `self.getPrev({ amount:Number = 1, loop:Boolean|null = null })`                          | Get previous element, returns `Node|null`             |
+| Method                  | `self.goToPrev({ amount:Number = 1, force:Boolean = false, loop:Boolean|null = null })`                          | Activate previous element, returns `Node|null`             |
+| Method                  | `self.getNumIndex({ index:Number, loop:Boolean|null = null }`                          | Get index from number, return `Number|null`             |
+| Method                  | `self.getNum({ index:Number = 1, loop:Boolean|null = null })`                          | Get element from index, returns `Node|null`             |
+| Method                  | `self.goToNum({ index:Number, force:Boolean = false, loop:Boolean|null = null })`                          | Activate index, returns `Node|null`             |
 
 </div>
 

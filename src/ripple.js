@@ -57,7 +57,7 @@ class Ripple {
     self.initial = true
     // inner
     if (!self.inner) {
-      self.container.append(Xt.node('<div class="xt-ripple-inner"></div>'))
+      self.container.append(Xt.node({ str: '<div class="xt-ripple-inner"></div>' }))
       self.inner = self.container.querySelector(':scope > .xt-ripple-inner')
     }
     // on
@@ -95,7 +95,7 @@ class Ripple {
     const options = self.options
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
-      self.inner.append(Xt.node('<div class="xt-ripple"></div>'))
+      self.inner.append(Xt.node({ str: '<div class="xt-ripple"></div>' }))
       // fix prevent dragging links and images
       if (e.type === 'mousedown') {
         e.preventDefault()

@@ -109,7 +109,7 @@ const mountEventmethods = ({ ref }) => {
           Drop ${indexEl}
         </button>
       `
-      drop.append(Xt.node(strEl))
+      drop.append(Xt.node({ str: strEl }))
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
@@ -130,7 +130,7 @@ const mountEventmethods = ({ ref }) => {
           </div>
         </div>
       `
-      drop.append(Xt.node(strTr))
+      drop.append(Xt.node({ str: strTr }))
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()

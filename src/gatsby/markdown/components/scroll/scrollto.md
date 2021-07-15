@@ -121,7 +121,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Trigger
 
-Trigger events on **DOM elements**.
+Trigger events on **DOM node**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
