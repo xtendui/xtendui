@@ -508,7 +508,7 @@ if (typeof window !== 'undefined') {
    * @return {Boolean}
    */
   Xt.contains = ({ els, tr } = {}) => {
-    if (!els.length) {
+    if (els instanceof HTMLElement) {
       return els.contains(tr)
     }
     for (const el of els) {
