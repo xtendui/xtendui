@@ -512,7 +512,9 @@ if (typeof window !== 'undefined') {
       return els.contains(tr)
     }
     for (const el of els) {
-      return el.contains(tr)
+      if (el.contains(tr)) {
+        return true
+      }
     }
     return false
   }
@@ -603,40 +605,6 @@ if (typeof window !== 'undefined') {
     template.innerHTML = str.trim()
     return template.content.childNodes
   }
-
-  /**
-   * Set scrollbar width of document
-   */
-  Xt.setScrollbarWidth = () => {
-    if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth)
-      removeEventListener('resize', scrollbarWidthHandler)
-      addEventListener('resize', scrollbarWidthHandler)
-    }
-    // add outer
-    const outer = document.createElement('div')
-    outer.style.visibility = 'hidden'
-    outer.style.width = '100%'
-    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-    outer.classList.add('xt-ignore', 'xt-overflow-main')
-    document.body.append(outer)
-    // force scrollbars
-    outer.style.overflow = 'scroll'
-    // add inner
-    const inner = document.createElement('div')
-    inner.style.width = '100%'
-    inner.classList.add('xt-ignore')
-    outer.append(inner)
-    // return
-    const widthNoScroll = outer.offsetWidth
-    const widthWithScroll = inner.offsetWidth
-    Xt.scrollbarWidth = widthNoScroll - widthWithScroll
-    document.documentElement.style.setProperty('--scrollbar-width', `${Xt.scrollbarWidth}px`)
-    // remove
-    outer.remove()
-  }
-
-  Xt.setScrollbarWidth()
 
   /**
    * addScript
@@ -948,14 +916,48 @@ if (typeof window !== 'undefined') {
   Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
 
   /**
-   * utility vars
+   * Set scrollbar width of document
+   */
+  Xt.setScrollbarWidth = () => {
+    if (Xt.scrollbarWidth === undefined) {
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth)
+      removeEventListener('resize', scrollbarWidthHandler)
+      addEventListener('resize', scrollbarWidthHandler)
+    }
+    // add outer
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.width = '100%'
+    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+    outer.classList.add('xt-ignore', 'xt-overflow-main')
+    document.body.append(outer)
+    // force scrollbars
+    outer.style.overflow = 'scroll'
+    // add inner
+    const inner = document.createElement('div')
+    inner.style.width = '100%'
+    inner.classList.add('xt-ignore')
+    outer.append(inner)
+    // return
+    const widthNoScroll = outer.offsetWidth
+    const widthWithScroll = inner.offsetWidth
+    Xt.scrollbarWidth = widthNoScroll - widthWithScroll
+    document.documentElement.style.setProperty('--scrollbar-width', `${Xt.scrollbarWidth}px`)
+    // remove
+    outer.remove()
+  }
+
+  Xt.ready(() => {
+    Xt.setScrollbarWidth()
+  })
+
+  /**
+   * Xt.innerHeightSet and --vh
    */
   Xt.innerHeightSet = () => {
     Xt.innerHeight = window.innerHeight
     document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
   }
-
-  // init
 
   addEventListener('resize', e => {
     Xt.eventDelay({
@@ -969,7 +971,9 @@ if (typeof window !== 'undefined') {
     })
   })
 
-  Xt.innerHeightSet()
+  Xt.ready(() => {
+    Xt.innerHeightSet()
+  })
 
   //
 }
