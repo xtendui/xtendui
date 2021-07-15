@@ -1,5 +1,5 @@
 /*!
- * Xtend (https://xtendui.com/)
+ * Xtend UI (https://xtendui.com/)
  * @copyright (c) 2017 - 2021 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/beta/LICENSE)
  */
@@ -11,7 +11,7 @@ Xt.usabilityIgnore = '.sf-toolbar, .gm-style'
 Xt.ready(() => {
   // eslint-disable-next-line no-console
   console.debug(
-    '%cXtend usability log activated, to deactivate remove xtendui/components/usability',
+    '%cXtend UI usability log activated, to deactivate remove xtendui/components/usability',
     'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
   )
   // images
@@ -23,12 +23,12 @@ Xt.ready(() => {
       // loading
       const loading = ref.getAttribute('loading')
       if (!loading) {
-        console.warn('Xtend usability detected an "image" without "loading" attribute', ref)
+        console.warn('Xtend UI usability detected an "image" without "loading" attribute', ref)
       }
       // alt
       const alt = ref.getAttribute('alt')
       if (!alt && alt !== '') {
-        console.warn('Xtend usability detected an "image" without "alt" attribute', ref)
+        console.warn('Xtend UI usability detected an "image" without "alt" attribute', ref)
       }
     },
   })
@@ -42,7 +42,7 @@ Xt.ready(() => {
       const labels = ref.labels
       const label = ref.getAttribute('aria-label') || ref.getAttribute('aria-labelledby')
       if (!labels.length && (!label || label === '')) {
-        console.warn('Xtend usability detected an "input" without "label" or "aria-label" or "aria-labelledby"', ref)
+        console.warn('Xtend UI usability detected an "input" without "label" or "aria-label" or "aria-labelledby"', ref)
       }
     },
   })
@@ -58,7 +58,7 @@ Xt.ready(() => {
       const label = ref.getAttribute('aria-label') || ref.getAttribute('aria-labelledby')
       if (!text.length && (!title || title === '') && (!label || label === '')) {
         console.warn(
-          'Xtend usability detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"',
+          'Xtend UI usability detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"',
           ref
         )
       }
@@ -73,7 +73,7 @@ Xt.ready(() => {
             (!rel.toLowerCase().indexOf('noopener') && !rel.toLowerCase().indexOf('noreferrer'))
           ) {
             console.warn(
-              'Xtend usability detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"',
+              'Xtend UI usability detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"',
               ref
             )
           }

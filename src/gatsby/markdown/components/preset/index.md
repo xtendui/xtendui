@@ -76,9 +76,7 @@ The following theme values are added with the preset:
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
 * [outline](https://tailwindcss.com/docs/outline) `outline-browser` added.
 * [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
-* Added new settings see [animation preset](/components/animation/preset).
-
-## Theme Animations
+* Added new settings see [animation](/components/animation).
 
 ## Variants
 
@@ -86,7 +84,7 @@ Xtend UI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](http
 
 For [all tailwind variants with hover already](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js) and for `transitionProperty`, `transitionTimingFunction`, `transitionDuration`, `transitionDelay`, `display`, `zIndex` we add the followind variants:
 
-- added variants to style activation classes: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`
+- added variants to style activation classes: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
 
 - activated `active:` variant and added `group-active:` variant.
 

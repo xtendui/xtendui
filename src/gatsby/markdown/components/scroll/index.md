@@ -51,7 +51,7 @@ addEventListener('touchstart', stopScrolling)
 addEventListener('wheel', stopScrolling)
 ```
 
-- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript/api#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
+- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
 Just need this code one time in the project.
 

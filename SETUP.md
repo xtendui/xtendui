@@ -100,7 +100,7 @@ Add to the `body` the class `xt-body` to setup [animations global styles](https:
 
 Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
 
-**If you use gsap** add [this javascript](https://xtendui.com/components/animation#javascript) to setup animations.
+**If you use gsap** add [this javascript](https://xtendui.com/components/animation#setup) to setup animations.
 
 **If you use ScrollTrigger** add [this javascript](https://xtendui.com/components/scroll#setup) to setup scroll fixes.
 
