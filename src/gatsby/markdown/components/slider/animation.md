@@ -54,15 +54,23 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 [[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
-
-[[notePrimary]]
 | Do not transition or transform on `xt-slide` because of transform positioning, **transform and transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/slider/animation">
   </demoinline>
 </demo>
+
+[[notePrimary]]
+| When you use animations you need to **specity the duration of the animation** for proper interactions.
+
+You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/javascript#xt-options).
+
+```js
+Xt.options['xt-slider'] = {
+  duration: 500
+}
+```
 
 Check out [slider's themes](/themes/slider) for **advanced animations**.
 

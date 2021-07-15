@@ -103,7 +103,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Properties
 
-Access properties by getting component object.
+Access properties by getting [self object](/components/javascript#xt-get).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

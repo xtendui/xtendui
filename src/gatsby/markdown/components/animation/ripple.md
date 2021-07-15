@@ -61,7 +61,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Properties
 
-Access properties by getting component object.
+Access properties by getting [self object](/components/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') })
@@ -81,7 +81,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting component object.
+Call methods by getting [self object](/components/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') })

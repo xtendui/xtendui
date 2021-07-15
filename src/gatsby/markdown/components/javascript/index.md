@@ -163,6 +163,45 @@ Alternatively you can use your own custom style, for example `off:visibility-hid
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
+## Xt.get
+
+You can get **self object from DOM element** on Xtend UI components.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.get({ name, el })`                          | Get **self object** on DOM element for that component name (e.g. `'xt-toggle'`)             |
+
+</div>
+
+For example if you want to **get the drop object** on a particular node.
+
+```js
+let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
+const container = self.container
+```
+
+## Xt.options
+
+You can set **default options** for Xtend UI components, they get **applied after default options and before custom options**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.options:Object`              | Set default options for that component name (e.g. `'xt-toggle'`)             |
+
+</div>
+
+For example if you want **all drops to have a duration of 500**.
+
+```js
+Xt.options['xt-drop'] = {
+  duration: 500
+}
+```
+
 ## Xt.innerHeight
 
 You have some utilities for viewport height that **changes only on horizontal resize**, useful to have **mobile viewport height that doesn't resize on vertical scroll**.

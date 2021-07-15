@@ -6,16 +6,6 @@ title: "API"
 date: "1980-05-05"
 ---
 
-## Util
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | DOM Element                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Object                   | `let self = Xt.get({ name: 'xt-slider', el })`       | `container` `elements` `targets` | Get object self for this component class             |
-
-</div>
-
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).
@@ -74,7 +64,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 ## Properties
 
-Access properties by getting component object.
+Access properties by getting [self object](/components/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-slider', el: document.querySelector('.my-container') })
@@ -105,7 +95,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting component object.
+Call methods by getting [self object](/components/javascript#xt-get).
 
 ```js
 const self = Xt.get({ name: 'xt-slider', el: document.querySelector('.my-container') })

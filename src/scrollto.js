@@ -1,5 +1,5 @@
 /*!
- * Xtend UI (https://xtendui.com/)
+ * Xtend (https://xtendui.com/)
  * @copyright (c) 2017 - 2021 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/beta/LICENSE)
  */
@@ -37,7 +37,7 @@ class Scrollto {
   initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.optionsDefault[self.componentName]])
+    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
     self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
   }
 

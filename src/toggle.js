@@ -72,7 +72,7 @@ class Toggle {
     const self = this
     // options
     self.optionsDefault = Xt.merge([self.constructor.optionsDefaultSuper, self.constructor.optionsDefault])
-    self.optionsDefault = Xt.merge([self.optionsDefault, Xt.optionsDefault[self.componentName]])
+    self.optionsDefault = Xt.merge([self.optionsDefault, Xt.options[self.componentName]])
     self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
     // classes
     const options = self.options
