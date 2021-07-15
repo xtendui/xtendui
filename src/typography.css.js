@@ -227,8 +227,8 @@ module.exports = {
     },
     '.xt-figure': {
       // styles
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.5'),
+      marginTop: theme('spacing.8'),
+      marginBottom: theme('spacing.8'),
       '&:first-child': {
         marginTop: '0',
       },
