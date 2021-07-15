@@ -774,36 +774,28 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   if (htmlSource) {
     inner.append(
       Xt.node(
-        DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
-        )
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
       )
     )
   }
   if (jsxSource) {
     inner.append(
       Xt.node(
-        DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
-        )
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
       )
     )
   }
   if (cssSource) {
     inner.append(
       Xt.node(
-        DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
-        )
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
       )
     )
   }
   if (jsSource) {
     inner.append(
       Xt.node(
-        DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
-        )
+        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
       )
     )
   }
