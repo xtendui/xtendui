@@ -12,9 +12,6 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-[[notePrimary]]
-| Do not transition or transform on `xt-drop` because of transform positioning, **transform and transition the content instead**.
-
 <demo>
   <demoinline src="demos/components/drop/animation">
   </demoinline>

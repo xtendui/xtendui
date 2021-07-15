@@ -44,13 +44,12 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      const inner = tr.querySelector(':scope > *')
-      gsap.killTweensOf(inner)
-      gsap.set(inner, {
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
         x: -self.direction * targetXOn,
         opacity: 0,
       })
-      gsap.to(inner, {
+      gsap.to(tr, {
         x: 0,
         opacity: 1,
         duration: targetTimeOn,
@@ -71,9 +70,8 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      const inner = tr.querySelector(':scope > *')
-      gsap.killTweensOf(inner)
-      gsap.to(inner, {
+      gsap.killTweensOf(tr)
+      gsap.to(tr, {
         x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,

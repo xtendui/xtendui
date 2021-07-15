@@ -57,9 +57,6 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 [[noteDefault]]
 | Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**double the width** of `drag.dragger`), see [Nooverflow demo](/components/slider/other#nooverflow).
 
-[[notePrimary]]
-| Do not transition or transform on `xt-slide` because of transform positioning, **transform and transition the content instead**.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |

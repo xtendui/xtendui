@@ -1,40 +1,26 @@
 .demo--drop-animation-css, .demo--drop-animation-css-react {
   .xt-drop {
     /* initial */
-    > * {
-      @apply transition;
-      @apply opacity-0;
-    }
+    @apply transition;
+    @apply opacity-0;
     &.dir-before {
-      > * {
-        @apply translate-x-4;
-      }
+      @apply translate-x-4;
     }
     &.dir-after {
-      > * {
-        @apply -translate-x-4;
-      }
+      @apply -translate-x-4;
     }
     /* in */
     &.in {
-      > * {
-        @apply opacity-100 translate-x-0;
-      }
+      @apply opacity-100 translate-x-0;
     }
     /* out */
     &.out {
-      > * {
-        @apply opacity-0 translate-x-0;
-      }
+      @apply opacity-0;
       &.dir-before {
-        > * {
-          @apply -translate-x-4;
-        }
+        @apply -translate-x-4;
       }
       &.dir-after {
-        > * {
-          @apply translate-x-4;
-        }
+        @apply translate-x-4;
       }
     }
   }
