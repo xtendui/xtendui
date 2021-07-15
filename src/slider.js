@@ -564,10 +564,14 @@ class Slider extends Xt.Toggle {
    */
   initStart({ save = false } = {}) {
     const self = this
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    // init drag
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        // dispatch event
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+      },
+      ns: `${self.ns}InitDrag`,
     })
     // super after
     super.initStart({ save })
@@ -755,12 +759,12 @@ class Slider extends Xt.Toggle {
       if (tr === last && (self.drag.direction < 0 || self.drag.position >= min)) {
         // val
         self.drag.final = max - min + self.drag.position - maxCheck
-        // listener dispatch
+        // dispatch event
         self.drag.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       } else if (tr === first && (self.drag.direction > 0 || self.drag.position <= max)) {
         self.drag.final = min - max + self.drag.position + maxCheck
-        // listener dispatch
+        // dispatch event
         self.drag.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
@@ -776,7 +780,7 @@ class Slider extends Xt.Toggle {
         // val
         self.drag.final = self.drag.initial - remainder
         //console.log(diff, remainder, self.drag.position, self.drag.final, self.drag.initial)
-        // listener dispatch
+        // dispatch event
         self.drag.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       }
@@ -786,7 +790,7 @@ class Slider extends Xt.Toggle {
     // ratio
     self.drag.ratioInverse = Math.abs(self.drag.final - self.drag.position) / Math.abs(maxCheck - min)
     self.drag.ratio = 1 - self.drag.ratioInverse
-    // listener dispatch
+    // dispatch event
     self.drag.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // fix keep self.drag.instant
@@ -805,7 +809,7 @@ class Slider extends Xt.Toggle {
         groupHeight += 'px'
         if (self.autoHeight.style.height !== groupHeight) {
           self.autoHeight.style.height = groupHeight
-          // listener dispatch
+          // dispatch event
           tr.dispatchEvent(new CustomEvent(`autoheight.${self.componentNs}`))
         }
         if (self.keepHeight && self.initial) {
@@ -1019,7 +1023,7 @@ class Slider extends Xt.Toggle {
     self.drag.index = self.index
     self.drag.old = self.drag.start
     self.drag.overflow = null
-    // listener dispatch
+    // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
   }
 
@@ -1052,7 +1056,7 @@ class Slider extends Xt.Toggle {
     }
     // fix no drag change when click
     if (self.drag.start === self.drag.current) {
-      // listener dispatch
+      // dispatch event
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
       return
     }
@@ -1088,7 +1092,7 @@ class Slider extends Xt.Toggle {
       }
       // auto
       self.eventAutoresume()
-      // listener dispatch
+      // dispatch event
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
     })
   }
@@ -1181,9 +1185,9 @@ class Slider extends Xt.Toggle {
         self.eventWrap({ index: found })
       }
     }
-    // listener dispatch
+    // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // listener dispatch
+    // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
   }
 
@@ -1200,10 +1204,10 @@ class Slider extends Xt.Toggle {
     self.drag.ratioInverse = 1 - self.drag.ratio
     // val
     self.drag.final = self.drag.initial
-    // listener dispatch
+    // dispatch event
     self.drag.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
-    // listener dispatch
+    // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
     // auto
     self.eventAutostart()

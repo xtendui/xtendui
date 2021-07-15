@@ -69,16 +69,20 @@ class Mousefollow {
     self.container.addEventListener('mouseenter', enterHandler)
     const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
     self.container.addEventListener('mouseleave', leaveHandler)
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      self.initial = false
-      // debug
-      if (options.debug) {
-        // eslint-disable-next-line no-console
-        console.log(`${self.componentName} init`, self)
-      }
+    // init
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+        // debug
+        if (options.debug) {
+          // eslint-disable-next-line no-console
+          console.log(`${self.componentName} init`, self)
+        }
+      },
+      ns: `${self.ns}Init`,
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
@@ -110,7 +114,7 @@ class Mousefollow {
         transform: options.transform,
       })
     }
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
   }
 
@@ -138,7 +142,7 @@ class Mousefollow {
           tr.style.top = `${y}px`
         }
       }
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
     }
   }
@@ -154,7 +158,7 @@ class Mousefollow {
         // class
         Xt.off({ el: tr })
       }
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
     }
   }
@@ -188,8 +192,10 @@ class Mousefollow {
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    // delete
+    delete this
   }
 
   //

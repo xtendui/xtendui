@@ -64,16 +64,20 @@ class Ripple {
     const onHandler = Xt.dataStorage.put(self.container, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
     self.container.addEventListener('mousedown', onHandler)
     self.container.addEventListener('touchstart', onHandler, { passive: true })
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      self.initial = false
-      // debug
-      if (options.debug) {
-        // eslint-disable-next-line no-console
-        console.log(`${self.componentName} init`, self)
-      }
+    // init
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+        // debug
+        if (options.debug) {
+          // eslint-disable-next-line no-console
+          console.log(`${self.componentName} init`, self)
+        }
+      },
+      ns: `${self.ns}Init`,
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
@@ -125,13 +129,13 @@ class Ripple {
       }
       const top = y - size / 2
       const left = x - size / 2
-      // listener dispatch
+      // dispatch event
       self.size = size
       self.top = top
       self.left = left
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
       // off
       const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.eventEnd.bind(self))
@@ -149,7 +153,7 @@ class Ripple {
     const endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
   }
 
@@ -187,8 +191,10 @@ class Ripple {
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    // delete
+    delete this
   }
 
   //

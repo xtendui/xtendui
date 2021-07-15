@@ -244,19 +244,23 @@ class Toggle {
     }
     // no currents
     if (currents === 0) {
-      // keep the same level of raf for custom listener
-      requestAnimationFrame(() => {
-        // listener dispatch
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-        // initial after autostart
-        self.initial = false
-        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.eventAutostart()
-        // debug
-        if (options.debug) {
-          // eslint-disable-next-line no-console
-          console.log(`${self.componentName} init`, self)
-        }
+      // init
+      Xt.frame({
+        el: self.container,
+        func: () => {
+          // dispatch event
+          self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+          // initial after autostart
+          self.initial = false
+          // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+          self.eventAutostart()
+          // debug
+          if (options.debug) {
+            // eslint-disable-next-line no-console
+            console.log(`${self.componentName} init`, self)
+          }
+        },
+        ns: `${self.ns}Init`,
       })
     }
   }
@@ -1158,7 +1162,7 @@ class Toggle {
     if (options.mediaLoaded) {
       el.classList.add('xt-medialoaded')
     }
-    // listener dispatch
+    // dispatch event
     el.dispatchEvent(
       new CustomEvent(`medialoaded.${self.componentNs}`, {
         detail: { deferred: deferred },
@@ -1914,7 +1918,7 @@ class Toggle {
         if (options.aria === true || options.aria.activation) {
           self.container.setAttribute('aria-live', 'off')
         }
-        // listener dispatch
+        // dispatch event
         self.container.dispatchEvent(
           new CustomEvent(`autostart.${self.componentNs}`, {
             detail: e ? e.detail : null,
@@ -1939,7 +1943,7 @@ class Toggle {
       if (options.aria === true || options.aria.activation) {
         self.container.setAttribute('aria-live', 'polite')
       }
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(
         new CustomEvent(`autostop.${self.componentNs}`, {
           detail: e ? e.detail : null,
@@ -1970,7 +1974,7 @@ class Toggle {
         if (options.aria === true || options.aria.activation) {
           self.container.setAttribute('aria-live', 'polite')
         }
-        // listener dispatch
+        // dispatch event
         self.container.dispatchEvent(
           new CustomEvent(`autopause.${self.componentNs}`, {
             detail: e ? e.detail : null,
@@ -2000,7 +2004,7 @@ class Toggle {
           self.autopaused = false
           // resume
           self.eventAutostart()
-          // listener dispatch
+          // dispatch event
           self.container.dispatchEvent(
             new CustomEvent(`autoresume.${self.componentNs}`, {
               detail: e ? e.detail : null,
@@ -2260,7 +2264,7 @@ class Toggle {
           }
         }
       }
-      // listener dispatch
+      // dispatch event
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
@@ -2294,7 +2298,7 @@ class Toggle {
       // special
       self.specialCollapse({ actionCurrent, el, type })
       self.specialClose({ actionCurrent, el, type, obj })
-      // listener dispatch
+      // dispatch event
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // off but without classes
         if (!self.disabled) {
@@ -2408,7 +2412,7 @@ class Toggle {
       // special
       self.specialCollapse({ actionCurrent, el, type, reset: true })
       self.specialScrollto({ actionCurrent, el, type, obj })
-      // listener dispatch
+      // dispatch event
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
@@ -2456,7 +2460,7 @@ class Toggle {
           }
         }
       }
-      // listener dispatch
+      // dispatch event
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         // off but without classes
         if (!self.disabled) {
@@ -2552,29 +2556,33 @@ class Toggle {
           Xt.focusTrapArr.push(nsFocusTrap)
         }
       }
-      // keep the same level of raf for custom listener
-      requestAnimationFrame(() => {
-        if (self.initial) {
-          // remove class initial
-          for (const type in obj) {
-            for (const el of obj[type].queueEls) {
-              el.classList.remove(...self.classesInitial)
+      // init
+      Xt.frame({
+        el: self.container,
+        func: () => {
+          if (self.initial) {
+            // remove class initial
+            for (const type in obj) {
+              for (const el of obj[type].queueEls) {
+                el.classList.remove(...self.classesInitial)
+              }
+            }
+            // dispatch event
+            self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+            // initial after autostart
+            self.initial = false
+            // debug
+            if (options.debug) {
+              // eslint-disable-next-line no-console
+              console.log(`${self.componentName} init`, self)
             }
           }
-          // listener dispatch
-          self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-          // initial after autostart
-          self.initial = false
-          // debug
-          if (options.debug) {
-            // eslint-disable-next-line no-console
-            console.log(`${self.componentName} init`, self)
-          }
-        }
-        // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
-        self.eventAutostart()
-        // reset
-        self.inverse = null
+          // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
+          self.eventAutostart()
+          // reset
+          self.inverse = null
+        },
+        ns: `${self.ns}Init`,
       })
     } else if (actionCurrent === 'Out') {
       // focusLimit
@@ -3362,7 +3370,7 @@ class Toggle {
           el.removeAttribute('aria-disabled')
         }
       }
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
     }
   }
@@ -3411,7 +3419,7 @@ class Toggle {
       }
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
-      // listener dispatch
+      // dispatch event
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
       }
@@ -3465,7 +3473,7 @@ class Toggle {
     const self = this
     // restart
     self.initStart()
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`restart.${self.componentNs}`))
   }
 
@@ -3547,7 +3555,7 @@ class Toggle {
       self.container.removeAttribute(`data-${self.componentName}-init`)
       // set self
       Xt.remove({ name: self.componentName, el: self.container })
-      // listener dispatch
+      // dispatch event
       self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
       // delete
       delete this

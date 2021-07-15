@@ -72,16 +72,20 @@ class Groupnumber {
     }
     // initial
     self.initStart()
-    // keep the same level of raf for custom listener
-    requestAnimationFrame(() => {
-      // listener dispatch
-      self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-      self.initial = false
-      // debug
-      if (options.debug) {
-        // eslint-disable-next-line no-console
-        console.log(`${self.componentName} init`, self)
-      }
+    // init
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
+        // debug
+        if (options.debug) {
+          // eslint-disable-next-line no-console
+          console.log(`${self.componentName} init`, self)
+        }
+      },
+      ns: `${self.ns}Init`,
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
@@ -182,8 +186,10 @@ class Groupnumber {
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
-    // listener dispatch
+    // dispatch event
     self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    // delete
+    delete this
   }
 
   //
