@@ -15,9 +15,6 @@
   <a href="https://github.com/xtendui/xtendui/actions?query=workflow%3ARelease" title="Build Status" style="display: inline-block;">
     <img src="https://img.shields.io/github/workflow/status/xtendui/xtendui/Release?style=flat-square" alt="Build Status" loading="eager">
   </a>
-  <a href="https://depfu.com/repos/github/xtendui/xtendui" title="Dependencies" style="display: inline-block;">
-    <img src="https://img.shields.io/depfu/xtendui/xtendui?style=flat-square" alt="Dependencies" loading="eager">
-  </a>
   <a href="https://www.npmjs.com/package/xtendui" title="Latest Release" style="display: inline-block;">
     <img src="https://img.shields.io/npm/v/xtendui.svg?style=flat-square" alt="Latest Release" loading="eager">
   </a>
