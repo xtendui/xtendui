@@ -144,20 +144,20 @@ module.exports = {
       textTransform: 'inherit',
       // styles
       marginTop: theme('spacing.0'),
-      marginBottom: theme('spacing.3'),
+      marginBottom: theme('spacing.4'),
       '&:last-child': {
         marginBottom: '0',
       },
     },
     '.xt-ul': {
       // styles
-      marginBottom: theme('spacing.5'),
+      marginBottom: theme('spacing.4'),
       '&:last-child': {
         marginBottom: '0',
       },
       '> li': {
         position: 'relative',
-        marginBottom: theme('spacing.3'),
+        marginBottom: theme('spacing.4'),
         paddingLeft: '1.25rem',
         '&:last-child': {
           marginBottom: '0',
@@ -173,13 +173,13 @@ module.exports = {
     },
     '.xt-ol': {
       // styles
-      marginBottom: theme('spacing.5'),
+      marginBottom: theme('spacing.4'),
       '&:last-child': {
         marginBottom: '0',
       },
       '> li': {
         position: 'relative',
-        marginBottom: theme('spacing.3'),
+        marginBottom: theme('spacing.4'),
         paddingLeft: '1.5rem',
         counterIncrement: 'ol-counter',
         '&:last-child': {
@@ -196,15 +196,15 @@ module.exports = {
     },
     '.xt-dl': {
       // styles
-      marginBottom: theme('spacing.5'),
+      marginBottom: theme('spacing.4'),
       '&:last-child': {
         marginBottom: '0',
       },
     },
     '.xt-hr': {
       // styles
-      marginTop: theme('spacing.5'),
-      marginBottom: theme('spacing.5'),
+      marginTop: theme('spacing.4'),
+      marginBottom: theme('spacing.4'),
       '&:first-child': {
         marginTop: '0',
       },
@@ -225,7 +225,7 @@ module.exports = {
     },
     '.xt-figcaption': {
       // styles
-      marginTop: theme('spacing.3'),
+      marginTop: theme('spacing.4'),
       fontSize: rem(14),
       lineHeight: theme('lineHeight.snug'),
     },
