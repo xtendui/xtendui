@@ -201,6 +201,19 @@ module.exports = {
         marginBottom: '0',
       },
     },
+    '.xt-blockquote': {
+      // styles
+      marginTop: theme('spacing.4'),
+      marginBottom: theme('spacing.4'),
+      '&:first-child': {
+        marginTop: '0',
+      },
+      '&:last-child': {
+        marginBottom: '0',
+      },
+      paddingLeft: theme('spacing.4'),
+      borderLeft: `4px solid ${theme('colors.gray.200')}`,
+    },
     '.xt-hr': {
       // styles
       marginTop: theme('spacing.4'),
@@ -280,6 +293,9 @@ module.exports = {
     },
     'dl:not([class])': {
       '@apply xt-dl': '',
+    },
+    'blockquote:not([class])': {
+      '@apply xt-blockquote': '',
     },
     'hr:not([class])': {
       '@apply xt-hr': '',

@@ -16,6 +16,17 @@ const html = /* HTML */ `
 
     <p>Example <abbr title="Lorem Ipsum">abbreviation text</abbr>.</p>
 
+    <blockquote>
+      <h4>Example Blockquote</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus ligula turpis, sed sollicitudin tortor
+        rutrum at. Aenean dui leo, volutpat ut tellus sed, vestibulum sollicitudin ante. Duis gravida pretium dapibus.
+        In pulvinar vulputate tellus, nec congue est rutrum id. Integer ut nunc egestas, dapibus leo a, aliquet nisi.
+        Aliquam suscipit hendrerit fermentum. Nullam ex ex, semper sed elementum non, volutpat vel arcu. Mauris sit amet
+        lacinia nisi, eget euismod nunc. Mauris porta lectus a molestie finibus.
+      </p>
+    </blockquote>
+
     <blockquote class="mb-4 xt-mb-auto pt-4 text-center">
       <p class="xt-h4">&quot;This line rendered as blockquote title.&ldquo;</p>
       <p>This line rendered as blockquote text.</p>
