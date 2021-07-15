@@ -68,6 +68,7 @@
     "clipboard": "^2.0.8",
     "css-loader": "^5.2.6",
     "cssnano": "^5.0.6",
+    "dompurify": "^2.3.0",
     "dotenv": "^10.0.0",
     "eslint": "7.30.0",
     "eslint-config-prettier": "^8.3.0",

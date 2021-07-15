@@ -4,6 +4,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle.js'
 import 'xtendui/src/tooltip.js'
 import kebabCase from 'lodash.kebabcase'
+import DOMPurify from 'dompurify'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
 require('prismjs/components/prism-jsx.min')
@@ -142,7 +143,9 @@ export const populateBlock = () => {
   // prism
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
-    el.after(Xt.node(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`))
+    el.after(
+      Xt.node(DOMPurify.sanitize(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`))
+    )
     el.remove()
   }
   for (const pre of document.querySelectorAll('pre:not(.noedit)')) {
@@ -282,7 +285,7 @@ export const populateDemo = container => {
     item.setAttribute('id', kebabCase(id))
     container
       .querySelector('.gatsby_demo_tabs_left')
-      .append(Xt.node(`<button type="button" class="xt-button">${name}</button>`))
+      .append(Xt.node(DOMPurify.sanitize(`<button type="button" class="xt-button">${name}</button>`)))
     // if not iframe
     if (item.getAttribute('data-iframe')) {
       // if not themes
@@ -653,7 +656,9 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node(
-        `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`
+        DOMPurify.sanitize(
+          `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`
+        )
       )
     )
     item.querySelector('.gatsby_demo_item_switch').append(
@@ -771,28 +776,36 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   if (htmlSource) {
     inner.append(
       Xt.node(
-        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
+        DOMPurify.sanitize(
+          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
+        )
       )
     )
   }
   if (jsxSource) {
     inner.append(
       Xt.node(
-        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
+        DOMPurify.sanitize(
+          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
+        )
       )
     )
   }
   if (cssSource) {
     inner.append(
       Xt.node(
-        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
+        DOMPurify.sanitize(
+          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
+        )
       )
     )
   }
   if (jsSource) {
     inner.append(
       Xt.node(
-        `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
+        DOMPurify.sanitize(
+          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
+        )
       )
     )
   }
@@ -837,7 +850,7 @@ const populateSources = (item, element, isReact = false) => {
     .append(Xt.node('<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
   item
     .querySelector('.gatsby_demo_code_tabs_left')
-    .append(Xt.node(`<button type="button" class="xt-button">${lang}</button>`))
+    .append(Xt.node(DOMPurify.sanitize(`<button type="button" class="xt-button">${lang}</button>`)))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')
   const pre = itemInside[itemInside.length - 1].querySelector('pre')
@@ -907,12 +920,14 @@ export const makeDocument = () => {
         }
         const activeList = activeTooltip.querySelector('.xt-list')
         activeList.append(
-          Xt.node(`
+          Xt.node(
+            DOMPurify.sanitize(`
 <a href="#${encodeURIComponent(
-            id
-          )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+              id
+            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
   <span class="py-px">${el.textContent.trim()}</span>
 </a>`)
+          )
         )
       }
     }
