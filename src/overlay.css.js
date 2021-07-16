@@ -6,7 +6,8 @@
 
 module.exports = {
   boxShadow: {
-    overlay: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+    overlay:
+      '0 200px 300px 0 rgba(0,0,0,0.025), 0 100px 200px 0 rgba(0,0,0,0.025), 0 50px 100px 0 rgba(0,0,0,0.025), 0 20px 50px 0 rgba(0,0,0,0.05), 0 10px 20px 0 rgba(0,0,0,0.075), 0 5px 10px 0 rgba(0,0,0,0.1)',
   },
   utility: theme => ({
     '.xt-overlay-container': {

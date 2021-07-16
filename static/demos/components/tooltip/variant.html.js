@@ -40,6 +40,25 @@ const html = /* HTML */ `
           </div>
         </div>
       </div>
+
+      <div data-xt-tooltip="{ position: 'bottom' }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-tooltip-element
+        >
+          Blur
+        </button>
+
+        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div
+            class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} bg-opacity-70 backdrop-filter backdrop-blur ***"
+          >
+            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
+            molestie ${classes.iconLink()} diam nec euismod commodo.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 `
