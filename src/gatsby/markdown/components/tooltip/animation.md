@@ -6,6 +6,8 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
+Check out [tooltip's themes](/themes/tooltip) for **advanced animations**.
+
 ## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
@@ -27,8 +29,6 @@ Xt.options['xt-tooltip'] = {
   duration: 500
 }
 ```
-
-Check out [tooltip's themes](/themes/tooltip) for **advanced animations**.
 
 ## Duration and Delay
 

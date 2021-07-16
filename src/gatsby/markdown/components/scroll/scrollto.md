@@ -105,6 +105,22 @@ duration: () => {
 },
 ```
 
+## Util
+
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
+```
+
+You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+
+```js
+Xt.options['xt-scrollto'] = {
+  debug: true
+}
+```
+
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).

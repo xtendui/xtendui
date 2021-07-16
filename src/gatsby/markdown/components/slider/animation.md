@@ -6,6 +6,8 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
+Check out [slider's themes](/themes/slider) for **advanced animations**.
+
 ## Drag Position
 
 Each slider demo listens to the event `dragposition.xt.slider` and:
@@ -45,8 +47,6 @@ Here's an example of absolute animation with **mask and incoming slide**, on `dr
   </demoinline>
 </demo>
 
-Check out [slider's themes](/themes/slider) for **advanced animations**.
-
 ## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
@@ -71,8 +71,6 @@ Xt.options['xt-slider'] = {
   duration: 500
 }
 ```
-
-Check out [slider's themes](/themes/slider) for **advanced animations**.
 
 ## Duration and Delay
 

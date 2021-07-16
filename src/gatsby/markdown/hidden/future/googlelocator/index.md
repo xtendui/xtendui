@@ -12,7 +12,6 @@ Import the **javascript** file with `import 'xtendui/src/googlelocator'`.
 
 Initialize manually **within javascript** with `new Xt.Googlelocator(document.querySelector('.my-container'), {/* options */})`.
 
-
 ## Usage
 
 Use this code to create a **google locator**. Search for "New York" to see it in action.
@@ -87,6 +86,22 @@ map: {
 infoWindow: {},
 ```
 
+## Util
+
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') })
+```
+
+You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+
+```js
+Xt.options['xt-googlelocator'] = {
+  debug: true
+}
+```
+
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).
@@ -104,6 +119,11 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 ## Properties
 
 Access properties by getting [self object](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-googlelocator') })
+const container = self.container
+```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -124,5 +144,24 @@ Access properties by getting [self object](/components/javascript#xt-get).
 | Property                   | `searchInput:Node`       | Search input node             |
 | Property                   | `search:Object`       | Search object             |
 | Property                   | `searchBtn:Node`       | Search button node             |
+
+</div>
+
+## Methods
+
+Call methods by getting [self object](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') })
+self.destroy()
+self = null
+```
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

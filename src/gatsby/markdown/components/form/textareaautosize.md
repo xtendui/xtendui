@@ -24,6 +24,14 @@ Use this code to create a **textarea autosize**. You can customize `min-height` 
   </demoinline>
 </demo>
 
+## Util
+
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
+```
+
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).

@@ -6,6 +6,22 @@ title: "API"
 date: "1980-05-05"
 ---
 
+## Util
+
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+
+```js
+let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
+```
+
+You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+
+```js
+Xt.options['xt-drop'] = {
+  debug: true
+}
+```
+
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).

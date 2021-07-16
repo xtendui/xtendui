@@ -6,6 +6,8 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
+Check out [toggle's themes](/themes/toggle) for **advanced animations**.
+
 ## Display
 
 To show and hide nodes we use **custom tailwind variants** attached to classes used by the component.
@@ -44,8 +46,6 @@ Xt.options['xt-toggle'] = {
   duration: 500
 }
 ```
-
-Check out [toggle's themes](/themes/toggl) for **advanced animations**.
 
 ## Duration and Delay
 
