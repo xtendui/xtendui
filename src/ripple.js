@@ -89,6 +89,7 @@ class Ripple {
 
   /**
    * eventStart
+   * @param {Event} e
    */
   eventStart(e) {
     const self = this
@@ -136,7 +137,11 @@ class Ripple {
       self.sizeFinal = sizeFinal
       self.scaleFinal = scaleFinal
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
+      self.container.dispatchEvent(
+        new CustomEvent(`on.${self.componentNs}`, {
+          detail: e,
+        })
+      )
       // off
       const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.eventEnd.bind(self))
       addEventListener('mouseup', endHandler)
@@ -146,15 +151,20 @@ class Ripple {
 
   /**
    * eventStart
+   * @param {Event} e
    */
-  eventEnd() {
+  eventEnd(e) {
     const self = this
     // off
     const endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
     removeEventListener('mouseup', endHandler)
     removeEventListener('touchend', endHandler)
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+    self.container.dispatchEvent(
+      new CustomEvent(`off.${self.componentNs}`, {
+        detail: e,
+      })
+    )
   }
 
   //

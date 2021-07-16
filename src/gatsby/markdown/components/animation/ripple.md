@@ -52,8 +52,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.ripple`       | `container` | Activation event             |
-| Event                   | `off.xt.ripple`      | `container` | Deactivation event            |
+| Event                   | `on.xt.ripple`       | `container` | Activation event (event `e.detail` is original event)             |
+| Event                   | `off.xt.ripple`      | `container` | Deactivation event (event `e.detail` is original event)            |
 | Event                   | `init.xt.ripple`           | `container` | Init or reinit event             |
 | Event                   | `destroy.xt.ripple`           | `container` | Destroy event             |
 

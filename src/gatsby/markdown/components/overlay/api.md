@@ -14,8 +14,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.overlay`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt.overlay`      | `elements` `targets` | Deactivation event            |
+| Event                   | `on.xt.overlay`       | `elements` `targets` | Activation event (event `e.detail` is original event)             |
+| Event                   | `off.xt.overlay`      | `elements` `targets` | Deactivation event (event `e.detail` is original event)            |
 | Event                   | `ondone.xt.overlay`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.overlay`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.overlay`           | `elements` `targets` | Images loaded event            |

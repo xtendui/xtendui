@@ -115,11 +115,16 @@ class Mousefollow {
       })
     }
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+    self.container.dispatchEvent(
+      new CustomEvent(`change.${self.componentNs}`, {
+        detail: e,
+      })
+    )
   }
 
   /**
    * mouseenter
+   * @param {Event} e
    */
   mouseenter(e) {
     const self = this
@@ -143,14 +148,19 @@ class Mousefollow {
         }
       }
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`on.${self.componentNs}`))
+      self.container.dispatchEvent(
+        new CustomEvent(`on.${self.componentNs}`, {
+          detail: e,
+        })
+      )
     }
   }
 
   /**
    * mouseleave
+   * @param {Event} e
    */
-  mouseleave() {
+  mouseleave(e) {
     const self = this
     const options = self.options
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
@@ -159,7 +169,11 @@ class Mousefollow {
         Xt.off({ el: tr })
       }
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`off.${self.componentNs}`))
+      self.container.dispatchEvent(
+        new CustomEvent(`off.${self.componentNs}`, {
+          detail: e,
+        })
+      )
     }
   }
 

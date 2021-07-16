@@ -73,9 +73,9 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.mousefollow`       | `container` | Activation event             |
-| Event                   | `off.xt.mousefollow`      | `container` | Deactivation event            |
-| Event                   | `change.xt.mousefollow`       | `container` | Change event             |
+| Event                   | `on.xt.mousefollow`       | `container` | Activation event (event `e.detail` is original event)             |
+| Event                   | `off.xt.mousefollow`      | `container` | Deactivation event (event `e.detail` is original event)            |
+| Event                   | `change.xt.mousefollow`       | `container` | Change event (event `e.detail` is original event)             |
 | Event                   | `init.xt.mousefollow`           | `container` | Init or reinit event             |
 | Event                   | `destroy.xt.mousefollow`           | `container` | Destroy event             |
 

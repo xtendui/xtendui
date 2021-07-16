@@ -1102,7 +1102,7 @@ class Toggle {
       check = self.targets[0]
     }
     // triggering e.detail.container
-    if (!e?.detail?.container || e.detail.container.contains(check)) {
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
       // handler
       const currents = self.getCurrents()
       for (const current of currents) {
@@ -1884,9 +1884,8 @@ class Toggle {
 
   /**
    * auto start
-   * @param {Event} e
    */
-  eventAutostart(e = null) {
+  eventAutostart() {
     const self = this
     const options = self.options
     // disabled
@@ -1919,20 +1918,15 @@ class Toggle {
           self.container.setAttribute('aria-live', 'off')
         }
         // dispatch event
-        self.container.dispatchEvent(
-          new CustomEvent(`autostart.${self.componentNs}`, {
-            detail: e ? e.detail : null,
-          })
-        )
+        self.container.dispatchEvent(new CustomEvent(`autostart.${self.componentNs}`))
       }
     }
   }
 
   /**
    * auto stop
-   * @param {Event} e
    */
-  eventAutostop(e = null) {
+  eventAutostop() {
     const self = this
     const options = self.options
     // stop
@@ -1944,19 +1938,14 @@ class Toggle {
         self.container.setAttribute('aria-live', 'polite')
       }
       // dispatch event
-      self.container.dispatchEvent(
-        new CustomEvent(`autostop.${self.componentNs}`, {
-          detail: e ? e.detail : null,
-        })
-      )
+      self.container.dispatchEvent(new CustomEvent(`autostop.${self.componentNs}`))
     }
   }
 
   /**
    * auto pause
-   * @param {Event} e
    */
-  eventAutopause(e = null) {
+  eventAutopause() {
     const self = this
     const options = self.options
     // disabled
@@ -1975,20 +1964,15 @@ class Toggle {
           self.container.setAttribute('aria-live', 'polite')
         }
         // dispatch event
-        self.container.dispatchEvent(
-          new CustomEvent(`autopause.${self.componentNs}`, {
-            detail: e ? e.detail : null,
-          })
-        )
+        self.container.dispatchEvent(new CustomEvent(`autopause.${self.componentNs}`))
       }
     }
   }
 
   /**
    * auto resume
-   * @param {Event} e
    */
-  eventAutoresume(e = null) {
+  eventAutoresume() {
     const self = this
     const options = self.options
     // disabled
@@ -2005,11 +1989,7 @@ class Toggle {
           // resume
           self.eventAutostart()
           // dispatch event
-          self.container.dispatchEvent(
-            new CustomEvent(`autoresume.${self.componentNs}`, {
-              detail: e ? e.detail : null,
-            })
-          )
+          self.container.dispatchEvent(new CustomEvent(`autoresume.${self.componentNs}`))
         }
       }
     }
@@ -2271,7 +2251,7 @@ class Toggle {
           func: () => {
             el.dispatchEvent(
               new CustomEvent(`on.${self.componentNs}`, {
-                detail: obj.elements.e ? obj.elements.e.detail : null,
+                detail: obj.elements.e,
               })
             )
           },
@@ -2307,7 +2287,7 @@ class Toggle {
             func: () => {
               el.dispatchEvent(
                 new CustomEvent(`off.${self.componentNs}`, {
-                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                  detail: obj.elements.e,
                 })
               )
             },
@@ -2419,7 +2399,7 @@ class Toggle {
           func: () => {
             el.dispatchEvent(
               new CustomEvent(`ondone.${self.componentNs}`, {
-                detail: obj.elements.e ? obj.elements.e.detail : null,
+                detail: obj.elements.e,
               })
             )
           },
@@ -2469,7 +2449,7 @@ class Toggle {
             func: () => {
               el.dispatchEvent(
                 new CustomEvent(`offdone.${self.componentNs}`, {
-                  detail: obj.elements.e ? obj.elements.e.detail : null,
+                  detail: obj.elements.e,
                 })
               )
             },
@@ -3442,7 +3422,7 @@ class Toggle {
       check = self.targets[0]
     }
     // triggering e.detail.container
-    if (!e?.detail?.container || e.detail.container.contains(check)) {
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
       Xt.eventDelay({
         event: e,
         element: self.container,

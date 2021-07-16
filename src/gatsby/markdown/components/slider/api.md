@@ -14,8 +14,8 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `on.xt.slider`       | `elements` `targets` | Activation event             |
-| Event                   | `off.xt.slider`      | `elements` `targets` | Deactivation event            |
+| Event                   | `on.xt.slider`       | `elements` `targets` | Activation event (event `e.detail` is original event)             |
+| Event                   | `off.xt.slider`      | `elements` `targets` | Deactivation event (event `e.detail` is original event)            |
 | Event                   | `ondone.xt.slider`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.slider`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.slider`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
