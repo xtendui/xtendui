@@ -30,7 +30,7 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: theme('colors.gray.500');
+      background: theme('colors.primary.200');
     }
   }
   .gatsby_make-line_container {
@@ -66,7 +66,7 @@
   }
   .gatsby_site-article_anchor {
     opacity: 0;
-    @apply transition-all delay-500;
+    @apply transition-all delay-100;
   }
   &:hover {
     .gatsby_site-article_anchor {
