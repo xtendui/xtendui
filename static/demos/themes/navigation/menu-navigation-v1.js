@@ -181,6 +181,17 @@ const mountDrops = ({ ref }) => {
 
   self.container.addEventListener('off.xt.drop', off, true)
 
+  // leave
+
+  const leave = e => {
+    const tr = e.target
+    tr.dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+  }
+
+  for (const tr of self.targets) {
+    tr.addEventListener('mouseleave', leave)
+  }
+
   // unmount
 
   return () => {
