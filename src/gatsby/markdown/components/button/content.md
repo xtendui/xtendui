@@ -10,16 +10,14 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
-Use `.xt-link` to create a [link](/components/link).
+Use `.xt-link` to style as button as [link](/components/link).
 
 <demo>
   <demoinline src="demos/components/button/variant">
   </demoinline>
 </demo>
 
-Use **tailwind classes** to assign styles (e.g. [text-color](https://tailwindcss.com/docs/text-color), [text-opacity](https://tailwindcss.com/docs/text-opacity)).
-
-Text styles on **parent elements** are applied when **inerithed**.
+Do not assign **text styles** to inherit them from parent nodes.
 
 See [link variant](/components/link#variant) to style **links**.
 
