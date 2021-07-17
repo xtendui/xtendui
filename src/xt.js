@@ -916,6 +916,84 @@ if (typeof window !== 'undefined') {
   Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
 
   /**
+   * init matches
+   * @param {Object} params
+   * @param {Object} params.self Self object
+   */
+  Xt.initMatches = ({ self } = {}) => {
+    const options = self.options
+    // only on initialization not on reinit because the mql reinit
+    if (self.initial === undefined) {
+      // remove matches
+      if (self.matches) {
+        Xt.removeMatches({ self })
+      }
+      // matches
+      if (options.matches) {
+        self.matches = []
+        const mqs = Object.entries(options.matches)
+        if (mqs.length) {
+          for (const [key, value] of mqs) {
+            // matches
+            const mql = matchMedia(key)
+            self.matches.push({ mql, value })
+            Xt.eventMatches({ self, mql, value, skipReinit: true })
+            mql.addEventListener('change', Xt.eventMatches.bind(this, { self, mql, value }))
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * match
+   * @param {Object} params
+   * @param {Object} params.self Self object
+   * @param {Object} params.mql Match media query list
+   * @param {Object} params.value Match media value
+   * @param {Boolean} params.skipReinit Skip reinit
+   */
+  Xt.eventMatches = ({ self, mql, value, skipReinit = false } = {}) => {
+    // fix NEEDED for chrome not removing mql event listener
+    if (!self.container.closest('html')) {
+      return
+    }
+    // replace options
+    if (mql.matches) {
+      // set options value
+      self.options = Xt.merge([self.options, value])
+    } else {
+      // set options value from initial
+      self.options = Xt.mergeReset({ start: self.options, reset: self.optionsInitial, check: value })
+    }
+    // reinit one time only with raf
+    if (!skipReinit) {
+      // reinit
+      cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}MatchFrame`))
+      Xt.dataStorage.set(
+        self.container,
+        `${self.ns}MatchFrame`,
+        requestAnimationFrame(self.eventReinitHandler.bind(self).bind(self))
+      )
+    }
+  }
+
+  /**
+   * removeMatches
+   */
+  Xt.removeMatches = ({ self } = {}) => {
+    // remove matches
+    if (self.matches?.length) {
+      for (const obj of self.matches) {
+        // matches
+        const mql = obj.mql
+        const value = obj.value
+        mql.removeEventListener('change', Xt.eventMatches.bind(this, { self, mql, value }))
+      }
+    }
+  }
+
+  /**
    * Set scrollbar width of document
    */
   Xt.setScrollbarWidth = () => {

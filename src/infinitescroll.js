@@ -62,6 +62,12 @@ class Infinitescroll {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // elements
     self.elementsUp = self.container.querySelectorAll(options.elements.scrollUp)
@@ -107,6 +113,10 @@ class Infinitescroll {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -115,6 +125,10 @@ class Infinitescroll {
   initStart() {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // logic
     self.setCurrent()
     self.update()
@@ -147,6 +161,10 @@ class Infinitescroll {
   eventTrigger({ trigger } = {}) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // request
     const up = parseFloat(trigger.getAttribute('data-xt-infinitescroll-up'))
     const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
@@ -172,6 +190,10 @@ class Infinitescroll {
    */
   eventUnload() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // save scroll position
     if (self.scrollResume) {
       document.scrollingElement.scrollTop = 0
@@ -183,6 +205,10 @@ class Infinitescroll {
    */
   eventBeforeunload() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // save scroll position
     if (self.scrollResume) {
       const state = {}
@@ -197,6 +223,10 @@ class Infinitescroll {
   eventScroll() {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // scroll
     const scrollTop = document.scrollingElement.scrollTop
     const windowHeight = window.innerHeight
@@ -400,6 +430,40 @@ class Infinitescroll {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
 
@@ -436,6 +500,28 @@ class Infinitescroll {
     url.search = searchParams.toString()
     self.url = url
     //console.debug('xt-infinitescroll current', self.current)
+  }
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
   }
 
   /**

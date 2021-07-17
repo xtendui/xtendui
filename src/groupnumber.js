@@ -55,6 +55,12 @@ class Groupnumber {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // elements
     self.inputs = self.container.querySelectorAll(options.inputs)
@@ -89,6 +95,10 @@ class Groupnumber {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -96,6 +106,10 @@ class Groupnumber {
    */
   initStart() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // logic
     self.eventChange.bind(self, 0)()
   }
@@ -111,6 +125,10 @@ class Groupnumber {
    */
   eventChange(step, e) {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // trigger external events and skip internal events
     if (!e?.detail?.skip) {
       const input = self.container.querySelector('input')
@@ -156,8 +174,64 @@ class Groupnumber {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit

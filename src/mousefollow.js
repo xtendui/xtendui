@@ -59,6 +59,12 @@ class Mousefollow {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // targets
     self.targets = self.container.querySelectorAll(options.targets)
@@ -86,6 +92,10 @@ class Mousefollow {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   //
@@ -98,6 +108,10 @@ class Mousefollow {
   mousemove(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // fix initial
     if (self.width === undefined) {
       self.mouseenter(e)
@@ -129,6 +143,11 @@ class Mousefollow {
   mouseenter(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // check
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       for (const tr of self.targets) {
         // size
@@ -163,6 +182,11 @@ class Mousefollow {
   mouseleave(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // check
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       for (const tr of self.targets) {
         // class
@@ -178,8 +202,74 @@ class Mousefollow {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    const options = self.options
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // position
+      for (const tr of self.targets) {
+        if (options.transform) {
+          tr.style.transform = ''
+        } else {
+          tr.style.left = ''
+          tr.style.top = ''
+        }
+      }
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit
@@ -195,6 +285,10 @@ class Mousefollow {
    */
   destroy() {
     const self = this
+    // disable
+    self.disable({ skipEvent: true })
+    // remove matches
+    Xt.removeMatches({ self })
     // remove events
     const moveHandler = Xt.dataStorage.get(self.container, `mousemove/${self.ns}`)
     self.container.removeEventListener('mousemove', moveHandler)

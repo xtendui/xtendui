@@ -54,6 +54,12 @@ class Ripple {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // inner
     if (!self.inner) {
@@ -81,6 +87,10 @@ class Ripple {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   //
@@ -94,6 +104,10 @@ class Ripple {
   eventStart(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // check if inside onlyInside
     if (!options.onlyInside || e.target.closest(options.onlyInside)) {
       self.inner.append(Xt.node({ str: '<div class="xt-ripple"></div>' }))
@@ -155,6 +169,10 @@ class Ripple {
    */
   eventEnd(e) {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // off
     const endHandler = Xt.dataStorage.get(window, `mouseup touchend/${self.ns}`)
     removeEventListener('mouseup', endHandler)
@@ -168,8 +186,64 @@ class Ripple {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit

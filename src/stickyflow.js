@@ -54,6 +54,12 @@ class Stickyflow {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // elements
     self.element = self.container.querySelector(options.element)
@@ -83,6 +89,10 @@ class Stickyflow {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -90,6 +100,10 @@ class Stickyflow {
    */
   initStart() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // initial
     self.eventChange()
   }
@@ -105,7 +119,11 @@ class Stickyflow {
    */
   eventChange() {
     const self = this
-    // logic
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // position
     const scrollTop = document.scrollingElement.scrollTop
     const windowHeight = window.innerHeight
     const objectHeight = self.element.offsetHeight
@@ -149,8 +167,70 @@ class Stickyflow {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // position
+      self.filler.style.height = ''
+      self.element.style.top = ''
+      self.element.style.bottom = ''
+      self.element.classList.remove('xt-stickyflow-bottom')
+      self.element.classList.remove('xt-stickyflow-top')
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit

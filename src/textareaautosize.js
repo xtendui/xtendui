@@ -55,6 +55,12 @@ class Textareaautosize {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     // key
     const changeHandler = Xt.dataStorage.put(
@@ -87,6 +93,10 @@ class Textareaautosize {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -94,6 +104,10 @@ class Textareaautosize {
    */
   initStart() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // logic
     self.keychange.bind(self)()
   }
@@ -107,17 +121,85 @@ class Textareaautosize {
    */
   keychange() {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // size
     self.container.style.height = '5px'
     self.container.style.height = `${self.container.scrollHeight}px` // fixes both safari RAF and form reset
-    requestAnimationFrame(() => {
-      self.container.style.height = '5px' // fixes both safari RAF and form reset
-      self.container.style.height = `${self.container.scrollHeight}px`
+    Xt.frame({
+      el: self.container,
+      func: () => {
+        self.container.style.height = '5px' // fixes both safari RAF and form reset
+        self.container.style.height = `${self.container.scrollHeight}px`
+      },
+      ns: `${self.ns}Keychange`,
     })
+  }
+
+  //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // size
+      self.container.style.height = ''
+      Xt.frame({ el: self.container, ns: `${self.ns}Keychange` })
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
   }
 
   //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit

@@ -146,22 +146,26 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="*** absolute z-content top-0 left-0 h-full px-6 group ***"
+        class="*** absolute z-content top-0 left-0 h-full px-2 md:px-6 group ***"
         data-xt-nav="-1"
         aria-label="Previous slide"
       >
-        <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonDefault()} group-hover:scale-125">
+        <div
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
+        >
           ${classes.iconArrowLeft({})}
         </div>
       </button>
 
       <button
         type="button"
-        class="*** absolute z-content top-0 right-0 h-full px-6 text-2xl group ***"
+        class="*** absolute z-content top-0 right-0 h-full px-2 md:px-6 text-2xl group ***"
         data-xt-nav="1"
         aria-label="Next slide"
       >
-        <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonDefault()} group-hover:scale-125">
+        <div
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
+        >
           ${classes.iconArrowRight({})}
         </div>
       </button>

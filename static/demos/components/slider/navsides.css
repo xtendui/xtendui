@@ -1,9 +1,9 @@
 .demo--slider-navsides, .demo--slider-navsides-react {
   .slider-navs-container {
-    [data-xt-nav] {
-      opacity: 0;
-    }
-    @media (hover: hover) {
+    @screen md {
+      [data-xt-nav] {
+        opacity: 0;
+      }
       &:hover {
         [data-xt-nav] {
           opacity: 100;

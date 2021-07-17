@@ -55,6 +55,12 @@ class Googlelocator {
     Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
     self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
     // vars
+    self.disabled = false
+    // enable first for proper initial activation
+    self.enable()
+    // matches
+    Xt.initMatches({ self })
+    // vars
     self.initial = true
     self.locateCache = null
     self.loaderElement = self.container.querySelector(options.elements.loader)
@@ -83,67 +89,7 @@ class Googlelocator {
       })
     }
     // search place
-    google.maps.event.addListener(self.search, 'place_changed', () => {
-      // search place
-      let place = self.search.getPlace()
-      if (place && place.name && place.name !== '') {
-        if (place.geometry) {
-          // place
-          self.position = place.geometry.location
-          self.viewport = place.geometry.viewport
-          self.radius = null
-          self.submit()
-          return
-        }
-      }
-      // locate prediction
-      if (self.locateCache && self.locateCache.value === self.searchInput.value) {
-        self.position = self.locateCache.position
-        self.viewport = null
-        self.radius = options.locateRadius
-        self.submit()
-        return
-      }
-      // cached prediction
-      if (self.predictionCache && self.predictionCache.value === self.searchInput.value) {
-        self.position = self.predictionCache.position
-        self.viewport = self.predictionCache.viewport
-        self.radius = null
-        self.submit()
-        return
-      }
-      // new prediction
-      new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
-        if (results && results.length) {
-          const placesPreview = document.createElement('div')
-          placesPreview.classList.add('hidden')
-          new google.maps.places.PlacesService(placesPreview).getDetails(
-            { reference: results[0].reference },
-            results => {
-              place = results
-              self.searchInput.value = place.formatted_address
-              self.position = place.geometry.location
-              self.viewport = place.geometry.viewport
-              self.radius = null
-              self.predictionCache = {
-                value: self.searchInput.value,
-                position: self.position,
-                viewport: self.viewport,
-              }
-              self.submit()
-              placesPreview.remove()
-            }
-          )
-        } else {
-          self.locations = []
-          self.populateItems()
-          self.container.classList.add('noplace')
-          self.container.classList.remove('empty')
-          self.container.classList.remove('found')
-          self.container.classList.remove('error')
-        }
-      })
-    })
+    google.maps.event.addListener(self.search, 'place_changed', self.placeChanged.bind(self))
     // submitCurrent
     if (options.elements.repeatBtn) {
       self.repeatElement = self.container.querySelector(options.elements.repeatBtn)
@@ -190,6 +136,10 @@ class Googlelocator {
     })
     // initialized class
     self.container.setAttribute(`data-${self.componentName}-init`, '')
+    // disable last for proper options.disableDeactivate
+    if (self.options.disabled || self.disabledManual) {
+      self.disable()
+    }
   }
 
   /**
@@ -198,6 +148,10 @@ class Googlelocator {
   initStart() {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // logic
     if (options.initialSearch) {
       google.maps.event.addListenerOnce(self.map, 'idle', () => {
@@ -213,12 +167,84 @@ class Googlelocator {
   //
 
   /**
+   * placeChanged
+   */
+  placeChanged() {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // search place
+    let place = self.search.getPlace()
+    if (place && place.name && place.name !== '') {
+      if (place.geometry) {
+        // place
+        self.position = place.geometry.location
+        self.viewport = place.geometry.viewport
+        self.radius = null
+        self.submit()
+        return
+      }
+    }
+    // locate prediction
+    if (self.locateCache && self.locateCache.value === self.searchInput.value) {
+      self.position = self.locateCache.position
+      self.viewport = null
+      self.radius = options.locateRadius
+      self.submit()
+      return
+    }
+    // cached prediction
+    if (self.predictionCache && self.predictionCache.value === self.searchInput.value) {
+      self.position = self.predictionCache.position
+      self.viewport = self.predictionCache.viewport
+      self.radius = null
+      self.submit()
+      return
+    }
+    // new prediction
+    new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
+      if (results && results.length) {
+        const placesPreview = document.createElement('div')
+        placesPreview.classList.add('hidden')
+        new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, results => {
+          place = results
+          self.searchInput.value = place.formatted_address
+          self.position = place.geometry.location
+          self.viewport = place.geometry.viewport
+          self.radius = null
+          self.predictionCache = {
+            value: self.searchInput.value,
+            position: self.position,
+            viewport: self.viewport,
+          }
+          self.submit()
+          placesPreview.remove()
+        })
+      } else {
+        self.locations = []
+        self.populateItems()
+        self.container.classList.add('noplace')
+        self.container.classList.remove('empty')
+        self.container.classList.remove('found')
+        self.container.classList.remove('error')
+      }
+    })
+  }
+
+  /**
    * searchSubmit
    * @param {Event} e
    */
   searchSubmit(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // prevent form submit on enter
     const key = e.which || e.keyCode
     if (key === 13) {
@@ -239,6 +265,10 @@ class Googlelocator {
   searchClick(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // prevent form submit
     e.preventDefault()
     // reset map and submit
@@ -258,6 +288,10 @@ class Googlelocator {
   submit() {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // fix .getBounds not ready
     if (!self.map.getBounds()) {
       google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
@@ -495,6 +529,10 @@ class Googlelocator {
    */
   locate({ initial = false } = {}) {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // loader
     if (!initial) {
       self.loaderShow()
@@ -557,8 +595,64 @@ class Googlelocator {
   }
 
   //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      }
+    }
+  }
+
+  //
   // util
   //
+
+  /**
+   * reinit handler
+   * @param {Event} e
+   */
+  eventReinitHandler(e) {
+    const self = this
+    // check
+    const check = self.container
+    // triggering e.detail.container
+    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+      Xt.eventDelay({
+        event: e,
+        element: self.container,
+        ns: `${self.ns}Reinit`,
+        func: () => {
+          // handler
+          self.reinit()
+        },
+      })
+    }
+  }
 
   /**
    * reinit
@@ -574,6 +668,7 @@ class Googlelocator {
    */
   destroy() {
     const self = this
+    const options = self.options
     // events
     const searchHandler = Xt.dataStorage.get(self.searchInput, `keypress/${self.ns}`)
     self.searchInput.removeEventListener('keypress', searchHandler)
@@ -586,6 +681,20 @@ class Googlelocator {
     if (self.repeatElement) {
       const repeatHandler = Xt.dataStorage.get(self.repeatElement, `click/${self.ns}`)
       self.repeatElement.removeEventListener('click', repeatHandler)
+    }
+    // search place
+    google.maps.event.removeListener(self.search, 'place_changed', self.placeChanged.bind(self))
+    // locate
+    if (options.elements.locateBtn) {
+      self.locateElement = self.container.querySelector(options.elements.locateBtn)
+      if (self.locateElement) {
+        if (location.protocol === 'https:') {
+          if (navigator.geolocation) {
+            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.locate.bind(self))
+            self.locateElement.removeEventListener('click', locateHandler)
+          }
+        }
+      }
     }
     // populate
     self.container.classList.remove('noplace')

@@ -92,11 +92,11 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
+| Property                   | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
-| Property                   | `initial:Boolean`       | If initial or reset activation            |
-| Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 | Property                   | `dragger:Node`       | Dragger node             |

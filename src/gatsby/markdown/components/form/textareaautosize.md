@@ -32,6 +32,18 @@ You can get **self object from DOM node** on Xtend UI components with [Xt.get](/
 let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
 ```
 
+## Match Media
+
+You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
+
+</div>
+
 ## Listen
 
 Listen to events, for listeners use [this guideline](/components/javascript#listeners).
@@ -41,6 +53,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `init.xt.textareaautosize`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.textareaautosize`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.textareaautosize`           | `container` | Destroy event             |
 
 </div>
@@ -59,8 +72,9 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
-| Property                   | `container:Node`       | Container node             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
+| Property                   | `disabled:Boolean`       | If component disabled            |
+| Property                   | `container:Node`       | Container node             |
 | Property                   | `form:Node`       | Form closest node             |
 
 </div>

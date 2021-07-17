@@ -56,7 +56,6 @@ class Toggle {
     self.disabled = false
     self.disabledManual = false
     self.hasHash = false
-    self.matches = []
     self.queueIn = []
     self.queueOut = []
     self.autopaused = false
@@ -98,7 +97,7 @@ class Toggle {
     self.enable()
     // init
     self.initSetup()
-    self.initMatches()
+    Xt.initMatches({ self })
     self.initScope()
     self.initAria()
     self.initEvents()
@@ -3259,68 +3258,8 @@ class Toggle {
   }
 
   //
-  // match and status
+  // status
   //
-
-  /**
-   * init match
-   */
-  initMatches() {
-    const self = this
-    const options = self.options
-    // only on initialization not on reinit because the mql reinit
-    if (self.initial === undefined) {
-      // remove matches
-      self.removeMatches()
-      self.matches = []
-      // matches
-      if (options.matches) {
-        const mqs = Object.entries(options.matches)
-        if (mqs.length) {
-          for (const [key, value] of mqs) {
-            // matches
-            const mql = matchMedia(key)
-            self.matches.push({ mql, value })
-            self.eventMatch({ mql, value, skipReinit: true })
-            mql.addEventListener('change', self.eventMatch.bind(self, { mql, value }))
-          }
-        }
-      }
-    }
-  }
-
-  /**
-   * match
-   * @param {Object} params
-   * @param {Object} params.mql Match media query list
-   * @param {Object} params.value Match media value
-   * @param {Boolean} params.skipReinit Skip reinit
-   */
-  eventMatch({ mql, value, skipReinit = false } = {}) {
-    const self = this
-    // fix NEEDED for chrome not removing mql event listener
-    if (!self.container.closest('html')) {
-      return
-    }
-    // replace options
-    if (mql.matches) {
-      // set options value
-      self.options = Xt.merge([self.options, value])
-    } else {
-      // set options value from initial
-      self.options = Xt.mergeReset({ start: self.options, reset: self.optionsInitial, check: value })
-    }
-    // reinit one time only with raf
-    if (!skipReinit) {
-      // reinit
-      cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}MatchFrame`))
-      Xt.dataStorage.set(
-        self.container,
-        `${self.ns}MatchFrame`,
-        requestAnimationFrame(self.eventReinitHandler.bind(self))
-      )
-    }
-  }
 
   /**
    * enable
@@ -3499,22 +3438,6 @@ class Toggle {
   }
 
   /**
-   * removeMatches
-   */
-  removeMatches() {
-    const self = this
-    // remove matches
-    if (self.matches.length) {
-      for (const obj of self.matches) {
-        // matches
-        const mql = obj.mql
-        const value = obj.value
-        mql.removeEventListener('change', self.eventMatch.bind(self, { mql, value }))
-      }
-    }
-  }
-
-  /**
    * destroy
    * @param {Object} params
    * @param {Boolean} params.weak Do not destroy component
@@ -3524,7 +3447,7 @@ class Toggle {
     // disable
     self.disable({ skipEvent: true })
     // remove matches
-    self.removeMatches()
+    Xt.removeMatches({ self })
     // remove events
     self.removeEvents()
     // remove namespace

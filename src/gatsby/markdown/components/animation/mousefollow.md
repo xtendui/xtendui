@@ -65,6 +65,18 @@ friction: ({ delta }) => {
 },
 ```
 
+## Match Media
+
+You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
+
+</div>
+
 ## Util
 
 You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
@@ -93,6 +105,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `off.xt.mousefollow`      | `container` | Deactivation event (event `e.detail` is original event)            |
 | Event                   | `change.xt.mousefollow`       | `container` | Change event (event `e.detail` is original event)             |
 | Event                   | `init.xt.mousefollow`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.mousefollow`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.mousefollow`           | `container` | Destroy event             |
 
 </div>
@@ -111,6 +124,8 @@ const container = self.container
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
 | Property                   | `options:Object`       | Final options             |
+| Property                   | `initial:Boolean`       | If initial or reset activation             |
+| Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `targets:Array`       | Targets nodes            |
 
