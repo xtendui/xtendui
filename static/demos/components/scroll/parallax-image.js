@@ -54,8 +54,16 @@ const parallax = ({ ref }) => {
 
     const scrollTrigger = {
       trigger: item,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: () => {
+        // full range of animation also on top of the page
+        const start = window.innerHeight - item.offsetTop
+        return `top${start > 0 ? `+=${start}` : ''} bottom`
+      },
+      end: () => {
+        // full range of animation also on bottom of the page
+        const end = window.innerHeight - document.scrollingElement.scrollHeight + item.offsetTop + item.offsetHeight
+        return `bottom${end > 0 ? `-=${end}` : ''} top`
+      },
       scrub: 1,
     }
 
