@@ -191,6 +191,7 @@ const mountDrops = ({ ref }) => {
   self.container.addEventListener('off.xt.drop', off, true)
 
   // leave
+  // when want to close the drop on mouseleave also when using 'click'
 
   const leave = e => {
     const tr = e.target
