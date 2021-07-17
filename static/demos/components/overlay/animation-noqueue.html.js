@@ -39,7 +39,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
-                class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                 aria-label="Close"
               >
                 ${classes.iconX()}
@@ -106,7 +106,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
-                class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                 aria-label="Close"
               >
                 ${classes.iconX()}
@@ -173,7 +173,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
-                class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                 aria-label="Close"
               >
                 ${classes.iconX()}

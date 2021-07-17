@@ -19,7 +19,7 @@ const html = /* HTML */ `
               <div class="xt-card ${classes.cardRadius()} md:rounded-tr-none shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100 ***"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100 ***"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -66,7 +66,7 @@ const html = /* HTML */ `
               <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -113,7 +113,7 @@ const html = /* HTML */ `
               <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:left-auto md:right-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:left-auto md:right-100"
                   aria-label="Close"
                 >
                   ${classes.iconX()}

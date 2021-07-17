@@ -101,9 +101,6 @@ pre {
       @apply border-white bg-white text-opacity-100;
     }
   }
-  #gatsby_open-full & {
-    z-index: calc(theme('zIndex.above') + 1);
-  }
 }
 
 .gatsby_demo_code_tabs {

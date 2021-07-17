@@ -126,7 +126,7 @@ export default function Header({ page }) {
               <div className="*** xt-design *** overflow-hidden bg-primary-500 bg-opacity-80 backdrop-filter backdrop-blur backdrop-saturate-150 transform opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:translate-x-0"></div>
               <div className="xt-card xt-min-h-screen transform opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:translate-x-0 ">
                 <div
-                  className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 pr-3 text-2xl"
+                  className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 pr-3 text-2xl"
                   aria-label="Close"
                   dangerouslySetInnerHTML={{ __html: classes.iconX() }}></div>
                 <div className="mt-16 md:mt-0">

@@ -26,7 +26,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -73,7 +73,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -110,7 +110,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -157,7 +157,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -194,7 +194,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -241,7 +241,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}

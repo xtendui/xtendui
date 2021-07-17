@@ -152,7 +152,7 @@ const html = /* HTML */ `
                     <div class="xt-overlay-container p-0">
                       <button
                         type="button"
-                        class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                        class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                         aria-label="Close"
                       >
                         ${classes.iconX()}
