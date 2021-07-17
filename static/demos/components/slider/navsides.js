@@ -1,10 +1,9 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--navsides-slider',
+  matches: '.demo--slider-navsides',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

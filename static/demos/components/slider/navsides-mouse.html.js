@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--navsides-slider">
+  <div class="demo--slider-navsides-mouse">
     <div class="xt-slider">
       <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
         <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
@@ -47,15 +47,6 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonSlider()} hidden"
-          data-xt-slider-element
-          title="Slide xt-num"
-        ></button>
-      </nav>
-
       <button
         type="button"
         class="*** hidden md:block cursor-none absolute top-0 left-0 w-24 h-full group ***"
@@ -64,12 +55,12 @@ const html = /* HTML */ `
         data-xt-mousefollow
       >
         <div
-          class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100"
+          class="*** xt-mousefollow fixed transition-opacity opacity-0 in:opacity-100 ***"
           data-xt-mousefollow-target
         >
-          ${classes.iconArrowLeft({
-            classes: '*** transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
-          })}
+          <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonPrimaryGroup()}">
+            ${classes.iconArrowLeft({})}
+          </div>
         </div>
       </button>
 
@@ -81,14 +72,23 @@ const html = /* HTML */ `
         data-xt-mousefollow
       >
         <div
-          class="*** xt-mousefollow fixed *** text-black text-2xl transition-opacity opacity-0 in:opacity-100"
+          class="*** xt-mousefollow fixed transition-opacity opacity-0 in:opacity-100 ***"
           data-xt-mousefollow-target
         >
-          ${classes.iconArrowRight({
-            classes: '*** transition-all duration-300 group-in:opacity-75 group-in:scale-75 ***',
-          })}
+          <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonPrimaryGroup()}">
+            ${classes.iconArrowRight({})}
+          </div>
         </div>
       </button>
+
+      <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSlider()} hidden"
+          data-xt-slider-element
+          title="Slide xt-num"
+        ></button>
+      </nav>
     </div>
   </div>
 `

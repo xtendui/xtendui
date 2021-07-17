@@ -137,7 +137,7 @@ pre {
   }
   #gatsby_open-full & {
     @apply off:hidden out:pointer-events-none on:block in:block out:block !important;
-    z-index: theme('zIndex.above');
+    z-index: calc(theme('zIndex.above') + 1);
     order: -1;
     position: absolute;
     width: 100%;
@@ -247,7 +247,7 @@ pre {
 
 #gatsby_open-full {
   position: fixed;
-  z-index: theme('zIndex.above');
+  z-index: calc(theme('zIndex.above') + 1);
   top: 0;
   left: 0;
   bottom: 0;

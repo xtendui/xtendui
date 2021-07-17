@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount({

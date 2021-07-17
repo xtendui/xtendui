@@ -146,40 +146,28 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="hidden md:block cursor-none absolute z-above top-0 left-0 w-24 h-full group"
+        class="*** absolute z-content top-0 left-0 h-full px-6 group ***"
         data-xt-nav="-1"
         aria-label="Previous slide"
-        data-xt-mousefollow
       >
-        <div
-          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-          data-xt-mousefollow-target
-        >
-          ${classes.iconArrowLeft({
-            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-          })}
+        <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonDefault()} group-hover:scale-125">
+          ${classes.iconArrowLeft({})}
         </div>
       </button>
 
       <button
         type="button"
-        class="hidden md:block cursor-none absolute z-above top-0 right-0 w-24 h-full group"
+        class="*** absolute z-content top-0 right-0 h-full px-6 text-2xl group ***"
         data-xt-nav="1"
         aria-label="Next slide"
-        data-xt-mousefollow
       >
-        <div
-          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-          data-xt-mousefollow-target
-        >
-          ${classes.iconArrowRight({
-            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-          })}
+        <div class="xt-button text-xl w-10 h-10 rounded-full ${classes.buttonDefault()} group-hover:scale-125">
+          ${classes.iconArrowRight({})}
         </div>
       </button>
 
       <nav
-        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-3 md:bottom-6"
         data-xt-slider-pagination
       >
         <button

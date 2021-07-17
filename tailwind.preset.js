@@ -30,12 +30,13 @@ module.exports = {
       zIndex: {
         below: '-1',
         slide: '200', // same as options.zIndex.targets.start
+        content: '300', // above all page content
         drop: '400', // same as options.zIndex.targets.start
         tooltip: '500', // same as options.zIndex.targets.start
         sticky: '900',
-        above: '1000', // this is the z-index above all page content
+        above: '1000', // above all page components
         overlay: '5000', // same as options.zIndex.targets.start
-        last: '10000', // this is the z-index above all xtendui zIndex
+        last: '10000', // this is the z-index above all
       },
       flex: {
         full: '1 1 100%',

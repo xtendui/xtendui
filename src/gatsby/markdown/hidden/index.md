@@ -13,6 +13,7 @@ description: "Hidden"
 .listing
 .googlelocator
 .slider
+.slider-navs-container
 
 #### Themes
 
