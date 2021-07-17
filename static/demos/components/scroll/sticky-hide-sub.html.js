@@ -1,10 +1,15 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--sticky-hide">
+  <div class="demo--sticky-hide-sub">
     <div class="*** xt-sticky ***">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
-        <div class="xt-h4">Main</div>
+      <div data-xt-sticky-hide-content>
+        <div class="xt-card p-4 ${classes.cardDefault()}" data-xt-sticky-hide-sub>
+          <div class="xt-h6">Sub</div>
+        </div>
+        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+          <div class="xt-h4">Main</div>
+        </div>
       </div>
     </div>
 

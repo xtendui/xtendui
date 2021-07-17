@@ -43,7 +43,7 @@ Xt.mount({
 
     sticky.addEventListener('mouseleave', curve)
 
-    // hide depending on inner (always before pin or bugs)
+    // hide depending on inner (always before pin ScrollTrigger)
 
     ScrollTrigger.create({
       trigger: sticky,

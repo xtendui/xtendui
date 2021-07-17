@@ -88,8 +88,9 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 [[notePrimary]]
 | Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
-Here's an example of **complex sticky hide** when scrolling down but only after the first card.
+Here's an examples of **sticky that hides depending on scroll direction**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky-hide"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/sticky-hide-sub"></div>
 </demo>

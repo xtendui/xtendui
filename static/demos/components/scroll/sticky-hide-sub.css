@@ -1,4 +1,4 @@
-.demo--sticky-hide, .demo--sticky-hide-react {
+.demo--sticky-hide-sub, .demo--sticky-hide-sub-react {
   [data-xt-sticky-hide-sub] .h6 {
     @apply transition-all ease-in-out-quint;
   }
