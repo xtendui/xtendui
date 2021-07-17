@@ -748,7 +748,7 @@ if (typeof window !== 'undefined') {
       })
     }
     if (raf) {
-      // needs TWO raf or sequential off/on flickr (e.g. display)
+      // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.frameDouble({ el, func })
     } else {
       // fix need to repeat inside frameDouble in case we cancel

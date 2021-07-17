@@ -3,7 +3,7 @@ import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--menu-navigation-v1',
+  matches: '.demo--megamenu-v1',
   mount: ({ ref }) => {
     const unmountDrops = mountDrops({ ref })
     const unmountLine = mountLine({ ref })
@@ -25,6 +25,7 @@ const mountDrops = ({ ref }) => {
   // vars
 
   const megamenu = ref.querySelector('.megamenu')
+  const backdrop = ref.querySelector('.megamenu-backdrop')
 
   const contentXOn = -40
   const contentXOff = -40
@@ -71,6 +72,10 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
+      // backdrop
+      if (backdrop) {
+        Xt.on({ el: backdrop })
+      }
       // content
       const content = tr.querySelector('.xt-drop-content')
       gsap.killTweensOf(content)
@@ -141,6 +146,10 @@ const mountDrops = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
+      // backdrop
+      if (backdrop) {
+        Xt.off({ el: backdrop })
+      }
       // content
       const content = tr.querySelector('.xt-drop-content')
       gsap.killTweensOf(content)
