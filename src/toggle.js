@@ -1095,13 +1095,8 @@ class Toggle {
    */
   eventCloseautoHandler(e) {
     const self = this
-    // check
-    let check = self.container
-    if (self.mode === 'unique') {
-      check = self.targets[0]
-    }
     // triggering e.detail.container
-    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
+    if (!e?.detail?.container || e?.detail?.container.contains(self.container)) {
       // handler
       const currents = self.getCurrents()
       for (const current of currents) {
@@ -3348,31 +3343,6 @@ class Toggle {
   //
   // util
   //
-
-  /**
-   * reinit handler
-   * @param {Event} e
-   */
-  eventReinitHandler(e) {
-    const self = this
-    // check
-    let check = self.container
-    if (self.mode === 'unique') {
-      check = self.targets[0]
-    }
-    // triggering e.detail.container
-    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
-      Xt.eventDelay({
-        event: e,
-        element: self.container,
-        ns: `${self.ns}Reinit`,
-        func: () => {
-          // handler
-          self.reinit()
-        },
-      })
-    }
-  }
 
   /**
    * Reinit component and save currents as initial

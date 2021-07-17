@@ -503,28 +503,6 @@ class Infinitescroll {
   }
 
   /**
-   * reinit handler
-   * @param {Event} e
-   */
-  eventReinitHandler(e) {
-    const self = this
-    // check
-    const check = self.container
-    // triggering e.detail.container
-    if (!e?.detail?.container || e?.detail?.container.contains(check)) {
-      Xt.eventDelay({
-        event: e,
-        element: self.container,
-        ns: `${self.ns}Reinit`,
-        func: () => {
-          // handler
-          self.reinit()
-        },
-      })
-    }
-  }
-
-  /**
    * reinit
    */
   reinit() {
