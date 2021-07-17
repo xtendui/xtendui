@@ -100,7 +100,9 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-ScrollTrigger.refresh()
+requestAnimationFrame(() => {
+  ScrollTrigger.refresh()
+})
 ```
 
 Then you need to **refresh scrolltriggers selectively** when you want **ScrollTriggers to stick at the bottom** on mobile when the status bar appear/disappear on scroll.

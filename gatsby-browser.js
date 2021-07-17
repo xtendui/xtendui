@@ -71,7 +71,7 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
   }
 }
 
-export const onRouteUpdate = ({ location, prevLocation }) => {
+export const onRouteUpdate = () => {
   // init
   Xt.init()
   // keepSidebarScroll
@@ -81,12 +81,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
     overlay.scrollTop = window.keepSidebarScroll
     gatsbySidebarContain()
   }
-  // if changing page
-  if (prevLocation) {
-    // if new page
-    if (location.pathname !== prevLocation.pathname) {
-      /* ScrollToPlugin refresh on route update */
-      ScrollTrigger.refresh()
-    }
-  }
+  /* ScrollToPlugin refresh on route update */
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh()
+  })
 }

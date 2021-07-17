@@ -111,3 +111,11 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-multiple"></div>
 </demo>
+
+## Content
+
+Here's an example of **parallax on images** with [media](/components/media).
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scroll/parallax-image"></div>
+</demo>
