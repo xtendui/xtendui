@@ -331,7 +331,6 @@ if (typeof window !== 'undefined') {
    */
   Xt.eventReinit = ({ self } = {}, e) => {
     // triggering e.detail.container
-    console.log(e)
     if (!e?.detail?.container || e?.detail?.container.contains(self.container)) {
       Xt.eventDelay({
         event: e,
