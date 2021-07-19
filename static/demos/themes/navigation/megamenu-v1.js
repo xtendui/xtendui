@@ -29,15 +29,15 @@ const mountDrops = ({ ref }) => {
 
   const contentXOn = -40
   const contentXOff = -40
-  const contentTime = 0.75
+  const contentTime = 0.5
   const contentDelayOn = 0.25
   const contentEase = 'quint.out'
 
-  const designTime = 1
+  const designTime = 0.5
   const designDelayOff = 0.1 // fix opacity when changing fast
   const designEase = 'expo.out'
 
-  const innerTime = 1
+  const innerTime = 0.5
   const innerEase = 'expo.out'
 
   let innerHeightFinal = 0
@@ -48,7 +48,7 @@ const mountDrops = ({ ref }) => {
   /***/
   let self = new Xt.Drop(megamenu, {
     queue: false,
-    duration: 1000,
+    duration: 500,
     preventEvent: true,
     // activated by switcher
     //on: 'mouseenter',
