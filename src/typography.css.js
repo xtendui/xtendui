@@ -152,6 +152,7 @@ module.exports = {
     '.xt-ul': {
       // styles
       marginBottom: theme('spacing.4'),
+      paddingLeft: theme('spacing.2'),
       '&:last-child': {
         marginBottom: '0',
       },
@@ -173,6 +174,7 @@ module.exports = {
     '.xt-ol': {
       // styles
       marginBottom: theme('spacing.4'),
+      paddingLeft: theme('spacing.2'),
       '&:last-child': {
         marginBottom: '0',
       },
