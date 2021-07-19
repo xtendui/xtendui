@@ -158,7 +158,7 @@ module.exports = {
       '> li': {
         position: 'relative',
         marginBottom: theme('spacing.4'),
-        paddingLeft: '1.25rem',
+        paddingLeft: theme('spacing.5'),
         '&:last-child': {
           marginBottom: '0',
         },
@@ -167,7 +167,6 @@ module.exports = {
           display: 'inline-block',
           left: '0',
           content: '"\\2022"',
-          color: theme('colors.gray.300'),
         },
       },
     },
@@ -180,7 +179,7 @@ module.exports = {
       '> li': {
         position: 'relative',
         marginBottom: theme('spacing.4'),
-        paddingLeft: '1.5rem',
+        paddingLeft: theme('spacing.5'),
         counterIncrement: 'ol-counter',
         '&:last-child': {
           marginBottom: '0',
@@ -190,7 +189,6 @@ module.exports = {
           display: 'inline-block',
           left: '0',
           content: 'counter(ol-counter) "."',
-          color: theme('colors.gray.300'),
         },
       },
     },
@@ -211,7 +209,7 @@ module.exports = {
       '&:last-child': {
         marginBottom: '0',
       },
-      paddingLeft: theme('spacing.4'),
+      paddingLeft: theme('spacing.7'),
       borderLeft: `4px solid ${theme('colors.gray.200')}`,
     },
     '.xt-hr': {
