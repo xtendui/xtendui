@@ -13,6 +13,8 @@ Test overlay close on backdrop click.
 
 Test overlay no close clicking inside with eventLimit.
 
+Test overlay should close with event 'off.xt.trigger.overlay'.
+
 <demo>
   <demoinline src="demos/components/toggle/usage-self">
   </demoinline>
