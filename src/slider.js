@@ -100,11 +100,13 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // @PERF
     for (const tr of self.targets) {
-      const trLeft = tr.offsetLeft
+      let trLeft
       let trWidth
       if (options.mode === 'absolute') {
+        trLeft = 0
         trWidth = self.drag.size
       } else {
+        trLeft = tr.offsetLeft
         trWidth = tr.offsetWidth
       }
       Xt.dataStorage.set(tr, `${self.ns}TrLeftWrap`, trLeft)

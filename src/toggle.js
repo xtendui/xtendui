@@ -136,11 +136,6 @@ class Toggle {
     Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([])
-    // initialized class
-    if (!options.classSkip) {
-      // fix before initScope or slider absolute has multiple active and bugs initial calculations
-      self.container.setAttribute(`data-${self.componentName}-init`, '')
-    }
   }
 
   /**
@@ -247,6 +242,11 @@ class Toggle {
       Xt.frame({
         el: self.container,
         func: () => {
+          // initialized class
+          if (!options.classSkip) {
+            // fix before initScope or slider absolute has multiple active and bugs initial calculations
+            self.container.setAttribute(`data-${self.componentName}-init`, '')
+          }
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
           // initial after autostart
@@ -2540,6 +2540,11 @@ class Toggle {
               for (const el of obj[type].queueEls) {
                 el.classList.remove(...self.classesInitial)
               }
+            }
+            // initialized class
+            if (!options.classSkip) {
+              // fix before initScope or slider absolute has multiple active and bugs initial calculations
+              self.container.setAttribute(`data-${self.componentName}-init`, '')
             }
             // dispatch event
             self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))

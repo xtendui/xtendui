@@ -74,6 +74,8 @@ class Ripple {
     Xt.frame({
       el: self.container,
       func: () => {
+        // initialized class
+        self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
         self.initial = false
@@ -85,8 +87,6 @@ class Ripple {
       },
       ns: `${self.ns}Init`,
     })
-    // initialized class
-    self.container.setAttribute(`data-${self.componentName}-init`, '')
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self.disabledManual) {
       self.disable()
