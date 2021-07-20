@@ -8,7 +8,6 @@ description: "Hidden"
 
 #### Components
 
-.target
 .hero
 .listing
 .googlelocator

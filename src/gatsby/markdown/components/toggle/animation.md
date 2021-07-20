@@ -8,15 +8,18 @@ date: "2010-10-09"
 
 Check out [toggle's themes](/themes/toggle) for **advanced animations**.
 
-## Display
+## Activation
 
-To show and hide nodes we use **custom tailwind variants** attached to classes used by the component.
+To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
 Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
+
+[[noteDefault]]
+| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 

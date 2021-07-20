@@ -8,6 +8,13 @@ date: "2010-10-09"
 
 Check out [slider's themes](/themes/slider) for **advanced animations**.
 
+## Activation
+
+This component has **automatic activation** you don't need to assign custom variants for activations.
+
+[[noteDefault]]
+| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+
 ## Drag Position
 
 Each slider demo listens to the event `dragposition.xt.slider` and:

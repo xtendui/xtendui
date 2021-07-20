@@ -19,7 +19,9 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 ## Activation
 
-Use **tailwind classes** to assign loader activation animation. 
+Use **tailwind classes** to assign loader activation animation.
+
+Use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) to activate and animate.
 
 Example loader spinner with **activation animation**.
 

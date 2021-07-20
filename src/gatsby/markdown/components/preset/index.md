@@ -84,8 +84,11 @@ Xtend UI add **custom tailwind variants**, see [xtendui/tailwind.preset.js](http
 
 For [all tailwind variants with hover already](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js) and for `transitionProperty`, `transitionTimingFunction`, `transitionDuration`, `transitionDelay`, `display`, `zIndex` we add the followind variants:
 
-- added variants to style activation classes: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
+- activated `hover:` and `group-hover:` variant if not already present.
 
 - activated `active:` variant and added `group-active:` variant.
 
-- activated `hover:` and `group-hover:` variant if not already present.
+- added variants to style **activation classes**: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
+
+[[noteDefault]]
+| To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) or a **interaction component** (e.g. [toggle](/components/toggle)).

@@ -8,6 +8,13 @@ date: "2010-10-09"
 
 Check out [overlay's themes](/themes/overlay) for **advanced animations**.
 
+## Activation
+
+This component has **automatic activation** you don't need to assign custom variants for activations.
+
+[[noteDefault]]
+| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+
 ## Animation
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).

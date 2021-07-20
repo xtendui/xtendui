@@ -18,60 +18,6 @@ Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
 Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sends **warning messages with website usability suggestions**.
 
-## Listeners
-
-We always check for `e.target` because **events propagate** and we want to listen to **only events originated in the same target we listen for Xtend UI components**.
-
-Listen to events on a **single Node**.
-
-```js
-const node = document.querySelector('.my-node')
-
-const on = e => {
-  // check because of event propagation
-  if (e.target === node) {
-    // logic
-  }
-}
-
-node.addEventListener('eventname.xt.componentname', on)
-```
-
-Listen to events on **multiple Nodes**.
-
-```js
-for (const node of document.querySelectorAll('.my-node')) {
-  const on = e => {
-    // check because of event propagation
-    if (e.target === node) {
-      // logic
-    }
-  }
-
-  node.addEventListener('eventname.xt.componentname', on)
-}
-```
-
-Listen to events on **multiple Nodes** with **events delegation useCapture**.
-
-This method is useful to capture events also if child nodes gets added in future.
-
-```js
-const container = document.querySelector('.my-container')
-
-let self = Xt.get({ name: 'xt-componentname', el: container })
-
-const on = e => {
-  const tr = e.target
-  // check because of event propagation
-  if (self.targets.includes(tr)) {
-    // logic
-  }
-}
-
-container.addEventListener('eventname.xt.componentname', on, true)
-```
-
 ## Xt.ready
 
 You can execute a function on DOM ready.
@@ -136,6 +82,14 @@ Xt.mount({
 
 ## Xt.on and Xt.off
 
+To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
+
+Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
+
+Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+
+Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
+
 You can **toggle activations with javascript**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -153,15 +107,14 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
 
-#### Display
-
-To show and hide nodes we use **custom tailwind variants** attached to classes used by the component.
-
-Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
-
-Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
-
-Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
+<demo>
+  <demoinline src="demos/components/javascript/animation">
+  </demoinline>
+  <demoinline src="demos/components/javascript/animation-css">
+  </demoinline>
+  <demoinline src="demos/components/javascript/animation-js">
+  </demoinline>
+</demo>
 
 ## Xt.get
 
@@ -355,4 +308,58 @@ const resize = function (e) {
 }
 
 document.querySelector.addEventListener(resize)
+```
+
+## Listeners
+
+We always check for `e.target` because **events propagate** and we want to listen to **only events originated in the same target we listen for Xtend UI components**.
+
+Listen to events on a **single Node**.
+
+```js
+const node = document.querySelector('.my-node')
+
+const on = e => {
+  // check because of event propagation
+  if (e.target === node) {
+    // logic
+  }
+}
+
+node.addEventListener('eventname.xt.componentname', on)
+```
+
+Listen to events on **multiple Nodes**.
+
+```js
+for (const node of document.querySelectorAll('.my-node')) {
+  const on = e => {
+    // check because of event propagation
+    if (e.target === node) {
+      // logic
+    }
+  }
+
+  node.addEventListener('eventname.xt.componentname', on)
+}
+```
+
+Listen to events on **multiple Nodes** with **events delegation useCapture**.
+
+This method is useful to capture events also if child nodes gets added in future.
+
+```js
+const container = document.querySelector('.my-container')
+
+let self = Xt.get({ name: 'xt-componentname', el: container })
+
+const on = e => {
+  const tr = e.target
+  // check because of event propagation
+  if (self.targets.includes(tr)) {
+    // logic
+  }
+}
+
+container.addEventListener('eventname.xt.componentname', on, true)
 ```
