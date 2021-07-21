@@ -22,6 +22,11 @@ module.exports = {
         content: '"/"',
       },
     },
+    '.xt-separator-backslash': {
+      '&:after': {
+        content: '"\\005C"',
+      },
+    },
     '.xt-separator-pipe': {
       '&:after': {
         content: '"|"',
