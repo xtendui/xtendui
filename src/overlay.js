@@ -77,7 +77,7 @@ Overlay.optionsDefault = {
   closeauto: true,
   openauto: true,
   closeDeep: '.xt-dismiss',
-  closeInside: '.xt-backdrop, .xt-overlay, .xt-overlay-container',
+  closeInside: '.xt-backdrop',
   closeOutside: false,
   // timing
   queue: {

@@ -147,7 +147,7 @@ const html = /* HTML */ `
                     id="overlay--product-images"
                   >
                     <div
-                      class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"
+                      class="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"
                     ></div>
                     <div class="xt-overlay-container p-0">
                       <button

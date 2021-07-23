@@ -126,7 +126,7 @@ There some other event options.
 | Option                  | `openauto:Boolean`                          | `true`        | Trigger the event `openauto.trigger.xt` **inside elements or targets** to automatically activate `openauto: true`            |
 | Option                  | `closeauto:Boolean`                          | `true`        | Trigger the event `closeauto.trigger.xt` **on window** to automatically deactivate **current activation** if `closeauto: true`            |
 | Option                  | `closeDeep:Query`                          | `'.xt-dismiss'`        | Query Node **inside elements or targets** to close on click also if nested Nodes            |
-| Option                  | `closeInside:Query`                          | `'.xt-backdrop, .xt-overlay, .xt-overlay-container`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no nested events)            |
+| Option                  | `closeInside:Query`                          | `'.xt-backdrop`        | Query Node **inside elements or targets** and listen on click events to automatically deactivate (no nested events)            |
 | Option                  | `closeOutside:Query`                          | `false`        | Query Node **on document** and listen on click events to automatically deactivate (automatically excludes click inside **elements and targets**)            |
 
 </div>
