@@ -19,7 +19,7 @@ const html = /* HTML */ `
           <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Email </label>
           <input
             type="email"
-            class="${classes.input()} ${classes.inputUnderline()}"
+            class="${classes.input()} ${classes.inputUnderline()} valid-submit:!border-green-200 invalid-submit:!border-red-200"
             aria-label="Email"
             placeholder="Email"
             required

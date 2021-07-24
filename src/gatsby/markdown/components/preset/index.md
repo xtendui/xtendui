@@ -19,8 +19,6 @@ module.exports = {
     extend: {
       colors: {
         // custom xtendui colors
-        success: '#48bb78',
-        error: '#f56565',
         primary: {
           50: '#F8F7FF',
           100: '#F1F0FE',
@@ -68,7 +66,7 @@ The following theme values are added with the preset:
 
 * [breakpoints](https://tailwindcss.com/docs/breakpoints) added the [media queries for hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) `hover-none` and `hover-hover`.
 * [font-size](https://tailwindcss.com/docs/font-size) `text-xs` modified to `~13px`, `text-2xs` added with `~12px`, `text-3xs*` added with `~11px`, `text-4xs*` added with `~10px`, for better control on small font sizes.
-* [colors](https://tailwindcss.com/docs/customizing-colors) new colors `error` and `succes`, and a default `primary` color stack to be replaced with your primary color.
+* [colors](https://tailwindcss.com/docs/customizing-colors) and a default `primary` color stack to be replaced with your primary color.
 * [z-index](https://tailwindcss.com/docs/z-index) **additional z-index** used by components, use `z-below` for **z-index below content**, use `z-content` for **z-index above content**, `z-above` for **z-index above pupup content**, use `z-last` for **z-index above anything**.
 * [flex](https://tailwindcss.com/docs/flex) `flex-full` added.
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
@@ -88,7 +86,9 @@ For [all tailwind variants with hover already](https://github.com/tailwindlabs/t
 
 - activated `active:` variant and added `group-active:` variant.
 
-- added variants to style **activation classes**: `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
+- added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
+
+- added variants to style [form validation after form submit](/components/form/validation) with `valid-submit:` and `invalid-submit:`.
 
 [[noteDefault]]
 | To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) or a **interaction component** (e.g. [toggle](/components/toggle)).

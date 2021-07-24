@@ -14,7 +14,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 Use **component classes** `.xt-label-required` to add required fields visual.
 
-Form validation automatically adds to form elements `.xt-form-valid`, `.xt-form-invalid` with **border color**, just use border on form elements or customize `.xt-form-valid`, `.xt-form-invalid` styles. Check [xtendui/src/form.css.js](https://github.com/xtendui/xtendui/blob/beta/src/form.css.js) for default styles.
+You can style validation classes with `.valid-submit` and `.invalid-submit`, you can also use the custom variants `valid-submit:` and `invalid-submit:`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -22,8 +22,8 @@ Form validation automatically adds to form elements `.xt-form-valid`, `.xt-form-
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
 | Component                  | `.xt-label-required`                     | `xt-label-required`                | Label required class            |
-| Component                  | `.xt-form-valid`                     | `xt-form-valid`                | Validation valid class            |
-| Component                  | `.xt-form-invalid`                     | `xt-form-invalid`                | Validation invalid class            |
+| Component                  | `.valid-submit`                     | `valid-submit`                | Validation valid class            |
+| Component                  | `.invalid-submit`                     | `invalid-submit`                | Validation invalid class            |
 
 </div>
 

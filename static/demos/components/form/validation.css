@@ -1,0 +1,8 @@
+.demo--form-validation, .demo--form-validation-react {
+  .valid-submit {
+    border-color: theme('colors.green.500') !important;
+  }
+  .invalid-submit {
+    border-color: theme('colors.red.500') !important;
+  }
+}

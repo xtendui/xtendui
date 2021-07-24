@@ -63,8 +63,8 @@ Xt.mount({
     const change = e => {
       const item = e.target
       if (item.dataset.xtValidate === 'true') {
-        item.classList.add('xt-form-valid')
-        item.classList.remove('xt-form-invalid')
+        item.classList.add('valid-submit')
+        item.classList.remove('invalid-submit')
         item.checkValidity()
       }
     }
@@ -82,8 +82,8 @@ Xt.mount({
 
     const invalid = e => {
       const item = e.target
-      item.classList.remove('xt-form-valid')
-      item.classList.add('xt-form-invalid')
+      item.classList.remove('valid-submit')
+      item.classList.add('invalid-submit')
       item.dataset.xtValidate = 'true'
       // scroll to views
       addEventListener('scroll', scroll, { once: true })

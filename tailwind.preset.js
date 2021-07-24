@@ -12,8 +12,6 @@ module.exports = {
         xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
       },
       colors: {
-        success: '#22c55e',
-        error: '#ef4444',
         primary: {
           50: '#f0f7ff',
           100: '#d6e9ff',
@@ -104,6 +102,8 @@ module.exports = {
     'focus',
     'focus-visible',
     'active',
+    'valid-submit', // custom
+    'invalid-submit', // custom
     'disabled',
   ],
   variants: {
@@ -124,6 +124,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -144,6 +146,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -164,6 +168,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -184,6 +190,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -204,6 +212,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -224,6 +234,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -244,6 +256,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -264,6 +278,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -284,6 +300,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -304,6 +322,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -324,6 +344,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -344,6 +366,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -364,6 +388,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -384,6 +410,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -404,6 +432,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -424,6 +454,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -444,6 +476,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -464,6 +498,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -484,6 +520,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -504,6 +542,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -524,6 +564,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),
@@ -544,6 +586,8 @@ module.exports = {
           'done',
           'hover',
           'active',
+          'valid-submit',
+          'invalid-submit',
         ],
         'responsive'
       ),

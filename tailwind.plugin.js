@@ -274,5 +274,17 @@ module.exports = plugin.withOptions(() => {
         return `.${e(`done${separator}${className}`)}.done`
       })
     })
+
+    addVariant('valid-submit', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`valid-submit${separator}${className}`)}.valid-submit`
+      })
+    })
+
+    addVariant('invalid-submit', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`invalid-submit${separator}${className}`)}.invalid-submit`
+      })
+    })
   }
 })
