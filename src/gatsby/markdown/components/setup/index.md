@@ -105,7 +105,7 @@ Xt.init()
 
 ## Boilerplate
 
-Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles) and [layout global styles](https://xtendui.com/components/layout#global-styles).
+Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles), [layout global styles](https://xtendui.com/components/layout#global-styles), [typography global styles](https://xtendui.com/components/typography#global-styles).
 
 Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
 
