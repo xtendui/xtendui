@@ -1,6 +1,6 @@
 const html = /* HTML */ `
   <div class="demo--parallax-image">
-    <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
+    <div class="xt-media-container bg-gray-500 pb-[37.5%]">
       <img
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -13,7 +13,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
+    <div class="xt-media-container bg-gray-500 pb-[37.5%]">
       <img
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/Tyg0rVhOTrE"
@@ -26,7 +26,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
+    <div class="xt-media-container bg-gray-500 pb-[37.5%]">
       <img
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -39,7 +39,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
+    <div class="xt-media-container bg-gray-500 pb-[37.5%]">
       <img
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wQLAGv4_OYs"

@@ -41,6 +41,8 @@ You can also use **video** or **iframe** for media.
 
 ## Size
 
+#### Aspect ratio
+
 Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
 
 <demo>
@@ -48,41 +50,34 @@ Assing `padding-bottom` on `.xt-media-container` to the aspect ratio you desire.
   </demoinline>
 </demo>
 
-Or use **component utility** `.xt-ratio-<value>` on `.xt-media-container` to make aspect ratio images.
+#### Height
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-4 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.xt-ratio-<value>`       | `ratio-<value>`                | `responsive`                | Apply aspect ratio, can be `15`, `37.5`, `50`, `56.2`, `75`, `100`, `125`, `150`            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/media/ratio-class">
-  </demoinline>
-</demo>
-
-Or use **tailwind classes** to assign height (e.g. [height](https://tailwindcss.com/docs/height)).
-
-You can also use `min-height: <Value>` to have a min height (**use narrow screen to see it in action**).
+Assing `height` on `.xt-media-container` to assign the height you desire.
 
 <demo>
   <demoinline src="demos/components/media/height">
   </demoinline>
+</demo>
+
+#### Min Height
+
+Additionally with `height` or `padding-bottom` you can add a `min-height: <Value>` to have a min height (**use narrow screen to see it in action**).
+
+<demo>
   <demoinline src="demos/components/media/min-height">
   </demoinline>
 </demo>
 
-Or use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width)).
+#### Width
 
-[[notePrimary]]
-| Always **assign width to a parent node**.
+If you want to assign `width` **assign it to a parent node** of `.xt-media-container`.
 
 <demo>
   <demoinline src="demos/components/media/width">
   </demoinline>
 </demo>
+
+#### Relative
 
 Or use **tailwind classes** `.relative` on `.xt-media` to assign relative position. The result is a **responsive media**.
 

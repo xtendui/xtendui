@@ -27,7 +27,7 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+              <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">
