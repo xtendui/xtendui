@@ -33,7 +33,6 @@ module.exports = {
       },
     },
     '.xt-h1': {
-      // styles
       marginTop: theme('spacing.10'),
       marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -50,7 +49,6 @@ module.exports = {
       },
     },
     '.xt-h2': {
-      // styles
       marginTop: theme('spacing.10'),
       marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -67,7 +65,6 @@ module.exports = {
       },
     },
     '.xt-h3': {
-      // styles
       marginTop: theme('spacing.10'),
       marginBottom: theme('spacing.4'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -84,7 +81,6 @@ module.exports = {
       },
     },
     '.xt-h4': {
-      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -101,7 +97,6 @@ module.exports = {
       },
     },
     '.xt-h5': {
-      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.3'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -118,7 +113,6 @@ module.exports = {
       },
     },
     '.xt-h6': {
-      // styles
       marginTop: theme('spacing.5'),
       marginBottom: theme('spacing.2'),
       fontFamily: theme('fontFamily.sans').toString(),
@@ -142,7 +136,6 @@ module.exports = {
       lineHeight: 'inherit',
       letterSpacing: 'inherit',
       textTransform: 'inherit',
-      // styles
       marginTop: theme('spacing.0'),
       marginBottom: theme('spacing.4'),
       '&:last-child': {
@@ -150,7 +143,6 @@ module.exports = {
       },
     },
     '.xt-ul': {
-      // styles
       marginBottom: theme('spacing.4'),
       paddingLeft: theme('spacing.2'),
       '&:last-child': {
@@ -172,7 +164,6 @@ module.exports = {
       },
     },
     '.xt-ol': {
-      // styles
       marginBottom: theme('spacing.4'),
       paddingLeft: theme('spacing.2'),
       '&:last-child': {
@@ -195,14 +186,12 @@ module.exports = {
       },
     },
     '.xt-dl': {
-      // styles
       marginBottom: theme('spacing.4'),
       '&:last-child': {
         marginBottom: '0',
       },
     },
     '.xt-blockquote': {
-      // styles
       marginTop: theme('spacing.4'),
       marginBottom: theme('spacing.4'),
       '&:first-child': {
@@ -215,7 +204,6 @@ module.exports = {
       borderLeft: `4px solid ${theme('colors.gray.200')}`,
     },
     '.xt-hr': {
-      // styles
       marginTop: theme('spacing.4'),
       marginBottom: theme('spacing.4'),
       '&:first-child': {
@@ -226,7 +214,6 @@ module.exports = {
       },
     },
     '.xt-figure': {
-      // styles
       marginTop: theme('spacing.8'),
       marginBottom: theme('spacing.8'),
       '&:first-child': {
@@ -237,7 +224,6 @@ module.exports = {
       },
     },
     '.xt-figcaption': {
-      // styles
       marginTop: theme('spacing.4'),
       fontSize: rem(14),
       lineHeight: theme('lineHeight.snug'),

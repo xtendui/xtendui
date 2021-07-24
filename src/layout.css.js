@@ -45,12 +45,10 @@ module.exports = {
         }
       : {},
     '::selection': {
-      // styles
       backgroundColor: '#00FFDD',
       color: theme('colors.black'),
     },
     '.xt-overflow-main': {
-      // styles
       '-webkit-overflow-scrolling': 'touch',
       '&::-webkit-scrollbar': {
         height: '10px',
@@ -67,7 +65,6 @@ module.exports = {
       scrollbarColor: `${theme('colors.gray.300')} ${theme('colors.white')}`,
     },
     '.xt-overflow-sub': {
-      // styles
       '-webkit-overflow-scrolling': 'touch',
       '&::-webkit-scrollbar': {
         height: '5px',
@@ -82,7 +79,6 @@ module.exports = {
     },
     '[readonly], [disabled], .xt-disabled': {
       pointerEvents: 'none',
-      // styles
       '&:not(.on)': {
         opacity: '.5',
       },

@@ -9,7 +9,6 @@ module.exports = {
     '.xt-select': {
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
-      // styles
       paddingRight: '3em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${encodeURIComponent(
         theme('colors.black')
@@ -33,7 +32,6 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      // styles
       top: '.2em',
       width: '1.25em',
       height: '1.25em',
@@ -54,7 +52,6 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      // styles
       top: '.2em',
       width: '1.25em',
       height: '1.25em',
@@ -75,7 +72,6 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      // styles
       top: '.2em',
       width: '2.25em',
       height: '1.25em',

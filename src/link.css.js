@@ -11,7 +11,6 @@ module.exports = {
       // fix specificity when nested .xt-links-default and .xt-links-inverse
       '&, .xt-links-default &': {
         'a:not([class]), a[class=""], .xt-link': {
-          // styles
           wordWrap: 'break-word',
           overflowWrap: 'break-word',
           color: theme('colors.white'),
@@ -26,7 +25,6 @@ module.exports = {
       // fix specificity when nested .xt-links-default and .xt-links-inverse
       '&, .xt-links-inverse &': {
         'a:not([class]), a[class=""], .xt-link': {
-          // styles
           wordWrap: 'break-word',
           overflowWrap: 'break-word',
           color: theme('colors.primary.500'),
