@@ -5,4 +5,9 @@
   .invalid-submit {
     border-color: theme('colors.red.500') !important;
   }
+  .label-required {
+    &:after {
+      content: "*";
+    }
+  }
 }

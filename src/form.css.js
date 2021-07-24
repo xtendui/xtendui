@@ -6,12 +6,6 @@
 
 module.exports = {
   component: theme => ({
-    '.xt-label-required': {
-      // styles
-      '&:after': {
-        content: '"*"',
-      },
-    },
     '.xt-select': {
       appearance: 'none',
       backgroundRepeat: 'no-repeat',

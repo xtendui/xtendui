@@ -12,8 +12,6 @@ Html5 form validation and Constraint Validation API. You can disable form valida
 
 It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
 
-Use **component classes** `.xt-label-required` to add required fields visual.
-
 You can style validation classes with `.valid-submit` and `.invalid-submit`, you can also use the custom variants `valid-submit:` and `invalid-submit:`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -21,7 +19,6 @@ You can style validation classes with `.valid-submit` and `.invalid-submit`, you
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
 | Component                  | `form[novalidate]`                     | `NOT POSSIBLE`                | Do not validate form            |
-| Component                  | `.xt-label-required`                     | `xt-label-required`                | Label required class            |
 | Component                  | `.valid-submit`                     | `valid-submit`                | Validation valid class            |
 | Component                  | `.invalid-submit`                     | `invalid-submit`                | Validation invalid class            |
 

@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Custom constrain </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Custom constrain </label>
           <input
             type="text"
             class="${classes.input()} ${classes.inputUnderline()} input--constrains"
@@ -16,7 +16,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Email </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Email </label>
           <input
             type="email"
             class="${classes.input()} ${classes.inputUnderline()} valid-submit:!border-green-200 invalid-submit:!border-red-200"
@@ -27,7 +27,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Number </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Number </label>
           <input
             type="number"
             class="${classes.input()} ${classes.inputUnderline()}"
@@ -40,7 +40,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Letters </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Letters </label>
           <input
             type="text"
             class="${classes.input()} ${classes.inputUnderline()}"
@@ -52,12 +52,12 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> File </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> File </label>
           <input type="file" class="${classes.input()} ${classes.inputUnderline()}" aria-label="File" required />
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Textarea </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Textarea </label>
           <textarea
             class="${classes.input()} ${classes.textarea()} ${classes.inputUnderline()} h-24 resize-vertical"
             aria-label="Textarea"
@@ -67,7 +67,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Select </label>
           <select class="${classes.input()} xt-select ${classes.inputUnderline()}" aria-label="Select" required>
             <option selected value="">Select an option</option>
             <option>Test</option>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Select multiple </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Select multiple </label>
           <select
             class="${classes.input()} xt-select ${classes.inputUnderline()}"
             aria-label="Select multiple"
@@ -91,7 +91,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Checkbox </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
@@ -128,7 +128,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Radio </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
@@ -165,7 +165,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} xt-label-required"> Switch </label>
+          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
