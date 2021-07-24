@@ -12,35 +12,5 @@ module.exports = {
       fontSize: '1em',
       verticalAlign: 'baseline',
     },
-    '.xt-separator-dash': {
-      '&:after': {
-        content: '"-"',
-      },
-    },
-    '.xt-separator-slash': {
-      '&:after': {
-        content: '"/"',
-      },
-    },
-    '.xt-separator-backslash': {
-      '&:after': {
-        content: '"\\005C"',
-      },
-    },
-    '.xt-separator-pipe': {
-      '&:after': {
-        content: '"|"',
-      },
-    },
-    '.xt-separator-point': {
-      '&:after': {
-        content: '"•"',
-      },
-    },
-    '.xt-separator-arrow': {
-      '&:after': {
-        content: '">"',
-      },
-    },
   },
 }

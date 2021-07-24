@@ -13,7 +13,15 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use this code to create a **separator**.
+Use `.xt-separator` to create a **separator**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-separator`                     | `xt-separator`                | Separator styles            |
+
+</div>
 
 <demo>
   <demoinline src="demos/components/typography/separator">
@@ -24,15 +32,7 @@ Use this code to create a **separator**.
 
 Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [text-color](https://tailwindcss.com/docs/text-color)).
 
-For `<type>` values use `dash`, `slash`, `pipe`, `point` or `arrow`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-separator-<type>`                     | `separator-<type>`                | Separator content            |
-
-</div>
+Assign separator content with `before:content-['<content>']`.
 
 <demo>
   <demoinline src="demos/components/typography/separator-variant">

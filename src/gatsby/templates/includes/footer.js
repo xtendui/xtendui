@@ -25,7 +25,7 @@ export default function Footer() {
           </a>{' '}
         </div>
         <div>
-          © 2017 <span className="xt-separator xt-separator-dash"></span> {new Date().getFullYear()}{' '}
+          © 2017 <span className="xt-separator before:content-['-']"></span> {new Date().getFullYear()}{' '}
           {site.siteMetadata.author}
         </div>
       </div>

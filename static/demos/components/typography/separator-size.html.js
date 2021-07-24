@@ -4,21 +4,17 @@ const html = /* HTML */ `
   <div>
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Size xs</div>
 
-    Lorem ipsum <span class="xt-separator xt-separator-dash *** mx-1 text-xs ***"></span> dolor sit amet
-    <span class="xt-separator xt-separator-slash *** mx-1 text-xs ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-backslash *** mx-1 text-xs ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-pipe *** mx-1 text-xs ***"></span> dolor sit amet
-    <span class="xt-separator xt-separator-point *** mx-1 text-xs ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-arrow *** mx-1 text-xs ***"></span> dolor sit amet.
+    Lorem ipsum <span class="xt-separator before:content-['-'] *** mx-1 text-xs ***"></span> dolor sit amet
+    <span class="xt-separator before:content-['/'] *** mx-1 text-xs ***"></span> Lorem ipsum
+    <span class="xt-separator before:content-['|'] *** mx-1 text-xs ***"></span> dolor sit amet
+    <span class="xt-separator before:content-['•'] *** mx-1 text-xs ***"></span> Lorem ipsum
 
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Size xl</div>
 
-    Lorem ipsum <span class="xt-separator xt-separator-dash *** mx-3 text-xl ***"></span> dolor sit amet
-    <span class="xt-separator xt-separator-slash *** mx-3 text-xl ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-backslash *** mx-3 text-xl ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-pipe *** mx-3 text-xl ***"></span> dolor sit amet
-    <span class="xt-separator xt-separator-point *** mx-3 text-xl ***"></span> Lorem ipsum
-    <span class="xt-separator xt-separator-arrow *** mx-3 text-xl ***"></span> dolor sit amet.
+    Lorem ipsum <span class="xt-separator before:content-['-'] *** mx-3 text-xl ***"></span> dolor sit amet
+    <span class="xt-separator before:content-['/'] *** mx-3 text-xl ***"></span> Lorem ipsum
+    <span class="xt-separator before:content-['|'] *** mx-3 text-xl ***"></span> dolor sit amet
+    <span class="xt-separator before:content-['•'] *** mx-3 text-xl ***"></span> Lorem ipsum
   </div>
 `
 
