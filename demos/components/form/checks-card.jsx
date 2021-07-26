@@ -17,7 +17,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
                 name="checkbox-card-0"
                 defaultChecked
                 disabled
@@ -37,7 +37,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
                 name="checkbox-card-1"
               />
             </div>
@@ -55,7 +55,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
                 name="radio-card"
                 defaultChecked
               />
@@ -74,7 +74,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
+                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
                 name="radio-card"
               />
             </div>
@@ -92,7 +92,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                 name="switch-card"
                 defaultChecked
               />
@@ -111,7 +111,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
+                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                 name="switch-card"
               />
             </div>

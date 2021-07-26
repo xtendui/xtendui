@@ -19,7 +19,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
+                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
                 defaultChecked
               />
               <span className="ml-4">Activate on scroll</span>

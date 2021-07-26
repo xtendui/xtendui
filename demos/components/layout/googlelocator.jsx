@@ -72,7 +72,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                       name="type-options"
                       defaultValue=""
                       data-xt-googlelocator-filter
@@ -86,7 +86,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                       name="type-options"
                       defaultValue="restaurant"
                       data-xt-googlelocator-filter
@@ -99,7 +99,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
-                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                      className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                       name="type-options"
                       defaultValue="school"
                       data-xt-googlelocator-filter
@@ -112,7 +112,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
-                      className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 transition-all"
+                      className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                       name="type-fav"
                       defaultValue="fav"
                       data-xt-googlelocator-filter

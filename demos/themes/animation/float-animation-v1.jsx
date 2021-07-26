@@ -425,7 +425,7 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
-                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
+                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the
@@ -535,7 +535,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                                     name="radio-usage"
                                     defaultChecked
                                   />
@@ -547,7 +547,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 2 </span>
@@ -558,7 +558,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 transition-all"
+                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 3 </span>
@@ -571,7 +571,7 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
-                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 transition-all"
+                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the

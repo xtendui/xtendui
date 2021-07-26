@@ -10,7 +10,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 transition-all"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
             name="checkbox-button-0"
             defaultChecked
             disabled
@@ -21,7 +21,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 transition-all"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
             name="checkbox-button-1"
           />
         </label>
@@ -30,7 +30,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
+            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
             name="radio-button"
             defaultChecked
           />
@@ -40,7 +40,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 transition-all sr-only"
+            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
             name="radio-button"
           />
         </label>
@@ -49,7 +49,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 transition-all"
+            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
             name="switch-button"
             defaultChecked
           />
@@ -59,7 +59,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 transition-all"
+            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
             name="switch-button"
           />
         </label>
