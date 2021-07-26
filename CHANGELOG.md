@@ -1,3 +1,28 @@
+# [1.0.0-beta.37](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.36...v1.0.0-beta.37) (2021-07-26)
+
+
+### Bug Fixes
+
+* **js:** fix off.trigger not having force true ([26c400a](https://github.com/xtendui/xtendui/commit/26c400ae4e33c1ba5a1d111f55070af7a600b991))
+* **overlay:** closeInside close also when clicking space ([9a83ce0](https://github.com/xtendui/xtendui/commit/9a83ce0b266f14444319582e42db14b95031ff44))
+
+
+### Code Refactoring
+
+* **form:** removed cssinjs validation styles and added new variants for valid and invalid ([6ee7b78](https://github.com/xtendui/xtendui/commit/6ee7b78f719c11a4437e9c8094bea582aca4cbf6))
+* **form:** removed xt-label-required default styles ([98f3868](https://github.com/xtendui/xtendui/commit/98f38688a2e8909a6f3ffba313cd3d26a34a5160))
+* **media:** removed xt-ratio classes in favor of padding bottom jit ([027d5ab](https://github.com/xtendui/xtendui/commit/027d5ab56eb263713253d026db46dc385aaf251a))
+* **overlay:** removed pointer-events-none from xt-backdrop and fixes closeInside interaction clicking on scrollbar no longer closes overlay ([3fbb285](https://github.com/xtendui/xtendui/commit/3fbb285d4289e2d1063fa4a450a9950cbd7e7667))
+
+
+### BREAKING CHANGES
+
+* **form:** style xt-label-required with asterisk
+* **form:** style valid and invalid with css .valid-submit and .invalid-submit or variants valid-submit: invalid-submit:
+Also removed default colors error and success from xtendui
+* **media:** instead of xt-ratio-<number> classes use jit pb-[<number>%]
+* **overlay:** remove pointer-events-none from xt-backdrop
+
 # [1.0.0-beta.36](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2021-07-15)
 
 
