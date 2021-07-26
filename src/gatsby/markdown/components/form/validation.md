@@ -24,6 +24,9 @@ You can style validation classes with `.valid-submit` and `.invalid-submit`, you
 
 </div>
 
+[[notePrimary]]
+| Use **border on all form elements** if you want to **show validation with border color**.
+
 <demo>
   <demoinline src="demos/components/form/validation">
   </demoinline>
