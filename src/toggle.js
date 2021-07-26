@@ -2986,6 +2986,7 @@ class Toggle {
         if (type === 'elements' || type === 'targets') {
           const closeElement = el
           const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
+          // use mousedown not click or it triggers also when click start outside
           closeElement.removeEventListener('mousedown', specialcloseinsideHandler)
         }
       }
@@ -2996,6 +2997,7 @@ class Toggle {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
             const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
+            // use mousedown not click or it triggers also when click start outside
             closeElement.removeEventListener('mousedown', specialcloseoutsideHandler)
           }
         }
@@ -3007,6 +3009,7 @@ class Toggle {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
+            // use mousedown not click or it triggers also when click start outside
             closeElement.removeEventListener('mousedown', specialclosedeepHandler)
             // focusable
             const specialclosedeepKeydownHandler = Xt.dataStorage.get(closeElement, `keydown/close/${self.ns}`)
@@ -3076,6 +3079,7 @@ class Toggle {
     // key enter or space
     if (code === 13 || code === 32) {
       e.preventDefault()
+      // use mousedown not click or it triggers also when click start outside
       closeElement.dispatchEvent(new CustomEvent('mousedown'))
     }
   }
