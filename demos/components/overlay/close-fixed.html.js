@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <button
@@ -113,12 +113,12 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <div class="xt-overlay-inner">
               <button
                 type="button"
-                class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                 aria-label="Close"
               >
                 ${classes.iconX()}

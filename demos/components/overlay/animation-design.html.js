@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay group" data-xt-overlay-target>
-        <div class="xt-backdrop pointer-events-none bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
@@ -22,12 +22,12 @@ const html = /* HTML */ `
             <div class="xt-card *** transition opacity-0 group-in:opacity-100 ***">
               <button
                 type="button"
-                class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                 aria-label="Close"
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+              <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">

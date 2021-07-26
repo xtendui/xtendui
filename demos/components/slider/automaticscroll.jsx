@@ -76,32 +76,32 @@ export default function demo() {
             <div className="xt-slides xt-row xt-row-px" data-xt-slider-dragger>
               <div className="xt-slide group xt-list xt-list-px flex-nowrap" data-xt-slider-target>
                 <a href="#test-link-1" className="slide-asset" title="item 0">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-2" className="slide-asset" title="item 1">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-3" className="slide-asset" title="item 2">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-4" className="slide-asset" title="item 3">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-5" className="slide-asset" title="item 4">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                   </div>
                 </a>
                 <a href="#test-link-6" className="slide-asset" title="item 5">
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
                   </div>
                 </a>

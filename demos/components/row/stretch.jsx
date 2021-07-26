@@ -5,7 +5,7 @@ export default function demo() {
       <div className="xt-row xt-row-4 *** xt-row-stretch ***">
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
-            <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+            <div className="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
               <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div className="py-8 px-9 text-base">
@@ -28,7 +28,7 @@ export default function demo() {
 
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
-            <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+            <div className="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
               <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div className="py-8 px-9 text-base">

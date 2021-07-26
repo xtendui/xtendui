@@ -16,7 +16,7 @@ export default function demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="*** xt-media-container *** bg-gray-500 xt-ratio-75 overflow-hidden">
+                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
                   <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -44,7 +44,7 @@ export default function demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="*** xt-media-container *** bg-gray-500 xt-ratio-75 overflow-hidden">
+                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
                   <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="*** xt-media-container *** bg-gray-500 xt-ratio-75 overflow-hidden">
+                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
                   <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="*** xt-media-container *** bg-gray-500 xt-ratio-75 overflow-hidden">
+                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
                   <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -177,7 +177,7 @@ const mountItemsParallax = ({ ref }) => {
         const end = window.innerHeight - document.scrollingElement.scrollHeight + item.offsetTop + item.offsetHeight
         return `bottom${end > 0 ? `-=${end}` : ''} top`
       },
-      scrub: 1.5,
+      scrub: 1,
     }
 
     gsap.set(content, {

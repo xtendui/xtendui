@@ -12,13 +12,8 @@ export default function demo() {
   return (
     <div className="demo--sticky-hide-react" ref={ref}>
       <div className="*** xt-sticky ***">
-        <div data-xt-sticky-hide-content>
-          <div className="xt-card p-4 text-black xt-links-default bg-gray-100" data-xt-sticky-hide-sub>
-            <div className="xt-h6">Sub</div>
-          </div>
-          <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
-            <div className="xt-h4">Main</div>
-          </div>
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
+          <div className="xt-h4">Main</div>
         </div>
       </div>
 
@@ -115,10 +110,8 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const sticky = ref.querySelector('.xt-sticky')
-  const content = sticky.querySelector('[data-xt-sticky-hide-content]')
-  const inner = sticky.querySelector('[data-xt-sticky-hide-sub]')
 
-  // hide depending on inner (always before pin or bugs)
+  // hide depending on direction (always before pin ScrollTrigger)
 
   /***/
   ScrollTrigger.create({
@@ -126,16 +119,16 @@ const mountSticky = ({ ref }) => {
     start: -1, // needs -1 because start trigger is sticky
     end: () => `top top-=${sticky.offsetHeight}`,
     onUpdate: self => {
-      if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
-        content.classList.remove('scrolling-hide')
-        gsap.killTweensOf(content)
-        gsap.to(content, {
+      if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
+        sticky.classList.remove('scrolling-hide')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
           y: 0,
           duration: 0.5,
           ease: 'quart.out',
         })
-      } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
-        content.classList.add('scrolling-hide')
+      } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
+        sticky.classList.add('scrolling-hide')
       }
     },
   })
@@ -155,26 +148,26 @@ const mountSticky = ({ ref }) => {
       // scrolling-down depending on scroll direction
       if (!self.getVelocity()) return // skip on initial
       if (
-        content.classList.contains('scrolling-down') &&
-        content.classList.contains('scrolling-hide') &&
+        sticky.classList.contains('scrolling-down') &&
+        sticky.classList.contains('scrolling-hide') &&
         self.direction < 0
       ) {
-        content.classList.remove('scrolling-down')
-        gsap.killTweensOf(content)
-        gsap.to(content, {
+        sticky.classList.remove('scrolling-down')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
           y: 0,
           duration: 0.5,
           ease: 'quart.out',
         })
       } else if (
-        !content.classList.contains('scrolling-down') &&
-        content.classList.contains('scrolling-hide') &&
+        !sticky.classList.contains('scrolling-down') &&
+        sticky.classList.contains('scrolling-hide') &&
         self.direction > 0
       ) {
-        content.classList.add('scrolling-down')
-        gsap.killTweensOf(content)
-        gsap.to(content, {
-          y: -(inner.offsetTop + inner.offsetHeight),
+        sticky.classList.add('scrolling-down')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
+          y: -(sticky.offsetTop + sticky.offsetHeight),
           duration: 0.5,
           ease: 'quart.out',
         })

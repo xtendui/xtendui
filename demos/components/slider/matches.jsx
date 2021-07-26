@@ -101,7 +101,7 @@ const mountSlider = ({ ref }) => {
     matches: {
       '(min-width: 768px)': {
         wrap: false,
-        group: 1,
+        contain: false,
       },
     },
   })

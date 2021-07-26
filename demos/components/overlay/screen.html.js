@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
@@ -21,7 +21,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -64,7 +64,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
@@ -72,12 +72,12 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-500 xt-ratio-100">
+                <div class="xt-media-container bg-gray-500 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -96,7 +96,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
@@ -104,7 +104,7 @@ const html = /* HTML */ `
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -134,7 +134,7 @@ const html = /* HTML */ `
                       </div>
                     </div>
                   </div>
-                  <div class="xt-media-container bg-gray-500 xt-ratio-25">
+                  <div class="xt-media-container bg-gray-500 pb-[25%]">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>

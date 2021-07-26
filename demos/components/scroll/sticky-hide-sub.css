@@ -1,0 +1,10 @@
+.demo--sticky-hide-sub, .demo--sticky-hide-sub-react {
+  [data-xt-sticky-hide-sub] .h6 {
+    @apply transition-all ease-in-out-quint;
+  }
+  [data-xt-sticky-hide-content].scrolling-down.scrolling-hide {
+    [data-xt-sticky-hide-sub] .h6 {
+      @apply text-xl;
+    }
+  }
+}

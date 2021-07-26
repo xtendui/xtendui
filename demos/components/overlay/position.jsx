@@ -15,13 +15,13 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop z-below bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -73,13 +73,13 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop z-below bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -131,13 +131,13 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+            <div className="xt-backdrop z-below bg-black opacity-25"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card *** xt-min-h-screen *** shadow-overlay text-black xt-links-default bg-white">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-media-container bg-gray-500 xt-ratio-37.5">
+                  <div className="xt-media-container bg-gray-500 pb-[37.5%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="py-8 px-9 text-base">

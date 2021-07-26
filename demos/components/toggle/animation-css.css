@@ -1,5 +1,5 @@
 .demo--toggle-animation, .demo--toggle-animation-react {
-  .target {
+  [data-xt-toggle-target] {
     /* initial */
     @apply transition opacity-0;
     &.dir-before {

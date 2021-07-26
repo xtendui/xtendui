@@ -35,7 +35,7 @@ export default function demo() {
                     </button>
 
                     <div className="xt-drop p-4" data-xt-drop-target-nested>
-                      <div className="xt-backdrop bg-black opacity-25"></div>
+                      <div className="xt-backdrop z-below bg-black opacity-25"></div>
                       <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-white xt-links-inverse bg-primary-500">
                         <nav className="xt-list flex-col">
                           <a

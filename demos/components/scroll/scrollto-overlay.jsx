@@ -69,12 +69,12 @@ export default function demo() {
       </div>
 
       <div className="xt-overlay" id="overlay--scrollto">
-        <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+        <div className="xt-backdrop z-below bg-black opacity-25"></div>
         <div className="xt-overlay-container py-0">
           <div className="xt-overlay-inner">
             <button
               type="button"
-              className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+              className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
               aria-label="Close">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

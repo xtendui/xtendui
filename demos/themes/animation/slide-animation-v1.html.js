@@ -78,7 +78,7 @@ const html = /* HTML */ `
           <div class="xt-card w-64 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ${animDesign()}">
             <button
               type="button"
-              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+              class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
               aria-label="Close"
             >
               ${classes.iconX()}
@@ -163,18 +163,18 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
-              class="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl ${animItem()}"
+              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${animItem()}"
               aria-label="Close"
             >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()} ${animDesign()}">
-                <div class="xt-media-container bg-gray-500 ${animItem()} xt-ratio-100">
+                <div class="xt-media-container bg-gray-500 ${animItem()} pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
@@ -193,13 +193,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen ${classes.cardWhite()} ${animDesign()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -242,13 +242,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ${animDesign()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -344,7 +344,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col ${animItem()}">
-                    <div class="xt-media-container bg-gray-500 h-48 md:xt-ratio-100">
+                    <div class="xt-media-container bg-gray-500 h-48 md:pb-[100%]">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div class="${classes.cardMd()} bg-gray-200 rounded-b-md md:rounded-bl-none flex-full">
@@ -372,13 +372,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ${animDesign()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -387,7 +387,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group rounded-md ${animItem()}">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:xt-ratio-100 md:flex-full"
+                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>

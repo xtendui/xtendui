@@ -13,13 +13,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div class="xt-card *** xt-min-h-screen *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -60,13 +60,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
             <div class="xt-overlay-inner">
               <div class="xt-card *** xt-min-h-screen *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -107,18 +107,18 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div class="xt-card *** xt-min-h-screen *** shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-500 xt-ratio-37.5">
+                <div class="xt-media-container bg-gray-500 pb-[37.5%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="${classes.cardMd()}">

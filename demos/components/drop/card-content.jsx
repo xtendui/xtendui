@@ -35,7 +35,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-md pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
             </div>
@@ -71,7 +71,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div className="*** py-8 px-9 text-base ***">

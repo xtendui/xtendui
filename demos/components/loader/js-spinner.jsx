@@ -21,7 +21,7 @@ export default function demo() {
             </p>
           </div>
           <div
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 off:hidden out:pointer-events-none opacity-0 transition in:opacity-100"
+            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
             data-xt-duration="500">
             <div className="*** xt-spinner absolute inset-0 m-auto *** w-6 h-6 text-primary-500">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
@@ -59,7 +59,7 @@ export default function demo() {
           className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Lorem ipsum
           <span
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 off:hidden out:pointer-events-none opacity-0 transition in:opacity-100"
+            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
             data-xt-duration="500">
             <span className="*** xt-spinner absolute inset-0 m-auto *** w-6 h-6 text-primary-500">
               {' '}

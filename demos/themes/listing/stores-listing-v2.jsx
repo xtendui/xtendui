@@ -30,7 +30,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +203,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +250,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +313,7 @@ export default function demo() {
                 <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
                   <button
                     type="button"
-                    className="xt-button xt-dismiss absolute z-last top-0 right-0 text-xl"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
                     aria-label="Close">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

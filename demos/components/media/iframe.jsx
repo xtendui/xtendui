@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="xt-media-container bg-gray-100 xt-ratio-56.2">
+      <div className="xt-media-container bg-gray-100 pb-[56.2%]">
         <iframe
           className="xt-media"
           type="text/html"

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 export default function demo() {
@@ -23,7 +22,7 @@ export default function demo() {
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
-                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                    className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                     <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
                   </a>
                 </div>
@@ -40,7 +39,7 @@ export default function demo() {
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
-                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -61,7 +60,7 @@ export default function demo() {
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
                     href="/"
-                    className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                    className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                   </a>
                 </div>
@@ -76,7 +75,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1">4. Lorem ipsum dolor sit amet</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -100,7 +99,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
                     <h2 className="xt-h1">5. Lorem ipsum dolor sit amet</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -124,7 +123,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">
                     <h2 className="xt-h1">6. Lorem ipsum dolor sit amet</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -144,16 +143,13 @@ export default function demo() {
 
         <button
           type="button"
-          className="hidden md:block cursor-none absolute z-above top-0 left-0 w-24 h-full group"
+          className="*** absolute z-content top-0 left-0 h-full px-2 md:px-6 group ***"
           data-xt-nav="-1"
-          aria-label="Previous slide"
-          data-xt-mousefollow>
-          <div
-            className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-            data-xt-mousefollow-target>
+          aria-label="Previous slide">
+          <div className="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 group-hover:scale-125">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
+              className="xt-icon "
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -170,16 +166,13 @@ export default function demo() {
 
         <button
           type="button"
-          className="hidden md:block cursor-none absolute z-above top-0 right-0 w-24 h-full group"
+          className="*** absolute z-content top-0 right-0 h-full px-2 md:px-6 text-2xl group ***"
           data-xt-nav="1"
-          aria-label="Next slide"
-          data-xt-mousefollow>
-          <div
-            className="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-            data-xt-mousefollow-target>
+          aria-label="Next slide">
+          <div className="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 group-hover:scale-125">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="xt-icon transform transition-all duration-300 group-in:opacity-75 group-in:scale-75"
+              className="xt-icon "
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -195,7 +188,7 @@ export default function demo() {
         </button>
 
         <nav
-          className="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+          className="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
           data-xt-slider-pagination>
           <button
             type="button"

@@ -20,7 +20,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                     <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1</h2>
                   </div>
                 </div>
@@ -36,7 +36,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                     <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2</h2>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export default function demo() {
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
-                  <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                     <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">3</h2>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function demo() {
                 <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div className="flex relative h-96">
-                <div className="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
                   <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">4</h2>
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default function demo() {
         </div>
 
         <nav
-          className="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+          className="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
           data-xt-slider-pagination>
           <button
             type="button"

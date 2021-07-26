@@ -13,7 +13,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center"
                 >
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
                 </a>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
                   <p>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
                   <h2 class="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                 </a>
@@ -73,7 +73,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
                   <h2 class="xt-h1">4. Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -101,7 +101,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left"
                 >
                   <h2 class="xt-h1">5. Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -129,7 +129,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right"
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right"
                 >
                   <h2 class="xt-h1">6. Lorem ipsum dolor sit amet</h2>
                   <p>
@@ -152,40 +152,32 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="hidden md:block cursor-none absolute z-above top-0 left-0 w-24 h-full group"
+        class="*** absolute z-content top-0 left-0 h-full px-2 md:px-6 group ***"
         data-xt-nav="-1"
         aria-label="Previous slide"
-        data-xt-mousefollow
       >
         <div
-          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-          data-xt-mousefollow-target
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
         >
-          ${classes.iconArrowLeft({
-            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-          })}
+          ${classes.iconArrowLeft({})}
         </div>
       </button>
 
       <button
         type="button"
-        class="hidden md:block cursor-none absolute z-above top-0 right-0 w-24 h-full group"
+        class="*** absolute z-content top-0 right-0 h-full px-2 md:px-6 text-2xl group ***"
         data-xt-nav="1"
         aria-label="Next slide"
-        data-xt-mousefollow
       >
         <div
-          class="*** xt-mousefollow fixed *** text-white text-4xl transition-opacity opacity-0 in:opacity-100"
-          data-xt-mousefollow-target
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
         >
-          ${classes.iconArrowRight({
-            classes: 'transform transition-all duration-300 group-in:opacity-75 group-in:scale-75',
-          })}
+          ${classes.iconArrowRight({})}
         </div>
       </button>
 
       <nav
-        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-slide bottom-6"
+        class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
         data-xt-slider-pagination
       >
         <button

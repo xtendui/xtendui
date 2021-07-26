@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-4 *** xt-row-stretch ***">
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="${classes.cardMd()}">
@@ -28,7 +28,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
-          <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+          <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <div class="${classes.cardMd()}">

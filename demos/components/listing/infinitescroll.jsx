@@ -71,7 +71,7 @@ export default function demo() {
           <div className="xt-row xt-row-6" data-xt-infinitescroll-items-container>
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -83,7 +83,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -95,7 +95,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -107,7 +107,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -119,7 +119,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -131,7 +131,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75">
+                <div className="xt-media-container bg-gray-500 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -143,7 +143,7 @@ export default function demo() {
 
             <div className="w-6/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
+                <div className="xt-media-container bg-gray-500 pb-[75%] md:pb-[50%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -155,7 +155,7 @@ export default function demo() {
 
             <div className="w-6/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 xt-ratio-75 md:xt-ratio-50">
+                <div className="xt-media-container bg-gray-500 pb-[75%] md:pb-[50%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">

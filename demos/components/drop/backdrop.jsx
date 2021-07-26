@@ -15,7 +15,7 @@ export default function demo() {
           </button>
 
           <div className="xt-drop p-4" data-xt-drop-target>
-            <div className="*** xt-backdrop bg-black opacity-25 ***"></div>
+            <div className="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
             <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
               <nav className="xt-list flex-col">
                 <a
@@ -48,7 +48,7 @@ export default function demo() {
             </button>
 
             <div className="xt-drop p-4" data-xt-drop-target>
-              <div className="*** xt-backdrop bg-black opacity-25 ***"></div>
+              <div className="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
               <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
                 <nav className="xt-list flex-col">
                   <a

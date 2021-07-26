@@ -49,7 +49,7 @@ const parallax = ({ ref }) => {
       trigger: item,
       start: 'top bottom',
       end: 'top bottom-=200', // end 200px after
-      scrub: 1.5,
+      scrub: 1,
     }
 
     gsap
@@ -72,7 +72,7 @@ const parallax = ({ ref }) => {
       trigger: item,
       start: `bottom top+=200`, // start 200px before
       end: `bottom top`,
-      scrub: 1.5,
+      scrub: 1,
     }
 
     gsap

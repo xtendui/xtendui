@@ -49,7 +49,7 @@ const parallax = ({ ref }) => {
   for (const item of items) {
     item.classList.add('parallaxed')
 
-    // no scrub
+    // scrollTrigger
 
     const scrollTrigger = {
       trigger: item,
@@ -63,7 +63,7 @@ const parallax = ({ ref }) => {
         const end = window.innerHeight - document.scrollingElement.scrollHeight + item.offsetTop + item.offsetHeight
         return `bottom${end > 0 ? `-=${end}` : ''} top`
       },
-      scrub: 1.5,
+      scrub: 1,
       markers: true,
     }
 

@@ -9,7 +9,7 @@ const html = /* HTML */ `
       </div>
       <div class="flex relative min-h-screen">
         <div
-          class="relative p-8 md:p-12 lg:p-16 xl:p-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group"
+          class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group"
         >
           <h2 class="xt-h1">Lorem ipsum dolor sit amet</h2>
           <h3 class="xt-p">
@@ -29,7 +29,7 @@ const html = /* HTML */ `
       </div>
       <div class="flex relative min-h-screen">
         <div
-          class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group"
+          class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group"
         >
           <h2 class="xt-h1">Lorem ipsum dolor sit amet</h2>
           <h3 class="xt-p">
@@ -49,7 +49,7 @@ const html = /* HTML */ `
       </div>
       <div class="flex relative min-h-screen">
         <div
-          class="relative p-8 md:p-12 lg:p-16 xl:p-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right group"
+          class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right group"
         >
           <h2 class="xt-h1">Lorem ipsum dolor sit amet</h2>
           <h3 class="xt-p">

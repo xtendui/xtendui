@@ -13,13 +13,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-lg"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-lg"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -60,13 +60,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-3xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -107,13 +107,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container *** max-w-5xl ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -154,13 +154,13 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}

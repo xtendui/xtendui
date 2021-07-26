@@ -16,7 +16,7 @@ export default function demo() {
 
           <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96">
-              <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div className="py-8 px-9 text-base">
@@ -51,7 +51,7 @@ export default function demo() {
 
           <div className="xt-drop p-4" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
-              <div className="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+              <div className="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div className="py-8 px-9 text-base overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">

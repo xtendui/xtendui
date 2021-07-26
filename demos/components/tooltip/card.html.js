@@ -15,12 +15,12 @@ const html = /* HTML */ `
           <div class="*** xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <button
               type="button"
-              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+              class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
               aria-label="Close"
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-500 rounded-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
           </div>
@@ -39,12 +39,12 @@ const html = /* HTML */ `
           <div class="xt-card w-80 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
             <button
               type="button"
-              class="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+              class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
               aria-label="Close"
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-500 rounded-t-md xt-ratio-37.5">
+            <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div class="${classes.cardMd()}">

@@ -128,11 +128,11 @@ export default function demo() {
                     <div
                       className="xt-overlay ease-in-out-quint opacity-0 in:ease-out-quint in:opacity-100"
                       id="overlay--product-images">
-                      <div className="xt-backdrop pointer-events-none bg-black transition opacity-0 group-in:opacity-25"></div>
+                      <div className="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
                       <div className="xt-overlay-container p-0">
                         <button
                           type="button"
-                          className="xt-button xt-dismiss fixed z-last top-0 right-0 p-5 text-2xl"
+                          className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
                           aria-label="Close">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

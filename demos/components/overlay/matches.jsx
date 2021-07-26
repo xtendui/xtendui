@@ -14,13 +14,13 @@ export default function demo() {
         </button>
 
         <div className="xt-overlay" data-xt-overlay-target>
-          <div className="xt-backdrop pointer-events-none bg-black opacity-25"></div>
+          <div className="xt-backdrop z-below bg-black opacity-25"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
                 <button
                   type="button"
-                  className="xt-button xt-dismiss absolute z-last top-0 right-0 p-5 text-2xl"
+                  className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

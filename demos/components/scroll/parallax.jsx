@@ -99,7 +99,7 @@ const parallax = ({ ref }) => {
 
   const scrollTrigger2 = {
     trigger: item2,
-    scrub: 1.5,
+    scrub: 1,
   }
 
   gsap
