@@ -57,7 +57,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="xt-overlay" id="overlay--scrollto">
-      <div class="xt-backdrop bg-black opacity-25"></div>
+      <div class="xt-backdrop z-below bg-black opacity-25"></div>
       <div class="xt-overlay-container py-0">
         <div class="xt-overlay-inner">
           <button

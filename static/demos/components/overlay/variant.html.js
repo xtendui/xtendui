@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="*** xt-backdrop bg-black opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardWhite()} ***">
@@ -60,7 +60,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="*** xt-backdrop bg-primary-700 bg-opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-primary-700 bg-opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardPrimary()} ***">
@@ -107,7 +107,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="*** xt-backdrop bg-black opacity-0 ***"></div>
+          <div class="*** xt-backdrop z-below bg-black opacity-0 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.cardRadius()} *** shadow-overlay ${classes.cardWhite()} ***">
@@ -154,7 +154,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="*** xt-backdrop bg-black bg-opacity-10 ***"></div>
+          <div class="*** xt-backdrop z-below bg-black bg-opacity-10 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div

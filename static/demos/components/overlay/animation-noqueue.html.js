@@ -31,7 +31,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group0">
-        <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
@@ -98,7 +98,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group1">
-        <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
@@ -165,7 +165,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group2">
-        <div class="xt-backdrop bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"

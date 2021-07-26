@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--megamenu-v1">
     <div class="*** megamenu ***">
       <div
-        class="*** megamenu-backdrop *** xt-backdrop off:hidden out:pointer-events-none bg-black transition opacity-0 in:opacity-25"
+        class="*** megamenu-backdrop *** xt-backdrop z-below off:hidden out:pointer-events-none bg-black transition opacity-0 in:opacity-25"
         data-xt-duration="500"
       ></div>
 

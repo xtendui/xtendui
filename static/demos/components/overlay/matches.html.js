@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay" data-xt-overlay-target>
-        <div class="xt-backdrop bg-black opacity-25"></div>
+        <div class="xt-backdrop z-below bg-black opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
