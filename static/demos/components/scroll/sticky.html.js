@@ -17,7 +17,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
-    <div class="*** xt-sticky ***" data-xt-sticky-top>
+    <div class="*** xt-sticky ***" data-js-sticky-top>
       <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
@@ -58,7 +58,7 @@ const html = /* HTML */ `
 
     <div class="*** relative ***">
       <div class="*** absolute w-full ***">
-        <div class="*** xt-sticky ***" data-xt-sticky-bottom>
+        <div class="*** xt-sticky ***" data-js-sticky-bottom>
           <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
             <div class="xt-h4">Bottom</div>
           </div>

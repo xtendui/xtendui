@@ -1,5 +1,5 @@
 .demo--javascript-animation-css, .demo--javascript-animation-css-react {
-  [data-target] {
+  [data-js-target] {
     /* initial */
     @apply transition opacity-0 -translate-x-4;
     /* in */
