@@ -46,7 +46,7 @@
     "focus-trap": "^6.6.0",
     "gsap": "^3.7.0",
     "relaxed-json": "^1.0.3",
-    "tailwindcss": "^2.2.6"
+    "tailwindcss": "^2.2.7"
   },
   "peerDependencies": {
     "tailwindcss": "2.x"

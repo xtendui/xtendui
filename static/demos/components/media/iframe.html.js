@@ -4,7 +4,7 @@ const html = /* HTML */ `
       <iframe
         class="xt-media"
         type="text/html"
-        src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&enablejsapi=1&rel=0"
+        src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&rel=0"
         frameborder="0"
       ></iframe>
     </div>
