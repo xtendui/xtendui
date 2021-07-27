@@ -20,7 +20,17 @@ description: "Hidden"
 .featured
 .megamenu
 
-## Tests
+## Useful demos
+
+// check if already done for content added dinamically
+
+// mount granularly
+
+// unmount
+
+return () => {}
+
+## Test
 
 See [link if scrolls right](/components/slider/other#media-loaded).
 

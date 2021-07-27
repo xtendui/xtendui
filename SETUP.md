@@ -85,9 +85,9 @@ npm install @babel/core @babel/preset-env --save-dev
 
 Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
 
-#### Route Update
+#### Route Update and SSR
 
-**On route update** in react or other frameworks, you need to call this code.
+**On route update** in react or other frameworks with ssr, you need to call this code to properly update mutation observer.
 
 ```jsx
 import { Xt } from 'xtendui'

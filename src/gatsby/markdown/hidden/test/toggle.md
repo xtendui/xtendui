@@ -1,7 +1,7 @@
 ---
 type: "Hidden"
 category: "Hidden"
-parent: "Tests"
+parent: "Test"
 title: "Toggle"
 ---
 
@@ -123,19 +123,6 @@ Test position and visibility.
   <demoinline src="demos/components/drop/static">
   </demoinline>
   <demoinline src="demos/components/tooltip/static">
-  </demoinline>
-</demo>
-
-## Auto
-
-Test auto.
-
-Test window blur and focus shouldn't start if no started and should pause and resume if started.
-
-<demo>
-  <demoinline src="demos/components/toggle/progress">
-  </demoinline>
-  <demoinline src="demos/components/slider/progress">
   </demoinline>
 </demo>
 

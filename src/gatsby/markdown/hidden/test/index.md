@@ -1,10 +1,25 @@
 ---
 type: "Hidden"
 category: "Hidden"
-parent: "Tests"
-title: "Tests"
+parent: "Test"
+title: "Test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
+
+Test resize and open/close overlay should always work.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/hidden/test/mount-unmount"></div>
+</demo>
+
+TEST OFF on unmount this should not be called.
+
+TEST UNMOUNT this should not be called multiple times after changing page and resize.
+
+<demo>
+  <demoinline src="demos/hidden/test/unmount">
+  </demoinline>
+</demo>
 
 Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable.
 

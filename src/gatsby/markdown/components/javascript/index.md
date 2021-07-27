@@ -42,8 +42,9 @@ You can return a function to execute when **the Node is removed from the DOM**.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `matches:Query`                          | `false`        | Query to match for mount            |
-| Option                    | `mount:Function`                          | `false`        | Function to execute on mount, returned function will be executed on unmount             |
+| Option                    | `matches:Query`                          | `null`        | Query to match for mount            |
+| Option                    | `container:Node`                          | `null`        | Only if added nodes are inside a container node            |
+| Option                    | `mount:Function`                          | `null`        | Function to execute on mount, returned function will be executed on unmount             |
 | Option                    | `ignore:Query|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
 
 </div>
@@ -69,7 +70,7 @@ Xt.mount({
   mount: ({ ref, obj, index }) => {
     // logic
 
-    console.debug('mounted', ref)
+    console.debug('mounted', ref, obj, index)
 
     // unmount
 

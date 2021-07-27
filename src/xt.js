@@ -55,19 +55,19 @@ if (typeof window !== 'undefined') {
    * init
    */
   Xt.init = () => {
-    Xt.ready(() => {
-      Xt.observer.disconnect()
-      Xt.observer.observe(document.documentElement, {
-        characterData: false,
-        attributes: false,
-        childList: true,
-        subtree: true,
-      })
-      Xt.mountCheck()
-    })
+    Xt.mountCheck()
   }
 
-  Xt.init()
+  Xt.ready(() => {
+    Xt.observer.disconnect()
+    Xt.observer.observe(document.documentElement, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true,
+    })
+    Xt.init()
+  })
 
   //
   // observer
@@ -82,29 +82,27 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            // always raf on sequential mounts when moving elements (e.g. mount inside sticky)
-            cancelAnimationFrame(Xt.dataStorage.get(added, 'xtObserverFrame'))
-            Xt.dataStorage.set(
-              added,
-              'xtObserverFrame',
-              requestAnimationFrame(() => {
+            // fix multiple initialization (e.g. mount inside sticky)
+            Xt.frame({
+              el: added,
+              func: () => {
                 Xt.mountCheck({ added })
-              })
-            )
+              },
+              ns: `Observer`,
+            })
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            // always raf on sequential mounts when moving elements (e.g. mount inside sticky)
-            cancelAnimationFrame(Xt.dataStorage.get(removed, 'xtObserverFrame'))
-            Xt.dataStorage.set(
-              removed,
-              'xtObserverFrame',
-              requestAnimationFrame(() => {
+            // fix multiple initialization (e.g. mount inside sticky)
+            Xt.frame({
+              el: removed,
+              func: () => {
                 Xt.unmountCheck({ removed })
-              })
-            )
+              },
+              ns: `Observer`,
+            })
           }
         }
       }
@@ -143,6 +141,10 @@ if (typeof window !== 'undefined') {
           continue
         }
       }
+      // container
+      if (obj.container && !obj.container.contains(added)) {
+        continue
+      }
       // check
       const refs = []
       if (added.matches(obj.matches)) {
@@ -154,7 +156,7 @@ if (typeof window !== 'undefined') {
       // call
       if (refs.length) {
         for (const [index, ref] of refs.entries()) {
-          // fix multiple initialization
+          // fix multiple initialization (e.g. mount inside sticky)
           obj.done = obj.done ? obj.done : []
           if (obj.done.includes(ref)) {
             return
@@ -192,11 +194,12 @@ if (typeof window !== 'undefined') {
     for (const obj of Xt.unmountArr) {
       // check
       if (removed === obj.ref || removed.contains(obj.ref)) {
-        if (obj.ref.closest('.xt-ignore')) {
+        const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
+        if (ignoreStr && obj.ref.closest(ignoreStr)) {
           return
         }
         // call
-        obj.unmount(obj)
+        obj.unmount({ obj })
         obj.unmountRemove()
       }
     }

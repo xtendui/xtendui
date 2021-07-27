@@ -41,17 +41,20 @@ const mountToggle = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    gsap.killTweensOf(tr)
-    gsap.set(tr, {
-      x: -self.direction * targetXOn,
-      opacity: 0,
-    })
-    gsap.to(tr, {
-      x: 0,
-      opacity: 1,
-      duration: targetTimeOn,
-      ease: targetEaseOn,
-    })
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
+        x: -self.direction * targetXOn,
+        opacity: 0,
+      })
+      gsap.to(tr, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
+    }
   }
 
   for (const tr of self.targets) {
@@ -64,13 +67,16 @@ const mountToggle = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    gsap.killTweensOf(tr)
-    gsap.to(tr, {
-      x: self.direction * targetXOff,
-      opacity: 0,
-      duration: targetTimeOff,
-      ease: targetEaseOff,
-    })
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      gsap.killTweensOf(tr)
+      gsap.to(tr, {
+        x: self.direction * targetXOff,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
+    }
   }
 
   for (const tr of self.targets) {

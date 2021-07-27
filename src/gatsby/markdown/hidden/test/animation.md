@@ -1,7 +1,7 @@
 ---
 type: "Hidden"
 category: "Hidden"
-parent: "Tests"
+parent: "Test"
 title: "Animation"
 ---
 

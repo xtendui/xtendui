@@ -3,22 +3,40 @@ import { Xt } from 'xtendui'
 Xt.mount({
   matches: '.demo--media-video-matches',
   mount: ({ ref }) => {
-    const unmountVideoMatches = mountVideoMatches({ ref })
+    const unmountVideosMatches = mountVideosMatches({ ref })
 
     // unmount
 
     return () => {
-      unmountVideoMatches()
+      unmountVideosMatches()
     }
   },
 })
+
+/* mountVideosMatches */
+
+const mountVideosMatches = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    matches: 'video',
+    container: ref,
+    mount: ({ ref }) => {
+      return mountVideoMatches({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountVideoMatches */
 
 const mountVideoMatches = ({ ref }) => {
   // vars
 
-  const video = ref.querySelector('video')
+  const video = ref
 
   // resize
 
@@ -38,7 +56,7 @@ const mountVideoMatches = ({ ref }) => {
       }
     } else {
       const srcDefault = video.querySelector('source[src]')?.getAttribute('src')
-      if (src.indexOf(srcDefault) === -1) {
+      if (srcDefault && src.indexOf(srcDefault) === -1) {
         video.src = srcDefault
       }
     }
@@ -49,5 +67,7 @@ const mountVideoMatches = ({ ref }) => {
 
   // unmount
 
-  return () => {}
+  return () => {
+    removeEventListener('resize', resize)
+  }
 }

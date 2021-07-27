@@ -1376,8 +1376,10 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // reset nooverflow
-    self.dragger.classList.remove(...options.nooverflow.split(' '))
-    self.disabledManual = false
+    if (options.nooverflow) {
+      self.dragger.classList.remove(...options.nooverflow.split(' '))
+      self.disabledManual = false
+    }
   }
 
   /**

@@ -1,7 +1,7 @@
 ---
 type: "Hidden"
 category: "Hidden"
-parent: "Tests"
+parent: "Test"
 title: "Slider"
 ---
 
@@ -118,6 +118,17 @@ Test autoheight.
 
 <demo>
   <demoinline src="demos/components/slider/autoheight">
+  </demoinline>
+</demo>
+
+## Auto
+
+Test auto.
+
+Test window blur and focus shouldn't start if no started and should pause and resume if started.
+
+<demo>
+  <demoinline src="demos/components/slider/progress">
   </demoinline>
 </demo>
 

@@ -3,22 +3,40 @@ import { Xt } from 'xtendui'
 Xt.mount({
   matches: '.demo--media-iframe-lazy',
   mount: ({ ref }) => {
-    const unmountIframeLazy = mountIframeLazy({ ref })
+    const unmountIframesLazy = mountIframesLazy({ ref })
 
     // unmount
 
     return () => {
-      unmountIframeLazy()
+      unmountIframesLazy()
     }
   },
 })
+
+/* mountIframesLazy */
+
+const mountIframesLazy = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    matches: 'iframe[data-src*="youtube"]',
+    container: ref,
+    mount: ({ ref }) => {
+      return mountIframeLazy({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountIframeLazy */
 
 const mountIframeLazy = ({ ref }) => {
   // vars
 
-  const iframe = ref.querySelector('iframe[data-src*="youtube"]')
+  const iframe = ref
   const src = iframe.getAttribute('data-src')
   const container = iframe.parentNode
 

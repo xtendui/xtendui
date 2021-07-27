@@ -13,7 +13,7 @@ export default class Demo extends React.Component {
     if (typeof window !== 'undefined') {
       // populate
       const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
-      // Xt.ready because after Xt.init
+      // Xt.ready because after Xt.ready
       Xt.ready(() => {
         populateDemo(container)
       })

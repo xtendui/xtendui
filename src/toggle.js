@@ -3308,13 +3308,19 @@ class Toggle {
     const options = self.options
     if (!self.disabled) {
       // off but without classes
+      if (skipEvent) {
+        // we disable if we need to skip event and other things that can throw errors (e.g. destroy)
+        self.disabled = true
+      }
       if (options.disableDeactivate) {
         for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
           self.eventOff({ el, force: true })
         }
       }
       // disable
-      self.disabled = true
+      if (!skipEvent) {
+        self.disabled = true
+      }
       if (!options.classSkip) {
         self.container.setAttribute(`data-${self.componentName}-disabled`, '')
       }

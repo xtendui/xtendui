@@ -34,7 +34,7 @@ const demoHash = () => {
           if (item.closest('#gatsby_open-full-content')) {
             return
           }
-          // raf because after Xt.init
+          // raf because after Xt.ready
           requestAnimationFrame(() => {
             makeFullscreen(demo)
           })
