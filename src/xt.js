@@ -169,6 +169,7 @@ if (typeof window !== 'undefined') {
             Xt.unmount({
               ref: ref,
               matches: obj.matches,
+              ignore: obj.ignore,
               unmount: call,
               unmountRemove: () => {
                 // fix multiple initialization
