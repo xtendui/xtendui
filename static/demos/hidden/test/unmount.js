@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/toggle'
+import 'xtendui/src/overlay'
 
 Xt.mount({
   matches: '.demo--unmount',
@@ -19,13 +19,11 @@ Xt.mount({
 const mountTest = ({ ref }) => {
   // vars
 
-  const toggle = ref
+  const overlay = ref
 
   // init
 
-  let self = new Xt.Toggle(toggle, {
-    disableDeactivate: true,
-  })
+  let self = new Xt.Overlay(overlay, {})
 
   // off
 
@@ -39,7 +37,7 @@ const mountTest = ({ ref }) => {
   }
 
   for (const tr of self.targets) {
-    tr.addEventListener('off.xt.toggle', off)
+    tr.addEventListener('off.xt.overlay', off)
   }
 
   // resize

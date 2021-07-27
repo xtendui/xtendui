@@ -16,6 +16,8 @@ TEST OFF on unmount this should not be called.
 
 TEST UNMOUNT this should not be called multiple times after changing page and resize.
 
+Test change page with browser location prev e next should close overlay automatically.
+
 <demo>
   <demoinline src="demos/hidden/test/unmount">
   </demoinline>
