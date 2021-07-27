@@ -194,6 +194,7 @@ if (typeof window !== 'undefined') {
     for (const obj of Xt.unmountArr) {
       // check
       if (removed === obj.ref || removed.contains(obj.ref)) {
+        // ignore
         const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
         if (ignoreStr && obj.ref.closest(ignoreStr)) {
           return
