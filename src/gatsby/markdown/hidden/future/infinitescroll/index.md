@@ -83,7 +83,7 @@ You can set **default options** for Xtend UI components, with [Xt.options](/comp
 
 ```js
 Xt.options['xt-infinitescroll'] = {
-  debug: true
+  debug: true,
 }
 ```
 

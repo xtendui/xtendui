@@ -152,7 +152,7 @@ For example if you want **all drops to have a duration of 500**.
 
 ```js
 Xt.options['xt-drop'] = {
-  duration: 500
+  duration: 500,
 }
 ```
 

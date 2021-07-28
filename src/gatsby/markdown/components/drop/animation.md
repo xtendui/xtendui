@@ -33,7 +33,7 @@ You can also set **component's default duration** instead of specify it on each 
 
 ```js
 Xt.options['xt-drop'] = {
-  duration: 500
+  duration: 500,
 }
 ```
 

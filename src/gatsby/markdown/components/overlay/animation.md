@@ -35,7 +35,7 @@ You can also set **component's default duration** instead of specify it on each 
 
 ```js
 Xt.options['xt-overlay'] = {
-  duration: 500
+  duration: 500,
 }
 ```
 

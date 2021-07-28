@@ -129,7 +129,7 @@ You can set **default options** for Xtend UI components, with [Xt.options](/comp
 
 ```js
 Xt.options['xt-scrollto'] = {
-  debug: true
+  debug: true,
 }
 ```
 

@@ -68,7 +68,7 @@ You can set **default options** for Xtend UI components, with [Xt.options](/comp
 
 ```js
 Xt.options['xt-ripple'] = {
-  debug: true
+  debug: true,
 }
 ```
 
