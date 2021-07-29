@@ -1,9 +1,9 @@
 .demo--sticky-hide-sub, .demo--sticky-hide-sub-react {
-  [data-js-sticky-hide-sub] .h6 {
+  .xt-h4 {
     @apply transition-all ease-in-out-quint;
   }
-  [data-js-sticky-hide-content].scrolling-down.scrolling-hide {
-    [data-js-sticky-hide-sub] .h6 {
+  .xt-sticky.scrolling-down.scrolling-hide {
+    .xt-h4 {
       @apply text-xl;
     }
   }
