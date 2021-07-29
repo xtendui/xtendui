@@ -11,7 +11,6 @@ const html = /* HTML */ `
             class="${classes.input()} ${classes.inputUnderline()} input--constrains"
             aria-label="Custom constrain"
             placeholder="Custom constrain"
-            required
           />
         </div>
 

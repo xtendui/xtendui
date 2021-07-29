@@ -35,6 +35,7 @@ const mountValidation = ({ ref }) => {
 
   input.addEventListener('input', validate)
   input.addEventListener('change', validate)
+  validate()
 
   // unmount
 
