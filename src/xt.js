@@ -38,16 +38,16 @@ if (typeof window !== 'undefined') {
    */
   Xt.ready = func => {
     // no raf or ScrollTrigger bugs initialization
-    if (document.readyState === 'complete') {
+    if (document.readyState === 'interactive') {
       func()
     } else {
-      const complete = () => {
-        if (document.readyState === 'complete') {
+      const interactive = () => {
+        if (document.readyState === 'interactive') {
           func()
-          document.removeEventListener('readystatechange', complete)
+          document.removeEventListener('readystatechange', interactive)
         }
       }
-      document.addEventListener('readystatechange', complete)
+      document.addEventListener('readystatechange', interactive)
     }
   }
 
