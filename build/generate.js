@@ -69,6 +69,8 @@ console.log(test)
           if (mounts) {
             for (const meta of mounts.entries()) {
               strMount += meta[1]
+              // only the first mount
+              break
             }
             strMount = strMount.replace(/^ {2}/gm, '')
           }
