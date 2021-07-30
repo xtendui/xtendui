@@ -43,7 +43,7 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}">
+      <div class="off:hidden out:pointer-events-none relative ${classes.cardToggle()}" data-xt-toggle-target>
         Target 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 h-1 top-auto">
