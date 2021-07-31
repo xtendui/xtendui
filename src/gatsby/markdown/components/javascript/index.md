@@ -83,42 +83,6 @@ Xt.mount({
 })
 ```
 
-## Xt.on and Xt.off
-
-To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
-
-Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
-
-Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
-
-Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
-
-You can **toggle activations with javascript**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
-| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean =true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
-
-</div>
-
-You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
-
-Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
-
-You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
-
-<demo>
-  <demoinline src="demos/components/javascript/animation">
-  </demoinline>
-  <demoinline src="demos/components/javascript/animation-css">
-  </demoinline>
-  <demoinline src="demos/components/javascript/animation-js">
-  </demoinline>
-</demo>
-
 ## Xt.node
 
 You can create **DOM node from string** with this method.
@@ -179,6 +143,42 @@ You can get **translate values** with this method.
 | Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
 
 </div>
+
+## Xt.on and Xt.off
+
+To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
+
+Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
+
+Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+
+Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
+
+You can **toggle activations with javascript**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean =true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
+
+</div>
+
+You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
+
+Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+
+You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
+
+<demo>
+  <demoinline src="demos/components/javascript/animation">
+  </demoinline>
+  <demoinline src="demos/components/javascript/animation-css">
+  </demoinline>
+  <demoinline src="demos/components/javascript/animation-js">
+  </demoinline>
+</demo>
 
 ## Xt.get
 
