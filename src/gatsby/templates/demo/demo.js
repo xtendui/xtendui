@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Xt } from 'xtendui'
 
 export default class Demo extends React.Component {
   constructor() {
@@ -13,10 +12,7 @@ export default class Demo extends React.Component {
     if (typeof window !== 'undefined') {
       // populate
       const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
-      // Xt.ready because after Xt.ready
-      Xt.ready(() => {
-        populateDemo(container)
-      })
+      populateDemo(container)
     }
   }
 
