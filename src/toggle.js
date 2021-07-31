@@ -59,6 +59,7 @@ class Toggle {
     self.queueIn = []
     self.queueOut = []
     self.autopaused = false
+    self.observer = null
     // init
     self.initVars()
     self.initLogic()
@@ -784,19 +785,19 @@ class Toggle {
     if (options.visibleReinit) {
       if (!Xt.visible({ el: self.container })) {
         // intersection observer
-        const observer = new IntersectionObserver(
-          function (entries, observer) {
+        self.observer = new IntersectionObserver(
+          (entries, observer) => {
             for (const entry of entries) {
               if (entry.intersectionRatio > 0) {
                 self.eventVisibleReinit()
-                // disconnect observer
                 observer.disconnect()
+                self.observer = null
               }
             }
           },
           { root: null }
         )
-        observer.observe(self.container)
+        self.observer.observe(self.container)
       }
     }
   }
@@ -3345,6 +3346,11 @@ class Toggle {
         for (const jump of self.targets) {
           jump.classList.remove('xt-jump')
         }
+      }
+      // intersection observer
+      if (self.observer) {
+        self.observer.disconnect()
+        self.observer = null
       }
       // stop auto
       clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
