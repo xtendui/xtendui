@@ -141,8 +141,8 @@ if (typeof window !== 'undefined') {
           continue
         }
       }
-      // container
-      if (obj.container && !obj.container.contains(added)) {
+      // root
+      if (obj.root && !obj.root.contains(added)) {
         continue
       }
       // check

@@ -19,8 +19,8 @@ const mountIframesLazy = ({ ref }) => {
   // mount granularly
 
   Xt.mount({
+    root: ref,
     matches: 'iframe[data-src*="youtube"]',
-    container: ref,
     mount: ({ ref }) => {
       return mountIframeLazy({ ref })
     },

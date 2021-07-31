@@ -6,11 +6,15 @@ title: "Test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+## Mount
+
 Test resize and open/close overlay should always work.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/hidden/test/mount-unmount"></div>
 </demo>
+
+## Unmount
 
 TEST OFF on unmount this should not be called.
 
@@ -22,6 +26,17 @@ Test change page with browser location prev e next should close overlay automati
   <demoinline src="demos/hidden/test/unmount">
   </demoinline>
 </demo>
+
+## Root
+
+Test click should load iframe, it tests mount with root.
+
+<demo>
+  <demoinline src="demos/components/media/iframe-lazy">
+  </demoinline>
+</demo>
+
+## Docs
 
 Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable.
 

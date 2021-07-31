@@ -19,8 +19,8 @@ const mountVideosMatches = ({ ref }) => {
   // mount granularly
 
   Xt.mount({
+    root: ref,
     matches: 'video',
-    container: ref,
     mount: ({ ref }) => {
       return mountVideoMatches({ ref })
     },
