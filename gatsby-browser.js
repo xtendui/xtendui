@@ -2,7 +2,6 @@ window.keepSidebarScroll = 0
 window.overlayOpen = false
 window.currentDemos = []
 
-import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -72,8 +71,6 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 export const onRouteUpdate = () => {
-  // init
-  Xt.init()
   // keepSidebarScroll
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')

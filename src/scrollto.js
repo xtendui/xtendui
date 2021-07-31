@@ -91,12 +91,12 @@ class Scrollto {
         }
       }
     }
-    // initial
-    self.initStart()
     // init
     Xt.frame({
       el: self.container,
       func: () => {
+        // initial needs to be inside raf for content added (e.g. react)
+        self.initStart()
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
@@ -119,15 +119,12 @@ class Scrollto {
     const self = this
     // initial scrollto
     self.eventStart()
-    // document ready fixes wrong activation on page load
-    Xt.ready(() => {
-      // initial activation
-      for (const scroller of self.scrollers) {
-        if (scroller) {
-          self.eventActivationHandler({ scroller })
-        }
+    // initial activation
+    for (const scroller of self.scrollers) {
+      if (scroller) {
+        self.eventActivationHandler({ scroller })
       }
-    })
+    }
   }
 
   //
@@ -180,17 +177,7 @@ class Scrollto {
           self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
         // logic
-        if (self.initial) {
-          Xt.frame({
-            el: self.container,
-            func: () => {
-              self.eventScrolltoRaf()
-            },
-            ns: `${self.ns}Scrollto`,
-          })
-        } else {
-          self.eventScrolltoRaf()
-        }
+        self.eventScrolltoRaf()
       }
     }
   }

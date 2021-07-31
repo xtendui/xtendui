@@ -29,47 +29,6 @@ if (typeof window !== 'undefined') {
   Xt.scrolltoHashforce = null
 
   //
-  // initialization
-  //
-
-  /**
-   * ready
-   * @param {Function} func Function to execute on dom ready
-   */
-  Xt.ready = func => {
-    // no raf or ScrollTrigger bugs initialization
-    if (document.readyState !== 'loading') {
-      func()
-    } else {
-      const interactive = () => {
-        if (document.readyState !== 'loading') {
-          func()
-          document.removeEventListener('readystatechange', interactive)
-        }
-      }
-      document.addEventListener('readystatechange', interactive)
-    }
-  }
-
-  /**
-   * init
-   */
-  Xt.init = () => {
-    Xt.mountCheck()
-  }
-
-  Xt.ready(() => {
-    Xt.observer.disconnect()
-    Xt.observer.observe(document.documentElement, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true,
-    })
-    Xt.init()
-  })
-
-  //
   // observer
   //
 
@@ -115,6 +74,9 @@ if (typeof window !== 'undefined') {
    */
   Xt.mount = obj => {
     Xt.mountArr.push(obj)
+    Xt.ready(() => {
+      Xt.mountCheck({ obj })
+    })
   }
 
   /**
@@ -129,9 +91,11 @@ if (typeof window !== 'undefined') {
    * mountCheck
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.added
+   * @param {Object} params.obj
    */
-  Xt.mountCheck = ({ added = document.documentElement } = {}) => {
-    for (const obj of Xt.mountArr) {
+  Xt.mountCheck = ({ added = document.documentElement, obj = null } = {}) => {
+    const arr = obj ? [obj] : Xt.mountArr
+    for (const obj of arr) {
       // ignore
       const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
       if (ignoreStr) {
@@ -140,10 +104,6 @@ if (typeof window !== 'undefined') {
           Xt.ignoreOnce({ el: ignore }) // fix ignore once for mount when moving
           continue
         }
-      }
-      // root
-      if (obj.root && !obj.root.contains(added)) {
-        continue
       }
       // check
       const refs = []
@@ -156,6 +116,10 @@ if (typeof window !== 'undefined') {
       // call
       if (refs.length) {
         for (const [index, ref] of refs.entries()) {
+          // root
+          if (obj.root && !obj.root.contains(ref)) {
+            continue
+          }
           // fix multiple initialization (e.g. mount inside sticky)
           obj.done = obj.done ? obj.done : []
           if (obj.done.includes(ref)) {
@@ -205,6 +169,48 @@ if (typeof window !== 'undefined') {
         obj.unmountRemove()
       }
     }
+  }
+
+  //
+  // initialization
+  //
+
+  /**
+   * ready
+   * @param {Function} func Function to execute on dom ready
+   */
+  Xt.ready = func => {
+    if (document.readyState !== 'loading') {
+      // raf because we need all functions defined after mount
+      requestAnimationFrame(() => {
+        func()
+      })
+    } else {
+      const interactive = () => {
+        if (document.readyState !== 'loading') {
+          func()
+          document.removeEventListener('readystatechange', interactive)
+        }
+      }
+      document.addEventListener('readystatechange', interactive)
+    }
+  }
+
+  /**
+   * read
+   */
+  Xt.ready(() => {
+    Xt.observer.disconnect()
+    Xt.observer.observe(document.documentElement, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true,
+    })
+  })
+
+  Xt.refresh = () => {
+    Xt.mountCheck()
   }
 
   //
