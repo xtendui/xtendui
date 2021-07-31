@@ -183,15 +183,15 @@ You can create **DOM node from string** with this method.
 
 </div>
 
-## Xt.addScript
+## Xt.script
 
-You can **add a script to body** with this method.
+You can **add external scripts to document** with this method that gets executed immediately.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.addScript({ url:String, callback:Function = null })`                          | Add script to body             |
+| Method                  | `Xt.script({ url:String, callback:Function = null })`                          | Add script to body             |
 
 </div>
 

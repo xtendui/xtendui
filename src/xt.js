@@ -730,12 +730,12 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * addScript
+   * Add script to document
    * @param {Object} params
    * @param {String} params.url
    * @param {Function} params.callback
    */
-  Xt.addScript = ({ url, callback = null } = {}) => {
+  Xt.script = ({ url, callback = null } = {}) => {
     if (!document.querySelector(`script[src="${url}"]`)) {
       const script = document.createElement('script')
       if (callback) {
