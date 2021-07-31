@@ -74,8 +74,10 @@ if (typeof window !== 'undefined') {
    */
   Xt.mount = obj => {
     Xt.mountArr.push(obj)
-    Xt.ready(() => {
-      Xt.mountCheck({ obj })
+    Xt.ready({
+      func: () => {
+        Xt.mountCheck({ obj })
+      },
     })
   }
 
@@ -177,17 +179,20 @@ if (typeof window !== 'undefined') {
 
   /**
    * ready
-   * @param {Function} func Function to execute on dom ready
+   * @param {Object} params
+   * @param {Function} params.func Function to execute
+   * @param {String} params.state States separated by space, can be 'loading' 'interactive' 'complete'
    */
-  Xt.ready = func => {
-    if (document.readyState !== 'loading') {
+  Xt.ready = ({ func, state = 'interactive complete' } = {}) => {
+    const states = [...state.split(' ')]
+    if (states.includes(document.readyState)) {
       // raf because we need all functions defined after mount
       requestAnimationFrame(() => {
         func()
       })
     } else {
       const interactive = () => {
-        if (document.readyState !== 'loading') {
+        if (states.includes(document.readyState)) {
           func()
           document.removeEventListener('readystatechange', interactive)
         }
@@ -199,14 +204,16 @@ if (typeof window !== 'undefined') {
   /**
    * read
    */
-  Xt.ready(() => {
-    Xt.observer.disconnect()
-    Xt.observer.observe(document.documentElement, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true,
-    })
+  Xt.ready({
+    func: () => {
+      Xt.observer.disconnect()
+      Xt.observer.observe(document.documentElement, {
+        characterData: false,
+        attributes: false,
+        childList: true,
+        subtree: true,
+      })
+    },
   })
 
   Xt.refresh = () => {
@@ -1063,8 +1070,10 @@ if (typeof window !== 'undefined') {
     outer.remove()
   }
 
-  Xt.ready(() => {
-    Xt.setScrollbarWidth()
+  Xt.ready({
+    func: () => {
+      Xt.setScrollbarWidth()
+    },
   })
 
   /**
@@ -1087,8 +1096,10 @@ if (typeof window !== 'undefined') {
     })
   })
 
-  Xt.ready(() => {
-    Xt.innerHeightSet()
+  Xt.ready({
+    func: () => {
+      Xt.innerHeightSet()
+    },
   })
 
   //

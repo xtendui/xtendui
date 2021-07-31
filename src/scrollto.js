@@ -177,15 +177,15 @@ class Scrollto {
           self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
         // logic
-        self.eventScrolltoRaf()
+        self.eventScrolltoLogic()
       }
     }
   }
 
   /**
-   * scrollto requestAnimationFrame
+   * scrollto logic
    */
-  eventScrolltoRaf() {
+  eventScrolltoLogic() {
     const self = this
     const options = self.options
     // force no hashchange

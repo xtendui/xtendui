@@ -20,13 +20,15 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sen
 
 ## Xt.ready
 
-You can execute a function on DOM ready.
+You can execute a function on Document.readyState, **by default it listens when document is ready**.
+
+It has a requestAnimationFrame if the state is instantly matches, to **ensure all the javascript are ready on function call**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.ready:Function`              | `func:Function`       | Execute a function on DOM ready                  |
+| Function                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
 
 </div>
 
