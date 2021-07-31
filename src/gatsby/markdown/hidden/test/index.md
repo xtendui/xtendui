@@ -18,7 +18,9 @@ Test resize and open/close overlay should always work.
 
 TEST OFF on unmount this should not be called.
 
-TEST UNMOUNT this should not be called multiple times after changing page and resize.
+TEST UNMOUNT this should be called on change page.
+
+TEST UNMOUNT this should not be called multiple times on changing page and resize.
 
 Test change page with browser location prev e next should close overlay automatically.
 

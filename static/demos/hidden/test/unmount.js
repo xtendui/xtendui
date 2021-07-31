@@ -44,7 +44,7 @@ const mountTest = ({ ref }) => {
 
   const resize = () => {
     // eslint-disable-next-line no-console
-    console.log('TEST UNMOUNT this should not be called multiple times after changing page and resize.')
+    console.log('TEST UNMOUNT this should not be called multiple times on changing page and resize.')
   }
 
   addEventListener('resize', resize)
@@ -52,6 +52,8 @@ const mountTest = ({ ref }) => {
   // unmount
 
   return () => {
+    // eslint-disable-next-line no-console
+    console.log('TEST UNMOUNT this should be called on change page.')
     removeEventListener('resize', resize)
     self.destroy()
     self = null
