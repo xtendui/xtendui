@@ -41,6 +41,8 @@ const gatsbySidebarContain = () => {
 
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_menu--button')
+  // demoHash
+  dispatchEvent(new CustomEvent('demoHashChange'))
   // keepSidebarScroll
   const overlay = document.querySelector('#gatsby_menu--overlay')
   const sidebar = document.querySelector('.gatsby_site-article_sidebar')
