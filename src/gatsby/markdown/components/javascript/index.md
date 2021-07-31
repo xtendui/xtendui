@@ -119,57 +119,6 @@ You can use also **css animations**, just add them with **class names** `.on`, `
   </demoinline>
 </demo>
 
-## Xt.get
-
-You can get **self object from DOM node** on Xtend UI components.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.get({ name:String, el:Node })`                          | Get **self object** on DOM node for that component name (e.g. `'xt-toggle'`)             |
-
-</div>
-
-For example if you want to **get the drop object** on a particular node.
-
-```js
-let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
-const container = self.container
-```
-
-## Xt.options
-
-You can set **default options** for Xtend UI components, they get **applied after default options and before custom options**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.options:Object`              | Set default options for that component name (e.g. `'xt-toggle'`)             |
-
-</div>
-
-For example if you want **all drops to have a duration of 500**.
-
-```js
-Xt.options['xt-drop'] = {
-  duration: 500,
-}
-```
-
-## Xt.getTranslate
-
-You can get **translate values** with this method.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
-
-</div>
-
 ## Xt.node
 
 You can create **DOM node from string** with this method.
@@ -218,6 +167,57 @@ You can **check if node is visible with `display`** with this method.
 | Method                  | `Xt.visible({ el:Node })`                          | Check if node is visible with `display`, returns `Boolean`             |
 
 </div>
+
+## Xt.getTranslate
+
+You can get **translate values** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
+
+</div>
+
+## Xt.get
+
+You can get **self object from DOM node** on Xtend UI components.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.get({ name:String, el:Node })`                          | Get **self object** on DOM node for that component name (e.g. `'xt-toggle'`)             |
+
+</div>
+
+For example if you want to **get the drop object** on a particular node.
+
+```js
+let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
+const container = self.container
+```
+
+## Xt.options
+
+You can set **default options** for Xtend UI components, they get **applied after default options and before custom options**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Variable                  | `Xt.options:Object`              | Set default options for that component name (e.g. `'xt-toggle'`)             |
+
+</div>
+
+For example if you want **all drops to have a duration of 500**.
+
+```js
+Xt.options['xt-drop'] = {
+  duration: 500,
+}
+```
 
 ## Xt.innerHeight
 
