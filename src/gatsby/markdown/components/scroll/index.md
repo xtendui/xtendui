@@ -85,9 +85,7 @@ here your custom code that trigger height change or show/hide elements
 */
 
 // refresh ScrollTrigger DOM
-Xt.ready(() => {
-  ScrollTrigger.refresh()
-})
+ScrollTrigger.refresh()
 ```
 
 - For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).
