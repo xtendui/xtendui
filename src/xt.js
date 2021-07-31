@@ -29,13 +29,13 @@ if (typeof window !== 'undefined') {
   Xt.scrolltoHashforce = null
 
   //
-  // observer
+  // mutationObserver
   //
 
   /**
-   * observer
+   * init
    */
-  Xt.observer = new MutationObserver(mutationsList => {
+  Xt.mutationObserver = new MutationObserver(mutationsList => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // added
@@ -206,8 +206,8 @@ if (typeof window !== 'undefined') {
    */
   Xt.ready({
     func: () => {
-      Xt.observer.disconnect()
-      Xt.observer.observe(document.documentElement, {
+      Xt.mutationObserver.disconnect()
+      Xt.mutationObserver.observe(document.documentElement, {
         characterData: false,
         attributes: false,
         childList: true,
