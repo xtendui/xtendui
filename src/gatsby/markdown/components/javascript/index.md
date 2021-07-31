@@ -22,7 +22,7 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sen
 
 You can execute a function on Document.readyState, **by default it listens when document is ready**.
 
-It has a requestAnimationFrame if the state is instantly matches, to **ensure all the javascript are ready on function call**.
+It has a requestAnimationFrame **if the state is instantly matched**, to **ensure all the javascript are ready on function call**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

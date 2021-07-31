@@ -2147,7 +2147,9 @@ class Toggle {
     const els = obj[type].queueEls
     for (const el of els) {
       // delay
-      let delay = Xt.delayTime({ el, duration: options.delay || options[`delay${actionCurrent}`], actionCurrent })
+      let delay = self.initial
+        ? false
+        : Xt.delayTime({ el, duration: options.delay || options[`delay${actionCurrent}`], actionCurrent })
       if (delay) {
         if (typeof delay === 'function') {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2326,7 +2328,9 @@ class Toggle {
     const options = self.options
     // duration
     const els = obj[type].queueEls
-    let duration = Xt.animTime({ el, duration: options.duration || options[`duration${actionCurrent}`], actionCurrent })
+    let duration = self.initial
+      ? false
+      : Xt.animTime({ el, duration: options.duration || options[`duration${actionCurrent}`], actionCurrent })
     if (duration) {
       if (typeof duration === 'function') {
         const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2722,16 +2726,18 @@ class Toggle {
     if (options.scrollto) {
       if (actionCurrent === 'In') {
         const scrollto = ({ el }) => {
-          // raf for scrolling on page load
-          Xt.frame({
-            el: window,
+          // Xt.ready complete and raf to be right after page refresh
+          const instant = self.initial
+          Xt.ready({
+            state: 'complete',
             func: () => {
-              if (self.initial) {
-                Xt.scrolltoHashforce = true
-              }
-              el.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+              requestAnimationFrame(() => {
+                if (instant) {
+                  Xt.scrolltoHashforce = true
+                }
+                el.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+              })
             },
-            ns: `${self.ns}Scrollto`,
           })
         }
         // check
