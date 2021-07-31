@@ -20,6 +20,28 @@ Xt.mount({
 /* mountTest */
 
 const mountTest = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    matches: '.xt-sticky',
+    mount: ({ ref }) => {
+      return mountSticky({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountSticky */
+
+const mountSticky = ({ ref }) => {
+  // vars
+
+  const sticky = ref
+
   // matchemdia
 
   ScrollTrigger.matchMedia({
@@ -27,7 +49,7 @@ const mountTest = ({ ref }) => {
       // sticky
 
       ScrollTrigger.create({
-        trigger: ref.querySelector('.xt-sticky'),
+        trigger: sticky,
         start: 'top top',
         endTrigger: 'html',
         end: 'bottom top',
