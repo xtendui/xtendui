@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--sticky-stack-react" ref={ref}>
-      <div className="*** xt-sticky ***" data-xt-sticky-stack-top>
+      <div className="*** xt-sticky ***" data-js-sticky-stack-top>
         <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
@@ -32,7 +32,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky *** group" data-xt-sticky-stack-topsecond>
+      <div className="*** xt-sticky *** group" data-js-sticky-stack-topsecond>
         <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h4 transition-all group-on:xt-h6">Top Second</div>
         </div>
@@ -53,7 +53,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky ***" data-xt-sticky-stack-topthird>
+      <div className="*** xt-sticky ***" data-js-sticky-stack-topthird>
         <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h6">Top Third</div>
         </div>
@@ -74,7 +74,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="*** xt-sticky ***" data-xt-sticky-stack-bottom>
+      <div className="*** xt-sticky ***" data-js-sticky-stack-bottom>
         <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Bottom</div>
         </div>
@@ -95,7 +95,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky ***" data-xt-sticky-stack-bottomsecond>
+      <div className="*** xt-sticky ***" data-js-sticky-stack-bottomsecond>
         <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
           <div className="xt-h6">Bottom Second</div>
         </div>
@@ -138,10 +138,10 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-stack-top]'),
+    trigger: ref.querySelector('[data-js-sticky-stack-top]'),
     start: 'top top',
-    endTrigger: '[data-xt-sticky-stack-topsecond]',
-    end: () => `top ${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
+    endTrigger: '[data-js-sticky-stack-topsecond]',
+    end: () => `top ${document.querySelector('[data-js-sticky-stack-topsecond]').offsetHeight}px`,
     pin: true,
     pinSpacing: false,
   })
@@ -149,7 +149,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-stack-topsecond]'),
+    trigger: ref.querySelector('[data-js-sticky-stack-topsecond]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -161,8 +161,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-stack-topthird]'),
-    start: () => `top top+=${document.querySelector('[data-xt-sticky-stack-topsecond]').offsetHeight}px`,
+    trigger: ref.querySelector('[data-js-sticky-stack-topthird]'),
+    start: () => `top top+=${document.querySelector('[data-js-sticky-stack-topsecond]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,
@@ -176,7 +176,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-stack-bottom]'),
+    trigger: ref.querySelector('[data-js-sticky-stack-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',
@@ -191,8 +191,8 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottomSecond = ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-stack-bottomsecond]'),
-    start: () => `bottom bottom-=${document.querySelector('[data-xt-sticky-stack-bottom]').offsetHeight}px`,
+    trigger: ref.querySelector('[data-js-sticky-stack-bottomsecond]'),
+    start: () => `bottom bottom-=${document.querySelector('[data-js-sticky-stack-bottom]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,

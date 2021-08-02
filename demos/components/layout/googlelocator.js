@@ -217,11 +217,11 @@ const mountGooglelocator = ({ ref }) => {
   // add yout api key here
 
   const lang = document.documentElement.getAttribute('lang')
-  Xt.addScript({
+  Xt.script({
     url: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=${lang}&&region=US&callback=demoGooglelocator`,
   })
 
-  Xt.addScript({ url: 'https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js' })
+  Xt.script({ url: 'https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js' })
 
   // unmount
 

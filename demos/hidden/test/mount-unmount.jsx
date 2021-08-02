@@ -1,0 +1,204 @@
+import React, { useRef, useEffect } from 'react'
+import { Xt } from 'xtendui'
+import 'xtendui/src/overlay'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+export default function demo() {
+  const ref = useRef()
+  useEffect(() => {
+    return mount({ ref: ref.current })
+  }, [])
+
+  return (
+    <div className="demo--mount-unmount-react" ref={ref}>
+      <div className="xt-sticky">
+        <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500" data-xt-overlay>
+          <button
+            type="button"
+            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            data-xt-overlay-element>
+            overlay
+          </button>
+
+          <div className="xt-overlay group" data-xt-overlay-target>
+            <div className="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+            <div className="xt-overlay-container max-w-3xl">
+              <div className="xt-overlay-inner">
+                <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
+                  <button
+                    type="button"
+                    className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
+                    aria-label="Close">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="xt-icon "
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                  <div className="py-8 px-9 text-base">
+                    <div className="xt-h4">Overlay 0</div>
+                    <p>
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
+                      mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                    </p>
+                    <p>
+                      Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                      ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.
+                    </p>
+                    <p>
+                      Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                      justo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="xt-card py-6 px-7 text-sm text-black xt-links-default bg-gray-100">
+        <div className="xt-h4">Lorem ipsum</div>
+        <p>
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
+          vitae magna eget, vehicula scelerisque elit.
+        </p>
+        <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat, ligula nulla
+          sollicitudin nunc, ut commodo nulla enim nec nisi.
+        </p>
+        <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+  )
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountTest = mountTest({ ref })
+
+  // unmount
+
+  return () => {
+    unmountTest()
+  }
+}
+
+/* mountTest */
+
+const mountTest = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    matches: '.xt-sticky',
+    mount: ({ ref }) => {
+      return mountSticky({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountSticky */
+
+const mountSticky = ({ ref }) => {
+  // vars
+
+  const sticky = ref
+
+  // matchemdia
+
+  ScrollTrigger.matchMedia({
+    '(max-width: 767px)': () => {
+      // sticky
+
+      ScrollTrigger.create({
+        trigger: sticky,
+        start: 'top top',
+        endTrigger: 'html',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+      })
+    },
+  })
+}

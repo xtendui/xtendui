@@ -53,7 +53,9 @@ const mountToggle = ({ ref }) => {
     // reinit slides
     const selfSlider = Xt.get({ name: 'xt-slider', el: slider })
     if (selfSlider) {
-      selfSlider.reinit({ save: false })
+      requestAnimationFrame(() => {
+        selfSlider.reinit({ save: false })
+      })
     }
   }
 

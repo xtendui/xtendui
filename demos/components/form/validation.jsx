@@ -18,7 +18,6 @@ export default function demo() {
               className="block w-full py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none input--constrains"
               aria-label="Custom constrain"
               placeholder="Custom constrain"
-              required
             />
           </div>
 
@@ -275,6 +274,7 @@ const mountValidation = ({ ref }) => {
 
   input.addEventListener('input', validate)
   input.addEventListener('change', validate)
+  validate()
 
   // unmount
 

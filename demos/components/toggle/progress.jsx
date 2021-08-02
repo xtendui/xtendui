@@ -65,7 +65,9 @@ export default function demo() {
           </span>
         </button>
 
-        <div className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow">
+        <div
+          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          data-xt-toggle-target>
           Target 0
           <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">

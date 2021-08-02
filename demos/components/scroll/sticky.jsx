@@ -26,7 +26,7 @@ export default function demo() {
         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
       </div>
 
-      <div className="*** xt-sticky ***" data-xt-sticky-top>
+      <div className="*** xt-sticky ***" data-js-sticky-top>
         <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
           <div className="xt-h4">Top</div>
         </div>
@@ -79,7 +79,7 @@ export default function demo() {
 
       <div className="*** relative ***">
         <div className="*** absolute w-full ***">
-          <div className="*** xt-sticky ***" data-xt-sticky-bottom>
+          <div className="*** xt-sticky ***" data-js-sticky-bottom>
             <div className="xt-card py-6 px-7 text-sm text-white xt-links-inverse bg-primary-500">
               <div className="xt-h4">Bottom</div>
             </div>
@@ -124,7 +124,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-top]'),
+    trigger: ref.querySelector('[data-js-sticky-top]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -135,7 +135,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('[data-xt-sticky-bottom]'),
+    trigger: ref.querySelector('[data-js-sticky-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',

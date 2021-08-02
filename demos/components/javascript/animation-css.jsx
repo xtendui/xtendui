@@ -16,7 +16,7 @@ export default function demo() {
         <span
           className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 *** off:hidden out:pointer-events-none ***"
           data-xt-duration="1000"
-          data-target>
+          data-js-target>
           Active
         </span>
       </button>
@@ -41,7 +41,7 @@ const mount = ({ ref }) => {
 const mountActivation = ({ ref }) => {
   // vars
 
-  const tr = ref.querySelector('[data-target]')
+  const tr = ref.querySelector('[data-js-target]')
 
   // init
 

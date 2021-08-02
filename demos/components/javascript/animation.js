@@ -18,7 +18,7 @@ Xt.mount({
 const mountActivation = ({ ref }) => {
   // vars
 
-  const tr = ref.querySelector('[data-target]')
+  const tr = ref.querySelector('[data-js-target]')
 
   // init
 
