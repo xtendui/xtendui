@@ -194,6 +194,7 @@ if (typeof window !== 'undefined') {
       const interactive = () => {
         if (states.includes(document.readyState)) {
           func()
+          // needs to be removed or it will call multiple times
           document.removeEventListener('readystatechange', interactive)
         }
       }
