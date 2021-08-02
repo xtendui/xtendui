@@ -89,13 +89,15 @@ if (typeof window !== 'undefined') {
         fnc()
       })
     } else {
-      document.addEventListener('readystatechange', () => {
+      const interactive = () => {
         if (document.readyState !== 'loading') {
           requestAnimationFrame(() => {
             fnc()
           })
+          document.removeEventListener('readystatechange', interactive)
         }
-      })
+      }
+      document.addEventListener('readystatechange', interactive)
     }
   }
 
