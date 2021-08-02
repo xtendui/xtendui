@@ -84,13 +84,13 @@ if (typeof window !== 'undefined') {
    * @param {Function} fnc Function to execute on dom ready
    */
   Xt.ready = fnc => {
-    if (document.readyState === 'complete') {
+    if (document.readyState !== 'loading') {
       requestAnimationFrame(() => {
         fnc()
       })
     } else {
       document.addEventListener('readystatechange', () => {
-        if (document.readyState === 'complete') {
+        if (document.readyState !== 'loading') {
           requestAnimationFrame(() => {
             fnc()
           })
