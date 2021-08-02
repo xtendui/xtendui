@@ -1,3 +1,30 @@
+# [1.0.0-beta.38](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.37...v1.0.0-beta.38) (2021-08-02)
+
+
+### Bug Fixes
+
+* **js:** fix Xt.ready on interactive instead of on complete ([64c46b7](https://github.com/xtendui/xtendui/commit/64c46b7cbdb44bd3ae225181865643122b9e4928))
+* **js:** fix Xt.ready on interactive instead of on complete ([6977b6e](https://github.com/xtendui/xtendui/commit/6977b6ecd20f827e9f196d4e382fca51063d0f47))
+* **toggle:** fix instat scrollto when initial and fixed iinitial activation with no animation duration and delay duration on initial ([0c60a73](https://github.com/xtendui/xtendui/commit/0c60a73c8b2c7e54f016741b04e9a0516235b69a))
+* **toggle:** refactor intersection observer ([1036818](https://github.com/xtendui/xtendui/commit/1036818c31b0a8025b707f61d3ebd19ccfbdeeda))
+* Xt.mount pass ignore to unmount also ([f5af94d](https://github.com/xtendui/xtendui/commit/f5af94dd0a4a022b4ab97ae3513c7d3fb62f9a4c))
+
+
+### Code Refactoring
+
+* Xt.addScript to Xt.script ([205a2d5](https://github.com/xtendui/xtendui/commit/205a2d5df6aec60dc98e4ce04434f656d7b311c1))
+* **js:** refactor Xt.ready with object arguments ([f45b963](https://github.com/xtendui/xtendui/commit/f45b9633e01c5e88eac35e41b4acc1bc4c7a13a5))
+* added Xt.mount argument container:Node and fixed Xt unmount not working and fixed unmount errors ([3d19c97](https://github.com/xtendui/xtendui/commit/3d19c9707329b681e76c7425d6633a05d6db873a))
+* refactor Xt.mount check granularly on mount instead of document ready, removed Xt.init, fixed Xt.mount root, refactor scrollto init after raf ([8ecf908](https://github.com/xtendui/xtendui/commit/8ecf908705eebe3b100afe27286de9c3b1bee21c))
+
+
+### BREAKING CHANGES
+
+* instead of Xt.addScript use Xt.script
+* **js:** Xt.ready now has object arguments pass { func: yourfunction } as argument
+* removed Xt.init not needed anymore
+* if you used Xt.init() remove it
+
 # [1.0.0-beta.37](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.36...v1.0.0-beta.37) (2021-07-26)
 
 
