@@ -151,16 +151,6 @@ class Slider extends Xt.Toggle {
     }
     // initGroupsSame
     self.initGroupsSame()
-    // @PERF
-    for (const group of self.groups) {
-      let groupHeight = 0
-      for (const tr of group.targets) {
-        const content = tr.children.length ? tr.children[0] : tr
-        const height = content.offsetHeight
-        groupHeight = height > groupHeight ? height : groupHeight
-      }
-      Xt.dataStorage.set(group.target, `${self.ns}GroupHeight`, groupHeight)
-    }
   }
 
   /**
@@ -740,6 +730,7 @@ class Slider extends Xt.Toggle {
       }
     }
     if (!found) return
+    const group = found
     el = found.element
     const tr = found.target
     // fix keep self.drag.instant
@@ -806,7 +797,12 @@ class Slider extends Xt.Toggle {
     })
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
-      let groupHeight = Xt.dataStorage.get(tr, `${self.ns}GroupHeight`)
+      let groupHeight = 0
+      for (const tr of group.targets) {
+        const content = tr.children.length ? tr.children[0] : tr
+        const height = content.offsetHeight
+        groupHeight = height > groupHeight ? height : groupHeight
+      }
       if (groupHeight > 0) {
         groupHeight += 'px'
         if (self.autoHeight.style.height !== groupHeight) {
