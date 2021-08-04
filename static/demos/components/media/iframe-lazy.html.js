@@ -3,9 +3,11 @@ const html = /* HTML */ `
     <div class="xt-media-container bg-gray-500 pb-[56.2%] *** group ***">
       <iframe
         class="xt-media"
-        type="text/html"
         data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=1&showinfo=0&rel=0"
+        title="YouTube video player"
         frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
       ></iframe>
       <div
         class="*** xt-media object-cover object-center cursor-pointer transition group-in:opacity-0 group-done:hidden ***"
