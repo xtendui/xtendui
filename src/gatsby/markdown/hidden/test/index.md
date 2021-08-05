@@ -6,15 +6,7 @@ title: "Test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-## Mount
-
-Test resize and open/close overlay should always work.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/hidden/test/mount-unmount"></div>
-</demo>
-
-## Unmount
+## Mount Unmount
 
 TEST OFF on unmount this should not be called.
 
@@ -22,11 +14,23 @@ TEST UNMOUNT this should be called on change page.
 
 TEST UNMOUNT this should not be called multiple times on changing page and resize.
 
+TEST MOUNT should NOT be called twice (after 2 seconds).
+
+TEST MOUNT should be called once (after 2 seconds).
+
 Test change page with browser location prev e next should close overlay automatically.
 
 <demo>
-  <demoinline src="demos/hidden/test/unmount">
+  <demoinline src="demos/hidden/test/mount-unmount">
   </demoinline>
+</demo>
+
+## ScrollTrigger Matches
+
+Test resize and open/close overlay should always work.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/hidden/test/scrolltrigger-matches"></div>
 </demo>
 
 ## Root

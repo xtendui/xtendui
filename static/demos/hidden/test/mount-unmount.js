@@ -1,11 +1,8 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--mount-unmount',
+  matches: '.demo--unmount',
   mount: ({ ref }) => {
     const unmountTest = mountTest({ ref })
 
@@ -20,42 +17,61 @@ Xt.mount({
 /* mountTest */
 
 const mountTest = ({ ref }) => {
-  // mount granularly
+  // vars
 
-  Xt.mount({
-    root: ref,
-    matches: '.xt-sticky',
-    mount: ({ ref }) => {
-      return mountSticky({ ref })
-    },
-  })
+  const overlay = ref
+
+  // init
+
+  let self = new Xt.Overlay(overlay, {})
+
+  // off
+
+  const off = e => {
+    const tr = e.target
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      // eslint-disable-next-line no-console
+      console.log('TEST OFF on unmount this should not be called.')
+    }
+  }
+
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.overlay', off)
+  }
+
+  // resize
+
+  const resize = () => {
+    // eslint-disable-next-line no-console
+    console.log('TEST UNMOUNT this should not be called multiple times on changing page and resize.')
+  }
+
+  addEventListener('resize', resize)
+
+  // mount
+
+  setTimeout(() => {
+    Xt.mount({
+      root: ref,
+      matches: '.xt-overlay',
+      mount: () => {
+        // eslint-disable-next-line no-console
+        console.log('TEST MOUNT should be called once (after 2 seconds).')
+      },
+    })
+  }, 2000)
+
+  // eslint-disable-next-line no-console
+  console.log('TEST MOUNT should NOT be called twice (after 2 seconds).')
 
   // unmount
 
-  return () => {}
-}
-
-/* mountSticky */
-
-const mountSticky = ({ ref }) => {
-  // vars
-
-  const sticky = ref
-
-  // matchemdia
-
-  ScrollTrigger.matchMedia({
-    '(max-width: 767px)': () => {
-      // sticky
-
-      ScrollTrigger.create({
-        trigger: sticky,
-        start: 'top top',
-        endTrigger: 'html',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-      })
-    },
-  })
+  return () => {
+    // eslint-disable-next-line no-console
+    console.log('TEST UNMOUNT this should be called on change page.')
+    removeEventListener('resize', resize)
+    self.destroy()
+    self = null
+  }
 }
