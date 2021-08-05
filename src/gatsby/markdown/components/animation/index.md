@@ -23,6 +23,8 @@ Add to the `body` the class `xt-body` to have this features:
 * Set gsap `force3D: false` for smoother pixels animations.
 
 ```js
+import gsap from 'gsap'
+
 /* animation */
 
 gsap.config({ force3D: false }) // smoother pixels animations
@@ -31,6 +33,8 @@ gsap.config({ force3D: false }) // smoother pixels animations
 * **If you want custom easing** in gsap use this code with your custom easing.
 
 ```js
+import gsap from 'gsap'
+
 /* custom easing */
 
 import bezierEasing from 'bezier-easing'
@@ -54,6 +58,9 @@ gsap.registerEase('inOut', progress => {
 * **Prefers Reduced Motion**, **can set up instant gsap animation and instant interactivity, and increase automatic time** when the the user has activated "Prefers Reduced Motion", use this script.
 
 ```js
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+
 /* animation */
 
 // accessibility
@@ -75,6 +82,9 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 You can play with gsap and Xtend UI settings, an **example setup** for for faster animation on mobile.
 
 ```js
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+
 /* animation */
 
 // faster on mobile
