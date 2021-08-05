@@ -735,8 +735,10 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {String} params.url
    * @param {Function} params.callback
+   * @param {Boolean} params.defer
+   * @param {Boolean} params.async
    */
-  Xt.script = ({ url, callback = null } = {}) => {
+  Xt.script = ({ url, callback = null, defer = true, async = true } = {}) => {
     if (!document.querySelector(`script[src="${url}"]`)) {
       const script = document.createElement('script')
       if (callback) {
@@ -744,6 +746,8 @@ if (typeof window !== 'undefined') {
       }
       script.type = 'text/javascript'
       script.src = url
+      script.defer = defer
+      script.async = async
       document.body.append(script)
     }
   }

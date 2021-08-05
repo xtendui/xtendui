@@ -104,7 +104,7 @@ You can **add external scripts to document** with this method that gets executed
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.script({ url:String, callback:Function = null })`                          | Add script to body             |
+| Method                  | `Xt.script({ url:String, callback:Function = null, defer:Boolean = true, async:Boolean = true })`                          | Add script to body             |
 
 </div>
 
