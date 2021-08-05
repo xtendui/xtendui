@@ -4,19 +4,37 @@ import 'xtendui/src/form'
 Xt.mount({
   matches: '.demo--form-validation',
   mount: ({ ref }) => {
-    const unmountValidation = mountValidation({ ref })
+    const unmountScrollToError = mountScrollToError({ ref })
+    const unmountValidationCustom = mountValidationCustom({ ref })
 
     // unmount
 
     return () => {
-      unmountValidation()
+      unmountScrollToError()
+      unmountValidationCustom()
     }
   },
 })
 
-/* mountValidation */
+/* mountScrollToError */
 
-const mountValidation = ({ ref }) => {
+const mountScrollToError = ({ ref }) => {
+  // vars
+
+  let el = ref.querySelector('.custom-validation-error')
+
+  // init
+
+  if (el) {
+    el = el.parentNode
+    const rect = el.getBoundingClientRect()
+    window.scrollTo(window.scrollX, rect.top - Xt.innerHeight * Xt.formScrollWindowFactor)
+  }
+}
+
+/* mountValidationCustom */
+
+const mountValidationCustom = ({ ref }) => {
   // vars
 
   const input = ref.querySelector('.input--constrains')

@@ -87,6 +87,9 @@ const html = /* HTML */ `
             <option>Option 2</option>
             <option>Option 3</option>
           </select>
+          <div class="mt-3 text-red-500 text-xs leading-snug *** custom-validation-error ***">
+            Scroll to this error on page load
+          </div>
         </div>
 
         <div class="w-full">

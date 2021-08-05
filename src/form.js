@@ -56,7 +56,6 @@ Xt.mount({
     // vars
 
     const items = ref.elements
-    const scrollWindowFactor = 0.2
 
     // valid
 
@@ -77,7 +76,7 @@ Xt.mount({
     // invalid
 
     const scroll = () => {
-      window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * scrollWindowFactor)
+      window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * Xt.formScrollWindowFactor)
     }
 
     const invalid = e => {
@@ -86,7 +85,9 @@ Xt.mount({
       item.classList.add('invalid-submit')
       item.dataset.xtValidate = 'true'
       // scroll to views
-      addEventListener('scroll', scroll, { once: true })
+      if (Xt.formScrollWindowFactor) {
+        addEventListener('scroll', scroll, { once: true })
+      }
     }
 
     const submit = () => {

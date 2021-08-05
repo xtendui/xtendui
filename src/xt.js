@@ -27,6 +27,7 @@ if (typeof window !== 'undefined') {
   Xt.durationTimescale = 1
   Xt.autoTimescale = 1
   Xt.scrolltoHashforce = null
+  Xt.formScrollWindowFactor = 0.2
 
   //
   // mutationObserver
