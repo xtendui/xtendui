@@ -14,6 +14,9 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="/img.svg" loading="lazy" alt="" />
+            </div>
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
@@ -24,6 +27,9 @@ const html = /* HTML */ `
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
               </div>
+            </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="/img-ratio.svg" loading="lazy" alt="" />
             </div>
           </div>
 
@@ -36,6 +42,9 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt="" />
+            </div>
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
@@ -46,6 +55,9 @@ const html = /* HTML */ `
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
               </div>
+            </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
             </div>
           </div>
 
@@ -58,6 +70,9 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt="" />
+            </div>
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
@@ -68,6 +83,9 @@ const html = /* HTML */ `
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
               </div>
+            </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
             </div>
           </div>
 
@@ -80,16 +98,16 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
+            <div class="hidden" data-xt-slider-content>
+              <img class="h-full w-auto" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
+            </div>
           </div>
         </div>
 
         <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
-          <button
-            type="button"
-            class="xt-button ${classes.buttonSlider()} hidden"
-            data-xt-slider-element
-            title="Slide xt-num"
-          ></button>
+          <button type="button" class="xt-button h-10 hidden" data-xt-slider-element title="Slide xt-num">
+            xt-content
+          </button>
         </nav>
       </div>
     </div>

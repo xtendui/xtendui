@@ -744,7 +744,7 @@ class Toggle {
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
       for (const el of self.elements) {
-        const imgs = el.querySelectorAll('img')
+        const imgs = Array.from(el.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
@@ -763,7 +763,7 @@ class Toggle {
         }
       }
       for (const tr of self.targets) {
-        const imgs = tr.querySelectorAll('img')
+        const imgs = Array.from(tr.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
         self.destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
