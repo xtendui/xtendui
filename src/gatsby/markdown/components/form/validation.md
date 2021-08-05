@@ -26,9 +26,9 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Variable                  | `Xt.formScrollWindowFactor:Number|false`              | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `Xt.formScrollWindowFactor:Number|false`              | `0.2`        | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
 
 </div>
 

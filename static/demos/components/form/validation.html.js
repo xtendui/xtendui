@@ -233,4 +233,5 @@ const html = /* HTML */ `
 
 export const object = {
   html: html,
+  container: true,
 }

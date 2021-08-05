@@ -30,6 +30,10 @@ const mountScrollToError = ({ ref }) => {
     const rect = el.getBoundingClientRect()
     window.scrollTo(window.scrollX, rect.top - Xt.innerHeight * Xt.formScrollWindowFactor)
   }
+
+  // unmount
+
+  return () => {}
 }
 
 /* mountValidationCustom */
