@@ -106,6 +106,8 @@ If you want to show a warning on unsupported browser you can use [browser update
     function $buo_f(){
     var e = document.createElement("script");
     e.src = "//browser-update.org/update.min.js";
+    e.async = true;
+    e.defer = true;
     document.body.appendChild(e);
     };
     try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
