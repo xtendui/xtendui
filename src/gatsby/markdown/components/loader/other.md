@@ -51,3 +51,7 @@ Use **component classes** to create a **mouse follow**.
   <demoinline src="demos/components/animation/mousefollow">
   </demoinline>
 </demo>
+
+## Form
+
+Refer to [form loader](/components/form/loader).

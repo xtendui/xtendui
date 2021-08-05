@@ -1,0 +1,28 @@
+.demo--form-loader, .demo--form-loader-react {
+  .xt-loading {
+    @apply relative;
+    .xt-loading-content {
+      @apply transition;
+    }
+    .xt-loader {
+      @apply transition opacity-0 pointer-events-none;
+    }
+  }
+  .xt-loading-white {
+    .xt-loader {
+      @apply bg-white bg-opacity-30;
+      .xt-spinner {
+        @apply text-black;
+      }
+    }
+  }
+  .loading.xt-loading, .loading .xt-loading {
+    @apply pointer-events-none;
+    .xt-loading-content {
+      @apply transition opacity-0;
+    }
+    .xt-loader {
+      @apply opacity-100;
+    }
+  }
+}
