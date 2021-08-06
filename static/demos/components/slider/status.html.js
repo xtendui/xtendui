@@ -4,6 +4,18 @@ const html = /* HTML */ `
   <div class="demo--slider-status">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
+        <!-- switcher for demo purpose remove this -->
+        <form class="text-sm mb-8">
+          <label class="${classes.checkLabel()}">
+            <input
+              type="checkbox"
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+              checked
+            />
+            <span class="${classes.checkContent()}">Group Same</span>
+          </label>
+        </form>
+
         <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="xt-card ${classes.cardSlide()}">

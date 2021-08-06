@@ -7,12 +7,14 @@ Xt.mount({
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
     const unmountStatus = mountStatus({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
 
     // unmount
 
     return () => {
       unmountSlider()
       unmountStatus()
+      unmountSwitcher()
     }
   },
 })
@@ -87,7 +89,7 @@ const mountStatus = ({ ref }) => {
         availableWidth += tr.offsetWidth
       }
       // width
-      const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+      const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
       if (!trs.length) return
       let width = 0
       const left = trs[0].offsetLeft
@@ -113,4 +115,36 @@ const mountStatus = ({ ref }) => {
   return () => {
     removeEventListener('resize', change)
   }
+}
+
+/* mountSwitcher */
+
+const mountSwitcher = ({ ref }) => {
+  /* switcher for demo purpose remove this */
+
+  // vars
+
+  const slider = ref.querySelector('.xt-slider')
+  const switcher = ref.querySelector('input[type="checkbox"]')
+
+  // change
+
+  const change = () => {
+    if (switcher.checked) {
+      window.demogroupedstatus = true
+    } else {
+      window.demogroupedstatus = false
+    }
+    slider.dispatchEvent(new CustomEvent('status.xt.slider'))
+  }
+
+  switcher.addEventListener('change', change)
+
+  requestAnimationFrame(() => {
+    change()
+  })
+
+  // unmount
+
+  return () => {}
 }
