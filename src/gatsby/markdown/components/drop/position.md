@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Drop"
 title: "Position"
 date: "2009-10-10"

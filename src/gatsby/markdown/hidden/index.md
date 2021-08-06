@@ -102,7 +102,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | This component uses [card](/components/card) see documentation for more info.
 
 [[noteDefault]]
-| This component uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
+| This component uses [mouse follow](/components/mouse-follow) see documentation for more info.
 
 [[notePrimary]]
 | For usability purpose use `role="toolbar"`.

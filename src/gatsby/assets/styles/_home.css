@@ -7,7 +7,7 @@
     }
   }
   .scrolling-down.scrolling-hide & {
-    @apply relative pt-7 pb-5;
+    @apply relative pt-9 pb-5;
   }
 }
 
@@ -37,7 +37,10 @@
     border-radius: 6px;
     padding: 6px 9px;
     font-weight: theme('fontWeight.semibold');
-    font-size: 14px;
+    font-size: 13px;
+    @screen md {
+      font-size: 14px;
+    }
     color: rgba(255, 255, 255, 0.66);
     line-height: 1;
     letter-spacing: theme('letterSpacing.wide');

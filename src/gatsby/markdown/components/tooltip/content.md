@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Tooltip"
 title: "Content"
 date: "2030-10-10"

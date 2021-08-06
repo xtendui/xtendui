@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Tooltip"
 title: "Interaction"
 date: "2010-10-10"
@@ -186,6 +186,6 @@ See [toggle auto](/components/toggle/interaction#auto) for more info.
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.
 
-## ScrollTo
+## Scroll To
 
-See [scrollTo toggle](/components/scroll/scroll-to#interaction) for more info.
+See [scrollTo toggle](/components/scroll-to#interaction) for more info.

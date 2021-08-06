@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Drop"
 title: "Content Card"
 date: "2030-05-05"

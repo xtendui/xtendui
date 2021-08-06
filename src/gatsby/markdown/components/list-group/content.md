@@ -65,3 +65,11 @@ You can make group a **single interactive object**, be sure to use `group` on th
   <demoinline src="demos/components/list-group/merge-vertical">
   </demoinline>
 </demo>
+
+## Nav
+
+Refer to [nav component](/components/nav).
+
+## Toolbar
+
+Refer to [toolbar component](/components/toolbar).

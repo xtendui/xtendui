@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Overlay"
 title: "Interaction"
 date: "2010-10-10"
@@ -181,6 +181,6 @@ You can set **body classes on activation**, remember to keep default `classBody`
   </demoinline>
 </demo>
 
-## ScrollTo
+## Scroll To
 
-See [scrollTo toggle](/components/scroll/scroll-to#interaction) for more info.
+See [scrollTo toggle](/components/scroll-to#interaction) for more info.

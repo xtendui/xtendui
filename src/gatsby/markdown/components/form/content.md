@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Form"
 parent: "Form"
 title: "Content"
 date: "2030-10-10"
@@ -55,3 +55,11 @@ Use [card](/components/card) with `label` to create **checks with card**.
   <demoinline src="demos/components/form/checks-card">
   </demoinline>
 </demo>
+
+## Group
+
+Refer to [list group](/components/list-group).
+
+## Toolbar
+
+Refer to [toolbar](/components/toolbar).

@@ -2,17 +2,10 @@
 type: "Components"
 category: "Design"
 parent: "List Group"
-title: "Other"
-date: "2005-10-10"
+title: "Addon"
+description: "Various list group addon."
+date: "1900-10-10"
 ---
-
-## Nav
-
-Refer to [nav component](/components/nav).
-
-## Toolbar
-
-Refer to [toolbar component](/components/toolbar).
 
 ## Expand
 

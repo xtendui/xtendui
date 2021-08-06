@@ -1,9 +1,9 @@
 ---
 type: "Components"
-category: "Design"
+category: "Form"
 parent: "Form"
 title: "Validation"
-date: "1900-10-10"
+date: "2010-10-10"
 ---
 
 ## Validation

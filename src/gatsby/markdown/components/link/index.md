@@ -8,7 +8,7 @@ description: "Default link styles for html links, can also be applied to buttons
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link` see [preset customization](/components/preset#customization). Check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link` see [preset customization](/introduction/preset#customization). Check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
 
 ## Global Styles
 
@@ -27,7 +27,7 @@ Use `a` without classes or `.xt-link` to create a **link**.
 </div>
 
 [[noteDefault]]
-| To have custom styles use **tailwind classes**. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
+| To have custom styles use **tailwind classes**. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/introduction/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
 
 [[notePrimary]]
 | Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).

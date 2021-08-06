@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Toggle"
 title: "Addon"
 description: "Various toggle addon."

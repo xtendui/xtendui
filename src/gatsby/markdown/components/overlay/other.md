@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Overlay"
 title: "Other"
 date: "2005-10-10"

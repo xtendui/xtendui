@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Toggle"
 title: "Toggle"
 description: "Create advanced interactions with ease, has a comprehensive javascript api."

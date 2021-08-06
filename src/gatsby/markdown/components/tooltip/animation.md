@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Tooltip"
 title: "Animation"
 date: "2010-10-09"
@@ -165,4 +165,4 @@ Use this code to create **tooltips with fast animation on sequential interaction
 
 ## Collapse
 
-Refer to [animation collapse](/components/animation/collapse).
+Refer to [animation collapse](/components/collapse).

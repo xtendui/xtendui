@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Toggle"
 title: "Interaction"
 date: "2010-10-10"
@@ -279,6 +279,6 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.
 
-## ScrollTo
+## Scroll To
 
-See [scrollTo toggle](/components/scroll/scroll-to#interaction) for more info.
+See [scrollTo toggle](/components/scroll-to#interaction) for more info.

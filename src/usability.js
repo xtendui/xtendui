@@ -12,7 +12,7 @@ Xt.ready({
   func: () => {
     // eslint-disable-next-line no-console
     console.debug(
-      '%cXtend UI usability log activated, to deactivate remove xtendui/components/usability',
+      '%cXtend UI usability log activated, to deactivate remove xtendui/src/usability.js',
       'font-weight:bold; color: white; background-color: #0078ff; padding: 6px 10px;'
     )
     // images

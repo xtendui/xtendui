@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Form"
 parent: "Form"
 title: "Other"
 date: "2005-10-10"
@@ -34,20 +34,3 @@ Use **tailwind classes** to style **fieldset**, **legend** and **note**.
   <demoinline src="demos/components/form/other">
   </demoinline>
 </demo>
-
-## Label addon
-
-Use **tailwind classes** to create a **label addon**.
-
-<demo>
-  <demoinline src="demos/components/form/label-addon">
-  </demoinline>
-</demo>
-
-## Group
-
-Refer to [list group](/components/list-group).
-
-## Toolbar
-
-Refer to [toolbar](/components/toolbar).

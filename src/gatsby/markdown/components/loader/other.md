@@ -45,10 +45,10 @@ Use **component classes** to create a **mouse follow**.
 | Remember **not to transition transform** of `.xt-mousefollow` element.
 
 [[noteDefault]]
-| This demo uses [mouse follow](/components/animation/mousefollow) see documentation for more info.
+| This demo uses [mouse follow](/components/mouse-follow) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/animation/mousefollow">
+  <demoinline src="demos/components/mouse-follow/usage">
   </demoinline>
 </demo>
 

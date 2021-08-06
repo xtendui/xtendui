@@ -105,3 +105,11 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   <demoinline src="demos/components/card/close">
   </demoinline>
 </demo>
+
+## Note
+
+Refer to [note component](/components/note).
+
+## Checks
+
+Refer to [form checks custom](/components/form/other#checks-custom).

@@ -171,44 +171,46 @@ export const populateBlock = () => {
       // check because of event propagation
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
-        const container = content.querySelector('.gatsby_demo')
-        // hidden tooltip
-        const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
-        if (tooltip) {
-          tooltip.classList.remove('hidden')
-        }
-        // populate iframe
-        if (container) {
-          for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
-            // spinner
-            item.classList.remove('loaded')
+        if (content) {
+          const container = content.querySelector('.gatsby_demo')
+          // hidden tooltip
+          const tooltip = document.querySelector('.button--open-full + .xt-tooltip')
+          if (tooltip) {
+            tooltip.classList.remove('hidden')
           }
-        }
-        // iframe
-        if (container && container.dataset.isFullscreenOnly) {
           // populate iframe
-          for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
-            if (item.getAttribute('data-iframe-fullscreen')) {
-              item.dispatchEvent(new CustomEvent('off.xt.toggle'))
+          if (container) {
+            for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
+              // spinner
+              item.classList.remove('loaded')
             }
           }
-          // populate source
-          const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-          if (sourceTo) {
-            sourceTo.innerHTML = ''
+          // iframe
+          if (container && container.dataset.isFullscreenOnly) {
+            // populate iframe
+            for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
+              if (item.getAttribute('data-iframe-fullscreen')) {
+                item.dispatchEvent(new CustomEvent('off.xt.toggle'))
+              }
+            }
+            // populate source
+            const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+            if (sourceTo) {
+              sourceTo.innerHTML = ''
+            }
           }
+          // btnOpenFull
+          for (const btn of document.querySelectorAll('.button--open-full.on')) {
+            btn.classList.remove('on')
+          }
+          // toggles
+          const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
+          for (const el of listingToggles) {
+            el.classList.remove('on')
+          }
+          // empty demo
+          demoEmpty({ reset: true })
         }
-        // btnOpenFull
-        for (const btn of document.querySelectorAll('.button--open-full.on')) {
-          btn.classList.remove('on')
-        }
-        // toggles
-        const listingToggles = document.querySelectorAll('[data-gatsby-listing-toggle]')
-        for (const el of listingToggles) {
-          el.classList.remove('on')
-        }
-        // empty demo
-        demoEmpty({ reset: true })
       }
     })
   }

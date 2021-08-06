@@ -19,7 +19,7 @@ export default function Page() {
           <div className="gatsby_site-main_inner flex flex-col flex-auto">
             <header className="gatsby_home-header xt-sticky">
               <div className="gatsby_home-header_inner relative">
-                <div className="gatsby_home-header_content relative z-20 py-6 text-white xt-links-inverse text-center transition-all duration-300 ease-out-quart">
+                <div className="gatsby_home-header_content relative z-20 pt-8 pb-10 text-white xt-links-inverse text-center transition-all duration-300 ease-out-quart">
                   <div className="container">
                     <div className="gatsby_logo-icon mb-4 transition-all duration-300 ease-out-quart">
                       <img
@@ -31,9 +31,9 @@ export default function Page() {
                       />
                     </div>
                     <div className="gatsby_home-header_actions">
-                      <div className="xt-list xt-list-1 justify-center">
-                        <Link to="/components/setup" className="xt-button">
-                          Setup
+                      <div className="xt-list justify-center">
+                        <Link to="/introduction" className="xt-button">
+                          Introduction
                         </Link>
                         <Link to="/components" className="xt-button">
                           Components
@@ -277,14 +277,12 @@ export default function Page() {
                     <div className="xt-row xt-row-stretch">
                       <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
                         <Link
-                          to="/components/setup"
+                          to="/intro"
                           className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
                           <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Setup
+                            Introduction
                           </div>
-                          <p className="xt-p text-sm leading-snug opacity-50">
-                            Installation instructions to get Xtend UI up and running.
-                          </p>
+                          <p className="xt-p text-sm leading-snug opacity-50">Get started with Xtend UI.</p>
                         </Link>
                       </div>
                       <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">

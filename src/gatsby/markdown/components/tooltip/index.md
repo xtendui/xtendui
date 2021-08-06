@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Tooltip"
 title: "Tooltip"
 description: "Informations or elements to show on user interaction, can contain simple text and more complex graphics."
@@ -8,7 +8,7 @@ description: "Informations or elements to show on user interaction, can contain 
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [preset customization](/components/preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/beta/src/tooltip.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [preset customization](/introduction/preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/beta/src/tooltip.css.js) for default styles.
 
 ## Javascript
 

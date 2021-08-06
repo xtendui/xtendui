@@ -16,11 +16,3 @@ date: "2005-10-10"
 ## Stretch
 
 You can stretch cards vertically inside row, see [row stretch](/components/row/other#stretch).
-
-## Note
-
-Refer to [note component](/components/note).
-
-## Checks
-
-Refer to [form checks custom](/components/form/other#checks-custom).

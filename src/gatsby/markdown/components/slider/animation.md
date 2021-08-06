@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Slider"
 title: "Animation"
 date: "2010-10-09"

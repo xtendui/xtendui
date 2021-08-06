@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Overlay"
 title: "Overlay"
 description: "Use overlay when you need to display any content over the main page, comes in different options and factors."
@@ -8,7 +8,7 @@ description: "Use overlay when you need to display any content over the main pag
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [preset customization](/components/preset#customization). Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/beta/src/overlay.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [preset customization](/introduction/preset#customization). Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/beta/src/overlay.css.js) for default styles.
 
 [[notePrimary]]
 | Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.

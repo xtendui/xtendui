@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Global"
+category: "Javascript"
 parent: "Javascript"
 title: "Javascript"
 description: "Javascript utilities and animations usability improvements."
@@ -8,15 +8,11 @@ description: "Javascript utilities and animations usability improvements."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [preset customization](/components/preset#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [preset customization](/introduction/preset#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
 
 ## Javascript
 
 Import the **javascript** file with `import { Xt } from 'xtendui'`.
-
-## Usability and Seo
-
-Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sends **warning messages with website usability suggestions**.
 
 ## Xt.ready
 

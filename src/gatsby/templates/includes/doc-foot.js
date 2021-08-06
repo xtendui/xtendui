@@ -8,13 +8,16 @@ export default class DocFoot extends React.Component {
     const { page } = this.props
     const postsComponents = page.postsAll.posts.filter(
       x =>
-        ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.parent === page.post.frontmatter.parent
+        ['Components'].includes(x.post.frontmatter.type) &&
+        (x.post.frontmatter.category === page.post.frontmatter.parent ||
+          x.post.frontmatter.parent === page.post.frontmatter.parent)
     )
     const postsThemes = page.postsAll.posts.filter(
       x =>
         ['Themes'].includes(x.post.frontmatter.type) &&
-        x.post.frontmatter.parent === page.post.frontmatter.parent &&
-        x.post.frontmatter.title !== x.post.frontmatter.parent
+        x.post.frontmatter.title !== page.post.frontmatter.parent &&
+        (x.post.frontmatter.parent === page.post.frontmatter.category ||
+          x.post.frontmatter.parent === page.post.frontmatter.parent)
     )
     return (
       <div className="gatsby_site-article_foot">
@@ -23,7 +26,7 @@ export default class DocFoot extends React.Component {
             <div className="xt-row xt-row-stretch">
               <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                 <Link
-                  to={'/components/setup'}
+                  to={'/introduction/setup'}
                   className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Problems getting it to work?
@@ -98,7 +101,11 @@ export default class DocFoot extends React.Component {
                         {postsThemes.length} theme
                         {postsThemes.length === 1 ? '' : 's'}{' '}
                       </strong>
-                      for {page.post.frontmatter.parent}.
+                      for{' '}
+                      {postsThemes.filter(x => x.post.frontmatter.parent === page.post.frontmatter.category).length
+                        ? page.post.frontmatter.category
+                        : page.post.frontmatter.parent}
+                      .
                     </p>
                   </Link>
                 </div>

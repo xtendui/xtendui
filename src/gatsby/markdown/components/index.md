@@ -1,7 +1,7 @@
 ---
 type: "Components"
 title: "Components"
-description: "Customizable components with an ecosystem of plugins."
+description: "Get started with Xtend UI."
 date: "2020-11-10"
 menu: true
 ---

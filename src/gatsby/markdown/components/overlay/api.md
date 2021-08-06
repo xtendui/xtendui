@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Overlay"
 title: "API"
 date: "1980-05-05"

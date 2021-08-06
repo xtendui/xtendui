@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Interaction"
+category: "Toggle"
 parent: "Drop"
 title: "Animation"
 date: "2010-10-09"
@@ -155,4 +155,4 @@ Use `.xt-design` when you want to **animate the design independently from the co
 
 ## Collapse
 
-Refer to [animation collapse](/components/animation/collapse).
+Refer to [animation collapse](/components/collapse).
