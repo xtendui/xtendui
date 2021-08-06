@@ -31,7 +31,7 @@ export default function Page() {
                       />
                     </div>
                     <div className="gatsby_home-header_actions">
-                      <div className="xt-list justify-center">
+                      <div className="xt-list md:xt-list-1 justify-center">
                         <Link to="/introduction" className="xt-button">
                           Introduction
                         </Link>
