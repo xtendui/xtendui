@@ -1,6 +1,6 @@
 ---
 type: "Introduction"
-category: "Setup"
+category: "Info"
 parent: "Informations"
 title: "Informations"
 description: "General project informations and browsers support."

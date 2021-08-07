@@ -1,7 +1,7 @@
 export const typeSort = (a, b) => {
   let first = 0
   let last = 0
-  if (b.title === 'Setup') {
+  if (b.title === 'Info') {
     // a is less than b by some ordering criterion
     first += 30
   }
@@ -9,7 +9,7 @@ export const typeSort = (a, b) => {
     // a is less than b by some ordering criterion
     first += 10
   }
-  if (a.title === 'Setup') {
+  if (a.title === 'Info') {
     // a is greater than b by the ordering criterion
     last += 30
   }

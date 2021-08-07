@@ -1,6 +1,6 @@
 ---
 type: "Introduction"
-category: "Setup"
+category: "Info"
 parent: "Brand"
 title: "Brand"
 description: "Xtend UI brand assets for sharing."
