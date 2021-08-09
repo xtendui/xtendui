@@ -36,6 +36,8 @@ See [link if scrolls right](/components/slider/other#media-loaded).
 
 ## Markdown
 
+**xtendui toggle components**
+
 You can set activation styles by adding the class `.on`.
 
 Use **tailwind variants** `active:`, `group-active:`, `on:`, `group-on:` to assign animations.
