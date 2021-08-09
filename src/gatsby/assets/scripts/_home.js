@@ -12,7 +12,6 @@ Xt.mount({
 
     const sticky = ref
     const background = ref.querySelector('.gatsby_home-header_background rect')
-    const content = ref.querySelector('.gatsby_home-header_inner')
     const inner = ref.querySelector('.gatsby_logo-icon')
 
     // methods
@@ -27,7 +26,7 @@ Xt.mount({
     }
 
     const curve = () => {
-      if (!content.classList.contains('scrolling-down')) {
+      if (!sticky.classList.contains('scrolling-down')) {
         gsap.killTweensOf(background)
         gsap.to(background, {
           rx: '50%',
@@ -50,17 +49,11 @@ Xt.mount({
       start: -1, // needs -1 because start trigger is sticky
       end: () => `top top-=${sticky.offsetHeight}`,
       onUpdate: self => {
-        if (self.isActive && self.direction < 0 && content.classList.contains('scrolling-hide')) {
-          content.classList.remove('scrolling-hide')
-          gsap.killTweensOf(content)
-          gsap.to(content, {
-            marginTop: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-          })
+        if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.remove('scrolling-hide')
           curve()
-        } else if (!self.isActive && self.direction > 0 && !content.classList.contains('scrolling-hide')) {
-          content.classList.add('scrolling-hide')
+        } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.add('scrolling-hide')
           straight()
         }
       },
@@ -79,27 +72,27 @@ Xt.mount({
         // scrolling-down depending on scroll direction
         if (!self.getVelocity()) return // skip on initial
         if (
-          content.classList.contains('scrolling-down') &&
-          content.classList.contains('scrolling-hide') &&
+          sticky.classList.contains('scrolling-down') &&
+          sticky.classList.contains('scrolling-hide') &&
           self.direction < 0
         ) {
-          content.classList.remove('scrolling-down')
-          gsap.killTweensOf(content)
-          gsap.to(content, {
-            marginTop: 0,
+          sticky.classList.remove('scrolling-down')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            top: 0,
             duration: 0.5,
             ease: 'quart.out',
           })
           curve()
         } else if (
-          !content.classList.contains('scrolling-down') &&
-          content.classList.contains('scrolling-hide') &&
+          !sticky.classList.contains('scrolling-down') &&
+          sticky.classList.contains('scrolling-hide') &&
           self.direction > 0
         ) {
-          content.classList.add('scrolling-down')
-          gsap.killTweensOf(content)
-          gsap.to(content, {
-            marginTop: -(inner.offsetTop + inner.offsetHeight),
+          sticky.classList.add('scrolling-down')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            top: -(inner.offsetTop + inner.offsetHeight),
             duration: 0.5,
             ease: 'quart.out',
           })

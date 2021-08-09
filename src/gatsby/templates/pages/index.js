@@ -56,8 +56,8 @@ export default function Page() {
                   <h3 className="mt-10 mb-4 xt-my-auto font-black text-3xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                     Complex UI made easy with simplicity and total freedom
                   </h3>
-                  <h1 className="mt-5 mb-3 xt-my-auto font-normal leading-tight tracking-tight normal-case text-lg lg:text-2xl lg:leading-tight gatsby_home-main_scroll">
-                    <span className="gatsby_home-main_head_description opacity-50">
+                  <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl gatsby_home-main_scroll">
+                    <span className="opacity-50">
                       Xtend UI is a powerfull library of tailwind components enhanced by vanilla js. It helps you build
                       interfaces with advanced interactions and animations.
                     </span>
