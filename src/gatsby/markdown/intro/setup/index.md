@@ -1,10 +1,9 @@
 ---
 type: "Introduction"
-category: "Info"
+category: "Introduction"
 parent: "Setup"
 title: "Setup"
 description: "Installation instructions to get Xtend UI up and running."
-date: "2050-09-10"
 ---
 
 If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
@@ -65,7 +64,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can [customize preset or theme](https://xtendui.com/introduction/preset#customization).
+You can [customize preset or theme](https://xtendui.com/components/css#customization).
 
 ## Javascript
 

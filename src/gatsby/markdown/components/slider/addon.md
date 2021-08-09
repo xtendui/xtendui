@@ -3,7 +3,6 @@ type: "Components"
 category: "Toggle"
 parent: "Slider"
 title: "Addon"
-description: "Various slider addon."
 date: "1900-10-10"
 ---
 

@@ -3,7 +3,6 @@ type: "Components"
 category: "Layout"
 parent: "Layout"
 title: "Addon"
-description: "Various layout addon."
 date: "1900-10-10"
 ---
 

@@ -1,10 +1,9 @@
 ---
 type: "Introduction"
-category: "Info"
+category: "Introduction"
 parent: "Informations"
 title: "Informations"
 description: "General project informations and browsers support."
-date: "2050-09-10"
 ---
 
 <p></p>

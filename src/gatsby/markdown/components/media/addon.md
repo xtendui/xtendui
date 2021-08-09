@@ -2,8 +2,8 @@
 type: "Components"
 category: "Design"
 parent: "Media"
-title: "Other"
-date: "2005-10-10"
+title: "Addon"
+date: "1900-10-10"
 ---
 
 ## Iframe Lazy

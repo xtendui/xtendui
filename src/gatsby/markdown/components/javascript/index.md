@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Javascript"
+category: "Global"
 parent: "Javascript"
 title: "Javascript"
 description: "Javascript utilities and animations usability improvements."
@@ -8,11 +8,15 @@ description: "Javascript utilities and animations usability improvements."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [preset customization](/introduction/preset#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [css customization](/components/css#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
 
 ## Javascript
 
 Import the **javascript** file with `import { Xt } from 'xtendui'`.
+
+## Usability
+
+Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sends **warning messages with website usability suggestions**.
 
 ## Xt.ready
 
@@ -197,7 +201,7 @@ const container = self.container
 
 ## Xt.options
 
-You can set **default options** for Xtend UI components, they get **applied after default options and before custom options**.
+You can set **default options** for all components of the same type, they get **applied after default options and before custom options**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

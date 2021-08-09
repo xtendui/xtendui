@@ -1,10 +1,9 @@
 ---
 type: "Introduction"
-category: "Info"
+category: "Other"
 parent: "Brand"
 title: "Brand"
 description: "Xtend UI brand assets for sharing."
-date: "2005-10-10"
 ---
 
 Here are assets for sharing informations like in articles or other internet media.

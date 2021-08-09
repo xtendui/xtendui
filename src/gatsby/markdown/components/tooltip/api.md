@@ -14,7 +14,7 @@ You can get **self object from DOM node** on Xtend UI components with [Xt.get](/
 let self = Xt.get({ name: 'xt-tooltip', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
 
 ```js
 Xt.options['xt-tooltip'] = {

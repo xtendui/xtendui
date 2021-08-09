@@ -183,4 +183,4 @@ You can set **body classes on activation**, remember to keep default `classBody`
 
 ## Scroll To
 
-See [scrollTo toggle](/components/scroll-to#interaction) for more info.
+See [scrollTo toggle](/components/scroll-to#toggle) for more info.

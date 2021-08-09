@@ -3,7 +3,6 @@ type: "Components"
 category: "Form"
 parent: "Form"
 title: "Addon"
-description: "Various form addon."
 date: "1900-10-10"
 ---
 

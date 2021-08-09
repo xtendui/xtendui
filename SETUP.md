@@ -56,7 +56,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can [customize preset or theme](https://xtendui.com/introduction/preset#customization).
+You can [customize preset or theme](https://xtendui.com/components/css#customization).
 
 ## Javascript
 

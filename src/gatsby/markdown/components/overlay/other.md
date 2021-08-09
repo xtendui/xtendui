@@ -63,30 +63,6 @@ You can put **any content** inside, here are some examples.
   </demoinline>
 </demo>
 
-## Close fixed
-
-You can have the the close button with `.fixed` to have it **fixed inside the overlay**.
-
-[[notePrimary]]
-| Move close button with `.fixed` outside transforms elements content.
-
-[[notePrimary]]
-| Do not transition margin on `.fixed` because of margin positioning, **transition the content instead**.
-
-<demo>
-  <demoinline src="demos/components/overlay/close-fixed">
-  </demoinline>
-</demo>
-
-## Close outside
-
-Use this code to create a **close outside**.
-
-<demo>
-  <demoinline src="demos/components/overlay/closeoutside">
-  </demoinline>
-</demo>
-
 ## Append To
 
 You can **automatically move targets on activation inside the DOM**.

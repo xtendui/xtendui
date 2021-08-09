@@ -36,22 +36,3 @@ Example loader filler with **activation animation**.
   <demoinline src="demos/components/loader/js-filler">
   </demoinline>
 </demo>
-
-## Mouse Follow
-
-Use **component classes** to create a **mouse follow**.
-
-[[notePrimary]]
-| Remember **not to transition transform** of `.xt-mousefollow` element.
-
-[[noteDefault]]
-| This demo uses [mouse follow](/components/mouse-follow) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/mouse-follow/usage">
-  </demoinline>
-</demo>
-
-## Form
-
-Refer to [form loader](/components/form/loader).

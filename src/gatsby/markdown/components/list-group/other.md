@@ -3,7 +3,6 @@ type: "Components"
 category: "Design"
 parent: "List Group"
 title: "Addon"
-description: "Various list group addon."
 date: "1900-10-10"
 ---
 

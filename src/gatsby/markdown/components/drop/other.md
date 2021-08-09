@@ -65,15 +65,6 @@ You can put **any content** inside, here are some examples.
   </demoinline>
 </demo>
 
-## Reset to Current
-
-Use this code to create a **drop that resets to current** automatically on deactivation.
-
-<demo>
-  <demoinline src="demos/components/drop/reset-to-current">
-  </demoinline>
-</demo>
-
 ## Zindex
 
 On sequential activation you can **automatically set zIndex of activated elements and targets**.

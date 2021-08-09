@@ -3,7 +3,6 @@ type: "Components"
 category: "Toggle"
 parent: "Toggle"
 title: "Addon"
-description: "Various toggle addon."
 date: "1900-10-10"
 ---
 

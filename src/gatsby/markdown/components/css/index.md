@@ -1,10 +1,9 @@
 ---
-type: "Introduction"
-category: "Features"
-parent: "Preset"
-title: "Preset"
+type: "Components"
+category: "Global"
+parent: "Css"
+title: "Css"
 description: "Xtend UI preset with default theme that extends Tailwind default theme."
-date: "2020-10-05"
 ---
 
 ## Customization

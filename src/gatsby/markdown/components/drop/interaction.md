@@ -188,4 +188,4 @@ See [overlay class body](/components/overlay/interaction#class-body) for more in
 
 ## Scroll To
 
-See [scrollTo toggle](/components/scroll-to#interaction) for more info.
+See [scrollTo toggle](/components/scroll-to#toggle) for more info.

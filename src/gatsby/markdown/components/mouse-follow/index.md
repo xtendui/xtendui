@@ -8,7 +8,7 @@ description: "Javascript animation utility to follow mouse position."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow` see [preset customization](/introduction/preset#customization). Check [xtendui/src/mousefollow.css.js](https://github.com/xtendui/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow` see [css customization](/components/css#customization). Check [xtendui/src/mousefollow.css.js](https://github.com/xtendui/xtendui/blob/beta/src/mousefollow.css.js) for default styles.
 
 ## Javascript
 
@@ -84,7 +84,7 @@ You can get **self object from DOM node** on Xtend UI components with [Xt.get](/
 let self = Xt.get({ name: 'xt-mousefollow', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
 
 ```js
 Xt.options['xt-mousefollow'] = {

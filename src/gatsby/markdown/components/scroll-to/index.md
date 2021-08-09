@@ -40,9 +40,9 @@ Try the demo [on a new page](/demos/components/scroll-to/overlay#anchor-2) to pr
   </div>
 </demo>
 
-## Interaction
+## Toggle
 
-You can also **trigger ScrollTo activation with [toggle hash](/components/toggle/interaction#hash)** or also other interactions components with hash options (e.g. overlay, drop, tooltip, slider).
+You can also **trigger ScrollTo activation with toggle hash** on **xtendui toggle components** ([toggle](/components/toggle/interaction#hash), [drop](/components/drop/interaction#hash), [overlay](/components/overlay/interaction#hash), [slider](/components/slider/interaction#hash), [tooltip](/components/tooltip/interaction#hash)).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -124,7 +124,7 @@ You can get **self object from DOM node** on Xtend UI components with [Xt.get](/
 let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for Xtend UI components, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
 
 ```js
 Xt.options['xt-scrollto'] = {
