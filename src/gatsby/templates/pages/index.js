@@ -58,8 +58,8 @@ export default function Page() {
                   </h3>
                   <h1 className="mt-5 mb-3 xt-my-auto font-normal leading-tight tracking-tight normal-case text-lg lg:text-2xl lg:leading-tight gatsby_home-main_scroll">
                     <span className="gatsby_home-main_head_description opacity-50">
-                      Xtend UI is a powerfull library to create advanced UI with custom tailwind components and advanced
-                      interactions and animations
+                      Xtend UI is a powerfull library of tailwind components enhanced by vanilla js. It helps you build
+                      interfaces with advanced interactions and animations.
                     </span>
                   </h1>
                   <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
@@ -123,121 +123,46 @@ export default function Page() {
               <div className="my-28 text-center">
                 <div className="container">
                   <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
-                    Features
-                  </h3>
-                  <div className="xt-row xt-row-12">
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Tailwind Css</h2>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              <strong>Tailwind plugin</strong> with overridable cssinjs setup styles.
-                            </li>
-                            <li>
-                              <strong>Tailwind components</strong> that supports a wide range of designs.
-                            </li>
-                            <li>
-                              <strong>Tailwind custom variants</strong> for simple class based animations.
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">Vanilla JS</h2>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              Ecosystem of <strong>vanilla javascript</strong> plugins.
-                            </li>
-                            <li>
-                              <strong>Strong API</strong> with customizzable behaviour.
-                            </li>
-                            <li>
-                              A system to mount components with <strong>mutation observer queries</strong>, to structure
-                              your javascript code better.
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Gsap</h2>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              Complex interaction components you only need to specify <strong>custom animations</strong>
-                              .
-                            </li>
-                            <li>
-                              <strong>Scroll and parallax animations</strong> with{' '}
-                              <a
-                                href="https://greensock.com/docs/v3/Plugins/ScrollTrigger"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                Gsap ScrollTrigger
-                              </a>
-                              .
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="my-28 text-center">
-                <div className="container">
-                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
                     Philosophy
                   </h3>
                   <div className="xt-row xt-row-3.5 md:xt-row-10">
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
                         <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Customization
+                          Framework agnostic
                         </h3>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Components that supports a wide range of design personalizations.
+                          Use it on vanilla html or in any popular framework.
                         </p>
                       </div>
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
                         <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Interaction
+                          Custom Design
                         </h3>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Makes complex interactions trivial with well thought components.
+                          Customizzable components that supports a wide range of designs.
                         </p>
                       </div>
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
                         <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          User Explerience
+                          Complex Interaction
                         </h3>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Complex UI logic to be used with custom animations.
+                          Complex interaction logic managed internally by components.
                         </p>
                       </div>
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
                         <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Plug and Play
+                          User Experience
                         </h3>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Components classes with prefix, import only the one you needs and purge css.
+                          Support for advanced interaction and animations with simple usage.
                         </p>
                       </div>
                     </div>
@@ -261,8 +186,75 @@ export default function Page() {
                           UX Themes
                         </h3>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Themes focused on interactions and animations instead of design.
+                          Themes focused on user experience instead of design.
                         </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="my-28 text-center">
+                <div className="container">
+                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                    Features
+                  </h3>
+                  <div className="xt-row xt-row-12">
+                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                      <div className="xt-row xt-row-4">
+                        <div className="w-full md:w-6/12 lg:w-5/12">
+                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Tailwind Css</h2>
+                        </div>
+                        <div className="w-full md:w-6/12 lg:w-7/12">
+                          <ul>
+                            <li>
+                              <strong>Tailwind components</strong> class based with flexible design.
+                            </li>
+                            <li>
+                              <strong>Tailwind custom variants</strong> for simple class based activations and
+                              animations.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                      <div className="xt-row xt-row-4">
+                        <div className="w-full md:w-6/12 lg:w-5/12">
+                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">Vanilla JS</h2>
+                        </div>
+                        <div className="w-full md:w-6/12 lg:w-7/12">
+                          <ul>
+                            <li>
+                              A system to mount components with <strong>mutation observer queries</strong>, to structure
+                              your javascript code better.
+                            </li>
+                            <li>
+                              Ecosystem of <strong>vanilla javascript plugins</strong> that does the hard things for
+                              you.
+                            </li>
+                            <li>
+                              <strong>Strong API</strong> with customizzable behaviours.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                      <div className="xt-row xt-row-4">
+                        <div className="w-full md:w-6/12 lg:w-5/12">
+                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Gsap</h2>
+                        </div>
+                        <div className="w-full md:w-6/12 lg:w-7/12">
+                          <ul>
+                            <li>
+                              <strong>Complex interaction from js components</strong> you only need to specify{' '}
+                              <strong>custom animations</strong>.
+                            </li>
+                            <li>
+                              <strong>Scroll, sticky and parallax animations</strong> withGsap ScrollTrigger.
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -305,7 +297,7 @@ export default function Page() {
                             Themes
                           </div>
                           <p className="xt-p text-sm leading-snug opacity-50">
-                            UI themes with advanced interactions and animations.
+                            UX themes with advanced interactions and animations.
                           </p>
                         </Link>
                       </div>

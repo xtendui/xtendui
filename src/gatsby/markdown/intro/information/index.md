@@ -30,7 +30,7 @@ description: "General project informations and browsers support."
 
 ## Complex UI made easy with simplicity and total freedom
 
-Xtend UI is a powerfull library to create advanced UI with custom tailwind components and advanced interactions and animations.
+Xtend UI is a powerfull library to create advanced interfaces with custom tailwind components and advanced interactions and animations.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
