@@ -26,7 +26,6 @@ const mountEventmethods = ({ ref }) => {
   /***/
   let self = new Xt.Slider(slider, {
     wrap: true,
-    group: 1,
   })
   /***/
 

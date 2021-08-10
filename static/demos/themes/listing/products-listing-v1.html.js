@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--products-listing-v1">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left' }">
+      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', loop: true }">
         <div class="container">
           <div class="xt-h3 mb-8">
             <div class="xt-list xt-list-2 items-center">

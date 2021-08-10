@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
+import { Xt } from 'xtendui'
 import 'src/gatsby/assets/styles/app.css'
 
-export default function Layout({ children }) {
+export default function LayoutDemo({ children }) {
   const { site } = useSiteMetadata()
+  // no useEffect cause bugs demos hash
+  useLayoutEffect(() => {
+    // fix iframe css being loaded after js executed (e.g. slider wrap wrong initial values)
+    Xt.ready({
+      func: () => {
+        dispatchEvent(
+          new CustomEvent('resize', {
+            detail: {
+              force: true,
+            },
+          })
+        )
+      },
+    })
+  }, [])
   return (
     <>
       <Helmet>
@@ -20,6 +36,6 @@ export default function Layout({ children }) {
   )
 }
 
-Layout.propTypes = {
+LayoutDemo.propTypes = {
   children: PropTypes.node.isRequired,
 }

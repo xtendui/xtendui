@@ -127,6 +127,7 @@ const html = /* HTML */ `
               </nav>
             </div>
           </div>
+
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="xt-card ${classes.cardSlide()}">
               <div class="xt-h4">6</div>

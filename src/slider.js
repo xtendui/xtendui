@@ -771,8 +771,6 @@ class Slider extends Xt.Toggle {
     const isDrag = self.drag.instant
     // activation
     super.eventOn({ el, force }, e)
-    // wrap
-    self.eventWrap({ index: self.index })
     // vars
     const first = self.groups[self.drag.wrapFirst].target
     const last = self.groups[self.drag.wrapLast].target
@@ -829,6 +827,8 @@ class Slider extends Xt.Toggle {
       },
       ns: `${self.ns}isDrag`,
     })
+    // wrap after self.drag.final for proper initialization direction inside self.eventWrap
+    self.eventWrap({ index: self.index })
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
       let groupHeight = 0
@@ -887,7 +887,7 @@ class Slider extends Xt.Toggle {
       // only one call
       let dir = self.direction
       if (dir === 0) {
-        // fix on resize and reinit set direction to left (-1) if on left, to right (1) if on right
+        // fix on init and reinit set direction to left (-1) if on left, to right (1) if on right
         dir = self.drag.final > -self.drag.size ? -1 : 1
       }
       if (self.drag.wrapDir !== dir || self.drag.wrapIndex !== index) {

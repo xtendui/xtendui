@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SEO from 'src/gatsby/templates/seo'
-import Layout from 'src/gatsby/templates/layout-demo'
+import LayoutDemo from 'src/gatsby/templates/layout-demo'
 
 export default class DemoIframe extends React.Component {
   constructor(props) {
@@ -59,15 +59,17 @@ export default class DemoIframe extends React.Component {
         document.documentElement.classList.add('gatsby_iframe-container')
       }
     }
-    try {
-      require(`static/${this.src}.js`).default
-      // eslint-disable-next-line no-empty
-    } catch (ex) {}
+    if (this.state.mode === 'html') {
+      try {
+        require(`static/${this.src}.js`).default
+        // eslint-disable-next-line no-empty
+      } catch (ex) {}
+    }
     // react
     const Demo = require(`static/${this.src}.jsx`).default
     // render all
     return (
-      <Layout>
+      <LayoutDemo>
         <SEO title={seo.title} description={seo.description} />
         <div id="body-outer">
           {this.state.mode === 'react' ? (
@@ -82,7 +84,7 @@ export default class DemoIframe extends React.Component {
             />
           )}
         </div>
-      </Layout>
+      </LayoutDemo>
     )
   }
 }
