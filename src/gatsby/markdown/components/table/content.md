@@ -33,7 +33,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Interactive
 
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
 <demo>
   <demoinline src="demos/components/table/interactive">

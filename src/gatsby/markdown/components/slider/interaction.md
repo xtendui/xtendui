@@ -91,7 +91,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2) to preview location hash changes.
+Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/slider/hash">
@@ -103,7 +103,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-2) 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `drag.dragger:Query`                          | `'[data-xt-slider-dragger]'`        | Query for dragger element             |	
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for activation and disable interactions on targets             |	
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	

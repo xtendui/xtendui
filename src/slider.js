@@ -6,6 +6,7 @@
 
 import { Xt } from './xt'
 import './toggle'
+import RJSON from 'relaxed-json'
 
 /**
  * Slider
@@ -45,6 +46,8 @@ class Slider extends Xt.Toggle {
     // dragger
     self.dragger = self.container.querySelector(options.drag.dragger)
     self.destroyElements.push(self.dragger)
+    // dragger initial
+    self.dragger.classList.add('initial')
     // @PERF
     self.drag.wrapDir = 0
     self.drag.wrapIndex = null
@@ -526,6 +529,16 @@ class Slider extends Xt.Toggle {
   initEvents() {
     super.initEvents()
     const self = this
+    // init
+    const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self.eventInitHandler.bind(self))
+    self.container.addEventListener('init.xt.slider', initHandler)
+    // dragposition
+    const dragpositionHandler = Xt.dataStorage.put(
+      self.dragger,
+      `dragposition/${self.ns}`,
+      self.eventDragpositionHandler.bind(self)
+    )
+    self.dragger.addEventListener('dragposition.xt.slider', dragpositionHandler)
     // drag start
     const dragstartHandler = Xt.dataStorage.put(
       window,
@@ -569,7 +582,33 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * element drag fix
+   * init handler
+   * @param {Event} e
+   */
+  eventInitHandler() {
+    const self = this
+    // dragger initial
+    self.dragger.classList.remove('initial')
+  }
+
+  /**
+   * drag position handler
+   * @param {Event} e
+   */
+  eventDragpositionHandler() {
+    const self = this
+    const options = self.options
+    // dragposition
+    if (!options.dragposition && options.mode !== 'absolute') {
+      self.initial || self.drag.instant ? self.dragger.classList.remove('in') : self.dragger.classList.add('in')
+      // set internal position to resume animation mid dragging
+      self.drag.position = self.drag.final
+      self.dragger.style.transform = `translateX(${self.drag.final}px)`
+    }
+  }
+
+  /**
+   * drag fix
    * @param {Event} e
    */
   eventDragstartFix(e) {
@@ -577,7 +616,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag on handler
+   * drag on handler
    * @param {Event} e
    */
   eventDragstartHandler(e) {
@@ -612,7 +651,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag off handler
+   * drag off handler
    * @param {Event} e
    */
   eventDragendHandler(e) {
@@ -630,7 +669,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag on
+   * drag on
    * @param {Event} e
    */
   eventDragstart(e) {
@@ -650,7 +689,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag handler
+   * drag handler
    * @param {Event} e
    */
   eventDragHandler(e) {
@@ -668,7 +707,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag off
+   * drag off
    * @param {Event} e
    */
   eventDragend(e) {
@@ -987,7 +1026,7 @@ class Slider extends Xt.Toggle {
   //
 
   /**
-   * element drag on logic
+   * drag on logic
    * @param {Event} e
    */
   logicDragstart(e) {
@@ -1016,7 +1055,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag off logic
+   * drag off logic
    * @param {Event} e
    */
   logicDragend(e) {
@@ -1082,7 +1121,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag logic
+   * drag logic
    * @param {Event} e
    */
   logicDrag(e) {
@@ -1172,7 +1211,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * element drag reset logic
+   * drag reset logic
    */
   logicDragreset() {
     const self = this
@@ -1409,6 +1448,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: true,
   wrap: false,
+  dragposition: false,
   nooverflow: '!transform-none justify-center',
   autoHeight: false,
   keepHeight: false,
@@ -1457,3 +1497,30 @@ Slider.optionsDefault = {
 //
 
 Xt.Slider = Slider
+
+//
+// observe
+//
+
+if (typeof window !== 'undefined') {
+  Xt.mount({
+    matches: `[data-${Xt.Slider.componentName}]`,
+    mount: ({ ref }) => {
+      // vars
+
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Slider.componentName}`)
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+
+      // init
+
+      let self = new Xt.Slider(ref, options)
+
+      // unmount
+
+      return () => {
+        self.destroy()
+        self = null
+      }
+    },
+  })
+}

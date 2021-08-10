@@ -91,7 +91,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
       break
     }
   }
-  search = search.length ? search : arr[1]
+  search = search && search.length ? search : arr[1]
   if (search) {
     const toRemove = search.search(/\S/g)
     for (const i of arr.keys()) {

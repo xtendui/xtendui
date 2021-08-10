@@ -3,11 +3,14 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--products-listing-v2">
     <div class="py-10">
-      <div class="xt-slider pb-10">
+      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left' }">
         <div class="container">
           <div class="xt-h3 mb-8">Latest Products</div>
 
-          <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+          <div
+            class="xt-slides transition-all ease-out-expo duration-300 in:ease-out-quint in:duration-1000 xt-row xt-row-4"
+            data-xt-slider-dragger
+          >
             <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
               <a href="#" class="*** listing-item *** block group">
                 <div class="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">

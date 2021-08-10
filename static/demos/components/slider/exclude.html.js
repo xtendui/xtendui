@@ -22,9 +22,12 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-slider">
+    <div class="xt-slider" data-xt-slider="{ exclude: '.hidden' }">
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+        <div
+          class="xt-slides transition-all ease-out-expo duration-300 in:ease-out-quint in:duration-1000 xt-row xt-row-4"
+          data-xt-slider-dragger
+        >
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
               <div class="xt-card ${classes.cardSlide()}">

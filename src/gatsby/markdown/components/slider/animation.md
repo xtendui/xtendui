@@ -17,15 +17,39 @@ This component has **automatic activation** you don't need to assign custom vari
 
 ## Drag Position
 
-Each slider demo listens to the event `dragposition.xt.slider` and:
+By default `mode: 'relative'` sliders has automatic transform position of `drag.dragger` and **needs to be animated with css transition**.
 
-- it calculates the `distance` and `duration` depending on the distance of the **final position value** `self.drag.final` in respect to the position of the **current position value** `self.drag.position`.
+Use **tailwind classes** to assign animation (e.g. [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
-- it updates the value of `self.drag.position` animating it with **that duration and your custom easing**.
+You can also assign different styles on `drag.dragger` to animate differently on activation (**default styles are for all transitions including drag**).
+
+<demo>
+  <demoinline src="demos/components/slider/dragposition-false">
+  </demoinline>
+</demo>
+
+You can manually assign transform of `drag.dragger` and use any animation you want with javascript, in javascript just remember to set **position animation to keep updated with animation** and **dragger animation**.
+
+Listen to the event `dragposition.xt.slider` and:
+
+- update the value of `self.drag.position` animating it with **that duration and your custom easing**.
 
 - on **relative mode** animates `self.dragger` to the final position value `self.drag.final` with yout custom easing.
 
-This is done in order to keep the **internal slider values updated** with your **custom slider animations**.
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `dragposition:Boolean`                          | `false`        | Animate `drag.dragger` manually with `dragposition.xt.slider` event instead of css transition             |
+
+</div>
+
+This is done in order to keep the **internal slider values updated** with your **custom slider animations**, needed especially for **absolute mode**.
+
+<demo>
+  <demoinline src="demos/components/slider/dragposition">
+  </demoinline>
+</demo>
 
 ## Absolute
 
@@ -56,7 +80,7 @@ Here's an example of absolute animation with **mask and incoming slide**, on `dr
 
 ## Animation
 
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration)).
+Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
