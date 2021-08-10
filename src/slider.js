@@ -526,23 +526,19 @@ class Slider extends Xt.Toggle {
   initEvents() {
     super.initEvents()
     const self = this
-    const options = self.options
-    // dragger
-    if (!options.drag.manual) {
-      // drag start
-      const dragstartHandler = Xt.dataStorage.put(
-        window,
-        `mousedown touchstart/drag/${self.ns}`,
-        self.eventDragstartHandler.bind(self)
-      )
-      const events = ['mousedown', 'touchstart']
-      for (const event of events) {
-        addEventListener(event, dragstartHandler, { passive: false })
-      }
-      // fix prevent dragging links and images
-      const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
-      self.dragger.addEventListener('dragstart', dragstartFixHandler)
+    // drag start
+    const dragstartHandler = Xt.dataStorage.put(
+      window,
+      `mousedown touchstart/drag/${self.ns}`,
+      self.eventDragstartHandler.bind(self)
+    )
+    const events = ['mousedown', 'touchstart']
+    for (const event of events) {
+      addEventListener(event, dragstartHandler, { passive: false })
     }
+    // fix prevent dragging links and images
+    const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self.eventDragstartFix)
+    self.dragger.addEventListener('dragstart', dragstartFixHandler)
     // resize
     const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, Xt.eventReinit.bind(null, { self }))
     addEventListener('resize', reinitHandler)
@@ -996,13 +992,8 @@ class Slider extends Xt.Toggle {
    */
   logicDragstart(e) {
     const self = this
-    const options = self.options
     // disabled
     if (self.disabled) {
-      return
-    }
-    // manual
-    if (options.drag.manual) {
       return
     }
     // save event
@@ -1033,10 +1024,6 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // disabled
     if (self.disabled) {
-      return
-    }
-    // manual
-    if (options.drag.manual) {
       return
     }
     // save event
@@ -1103,10 +1090,6 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // disabled
     if (self.disabled) {
-      return
-    }
-    // manual
-    if (options.drag.manual) {
       return
     }
     // save event
@@ -1267,9 +1250,7 @@ class Slider extends Xt.Toggle {
     // enable
     if (self.disabled) {
       // grab
-      if (!options.drag.manual) {
-        self.dragger.classList.add('xt-grab')
-      }
+      self.dragger.classList.add('xt-grab')
       // hideDisable
       if (options.hideDisable) {
         const els = self.container.querySelectorAll(options.hideDisable)
@@ -1357,11 +1338,8 @@ class Slider extends Xt.Toggle {
    */
   destroyDrag() {
     const self = this
-    const options = self.options
     // drag position
-    if (!options.drag.manual) {
-      self.dragger.style.transform = ''
-    }
+    self.dragger.style.transform = ''
   }
 
   /**
@@ -1438,7 +1416,6 @@ Slider.optionsDefault = {
   hideDisable: '[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]',
   drag: {
     dragger: '[data-xt-slider-dragger]',
-    manual: false,
     threshold: 15,
     factor: 1,
     overflow: ({ overflow }) => {

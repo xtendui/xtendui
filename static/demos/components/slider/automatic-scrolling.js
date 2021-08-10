@@ -26,6 +26,9 @@ const mountSliders = ({ ref }) => {
   for (const slider of sliders) {
     // vars
 
+    const dragEase = 'linear'
+    let distance
+    let duration
     const timeScaleTimeOn = 0.75
     const timeScaleEaseOn = 'quint.in'
     const timeScaleTimeOff = 0.75
@@ -36,54 +39,54 @@ const mountSliders = ({ ref }) => {
     /***/
     let self = new Xt.Slider(slider, {
       align: 'left',
-      jump: false,
-      wrap: true,
-      drag: {
-        manual: true,
-      },
+      groupSame: false,
+      wrap: 0, // needed 0 to have wrap enabled on same available space as slider enable/disable
     })
     /***/
 
-    // on
+    // dragposition (set internal position to resume animation mid dragging)
 
-    const on = e => {
-      const tr = e.target
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        if (self.intial || self.wrap) {
-          // reset dragging position
-          gsap.killTweensOf(self.dragger)
-          gsap.set(self.dragger, {
-            x: self.drag.dragPos,
-          })
-          if (self.intial) {
-            self.goToNext()
-          }
-        } else {
-          // time depending on target and dragger width
-          const slideWidth = tr.offsetWidth
-          const time = (slideWidth * 15) / 1000 // constant speed
-          // end dragging position
-          gsap.killTweensOf(self.dragger)
-          gsap
-            .to(self.dragger, {
-              x: self.drag.dragPos,
-              duration: time,
-              ease: 'linear',
-            })
-            .eventCallback('onComplete', () => {
-              // wrap before changing slide if needed, needed with wrap = true
-              self.eventWrap()
-              requestAnimationFrame(() => {
-                // go to next slide
-                self.goToNext()
-              })
-            })
-        }
-      }
+    const dragposition = () => {
+      // duration depending on distance
+      distance = Math.abs(self.drag.position - self.drag.final)
+      duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+      // position animation to keep updated with animation
+      gsap.killTweensOf(self.drag)
+      gsap.to(self.drag, {
+        position: self.drag.final,
+        duration: duration,
+        ease: dragEase,
+      })
+      // dragger animation
+      gsap.killTweensOf(self.dragger)
+      gsap
+        .to(self.dragger, {
+          x: self.drag.final,
+          duration: duration,
+          ease: dragEase,
+        })
+        .eventCallback('onComplete', () => {
+          /***/
+          // this is what makes the slider automatic
+          // go to next slide
+          self.goToNext()
+          /***/
+        })
     }
 
-    self.container.addEventListener('on.xt.slider', on, true)
+    self.dragger.addEventListener('dragposition.xt.slider', dragposition)
+
+    // init
+
+    const init = () => {
+      /***/
+      // this is what makes the slider automatic
+      // start automatic on init
+      self.goToNext()
+      /***/
+    }
+
+    self.container.addEventListener('init.xt.slider', init)
 
     // pause
 
