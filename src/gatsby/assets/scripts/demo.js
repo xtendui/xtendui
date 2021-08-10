@@ -333,6 +333,15 @@ export const populateDemo = container => {
     item.addEventListener('on.xt.toggle', () => {
       if (!self.initial) {
         btnOpenIframe(item)
+        // triggering e.detail.container (e.g. slider wrap)
+        dispatchEvent(
+          new CustomEvent('resize', {
+            detail: {
+              force: true,
+              container: item,
+            },
+          })
+        )
         // only if demo opened
         if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
           // hash
