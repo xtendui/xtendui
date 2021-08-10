@@ -76,7 +76,7 @@ Test groups.
 <demo>
   <demoinline src="demos/components/slider/group">
   </demoinline>
-  <demoinline src="demos/components/slider/group-wrap">
+  <demoinline src="demos/components/slider/no-group-same">
   </demoinline>
 </demo>
 

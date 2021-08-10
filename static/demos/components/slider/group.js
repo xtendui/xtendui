@@ -30,6 +30,12 @@ const mountSlider = ({ ref }) => {
   /***/
   let self = new Xt.Slider(slider, {
     group: 1,
+    wrap: true,
+    matches: {
+      '(min-width: 768px)': {
+        group: 0.8,
+      },
+    },
   })
   /***/
 

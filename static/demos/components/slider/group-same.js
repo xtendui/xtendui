@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-hash',
+  matches: '.demo--slider-group-same',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -28,7 +28,9 @@ const mountSlider = ({ ref }) => {
   // init
 
   /***/
-  let self = new Xt.Slider(slider, {})
+  let self = new Xt.Slider(slider, {
+    wrap: true,
+  })
   /***/
 
   // dragposition (set internal position to resume animation mid dragging)

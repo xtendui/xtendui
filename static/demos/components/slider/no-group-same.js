@@ -3,7 +3,7 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-group-wrap',
+  matches: '.demo--slider-no-group-same',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
@@ -29,14 +29,8 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    align: 'center',
     wrap: true,
-    group: 1,
-    matches: {
-      '(min-width: 768px)': {
-        group: 0.8,
-      },
-    },
+    groupSame: false,
   })
   /***/
 

@@ -29,7 +29,6 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    align: 'center',
     wrap: true,
   })
   /***/

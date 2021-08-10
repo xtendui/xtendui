@@ -131,10 +131,9 @@ class Slider extends Xt.Toggle {
     self.initGroupsPosition()
     // wrap
     if (
-      options.wrap &&
+      options.wrap !== false &&
       options.mode !== 'absolute' &&
-      !options.drag.manual &&
-      self.drag.availableSpace >= self.drag.size
+      self.drag.availableSpace > self.drag.size * options.wrap
     ) {
       self.wrap = true
     } else {
@@ -247,7 +246,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // contain groups
-    if (options.contain && !self.wrap && options.mode !== 'absolute' && self.usedWidth > self.drag.size) {
+    if (options.contain && options.mode !== 'absolute' && !self.wrap && self.usedWidth > self.drag.size) {
       // only if slides overflow dragger
       const first = self.groups[self.drag.wrapFirst].target
       const last = self.groups[self.drag.wrapLast].target
@@ -353,7 +352,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // groups multiple targets if are inside dragger
-    if (options.mode !== 'absolute') {
+    if (options.groupSame && options.mode !== 'absolute') {
       for (const [z, group] of self.groups.entries()) {
         const tr = group.target
         const groupGroup = tr.getAttribute('data-xt-group')
@@ -1428,6 +1427,7 @@ Slider.optionsDefault = {
   // slider
   mode: 'relative',
   group: false,
+  groupSame: true,
   align: 'center',
   contain: true,
   wrap: false,
