@@ -249,9 +249,8 @@ class Toggle {
             self.container.setAttribute(`data-${self.componentName}-init`, '')
           }
           // dispatch event
-          self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-          // initial after autostart
           self.initial = false
+          self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
           self.eventAutostart()
           // debug
@@ -2552,9 +2551,8 @@ class Toggle {
               self.container.setAttribute(`data-${self.componentName}-init`, '')
             }
             // dispatch event
-            self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-            // initial after autostart
             self.initial = false
+            self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
             // debug
             if (options.debug) {
               // eslint-disable-next-line no-console
