@@ -96,18 +96,6 @@ const html = /* HTML */ `
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
-
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-500 pb-[37.5%]">
-              <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-            </div>
-          </div>
-
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-500 pb-[37.5%]">
-              <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-            </div>
-          </div>
         </div>
 
         <nav class="hidden" data-xt-slider-pagination>

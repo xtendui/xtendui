@@ -164,3 +164,10 @@ Test medialoaded activation and position.
   <demoinline src="demos/components/slider/media-loaded">
   </demoinline>
 </demo>
+
+Test initial automatic activation on init.
+
+<demo>
+  <demoinline src="demos/components/slider/automatic-scrolling">
+  </demoinline>
+</demo>

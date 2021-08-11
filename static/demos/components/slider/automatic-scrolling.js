@@ -26,9 +26,8 @@ const mountSliders = ({ ref }) => {
   for (const slider of sliders) {
     // vars
 
+    let dragDuration
     const dragEase = 'linear'
-    let distance
-    let duration
     const timeScaleTimeOn = 0.75
     const timeScaleEaseOn = 'quint.in'
     const timeScaleTimeOff = 0.75
@@ -39,23 +38,22 @@ const mountSliders = ({ ref }) => {
     /***/
     let self = new Xt.Slider(slider, {
       align: 'left',
+      wrap: 0, // needed 0 to have wrap enabled on same available space as slider enable/disable
       groupSame: false,
       dragposition: true,
-      wrap: 0, // needed 0 to have wrap enabled on same available space as slider enable/disable
     })
     /***/
 
     // dragposition (set internal position to resume animation mid dragging)
 
     const dragposition = () => {
-      // duration depending on distance
-      distance = Math.abs(self.drag.position - self.drag.final)
-      duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+      // duration depending dragger size
+      dragDuration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + self.drag.size / 200), 1.5)
       // position animation to keep updated with animation
       gsap.killTweensOf(self.drag)
       gsap.to(self.drag, {
         position: self.drag.final,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       // dragger animation
@@ -63,7 +61,7 @@ const mountSliders = ({ ref }) => {
       gsap
         .to(self.dragger, {
           x: self.drag.final,
-          duration: duration,
+          duration: dragDuration,
           ease: dragEase,
         })
         .eventCallback('onComplete', () => {
@@ -82,8 +80,10 @@ const mountSliders = ({ ref }) => {
     const init = () => {
       /***/
       // this is what makes the slider automatic
-      // start automatic on init
-      self.goToNext()
+      // start automatic on init after a raf when self.initial becomes false
+      requestAnimationFrame(() => {
+        self.goToNext()
+      })
       /***/
     }
 

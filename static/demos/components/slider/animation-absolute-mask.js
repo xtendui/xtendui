@@ -22,8 +22,7 @@ const mountSlider = ({ ref }) => {
 
   const slider = ref.querySelector('.xt-slider')
   const dragEase = 'quart.out'
-  let distance
-  let duration
+  let dragDuration
 
   const maskPercent = 100
   const maskInnerPercent = 100
@@ -33,7 +32,7 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
-    duration: () => duration * 1000,
+    duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
   })
@@ -42,14 +41,13 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // duration depending dragger size
+    dragDuration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + self.drag.size / 200), 1.5)
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
       position: self.drag.final,
-      duration: duration,
+      duration: dragDuration,
       ease: dragEase,
     })
   }
@@ -123,7 +121,7 @@ const mountSlider = ({ ref }) => {
       })
       gsap.to(mask, {
         x: 0,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       const maskInner = mask.querySelector('.hero-inner')
@@ -135,7 +133,7 @@ const mountSlider = ({ ref }) => {
       gsap.to(maskInner, {
         x: 0,
         opacity: 1,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
     }
@@ -154,7 +152,7 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(mask)
       gsap.to(mask, {
         x: `${-maskPercent * self.direction}%`,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       const maskInner = mask.querySelector('.hero-inner')
@@ -162,7 +160,7 @@ const mountSlider = ({ ref }) => {
       gsap.to(maskInner, {
         x: `${maskInnerPercent * self.direction}%`,
         opacity: 1 - maskInnerOpacity,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       /***/
@@ -176,7 +174,7 @@ const mountSlider = ({ ref }) => {
         gsap
           .to(mask, {
             x: `${-maskPercent * self.direction}%`,
-            duration: duration,
+            duration: dragDuration,
             ease: dragEase,
           })
           .eventCallback('onComplete', () => {
@@ -187,7 +185,7 @@ const mountSlider = ({ ref }) => {
         gsap.to(maskInner, {
           x: `${maskInnerPercent * self.direction}%`,
           opacity: 1 - maskInnerOpacity,
-          duration: duration,
+          duration: dragDuration,
           ease: dragEase,
         })
       }
