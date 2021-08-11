@@ -250,10 +250,10 @@ class Toggle {
           }
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-          // initial after autostart
-          self.initial = false
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
           self.eventAutostart()
+          // initial after autostart
+          self.initial = false
           // debug
           if (options.debug) {
             // eslint-disable-next-line no-console
@@ -2553,8 +2553,6 @@ class Toggle {
             }
             // dispatch event
             self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
-            // initial after autostart
-            self.initial = false
             // debug
             if (options.debug) {
               // eslint-disable-next-line no-console
@@ -2563,6 +2561,10 @@ class Toggle {
           }
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
           self.eventAutostart()
+          // initial after autostart
+          if (self.initial) {
+            self.initial = false
+          }
           // reset
           self.inverse = null
         },
