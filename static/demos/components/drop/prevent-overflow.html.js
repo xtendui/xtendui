@@ -2,8 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-prevent-overflow">
-    <div class="py-4 px-6 bg-primary-500">
-      <div class="xt-list xt-list-3 items-center">
+    <div class="py-4 px-6 bg-primary-500" data-node-boundary>
+      <div class="xt-list xt-list-3 items-center" data-node-drop>
         <div data-xt-drop-element>
           <button
             type="button"

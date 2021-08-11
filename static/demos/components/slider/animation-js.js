@@ -33,6 +33,7 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
+    wrap: true,
     duration: 500,
   })
   /***/
@@ -41,20 +42,12 @@ const mountSlider = ({ ref }) => {
 
   /***/
   const init = () => {
-    const trs = self.targets.filter(x => !self.hasCurrent(x, false, true))
+    const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
     for (const tr of trs) {
-      const index = self.getIndex({ el: tr })
-      if (index < self.index) {
-        gsap.set(tr, {
-          x: -1 * targetXOn,
-          opacity: 0,
-        })
-      } else if (index >= self.index) {
-        gsap.set(tr, {
-          x: 1 * targetXOn,
-          opacity: 0,
-        })
-      }
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.set(content, {
+        opacity: 0,
+      })
     }
   }
 
@@ -68,8 +61,12 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.killTweensOf(content)
+      gsap.set(content, {
+        x: self.direction * targetXOn,
+      })
+      gsap.to(content, {
         x: 0,
         opacity: 1,
         duration: targetTimeOn,
@@ -88,8 +85,9 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.killTweensOf(content)
+      gsap.to(content, {
         x: -self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,

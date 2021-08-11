@@ -38,7 +38,7 @@ const mountFormLoader = ({ ref }) => {
 
   const button = ref
   const form = button.form
-  const loaderTemplate = document.querySelector('[data-js-loader-template]')
+  const loaderTemplate = document.querySelector('[data-node-loader-template]')
 
   // submit
 

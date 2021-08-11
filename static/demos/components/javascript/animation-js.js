@@ -19,7 +19,7 @@ Xt.mount({
 const mountActivation = ({ ref }) => {
   // vars
 
-  const tr = ref.querySelector('[data-js-target]')
+  const tr = ref.querySelector('[data-node-target]')
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
   const targetXOn = 16

@@ -1,7 +1,7 @@
 .demo--toggle-animation, .demo--toggle-animation-react {
   [data-xt-toggle-target] {
     /* initial */
-    @apply transition opacity-0;
+    @apply opacity-0;
     &.dir-before {
       @apply translate-x-4;
     }
@@ -10,11 +10,11 @@
     }
     /* in */
     &.in {
-      @apply opacity-100 translate-x-0;
+      @apply transition opacity-100 translate-x-0;
     }
     /* out */
     &.out {
-      @apply opacity-0;
+      @apply transition opacity-0;
       &.dir-before {
         @apply -translate-x-4;
       }

@@ -19,8 +19,8 @@ Xt.mount({
 const mountDrops = ({ ref }) => {
   // vars
 
-  const drop = ref.querySelector(':scope > * > .xt-list')
-  const boundary = ref.querySelector(':scope > *')
+  const drop = ref.querySelector('[data-node-drop]')
+  const boundary = ref.querySelector('[data-node-boundary]')
 
   // init
 

@@ -2,10 +2,10 @@
   .xt-overlay {
     /* initial */
     .xt-backdrop {
-      @apply transition opacity-0;
+      @apply opacity-0;
     }
     .xt-overlay-inner {
-      @apply transition opacity-0;
+      @apply opacity-0;
     }
     &.dir-before {
       .xt-overlay-inner {
@@ -20,19 +20,19 @@
     /* in */
     &.in {
       .xt-backdrop {
-        @apply opacity-25;
+        @apply transition opacity-25;
       }
       .xt-overlay-inner {
-        @apply opacity-100 translate-y-0;
+        @apply transition opacity-100 translate-y-0;
       }
     }
     /* out */
     &.out {
       .xt-backdrop {
-        @apply opacity-0;
+        @apply transition opacity-0;
       }
       .xt-overlay-inner {
-        @apply opacity-0;
+        @apply transition opacity-0;
       }
       &.dir-before {
         .xt-overlay-inner {

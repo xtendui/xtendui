@@ -1,25 +1,39 @@
 .demo--slider-animation-css, .demo--slider-animation-css-react {
   .xt-slide {
     /* initial */
-    @apply transition opacity-0;
+    [data-node-target-content] {
+      @apply opacity-0;
+    }
     &.dir-before {
-      @apply translate-x-12;
+      [data-node-target-content] {
+        @apply -translate-x-12;
+      }
     }
     &.dir-after {
-      @apply -translate-x-12;
+      [data-node-target-content] {
+        @apply translate-x-12;
+      }
     }
     /* in */
     &.in {
-      @apply opacity-100 translate-x-0;
+      [data-node-target-content] {
+        @apply transition opacity-100 translate-x-0;
+      }
     }
     /* out */
     &.out {
-      @apply opacity-0 translate-x-0;
+      [data-node-target-content] {
+        @apply transition opacity-0 translate-x-0;
+      }
       &.dir-before {
-        @apply translate-x-12;
+        [data-node-target-content] {
+          @apply translate-x-12;
+        }
       }
       &.dir-after {
-        @apply -translate-x-12;
+        [data-node-target-content] {
+          @apply -translate-x-12;
+        }
       }
     }
   }

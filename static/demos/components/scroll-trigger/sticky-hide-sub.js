@@ -22,7 +22,7 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const sticky = ref.querySelector('.xt-sticky')
-  const sub = sticky.querySelector('[data-js-sticky-hide-sub]')
+  const sub = sticky.querySelector('[data-node-sticky-hide-sub]')
 
   // hide depending on direction (always before pin ScrollTrigger)
 

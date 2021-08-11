@@ -159,6 +159,13 @@ Test animation fast duration with and without `data-xt-duration`.
   </demoinline>
 </demo>
 
+Test popperjs settings by checking position.
+
+<demo>
+  <demoinline src="demos/components/tooltip/prevent-overflow">
+  </demoinline>
+</demo>
+
 ## Api
 
 Test [e.detail.skip = true](/components/toggle/api#trigger).

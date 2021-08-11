@@ -225,7 +225,7 @@ const mountArrow = ({ ref }) => {
   // vars
 
   const arrow = ref.querySelector('.product-arrow')
-  const icon = arrow.querySelector(':scope > *')
+  const icon = arrow.querySelector('svg')
   const posY = 15
 
   // interval

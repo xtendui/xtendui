@@ -23,7 +23,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   ScrollTrigger.create({
-    trigger: ref.querySelector('[data-js-sticky-top]'),
+    trigger: ref.querySelector('[data-node-sticky-top]'),
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -34,7 +34,7 @@ const mountSticky = ({ ref }) => {
 
   /***/
   const scrollTriggerBottom = ScrollTrigger.create({
-    trigger: ref.querySelector('[data-js-sticky-bottom]'),
+    trigger: ref.querySelector('[data-node-sticky-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
     end: 'bottom top',

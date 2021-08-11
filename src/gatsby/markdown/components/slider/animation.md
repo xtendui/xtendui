@@ -197,6 +197,9 @@ You can use also **javascript animations**, just use [drop api](/components/slid
 [[notePrimary]]
 | On relative mode in `on.xt.slider` and `off.xt.slider` do not **set starting and end animation values** with `gsap.set`, do it in the `init.xt.slider` instead.
 
+[[notePrimary]]
+| On relative mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** only if .
+
 <demo>
   <demoinline src="demos/components/slider/animation-js">
   </demoinline>
