@@ -32,23 +32,18 @@ const mountStatus = ({ ref }) => {
   const change = e => {
     // check because of event propagation
     if (e.target === slider || self.targets.includes(e.target)) {
-      // availableWidth
-      let availableWidth = 0
-      for (const tr of self.targets) {
-        availableWidth += tr.offsetWidth
-      }
       // width
       const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
       if (!trs.length) return
-      let width = 0
+      let currentSizeContent = 0
       const left = trs[0].offsetLeft
       for (const tr of trs) {
-        width += tr.offsetWidth
+        currentSizeContent += tr.offsetWidth
       }
       // set
       const totalWidth = total.offsetWidth
-      const currentWidth = (width * totalWidth) / availableWidth
-      const currentLeft = (left * totalWidth) / availableWidth
+      const currentWidth = (currentSizeContent * totalWidth) / self.drag.sizeContent
+      const currentLeft = (left * totalWidth) / self.drag.sizeContent
       current.style.width = `${currentWidth}px`
       current.style.left = `${currentLeft}px`
     }

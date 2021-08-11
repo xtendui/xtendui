@@ -101,6 +101,7 @@ const container = self.container
 | Property                   | `autoblock:Boolean`       | Block all auto logic            |
 | Property                   | `dragger:Node`       | Dragger node             |
 | Property                   | `drag.size:Number`       | Dragger size             |
+| Property                   | `drag.sizeContent:Number`       | Content size             |
 | Property                   | `drag.position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
 | Property                   | `drag.final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
 | Property                   | `drag.ratio:Number`       | Current drag ratio from 0 to 1             |

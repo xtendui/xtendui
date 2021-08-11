@@ -102,6 +102,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // @PERF
+    let sizeContent = 0
     for (const tr of self.targets) {
       let trLeft
       let trWidth
@@ -112,10 +113,12 @@ class Slider extends Xt.Toggle {
         trLeft = tr.offsetLeft
         trWidth = tr.offsetWidth
       }
+      sizeContent += trWidth
       Xt.dataStorage.set(tr, `${self.ns}TrLeftWrap`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
     }
+    self.drag.sizeContent = sizeContent
     // initGroupsInitial
     self.initGroupsInitial()
     // disable slider if not overflowing

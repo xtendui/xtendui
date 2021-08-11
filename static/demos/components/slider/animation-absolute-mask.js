@@ -21,8 +21,8 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const dragEase = 'quart.out'
   let dragDuration
+  const dragEase = 'quart.out'
 
   const maskPercent = 100
   const maskInnerPercent = 100
@@ -41,7 +41,7 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending dragger size
+    // duration depending on dragger size
     dragDuration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + self.drag.size / 200), 1.5)
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)

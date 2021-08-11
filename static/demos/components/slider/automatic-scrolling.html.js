@@ -48,18 +48,19 @@ const html = /* HTML */ `
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
             <div class="xt-h4">Eleven</div>
           </div>
-
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-h4">Twelve</div>
-          </div>
         </div>
 
         <div class="*** absolute inset-y-0 left-0 w-16 bg-gradient-to-l from-transparent to-white ***"></div>
 
         <div class="*** absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white ***"></div>
 
-        <nav class="hidden" data-xt-slider-pagination>
-          <button type="button" class="xt-button hidden" data-xt-slider-element></button>
+        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonSlider()} hidden"
+            data-xt-slider-element
+            title="Slide xt-num"
+          ></button>
         </nav>
       </div>
     </div>
@@ -96,10 +97,27 @@ const html = /* HTML */ `
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
+
+          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-500 pb-[37.5%]">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-500 pb-[37.5%]">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
         </div>
 
-        <nav class="hidden" data-xt-slider-pagination>
-          <button type="button" class="xt-button hidden" data-xt-slider-element></button>
+        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonSlider()} hidden"
+            data-xt-slider-element
+            title="Slide xt-num"
+          ></button>
         </nav>
       </div>
     </div>

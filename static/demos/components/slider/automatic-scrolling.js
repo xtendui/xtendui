@@ -27,7 +27,10 @@ const mountSliders = ({ ref }) => {
     // vars
 
     let dragDuration
-    const dragEase = 'linear'
+    let dragEase
+    let isAutomatic = false
+    const dragEaseNormal = 'quart.out'
+    const dragEaseAutomatic = 'linear'
     const timeScaleTimeOn = 0.75
     const timeScaleEaseOn = 'quint.in'
     const timeScaleTimeOff = 0.75
@@ -37,6 +40,7 @@ const mountSliders = ({ ref }) => {
 
     /***/
     let self = new Xt.Slider(slider, {
+      duration: () => dragDuration * 1000,
       align: 'left',
       wrap: 0, // needed 0 to have wrap enabled on same available space as slider enable/disable
       groupSame: false,
@@ -44,11 +48,29 @@ const mountSliders = ({ ref }) => {
     })
     /***/
 
+    /***/
+    // automaticNext
+
+    const automaticNext = () => {
+      // go to next slide when animation completes
+      isAutomatic = true
+      self.goToNext()
+      isAutomatic = false
+    }
+    /***/
+
     // dragposition (set internal position to resume animation mid dragging)
 
     const dragposition = () => {
-      // duration depending dragger size
-      dragDuration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + self.drag.size / 200), 1.5)
+      // duration depending on content size
+      const speedFactor = 3
+      dragDuration =
+        self.initial || self.drag.instant
+          ? 0
+          : isAutomatic
+          ? (self.drag.sizeContent * speedFactor) / 1000 // automatic change duration
+          : 0.5 // manual change duration
+      dragEase = isAutomatic ? dragEaseAutomatic : dragEaseNormal
       // position animation to keep updated with animation
       gsap.killTweensOf(self.drag)
       gsap.to(self.drag, {
@@ -66,9 +88,8 @@ const mountSliders = ({ ref }) => {
         })
         .eventCallback('onComplete', () => {
           /***/
-          // this is what makes the slider automatic
-          // go to next slide
-          self.goToNext()
+          // go to next slide when animation completes
+          automaticNext()
           /***/
         })
     }
@@ -79,10 +100,9 @@ const mountSliders = ({ ref }) => {
 
     const init = () => {
       /***/
-      // this is what makes the slider automatic
       // start automatic on init after a raf when self.initial becomes false
       requestAnimationFrame(() => {
-        self.goToNext()
+        automaticNext()
       })
       /***/
     }
