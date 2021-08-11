@@ -79,8 +79,8 @@ class Stickyflow {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.initial = false
         self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.initial = false
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
