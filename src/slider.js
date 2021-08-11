@@ -1074,6 +1074,8 @@ class Slider extends Xt.Toggle {
       self.drag.current = e.touches[0].clientX
       self.drag.currentOther = e.touches[0].clientY
     }
+    // vars
+    self.autoblock = false
     // disable interaction
     for (const tr of self.targets) {
       tr.classList.remove('pointer-events-none')
@@ -1084,8 +1086,6 @@ class Slider extends Xt.Toggle {
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
       return
     }
-    // vars
-    self.autoblock = false
     // raf because on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // only if dragging enough
@@ -1226,8 +1226,6 @@ class Slider extends Xt.Toggle {
     self.drag.ratioInverse = 1 - self.drag.ratio
     // val
     self.drag.final = self.drag.initial
-    // vars
-    self.autoblock = false
     // dispatch event
     self.drag.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
