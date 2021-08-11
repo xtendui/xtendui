@@ -600,7 +600,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // dragposition
     if (!options.dragposition && options.mode !== 'absolute') {
-      self.initial || self.drag.instant ? self.dragger.classList.remove('in') : self.dragger.classList.add('in')
+      self.initial || self.drag.instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
       // set internal position to resume animation mid dragging
       self.drag.position = self.drag.final
       self.dragger.style.transform = `translateX(${self.drag.final}px)`

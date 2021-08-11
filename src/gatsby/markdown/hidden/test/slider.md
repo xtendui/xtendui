@@ -5,6 +5,15 @@ parent: "Test"
 title: "Slider"
 ---
 
+## Relative
+
+Test drag animations on drag and activation.
+
+<demo>
+  <demoinline src="demos/components/slider/dragposition-false">
+  </demoinline>
+</demo>
+
 ## Absolute
 
 Test direction and other drag values on initial, same index, reset, drag, nav.

@@ -21,7 +21,7 @@ By default `mode: 'relative'` sliders has automatic transform position of `drag.
 
 Use **tailwind classes** to assign animation (e.g. [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
-You can also assign different styles on `drag.dragger` to animate differently on activation (**default styles are for all transitions including drag**).
+You can also use **tailwind variants** `on:` on `drag.dragger` to animate differently on activation (**default styles are for all transitions including drag**).
 
 <demo>
   <demoinline src="demos/components/slider/dragposition-false">

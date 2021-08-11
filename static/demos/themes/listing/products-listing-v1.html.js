@@ -34,7 +34,7 @@ const html = /* HTML */ `
           </div>
 
           <div
-            class="xt-slides transition-all ease-out-expo duration-300 in:ease-out-quint in:duration-1000 xt-row xt-row-4"
+            class="xt-slides transition-all ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
             data-xt-slider-dragger
           >
             <div class="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
