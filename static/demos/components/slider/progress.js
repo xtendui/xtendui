@@ -105,41 +105,6 @@ const mountSlider = ({ ref }) => {
   // autostop
 
   const autostop = () => {
-    // elements
-    const els = self.elements.filter(x => self.hasCurrent({ el: x }))
-    for (const el of els) {
-      const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
-      for (const filler of fillers) {
-        gsap.killTweensOf(filler)
-        gsap.to(filler, {
-          height: 0,
-          top: 0,
-          duration: fillerTime,
-          ease: fillerEase,
-        })
-      }
-    }
-    // targets
-    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of trs) {
-      const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
-      for (const filler of fillers) {
-        gsap.killTweensOf(filler)
-        gsap.to(filler, {
-          width: 0,
-          left: '100%',
-          duration: fillerTime,
-          ease: fillerEase,
-        })
-      }
-    }
-  }
-
-  self.container.addEventListener('autostop.xt.slider', autostop)
-
-  // autopause
-
-  const autopause = () => {
     // slider
     const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
@@ -179,7 +144,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('autopause.xt.slider', autopause)
+  self.container.addEventListener('autostop.xt.slider', autostop)
 
   // unmount
 

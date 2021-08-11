@@ -6,8 +6,8 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
         Toggle 0
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
+          <span class="${classes.filler()} text-black text-opacity-50">
+            <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
         </span>
@@ -16,8 +16,8 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
         Toggle 1
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
+          <span class="${classes.filler()} text-black text-opacity-50">
+            <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
         </span>
@@ -26,8 +26,8 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
         Toggle 2
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
+          <span class="${classes.filler()} text-black text-opacity-50">
+            <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
         </span>
@@ -36,8 +36,8 @@ const html = /* HTML */ `
       <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
         Toggle 3
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-primary-500">
-            <span class="block absolute bg-current opacity-25 w-full h-full"></span>
+          <span class="${classes.filler()} text-black text-opacity-50">
+            <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
         </span>

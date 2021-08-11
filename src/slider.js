@@ -1044,8 +1044,9 @@ class Slider extends Xt.Toggle {
       self.drag.startOther = e.touches[0].clientY
     }
     // auto
-    self.eventAutopause()
+    self.eventAutostop()
     // vars
+    self.autoblock = true
     self.drag.instant = true
     self.drag.index = self.index
     self.drag.old = self.drag.start
@@ -1083,6 +1084,8 @@ class Slider extends Xt.Toggle {
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
       return
     }
+    // vars
+    self.autoblock = false
     // raf because on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // only if dragging enough
@@ -1114,7 +1117,7 @@ class Slider extends Xt.Toggle {
         self.logicDragreset()
       }
       // auto
-      self.eventAutoresume()
+      self.eventAutostart()
       // dispatch event
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
     })
@@ -1223,6 +1226,8 @@ class Slider extends Xt.Toggle {
     self.drag.ratioInverse = 1 - self.drag.ratio
     // val
     self.drag.final = self.drag.initial
+    // vars
+    self.autoblock = false
     // dispatch event
     self.drag.instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))

@@ -37,7 +37,6 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `medialoaded.xt.toggle`           | `elements` `targets` | Images loaded event            |
 | Event                   | `autostart.xt.toggle`           | `container` | Auto start event             |
 | Event                   | `autostop.xt.toggle`           | `container` | Auto stop event             |
-| Event                   | `autopause.xt.toggle`           | `container` | Auto pause event             |
 | Event                   | `init.xt.toggle`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.toggle`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.toggle`           | `container` | Restart event             |
@@ -94,6 +93,7 @@ const container = self.container
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `autoblock:Boolean`       | Block all auto logic            |
 | Property                   | `index|null:Number`       | Current activated index            |
 
 </div>

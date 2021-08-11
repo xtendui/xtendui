@@ -37,7 +37,6 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 | Event                   | `medialoaded.xt.slider`           | `elements` `targets` | Images loaded event, only when setting `options.mediaLoaded: true`           |
 | Event                   | `autostart.xt.slider`           | `container` | Auto start event             |
 | Event                   | `autostop.xt.slider`           | `container` | Auto stop event             |
-| Event                   | `autopause.xt.slider`           | `container` | Auto pause event             |
 | Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
 | Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
 | Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
@@ -99,6 +98,7 @@ const container = self.container
 | Property                   | `targets:Array`       | Targets nodes            |
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `autoblock:Boolean`       | Block all auto logic            |
 | Property                   | `dragger:Node`       | Dragger node             |
 | Property                   | `drag.size:Number`       | Dragger size             |
 | Property                   | `drag.position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
