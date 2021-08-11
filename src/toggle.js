@@ -2870,14 +2870,13 @@ class Toggle {
           const closeElement = el
           const specialcloseinsideHandler = Xt.dataStorage.put(
             closeElement,
-            `mousedown/close/${self.ns}`,
+            `click/close/${self.ns}`,
             self.eventSpecialcloseinsideHandler.bind(self)
           )
           // raf because do not close when clicking things that trigger this
           requestAnimationFrame(() => {
-            // use mousedown not click or it triggers also when click start outside
-            closeElement.removeEventListener('mousedown', specialcloseinsideHandler)
-            closeElement.addEventListener('mousedown', specialcloseinsideHandler)
+            closeElement.removeEventListener('click', specialcloseinsideHandler)
+            closeElement.addEventListener('click', specialcloseinsideHandler)
           })
         }
       }
@@ -2889,14 +2888,13 @@ class Toggle {
           for (const outside of outsides) {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
               outside,
-              `mousedown/close/${self.ns}`,
+              `click/close/${self.ns}`,
               self.eventSpecialcloseoutsideHandler.bind(self)
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              // use mousedown not click or it triggers also when click start outside
-              outside.removeEventListener('mousedown', specialcloseoutsideHandler)
-              outside.addEventListener('mousedown', specialcloseoutsideHandler)
+              outside.removeEventListener('click', specialcloseoutsideHandler)
+              outside.addEventListener('click', specialcloseoutsideHandler)
             })
           }
         }
@@ -2909,14 +2907,13 @@ class Toggle {
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.put(
               closeElement,
-              `mousedown/close/${self.ns}`,
+              `click/close/${self.ns}`,
               self.eventSpecialclosedeepHandler.bind(self)
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              // use mousedown not click or it triggers also when click start outside
-              closeElement.removeEventListener('mousedown', specialclosedeepHandler)
-              closeElement.addEventListener('mousedown', specialclosedeepHandler)
+              closeElement.removeEventListener('click', specialclosedeepHandler)
+              closeElement.addEventListener('click', specialclosedeepHandler)
             })
             // focusable
             const specialclosedeepKeydownHandler = Xt.dataStorage.put(
@@ -2938,9 +2935,8 @@ class Toggle {
       if (options.closeInside) {
         if (type === 'elements' || type === 'targets') {
           const closeElement = el
-          const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
-          // use mousedown not click or it triggers also when click start outside
-          closeElement.removeEventListener('mousedown', specialcloseinsideHandler)
+          const specialcloseinsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+          closeElement.removeEventListener('click', specialcloseinsideHandler)
         }
       }
       // closeOutside
@@ -2949,9 +2945,8 @@ class Toggle {
         if (type === 'elements' && el === obj.elements.queueEls[0]) {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
-            // use mousedown not click or it triggers also when click start outside
-            closeElement.removeEventListener('mousedown', specialcloseoutsideHandler)
+            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+            closeElement.removeEventListener('click', specialcloseoutsideHandler)
           }
         }
       }
@@ -2961,9 +2956,8 @@ class Toggle {
         if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
-            const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
-            // use mousedown not click or it triggers also when click start outside
-            closeElement.removeEventListener('mousedown', specialclosedeepHandler)
+            const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
+            closeElement.removeEventListener('click', specialclosedeepHandler)
             // focusable
             const specialclosedeepKeydownHandler = Xt.dataStorage.get(closeElement, `keydown/close/${self.ns}`)
             closeElement.removeEventListener('keydown', specialclosedeepKeydownHandler)
@@ -3032,8 +3026,7 @@ class Toggle {
     // key enter or space
     if (code === 13 || code === 32) {
       e.preventDefault()
-      // use mousedown not click or it triggers also when click start outside
-      closeElement.dispatchEvent(new CustomEvent('mousedown'))
+      closeElement.dispatchEvent(new CustomEvent('click'))
     }
   }
 
