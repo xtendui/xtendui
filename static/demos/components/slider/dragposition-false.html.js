@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-slider" data-xt-slider>
+    <div class="xt-slider" data-xt-slider="{ wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides *** transition-all ease-out-expo duration-700 on:ease-out-quint *** xt-row xt-row-4"

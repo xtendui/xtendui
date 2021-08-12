@@ -800,14 +800,14 @@ class Slider extends Xt.Toggle {
     // fix absolute multi step activation (only if not already applied fix)
     if (options.mode === 'absolute' && !self.drag.instant && self.direction) {
       const diff = self.drag.initial - self.drag.position
-      //console.log(diff, self.drag.initial, self.drag.position)
+      //console.debug(diff, self.drag.initial, self.drag.position)
       if (Math.abs(diff) > maxCheck) {
         // remainder add or remove maxCheck depending on direction
         let remainder = diff % maxCheck
         remainder += maxCheck * self.direction
         // val
         self.drag.final = self.drag.initial - remainder
-        //console.log(diff, remainder, self.drag.position, self.drag.final, self.drag.initial)
+        //console.debug(diff, remainder, self.drag.position, self.drag.final, self.drag.initial)
         // dispatch event
         self.drag.instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
@@ -830,7 +830,7 @@ class Slider extends Xt.Toggle {
       },
       ns: `${self.ns}isDrag`,
     })
-    // wrap after self.drag.final for proper initialization direction inside self.eventWrap
+    // wrap after self.drag.final for proper initial initialization direction (e.g. slider api)
     self.eventWrap({ index: self.index })
     // autoHeight and keepHeight
     if (self.autoHeight || (self.keepHeight && self.initial)) {
@@ -867,7 +867,7 @@ class Slider extends Xt.Toggle {
       // forced value
       self.direction = self.inverse ? -1 : 1
     } else {
-      // direction from activation position (also when wrap there's no other way)
+      // direction before setting positions we check target activations positions (also when wrap there's no other way)
       const left = Xt.dataStorage.get(self.groups[self.index].target, `${self.ns}GroupLeft`)
       const leftOld = Xt.dataStorage.get(self.groups[self.oldIndex].target, `${self.ns}GroupLeft`)
       self.direction = left > leftOld ? -1 : 1
@@ -888,16 +888,15 @@ class Slider extends Xt.Toggle {
       const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
       const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
       // only one call
-      let dir = self.direction
-      if (dir === 0) {
+      let direction = self.direction
+      if (!direction) {
         // fix on init and reinit set direction to left (-1) if on left, to right (1) if on right
-        dir = self.drag.final > -self.drag.size ? -1 : 1
+        direction = self.drag.final > -self.drag.size ? -1 : 1
       }
-      if (self.drag.wrapDir !== dir || self.drag.wrapIndex !== index) {
-        self.drag.wrapDir = dir
+      if (self.drag.wrapDir !== direction || self.drag.wrapIndex !== index) {
+        self.drag.wrapDir = direction
         self.drag.wrapIndex = index
-        //console.debug(dir, index)
-        self.eventMove({ index, dir, left, width, movingSpace: width })
+        self.eventMove({ index, direction, left, width, movingSpace: 0 })
       }
     }
   }
@@ -906,17 +905,17 @@ class Slider extends Xt.Toggle {
    * eventMove
    * @param {Object} params
    * @param {Number} params.index
-   * @param {Number} params.dir
+   * @param {Number} params.direction
    * @param {Number} params.left
    * @param {Number} params.width
    * @param {Number} params.movingSpace
    */
-  eventMove({ index, dir, left, width, movingSpace } = {}) {
+  eventMove({ index, direction, left, width, movingSpace } = {}) {
     const self = this
     const options = self.options
     // index
     const tot = self.groups.length
-    if (dir < 0) {
+    if (direction < 0) {
       index = self.getPrevIndex({ index })
       // keep index of moved slides
       self.drag.wrapFirst = index
@@ -926,7 +925,7 @@ class Slider extends Xt.Toggle {
       self.drag.wrapLast = self.drag.wrapFirst - 1
       self.drag.wrapLast = self.drag.wrapLast < tot ? self.drag.wrapLast : self.drag.wrapLast - tot
       self.drag.wrapLast = self.drag.wrapLast >= 0 ? self.drag.wrapLast : tot + self.drag.wrapLast
-    } else if (dir > 0) {
+    } else if (direction > 0) {
       index = self.getNextIndex({ index })
       // keep index of moved slides
       self.drag.wrapLast = index
@@ -946,7 +945,7 @@ class Slider extends Xt.Toggle {
     const moveLeftWrap = Xt.dataStorage.get(move, `${self.ns}TrLeftWrap`)
     const moveWidth = Xt.dataStorage.get(move, `${self.ns}GroupWidth`)
     let moveLeft = left
-    if (dir < 0) {
+    if (direction < 0) {
       // move translate
       translate = -left - moveLeftWrap - moveWidth
       // set new activation position
@@ -957,7 +956,7 @@ class Slider extends Xt.Toggle {
       } else if (options.align === 'right') {
         moveLeft += width
       }
-    } else if (dir > 0) {
+    } else if (direction > 0) {
       // move translate
       translate = -left - moveLeftWrap + width
       // set new activation position
@@ -993,7 +992,7 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft + translate)
     }
     // loop available width
-    if (dir < 0) {
+    if (direction < 0) {
       if (options.align === 'center') {
         movingSpace += moveWidth + moveAlignCenter
       } else if (options.align === 'left') {
@@ -1001,7 +1000,7 @@ class Slider extends Xt.Toggle {
       } else if (options.align === 'right') {
         movingSpace += moveWidth + moveAlignNone
       }
-    } else if (dir > 0) {
+    } else if (direction > 0) {
       if (options.align === 'center') {
         movingSpace += moveWidth + moveAlignCenter
       } else if (options.align === 'left') {
@@ -1010,8 +1009,9 @@ class Slider extends Xt.Toggle {
         movingSpace += moveWidth + moveAlignFull
       }
     }
-    if (movingSpace < self.drag.size) {
-      self.eventMove({ index, dir, left: moveLeft, width: moveWidth, movingSpace })
+    //console.debug(index, movingSpace, self.drag.size) // logicDragfind
+    if (movingSpace <= self.drag.size) {
+      self.eventMove({ index, direction, left: moveLeft, width: moveWidth, movingSpace })
     }
   }
 
@@ -1051,6 +1051,7 @@ class Slider extends Xt.Toggle {
     // vars
     self.autoblock = true
     self.drag.instant = true
+    self.drag.draglock = false
     self.drag.index = self.index
     self.drag.old = self.drag.start
     self.drag.overflow = null
@@ -1092,7 +1093,7 @@ class Slider extends Xt.Toggle {
     // raf because on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // only if dragging enough
-      if (Math.abs(self.drag.distance) > options.drag.threshold) {
+      if (self.drag.draglock) {
         const index = self.index
         // if on the same slide as we started dragging
         if (index !== self.drag.index || Math.abs(self.drag.distance) >= self.drag.size) {
@@ -1100,17 +1101,14 @@ class Slider extends Xt.Toggle {
           self.goToNum({ index })
         } else {
           // depending on direction and if direction is not going back
+          const direction = Math.sign(self.drag.distance)
           if (
-            Math.sign(self.drag.distance) > 0 &&
+            direction > 0 &&
             self.drag.direction > 0 &&
             (options.loop || self.wrap || index !== self.getElementsGroups().length - 1)
           ) {
             self.goToNext({ amount: 1 })
-          } else if (
-            Math.sign(self.drag.distance) < 0 &&
-            self.drag.direction < 0 &&
-            (options.loop || self.wrap || index !== 0)
-          ) {
+          } else if (direction < 0 && self.drag.direction < 0 && (options.loop || self.wrap || index !== 0)) {
             self.goToPrev({ amount: 1 })
           } else {
             self.logicDragreset()
@@ -1148,12 +1146,6 @@ class Slider extends Xt.Toggle {
     // check threshold
     self.drag.distance = self.drag.start - self.drag.current
     self.drag.distanceOther = self.drag.startOther - self.drag.currentOther
-    if (Math.abs(self.drag.distance) > options.drag.threshold) {
-      // disable interaction
-      for (const tr of self.targets) {
-        tr.classList.add('pointer-events-none')
-      }
-    }
     // check drag direction
     if (Math.abs(self.drag.distanceOther) > Math.abs(self.drag.distance)) {
       // prevent drag logic
@@ -1162,6 +1154,14 @@ class Slider extends Xt.Toggle {
       // prevent page scroll
       if (e.cancelable) {
         e.preventDefault()
+      }
+    }
+    // only if dragging enough
+    self.drag.draglock = self.drag.draglock ? self.drag.draglock : Math.abs(self.drag.distance) > options.drag.threshold
+    // disable interaction
+    if (self.drag.draglock) {
+      for (const tr of self.targets) {
+        tr.classList.add('pointer-events-none')
       }
     }
     // calc
@@ -1191,7 +1191,7 @@ class Slider extends Xt.Toggle {
     // val
     self.drag.final = final
     // set direction
-    self.direction = self.drag.initial - self.drag.final < 0 ? -1 : 1
+    self.direction = Math.sign(self.drag.initial - self.drag.final)
     self.inverse = self.direction < 0
     // ratio
     self.drag.ratio = Math.abs(self.drag.final - self.drag.initial) / Math.abs(maxCheck - min)
@@ -1200,20 +1200,22 @@ class Slider extends Xt.Toggle {
     if (options.mode === 'absolute' && (self.drag.ratio > 1 || self.drag.ratio < -1)) {
       return
     }
-    // activation
-    if (options.mode !== 'absolute' && Math.abs(self.drag.distance) > options.drag.threshold) {
-      // get nearest
-      const found = self.logicDragfind()
-      // get nearest
-      if (found !== self.index) {
-        super.eventOn({ el: self.groups[found].element, force: true })
-        self.eventWrap({ index: found })
-      }
-    }
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
+    // reset
+    self.inverse = null
+    // activation
+    if (options.mode !== 'absolute' && self.drag.draglock) {
+      // get nearest
+      const found = self.logicDragfind({ index: self.index })
+      if (found !== null && found !== self.index) {
+        //console.debug(found)
+        super.eventOn({ el: self.groups[found].element, force: true })
+        self.eventWrap({ index: found })
+      }
+    }
   }
 
   /**
@@ -1222,7 +1224,7 @@ class Slider extends Xt.Toggle {
   logicDragreset() {
     const self = this
     // set direction
-    self.direction = self.direction < 0 ? 1 : -1
+    self.direction = self.direction * -1
     self.inverse = self.direction < 0
     // ratio
     self.drag.ratio = self.drag.ratioInverse
@@ -1234,52 +1236,64 @@ class Slider extends Xt.Toggle {
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
+    // reset
+    self.inverse = null
     // auto
     self.eventAutostart()
   }
 
   /**
-   * activate depending on drag
-   * @return {Boolean} Found index
+   * activate index depending on drag position
+   * @param {Object} params
+   * @param {Boolean} params.index
+   * @return {Number} Activation index
    */
-  logicDragfind() {
+  logicDragfind({ index } = {}) {
     const self = this
-    // array of orders based on current display order
-    const arr = []
-    for (let i = self.drag.wrapFirst; i < self.groups.length; i++) {
-      arr.push(i)
-    }
-    if (self.drag.wrapFirst !== 0) {
-      for (let i = 0; i <= self.drag.wrapLast; i++) {
-        arr.push(i)
-      }
-    }
     // find
-    const direction = Math.sign(self.drag.distance)
+    const direction = self.drag.direction
+    //const direction = Math.sign(self.drag.initial - self.drag.final)
+    //const direction = Math.sign(self.drag.distance)
     if (direction < 0) {
-      for (let i = 0; i < arr.length; i++) {
-        const tr = self.groups[arr[i]].target
+      for (let i = index; i >= 0; i--) {
+        const tr = self.groups[i].target
         const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
         const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
-        //console.debug(self.drag.final, left - width / 2, left, width, tr, self.drag.size)
+        //console.debug(direction, index, i, self.drag.final, left - width / 2)
         // first inside dragger on the left
-        if (self.drag.final > left - width / 2) {
-          return arr[i]
+        if (self.drag.final < left + width / 2) {
+          return i
+        }
+        if (i === 0) {
+          // continue loop
+          i = self.groups.length
+        }
+        if (i === index + 1) {
+          // break loop
+          break
         }
       }
     } else if (direction > 0) {
-      for (let i = arr.length - 1; i >= 0; i--) {
-        const tr = self.groups[arr[i]].target
+      for (let i = index; i < self.groups.length; i++) {
+        const tr = self.groups[i].target
         const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
         const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
-        //console.debug(self.drag.final, left + width / 2, left, width, tr, self.drag.size)
+        //console.debug(direction, index, i, self.drag.final, left - width / 2)
         // last inside dragger on the right
-        if (self.drag.final < left + width / 2) {
-          return arr[i]
+        if (self.drag.final > left - width / 2) {
+          return i
+        }
+        if (i === self.groups.length - 1) {
+          // continue loop
+          i = -1
+        }
+        if (i === index - 1) {
+          // break loop
+          break
         }
       }
     }
-    return
+    return null
   }
 
   //

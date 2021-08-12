@@ -23,7 +23,7 @@
     /* out */
     &.out {
       [data-node-target-content] {
-        @apply transition opacity-0 translate-x-0;
+        @apply transition opacity-0;
       }
       &.dir-before {
         [data-node-target-content] {
