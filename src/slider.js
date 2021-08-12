@@ -1250,10 +1250,8 @@ class Slider extends Xt.Toggle {
    */
   logicDragfind({ index } = {}) {
     const self = this
-    // find
+    // find activation
     const direction = self.drag.direction
-    //const direction = Math.sign(self.drag.initial - self.drag.final)
-    //const direction = Math.sign(self.drag.distance)
     if (direction < 0) {
       for (let i = index; i >= 0; i--) {
         const tr = self.groups[i].target
