@@ -71,7 +71,7 @@ const mountScrollto = () => {
       const overlay = self.target.closest('.xt-overlay')
       if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
       const distance = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.min(Math.log(1 + distance / 200), 1)
+      return Math.min(1, Math.log(1 + distance / 200))
     },
     // deactivated by switcher
     class: false,

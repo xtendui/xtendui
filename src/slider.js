@@ -1477,7 +1477,7 @@ Slider.optionsDefault = {
     threshold: 15,
     factor: 1,
     overflow: ({ overflow }) => {
-      return Math.min(Math.log(1 + Math.pow(overflow, 10)), overflow)
+      return Math.min(overflow, Math.log(1 + Math.pow(overflow, 10)))
     },
   },
   // element

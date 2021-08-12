@@ -49,7 +49,7 @@ const fade = ({ ref }) => {
         duration: 0.5,
         ease: 'quart.out',
         stagger: index => {
-          return Math.min(index * 0.15, 0.6)
+          return Math.min(0.6, index * 0.15)
         },
       })
     },
@@ -60,7 +60,7 @@ const fade = ({ ref }) => {
         duration: 0.5,
         ease: 'quart.out',
         stagger: index => {
-          return Math.min(index * 0.15, 0.6)
+          return Math.min(0.6, index * 0.15)
         },
       })
     },
@@ -71,7 +71,7 @@ const fade = ({ ref }) => {
         duration: 0.5,
         ease: 'quart.out',
         stagger: index => {
-          return Math.min(index * 0.15, 0.6)
+          return Math.min(0.6, index * 0.15)
         },
       })
     },
@@ -82,7 +82,7 @@ const fade = ({ ref }) => {
         duration: 0.5,
         ease: 'quart.out',
         stagger: index => {
-          return Math.min(index * 0.15, 0.6)
+          return Math.min(0.6, index * 0.15)
         },
       })
     },
