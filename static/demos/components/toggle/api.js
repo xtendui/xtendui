@@ -29,14 +29,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = document.querySelector('#card--toggle-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-400"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
