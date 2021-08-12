@@ -18,6 +18,7 @@ const html = /* HTML */ `
             >
               Consectetur adipiscing elit
             </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
         </div>
 
@@ -35,6 +36,7 @@ const html = /* HTML */ `
             >
               Consectetur adipiscing elit
             </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
         </div>
       </div>

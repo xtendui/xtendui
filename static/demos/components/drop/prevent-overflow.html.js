@@ -26,6 +26,7 @@ const html = /* HTML */ `
                 </button>
               </nav>
             </div>
+            <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
           </div>
         </div>
 
@@ -51,6 +52,7 @@ const html = /* HTML */ `
                 </button>
               </nav>
             </div>
+            <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
           </div>
         </div>
       </div>

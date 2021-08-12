@@ -159,7 +159,7 @@ Test animation fast duration with and without `data-xt-duration`.
   </demoinline>
 </demo>
 
-Test popperjs settings by checking position.
+Test (not in fullscreen or it doesn't test boundary) arrow position and position inside boundary on first element for proper merge of popperjs options.
 
 <demo>
   <demoinline src="demos/components/tooltip/prevent-overflow">
