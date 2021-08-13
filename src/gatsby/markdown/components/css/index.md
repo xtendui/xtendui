@@ -28,7 +28,7 @@ Xtend UI add **custom tailwind variants**.
 
 - added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
 
-- added variants to style [form validation after form submit](/components/form/validation) with `valid-submit:` and `invalid-submit:`.
+- added variants to style [form validation after form submit](/components/form/addon#validation) with `valid-submit:` and `invalid-submit:`.
 
 - added `group-active:` variant.
 

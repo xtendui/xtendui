@@ -18,13 +18,13 @@ Use this code to create a **scroll to anchor**.
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
-Try the demo [on a new page](/demos/components/scroll-to/usage#anchor-2) to preview location hash changes.
-
 [[noteDefault]]
 | This demo uses [scroll sticky](/components/scroll-trigger/sticky) see documentation for more info.
 
 [[notePrimary]]
 | Do not assign **other components** to `anchors` or the components activations conflict.
+
+Try the demo [on a new page](/demos/components/scroll-to/usage#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll-to/usage">

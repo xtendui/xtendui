@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Form
 
-Refer to [form addon loader](components/form/addon#loader).
+Refer to [form addon loader](/components/form/addon#loader).
 
 ## Mouse Follow
 

@@ -32,30 +32,6 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Checks Custom
-
-You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
-
-[[notePrimary]]
-| For usability purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
-
-[[notePrimary]]
-| For usability purpose you can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
-
-Use [button](/components/button) with `label` to create **checks with button**.
-
-<demo>
-  <demoinline src="demos/components/form/checks-button">
-  </demoinline>
-</demo>
-
-Use [card](/components/card) with `label` to create **checks with card**.
-
-<demo>
-  <demoinline src="demos/components/form/checks-card">
-  </demoinline>
-</demo>
-
 ## Group
 
 Refer to [list group](/components/list-group).
