@@ -94,6 +94,7 @@ export default function Header({ page }) {
                   <button
                     type="button"
                     className={`xt-button ${classes.buttonMd()} ${classes.buttonRadius()} gatsby_menu--button`}
+                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: '.gatsby_site-wrapper', duration: 500, closeauto: false, matches: { '(min-width: 1024px)': { disabled: true } } }"
                     aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +118,7 @@ export default function Header({ page }) {
           </div>
 
           <div
-            className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on' : ''}`}
+            className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on in' : ''}`}
             id="gatsby_menu--overlay">
             <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">

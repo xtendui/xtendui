@@ -3,35 +3,23 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-/* overlay mobile */
+/* menu overlay */
 
 Xt.mount({
-  matches: '.gatsby_menu--button',
+  matches: '#gatsby_menu--overlay',
   mount: ({ ref }) => {
     // vars
 
-    const overlay = document.querySelector('#gatsby_menu--overlay')
+    const overlay = ref
     const sidebar = document.querySelector('.gatsby_site-article_sidebar')
 
     // overlay
-
-    new Xt.Overlay(ref, {
-      targets: '#gatsby_menu--overlay',
-      appendTo: '.gatsby_site-wrapper',
-      duration: 500,
-      closeauto: false,
-      matches: {
-        '(min-width: 1024px)': {
-          disabled: true,
-        },
-      },
-    })
 
     if (overlay) {
       overlay.scrollTop = window.keepSidebarScroll
     }
 
-    // sidebarContain
+    // sidebar
 
     const sidebarContain = () => {
       const sidebar = document.querySelector('.gatsby_site-article_sidebar')
