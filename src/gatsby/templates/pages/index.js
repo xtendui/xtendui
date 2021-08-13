@@ -122,25 +122,25 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                     Philosophy
-                  </h3>
+                  </div>
                   <div className="xt-row xt-row-3.5 md:xt-row-10">
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           Framework agnostic
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
-                          Use it on vanilla html or in any popular framework.
+                          Use it on vanilla html or in any popular javascript framework.
                         </p>
                       </div>
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           Custom Design
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
                           Customizzable components that supports a wide range of designs.
                         </p>
@@ -148,9 +148,9 @@ export default function Page() {
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           Complex Interaction
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
                           Complex interaction logic managed internally by components.
                         </p>
@@ -158,9 +158,9 @@ export default function Page() {
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           User Experience
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
                           Support for advanced interaction and animations with simple usage.
                         </p>
@@ -168,13 +168,13 @@ export default function Page() {
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           Usability
                           <div
                             className={`inline-block text-black text-3xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
                             WIP
                           </div>
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
                           A keen eye on usability. Aria injected automaticaly with js.
                         </p>
@@ -182,9 +182,9 @@ export default function Page() {
                     </div>
                     <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                       <div className="text-left text-sm">
-                        <h3 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                           UX Themes
-                        </h3>
+                        </h2>
                         <p className="xt-p text-sm leading-snug opacity-50">
                           Themes focused on user experience instead of design.
                         </p>
@@ -195,14 +195,16 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
-                    Features
-                  </h3>
+                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
+                    Built with
+                  </div>
                   <div className="xt-row xt-row-12">
                     <div className="gatsby_home-main_scroll inline-block w-full text-left">
                       <div className="xt-row xt-row-4">
                         <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Tailwind Css</h2>
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            Tailwind Css
+                          </h3>
                         </div>
                         <div className="w-full md:w-6/12 lg:w-7/12">
                           <ul>
@@ -220,7 +222,9 @@ export default function Page() {
                     <div className="gatsby_home-main_scroll inline-block w-full text-left">
                       <div className="xt-row xt-row-4">
                         <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-centerl">Vanilla JS</h2>
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            Vanilla JS
+                          </h3>
                         </div>
                         <div className="w-full md:w-6/12 lg:w-7/12">
                           <ul>
@@ -242,7 +246,9 @@ export default function Page() {
                     <div className="gatsby_home-main_scroll inline-block w-full text-left">
                       <div className="xt-row xt-row-4">
                         <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h2 className="xt-h1 font-black text-3xl lg:text-4xl flex items-center">Gsap</h2>
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            Gsap
+                          </h3>
                         </div>
                         <div className="w-full md:w-6/12 lg:w-7/12">
                           <ul>
@@ -262,9 +268,9 @@ export default function Page() {
               </div>
               <div className="gatsby_home-main_actions my-28 text-center">
                 <div className="container">
-                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                     Start Now!
-                  </h3>
+                  </div>
                   <div className="gatsby_listing-items">
                     <div className="xt-row xt-row-stretch">
                       <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
@@ -307,9 +313,9 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <h3 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl mb-14 gatsby_home-main_scroll">
+                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
                     Sponsors
-                  </h3>
+                  </div>
                   <div className="xt-row xt-row-8 items-center justify-center">
                     <div className="w-6/12 md:w-4/12 lg:w-3/12 gatsby_home-main_scroll">
                       <a

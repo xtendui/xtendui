@@ -12,10 +12,10 @@
 }
 
 .gatsby_home-header_background {
-  top: -100%;
+  top: -105%;
   left: -30%;
   width: 160%;
-  height: 200%;
+  height: 205%;
   rect {
     fill: theme('colors.primary.500');
     width: 100%;
