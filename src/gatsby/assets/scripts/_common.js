@@ -101,11 +101,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      button.classList.add('transition-none')
-      Xt.on({ el: button, raf: false })
-      requestAnimationFrame(() => {
-        button.classList.remove('transition-none')
-      })
+      Xt.on({ el: button, raf: false, initial: true })
     }
   },
 })
@@ -142,11 +138,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      button.classList.add('transition-none')
-      Xt.on({ el: button, raf: false })
-      requestAnimationFrame(() => {
-        button.classList.remove('transition-none')
-      })
+      Xt.on({ el: button, raf: false, initial: true })
     }
   },
 })

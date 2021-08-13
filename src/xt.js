@@ -822,14 +822,21 @@ if (typeof window !== 'undefined') {
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
    * @param {Boolean} params.raf Use requestAnimationFrame
+   * @param {Boolean} params.initial Instant animations with initial
    */
-  Xt.on = ({ el, ns = '', duration = null, raf = true } = {}) => {
+  Xt.on = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
     Xt.animTimeout({ el, ns: `${ns}OnOff` })
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
+    if (initial) {
+      el.classList.add('initial')
+    }
     const func = () => {
       el.classList.add('in')
+      if (initial) {
+        el.classList.remove('initial')
+      }
       Xt.animTimeout({
         el,
         ns: `${ns}OnOff`,
@@ -857,15 +864,22 @@ if (typeof window !== 'undefined') {
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
    * @param {Boolean} params.raf Use requestAnimationFrame
+   * @param {Boolean} params.initial Instant animations with initial
    */
-  Xt.off = ({ el, ns = '', duration = null, raf = true } = {}) => {
+  Xt.off = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
     Xt.animTimeout({ el, ns: `${ns}OnOff` })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', false)
+    if (initial) {
+      el.classList.add('initial')
+    }
     const func = () => {
       el.classList.remove('in')
       el.classList.add('out')
       el.classList.remove('done')
+      if (initial) {
+        el.classList.remove('initial')
+      }
       Xt.animTimeout({
         el,
         ns: `${ns}OnOff`,

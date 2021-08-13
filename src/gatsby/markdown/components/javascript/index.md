@@ -159,8 +159,8 @@ You can **toggle activations with javascript**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true })`                          | Activate node with `.on` `.in` `.out` `.done`             |
-| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean =true })`                          | Dectivate node with `.on` `.in` `.out` `.done`             |
+| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Activate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
+| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Dectivate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
 
 </div>
 
