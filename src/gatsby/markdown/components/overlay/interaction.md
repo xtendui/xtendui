@@ -133,7 +133,7 @@ There some other event options.
 
 ## Hash
 
-You can link the activation in the url hash, hash activation has precedence over class activation.
+You can **link the activation in the url hash** to be linkable and more usable, hash activation has precedence over class activation.
 
 Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash activates on hash location change.
 

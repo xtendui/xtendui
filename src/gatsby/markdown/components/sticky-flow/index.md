@@ -6,6 +6,8 @@ title: "Sticky Flow"
 description: "Advanced animation for postion sticky to show content on scroll for better usability."
 ---
 
+StickyFlow is a standalone plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
+
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
@@ -13,10 +15,6 @@ Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
 Initialize manually **within javascript** with `new Xt.Stickyflow(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
-
-Use this code to create a **sticky flow** (**use large screen to see it in action**).
-
-Pratically it's a solution that **scrolls sticky content** when it **overflow the window**, following scroll direction.
 
 Be sure that `sticky` parent has not `overflow-hidden` or `position: sticky;` doesn't work.
 

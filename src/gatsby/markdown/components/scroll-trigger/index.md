@@ -3,7 +3,7 @@ type: "Components"
 category: "Scroll"
 parent: "Scroll Trigger"
 title: "Scroll Trigger"
-description: "Content interactions and animations when you scroll the page, sticky pinned elements, fade elements, parallax."
+description: "ScrollTrigger interactions for all sort of interaction on page scroll."
 ---
 
 ## Styles
@@ -16,19 +16,19 @@ This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/S
 
 ## Usage
 
-Use this code to create a **fade**.
+Examples to do **fade animations on page scroll**. See [fade](/components/scroll-trigger/fade) for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/fade"></div>
 </demo>
 
-Use this code to create a **sticky**.
+Examples to do **sticky animations on page scroll**. See [sticky](/components/scroll-trigger/sticky) for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky"></div>
 </demo>
 
-Use this code to create a **parallax**.
+Examples to do **parallax animations on page scroll**. See [parallax](/components/scroll-trigger/parallax) for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax"></div>

@@ -8,7 +8,7 @@ description: "Collapse horizontal and vertical on interactions."
 
 ## Usage
 
-Collapse only work with **xtendui toggle components**, assign `options.collapseHeight` or `options.collapseWidth`.
+Collapse only work with **toggle components**, assign `options.collapseHeight` or `options.collapseWidth`.
 
 [[noteDefault]]
 | This component uses [toggle](/components/toggle) see documentation for more info.

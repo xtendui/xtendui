@@ -14,7 +14,7 @@ const buttonPrimary = () => classes.buttonPrimary()
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">List Group</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Toggle</div>
 
     <form class="text-xs">
       <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
@@ -23,7 +23,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
           data-xt-toggle-element
         >
-          List group
+          Toggle
         </button>
 
         <div

@@ -93,7 +93,7 @@ Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [li
 
 **If you use gsap** add [this javascript](https://xtendui.com/components/animation#setup) to setup animations.
 
-**If you use ScrollTrigger** add [this javascript](https://xtendui.com/components/scroll#setup) to setup scroll fixes.
+**If you use ScrollTrigger** add [this javascript](https://xtendui.com/components/scroll-trigger#setup) to setup scroll fixes.
 
 ## Unsupported browsers
 

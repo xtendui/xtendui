@@ -6,6 +6,8 @@ title: "Textarea Autosize"
 description: "Textarea with dynamic height depending on content."
 ---
 
+TextareaAutosize is a standalone plugin that manages **automatic size on textarea**.
+
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/textareaautosize'`.
@@ -16,7 +18,7 @@ Initialize manually **within javascript** with `new Xt.Textareaautosize(document
 
 ## Usage
 
-Use this code to create a **textarea autosize**. You can customize `min-height` and `max-height` of the textarea.
+You can customize `min-height` and `max-height` of the textarea.
 
 <demo>
   <demoinline src="demos/components/textarea-autosize/usage">

@@ -6,6 +6,8 @@ title: "Group Number"
 description: "Input number with list group and javascript for and effective interaction."
 ---
 
+GroupNumber is a standalone plugin that manages **quantity increments on input number**.
+
 ## Styles
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [css customization](/components/css#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/xtendui/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
@@ -19,8 +21,6 @@ Initialize automatically **within markup** with `[data-xt-groupnumber="{ <option
 Initialize manually **within javascript** with `new Xt.Groupnumber(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
-
-Use this code to create a **group number**.
 
 You can add steps with `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current value.	
 

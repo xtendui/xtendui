@@ -6,6 +6,8 @@ title: "Mouse Follow"
 description: "Javascript animation utility to follow mouse position."
 ---
 
+MouseFollow is a standalone plugin that manages **mousefollow animation**.
+
 ## Styles
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.mousefollow` see [css customization](/components/css#customization). Check [xtendui/src/mousefollow.css.js](https://github.com/xtendui/xtendui/blob/beta/src/mousefollow.css.js) for default styles.

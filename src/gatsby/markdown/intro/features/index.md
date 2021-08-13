@@ -55,17 +55,27 @@ Sometimes you need to **automatically scroll to the activated nodes**, you can u
 
 See [scrollto toggle](/components/scroll-to#toggle) for more info.
 
+#### Addon
+
+Many advanced usage of toggle components are in the addon pages.
+
+- Slider notable addons are **navigation sides**, **status**, **automatic scrolling**. See [slider addon](/components/slider/addon) for more info.
+
+- Toggle notable addons are **multilevel**. See [toggle addon](/components/toggle/addon) for more info.
+
+- Tooltip notable addons are **swap**. See [tooltip addon](/components/tooltip/addon) for more info.
+
 ## Scroll
 
 #### Scroll Trigger
 
-Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on scroll**.
+Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
 
 See [fade](/components/scroll-trigger/fade), [parallax](/components/scroll-trigger/parallax), [sticky](/components/scroll-trigger/sticky) for more info.
 
 #### Scroll To
 
-ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load**.
+ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**, with automatic activation on scroll.
 
 See [scrollto](/components/scroll-to) for more info.
 
@@ -81,16 +91,26 @@ Xtend UI forms have **variable size depending on parent font size** so they are 
 
 They **support various layout**. See [form layout](/components/form/layout) for more info.
 
-#### Addons
+#### Addon
 
-You can have **custom validation on form submit** with custom indications or notes and automatic scroll on errors. See [form validation](/components/form/addon#validation) for more info.
+- You can have **custom validation on form submit** with custom indications or notes and automatic scroll on errors. See [form validation](/components/form/addon#validation) for more info.
 
-You can have **checkboxes and radio styled with complete freedom**. See [form checks custom](/components/form/addon#checks-custom) for more info.
+- You can have **checkboxes and radio styled with complete freedom**. See [form checks custom](/components/form/addon#checks-custom) for more info.
 
-You can have **automatic loader on all forms without changing a single line of html**. See [form loader](/components/form/addon#loader) for more info.
+- You can have **automatic loader on all forms without changing a single line of html**. See [form loader](/components/form/addon#loader) for more info.
 
 ## Design
 
+## @TODO reusable card and list
+
+#### Link
+
+The **link component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html links**. See [link](/components/link) for more info.
+
 #### Typography
 
-Our typography component has cssinjs customizzable styles for **automatic and customizzable styling of blank html tags**. See [typography content](/components/typography/content) for more info.
+The **typography component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html tags**. See [typography content](/components/typography/content) for more info.
+
+#### Addon
+
+- The **media component** has some useful addon **iframe lazy loading** and **html5 video tag media matches**. See [media addon](/components/media/addon) for more info.

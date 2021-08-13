@@ -6,6 +6,8 @@ title: "Ripple"
 description: "Material ripple effect on user interaction."
 ---
 
+Ripple is a standalone plugin that manages **ripple animation**.
+
 ## Styles
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/css#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/beta/src/ripple.css.js) for default styles.
@@ -17,8 +19,6 @@ Import the **javascript** file with `import 'xtendui/src/ripple'`.
 Initialize manually **within javascript** with `new Xt.Ripple(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
-
-Use this code to create a **ripple**.
 
 Initialize with javascript **on the selectors you want the ripple effect on**, `options.onlyInside` takes care of activating only on interactive elements.
 

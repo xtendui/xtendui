@@ -6,6 +6,8 @@ title: "Infinite Scroll"
 description: "Automatic pagination activable on click or on scroll, with browser navigation support that loads only the current page."
 ---
 
+InfiniteScroll is a standalone plugin that manages **automating pagination loads with infinite scrolling**.
+
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/infinitescroll'`.
@@ -15,8 +17,6 @@ Initialize automatically **within markup** with `[data-xt-infinitescroll="{ <opt
 Initialize manually **within javascript** with `new Xt.Infinitescroll(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
-
-Use this code to create a **infinite scroll**.
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 

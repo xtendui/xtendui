@@ -3,8 +3,10 @@ type: "Components"
 category: "Scroll"
 parent: "Scroll To"
 title: "Scroll To"
-description: "Automatically scroll to elements or anchors with automatic activation on scroll."
+description: "Automatically scroll to anchors or nodes with automatic activation on scroll."
 ---
+
+ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**.
 
 ## Javascript
 
@@ -13,8 +15,6 @@ Import the **javascript** file with `import 'xtendui/src/scrollto'`.
 Initialize manually **within javascript** with `new Xt.Scrollto(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
-
-Use this code to create a **scroll to anchor**.
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
@@ -42,7 +42,7 @@ Try the demo [on a new page](/demos/components/scroll-to/overlay#anchor-2) to pr
 
 ## Toggle
 
-You can also **trigger ScrollTo activation with toggle hash** on **xtendui toggle components** ([toggle](/components/toggle/interaction#hash), [drop](/components/drop/interaction#hash), [overlay](/components/overlay/interaction#hash), [slider](/components/slider/interaction#hash), [tooltip](/components/tooltip/interaction#hash)).
+You can use the Scrollto component in conjunction with any **toggle component** ([toggle](/components/toggle/interaction#hash), [drop](/components/drop/interaction#hash), [overlay](/components/overlay/interaction#hash), [slider](/components/slider/interaction#hash), [tooltip](/components/tooltip/interaction#hash)). It also integrates with the **toggle hash** interaction.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

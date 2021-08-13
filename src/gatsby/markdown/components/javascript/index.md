@@ -3,7 +3,7 @@ type: "Components"
 category: "Global"
 parent: "Javascript"
 title: "Javascript"
-description: "Javascript utilities and animations usability improvements."
+description: "Global javascript utilities."
 ---
 
 ## Styles

@@ -6,6 +6,8 @@ title: "Google Locator"
 description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---
 
+GoogleLocator is a standalone plugin that manages **google places and maps and markers**.
+
 ## Javascript
 
 Import the **javascript** file with `import 'xtendui/src/googlelocator'`.
@@ -14,7 +16,7 @@ Initialize manually **within javascript** with `new Xt.Googlelocator(document.qu
 
 ## Usage
 
-Use this code to create a **google locator**. Search for "New York" to see it in action.
+Search for "New York" to see it in action.
 
 [[noteDefault]]
 | This component uses [loader](/components/loader) see documentation for more info.
