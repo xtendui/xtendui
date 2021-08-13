@@ -28,7 +28,7 @@
   @screen lg {
     display: flex !important;
     position: static;
-    z-index: initial;
+    z-index: auto !important;
     top: auto;
     left: auto;
     bottom: auto;

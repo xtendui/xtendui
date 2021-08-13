@@ -5,7 +5,7 @@
   .xt-overlay[data-xt-overlay-disabled] {
     display: flex !important;
     position: static;
-    z-index: initial;
+    z-index: auto;
     top: auto;
     left: auto;
     bottom: auto;

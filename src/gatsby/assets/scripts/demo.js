@@ -389,17 +389,19 @@ export const populateItem = item => {
   <div class="gatsby_demo_code_tabs bg-code">
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
-      <button type="button" class="xt-button button--clipboard" aria-label="Copy to Clipboard">
-        ${classes.iconCopy()}
-      </button>
-      <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-        <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-          Copy to Clipboard
+      <div>
+        <button type="button" class="xt-button button--clipboard" aria-label="Copy to Clipboard">
+          ${classes.iconCopy()}
+        </button>
+        <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
+          <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+            Copy to Clipboard
+          </div>
         </div>
-      </div>
-      <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
-        <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-          Copied!
+        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
+          <div class="relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+            Copied!
+          </div>
         </div>
       </div>
     </div>

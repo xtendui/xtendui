@@ -73,6 +73,7 @@ if (typeof window !== 'undefined') {
               el: added,
               ns: `Observer`,
             })
+            // no raf because instant initialization (e.g. menu mobile opened)
             Xt.mountCheck({ added })
           }
         }
@@ -182,7 +183,7 @@ if (typeof window !== 'undefined') {
               ignore: obj.ignore,
               unmount: call,
               unmountRemove: () => {
-                // fix multiple initialization
+                // fix multiple initialization (e.g. mount inside sticky)
                 obj.done = obj.done.filter(x => x !== ref)
                 // unmount remove
                 Xt.unmountArr = Xt.unmountArr.filter(x => {
