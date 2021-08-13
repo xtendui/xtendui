@@ -1,14 +1,14 @@
 ---
 type: "Components"
 category: "Design"
-parent: "List Group"
-title: "List Group"
+parent: "ListGroup"
+title: "ListGroup"
 description: "List subcomponent to group up buttons, inputs and other content."
 ---
 
 ## Usage
 
-Use [list](/components/list) to create a **list group**.
+Use [list](/components/list) to create a **listgroup**.
 
 #### Horizontal
 

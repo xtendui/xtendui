@@ -1,8 +1,8 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "Sticky Flow"
-title: "Sticky Flow"
+parent: "StickyFlow"
+title: "StickyFlow"
 description: "Advanced animation for postion sticky to show content on scroll for better usability."
 ---
 

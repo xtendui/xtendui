@@ -3,16 +3,16 @@ type: "Components"
 category: "Design"
 parent: "Toolbar"
 title: "Toolbar"
-description: "Simple toolbar component as a subcomponent of list group."
+description: "Simple toolbar component as a subcomponent of listgroup."
 tags: ['wip']
 ---
 
 ## Usage
 
-Use [list group](/components/list-group) to create a **toolbar**.
+Use [listgroup](/components/list-group) to create a **toolbar**.
 
 [[noteDefault]]
-| This component uses [list group](/components/list-group) see documentation for more info.
+| This component uses [listgroup](/components/list-group) see documentation for more info.
 
 [[notePrimary]]
 | For usability purpose use `role="toolbar"`.

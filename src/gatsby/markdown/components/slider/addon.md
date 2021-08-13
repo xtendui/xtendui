@@ -11,7 +11,7 @@ date: "1900-10-10"
 Use this code to create a **navigation sides** on slider (**mouse over the sides to see the navigation**).
 
 [[noteDefault]]
-| This component uses [mouse follow](/components/mouse-follow) see documentation for more info.
+| This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/slider/navsides">

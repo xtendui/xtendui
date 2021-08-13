@@ -23,7 +23,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
           data-xt-toggle-element
         >
-          Toggle
+          listgroup
         </button>
 
         <div
@@ -141,7 +141,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
         <div data-xt-tooltip-element>
           <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
-            list group
+            listgroup
           </button>
 
           <div class="xt-tooltip p-2 group" data-xt-tooltip-target>

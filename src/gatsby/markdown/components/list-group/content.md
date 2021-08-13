@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Design"
-parent: "List Group"
+parent: "ListGroup"
 title: "Content"
 date: "2030-10-10"
 ---

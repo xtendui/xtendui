@@ -1,8 +1,8 @@
 ---
 type: "Components"
 category: "Animation"
-parent: "Mouse Follow"
-title: "Mouse Follow"
+parent: "MouseFollow"
+title: "MouseFollow"
 description: "Javascript animation utility to follow mouse position."
 ---
 
@@ -24,7 +24,7 @@ Initialize manually **within javascript** with `new Xt.Mousefollow(document.quer
 
 Initialize mousefollow `container` to the **element that bounds the mosefollow**, for the targets to actually mousefollow use `options.targets`.
 
-Use **component classes** to create a **mouse follow** and add `fixed` position.
+Use **component classes** to create a **mousefollow** and add `fixed` position.
 
 [[notePrimary]]
 | Remember **not to transition transform** of `.xt-mousefollow` element.
@@ -33,7 +33,7 @@ Use **component classes** to create a **mouse follow** and add `fixed` position.
 
 |                      | Syntax                          | Mixin            | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-mousefollow`                     | `xt-mousefollow`                | Styles for mouse follow            |
+| Component                  | `.xt-mousefollow`                     | `xt-mousefollow`                | Styles for mousefollow            |
 
 </div>
 
@@ -51,7 +51,7 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
-| Option                    | `targets:Query`                          | `':scope > .xt-mousefollow'`        | Mouse follow targets            |
+| Option                    | `targets:Query`                          | `':scope > .xt-mousefollow'`        | Mousefollow targets            |
 | Option                    | `transform:Boolean`                          | `true`        | Use transform instead of position            |
 | Option                    | `friction:Function`                          | `<Function>`        | Function for friction             |
 | Option                    | `mouseCheck(self):Function|false`                          | `false`        | Function called on activate/deactivate, return false to skip activation/deactivation, return `Boolean`             |

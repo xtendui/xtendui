@@ -186,6 +186,6 @@ See [toggle auto](/components/toggle/interaction#auto) for more info.
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.
 
-## Scroll To
+## ScrollTo
 
 See [scrollTo toggle](/components/scroll-to#toggle) for more info.

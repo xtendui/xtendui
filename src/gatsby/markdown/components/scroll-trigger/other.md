@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "Scroll Trigger"
+parent: "ScrollTrigger"
 title: "Other"
 date: "2005-10-10"
 ---

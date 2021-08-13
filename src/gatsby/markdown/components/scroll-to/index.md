@@ -1,8 +1,8 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "Scroll To"
-title: "Scroll To"
+parent: "ScrollTo"
+title: "ScrollTo"
 description: "Automatically scroll to anchors or nodes with automatic activation on scroll."
 ---
 

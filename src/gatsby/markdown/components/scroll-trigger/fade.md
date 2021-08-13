@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "Scroll Trigger"
+parent: "ScrollTrigger"
 title: "Fade"
 date: "2010-10-12"
 ---

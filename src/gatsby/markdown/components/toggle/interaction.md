@@ -279,6 +279,6 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.
 
-## Scroll To
+## ScrollTo
 
 See [scrollTo toggle](/components/scroll-to#toggle) for more info.

@@ -1,8 +1,8 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "Scroll Trigger"
-title: "Scroll Trigger"
+parent: "ScrollTrigger"
+title: "ScrollTrigger"
 description: "ScrollTrigger interactions for all sort of interaction on page scroll."
 ---
 

@@ -111,15 +111,15 @@ If you want a tooltip with size and position **relative to a parent Node with re
   </demoinline>
 </demo>
 
-## Mouse Follow
+## MouseFollow
 
-Use **component classes** to create a **mouse follow**.
+Use **component classes** to create a **mousefollow**.
 
 [[notePrimary]]
 | Remember **not to transition transform** of `.xt-mousefollow` element.
 
 [[noteDefault]]
-| This demo uses [mouse follow](/components/mouse-follow) see documentation for more info.
+| This demo uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/tooltip/mousefollow">

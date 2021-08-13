@@ -34,7 +34,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Group
 
-Refer to [list group](/components/list-group).
+Refer to [listgroup](/components/list-group).
 
 ## Toolbar
 

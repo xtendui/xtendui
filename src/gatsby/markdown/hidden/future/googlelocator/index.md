@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Hidden"
 parent: "Future"
-title: "Google Locator"
+title: "GoogleLocator"
 description: "Plug and play a google maps locator, with all the basic functionality and more."
 ---
 

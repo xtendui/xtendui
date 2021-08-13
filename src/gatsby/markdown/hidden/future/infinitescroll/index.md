@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Hidden"
 parent: "Future"
-title: "Infinite Scroll"
+title: "InfiniteScroll"
 description: "Automatic pagination activable on click or on scroll, with browser navigation support that loads only the current page."
 ---
 

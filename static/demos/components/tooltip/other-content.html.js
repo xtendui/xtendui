@@ -8,7 +8,7 @@ const html = /* HTML */ `
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
-          list group
+          listgroup
         </button>
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target>

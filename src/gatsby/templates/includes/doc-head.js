@@ -12,10 +12,7 @@ export default class DocHead extends React.Component {
           <div className="gatsby_site-article_hero-content">
             <div className="gatsby_site-article_hero-content-inner">
               <h2 className="xt-h1">
-                {page.post.frontmatter.title
-                  .split(/[\s-]+/)
-                  .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                  .join(' ')}{' '}
+                {page.post.frontmatter.title}{' '}
                 {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
                   <span className="font-normal text-primary-200">
                     <br className="md:hidden" />

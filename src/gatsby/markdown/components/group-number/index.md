@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Form"
-parent: "Group Number"
-title: "Group Number"
-description: "Input number with list group and javascript for and effective interaction."
+parent: "GroupNumber"
+title: "GroupNumber"
+description: "Input number plugin for quantity increments."
 ---
 
 GroupNumber is a standalone plugin that manages **quantity increments on input number**.

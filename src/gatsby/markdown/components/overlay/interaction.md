@@ -181,6 +181,6 @@ You can set **body classes on activation**, remember to keep default `classBody`
   </demoinline>
 </demo>
 
-## Scroll To
+## ScrollTo
 
 See [scrollTo toggle](/components/scroll-to#toggle) for more info.

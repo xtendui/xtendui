@@ -7,7 +7,7 @@ description: "Xtend UI is full of advanced javascript features that makes your w
 date: "2005-10-10"
 ---
 
-Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task trivial**, that could take days to implement and that needs various iterations and complex use case to do properly.
+Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task trivial**, that could take days or even months to implement and that needs various iterations and complex use case to do properly.
 
 ## Global
 
@@ -49,7 +49,7 @@ Sometimes you need to **save the state of a component in the location hash**, to
 
 See [overlay hash](/components/overlay/interaction#hash), [slider hash](/components/slider/interaction#hash), [toggle hash](/components/toggle/interaction#hash) for more info.
 
-#### Scroll To
+#### ScrollTo
 
 Sometimes you need to **automatically scroll to the activated nodes**, you can use the [Scrollto component](/components/scroll-to) in conjunction with any **toggle component**. It also integrates with the **toggle hash** interaction.
 
@@ -67,19 +67,19 @@ Many advanced usage of toggle components are in the addon pages.
 
 ## Scroll
 
-#### Scroll Trigger
+#### ScrollTrigger
 
 Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
 
 See [fade](/components/scroll-trigger/fade), [parallax](/components/scroll-trigger/parallax), [sticky](/components/scroll-trigger/sticky) for more info.
 
-#### Scroll To
+#### ScrollTo
 
 ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**, with automatic activation on scroll.
 
 See [scrollto](/components/scroll-to) for more info.
 
-#### Sticky Flow
+#### StickyFlow
 
 StickyFlow is a standalone plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
 
