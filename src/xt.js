@@ -825,7 +825,7 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.initial Instant animations with initial
    */
   Xt.on = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
-    Xt.animTimeout({ el, ns: `${ns}OnOff` })
+    Xt.animTimeout({ el, ns })
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
@@ -839,7 +839,7 @@ if (typeof window !== 'undefined') {
       }
       Xt.animTimeout({
         el,
-        ns: `${ns}OnOff`,
+        ns,
         duration,
         actionCurrent: 'In',
         func: () => {
@@ -849,10 +849,10 @@ if (typeof window !== 'undefined') {
     }
     if (raf) {
       // needs TWO raf or sequential off/on flickr (e.g. display)
-      Xt.frameDouble({ el, func })
+      Xt.frameDouble({ el, ns, func })
     } else {
       // fix need to repeat inside frameDouble in case we cancel
-      Xt.frameDouble({ el })
+      Xt.frameDouble({ el, ns })
       func()
     }
   }
@@ -867,7 +867,7 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.initial Instant animations with initial
    */
   Xt.off = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
-    Xt.animTimeout({ el, ns: `${ns}OnOff` })
+    Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', false)
     if (initial) {
@@ -882,7 +882,7 @@ if (typeof window !== 'undefined') {
       }
       Xt.animTimeout({
         el,
-        ns: `${ns}OnOff`,
+        ns,
         duration,
         actionCurrent: 'Out',
         func: () => {
@@ -892,10 +892,10 @@ if (typeof window !== 'undefined') {
     }
     if (raf) {
       // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
-      Xt.frameDouble({ el, func })
+      Xt.frameDouble({ el, ns, func })
     } else {
       // fix need to repeat inside frameDouble in case we cancel
-      Xt.frameDouble({ el })
+      Xt.frameDouble({ el, ns })
       func()
     }
   }
