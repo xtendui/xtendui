@@ -30,6 +30,32 @@ if (typeof window !== 'undefined') {
   Xt.formScrollWindowFactor = 0.2
 
   //
+  // initialization
+  //
+
+  /**
+   * ready
+   * @param {Object} params
+   * @param {Function} params.func Function to execute
+   * @param {String} params.state States separated by space, can be 'loading' 'interactive' 'complete'
+   */
+  Xt.ready = ({ func, state = 'interactive complete' } = {}) => {
+    const states = [...state.split(' ')]
+    if (states.includes(document.readyState)) {
+      func()
+    } else {
+      const interactive = () => {
+        if (states.includes(document.readyState)) {
+          func()
+          // needs to be removed or it will call multiple times
+          document.removeEventListener('readystatechange', interactive)
+        }
+      }
+      document.addEventListener('readystatechange', interactive)
+    }
+  }
+
+  //
   // mutationObserver
   //
 
@@ -69,12 +95,16 @@ if (typeof window !== 'undefined') {
     }
   })
 
-  Xt.mutationObserver.disconnect()
-  Xt.mutationObserver.observe(document.documentElement, {
-    characterData: false,
-    attributes: false,
-    childList: true,
-    subtree: true,
+  Xt.ready({
+    func: () => {
+      Xt.mutationObserver.disconnect()
+      Xt.mutationObserver.observe(document.documentElement, {
+        characterData: false,
+        attributes: false,
+        childList: true,
+        subtree: true,
+      })
+    },
   })
 
   /**
@@ -186,40 +216,6 @@ if (typeof window !== 'undefined') {
         obj.unmount({ obj })
         obj.unmountRemove()
       }
-    }
-  }
-
-  //
-  // initialization
-  //
-
-  /**
-   * ready
-   * @param {Object} params
-   * @param {Function} params.func Function to execute
-   * @param {Function} params.raf Wait a requestAnimationFrame for all js being executed
-   * @param {String} params.state States separated by space, can be 'loading' 'interactive' 'complete'
-   */
-  Xt.ready = ({ func, raf = true, state = 'interactive complete' } = {}) => {
-    const states = [...state.split(' ')]
-    if (states.includes(document.readyState)) {
-      if (raf) {
-        // raf because we need all functions defined after mount
-        requestAnimationFrame(() => {
-          func()
-        })
-      } else {
-        func()
-      }
-    } else {
-      const interactive = () => {
-        if (states.includes(document.readyState)) {
-          func()
-          // needs to be removed or it will call multiple times
-          document.removeEventListener('readystatechange', interactive)
-        }
-      }
-      document.addEventListener('readystatechange', interactive)
     }
   }
 

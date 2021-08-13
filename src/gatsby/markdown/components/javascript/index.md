@@ -28,7 +28,7 @@ It has a requestAnimationFrame **if the state is instantly matched**, to **ensur
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.ready:Function`              | `{ func:Function, raf:Boolean = true, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
+| Function                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
 
 </div>
 
