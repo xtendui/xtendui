@@ -15,7 +15,7 @@ Interactions and animations are not easy at all. Here's why **Xtend UI is not th
 
 - Mount javascript code on **nodes when they are added to DOM** with **vanilla html and js** with [Xt.mount](/components/javascript#xt-mount).
 
-- Animate nodes with **tailwindcss classes** with [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off).
+- Animate nodes with **tailwindcss variants** with [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off).
 
 - **Customizzable default options for all components of the same type** with [Xt.options](/components/javascript#xt-options).
 
@@ -39,7 +39,7 @@ See [drop interaction](/components/drop/interaction), [overlay interaction](/com
 
 #### Animation
 
-You can animate all **toggle components** with **tailwindcss classes** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **collapse**.
+You can animate all **toggle components** with **tailwindcss variants** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **collapse**.
 
 See [drop animation](/components/drop/animation), [overlay animation](/components/overlay/animation), [slider animation](/components/slider/animation), [toggle animation](/components/toggle/animation), [tooltip animation](/components/tooltip/animation) for more info.
 
