@@ -224,9 +224,10 @@
 
 .gatsby_button-site_article_sidebar, .gatsby_button-site-header_link {
   padding: 0;
-  padding-bottom: 2px;
-  border-width: 0;
-  @apply w-full justify-start text-left;
+  @screen lg {
+    padding-bottom: 2px;
+  }
+  @apply w-full justify-start text-left border-0;
   .gatsby_button-site_article_sidebar_inner {
     @apply transition duration-300 ease-out-quint;
     border-radius: 6px;

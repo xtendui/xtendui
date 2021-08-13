@@ -136,7 +136,7 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               Html
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
@@ -151,7 +151,7 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-primary-500 bg-primary-500 hover:border-primary-700 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               React
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>

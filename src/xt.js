@@ -73,7 +73,7 @@ if (typeof window !== 'undefined') {
               el: added,
               ns: `Observer`,
             })
-            // no raf because instant initialization (e.g. menu mobile opened)
+            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done
             Xt.mountCheck({ added })
           }
         }
