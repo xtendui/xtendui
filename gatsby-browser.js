@@ -19,26 +19,6 @@ export const shouldUpdateScroll = ({ routerProps: { location }, prevRouterProps 
   return false
 }
 
-const gatsbySidebarContain = () => {
-  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  sidebar.scrollTop = window.keepSidebarScroll
-  let sidebarActive = document.querySelector(
-    '.gatsby_button-site_article_sidebar--sub.on, .gatsby_button-site_article_sidebar--sub.current'
-  )
-  if (sidebarActive) {
-    const add = 25
-    sidebarActive = sidebarActive.closest('.gatsby_site-header_item_container')
-    const sidebarActiveTop = sidebarActive.getBoundingClientRect().top + sidebar.scrollTop
-    const sidebarActiveBottom = sidebarActiveTop + sidebarActive.offsetHeight
-    if (sidebar.scrollTop > sidebarActiveTop) {
-      sidebar.scrollTop = sidebarActiveTop - add
-    }
-    if (sidebar.scrollTop + sidebar.offsetHeight < sidebarActiveBottom) {
-      sidebar.scrollTop = sidebarActiveBottom - sidebar.offsetHeight + add
-    }
-  }
-}
-
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_menu--button')
   // demoHash
@@ -73,13 +53,6 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
 }
 
 export const onRouteUpdate = () => {
-  // keepSidebarScroll
-  const overlay = document.querySelector('#gatsby_menu--overlay')
-  const sidebar = document.querySelector('.gatsby_site-article_sidebar')
-  if (overlay && sidebar) {
-    overlay.scrollTop = window.keepSidebarScroll
-    gatsbySidebarContain()
-  }
   /* ScrollToPlugin refresh on route update */
   requestAnimationFrame(() => {
     ScrollTrigger.refresh()
