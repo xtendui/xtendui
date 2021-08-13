@@ -118,7 +118,7 @@ export default function Header({ page }) {
           </div>
 
           <div
-            className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on in' : ''}`}
+            className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on' : ''}`}
             id="gatsby_menu--overlay">
             <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">

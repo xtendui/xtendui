@@ -72,10 +72,8 @@ if (typeof window !== 'undefined') {
             Xt.frame({
               el: added,
               ns: `Observer`,
-              func: () => {
-                Xt.mountCheck({ added })
-              },
             })
+            Xt.mountCheck({ added })
           }
         }
         // removed
