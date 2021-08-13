@@ -12,8 +12,7 @@ Check out [overlay's themes](/themes/overlay) for **advanced animations**.
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
 
-[[noteDefault]]
-| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -28,8 +27,7 @@ You can also customize `xt-backdrop` animations.
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
+> When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/javascript#xt-options).
 
@@ -79,8 +77,7 @@ You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
-[[notePrimary]]
-| Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
+> Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
 on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
@@ -95,8 +92,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 </div>
 
-[[notePrimary]]
-| Queue needs [multiple mode](/components/overlay#usage-multiple) to work.
+> Queue needs [multiple mode](/components/overlay#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/overlay/animation-queue">
@@ -117,8 +113,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
+> Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/overlay/animation-css">
@@ -137,8 +132,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
+> Direction needs [multiple mode](/components/overlay#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/overlay/animation-js">

@@ -26,8 +26,7 @@ Initialize mousefollow `container` to the **element that bounds the mosefollow**
 
 Use **component classes** to create a **mousefollow** and add `fixed` position.
 
-[[notePrimary]]
-| Remember **not to transition transform** of `.xt-mousefollow` element.
+> Remember **not to transition transform** of `.xt-mousefollow` element.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

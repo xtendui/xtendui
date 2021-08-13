@@ -18,11 +18,9 @@ Initialize manually **within javascript** with `new Xt.Googlelocator(document.qu
 
 Search for "New York" to see it in action.
 
-[[noteDefault]]
-| This component uses [loader](/components/loader) see documentation for more info.
+> This component uses [loader](/components/loader) see documentation for more info.
 
-[[notePrimary]]
-| Needs google API key with **Maps Javascript API**, **Places API**.
+> Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/layout/googlelocator">

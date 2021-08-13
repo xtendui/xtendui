@@ -61,8 +61,7 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
 
-[[noteDefault]]
-| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+> Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -85,8 +84,7 @@ Here's an example of **complex sticky stacking**.
 
 You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
 
-[[notePrimary]]
-| Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
+> Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
 Here's an examples of **sticky that hides depending on scroll direction**.
 

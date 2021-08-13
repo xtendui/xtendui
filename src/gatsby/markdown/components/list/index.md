@@ -14,8 +14,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Use `.xt-list` to create a **list**.
 
-[[notePrimary]]
-| For usability purpose use `<nav></nav>`.
+> For usability purpose use `<nav></nav>`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -43,5 +42,4 @@ Use this code to create a **list vertical** with `.flex-col`.
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| You can space anything inside `.xt-list`. If you need to use **tailwind width classes** use [row](/components/row).
+> You can space anything inside `.xt-list`. If you need to use **tailwind width classes** use [row](/components/row).

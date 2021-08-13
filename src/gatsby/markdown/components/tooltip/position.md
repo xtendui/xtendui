@@ -84,8 +84,7 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 </div>
 
-[[notePrimary]]
-| Use [strategy fixed](https://popper.js.org/docs/v2/constructors//#strategy) when positioning inside **fixed elements**.
+> Use [strategy fixed](https://popper.js.org/docs/v2/constructors//#strategy) when positioning inside **fixed elements**.
 
 For example you can set [preventOverflow boundary](https://popper.js.org/docs/v2/modifiers/prevent-overflow/#boundary) to constrain popperjs inside an element.
 
@@ -115,11 +114,9 @@ If you want a tooltip with size and position **relative to a parent Node with re
 
 Use **component classes** to create a **mousefollow**.
 
-[[notePrimary]]
-| Remember **not to transition transform** of `.xt-mousefollow` element.
+> Remember **not to transition transform** of `.xt-mousefollow` element.
 
-[[noteDefault]]
-| This demo uses [mousefollow](/components/mouse-follow) see documentation for more info.
+> This demo uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/tooltip/mousefollow">

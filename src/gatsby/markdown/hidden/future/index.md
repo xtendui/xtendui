@@ -25,8 +25,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 ## Aria
 
-[[notePrimary]]
-| **Do not use aria attributes for selectors**, they are generated and they can change anytime.
+> **Do not use aria attributes for selectors**, they are generated and they can change anytime.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -18,8 +18,7 @@ Alternatively you can use your own custom style, for example `off:visibility-hid
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
-[[noteDefault]]
-| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -39,8 +38,7 @@ For **inverse animation** you can use also **tailwind variants** `done:`, `group
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
+> When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/javascript#xt-options).
 
@@ -88,8 +86,7 @@ You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
-[[notePrimary]]
-| Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
+> Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
 on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 <demo>
@@ -109,8 +106,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 </div>
 
-[[notePrimary]]
-| Queue needs [multiple mode](/components/toggle#usage-multiple) to work.
+> Queue needs [multiple mode](/components/toggle#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
@@ -131,8 +127,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
+> Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -151,8 +146,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 
 </div>
 
-[[notePrimary]]
-| Direction needs [multiple mode](/components/drop#usage-multiple) to work.
+> Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">

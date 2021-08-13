@@ -25,8 +25,7 @@ You can specify `elements` that listens to event for activation, and `targets` t
 
 </div>
 
-[[notePrimary]]
-| Do not assign **other components** to `xt-slide` or the components activations conflict.
+> Do not assign **other components** to `xt-slide` or the components activations conflict.
 
 You can **filter elements and targets dynamically** with `exclude`, just **reinit the component** when you want to **recalculate exclude on elements and targets**.
 
@@ -146,8 +145,7 @@ Inside `[data-xt-slider-element].hidden` you can use this strings that gets popu
 
 </div>
 
-[[notePrimary]]
-| `[data-xt-slider-element].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
+> `[data-xt-slider-element].hidden` is essential to the functioning of the slider, it gets cloned inside the closest `[data-xt-slider-pagination]` but you can hide it using the class `[data-xt-slider-pagination].hidden`.
 
 You can use pagination also inside targets as you can see in the demo.
 
@@ -217,8 +215,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 </div>
 
-[[notePrimary]]
-| Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
+> Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
 
 Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
 

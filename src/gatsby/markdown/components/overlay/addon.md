@@ -10,11 +10,9 @@ date: "1900-10-10"
 
 You can have the the close button with `.fixed` to have it **fixed inside the overlay**.
 
-[[notePrimary]]
-| Move close button with `.fixed` outside transforms elements content.
+> Move close button with `.fixed` outside transforms elements content.
 
-[[notePrimary]]
-| Do not transition margin on `.fixed` because of margin positioning, **transition the content instead**.
+> Do not transition margin on `.fixed` because of margin positioning, **transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/overlay/close-fixed">

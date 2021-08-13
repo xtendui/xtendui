@@ -96,21 +96,6 @@ module.exports = {
             options: { components: ['demo'] },
           },
           {
-            resolve: 'gatsby-remark-custom-blocks',
-            options: {
-              blocks: {
-                noteDefault: {
-                  classes:
-                    'xt-card text-base leading-snug px-6 py-5 my-5 xt-my-auto font-normal text-black xt-links-default rounded-md bg-gray-100 gatsby_note',
-                },
-                notePrimary: {
-                  classes:
-                    'xt-card text-base leading-snug px-6 py-5 my-5 xt-my-auto font-normal text-black xt-links-default rounded-md bg-gray-100 gatsby_note',
-                },
-              },
-            },
-          },
-          {
             resolve: 'gatsby-remark-classes',
             options: {
               classMap: {
@@ -122,6 +107,8 @@ module.exports = {
                 'heading[depth=4]': 'xt-h4',
                 'heading[depth=5]': 'xt-h5',
                 'heading[depth=6]': 'xt-h6',
+                blockquote:
+                  'xt-card text-base leading-snug px-6 py-5 my-5 xt-my-auto font-normal text-black xt-links-default rounded-md bg-gray-100 gatsby_note',
               },
             },
           },

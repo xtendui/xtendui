@@ -18,11 +18,9 @@ Initialize manually **within javascript** with `new Xt.Scrollto(document.querySe
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
-[[noteDefault]]
-| This demo uses [scroll sticky](/components/scroll-trigger/sticky) see documentation for more info.
+> This demo uses [scroll sticky](/components/scroll-trigger/sticky) see documentation for more info.
 
-[[notePrimary]]
-| Do not assign **other components** to `anchors` or the components activations conflict.
+> Do not assign **other components** to `anchors` or the components activations conflict.
 
 Try the demo [on a new page](/demos/components/scroll-to/usage#anchor-2) to preview location hash changes.
 
@@ -52,8 +50,7 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 
 </div>
 
-[[notePrimary]]
-| Use `queue: false` for proper browser back button.
+> Use `queue: false` for proper browser back button.
 
 Try the demo [on a new page](/demos/components/scroll-to/toggle#anchor-2) to preview location hash changes.
 
@@ -168,8 +165,7 @@ let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-contain
 const container = self.container
 ```
 
-[[notePrimary]]
-| If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
+> If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

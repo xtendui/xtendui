@@ -13,11 +13,9 @@ Use **tailwind classes** to create a **breadcrumbs**.
 
 The `truncate` class gives ellipses if the breadcrumbs are too long, but it needs `inline` on the items (**use narrow screen to see it in action**).
 
-[[noteDefault]]
-| This component uses [separator](/components/separator) see documentation for more info.
+> This component uses [separator](/components/separator) see documentation for more info.
 
-[[notePrimary]]
-| For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <demo>
   <demoinline src="demos/components/breadcrumbs/usage">

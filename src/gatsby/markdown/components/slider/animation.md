@@ -12,8 +12,7 @@ Check out [slider's themes](/themes/slider) for **advanced animations**.
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
 
-[[noteDefault]]
-| If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Drag Position
 
@@ -57,8 +56,7 @@ With **absolute mode** all animation of the slides are given by yout **custom gs
 
 You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.drag.ratio`, `self.drag.ratioInverse`, `self.drag.instant` and `self.direction` values.
 
-[[notePrimary]]
-| On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.drag.instant` or if using `self.drag.ratio` or `self.drag.ratioInverse`.
+> On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.drag.instant` or if using `self.drag.ratio` or `self.drag.ratioInverse`.
 
 #### Cover
 
@@ -84,16 +82,14 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-[[notePrimary]]
-| Do not transition or transform on `xt-slide` because of transform positioning, **transform and transition the content instead**.
+> Do not transition or transform on `xt-slide` because of transform positioning, **transform and transition the content instead**.
 
 <demo>
   <demoinline src="demos/components/slider/animation">
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| When you use animations you need to **specity the duration of the animation** for proper interactions.
+> When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/javascript#xt-options).
 
@@ -143,8 +139,7 @@ You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 You can also **assign delay on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
-[[notePrimary]]
-| Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
+> Different delay for **in** and **out** desynchronized the animation use it with caution, prefer a normal `delay`.
 on single nodes** with `data-xt-delay="Milliseconds"` or `data-xt-delay-in="Milliseconds"` and `data-xt-delay-out="Milliseconds"`
 
 ## Queue
@@ -194,11 +189,9 @@ You can use also **javascript animations**, just use [drop api](/components/slid
 
 </div>
 
-[[notePrimary]]
-| On relative mode in `on.xt.slider` and `off.xt.slider` do not **set starting and end animation values** with `gsap.set`, do it in the `init.xt.slider` instead.
+> On relative mode in `on.xt.slider` and `off.xt.slider` do not **set starting and end animation values** with `gsap.set`, do it in the `init.xt.slider` instead.
 
-[[notePrimary]]
-| On relative mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** only if .
+> On relative mode in `on.xt.slider` and `off.xt.slider` you can **set starting and end animation values** only if .
 
 <demo>
   <demoinline src="demos/components/slider/animation-js">

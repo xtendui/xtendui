@@ -10,8 +10,7 @@ description: "Use overlay when you need to display any content over the main pag
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [css customization](/components/css#customization). Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/beta/src/overlay.css.js) for default styles.
 
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
+> Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
 ## Javascript
 
@@ -38,8 +37,7 @@ Use this code to create a **overlay** in **unique mode**.
 
 The **unique mode** is useful when you want to **trigger targets outside the scope**.
 
-[[notePrimary]]
-| Only when you specify **elements or targets with id** the query is **inside document not only inside object**.
+> Only when you specify **elements or targets with id** the query is **inside document not only inside object**.
 
 <demo>
   <demoinline src="demos/components/overlay/usage-unique">

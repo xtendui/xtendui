@@ -34,8 +34,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 If you have **custom backend validation** on submit, you can automatically **scroll to the first validation** element on page load.
 
-[[notePrimary]]
-| Use **border on all form elements** if you want to **show validation with border color**.
+> Use **border on all form elements** if you want to **show validation with border color**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/form/validation">
@@ -46,11 +45,9 @@ If you have **custom backend validation** on submit, you can automatically **scr
 
 You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
 
-[[notePrimary]]
-| For usability purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
+> For usability purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
 
-[[notePrimary]]
-| For usability purpose you can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
+> For usability purpose you can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
 
 Use [button](/components/button) with `label` to create **checks with button**.
 

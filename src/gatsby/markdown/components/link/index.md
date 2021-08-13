@@ -26,11 +26,9 @@ Use `a` without classes or `.xt-link` to create a **link**.
 
 </div>
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
 
-[[notePrimary]]
-| Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
+> Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
 
 <demo>
   <demoinline src="demos/components/link/usage">
@@ -50,8 +48,7 @@ Use **component utility** `.xt-links-default` and `.xt-links-inverse` on **paren
 
 </div>
 
-[[notePrimary]]
-| You can **nest up to two time included the body** to override links styles.
+> You can **nest up to two time included the body** to override links styles.
 
 <demo>
   <demoinline src="demos/components/link/variant-inverse">

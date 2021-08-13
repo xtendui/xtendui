@@ -10,8 +10,7 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
-[[notePrimary]]
-| `.xt-backdrop` is essential to the close interaction of the overlay, but you can hide it using the class `.opacity-0`.
+> `.xt-backdrop` is essential to the close interaction of the overlay, but you can hide it using the class `.opacity-0`.
 
 <demo>
   <demoinline src="demos/components/overlay/variant">

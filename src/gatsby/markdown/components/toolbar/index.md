@@ -11,11 +11,9 @@ tags: ['wip']
 
 Use [listgroup](/components/list-group) to create a **toolbar**.
 
-[[noteDefault]]
-| This component uses [listgroup](/components/list-group) see documentation for more info.
+> This component uses [listgroup](/components/list-group) see documentation for more info.
 
-[[notePrimary]]
-| For usability purpose use `role="toolbar"`.
+> For usability purpose use `role="toolbar"`.
 
 <demo>
   <demoinline src="demos/components/toolbar/usage">

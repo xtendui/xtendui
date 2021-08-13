@@ -36,8 +36,6 @@ Use this code to create **icons with img**.
   </demoinline>
 </demo>
 
-[[notePrimary]]
-| Icons with img don't support [icons variant](/components/icon/content#variant)
+> Icons with img don't support [icons variant](/components/icon/content#variant)
 
-[[noteDefault]]
-| Icons from [Feather Icons](https://feathericons.com).
+> Icons from [Feather Icons](https://feathericons.com).

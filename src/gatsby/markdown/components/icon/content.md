@@ -10,8 +10,7 @@ date: "2030-10-10"
 
 Use **tailwind classes** to assign variant (e.g. [text-color](https://tailwindcss.com/docs/text-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
-[[notePrimary]]
-| To **have parent text color** the Svg needs `stroke="currentColor"` or `fill="currentColor"` depending on svg format.
+> To **have parent text color** the Svg needs `stroke="currentColor"` or `fill="currentColor"` depending on svg format.
 
 <demo>
   <demoinline src="demos/components/icon/variant">

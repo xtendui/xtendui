@@ -63,8 +63,7 @@ Here's **mount function arguments**.
 
 </div>
 
-[[notePrimary]]
-| Remember to **use `.xt-ignore` when moving object** to prevent **child multiple mount and unmount**. If you want to automatically remove the `.xt-ignore` class when done use `.xt-ignore.xt-ignore-once`.
+> Remember to **use `.xt-ignore` when moving object** to prevent **child multiple mount and unmount**. If you want to automatically remove the `.xt-ignore` class when done use `.xt-ignore.xt-ignore-once`.
 
 ```js
 Xt.mount({

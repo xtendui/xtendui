@@ -19,8 +19,7 @@ Import the **javascript** file with `import 'xtendui/src/form'`.
 
 Use this code to create a **form items**.
 
-[[notePrimary]]
-| For usability purpose [label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea`, we use `aria-label="Label"`.
+> For usability purpose [label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea`, we use `aria-label="Label"`.
 
 <demo>
   <demoinline src="demos/components/form/usage">

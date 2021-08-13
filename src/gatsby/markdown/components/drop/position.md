@@ -84,8 +84,7 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 </div>
 
-[[notePrimary]]
-| Use [strategy fixed](https://popper.js.org/docs/v2/constructors//#strategy) when positioning inside **fixed elements**.
+> Use [strategy fixed](https://popper.js.org/docs/v2/constructors//#strategy) when positioning inside **fixed elements**.
 
 For example you can set [preventOverflow boundary](https://popper.js.org/docs/v2/modifiers/prevent-overflow/#boundary) to constrain popperjs inside an element.
 

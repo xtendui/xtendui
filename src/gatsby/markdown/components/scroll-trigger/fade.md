@@ -40,8 +40,7 @@ You can also use `once: true` to destroy ScrollTrigger as soon as the end positi
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
 
-[[noteDefault]]
-| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+> Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

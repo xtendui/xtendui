@@ -10,8 +10,7 @@ description: "Collapse horizontal and vertical on interactions."
 
 Collapse only work with **toggle components**, assign `options.collapseHeight` or `options.collapseWidth`.
 
-[[noteDefault]]
-| This component uses [toggle](/components/toggle) see documentation for more info.
+> This component uses [toggle](/components/toggle) see documentation for more info.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -22,11 +21,9 @@ Collapse only work with **toggle components**, assign `options.collapseHeight` o
 
 </div>
 
-[[noteDefault]]
-| Remember to assign `overflow-hidden` and `transition-all` on collapse nodes.
+> Remember to assign `overflow-hidden` and `transition-all` on collapse nodes.
 
-[[notePrimary]]
-| On **collapse nodes** **do not to use padding**.
+> On **collapse nodes** **do not to use padding**.
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 

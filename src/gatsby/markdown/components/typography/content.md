@@ -37,8 +37,7 @@ See [link variant](/components/link#variant) to style **links**.
 
 You can use headers **classes or tags** with customizable styles.
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `h1...h6` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `h1...h6` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -60,8 +59,7 @@ You can use headers **classes or tags** with customizable styles.
 
 Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tailwindcss.com/docs/font-size), [line-height](https://tailwindcss.com/docs/line-height), [letter-spacing](https://tailwindcss.com/docs/letter-spacing)).
 
-[[noteDefault]]
-| Remember to **override text line height with responsive leading**.
+> Remember to **override text line height with responsive leading**.
 
 <demo>
   <demoinline src="demos/components/typography/headers-custom">
@@ -72,8 +70,7 @@ Use **tailwind classes** to assign custom headers (e.g. [font-size](https://tail
 
 You can use paragraph **classes or tags** with customizable styles.
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `p` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `p` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -101,8 +98,7 @@ Text tags are styles by **tailwind or tailwind classes or component classes**.
 
 You can use lists **classes or tags** with customizable styles.
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `ul` and `ol` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `ul` and `ol` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -122,8 +118,7 @@ You can use lists **classes or tags** with customizable styles.
 
 You can use definition lists **classes or tags** with customizable styles.
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `dl` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `dl` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -142,8 +137,7 @@ You can use definition lists **classes or tags** with customizable styles.
 
 You can use figure and figcaption **classes or tags** with customizable styles.
 
-[[noteDefault]]
-| To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `figure` and `figcaption` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `figure` and `figcaption` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/css#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

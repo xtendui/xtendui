@@ -22,11 +22,9 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[notePrimary]]
-| Don't use **margin or width on list** because it has **automatic negative margins** for internal spacing. Use **padding** and `flex-full` instead.
+> Don't use **margin or width on list** because it has **automatic negative margins** for internal spacing. Use **padding** and `flex-full` instead.
 
-[[notePrimary]]
-| Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
+> Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
   <demoinline src="demos/components/list/space-px">
@@ -45,8 +43,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
-[[noteDefault]]
-| By default `.xt-list` has `align-items: stretch`.
+> By default `.xt-list` has `align-items: stretch`.
 
 <demo>
   <demoinline src="demos/components/list/alignment">

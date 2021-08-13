@@ -114,8 +114,7 @@ You can specify **on** and **off** events for the interactions.
 
 </div>
 
-[[notePrimary]]
-| When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
+> When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
 
 <demo>
   <demoinline src="demos/components/drop/event">

@@ -94,8 +94,7 @@ You can [style and animate](/components/toggle/animation#animation) **class name
 
 You can set initial activation by adding `on` to the **elements** or **targets**, class activation has precedence over automatic activation of `min` and `max`.
 
-[[notePrimary]]
-| If initial activation is on a **target with multiple groups** it activates elements with **at least one of the groups** and in DOM order.
+> If initial activation is on a **target with multiple groups** it activates elements with **at least one of the groups** and in DOM order.
 
 <demo>
   <demoinline src="demos/components/toggle/class">
@@ -119,8 +118,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 </div>
 
-[[notePrimary]]
-| `data-xt-group` additional elements aren't counted for min and max.
+> `data-xt-group` additional elements aren't counted for min and max.
 
 <demo>
   <demoinline src="demos/components/toggle/quantity">
@@ -140,8 +138,7 @@ You can specify **on** and **off** events for the toggle.
 
 </div>
 
-[[notePrimary]]
-| When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
+> When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
 
 <demo>
   <demoinline src="demos/components/toggle/event">
@@ -260,8 +257,7 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 </div>
 
-[[notePrimary]]
-| Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/toggle/api#trigger).
+> Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/toggle/api#trigger).
 
 <demo>
   <demoinline src="demos/components/toggle/auto">

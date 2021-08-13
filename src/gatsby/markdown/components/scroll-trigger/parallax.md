@@ -66,8 +66,7 @@ Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to
 
 Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on position** of trigger relative to viewport.
 
-[[noteDefault]]
-| Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
+> Use `endTrigger: 'html'` and `end: 'bottom top'` to make the **end position infinite**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -105,8 +104,7 @@ If you need **full range of animation** also on top and bottom of the page, calc
 
 You can add **multiple ScrollTriggers and animations** on the same elements.
 
-[[notePrimary]]
-| When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
+> When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-multiple"></div>

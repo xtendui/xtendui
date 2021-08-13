@@ -22,11 +22,9 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 </div>
 
-[[notePrimary]]
-| Don't use **margin or width on list** because it has **automatic negative margins** for internal spacing. Use **padding** and `flex-full` instead.
+> Don't use **margin or width on list** because it has **automatic negative margins** for internal spacing. Use **padding** and `flex-full` instead.
 
-[[notePrimary]]
-| Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
+> Sometimes **negative top margin bleed on parent nodes**, to fix it use `flex` the a parent node.
 
 <demo>
   <demoinline src="demos/components/row/space-px">

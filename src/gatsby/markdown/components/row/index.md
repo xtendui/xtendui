@@ -22,8 +22,7 @@ Use `.xt-row` to create a **row**.
 
 </div>
 
-[[notePrimary]]
-| You should always use **tailwind width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
+> You should always use **tailwind width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
 
 <demo>
   <demoinline src="demos/components/row/usage">

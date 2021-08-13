@@ -89,32 +89,23 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 </div>
 
-[[notePrimary]]
-| For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+> For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
-[[notePrimary]]
-| For usability purpose use `<nav></nav>`.
+> For usability purpose use `<nav></nav>`.
 
-[[noteDefault]]
-| This demos uses [loader](/components/loader) see documentation to **customize**.
+> This demos uses [loader](/components/loader) see documentation to **customize**.
 
-[[noteDefault]]
-| This component uses [card](/components/card) see documentation for more info.
+> This component uses [card](/components/card) see documentation for more info.
 
-[[noteDefault]]
-| This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
+> This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
-[[notePrimary]]
-| For usability purpose use `role="toolbar"`.
+> For usability purpose use `role="toolbar"`.
 
-[[notePrimary]]
-| For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
+> For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
 
-[[notePrimary]]
-| For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+> For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
 
-[[notePrimary]]
-| For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 

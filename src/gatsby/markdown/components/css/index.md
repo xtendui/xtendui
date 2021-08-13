@@ -32,8 +32,7 @@ Xtend UI add **custom tailwind variants**.
 
 - added `group-active:` variant.
 
-[[noteDefault]]
-| To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/components/toggle), [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [tooltip](/components/tooltip)).
+> To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/components/toggle), [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [tooltip](/components/tooltip)).
 
 ## Customization
 

@@ -11,8 +11,7 @@ tags: ['wip']
 
 Use [card](/components/card) to create a **note**.
 
-[[noteDefault]]
-| This component uses [card](/components/card) see documentation for more info.
+> This component uses [card](/components/card) see documentation for more info.
 
 Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [font-weight](https://tailwindcss.com/docs/font-weight)).
 

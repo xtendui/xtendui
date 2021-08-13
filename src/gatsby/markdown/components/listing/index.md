@@ -10,8 +10,7 @@ description: "Listing markup component for category pages or simple product list
 
 Use **tailwind classes** to create a **listing**.
 
-[[noteDefault]]
-| This component uses [media](/components/media) see documentation to **customize**.
+> This component uses [media](/components/media) see documentation to **customize**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/listing/usage">

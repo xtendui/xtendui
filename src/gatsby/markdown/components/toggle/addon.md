@@ -10,8 +10,7 @@ date: "1900-10-10"
 
 Use this code to create a **toggle multilevel**.
 
-[[notePrimary]]
-| For usability purpose use `<nav></nav>`.
+> For usability purpose use `<nav></nav>`.
 
 <demo>
   <demoinline src="demos/components/toggle/multilevel">

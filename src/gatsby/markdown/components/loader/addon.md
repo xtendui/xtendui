@@ -14,11 +14,9 @@ Refer to [form addon loader](/components/form/addon#loader).
 
 Use **component classes** to create a **mousefollow**.
 
-[[notePrimary]]
-| Remember **not to transition transform** of `.xt-mousefollow` element.
+> Remember **not to transition transform** of `.xt-mousefollow` element.
 
-[[noteDefault]]
-| This demo uses [mousefollow](/components/mouse-follow) see documentation for more info.
+> This demo uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/mouse-follow/usage">
