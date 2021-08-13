@@ -7,7 +7,7 @@ description: "Xtend UI is full of advanced javascript features that makes your w
 date: "2005-10-10"
 ---
 
-Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task trivial**, that could take days or even months to implement and that needs various iterations and complex use case to do properly.
+Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task effortless**, that could take days or even months to implement and that needs various iterations and complex use case to do properly.
 
 ## Global
 
