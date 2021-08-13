@@ -1133,8 +1133,8 @@ class Toggle {
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred) {
       Xt.eventDelay({
-        event: { detail: { delay: Xt.medialoadedDelay } },
-        element: self.container,
+        e: { detail: { delay: Xt.medialoadedDelay } },
+        el: self.container,
         ns: `${self.ns}MedialoadedReinit`,
         func: () => {
           // mediaLoaded
@@ -2017,7 +2017,7 @@ class Toggle {
     if (obj && obj[type] && !obj[type].done) {
       const queueOther = self[`queue${actionOther}`]
       const objOther = queueOther[queueOther.length - 1]
-      /* @TEST
+      /*
       if (objOther) {
         if (objOther[type]) {
           console.debug(actionCurrent, type, objOther[type].done)
@@ -2057,8 +2057,8 @@ class Toggle {
       if (obj[type].done) {
         for (const el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
-          cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
+          Xt.frameDouble({ el, ns: `${self.ns}CollapseHeightFrame` })
+          Xt.frameDouble({ el, ns: `${self.ns}CollapseWidthFrame` })
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
           clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
           // done other queue
@@ -2512,7 +2512,6 @@ class Toggle {
           // reset
           self.inverse = null
         },
-        ns: `${self.ns}Init`,
       })
     } else if (actionCurrent === 'Out') {
       // focusLimit
@@ -2580,11 +2579,9 @@ class Toggle {
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         if (actionCurrent === 'In') {
           // raf because only one time on route update
-          cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}ClassBodyFrame`))
-          Xt.dataStorage.set(
-            self.container,
-            `${self.ns}ClassBodyFrame`,
-            requestAnimationFrame(() => {
+          Xt.frame({
+            el: self.container,
+            func: () => {
               for (const c of options.classBody.split(' ')) {
                 // checks
                 Xt.classBody.add({
@@ -2595,15 +2592,14 @@ class Toggle {
                 const container = document.documentElement.querySelector('body')
                 container.classList.add(c)
               }
-            })
-          )
+            },
+            ns: `${self.ns}ClassBodyFrame`,
+          })
         } else if (actionCurrent === 'Out') {
           // raf because only one time on route update
-          cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}ClassBodyFrame`))
-          Xt.dataStorage.set(
-            self.container,
-            `${self.ns}ClassBodyFrame`,
-            requestAnimationFrame(() => {
+          Xt.frame({
+            el: self.container,
+            func: () => {
               for (const c of options.classBody.split(' ')) {
                 // checks
                 Xt.classBody.remove({
@@ -2616,8 +2612,9 @@ class Toggle {
                   container.classList.remove(c)
                 }
               }
-            })
-          )
+            },
+            ns: `${self.ns}ClassBodyFrame`,
+          })
         }
       }
     }
@@ -2733,21 +2730,13 @@ class Toggle {
             initial = initial === final ? 0 : initial
             el.style.height = `${initial}px`
             el.style.maxHeight = 'none'
-            // keep the same level of raf for activation
-            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
-            Xt.dataStorage.set(
+            Xt.frameDouble({
               el,
-              `${self.ns}CollapseHeightFrame`,
-              requestAnimationFrame(() => {
-                Xt.dataStorage.set(
-                  el,
-                  `${self.ns}CollapseHeightFrame`,
-                  requestAnimationFrame(() => {
-                    el.style.height = `${final}px`
-                  })
-                )
-              })
-            )
+              func: () => {
+                el.style.height = `${final}px`
+              },
+              ns: `${self.ns}CollapseHeightFrame`,
+            })
           }
         }
         if (options.collapseWidth === type) {
@@ -2766,21 +2755,13 @@ class Toggle {
             initial = initial === final ? 0 : initial
             el.style.width = `${initial}px`
             el.style.maxWidth = 'none'
-            // keep the same level of raf for activation
-            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
-            Xt.dataStorage.set(
+            Xt.frameDouble({
               el,
-              `${self.ns}CollapseWidthFrame`,
-              requestAnimationFrame(() => {
-                Xt.dataStorage.set(
-                  el,
-                  `${self.ns}CollapseWidthFrame`,
-                  requestAnimationFrame(() => {
-                    el.style.width = `${final}px`
-                  })
-                )
-              })
-            )
+              func: () => {
+                el.style.width = `${final}px`
+              },
+              ns: `${self.ns}CollapseWidthFrame`,
+            })
           }
         }
       } else if (actionCurrent === 'Out') {
@@ -2799,21 +2780,13 @@ class Toggle {
             const initial = el.offsetHeight
             final = initial === final ? 0 : final
             el.style.height = `${current}px`
-            // keep the same level of raf for activation
-            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseHeightFrame`))
-            Xt.dataStorage.set(
+            Xt.frameDouble({
               el,
-              `${self.ns}CollapseHeightFrame`,
-              requestAnimationFrame(() => {
-                Xt.dataStorage.set(
-                  el,
-                  `${self.ns}CollapseHeightFrame`,
-                  requestAnimationFrame(() => {
-                    el.style.height = `${final}px`
-                  })
-                )
-              })
-            )
+              func: () => {
+                el.style.height = `${final}px`
+              },
+              ns: `${self.ns}CollapseHeightFrame`,
+            })
           }
         }
         if (options.collapseWidth === type) {
@@ -2831,21 +2804,13 @@ class Toggle {
             const initial = el.offsetWidth
             final = initial === final ? 0 : final
             el.style.width = `${current}px`
-            // keep the same level of raf for activation
-            cancelAnimationFrame(Xt.dataStorage.get(el, `${self.ns}CollapseWidthFrame`))
-            Xt.dataStorage.set(
+            Xt.frameDouble({
               el,
-              `${self.ns}CollapseWidthFrame`,
-              requestAnimationFrame(() => {
-                Xt.dataStorage.set(
-                  el,
-                  `${self.ns}CollapseWidthFrame`,
-                  requestAnimationFrame(() => {
-                    el.style.width = `${final}px`
-                  })
-                )
-              })
-            )
+              func: () => {
+                el.style.width = `${final}px`
+              },
+              ns: `${self.ns}CollapseWidthFrame`,
+            })
           }
         }
       }

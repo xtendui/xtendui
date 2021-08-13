@@ -69,6 +69,21 @@ if (typeof window !== 'undefined') {
     }
   })
 
+  Xt.mutationObserver.disconnect()
+  Xt.mutationObserver.observe(document.documentElement, {
+    characterData: false,
+    attributes: false,
+    childList: true,
+    subtree: true,
+  })
+
+  /**
+   * refresh
+   */
+  Xt.refresh = () => {
+    Xt.mountCheck()
+  }
+
   /**
    * mount
    * @param {Object} obj
@@ -182,15 +197,20 @@ if (typeof window !== 'undefined') {
    * ready
    * @param {Object} params
    * @param {Function} params.func Function to execute
+   * @param {Function} params.raf Wait a requestAnimationFrame for all js being executed
    * @param {String} params.state States separated by space, can be 'loading' 'interactive' 'complete'
    */
-  Xt.ready = ({ func, state = 'interactive complete' } = {}) => {
+  Xt.ready = ({ func, raf = true, state = 'interactive complete' } = {}) => {
     const states = [...state.split(' ')]
     if (states.includes(document.readyState)) {
-      // raf because we need all functions defined after mount
-      requestAnimationFrame(() => {
+      if (raf) {
+        // raf because we need all functions defined after mount
+        requestAnimationFrame(() => {
+          func()
+        })
+      } else {
         func()
-      })
+      }
     } else {
       const interactive = () => {
         if (states.includes(document.readyState)) {
@@ -201,25 +221,6 @@ if (typeof window !== 'undefined') {
       }
       document.addEventListener('readystatechange', interactive)
     }
-  }
-
-  /**
-   * read
-   */
-  Xt.ready({
-    func: () => {
-      Xt.mutationObserver.disconnect()
-      Xt.mutationObserver.observe(document.documentElement, {
-        characterData: false,
-        attributes: false,
-        childList: true,
-        subtree: true,
-      })
-    },
-  })
-
-  Xt.refresh = () => {
-    Xt.mountCheck()
   }
 
   //
@@ -317,12 +318,13 @@ if (typeof window !== 'undefined') {
     // reinit one time only with raf
     if (!skipReinit) {
       // reinit
-      cancelAnimationFrame(Xt.dataStorage.get(self.container, `${self.ns}MatchFrame`))
-      Xt.dataStorage.set(
-        self.container,
-        `${self.ns}MatchFrame`,
-        requestAnimationFrame(Xt.eventReinit.bind(null, { self }))
-      )
+      Xt.frame({
+        el: self.container,
+        func: () => {
+          Xt.eventReinit({ self })
+        },
+        ns: `${self.ns}MatchFrame`,
+      })
     }
   }
 
@@ -353,8 +355,8 @@ if (typeof window !== 'undefined') {
     // triggering e.detail.container
     if (!e?.detail?.container || e?.detail?.container.contains(self.container)) {
       Xt.eventDelay({
-        event: e,
-        element: self.container,
+        e,
+        el: self.container,
         ns: `${self.ns}Reinit`,
         func: () => {
           // handler
@@ -532,12 +534,10 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.transform Use transforms instead of position
    */
   Xt.friction = ({ el, obj, transform = true } = {}) => {
-    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
-    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionInitFrame'))
-    Xt.dataStorage.set(
+    Xt.frame({ el, ns: `xtFrictionFrame` })
+    Xt.frame({
       el,
-      'xtFrictionInitFrame',
-      requestAnimationFrame(() => {
+      func: () => {
         let xCurrent
         let yCurrent
         if (transform) {
@@ -584,11 +584,9 @@ if (typeof window !== 'undefined') {
           const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
           xDist = obj.x - xCurrent
           yDist = obj.y - yCurrent
-          cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
-          Xt.dataStorage.set(
+          Xt.frame({
             el,
-            'xtFrictionFrame',
-            requestAnimationFrame(() => {
+            func: () => {
               if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
                 // continue friction
                 Xt.friction({ el, obj, transform })
@@ -597,11 +595,13 @@ if (typeof window !== 'undefined') {
                 Xt.dataStorage.remove(el, 'xtFrictionX')
                 Xt.dataStorage.remove(el, 'xtFrictionY')
               }
-            })
-          )
+            },
+            ns: `xtFrictionFrame`,
+          })
         }
-      })
-    )
+      },
+      ns: `xtFrictionInitFrame`,
+    })
   }
 
   /**
@@ -991,20 +991,20 @@ if (typeof window !== 'undefined') {
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
    */
-  Xt.eventDelay = ({ event, element, func = null, ns = '', duration = null } = {}) => {
-    cancelAnimationFrame(Xt.dataStorage.get(element, `${ns}eventDelayFrame`))
-    clearTimeout(Xt.dataStorage.get(element, `${ns}eventDelayTimeout`))
+  Xt.eventDelay = ({ e, el, func = null, ns = '', duration = null } = {}) => {
+    Xt.frame({ el, ns: `${ns}eventDelayFrame` })
+    clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
     if (func) {
-      if (event) {
+      if (e) {
         const container = document.documentElement
-        let delay = event?.detail?.delay
-        delay = duration ?? delay ? delay : Xt[`${event.type}Delay`]
-        if (event.type === 'resize') {
+        let delay = e?.detail?.delay
+        delay = duration ?? delay ? delay : Xt[`${e.type}Delay`]
+        if (e.type === 'resize') {
           const w = window.innerWidth
           const h = window.innerHeight
           // multiple calls check
           if (
-            !event?.detail?.force && // not when setting delay on event
+            !e?.detail?.force && // not when setting delay on event
             Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
             (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
           ) {
@@ -1012,31 +1012,42 @@ if (typeof window !== 'undefined') {
             return
           }
           // save after a frame to execute all eventDelay
-          cancelAnimationFrame(Xt.dataStorage.get(container, `${ns}eventDelayFrame`))
-          Xt.dataStorage.set(
-            container,
-            `${ns}eventDelayFrame`,
-            requestAnimationFrame(() => {
+          Xt.frame({
+            el: container,
+            func: () => {
               Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
               Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
-            })
-          )
+            },
+            ns: `${ns}eventDelayFrame`,
+          })
         }
         // delay
         if (!delay) {
-          Xt.dataStorage.set(element, `${ns}eventDelayFrame`, requestAnimationFrame(func.bind(event)))
+          Xt.frame({
+            el,
+            func: () => {
+              func(e)
+            },
+            ns: `${ns}eventDelayFrame`,
+          })
         } else {
           Xt.dataStorage.set(
-            element,
+            el,
             `${ns}eventDelayTimeout`,
             setTimeout(() => {
               // func
-              func(event)
+              func(e)
             }, delay)
           )
         }
       } else {
-        Xt.dataStorage.set(element, `${ns}eventDelayFrame`, requestAnimationFrame(func.bind(event)))
+        Xt.frame({
+          el,
+          func: () => {
+            func(e)
+          },
+          ns: `${ns}eventDelayFrame`,
+        })
       }
     }
   }
@@ -1092,8 +1103,8 @@ if (typeof window !== 'undefined') {
 
   addEventListener('resize', e => {
     Xt.eventDelay({
-      event: e,
-      element: document.documentElement,
+      e,
+      el: document.documentElement,
       ns: 'xtWindowHeightResize',
       duration: 0,
       func: () => {

@@ -698,15 +698,14 @@ class Slider extends Xt.Toggle {
   eventDragHandler(e) {
     const self = this
     // raf Drag and Dragend
-    cancelAnimationFrame(Xt.dataStorage.get(self.dragger, `${self.ns}DragFrame`))
-    Xt.dataStorage.set(
-      self.dragger,
-      `${self.ns}DragFrame`,
-      requestAnimationFrame(() => {
+    Xt.frame({
+      el: self.dragger,
+      func: () => {
         // logic
         self.logicDrag(e)
-      })
-    )
+      },
+      ns: `${self.ns}DragFrame`,
+    })
   }
 
   /**
@@ -728,15 +727,14 @@ class Slider extends Xt.Toggle {
       removeEventListener(event, dragHandler)
     }
     // raf Drag and Dragend
-    cancelAnimationFrame(Xt.dataStorage.get(self.dragger, `${self.ns}DragFrame`))
-    Xt.dataStorage.set(
-      self.dragger,
-      `${self.ns}DragFrame`,
-      requestAnimationFrame(() => {
+    Xt.frame({
+      el: self.dragger,
+      func: () => {
         // logic
         self.logicDragend(e)
-      })
-    )
+      },
+      ns: `${self.ns}DragFrame`,
+    })
   }
 
   //

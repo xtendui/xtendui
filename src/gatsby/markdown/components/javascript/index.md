@@ -28,7 +28,7 @@ It has a requestAnimationFrame **if the state is instantly matched**, to **ensur
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
+| Function                  | `Xt.ready:Function`              | `{ func:Function, raf:Boolean = true, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
 
 </div>
 
@@ -246,7 +246,7 @@ For special events like the `resize` and `scroll` events we use a special wrappe
 ```js
 addEventListener('resize', e => {
   Xt.eventDelay({
-    event: e,
+    e,
     element: document.documentElement,
     func: () => {
       // logic
@@ -256,7 +256,7 @@ addEventListener('resize', e => {
 
 addEventListener('scroll', e => {
   Xt.eventDelay({
-    event: e,
+    e,
     element: document.documentElement,
     func: () => {
       // logic
@@ -269,7 +269,7 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `{ event, element, func = null, ns = '', duration = null }`       | event delay wrapper                  |
+| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, func:Function|null = null, ns:String = '', duration:Number|null = null }`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 | Variable                  | `Xt.resizeDelay:Number|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
