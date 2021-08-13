@@ -269,7 +269,7 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, func:Function|null = null, ns:String = '', duration:Number|null = null }`       | event delay wrapper                  |
+| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, ns:String = '', duration:Number|null = null, func:Function|null = null }`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 | Variable                  | `Xt.resizeDelay:Number|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |

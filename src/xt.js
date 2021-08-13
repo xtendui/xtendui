@@ -45,10 +45,10 @@ if (typeof window !== 'undefined') {
             // fix multiple initialization (e.g. mount inside sticky)
             Xt.frame({
               el: added,
+              ns: `Observer`,
               func: () => {
                 Xt.mountCheck({ added })
               },
-              ns: `Observer`,
             })
           }
         }
@@ -58,10 +58,10 @@ if (typeof window !== 'undefined') {
             // fix multiple initialization (e.g. mount inside sticky)
             Xt.frame({
               el: removed,
+              ns: `Observer`,
               func: () => {
                 Xt.unmountCheck({ removed })
               },
-              ns: `Observer`,
             })
           }
         }
@@ -320,10 +320,10 @@ if (typeof window !== 'undefined') {
       // reinit
       Xt.frame({
         el: self.container,
+        ns: `${self.ns}MatchFrame`,
         func: () => {
           Xt.eventReinit({ self })
         },
-        ns: `${self.ns}MatchFrame`,
       })
     }
   }
@@ -537,6 +537,7 @@ if (typeof window !== 'undefined') {
     Xt.frame({ el, ns: `xtFrictionFrame` })
     Xt.frame({
       el,
+      ns: `xtFrictionInitFrame`,
       func: () => {
         let xCurrent
         let yCurrent
@@ -586,6 +587,7 @@ if (typeof window !== 'undefined') {
           yDist = obj.y - yCurrent
           Xt.frame({
             el,
+            ns: `xtFrictionFrame`,
             func: () => {
               if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
                 // continue friction
@@ -596,11 +598,9 @@ if (typeof window !== 'undefined') {
                 Xt.dataStorage.remove(el, 'xtFrictionY')
               }
             },
-            ns: `xtFrictionFrame`,
           })
         }
       },
-      ns: `xtFrictionInitFrame`,
     })
   }
 
@@ -771,10 +771,10 @@ if (typeof window !== 'undefined') {
    * requestAnimationFrame
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
-   * @param {Function} params.func Function to execute after transition or animation
    * @param {String} params.ns Namespace
+   * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.frame = ({ el, func = null, ns = '' } = {}) => {
+  Xt.frame = ({ el, ns = '', func = null } = {}) => {
     cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}Frame`))
     if (func) {
       // needs one raf
@@ -832,12 +832,12 @@ if (typeof window !== 'undefined') {
       el.classList.add('in')
       Xt.animTimeout({
         el,
-        func: () => {
-          el.classList.add('done')
-        },
         ns: `${ns}OnOff`,
         duration,
         actionCurrent: 'In',
+        func: () => {
+          el.classList.add('done')
+        },
       })
     }
     if (raf) {
@@ -868,12 +868,12 @@ if (typeof window !== 'undefined') {
       el.classList.remove('done')
       Xt.animTimeout({
         el,
-        func: () => {
-          el.classList.remove('out')
-        },
         ns: `${ns}OnOff`,
         duration,
         actionCurrent: 'Out',
+        func: () => {
+          el.classList.remove('out')
+        },
       })
     }
     if (raf) {
@@ -890,12 +890,12 @@ if (typeof window !== 'undefined') {
    * execute function after transition or animation
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
-   * @param {Function} params.func Function to execute after transition or animation
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
    * @param {String} params.actionCurrent Current action
+   * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.animTimeout = ({ el, func = null, ns = '', duration = null, actionCurrent = null } = {}) => {
+  Xt.animTimeout = ({ el, ns = '', duration = null, actionCurrent = null, func = null } = {}) => {
     clearTimeout(Xt.dataStorage.get(el, `${ns}AnimTimeout`))
     if (func) {
       duration = Xt.animTime({ el, duration, actionCurrent }) ?? 0
@@ -987,12 +987,12 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Event|Object} params.e Event
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
-   * @param {Function} params.func Function to execute after transition or animation
    * @param {String} params.ns Namespace
    * @param {Number} params.duration Duration
+   * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.eventDelay = ({ e, el, func = null, ns = '', duration = null } = {}) => {
-    Xt.frame({ el, ns: `${ns}eventDelayFrame` })
+  Xt.eventDelay = ({ e, el, ns = '', duration = null, func = null } = {}) => {
+    Xt.frame({ el, ns: `${ns}EventDelayFrame` })
     clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
     if (func) {
       if (e) {
@@ -1014,21 +1014,21 @@ if (typeof window !== 'undefined') {
           // save after a frame to execute all eventDelay
           Xt.frame({
             el: container,
+            ns: `${ns}EventDelayFrame`,
             func: () => {
               Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
               Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
             },
-            ns: `${ns}eventDelayFrame`,
           })
         }
         // delay
         if (!delay) {
           Xt.frame({
             el,
+            ns: `${ns}EventDelayFrame`,
             func: () => {
               func(e)
             },
-            ns: `${ns}eventDelayFrame`,
           })
         } else {
           Xt.dataStorage.set(
@@ -1043,10 +1043,10 @@ if (typeof window !== 'undefined') {
       } else {
         Xt.frame({
           el,
+          ns: `${ns}EventDelayFrame`,
           func: () => {
             func(e)
           },
-          ns: `${ns}eventDelayFrame`,
         })
       }
     }
@@ -1105,7 +1105,7 @@ if (typeof window !== 'undefined') {
     Xt.eventDelay({
       e,
       el: document.documentElement,
-      ns: 'xtWindowHeightResize',
+      ns: 'WindowHeightResize',
       duration: 0,
       func: () => {
         Xt.innerHeightSet()

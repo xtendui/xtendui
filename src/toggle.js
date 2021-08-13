@@ -243,6 +243,7 @@ class Toggle {
       // init
       Xt.frame({
         el: self.container,
+        ns: `${self.ns}Init`,
         func: () => {
           // initialized class
           if (!options.classSkip) {
@@ -261,7 +262,6 @@ class Toggle {
             console.log(`${self.componentName} init`, self)
           }
         },
-        ns: `${self.ns}Init`,
       })
     }
   }
@@ -1576,12 +1576,12 @@ class Toggle {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
             Xt.frame({
               el: window,
+              ns: `${self.ns}Hash`,
               func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', `#${encodeURIComponent(attr)}`)
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, false)
               },
-              ns: `${self.ns}Hash`,
             })
           }
         }
@@ -1668,12 +1668,12 @@ class Toggle {
             // raf prevents hash on chained activations (e.g: multiple hash on elements with same activation)
             Xt.frame({
               el: window,
+              ns: `${self.ns}Hash`,
               func: () => {
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, true)
                 history.pushState({}, '', '#')
                 Xt.dataStorage.set(self.container, `${self.ns}HashSkip`, false)
               },
-              ns: `${self.ns}Hash`,
             })
           }
         }
@@ -2109,10 +2109,10 @@ class Toggle {
       } else if (delay === 'raf') {
         Xt.frameDouble({
           el,
+          ns: `${self.ns + type}QueueDelayDone`,
           func: () => {
             self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
           },
-          ns: 'queueDelayDone',
         })
       } else {
         Xt.dataStorage.set(
@@ -2189,6 +2189,7 @@ class Toggle {
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
+          ns: `${self.ns}${actionCurrent}DelayDone`,
           func: () => {
             el.dispatchEvent(
               new CustomEvent(`on.${self.componentNs}`, {
@@ -2196,7 +2197,6 @@ class Toggle {
               })
             )
           },
-          ns: `${self.ns}${actionCurrent}DelayDone`,
         })
       }
     } else if (
@@ -2225,6 +2225,7 @@ class Toggle {
         if (!self.disabled) {
           Xt.frame({
             el,
+            ns: `${self.ns}${actionCurrent}DelayDone`,
             func: () => {
               el.dispatchEvent(
                 new CustomEvent(`off.${self.componentNs}`, {
@@ -2232,7 +2233,6 @@ class Toggle {
                 })
               )
             },
-            ns: `${self.ns}${actionCurrent}DelayDone`,
           })
         }
       }
@@ -2242,10 +2242,10 @@ class Toggle {
       // needs ONE raf or sequential off/on flickr (e.g. toggle inverse)
       Xt.frame({
         el,
+        ns: `${self.ns + type}QueueAnim`,
         func: () => {
           self.queueAnim({ actionCurrent, actionOther, obj, el, type })
         },
-        ns: 'queueAnim',
       })
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
@@ -2289,10 +2289,10 @@ class Toggle {
     } else if (duration === 'raf') {
       Xt.frameDouble({
         el,
+        ns: `${self.ns + type}QueueAnimDone`,
         func: () => {
           self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
         },
-        ns: 'queueAnimDone',
       })
     } else {
       Xt.dataStorage.set(
@@ -2339,6 +2339,7 @@ class Toggle {
       if (type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
+          ns: `${self.ns}${actionCurrent}AnimDone`,
           func: () => {
             el.dispatchEvent(
               new CustomEvent(`ondone.${self.componentNs}`, {
@@ -2346,7 +2347,6 @@ class Toggle {
               })
             )
           },
-          ns: `${self.ns}${actionCurrent}AnimDone`,
         })
       }
     } else if (actionCurrent === 'Out') {
@@ -2389,6 +2389,7 @@ class Toggle {
         if (!self.disabled) {
           Xt.frame({
             el,
+            ns: `${self.ns}${actionCurrent}AnimDone`,
             func: () => {
               el.dispatchEvent(
                 new CustomEvent(`offdone.${self.componentNs}`, {
@@ -2396,7 +2397,6 @@ class Toggle {
                 })
               )
             },
-            ns: `${self.ns}${actionCurrent}AnimDone`,
           })
         }
       }
@@ -2581,6 +2581,7 @@ class Toggle {
           // raf because only one time on route update
           Xt.frame({
             el: self.container,
+            ns: `${self.ns}ClassBodyFrame`,
             func: () => {
               for (const c of options.classBody.split(' ')) {
                 // checks
@@ -2593,12 +2594,12 @@ class Toggle {
                 container.classList.add(c)
               }
             },
-            ns: `${self.ns}ClassBodyFrame`,
           })
         } else if (actionCurrent === 'Out') {
           // raf because only one time on route update
           Xt.frame({
             el: self.container,
+            ns: `${self.ns}ClassBodyFrame`,
             func: () => {
               for (const c of options.classBody.split(' ')) {
                 // checks
@@ -2613,7 +2614,6 @@ class Toggle {
                 }
               }
             },
-            ns: `${self.ns}ClassBodyFrame`,
           })
         }
       }
@@ -2732,10 +2732,10 @@ class Toggle {
             el.style.maxHeight = 'none'
             Xt.frameDouble({
               el,
+              ns: `${self.ns}CollapseHeightFrame`,
               func: () => {
                 el.style.height = `${final}px`
               },
-              ns: `${self.ns}CollapseHeightFrame`,
             })
           }
         }
@@ -2757,10 +2757,10 @@ class Toggle {
             el.style.maxWidth = 'none'
             Xt.frameDouble({
               el,
+              ns: `${self.ns}CollapseWidthFrame`,
               func: () => {
                 el.style.width = `${final}px`
               },
-              ns: `${self.ns}CollapseWidthFrame`,
             })
           }
         }
@@ -2782,10 +2782,10 @@ class Toggle {
             el.style.height = `${current}px`
             Xt.frameDouble({
               el,
+              ns: `${self.ns}CollapseHeightFrame`,
               func: () => {
                 el.style.height = `${final}px`
               },
-              ns: `${self.ns}CollapseHeightFrame`,
             })
           }
         }
@@ -2806,10 +2806,10 @@ class Toggle {
             el.style.width = `${current}px`
             Xt.frameDouble({
               el,
+              ns: `${self.ns}CollapseWidthFrame`,
               func: () => {
                 el.style.width = `${final}px`
               },
-              ns: `${self.ns}CollapseWidthFrame`,
             })
           }
         }

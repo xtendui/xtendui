@@ -384,11 +384,11 @@ class Infinitescroll {
     // populate
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}Populate`,
       func: () => {
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`populate.${self.componentNs}`))
       },
-      ns: `${self.ns}Populate`,
     })
   }
 

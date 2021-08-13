@@ -81,6 +81,7 @@ class Groupnumber {
     // init
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}Init`,
       func: () => {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
@@ -93,7 +94,6 @@ class Groupnumber {
           console.log(`${self.componentName} init`, self)
         }
       },
-      ns: `${self.ns}Init`,
     })
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self.disabledManual) {

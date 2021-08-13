@@ -94,6 +94,7 @@ class Scrollto {
     // init
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}Init`,
       func: () => {
         // initial needs to be inside raf for content added (e.g. react)
         self.initStart()
@@ -108,7 +109,6 @@ class Scrollto {
           console.log(`${self.componentName} init`, self)
         }
       },
-      ns: `${self.ns}Init`,
     })
   }
 

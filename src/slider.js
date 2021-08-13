@@ -570,11 +570,11 @@ class Slider extends Xt.Toggle {
     // init drag
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}InitDrag`,
       func: () => {
         // dispatch event
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
       },
-      ns: `${self.ns}InitDrag`,
     })
     // super after
     super.initStart({ save })
@@ -700,11 +700,11 @@ class Slider extends Xt.Toggle {
     // raf Drag and Dragend
     Xt.frame({
       el: self.dragger,
+      ns: `${self.ns}DragFrame`,
       func: () => {
         // logic
         self.logicDrag(e)
       },
-      ns: `${self.ns}DragFrame`,
     })
   }
 
@@ -729,11 +729,11 @@ class Slider extends Xt.Toggle {
     // raf Drag and Dragend
     Xt.frame({
       el: self.dragger,
+      ns: `${self.ns}DragFrame`,
       func: () => {
         // logic
         self.logicDragend(e)
       },
-      ns: `${self.ns}DragFrame`,
     })
   }
 
@@ -823,10 +823,10 @@ class Slider extends Xt.Toggle {
     self.drag.instant = isDrag
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}isDrag`,
       func: () => {
         self.drag.instant = false
       },
-      ns: `${self.ns}isDrag`,
     })
     // wrap after self.drag.final for proper initial initialization direction (e.g. slider api)
     self.eventWrap({ index: self.index })

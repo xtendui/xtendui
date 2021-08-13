@@ -75,6 +75,7 @@ class Stickyflow {
     // init
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}Init`,
       func: () => {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
@@ -87,7 +88,6 @@ class Stickyflow {
           console.log(`${self.componentName} init`, self)
         }
       },
-      ns: `${self.ns}Init`,
     })
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self.disabledManual) {
@@ -157,11 +157,11 @@ class Stickyflow {
     // change
     Xt.frame({
       el: self.container,
+      ns: `${self.ns}Change`,
       func: () => {
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
       },
-      ns: `${self.ns}Change`,
     })
     self.scrollTopOld = scrollTop
   }
