@@ -51,11 +51,11 @@ Test drag activation.
 Test grouping and drag activation.
 
 <demo>
-  <demoinline src="demos/components/slider/nocontain-center">
+  <demoinline src="demos/components/slider/contain-false-center">
   </demoinline>
-  <demoinline src="demos/components/slider/nocontain-left">
+  <demoinline src="demos/components/slider/contain-false-left">
   </demoinline>
-  <demoinline src="demos/components/slider/nocontain-right">
+  <demoinline src="demos/components/slider/contain-false-right">
   </demoinline>
 </demo>
 
@@ -85,7 +85,7 @@ Test groups.
 <demo>
   <demoinline src="demos/components/slider/group">
   </demoinline>
-  <demoinline src="demos/components/slider/no-group-same">
+  <demoinline src="demos/components/slider/group-same-false">
   </demoinline>
 </demo>
 

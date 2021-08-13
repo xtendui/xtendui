@@ -40,11 +40,11 @@ When `contain` is enabled (default) it **groups the slides activation and positi
 </div>
 
 <demo>
-  <demoinline src="demos/components/slider/nocontain-center">
+  <demoinline src="demos/components/slider/contain-false-center">
   </demoinline>
-  <demoinline src="demos/components/slider/nocontain-left">
+  <demoinline src="demos/components/slider/contain-false-left">
   </demoinline>
-  <demoinline src="demos/components/slider/nocontain-right">
+  <demoinline src="demos/components/slider/contain-false-right">
   </demoinline>
 </demo>
 
@@ -91,7 +91,7 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
   </demoinline>
   <demoinline src="demos/components/slider/group-same">
   </demoinline>
-  <demoinline src="demos/components/slider/no-group-same">
+  <demoinline src="demos/components/slider/group-same-false">
   </demoinline>
 </demo>
 
