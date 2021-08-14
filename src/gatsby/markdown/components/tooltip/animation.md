@@ -111,6 +111,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 | ----------------------- | ---------------------------- | ----------------------------- |
 | Class                  | `.dir-before`       |  Class name for **before** direction activation            |
 | Class                  | `.dir-after`       |  Class name for **after** direction activation            |
+
 </div>
 
 > Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
