@@ -73,7 +73,7 @@ class Template extends React.Component {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
                                         <div
-                                          className="xt-media-container bg-gray-100 mt-3 rounded-md border-3 border-primary-300 pb-[56.2%]"
+                                          className="xt-media-container bg-gray-100 mt-3 rounded-md border-3 border-gray-100 pb-[56.2%]"
                                           key={z}>
                                           <video
                                             className="xt-media object-cover object-center"
