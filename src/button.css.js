@@ -18,6 +18,7 @@ module.exports = {
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',
+      touchAction: 'manipulation',
     },
   },
 }

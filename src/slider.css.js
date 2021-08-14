@@ -24,6 +24,7 @@ module.exports = {
       display: 'flex',
       flexWrap: 'nowrap',
       alignItems: 'flex-start',
+      touchAction: 'pan-x',
       // prevent browser selection
       '-webkit-user-select': 'none',
       '-moz-user-select': 'none',
