@@ -45,7 +45,9 @@ const html = /* HTML */ `
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-semibold text-sm">-35%</div>
-                        <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">For Exhibition Renewal</div>
+                        <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
+                          For Exhibition Renewal
+                        </div>
                       </div>
                     </div>
                   </div>
