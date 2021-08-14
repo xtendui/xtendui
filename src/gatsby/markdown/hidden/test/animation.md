@@ -94,19 +94,6 @@ Test direction and queue timing.
   </demoinline>
 </demo>
 
-## Design
-
-<demo>
-  <demoinline src="demos/components/toggle/animation-design">
-  </demoinline>
-  <demoinline src="demos/components/overlay/animation-design">
-  </demoinline>
-  <demoinline src="demos/components/drop/animation-design">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-design">
-  </demoinline>
-</demo>
-
 ## Collapse
 
 Test height and width and maxHeight styles on activation and deactivation.

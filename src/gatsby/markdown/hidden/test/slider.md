@@ -16,15 +16,9 @@ Test drag animations on drag and activation.
 
 ## Absolute
 
-Test direction and other drag values on initial, same index, reset, drag, nav.
+Test direction and other drag values on initial, reset, drag looping and going back and forth, nav looping, pag jumping of 2 or more.
 
 Test click should not change slide.
-
-Test activation drag reset.
-
-Test activation drag loop.
-
-Test drag left and right and repeat.
 
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-cover">
