@@ -81,6 +81,8 @@ Test queue timing.
 
 Test direction and queue timing.
 
+Slider test should not deactivate and reactivate if already activated (bug skip obj nodes that are in off and on)
+
 <demo>
   <demoinline src="demos/components/toggle/animation-js">
   </demoinline>

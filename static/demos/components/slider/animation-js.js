@@ -61,6 +61,7 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
+      // content
       const content = tr.querySelector('[data-node-target-content]')
       gsap.killTweensOf(content)
       gsap.set(content, {
@@ -85,6 +86,7 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
+      // content
       const content = tr.querySelector('[data-node-target-content]')
       gsap.killTweensOf(content)
       gsap.to(content, {

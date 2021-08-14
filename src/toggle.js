@@ -1713,30 +1713,39 @@ class Toggle {
       self.addCurrent({ el: elements[0] })
       self.setIndex({ el: elements[0] })
       self.setDirection()
-      // if currents > max
-      const currents = self.getCurrents()
-      if (currents.length > options.max) {
-        // deactivate old
-        self.eventOff({ el: currents[0] })
-      }
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
       const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
       const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
-      self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
+      let obj = self.eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
+      // if currents > max
+      const currents = self.getCurrents()
+      if (currents.length > options.max) {
+        // deactivate old
+        const objFiltered = self.eventOff({ el: currents[0], objFilter: obj })
+        // skip obj nodes that are in off and on (e.g. group same slider animation-js)
+        if (!options.queue && objFiltered?.obj) {
+          obj = objFiltered.obj
+        }
+      }
+      // put in queue
+      if (!options.queue) {
+        self[`queue${actionCurrent}`] = [obj]
+      } else {
+        self[`queue${actionCurrent}`].unshift(obj)
+      }
       // queue run
-      // eslint-disable-next-line guard-for-in
       for (const type in self[`queue${actionCurrent}`][0]) {
         self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
-      // activation
+      // return
       return true
     } else if ([...options.on.split(' ')].includes(e?.type)) {
       // fix same event for on and off same namespace
       self.eventOff({ el }, e)
     }
-    // activation
+    // return
     return false
   }
 
@@ -1745,10 +1754,11 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el To be deactivated
    * @param {Boolean} params.force
+   * @param {Object} params.objFilter Object to filter from
    * @param {Event} e
    * @return {Boolean} If deactivated
    */
-  eventOff({ el, force = false } = {}, e = null) {
+  eventOff({ el, force = false, objFilter = null } = {}, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1777,7 +1787,25 @@ class Toggle {
       const actionOther = 'In'
       const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
       const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
-      self.eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e })
+      const obj = self.eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
+      // skip obj nodes that are in off and on (e.g. group same slider animation-js)
+      if (!options.queue && objFilter) {
+        for (const key in obj) {
+          const item = obj[key]
+          if (item.queueEls) {
+            const itemFilter = objFilter[key]
+            const queueEls = item.queueEls.filter(x => !itemFilter.queueEls.includes(x))
+            itemFilter.queueEls = itemFilter.queueEls.filter(x => !item.queueEls.includes(x))
+            item.queueEls = queueEls
+          }
+        }
+      }
+      // put in queue
+      if (!options.queue) {
+        self[`queue${actionCurrent}`] = [obj]
+      } else {
+        self[`queue${actionCurrent}`].unshift(obj)
+      }
       // remove queue not started if queue too big
       if (self[`queue${actionCurrent}`].length > options.max) {
         // remove queue and stop
@@ -1788,21 +1816,22 @@ class Toggle {
         self.queueStop({ actionCurrent, actionOther, obj: removedOff })
       }
       // queue run
-      // eslint-disable-next-line guard-for-in
       for (const type in self[`queue${actionCurrent}`][0]) {
         self.queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
-      // deactivated
+      // return
+      if (objFilter) {
+        return { obj: objFilter }
+      }
       return true
     }
-    // deactivated
+    // return
     return false
   }
 
   /**
    * element on
    * @param {Object} params
-   * @param {String} params.actionCurrent
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.elements
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.targets
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} params.elementsInner
@@ -1810,9 +1839,7 @@ class Toggle {
    * @param {Boolean} params.force
    * @param {Event} params.e
    */
-  eventQueue({ actionCurrent, elements, targets, elementsInner, targetsInner, force, e } = {}) {
-    const self = this
-    const options = self.options
+  eventQueue({ elements, targets, elementsInner, targetsInner, force, e } = {}) {
     // populate
     const obj = {}
     obj.elements = {
@@ -1835,12 +1862,7 @@ class Toggle {
         queueEls: targetsInner,
       }
     }
-    // put in queue
-    if (!options.queue) {
-      self[`queue${actionCurrent}`] = [obj]
-    } else {
-      self[`queue${actionCurrent}`].unshift(obj)
-    }
+    return obj
   }
 
   /**
@@ -2130,6 +2152,10 @@ class Toggle {
           self.queueDone({ actionCurrent, actionOther, obj, type })
         }
       }
+    }
+    // queue done
+    if (!els.length) {
+      self.queueDone({ actionCurrent, actionOther, obj, type })
     }
   }
 
