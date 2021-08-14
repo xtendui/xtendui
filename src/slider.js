@@ -749,7 +749,7 @@ class Slider extends Xt.Toggle {
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  eventOn({ el, force = false }, e = null) {
+  eventOn({ el, force = false }, e) {
     const self = this
     const options = self.options
     // disabled

@@ -1693,7 +1693,7 @@ class Toggle {
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  eventOn({ el, force = false }, e = null) {
+  eventOn({ el, force = false }, e) {
     const self = this
     const options = self.options
     // disabled
@@ -1758,7 +1758,7 @@ class Toggle {
    * @param {Event} e
    * @return {Boolean} If deactivated
    */
-  eventOff({ el, force = false, objFilter = null } = {}, e = null) {
+  eventOff({ el, force = false, objFilter } = {}, e) {
     const self = this
     const options = self.options
     // disabled

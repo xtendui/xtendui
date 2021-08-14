@@ -154,7 +154,7 @@ class Scrollto {
    * @param {Node|HTMLElement|EventTarget|Window} params.tr target
    * @param {Event} e
    */
-  eventScrollto({ el, tr } = {}, e = null) {
+  eventScrollto({ el, tr } = {}, e) {
     const self = this
     const options = self.options
     // element
@@ -216,7 +216,7 @@ class Scrollto {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Change element
    * @param {Event} e
    */
-  eventChange({ hashchange = false, el = null }, e = null) {
+  eventChange({ hashchange = false, el }, e) {
     const self = this
     const options = self.options
     // hashchange

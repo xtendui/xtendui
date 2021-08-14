@@ -140,7 +140,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.added
    * @param {Object} params.obj
    */
-  Xt.mountCheck = ({ added = document.documentElement, obj = null } = {}) => {
+  Xt.mountCheck = ({ added = document.documentElement, obj } = {}) => {
     const arr = obj ? [obj] : Xt.mountArr
     for (const obj of arr) {
       // ignore
@@ -734,7 +734,7 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.defer
    * @param {Boolean} params.async
    */
-  Xt.script = ({ url, callback = null, defer = true, async = true } = {}) => {
+  Xt.script = ({ url, callback, defer = true, async = true } = {}) => {
     if (!document.querySelector(`script[src="${url}"]`)) {
       const script = document.createElement('script')
       if (callback) {
@@ -769,7 +769,7 @@ if (typeof window !== 'undefined') {
    * @param {String} params.ns Namespace
    * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.frame = ({ el, ns = '', func = null } = {}) => {
+  Xt.frame = ({ el, ns = '', func } = {}) => {
     cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}Frame`))
     if (func) {
       // needs one raf
@@ -787,10 +787,10 @@ if (typeof window !== 'undefined') {
    * double requestAnimationFrame
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
-   * @param {Function} params.func Function to execute after transition or animation
    * @param {String} params.ns Namespace
+   * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.frameDouble = ({ el, func = null, ns = '' } = {}) => {
+  Xt.frameDouble = ({ el, ns = '', func } = {}) => {
     cancelAnimationFrame(Xt.dataStorage.get(el, `${ns}FrameDouble`))
     if (func) {
       // needs two raf or sometimes classes doesn't animate properly
@@ -819,7 +819,7 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.raf Use requestAnimationFrame
    * @param {Boolean} params.initial Instant animations with initial
    */
-  Xt.on = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
+  Xt.on = ({ el, ns = '', duration, raf = true, initial = false } = {}) => {
     Xt.animTimeout({ el, ns })
     el.classList.add('on')
     el.classList.remove('out')
@@ -861,7 +861,7 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.raf Use requestAnimationFrame
    * @param {Boolean} params.initial Instant animations with initial
    */
-  Xt.off = ({ el, ns = '', duration = null, raf = true, initial = false } = {}) => {
+  Xt.off = ({ el, ns = '', duration, raf = true, initial = false } = {}) => {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', false)
@@ -904,7 +904,7 @@ if (typeof window !== 'undefined') {
    * @param {String} params.actionCurrent Current action
    * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.animTimeout = ({ el, ns = '', duration = null, actionCurrent = null, func = null } = {}) => {
+  Xt.animTimeout = ({ el, ns = '', duration, actionCurrent, func } = {}) => {
     clearTimeout(Xt.dataStorage.get(el, `${ns}AnimTimeout`))
     if (func) {
       duration = Xt.animTime({ el, duration, actionCurrent }) ?? 0
@@ -923,7 +923,7 @@ if (typeof window !== 'undefined') {
    * @param {Number} params.duration Duration
    * @param {String} params.actionCurrent Current action
    */
-  Xt.animTime = ({ el, duration = null, actionCurrent = null } = {}) => {
+  Xt.animTime = ({ el, duration, actionCurrent } = {}) => {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-duration-${actionCurrent}`)) || el.getAttribute('data-xt-duration')
     if (custom) {
@@ -943,7 +943,7 @@ if (typeof window !== 'undefined') {
    * @param {Number} params.duration Duration
    * @param {String} params.actionCurrent Current action
    */
-  Xt.delayTime = ({ el, duration = null, actionCurrent = null } = {}) => {
+  Xt.delayTime = ({ el, duration, actionCurrent } = {}) => {
     const custom =
       (actionCurrent && el.getAttribute(`data-xt-delay-${actionCurrent}`)) || el.getAttribute('data-xt-delay')
     if (custom) {
@@ -1000,7 +1000,7 @@ if (typeof window !== 'undefined') {
    * @param {Number} params.duration Duration
    * @param {Function} params.func Function to execute after transition or animation
    */
-  Xt.eventDelay = ({ e, el, ns = '', duration = null, func = null } = {}) => {
+  Xt.eventDelay = ({ e, el, ns = '', duration, func } = {}) => {
     Xt.frame({ el, ns: `${ns}EventDelayFrame` })
     clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
     if (func) {
