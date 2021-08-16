@@ -1,7 +1,7 @@
 ---
 type: "Intro"
 title: "Intro"
-description: "Customizable components with an ecosystem of plugins."
+description: "Project overview and instructions to get stated."
 date: "2020-12-10"
 menu: true
 ---

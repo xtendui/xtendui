@@ -3,7 +3,7 @@ type: "Intro"
 category: "Other"
 parent: "Brand"
 title: "Brand"
-description: "Xtend UI brand assets for sharing."
+description: "Brand assets for sharing."
 ---
 
 Here are assets for sharing informations like in articles or other internet media.

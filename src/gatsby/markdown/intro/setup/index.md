@@ -3,7 +3,7 @@ type: "Intro"
 category: "Introduction"
 parent: "Setup"
 title: "Setup"
-description: "Installation instructions to get Xtend UI up and running."
+description: "Installation instructions."
 ---
 
 If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).

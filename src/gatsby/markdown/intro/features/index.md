@@ -3,7 +3,7 @@ type: "Intro"
 category: "Introduction"
 parent: "Features"
 title: "Features"
-description: "Xtend UI is full of advanced javascript features that makes your work faster and better."
+description: "Overview of the main features."
 date: "2005-10-10"
 ---
 

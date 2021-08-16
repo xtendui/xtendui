@@ -3,7 +3,7 @@ type: "Intro"
 category: "Introduction"
 parent: "Informations"
 title: "Informations"
-description: "General project informations and browsers support."
+description: "Project informations."
 ---
 
 <p></p>

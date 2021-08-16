@@ -278,9 +278,11 @@ export default function Page() {
                           to="/intro"
                           className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
                           <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Introduction
+                            Intro
                           </div>
-                          <p className="xt-p text-sm leading-snug opacity-50">Get started with Xtend UI.</p>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Project overview and instructions to get stated.
+                          </p>
                         </Link>
                       </div>
                       <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
