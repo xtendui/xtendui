@@ -1,8 +1,8 @@
 ---
 type: "Intro"
 category: "Introduction"
-parent: "Features"
-title: "Features"
+parent: "Main Features"
+title: "Main Features"
 description: "Overview of the main features."
 date: "2005-10-10"
 ---
@@ -100,8 +100,6 @@ They **support various layout**. See [form layout](/components/form/layout) for 
 - You can have **automatic loader on all forms without changing a single line of html**. See [form loader](/components/form/addon#loader) for more info.
 
 ## Design
-
-## @TODO reusable card and list
 
 #### Link
 
