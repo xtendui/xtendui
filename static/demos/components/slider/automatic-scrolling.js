@@ -146,7 +146,7 @@ const mountSliders = ({ ref }) => {
     // unmount
 
     unmounts.push(() => {
-      pause()
+      gsap.killTweensOf(self.dragger)
       removeEventListener('blur', pause)
       removeEventListener('focus', resume)
       self.destroy()

@@ -894,7 +894,7 @@ class Slider extends Xt.Toggle {
       if (self.drag.wrapDir !== direction || self.drag.wrapIndex !== index) {
         self.drag.wrapDir = direction
         self.drag.wrapIndex = index
-        self.eventMove({ index, direction, left, width, movingSpace: 0 })
+        self.eventMove({ index, direction, left, width, movingSpace: width })
       }
     }
   }
