@@ -1,7 +1,7 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Scroll"
+parent: "Toggle"
 title: "products-gallery-v1"
 date: "2020-08-14"
 demos: [

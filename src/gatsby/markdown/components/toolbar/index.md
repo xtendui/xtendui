@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Toolbar"
 title: "Toolbar"
-description: "Simple toolbar component as a subcomponent of listgroup."
+description: "Toolbar is a component to group up buttons, inputs and other content."
 tags: ['wip']
 ---
 

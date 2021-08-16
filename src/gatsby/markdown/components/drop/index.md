@@ -3,12 +3,12 @@ type: "Components"
 category: "Toggle"
 parent: "Drop"
 title: "Drop"
-description: "Nested navigation to show on user interaction, can contain lists and more complex graphics."
+description: "Drop is a toggle plugin to show complex content relative to an element node and positioned relative to it."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop` see [css customization](/components/css#customization). Check [xtendui/src/drop.css.js](https://github.com/xtendui/xtendui/blob/beta/src/drop.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.drop` see [css customization](/components/global/preset#customization). Check [xtendui/src/drop.css.js](https://github.com/xtendui/xtendui/blob/beta/src/drop.css.js) for default styles.
 
 ## Javascript
 

@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Type"
 parent: "Animation"
 title: "Animation"
-description: "Animation components and utilities with css or javascript transitions/animations."
+description: "Animations effects for all sort of components."
 ---

@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Component"
 parent: "Toggle"
 title: "Toggle"
-description: "Create advanced interactions with ease, has a comprehensive javascript api."
+description: "Toggle is a plugin for all interactions that toggle a class and respond to it."
 ---

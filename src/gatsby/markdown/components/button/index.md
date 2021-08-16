@@ -3,12 +3,12 @@ type: "Components"
 category: "Design"
 parent: "Button"
 title: "Button"
-description: "Simple and extensible button styles."
+description: "Button is a component to style buttons, can also be applied to other tags."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button` see [css customization](/components/css#customization). Check [xtendui/src/button.css.js](https://github.com/xtendui/xtendui/blob/beta/src/button.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.button` see [css customization](/components/global/preset#customization). Check [xtendui/src/button.css.js](https://github.com/xtendui/xtendui/blob/beta/src/button.css.js) for default styles.
 
 ## Usage
 

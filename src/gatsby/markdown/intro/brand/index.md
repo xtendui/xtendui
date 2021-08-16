@@ -1,5 +1,5 @@
 ---
-type: "Introduction"
+type: "Intro"
 category: "Other"
 parent: "Brand"
 title: "Brand"

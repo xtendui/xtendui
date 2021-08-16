@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Global"
-parent: "Css"
-title: "Css"
-description: "Xtend UI preset with default theme that extends Tailwind default theme."
+parent: "Global"
+title: "Preset"
+date: "2030-10-10"
 ---
 
 ## Theme
@@ -32,11 +32,11 @@ Xtend UI add **custom tailwind variants**.
 
 - added `group-active:` variant.
 
-> To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/components/toggle), [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [tooltip](/components/tooltip)).
+> To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/components/toggle), [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [tooltip](/components/tooltip)).
 
 ## Customization
 
-You can **customize preset** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI preset default.
+You can **customize components css** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI preset default.
 
 Check [xtendui/tailwind.preset.js](https://github.com/xtendui/xtendui/blob/beta/tailwind.preset.js) for default preset.
 

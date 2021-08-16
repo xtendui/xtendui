@@ -1,14 +1,10 @@
 ---
 type: "Components"
 category: "Global"
-parent: "Javascript"
+parent: "Global"
 title: "Javascript"
-description: "Global javascript utilities."
+date: "2030-05-05"
 ---
-
-## Styles
-
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.javascript` see [css customization](/components/css#customization). Check [xtendui/src/javascript.css.js](https://github.com/xtendui/xtendui/blob/beta/src/javascript.css.js) for default styles.
 
 ## Javascript
 
@@ -171,11 +167,11 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
 
 <demo>
-  <demoinline src="demos/components/javascript/animation">
+  <demoinline src="demos/components/global/animation">
   </demoinline>
-  <demoinline src="demos/components/javascript/animation-css">
+  <demoinline src="demos/components/global/animation-css">
   </demoinline>
-  <demoinline src="demos/components/javascript/animation-js">
+  <demoinline src="demos/components/global/animation-js">
   </demoinline>
 </demo>
 

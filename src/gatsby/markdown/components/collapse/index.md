@@ -3,7 +3,7 @@ type: "Components"
 category: "Toggle"
 parent: "Collapse"
 title: "Collapse"
-description: "Collapse horizontal and vertical on interactions."
+description: "Collapse is a toggle interaction to animate with start and end height or width."
 ---
 
 ## Usage

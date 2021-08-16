@@ -3,10 +3,8 @@ type: "Components"
 category: "Scroll"
 parent: "ScrollTo"
 title: "ScrollTo"
-description: "Automatically scroll to anchors or nodes with automatic activation on scroll."
+description: "ScrollTo is a plugin that manages interaction scroll with hash links or any node."
 ---
-
-ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**.
 
 ## Javascript
 
@@ -115,13 +113,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-scrollto'] = {
@@ -131,7 +129,7 @@ Xt.options['xt-scrollto'] = {
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/javascript#listeners).
+Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -158,7 +156,7 @@ Trigger events on **DOM node**.
 
 ## Properties
 
-Access properties by getting [self object](/components/javascript#xt-get).
+Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
@@ -188,7 +186,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting [self object](/components/javascript#xt-get).
+Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })

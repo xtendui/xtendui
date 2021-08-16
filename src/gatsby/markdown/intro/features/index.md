@@ -1,5 +1,5 @@
 ---
-type: "Introduction"
+type: "Intro"
 category: "Introduction"
 parent: "Features"
 title: "Features"
@@ -13,11 +13,11 @@ Interactions and animations are not easy at all. Here's why **Xtend UI is not th
 
 #### Javascript
 
-- Mount javascript code on **nodes when they are added to DOM** with **vanilla html and js** with [Xt.mount](/components/javascript#xt-mount).
+- Mount javascript code on **nodes when they are added to DOM** with **vanilla html and js** with [Xt.mount](/components/global/javascript#xt-mount).
 
-- Animate nodes with **tailwindcss variants** with [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off).
+- Animate nodes with **tailwindcss variants** with [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off).
 
-- **Customizzable default options for all components of the same type** with [Xt.options](/components/javascript#xt-options).
+- **Customizzable default options for all components of the same type** with [Xt.options](/components/global/javascript#xt-options).
 
 ## Toggle
 
@@ -75,13 +75,13 @@ See [fade](/components/scroll-trigger/fade), [parallax](/components/scroll-trigg
 
 #### ScrollTo
 
-ScrollTo is a standalone plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**, with automatic activation on scroll.
+ScrollTo is a plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**, with automatic activation on scroll.
 
 See [scrollto](/components/scroll-to) for more info.
 
 #### StickyFlow
 
-StickyFlow is a standalone plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
+StickyFlow is a plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
 
 See [stickyflow](/components/sticky-flow) for more info.
 
@@ -109,7 +109,7 @@ The **link component** has cssinjs customizzable styles for **automatic and cust
 
 #### Typography
 
-The **typography component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html tags**. See [typography content](/components/typography/content) for more info.
+The **typography component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html content tags**. See [typography content](/components/typography/content) for more info.
 
 #### Addon
 

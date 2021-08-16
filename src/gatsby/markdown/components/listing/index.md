@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Listing"
 title: "Listing"
-description: "Listing markup component for category pages or simple product listing."
+description: "Listing is a component for category pages or simple listing."
 ---
 
 ## Usage

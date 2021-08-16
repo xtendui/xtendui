@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Breadcrumbs"
 title: "Breadcrumbs"
-description: "Examples of breadcrumbs, with all the basic functionality and more."
+description: "Breadcrumbs is a component for showing layered navigation states."
 tags: ['wip']
 ---
 

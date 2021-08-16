@@ -3,12 +3,12 @@ type: "Components"
 category: "Design"
 parent: "Separator"
 title: "Separator"
-description: "Separator to be used in text content"
+description: "Separator is a component to separate text content."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator` see [css customization](/components/css#customization). Check [xtendui/src/separator.css.js](https://github.com/xtendui/xtendui/blob/beta/src/separator.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.separator` see [css customization](/components/global/preset#customization). Check [xtendui/src/separator.css.js](https://github.com/xtendui/xtendui/blob/beta/src/separator.css.js) for default styles.
 
 ## Usage
 

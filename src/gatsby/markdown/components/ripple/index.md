@@ -3,14 +3,12 @@ type: "Components"
 category: "Animation"
 parent: "Ripple"
 title: "Ripple"
-description: "Material ripple effect on user interaction."
+description: "Ripple is a plugin that achieve Material ripple animation."
 ---
-
-Ripple is a standalone plugin that manages **ripple animation**.
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/css#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/beta/src/ripple.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/global/preset#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/beta/src/ripple.css.js) for default styles.
 
 ## Javascript
 
@@ -57,13 +55,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-ripple'] = {
@@ -73,7 +71,7 @@ Xt.options['xt-ripple'] = {
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/javascript#listeners).
+Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -89,7 +87,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Properties
 
-Access properties by getting [self object](/components/javascript#xt-get).
+Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') })
@@ -111,7 +109,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting [self object](/components/javascript#xt-get).
+Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') })

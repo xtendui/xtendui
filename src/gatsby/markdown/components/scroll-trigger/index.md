@@ -3,16 +3,16 @@ type: "Components"
 category: "Scroll"
 parent: "ScrollTrigger"
 title: "ScrollTrigger"
-description: "ScrollTrigger interactions for all sort of interaction on page scroll."
+description: "ScrollTrigger component contains interactions for all sort of interaction on page scroll."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [css customization](/components/css#customization). Check [xtendui/src/scrolltrigger.css.js](https://github.com/xtendui/xtendui/blob/beta/src/scrolltrigger.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [css customization](/components/global/preset#customization). Check [xtendui/src/scrolltrigger.css.js](https://github.com/xtendui/xtendui/blob/beta/src/scrolltrigger.css.js) for default styles.
 
 ## Javascript
 
-This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/introduction/setup#javascript-gsap) to **install and use gsap**.
+This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/intro/setup#javascript-gsap) to **install and use gsap**.
 
 ## Usage
 
@@ -51,7 +51,7 @@ addEventListener('touchstart', stopScrolling)
 addEventListener('wheel', stopScrolling)
 ```
 
-- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
+- If you have strange behaviours on resize and **ScrollTrigger seems not to refresh**, disable ScrollTrigger resize in `autoRefreshEvents` and refresh instead with [Xt.eventDelay](/components/global/javascript#xt-eventdelay) (`Xt.eventDelay` also fixes resize on status bar show/hide on mobile devices).
 
 Just need this code one time in the project.
 

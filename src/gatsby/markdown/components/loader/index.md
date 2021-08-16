@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Loader"
 title: "Loader"
-description: "Plug and play visual loaders, can easily integrate with javascript."
+description: "Loader is a component to create animated loaders."
 ---
 
 ## Usage

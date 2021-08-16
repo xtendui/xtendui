@@ -56,7 +56,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Customization
 
-You can [customize preset or theme](https://xtendui.com/components/css#customization).
+You can [customize components css](https://xtendui.com/components/global/preset#customization).
 
 ## Javascript
 
@@ -87,7 +87,7 @@ Then in the root of your project set up polyfills with [babel.config.js](https:/
 
 ## Boilerplate
 
-Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles), [layout global styles](https://xtendui.com/components/layout#global-styles), [typography global styles](https://xtendui.com/components/typography#global-styles).
+Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles), [layout global styles](https://xtendui.com/components/global#global-styles), [typography global styles](https://xtendui.com/components/typography#global-styles).
 
 Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
 

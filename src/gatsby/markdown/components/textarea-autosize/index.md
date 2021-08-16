@@ -3,10 +3,8 @@ type: "Components"
 category: "Form"
 parent: "TextareaAutosize"
 title: "TextareaAutosize"
-description: "Textarea with dynamic height depending on content."
+description: "TextareaAutosize is a plugin that manages automatic size on textarea."
 ---
-
-TextareaAutosize is a standalone plugin that manages **automatic size on textarea**.
 
 ## Javascript
 
@@ -27,7 +25,7 @@ You can customize `min-height` and `max-height` of the textarea.
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
@@ -47,7 +45,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/javascript#listeners).
+Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -61,7 +59,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Properties
 
-Access properties by getting [self object](/components/javascript#xt-get).
+Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
@@ -82,7 +80,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting [self object](/components/javascript#xt-get).
+Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })

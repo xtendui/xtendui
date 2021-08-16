@@ -1,7 +1,7 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Scroll"
+parent: "ScrollTrigger"
 title: "blocks-featured-v1"
 date: "2020-02-27"
 demos: [

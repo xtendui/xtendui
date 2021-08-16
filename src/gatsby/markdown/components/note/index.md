@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Note"
 title: "Note"
-description: "Small cards to display notes."
+description: "Note is a component to display small messages."
 tags: ['wip']
 ---
 

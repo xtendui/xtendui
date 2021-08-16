@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://xtendui.com/introduction">Intro</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
+  <a href="https://xtendui.com/intro">Intro</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
   <a href="https://github.com/xtendui/xtendui/blob/beta/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
@@ -38,7 +38,7 @@ Xtend UI is a powerfull library to create advanced interfaces with custom tailwi
 
 ## Setup
 
-For a complete css and js setup guide visit [online setup page](https://xtendui.com/introduction/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/beta/SETUP.md).
+For a complete css and js setup guide visit [online setup page](https://xtendui.com/intro/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/beta/SETUP.md).
 
 ## Contributing
 

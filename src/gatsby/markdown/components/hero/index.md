@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Hero"
 title: "Hero"
-description: "Hero markup component for pages introductions or banners."
+description: "Hero is a component to style complex boxed content."
 ---
 
 ## Usage

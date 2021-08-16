@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Table"
 title: "Table"
-description: "Base styles for all tables overridable with tailwind classes."
+description: "Table is a component with basic styles for tables."
 ---
 
 ## Usage

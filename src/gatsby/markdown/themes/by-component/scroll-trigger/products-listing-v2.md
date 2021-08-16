@@ -1,7 +1,7 @@
 ---
 type: "Themes"
 category: "By Component"
-parent: "Scroll"
+parent: "ScrollTrigger"
 title: "products-listing-v2"
 date: "2020-06-10"
 demos: [

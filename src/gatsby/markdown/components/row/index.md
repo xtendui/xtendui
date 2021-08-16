@@ -3,12 +3,12 @@ type: "Components"
 category: "Design"
 parent: "Row"
 title: "Row"
-description: "Flex component to space columns with paddings, also spaces vertically."
+description: "Row is a component to space any element with paddings, also spaces vertically."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [css customization](/components/css#customization). Check [xtendui/src/row.css.js](https://github.com/xtendui/xtendui/blob/beta/src/row.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [css customization](/components/global/preset#customization). Check [xtendui/src/row.css.js](https://github.com/xtendui/xtendui/blob/beta/src/row.css.js) for default styles.
 
 ## Usage
 

@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "ListGroup"
 title: "ListGroup"
-description: "List subcomponent to group up buttons, inputs and other content."
+description: "ListGroup is a component to group up buttons, inputs and other content."
 ---
 
 ## Usage

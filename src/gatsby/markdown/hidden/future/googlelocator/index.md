@@ -3,10 +3,8 @@ type: "Hidden"
 category: "Hidden"
 parent: "Future"
 title: "GoogleLocator"
-description: "Plug and play a google maps locator, with all the basic functionality and more."
+description: "GoogleLocator is a plugin that manages google places and maps and markers."
 ---
-
-GoogleLocator is a standalone plugin that manages **google places and maps and markers**.
 
 ## Javascript
 
@@ -23,7 +21,7 @@ Search for "New York" to see it in action.
 > Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/layout/googlelocator">
+  <div class="gatsby_demo_item" data-iframe="demos/components/global/googlelocator">
   </div>
 </demo>
 
@@ -100,13 +98,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/javascript#xt-get).
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') })
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-googlelocator'] = {
@@ -116,7 +114,7 @@ Xt.options['xt-googlelocator'] = {
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/javascript#listeners).
+Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -131,7 +129,7 @@ Listen to events, for listeners use [this guideline](/components/javascript#list
 
 ## Properties
 
-Access properties by getting [self object](/components/javascript#xt-get).
+Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-googlelocator') })
@@ -163,7 +161,7 @@ const container = self.container
 
 ## Methods
 
-Call methods by getting [self object](/components/javascript#xt-get).
+Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
 let self = Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') })

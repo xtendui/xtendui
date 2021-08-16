@@ -3,7 +3,7 @@ type: "Components"
 category: "Design"
 parent: "Badge"
 title: "Badge"
-description: "Component for showing short and relevant tags."
+description: "Badge is a component for showing short and relevant tags."
 tags: ['wip']
 ---
 

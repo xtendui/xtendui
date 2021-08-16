@@ -3,12 +3,12 @@ type: "Components"
 category: "Toggle"
 parent: "Tooltip"
 title: "Tooltip"
-description: "Informations or elements to show on user interaction, can contain simple text and more complex graphics."
+description: "Tooltip is a toggle plugin to show simple content relative to an element node and positioned relative to it."
 ---
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [css customization](/components/css#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/beta/src/tooltip.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [css customization](/components/global/preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/beta/src/tooltip.css.js) for default styles.
 
 ## Javascript
 

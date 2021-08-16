@@ -1,6 +1,6 @@
 ---
-type: "Introduction"
-category: "Introduction"
+type: "Intro"
+category: "Other"
 parent: "Usability"
 title: "Usability"
 description: "@TODO"

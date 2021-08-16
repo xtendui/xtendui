@@ -12,7 +12,7 @@ Check out [tooltip's themes](/themes/tooltip) for **advanced animations**.
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
 
-> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -27,7 +27,7 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 > When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/javascript#xt-options).
+You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-tooltip'] = {
