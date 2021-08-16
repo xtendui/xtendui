@@ -57,7 +57,7 @@ The component automatically disable and apply classes to `drag.dragger` when the
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `nooverflow:String|false`                          | `'transform-none justify-center'`        | Classes applied to `drag.dragger` when the slides do not overflow the dragger           |
+| Option                  | `nooverflow:String\|false`                          | `'transform-none justify-center'`        | Classes applied to `drag.dragger` when the slides do not overflow the dragger           |
 
 </div>
 
@@ -118,7 +118,7 @@ It's better to keep the start value like [the css one](https://github.com/xtendu
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+| Option                  | `zIndex:Object\|false`                 | `{ targets: { start: 200, factor: -1 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 
 </div>
 

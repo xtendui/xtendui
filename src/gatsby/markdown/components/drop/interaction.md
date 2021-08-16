@@ -109,8 +109,8 @@ You can specify **on** and **off** events for the interactions.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String|false`                              | `'click'`                     | Event to **listen for activation**           |
-| Option                  | `off:String|false`                             | `'click'`                       | Event to **listen for deactivation**          |
+| Option                  | `on:String\|false`                              | `'click'`                     | Event to **listen for activation**           |
+| Option                  | `off:String\|false`                             | `'click'`                       | Event to **listen for deactivation**          |
 
 </div>
 
@@ -165,7 +165,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `hash:String|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
+| Option                  | `hash:String\|false`                          | `[data-xt-hash]`        | Link activation in location hash using elements and targets attribute `hash` value            |
 
 </div>
 

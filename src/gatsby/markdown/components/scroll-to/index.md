@@ -44,7 +44,7 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `scrollto:Boolean|Query|String`                          | `false`        | On activation trigger [scrollto](/components/scroll-to) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
+| Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/components/scroll-to) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
 
 </div>
 
@@ -69,7 +69,7 @@ Here are the main **javascript options**.
 | Option                    | `anchors:Array`                          | `[href*="{hash}"]`        | Query for hash links where `{hash}` is the hash part of the link            |
 | Option                    | `scrollers:Query`                          | `'.xt-overlay:not([data-xt-overlay-disabled])'`        | Query for scroll nodes besides document (ordered parent > child)             |
 | Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |
-| Option                    | `events:String|false`                          | `'scroll off.xt.overlay'`        | Events of `self.scrollers` that triggers activation              |
+| Option                    | `events:String\|false`                          | `'scroll off.xt.overlay'`        | Events of `self.scrollers` that triggers activation              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
 | Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` or `[data-xt-scrollto-hash="false"]` on **each link**             |

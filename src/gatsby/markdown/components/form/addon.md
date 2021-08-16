@@ -28,7 +28,7 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Variable                  | `Xt.formScrollWindowFactor:Number|false`              | `0.2`        | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
+| Variable                  | `Xt.formScrollWindowFactor:Number\|false`              | `0.2`        | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
 
 </div>
 

@@ -31,7 +31,7 @@ Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to ena
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `aria:Object|false`                          | `Object`        | Inject aria attributes            |
+| Option                  | `aria:Object\|false`                          | `Object`        | Inject aria attributes            |
 | Option                  | `aria.activation:Boolean`                          | `true`        | Inject aria selected, expanded and live attributes            |
 | Option                  | `aria.role:Boolean`                          | `true`        | Inject aria role attributes            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject aria controls attributes            |

@@ -98,7 +98,7 @@ It's better to keep the start value like [the css one](https://github.com/xtendu
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `zIndex:Object|false`                 | `{ targets: { start: 5000, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
+| Option                  | `zIndex:Object\|false`                 | `{ targets: { start: 5000, factor: 0 } }`     | Set `z-index` on activation, can be `elements`, `targets`, `elementsInner`, `targetsInner`          |
 
 </div>
 

@@ -16,8 +16,8 @@ A **sticky** can be achieved by assigning **ScrollTrigger** with `pin: true` and
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `pin:Boolean|String|Element`                          | `false`        | **Pin the trigger** when scrolling           |
-| Option                  | `pinSpacing:Boolean|String`                          | `true`        | Add **distance spacing** for the pinned element            |
+| Option                  | `pin:Boolean\|String\|Element`                          | `false`        | **Pin the trigger** when scrolling           |
+| Option                  | `pinSpacing:Boolean\|String`                          | `true`        | Add **distance spacing** for the pinned element            |
 
 </div>
 
@@ -43,7 +43,7 @@ You can **toggle classes on activation** using `toggleClass: '<className>'`.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `toggleClass:String|Object`                          | `null`        | Toggle class with ScrollTrigger activation/deactivation             |
+| Option                  | `toggleClass:String\|Object`                          | `null`        | Toggle class with ScrollTrigger activation/deactivation             |
 
 </div>
 
@@ -67,10 +67,10 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `trigger:String|Element`                          | `undefined`        | Scroll trigger           |
-| Option                  | `start:String|Number|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
-| Option                  | `endTrigger:String|Element`                          | `false`        | End trigger           |
-| Option                  | `end:String|Number|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
+| Option                  | `trigger:String\|Element`                          | `undefined`        | Scroll trigger           |
+| Option                  | `start:String\|Number\|Function`                          | `'top bottom'`        | Start position: first argument is for trigger second argument is for scroller            |
+| Option                  | `endTrigger:String\|Element`                          | `false`        | End trigger           |
+| Option                  | `end:String\|Number\|Function`                          | `'bottom top'`        | End position: first argument is for endTrigger second argument is for scroller            |
 
 </div>
 

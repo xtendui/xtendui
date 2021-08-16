@@ -51,9 +51,9 @@ You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `duration:Function|Number|String`                          | `false`        | Activation and Deactivation duration            |
-| Option                  | `durationIn:Function|Number|String`                          | `false`        | Activation duration            |
-| Option                  | `durationOut:Function|Number|String`                          | `false`        | Deactivation duration            |
+| Option                  | `duration:Function\|Number\|String`                          | `false`        | Activation and Deactivation duration            |
+| Option                  | `durationIn:Function\|Number\|String`                          | `false`        | Activation duration            |
+| Option                  | `durationOut:Function\|Number\|String`                          | `false`        | Deactivation duration            |
 
 </div>
 
@@ -69,9 +69,9 @@ You can also set duration to two `requestAnimationFrame` with the string `raf`.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `delay:Function|Number|String`                          | `false`        | Activation and Deactivation delay            |
-| Option                  | `delayIn:Function|Number|String`                          | `false`        | Activation delay            |
-| Option                  | `delayOut:Function|Number|String`                          | `false`        | Deactivation delay            |
+| Option                  | `delay:Function\|Number\|String`                          | `false`        | Activation and Deactivation delay            |
+| Option                  | `delayIn:Function\|Number\|String`                          | `false`        | Activation delay            |
+| Option                  | `delayOut:Function\|Number\|String`                          | `false`        | Deactivation delay            |
 
 </div>
 
@@ -88,7 +88,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `queue:Object|false`                 | `false`     | Queue activations e.g.: `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`          |
+| Option                  | `queue:Object\|false`                 | `false`     | Queue activations e.g.: `{ elements: false, targets: true, elementsInner: false, targetsInner: true }`          |
 
 </div>
 

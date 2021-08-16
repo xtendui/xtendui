@@ -56,7 +56,7 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `wrap:Boolean|Number`                          | `false`        | Wrap slides on start and end, if number activates only after checks available space based on available `drag.dragger` width factor from `0` to `1`             |
+| Option                  | `wrap:Boolean\|Number`                          | `false`        | Wrap slides on start and end, if number activates only after checks available space based on available `drag.dragger` width factor from `0` to `1`             |
 
 </div>
 

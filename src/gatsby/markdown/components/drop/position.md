@@ -48,7 +48,7 @@ To **change the relative position of targets** you can specify a query inside el
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `positionInner:Query|false`                          | `false`        | Query **inside element** to use as relative for target position only if found            |----------------------------- |
+| Option                  | `positionInner:Query\|false`                          | `false`        | Query **inside element** to use as relative for target position only if found            |----------------------------- |
 
 </div>
 
@@ -68,7 +68,7 @@ Here are the main spacing javascript options.
 | Option                  | `strategy:String`                          | `'absolute'`        | Position strategy, can be `'absolute'` or `'fixed'`            |----------------------------- |
 | Option                  | `spaceOverflow:Number`                          | `15`        | Space to contain the drop            |
 | Option                  | `spaceFlip:Number`                          | `15`        | Space to flip the drop            |
-| Option                  | `spaceArrow:Number|false`                          | `false`        | Space for arrow, if false automatic            |
+| Option                  | `spaceArrow:Number\|false`                          | `false`        | Space for arrow, if false automatic            |
 
 </div>
 
@@ -80,7 +80,7 @@ If you need to get the **popperjs instance** use `Xt.dataStorage.get(target, 'Po
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `popperjs:Object|false`                          | `true`        | Options for popperjs            |
+| Option                  | `popperjs:Object\|false`                          | `true`        | Options for popperjs            |
 
 </div>
 

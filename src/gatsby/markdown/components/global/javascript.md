@@ -43,7 +43,7 @@ You can return a function to execute when **the Node is removed from the DOM**.
 | Option                    | `matches:Query`                          | `null`        | Query to match for mount            |
 | Option                    | `root:Node`                          | `null`        | Only if added nodes are inside a root node            |
 | Option                    | `mount:Function`                          | `null`        | Function to execute on mount, returned function will be executed on unmount             |
-| Option                    | `ignore:Query|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
+| Option                    | `ignore:Query\|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
 
 </div>
 
@@ -155,8 +155,8 @@ You can **toggle activations with javascript**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Activate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
-| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Dectivate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
+| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Activate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
+| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Dectivate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
 
 </div>
 
@@ -265,10 +265,10 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, ns:String = '', duration:Number|null = null, func:Function|null = null }`       | event delay wrapper                  |
-| Variable                  | `Xt.scrollDelay:Number|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
-| Variable                  | `Xt.resizeDelay:Number|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
-| Variable                  | `Xt.medialoadedDelay:Number|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
+| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, ns:String = '', duration:Number\|null = null, func:Function\|null = null }`       | event delay wrapper                  |
+| Variable                  | `Xt.scrollDelay:Number\|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
+| Variable                  | `Xt.resizeDelay:Number\|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
+| Variable                  | `Xt.medialoadedDelay:Number\|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
 
 </div>
 
