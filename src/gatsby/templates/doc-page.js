@@ -20,10 +20,6 @@ class Template extends React.Component {
     const { data } = this.props
     const seo = {}
     seo.title = data.post.frontmatter.title
-    seo.title = seo.title
-      .split(/[\s-]+/)
-      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-      .join(' ')
     seo.title =
       data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title
         ? `${data.post.frontmatter.parent} ${seo.title}`
@@ -64,10 +60,7 @@ class Template extends React.Component {
                                 data-gatsby-listing-toggle>
                                 <div>
                                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                                    {adiacent.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
+                                    {adiacent.frontmatter.title}
                                   </div>
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
@@ -109,18 +102,12 @@ class Template extends React.Component {
                                 to={markdownSlug(adiacent)}
                                 className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
                                 <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                                  {adiacent.frontmatter.title
-                                    .split(/[\s-]+/)
-                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                    .join(' ')}
+                                  {adiacent.frontmatter.title}
                                 </div>
                                 <p className="xt-p text-sm leading-snug opacity-50">
                                   {adiacent.frontmatter.description
                                     ? adiacent.frontmatter.description
-                                    : `${adiacent.frontmatter.parent}'s ${adiacent.frontmatter.title
-                                        .split(/[\s-]+/)
-                                        .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                        .join(' ')}`}
+                                    : `${adiacent.frontmatter.parent}'s ${adiacent.frontmatter.title}`}
                                 </p>
                               </Link>
                             </div>

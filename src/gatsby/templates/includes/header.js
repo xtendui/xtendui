@@ -250,14 +250,7 @@ export default function Header({ page }) {
                                                           }`}>
                                                           <div className="gatsby_button-site_article_sidebar_inner">
                                                             <div className="gatsby_button-site_article_sidebar_text">
-                                                              {adiacent.frontmatter.title
-                                                                .split(/[\s-]+/)
-                                                                .map(
-                                                                  item =>
-                                                                    item.charAt(0).toUpperCase() +
-                                                                    item.slice(1).toLowerCase()
-                                                                )
-                                                                .join(' ')}
+                                                              {adiacent.frontmatter.title}
                                                             </div>
                                                           </div>
                                                         </Link>
