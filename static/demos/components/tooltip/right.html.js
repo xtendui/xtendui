@@ -4,53 +4,122 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ position: 'right' }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-element
-        >
-          right<br />...
-        </button>
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right<br />...
+          </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
-          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
         </div>
       </div>
 
       <div data-xt-tooltip="{ position: 'right-start' }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-element
-        >
-          right start<br />...
-        </button>
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right start<br />...
+          </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
-          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
         </div>
       </div>
 
       <div data-xt-tooltip="{ position: 'right-end' }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
-          data-xt-tooltip-element
-        >
-          right end<br />...
-        </button>
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right end<br />...
+          </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
-          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+        </div>
+      </div>
+
+      <div data-xt-tooltip="{ position: 'right', inset: true }">
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right inset<br />...
+          </button>
+
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-tooltip="{ position: 'right-start', inset: true }">
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right start inset<br />...
+          </button>
+
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-tooltip="{ position: 'right-end', inset: true }">
+        <div data-xt-tooltip-element>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
+            right end inset<br />...
+          </button>
+
+          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+            <div
+              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            >
+              Lorem ipsum dolor sit amet
+            </div>
+            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+          </div>
         </div>
       </div>
     </div>

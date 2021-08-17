@@ -118,6 +118,12 @@ module.exports = {
     '.xt-collapse-reset': {
       overflow: 'visible !important',
     },
+    '[data-popper-inset]': {
+      padding: '0 !important',
+      '> .xt-arrow': {
+        display: 'none !important',
+      },
+    },
     '[data-popper-placement^="top"]': {
       paddingTop: '0 !important',
       paddingLeft: '0 !important',

@@ -107,6 +107,27 @@ class Tooltip extends Xt.Toggle {
               : {},
           ],
         }
+        // inset
+        if (options.inset) {
+          const inset = {
+            name: 'offset',
+            options: {
+              offset: ({ placement, popper }) => {
+                if (placement.search('left') !== -1 || placement.search('right') !== -1) {
+                  return [0, -popper.width]
+                }
+                if (placement.search('top') !== -1 || placement.search('bottom') !== -1) {
+                  return [0, -popper.height]
+                }
+                return []
+              },
+            },
+          }
+          popperOptionsDefault.modifiers.push(inset)
+          el.setAttribute('data-popper-inset', 'true')
+        } else {
+          el.removeAttribute('data-popper-inset', 'true')
+        }
         // fix merge array popperjs options modifiers
         let filteredOptions = options.popperjs
         if (options.popperjs.modifiers) {

@@ -17,6 +17,7 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `position:String`                          | `top`        | Position option for popperjs, can be `bottom`, `bottom-start`, `bottom-end`, `top`, `top-start`, `top-end`, `left`, `left-start`, `left-end`, `right`, `right-start`, `right-end`, `auto`, `auto-start`, `auto-end`.           |
+| Option                  | `inset:Boolean`                          | `false`        | Inset position inside           |
 
 </div>
 
