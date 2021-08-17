@@ -21,7 +21,7 @@ Interactions and animations are not easy at all. Here's why **Xtend UI is not th
 
 ## Toggle
 
-Toggle components **share the same base code and features**, they are used for **all interactions that toggle a class and respond to it**, they are [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [toggle](/components/toggle), [tooltip](/components/tooltip), and more to come.
+Toggle components **share the same base code and features**, they are used for **all interactions that toggle a class and respond to it**, they are [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [toggle](/components/toggle), [tooltip](/components/tooltip).
 
 #### Interaction
 
@@ -112,3 +112,7 @@ The **typography component** has cssinjs customizzable styles for **automatic an
 #### Addon
 
 - The **media component** has some useful addon **iframe lazy loading** and **html5 video tag media matches**. See [media addon](/components/media/addon) for more info.
+
+## Themes
+
+Check out [themes](/themes) for **advanced demos**.

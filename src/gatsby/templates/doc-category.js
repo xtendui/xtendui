@@ -9,6 +9,8 @@ import Layout from 'src/gatsby/templates/layout'
 import Demo from 'src/gatsby/templates/demo/demo'
 import DemoInline from 'src/gatsby/templates/demo/demo-inline'
 
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: { demo: Demo, demoinline: DemoInline },
@@ -52,7 +54,7 @@ export default class Template extends React.Component {
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title}
                             </div>
@@ -63,7 +65,7 @@ export default class Template extends React.Component {
                         <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
                           <Link
                             to={markdownSlug(post)}
-                            className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title}
                             </div>

@@ -1,5 +1,7 @@
 export const classes = {
   // special
+  gatsbyFloat: () =>
+    'transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   buttonToggle: () =>
     'rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition',
   cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
@@ -52,15 +54,15 @@ export const classes = {
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFull: () => 'text-black xt-links-default',
   cardDefaultInteractive: () =>
-    'text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
+    'text-black xt-links-default transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   cardDefaultFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200',
+    'text-black xt-links-default transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200',
   cardDefault: () => 'text-black xt-links-default bg-gray-100',
   cardPrimaryFull: () => 'text-primary-600',
   cardPrimaryInteractive: () =>
-    'text-white xt-links-inverse transform transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
+    'text-white xt-links-inverse transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   cardPrimaryFullInteractive: () =>
-    'text-black xt-links-default transform transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
+    'text-black xt-links-default transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   cardWhite: () => 'text-black xt-links-default bg-white',
   // components

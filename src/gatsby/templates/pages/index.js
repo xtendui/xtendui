@@ -53,15 +53,17 @@ export default function Page() {
             <main className="gatsby_home-main">
               <div className="gatsby_home-main_head xt-sticky xt-sticky-nozindex my-28 text-center">
                 <div className="container">
-                  <h3 className="mt-10 mb-4 xt-my-auto font-black text-3xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                    Complex UI made easy with simplicity and total freedom
-                  </h3>
-                  <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl gatsby_home-main_scroll">
-                    <span className="opacity-50">
-                      Xtend UI is a powerfull library of tailwind components enhanced by vanilla js. It helps you build
-                      interfaces with advanced interactions and animations.
-                    </span>
-                  </h1>
+                  <div className="gatsby_home-main_scroll">
+                    <h3 className="mt-10 mb-4 xt-my-auto font-black text-3xl md:text-5xl lg:text-6xl">
+                      Complex UI made easy with simplicity and total freedom
+                    </h3>
+                    <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
+                      <span className="opacity-50">
+                        Xtend UI is a powerfull library of tailwind components enhanced by vanilla js. It helps you
+                        build interfaces with advanced interactions and animations.
+                      </span>
+                    </h1>
+                  </div>
                   <div className="gatsby_home-main_social gatsby_home-main_scroll xt-list justify-center mt-6">
                     <div data-xt-tooltip="{ position: 'top', duration: 300 }">
                       <a
@@ -76,7 +78,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -94,7 +96,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -112,7 +114,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transform transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -122,72 +124,76 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                    Philosophy
+                  <div className="gatsby_home-main_scroll">
+                    <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                      Philosophy
+                    </div>
                   </div>
-                  <div className="xt-row xt-row-3.5 md:xt-row-10">
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Framework agnostic
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          Use it on vanilla html or in any popular javascript framework.
-                        </p>
+                  <div className="my-14 xt-my-auto">
+                    <div className="xt-row xt-row-3.5 md:xt-row-10">
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            Framework agnostic
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Use it on vanilla html or in any popular javascript framework.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Custom Design
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          Customizzable components that supports a wide range of designs.
-                        </p>
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            Custom Design
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Customizzable components that supports a wide range of designs.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Complex Interaction
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          Complex interaction logic managed internally by components.
-                        </p>
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            Complex Interaction
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Complex interaction logic managed internally by components.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          User Experience
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          Support for advanced interaction and animations with simple usage.
-                        </p>
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            User Experience
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Support for advanced interaction and animations with simple usage.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          Usability
-                          <div
-                            className={`inline-block text-black text-3xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
-                            WIP
-                          </div>
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          A keen eye on usability. Aria injected automaticaly with js.
-                        </p>
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            Usability
+                            <div
+                              className={`inline-block text-black text-3xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
+                              WIP
+                            </div>
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            A keen eye on usability. Aria injected automaticaly with js.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
-                      <div className="text-left text-sm">
-                        <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                          UX Themes
-                        </h2>
-                        <p className="xt-p text-sm leading-snug opacity-50">
-                          Themes focused on user experience instead of design.
-                        </p>
+                      <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
+                        <div className="text-left text-sm">
+                          <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                            UX Themes
+                          </h2>
+                          <p className="xt-p text-sm leading-snug opacity-50">
+                            Themes focused on user experience instead of design.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -195,71 +201,92 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                    Built with
+                  <div className="gatsby_home-main_scroll">
+                    <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                      Features
+                    </div>
+                    <p className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl opacity-50">
+                      For an overview of the main features visit
+                    </p>
+                    <Link
+                      to="/intro/main-features"
+                      className={`xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}`}>
+                      Main Features
+                    </Link>
                   </div>
-                  <div className="xt-row xt-row-12">
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
-                            Tailwind Css
-                          </h3>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              <strong>Tailwind components</strong> class based with flexible design.
-                            </li>
-                            <li>
-                              <strong>Tailwind custom variants</strong> for simple class based activations and
-                              animations.
-                            </li>
-                          </ul>
+                </div>
+              </div>
+              <div className="my-28 text-center">
+                <div className="container">
+                  <div className="gatsby_home-main_scroll">
+                    <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                      Built with
+                    </div>
+                  </div>
+                  <div className="my-14 xt-my-auto">
+                    <div className="xt-row xt-row-12">
+                      <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                        <div className="xt-row xt-row-4">
+                          <div className="w-full md:w-6/12 lg:w-5/12">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                              Tailwind Css
+                            </h3>
+                          </div>
+                          <div className="w-full md:w-6/12 lg:w-7/12">
+                            <ul>
+                              <li>
+                                <strong>Tailwind components</strong> class based with flexible design.
+                              </li>
+                              <li>
+                                <strong>Tailwind custom variants</strong> for simple class based activations and
+                                animations.
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
-                            Vanilla JS
-                          </h3>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              A system to mount components with <strong>mutation observer queries</strong>, to structure
-                              your javascript code better.
-                            </li>
-                            <li>
-                              Ecosystem of <strong>vanilla javascript plugins</strong> that does the hard things for
-                              you.
-                            </li>
-                            <li>
-                              <strong>Strong API</strong> with customizzable behaviours.
-                            </li>
-                          </ul>
+                      <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                        <div className="xt-row xt-row-4">
+                          <div className="w-full md:w-6/12 lg:w-5/12">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                              Vanilla JS
+                            </h3>
+                          </div>
+                          <div className="w-full md:w-6/12 lg:w-7/12">
+                            <ul>
+                              <li>
+                                A system to mount components with <strong>mutation observer queries</strong>, to
+                                structure your javascript code better.
+                              </li>
+                              <li>
+                                Ecosystem of <strong>vanilla javascript plugins</strong> that does the hard things for
+                                you.
+                              </li>
+                              <li>
+                                <strong>Strong API</strong> with customizzable behaviours.
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="gatsby_home-main_scroll inline-block w-full text-left">
-                      <div className="xt-row xt-row-4">
-                        <div className="w-full md:w-6/12 lg:w-5/12">
-                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
-                            Gsap
-                          </h3>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <ul>
-                            <li>
-                              <strong>Complex interaction from js components</strong> you only need to specify{' '}
-                              <strong>custom animations</strong>.
-                            </li>
-                            <li>
-                              <strong>Scroll, sticky and parallax animations</strong> withGsap ScrollTrigger.
-                            </li>
-                          </ul>
+                      <div className="gatsby_home-main_scroll inline-block w-full text-left">
+                        <div className="xt-row xt-row-4">
+                          <div className="w-full md:w-6/12 lg:w-5/12">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                              Gsap
+                            </h3>
+                          </div>
+                          <div className="w-full md:w-6/12 lg:w-7/12">
+                            <ul>
+                              <li>
+                                <strong>Complex interaction from js components</strong> you only need to specify{' '}
+                                <strong>custom animations</strong>.
+                              </li>
+                              <li>
+                                <strong>Scroll, sticky and parallax animations</strong> withGsap ScrollTrigger.
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -268,46 +295,72 @@ export default function Page() {
               </div>
               <div className="gatsby_home-main_actions my-28 text-center">
                 <div className="container">
-                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                    Start Now!
+                  <div className="gatsby_home-main_scroll">
+                    <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                      Start Now!
+                    </div>
                   </div>
-                  <div className="gatsby_listing-items">
-                    <div className="xt-row xt-row-stretch">
-                      <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                        <Link
-                          to="/intro"
-                          className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
-                          <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Intro
-                          </div>
-                          <p className="xt-p text-sm leading-snug opacity-50">
-                            Project overview and instructions to get stated.
-                          </p>
-                        </Link>
+                  <div className="mt-14 mb-10 xt-my-auto">
+                    <div className="gatsby_listing-items">
+                      <div className="xt-row flex-nowrap">
+                        <div className="w-6/12">
+                          <button
+                            type="button"
+                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md text-black leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            <span className="font-bold text-lg md:text-xl">Html</span>
+                            <span className="text-2xs md:text-xs opacity-50">Switch to Html</span>
+                          </button>
+                        </div>
+                        <div className="w-6/12">
+                          <button
+                            type="button"
+                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md text-black leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            <span className="font-bold text-lg md:text-xl">React</span>
+                            <span className="text-2xs md:text-xs opacity-50">Switch to React</span>
+                          </button>
+                        </div>
                       </div>
-                      <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                        <Link
-                          to="/components"
-                          className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
-                          <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Components
-                          </div>
-                          <p className="xt-p text-sm leading-snug opacity-50">
-                            Customizable components with an ecosystem of plugins.
-                          </p>
-                        </Link>
-                      </div>
-                      <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                        <Link
-                          to="/themes"
-                          className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transform transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-sm active:translate-y-0">
-                          <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                            Themes
-                          </div>
-                          <p className="xt-p text-sm leading-snug opacity-50">
-                            UX themes with advanced interactions and animations.
-                          </p>
-                        </Link>
+                    </div>
+                  </div>
+                  <div className="mb-14 mt-10 xt-my-auto">
+                    <div className="gatsby_listing-items">
+                      <div className="xt-row xt-row-stretch">
+                        <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
+                          <Link
+                            to="/intro"
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                              Intro
+                            </div>
+                            <p className="xt-p text-sm leading-snug opacity-50">
+                              Project overview and instructions to get stated.
+                            </p>
+                          </Link>
+                        </div>
+                        <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
+                          <Link
+                            to="/components"
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                              Components
+                            </div>
+                            <p className="xt-p text-sm leading-snug opacity-50">
+                              Customizable components with an ecosystem of plugins.
+                            </p>
+                          </Link>
+                        </div>
+                        <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
+                          <Link
+                            to="/themes"
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                              Themes
+                            </div>
+                            <p className="xt-p text-sm leading-snug opacity-50">
+                              UX themes with advanced interactions and animations.
+                            </p>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -315,26 +368,30 @@ export default function Page() {
               </div>
               <div className="my-28 text-center">
                 <div className="container">
-                  <div className="mt-10 mb-14 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl gatsby_home-main_scroll">
-                    Sponsors
+                  <div className="gatsby_home-main_scroll">
+                    <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                      Sponsors
+                    </div>
                   </div>
-                  <div className="xt-row xt-row-8 items-center justify-center">
-                    <div className="w-6/12 md:w-4/12 lg:w-3/12 gatsby_home-main_scroll">
-                      <a
-                        href="https://www.webgriffe.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Webgriffe"
-                        className="inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint">
-                        <img
-                          className="inline-block w-full"
-                          src={'/support/webgriffe.svg'}
-                          loading="eager"
-                          alt="Webgriffe"
-                          width="300"
-                          height="58"
-                        />
-                      </a>
+                  <div className="my-14 xt-my-auto">
+                    <div className="xt-row xt-row-8 items-center justify-center">
+                      <div className="w-6/12 md:w-4/12 lg:w-3/12 gatsby_home-main_scroll">
+                        <a
+                          href="https://www.webgriffe.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Webgriffe"
+                          className="inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint">
+                          <img
+                            className="inline-block w-full"
+                            src={'/support/webgriffe.svg'}
+                            loading="eager"
+                            alt="Webgriffe"
+                            width="300"
+                            height="58"
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

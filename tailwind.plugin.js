@@ -209,6 +209,18 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
+    addVariant('group-dir-before', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.dir-before .${e(`group-dir-before${separator}${className}`)}`
+      })
+    })
+
+    addVariant('group-dir-after', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.group.dir-after .${e(`group-dir-after${separator}${className}`)}`
+      })
+    })
+
     addVariant('group-off', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.group:not(.on):not(.in):not(.out) .${e(`group-off${separator}${className}`)}`
@@ -242,6 +254,18 @@ module.exports = plugin.withOptions(() => {
     addVariant('group-active', ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.group:active .${e(`group-active${separator}${className}`)}`
+      })
+    })
+
+    addVariant('dir-before', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`dir-before${separator}${className}`)}.dir-before`
+      })
+    })
+
+    addVariant('dir-after', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.${e(`dir-after${separator}${className}`)}.dir-after`
       })
     })
 

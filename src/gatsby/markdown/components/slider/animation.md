@@ -133,6 +133,15 @@ You can use also **javascript animations**, just use [drop api](/components/slid
   </demoinline>
 </demo>
 
+## Design Animation
+
+Use `.xt-design` when you want to **animate the design independently from the content**, use `relative` on parent element and on other elements on the same level of `.xt-design` for fixing z-index issues.
+
+<demo>
+  <demoinline src="demos/components/slider/animation-design">
+  </demoinline>
+</demo>
+
 ## Drag Position
 
 By default `mode: 'relative'` sliders has automatic transform position of `drag.dragger` and **needs to be animated with css transition**.

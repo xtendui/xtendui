@@ -1,9 +1,9 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const interactionDefault = () =>
-  '*** bg-gray-100 border-transparent border transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-sm on:bg-gray-300 on:translate-y-0 on:shadow-sm ***'
+  '*** bg-gray-100 border-transparent border transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
 const interactionPrimary = () =>
-  '*** bg-primary-500 border-transparent border transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-sm on:bg-primary-700 on:translate-y-0 on:shadow-sm ***'
+  '*** bg-primary-500 border-transparent border transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-md on:bg-primary-700 on:translate-y-0 on:shadow-md ***'
 const animDesign = () =>
   '*** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***'
 const animItem = () =>
