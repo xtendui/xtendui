@@ -8,7 +8,7 @@ description: "Group is a component to group up buttons, inputs and other content
 
 ## Usage
 
-Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
+Use `.inline-flex` and `.flex-auto` to expand it to **fill width**.
 
 > This component uses [list](/components/list) see documentation for more info.
 

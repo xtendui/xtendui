@@ -28,12 +28,12 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   </demoinline>
 </demo>
 
-## Nav
+## Group
 
-Use [nav component](/components/nav) to populate the tooltip with **nav content**.
+Use [group component](/components/group) to populate the tooltip with **group content**.
 
 <demo>
-  <demoinline src="demos/components/tooltip/nav">
+  <demoinline src="demos/components/tooltip/group">
   </demoinline>
 </demo>
 

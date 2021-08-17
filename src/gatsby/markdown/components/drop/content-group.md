@@ -2,7 +2,7 @@
 type: "Components"
 category: "Toggle"
 parent: "Drop"
-title: "Content Nav"
+title: "Content Group"
 date: "2030-10-10"
 ---
 
@@ -11,7 +11,7 @@ date: "2030-10-10"
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
 <demo>
-  <demoinline src="demos/components/drop/list-variant">
+  <demoinline src="demos/components/drop/group-variant">
   </demoinline>
 </demo>
 
@@ -22,6 +22,6 @@ Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/do
 Use [button classes](/components/button/content#size) to assign button size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
-  <demoinline src="demos/components/drop/list-size">
+  <demoinline src="demos/components/drop/group-size">
   </demoinline>
 </demo>
