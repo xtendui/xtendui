@@ -1,10 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
+  mode: process.env.DIST ? '' : 'jit',
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
-    content: ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
+    content: process.env.DIST ? [] : ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
   },
   theme: {
     extend: {

@@ -127,6 +127,6 @@ If you want to show a warning on unsupported browser you can use [browser update
 
 If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
 
-The CDN `dist/` files are large because they include all components and polyfills, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
+The CDN `dist/` files are large because they include all styles and components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
 
 Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.
