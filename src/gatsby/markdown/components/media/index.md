@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Media"
 title: "Media"
 description: "Media is a component to wrap media asset and display them in various ways."

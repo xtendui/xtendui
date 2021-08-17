@@ -145,7 +145,7 @@ const html = /* HTML */ `
               <div class="font-semibold text-black xt-links-default ${animItem()}">
                 <form class="text-sm">
                   <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem()}">
-                    <div class="xt-list-inner flex-auto">
+                    <div class="inline-flex flex-auto">
                       <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
                         ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                       </button>

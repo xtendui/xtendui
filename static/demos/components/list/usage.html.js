@@ -23,6 +23,18 @@ const html = /* HTML */ `
       >
         Amet
       </button>
+
+      <form class="text-sm *** inline-flex ***">
+        <button type="button" class="xt-button ${classes.buttonLg()} rounded-l-md ${classes.buttonDefault()}">
+          ${classes.iconSearch({ classes: 'text-xl -my-1' })}
+        </button>
+        <input
+          type="text"
+          class="${classes.input()} rounded-r-md ${classes.inputDefault()}"
+          aria-label="Search"
+          placeholder="Seach Catalog"
+        />
+      </form>
     </nav>
   </div>
 `

@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <form class="text-sm">
       <div class="xt-list flex-col *** max-w-md ***">
-        <div class="xt-list-inner">
+        <div class="inline-flex">
           <button type="button" class="xt-button ${classes.buttonMd()} rounded-tl-md ${classes.buttonDefault()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>

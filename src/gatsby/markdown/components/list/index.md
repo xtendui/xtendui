@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "List"
 title: "List"
 description: "List is a component to space any element with margins, also spaces vertically."
@@ -14,8 +14,6 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Use `.xt-list` to create a **list**.
 
-> For usability purpose use `<nav></nav>`.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |
@@ -24,22 +22,20 @@ Use `.xt-list` to create a **list**.
 
 </div>
 
-#### Horizontal
+> For usability purpose use `<nav></nav>`.
 
-Use this code to create a **list horizontal**.
+> You should never use **tailwind width classes** inside `.xt-list`. Otherwise you can space contents with [row](/components/row).
 
 <demo>
   <demoinline src="demos/components/list/usage">
   </demoinline>
 </demo>
 
-#### Vertical
+#### Stack
 
-Use this code to create a **list vertical** with `.flex-col`.
+Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**.
 
 <demo>
-  <demoinline src="demos/components/list/usage-vertical">
+  <demoinline src="demos/components/list/usage-stack">
   </demoinline>
 </demo>
-
-> You can space anything inside `.xt-list`. If you need to use **tailwind width classes** use [row](/components/row).

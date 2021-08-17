@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <form class="text-sm">
       <div class="xt-list *** xt-list-2 flex-col ***">
-        <div class="xt-list-inner">
+        <div class="inline-flex">
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} rounded-tl-md rounded-bl-md ${classes.buttonDefault()}"

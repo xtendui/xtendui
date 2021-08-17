@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Typography"
 title: "Typography"
 description: "Typography is a component for automatic and customizzable styling of blank html content tags."

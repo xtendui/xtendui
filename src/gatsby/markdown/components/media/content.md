@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Media"
 title: "Content"
 date: "2030-10-10"

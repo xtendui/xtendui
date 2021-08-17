@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Note"
 title: "Note"
 description: "Note is a component to display small messages."

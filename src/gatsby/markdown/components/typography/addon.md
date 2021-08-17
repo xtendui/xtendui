@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Typography"
 title: "Addon"
 date: "1900-10-10"

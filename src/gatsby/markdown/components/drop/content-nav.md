@@ -2,7 +2,7 @@
 type: "Components"
 category: "Toggle"
 parent: "Drop"
-title: "Content List"
+title: "Content Nav"
 date: "2030-10-10"
 ---
 

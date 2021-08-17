@@ -19,8 +19,5 @@ module.exports = {
         display: 'none',
       },
     },
-    '.xt-list-inner': {
-      display: 'inline-flex',
-    },
   },
 }

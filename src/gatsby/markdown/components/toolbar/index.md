@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Toolbar"
 title: "Toolbar"
 description: "Toolbar is a component to group up buttons, inputs and other content."

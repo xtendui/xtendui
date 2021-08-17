@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Icon"
 title: "Icon"
 description: "Icon is a component to style svg icons."

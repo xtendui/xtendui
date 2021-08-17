@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "ListGroup"
 title: "Addon"
 date: "1900-10-10"

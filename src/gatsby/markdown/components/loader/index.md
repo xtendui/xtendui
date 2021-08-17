@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Loader"
 title: "Loader"
 description: "Loader is a component to create animated loaders."

@@ -9,7 +9,7 @@ const html = /* HTML */ `
             <div class="xt-row xt-row-x-6 xt-row-y-4">
               <div class="w-full">
                 <div class="xt-list flex-nowrap">
-                  <div class="xt-list-inner flex-auto">
+                  <div class="inline-flex flex-auto">
                     <input
                       type="text"
                       class="${classes.input()} rounded-l-md ${classes.inputDefault()}"

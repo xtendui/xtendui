@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Separator"
 title: "Separator"
 description: "Separator is a component to separate text content."

@@ -13,12 +13,12 @@ export const classes = {
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   // size
   badgeRadius: () => 'rounded-xs',
-  badgeSm: () => 'py-1.5 px-2.5 text-3xs',
-  badgeMd: () => 'py-2.5 px-3.5 text-xs',
-  badgeLg: () => 'py-3 px-4 text-base',
-  buttonSm: () => 'py-1.5 px-2.5 text-3xs',
-  buttonMd: () => 'py-2.5 px-3.5 text-xs',
-  buttonLg: () => 'py-3 px-4 text-base',
+  badgeSm: () => 'py-2 px-2.5 text-3xs',
+  badgeMd: () => 'py-3 px-3.5 text-xs',
+  badgeLg: () => 'py-3.5 px-4 text-base',
+  buttonSm: () => 'py-2 px-2.5 text-3xs',
+  buttonMd: () => 'py-3 px-3.5 text-xs',
+  buttonLg: () => 'py-3.5 px-4 text-base',
   buttonRadius: () => 'rounded-md',
   buttonSmDrop: () => 'py-1 px-5 text-3xs',
   buttonMdDrop: () => 'py-2 px-6 text-2xs',
@@ -83,11 +83,11 @@ export const classes = {
   switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 border border-transparent transition-all',
   switchRadius: () => 'rounded-full',
   inputDefault: () =>
-    'py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
+    'py-2.5 px-3.5 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
   inputPrimary: () =>
-    'py-3 px-4 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
+    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
-    'py-3 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
+    'py-2.5 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
   labelDefault: () => 'font-semibold text-gray-700',
   labelPrimary: () => 'font-semibold text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)

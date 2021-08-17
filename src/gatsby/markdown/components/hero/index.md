@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Hero"
 title: "Hero"
 description: "Hero is a component to style complex boxed content."

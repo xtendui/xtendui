@@ -9,10 +9,6 @@ export const typeSort = (a, b) => {
     // a is less than b by some ordering criterion
     first += 100
   }
-  if (b.title === 'Layout') {
-    // a is less than b by some ordering criterion
-    first += 80
-  }
   if (b.title === 'Toggle') {
     // a is less than b by some ordering criterion
     first += 60
@@ -32,10 +28,6 @@ export const typeSort = (a, b) => {
   if (a.title === 'Global') {
     // a is greater than b by the ordering criterion
     last += 100
-  }
-  if (a.title === 'Layout') {
-    // a is greater than b by the ordering criterion
-    last += 80
   }
   if (a.title === 'Toggle') {
     // a is greater than b by the ordering criterion

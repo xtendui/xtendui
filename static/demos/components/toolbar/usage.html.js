@@ -11,7 +11,7 @@ const html = /* HTML */ `
           Back
         </button>
 
-        <div class="*** xt-list-inner flex-auto ***">
+        <div class="*** inline-flex flex-auto ***">
           <button type="button" class="xt-button ${classes.buttonMd()} *** rounded-l-md *** ${classes.buttonDefault()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
           />
         </div>
 
-        <div class="*** xt-list-inner ***">
+        <div class="*** inline-flex ***">
           <button type="button" class="xt-button ${classes.buttonMd()} *** rounded-l-md *** ${classes.buttonDefault()}">
             Clear
           </button>

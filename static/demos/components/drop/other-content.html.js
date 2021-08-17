@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <div class="xt-drop p-4" data-xt-drop-target>
         <form class="${classes.cardRadius()} shadow-drop text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
-            <div class="xt-list-inner flex-auto">
+            <div class="inline-flex flex-auto">
               <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>

@@ -6,6 +6,8 @@ title: "GroupNumber"
 description: "GroupNumber is a plugin that manages quantity increments on input number."
 ---
 
+> This component uses [listgroup](/components/list-group) see documentation for more info.
+
 ## Styles
 
 You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [css customization](/components/global/preset#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/xtendui/xtendui/blob/beta/src/groupnumber.css.js) for default styles.

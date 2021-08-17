@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Row"
 title: "Row"
 description: "Row is a component to space any element with paddings, also spaces vertically."

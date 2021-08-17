@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Listing"
 title: "Listing"
 description: "Listing is a component for category pages or simple listing."

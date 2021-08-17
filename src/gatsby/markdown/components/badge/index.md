@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "Badge"
 title: "Badge"
 description: "Badge is a component for showing short and relevant tags."

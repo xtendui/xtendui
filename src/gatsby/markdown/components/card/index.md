@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Card"
 title: "Card"
 description: "Card is a component for style boxed content."

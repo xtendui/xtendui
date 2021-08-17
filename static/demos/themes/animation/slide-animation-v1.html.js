@@ -126,7 +126,7 @@ const html = /* HTML */ `
             <div class="${classes.tooltipRadius()} shadow-tooltip ${classes.cardWhite()} ${animDesign()}">
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
-                  <div class="xt-list-inner flex-auto">
+                  <div class="inline-flex flex-auto">
                     <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>

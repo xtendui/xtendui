@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Table"
 title: "Table"
 description: "Table is a component with basic styles for tables."

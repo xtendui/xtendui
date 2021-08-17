@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Other"
 parent: "ListGroup"
 title: "ListGroup"
 description: "ListGroup is a component to group up buttons, inputs and other content."
@@ -8,45 +8,20 @@ description: "ListGroup is a component to group up buttons, inputs and other con
 
 ## Usage
 
-Use [list](/components/list) to create a **listgroup**.
-
-#### Horizontal
-
-Use this code to create a **group horizontal**.
-
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
+
+> This component uses [list](/components/list) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/list-group/usage">
   </demoinline>
 </demo>
 
-#### Vertical
+#### Stack
 
-Use this code to create a **group vertical** with `.flex-col`.
-
-Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
+Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**.
 
 <demo>
-  <demoinline src="demos/components/list-group/usage-vertical">
-  </demoinline>
-</demo>
-
-#### Nested
-
-Use **component classes** to style **nested**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |
-| Component                  | `.xt-list-inner`       | `xt-list-inner`                | Group list content            |
-
-</div>
-
-You can nest `.xt-list-inner` and [flex-direction](https://tailwindcss.com/docs/flex-direction).
-
-<demo>
-  <demoinline src="demos/components/list-group/usage-nested">
+  <demoinline src="demos/components/list-group/usage-stack">
   </demoinline>
 </demo>

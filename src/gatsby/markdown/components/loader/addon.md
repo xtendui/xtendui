@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Loader"
 title: "Addon"
 date: "1900-10-10"

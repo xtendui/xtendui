@@ -6,7 +6,7 @@ const html = /* HTML */ `
 
     <form class="text-sm">
       <div class="xt-list" data-xt-groupnumber>
-        <div class="xt-list-inner">
+        <div class="inline-flex">
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} rounded-l-md border border-gray-400 ${classes.buttonDefault()}"
@@ -37,31 +37,29 @@ const html = /* HTML */ `
 
     <form class="text-sm">
       <div class="xt-list" data-xt-groupnumber>
-        <div class="xt-list-inner">
-          <input
-            type="number"
-            class="${classes.input()} w-16 rounded-tl-md rounded-bl-md border border-r-0 border-gray-400 ${classes.inputDefault()}"
-            aria-label="Quantity"
-            value="1"
-            min="0"
-            max="100"
-          />
-          <div class="xt-list-inner flex-col">
-            <button
-              type="button"
-              class="xt-button text-2xs py-1 px-2.5 rounded-tr-md border border-gray-400 ${classes.buttonDefault()}"
-              data-xt-step="1"
-            >
-              +
-            </button>
-            <button
-              type="button"
-              class="xt-button text-2xs py-1 px-2.5 rounded-br-md border border-t-0 border-gray-400 ${classes.buttonDefault()}"
-              data-xt-step="-1"
-            >
-              -
-            </button>
-          </div>
+        <input
+          type="number"
+          class="${classes.input()} w-16 rounded-tl-md rounded-bl-md border border-r-0 border-gray-400 ${classes.inputDefault()}"
+          aria-label="Quantity"
+          value="1"
+          min="0"
+          max="100"
+        />
+        <div class="inline-flex flex-col">
+          <button
+            type="button"
+            class="xt-button text-2xs py-1 px-2.5 rounded-tr-md border border-gray-400 ${classes.buttonDefault()}"
+            data-xt-step="1"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            class="xt-button text-2xs py-1 px-2.5 rounded-br-md border border-t-0 border-gray-400 ${classes.buttonDefault()}"
+            data-xt-step="-1"
+          >
+            -
+          </button>
         </div>
       </div>
     </form>

@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Card"
 title: "Content Full"
 date: "2030-10-10"

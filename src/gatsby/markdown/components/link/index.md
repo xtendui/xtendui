@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Design"
+category: "Core"
 parent: "Link"
 title: "Link"
 description: "Link is a component to style default links, can also be applied to other tags."
