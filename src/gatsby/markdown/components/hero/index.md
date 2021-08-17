@@ -12,7 +12,7 @@ Use **tailwind classes** to create a **hero**.
 
 Assing the desired `min-height` instead of `min-h-screen`, assing the desired `max-width` instead of `max-w-2xl`,
 
-> This component uses [media](/components/media) see documentation to **customize**.
+> This component uses [media](/components/media) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/hero/usage">

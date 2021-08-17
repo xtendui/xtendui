@@ -101,7 +101,7 @@ When you need to reinit the component when the media is loaded and the **width**
 
 </div>
 
-> This component uses [loader](/components/loader) see documentation to **customize**.
+> This component uses [loader](/components/loader) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/slider/media-loaded">

@@ -34,7 +34,7 @@ return () => {}
 
 See [link if scrolls right](/components/slider/other#media-loaded).
 
-## Markdown
+## Useful
 
 You can set activation styles by adding the class `.on`.
 
@@ -44,19 +44,41 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 Use **component classes** to style **disabled**. Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/beta/src/global.css.js) for default styles.
 
+Use **component utility** `.xt-card-group` to stack card content **horizontally**.
+
 The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/beta/src/overlay.css.js) for default styles.
-
-Use this code to create a **card**.
-
-Use this code to create a **group vertical** with `.flex-col`.
-
-Use **tailwind classes** to create a **navigation**.
 
 Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
 
 Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
-Use **component utility** `.xt-card-group` to stack card content **horizontally**.
+> For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+
+> This component uses [loader](/components/loader) see documentation for more info.
+
+> For usability purpose use `<nav></nav>`.
+
+> For usability purpose use `role="toolbar"`.
+
+> For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
+
+> For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
+
+> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+
+<!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
+
+(**use touch device to see it in action**)
+
+(**use narrow screen to see it in action**)
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                      | Syntax                          | Mixin            | Description                   |
+| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
+| Component                  | `.xt-loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
+
+</div>
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -65,8 +87,6 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 | Utility                  | `.xt-card-group`       | `xt-card-group`                | `responsive`                | Card stack horizontal wrapper           |
 
 </div>
-
-You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -85,29 +105,13 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 </div>
 
-> For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
-> For usability purpose use `<nav></nav>`.
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Property                   | `direction:Number`       | Direction `1` or `-1`              |
 
-> This component uses [loader](/components/loader) see documentation to **customize**.
-
-> This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
-
-> For usability purpose use `role="toolbar"`.
-
-> For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
-
-> For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
-
-> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
-
-<!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
-
-(**use touch device to see it in action**)
-
-(**use narrow screen to see it in action**)
-
-(**use large screen to see it in action**)
+</div>
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -117,45 +121,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 </div>
 
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Property                   | `direction:Number`       | Direction `1` or `-1`              |
-
-</div>
-
-Use **component utility** `.xt-row-<space>` to space content.
-
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Variants               | Description                   |
-| ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
-| Utility                  | `.xt-list-<space>`       | `xt-list-<space>`                | `responsive`                | Space contents horizontally and vertically            |
-
-</div>
-
-For `<direction>` values use `x` or `y`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-loader-<direction>`                     | `loader-<direction>`                | Loader direction for filler            |
-
-</div>
-
-You can set **scroll mode** with css selectors.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          |  Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Selector                  | `&:not(.scroll-done) {`                     | Animate once            |
-
-</div>
+## Markdown
 
 Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
