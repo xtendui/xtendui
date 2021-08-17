@@ -159,7 +159,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
-          screen full
+          Screen full
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>

@@ -9,7 +9,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-overlay-element
         >
-          closed fixed
+          Default
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
@@ -109,7 +109,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-overlay-element
         >
-          screen closed fixed
+          Screen
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>

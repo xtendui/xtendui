@@ -14,14 +14,14 @@ const html = /* HTML */ `
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <div class="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-400 ***">
+            <div class="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-300 ***">
               <div class="${classes.cardSm()}">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                   turpis.
                 </p>
               </div>
-              <div class="${classes.cardMd()} *** border-t border-solid border-gray-400 ***">
+              <div class="${classes.cardMd()} *** border-t border-solid border-gray-300 ***">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
                   turpis.

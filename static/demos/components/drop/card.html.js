@@ -2,16 +2,17 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-tooltip>
-      <div data-xt-tooltip-element>
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-drop>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-element
         >
           Asset
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="*** xt-card w-64 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <div class="xt-media-container bg-gray-300 rounded-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -20,15 +21,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip-element>
+      <div data-xt-drop>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          data-xt-drop-element
         >
           Asset and text
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-drop p-4" data-xt-drop-target>
           <div class="*** xt-card w-64 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <div class="xt-media-container bg-gray-300 rounded-t-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />

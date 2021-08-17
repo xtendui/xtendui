@@ -24,27 +24,8 @@ const html = /* HTML */ `
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-        </div>
-      </div>
-
-      <div class="w-full">
-        <div class="xt-card">
-          <div class="*** ${classes.cardMd()} rounded-t-md ${classes.cardDefault()} ***">
-            <div class="xt-h4">Lorem ipsum</div>
-          </div>
-          <div class="*** ${classes.cardMd()} bg-gray-200 ***">
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-              velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-              vitae magna eget, vehicula scelerisque elit.
-            </p>
-          </div>
-          <div class="*** ${classes.cardSm()} rounded-b-md ${classes.cardPrimary()} ***">
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
-              velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
-              vitae magna eget, vehicula scelerisque elit.
-            </p>
+          <div class="*** ${classes.cardSm()} rounded-b-md bg-gray-200 ***">
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>
       </div>

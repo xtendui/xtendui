@@ -22,6 +22,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 <demo>
   <demoinline src="demos/components/card/interactive">
   </demoinline>
+  <demoinline src="demos/components/card/interactive-full">
+  </demoinline>
 </demo>
 
 ## Size
@@ -105,10 +107,6 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   <demoinline src="demos/components/card/close">
   </demoinline>
 </demo>
-
-## Note
-
-Refer to [note component](/components/note).
 
 ## Checks
 

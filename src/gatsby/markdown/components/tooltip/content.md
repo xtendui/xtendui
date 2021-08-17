@@ -28,18 +28,16 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   </demoinline>
 </demo>
 
-## Group
+## Content
 
-Use [group component](/components/group) to populate the tooltip with **group content**.
+You can use [card component](/components/card) and [group component](/components/group) as content.
 
 <demo>
   <demoinline src="demos/components/tooltip/group">
   </demoinline>
 </demo>
 
-## Card
-
-Use [card component](/components/card) to populate the tooltip with **card content**.
+You can also populate with other [card content](/components/card/content).
 
 <demo>
   <demoinline src="demos/components/tooltip/card">

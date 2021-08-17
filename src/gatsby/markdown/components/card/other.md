@@ -15,4 +15,4 @@ date: "2005-10-10"
 
 ## Stretch
 
-You can stretch cards vertically inside row, see [row stretch](/components/row/other#stretch).
+You can stretch cards vertically inside row, see [row stretch](/components/row/addon#stretch).

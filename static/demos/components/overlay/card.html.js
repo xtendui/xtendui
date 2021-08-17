@@ -9,16 +9,14 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-overlay-element
         >
-          inner
+          Asset
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
-              <div
-                class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96 ***"
-              >
+              <div class="*** xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ***">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -26,26 +24,8 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-300 rounded-t-md pb-[37.5%]">
+                <div class="xt-media-container bg-gray-300 rounded-md pb-[37.5%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                </div>
-                <div class="${classes.cardMd()}">
-                  <div class="xt-h4">Lorem ipsum</div>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
                 </div>
               </div>
             </div>
@@ -59,14 +39,14 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-overlay-element
         >
-          block
+          Asset and text
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
+              <div class="*** xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ***">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -77,7 +57,7 @@ const html = /* HTML */ `
                 <div class="xt-media-container bg-gray-300 rounded-t-md pb-[37.5%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
-                <div class="${classes.cardMd()} *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64 ***">
+                <div class="*** ${classes.cardMd()} ***">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -85,15 +65,20 @@ const html = /* HTML */ `
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.
                   </p>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.
                   </p>
+                  <p>
+                    Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.
+                  </p>
+                </div>
+                <div class="*** ${classes.cardSm()} rounded-b-md bg-gray-200 ***">
+                  <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
                 </div>
               </div>
             </div>
