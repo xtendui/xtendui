@@ -25,8 +25,8 @@ export default function Footer() {
           </a>{' '}
         </div>
         <div>
-          © 2017 <span className="inline relative align-baseline before:content-['-']"></span> {new Date().getFullYear()}{' '}
-          {site.siteMetadata.author}
+          © 2017 <span className="inline relative align-baseline before:content-['-']"></span>{' '}
+          {new Date().getFullYear()} {site.siteMetadata.author}
         </div>
       </div>
     </div>
