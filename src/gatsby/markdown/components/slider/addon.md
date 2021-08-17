@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Navigation Sides
 
-Use this code to create a **navigation sides** on slider (**mouse over the sides to see the navigation**).
+Mouse over the sides to see the navigation
 
 > This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
 
@@ -21,7 +21,7 @@ Use this code to create a **navigation sides** on slider (**mouse over the sides
 
 ## Status
 
-Use the [api](/components/slider/api#listen) and listen to events to make slider status indicators.	
+Use the [api](/components/slider/api#listen) and listen to events to make **slider status indicators**.	
 
 <demo>
   <demoinline src="demos/components/slider/status">

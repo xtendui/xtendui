@@ -12,8 +12,6 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use this code to create a **media**.
-
 <demo>
   <demoinline src="demos/components/media/usage">
   </demoinline>

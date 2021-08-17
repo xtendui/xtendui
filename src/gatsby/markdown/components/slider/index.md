@@ -30,7 +30,7 @@ You can have sliders on two different modes: `'relative'` or `'absolute'`.
 
 #### Relative
 
-Use this code to create a **slider relative**.
+Use this code to create a **slider** in **relative mode**.
 
 <demo>
   <demoinline src="demos/components/slider/usage-relative">
@@ -38,6 +38,8 @@ Use this code to create a **slider relative**.
 </demo>
 
 #### Absolute
+
+Use this code to create a **slider** in **absolute mode**.
 
 Use `off:hidden` to hide with `display: none;` the node when **not activated or animating**.
 

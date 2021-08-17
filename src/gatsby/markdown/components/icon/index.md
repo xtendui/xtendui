@@ -22,14 +22,14 @@ Use `.xt-icon` to create a **icon**.
 
 </div>
 
-Use this code to create **icons with svg**.
+**Icons with inline svg**.
 
 <demo>
   <demoinline src="demos/components/icon/usage">
   </demoinline>
 </demo>
 
-Use this code to create **icons with img**.
+**Icons with img tag**.
 
 <demo>
   <demoinline src="demos/components/icon/usage-img">

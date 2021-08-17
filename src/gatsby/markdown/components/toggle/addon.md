@@ -8,8 +8,6 @@ date: "1900-10-10"
 
 ## Multilevel
 
-Use this code to create a **toggle multilevel**.
-
 > For usability purpose use `<nav></nav>`.
 
 <demo>

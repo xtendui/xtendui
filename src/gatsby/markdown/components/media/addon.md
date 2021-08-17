@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Iframe Lazy
 
-You can use this code to make an **iframe lazy that loads on click**.
+Use this code to create a **iframe lazy that loads on click**.
 
 Just change `iframe[data-src]` and `img[src]` attributes of the iframe and image with the content you want.
 
@@ -21,7 +21,7 @@ Just change `iframe[data-src]` and `img[src]` attributes of the iframe and image
 
 ## Video Matches
 
-You can use this code to make an **video with different source for different media matches**.
+Use this code to create a **video with different source for different media matches**.
 
 Since HTML5 video doesn't support srcset or media on video sources, you can use this little script to have a **default source and different media queries on data-src source nodes**.
 
