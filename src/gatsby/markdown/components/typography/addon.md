@@ -6,6 +6,10 @@ title: "Addon"
 date: "1900-10-10"
 ---
 
+## Collapse Text
+
+Refer to [collapse](/components/collapse).
+
 ## Separator
 
 Use this code to create a **separator**.
