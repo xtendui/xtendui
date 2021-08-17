@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Other"
-parent: "ListGroup"
+parent: "Group"
 title: "Content"
 date: "2030-10-10"
 ---
@@ -15,9 +15,9 @@ Use `.inline-flex.flex-auto` to expand it to **fill width**. On responsive the c
 Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
 
 <demo>
-  <demoinline src="demos/components/list-group/size">
+  <demoinline src="demos/components/group/size">
   </demoinline>
-  <demoinline src="demos/components/list-group/size-vertical">
+  <demoinline src="demos/components/group/size-vertical">
   </demoinline>
 </demo>
 
@@ -26,9 +26,9 @@ Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.co
 Use [list space](/components/list/content#space) **component classes** to assign space).
 
 <demo>
-  <demoinline src="demos/components/list-group/space">
+  <demoinline src="demos/components/group/space">
   </demoinline>
-  <demoinline src="demos/components/list-group/space-vertical">
+  <demoinline src="demos/components/group/space-vertical">
   </demoinline>
 </demo>
 
@@ -37,9 +37,9 @@ Use [list space](/components/list/content#space) **component classes** to assign
 You can make group a **single interactive object**, be sure to use `group` on the interactive element.
 
 <demo>
-  <demoinline src="demos/components/list-group/merge">
+  <demoinline src="demos/components/group/merge">
   </demoinline>
-  <demoinline src="demos/components/list-group/merge-vertical">
+  <demoinline src="demos/components/group/merge-vertical">
   </demoinline>
 </demo>
 

@@ -8,7 +8,7 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-drop-element
       >
-        listgroup
+        Group
       </button>
 
       <div class="xt-drop p-4" data-xt-drop-target>

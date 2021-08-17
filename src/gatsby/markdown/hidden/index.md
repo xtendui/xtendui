@@ -159,7 +159,7 @@ You can set **scroll mode** with css selectors.
 
 </div>
 
-Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/list-group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
+Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 <script type="text/plain" class="language-html">
 <a href="#" class="xt-button">

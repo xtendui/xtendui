@@ -8,7 +8,7 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay-element
       >
-        listgroup
+        Group
       </button>
 
       <div class="xt-overlay" data-xt-overlay-target>
