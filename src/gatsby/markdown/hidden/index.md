@@ -89,9 +89,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 > For usability purpose use `<nav></nav>`.
 
-> This demos uses [loader](/components/loader) see documentation to **customize**.
-
-> This component uses [card](/components/card) see documentation for more info.
+> This component uses [loader](/components/loader) see documentation to **customize**.
 
 > This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
 

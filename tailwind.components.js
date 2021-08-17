@@ -14,7 +14,6 @@ module.exports = {
   overlay: require('./src/overlay.css.js'),
   ripple: require('./src/ripple.css.js'),
   row: require('./src/row.css.js'),
-  separator: require('./src/separator.css.js'),
   scrolltrigger: require('./src/scrolltrigger.css.js'),
   slider: require('./src/slider.css.js'),
   tooltip: require('./src/tooltip.css.js'),

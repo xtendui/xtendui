@@ -6,8 +6,6 @@ title: "Content"
 date: "2030-10-10"
 ---
 
-> This component uses [card](/components/card) see documentation for more info.
-
 ## Variant
 
 Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).

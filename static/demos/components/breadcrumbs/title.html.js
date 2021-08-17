@@ -5,11 +5,11 @@ const html = /* HTML */ `
     <div class="w-full p-8 md:p-10 lg:p-12 bg-gray-100">
       <nav class="*** truncate ***">
         <a href="#" class="xt-button *** inline *** text-xs py-2 px-0 text-black ${classes.buttonText()}"> Home </a>
-        <span class="xt-separator before:content-['/'] mx-2"></span>
+        <span class="inline relative align-baseline before:content-['/'] mx-2"></span>
         <a href="#" class="xt-button *** inline *** text-xs py-2 px-0 text-black ${classes.buttonText()}">
           Lorem ipsum dolor sit amet
         </a>
-        <span class="xt-separator before:content-['/'] mx-2"></span>
+        <span class="inline relative align-baseline before:content-['/'] mx-2"></span>
         <div class="xt-button *** inline *** text-xs py-2 px-0 text-black ${classes.buttonText()} pointer-events-none">
           Lorem ipsum
         </div>
