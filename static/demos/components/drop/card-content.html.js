@@ -17,7 +17,7 @@ const html = /* HTML */ `
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-500 rounded-md pb-[37.5%]">
+            <div class="xt-media-container bg-gray-300 rounded-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
           </div>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
             </button>
-            <div class="xt-media-container bg-gray-500 rounded-t-md pb-[37.5%]">
+            <div class="xt-media-container bg-gray-300 rounded-t-md pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div class="*** ${classes.cardMd()} ***">

@@ -1,38 +1,4 @@
 .demo--googlelocator, .demo--googlelocator-react {
-  .googlelocator-main {
-    /* hide map on mobile needs to be visible to work */
-    @apply pointer-events-none invisible md:pointer-events-auto md:visible;
-    @screen md {
-      padding-left: 20rem;
-    }
-    @screen lg {
-      padding-left: 25rem;
-    }
-    @screen xl {
-      padding-left: 30rem;
-    }
-  }
-
-  .googlelocator-aside {
-    @screen md {
-      width: 20rem;
-      min-height: 100%;
-      box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.2);
-    }
-    @screen lg {
-      width: 25rem;
-    }
-    @screen xl {
-      width: 30rem;
-    }
-  }
-
-  .googlelocator-aside-body {
-    @screen md {
-      flex: 1 1 0;
-    }
-  }
-
   .googlelocator-item-content {
     a {
       word-break: break-all;

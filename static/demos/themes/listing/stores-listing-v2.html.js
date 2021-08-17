@@ -6,11 +6,11 @@ const html = /* HTML */ `
       <div class="container">
         <div class="xt-row xt-row-6 xt-row-stretch">
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -22,7 +22,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"
@@ -53,11 +53,11 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -69,7 +69,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"
@@ -90,11 +90,11 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -106,7 +106,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"
@@ -137,11 +137,11 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -153,7 +153,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"
@@ -174,11 +174,11 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -190,7 +190,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"
@@ -221,11 +221,11 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
-                <div class="xt-media-container bg-gray-500 h-40">
+                <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -237,7 +237,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card ${classes.cardRadius()} ${classes.cardDefaultFull()}"
               >
                 <button
                   type="button"

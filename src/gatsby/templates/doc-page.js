@@ -60,7 +60,10 @@ class Template extends React.Component {
                                 data-gatsby-listing-toggle>
                                 <div>
                                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                                    {adiacent.frontmatter.title}
+                                    {adiacent.frontmatter.title
+                                      .split(/[\s-]+/)
+                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                      .join(' ')}
                                   </div>
                                   {data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {

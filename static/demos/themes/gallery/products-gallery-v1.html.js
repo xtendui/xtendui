@@ -15,74 +15,76 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-8 lg:xt-row-12 items-stretch">
             <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">
               <div class="relative md:py-12">
-                <div class="product-gallery">
+                <div
+                  class="*** product-gallery *** overflow-y-auto overflow-x-hidden xt-overflow-sub h-96 xt-container-remove md:!m-0 md:!h-auto md:!overflow-auto"
+                >
                   <div class="xt-list flex-col">
                     <a
                       href="#product-image-overlay-1"
-                      class="product-image w-full"
+                      class="*** product-image *** w-full"
                       id="product-image-1"
                       title="Expand image 1"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
+                      <div class="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
 
                     <a
                       href="#product-image-overlay-2"
-                      class="product-image w-full"
+                      class="*** product-image *** w-full"
                       id="product-image-2"
                       title="Expand image 2"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
+                      <div class="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
 
                     <a
                       href="#product-image-overlay-3"
-                      class="product-image w-full"
+                      class="*** product-image *** w-full"
                       id="product-image-3"
                       title="Expand image 3"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
+                      <div class="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
 
                     <a
                       href="#product-image-overlay-4"
-                      class="product-image w-full"
+                      class="*** product-image *** w-full"
                       id="product-image-4"
                       title="Expand image 4"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
+                      <div class="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
 
                     <a
                       href="#product-image-overlay-5"
-                      class="product-image w-full"
+                      class="*** product-image *** w-full"
                       id="product-image-5"
                       title="Expand image 5"
                     >
-                      <div class="xt-media-container bg-gray-500 overflow-hidden" data-xt-overlay-element>
+                      <div class="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/img.svg" loading="eager" alt="" />
                         <div
-                          class="xt-media-mask absolute inset-0 pointer-events-none bg-white -translate-y-full"
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
                         ></div>
                       </div>
                     </a>
@@ -92,51 +94,51 @@ const html = /* HTML */ `
                     <div class="xt-list flex-col h-full justify-center">
                       <a
                         href="#product-image-1"
-                        class="product-dot py-1.5 px-2 flex items-center justify-center group"
+                        class="py-1.5 px-2 flex items-center justify-center group"
                         title="Go to image 1"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
                         ></div>
                       </a>
 
                       <a
                         href="#product-image-2"
-                        class="product-dot py-1.5 px-2 flex items-center justify-center group"
+                        class="py-1.5 px-2 flex items-center justify-center group"
                         title="Go to image 2"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
                         ></div>
                       </a>
 
                       <a
                         href="#product-image-3"
-                        class="product-dot py-1.5 px-2 flex items-center justify-center group"
+                        class="py-1.5 px-2 flex items-center justify-center group"
                         title="Go to image 3"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
                         ></div>
                       </a>
 
                       <a
                         href="#product-image-4"
-                        class="product-dot py-1.5 px-2 flex items-center justify-center group"
+                        class="py-1.5 px-2 flex items-center justify-center group"
                         title="Go to image 4"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
                         ></div>
                       </a>
 
                       <a
                         href="#product-image-5"
-                        class="product-dot py-1.5 px-2 flex items-center justify-center group"
+                        class="py-1.5 px-2 flex items-center justify-center group"
                         title="Go to image 5"
                       >
                         <div
-                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black"
+                          class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
                         ></div>
                       </a>
                     </div>
@@ -158,7 +160,7 @@ const html = /* HTML */ `
                       <div class="xt-overlay-inner">
                         <div class="xt-card items-center justify-center shadow-overlay ${classes.cardWhite()}">
                           <div class="w-full">
-                            <div class="xt-media-container bg-gray-500 overflow-hidden">
+                            <div class="xt-media-container bg-gray-300 overflow-hidden">
                               <img
                                 class="xt-media relative"
                                 id="product-image-overlay-1"
@@ -168,7 +170,7 @@ const html = /* HTML */ `
                               />
                             </div>
 
-                            <div class="xt-media-container bg-gray-500 overflow-hidden">
+                            <div class="xt-media-container bg-gray-300 overflow-hidden">
                               <img
                                 class="xt-media relative"
                                 id="product-image-overlay-2"
@@ -178,7 +180,7 @@ const html = /* HTML */ `
                               />
                             </div>
 
-                            <div class="xt-media-container bg-gray-500 overflow-hidden">
+                            <div class="xt-media-container bg-gray-300 overflow-hidden">
                               <img
                                 class="xt-media relative"
                                 id="product-image-overlay-3"
@@ -188,7 +190,7 @@ const html = /* HTML */ `
                               />
                             </div>
 
-                            <div class="xt-media-container bg-gray-500 overflow-hidden">
+                            <div class="xt-media-container bg-gray-300 overflow-hidden">
                               <img
                                 class="xt-media relative"
                                 id="product-image-overlay-4"
@@ -198,7 +200,7 @@ const html = /* HTML */ `
                               />
                             </div>
 
-                            <div class="xt-media-container bg-gray-500 overflow-hidden">
+                            <div class="xt-media-container bg-gray-300 overflow-hidden">
                               <img
                                 class="xt-media relative"
                                 id="product-image-overlay-5"

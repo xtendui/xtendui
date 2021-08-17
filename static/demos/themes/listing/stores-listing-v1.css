@@ -4,7 +4,6 @@
   }
 
   .listing-item-back {
-    min-height: 22rem;
     transform: rotateY(180deg);
     backface-visibility: hidden;
   }
@@ -13,7 +12,6 @@
     perspective: 1400px;
     .listing-item-inner {
       transform-style: preserve-3d;
-      @apply transition ease-in-out-quad;
     }
     &.in {
       .listing-item-inner {

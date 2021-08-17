@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
-      <div class="xt-media-container bg-gray-500 w-full h-full absolute">
+      <div class="xt-media-container bg-gray-300 w-full h-full absolute">
         <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         <div class="*** absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 ***"></div>
       </div>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="hero relative overflow-hidden">
-      <div class="xt-media-container bg-gray-500 w-full h-full absolute">
+      <div class="xt-media-container bg-gray-300 w-full h-full absolute">
         <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
         <div class="*** absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50 ***"></div>
       </div>
@@ -43,7 +43,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="hero relative overflow-hidden">
-      <div class="xt-media-container bg-gray-500 w-full h-full absolute">
+      <div class="xt-media-container bg-gray-300 w-full h-full absolute">
         <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         <div class="*** absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50 ***"></div>
       </div>

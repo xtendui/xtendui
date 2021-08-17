@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--googlelocator">
     <div class="flex flex-wrap flex-auto flex-col md:flex-row md:min-h-screen">
-      <div class="*** googlelocator-aside *** flex flex-col w-full relative z-10">
+      <div class="flex flex-col w-full relative z-10 md:shadow-md md:min-h-full md:w-[20rem] lg:w-[25rem] xl:w-[30rem]">
         <div class="relative p-6 border-b border-gray-100">
           <form class="text-sm">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
@@ -91,10 +91,7 @@ const html = /* HTML */ `
           </form>
         </div>
 
-        <div
-          class="*** googlelocator-aside-body *** relative w-full p-6 xt-overflow-sub overflow-y-scroll"
-          data-xt-googlelocator-results
-        >
+        <div class="relative w-full p-6 xt-overflow-sub overflow-y-scroll md:flex-1" data-xt-googlelocator-results>
           <div class="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-100">
             Insert your position and find a place near you
           </div>
@@ -136,7 +133,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="*** googlelocator-main *** relative flex-auto min-h-full md:absolute md:inset-0">
+      <div
+        class="relative flex-auto min-h-full md:absolute md:inset-0 pointer-events-none invisible md:pointer-events-auto md:visible md:pl-[20rem] lg:pl-[25rem] xl:pl-[30rem]"
+      >
         <div class="relative w-full h-full">
           <div class="w-full h-full" data-xt-googlelocator-map></div>
 

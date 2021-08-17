@@ -94,7 +94,7 @@ const html = /* HTML */ `
                     </div>
                   </div>
                 </div>
-                <div class="xt-media-container bg-gray-500 rounded-b-md h-40">
+                <div class="xt-media-container bg-gray-300 rounded-b-md h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>

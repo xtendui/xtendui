@@ -5,7 +5,7 @@
 @import 'xtendui/static/demos/components/form/validation.css';
 @import 'xtendui/static/demos/components/form/variant-primary.css';
 @import 'xtendui/static/demos/components/global/animation-css.css';
-@import 'xtendui/static/demos/components/layout/googlelocator.css';
+@import 'xtendui/static/demos/components/global/googlelocator.css';
 @import 'xtendui/static/demos/components/list-group/expand.css';
 @import 'xtendui/static/demos/components/listing/infinitescroll.css';
 @import 'xtendui/static/demos/components/media/variant.css';
@@ -24,7 +24,6 @@
 @import 'xtendui/static/demos/components/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/slider/navsides.css';
 @import 'xtendui/static/demos/components/slider/touch-overflow.css';
-@import 'xtendui/static/demos/components/table/border.css';
 @import 'xtendui/static/demos/components/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/toggle/class-custom.css';
 @import 'xtendui/static/demos/components/toggle/multilevel.css';
@@ -32,8 +31,6 @@
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
 @import 'xtendui/static/demos/themes/animation/ripple-animation-v1.css';
-@import 'xtendui/static/demos/themes/gallery/products-gallery-v1.css';
 @import 'xtendui/static/demos/themes/listing/products-listing-v1.css';
 @import 'xtendui/static/demos/themes/listing/products-listing-v2.css';
 @import 'xtendui/static/demos/themes/listing/stores-listing-v1.css';
-@import 'xtendui/static/demos/themes/listing/stores-listing-v2.css';

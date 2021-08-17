@@ -1,22 +1,5 @@
 .demo--slider-media-loaded, .demo--slider-media-loaded-react {
   .xt-slide {
-    .xt-media-container {
-      @apply bg-gray-300;
-    }
-    /* fixed height */
-    img {
-      width: auto;
-      height: 10rem;
-      @screen sm {
-        height: 15rem;
-      }
-      @screen md {
-        height: 20rem;
-      }
-      @screen lg {
-        height: 30rem;
-      }
-    }
     /* full width when loading */
     width: 100%;
     &.xt-medialoaded {

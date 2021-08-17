@@ -122,7 +122,7 @@ module.exports = plugin.withOptions(() => {
               addComponents(css, {
                 respectPrefix: false,
               })
-            } else if (component === 'layout' && utility === '.xt-container-y') {
+            } else if (component === 'global' && utility === '.xt-container-y') {
               const css = {}
               Object.keys(options[utility]).forEach(name => {
                 const value = options[utility][name]
@@ -145,7 +145,7 @@ module.exports = plugin.withOptions(() => {
                 variants: variants,
                 respectPrefix: false,
               })
-            } else if (component === 'layout' && utility === '.xt-container-remove') {
+            } else if (component === 'global' && utility === '.xt-container-remove') {
               const css = {}
               Object.keys(options[utility]).forEach(name => {
                 const value = options[utility][name]
@@ -168,7 +168,7 @@ module.exports = plugin.withOptions(() => {
                 variants: variants,
                 respectPrefix: false,
               })
-            } else if (component === 'layout' && utility === '.xt-container-y-remove') {
+            } else if (component === 'global' && utility === '.xt-container-y-remove') {
               const css = {}
               Object.keys(options[utility]).forEach(name => {
                 const value = options[utility][name]

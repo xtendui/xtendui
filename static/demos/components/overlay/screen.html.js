@@ -77,7 +77,7 @@ const html = /* HTML */ `
                 >
                   ${classes.iconX()}
                 </button>
-                <div class="xt-media-container bg-gray-500 pb-[100%]">
+                <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
@@ -134,7 +134,7 @@ const html = /* HTML */ `
                       </div>
                     </div>
                   </div>
-                  <div class="xt-media-container bg-gray-500 pb-[25%]">
+                  <div class="xt-media-container bg-gray-300 pb-[25%]">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>

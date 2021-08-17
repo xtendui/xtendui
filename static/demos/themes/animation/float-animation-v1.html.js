@@ -196,7 +196,7 @@ const html = /* HTML */ `
               <div class="*** xt-design *** rounded-md bg-white ${animDesign()}"></div>
 
               <div class="xt-card xt-min-h-screen items-center justify-center rounded-md ${cardWhite()} ${animItem()}">
-                <div class="xt-media-container bg-gray-500 pb-[100%]">
+                <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
@@ -248,7 +248,7 @@ const html = /* HTML */ `
                     Account
                   </button>
                 </div>
-                <div class="xt-media-container bg-gray-500 h-48">
+                <div class="xt-media-container bg-gray-300 h-48">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
                 <div class="${classes.cardMd()}">
@@ -387,7 +387,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col">
-                    <div class="xt-media-container bg-gray-500 h-48 md:pb-[100%]">
+                    <div class="xt-media-container bg-gray-300 h-48 md:pb-[100%]">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div class="${classes.cardMd()} bg-gray-200 rounded-b-md md:rounded-bl-none flex-full">
@@ -434,7 +434,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
+                      class="xt-media-container bg-gray-300 rounded-t-md md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
