@@ -14,6 +14,8 @@ Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwind
 
 > This component uses [list](/components/list) see documentation for more info.
 
+> For usability purpose use `<nav></nav>`.
+
 <demo>
   <demoinline src="demos/components/nav/usage">
   </demoinline>

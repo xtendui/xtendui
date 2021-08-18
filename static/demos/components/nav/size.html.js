@@ -2,31 +2,35 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list flex-col *** max-w-[15rem] ***">
+    <nav class="xt-list flex-col *** max-w-xs ***">
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-t${classes.groupRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.dropButtonMd()} rounded-t${classes.groupRadius()} ${classes.dropButtonDefault()}"
       >
         Lorem ipsum dolor sit amet
       </a>
 
-      <a href="#" type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()}">
+      <a href="#" type="button" class="xt-button ${classes.dropButtonMd()} ${classes.dropButtonDefault()}">
         Consectetur adipiscing elit
       </a>
 
-      <a href="#" type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">Mauris mattis</a>
+      <a href="#" type="button" class="xt-button ${classes.dropButtonMd()} ${classes.dropButtonDefault()}"
+        >Mauris mattis</a
+      >
 
-      <a href="#" type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">purus odio</a>
+      <a href="#" type="button" class="xt-button ${classes.dropButtonMd()} ${classes.dropButtonDefault()}"
+        >purus odio</a
+      >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.dropButtonMd()} rounded-b${classes.groupRadius()} ${classes.dropButtonDefault()}"
       >
         Et dictum felis vestibulum sed
       </a>
-    </div>
+    </nav>
   </div>
 `
 

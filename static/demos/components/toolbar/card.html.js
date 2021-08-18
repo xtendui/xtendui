@@ -8,15 +8,8 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <div class="xt-list xt-list-2 justify-between p-4">
-            <a
-              href="#"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
-            >
-              Back
-            </a>
-
-            <div class="inline-flex">
+          <nav class="xt-list xt-list-2 p-4">
+            <div class="inline-flex mr-auto">
               <a
                 href="#"
                 class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
@@ -30,7 +23,14 @@ const html = /* HTML */ `
                 Submit
               </a>
             </div>
-          </div>
+
+            <a
+              href="#"
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+            >
+              Back
+            </a>
+          </nav>
           <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-gray-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
@@ -42,15 +42,8 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <div class="xt-list xt-list-2 justify-between p-4">
-            <a
-              href="#"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
-            >
-              Back
-            </a>
-
-            <div class="inline-flex">
+          <nav class="xt-list xt-list-2 p-4">
+            <div class="inline-flex mr-auto">
               <a
                 href="#"
                 class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
@@ -64,7 +57,14 @@ const html = /* HTML */ `
                 Submit
               </a>
             </div>
-          </div>
+
+            <a
+              href="#"
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+            >
+              Back
+            </a>
+          </nav>
           <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-primary-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>

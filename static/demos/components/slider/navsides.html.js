@@ -58,7 +58,7 @@ const html = /* HTML */ `
           aria-label="Previous slide"
         >
           <div
-            class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimaryGroup()} group-hover:scale-125"
+            class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()} group-hover:scale-125"
           >
             ${classes.iconArrowLeft({})}
           </div>
@@ -71,7 +71,7 @@ const html = /* HTML */ `
           aria-label="Next slide"
         >
           <div
-            class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimaryGroup()} group-hover:scale-125"
+            class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()} group-hover:scale-125"
           >
             ${classes.iconArrowRight({})}
           </div>

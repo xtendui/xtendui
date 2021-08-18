@@ -6,11 +6,11 @@ const html = /* HTML */ `
       <div class="xt-list *** flex-nowrap ***">
         <a href="#" type="submit" class="*** flex items-stretch group ***">
           <div
-            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonPrimaryGroup()}"
+            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()}"
           >
             Search
           </div>
-          <div class="xt-button ${classes.buttonMd()} ${classes.buttonDefaultGroup()}">
+          <div class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()} ${classes.buttonDefaultGroup()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </div>
         </a>

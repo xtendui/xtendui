@@ -85,7 +85,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop>
+      <div data-xt-drop="{ position: 'top' }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"

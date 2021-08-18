@@ -2,11 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list flex-col">
+    <nav class="xt-list flex-col">
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.buttonMd()} *** border border-b-0 border-gray-300 *** rounded-t${classes.groupRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.dropButtonMd()} *** border border-b-0 border-gray-300 *** rounded-t${classes.groupRadius()} ${classes.dropButtonDefault()}"
       >
         Lorem ipsum dolor sit amet
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.dropButtonMd()} ${classes.dropButtonDefault()}"
       >
         Consectetur adipiscing elit
       </a>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.dropButtonMd()} ${classes.dropButtonDefault()}"
       >
         Mauris mattis
       </a>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.dropButtonMd()} ${classes.dropButtonDefault()}"
       >
         purus odio
       </a>
@@ -38,11 +38,11 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.buttonMd()} *** border border-gray-300 *** rounded-b${classes.groupRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.dropButtonMd()} *** border border-gray-300 *** rounded-b${classes.groupRadius()} ${classes.dropButtonDefault()}"
       >
         Et dictum felis vestibulum sed
       </a>
-    </div>
+    </nav>
   </div>
 `
 

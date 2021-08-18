@@ -19,12 +19,10 @@ export const classes = {
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefault: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
-  buttonDefaultGroup: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
+  buttonDefaultGroup: () => 'group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
   buttonPrimary: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
-  buttonPrimaryGroup: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
+  buttonPrimaryGroup: () => 'group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
   buttonRing: () =>
     'font-semibold leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonText: () =>
@@ -38,8 +36,12 @@ export const classes = {
   dropButtonMd: () => 'py-2 px-3 text-xs',
   dropButtonDefault: () =>
     'w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
+  dropButtonDefaultGroup: () =>
+    'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
   dropButtonPrimary: () =>
-    'w-full justify-start text-left text-white font-semibold transition hover:text-black hover:bg-white active:text-black active:bg-white on:text-black on:bg-white',
+    'w-full justify-start text-left text-white font-semibold bg-primary-500 transition hover:text-black hover:bg-white active:text-black active:bg-gray-100 on:text-black on:bg-white',
+  dropButtonPrimaryGroup: () =>
+    'group-hover:text-black group-hover:bg-white group-active:text-black group-active:bg-gray-100 group-on:text-black group-on:bg-white',
   // overlay
   overlayCardRadius: () => '-lg',
   // badge

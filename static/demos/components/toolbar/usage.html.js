@@ -2,43 +2,64 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <form class="text-xs">
-      <div class="*** xt-list xt-list-4 justify-between ***">
-        <a href="#" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}">
-          Back
+    <div class="*** xt-list xt-list-2 ***">
+      <div class="*** inline-flex mr-auto ***">
+        <a
+          href="#"
+          class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonDefault()}"
+        >
+          Clear
         </a>
+        <a
+          href="#"
+          class="xt-button ${classes.buttonMd()} *** rounded-r${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+        >
+          Submit
+        </a>
+      </div>
 
-        <div class="*** inline-flex flex-auto ***">
+      <a href="#" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}">
+        Back
+      </a>
+
+      <div data-xt-drop>
+        <div data-xt-drop-element>
           <button
-            type="submit"
-            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonDefault()}"
+            type="button"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
-            ${classes.iconSearch({ classes: 'text-xl -my-1' })}
+            Go to Page
           </button>
-          <input
-            type="text"
-            class="${classes.input()} *** rounded-r${classes.groupRadius()} *** ${classes.inputDefault()}"
-            aria-label="Search"
-            placeholder="Seach Catalog"
-          />
-        </div>
 
-        <div class="*** inline-flex ***">
-          <a
-            href="#"
-            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonDefault()}"
-          >
-            Clear
-          </a>
-          <a
-            href="#"
-            class="xt-button ${classes.buttonMd()} *** rounded-r${classes.groupRadius()} *** ${classes.buttonPrimary()}"
-          >
-            Submit
-          </a>
+          <div class="xt-drop p-4" data-xt-drop-target>
+            <div
+              class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
+            >
+              <nav class="xt-list flex-col">
+                <a
+                  href="#"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
+                  Page 0
+                </a>
+                <a
+                  href="#"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
+                  Page 1
+                </a>
+                <a
+                  href="#"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
+                  Page 2
+                </a>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 `
 
