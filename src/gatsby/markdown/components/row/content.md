@@ -41,7 +41,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 ## Alignment
 
-Use **tailwind classes** to assign alignment (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
+Use **tailwind classes** to assign alignment (e.g. margin auto, [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
 <demo>
   <demoinline src="demos/components/row/alignment">
