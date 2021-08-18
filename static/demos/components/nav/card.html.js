@@ -4,11 +4,11 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardDefault()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardDefault()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.groupMd()}">
+          <nav class="xt-list flex-col ${classes.groupMd()} *** border-t border-gray-300">
             <a
               href="#"
               class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
@@ -30,18 +30,18 @@ const html = /* HTML */ `
               Amet
             </a>
           </nav>
-          <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-gray-300 ***">
+          <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} border-t border-gray-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardPrimary()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardPrimary()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.groupMd()}">
+          <nav class="xt-list flex-col ${classes.groupMd()} *** border-t border-primary-300 ***">
             <a
               href="#"
               class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
@@ -63,7 +63,7 @@ const html = /* HTML */ `
               Amet
             </a>
           </nav>
-          <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-primary-300 ***">
+          <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} border-t border-primary-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>

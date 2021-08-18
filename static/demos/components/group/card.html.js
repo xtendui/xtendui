@@ -4,17 +4,17 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardDefault()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardDefault()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <div class="*** ${classes.cardSm()} border-b border-gray-300 ***">
+          <div class="*** ${classes.cardSm()} border-t border-gray-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>
         <form class="text-sm">
           <div class="xt-list flex-col">
-            <div class="inline-flex">
+            <div class="inline-flex *** border-t border-b border-gray-300 ***">
               <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
@@ -28,7 +28,7 @@ const html = /* HTML */ `
 
             <a
               href="#"
-              class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonDefault()}"
             >
               Search
             </a>
@@ -37,22 +37,22 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardPrimary()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardPrimary()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <div class="*** ${classes.cardSm()} border-b border-primary-300 ***">
+          <div class="*** ${classes.cardSm()} border-t border-primary-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <form class="text-sm">
             <div class="xt-list flex-col">
-              <div class="inline-flex">
-                <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
+              <div class="inline-flex *** border-t border-b border-primary-300 ***">
+                <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()}">
                   ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
                 <input
                   type="text"
-                  class="${classes.input()} ${classes.inputDefault()}"
+                  class="${classes.input()} ${classes.inputPrimary()}"
                   aria-label="Search"
                   placeholder="Seach Catalog"
                 />

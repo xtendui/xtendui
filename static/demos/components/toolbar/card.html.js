@@ -4,11 +4,11 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardDefault()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardDefault()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list xt-list-2 p-4">
+          <nav class="xt-list xt-list-2 *** ${classes.cardSm()} border-t border-gray-300 ***">
             <div class="inline-flex mr-auto">
               <a
                 href="#"
@@ -31,18 +31,18 @@ const html = /* HTML */ `
               Back
             </a>
           </nav>
-          <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-gray-300 ***">
+          <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} border-t border-gray-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardPrimary()} ***">
-          <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.cardPrimary()} ***">
+          <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list xt-list-2 p-4">
+          <nav class="xt-list xt-list-2 *** ${classes.cardSm()} border-t border-primary-300 ***">
             <div class="inline-flex mr-auto">
               <a
                 href="#"
@@ -65,7 +65,7 @@ const html = /* HTML */ `
               Back
             </a>
           </nav>
-          <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-primary-300 ***">
+          <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} border-t border-primary-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>

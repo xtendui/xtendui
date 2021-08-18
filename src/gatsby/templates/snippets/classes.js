@@ -87,18 +87,18 @@ export const classes = {
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
   checkDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
-  checkPrimary: () => 'text-primary-600 bg-black bg-opacity-25 border border-transparent transition-all',
+  checkPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   checkRadius: () => 'rounded-md',
   radioDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
-  radioPrimary: () => 'text-primary-600 bg-black bg-opacity-25 border border-transparent transition-all',
+  radioPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   radioRadius: () => 'rounded-full',
   switchDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
-  switchPrimary: () => 'text-primary-600 bg-black bg-opacity-25 border border-transparent transition-all',
+  switchPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   switchRadius: () => 'rounded-full',
   inputDefault: () =>
     'py-2.5 px-3.5 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
   inputPrimary: () =>
-    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-black bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
+    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
     'py-2.5 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
   labelDefault: () => 'font-semibold text-gray-700',
