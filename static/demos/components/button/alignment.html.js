@@ -2,35 +2,49 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Text align</div>
+    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Justify content</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full ${classes.buttonPrimary()}"
       >
-        Text default (center)<br />Lorem ipsum dolor sit amet ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        Justify default (center)<br />Text default (center) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-center ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-center text-center *** ${classes.buttonPrimary()}"
       >
-        Text center<br />Lorem ipsum dolor sit amet ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        Justify center<br />Text center ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** text-left *** ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-start text-left *** ${classes.buttonPrimary()}"
       >
-        Text left<br />Lorem ipsum dolor sit amet ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        Justify start<br />Text left ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** text-right *** ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-end text-right *** ${classes.buttonPrimary()}"
       >
-        Text right<br />Lorem ipsum dolor sit amet ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+        Justify end<br />Text right ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-between *** ${classes.buttonPrimary()}"
+      >
+        Justify between ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-around *** ${classes.buttonPrimary()}"
+      >
+        Justify around ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
     </div>
 
@@ -63,52 +77,6 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** items-end *** ${classes.buttonPrimary()}"
       >
         Items end<br />Lorem ipsum dolor sit amet ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-    </div>
-
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Justify content</div>
-
-    <div class="xt-list xt-list-3 items-center">
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full ${classes.buttonPrimary()}"
-      >
-        Justify default (center) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-center *** ${classes.buttonPrimary()}"
-      >
-        Justify center ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-start *** ${classes.buttonPrimary()}"
-      >
-        Justify start ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-end *** ${classes.buttonPrimary()}"
-      >
-        Justify end ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-between *** ${classes.buttonPrimary()}"
-      >
-        Justify between ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} w-full *** justify-around *** ${classes.buttonPrimary()}"
-      >
-        Justify around ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </button>
     </div>
   </div>

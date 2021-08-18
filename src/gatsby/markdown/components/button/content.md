@@ -35,9 +35,13 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Icon and Alignment
+## Alignment and Icon
 
 Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
+
+> To properly align horizontally also when newlines specify both [text-align](https://tailwindcss.com/docs/text-align) and [justify-content](https://tailwindcss.com/docs/justify-content).
+
+> This component uses [icon](/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/button/alignment">
@@ -55,13 +59,13 @@ Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon 
 
 Refer to [group](/components/group).
 
-## Toolbar
-
-Refer to [toolbar](/components/toolbar).
-
 ## Nav
 
 Refer to [nav](/components/nav).
+
+## Toolbar
+
+Refer to [toolbar](/components/toolbar).
 
 ## Checks
 

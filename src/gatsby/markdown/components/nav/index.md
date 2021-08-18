@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Other"
-parent: "Group"
-title: "Group"
-description: "Group is a component to group up buttons, inputs and other content."
+parent: "Nav"
+title: "Nav"
+description: "Nav is a component to group up buttons, inputs and other content."
 ---
 
 ## Usage
@@ -15,13 +15,6 @@ Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwind
 > This component uses [list](/components/list) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/group/usage">
-  </demoinline>
-</demo>
-
-You can also have **horizontal layout on responsive**, use `.flex-auto` to expand it to **fill width**.
-
-<demo>
-  <demoinline src="demos/components/group/usage-responsive">
+  <demoinline src="demos/components/nav/usage">
   </demoinline>
 </demo>

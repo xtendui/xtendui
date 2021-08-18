@@ -37,4 +37,4 @@ Change [font-size](https://tailwindcss.com/docs/font-size) to change the icon si
 
 ## Button and Alignment
 
-Refer to [button icon and alignment](/components/button/content#icon-and-alignment).
+Refer to [button alignment and icon](/components/button/content#alignment-and-icon).

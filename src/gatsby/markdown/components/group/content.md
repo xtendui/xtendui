@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Core"
+category: "Other"
 parent: "Group"
 title: "Content"
 date: "2030-10-10"
@@ -13,8 +13,6 @@ Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.co
 <demo>
   <demoinline src="demos/components/group/size">
   </demoinline>
-  <demoinline src="demos/components/group/size-stack">
-  </demoinline>
 </demo>
 
 ## Border
@@ -23,8 +21,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
 
 <demo>
   <demoinline src="demos/components/group/border">
-  </demoinline>
-  <demoinline src="demos/components/group/border-stack">
   </demoinline>
 </demo>
 
@@ -35,17 +31,13 @@ Use [list space](/components/list/content#space) **component classes** to assign
 <demo>
   <demoinline src="demos/components/group/space">
   </demoinline>
-  <demoinline src="demos/components/group/space-stack">
-  </demoinline>
 </demo>
 
 ## Merge
 
-You can make group a **single interactive object**, be sure to use `group` on the interactive element.
+You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.
 
 <demo>
   <demoinline src="demos/components/group/merge">
-  </demoinline>
-  <demoinline src="demos/components/group/merge-stack">
   </demoinline>
 </demo>

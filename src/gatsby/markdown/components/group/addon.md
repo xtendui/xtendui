@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Core"
+category: "Other"
 parent: "Group"
 title: "Addon"
 date: "1900-10-10"

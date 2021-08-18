@@ -45,7 +45,7 @@ const mountEventmethods = ({ ref }) => {
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.append(Xt.node({ str: '<hr class="my-4 border-gray-400"/>' }))
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
       log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
