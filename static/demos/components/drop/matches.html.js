@@ -11,7 +11,7 @@ const html = /* HTML */ `
         drop
       </button>
 
-      <div class="xt-drop p-4" data-xt-drop-target>
+      <div class="xt-drop p-3" data-xt-drop-target>
         <div
           class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
         >

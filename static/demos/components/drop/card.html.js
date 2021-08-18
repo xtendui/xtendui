@@ -12,7 +12,7 @@ const html = /* HTML */ `
           White
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()} ***">
             <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           Primary
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardPrimary()} ***">
             <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -98,7 +98,7 @@ const html = /* HTML */ `
           Blur
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()} bg-opacity-75 backdrop-filter backdrop-blur ***"
           >

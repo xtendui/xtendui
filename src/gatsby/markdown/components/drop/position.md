@@ -21,7 +21,7 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 
 </div>
 
-Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-white"></div>` inside `.xt-drop` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
+Use `<div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>` inside `.xt-drop` to add an arrow. If you want the arrow to be **below the drop** use the class `z-below`.
 
 <demo>
   <demoinline src="demos/components/drop/bottom">

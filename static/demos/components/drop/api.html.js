@@ -84,7 +84,7 @@ const html = /* HTML */ `
         Drop 0
       </button>
 
-      <div class="xt-drop p-4" title="Target 0" data-xt-drop-target>
+      <div class="xt-drop p-3" title="Target 0" data-xt-drop-target>
         <div
           class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
         >
@@ -119,7 +119,7 @@ const html = /* HTML */ `
         Drop 1
       </button>
 
-      <div class="xt-drop p-4" title="Target 1" data-xt-drop-target>
+      <div class="xt-drop p-3" title="Target 1" data-xt-drop-target>
         <div
           class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
         >

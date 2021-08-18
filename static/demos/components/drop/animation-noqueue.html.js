@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div
-          class="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
           <div
@@ -51,7 +51,7 @@ const html = /* HTML */ `
         </button>
 
         <div
-          class="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
           <div class="xt-card w-80 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}">

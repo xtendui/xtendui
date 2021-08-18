@@ -112,7 +112,7 @@ const mountEventmethods = ({ ref }) => {
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
-        <div class="xt-drop p-4" title="Target ${indexTr}"
+        <div class="xt-drop p-3" title="Target ${indexTr}"
           data-xt-drop-target>
           <div class="xt-card w-64 rounded-md shadow-drop text-black xt-links-default bg-white">
             <nav class="list flex-col p-3">

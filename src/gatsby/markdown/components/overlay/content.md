@@ -32,8 +32,6 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 
 ## Content
 
-> This component uses [card](/components/card) see documentation for more info.
-
 You can also populate with other [card content](/components/card/content).
 
 <demo>

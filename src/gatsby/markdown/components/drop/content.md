@@ -8,9 +8,7 @@ date: "2030-10-10"
 
 ## Content
 
-> This component uses [card](/components/card) see documentation for more info.
-
-You can also populate with other [card content](/components/card/content).
+You can also populate with other [card content](/components/card/content) and  [card content](/components/nav/content).
 
 <demo>
   <demoinline src="demos/components/drop/card">

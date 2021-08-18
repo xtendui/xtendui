@@ -8,7 +8,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element data-xt-group="my-group">
         <a href="#">dolor</a>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target data-xt-group="my-group">
+        <div class="xt-tooltip p-3" data-xt-tooltip-target data-xt-group="my-group">
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
           >
@@ -16,7 +16,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target data-xt-position="right-end" data-xt-group="my-group">
+        <div class="xt-tooltip p-3" data-xt-tooltip-target data-xt-position="right-end" data-xt-group="my-group">
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
           >
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element>
         <a href="#">amet</a>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
           >

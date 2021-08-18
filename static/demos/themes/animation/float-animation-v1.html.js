@@ -57,7 +57,7 @@ const html = /* HTML */ `
           group
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-target>
+        <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
               class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white ${animDesign()}"
@@ -85,7 +85,7 @@ const html = /* HTML */ `
               </nav>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white ${animItemOpacity()}"></div>
         </div>
       </div>
 
@@ -98,7 +98,7 @@ const html = /* HTML */ `
           card
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-target>
+        <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
               class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white ${animDesign()}"
@@ -120,7 +120,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white ${animItemOpacity()}"></div>
         </div>
       </div>
     </div>
@@ -137,7 +137,7 @@ const html = /* HTML */ `
             tooltip
           </button>
 
-          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"
@@ -146,7 +146,7 @@ const html = /* HTML */ `
                 Lorem ipsum dolor sit amet
               </div>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity()}"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>
@@ -160,7 +160,7 @@ const html = /* HTML */ `
             Group
           </button>
 
-          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"
@@ -193,7 +193,7 @@ const html = /* HTML */ `
                 </form>
               </div>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-300 z-below ${animItemOpacity()}"></div>
+            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${animItemOpacity()}"></div>
           </div>
         </div>
       </div>

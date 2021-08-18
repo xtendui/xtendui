@@ -21,7 +21,7 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 
 </div>
 
-Use `<div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>` inside `.xt-tooltip` to add an arrow. You can change the [inset](https://tailwindcss.com/docs/top-right-bottom-left) and [width](https://tailwindcss.com/docs/width) and [height](https://tailwindcss.com/docs/height) values to change the arrow size and position.
+Use `<div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>` inside `.xt-tooltip` to add an arrow. If you want the arrow to be **below the drop** use the class `z-below`.
 
 <demo>
   <demoinline src="demos/components/tooltip/bottom">

@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div
-        class="xt-tooltip p-2 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+        class="xt-tooltip p-3 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
         data-xt-tooltip-target
       >
         <div

@@ -84,7 +84,7 @@ const html = /* HTML */ `
         Tooltip 0
       </button>
 
-      <div class="xt-tooltip p-2" title="Target 0" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" title="Target 0" data-xt-tooltip-target>
         <div
           class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
         >
@@ -100,7 +100,7 @@ const html = /* HTML */ `
         Tooltip 1
       </button>
 
-      <div class="xt-tooltip p-2" title="Target 1" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" title="Target 1" data-xt-tooltip-target>
         <div
           class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
         >

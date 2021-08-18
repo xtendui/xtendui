@@ -12,13 +12,13 @@ const html = /* HTML */ `
             bottom
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -32,13 +32,13 @@ const html = /* HTML */ `
             bottom start
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -52,13 +52,13 @@ const html = /* HTML */ `
             bottom end
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -72,13 +72,13 @@ const html = /* HTML */ `
             bottom inset
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -92,13 +92,13 @@ const html = /* HTML */ `
             bottom start inset
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -112,13 +112,13 @@ const html = /* HTML */ `
             bottom end inset
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>

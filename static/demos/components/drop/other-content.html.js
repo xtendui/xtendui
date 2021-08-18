@@ -11,7 +11,7 @@ const html = /* HTML */ `
         Group
       </button>
 
-      <div class="xt-drop p-4" data-xt-drop-target>
+      <div class="xt-drop p-3" data-xt-drop-target>
         <form class="${classes.dropCardRadius()} shadow-drop text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
             <div class="inline-flex flex-auto">

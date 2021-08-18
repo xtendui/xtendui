@@ -12,7 +12,7 @@ const html = /* HTML */ `
           Black
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} ***"
           >
@@ -31,7 +31,7 @@ const html = /* HTML */ `
           Primary
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardPrimary()} ***"
           >
@@ -50,7 +50,7 @@ const html = /* HTML */ `
           Blur
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} bg-opacity-75 backdrop-filter backdrop-blur ***"
           >

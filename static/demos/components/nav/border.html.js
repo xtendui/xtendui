@@ -10,13 +10,26 @@ const html = /* HTML */ `
         Lorem ipsum dolor sit amet
       </button>
 
-      <button type="button" class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+      >
         Consectetur adipiscing elit
       </button>
 
-      <button type="button" class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}">Mauris mattis</button>
+      <button
+        type="button"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+      >
+        Mauris mattis
+      </button>
 
-      <button type="button" class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}">purus odio</button>
+      <button
+        type="button"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.buttonMd()} ${classes.buttonDefault()}"
+      >
+        purus odio
+      </button>
 
       <button
         type="button"

@@ -12,7 +12,7 @@ const html = /* HTML */ `
           left
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -37,7 +37,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ const html = /* HTML */ `
           left start
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -75,7 +75,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -88,7 +88,7 @@ const html = /* HTML */ `
           left end
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -113,7 +113,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -126,7 +126,7 @@ const html = /* HTML */ `
           left inset
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -151,7 +151,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -164,7 +164,7 @@ const html = /* HTML */ `
           left start inset
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -189,7 +189,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -202,7 +202,7 @@ const html = /* HTML */ `
           left end inset
         </button>
 
-        <div class="xt-drop p-4" data-xt-drop-target>
+        <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
           >
@@ -227,7 +227,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
         </div>
       </div>
     </div>
