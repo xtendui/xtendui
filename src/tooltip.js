@@ -128,13 +128,7 @@ class Tooltip extends Xt.Toggle {
         } else {
           el.removeAttribute('data-popper-inset', 'true')
         }
-        // fix merge array popperjs options modifiers
-        let filteredOptions = options.popperjs
-        if (options.popperjs.modifiers) {
-          popperOptionsDefault.modifiers.push(...options.popperjs.modifiers)
-          filteredOptions = Object.entries(options.popperjs).filter(([key]) => key !== 'modifiers')
-        }
-        const popperOptions = Xt.merge([popperOptionsDefault, filteredOptions])
+        const popperOptions = Xt.merge([popperOptionsDefault, options.popperjs])
         const popperInstance = createPopper(popperEl ?? element, el, popperOptions)
         Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
         // fix recalc position with new css depending on position

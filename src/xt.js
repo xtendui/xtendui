@@ -658,13 +658,17 @@ if (typeof window !== 'undefined') {
     for (const obj of arr) {
       if (obj) {
         for (const [key, value] of Object.entries(obj)) {
-          if (
+          if (Array.isArray(value)) {
+            // if array merge arrays (e.g. options.popperjs modifiers)
+            final[key] = final[key] ? final[key] : []
+            final[key].push(...value)
+          } else if (
             value !== null &&
             typeof value === 'object' &&
-            !Array.isArray(value) && // not array
             !value.nodeName && // not HTML element
             value !== window // not window
           ) {
+            // if object deep merge
             final[key] = Xt.merge([final[key], value])
           } else {
             final[key] = value
