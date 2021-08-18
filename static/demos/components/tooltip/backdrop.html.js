@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
           >
             backdrop
           </button>
@@ -15,7 +15,7 @@ const html = /* HTML */ `
           <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
             <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
@@ -27,7 +27,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
           data-xt-tooltip-element
         >
           backdrop click
@@ -35,7 +35,9 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target>
           <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>

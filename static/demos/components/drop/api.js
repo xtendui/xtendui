@@ -114,15 +114,15 @@ const mountEventmethods = ({ ref }) => {
       const strTr = `
         <div class="xt-drop p-4" title="Target ${indexTr}"
           data-xt-drop-target>
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-            <nav class="list flex-col">
-              <a href="#" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+          <div class="xt-card w-64 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <nav class="list flex-col p-3">
+              <a href="#" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              <button type="button" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              <button type="button" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
                 Amet
               </button>
             </nav>

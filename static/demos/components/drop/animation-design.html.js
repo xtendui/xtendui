@@ -6,26 +6,35 @@ const html = /* HTML */ `
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-drop-element
         >
-          list
+          group
         </button>
 
         <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
+              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
             ></div>
-            <div class="xt-card w-64 py-3.5 transition opacity-0 group-in:opacity-100">
+            <div class="xt-card w-64 ${classes.dropGroupMd()} transition opacity-0 group-in:opacity-100">
               <nav class="xt-list flex-col">
-                <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+                <a
+                  href="#"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
-                <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+                <button
+                  type="button"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
                   Dolor sit
                 </button>
-                <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+                <button
+                  type="button"
+                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                >
                   Amet
                 </button>
               </nav>
@@ -37,7 +46,7 @@ const html = /* HTML */ `
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-drop-element
         >
           card
@@ -46,7 +55,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-4 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** ${classes.cardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
+              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
             ></div>
             <div class="xt-card w-80 transition opacity-0 group-in:opacity-100">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">

@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
           tooltip
         </button>
@@ -15,7 +15,9 @@ const html = /* HTML */ `
           class="xt-tooltip p-2 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-tooltip-target
         >
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>
@@ -24,7 +26,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
           tooltip
         </button>
@@ -33,7 +35,9 @@ const html = /* HTML */ `
           class="xt-tooltip p-2 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-tooltip-target
         >
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Consectetur adipiscing elit
           </div>
         </div>

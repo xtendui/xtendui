@@ -15,7 +15,7 @@ const html = /* HTML */ `
           <h3 class="xt-p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
           </h3>
-          <div class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}">
+          <div class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}">
             Lorem ipsum
           </div>
         </a>

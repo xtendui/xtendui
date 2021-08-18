@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
           <div class="md:xt-card-group">
             <div class="${classes.cardMd()} md:w-7/12">
               <div class="xt-h4">Lorem ipsum</div>

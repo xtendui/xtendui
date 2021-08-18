@@ -3,7 +3,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <label class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
+      <label
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Lorem ipsum
         <input
           type="checkbox"
@@ -14,7 +16,9 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
+      <label
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Lorem ipsum
         <input
           type="checkbox"
@@ -24,7 +28,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -36,7 +40,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -46,7 +50,9 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
+      <label
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Lorem ipsum
         <input
           type="radio"
@@ -56,7 +62,9 @@ const html = /* HTML */ `
         />
       </label>
 
-      <label class="*** xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}">
+      <label
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+      >
         Lorem ipsum
         <input
           type="radio"

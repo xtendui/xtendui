@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-tooltip-element
         >
           static

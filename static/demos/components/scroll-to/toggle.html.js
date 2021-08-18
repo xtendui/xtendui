@@ -10,19 +10,19 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: true }">
         <div class="xt-list xt-list-3 justify-center">
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #0
           </a>
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #1
           </a>
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #2
@@ -35,7 +35,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-0"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#0</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -61,7 +61,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-1"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#1</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -81,7 +81,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-2"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#2</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -118,19 +118,19 @@ const html = /* HTML */ `
       >
         <div class="xt-list xt-list-3 justify-center">
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #0a
           </a>
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #1a
           </a>
           <a
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #2a
@@ -143,7 +143,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-0a"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#0a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -169,7 +169,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-1a"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#1a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -189,7 +189,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-2a"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#2a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -224,7 +224,7 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: 'elements' }">
         <div class="xt-list xt-list-3 justify-center">
           <a
-            class="xt-button w-full my-3 ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #0b
@@ -234,7 +234,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-0b"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#0b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -256,7 +256,7 @@ const html = /* HTML */ `
           </div>
 
           <a
-            class="xt-button w-full my-3 ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #1b
@@ -267,7 +267,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-1b"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#1b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -283,7 +283,7 @@ const html = /* HTML */ `
           </div>
 
           <a
-            class="xt-button w-full my-3 ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-toggle-element
           >
             #2b
@@ -294,7 +294,7 @@ const html = /* HTML */ `
             data-xt-toggle-target
             data-xt-hash="anchor-2b"
           >
-            <div class="*** xt-card *** ${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
+            <div class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.cardDefault()}">
               <div class="xt-h5">#2b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis

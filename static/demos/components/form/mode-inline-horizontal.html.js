@@ -184,7 +184,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             submit
           </button>

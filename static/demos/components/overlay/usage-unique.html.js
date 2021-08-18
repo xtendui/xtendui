@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay="{ targets: '#overlay--unique' }"
       >
         Overlay
@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay="{ targets: '#overlay--unique' }"
       >
         Overlay same
@@ -23,7 +23,7 @@ const html = /* HTML */ `
         <div class="xt-backdrop z-below bg-black opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
-            <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
+            <div class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"

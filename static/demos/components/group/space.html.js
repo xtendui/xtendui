@@ -5,12 +5,15 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-list *** xt-list-2 ***">
         <div class="inline-flex flex-auto">
-          <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+          >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input
             type="text"
-            class="${classes.input()} rounded-r-md ${classes.inputDefault()}"
+            class="${classes.input()} rounded-r${classes.groupRadius()} ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />
@@ -18,7 +21,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
           Search
         </button>

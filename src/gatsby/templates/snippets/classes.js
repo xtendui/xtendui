@@ -11,44 +11,54 @@ export const classes = {
     'text-black xt-links-default bg-gray-100 border-2 border-transparent in:border-gray-200 transition',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
-  // size
-  badgeRadius: () => 'rounded-xs',
-  badgeSm: () => 'py-2 px-2.5 text-3xs',
-  badgeMd: () => 'py-3 px-3.5 text-xs',
-  badgeLg: () => 'py-3.5 px-4 text-base',
+  // button
+  buttonRadius: () => '-md',
   buttonSm: () => 'py-2 px-2.5 text-3xs',
   buttonMd: () => 'py-3 px-3.5 text-xs',
   buttonLg: () => 'py-3.5 px-4 text-base',
-  buttonRadius: () => 'rounded-md',
-  buttonMdDrop: () => 'py-2 px-6 text-2xs',
-  tooltipRadius: () => 'rounded-sm',
-  tooltipSm: () => 'py-1 px-2 text-3xs',
-  tooltipMd: () => 'py-2 px-3.5 text-xs',
-  tooltipLg: () => 'py-2.5 px-4 text-base',
-  cardRadius: () => 'rounded-md',
-  cardSm: () => 'py-6 px-7 text-sm',
-  cardMd: () => 'py-8 px-9 text-base',
-  cardLg: () => 'py-8 px-9 md:text-lg md:py-9 md:px-10 text-base',
-  // variant
-  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100',
-  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefault: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   buttonDefaultGroup: () =>
     'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
-  buttonDefaultDrop: () =>
-    'w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonPrimary: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   buttonPrimaryGroup: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
-  buttonPrimaryDrop: () =>
-    'w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75',
   buttonRing: () =>
     'font-semibold leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonText: () =>
     'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
+  // group
+  groupRadius: () => '-md',
+  // drop
+  dropButtonRadius: () => '-md',
+  dropCardRadius: () => '-md',
+  dropGroupMd: () => 'p-3',
+  dropButtonMd: () => 'py-2 px-3 text-xs',
+  dropButtonDefault: () =>
+    'w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
+  dropButtonPrimary: () =>
+    'w-full justify-start text-left text-white font-semibold transition hover:text-black hover:bg-white active:text-black active:bg-white on:text-black on:bg-white',
+  // overlay
+  overlayCardRadius: () => '-lg',
+  // badge
+  badgeRadius: () => '-xs',
+  badgeSm: () => 'py-2 px-2.5 text-3xs',
+  badgeMd: () => 'py-3 px-3.5 text-xs',
+  badgeLg: () => 'py-3.5 px-4 text-base',
+  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100',
+  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
+  // tooltip
+  tooltipRadius: () => '-md',
+  tooltipSm: () => 'py-1 px-2 text-3xs',
+  tooltipMd: () => 'py-2 px-2.5 text-xs',
+  tooltipLg: () => 'py-2.5 px-4 text-base',
+  // card
+  cardRadius: () => '-lg',
+  cardSm: () => 'p-6 text-sm',
+  cardMd: () => 'p-8 text-base',
+  cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
   cardDefaultFull: () => 'text-black xt-links-default',
   cardDefaultInteractive: () =>

@@ -7,14 +7,14 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             auto
           </button>
 
           <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
@@ -27,14 +27,14 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             auto start
           </button>
 
           <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>
@@ -47,14 +47,14 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             auto end
           </button>
 
           <div class="xt-tooltip p-2" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
             >
               Lorem ipsum dolor sit amet
             </div>

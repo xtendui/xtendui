@@ -9,21 +9,21 @@ const html = /* HTML */ `
             <div class="xt-list *** xt-list-px *** flex-col">
               <button
                 type="button"
-                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 Lorem Ipsum
               </button>
 
               <button
                 type="button"
-                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 Dolor sit
               </button>
 
               <button
                 type="button"
-                class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
               >
                 Amet
               </button>
@@ -32,14 +32,14 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Dolor sit
           </button>
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Amet
           </button>
@@ -50,21 +50,21 @@ const html = /* HTML */ `
         <div class="xt-list *** xt-list-px ***">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Lorem Ipsum
           </button>
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Dolor sit
           </button>
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Amet
           </button>

@@ -5,14 +5,16 @@ const html = /* HTML */ `
     <div data-xt-tooltip="{ on: 'click', off: 'click' }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-tooltip-element
       >
         click
       </button>
 
       <div class="xt-tooltip p-2" data-xt-tooltip-target>
-        <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+        <div
+          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+        >
           Lorem ipsum dolor sit amet
         </div>
       </div>
@@ -29,7 +31,9 @@ const html = /* HTML */ `
         />
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>

@@ -6,41 +6,57 @@ const html = /* HTML */ `
       <div data-xt-drop-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
           mouse
         </button>
 
         <div class="xt-drop p-4" data-xt-drop-target>
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div
+            class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
+          >
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <a
+                href="#"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button
+                type="button"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              >
                 Dolor sit
               </button>
               <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
                 <div data-xt-drop-element>
-                  <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+                  <button
+                    type="button"
+                    class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  >
                     nested
                   </button>
 
                   <div class="xt-drop p-4" data-xt-drop-target>
-                    <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardPrimary()}">
+                    <div
+                      class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardPrimary()}"
+                    >
                       <nav class="xt-list flex-col">
-                        <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}">
+                        <a
+                          href="#"
+                          class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
+                        >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </a>
                         <button
                           type="button"
-                          class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}"
+                          class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
                         >
                           Dolor sit
                         </button>
                         <button
                           type="button"
-                          class="xt-button ${classes.buttonMdDrop()} ${classes.buttonPrimaryDrop()}"
+                          class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
                         >
                           Amet
                         </button>
@@ -66,15 +82,26 @@ const html = /* HTML */ `
         />
 
         <div class="xt-drop p-4" data-xt-drop-target>
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div
+            class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
+          >
             <nav class="xt-list flex-col">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <a
+                href="#"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button
+                type="button"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              >
                 Dolor sit
               </button>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
+              <button
+                type="button"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              >
                 Amet
               </button>
             </nav>

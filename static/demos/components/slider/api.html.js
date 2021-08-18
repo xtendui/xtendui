@@ -6,56 +6,56 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center">
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-first-element"
         >
           1st element
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-first-target"
         >
           1st target
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-add"
         >
           Add
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-remove"
         >
           Remove
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-reinit"
         >
           Reinit
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-restart"
         >
           Restart
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-destroy"
         >
           Destroy
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           id="button--slider-api-unmount"
         >
           Unmount
@@ -142,7 +142,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
           <div
             class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
             id="card--slider-api-log"

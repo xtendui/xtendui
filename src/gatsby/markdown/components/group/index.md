@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Other"
+category: "Core"
 parent: "Group"
 title: "Group"
 description: "Group is a component to group up buttons, inputs and other content."

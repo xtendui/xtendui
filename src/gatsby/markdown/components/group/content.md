@@ -1,6 +1,6 @@
 ---
 type: "Components"
-category: "Other"
+category: "Core"
 parent: "Group"
 title: "Content"
 date: "2030-10-10"

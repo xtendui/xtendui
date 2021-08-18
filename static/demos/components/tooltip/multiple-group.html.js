@@ -9,13 +9,17 @@ const html = /* HTML */ `
         <a href="#">dolor</a>
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target data-xt-group="my-group">
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target data-xt-position="right-end" data-xt-group="my-group">
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Consectetur adipiscing elit
           </div>
         </div>
@@ -27,7 +31,9 @@ const html = /* HTML */ `
         <a href="#">amet</a>
 
         <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
+          <div
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          >
             Lorem ipsum dolor sit amet
           </div>
         </div>

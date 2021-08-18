@@ -28,7 +28,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #1
               </a>
@@ -39,28 +39,16 @@ const html = /* HTML */ `
                   <div class="*** xt-drop-content ***">
                     <div class="pt-16 pb-24 text-white xt-links-inverse">
                       <div class="container">
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
                         </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Dolor sit amet
                         </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Consectetur adipiscing elit
                         </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Morbi nec mauris est
                         </a>
                         <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0"> Show all </a>
@@ -74,7 +62,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #2
               </a>
@@ -85,16 +73,10 @@ const html = /* HTML */ `
                   <div class="*** xt-drop-content ***">
                     <div class="pt-16 pb-24 text-white xt-links-inverse">
                       <div class="container">
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
                         </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                        >
+                        <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Dolor sit amet
                         </a>
                         <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0"> Show all </a>
@@ -107,7 +89,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #3
             </a>
@@ -115,7 +97,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #4
               </a>
@@ -128,48 +110,27 @@ const html = /* HTML */ `
                       <div class="container">
                         <div class="xt-row xt-row-x-8">
                           <div class="w-full md:w-6/12">
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Lorem ipsum
                             </a>
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Dolor sit amet
                             </a>
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Consectetur adipiscing elit
                             </a>
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Morbi nec mauris est
                             </a>
                           </div>
                           <div class="w-full md:w-6/12">
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Dolor sit amet
                             </a>
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Consectetur adipiscing elit
                             </a>
-                            <a
-                              href="#"
-                              class="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case"
-                            >
+                            <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                               Morbi nec mauris est
                             </a>
                             <a href="#" class="xt-button xt-link text-lg mt-6 py-2 px-0"> Show all </a>
@@ -184,7 +145,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #5
             </a>

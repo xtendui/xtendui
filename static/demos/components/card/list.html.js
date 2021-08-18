@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
       <div class="${classes.cardMd()}">
         <div class="*** xt-list xt-list-6 md:flex-nowrap items-baseline ***">
           <div>${classes.iconPackage({ classes: 'text-3xl' })}</div>

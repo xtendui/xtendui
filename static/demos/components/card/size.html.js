@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
           <div class="*** ${classes.cardSm()} ***">
             <div class="xt-h5">Small</div>
             <p>
@@ -17,7 +17,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
           <div class="*** ${classes.cardMd()} ***">
             <div class="xt-h4">Medium</div>
             <p>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
           <div class="*** ${classes.cardLg()} ***">
             <div class="xt-h3">Large</div>
             <p>

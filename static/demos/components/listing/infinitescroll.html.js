@@ -22,7 +22,7 @@ const html = /* HTML */ `
           <div class="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
               data-xt-infinitescroll-up="-1"
             >
               <span class="content"> Load previous page </span>
@@ -139,7 +139,7 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-2 flex-col items-center">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-infinitescroll-down="+1"
           >
             <span class="content"> Show more products </span>

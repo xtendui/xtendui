@@ -11,7 +11,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">1</div>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">2</div>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">3</div>
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">4</div>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">5</div>
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">6</div>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div class="relative">
               <div
-                class="*** xt-design *** ${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+                class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
               <div class="xt-card p-8 text-base text-center text-black xt-links-default">
                 <div class="xt-h4">7</div>

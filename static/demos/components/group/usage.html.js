@@ -5,7 +5,10 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="*** xt-list ***">
         <div class="*** inline-flex flex-auto ***">
-          <button type="button" class="xt-button ${classes.buttonMd()} *** rounded-l-md *** ${classes.buttonDefault()}">
+          <button
+            type="button"
+            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupRadius()} *** ${classes.buttonDefault()}"
+          >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
 
@@ -17,7 +20,10 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button type="button" class="xt-button ${classes.buttonMd()} *** rounded-r-md *** ${classes.buttonPrimary()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} *** rounded-r${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+        >
           Search
         </button>
       </div>

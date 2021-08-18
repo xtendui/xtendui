@@ -5,17 +5,20 @@ const html = /* HTML */ `
     <div data-xt-drop>
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-drop-element
       >
         Group
       </button>
 
       <div class="xt-drop p-4" data-xt-drop-target>
-        <form class="${classes.cardRadius()} shadow-drop text-sm">
+        <form class="${classes.dropCardRadius()} shadow-drop text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
             <div class="inline-flex flex-auto">
-              <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
+              <button
+                type="button"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+              >
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
               <input
@@ -26,7 +29,10 @@ const html = /* HTML */ `
               />
             </div>
 
-            <button type="button" class="xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonPrimary()}">
+            <button
+              type="button"
+              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+            >
               Search
             </button>
           </div>

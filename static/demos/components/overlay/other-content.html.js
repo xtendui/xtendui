@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-overlay>
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay-element
       >
         Group
@@ -22,10 +22,13 @@ const html = /* HTML */ `
             ${classes.iconX()}
           </button>
           <div class="xt-overlay-inner">
-            <form class="text-sm ${classes.cardRadius()} shadow-overlay">
+            <form class="text-sm rounded${classes.overlayCardRadius()} shadow-overlay">
               <div class="xt-list flex-nowrap max-w-sm">
                 <div class="inline-flex flex-auto">
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+                  >
                     ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                   </button>
                   <input
@@ -36,7 +39,10 @@ const html = /* HTML */ `
                   />
                 </div>
 
-                <button type="button" class="xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonPrimary()}">
+                <button
+                  type="button"
+                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+                >
                   Search
                 </button>
               </div>

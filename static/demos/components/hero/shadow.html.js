@@ -15,7 +15,10 @@ const html = /* HTML */ `
           <h3 class="xt-p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
           </h3>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}">
+          <a
+            href="#"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             Lorem ipsum
           </a>
         </div>
@@ -35,7 +38,10 @@ const html = /* HTML */ `
           <h3 class="xt-p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
           </h3>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}">
+          <a
+            href="#"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             Lorem ipsum
           </a>
         </div>
@@ -55,7 +61,10 @@ const html = /* HTML */ `
           <h3 class="xt-p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis.
           </h3>
-          <a href="#" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}">
+          <a
+            href="#"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          >
             Lorem ipsum
           </a>
         </div>

@@ -56,7 +56,7 @@ Use **component utility** `.xt-card-group` to stack card content **horizontally*
 
 </div>
 
-Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width)).
+Use `.flex-full` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **expand height**.
 
 <demo>
   <demoinline src="demos/components/card/group">

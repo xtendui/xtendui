@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-overlay="{ duration: 500 }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay-element
       >
         overlay
@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div
             class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
           >
-            <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
+            <div class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"

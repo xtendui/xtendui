@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div data-xt-drop-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             Drop
           </button>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
         <div data-xt-drop-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             Drop
           </button>
@@ -57,7 +57,7 @@ const html = /* HTML */ `
         <div data-xt-drop-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
             Drop
           </button>

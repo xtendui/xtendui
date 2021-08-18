@@ -12,7 +12,7 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <input
                       type="text"
-                      class="${classes.input()} rounded-l-md ${classes.inputDefault()}"
+                      class="${classes.input()} rounded-l${classes.groupRadius()} ${classes.inputDefault()}"
                       aria-label="Search"
                       placeholder="Search"
                       data-xt-googlelocator-search-input
@@ -26,7 +26,7 @@ const html = /* HTML */ `
                     </button>
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r-md ${classes.buttonDefault()}"
+                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonDefault()}"
                       data-xt-googlelocator-search-btn
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -141,7 +141,7 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
             data-xt-googlelocator-repeat-btn
           >
             Search in this area

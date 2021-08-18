@@ -8,12 +8,11 @@ date: "2030-10-10"
 
 ## Content
 
-You can use [card component](/components/card) and [group component](/components/group) as content.
+> This component uses [group](/components/group) see documentation for more info.
 
-<demo>
-  <demoinline src="demos/components/drop/group">
-  </demoinline>
-</demo>
+> This component uses [card](/components/card) see documentation for more info.
+
+You can use [card component](/components/card) and [group component](/components/group) as content.
 
 You can also populate with other [card content](/components/card/content).
 

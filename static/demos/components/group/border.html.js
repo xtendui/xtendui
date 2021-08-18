@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="inline-flex flex-auto">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-l-md *** border border-r-0 border-gray-400 *** ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} *** border border-r-0 border-gray-400 *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-r-md *** border border-gray-400 *** ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} *** border border-gray-400 *** ${classes.buttonDefault()}"
         >
           Search
         </button>

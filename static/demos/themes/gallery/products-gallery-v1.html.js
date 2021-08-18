@@ -231,7 +231,7 @@ const html = /* HTML */ `
 
                 <a
                   href="#"
-                  class="xt-button ${classes.buttonLg()} ${classes.buttonRadius()} mb-6 ${classes.buttonPrimary()}"
+                  class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} mb-6 ${classes.buttonPrimary()}"
                 >
                   Add to cart
                 </a>

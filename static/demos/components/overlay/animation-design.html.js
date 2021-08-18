@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-overlay="{ duration: 500 }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         data-xt-overlay-element
       >
         overlay
@@ -16,7 +16,7 @@ const html = /* HTML */ `
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
-              class="*** xt-design *** ${classes.cardRadius()} shadow-overlay bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
+              class="*** xt-design *** rounded${classes.overlayCardRadius()} shadow-overlay bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
             ></div>
 
             <div class="xt-card *** transition opacity-0 group-in:opacity-100 ***">
@@ -27,7 +27,7 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-media-container bg-gray-300 rounded-t-md pb-[37.5%]">
+              <div class="xt-media-container bg-gray-300 rounded-t${classes.overlayCardRadius()} pb-[37.5%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">

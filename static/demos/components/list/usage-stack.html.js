@@ -5,32 +5,35 @@ const html = /* HTML */ `
     <nav class="xt-list xt-list-3 *** flex-col ***">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
       >
         Lorem Ipsum
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
       >
         Dolor sit
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
       >
         Amet
       </button>
 
       <form class="text-sm *** inline-flex ***">
-        <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${classes.buttonDefault()}">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+        >
           ${classes.iconSearch({ classes: 'text-xl -my-1' })}
         </button>
         <input
           type="text"
-          class="${classes.input()} rounded-r-md ${classes.inputDefault()}"
+          class="${classes.input()} rounded-r${classes.groupRadius()} ${classes.inputDefault()}"
           aria-label="Search"
           placeholder="Seach Catalog"
         />

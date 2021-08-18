@@ -7,13 +7,13 @@ const html = /* HTML */ `
         <div class="inline-flex">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded-tl-md *** border border-r-0 border-b-0 border-gray-400 *** ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupRadius()} *** border border-r-0 border-b-0 border-gray-400 *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input
             type="text"
-            class="${classes.input()} rounded-tr-md *** border border-b-0 border-gray-400 *** ${classes.inputDefault()}"
+            class="${classes.input()} rounded-tr${classes.groupRadius()} *** border border-b-0 border-gray-400 *** ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-b-md *** border border-gray-400 *** ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} rounded-b${classes.cardRadius()} *** border border-gray-400 *** ${classes.buttonDefault()}"
         >
           Search
         </button>

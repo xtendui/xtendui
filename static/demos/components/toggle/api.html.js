@@ -5,56 +5,56 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-first-element"
       >
         1st element
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-first-target"
       >
         1st target
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-add"
       >
         Add
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-remove"
       >
         Remove
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         id="button--toggle-api-unmount"
       >
         Unmount
