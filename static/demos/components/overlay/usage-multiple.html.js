@@ -51,11 +51,12 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        data-xt-overlay-element
       >
         overlay 1
       </button>
 
-      <div class="*** xt-overlay ***">
+      <div class="*** xt-overlay ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-black opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
