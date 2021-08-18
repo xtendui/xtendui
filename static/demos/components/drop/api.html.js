@@ -143,7 +143,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card rounded${classes.dropCardRadius()} ${classes.cardDefault()} mt-6">
+    <div class="xt-card rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--drop-api-log"

@@ -52,7 +52,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} bg-opacity-75 backdrop-filter backdrop-blur ***"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()} ${classes.bgBlur()} ***"
           >
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
             molestie ${classes.iconLink()} diam nec euismod commodo.

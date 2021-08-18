@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.cardDefault()} ***">
+        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardDefault()} ***">
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.cardPrimary()} ***">
+        <div class="*** xt-card rounded${classes.dropCardRadius()} ${classes.dropCardPrimary()} ***">
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>

@@ -1,5 +1,7 @@
 export const classes = {
   // special
+  bgBlur: () => 'bg-opacity-75 backdrop-filter backdrop-blur',
+  bgBlurInner: () => 'bg-opacity-0',
   gatsbyFloat: () =>
     'transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   buttonToggle: () =>
@@ -42,6 +44,7 @@ export const classes = {
   // drop
   dropCardRadius: () => '-md',
   dropCardDefault: () => 'text-black xt-links-default bg-gray-100',
+  dropCardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   // overlay
   overlayCardRadius: () => '-lg',
   // badge

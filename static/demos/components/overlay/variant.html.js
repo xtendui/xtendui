@@ -160,7 +160,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} *** shadow-overlay ${classes.cardWhite()} bg-opacity-75 backdrop-filter backdrop-blur ***"
+                class="xt-card rounded${classes.overlayCardRadius()} *** shadow-overlay ${classes.cardWhite()} ${classes.bgBlur()} ***"
               >
                 <button
                   type="button"

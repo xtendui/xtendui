@@ -39,7 +39,9 @@ const html = /* HTML */ `
 
                   <div class="xt-drop p-3" data-xt-drop-target-nested>
                     <div class="xt-backdrop z-below bg-black opacity-25"></div>
-                    <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardPrimary()}">
+                    <div
+                      class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardPrimary()}"
+                    >
                       <nav class="xt-list flex-col ${classes.groupMd()}">
                         <a
                           href="#"

@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
-          <div class="*** xt-card w-64 rounded${classes.cardRadius()} shadow-tooltip ${classes.cardWhite()} ***">
+          <div class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()} ***">
             <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
@@ -52,7 +52,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
-          <div class="*** xt-card w-64 rounded${classes.cardRadius()} shadow-tooltip ${classes.cardPrimary()} ***">
+          <div
+            class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-tooltip ${classes.dropCardPrimary()} ***"
+          >
             <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
@@ -93,7 +95,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="*** xt-card w-64 rounded${classes.cardRadius()} shadow-tooltip ${classes.cardWhite()} bg-opacity-75 backdrop-filter backdrop-blur ***"
+            class="*** xt-card w-64 rounded${classes.dropCardRadius()} shadow-tooltip ${classes.dropCardDefault()} ${classes.bgBlur()} ***"
           >
             <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -101,19 +103,19 @@ const html = /* HTML */ `
             <nav class="*** xt-list flex-col ${classes.groupMd()} ***">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()} *** ${classes.bgBlurInner()} ***"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()} *** ${classes.bgBlurInner()} ***"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()} *** ${classes.bgBlurInner()} ***"
               >
                 Amet
               </button>
