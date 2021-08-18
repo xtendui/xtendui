@@ -12,13 +12,13 @@ const html = /* HTML */ `
             <div class="inline-flex mr-auto">
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
               >
                 Clear
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
               >
                 Submit
               </a>
@@ -46,13 +46,13 @@ const html = /* HTML */ `
             <div class="inline-flex mr-auto">
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
               >
                 Clear
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
               >
                 Submit
               </a>

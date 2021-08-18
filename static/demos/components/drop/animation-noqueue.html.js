@@ -15,25 +15,23 @@ const html = /* HTML */ `
           class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
-          <div
-            class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
-          >
-            <nav class="xt-list flex-col">
+          <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
+            <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
               >
                 Amet
               </button>
@@ -54,7 +52,7 @@ const html = /* HTML */ `
           class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
-          <div class="xt-card w-80 rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-80 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
             </button>

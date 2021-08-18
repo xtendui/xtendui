@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <div class="inline-flex flex-auto">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupRadius()} md:rounded-l${classes.groupRadius()} *** border border-b-0 md:border-b border-gray-300 *** ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} *** border border-b-0 md:border-b border-gray-300 *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} md:rounded-bl-none md:rounded-r${classes.groupRadius()} *** border border-gray-300 *** ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} *** border border-gray-300 *** ${classes.buttonDefault()}"
         >
           Search
         </a>

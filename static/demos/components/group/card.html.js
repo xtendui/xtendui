@@ -28,7 +28,7 @@ const html = /* HTML */ `
 
             <a
               href="#"
-              class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
             >
               Search
             </a>
@@ -60,7 +60,7 @@ const html = /* HTML */ `
 
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} ${classes.buttonPrimary()}"
+                class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
               >
                 Search
               </a>

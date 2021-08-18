@@ -17,7 +17,7 @@ const html = /* HTML */ `
             <div class="inline-flex flex-auto">
               <button
                 type="button"
-                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
               >
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
@@ -31,7 +31,7 @@ const html = /* HTML */ `
 
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
             >
               Search
             </button>

@@ -7,13 +7,13 @@ const html = /* HTML */ `
         <div class="*** inline-flex ***">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} *** rounded-tl${classes.groupRadius()} *** ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} *** rounded-tl${classes.groupButtonRadius()} *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
           <input
             type="text"
-            class="${classes.input()} *** rounded-tr${classes.groupRadius()} *** ${classes.inputDefault()}"
+            class="${classes.input()} *** rounded-tr${classes.groupButtonRadius()} *** ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} *** rounded-b${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.buttonPrimary()}"
         >
           Search
         </a>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
       <div class="*** xt-list ***">
         <input
           type="number"
-          class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupRadius()} rounded-bl${classes.groupRadius()} *** ${classes.inputDefault()}"
+          class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupButtonRadius()} rounded-bl${classes.groupButtonRadius()} *** ${classes.inputDefault()}"
           aria-label="Quantity"
           value="1"
           min="0"
@@ -41,13 +41,13 @@ const html = /* HTML */ `
         <div class="*** inline-flex flex-col ***">
           <a
             href="#"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded-tr${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+            class="xt-button text-2xs py-1 px-2.5 *** rounded-tr${classes.groupButtonRadius()} *** ${classes.buttonPrimary()}"
           >
             +
           </a>
           <a
             href="#"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded-br${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+            class="xt-button text-2xs py-1 px-2.5 *** rounded-br${classes.groupButtonRadius()} *** ${classes.buttonPrimary()}"
           >
             -
           </a>

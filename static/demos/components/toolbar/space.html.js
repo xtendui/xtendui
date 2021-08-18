@@ -6,13 +6,13 @@ const html = /* HTML */ `
       <div class="inline-flex mr-auto">
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
         >
           Clear
         </a>
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
         >
           Submit
         </a>
@@ -28,34 +28,33 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
-            Go to Page
+            Edit ${classes.iconEdit({ classes: 'xt-icon ml-2' })}
           </button>
 
-          <div class="xt-drop p-4" data-xt-drop-target>
-            <div
-              class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} shadow-drop ${classes.cardWhite()}"
-            >
-              <nav class="xt-list flex-col">
+          <div class="xt-drop p-3" data-xt-drop-target>
+            <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
+              <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
-                  Page 0
+                  ${classes.iconCopy({ classes: 'xt-icon mr-2' })} Copy
                 </a>
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
-                  Page 1
+                  ${classes.iconCode({ classes: 'xt-icon mr-2' })} Code
                 </a>
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
-                  Page 2
+                  ${classes.iconMaximize({ classes: 'xt-icon mr-2' })} Full
                 </a>
               </nav>
             </div>
+            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
           </div>
         </div>
       </div>

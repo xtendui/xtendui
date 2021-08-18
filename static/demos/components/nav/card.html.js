@@ -8,24 +8,24 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.dropGroupMd()}">
+          <nav class="xt-list flex-col ${classes.groupMd()}">
             <a
               href="#"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
             <a
               href="#"
               type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
             >
               Dolor sit
             </a>
             <a
               href="#"
               type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
             >
               Amet
             </a>
@@ -41,24 +41,24 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.dropGroupMd()}">
+          <nav class="xt-list flex-col ${classes.groupMd()}">
             <a
               href="#"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
             <a
               href="#"
               type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
             >
               Dolor sit
             </a>
             <a
               href="#"
               type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
+              class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
             >
               Amet
             </a>

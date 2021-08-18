@@ -12,7 +12,7 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <input
                       type="text"
-                      class="${classes.input()} rounded-l${classes.groupRadius()} ${classes.inputDefault()}"
+                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputDefault()}"
                       aria-label="Search"
                       placeholder="Search"
                       data-xt-googlelocator-search-input
@@ -26,7 +26,7 @@ const html = /* HTML */ `
                     </button>
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonDefault()}"
+                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonDefault()}"
                       data-xt-googlelocator-search-btn
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}

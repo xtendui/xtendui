@@ -34,7 +34,7 @@ const html = /* HTML */ `
             <div class="inline-flex flex-auto">
               <button
                 type="button"
-                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonDefault()}"
               >
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
@@ -48,7 +48,7 @@ const html = /* HTML */ `
 
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${buttonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${buttonPrimary()}"
             >
               Search
             </button>
@@ -71,25 +71,23 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative rounded${classes.dropCardRadius()} shadow-drop ${animDesign()}" data-xt-drop-inner>
-            <div
-              class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} ${classes.cardWhite()}"
-            >
-              <nav class="xt-list flex-col ${animItem()}">
+            <div class="xt-card w-64 rounded${classes.dropCardRadius()} ${classes.cardWhite()}">
+              <nav class="xt-list flex-col ${classes.groupMd()} ${animItem()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Amet
                 </button>
@@ -177,7 +175,7 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${buttonDefault()}"
+                      class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonDefault()}"
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>
@@ -191,7 +189,7 @@ const html = /* HTML */ `
 
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${buttonPrimary()}"
                   >
                     Search
                   </button>

@@ -23,6 +23,8 @@ If you want to **control a specific tooltip position** use `[data-xt-position=<v
 
 Use `<div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black"></div>` inside `.xt-tooltip` to add an arrow. If you want the arrow to be **below the drop** use the class `z-below`.
 
+> If you cange any of **`xt-tooltip` padding** or **`xt-arrow` margin and size** you need to **revisit all of those sizes**.
+
 <demo>
   <demoinline src="demos/components/tooltip/bottom">
   </demoinline>

@@ -8,14 +8,14 @@ const html = /* HTML */ `
           <a
             href="#"
             type="submit"
-            class="xt-button ${classes.buttonMd()} *** rounded${classes.groupRadius()} *** ${classes.buttonDefault()}"
+            class="xt-button ${classes.buttonMd()} *** rounded${classes.groupButtonRadius()} *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </a>
 
           <input
             type="text"
-            class="${classes.input()} *** rounded${classes.groupRadius()} rounded-l-none *** ${classes.inputDefault()}"
+            class="${classes.input()} *** rounded${classes.groupButtonRadius()} rounded-l-none *** ${classes.inputDefault()}"
             aria-label="Search"
             placeholder="Seach Catalog"
           />
@@ -23,7 +23,7 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} *** rounded${classes.groupRadius()} *** ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} *** rounded${classes.groupButtonRadius()} *** ${classes.buttonPrimary()}"
         >
           Search
         </a>

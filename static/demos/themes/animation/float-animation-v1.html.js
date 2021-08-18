@@ -62,23 +62,23 @@ const html = /* HTML */ `
             <div
               class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white ${animDesign()}"
             ></div>
-            <div class="xt-card w-64 ${classes.dropGroupMd()} ${animItem()}">
-              <nav class="xt-list flex-col">
+            <div class="xt-card w-64 ${animItem()}">
+              <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Amet
                 </button>
@@ -171,7 +171,7 @@ const html = /* HTML */ `
                     <div class="inline-flex flex-auto">
                       <button
                         type="button"
-                        class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${buttonDefault()}"
+                        class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonDefault()}"
                       >
                         ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                       </button>
@@ -185,7 +185,7 @@ const html = /* HTML */ `
 
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${buttonPrimary()}"
+                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${buttonPrimary()}"
                     >
                       Search
                     </button>

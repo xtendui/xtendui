@@ -6,13 +6,13 @@ const html = /* HTML */ `
       <div class="inline-flex *** group ***">
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()} ${classes.buttonDefaultGroup()}"
+          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()} ${classes.buttonDefaultGroup()}"
         >
           Back
         </a>
         <a
           href="#"
-          class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()}"
+          class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()}"
         >
           Clear
         </a>

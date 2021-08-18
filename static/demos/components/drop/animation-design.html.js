@@ -17,23 +17,23 @@ const html = /* HTML */ `
             <div
               class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
             ></div>
-            <div class="xt-card w-64 ${classes.dropGroupMd()} transition opacity-0 group-in:opacity-100">
-              <nav class="xt-list flex-col">
+            <div class="xt-card w-64 transition opacity-0 group-in:opacity-100">
+              <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
                 >
                   Amet
                 </button>

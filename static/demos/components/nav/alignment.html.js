@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
       >
         Justify default (center)<br />Text default (center) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} *** justify-center text-center *** ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-center text-center *** ${classes.groupButtonDefault()}"
       >
         Justify center<br />Text center ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} *** justify-start text-left *** ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-start text-left *** ${classes.groupButtonDefault()}"
       >
         Justify start<br />Text left ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} *** justify-end text-right *** ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-end text-right *** ${classes.groupButtonDefault()}"
       >
         Justify end<br />Text right ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} *** justify-between *** ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-between *** ${classes.groupButtonDefault()}"
       >
         Justify between ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.dropButtonMd()} rounded${classes.groupRadius()} *** justify-around *** ${classes.dropButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-around *** ${classes.groupButtonDefault()}"
       >
         Justify around ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>

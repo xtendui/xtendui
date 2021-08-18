@@ -27,13 +27,13 @@ const html = /* HTML */ `
       <form class="text-sm *** inline-flex ***">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+          class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
         >
           ${classes.iconSearch({ classes: 'text-xl -my-1' })}
         </button>
         <input
           type="text"
-          class="${classes.input()} rounded-r${classes.groupRadius()} ${classes.inputDefault()}"
+          class="${classes.input()} rounded-r${classes.groupButtonRadius()} ${classes.inputDefault()}"
           aria-label="Search"
           placeholder="Seach Catalog"
         />

@@ -28,20 +28,20 @@ export const classes = {
   buttonText: () =>
     'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
   // group
-  groupRadius: () => '-md',
-  // drop
-  dropButtonRadius: () => '-md',
-  dropCardRadius: () => '-md',
-  dropGroupMd: () => 'p-3',
-  dropButtonMd: () => 'py-2 px-3 text-xs',
-  dropButtonDefault: () =>
-    'w-full justify-start text-left text-black font-semibold transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
-  dropButtonDefaultGroup: () =>
+  groupMd: () => 'p-3',
+  groupButtonRadius: () => '-md',
+  groupButtonMd: () => 'py-2 px-3 text-xs',
+  groupButtonDefault: () =>
+    'w-full justify-start text-left text-black font-semibold bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
+  groupButtonDefaultGroup: () =>
     'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
-  dropButtonPrimary: () =>
+  groupButtonPrimary: () =>
     'w-full justify-start text-left text-white font-semibold bg-primary-500 transition hover:text-black hover:bg-white active:text-black active:bg-gray-100 on:text-black on:bg-white',
-  dropButtonPrimaryGroup: () =>
+  groupButtonPrimaryGroup: () =>
     'group-hover:text-black group-hover:bg-white group-active:text-black group-active:bg-gray-100 group-on:text-black group-on:bg-white',
+  // drop
+  dropCardRadius: () => '-md',
+  dropCardDefault: () => 'text-black xt-links-default bg-gray-100',
   // overlay
   overlayCardRadius: () => '-lg',
   // badge
@@ -62,19 +62,19 @@ export const classes = {
   cardMd: () => 'p-8 text-base',
   cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
   cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
+  cardWhite: () => 'text-black xt-links-default bg-white',
+  cardDefault: () => 'text-black xt-links-default bg-gray-100',
   cardDefaultFull: () => 'text-black xt-links-default',
   cardDefaultInteractive: () =>
     'text-black xt-links-default transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   cardDefaultFullInteractive: () =>
     'text-black xt-links-default transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200',
-  cardDefault: () => 'text-black xt-links-default bg-gray-100',
+  cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   cardPrimaryFull: () => 'text-primary-600',
   cardPrimaryInteractive: () =>
     'text-white xt-links-inverse transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   cardPrimaryFullInteractive: () =>
     'text-black xt-links-default transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
-  cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
-  cardWhite: () => 'text-black xt-links-default bg-white',
   // components
   slide: () => 'group',
   loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',
@@ -225,6 +225,11 @@ export const classes = {
     classes = classes ? `${classes}` : ''
     classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
     return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`
+  },
+  iconEdit: ({ classes } = {}) => {
+    classes = classes ? `${classes}` : ''
+    classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
+    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`
   },
   // other
   svgSpinner: ({ classes, dimension = 120, radius = 100, dash = 628 }) => {

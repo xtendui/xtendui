@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip *** xt-tooltip-static ***" data-xt-tooltip-target>
-          <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
+          <div class="xt-card w-full shadow-drop ${classes.dropCardDefault()}">
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}
             </button>

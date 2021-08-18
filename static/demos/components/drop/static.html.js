@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop *** xt-drop-static ***" data-xt-drop-target>
-            <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
+            <div class="xt-card w-full shadow-drop ${classes.dropCardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop xt-drop-static" data-xt-drop-target>
-            <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
+            <div class="xt-card w-full shadow-drop ${classes.dropCardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop xt-drop-static" data-xt-drop-target>
-            <div class="xt-card w-full shadow-drop ${classes.cardWhite()}">
+            <div class="xt-card w-full shadow-drop ${classes.dropCardDefault()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>
