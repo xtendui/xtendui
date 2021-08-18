@@ -222,11 +222,9 @@ const html = /* HTML */ `
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** rounded${classes.cardRadius()} bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** bg-white ${animDesign()}"></div>
 
-              <div
-                class="xt-card xt-min-h-screen items-center justify-center rounded${classes.cardRadius()} ${cardWhite()} ${animItem()}"
-              >
+              <div class="xt-card xt-min-h-screen items-center justify-center ${cardWhite()} ${animItem()}">
                 <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
@@ -319,7 +317,7 @@ const html = /* HTML */ `
                 class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
               ></div>
 
-              <div class="xt-card rounded${classes.cardRadius()} ${cardWhite()} ${animItem()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${cardWhite()} ${animItem()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
@@ -422,7 +420,7 @@ const html = /* HTML */ `
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.cardRadius()} md:rounded-bl-none flex-full"
+                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayCardRadius()} md:rounded-bl-none flex-full"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -455,7 +453,7 @@ const html = /* HTML */ `
                 class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
               ></div>
 
-              <div class="xt-card rounded${classes.cardRadius()} ${cardWhite()} ${animItem()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${cardWhite()} ${animItem()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
@@ -467,7 +465,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayCardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -554,7 +552,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.cardRadius()} bg-gray-200">
+                <div class="${classes.cardSm()} rounded-b${classes.overlayCardRadius()} bg-gray-200">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>

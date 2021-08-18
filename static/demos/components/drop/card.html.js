@@ -20,26 +20,24 @@ const html = /* HTML */ `
             <nav class="*** xt-list flex-col ${classes.dropGroupMd()} ***">
               <a
                 href="#"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Amet
               </button>
             </nav>
-            <div
-              class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} bg-gray-100 text-black xt-links-default ***"
-            >
+            <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-gray-300 ***">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
             </div>
           </div>
@@ -63,26 +61,24 @@ const html = /* HTML */ `
             <nav class="*** xt-list flex-col ${classes.dropGroupMd()} ***">
               <a
                 href="#"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonPrimary()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonPrimary()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonPrimary()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
               >
                 Amet
               </button>
             </nav>
-            <div
-              class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} bg-gray-100 text-black xt-links-default ***"
-            >
+            <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-primary-300 ***">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
             </div>
           </div>
@@ -108,26 +104,24 @@ const html = /* HTML */ `
             <nav class="*** xt-list flex-col ${classes.dropGroupMd()} ***">
               <a
                 href="#"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()}  *** ${classes.dropButtonDefault()} ***"
+                class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
               >
                 Amet
               </button>
             </nav>
-            <div
-              class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} bg-gray-100 text-black xt-links-default ***"
-            >
+            <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-white ***">
               <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
             </div>
           </div>

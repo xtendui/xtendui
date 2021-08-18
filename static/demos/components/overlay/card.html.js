@@ -16,9 +16,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** rounded${classes.overlayCardRadius()} shadow-overlay bg-white"></div>
-
-              <div class="xt-card rounded${classes.cardRadius()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay bg-white">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -27,8 +25,8 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group">
-                  <div class="${classes.cardMd()} md:w-7/12">
+                <div class="*** md:xt-card-group ***">
+                  <div class="*** ${classes.cardMd()} md:w-7/12 ***">
                     <div class="xt-h4">Contact us</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
@@ -116,7 +114,7 @@ const html = /* HTML */ `
                     </form>
                   </div>
 
-                  <div class="md:w-5/12 flex flex-col">
+                  <div class="*** md:w-5/12 flex flex-col ***">
                     <div class="xt-media-container bg-gray-300 md:rounded-t${classes.cardRadius()} h-48 md:pb-[100%]">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -150,9 +148,9 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** rounded${classes.overlayCardRadius()} shadow-overlay bg-white"></div>
-
-              <div class="xt-card rounded${classes.cardRadius()}">
+              <div
+                class="xt-card rounded${classes.cardRadius()} rounded${classes.overlayCardRadius()} shadow-overlay bg-white"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -161,8 +159,8 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group">
-                  <div class="md:w-5/12 flex flex-col">
+                <div class="*** md:xt-card-group ***">
+                  <div class="*** md:w-5/12 flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
                     >
@@ -170,7 +168,7 @@ const html = /* HTML */ `
                     </div>
                   </div>
 
-                  <div class="${classes.cardMd()} md:w-7/12">
+                  <div class="*** ${classes.cardMd()} md:w-7/12 ***">
                     <div class="xt-h4">Subscribe to our newsletter</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
@@ -251,7 +249,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.cardRadius()} bg-gray-200">
+                <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} bg-gray-200 ***">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>

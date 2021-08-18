@@ -28,9 +28,9 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   </demoinline>
 </demo>
 
-## Content
+## Card and Nav
 
-You can also populate with other [card content](/components/card/content) and  [card content](/components/nav/content).
+You can also populate with other [card content](/components/card/content) and [nav content](/components/nav/content).
 
 <demo>
   <demoinline src="demos/components/tooltip/card">

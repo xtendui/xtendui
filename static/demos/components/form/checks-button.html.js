@@ -28,7 +28,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input
@@ -40,7 +40,7 @@ const html = /* HTML */ `
       </label>
 
       <label
-        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}  *** focus-within:outline-browser ***"
+        class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
         <input

@@ -30,7 +30,7 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Content
+## Card
 
 You can also populate with other [card content](/components/card/content).
 

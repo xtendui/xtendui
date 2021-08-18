@@ -6,9 +6,9 @@ title: "Content"
 date: "2030-10-10"
 ---
 
-## Content
+## Card and Nav
 
-You can also populate with other [card content](/components/card/content) and  [card content](/components/nav/content).
+You can also populate with other [card content](/components/card/content) and [nav content](/components/nav/content).
 
 <demo>
   <demoinline src="demos/components/drop/card">

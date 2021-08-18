@@ -71,7 +71,9 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative rounded${classes.dropCardRadius()} shadow-drop ${animDesign()}" data-xt-drop-inner>
-            <div class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.cardRadius()} ${classes.cardWhite()}">
+            <div
+              class="xt-card w-64 ${classes.dropGroupMd()} rounded${classes.dropCardRadius()} ${classes.cardWhite()}"
+            >
               <nav class="xt-list flex-col ${animItem()}">
                 <a
                   href="#"
@@ -109,7 +111,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative rounded${classes.dropCardRadius()} shadow-drop ${animDesign()}" data-xt-drop-inner>
-            <div class="xt-card w-64 rounded${classes.cardRadius()} ${classes.cardWhite()}">
+            <div class="xt-card w-64 rounded${classes.dropCardRadius()} ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${animItem()}"
@@ -117,7 +119,7 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="${classes.cardSm()} rounded${classes.cardRadius()}  ${animItem()}">
+              <div class="${classes.cardSm()} rounded${classes.dropCardRadius()}  ${animItem()}">
                 <div class="xt-h5">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -300,7 +302,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner rounded${classes.overlayCardRadius()} shadow-overlay ${animDesign()}"
               data-xt-overlay-inner
             >
-              <div class="xt-card rounded${classes.cardRadius()} ${classes.cardWhite()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -309,7 +311,7 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group rounded${classes.cardRadius()} ${animItem()}">
+                <div class="md:xt-card-group rounded${classes.overlayCardRadius()} ${animItem()}">
                   <div class="${classes.cardMd()} md:w-7/12">
                     <div class="xt-h4">Contact us</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
@@ -399,11 +401,13 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 flex flex-col ${animItem()}">
-                    <div class="xt-media-container bg-gray-300 md:rounded-tr${classes.cardRadius()} h-48 md:pb-[100%]">
+                    <div
+                      class="xt-media-container bg-gray-300 md:rounded-tr${classes.overlayCardRadius()} h-48 md:pb-[100%]"
+                    >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.cardRadius()} md:rounded-bl-none flex-full"
+                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayCardRadius()} md:rounded-bl-none flex-full"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -435,7 +439,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner rounded${classes.overlayCardRadius()} shadow-overlay ${animDesign()}"
               data-xt-overlay-inner
             >
-              <div class="xt-card rounded${classes.cardRadius()} ${classes.cardWhite()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -444,10 +448,10 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group rounded${classes.cardRadius()} ${animItem()}">
+                <div class="md:xt-card-group rounded${classes.overlayCardRadius()} ${animItem()}">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayCardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -534,7 +538,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.cardRadius()} bg-gray-200 ${animItem()}">
+                <div class="${classes.cardSm()} rounded-b${classes.overlayCardRadius()} bg-gray-200 ${animItem()}">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>

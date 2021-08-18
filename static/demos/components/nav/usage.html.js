@@ -5,12 +5,12 @@ const html = /* HTML */ `
     <div class="*** xt-list flex-col ***">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} *** rounded-t${classes.groupRadius()} *** ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} *** rounded-t${classes.groupRadius()} *** ${classes.buttonPrimary()}"
       >
         Lorem ipsum dolor sit amet
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
+      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()}">
         Consectetur adipiscing elit
       </button>
 

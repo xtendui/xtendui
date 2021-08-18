@@ -26,10 +26,19 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
 
 ## Space
 
-Use [list space](/components/list/content#space) **component classes** to assign space).
+Use [list space](/components/list/content#space) to space content.
 
 <demo>
   <demoinline src="demos/components/group/space">
+  </demoinline>
+</demo>
+
+## Card
+
+You can include the component inside a [card](/components/card).
+
+<demo>
+  <demoinline src="demos/components/group/card">
   </demoinline>
 </demo>
 
