@@ -36,9 +36,6 @@ module.exports = {
         overlay: '5000', // same as options.zIndex.targets.start
         last: '10000', // this is the z-index above all
       },
-      flex: {
-        full: '1 1 100%',
-      },
       inset: {
         100: '100%',
       },

@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Other"
-parent: "Nav"
-title: "Nav"
-description: "Nav is a component to group up buttons, inputs and other content."
+parent: "Toolbar"
+title: "Toolbar"
+description: "Toolbar is a component to group up buttons, inputs and other content."
 ---
 
 ## Usage
@@ -15,6 +15,6 @@ Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwind
 > This component uses [list](/components/list) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/nav/usage">
+  <demoinline src="demos/components/toolbar/usage">
   </demoinline>
 </demo>

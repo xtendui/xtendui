@@ -14,7 +14,6 @@ The following theme values are added with the preset:
 * [font-size](https://tailwindcss.com/docs/font-size) `text-xs` modified to `~13px`, `text-2xs` added with `~12px`, `text-3xs*` added with `~11px`, `text-4xs*` added with `~10px`, for better control on small font sizes.
 * [colors](https://tailwindcss.com/docs/customizing-colors) and a default `primary` color stack to be replaced with your primary color.
 * [z-index](https://tailwindcss.com/docs/z-index) **additional z-index** used by components, use `z-below` for **z-index below content**, use `z-content` for **z-index above content**, `z-above` for **z-index above pupup content**, use `z-last` for **z-index above anything**.
-* [flex](https://tailwindcss.com/docs/flex) `flex-full` added.
 * [inset](https://tailwindcss.com/docs/top-right-bottom-left) **additional inset**, use `top-100` `left-100` `bottom-100` `right-100` to position with the value `100%`.
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added, `rounded-sm` modified to `~3px`, `rounded-xs` added with `~2px`, for better control on small border radius.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.

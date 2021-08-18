@@ -15,7 +15,7 @@ const html = /* HTML */ `
         <form class="text-sm">
           <div class="xt-list flex-col">
             <div class="inline-flex">
-              <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
+              <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
               <input
@@ -26,12 +26,12 @@ const html = /* HTML */ `
               />
             </div>
 
-            <button
-              type="button"
+            <a
+              href="#"
               class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} ${classes.buttonPrimary()}"
             >
               Search
-            </button>
+            </a>
           </div>
         </form>
       </div>
@@ -47,7 +47,7 @@ const html = /* HTML */ `
           <form class="text-sm">
             <div class="xt-list flex-col">
               <div class="inline-flex">
-                <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
+                <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
                   ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
                 <input
@@ -58,12 +58,12 @@ const html = /* HTML */ `
                 />
               </div>
 
-              <button
-                type="button"
+              <a
+                href="#"
                 class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} ${classes.buttonPrimary()}"
               >
                 Search
-              </button>
+              </a>
             </div>
           </form>
         </div>

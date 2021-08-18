@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="xt-list flex-col md:flex-row">
         <div class="inline-flex flex-auto">
           <button
-            type="button"
+            type="submit"
             class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupRadius()} md:rounded-l${classes.groupRadius()} *** border border-b-0 md:border-b border-gray-300 *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -20,12 +20,12 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button
-          type="button"
+        <a
+          href="#"
           class="xt-button ${classes.buttonMd()} rounded-b${classes.groupRadius()} md:rounded-bl-none md:rounded-r${classes.groupRadius()} *** border border-gray-300 *** ${classes.buttonDefault()}"
         >
           Search
-        </button>
+        </a>
       </div>
     </form>
   </div>

@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="*** xt-list flex-col md:flex-row ***">
         <div class="*** inline-flex flex-auto ***">
           <button
-            type="button"
+            type="submit"
             class="xt-button ${classes.buttonMd()} *** rounded-t${classes.groupRadius()} md:rounded-tr-none md:rounded-l${classes.groupRadius()} *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -20,24 +20,24 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button
-          type="button"
+        <a
+          href="#"
           class="xt-button ${classes.buttonMd()} *** rounded-b${classes.groupRadius()} md:rounded-bl-none md:rounded-r${classes.groupRadius()} *** ${classes.buttonPrimary()}"
         >
           Search
-        </button>
+        </a>
       </div>
     </form>
 
     <form class="text-sm mt-6">
       <div class="*** xt-list ***">
         <div class="*** inline-flex flex-col md:flex-row ***">
-          <button
-            type="button"
+          <a
+            href="#"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-tl${classes.groupRadius()} md:rounded-l${classes.groupRadius()} *** ${classes.buttonPrimary()}"
           >
             +
-          </button>
+          </a>
           <input
             type="number"
             class="${classes.input()} w-16 text-center ${classes.inputDefault()}"
@@ -46,12 +46,12 @@ const html = /* HTML */ `
             min="0"
             max="100"
           />
-          <button
-            type="button"
+          <a
+            href="#"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-b${classes.groupRadius()} md:rounded-bl-none md:rounded-tr${classes.groupRadius()} *** ${classes.buttonPrimary()}"
           >
             -
-          </button>
+          </a>
         </div>
       </div>
     </form>

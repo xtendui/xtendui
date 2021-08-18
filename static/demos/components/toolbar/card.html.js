@@ -8,28 +8,29 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.dropGroupMd()}">
+          <div class="xt-list xt-list-2 justify-between p-4">
             <a
               href="#"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Back
             </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
-            >
-              Dolor sit
-            </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonDefault()}"
-            >
-              Amet
-            </a>
-          </nav>
+
+            <div class="inline-flex">
+              <a
+                href="#"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+              >
+                Clear
+              </a>
+              <a
+                href="#"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+              >
+                Submit
+              </a>
+            </div>
+          </div>
           <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-gray-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
@@ -41,28 +42,29 @@ const html = /* HTML */ `
           <div class="xt-media-container bg-gray-300 rounded-t${classes.dropCardRadius()} pb-[37.5%]">
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
-          <nav class="xt-list flex-col ${classes.dropGroupMd()}">
+          <div class="xt-list xt-list-2 justify-between p-4">
             <a
               href="#"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              Back
             </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
-            >
-              Dolor sit
-            </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button ${classes.dropButtonMd()} rounded${classes.dropButtonRadius()} ${classes.dropButtonPrimary()}"
-            >
-              Amet
-            </a>
-          </nav>
+
+            <div class="inline-flex">
+              <a
+                href="#"
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupRadius()} ${classes.buttonDefault()}"
+              >
+                Clear
+              </a>
+              <a
+                href="#"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.groupRadius()} ${classes.buttonPrimary()}"
+              >
+                Submit
+              </a>
+            </div>
+          </div>
           <div class="*** ${classes.cardSm()} rounded-b${classes.dropCardRadius()} border-t border-primary-300 ***">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>

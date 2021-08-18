@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="*** xt-list flex-col ***">
         <div class="*** inline-flex ***">
           <button
-            type="button"
+            type="submit"
             class="xt-button ${classes.buttonMd()} *** rounded-tl${classes.groupRadius()} *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -19,12 +19,12 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button
-          type="button"
+        <a
+          href="#"
           class="xt-button ${classes.buttonMd()} *** rounded-b${classes.groupRadius()} *** ${classes.buttonPrimary()}"
         >
           Search
-        </button>
+        </a>
       </div>
     </form>
 
@@ -39,18 +39,18 @@ const html = /* HTML */ `
           max="100"
         />
         <div class="*** inline-flex flex-col ***">
-          <button
-            type="button"
+          <a
+            href="#"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-tr${classes.groupRadius()} *** ${classes.buttonPrimary()}"
           >
             +
-          </button>
-          <button
-            type="button"
+          </a>
+          <a
+            href="#"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-br${classes.groupRadius()} *** ${classes.buttonPrimary()}"
           >
             -
-          </button>
+          </a>
         </div>
       </div>
     </form>

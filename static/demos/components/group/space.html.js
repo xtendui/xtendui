@@ -5,12 +5,13 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-list *** xt-list-4 *** flex-col md:flex-row">
         <div class="inline-flex flex-auto">
-          <button
-            type="button"
+          <a
+            href="#"
+            type="submit"
             class="xt-button ${classes.buttonMd()} *** rounded${classes.groupRadius()} *** ${classes.buttonDefault()}"
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
-          </button>
+          </a>
 
           <input
             type="text"
@@ -20,12 +21,12 @@ const html = /* HTML */ `
           />
         </div>
 
-        <button
-          type="button"
+        <a
+          href="#"
           class="xt-button ${classes.buttonMd()} *** rounded${classes.groupRadius()} *** ${classes.buttonPrimary()}"
         >
           Search
-        </button>
+        </a>
       </div>
     </form>
   </div>

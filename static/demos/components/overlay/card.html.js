@@ -119,7 +119,7 @@ const html = /* HTML */ `
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.cardRadius()} md:rounded-bl-none flex-full"
+                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.cardRadius()} md:rounded-bl-none flex-auto"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -162,7 +162,7 @@ const html = /* HTML */ `
                 <div class="*** md:xt-card-group ***">
                   <div class="*** md:w-5/12 flex flex-col ***">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>

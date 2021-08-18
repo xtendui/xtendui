@@ -16,7 +16,7 @@ const html = /* HTML */ `
           </p>
         </div>
         <div class="*** flex flex-col md:w-5/12 ***">
-          <div class="*** flex-full *** ${classes.cardSm()} bg-gray-200">
+          <div class="*** flex-auto *** ${classes.cardSm()} bg-gray-200">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <div
