@@ -10,7 +10,7 @@ description: "Collapse is a toggle interaction to animate with start and end hei
 
 Collapse only work with **toggle components**, assign `options.collapseHeight` or `options.collapseWidth`.
 
-> This component uses [toggle](/components/toggle) see documentation for more info.
+> This demos use [toggle](/components/toggle) see documentation for more info.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

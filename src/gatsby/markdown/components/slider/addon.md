@@ -10,7 +10,7 @@ date: "1900-10-10"
 
 Mouse over the sides to see the navigation
 
-> This component uses [mousefollow](/components/mouse-follow) see documentation for more info.
+> This demos use [mousefollow](/components/mouse-follow) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/slider/navsides">

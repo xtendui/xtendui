@@ -22,7 +22,7 @@ Initialize manually **within javascript** with `new Xt.Groupnumber(document.quer
 
 You can add steps with `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current value.
 
-> This component uses [group](/components/group) see documentation for more info.
+> This demos use [group](/components/group) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/group-number/usage">

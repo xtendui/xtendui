@@ -8,7 +8,11 @@ date: "2030-10-10"
 
 ## Size
 
-Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+
+Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
+
+Use [list space](/components/list/content#space) to space content.
 
 <demo>
   <demoinline src="demos/components/nav/size">
@@ -24,23 +28,14 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-## Space
-
-Use [list space](/components/list/content#space) to space content.
-
-<demo>
-  <demoinline src="demos/components/nav/space">
-  </demoinline>
-</demo>
-
-## Other Content
+## Custom
 
 You can include the component inside a [card](/components/card) and add interactive components.
 
-> This component uses [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
+> This demos use [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/nav/content">
+  <demoinline src="demos/components/nav/custom">
   </demoinline>
 </demo>
 
@@ -59,7 +54,7 @@ Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwind
 
 > To properly align horizontally also when newlines specify both [text-align](https://tailwindcss.com/docs/text-align) and [justify-content](https://tailwindcss.com/docs/justify-content).
 
-> This component uses [icon](/components/icon) see documentation for more info.
+> This demos use [icon](/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/nav/alignment">

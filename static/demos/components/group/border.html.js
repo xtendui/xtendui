@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <form class="text-sm">
-      <div class="xt-list flex-col md:flex-row">
+      <div class="xt-list flex-col md:flex-row md:flex-nowrap">
         <div class="inline-flex flex-auto">
           <button
             type="submit"

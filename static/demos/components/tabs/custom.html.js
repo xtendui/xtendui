@@ -9,13 +9,24 @@ const html = /* HTML */ `
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <nav class="xt-list flex-col *** border-t border-gray-300 ***">
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}">
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+            >
               Lorem ipsum
             </a>
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}">
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+            >
               dolor sit amet
             </a>
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
               >Consectetur</a
             >
             <div data-xt-tooltip>
@@ -23,7 +34,7 @@ const html = /* HTML */ `
                 <div data-xt-drop-element>
                   <button
                     type="button"
-                    class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+                    class="xt-button *** w-full *** ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
                     data-xt-tooltip-element
                   >
                     ${classes.iconEdit({ classes: 'xt-icon mr-2' })} Edit
@@ -80,13 +91,13 @@ const html = /* HTML */ `
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <nav class="xt-list flex-col *** border-t border-primary-300 ***">
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonPrimary()}">
+            <a href="#" type="button" class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonPrimary()}">
               Lorem ipsum
             </a>
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonPrimary()}">
+            <a href="#" type="button" class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonPrimary()}">
               dolor sit amet
             </a>
-            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonPrimary()}"
+            <a href="#" type="button" class="xt-button flex-auto ${classes.buttonMd()} ${classes.buttonPrimary()}"
               >Consectetur</a
             >
             <div data-xt-tooltip>
@@ -94,7 +105,7 @@ const html = /* HTML */ `
                 <div data-xt-drop-element>
                   <button
                     type="button"
-                    class="xt-button w-full ${classes.buttonMd()} ${classes.buttonPrimary()}"
+                    class="xt-button *** w-full *** ${classes.buttonMd()} ${classes.buttonPrimary()}"
                     data-xt-tooltip-element
                   >
                     ${classes.iconEdit({ classes: 'xt-icon mr-2' })} Edit

@@ -8,7 +8,7 @@ description: "Listing is a component for category pages or simple listing."
 
 ## Usage
 
-> This component uses [media](/components/media) see documentation for more info.
+> This demos use [media](/components/media) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/listing/usage">

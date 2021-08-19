@@ -6,23 +6,27 @@ title: "Content"
 date: "2030-10-10"
 ---
 
-## Space
+## Size
+
+Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/docs/padding), [font-size](https://tailwindcss.com/docs/font-size)).
+
+Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
 Use [list space](/components/list/content#space) to space content.
 
 <demo>
-  <demoinline src="demos/components/toolbar/space">
+  <demoinline src="demos/components/toolbar/size">
   </demoinline>
 </demo>
 
-## Other Content
+## Custom
 
 You can include the component inside a [card](/components/card) and add interactive components.
 
-> This component uses [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
+> This demos use [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/toolbar/content">
+  <demoinline src="demos/components/toolbar/custom">
   </demoinline>
 </demo>
 

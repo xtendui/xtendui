@@ -41,7 +41,7 @@ Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwind
 
 > To properly align horizontally also when newlines specify both [text-align](https://tailwindcss.com/docs/text-align) and [justify-content](https://tailwindcss.com/docs/justify-content).
 
-> This component uses [icon](/components/icon) see documentation for more info.
+> This demos use [icon](/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/button/alignment">

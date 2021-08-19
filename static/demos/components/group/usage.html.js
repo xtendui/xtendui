@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <form class="text-sm">
-      <div class="*** xt-list flex-col md:flex-row ***">
+      <div class="*** xt-list flex-col md:flex-row md:flex-nowrap ***">
         <div class="*** inline-flex flex-auto ***">
           <button
             type="submit"
@@ -31,7 +31,7 @@ const html = /* HTML */ `
 
     <form class="text-sm mt-6">
       <div class="*** xt-list ***">
-        <div class="*** inline-flex flex-col md:flex-row ***">
+        <div class="*** inline-flex flex-col md:flex-row md:flex-nowrap ***">
           <a
             href="#"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-t${classes.groupButtonRadius()} md:rounded-tl-none md:rounded-r${classes.groupButtonRadius()} md:order-3 *** ${classes.buttonPrimary()}"

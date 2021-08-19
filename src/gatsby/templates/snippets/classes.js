@@ -36,7 +36,9 @@ export const classes = {
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',
+  groupButtonSm: () => 'py-1 px-2 text-xs',
   groupButtonMd: () => 'py-2 px-3 text-xs',
+  groupButtonLg: () => 'py-2.5 px-3.5 text-base',
   groupButtonDefault: () =>
     'w-full justify-start text-left text-black font-semibold bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
   groupButtonDefaultGroup: () =>

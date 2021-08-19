@@ -9,7 +9,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-tooltip-element
         >
-          small
+          Small
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
@@ -27,7 +27,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-tooltip-element
         >
-          medium
+          Medium
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
@@ -45,7 +45,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-tooltip-element
         >
-          large
+          Large
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>

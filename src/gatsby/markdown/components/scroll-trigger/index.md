@@ -12,7 +12,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Javascript
 
-This component uses [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/intro/setup#javascript-gsap) to **install and use gsap**.
+This demos use [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger), follow [gsap setup](/intro/setup#javascript-gsap) to **install and use gsap**.
 
 ## Usage
 

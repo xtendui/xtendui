@@ -7,21 +7,21 @@ const html = /* HTML */ `
         type="button"
         class="xt-button *** ${classes.buttonSm()} rounded${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
-        small
+        Small
       </button>
 
       <button
         type="button"
         class="xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
-        medium
+        Medium
       </button>
 
       <button
         type="button"
         class="xt-button *** ${classes.buttonLg()} rounded${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
       >
-        large
+        Large
       </button>
     </div>
   </div>

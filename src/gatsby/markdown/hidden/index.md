@@ -54,7 +54,7 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 > For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
-> This component uses [loader](/components/loader) see documentation for more info.
+> This demos use [loader](/components/loader) see documentation for more info.
 
 > For usability purpose use `<nav></nav>`.
 

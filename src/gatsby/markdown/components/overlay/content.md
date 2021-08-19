@@ -30,13 +30,13 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   </demoinline>
 </demo>
 
-## Other Content
+## Custom
 
 You can also populate with other [card content](/components/card/content).
 
-> This component uses [card](/components/card) see documentation for more info.
+> This demos use [card](/components/card) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/overlay/card">
+  <demoinline src="demos/components/overlay/custom">
   </demoinline>
 </demo>

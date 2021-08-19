@@ -14,7 +14,7 @@ Use **tailwind classes** to assign alignment (e.g. margin auto, [align-items](ht
 
 Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**. Use `.flex-auto` to expand items to **fill width**.
 
-> This component uses [list](/components/list) see documentation for more info.
+> This demos use [list](/components/list) see documentation for more info.
 
 > For usability purpose use `<nav></nav>`.
 

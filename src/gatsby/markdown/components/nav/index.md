@@ -16,7 +16,7 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
 
 You can set activation styles by adding the class `.on`.
 
-> This component uses [list](/components/list) see documentation for more info.
+> This demos use [list](/components/list) see documentation for more info.
 
 > For usability purpose use `<nav></nav>`.
 
