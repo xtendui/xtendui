@@ -17,10 +17,7 @@ const html = /* HTML */ `
       >
         dolor sit amet
       </a>
-      <a
-        href="#"
-        type="button"
-        class="xt-button *** w-full *** ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+      <a href="#" type="button" class="xt-button *** w-full *** ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
         >Consectetur</a
       >
       <a

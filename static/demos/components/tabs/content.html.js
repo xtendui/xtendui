@@ -9,24 +9,13 @@ const html = /* HTML */ `
             <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           </div>
           <nav class="xt-list flex-col *** border-t border-gray-300 ***">
-            <a
-              href="#"
-              type="button"
-              class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
-            >
+            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}">
               Lorem ipsum
             </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
-            >
+            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}">
               dolor sit amet
             </a>
-            <a
-              href="#"
-              type="button"
-              class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
+            <a href="#" type="button" class="xt-button w-full ${classes.buttonMd()} ${classes.buttonDefaultPrimary()}"
               >Consectetur</a
             >
             <div data-xt-tooltip>

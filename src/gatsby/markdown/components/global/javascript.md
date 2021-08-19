@@ -14,6 +14,15 @@ Import the **javascript** file with `import { Xt } from 'xtendui'`.
 
 Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sends **warning messages with website usability suggestions**.
 
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `Xt.usabilityHostnames:Boolean|String`              | `'localhost'`       | Enable usability checks **on hostnames separated by space**                  |
+| Variable                  | `Xt.usabilityIgnore:String`              | `'.sf-toolbar, .gm-style'`       | Disable usability checks **inside this query**                  |
+
+</div>
+
 ## Xt.ready
 
 You can execute a function on Document.readyState, **by default it listens when document is ready**.
@@ -24,7 +33,7 @@ It has a requestAnimationFrame **if the state is instantly matched**, to **ensur
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
+| Variable                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete' }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
 
 </div>
 
@@ -265,7 +274,7 @@ addEventListener('scroll', e => {
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Function                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, ns:String = '', duration:Number\|null = null, func:Function\|null = null }`       | event delay wrapper                  |
+| Variable                  | `Xt.eventDelay:Function`              | `{ e:Event|Object, el:Node, ns:String = '', duration:Number\|null = null, func:Function\|null = null }`       | event delay wrapper                  |
 | Variable                  | `Xt.scrollDelay:Number\|false`              | `false`        | Delay for the `scroll` event with `Xt.eventDelay`                 |
 | Variable                  | `Xt.resizeDelay:Number\|false`              | `75`        | Delay for the `resize` event with `Xt.eventDelay`            |
 | Variable                  | `Xt.medialoadedDelay:Number\|false`              | `false`        | Delay for the `mediaLoaded` event with `Xt.eventDelay`            |
