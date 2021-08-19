@@ -169,7 +169,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip ${cardBlack()} ${designAnim()}"
               ></div>
-              <div class="relative ${classes.tooltipMd()} font-medium text-white xt-links-inverse ${itemAnim()}">
+              <div class="relative ${classes.tooltipMd()} font-medium ${classes.textWhite()} ${itemAnim()}">
                 Lorem ipsum dolor sit amet
               </div>
             </div>
@@ -192,7 +192,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
               ></div>
-              <div class="${classes.textBlack()} xt-links-default ${itemAnim()}">
+              <div class="${classes.textBlack()} ${itemAnim()}">
                 <form class="text-sm">
                   <div class="xt-list flex-nowrap max-w-sm ${itemAnim()}">
                     <div class="inline-flex flex-auto">
@@ -239,7 +239,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
@@ -271,7 +271,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="*** xt-design *** ${cardWhite()} ${designAnim()}"></div>
@@ -337,7 +337,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
@@ -472,7 +472,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div

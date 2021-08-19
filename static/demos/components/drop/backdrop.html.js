@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-drop p-3" data-xt-drop-target>
-          <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
           <div
             class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
           >
@@ -52,7 +52,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop p-3" data-xt-drop-target>
-            <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
+            <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
             <div
               class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
             >

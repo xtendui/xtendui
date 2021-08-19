@@ -65,7 +65,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="xt-overlay" id="overlay--nested">
-      <div class="xt-backdrop z-below bg-black opacity-25"></div>
+      <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
           <div

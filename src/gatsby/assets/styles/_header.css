@@ -177,7 +177,6 @@
   font-weight: theme('fontWeight.semibold');
   margin-top: 1rem !important;
   margin-bottom: 0.5rem !important;
-  @apply text-white xt-links-inverse;
   .gatsby_site-header_listing > *:first-child & {
     margin-top: 0 !important;
   }

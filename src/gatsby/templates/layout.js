@@ -9,6 +9,7 @@ import DocFoot from 'src/gatsby/templates/includes/doc-foot'
 import DocFullscreen from 'src/gatsby/templates/includes/doc-fullscreen'
 
 import 'src/gatsby/assets/styles/app.css'
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 export default function Layout({ children, page, seo }) {
   const { site } = useSiteMetadata()
@@ -25,7 +26,7 @@ export default function Layout({ children, page, seo }) {
     <>
       <Helmet>
         <body
-          className="xt-body xt-links-default xl:text-lg xt-overflow-main"
+          className={`xt-body ${classes.textBlack()} xl:text-lg xt-overflow-main`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>

@@ -19,7 +19,8 @@ export default function Page() {
           <div className="gatsby_site-main_inner flex flex-col flex-auto">
             <header className="gatsby_home-header xt-sticky">
               <div className="gatsby_home-header_inner relative">
-                <div className="gatsby_home-header_content relative z-20 pt-8 pb-10 text-white xt-links-inverse text-center transition-all duration-300 ease-out-quart">
+                <div
+                  className={`gatsby_home-header_content relative z-20 pt-8 pb-10 ${classes.textWhite()} text-center transition-all duration-300 ease-out-quart`}>
                   <div className="container">
                     <div className="gatsby_logo-icon mb-4 transition-all duration-300 ease-out-quart">
                       <img
@@ -326,9 +327,7 @@ export default function Page() {
                     <div className="gatsby_listing-items">
                       <div className="xt-row xt-row-stretch">
                         <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                          <Link
-                            to="/intro"
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                          <Link to="/intro" className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               Intro
                             </div>
@@ -338,9 +337,7 @@ export default function Page() {
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                          <Link
-                            to="/components"
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                          <Link to="/components" className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               Components
                             </div>
@@ -350,9 +347,7 @@ export default function Page() {
                           </Link>
                         </div>
                         <div className="gatsby_listing-column gatsby_home-main_scroll w-2/4 md:w-2/6">
-                          <Link
-                            to="/themes"
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                          <Link to="/themes" className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               Themes
                             </div>

@@ -56,7 +56,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
                               <button
                                 type="button"
-                                className="xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 text-center"
+                                className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}
                                 data-gatsby-listing-toggle>
                                 <div>
                                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
@@ -103,7 +103,7 @@ class Template extends React.Component {
                             <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
                               <Link
                                 to={markdownSlug(adiacent)}
-                                className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                                className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                                 <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                                   {adiacent.frontmatter.title}
                                 </div>

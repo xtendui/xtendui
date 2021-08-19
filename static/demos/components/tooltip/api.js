@@ -114,7 +114,7 @@ const mountEventmethods = ({ ref }) => {
       const strTr = `
         <div class="xt-tooltip p-3" title="Target ${indexTr}"
           data-xt-tooltip-target>
-          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-medium text-white xt-links-inverse bg-black">
+          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-medium ${classes.textWhite()} bg-black">
             Lorem ipsum dolor sit amet
           </div>
         </div>

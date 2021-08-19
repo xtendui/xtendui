@@ -29,7 +29,7 @@ export default class DocFoot extends React.Component {
               <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                 <Link
                   to={'/intro/setup'}
-                  className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                  className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Problems getting it to work?
                   </div>
@@ -43,7 +43,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                   <Link
                     to={`/components/`}
-                    className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                    className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Visit the Components pages
                     </div>
@@ -58,7 +58,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                   <Link
                     to={`/components/${kebabCase(page.post.frontmatter.parent)}`}
-                    className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                    className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Visit the Components pages
                     </div>
@@ -78,7 +78,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                   <Link
                     to={`/themes/`}
-                    className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                    className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Visit the Themes pages
                     </div>
@@ -93,7 +93,7 @@ export default class DocFoot extends React.Component {
                 <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                   <Link
                     to={`/themes/${kebabCase(page.post.frontmatter.parent)}`}
-                    className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                    className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Visit the Themes pages
                     </div>

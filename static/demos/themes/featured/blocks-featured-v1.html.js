@@ -4,7 +4,7 @@ const buttonLineContent = 'pl-8'
 
 const html = /* HTML */ `
   <div class="demo--blocks-featured-v1">
-    <div class="*** featured *** inline-block w-full bg-primary-900 text-white xt-links-inverse">
+    <div class="*** featured *** inline-block w-full bg-primary-900 ${classes.textWhite()}">
       <a href="#" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">

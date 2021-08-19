@@ -5,6 +5,7 @@ import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
 import { Xt } from 'xtendui'
 import 'src/gatsby/assets/styles/app.css'
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 export default function LayoutDemo({ children }) {
   const { site } = useSiteMetadata()
@@ -27,7 +28,7 @@ export default function LayoutDemo({ children }) {
     <>
       <Helmet>
         <body
-          className="xt-body xt-links-default xl:text-lg"
+          className={`xt-body ${classes.textBlack()} xl:text-lg`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>

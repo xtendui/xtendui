@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
-            <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
+            <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
             >
@@ -34,7 +34,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
-          <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >

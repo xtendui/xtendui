@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay" data-xt-overlay-target>
-        <div class="xt-backdrop z-below bg-black opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
@@ -57,7 +57,7 @@ const html = /* HTML */ `
                   </button>
 
                   <div class="xt-overlay" data-xt-overlay-target-nested>
-                    <div class="xt-backdrop z-below bg-black opacity-25"></div>
+                    <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
                     <div class="xt-overlay-container max-w-3xl">
                       <div class="xt-overlay-inner">
                         <div

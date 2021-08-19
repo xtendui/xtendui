@@ -14,7 +14,7 @@ export default function Header({ page }) {
   }
   const { site } = useSiteMetadata()
   return (
-    <div className="gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 text-white xt-links-inverse leading-none">
+    <div className={`gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 ${classes.textWhite()} leading-none`}>
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky relative">
           <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25"></div>
@@ -118,13 +118,13 @@ export default function Header({ page }) {
           </div>
 
           <div
-            className={`xt-overlay text-white xt-links-inverse group ${overlayOpen ? 'on' : ''}`}
+            className={`xt-overlay group ${overlayOpen ? 'on' : ''}`}
             id="gatsby_menu--overlay">
-            <div className="xt-backdrop bg-black transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
               <div className="xt-overlay-inner">
                 <div className="*** xt-design *** overflow-hidden bg-primary-500 bg-opacity-80 backdrop-filter backdrop-blur backdrop-saturate-150 lg:backdrop-filter-none opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none"></div>
-                <div className="xt-card xt-min-h-screen opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none">
+                <div className={`xt-card xt-min-h-screen ${classes.textWhite()} opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none`}>
                   <div
                     className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 pr-3 text-2xl"
                     aria-label="Close"

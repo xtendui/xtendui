@@ -3,7 +3,7 @@ export const classes = {
   bgBlur: () => 'bg-opacity-75 backdrop-filter backdrop-blur',
   bgBlurInner: () => 'bg-opacity-0',
   gatsbyFloat: () =>
-    'transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
+    'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   cardToggle: () => 'rounded-full text-xs py-2 px-3 font-medium shadow',
   cardSlide: () =>
     'rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
@@ -51,12 +51,12 @@ export const classes = {
   tooltipMd: () => 'py-2 px-2.5 text-xs',
   tooltipLg: () => 'py-2.5 px-4 text-base',
   // card
-  textBlack: () => 'text-black xt-links-default',
+  textBlack: () => 'text-gray-900 xt-links-default',
   textWhite: () => 'text-white xt-links-inverse',
   cardRadius: () => '-2xl',
-  cardSm: () => 'p-6 text-sm',
-  cardMd: () => 'p-8 text-base',
-  cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
+  cardSm: () => 'p-6 sm:p-8 text-sm',
+  cardMd: () => 'p-7 sm:p-9 text-base',
+  cardLg: () => 'p-8 sm:p-10 text-base sm:text-lg',
   cardBlack: () => 'font-medium bg-black',
   cardWhite: () => 'bg-white',
   cardGray: () => 'bg-gray-100',

@@ -11,7 +11,7 @@ const html = /* HTML */ `
     </button>
 
     <div class="xt-overlay group" data-xt-overlay-target>
-      <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
+      <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div class="xt-overlay-inner">
           <div

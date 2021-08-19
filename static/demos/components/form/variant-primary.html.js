@@ -81,7 +81,7 @@ const html = /* HTML */ `
                   checked
                   disabled
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -95,7 +95,7 @@ const html = /* HTML */ `
                   type="checkbox"
                   class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkPrimary()} ***"
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -117,7 +117,7 @@ const html = /* HTML */ `
                   name="radio-primary"
                   checked
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -132,7 +132,7 @@ const html = /* HTML */ `
                   class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                   name="radio-primary"
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -152,7 +152,7 @@ const html = /* HTML */ `
                   type="checkbox"
                   class="xt-check xt-switch *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -168,7 +168,7 @@ const html = /* HTML */ `
                   name="switch-primary"
                   checked
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
@@ -183,7 +183,7 @@ const html = /* HTML */ `
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchPrimary()} ***"
                   name="switch-primary"
                 />
-                <span class="*** ${classes.checkContent()} *** text-white xt-links-inverse"
+                <span class="*** ${classes.checkContent()} *** ${classes.textWhite()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.</span

@@ -114,7 +114,7 @@ const mountEventmethods = ({ ref }) => {
       const strTr = `
         <div class="xt-drop p-3" title="Target ${indexTr}"
           data-xt-drop-target>
-          <div class="xt-card w-64 rounded-md shadow-drop text-black xt-links-default bg-white">
+          <div class="xt-card w-64 rounded-md shadow-drop bg-gray-100">
             <nav class="list flex-col p-3">
               <a href="#" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-medium transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -12,7 +12,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
-          <div class="rounded${classes.tooltipRadius()} shadow-tooltip text-black xt-links-default bg-white">
+          <div class="rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textBlack()} ${classes.cardWhite()}">
             <form class="text-sm">
               <div class="xt-list flex-nowrap max-w-sm">
                 <div class="inline-flex flex-auto">

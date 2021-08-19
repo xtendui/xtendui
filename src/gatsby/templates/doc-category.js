@@ -54,7 +54,7 @@ export default class Template extends React.Component {
                             href={post.frontmatter.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title}
                             </div>
@@ -65,7 +65,7 @@ export default class Template extends React.Component {
                         <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
                           <Link
                             to={markdownSlug(post)}
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 text-black xt-links-default rounded-md ${classes.gatsbyFloat()}`}>
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title}
                             </div>

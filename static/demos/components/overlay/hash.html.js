@@ -20,7 +20,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay" id="overlay--hash" data-xt-hash="demo--overlay-hash">
-        <div class="xt-backdrop z-below bg-black opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div

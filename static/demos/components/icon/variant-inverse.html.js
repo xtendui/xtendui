@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="text-white xt-links-inverse py-4 px-6 bg-primary-500">
+    <div class="${classes.textWhite()} py-4 px-6 bg-primary-500">
       <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Text</div>
 
       ${classes.iconSearch()}

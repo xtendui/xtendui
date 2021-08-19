@@ -37,7 +37,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 text-white xt-links-inverse">
+                    <div class="pt-16 pb-24 ${classes.textWhite()}">
                       <div class="container">
                         <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
@@ -71,7 +71,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-gray-700 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 text-white xt-links-inverse">
+                    <div class="pt-16 pb-24 ${classes.textWhite()}">
                       <div class="container">
                         <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
@@ -106,7 +106,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-gray-100 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 text-black xt-links-default">
+                    <div class="pt-16 pb-24 ${classes.textBlack()} ">
                       <div class="container">
                         <div class="xt-row xt-row-x-8">
                           <div class="w-full md:w-6/12">
