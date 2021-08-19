@@ -38,10 +38,6 @@ export const classes = {
   groupButtonLg: () => 'py-2 px-3 text-base',
   groupButtonGray: () => 'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100',
   groupButtonPrimary: () => 'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500',
-  // drop
-  dropCardRadius: () => '-md',
-  // overlay
-  overlayCardRadius: () => '-lg',
   // badge
   badgeRadius: () => '-xs',
   badgeSm: () => 'py-2 px-2.5 text-3xs',
@@ -57,7 +53,7 @@ export const classes = {
   // card
   textBlack: () => 'text-black xt-links-default',
   textWhite: () => 'text-white xt-links-inverse',
-  cardRadius: () => '-lg',
+  cardRadius: () => '-2xl',
   cardSm: () => 'p-6 text-sm',
   cardMd: () => 'p-8 text-base',
   cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
@@ -68,6 +64,10 @@ export const classes = {
   cardPrimary: () => 'bg-primary-500',
   cardPrimaryInteractive: () =>
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
+  // drop
+  dropCardRadius: () => '-md',
+  // overlay
+  overlayCardRadius: () => '-2xl',
   // components
   slide: () => 'group',
   loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',
