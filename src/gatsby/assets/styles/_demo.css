@@ -9,7 +9,13 @@
     .gatsby_iframe-container& {
       @apply p-4 md:p-6 lg:p-8;
     }
+    .gatsby_iframe-center& {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .gatsby_iframe-gradient& {
+      @apply bg-gradient-to-r from-primary-100 to-primary-200;
     }
   }
 }

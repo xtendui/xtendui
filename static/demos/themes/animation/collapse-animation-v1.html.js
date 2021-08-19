@@ -220,85 +220,6 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
-          Gallery
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
-          <div class="xt-overlay-container p-0">
-            <button
-              type="button"
-              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${itemAnim()}"
-              aria-label="Close"
-            >
-              ${classes.iconX()}
-            </button>
-            <div class="xt-overlay-inner ${designAnim()}" data-xt-overlay-inner>
-              <div class="xt-card xt-min-h-screen items-center justify-center ${classes.textBlack()} ${cardWhite()}">
-                <div class="xt-media-container bg-gray-300 pb-[100%] ${itemAnim()}">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
-          Menu
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
-          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div class="xt-overlay-inner ${designAnim()}" data-xt-overlay-inner>
-              <div class="xt-card xt-min-h-screen ${classes.textBlack()} ${cardWhite()}">
-                <button
-                  type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                  aria-label="Close"
-                >
-                  ${classes.iconX()}
-                </button>
-                <div class="xt-list bg-primary-500 ${itemAnim()}">
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Menu</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
-                </div>
-                <div class="xt-media-container bg-gray-300 h-48 ${itemAnim()}">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-                <div class="${classes.cardMd()} ${itemAnim()}">
-                  <div class="xt-h4">Lorem ipsum</div>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
-                </div>
-                <div class="${classes.cardSm()} bg-gray-200 mt-auto ${itemAnim()}">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                    turpis.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
           Contact
         </button>
 
@@ -413,7 +334,7 @@ const html = /* HTML */ `
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayRadius()} md:rounded-bl-none flex-auto"
+                      class="${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} flex-auto"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -543,8 +464,89 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} bg-gray-200 ${itemAnim()}">
+                <div
+                  class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()} ${itemAnim()}"
+                >
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
+          Menu
+        </button>
+
+        <div class="xt-overlay group" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
+            <div class="xt-overlay-inner ${designAnim()}" data-xt-overlay-inner>
+              <div class="xt-card xt-min-h-screen ${classes.textBlack()} ${cardWhite()}">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
+                  aria-label="Close"
+                >
+                  ${classes.iconX()}
+                </button>
+                <div class="xt-list bg-primary-500 ${itemAnim()}">
+                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Menu</button>
+                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
+                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
+                </div>
+                <div class="xt-media-container bg-gray-300 h-48 ${itemAnim()}">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                </div>
+                <div class="${classes.cardMd()} ${itemAnim()}">
+                  <div class="xt-h4">Lorem ipsum</div>
+                  <p>
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  </p>
+                </div>
+                <div class="${classes.cardSm()} ${classes.cardWhiteAccent()} mt-auto ${itemAnim()}">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                    turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
+          Gallery
+        </button>
+
+        <div class="xt-overlay group" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+          <div class="xt-overlay-container p-0">
+            <button
+              type="button"
+              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${itemAnim()}"
+              aria-label="Close"
+            >
+              ${classes.iconX()}
+            </button>
+            <div class="xt-overlay-inner ${designAnim()}" data-xt-overlay-inner>
+              <div class="xt-card xt-min-h-screen items-center justify-center ${classes.textBlack()} ${cardWhite()}">
+                <div class="xt-media-container bg-gray-300 pb-[100%] ${itemAnim()}">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
             </div>

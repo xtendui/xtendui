@@ -16,7 +16,7 @@ const html = /* HTML */ `
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div class="${classes.cardMd()} mt-auto rounded-b${classes.cardRadius()} bg-gray-200">
+          <div class="${classes.cardMd()} mt-auto rounded-b${classes.cardRadius()} ${classes.cardWhiteAccent()}">
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
@@ -35,7 +35,7 @@ const html = /* HTML */ `
             <div class="xt-h4">Lorem ipsum</div>
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
-          <div class="${classes.cardMd()} mt-auto rounded-b${classes.cardRadius()} bg-gray-200">
+          <div class="${classes.cardMd()} mt-auto rounded-b${classes.cardRadius()} ${classes.cardWhiteAccent()}">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>

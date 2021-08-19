@@ -1,6 +1,6 @@
 export const classes = {
   // special
-  bgBlur: () => 'backdrop-filter backdrop-blur backdrop-saturate-150',
+  bgBlur: () => 'backdrop-filter backdrop-blur',
   bgBlurInner: () => 'bg-opacity-0',
   gatsbyFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
@@ -39,6 +39,7 @@ export const classes = {
   cardLg: () => 'p-8 sm:p-10 text-base sm:text-lg',
   cardBlack: () => 'font-medium bg-black',
   cardWhite: () => 'bg-white',
+  cardWhiteAccent: () => 'bg-primary-100',
   cardGray: () => 'bg-gray-100',
   cardGrayInteractive: () => 'transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   cardPrimary: () => 'bg-primary-500',

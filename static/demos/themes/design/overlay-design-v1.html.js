@@ -1,107 +1,12 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonPrimary = () => `${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
-const cardWhite = () => `${classes.cardWhite()} bg-opacity-75 ${classes.bgBlur()}`
+const cardWhite = () => `${classes.cardWhite()}`
+const cardWhiteAccent = () => `${classes.cardWhiteAccent()}`
 
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
-          Gallery
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
-          <div class="xt-overlay-container p-0">
-            <button
-              type="button"
-              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
-              aria-label="Close"
-            >
-              ${classes.iconX()}
-            </button>
-            <div class="xt-overlay-inner">
-              <div
-                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
-              >
-                <div class="xt-media-container bg-gray-300 pb-[100%]">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-overlay>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
-          Menu
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
-          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}">
-                <button
-                  type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                  aria-label="Close"
-                >
-                  ${classes.iconX()}
-                </button>
-                <div class="xt-list bg-primary-500">
-                  <button
-                    type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-                  >
-                    Menu
-                  </button>
-                  <button
-                    type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-                  >
-                    Info
-                  </button>
-                  <button
-                    type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
-                  >
-                    Account
-                  </button>
-                </div>
-                <div class="xt-media-container bg-gray-300 h-48">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-                <div class="${classes.cardMd()}">
-                  <div class="xt-h4">Lorem ipsum</div>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
-                </div>
-                <div class="${classes.cardSm()} bg-gray-200 mt-auto">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                    turpis.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div data-xt-overlay>
         <button
           type="button"
@@ -221,7 +126,7 @@ const html = /* HTML */ `
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayRadius()} md:rounded-bl-none flex-auto"
+                      class="${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${cardWhiteAccent()} flex-auto"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -350,8 +255,104 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} bg-gray-200">
+                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${cardWhiteAccent()}">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
+          Menu
+        </button>
+
+        <div class="xt-overlay group" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
+            <div class="xt-overlay-inner">
+              <div class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
+                  aria-label="Close"
+                >
+                  ${classes.iconX()}
+                </button>
+                <div class="xt-list bg-primary-500">
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                  >
+                    Menu
+                  </button>
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                  >
+                    Info
+                  </button>
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                  >
+                    Account
+                  </button>
+                </div>
+                <div class="xt-media-container bg-gray-300 h-48">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                </div>
+                <div class="${classes.cardMd()}">
+                  <div class="xt-h4">Lorem ipsum</div>
+                  <p>
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
+                  </p>
+                </div>
+                <div class="${classes.cardSm()} ${cardWhiteAccent()} mt-auto">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
+                    turpis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-xt-overlay>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          data-xt-overlay-element
+        >
+          Gallery
+        </button>
+
+        <div class="xt-overlay group" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+          <div class="xt-overlay-container p-0">
+            <button
+              type="button"
+              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
+              aria-label="Close"
+            >
+              ${classes.iconX()}
+            </button>
+            <div class="xt-overlay-inner">
+              <div
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
+              >
+                <div class="xt-media-container bg-gray-300 pb-[100%]">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
               </div>
             </div>
@@ -365,5 +366,6 @@ const html = /* HTML */ `
 export const object = {
   html: html,
   container: true,
+  center: true,
   gradient: true,
 }

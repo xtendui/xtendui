@@ -16,11 +16,11 @@ const html = /* HTML */ `
           </p>
         </div>
         <div class="*** flex flex-col md:w-5/12 ***">
-          <div class="*** flex-auto *** ${classes.cardSm()} bg-gray-200">
+          <div class="*** flex-auto *** ${classes.cardSm()}">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <div
-            class="${classes.cardSm()} bg-primary-500 ${classes.textWhite()} rounded-b${classes.cardRadius()} md:rounded-bl-none"
+            class="${classes.cardSm()} ${classes.textWhite()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}"
           >
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>

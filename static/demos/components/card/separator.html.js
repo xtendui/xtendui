@@ -15,7 +15,7 @@ const html = /* HTML */ `
               </p>
             </div>
             <div class="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-300 ***">
-              <div class="${classes.cardMd()} bg-gray-200">
+              <div class="${classes.cardMd()} ${classes.cardWhiteAccent()}">
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
               </div>
               <div class="${classes.cardSm()} *** border-t border-solid border-gray-300 ***">

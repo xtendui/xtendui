@@ -14,7 +14,7 @@ const html = /* HTML */ `
           vitae magna eget, vehicula scelerisque elit.
         </p>
       </div>
-      <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} bg-gray-200 ***">
+      <div class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} ${classes.cardWhiteAccent()} ***">
         <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
       </div>
     </div>
