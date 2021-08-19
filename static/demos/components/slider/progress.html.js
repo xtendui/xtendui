@@ -112,7 +112,7 @@ const html = /* HTML */ `
           <span
             class="${classes.spinner()} w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100 -mt-1 ml-4"
           >
-            ${classes.svgSpinner({})}
+            ${classes.svgSpinner()}
           </span>
         </span>
       </div>

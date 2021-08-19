@@ -61,8 +61,6 @@ Many advanced usage of toggle components are in the addon pages.
 
 - Slider notable addons are **navigation sides**, **status**, **automatic scrolling**. See [slider addon](/components/slider/addon) for more info.
 
-- Toggle notable addons are **multilevel**. See [toggle addon](/components/toggle/addon) for more info.
-
 - Tooltip notable addons are **swap**. See [tooltip addon](/components/tooltip/addon) for more info.
 
 ## Scroll

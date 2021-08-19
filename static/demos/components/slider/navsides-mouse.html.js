@@ -65,7 +65,7 @@ const html = /* HTML */ `
             <div
               class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()}"
             >
-              ${classes.iconArrowLeft({})}
+              ${classes.iconArrowLeft()}
             </div>
           </div>
         </button>
@@ -84,7 +84,7 @@ const html = /* HTML */ `
             <div
               class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonPrimary()} ${classes.buttonPrimaryGroup()}"
             >
-              ${classes.iconArrowRight({})}
+              ${classes.iconArrowRight()}
             </div>
           </div>
         </button>

@@ -9,6 +9,7 @@
 @import 'xtendui/static/demos/components/group/expand.css';
 @import 'xtendui/static/demos/components/listing/infinitescroll.css';
 @import 'xtendui/static/demos/components/media/variant.css';
+@import 'xtendui/static/demos/components/nav/multilevel.css';
 @import 'xtendui/static/demos/components/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/overlay/class-body.css';
 @import 'xtendui/static/demos/components/overlay/disabled.css';
@@ -26,7 +27,6 @@
 @import 'xtendui/static/demos/components/slider/touch-overflow.css';
 @import 'xtendui/static/demos/components/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/toggle/class-custom.css';
-@import 'xtendui/static/demos/components/toggle/multilevel.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
