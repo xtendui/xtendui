@@ -434,7 +434,7 @@ Scrollto.componentName = 'xt-scrollto'
 Scrollto.optionsDefault = {
   debug: false,
   // elements
-  anchors: '[href*="{hash}"]',
+  anchors: '[href*="{hash}"]:not([href$="#"])',
   scrollers: '.xt-overlay:not([data-xt-overlay-disabled])',
   // class
   class: 'on',
