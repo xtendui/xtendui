@@ -9,8 +9,6 @@ tags: ['wip']
 
 ## Usage
 
-Use **tailwind classes** to create a **badge**.
-
 <demo>
   <demoinline src="demos/components/badge/usage">
   </demoinline>

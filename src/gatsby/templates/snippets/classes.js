@@ -25,6 +25,10 @@ export const classes = {
   buttonPrimary: () =>
     'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   buttonPrimaryGroup: () => 'group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
+  buttonDefaultPrimary: () =>
+    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+  buttonDefaultPrimaryGroup: () =>
+    'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
   buttonRing: () =>
     'font-semibold leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonText: () =>

@@ -12,7 +12,7 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use `.xt-list` to create a **list**.
+Use `.flex-auto` to expand items to **fill width**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

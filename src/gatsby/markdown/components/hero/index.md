@@ -8,8 +8,6 @@ description: "Hero is a component to style complex boxed content."
 
 ## Usage
 
-Use **tailwind classes** to create a **hero**.
-
 Assing the desired `min-height` instead of `min-h-screen`, assing the desired `max-width` instead of `max-w-2xl`,
 
 > This component uses [media](/components/media) see documentation for more info.

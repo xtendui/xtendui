@@ -12,8 +12,6 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use `.xt-card` to create a **card**.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Description                   |

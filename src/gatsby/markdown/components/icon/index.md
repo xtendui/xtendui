@@ -12,8 +12,6 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Usage
 
-Use `.xt-icon` to create a **icon**.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                      | Syntax                          | Mixin            | Variants               | Description                   |

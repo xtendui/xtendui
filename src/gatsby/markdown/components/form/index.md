@@ -14,7 +14,6 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 Import the **javascript** file with `import 'xtendui/src/form'`.
 
-
 ## Usage
 
 > For usability purpose [label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea`, we use `aria-label="Label"`.

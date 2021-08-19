@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Other"
-parent: "Nav"
-title: "Nav"
-description: "Nav is a component to group up buttons, inputs and other content."
+parent: "Tabs"
+title: "Tabs"
+description: "Tabs is a component to group up buttons, inputs and other content."
 ---
 
 ## Usage
@@ -12,7 +12,7 @@ Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwind
 
 Use **tailwind classes** to assign alignment (e.g. margin auto, [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
-Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**. Use `.flex-auto` to expand items to **fill width**.
+Use `.flex-auto` to expand items to **fill width**.
 
 You can set activation styles by adding the class `.on`.
 
@@ -21,6 +21,6 @@ You can set activation styles by adding the class `.on`.
 > For usability purpose use `<nav></nav>`.
 
 <demo>
-  <demoinline src="demos/components/nav/usage">
+  <demoinline src="demos/components/tabs/usage">
   </demoinline>
 </demo>

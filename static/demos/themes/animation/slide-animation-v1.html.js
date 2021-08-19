@@ -74,7 +74,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${animItemOpacity()}"></div>
         </div>
       </div>
 
@@ -106,7 +106,7 @@ const html = /* HTML */ `
               </p>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${animItemOpacity()}"></div>
         </div>
       </div>
     </div>

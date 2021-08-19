@@ -8,8 +8,6 @@ description: "Table is a component with basic styles for tables."
 
 ## Usage
 
-Use **tailwind classes** to create a **table**.
-
 <demo>
   <demoinline src="demos/components/table/usage">
   </demoinline>

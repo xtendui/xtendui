@@ -1,26 +1,17 @@
 ---
 type: "Components"
 category: "Other"
-parent: "Nav"
+parent: "Tabs"
 title: "Content"
 date: "2030-10-10"
 ---
-
-## Size
-
-Use **tailwind classes** to assign size (e.g. [max-width](https://tailwindcss.com/docs/max-width)).
-
-<demo>
-  <demoinline src="demos/components/nav/size">
-  </demoinline>
-</demo>
 
 ## Border
 
 Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindcss.com/docs/border-color), [border-radius](https://tailwindcss.com/docs/border-radius)).
 
 <demo>
-  <demoinline src="demos/components/nav/border">
+  <demoinline src="demos/components/tabs/border">
   </demoinline>
 </demo>
 
@@ -29,7 +20,7 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
 Use [list space](/components/list/content#space) to space content.
 
 <demo>
-  <demoinline src="demos/components/nav/space">
+  <demoinline src="demos/components/tabs/space">
   </demoinline>
 </demo>
 
@@ -40,16 +31,7 @@ You can include the component inside a [card](/components/card) and add interact
 > This component uses [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/nav/content">
-  </demoinline>
-</demo>
-
-## Merge
-
-You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.
-
-<demo>
-  <demoinline src="demos/components/nav/merge">
+  <demoinline src="demos/components/tabs/content">
   </demoinline>
 </demo>
 
@@ -62,6 +44,6 @@ Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwind
 > This component uses [icon](/components/icon) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/nav/alignment">
+  <demoinline src="demos/components/tabs/alignment">
   </demoinline>
 </demo>

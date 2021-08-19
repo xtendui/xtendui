@@ -9,7 +9,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-overlay-element
         >
-          Default
+          White
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>

@@ -50,21 +50,21 @@ const html = /* HTML */ `
         <div class="xt-list *** xt-list-2 ***">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** flex-auto *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Lorem Ipsum
           </button>
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** flex-auto *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Dolor sit
           </button>
 
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** flex-auto *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
           >
             Amet
           </button>

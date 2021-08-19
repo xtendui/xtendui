@@ -14,7 +14,10 @@ const html = /* HTML */ `
         </div>
         <form class="text-sm">
           <div class="xt-list flex-col">
-            <div class="inline-flex *** border-t border-b border-gray-300 ***">
+            <div
+              class="inline-flex *** border-t border-b border-gray-300 ***"
+              data-xt-tooltip="{ on: 'focus', off: 'blur' }"
+            >
               <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
@@ -23,12 +26,20 @@ const html = /* HTML */ `
                 class="${classes.input()} ${classes.inputDefault()}"
                 aria-label="Search"
                 placeholder="Seach Catalog"
+                data-xt-tooltip-element
               />
+              <div class="*** xt-tooltip *** p-2" data-xt-tooltip-target>
+                <div
+                  class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+                >
+                  Lorem ipsum dolor sit amet
+                </div>
+              </div>
             </div>
 
             <a
               href="#"
-              class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+              class="xt-button *** w-full *** ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonDefault()}"
             >
               Search
             </a>
@@ -46,7 +57,10 @@ const html = /* HTML */ `
           </div>
           <form class="text-sm">
             <div class="xt-list flex-col">
-              <div class="inline-flex *** border-t border-b border-primary-300 ***">
+              <div
+                class="inline-flex *** border-t border-b border-primary-300 ***"
+                data-xt-tooltip="{ on: 'focus', off: 'blur' }"
+              >
                 <button type="submit" class="xt-button ${classes.buttonMd()} ${classes.buttonPrimary()}">
                   ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                 </button>
@@ -55,12 +69,20 @@ const html = /* HTML */ `
                   class="${classes.input()} ${classes.inputPrimary()}"
                   aria-label="Search"
                   placeholder="Seach Catalog"
+                  data-xt-tooltip-element
                 />
+                <div class="*** xt-tooltip *** p-2" data-xt-tooltip-target>
+                  <div
+                    class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+                  >
+                    Lorem ipsum dolor sit amet
+                  </div>
+                </div>
               </div>
 
               <a
                 href="#"
-                class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+                class="xt-button *** w-full *** ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
               >
                 Search
               </a>

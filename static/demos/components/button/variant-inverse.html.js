@@ -20,6 +20,13 @@ const html = /* HTML */ `
 
         <button
           type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonDefaultPrimary()} ***"
+        >
+          Gray Primary
+        </button>
+
+        <button
+          type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonRing()} ***"
         >
           Ring

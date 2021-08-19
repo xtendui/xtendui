@@ -8,7 +8,7 @@ const html = /* HTML */ `
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
         >
-          Default
+          Gray
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>

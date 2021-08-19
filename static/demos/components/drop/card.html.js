@@ -9,7 +9,7 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           data-xt-drop-element
         >
-          Default
+          Gray
         </button>
 
         <div class="xt-drop p-3" data-xt-drop-target>

@@ -24,7 +24,7 @@ const html = /* HTML */ `
         Amet
       </button>
 
-      <form class="text-sm *** inline-flex ***">
+      <form class="text-sm *** inline-flex flex-auto ***">
         <button
           type="button"
           class="xt-button ${classes.buttonLg()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"

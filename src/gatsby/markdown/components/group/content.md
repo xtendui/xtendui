@@ -33,12 +33,14 @@ Use [list space](/components/list/content#space) to space content.
   </demoinline>
 </demo>
 
-## Card
+## Other Content
 
-You can include the component inside a [card](/components/card).
+You can include the component inside a [card](/components/card) and add interactive components.
+
+> This component uses [card](/components/card) [tooltip](/components/tooltip) see documentation for more info.
 
 <demo>
-  <demoinline src="demos/components/group/card">
+  <demoinline src="demos/components/group/content">
   </demoinline>
 </demo>
 

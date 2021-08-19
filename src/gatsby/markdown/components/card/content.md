@@ -114,12 +114,16 @@ Refer to [form checks custom](/components/form/addon#checks-custom).
 
 ## Content Group
 
-Refer to [group card](/components/group/content#card).
+Refer to [group other content](/components/group/content#other-content).
 
 ## Content Nav
 
-Refer to [nav card](/components/nav/content#card).
+Refer to [nav other content](/components/nav/content#other-content).
+
+## Content Tabs
+
+Refer to [tabs other content](/components/tabs/content#other-content).
 
 ## Content Toolbar
 
-Refer to [toolbar card](/components/toolbar/content#card).
+Refer to [toolbar other content](/components/toolbar/content#other-content).

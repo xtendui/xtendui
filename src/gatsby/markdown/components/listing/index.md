@@ -8,8 +8,6 @@ description: "Listing is a component for category pages or simple listing."
 
 ## Usage
 
-Use **tailwind classes** to create a **listing**.
-
 > This component uses [media](/components/media) see documentation for more info.
 
 <demo>

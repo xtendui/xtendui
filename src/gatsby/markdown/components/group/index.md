@@ -12,7 +12,7 @@ Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwind
 
 Use **tailwind classes** to assign alignment (e.g. margin auto, [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
-Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**. Use `.flex-auto` to expand it to **fill width**.
+Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**. Use `.flex-auto` to expand items to **fill width**.
 
 > This component uses [list](/components/list) see documentation for more info.
 
