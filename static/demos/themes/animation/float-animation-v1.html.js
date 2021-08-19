@@ -87,7 +87,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
+              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
             ></div>
             <div class="xt-card w-64 ${classes.textBlack()} ${itemAnim()}">
               <nav class="xt-list flex-col ${classes.groupMd()}">
@@ -128,7 +128,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
+              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
             ></div>
             <div class="xt-card w-64 ${classes.textBlack()} ${itemAnim()}">
               <button
@@ -167,7 +167,7 @@ const html = /* HTML */ `
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip ${cardBlack()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${cardBlack()} ${designAnim()}"
               ></div>
               <div class="relative ${classes.tooltipMd()} font-medium ${classes.textWhite()} ${itemAnim()}">
                 Lorem ipsum dolor sit amet
@@ -190,7 +190,7 @@ const html = /* HTML */ `
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
               ></div>
               <div class="${classes.textBlack()} ${itemAnim()}">
                 <form class="text-sm">
@@ -341,10 +341,10 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${cardWhite()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${cardWhite()} ${designAnim()}"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.textBlack()} ${itemAnim()}">
+              <div class="xt-card rounded${classes.overlayRadius()} ${classes.textBlack()} ${itemAnim()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
@@ -446,7 +446,7 @@ const html = /* HTML */ `
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayCardRadius()} md:rounded-bl-none flex-auto"
+                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayRadius()} md:rounded-bl-none flex-auto"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -476,10 +476,10 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${cardWhite()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${cardWhite()} ${designAnim()}"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.textBlack()} ${itemAnim()}">
+              <div class="xt-card rounded${classes.overlayRadius()} ${classes.textBlack()} ${itemAnim()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
@@ -491,7 +491,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayCardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -577,7 +577,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.overlayCardRadius()} bg-gray-200">
+                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} bg-gray-200">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>

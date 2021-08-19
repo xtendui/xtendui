@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonPrimary = () => `${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
-const cardWhite = () => `${classes.cardWhite()}`
+const cardWhite = () => `${classes.cardWhite()} bg-opacity-75 ${classes.bgBlur()}`
 
 const html = /* HTML */ `
   <div>
@@ -27,7 +27,7 @@ const html = /* HTML */ `
             </button>
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.textBlack()} ${cardWhite()}"
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >
                 <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -51,7 +51,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.textBlack()} ${cardWhite()}">
+              <div class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -116,7 +116,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >
                 <button
                   type="button"
@@ -216,12 +216,12 @@ const html = /* HTML */ `
 
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-300 h-48 md:pb-[100%] md:rounded-tr${classes.overlayCardRadius()} "
+                      class="xt-media-container bg-gray-300 h-48 md:pb-[100%] md:rounded-tr${classes.overlayRadius()} "
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayCardRadius()} md:rounded-bl-none flex-auto"
+                      class="${classes.cardMd()} bg-gray-200 rounded-b${classes.overlayRadius()} md:rounded-bl-none flex-auto"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -251,7 +251,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >
                 <button
                   type="button"
@@ -264,7 +264,7 @@ const html = /* HTML */ `
                 <div class="md:xt-card-group">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayCardRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -350,7 +350,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.overlayCardRadius()} bg-gray-200">
+                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} bg-gray-200">
                   <p>Receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
@@ -365,4 +365,5 @@ const html = /* HTML */ `
 export const object = {
   html: html,
   container: true,
+  gradient: true,
 }

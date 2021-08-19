@@ -6,7 +6,7 @@ const html = /* HTML */ `
 
     <div class="*** xt-tooltip *** p-2" id="tooltip--unique-1">
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
+        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
       >
         Lorem ipsum dolor sit amet
       </div>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
     <div class="*** xt-tooltip *** p-2" id="tooltip--unique-2" data-xt-position="right-end">
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
+        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
       >
         Consectetur adipiscing elit
       </div>

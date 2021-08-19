@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
         <div class="relative">
           <div
-            class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
+            class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
           ></div>
           <div
             class="relative ${classes.tooltipMd()} font-medium ${classes.textWhite()} *** transition duration-300 opacity-0 group-in:opacity-100 ***"

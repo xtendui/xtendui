@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()} ***"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} ***"
           >
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
             molestie ${classes.iconLink()} diam nec euismod commodo.
@@ -33,7 +33,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** shadow-tooltip ${classes.textWhite()} ${classes.cardPrimary()} ***"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardPrimary()} ***"
           >
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
             molestie ${classes.iconLink()} diam nec euismod commodo.

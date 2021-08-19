@@ -1,3 +1,5 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const html = /* HTML */ `
   <div class="demo--media-iframe-lazy">
     <div class="xt-media-container bg-gray-300 pb-[56.2%] *** group ***">
@@ -14,7 +16,7 @@ const html = /* HTML */ `
       >
         <img src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg" loading="lazy" alt="" />
         <div
-          class="*** absolute inset-0 m-auto w-20 h-12 rounded-xl shadow-xl bg-black bg-opacity-60 backdrop-filter backdrop-blur ***"
+          class="*** absolute inset-0 m-auto w-20 h-12 rounded-xl ${classes.overlayShadow()} bg-black bg-opacity-60 ${classes.bgBlur()} ***"
         >
           <div
             class="*** absolute inset-0 w-0 h-0 m-auto border-l-[18px] border-b-[10px] border-t-[10px] border-transparent border-l-white ***"

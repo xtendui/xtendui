@@ -5,8 +5,11 @@
     visibility: visible;
     height: initial;
     max-width: none;
+    min-height: 100vh;
     .gatsby_iframe-container& {
       @apply p-4 md:p-6 lg:p-8;
+    }
+    .gatsby_iframe-gradient& {
     }
   }
 }

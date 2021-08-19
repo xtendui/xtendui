@@ -18,7 +18,6 @@ The following theme values are added with the preset:
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added, `rounded-sm` modified to `~3px`, `rounded-xs` added with `~2px`, for better control on small border radius.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
 * [outline](https://tailwindcss.com/docs/outline) `outline-browser` added.
-* [box-shadow](https://tailwindcss.com/docs/box-shadow) added components box shadows.
 * Added new settings see [animation](/components/animation).
 
 ## Variants

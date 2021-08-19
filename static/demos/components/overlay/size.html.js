@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** max-w-xl ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** max-w-3xl ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -115,7 +115,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** max-w-5xl ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -164,7 +164,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"

@@ -159,7 +159,7 @@ const html = /* HTML */ `
                       </button>
                       <div class="xt-overlay-inner">
                         <div
-                          class="xt-card items-center justify-center shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                          class="xt-card items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
                         >
                           <div class="w-full">
                             <div class="xt-media-container bg-gray-300 overflow-hidden">

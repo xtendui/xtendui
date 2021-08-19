@@ -1,6 +1,6 @@
 export const classes = {
   // special
-  bgBlur: () => 'bg-opacity-75 backdrop-filter backdrop-blur',
+  bgBlur: () => 'backdrop-filter backdrop-blur backdrop-saturate-150',
   bgBlurInner: () => 'bg-opacity-0',
   gatsbyFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
@@ -30,26 +30,6 @@ export const classes = {
   buttonRingAnim: () => 'transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonTextAnim: () => 'transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
   buttonCloseOutsideAnim: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
-  // group
-  groupMd: () => 'p-3',
-  groupButtonRadius: () => '-md',
-  groupButtonSm: () => 'py-1 px-2 text-xs',
-  groupButtonMd: () => 'py-1.5 px-2.5 text-sm',
-  groupButtonLg: () => 'py-2 px-3 text-base',
-  groupButtonGray: () => 'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100',
-  groupButtonPrimary: () => 'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500',
-  // badge
-  badgeRadius: () => '-xs',
-  badgeSm: () => 'py-2 px-2.5 text-3xs',
-  badgeMd: () => 'py-3 px-3.5 text-xs',
-  badgeLg: () => 'py-3.5 px-4 text-base',
-  badgeGray: () => 'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100',
-  badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
-  // tooltip
-  tooltipRadius: () => '-md',
-  tooltipSm: () => 'py-1 px-2 text-3xs',
-  tooltipMd: () => 'py-2 px-2.5 text-xs',
-  tooltipLg: () => 'py-2.5 px-4 text-base',
   // card
   textBlack: () => 'text-gray-900 xt-links-default',
   textWhite: () => 'text-white xt-links-inverse',
@@ -64,10 +44,33 @@ export const classes = {
   cardPrimary: () => 'bg-primary-500',
   cardPrimaryInteractive: () =>
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
+  // group
+  groupMd: () => 'p-3',
+  groupButtonRadius: () => '-md',
+  groupButtonSm: () => 'py-1 px-2 text-xs',
+  groupButtonMd: () => 'py-1.5 px-2.5 text-sm',
+  groupButtonLg: () => 'py-2 px-3 text-base',
+  groupButtonGray: () => 'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100',
+  groupButtonPrimary: () => 'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500',
+  // tooltip
+  tooltipRadius: () => '-md',
+  tooltipShadow: () => 'shadow-md',
+  tooltipSm: () => 'py-1 px-2 text-3xs',
+  tooltipMd: () => 'py-2 px-2.5 text-xs',
+  tooltipLg: () => 'py-2.5 px-4 text-base',
   // drop
-  dropCardRadius: () => '-md',
+  dropRadius: () => '-md',
+  dropShadow: () => 'shadow-lg',
   // overlay
-  overlayCardRadius: () => '-2xl',
+  overlayRadius: () => '-2xl',
+  overlayShadow: () => 'shadow-xl',
+  // badge
+  badgeRadius: () => '-xs',
+  badgeSm: () => 'py-2 px-2.5 text-3xs',
+  badgeMd: () => 'py-3 px-3.5 text-xs',
+  badgeLg: () => 'py-3.5 px-4 text-base',
+  badgeGray: () => 'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100',
+  badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
   // components
   slide: () => 'group',
   loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',

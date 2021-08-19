@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -68,7 +68,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"

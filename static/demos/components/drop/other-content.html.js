@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-drop p-3" data-xt-drop-target>
-        <form class="${classes.dropCardRadius()} shadow-drop text-sm">
+        <form class="${classes.dropRadius()} ${classes.dropShadow()} text-sm">
           <div class="xt-list flex-nowrap max-w-sm">
             <div class="inline-flex flex-auto">
               <button

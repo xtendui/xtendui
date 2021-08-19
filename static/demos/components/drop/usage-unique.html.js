@@ -12,7 +12,7 @@ const html = /* HTML */ `
 
     <div class="*** xt-drop *** p-4" id="drop--unique-1">
       <div
-        class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
+        class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
       >
         <nav class="xt-list flex-col ${classes.groupMd()}">
           <a
@@ -39,7 +39,7 @@ const html = /* HTML */ `
 
     <div class="*** xt-drop *** p-4" id="drop--unique-2" data-xt-position="right-end">
       <div
-        class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
+        class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
       >
         <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
           ${classes.iconX()}

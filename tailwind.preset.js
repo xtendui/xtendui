@@ -50,11 +50,6 @@ module.exports = {
       outline: {
         browser: '5px auto Highlight',
       },
-      boxShadow: {
-        ...require('./src/drop.css.js').boxShadow,
-        ...require('./src/overlay.css.js').boxShadow,
-        ...require('./src/tooltip.css.js').boxShadow,
-      },
       transitionDelay: {
         ...require('./src/animation.css.js').transitionDelay,
       },
